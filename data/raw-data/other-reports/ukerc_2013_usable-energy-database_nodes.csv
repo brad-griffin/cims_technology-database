@@ -1,0 +1,117 @@
+process,technology,sector,end-use,process-step,service-unit
+Integrated steelworks,blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,blast-furnace_top-gas-recycling-ccs,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,smelting-vessel_hisarna,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,smelting-vessel_hisarna-ccs,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,shaft-furnace_midrex,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,shaft-furnace_natural-gas_ulcored-ccs,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,electrolysis-cell_electricity_ulcowin,iron-and-steel,material-conversion,integrated-steelworks,t
+Subsector,electric-arc-furnace,iron-and-steel,other-services,subsector,t
+Electric arc furnace,furnace,iron-and-steel,process-heat-high-temp,electric-arc-furnace,t
+Electric arc furnace,furnace_preheat,iron-and-steel,process-heat-high-temp,electric-arc-furnace,t
+Electric arc furnace,melting-furnace,iron-and-steel,process-heat-high-temp,electric-arc-furnace,t
+Hot rolling,motor_electricity_efficiency-moderate,iron-and-steel,forming-and-finishing,hot-rolling,t
+"Continuous casting, Hot rolling (not including heavy section)",caster,iron-and-steel,forming-and-finishing,continuous-casting-hot-rolling-not-including-heavy-section,t
+Steam cracker,steam-cracker_naphtha,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_oil,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_steam,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_methanol,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,combined-cycle_coal_chp,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,combined-cycle_coal_ccs,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_coal,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,combined-cycle_biomass_chp,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_biomass,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,capture-unit_post-combustion,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,boiler_natural-gas_post-combustion,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,boiler_biomass_post-combustion,chemicals,steam-and-hot-water,steam-cracker,t
+Steam cracker,steam-cracker_post-combustion,chemicals,steam-and-hot-water,steam-cracker,t
+Steam reformer (Ammonia),autothermal-reformer,chemicals,steam-and-hot-water,steam-reformer-ammonia,t
+CHP for mercury cell process (Chlorine),fuel-cell_hydrogen_chp,chemicals,steam-and-hot-water,chp-for-mercury-cell-process-chlorine,GJ
+Dairy - Pasteuriser,pasteuriser,food-and-beverage,other-services,dairy-pasteuriser,m3
+Bakery - indirect ovens,oven,food-and-beverage,other-services,bakery-indirect-ovens,tonnes of mixed product
+CHP plant,gasifier_chp,pulp-and-paper,steam-and-hot-water,chp-plant,GJ
+Sector,dryer,pulp-and-paper,drying-and-separation,sector,t
+Dryer,dryer,pulp-and-paper,drying-and-separation,dryer,t
+Dry kiln,kiln_bat,cement,process-heat-high-temp,dry-kiln,t
+Dry kiln,kiln_dry,cement,process-heat-high-temp,dry-kiln,t
+Semi-wet kiln,kiln_bat,cement,process-heat-high-temp,semi-wet-kiln,t
+Semi-dry kiln,kiln_bat,cement,process-heat-high-temp,semi-dry-kiln,t
+Cement plant,kiln_post-combustion,cement,other-services,cement-plant,t
+Cement plant,kiln_waste-heat_post-combustion,cement,steam-and-hot-water,cement-plant,t
+Cement plant,kiln_oxyfuel,cement,other-services,cement-plant,t
+Cement subsector (2030 kiln efficiency),kiln,cement,process-heat-high-temp,cement-subsector-2030-kiln-efficiency,t
+Boilers,boiler_biomass,all-industry,other-services,boilers,GJ
+Motors - Pumps,motor_electricity_variable-speed,all-industry,machine-drive,motors-pumps,GJ
+Motors - Pumps,pump_electricity_efficiency-moderate,all-industry,machine-drive,motors-pumps,GJ
+Motors - Pumps,motor_electricity_efficiency-moderate,all-industry,machine-drive,motors-pumps,GJ
+Motors - Compressors,compressor_electricity,all-industry,machine-drive,motors-compressors,GJ
+Motors - Fans,fan_electricity_efficiency-moderate,all-industry,other-services,motors-fans,GJ
+Motors - Fans,motor_electricity_variable-speed,all-industry,other-services,motors-fans,GJ
+Motors - Fans,motor_electricity_efficiency-moderate,all-industry,machine-drive,motors-fans,GJ
+Iron manufacture,dryer_coke_efficiency-moderate,iron-and-steel,drying-and-separation,iron-manufacture,t
+Coke oven,coke-oven_coke-oven-gas_efficiency-moderate,iron-and-steel,process-heat-high-temp,coke-oven,t
+Coke oven,coke-oven_coke_efficiency-moderate,iron-and-steel,other-services,coke-oven,t
+Sinter plant,sinter-plant_waste-heat_efficiency-strong,iron-and-steel,material-preparation,sinter-plant,t
+Sinter plant,sinter-plant_efficiency-moderate,iron-and-steel,material-preparation,sinter-plant,t
+Blast furnace,blast-furnace_efficiency-moderate,iron-and-steel,process-heat-high-temp,blast-furnace,t
+Blast furnace,blast-furnace_waste-heat_efficiency-moderate,iron-and-steel,process-heat-high-temp,blast-furnace,t
+Blast furnace,blast-furnace_blast-furnace-gas_efficiency-moderate,iron-and-steel,process-heat-high-temp,blast-furnace,t
+Integrated steelworks,blast-furnace_coal_efficiency-moderate,iron-and-steel,material-conversion,integrated-steelworks,t
+Integrated steelworks,blast-furnace_efficiency-moderate,iron-and-steel,material-conversion,integrated-steelworks,t
+Basic oxygen furnace,basic-oxygen-furnace_efficiency-strong,iron-and-steel,process-heat-high-temp,basic-oxygen-furnace,t
+Basic oxygen furnace,basic-oxygen-furnace_electricity_efficiency-moderate,iron-and-steel,process-heat-high-temp,basic-oxygen-furnace,t
+Electric arc furnace,electric-arc-furnace_electricity_efficiency-moderate,iron-and-steel,process-heat-high-temp,electric-arc-furnace,t
+Continuous casting,caster_efficiency-strong,iron-and-steel,forming-and-finishing,continuous-casting,t
+Hot rolling,rolling-mill_efficiency-moderate,iron-and-steel,forming-and-finishing,hot-rolling,t
+Hot rolling,rolling-mill_efficiency-strong,iron-and-steel,forming-and-finishing,hot-rolling,t
+Hot rolling,rolling-mill_waste-heat_efficiency-moderate,iron-and-steel,forming-and-finishing,hot-rolling,t
+Hot rolling (not including heavy section),rolling-mill_efficiency-strong,iron-and-steel,forming-and-finishing,hot-rolling-not-including-heavy-section,t
+Subsector,management-system_efficiency-moderate,iron-and-steel,other-services,subsector,t
+Steam cracker,steam-cracker_steam_efficiency-moderate,chemicals,steam-and-hot-water,steam-cracker,t
+Benzene separation process,distillation-column_efficiency-strong,chemicals,drying-and-separation,benzene-separation-process,t
+Steam reformer (Ammonia),steam-reformer_steam_efficiency-moderate,chemicals,steam-and-hot-water,steam-reformer-ammonia,t
+Steam reformer (Hydrogen),steam-reformer_steam_efficiency-moderate,chemicals,steam-and-hot-water,steam-reformer-hydrogen,t
+CHP for mercury cell process (Chlorine),combined-cycle_efficiency-moderate,chemicals,steam-and-hot-water,chp-for-mercury-cell-process-chlorine,GJ
+Otswald process (Nitric acid),reactor_efficiency-moderate,chemicals,other-services,otswald-process-nitric-acid,t
+Meat - Heating systems,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-high-temp,meat-heating-systems,tonnes of mixed product
+Dairy,management-system_efficiency-moderate,food-and-beverage,other-services,dairy,m3
+Dairy - Pasteuriser,pasteuriser_efficiency-moderate,food-and-beverage,other-services,dairy-pasteuriser,m3
+Dairy - Pasteuriser,pasteuriser_efficiency-strong,food-and-beverage,other-services,dairy-pasteuriser,m3
+Dairy,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-high-temp,dairy,m3
+Dairy - CIP,cleaning-system_efficiency-strong,food-and-beverage,other-services,dairy-cip,m3
+Dairy-CIP,cleaning-system_efficiency-strong,food-and-beverage,other-services,dairy-cip,m3
+Dairy-CIP,cleaning-system_efficiency-moderate,food-and-beverage,other-services,dairy-cip,m3
+Bakery - ovens,oven_efficiency-moderate,food-and-beverage,other-services,bakery-ovens,tonnes of mixed product
+Bakery - ovens,oven_electricity_efficiency-moderate,food-and-beverage,machine-drive,bakery-ovens,tonnes of mixed product
+Bakery,management-system_electricity_efficiency-moderate,food-and-beverage,material-conversion,bakery,tonnes of mixed product
+"Bakery - non ovens, including cooler",management-system_efficiency-moderate,food-and-beverage,other-services,bakery-non-ovens-including-cooler,tonnes of mixed product
+Bakery - indirect ovens,oven_efficiency-moderate,food-and-beverage,other-services,bakery-indirect-ovens,tonnes of mixed product
+Bakery - direct ovens,oven_efficiency-moderate,food-and-beverage,other-services,bakery-direct-ovens,tonnes of mixed product
+Bakery -oven,oven_efficiency-moderate,food-and-beverage,other-services,bakery-oven,tonnes of mixed product
+Bakery - cooler,fan_electricity_efficiency-strong,food-and-beverage,machine-drive,bakery-cooler,tonnes of mixed product
+Bakery - indirect ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-high-temp,bakery-indirect-ovens,tonnes of mixed product
+Bakery - ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-high-temp,bakery-ovens,tonnes of mixed product
+Undefined sector boilers,boiler_steam_efficiency-strong,food-and-beverage,steam-and-hot-water,undefined-sector-boilers,GJ
+Undefined sector,management-system_efficiency-strong,food-and-beverage,other-services,undefined-sector,£k
+Drying systems,dryer_waste-heat_efficiency-strong,food-and-beverage,drying-and-separation,drying-systems,£k
+Compressed air,compressor_electricity_efficiency-moderate,pulp-and-paper,machine-drive,compressed-air,t
+Dryer,dryer_efficiency-moderate,pulp-and-paper,drying-and-separation,dryer,t
+Dryer,dryer_efficiency-strong,pulp-and-paper,drying-and-separation,dryer,t
+Dryer,dryer_steam_efficiency-moderate,pulp-and-paper,drying-and-separation,dryer,t
+Dryer,dryer_waste-heat_efficiency-moderate,pulp-and-paper,drying-and-separation,dryer,t
+Press,press_efficiency-moderate,pulp-and-paper,other-services,press,t
+Press,press_steam_efficiency-strong,pulp-and-paper,steam-and-hot-water,press,t
+Press,press_steam_efficiency-moderate,pulp-and-paper,steam-and-hot-water,press,t
+Press,press_electricity_efficiency-moderate,pulp-and-paper,other-services,press,t
+Sector,management-system_electricity_efficiency-moderate,pulp-and-paper,machine-drive,sector,t
+Stock preparation,pulper_efficiency-moderate,pulp-and-paper,other-services,stock-preparation,t
+Vacuum systems,pump_electricity_efficiency-moderate,pulp-and-paper,other-services,vacuum-systems,t
+Wire,rolling-mill_efficiency-moderate,pulp-and-paper,other-services,wire,t
+"Vacuum, wire, press,dryer",rolling-mill_efficiency-moderate,pulp-and-paper,drying-and-separation,vacuum-wire-press-dryer,t
+Dry kiln,kiln_efficiency-moderate,cement,process-heat-high-temp,dry-kiln,t
+Kiln,kiln_efficiency-moderate,cement,process-heat-high-temp,kiln,t
+Cement subsector,kiln_efficiency-strong,cement,other-services,cement-subsector,t
+Boilers,boiler_efficiency-moderate,all-industry,steam-and-hot-water,boilers,GJ
+Steam system,boiler_steam_efficiency-moderate,all-industry,steam-and-hot-water,steam-system,GJ
+Motors - Compressors,compressor_electricity_efficiency-moderate,all-industry,machine-drive,motors-compressors,GJ

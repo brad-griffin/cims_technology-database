@@ -1,0 +1,399 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.4",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "6eec5c3359e420e637aca7e8e247ce0c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "0b4d9db5800b0f4880d19ab2eb029819",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"technology-data-input-template\">Technology Data Input Template</h1>\n<span class=\"paragraph\">Build a long-format technology dataset (columns: <code>process, technology,\nparameter, unit, value, reference, note</code>) by entering, editing and\nexporting technologies one at a time.</span>\n<span class=\"paragraph\"><strong>Workflow</strong></span>\n<ol>\n<li><strong>Load</strong> an existing CSV (optional) -- must be in this notebook's export\n   format, or it is rejected with a warning.</li>\n<li>Review the <strong>Calculation variables</strong> (constants for formulas).</li>\n<li><strong>Choose a technology to edit</strong> (optional) -- loads its values into the\n   editor; calculated values come back into the <strong>formula</strong> field.</li>\n<li><strong>Edit</strong> the entry fields. Put a literal in <strong>value</strong>, or an expression in\n   the <strong>formula</strong> field (e.g. <code>=capacity * 0.95</code>) -- the formula is computed\n   into <code>value</code>, and the <code>note</code> field stays free for human notes.</li>\n<li><strong>Save technology to working data</strong> -- overwrites that process/technology\n   if it already exists, otherwise appends it.</li>\n<li>Edit the <strong>meta</strong> data.</li>\n<li><strong>Export</strong> the working data to CSV.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "637473fd79b1976b5cc46c7b0fe68d2b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "aaf571c8c3938cb95fe7f6d391cf201c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "867a611ea96f7d3960771c830a5c0642",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "d9cb7e4f83584a4a037a4184e981bd54",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "efba70a5bc20dd4becdb6652fa52c687",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "1c59ad6ebb575237993fb42f8d3205d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "34f37428a3032b8c2005df72e9e7acaa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "0bcdb5e45590d100fe2db25254ffb7f1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "03322fc9e963ddd9a072188fa49cd986",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "5f1ab89bd9018324262746445026d919",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "4697a60659c2a9d312ef9809f80060df",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "bc4e429313b3fe2bee0afe762c8ac65c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "259b217d91f1be953638ac800d01fee5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "99324df322e5e256233113e2707ee361",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "93183e9f2b56b573bfb7c03b59962276",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "11c3853fb36621281d8a5a020fc91f8d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "f600ae063e47aa9d3185d292c2094b7a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "fc5c4f8b6047304ccb1c03bbc2d4a971",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "5702773adbfc4087e1f59728e1638687",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "c182c6ca51d1a9f736e5a6d3cd38bc9a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "c3f00e11cb3e32cbc3bf1e3622717579",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "296c9995de01b0901ca0ce604444afb2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "7afdec83f05594f2eeb40a5aacf74f8e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "29662a775acf65c7b4aaf3a9f3a008c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "25791a07c4974fc29602bee189445987",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "a6875decd349b23e3b936c545658feb7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "5381f3af4961c260c8c6aa403a072714",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "4edc8e7155a816d584295082349ebee1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"1-load-optional\">1. Load (optional)</h2></span><marimo-ui-element object-id='nWHF-0' random-id='d0ba60a2-6443-f2b8-45c6-e89faec5c5eb'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Load CSV&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Loaded <strong>100 rows</strong> from <code>C:/_dev/tech_data/data/raw_data/gov_usa/epa/epa_2007_biomass-chp-technologies-catalog.csv</code>. Meta (licence / citation) loaded from the sidecar.</span></span><div class=\"loaded-badge loaded-yes\">Loaded: <code>C:/_dev/tech_data/data/raw_data/gov_usa/epa/epa_2007_biomass-chp-technologies-catalog.csv</code></div></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"calculation-variables\">Calculation variables</h2></span><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Constants</strong> available to every <code>=</code> formula:</span></span><marimo-ui-element object-id='SFPL-0' random-id='3369dc80-bf75-ca03-2120-cc844ac461fd'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;hours_per_year&#92;&quot;,&#92;&quot;value&#92;&quot;:8760.0},{&#92;&quot;name&#92;&quot;:&#92;&quot;GJ_per_MWh&#92;&quot;,&#92;&quot;value&#92;&quot;:3.6},{&#92;&quot;name&#92;&quot;:&#92;&quot;GJ_per_MMBtu&#92;&quot;,&#92;&quot;value&#92;&quot;:1.0551}]&quot;' data-total-rows='3' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='3' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;value&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Each parameter's value is <strong>also</strong> available to formulas in other fields, referenced by name with spaces and hyphens replaced by underscores:</span>\n<span class=\"paragraph\"><code>description, trl, state_of_development, year_available_commercially, lifetime, capacity, capacity_factor, annual_output, capex, opex, efficiency</code></span>\n<span class=\"paragraph\">Example: for the annual output formula cell value, use <strong>= capacity * capacity_factor * hours_per_year * GJ_per_MWh</strong></span></span></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"3-choose-a-technology-to-edit-optional\">3. Choose a technology to edit (optional)</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem'><marimo-ui-element object-id='ROlb-0' random-id='f72c050a-3dcd-eb92-b731-1c81d440851c'><marimo-dropdown data-initial-value='[]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Technology to edit&lt;/span&gt;&lt;/span&gt;&quot;' data-options='[&quot;steam / biomass-boiler&quot;,&quot;steam / biogas-combustion-turbine&quot;,&quot;steam / natural-gas-combustion-turbine&quot;,&quot;steam / landfill-gas-combustion-turbine&quot;,&quot;steam / biomass-gasifier&quot;,&quot;steam / internal-combustion-engine&quot;,&quot;steam / microturbine&quot;,&quot;steam / fuel-cell&quot;,&quot;steam / biomass-steam-turbine&quot;]' data-allow-select-none='true' data-searchable='false' data-full-width='false'></marimo-dropdown></marimo-ui-element><marimo-ui-element object-id='ROlb-1' random-id='a8f9e333-fb6b-40be-6cf2-2ff1134609e7'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Load into editor&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element><marimo-ui-element object-id='ROlb-2' random-id='fc9fe8bb-7fb4-3c17-0a6d-562423c84a88'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Clear editor (new technology)&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"4-edit\">4. Edit</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem'><marimo-ui-element object-id='TqIu-0' random-id='95cee57c-7e0f-b084-8b33-7ebd0c50b61f'><marimo-text data-initial-value='&quot;steam&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;process&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;e.g. steam&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element><marimo-ui-element object-id='TqIu-1' random-id='df0143cd-8507-e765-22ae-f30cbffb687e'><marimo-text data-initial-value='&quot;biomass-steam-turbine&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;technology&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;e.g. electricity_boiler&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.25rem'><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>parameter</strong></span></span></div><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>value</strong></span></span></div><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>formula</strong></span></span></div><div style='flex: 1'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>unit</strong></span></span></div><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>reference</strong></span></span></div><div style='flex: 3'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>note</strong></span></span></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">description</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-123' random-id='aa84aeb1-9624-c216-3c7e-0e8fa968e420'><marimo-text data-initial-value='&quot;steam back-pressure turbine&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-124' random-id='b793f189-7481-8c9b-e8bc-0a8a9fea6a66'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-125' random-id='679e7cf7-b0bc-bad6-fcc8-8ef576f359bd'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-126' random-id='b12d14b0-46f8-79bb-e333-4822b0356583'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-127' random-id='a7106d1e-4c94-826f-450c-155b1c01aca6'><marimo-text data-initial-value='&quot;syngas from thermal gasification&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">trl</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-129' random-id='f2fcd1ef-0d1c-5dea-be27-c40130be4118'><marimo-text data-initial-value='&quot;9&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-130' random-id='e1cc8856-c97d-c0cc-df1a-79fd41770d92'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-131' random-id='3286f9a0-c3c4-b686-7794-e97252b4fc0f'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-132' random-id='6a002075-f580-8a89-9b1f-31fb67d45ed9'><marimo-text data-initial-value='&quot;Table 6-1&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-133' random-id='3f67db2d-0262-ac05-bccc-91a6e07782ed'><marimo-text data-initial-value='&quot;commercialization status: numerous models available&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span title=\"options: existing, commercial, pilot, R&amp;D, conceptual\">state-of-development (i)</span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-135' random-id='83b7ca8e-5503-6bf6-0d2b-8c7a69e3dc7c'><marimo-text data-initial-value='&quot;existing&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-136' random-id='863a4e25-e517-de90-4619-6a234c1203a3'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-137' random-id='1cbd2227-84fb-312c-0742-95c164d5e3b0'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-138' random-id='456e52d1-728a-bdd5-78e7-e2f8f4c1dd80'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-139' random-id='484c1980-bba8-f0c8-8145-1dce9c13d573'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">year-available-commercially</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-141' random-id='d2072a64-b52d-db2b-4491-bd65b5579cb2'><marimo-text data-initial-value='&quot;1930&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-142' random-id='f2004b2a-b853-75ba-2ce5-b838ec3f3beb'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-143' random-id='90abe08c-9810-5894-4477-83e0a2c8918a'><marimo-text data-initial-value='&quot;year&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-144' random-id='4a7a5c0d-a97c-5837-6747-48653c409929'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-145' random-id='e963c8c2-1118-e8a4-9832-99d1ae6d6701'><marimo-text data-initial-value='&quot;introduced in 1920s; assume widely available after&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">lifetime</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-147' random-id='f70ee60a-32f6-bce2-fa5e-ef65f3d46241'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-148' random-id='81df10d3-c925-44b7-0b9a-0ca1e2e5f8ea'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-149' random-id='632f9826-ec61-bc5b-2342-5504bed71e16'><marimo-text data-initial-value='&quot;years&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-150' random-id='acd91c83-880c-b2e7-30c3-4511dc9b1b3f'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-151' random-id='04cc733b-ba3d-fdaf-c198-dccb63dceb87'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">capacity</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-153' random-id='7ab09fc1-9e5c-5d3a-57ce-bf7d5e073b81'><marimo-text data-initial-value='&quot;3&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-154' random-id='c8e4c121-37aa-19fb-430f-78b6049660e6'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-155' random-id='f822bea4-0855-2fac-069f-6ce9eb32cf60'><marimo-text data-initial-value='&quot;MW&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-156' random-id='aa9bb00d-0ca7-47d6-1eb6-e648657d8d24'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-157' random-id='1e7b3f20-c14d-f0ce-71f2-2c881f8f0ac7'><marimo-text data-initial-value='&quot;medium plant&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">capacity-factor</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-159' random-id='fb8f395c-53bf-8b10-4da0-8c49ad37213e'><marimo-text data-initial-value='&quot;0.9&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-160' random-id='566d8010-9e4e-a1f2-51fb-5bf43c5b0757'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-161' random-id='d0d71530-d291-01a4-fbd1-197c163842c0'><marimo-text data-initial-value='&quot;%&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-162' random-id='2f34f94f-919b-9d75-8bc2-b7b171d63975'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-163' random-id='5a118934-a463-cf31-b074-2bd6fd023a81'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">annual-output</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-165' random-id='8c6eaaa8-6a96-a739-a2f3-b7417b9997c4'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-166' random-id='b8e30ebb-33f6-b38f-e6e1-0ab43109b331'><marimo-text data-initial-value='&quot;round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-167' random-id='c1fa8b4c-4be2-2478-6f1e-0c3188dc4208'><marimo-text data-initial-value='&quot;GJ&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-168' random-id='2ae9c631-660a-5a20-4a6e-f2bd6ef365e9'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-169' random-id='d677fa80-7dae-5b36-a904-1f46ac91d301'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">capex</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-171' random-id='da884f07-afa4-26b3-4769-488d58a479e8'><marimo-text data-initial-value='&quot;27708000&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-172' random-id='2bf78099-4c1a-fae3-a0b8-5416ceaf35f8'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-173' random-id='ea30cb76-13c3-1c33-553c-f904ce1f6c1d'><marimo-text data-initial-value='&quot;2007_USD&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-174' random-id='9dcaa8ae-ad9f-d65b-8c04-c9a482b0e1c0'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-175' random-id='8ad987c8-ccaf-a578-e229-b13330812204'><marimo-text data-initial-value='&quot;medium plant, gasifier + prep yard&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">opex</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-177' random-id='bf2a20ed-60e2-b26b-303b-e24547d9ac7c'><marimo-text data-initial-value='&quot;1109500&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-178' random-id='1c157cb0-393a-9a18-2f7c-d101b5c307c0'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-179' random-id='2920277a-75d0-12c3-56a0-267da0940da5'><marimo-text data-initial-value='&quot;2007_USD&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-180' random-id='2e961c02-b142-367c-78ee-2058324d7fc5'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-181' random-id='1675b531-ae66-badc-0c88-c5a180d4dd6f'><marimo-text data-initial-value='&quot;medium plant, gasifier + prep yard&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">efficiency</span></span></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-183' random-id='c5d27091-ef89-8da6-da26-f60a8897e9e2'><marimo-text data-initial-value='&quot;0.75&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-184' random-id='9c6d6b9e-9699-691d-065f-5bcaca1e2881'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='TqIu-185' random-id='46b26691-2fdc-abca-aaa6-dbde5bf5f8f0'><marimo-text data-initial-value='&quot;%&quot;' data-label='null' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='TqIu-186' random-id='265d761e-067c-baae-dece-54fd233f3309'><marimo-text data-initial-value='&quot;Table 6-2&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='TqIu-187' random-id='72102857-b811-8d90-afe3-1592fc446cc7'><marimo-text data-initial-value='&quot;effective electrical efficiency&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>custom parameters (type a name to include the row):</em></span></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><marimo-ui-element object-id='Vxnm-65' random-id='44b35caa-17df-2b19-cc79-757c1f837273'><marimo-text data-initial-value='&quot;efficiency_chp&quot;' data-label='null' data-placeholder='&quot;custom parameter name&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-66' random-id='78a1c9f7-71c5-6d05-556a-ae5d928c6624'><marimo-text data-initial-value='&quot;0.795&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-67' random-id='bc0482de-7937-a816-a065-a68bd832e5bc'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='Vxnm-68' random-id='af76d614-684c-adb4-53d7-fdb8309ab12a'><marimo-text data-initial-value='&quot;%&quot;' data-label='null' data-placeholder='&quot;unit&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-69' random-id='add4dfae-be8c-4663-fdd1-194bfddbf75d'><marimo-text data-initial-value='&quot;Table 6-2&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='Vxnm-70' random-id='7154c0d6-f1d5-76c9-95f8-a6520ef3a494'><marimo-text data-initial-value='&quot;overall efficiency of chp system&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><marimo-ui-element object-id='Vxnm-72' random-id='a58f2c27-5a84-af4d-7837-66316ad66df0'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;custom parameter name&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-73' random-id='c4504d79-9ae9-1380-e803-d5ec62aee8be'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-74' random-id='e6918afd-131e-a405-efca-2175a3f9f359'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='Vxnm-75' random-id='a3652703-ecd7-b828-07d8-90213d73bb56'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;unit&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-76' random-id='a0eca52a-fe36-557c-ca2f-c968218cd791'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='Vxnm-77' random-id='778965d3-8ce5-b9e7-08e6-84e457d81008'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><marimo-ui-element object-id='Vxnm-79' random-id='8fef9f97-c165-f6ee-2bff-2f7868e63c51'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;custom parameter name&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-80' random-id='7309374c-f461-2760-8952-d2afba750122'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-81' random-id='cb4eed67-1fb9-5924-c2a0-3fa4e393f095'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='Vxnm-82' random-id='4c695d66-1039-947b-7002-9c4497b0e790'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;unit&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-83' random-id='edc37398-0468-6884-85e4-8d34e53d112b'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='Vxnm-84' random-id='74b7863b-9f91-fd77-29c3-6f65304439d6'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><marimo-ui-element object-id='Vxnm-86' random-id='3f098d77-f2bf-83cd-c790-1bfc764242d3'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;custom parameter name&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-87' random-id='4ef356ae-9d28-48b3-0c5c-a8d0e9e0fbdf'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-88' random-id='1fd29d97-438b-c7e1-14f5-4dee9b027829'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='Vxnm-89' random-id='777fb37d-6bbd-0382-f334-7027d636a0c5'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;unit&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-90' random-id='89f3ee33-aa5e-d63c-c797-2179a8386f26'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='Vxnm-91' random-id='52bc2fa2-2fe1-66f2-4058-cbec5e7b16bb'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 2'><marimo-ui-element object-id='Vxnm-93' random-id='bf502226-d5cd-55a0-a9b6-ed0c8c09cfb1'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;custom parameter name&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-94' random-id='e50ecb82-030d-c53b-4416-1d40374f7fd9'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;value&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-95' random-id='b373df8c-08c0-bfed-c1d4-15d7fb9b112c'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;formula&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='Vxnm-96' random-id='f88d8200-060b-e99b-14e6-06c847800cc2'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;unit&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 2'><marimo-ui-element object-id='Vxnm-97' random-id='a8cffc12-b23e-05c9-a1f8-5f022d6a6dba'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;e.g. page 43&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><div style='flex: 3'><marimo-ui-element object-id='Vxnm-98' random-id='eac7b1d0-a968-1d4e-73b7-63a8c51a6820'><marimo-text data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;note / assumption&quot;' data-kind='&quot;text&quot;' data-full-width='false' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div></div></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"resolved-values\">Resolved values</h3></span><marimo-ui-element object-id='ulZA-0' random-id='4c3ecb75-b94a-7b0c-efe8-3f602942a9d9'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;parameter&#92;&quot;:&#92;&quot;description&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;steam back-pressure turbine&#92;&quot;,&#92;&quot;resolved&#92;&quot;:&#92;&quot;steam back-pressure turbine&#92;&quot;,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;trl&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;9&#92;&quot;,&#92;&quot;resolved&#92;&quot;:9,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;state-of-development&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;existing&#92;&quot;,&#92;&quot;resolved&#92;&quot;:&#92;&quot;existing&#92;&quot;,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;year-available-commercially&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;1930&#92;&quot;,&#92;&quot;resolved&#92;&quot;:1930,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;3&#92;&quot;,&#92;&quot;resolved&#92;&quot;:3,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity-factor&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;0.9&#92;&quot;,&#92;&quot;resolved&#92;&quot;:0.9,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;annual-output&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;=round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)&#92;&quot;,&#92;&quot;resolved&#92;&quot;:85147.0,&#92;&quot;status&#92;&quot;:&#92;&quot;formula&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;capex&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;27708000&#92;&quot;,&#92;&quot;resolved&#92;&quot;:27708000,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;opex&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;1109500&#92;&quot;,&#92;&quot;resolved&#92;&quot;:1109500,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;efficiency&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;0.75&#92;&quot;,&#92;&quot;resolved&#92;&quot;:0.75,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;},{&#92;&quot;parameter&#92;&quot;:&#92;&quot;efficiency_chp&#92;&quot;,&#92;&quot;input&#92;&quot;:&#92;&quot;0.795&#92;&quot;,&#92;&quot;resolved&#92;&quot;:0.795,&#92;&quot;status&#92;&quot;:&#92;&quot;literal&#92;&quot;}]&quot;' data-total-rows='11' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='25' data-field-types='[[&quot;parameter&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;input&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;resolved&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;status&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"5-save\">5. Save</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem'><marimo-ui-element object-id='ecfG-0' random-id='a0522f9c-1de2-1d6c-962a-5fa7960ddad1'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Save technology to working data&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element><marimo-ui-element object-id='ecfG-1' random-id='9f63e103-9a57-3005-e67c-13ff12f74f0b'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Clear ALL working data&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Overwrote <strong>steam / biomass-steam-turbine</strong> (11 rows).</span></span></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"working-data\">Working data</h2></span><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>rows:</strong> 100  |  <strong>technologies:</strong> 9</span></span><marimo-ui-element object-id='aLJB-0' random-id='0043711e-74c6-2477-4237-ff0235d8f5ba'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;description&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;industrial biomass steam boiler&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;trl&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;9&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;page 31&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;introduced in 1920s; assume technology is mature&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;state-of-development&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;existing&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;year-available-commercially&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;year&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;1930&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;introduced in 1920s; assume widely available after&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;lifetime&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;years&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;35&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;25-40+ years&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;MW&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;62.0&#92;&quot;,&#92;&quot;formula&#92;&quot;:&#92;&quot;round(212*GJ_per_MMBtu/GJ_per_MWh,0)&#92;&quot;,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-7&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant, boiler only; steam output to energy, using 1,020 Btu/lb of useful heat&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity-factor&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;%&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;0.95&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-7&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant, boiler only&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;annual-output&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;GJ&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;1857470.0&#92;&quot;,&#92;&quot;formula&#92;&quot;:&#92;&quot;round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)&#92;&quot;,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capex&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;2007_USD&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;23430000&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-4&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant, boiler + prep yard&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;opex&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;2007_USD&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;1415000&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-6&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant, boiler + prep yard&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;efficiency&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;%&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;0.77&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-7&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant, boiler only&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;temperature-output&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;C&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;293&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;calc based on steam flow data&#92;&quot;,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biomass-boiler&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;pressure-output&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;psig&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;750&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 5-4&#92;&quot;,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;description&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;biogas combustion turbine&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;syngas from thermal gasification&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;trl&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;9&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 6-1&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;commercialization status: numerous models available&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;state-of-development&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;commercial&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;year-available-commercially&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;year&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;1980&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;page 66&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;introduced in 1920s; widely available after&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;MW&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;10&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capacity-factor&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;%&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;0.9&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;annual-output&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;GJ&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;283824.0&#92;&quot;,&#92;&quot;formula&#92;&quot;:&#92;&quot;round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)&#92;&quot;,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;capex&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;2007_USD&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;9000000.0&#92;&quot;,&#92;&quot;formula&#92;&quot;:&#92;&quot;round(600*capacity*1000*1.5,0)&#92;&quot;,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant; 50% more than natural gas turbine&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;opex&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;2007_USD&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;827820.0&#92;&quot;,&#92;&quot;formula&#92;&quot;:&#92;&quot;round(0.006*annual_output/GJ_per_MWh*1000*1.75,0)&#92;&quot;,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:&#92;&quot;medium plant; 75% more than natural gas turbine&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;efficiency&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;%&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;0.312&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 6-3&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;effective electrical efficiency&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;biogas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;efficiency_chp&#92;&quot;,&#92;&quot;unit&#92;&quot;:&#92;&quot;%&#92;&quot;,&#92;&quot;value&#92;&quot;:&#92;&quot;0.73&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:&#92;&quot;Table 6-3&#92;&quot;,&#92;&quot;note&#92;&quot;:&#92;&quot;overall efficiency of chp system&#92;&quot;},{&#92;&quot;process&#92;&quot;:&#92;&quot;steam&#92;&quot;,&#92;&quot;technology&#92;&quot;:&#92;&quot;natural-gas-combustion-turbine&#92;&quot;,&#92;&quot;parameter&#92;&quot;:&#92;&quot;description&#92;&quot;,&#92;&quot;unit&#92;&quot;:null,&#92;&quot;value&#92;&quot;:&#92;&quot;natural gas combustion turbine&#92;&quot;,&#92;&quot;formula&#92;&quot;:null,&#92;&quot;reference&#92;&quot;:null,&#92;&quot;note&#92;&quot;:null}]&quot;' data-total-rows='100' data-total-columns='8' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='25' data-field-types='[[&quot;process&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;technology&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;parameter&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;unit&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;value&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;formula&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;reference&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;note&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"6-meta\">6. Meta</h2></span><marimo-ui-element object-id='nHfw-0' random-id='7cfc393e-2773-cc82-db20-caf780ca9870'><marimo-text data-initial-value='&quot;US Government&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;licence&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='true' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element><marimo-ui-element object-id='nHfw-1' random-id='d91bc4cb-657b-1a88-685e-d28b8c009ff3'><marimo-text data-initial-value='&quot;U. S. Environmental Protection Agency, 2007, Biomass Combined Heat and Power Catalog of Technologies&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;citation&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;Author(s). (Year). Title. DOI/URL&quot;' data-kind='&quot;text&quot;' data-full-width='true' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element></div><span class=\"markdown prose dark:prose-invert contents\"><hr /></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"7-export\">7. Export</h2></span><marimo-ui-element object-id='nHfw-2' random-id='89007075-f91e-30df-136a-a71177ed34c4'><marimo-text data-initial-value='&quot;C:&#92;&#92;_dev&#92;&#92;tech_data&#92;&#92;data&#92;&#92;raw_data&#92;&#92;gov_usa&#92;&#92;epa&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;output folder&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='true' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element><marimo-ui-element object-id='nHfw-3' random-id='06899b56-e65a-4dff-f760-5a86144ddad1'><marimo-text data-initial-value='&quot;epa_2007_biomass-chp-technologies-catalog.csv&quot;' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;output filename&lt;/span&gt;&lt;/span&gt;&quot;' data-placeholder='&quot;&quot;' data-kind='&quot;text&quot;' data-full-width='true' data-disabled='false' data-debounce='true'></marimo-text></marimo-ui-element><div style='display: flex;flex: 1;flex-direction: row;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem'><marimo-ui-element object-id='xXTn-0' random-id='51a64069-9b89-8bb6-4f18-158e0f65c661'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Export CSV&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element><marimo-ui-element object-id='xXTn-1' random-id='906653ec-72d0-ca97-1827-4a2081225337'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Save As&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div><span class=\"markdown prose dark:prose-invert contents\"></span></div></div>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

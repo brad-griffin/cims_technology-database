@@ -1,0 +1,6 @@
+parameter,value
+licence,"(c) IEA ETSAP - rights reserved, freely downloadable"
+citation,"Van Wortswinkel, L., & Nijs, W. (2010). Iron and Steel. IEA ETSAP Technology Brief I02. https://iea-etsap.org/E-TechDS/PDF/I02-Iron&Steel-GS-AD-gct.pdf"
+source-id,etsap_2010_002
+currency-note,"Two denominations in one document. Table 1's first block (blast furnace and COREX) is EUR2010; Table 1's second block (Midrex, Hylsa, Tecnored, Hismelt, EAF) and every cost in the body text are USD2000, which p.4 states explicitly. Neither a deflator nor an exchange rate is given. Nothing converted."
+extraction-note,"Table 1's two blocks do not share a column layout - five columns in the environmental block against six in the cost block, which splits Tecnored into cogeneration and non-cogeneration. All columns were resolved from the PDF's x-coordinates; read in text order the headers interleave and produce wrong column names, and the sparse rows (coke, burnt lime, iron ore fines, sinked CO2) land under the wrong technologies."

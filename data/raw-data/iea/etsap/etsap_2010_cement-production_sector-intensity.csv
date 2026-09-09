@@ -1,0 +1,16 @@
+subject,parameter,unit,year,value,value-min,value-max,reference,note
+"cement sector, global",electricity,kWh/t cement,2006,111,89,130,"p.8, Table 7, p.4","GNR database global average, 844 plants; 90% of them fall between 89 and 130 kWh/t. The brief also gives 90-150 kWh/t as the overall range [1] and IEA's 90-120 kWh/t except for the US, Mexico and Canada, which are all above 120."
+"cement sector, global",electricity,kWh/t cement,2030,105,,,"p.8, Table 7","projection, no CCS"
+"cement sector, global",electricity,kWh/t cement,2050,95,,,"p.8, Table 7","projection, no CCS"
+"cement sector, global",electricity,kWh/t cement,2030,,115,130,"p.8, Table 7",projection assuming up to 20% of capacity carries CCS. On a plant basis CCS raises power consumption by 50% to 120%.
+"cement sector, global",electricity,kWh/t cement,2050,,115,145,"p.8, Table 7",projection assuming up to 40% of capacity carries CCS
+"cement sector, global",electricity,kWh/t cement,1990,115,,,p.6,GNR annual global average
+"cement sector, global",specific-energy-consumption,GJ/t clinker,2006,3.38,,,"p.8, Table 7, p.6",GNR global average thermal energy demand; 3605 MJ/t in 1990
+"cement sector, global",specific-energy-consumption,GJ/t clinker,2030,,3.3,3.4,"p.8, Table 7","projection, no CCS"
+"cement sector, global",specific-energy-consumption,GJ/t clinker,2050,,3.2,3.3,"p.8, Table 7","projection, no CCS"
+"cement sector, global",fuel-substitution-waste-and-biomass,%,2030,30,,,"p.8, Table 7","global level; developed regions 50-60%. Europe's substitution rate rose from about 3% in 1999 to 17% in 2007, some countries exceed 50% and individual plants have reached 80% (p.4)."
+"cement sector, global",fuel-substitution-waste-and-biomass,%,2050,35,,,"p.8, Table 7",global level; developed regions 50-60%
+"ECRA reference plant, average existing",emissions-factor co2,kg/t cement,,679,,,p.6,"clinker-to-cement factor 78%, thermal energy 3690 MJ/t clinker, electricity 111 kWh/t cement, operating cost 29 EUR2007/t clinker"
+"ECRA reference plant, new state-of-the-art",emissions-factor co2,kg/t cement,,600,,,p.6,"clinker-to-cement factor 71%, thermal energy 3210 MJ/t clinker, electricity 89 kWh/t cement, operating cost 32 EUR2007/t clinker at 2 Mt clinker/y. Fuel mix 67% fossil, 23% waste, 10% biomass, against 90/7/3 for the existing reference plant."
+"cement sector, EU",water,l/t cement,,70,,,p.3,state-of-the-art plants
+"cement sector, global",ccs-capacity-share,%,2050,,10,43,p.1,share of global cement capacity that could be equipped with CCS

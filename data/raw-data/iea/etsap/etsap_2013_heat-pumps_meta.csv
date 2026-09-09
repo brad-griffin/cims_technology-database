@@ -1,0 +1,8 @@
+parameter,value
+licence,"(c) IEA ETSAP and IRENA - rights reserved, freely downloadable"
+citation,"Nishihata, H. (2013). Heat Pumps. IEA-ETSAP and IRENA Technology Policy Brief E19. https://iea-etsap.org/"
+source-id,etsap_2013_002
+scope-note,"MOSTLY OUT OF SCOPE, AND THAT IS THE MAIN FINDING. E19 is a buildings brief: its two cost tables are residential and non-residential BUILDINGS, its performance tables are about air-conditioners, chillers and refrigerants, and the sector vocabulary has no residential or commercial sector to hold any of it. Only four technologies reach the roster and only three numbers on them are industrial - 165 degC steam, 120 degC hot air, and a COP of 3-4 for large-capacity units on industrial cooling duty. Everything else is in the two sidecars."
+cost-note,"NO CURRENCY YEAR IS GIVEN for either cost table, and the two are not comparable with each other: Table 4 is an INSTALLED cost in USD/kW, Table 5 a MARKET price in USD per refrigeration ton explicitly excluding commission, setting and installation. Neither is industrial. No capex reaches the roster - the heat pump cost gap is still open."
+tier-note,"The brief's 165 degC steam figure sits 15 degC ABOVE the design doc's 150 degC low/medium tier boundary, so it is the source that lets heat-pump_electricity_medium-temp stop being a placeholder. It also conflicts with the TRL 6 that section 4.3 carries from IEA: E19 describes 165 degC steam in the present tense as commercially available. The conflict is recorded on the row, not resolved."
+unit-note,"COP is recorded with unit 'COP', not 'fraction'. populate.py normalises fraction to %, which would turn a COP of 4 into 400%."

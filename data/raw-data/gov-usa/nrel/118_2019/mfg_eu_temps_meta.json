@@ -1,0 +1,67 @@
+{
+    "COUNTY_FIPS":
+        {
+            "description": "County Federal Information Processing Standard county code, 2014 vintage",
+            "units": "None",
+            "dtype": "int32"
+        },
+    "Emp_Size": {
+            "description": "Employment size class bins",
+            "units": "Number of employees",
+            "dtype": "object"
+        },
+    "MECS_FT":
+        {
+            "description": "Fuel type categorized by Manufacturing Energy Consumption Survey definition",
+            "units": "None",
+            "dtype": "object"
+        },
+    "MECS_Region":
+        {
+            "description": "Geographic region categorized by Manufacturing Energy Consumption Survey definition. Equivalent to Census Region",
+            "units": "None",
+            "dtype": "object"
+        },
+    "data_source":
+        {
+            "description": "Data source of energy estimates. GHGRP denotes facility-level estimates from the Greenhouse Gas Reporting Program. ipf denotes estimates from 2014 Manufacturing Energy Consumption Survey.",
+            "units": "None",
+            "dtype": "object"
+        },
+    "est_count":
+        {
+            "description": "Number of establishments by NAICS-Emp_size combination per county",
+            "units": "Establishments",
+            "dtype": "float64"
+        },
+    "fipstate":
+        {
+            "description": "County Federal Information Processing Standard state code, 2014 vintage",
+            "units": "None",
+            "dtype": "int64"
+        },
+    "naics":
+        {
+            "description": "North American Industrial Classification System code, 2012 vintage",
+            "units": "None",
+            "dtype": "int32"
+        },
+    "End_use":
+        {
+            "description": "Energy end use categorized by Manufacturing Energy Consumption Survey definition",
+            "units": "None",
+            "dtype": "object"
+        },
+    "Temp_C":
+        {
+            "description": "Process temperature",
+            "units": "Degrees Celcius",
+            "dtype": "float64"
+        },
+    "MMBtu":
+        {
+            "description": "Energy demand by NAICS-Emp_Size-end_use-MECS_FT-Temp_C combination by county",
+            "units": "Million British thermal units",
+            "dtype": "float64"
+        }
+}

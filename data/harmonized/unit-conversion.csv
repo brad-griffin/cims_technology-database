@@ -1,0 +1,19 @@
+from-unit,to-unit,factor,offset,note
+fraction,%,100,0,"same quantity, different scale"
+fraction/yr,%/yr,100,0,
+MJ/unit,GJ/unit,0.001,0,
+MMBtu,GJ,1.0551,0,HHV-neutral energy conversion
+MMBtu/hr,MW,0.29307,0,1 MMBtu/hr = 0.29307 MW
+Btu/kWh,GJ/GJ,0.29307,0,heat rate to energy ratio; kept for reference
+kW,MW,0.001,0,
+kWh,GJ,0.0036,0,
+degF,degC,0.5555556,-17.777778,"(F - 32) x 5/9, written as F x 5/9 - 17.7778"
+psig,bar,0.0689476,0,gauge pressure; 1 psi = 0.0689476 bar
+psi,bar,0.0689476,0,
+kg/GJ,t/GJ,0.001,0,
+kgCO2/unit,t/unit,0.001,0,
+kgeCO2/unit,t/unit,0.001,0,UKERC spelling of kg CO2-equivalent per unit of output
+lb/MMBtu,t/GJ,0.000429904274476353,0,"lb to t, then per-MMBtu to per-GJ"
+months,years,0.08333333333333333,0,
+Nm3/unit,m3/unit,1,0,normal cubic metres kept as m3; conditions noted per source
+kg/unit,t/unit,0.001,0,species is carried in the target column

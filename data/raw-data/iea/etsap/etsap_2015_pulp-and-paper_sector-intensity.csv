@@ -1,0 +1,13 @@
+subject,parameter,unit,year,value,value-min,value-max,reference,note
+"chemical pulping, global",market-share,%,2010,70,,,"p.9, Table 4","share of global pulp production. Original: Swedish Forest Industries Federation, 2013 [3]."
+"mechanical pulping, global",market-share,%,2010,21,,,"p.9, Table 4",
+"other pulping, global",market-share,%,2010,9,,,"p.9, Table 4",
+chemical pulping,product-yield-from-wood,%,,45,,,"p.9, Table 4","mass of pulp per mass of wood. The low yield is because chemical pulping dissolves the lignin away entirely - but the lignin is then burnt in the recovery boiler, which is what makes a chemical mill an energy producer. Original: PaperOnline, 2013 [1]."
+mechanical pulping,product-yield-from-wood,%,,95,,,"p.9, Table 4","Original: PaperOnline, 2013 [1]."
+"chemical pulping, USA",average-mill-size,kt/yr,2000,400,,,"p.9, Table 4","Original: Smith et al., 2003 [11]."
+"mechanical pulping, USA",average-mill-size,kt/yr,2000,130,,,"p.9, Table 4",
+"chemical pulping, greenfield",new-large-mill-size,kt/yr,,,1300,1500,"p.9, Table 4","Original: EBRD & POYRY, 2012 [10]."
+"pulp production, global",production,Mt/yr,2010,186,,,"p.4, Table 2","North America 37%, Europe 25%, Asia 24%, Latin America 11%, Oceania 2%, Africa 1%."
+"paper production, global",production,Mt/yr,2010,394,,,"p.4, Table 2","Asia 42%, Europe 28%, North America 23%, Latin America 5%, Oceania 1%, Africa 1%."
+kraft pulp mill excess heat,temperature-output,degC,,100,,,p.6,"the high-temperature fraction of a conventional market kraft mill's excess heat; MOST of the excess heat is around 40 degC. Cutting the mill's water use increases the share available at the higher temperature. This is the number that decides whether a heat pump or a plain heat exchanger is the right district-heating option, so it matters for the tier work."
+"investment scale factor, pulp and paper",scale-exponent,,,,0.6,0.7,p.7,the exponent R in (Cost/Cost_base) = (Size/Size_base)^R. Table 4's own cost functions use 0.6.

@@ -1,0 +1,66 @@
+process,technology,sector,end-use,process-step,service-unit
+Electrolysis,electrolysis-cell_electricity,all-industry,material-conversion,,t
+Thermal processes,gasifier_biomass,all-industry,other-services,,t
+Thermal processes,autothermal-reformer,all-industry,material-conversion,,t
+Thermal processes,gasifier_coal,all-industry,material-conversion,,t
+Thermal processes,steam-reformer_steam,all-industry,material-conversion,,t
+Other production techniques,smelting-vessel,non-ferrous-metals,material-conversion,,t
+Other production techniques,smelting-vessel_electricity,non-ferrous-metals,material-conversion,,t
+With carbon capture,capture-unit,non-ferrous-metals,other-services,,t
+With carbon capture,smelting-vessel,non-ferrous-metals,other-services,,t
+Other production techniques,grinding-mill,cement,material-conversion,,t
+Other production techniques,calciner,cement,material-conversion,,t
+Other production techniques,kiln,cement,material-conversion,,t
+Shift in energy sources and electrification,direct-heater_solar,cement,process-heat-high-temp,,t
+With carbon capture,capture-unit_ccs,cement,other-services,,t
+With carbon capture,capture-unit_oxyfuel-ccs,cement,other-services,,t
+Ammonia,electrolysis-cell_hydrogen,chemicals,material-conversion,,t
+Ethylene,fermenter,chemicals,material-conversion,,t
+Ethylene,gasifier,chemicals,material-conversion,,t
+High value chemicals,fermenter_biomass,chemicals,material-conversion,,t
+High value chemicals,steam-cracker_naphtha,chemicals,material-conversion,,t
+High value chemicals,steam-cracker_steam,chemicals,material-conversion,,t
+Methanol,gasifier_biomass,chemicals,material-conversion,,t
+Methanol,capture-unit_methanol,chemicals,other-services,,t
+High temperature,plasma-torch_electricity,all-industry,process-heat-high-temp,,t
+High temperature,induction-heater,all-industry,process-heat-high-temp,,t
+High temperature,photochemical-heater,all-industry,process-heat-high-temp,,t
+High temperature,radio-frequency-heater,all-industry,process-heat-high-temp,,t
+High temperature,rotary-compression-heater,all-industry,process-heat-high-temp,,t
+High temperature,ultraviolet-curer,all-industry,process-heat-high-temp,,t
+High temperature,direct-heater_ammonia,all-industry,process-heat-high-temp,,t
+High temperature,direct-heater_hydrogen,all-industry,process-heat-high-temp,,t
+High temperature,direct-heater,all-industry,process-heat-high-temp,,t
+Low to medium temperature,microwave-heater,all-industry,process-heat-low-temp,,t
+Low to medium temperature,photochemical-heater,all-industry,process-heat-low-temp,,t
+Low to medium temperature,radio-frequency-heater,all-industry,process-heat-low-temp,,t
+Low to medium temperature,ultraviolet-curer,all-industry,process-heat-low-temp,,t
+Low to medium temperature,boiler_ammonia,all-industry,process-heat-low-temp,,t
+Low to medium temperature,boiler_biomass,all-industry,process-heat-low-temp,,t
+Low to medium temperature,boiler_hydrogen,all-industry,process-heat-low-temp,,t
+Low to medium temperature,heat-pump,all-industry,process-heat-low-temp,,t
+Direct reduced iron (DRI),shaft-furnace_hydrogen,iron-and-steel,material-conversion,,t
+Direct reduced iron (DRI),shaft-furnace,iron-and-steel,material-conversion,,t
+Direct reduced iron (DRI),shaft-furnace_ccs,iron-and-steel,other-services,,t
+Direct reduced iron (DRI),shaft-furnace_natural-gas,iron-and-steel,material-conversion,,t
+Direct reduced iron (DRI),shaft-furnace_ammonia,iron-and-steel,material-conversion,,t
+Other production techniques,electrolysis-cell_electricity,iron-and-steel,material-conversion,,t
+Shift in energy sources and electrification,blast-furnace_coal,iron-and-steel,material-conversion,,t
+Shift in energy sources and electrification,electrolysis-cell_electricity,iron-and-steel,material-conversion,,t
+Shift in energy sources and electrification,pellet-plant,iron-and-steel,material-conversion,,t
+With carbon capture and usage,blast-furnace_hydrogen_ccs,iron-and-steel,other-services,,t
+With carbon capture and usage,blast-furnace,iron-and-steel,other-services,,t
+With carbon capture and usage,blast-furnace_biomass,iron-and-steel,other-services,,t
+With carbon capture and usage,smelting-vessel,iron-and-steel,other-services,,t
+Manufacturing,electrolysis-cell_electricity,non-ferrous-metals,material-conversion,,t
+Manufacturing,rolling-mill,non-ferrous-metals,material-conversion,,t
+Other production techniques,boiler,pulp-and-paper,other-services,,t
+Other production techniques,refining-furnace,pulp-and-paper,material-conversion,,t
+Other production techniques,pulper,pulp-and-paper,material-conversion,,t
+Other production techniques,paper-machine,pulp-and-paper,material-conversion,,t
+Other production techniques,press,pulp-and-paper,material-conversion,,t
+Other production techniques,dryer,pulp-and-paper,material-conversion,,t
+Other production techniques,dryer_steam,pulp-and-paper,material-conversion,,t
+Recycling (waste product conversion to chemicals and bioenergy),gasifier_black-liquor,pulp-and-paper,material-preparation,,t
+Shift in energy sources and electrification,boiler_electricity,pulp-and-paper,material-conversion,,t
+Shift in energy sources and electrification,heat-pump,pulp-and-paper,process-heat-high-temp,,t

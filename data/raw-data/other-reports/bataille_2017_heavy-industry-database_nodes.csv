@@ -1,0 +1,404 @@
+process,technology,sector,end-use,process-step,service-unit
+Production processes: Dry kilns,kiln_bat,cement,material-conversion,Production processes: Dry kilns,t
+Production processes: Dry kilns,kiln,cement,material-conversion,Production processes: Dry kilns,t
+Production processes: Improvement technology (precalciner),precalciner,cement,material-conversion,Production processes: Improvement technology (precalciner),t
+Production processes: Kilns with higher waste+biomass utilization,kiln_bat,cement,material-conversion,Production processes: Kilns with higher waste+biomass utilization,t
+Production processes: Kilns with higher waste+biomass utilization,kiln,cement,material-conversion,Production processes: Kilns with higher waste+biomass utilization,t
+Production processes: Kilns with CCS (replacement and retrofit),kiln_post-combustion,cement,material-conversion,Production processes: Kilns with CCS (replacement and retrofit),t
+Production processes: Kilns with CCS (replacement and retrofit),kiln_oxyfuel-ccs,cement,material-conversion,Production processes: Kilns with CCS (replacement and retrofit),t
+Finishing process: Grinding & mixing options,grinding-mill,cement,forming-and-finishing,Finishing process: Grinding & mixing options,t
+CHP plants,combined-cycle_natural-gas_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_coal_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_municipal-waste_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,pulp-and-paper,steam-and-hot-water,CHP plants,kW
+Boilers,boiler_natural-gas,pulp-and-paper,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_coal,pulp-and-paper,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_hydrogen,pulp-and-paper,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_biomass,pulp-and-paper,steam-and-hot-water,Boilers,GJ
+Production processes: Other production steps (including improvement processes),efficiency-base,pulp-and-paper,material-conversion,Production processes: Other production steps (including improvement processes),t
+Production processes: Other production steps (including improvement processes),efficiency-moderate,pulp-and-paper,material-conversion,Production processes: Other production steps (including improvement processes),t
+Production processes: Press section (including improvement process),press_efficiency-base,pulp-and-paper,material-conversion,Production processes: Press section (including improvement process),t
+Production processes: Press section (including improvement process),press_efficiency-moderate,pulp-and-paper,material-conversion,Production processes: Press section (including improvement process),t
+Production processes: Dryer (including improvement processes),dryer_efficiency-base,pulp-and-paper,material-conversion,Production processes: Dryer (including improvement processes),t
+Production processes: Dryer (including improvement processes),press,pulp-and-paper,material-conversion,Production processes: Dryer (including improvement processes),t
+Production processes: Dryer (including improvement processes),dryer_efficiency-moderate,pulp-and-paper,material-conversion,Production processes: Dryer (including improvement processes),t
+Production processes: Dryer (including improvement processes),dryer_steam,pulp-and-paper,material-conversion,Production processes: Dryer (including improvement processes),t
+Production processes: Dryer (including improvement processes),heat-recovery-unit_waste-heat,pulp-and-paper,material-conversion,Production processes: Dryer (including improvement processes),t
+Production processes: Alternative drying systems,dryer,pulp-and-paper,material-conversion,Production processes: Alternative drying systems,t
+Alternative production route: dry sheet forming,paper-machine,pulp-and-paper,material-conversion,Alternative production route: dry sheet forming,t
+Finishing process,paper-machine,pulp-and-paper,forming-and-finishing,Finishing process,t
+Finishing process,pump_electricity,pulp-and-paper,forming-and-finishing,Finishing process,
+Finishing process,press_steam,pulp-and-paper,forming-and-finishing,Finishing process,
+Finishing process,dryer_steam,pulp-and-paper,forming-and-finishing,Finishing process,
+Production processes: Sinter production (including improvement technologies,sinter-plant,iron-and-steel,material-preparation,Production processes: Sinter production (including improvement technologies,t
+Production processes: Sinter production (including improvement technologies,heat-recovery-unit_waste-heat,iron-and-steel,material-preparation,Production processes: Sinter production (including improvement technologies,t
+Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),blast-furnace,iron-and-steel,material-conversion,Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),t
+Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),blast-furnace_coal,iron-and-steel,material-conversion,Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),t
+Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),heat-recovery-unit_waste-heat,iron-and-steel,material-conversion,Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),t
+Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),basic-oxygen-furnace,iron-and-steel,material-conversion,Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),t
+Production processes: Electric arc furnace (including improvement technologies),electric-arc-furnace_electricity,iron-and-steel,material-conversion,Production processes: Electric arc furnace (including improvement technologies),t
+Production processes: Electric arc furnace (including improvement technologies),electric-arc-furnace_electricity_preheat,iron-and-steel,material-conversion,Production processes: Electric arc furnace (including improvement technologies),t
+Production processes: Alternative blast furnaces,blast-furnace,iron-and-steel,material-conversion,Production processes: Alternative blast furnaces,t
+Production processes: Alternative blast furnaces,blast-furnace_ccs,iron-and-steel,material-conversion,Production processes: Alternative blast furnaces,t
+Production processes: Alternative blast furnaces,blast-furnace_hisarna,iron-and-steel,material-conversion,Production processes: Alternative blast furnaces,t
+Production processes: Alternative blast furnaces,blast-furnace_hisarna-ccs,iron-and-steel,material-conversion,Production processes: Alternative blast furnaces,t
+Production processes: Alternative Direct Reduction Ironmaking technologies,electric-arc-furnace_electricity_midrex,iron-and-steel,material-conversion,Production processes: Alternative Direct Reduction Ironmaking technologies,t
+Production processes: Alternative Direct Reduction Ironmaking technologies,shaft-furnace_ulcored-ccs,iron-and-steel,material-conversion,Production processes: Alternative Direct Reduction Ironmaking technologies,t
+Production processes: Casting & rolling and finishing process (including improvement processes),caster,iron-and-steel,forming-and-finishing,Production processes: Casting & rolling and finishing process (including improvement processes),t
+Production processes: Casting & rolling and finishing process (including improvement processes),heat-recovery-unit,iron-and-steel,forming-and-finishing,Production processes: Casting & rolling and finishing process (including improvement processes),t
+CHP plants,combined-cycle_natural-gas_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_blast-furnace-gas_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_coke-oven-gas_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,iron-and-steel,steam-and-hot-water,CHP plants,kW
+Boilers,boiler_natural-gas,iron-and-steel,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_blast-furnace-gas,iron-and-steel,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_coke-oven-gas,iron-and-steel,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_hydrogen,iron-and-steel,steam-and-hot-water,Boilers,GJ
+Boilers,boiler_biomass,iron-and-steel,steam-and-hot-water,Boilers,GJ
+"High value chemicals: production process, state-of-the-art steam crackers",steam-cracker_steam,chemicals,material-conversion,"High value chemicals: production process, state-of-the-art steam crackers",t
+"High value chemicals: production process, state-of-the-art steam crackers",steam-cracker_naphtha,chemicals,material-conversion,"High value chemicals: production process, state-of-the-art steam crackers",t
+"High value chemicals: production process, state-of-the-art steam crackers",steam-cracker_oil,chemicals,material-conversion,"High value chemicals: production process, state-of-the-art steam crackers",t
+"High value chemicals: production process, steam crackers with CCS",boiler_biomass_post-combustion,chemicals,material-conversion,"High value chemicals: production process, steam crackers with CCS",t
+"High value chemicals: production process, steam crackers with CCS",boiler_natural-gas_post-combustion,chemicals,material-conversion,"High value chemicals: production process, steam crackers with CCS",t
+"High value chemicals: production process, steam crackers with CCS",steam-cracker_steam_post-combustion,chemicals,material-conversion,"High value chemicals: production process, steam crackers with CCS",t
+"High value chemicals: production process, Fischer-Tropsch steam crackers",steam-cracker_biomass,chemicals,material-conversion,"High value chemicals: production process, Fischer-Tropsch steam crackers",t
+"High value chemicals: production process, Fischer-Tropsch steam crackers",steam-cracker_coal,chemicals,material-conversion,"High value chemicals: production process, Fischer-Tropsch steam crackers",t
+"Ammonia: production process, steam reforming",steam-reformer_ammonia,chemicals,material-conversion,"Ammonia: production process, steam reforming",t
+"Ammonia: production process, steam reforming",autothermal-reformer_ammonia,chemicals,material-conversion,"Ammonia: production process, steam reforming",t
+"Ammonia: production process, steam reforming",steam-reformer_ammonia_ccs,chemicals,material-conversion,"Ammonia: production process, steam reforming",t
+"Other chemicals: production processes, high temperature heat",direct-heater_coal,chemicals,process-heat-high-temp,"Other chemicals: production processes, high temperature heat",GJ
+"Other chemicals: production processes, high temperature heat",direct-heater_oil,chemicals,process-heat-high-temp,"Other chemicals: production processes, high temperature heat",GJ
+"Other chemicals: production processes, high temperature heat",direct-heater_natural-gas,chemicals,process-heat-high-temp,"Other chemicals: production processes, high temperature heat",GJ
+"Other chemicals: production processes, high temperature heat",direct-heater_hydrogen,chemicals,process-heat-high-temp,"Other chemicals: production processes, high temperature heat",GJ
+"Other chemicals: production processes, high temperature heat",direct-heater_electricity,chemicals,process-heat-high-temp,"Other chemicals: production processes, high temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_coal_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_coal_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_oil_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_oil_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_natural-gas_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_natural-gas_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_hydrogen_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_hydrogen_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_electricity_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_electricity_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",combined-cycle_steam_chp,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_biomass_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_biomass_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_biogas_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_biogas_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_liquid-biomass_efficiency-base,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, low temperature heat",direct-heater_liquid-biomass_efficiency-strong,chemicals,process-heat-low-temp,"Other chemicals: production processes, low temperature heat",GJ
+"Other chemicals: production processes, drying & separation",dryer_coal_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_coal_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_oil_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_oil_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_natural-gas_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_natural-gas_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_hydrogen_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_hydrogen_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_electricity_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_electricity_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_biomass_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_biomass_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_biogas_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_biogas_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_liquid-biomass_efficiency-base,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",dryer_liquid-biomass_efficiency-strong,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, drying & separation",combined-cycle_steam_chp,chemicals,drying-and-separation,"Other chemicals: production processes, drying & separation",GJ
+"Other chemicals: production processes, motor drive",motor_electricity_efficiency-base,chemicals,machine-drive,"Other chemicals: production processes, motor drive",GJ
+"Other chemicals: production processes, motor drive",motor_electricity_efficiency-strong,chemicals,machine-drive,"Other chemicals: production processes, motor drive",GJ
+"Other chemicals: production processes, refrigeration",chiller_electricity,chemicals,refrigeration-and-cooling,"Other chemicals: production processes, refrigeration",GJ
+"Other chemicals: production processes, refrigeration",chiller_oil,chemicals,refrigeration-and-cooling,"Other chemicals: production processes, refrigeration",GJ
+"Other chemicals: production processes, other services",direct-heater_coal,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_oil,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_natural-gas,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_hydrogen,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_electricity,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_biomass,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_biogas,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",direct-heater_liquid-biomass,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+"Other chemicals: production processes, other services",combined-cycle_steam_chp,chemicals,other-services,"Other chemicals: production processes, other services",GJ
+CHP plants,steam-turbine_coal_chp,chemicals,steam-and-hot-water,CHP plants,GJ
+CHP plants,combined-cycle_natural-gas_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_lpg_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,chemicals,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,chemicals,steam-and-hot-water,CHP plants,kW
+Production processes: High temperature heat,direct-heater_coal,non-ferrous-metals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_oil,non-ferrous-metals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_natural-gas,non-ferrous-metals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_hydrogen,non-ferrous-metals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_electricity,non-ferrous-metals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: Motor drive,motor_electricity_efficiency-base,non-ferrous-metals,machine-drive,Production processes: Motor drive,GJ
+Production processes: Motor drive,motor_electricity_efficiency-strong,non-ferrous-metals,machine-drive,Production processes: Motor drive,GJ
+Production processes: Other services,direct-heater_coal,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_oil,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_natural-gas,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_hydrogen,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_electricity,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biomass,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biogas,non-ferrous-metals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_liquid-biomass,non-ferrous-metals,other-services,Production processes: Other services,GJ
+CHP plants,combined-cycle_natural-gas_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_coal_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,food-and-beverage,steam-and-hot-water,CHP plants,kW
+Production processes: Low temperature heat,direct-heater_coal_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coal_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-base,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-strong,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,combined-cycle_steam_chp,food-and-beverage,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-base,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-strong,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,combined-cycle_steam_chp,food-and-beverage,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Motor drive,motor_electricity_efficiency-base,food-and-beverage,machine-drive,Production processes: Motor drive,GJ
+Production processes: Motor drive,motor_electricity_efficiency-strong,food-and-beverage,machine-drive,Production processes: Motor drive,GJ
+Production processes: Refrigeration,chiller_electricity,food-and-beverage,refrigeration-and-cooling,Production processes: Refrigeration,GJ
+Production processes: Refrigeration,chiller_oil,food-and-beverage,refrigeration-and-cooling,Production processes: Refrigeration,GJ
+Production processes: Other services,direct-heater_coal,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_oil,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_natural-gas,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_hydrogen,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_electricity,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biomass,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biogas,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_liquid-biomass,food-and-beverage,other-services,Production processes: Other services,GJ
+Production processes: Other services,combined-cycle_steam_chp,food-and-beverage,other-services,Production processes: Other services,GJ
+CHP plants,combined-cycle_natural-gas_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_coke-oven-gas_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_coal_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,non-metallic-minerals,steam-and-hot-water,CHP plants,kW
+Production processes: High temperature heat,direct-heater_coal,non-metallic-minerals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_oil,non-metallic-minerals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_natural-gas,non-metallic-minerals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_hydrogen,non-metallic-minerals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_electricity,non-metallic-minerals,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coal_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coal_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-base,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-strong,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,combined-cycle_steam_chp,non-metallic-minerals,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-base,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-strong,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,combined-cycle_steam_chp,non-metallic-minerals,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Motor drive,motor_electricity_efficiency-base,non-metallic-minerals,machine-drive,Production processes: Motor drive,GJ
+Production processes: Motor drive,motor_electricity_efficiency-strong,non-metallic-minerals,machine-drive,Production processes: Motor drive,GJ
+Production processes: Other services,direct-heater_coal,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_oil,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_natural-gas,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_hydrogen,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_electricity,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biomass,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biogas,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_liquid-biomass,non-metallic-minerals,other-services,Production processes: Other services,GJ
+Production processes: Other services,combined-cycle_steam_chp,non-metallic-minerals,other-services,Production processes: Other services,GJ
+CHP plants,combined-cycle_natural-gas_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,combustion-turbine_natural-gas_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_coal_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,steam-turbine_biomass_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_biogas_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,combined-cycle_hydrogen_chp,other-industry,steam-and-hot-water,CHP plants,kW
+CHP plants,fuel-cell_hydrogen_chp,other-industry,steam-and-hot-water,CHP plants,kW
+Production processes: High temperature heat,direct-heater_coal,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_coke,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_benzole-and-tars,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_lpg,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_oil,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_natural-gas,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_biomass,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_biogas,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_liquid-biomass,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_electricity,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: High temperature heat,direct-heater_hydrogen,other-industry,process-heat-high-temp,Production processes: High temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coal_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coal_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coke_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_coke_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_benzole-and-tars_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_benzole-and-tars_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_lpg_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_lpg_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_oil_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_natural-gas_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biomass_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_biogas_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_liquid-biomass_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_electricity_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,combined-cycle_steam_chp,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-base,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Low temperature heat,direct-heater_hydrogen_efficiency-strong,other-industry,process-heat-low-temp,Production processes: Low temperature heat,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_coal_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_coke_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_coke_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_benzole-and-tars_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_benzole-and-tars_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_lpg_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_lpg_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_oil_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_natural-gas_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biomass_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_biogas_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_liquid-biomass_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_electricity_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,combined-cycle_steam_chp,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-base,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Drying & separation,dryer_hydrogen_efficiency-strong,other-industry,drying-and-separation,Production processes: Drying & separation,GJ
+Production processes: Motor drive,motor_electricity_efficiency-base,other-industry,machine-drive,Production processes: Motor drive,GJ
+Production processes: Motor drive,motor_electricity_efficiency-strong,other-industry,machine-drive,Production processes: Motor drive,GJ
+Production processes: Refrigeration,chiller_electricity,other-industry,refrigeration-and-cooling,Production processes: Refrigeration,GJ
+Production processes: Refrigeration,chiller_oil,other-industry,refrigeration-and-cooling,Production processes: Refrigeration,GJ
+Production processes: Other services,direct-heater_coal,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_coke,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_benzole-and-tars,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_lpg,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_oil,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_natural-gas,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biomass,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_biogas,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_liquid-biomass,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_electricity,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,combined-cycle_steam_chp,other-industry,other-services,Production processes: Other services,GJ
+Production processes: Other services,direct-heater_hydrogen,other-industry,other-services,Production processes: Other services,GJ
+cement,kiln,cement,other-services,,
+cement,direct-heater,cement,other-services,,
+cement,direct-heater_efficiency-moderate,cement,other-services,,
+cement,calciner_steam,cement,other-services,,
+cement,direct-heater_oil,cement,other-services,,
+cement,direct-heater_biomass,cement,other-services,,
+cement,kiln_bat,cement,other-services,,
+cement,kiln_post-combustion,cement,other-services,,
+cement,kiln_oxyfuel-ccs,cement,other-services,,
+non-metallic-minerals,direct-heater_oxyfuel,non-metallic-minerals,other-services,,
+non-metallic-minerals,melting-furnace_electricity,non-metallic-minerals,other-services,,
+non-metallic-minerals,capture-unit_ccs,non-metallic-minerals,other-services,,
+non-metallic-minerals,direct-heater,non-metallic-minerals,other-services,,
+iron-and-steel,basic-oxygen-furnace,iron-and-steel,other-services,,
+iron-and-steel,electric-arc-furnace_electricity,iron-and-steel,other-services,,
+iron-and-steel,electric-arc-furnace_natural-gas_midrex,iron-and-steel,other-services,,
+iron-and-steel,converter_coal,iron-and-steel,other-services,,
+iron-and-steel,smelting-vessel_coal,iron-and-steel,other-services,,
+iron-and-steel,electric-arc-furnace_coal_efficiency-moderate,iron-and-steel,other-services,,
+iron-and-steel,shaft-furnace_coal,iron-and-steel,other-services,,
+iron-and-steel,blast-furnace_coke_top-gas-recycling-ccs,iron-and-steel,other-services,,
+iron-and-steel,heat-recovery-unit_waste-heat,iron-and-steel,other-services,,
+iron-and-steel,electric-arc-furnace_hydrogen,iron-and-steel,other-services,,
+iron-and-steel,blast-furnace_coke_ulcowin,iron-and-steel,other-services,,
+iron-and-steel,electric-arc-furnace_natural-gas_ulcored-ccs,iron-and-steel,other-services,,
+non-ferrous-metals,direct-heater_solar,non-ferrous-metals,other-services,,
+non-ferrous-metals,direct-heater,non-ferrous-metals,other-services,,
+mining,rolling-mill_electricity_efficiency-moderate,mining,other-services,,
+mining,calciner_coal,mining,other-services,,
+mining,direct-heater_coal_efficiency-moderate,mining,other-services,,
+petroleum-refining,refining-furnace,petroleum-refining,other-services,,
+petroleum-refining,steam-cracker_waste-heat_efficiency-strong,petroleum-refining,other-services,,
+petroleum-refining,capture-unit_hydrogen,petroleum-refining,other-services,,
+petroleum-refining,direct-heater_post-combustion,petroleum-refining,other-services,,
+chemicals,direct-heater,chemicals,other-services,,
+chemicals,direct-heater_electricity,chemicals,other-services,,
+chemicals,steam-cracker_hydrogen,chemicals,other-services,,
+chemicals,steam-cracker_naphtha,chemicals,other-services,,
+chemicals,steam-cracker_natural-gas,chemicals,other-services,,
+chemicals,direct-heater_biomass,chemicals,other-services,,
+chemicals,direct-heater_coke,chemicals,other-services,,
+chemicals,steam-reformer_hydrogen,chemicals,other-services,,
+chemicals,electrolysis-cell_electricity,chemicals,other-services,,
+chemicals,direct-heater_hydrogen,chemicals,other-services,,
+chemicals,direct-heater_ammonia,chemicals,other-services,,
+chemicals,gasifier_natural-gas,chemicals,other-services,,
+chemicals,direct-heater_retrofit,chemicals,other-services,,
+chemicals,distillation-column,chemicals,other-services,,
+chemicals,fermenter,chemicals,other-services,,
+chemicals,boiler_biomass_post-combustion,chemicals,other-services,,
+chemicals,boiler_post-combustion,chemicals,other-services,,
+chemicals,capture-unit_post-combustion,chemicals,other-services,,
+chemicals,steam-cracker_biomass,chemicals,other-services,,
+chemicals,steam-cracker_coal,chemicals,other-services,,
+pulp-and-paper,direct-heater_natural-gas,pulp-and-paper,other-services,,
+pulp-and-paper,dryer,pulp-and-paper,other-services,,
+all-industry,direct-heater,all-industry,other-services,,
+all-industry,dryer_natural-gas_efficiency-moderate,all-industry,other-services,,
+all-industry,refining-furnace,all-industry,other-services,,
+all-industry,gasifier_efficiency-base,all-industry,other-services,,

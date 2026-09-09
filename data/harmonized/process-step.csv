@@ -1,0 +1,353 @@
+process-step,sector,process-step-label,product,product-unit,upstream-step,description,note
+boilers,all-industry,Boilers,,GJ,,,from the UKERC 'Baseline applicable' column
+motors-compressors,all-industry,Motors - Compressors,,GJ,,,from the UKERC 'Baseline applicable' column
+motors-fans,all-industry,Motors - Fans,,GJ,,,from the UKERC 'Baseline applicable' column
+motors-pumps,all-industry,Motors - Pumps,,GJ,,,from the UKERC 'Baseline applicable' column
+steam-system,all-industry,Steam system,,GJ,,,from the UKERC 'Baseline applicable' column
+Finishing process: Grinding & mixing options,cement,Finishing process: Grinding & mixing options,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Dry kilns,cement,Production processes: Dry kilns,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Improvement technology (precalciner),cement,Production processes: Improvement technology (precalciner),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Kilns with CCS (replacement and retrofit),cement,Production processes: Kilns with CCS (replacement and retrofit),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Kilns with higher waste+biomass utilization,cement,Production processes: Kilns with higher waste+biomass utilization,,t,,,from the Bataille 2017 sheet's process-step band
+alternative-binder,cement,Alternative binder,,t,,,from the etsap_2010_003 extraction
+cement-plant,cement,Cement plant,,t,,,from the UKERC 'Baseline applicable' column
+cement-subsector,cement,Cement subsector,,t,,,from the UKERC 'Baseline applicable' column
+cement-subsector-2030-kiln-efficiency,cement,Cement subsector (2030 kiln efficiency),,t,,,from the UKERC 'Baseline applicable' column
+clinker-cooler,cement,Clinker cooling,,t,,,from the etsap_2010_003 extraction
+dry-kiln,cement,Dry kiln,,t,,,from the UKERC 'Baseline applicable' column
+finish-grinding,cement,Cement grinding,,t,,,from the etsap_2010_003 extraction
+kiln,cement,Kiln,,t,,,from the UKERC 'Baseline applicable' column
+semi-dry-kiln,cement,Semi-dry kiln,,t,,,from the UKERC 'Baseline applicable' column
+semi-wet-kiln,cement,Semi-wet kiln,,t,,,from the UKERC 'Baseline applicable' column
+wet-kiln,cement,Clinker kiln,,t,,,from the etsap_2010_003 extraction
+"Ammonia: production process, steam reforming",chemicals,"Ammonia: production process, steam reforming",,t,,,from the Bataille 2017 sheet's process-step band
+CHP plants,chemicals,CHP plants,,GJ,,,from the Bataille 2017 sheet's process-step band
+"High value chemicals: production process, Fischer-Tropsch steam crackers",chemicals,"High value chemicals: production process, Fischer-Tropsch steam crackers",,t,,,from the Bataille 2017 sheet's process-step band
+"High value chemicals: production process, state-of-the-art steam crackers",chemicals,"High value chemicals: production process, state-of-the-art steam crackers",,t,,,from the Bataille 2017 sheet's process-step band
+"High value chemicals: production process, steam crackers with CCS",chemicals,"High value chemicals: production process, steam crackers with CCS",,t,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, drying & separation",chemicals,"Other chemicals: production processes, drying & separation",,GJ,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, high temperature heat",chemicals,"Other chemicals: production processes, high temperature heat",,GJ,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, low temperature heat",chemicals,"Other chemicals: production processes, low temperature heat",,GJ,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, motor drive",chemicals,"Other chemicals: production processes, motor drive",,GJ,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, other services",chemicals,"Other chemicals: production processes, other services",,GJ,,,from the Bataille 2017 sheet's process-step band
+"Other chemicals: production processes, refrigeration",chemicals,"Other chemicals: production processes, refrigeration",,GJ,,,from the Bataille 2017 sheet's process-step band
+ammonia-synthesis,chemicals,Ammonia Synthesis,,GJ,,,from the CIMS service name 'Ammonia Synthesis'
+benzene-separation-process,chemicals,Benzene separation process,,t,,,from the UKERC 'Baseline applicable' column
+btx-reforming,chemicals,BTX Reforming,,GJ,,,from the CIMS service name 'BTX Reforming'
+caustic-process,chemicals,Caustic Process,,t,,,from the CIMS service name 'Caustic Process'
+ccs,chemicals,CCS,,GJ,,,from the CIMS service name 'CCS'
+chlor-alkali-evaporation,chemicals,Chlor Alkali Evaporation,,GJ,,,from the CIMS service name 'Chlor Alkali Evaporation'
+chlorine-electrolysis,chemicals,Chlorine Electrolysis,,t,,,from the CIMS service name 'Chlorine Electrolysis'
+chp-for-mercury-cell-process-chlorine,chemicals,CHP for mercury cell process (Chlorine),,GJ,,,from the UKERC 'Baseline applicable' column
+combined-ammonia-methanol-synthesis,chemicals,Combined Ammonia Methanol Synthesis,,GJ,,,from the CIMS service name 'Combined Ammonia Methanol Synthesis'
+conveyance,chemicals,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+direct-drive,chemicals,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+large,chemicals,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,chemicals,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+methane-blend,chemicals,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+methane-fuel,chemicals,Methane Fuel,,GJ,,,from the CIMS service name 'Methane Fuel'
+methanol-synthesis,chemicals,Methanol Synthesis,,GJ,,,from the CIMS service name 'Methanol Synthesis'
+otswald-process-nitric-acid,chemicals,Otswald process (Nitric acid),,t,,,from the UKERC 'Baseline applicable' column
+process,chemicals,Process,,t,,,from the CIMS service name 'Process'
+production,chemicals,Production,,t,,,from the CIMS service name 'Production'
+pyrolysis,chemicals,Pyrolysis,,GJ,,,from the CIMS service name 'Pyrolysis'
+size-1,chemicals,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,chemicals,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,chemicals,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,chemicals,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,chemicals,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,chemicals,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,chemicals,Small,,GJ,,,from the CIMS service name 'Small'
+sodium-chlorate,chemicals,Sodium Chlorate,,t,,,from the CIMS service name 'Sodium Chlorate'
+space-cooling,chemicals,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,chemicals,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,chemicals,Steam,,GJ,,,from the CIMS service name 'Steam'
+steam-cracker,chemicals,Steam cracker,,t,,,from the UKERC 'Baseline applicable' column
+steam-reformer-ammonia,chemicals,Steam reformer (Ammonia),,t,,,from the UKERC 'Baseline applicable' column
+steam-reformer-hydrogen,chemicals,Steam reformer (Hydrogen),,t,,,from the UKERC 'Baseline applicable' column
+ventilation,chemicals,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+CHP plants,food-and-beverage,CHP plants,,kW,,,from the Bataille 2017 sheet's process-step band
+Production processes: Drying & separation,food-and-beverage,Production processes: Drying & separation,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Low temperature heat,food-and-beverage,Production processes: Low temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Motor drive,food-and-beverage,Production processes: Motor drive,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Other services,food-and-beverage,Production processes: Other services,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Refrigeration,food-and-beverage,Production processes: Refrigeration,,GJ,,,from the Bataille 2017 sheet's process-step band
+bakery,food-and-beverage,Bakery,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-cooler,food-and-beverage,Bakery - cooler,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-direct-ovens,food-and-beverage,Bakery - direct ovens,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-indirect-ovens,food-and-beverage,Bakery - indirect ovens,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-non-ovens-including-cooler,food-and-beverage,"Bakery - non ovens, including cooler",,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-oven,food-and-beverage,Bakery -oven,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+bakery-ovens,food-and-beverage,Bakery - ovens,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+dairy,food-and-beverage,Dairy,,m3,,,from the UKERC 'Baseline applicable' column
+dairy-cip,food-and-beverage,Dairy - CIP,,m3,,,from the UKERC 'Baseline applicable' column
+dairy-pasteuriser,food-and-beverage,Dairy - Pasteuriser,,m3,,,from the UKERC 'Baseline applicable' column
+drying-systems,food-and-beverage,Drying systems,,£k,,,from the UKERC 'Baseline applicable' column
+meat-heating-systems,food-and-beverage,Meat - Heating systems,,tonnes of mixed product,,,from the UKERC 'Baseline applicable' column
+undefined-sector,food-and-beverage,Undefined sector,,£k,,,from the UKERC 'Baseline applicable' column
+undefined-sector-boilers,food-and-beverage,Undefined sector boilers,,GJ,,,from the UKERC 'Baseline applicable' column
+Boilers,iron-and-steel,Boilers,,GJ,,,from the Bataille 2017 sheet's process-step band
+CHP plants,iron-and-steel,CHP plants,,kW,,,from the Bataille 2017 sheet's process-step band
+Production processes: Alternative Direct Reduction Ironmaking technologies,iron-and-steel,Production processes: Alternative Direct Reduction Ironmaking technologies,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Alternative blast furnaces,iron-and-steel,Production processes: Alternative blast furnaces,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),iron-and-steel,Production processes: Blast furnaces & basic oxygen furnace (including improvement technologies),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Casting & rolling and finishing process (including improvement processes),iron-and-steel,Production processes: Casting & rolling and finishing process (including improvement processes),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Electric arc furnace (including improvement technologies),iron-and-steel,Production processes: Electric arc furnace (including improvement technologies),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Sinter production (including improvement technologies,iron-and-steel,Production processes: Sinter production (including improvement technologies,,t,,,from the Bataille 2017 sheet's process-step band
+agglomeration,iron-and-steel,Agglomeration,,t,,,from the CIMS service name 'Agglomeration'
+anneal-temper,iron-and-steel,Anneal Temper,,GJ,,,from the CIMS service name 'Anneal Temper'
+bar,iron-and-steel,Bar,,t,,,from the CIMS service name 'Bar'
+basic-oxygen-furnace,iron-and-steel,Basic oxygen furnace,,t,,,from the UKERC 'Baseline applicable' column
+billet-casting,iron-and-steel,Billet Casting,,t,,,from the CIMS service name 'Billet Casting'
+blast-furnace,iron-and-steel,Blast furnace,,t,,,from the UKERC 'Baseline applicable' column
+bloom-casting,iron-and-steel,Bloom Casting,,t,,,from the CIMS service name 'Bloom Casting'
+casting,iron-and-steel,Casting,,t,,,from the CIMS service name 'Casting'
+ccs,iron-and-steel,CCS,,GJ,,,from the CIMS service name 'CCS'
+coke-oven,iron-and-steel,Coke oven,,t,,,from the UKERC 'Baseline applicable' column
+cold-roll,iron-and-steel,Cold Roll,,t,,,from the CIMS service name 'Cold Roll'
+continuous-casting,iron-and-steel,Continuous casting,,t,,,from the UKERC 'Baseline applicable' column
+continuous-casting-hot-rolling-not-including-heavy-section,iron-and-steel,"Continuous casting, Hot rolling (not including heavy section)",,t,,,from the UKERC 'Baseline applicable' column
+conveyance,iron-and-steel,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+cryogenics,iron-and-steel,Cryogenics,,GJ,,,from the CIMS service name 'Cryogenics'
+direct-drive,iron-and-steel,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+direct-reduction,iron-and-steel,Direct reduction,,t,,,from the etsap_2010_002 extraction
+electric-arc-furnace,iron-and-steel,Electric arc furnace,,t,,,from the UKERC 'Baseline applicable' column
+electrocleancomp,iron-and-steel,Electrocleancomp,,t,,,from the CIMS service name 'Electrocleancomp'
+finishing-mills,iron-and-steel,Finishing Mills,,t,,,from the CIMS service name 'Finishing Mills'
+galvanize,iron-and-steel,Galvanize,,t,,,from the CIMS service name 'Galvanize'
+heavy-structural-shapes,iron-and-steel,Heavy Structural Shapes,,t,,,from the CIMS service name 'Heavy Structural Shapes'
+hot-rolling,iron-and-steel,Hot rolling,,t,,,from the UKERC 'Baseline applicable' column
+hot-rolling-not-including-heavy-section,iron-and-steel,Hot rolling (not including heavy section),,t,,,from the UKERC 'Baseline applicable' column
+integrated,iron-and-steel,Integrated,,t,,,from the CIMS service name 'Integrated'
+integrated-steelworks,iron-and-steel,Integrated steelworks,,t,,,from the UKERC 'Baseline applicable' column
+iron-manufacture,iron-and-steel,Iron manufacture,,t,,,from the UKERC 'Baseline applicable' column
+ladle-preheat,iron-and-steel,Ladle Preheat,,GJ,,,from the CIMS service name 'Ladle Preheat'
+ladle-refining,iron-and-steel,Ladle Refining,,GJ,,,from the CIMS service name 'Ladle Refining'
+large,iron-and-steel,Large,,GJ,,,from the CIMS service name 'Large'
+light-structural-shapes,iron-and-steel,Light Structural Shapes,,t,,,from the CIMS service name 'Light Structural Shapes'
+lighting,iron-and-steel,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+methane-blend,iron-and-steel,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+pelletisation,iron-and-steel,Pelletisation,,t,,,from the etsap_2010_002 extraction
+recycled,iron-and-steel,Recycled,,GJ,,,from the CIMS service name 'Recycled'
+reheating,iron-and-steel,Reheating,,GJ,,,from the CIMS service name 'Reheating'
+reheators,iron-and-steel,Reheators,,GJ,,,from the CIMS service name 'Reheators'
+rod,iron-and-steel,Rod,,t,,,from the CIMS service name 'Rod'
+roughing-mills,iron-and-steel,Roughing Mills,,t,,,from the CIMS service name 'Roughing Mills'
+sinter-plant,iron-and-steel,Sinter plant,,t,,,from the UKERC 'Baseline applicable' column
+size-1,iron-and-steel,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,iron-and-steel,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,iron-and-steel,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,iron-and-steel,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,iron-and-steel,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,iron-and-steel,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+skin-pass,iron-and-steel,Skin Pass,,t,,,from the CIMS service name 'Skin Pass'
+small,iron-and-steel,Small,,GJ,,,from the CIMS service name 'Small'
+smelting-reduction,iron-and-steel,Smelting reduction,,t,,,from the etsap_2010_002 extraction
+space-cooling,iron-and-steel,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,iron-and-steel,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,iron-and-steel,Steam,,GJ,,,from the CIMS service name 'Steam'
+subsector,iron-and-steel,Subsector,,t,,,from the UKERC 'Baseline applicable' column
+tin-plate,iron-and-steel,Tin Plate,,t,,,from the CIMS service name 'Tin Plate'
+tubes,iron-and-steel,Tubes,,t,,,from the CIMS service name 'Tubes'
+ventilation,iron-and-steel,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+agglomeration,mining,Agglomeration,,t,,,from the CIMS service name 'Agglomeration'
+cleaning,mining,Cleaning,,t,,,from the CIMS service name 'Cleaning'
+conveyance,mining,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+crush-and-screen,mining,Crush and Screen,,t,,,from the CIMS service name 'Crush and Screen'
+direct-drive,mining,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+drying,mining,Drying,,GJ,,,from the CIMS service name 'Drying'
+extraction,mining,Extraction,,t,,,from the CIMS service name 'Extraction'
+flotation,mining,Flotation,,GJ,,,from the CIMS service name 'Flotation'
+large,mining,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,mining,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+methane-blend,mining,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+mine-ventilation,mining,Mine Ventilation,,GJ,,,from the CIMS service name 'Mine Ventilation'
+primary-crushing,mining,Primary Crushing,,t,,,from the CIMS service name 'Primary Crushing'
+primary-milling,mining,Primary Milling,,t,,,from the CIMS service name 'Primary Milling'
+secondary-crushing,mining,Secondary Crushing,,t,,,from the CIMS service name 'Secondary Crushing'
+secondary-milling,mining,Secondary Milling,,t,,,from the CIMS service name 'Secondary Milling'
+size-1,mining,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,mining,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,mining,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,mining,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,mining,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,mining,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,mining,Small,,GJ,,,from the CIMS service name 'Small'
+space-cooling,mining,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,mining,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,mining,Steam,,GJ,,,from the CIMS service name 'Steam'
+transportation,mining,Transportation,,GJ,,,from the CIMS service name 'Transportation'
+ventilation,mining,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+washing,mining,Washing,,t,,,from the CIMS service name 'Washing'
+Production processes: High temperature heat,non-ferrous-metals,Production processes: High temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Motor drive,non-ferrous-metals,Production processes: Motor drive,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Other services,non-ferrous-metals,Production processes: Other services,,GJ,,,from the Bataille 2017 sheet's process-step band
+alumina-refining,non-ferrous-metals,Alumina refining,,t,,,from the etsap_2012_001 extraction
+anode-production,non-ferrous-metals,Anode production,,t,,,from the etsap_2012_001 extraction
+continuous-smelting,non-ferrous-metals,Continuous Smelting,,GJ,,,from the CIMS service name 'Continuous Smelting'
+convert,non-ferrous-metals,Convert,,GJ,,,from the CIMS service name 'Convert'
+conveyance,non-ferrous-metals,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+cryogenics,non-ferrous-metals,Cryogenics,,GJ,,,from the CIMS service name 'Cryogenics'
+direct-drive,non-ferrous-metals,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+electrolysis,non-ferrous-metals,Electrolysis,,t,,,from the CIMS service name 'Electrolysis'
+hydro-metallurgy,non-ferrous-metals,Hydro Metallurgy,,t,,,from the CIMS service name 'Hydro Metallurgy'
+large,non-ferrous-metals,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,non-ferrous-metals,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+melt-cast,non-ferrous-metals,Melt Cast,,GJ,,,from the CIMS service name 'Melt Cast'
+methane-blend,non-ferrous-metals,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+pre-bake-anode,non-ferrous-metals,Pre-bake Anode,,GJ,,,from the CIMS service name 'Pre-bake Anode'
+refine,non-ferrous-metals,Refine,,GJ,,,from the CIMS service name 'Refine'
+roast,non-ferrous-metals,Roast,,GJ,,,from the CIMS service name 'Roast'
+secondary-melting,non-ferrous-metals,Secondary aluminium,,t,,,from the etsap_2012_001 extraction
+size-1,non-ferrous-metals,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,non-ferrous-metals,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,non-ferrous-metals,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,non-ferrous-metals,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,non-ferrous-metals,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,non-ferrous-metals,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,non-ferrous-metals,Small,,GJ,,,from the CIMS service name 'Small'
+smelt,non-ferrous-metals,Smelt,,GJ,,,from the CIMS service name 'Smelt'
+space-cooling,non-ferrous-metals,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,non-ferrous-metals,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,non-ferrous-metals,Steam,,GJ,,,from the CIMS service name 'Steam'
+ventilation,non-ferrous-metals,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+CHP plants,non-metallic-minerals,CHP plants,,kW,,,from the Bataille 2017 sheet's process-step band
+Production processes: Drying & separation,non-metallic-minerals,Production processes: Drying & separation,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: High temperature heat,non-metallic-minerals,Production processes: High temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Low temperature heat,non-metallic-minerals,Production processes: Low temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Motor drive,non-metallic-minerals,Production processes: Motor drive,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Other services,non-metallic-minerals,Production processes: Other services,,GJ,,,from the Bataille 2017 sheet's process-step band
+ccs,non-metallic-minerals,CCS,,GJ,,,from the CIMS service name 'CCS'
+conveyance,non-metallic-minerals,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+direct-drive,non-metallic-minerals,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+dolomitic,non-metallic-minerals,Dolomitic,,GJ,,,from the CIMS service name 'Dolomitic'
+dry-ground-cement,non-metallic-minerals,Dry Ground Cement,,GJ,,,from the CIMS service name 'Dry Ground Cement'
+dry-process-rotary-kiln,non-metallic-minerals,Dry process rotary kiln,,GJ,,,from the CIMS service name 'Dry process rotary kiln'
+finish-grinding,non-metallic-minerals,Finish Grinding,,t,,,from the CIMS service name 'Finish Grinding'
+fluidized-bed,non-metallic-minerals,Fluidized bed,,GJ,,,from the CIMS service name 'Fluidized bed'
+heat,non-metallic-minerals,Heat,,GJ,,,from the CIMS service name 'Heat'
+kilns,non-metallic-minerals,Kilns,,GJ,,,from the CIMS service name 'Kilns'
+large,non-metallic-minerals,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,non-metallic-minerals,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+methane-blend,non-metallic-minerals,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+size-1,non-metallic-minerals,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,non-metallic-minerals,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,non-metallic-minerals,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,non-metallic-minerals,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,non-metallic-minerals,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,non-metallic-minerals,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,non-metallic-minerals,Small,,GJ,,,from the CIMS service name 'Small'
+space-cooling,non-metallic-minerals,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,non-metallic-minerals,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+ventilation,non-metallic-minerals,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+CHP plants,other-industry,CHP plants,,kW,,,from the Bataille 2017 sheet's process-step band
+Production processes: Drying & separation,other-industry,Production processes: Drying & separation,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: High temperature heat,other-industry,Production processes: High temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Low temperature heat,other-industry,Production processes: Low temperature heat,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Motor drive,other-industry,Production processes: Motor drive,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Other services,other-industry,Production processes: Other services,,GJ,,,from the Bataille 2017 sheet's process-step band
+Production processes: Refrigeration,other-industry,Production processes: Refrigeration,,GJ,,,from the Bataille 2017 sheet's process-step band
+blowdowns,other-industry,Blowdowns,,GJ,,,from the CIMS service name 'Blowdowns'
+ccs,other-industry,CCS,,GJ,,,from the CIMS service name 'CCS'
+compression,other-industry,Compression,,GJ,,,from the CIMS service name 'Compression'
+direct-drive-large,other-industry,Direct Drive Large,,GJ,,,from the CIMS service name 'Direct Drive Large'
+direct-drive-small,other-industry,Direct Drive Small,,GJ,,,from the CIMS service name 'Direct Drive Small'
+direct-heat,other-industry,Direct Heat,,GJ,,,from the CIMS service name 'Direct Heat'
+flaring,other-industry,Flaring,,GJ,,,from the CIMS service name 'Flaring'
+formation-co2,other-industry,Formation CO2,,GJ,,,from the CIMS service name 'Formation CO2'
+hydrogen,other-industry,Hydrogen,,GJ,,,from the CIMS service name 'Hydrogen'
+lighting,other-industry,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+lng-compression,other-industry,LNG Compression,,GJ,,,from the CIMS service name 'LNG Compression'
+methane-blend,other-industry,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+og-methane-blend,other-industry,OG Methane Blend,,GJ,,,from the CIMS service name 'OG Methane Blend'
+pumping,other-industry,Pumping,,GJ,,,from the CIMS service name 'Pumping'
+steam,other-industry,Steam,,GJ,,,from the CIMS service name 'Steam'
+still-gas-steam,other-industry,Still Gas Steam,,GJ,,,from the CIMS service name 'Still Gas Steam'
+upgrading,other-industry,Upgrading,,GJ,,,from the CIMS service name 'Upgrading'
+ventilation-ac,other-industry,Ventilation AC,,GJ,,,from the CIMS service name 'Ventilation AC'
+ccs,petroleum-refining,CCS,,GJ,,,from the CIMS service name 'CCS'
+coking,petroleum-refining,Coking,,GJ,,,from the CIMS service name 'Coking'
+cracking,petroleum-refining,Cracking,,GJ,,,from the CIMS service name 'Cracking'
+desulphurization,petroleum-refining,Desulphurization,,GJ,,,from the CIMS service name 'Desulphurization'
+direct-heat,petroleum-refining,Direct Heat,,GJ,,,from the CIMS service name 'Direct Heat'
+heater,petroleum-refining,Heater,,GJ,,,from the CIMS service name 'Heater'
+high,petroleum-refining,High,,GJ,,,from the CIMS service name 'High'
+hydrogen,petroleum-refining,Hydrogen,,GJ,,,from the CIMS service name 'Hydrogen'
+large,petroleum-refining,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,petroleum-refining,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+low,petroleum-refining,Low,,GJ,,,from the CIMS service name 'Low'
+medium,petroleum-refining,Medium,,GJ,,,from the CIMS service name 'Medium'
+methane-blend,petroleum-refining,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+reforming,petroleum-refining,Reforming,,GJ,,,from the CIMS service name 'Reforming'
+size-1,petroleum-refining,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,petroleum-refining,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,petroleum-refining,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,petroleum-refining,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,petroleum-refining,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,petroleum-refining,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,petroleum-refining,Small,,GJ,,,from the CIMS service name 'Small'
+space-cooling,petroleum-refining,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,petroleum-refining,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,petroleum-refining,Steam,,GJ,,,from the CIMS service name 'Steam'
+vacuum,petroleum-refining,Vacuum,,GJ,,,from the CIMS service name 'Vacuum'
+ventilation,petroleum-refining,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+Alternative production route: dry sheet forming,pulp-and-paper,Alternative production route: dry sheet forming,,t,,,from the Bataille 2017 sheet's process-step band
+Boilers,pulp-and-paper,Boilers,,GJ,,,from the Bataille 2017 sheet's process-step band
+CHP plants,pulp-and-paper,CHP plants,,kW,,,from the Bataille 2017 sheet's process-step band
+Finishing process,pulp-and-paper,Finishing process,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Alternative drying systems,pulp-and-paper,Production processes: Alternative drying systems,,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Dryer (including improvement processes),pulp-and-paper,Production processes: Dryer (including improvement processes),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Other production steps (including improvement processes),pulp-and-paper,Production processes: Other production steps (including improvement processes),,t,,,from the Bataille 2017 sheet's process-step band
+Production processes: Press section (including improvement process),pulp-and-paper,Production processes: Press section (including improvement process),,t,,,from the Bataille 2017 sheet's process-step band
+bleaching-fully,pulp-and-paper,Bleaching Fully,,GJ,,,from the CIMS service name 'Bleaching Fully'
+bleaching-semi,pulp-and-paper,Bleaching Semi,,GJ,,,from the CIMS service name 'Bleaching Semi'
+chp-plant,pulp-and-paper,CHP plant,,GJ,,,from the UKERC 'Baseline applicable' column
+coated-drying,pulp-and-paper,Coated Drying,,GJ,,,from the CIMS service name 'Coated Drying'
+coated-forming-pressing-finishing,pulp-and-paper,Coated Forming Pressing Finishing,,t,,,from the CIMS service name 'Coated Forming Pressing Finishing'
+coated-stock-prep,pulp-and-paper,Coated Stock Prep,,GJ,,,from the CIMS service name 'Coated Stock Prep'
+compressed-air,pulp-and-paper,Compressed air,,t,,,from the UKERC 'Baseline applicable' column
+conveyance,pulp-and-paper,Conveyance,,GJ,,,from the CIMS service name 'Conveyance'
+cut-and-chip,pulp-and-paper,Cut and Chip,,GJ,,,from the CIMS service name 'Cut and Chip'
+direct-drive,pulp-and-paper,Direct Drive,,GJ,,,from the CIMS service name 'Direct Drive'
+dryer,pulp-and-paper,Dryer,,t,,,from the UKERC 'Baseline applicable' column
+energy-recovery,pulp-and-paper,Energy recovery,,GJ,,,from the etsap_2015_001 extraction
+evaporator,pulp-and-paper,Evaporator,,GJ,,,from the CIMS service name 'Evaporator'
+large,pulp-and-paper,Large,,GJ,,,from the CIMS service name 'Large'
+lighting,pulp-and-paper,Lighting,,GJ,,,from the CIMS service name 'Lighting'
+lime-kiln,pulp-and-paper,Lime Kiln,,GJ,,,from the CIMS service name 'Lime Kiln'
+linerboard-drying,pulp-and-paper,Linerboard Drying,,GJ,,,from the CIMS service name 'Linerboard Drying'
+linerboard-forming-pressing-finishing,pulp-and-paper,Linerboard Forming Pressing Finishing,,t,,,from the CIMS service name 'Linerboard Forming Pressing Finishing'
+linerboard-stock-prep,pulp-and-paper,Linerboard Stock Prep,,GJ,,,from the CIMS service name 'Linerboard Stock Prep'
+methane-blend,pulp-and-paper,Methane Blend,,GJ,,,from the CIMS service name 'Methane Blend'
+newsprint-drying,pulp-and-paper,Newsprint Drying,,GJ,,,from the CIMS service name 'Newsprint Drying'
+newsprint-prep-form-press-finish,pulp-and-paper,Newsprint Prep Form Press Finish,,t,,,from the CIMS service name 'Newsprint Prep Form Press Finish'
+paper-machine,pulp-and-paper,Paper making,,t,,,from the etsap_2015_001 extraction
+press,pulp-and-paper,Press,,t,,,from the UKERC 'Baseline applicable' column
+pulp-drying,pulp-and-paper,Pulp Drying,,GJ,,,from the CIMS service name 'Pulp Drying'
+pulping-chemical,pulp-and-paper,Pulping Chemical,,GJ,,,from the CIMS service name 'Pulping Chemical'
+pulping-mechanical,pulp-and-paper,Pulping Mechanical,,GJ,,,from the CIMS service name 'Pulping Mechanical'
+pulping-recycled,pulp-and-paper,Pulping Recycled,,GJ,,,from the CIMS service name 'Pulping Recycled'
+pulping-semi-chemical,pulp-and-paper,Pulping Semi Chemical,,GJ,,,from the CIMS service name 'Pulping Semi Chemical'
+recovery-furnace,pulp-and-paper,Recovery Furnace,,GJ,,,from the CIMS service name 'Recovery Furnace'
+sector,pulp-and-paper,Sector,,t,,,from the UKERC 'Baseline applicable' column
+size-1,pulp-and-paper,Size 1,,GJ,,,from the CIMS service name 'Size 1'
+size-2,pulp-and-paper,Size 2,,GJ,,,from the CIMS service name 'Size 2'
+size-3,pulp-and-paper,Size 3,,GJ,,,from the CIMS service name 'Size 3'
+size-4,pulp-and-paper,Size 4,,GJ,,,from the CIMS service name 'Size 4'
+size-5,pulp-and-paper,Size 5,,GJ,,,from the CIMS service name 'Size 5'
+size-6,pulp-and-paper,Size 6,,GJ,,,from the CIMS service name 'Size 6'
+small,pulp-and-paper,Small,,GJ,,,from the CIMS service name 'Small'
+space-cooling,pulp-and-paper,Space Cooling,,GJ,,,from the CIMS service name 'Space Cooling'
+space-heating,pulp-and-paper,Space Heating,,GJ,,,from the CIMS service name 'Space Heating'
+steam,pulp-and-paper,Steam,,GJ,,,from the CIMS service name 'Steam'
+stock-preparation,pulp-and-paper,Stock preparation,,t,,,from the UKERC 'Baseline applicable' column
+tissue-drying,pulp-and-paper,Tissue Drying,,GJ,,,from the CIMS service name 'Tissue Drying'
+tissue-forming-pressing-finishing,pulp-and-paper,Tissue Forming Pressing Finishing,,t,,,from the CIMS service name 'Tissue Forming Pressing Finishing'
+tissue-stock-prep,pulp-and-paper,Tissue Stock Prep,,GJ,,,from the CIMS service name 'Tissue Stock Prep'
+uncoated-drying,pulp-and-paper,Uncoated Drying,,GJ,,,from the CIMS service name 'Uncoated Drying'
+uncoated-forming-pressing-finishing,pulp-and-paper,Uncoated Forming Pressing Finishing,,t,,,from the CIMS service name 'Uncoated Forming Pressing Finishing'
+uncoated-stock-prep,pulp-and-paper,Uncoated Stock Prep,,GJ,,,from the CIMS service name 'Uncoated Stock Prep'
+vacuum-systems,pulp-and-paper,Vacuum systems,,t,,,from the UKERC 'Baseline applicable' column
+vacuum-wire-press-dryer,pulp-and-paper,"Vacuum, wire, press,dryer",,t,,,from the UKERC 'Baseline applicable' column
+ventilation,pulp-and-paper,Ventilation,,GJ,,,from the CIMS service name 'Ventilation'
+wire,pulp-and-paper,Wire,,t,,,from the UKERC 'Baseline applicable' column

@@ -1,0 +1,420 @@
+list-name,term,origin,note
+capacity-basis,electric-output,declared-here,
+capacity-basis,product-output,declared-here,
+capacity-basis,thermal-input,declared-here,
+capacity-basis,thermal-output,declared-here,
+carrier,ammonia,design-doc-6.2,
+carrier,benzole-and-tars,design-doc-6.2,
+carrier,biogas,design-doc-6.2,
+carrier,biomass,design-doc-6.2,
+carrier,biomethane,design-doc-6.2,
+carrier,black-liquor,design-doc-6.2,
+carrier,blast-furnace-gas,design-doc-6.2,
+carrier,coal,design-doc-6.2,
+carrier,coke,design-doc-6.2,
+carrier,coke-oven-gas,design-doc-6.2,
+carrier,diesel,design-doc-6.2,
+carrier,electricity,design-doc-6.2,
+carrier,fossil,design-doc-6.2,
+carrier,geothermal,design-doc-6.2,
+carrier,hydrogen,design-doc-6.2,
+carrier,landfill-gas,design-doc-6.2,
+carrier,liquid-biomass,design-doc-6.2,
+carrier,lpg,design-doc-6.2,
+carrier,methanol,design-doc-6.2,
+carrier,municipal-waste,design-doc-6.2,
+carrier,naphtha,design-doc-6.2,
+carrier,natural-gas,design-doc-6.2,
+carrier,nuclear,design-doc-6.2,
+carrier,oil,design-doc-6.2,
+carrier,petroleum-coke,design-doc-6.2,
+carrier,refinery-gas,design-doc-6.2,
+carrier,renewable-natural-gas,design-doc-6.2,
+carrier,solar,design-doc-6.2,
+carrier,steam,design-doc-6.2,
+carrier,still-gas,design-doc-6.2,
+carrier,syngas,design-doc-6.2,
+carrier,waste-heat,design-doc-6.2,
+commodity,air,design-doc-6.2,combustion and cooling air drawn through a kiln system; ETSAP I03 Table 7 reports it per tonne of clinker
+commodity,alumina,declared-here,read from its own table
+commodity,aluminium,declared-here,read from its own table
+commodity,ammonia,declared-here,read from its own table
+commodity,ammonia-fuel,declared-here,read from its own table
+commodity,basic-oxygen-furnace-gas,declared-here,read from its own table
+commodity,bauxite,design-doc-6.2,the ore alumina is refined from; ETSAP I10
+commodity,benzole-and-tars,declared-here,read from its own table
+commodity,biogas,declared-here,read from its own table
+commodity,bioliquid,declared-here,read from its own table
+commodity,biomass-solid,declared-here,read from its own table
+commodity,biomethane,declared-here,read from its own table
+commodity,black-liquor,declared-here,read from its own table
+commodity,blast-furnace-gas,declared-here,read from its own table
+commodity,burning-oil,declared-here,read from its own table
+commodity,carrier-gas-coal,declared-here,read from its own table
+commodity,cement,declared-here,read from its own table
+commodity,ch4,declared-here,read from its own table
+commodity,charcoal,declared-here,read from its own table
+commodity,clinker,declared-here,read from its own table
+commodity,co,declared-here,read from its own table
+commodity,co2,declared-here,read from its own table
+commodity,co2-biogenic,declared-here,read from its own table
+commodity,co2-captured,declared-here,read from its own table
+commodity,co2e,declared-here,read from its own table
+commodity,coal,declared-here,read from its own table
+commodity,coke,declared-here,read from its own table
+commodity,coke-breeze,declared-here,read from its own table
+commodity,coke-oven-gas,declared-here,read from its own table
+commodity,coking-coal,declared-here,read from its own table
+commodity,crude-steel,declared-here,read from its own table
+commodity,diesel,declared-here,read from its own table
+commodity,direct-reduced-iron,declared-here,read from its own table
+commodity,dolomite,declared-here,read from its own table
+commodity,electricity,declared-here,read from its own table
+commodity,electrodes,declared-here,read from its own table
+commodity,ethane,declared-here,read from its own table
+commodity,ethanol,declared-here,read from its own table
+commodity,fossil-waste,declared-here,read from its own table
+commodity,gas-oil,declared-here,read from its own table
+commodity,geothermal-heat,declared-here,read from its own table
+commodity,ggbfs,declared-here,read from its own table
+commodity,gypsum,declared-here,read from its own table
+commodity,heavy-fuel-oil,declared-here,read from its own table
+commodity,hf,design-doc-6.2,"hydrogen fluoride; an aluminium smelter emission, ETSAP I10 Table 1"
+commodity,high-value-chemicals,declared-here,read from its own table
+commodity,hot-metal,declared-here,read from its own table
+commodity,hot-rolled-steel,declared-here,read from its own table
+commodity,hot-water,declared-here,read from its own table
+commodity,hydrogen,declared-here,read from its own table
+commodity,iron-ore,declared-here,read from its own table
+commodity,kerosene,declared-here,read from its own table
+commodity,landfill-gas,declared-here,read from its own table
+commodity,light-fuel-oil,declared-here,read from its own table
+commodity,lime,declared-here,read from its own table
+commodity,limestone,declared-here,read from its own table
+commodity,liquid-steel,declared-here,read from its own table
+commodity,lpg,declared-here,read from its own table
+commodity,methane,declared-here,read from its own table
+commodity,methanol,declared-here,read from its own table
+commodity,municipal-solid-waste,declared-here,read from its own table
+commodity,n2o,declared-here,read from its own table
+commodity,naphtha,declared-here,read from its own table
+commodity,natural-gas,declared-here,read from its own table
+commodity,non-renewable-waste,declared-here,read from its own table
+commodity,nox,declared-here,read from its own table
+commodity,nuclear-heat,declared-here,read from its own table
+commodity,oil,design-doc-6.2,"oil reported without a grade; the commodity twin of the carrier term. ETSAP I07 Table 4 says 'External, oil/other'. Should not survive into data/processed/ unattributed."
+commodity,olivine,declared-here,read from its own table
+commodity,oxygen,declared-here,read from its own table
+commodity,pah,design-doc-6.2,"polycyclic aromatic hydrocarbons, reported as benzo-a-pyrene; ETSAP I10 Table 1"
+commodity,paper,declared-here,read from its own table
+commodity,pellets,declared-here,read from its own table
+commodity,petrochemical-feedstock,declared-here,read from its own table
+commodity,petroleum-coke,declared-here,read from its own table
+commodity,pfc,design-doc-6.2,"perfluorocarbons (CF4, C2F6) from the aluminium anode effect; GWP 6200 and 9200"
+commodity,pm,declared-here,read from its own table
+commodity,propane,declared-here,read from its own table
+commodity,pulverised-fuel-ash,declared-here,read from its own table
+commodity,quartz,declared-here,read from its own table
+commodity,raw-meal,declared-here,read from its own table
+commodity,recovered-paper,declared-here,read from its own table
+commodity,red-mud,design-doc-6.2,"the solid residue of Bayer process alumina refining; ETSAP I10, 600-1500 kg/t Al2O3"
+commodity,refinery-gas,declared-here,read from its own table
+commodity,renewable-fuel,declared-here,read from its own table
+commodity,salt-slag,design-doc-6.2,the salt flux residue of secondary aluminium melting; ETSAP I10
+commodity,scrap-steel,declared-here,read from its own table
+commodity,sinter,declared-here,read from its own table
+commodity,slag,declared-here,read from its own table
+commodity,so2,declared-here,read from its own table
+commodity,sodium-hydroxide,declared-here,read from its own table
+commodity,solar-thermal,declared-here,read from its own table
+commodity,solvent-amine,declared-here,read from its own table
+commodity,steam,declared-here,read from its own table
+commodity,supplementary-cementitious-material,declared-here,read from its own table
+commodity,total-fluoride,design-doc-6.2,"total fluoride, gaseous plus particulate; reported separately from HF by ETSAP I10"
+commodity,voc,declared-here,read from its own table
+commodity,waste-heat,declared-here,read from its own table
+commodity,waste-plastic,declared-here,read from its own table
+commodity,water,declared-here,read from its own table
+commodity,wood-pulp,declared-here,read from its own table
+commodity-class,emission,declared-here,
+commodity-class,energy,declared-here,
+commodity-class,material,declared-here,
+confidence,high,declared-here,
+confidence,low,declared-here,
+confidence,medium,declared-here,
+constraint,applicability-to-stock,declared-here,
+constraint,capacity-max,declared-here,
+constraint,capacity-min,declared-here,
+constraint,current-adoption-share,declared-here,
+constraint,growth-rate-max,declared-here,
+constraint,market-share-new-max,declared-here,
+constraint,market-share-new-min,declared-here,
+constraint,market-share-total,declared-here,
+constraint,max-adoption-share,declared-here,
+constraint,refit-required,declared-here,
+constraint,retirement-rate,declared-here,
+constraint-basis,absolute,declared-here,
+constraint-basis,of-baseline-stock,declared-here,
+constraint-basis,of-new-sales,declared-here,
+constraint-basis,of-sector-output,declared-here,
+cost-basis,equipment,declared-here,
+cost-basis,installed,declared-here,
+cost-basis,not-applicable,declared-here,
+cost-basis,overnight,declared-here,
+cost-basis,total-plant,declared-here,
+direction,input,declared-here,
+direction,output,declared-here,
+end-use,drying-and-separation,declared-here,read from its own table
+end-use,electrochemical,declared-here,read from its own table
+end-use,facility-services,declared-here,read from its own table
+end-use,forming-and-finishing,declared-here,read from its own table
+end-use,machine-drive,declared-here,read from its own table
+end-use,material-conversion,declared-here,read from its own table
+end-use,material-preparation,declared-here,read from its own table
+end-use,other-services,declared-here,read from its own table
+end-use,process-heat-high-temp,declared-here,read from its own table
+end-use,process-heat-low-temp,declared-here,read from its own table
+end-use,process-heat-medium-temp,declared-here,read from its own table
+end-use,refrigeration-and-cooling,declared-here,read from its own table
+end-use,steam-and-hot-water,declared-here,read from its own table
+equipment,air-separation-unit,design-doc-6.2,
+equipment,anaerobic-digester,design-doc-6.2,
+equipment,arc-heater,design-doc-6.2,
+equipment,autothermal-reformer,design-doc-6.2,
+equipment,basic-oxygen-furnace,design-doc-6.2,
+equipment,blast-furnace,design-doc-6.2,
+equipment,boiler,design-doc-6.2,
+equipment,calciner,design-doc-6.2,
+equipment,capture-unit,design-doc-6.2,
+equipment,caster,design-doc-6.2,
+equipment,chiller,design-doc-6.2,
+equipment,cleaning-system,design-doc-6.2,
+equipment,clinker-cooler,design-doc-6.2,"grate clinker cooler; ETSAP I03 gives it its own electricity, lifetime, capacity and heat recovery efficiency"
+equipment,coke-oven,design-doc-6.2,
+equipment,combined-cycle,design-doc-6.2,
+equipment,combustion-turbine,design-doc-6.2,
+equipment,compressor,design-doc-6.2,
+equipment,converter,design-doc-6.2,
+equipment,conveyor,design-doc-6.2,
+equipment,cooling-tower,design-doc-6.2,
+equipment,crusher,design-doc-6.2,
+equipment,digester,design-doc-6.2,
+equipment,direct-heater,design-doc-6.2,
+equipment,distillation-column,design-doc-6.2,
+equipment,dryer,design-doc-6.2,
+equipment,electric-arc-furnace,design-doc-6.2,
+equipment,electrolyser,design-doc-6.2,
+equipment,electrolysis-cell,design-doc-6.2,
+equipment,evaporator,design-doc-6.2,
+equipment,fan,design-doc-6.2,
+equipment,fermenter,design-doc-6.2,
+equipment,flotation-cell,design-doc-6.2,
+equipment,fuel-cell,design-doc-6.2,
+equipment,furnace,design-doc-6.2,
+equipment,gasifier,design-doc-6.2,
+equipment,geothermal-well,design-doc-6.2,
+equipment,grinding-mill,design-doc-6.2,
+equipment,heat-pump,design-doc-6.2,
+equipment,heat-recovery-unit,design-doc-6.2,
+equipment,induction-heater,design-doc-6.2,
+equipment,kiln,design-doc-6.2,
+equipment,leaching-vessel,design-doc-6.2,
+equipment,lighting,design-doc-6.2,
+equipment,management-system,design-doc-6.2,
+equipment,melting-furnace,design-doc-6.2,
+equipment,microturbine,design-doc-6.2,
+equipment,microwave-heater,design-doc-6.2,
+equipment,motor,design-doc-6.2,
+equipment,oven,design-doc-6.2,
+equipment,paper-machine,design-doc-6.2,
+equipment,pasteuriser,design-doc-6.2,
+equipment,pellet-plant,design-doc-6.2,
+equipment,photochemical-heater,design-doc-6.2,
+equipment,plasma-torch,design-doc-6.2,
+equipment,precalciner,design-doc-6.2,
+equipment,preheater,design-doc-6.2,
+equipment,press,design-doc-6.2,
+equipment,pulper,design-doc-6.2,
+equipment,pump,design-doc-6.2,
+equipment,radio-frequency-heater,design-doc-6.2,
+equipment,reactor,design-doc-6.2,
+equipment,reciprocating-engine,design-doc-6.2,
+equipment,refining-furnace,design-doc-6.2,
+equipment,resistance-heater,design-doc-6.2,
+equipment,roaster,design-doc-6.2,
+equipment,rolling-mill,design-doc-6.2,
+equipment,rotary-compression-heater,design-doc-6.2,
+equipment,shaft-furnace,design-doc-6.2,
+equipment,sinter-plant,design-doc-6.2,
+equipment,smelting-vessel,design-doc-6.2,
+equipment,solar-collector,design-doc-6.2,
+equipment,solar-concentrator,design-doc-6.2,
+equipment,space-heater,design-doc-6.2,
+equipment,steam-cracker,design-doc-6.2,
+equipment,steam-reformer,design-doc-6.2,
+equipment,steam-turbine,design-doc-6.2,
+equipment,transesterification-unit,design-doc-6.2,
+equipment,ultraviolet-curer,design-doc-6.2,
+equipment,vapour-recompressor,design-doc-6.2,
+equipment,ventilation-unit,design-doc-6.2,
+heat-output-type,direct,declared-here,
+heat-output-type,hot-water,declared-here,
+heat-output-type,not-applicable,declared-here,
+heat-output-type,steam,declared-here,
+parameter,abatement-cost,declared-here,read from its own table
+parameter,annual-output,declared-here,read from its own table
+parameter,availability,declared-here,read from its own table
+parameter,capacity,declared-here,read from its own table
+parameter,capacity-factor,declared-here,read from its own table
+parameter,capex,declared-here,read from its own table
+parameter,capital-recovery,declared-here,read from its own table
+parameter,capture-rate,declared-here,read from its own table
+parameter,construction-time,declared-here,read from its own table
+parameter,cost-learning-rate,declared-here,read from its own table
+parameter,decommissioning-cost,declared-here,read from its own table
+parameter,degradation-rate,declared-here,read from its own table
+parameter,discount-rate,declared-here,read from its own table
+parameter,efficiency,declared-here,read from its own table
+parameter,efficiency-chp,declared-here,read from its own table
+parameter,efficiency-part-load,declared-here,read from its own table
+parameter,emissions-factor,declared-here,read from its own table
+parameter,emissions-indirect,declared-here,read from its own table
+parameter,emissions-process,declared-here,read from its own table
+parameter,emissions-reduction-potential,declared-here,read from its own table
+parameter,heat-to-power-ratio,declared-here,read from its own table
+parameter,lifetime,declared-here,read from its own table
+parameter,load-range-min,declared-here,read from its own table
+parameter,opex-fixed,declared-here,read from its own table
+parameter,opex-variable,declared-here,read from its own table
+parameter,pressure-output,declared-here,read from its own table
+parameter,specific-energy-consumption,declared-here,read from its own table
+parameter,temperature-max,declared-here,read from its own table
+parameter,temperature-min,declared-here,read from its own table
+parameter,temperature-output,declared-here,read from its own table
+parameter,year-available,declared-here,read from its own table
+parameter,year-unavailable,declared-here,read from its own table
+parameter-class,cost,declared-here,
+parameter-class,deployment,declared-here,
+parameter-class,emissions,declared-here,
+parameter-class,technical,declared-here,
+relationship-to-baseline,additional,declared-here,
+relationship-to-baseline,replacement,declared-here,
+relationship-to-baseline,standalone,declared-here,
+role,alternative-route,declared-here,
+role,baseline,declared-here,
+role,improvement,declared-here,
+role,incumbent,declared-here,
+role,new,declared-here,
+sector,all-industry,declared-here,read from its own table
+sector,cement,declared-here,read from its own table
+sector,chemicals,declared-here,read from its own table
+sector,food-and-beverage,declared-here,read from its own table
+sector,iron-and-steel,declared-here,read from its own table
+sector,mining,declared-here,read from its own table
+sector,non-ferrous-metals,declared-here,read from its own table
+sector,non-metallic-minerals,declared-here,read from its own table
+sector,other-industry,declared-here,read from its own table
+sector,petroleum-refining,declared-here,read from its own table
+sector,pulp-and-paper,declared-here,read from its own table
+service-type,heat-supply,declared-here,
+service-type,other-service,declared-here,
+service-type,process,declared-here,
+state-of-development,commercial,declared-here,
+state-of-development,conceptual,declared-here,
+state-of-development,existing,declared-here,
+state-of-development,pilot,declared-here,
+state-of-development,r-and-d,declared-here,
+status,draft,declared-here,
+status,final,declared-here,
+status,placeholder,declared-here,
+status,review,declared-here,
+status,superseded,declared-here,
+temperature-tier,high-temp,declared-here,
+temperature-tier,low-temp,declared-here,
+temperature-tier,medium-temp,declared-here,
+temperature-tier,not-applicable,declared-here,
+trl-scale,iea-etp,declared-here,
+trl-scale,nasa-1-9,declared-here,
+trl-scale,trl-1-9,declared-here,
+uncertainty-type,assumed-range,declared-here,
+uncertainty-type,expert-judgement,declared-here,
+uncertainty-type,percent-of-central,declared-here,
+uncertainty-type,reported-range,declared-here,
+uncertainty-type,standard-deviation,declared-here,
+value-type,assumed,declared-here,
+value-type,derived,declared-here,
+value-type,placeholder,declared-here,
+value-type,proxy,declared-here,
+value-type,reported,declared-here,
+variant,anode-baking,design-doc-6.2,prebaked carbon anode plant; ETSAP I10
+variant,back-pressure,design-doc-6.2,back-pressure steam turbine; ETSAP I07 Table 3
+variant,bat,design-doc-6.2,
+variant,bayer,design-doc-6.2,Bayer process alumina refining; ETSAP I10
+variant,bleached-dried,design-doc-6.2,"bleached sulphate/kraft market pulp, dried; ETSAP I07 Table 4"
+variant,bleached-slush,design-doc-6.2,bleached sulphate/kraft pulp delivered as slush to an integrated paper mill; ETSAP I07
+variant,ccs,design-doc-6.2,
+variant,ccs-retrofit,design-doc-6.2,
+variant,chp,design-doc-6.2,
+variant,condensing,design-doc-6.2,condensing steam turbine; ETSAP I07 Table 3
+variant,corex,design-doc-6.2,"COREX smelting reduction, first-generation; ETSAP I02"
+variant,corex-ccs,design-doc-6.2,COREX with CO2 capture and storage; ETSAP I02 Table 1
+variant,direct,design-doc-6.2,
+variant,dry,design-doc-6.2,
+variant,efficiency-base,design-doc-6.2,
+variant,efficiency-moderate,design-doc-6.2,
+variant,efficiency-strong,design-doc-6.2,
+variant,fluidised-bed,design-doc-6.2,"fluidised bed cement kiln, pilot scale; ETSAP I03 p.5"
+variant,geopolymer,design-doc-6.2,alkali-activated geopolymer binder; ETSAP I03 p.7
+variant,greenfield,design-doc-6.2,
+variant,high-pressure-roll,design-doc-6.2,high pressure grinding rolls for cement grinding; ETSAP I03 p.5
+variant,high-temp,design-doc-6.2,
+variant,hisarna,design-doc-6.2,
+variant,hisarna-ccs,design-doc-6.2,
+variant,hismelt,design-doc-6.2,"Hismelt smelting reduction, fed with iron ore and coal fines; ETSAP I02"
+variant,htgr,design-doc-6.2,
+variant,hyl,design-doc-6.2,HYL / Energiron direct reduction family; ETSAP I02 calls it Hylsa
+variant,inert-anode,design-doc-6.2,"carbon-free inert anode aluminium cell, pilot stage; ETSAP I10"
+variant,kraft-paperboard,design-doc-6.2,kraft paperboard paper machine; ETSAP I07
+variant,lepol,design-doc-6.2,Lepol travelling-grate kiln for semi-dry and semi-wet cement; ETSAP I03
+variant,lignin-extraction,design-doc-6.2,lignin precipitated from black liquor rather than burnt; ETSAP I07 Table 3
+variant,long-dry,design-doc-6.2,long dry rotary cement kiln with no preheater; ETSAP I03 Table 4
+variant,low-temp,design-doc-6.2,
+variant,medium-temp,design-doc-6.2,
+variant,midrex,design-doc-6.2,
+variant,motor-fuel,design-doc-6.2,black liquor gasification with motor fuel synthesis (BLGMF); ETSAP I07 Table 3
+variant,newsprint,design-doc-6.2,newsprint paper machine; ETSAP I07
+variant,oxyfuel,design-doc-6.2,
+variant,plasma,design-doc-6.2,plasma-heated blast furnace; ETSAP I02 p.4
+variant,post-combustion,design-doc-6.2,
+variant,pre-combustion,design-doc-6.2,
+variant,prebake,design-doc-6.2,centre worked Prebaked aluminium cell with point feeders and a scrubber; ETSAP I10
+variant,prebake-no-scrubber,design-doc-6.2,Prebaked aluminium cell without flue gas scrubbing; ETSAP I10 Table 1
+variant,preheat,design-doc-6.2,
+variant,recovery,design-doc-6.2,
+variant,recycled-slush,design-doc-6.2,"recovered paper pulp, slush; ETSAP I07"
+variant,retrofit,design-doc-6.2,
+variant,secondary,design-doc-6.2,production from scrap rather than from ore; ETSAP I10 secondary aluminium
+variant,semi-dry,design-doc-6.2,
+variant,semi-wet,design-doc-6.2,
+variant,smr,design-doc-6.2,
+variant,soderberg,design-doc-6.2,"Soderberg aluminium cell, anode paste baked in place; ETSAP I10"
+variant,soderberg-modified,design-doc-6.2,"modernised Soderberg cell - point feeders, dry paste, better casing; ETSAP I10"
+variant,soderberg-vss,design-doc-6.2,Vertical Stud Soderberg cell; ETSAP I10
+variant,tecnored,design-doc-6.2,Tecnored smelting reduction; ETSAP I02
+variant,tecnored-chp,design-doc-6.2,Tecnored smelting reduction with cogeneration; ETSAP I02
+variant,tes,design-doc-6.2,
+variant,tmp-dried,design-doc-6.2,"thermo-mechanical pulp, dried; ETSAP I07"
+variant,tmp-slush,design-doc-6.2,thermo-mechanical pulp delivered as slush; ETSAP I07
+variant,top-gas-recycling,design-doc-6.2,
+variant,top-gas-recycling-ccs,design-doc-6.2,
+variant,ulcored,design-doc-6.2,
+variant,ulcored-ccs,design-doc-6.2,
+variant,ulcowin,design-doc-6.2,
+variant,unbleached-dried,design-doc-6.2,"unbleached sulphate/kraft market pulp, dried; ETSAP I07"
+variant,unbleached-slush,design-doc-6.2,unbleached sulphate/kraft pulp delivered as slush; ETSAP I07
+variant,variable-speed,design-doc-6.2,
+variant,vertical-roller,design-doc-6.2,vertical roller mill for cement grinding; ETSAP I03 p.5
+variant,wet,design-doc-6.2,
+variant,wet-precalciner,design-doc-6.2,wet slurry dried in an integral dryer crusher then fed to a 2-stage precalciner kiln; ETSAP I03 Table 4
+yes-no,no,declared-here,
+yes-no,yes,declared-here,

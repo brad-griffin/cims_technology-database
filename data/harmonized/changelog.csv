@@ -1,0 +1,5 @@
+date,who,table,record-id,change,reason,note
+2026-08-27,claude,technology,,"populated 506 technologies: 1222 CIMS roster entries, 4 extractions, 35 placeholders",first population of the harmonized layer,
+2026-08-27,claude,tech-parameter,,evaluated 157 arithmetic-only formulas into values; normalised 73 rows from fraction to %,"the wide view needs a number to put costs on a per-capacity basis, and one unit convention per quantity",formulas referring to other parameters are left for the marimo template to resolve
+2026-08-27,claude,tech-flow,,1900 flow rows and 1071 constraint rows from UKERC 2013,UKERC extraction completed 2026-08-27; 84 distinct technologies plus 167 efficiency measures bucketed into 78 buckets,per-measure figures kept in ukerc_2013_usable-energy-database_rows.csv
+2026-08-27,claude,tech-parameter,,"1765 fact rows from ETSAP I01, EPA 2007, EPA 2017 and LBNL 2021",extractions completed 2026-08-27,
