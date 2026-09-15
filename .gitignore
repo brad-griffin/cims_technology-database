@@ -1,0 +1,37 @@
+# What this repo does NOT track.
+#
+# The data is the point here, so nothing that matches a data file is listed:
+# every .csv under data/ and design/, the generated review .md files and
+# technology-database-template.xlsx are all deliberately tracked, because a
+# reviewer needs to see what a pipeline run changed. What is listed below is
+# only what a tool writes for its own benefit and can regenerate from scratch.
+
+# Python bytecode and tool caches. Every script here is run straight from the
+# working tree (python data/harmonized/populate.py), so these appear on any run
+# and are pure noise in a diff.
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments. Nothing in the pipeline depends on where the interpreter lives.
+.venv/
+venv/
+env/
+*.egg-info/
+
+# marimo's scratch directory, written beside a notebook when one is run.
+__marimo__/
+
+# Excel and Word lock files: an open workbook leaves ~$name.xlsx beside it, and
+# committing one records a file that exists only while the app is open.
+~$*
+*.tmp
+
+# OS metadata.
+.DS_Store
+Thumbs.db
+desktop.ini
