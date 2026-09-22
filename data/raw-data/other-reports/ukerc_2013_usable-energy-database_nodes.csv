@@ -74,11 +74,11 @@ Steam reformer (Ammonia),steam-reformer_steam_efficiency-moderate,chemicals,stea
 Steam reformer (Hydrogen),steam-reformer_steam_efficiency-moderate,chemicals,steam-and-hot-water,steam-reformer-hydrogen,t
 CHP for mercury cell process (Chlorine),combined-cycle_efficiency-moderate,chemicals,steam-and-hot-water,chp-for-mercury-cell-process-chlorine,GJ
 Otswald process (Nitric acid),reactor_efficiency-moderate,chemicals,other-services,otswald-process-nitric-acid,t
-Meat - Heating systems,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-high-temp,meat-heating-systems,tonnes of mixed product
+Meat - Heating systems,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-low-temp,meat-heating-systems,tonnes of mixed product
 Dairy,management-system_efficiency-moderate,food-and-beverage,other-services,dairy,m3
 Dairy - Pasteuriser,pasteuriser_efficiency-moderate,food-and-beverage,other-services,dairy-pasteuriser,m3
 Dairy - Pasteuriser,pasteuriser_efficiency-strong,food-and-beverage,other-services,dairy-pasteuriser,m3
-Dairy,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-high-temp,dairy,m3
+Dairy,heat-pump_waste-heat_efficiency-strong,food-and-beverage,process-heat-low-temp,dairy,m3
 Dairy - CIP,cleaning-system_efficiency-strong,food-and-beverage,other-services,dairy-cip,m3
 Dairy-CIP,cleaning-system_efficiency-strong,food-and-beverage,other-services,dairy-cip,m3
 Dairy-CIP,cleaning-system_efficiency-moderate,food-and-beverage,other-services,dairy-cip,m3
@@ -90,8 +90,8 @@ Bakery - indirect ovens,oven_efficiency-moderate,food-and-beverage,other-service
 Bakery - direct ovens,oven_efficiency-moderate,food-and-beverage,other-services,bakery-direct-ovens,tonnes of mixed product
 Bakery -oven,oven_efficiency-moderate,food-and-beverage,other-services,bakery-oven,tonnes of mixed product
 Bakery - cooler,fan_electricity_efficiency-strong,food-and-beverage,machine-drive,bakery-cooler,tonnes of mixed product
-Bakery - indirect ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-high-temp,bakery-indirect-ovens,tonnes of mixed product
-Bakery - ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-high-temp,bakery-ovens,tonnes of mixed product
+Bakery - indirect ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-medium-temp,bakery-indirect-ovens,tonnes of mixed product
+Bakery - ovens,oven_waste-heat_efficiency-moderate,food-and-beverage,process-heat-medium-temp,bakery-ovens,tonnes of mixed product
 Undefined sector boilers,boiler_steam_efficiency-strong,food-and-beverage,steam-and-hot-water,undefined-sector-boilers,GJ
 Undefined sector,management-system_efficiency-strong,food-and-beverage,other-services,undefined-sector,£k
 Drying systems,dryer_waste-heat_efficiency-strong,food-and-beverage,drying-and-separation,drying-systems,£k

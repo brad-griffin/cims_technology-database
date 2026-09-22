@@ -45,11 +45,11 @@ def _(mo):
 
     **target** names what a row refers to when the parameter alone is not
     enough: the commodity for `flow-input` / `flow-output`, the species for
-    `emissions-factor`. Leave it blank otherwise.
+    `emissions-combustion`. Leave it blank otherwise.
 
     **Repeating a parameter.** A technology usually consumes more than one
     commodity. Use the custom rows: name several of them `flow-input` and give
-    each a different `target`. The same works for `emissions-factor` across
+    each a different `target`. The same works for `emissions-combustion` across
     species. Custom rows are keyed internally as `name@target`, so they no
     longer overwrite one another.
 
@@ -89,7 +89,6 @@ def _():
         ("temperature-min", "degC"),
         ("temperature-max", "degC"),
         ("pressure-output", "psig"),
-        ("efficiency-part-load", "fraction"),
         ("availability", "fraction"),
         ("load-range-min", "fraction"),
         ("degradation-rate", "fraction/yr"),
@@ -103,9 +102,10 @@ def _():
         ("cost-learning-rate", "fraction"),
         ("decommissioning-cost", "2018_USD"),
         # -- emissions ---------------------------------------------------
-        ("emissions-factor", "t/GJ"),
+        ("emissions-combustion", "t/GJ"),
         ("emissions-process", "t/t"),
-        ("emissions-indirect", "t/t"),
+        ("emissions-total", "t/t"),
+        ("emissions-captured", "t/t"),
         ("capture-rate", "fraction"),
         # -- deployment --------------------------------------------------
         ("year-available", "year"),
@@ -118,7 +118,7 @@ def _():
     STATE_OPTIONS = "existing, commercial, pilot, r-and-d, conceptual"
 
     # 'target' names the commodity or emission species a row refers to --
-    # required for flow-input / flow-output / emissions-factor, blank
+    # required for flow-input / flow-output / emissions-combustion, blank
     # otherwise.  'value-min' / 'value-max' hold a range where the source
     # gives one.
     COLUMNS = ["process", "technology", "parameter", "target", "unit",
@@ -257,7 +257,7 @@ def _():
         The key is unique within the form -- it is what the formula resolver
         indexes by.  The parameter name itself is fields['name'], so the same
         parameter may appear several times with different targets (one
-        flow-input row per commodity, one emissions-factor row per species)."""
+        flow-input row per commodity, one emissions-combustion row per species)."""
         entries = []
         for nm, _ in params:
             _f = dict(param_inputs[nm].value)
@@ -766,7 +766,7 @@ def _(PARAMETERS, STATE_OPTIONS, custom_inputs, mo, param_inputs):
         "state-of-development": "options: " + STATE_OPTIONS,
         "flow-input": "one row per commodity consumed; put the commodity in target",
         "flow-output": "one row per commodity produced; put the commodity in target",
-        "emissions-factor": "put the species (co2, ch4, n2o) in target",
+        "emissions-combustion": "put the species in target: co2, co2e or pfc. Scope 1 GHGs only - non-GHG species (nox, so2, pm) are out of scope and are not converted to CO2e",
         "capex": "record the cost basis in note: equipment / installed / total-plant / overnight",
     }
 
