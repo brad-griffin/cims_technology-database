@@ -22,3 +22,7 @@ kWh/t,GJ/t,0.0036,0,
 MWh/t,GJ/t,3.6,0,
 COP,%,100,0,"Coefficient of performance is useful energy out per unit in, so it is an efficiency; x100 puts it on the same % basis as a combustion efficiency. Values exceed 100% because the device moves heat rather than making it."
 MJ/t,GJ/t,0.001,0,
+kg,t,0.001,0,mass numerator; the denominator is carried unchanged
+g,t,0.000001,0,mass numerator
+MJ,GJ,0.001,0,energy numerator
+MWh,GJ,3.6,0,energy numerator

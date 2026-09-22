@@ -1,0 +1,173 @@
+old,new,reason
+adsorber_pressure-vacuum,adsorber_pressure-swing,discriminator cut short or garbled
+air-separation-unit_cryogenic-separation,capture-unit_cryogenic-condensation,equipment named the wrong device
+anaerobic-digester_digestion-upgrading,anaerobic-digester_biomethane-upgrading,discriminator cut short or garbled
+autothermal-reformer_reforming-full,autothermal-reformer_ccs-concentrated,capture or efficiency step moved to the modifier slot
+blast-furnace_top-gas,blast-furnace_top-gas-recycling,discriminator cut short or garbled
+boiler_electric-generation,boiler_electric-injection-steam,discriminator cut short or garbled
+boiler_high-solids,boiler_recovery-high-solids,discriminator cut short or garbled
+calciner_electrified-indirectly,calciner_indirect,discriminator cut short or garbled
+capture-unit_amine-post,capture-unit_amine,discriminator cut short or garbled
+capture-unit_cryogenic-post,capture-unit_cryogenic-flue-gas,discriminator cut short or garbled
+capture-unit_liquid-solvent,capture-unit_dac-liquid-solvent,discriminator cut short or garbled
+capture-unit_solid-sorbent-dac,capture-unit_dac-solid-sorbent,discriminator cut short or garbled
+chiller_packaged-air,chiller_packaged,discriminator cut short or garbled
+coke-oven_product-battery,coke-oven_by-product,discriminator cut short or garbled
+combined-cycle_efficiency-moderate,combustion-turbine_simple-cycle_efficiency-moderate,equipment named the wrong device
+combustion-turbine_efficiency-moderate,combustion-turbine_drive_efficiency-moderate,capture or efficiency step moved to the modifier slot
+combustion-turbine_engine-drive,combustion-turbine_drive,discriminator cut short or garbled
+combustion-turbine_engine-simple,combustion-turbine_simple-cycle,discriminator cut short or garbled
+combustion-turbine_high-efficiency,combustion-turbine_drive-high-efficiency,discriminator cut short or garbled
+compressor_boil-off,compressor_boil-off-recovery,discriminator cut short or garbled
+compressor_dehydration-compression,compressor_co2-dehydration,discriminator cut short or garbled
+compressor_electric-drive,compressor_electric-drive-centrifugal,discriminator cut short or garbled
+compressor_electric-drive-compression,compressor_electric-drive-reciprocating,discriminator cut short or garbled
+compressor_gas-turbine,compressor_gas-turbine-drive,discriminator cut short or garbled
+compressor_reciprocating-gas,compressor_gas-engine-drive,discriminator cut short or garbled
+compressor_station-waste,heat-recovery-unit_compressor-station-power,equipment named the wrong device
+converter_continuous-converting,converter_continuous,discriminator repeated the equipment
+conveyor_pit-crushing,conveyor_in-pit-crushing,discriminator cut short or garbled
+conveyor_place-truck,conveyor_overland,discriminator cut short or garbled
+digester_bayer-digestion,digester_bayer,discriminator repeated the equipment
+digester_biomass-fired,digester_bayer-biomass,discriminator cut short or garbled
+digester_electrified-bayer,digester_bayer-electric,discriminator cut short or garbled
+digester_hydrogen-bayer,digester_bayer-hydrogen,discriminator cut short or garbled
+direct-heater_dryer-curing,dryer_direct-fired,equipment named the wrong device
+direct-heater_electric-air,dryer_electric-air,equipment named the wrong device
+direct-heater_electric-heat,direct-heater_mine-air-electric,discriminator cut short or garbled
+direct-heater_fixed-flow,direct-heater_mine-air-fired,discriminator cut short or garbled
+direct-heater_fuel-space,space-heater_fuel-fired,equipment named the wrong device
+direct-heater_hot-press,press_hot-platen,equipment named the wrong device
+direct-heater_indirect-oven,oven_indirect-fired,equipment named the wrong device
+direct-heater_rotary-dryer,dryer_rotary-direct-fired,equipment named the wrong device
+direct-heater_rotary-fluid,dryer_rotary-fluid-bed,equipment named the wrong device
+direct-heater_spray-drum,dryer_spray-drum-belt,equipment named the wrong device
+direct-heater_tunnel-deck,oven_tunnel-deck,equipment named the wrong device
+direct-heater_veneer-strand,dryer_veneer-strand,equipment named the wrong device
+distillation-column_progressive-divided,distillation-column_progressive,discriminator cut short or garbled
+dryer_electric-heat,dryer_electric,discriminator cut short or garbled
+dryer_kiln-waste,dryer_kiln-waste-heat,discriminator cut short or garbled
+dryer_lime-kiln,kiln_lime-product-cooler,equipment named the wrong device
+dryer_mechanical-dewatering,press_dewatering,equipment named the wrong device
+electric-arc-furnace_plasma-heating,plasma-torch,equipment named the wrong device
+electric-arc-furnace_submerged,electric-arc-furnace_submerged-arc,discriminator cut short or garbled
+electrolysis-cell_low-temperature,electrolysis-cell_iron-electrowinning,discriminator cut short or garbled
+electrolysis-cell_membrane-chlor,electrolysis-cell_chlor-alkali-membrane,discriminator cut short or garbled
+electrolysis-cell_solid-oxide,electrolyzer_solid-oxide,equipment named the wrong device
+electrolysis-cell_water-low-temperature,electrolyzer_low-temperature,equipment named the wrong device
+evaporator_produced-water,evaporator_crystallizer,discriminator cut short or garbled
+furnace_efficiency-moderate,furnace_reheating_efficiency-moderate,capture or efficiency step moved to the modifier slot
+furnace_efficiency-strong,furnace_reheating_efficiency-strong,capture or efficiency step moved to the modifier slot
+furnace_electrified-hydrogen,furnace_anode-baking-electric,discriminator cut short or garbled
+furnace_fuel-fired,furnace_heat-treatment,discriminator cut short or garbled
+furnace_homogenizing-furnaces,furnace_homogenizing,discriminator repeated the equipment
+furnace_hybrid-electric,furnace_glass-hybrid-electric,discriminator cut short or garbled
+furnace_open-arc,electric-arc-furnace_open-arc-dc,equipment named the wrong device
+furnace_oxy-fuel,furnace_glass-oxy-fuel,discriminator cut short or garbled
+furnace_prebake-anode,furnace_anode-baking,discriminator cut short or garbled
+furnace_reheating-fuel,furnace_reheating,discriminator repeated the equipment
+gas-treatment-unit_advanced-acid,gas-treatment-unit_acid-gas-advanced,discriminator cut short or garbled
+gas-treatment-unit_claus-sulphur,gas-treatment-unit_claus,discriminator repeated the equipment
+gasifier_biomass-fired,kiln_lime-gasifier-fired,equipment named the wrong device
+gasifier_biomass-waste-methanol,gasifier_biomass-methanol,discriminator cut short or garbled
+gasifier_coal-petroleum,gasifier_coal-petroleum-coke,discriminator cut short or garbled
+grinding-mill_high-pressure,grinding-mill_high-pressure-rolls,discriminator cut short or garbled
+grinding-mill_stirred-fine,grinding-mill_stirred,discriminator repeated the equipment
+haul-truck_hydrogen-fuel,haul-truck_hydrogen-fuel-cell,discriminator cut short or garbled
+heat-recovery-unit_air-fuel,furnace_glass-regenerative,equipment named the wrong device
+heat-recovery-unit_continuous-kiln,kiln_lumber-continuous,equipment named the wrong device
+heat-recovery-unit_distillers-grain,dryer_distillers-grain,equipment named the wrong device
+heat-recovery-unit_high-efficiency,dryer_hood-heat-recovery,equipment named the wrong device
+heat-recovery-unit_induration-cooler,pellet-plant_cooler-heat-recovery,equipment named the wrong device
+heat-recovery-unit_oxy-fuel,reactor_fluid-catalytic-cracking-oxy-fuel,equipment named the wrong device
+heat-recovery-unit_parallel-flow,kiln_lime-parallel-flow,equipment named the wrong device
+heat-recovery-unit_regenerative-oxy-fuel-burner,furnace_regenerative-oxy-fuel,equipment named the wrong device
+heat-recovery-unit_regenerative-oxy-fuel-melting,melting-furnace_regenerative-oxy-fuel,equipment named the wrong device
+heat-recovery-unit_regenerative-pasteurizers,pasteurizer_regenerative,equipment named the wrong device
+heat-recovery-unit_regenerative-recuperative,furnace_regenerative-burners,equipment named the wrong device
+heat-recovery-unit_thermal-storage,thermal-storage_electric,equipment named the wrong device
+heat-recovery-unit_turbine,heat-recovery-unit_turbine-exhaust,discriminator cut short or garbled
+induction-heater_electric-heat,induction-heater_heat-treatment,discriminator cut short or garbled
+induction-heater_heating,induction-heater,discriminator repeated the equipment
+kiln_ccs-diffuse,kiln_dry-precalciner_ccs-diffuse,capture or efficiency step moved to the modifier slot
+kiln_dehumidification-heat,kiln_lumber-heat-pump,discriminator cut short or garbled
+kiln_dolomitic-lime,kiln_lime-dolomitic,discriminator cut short or garbled
+kiln_efficiency-moderate,kiln_dry-precalciner_efficiency-moderate,capture or efficiency step moved to the modifier slot
+kiln_efficiency-strong,kiln_dry-precalciner_efficiency-strong,capture or efficiency step moved to the modifier slot
+kiln_electric,kiln_ceramic-electric,discriminator cut short or garbled
+kiln_electrified-lime,kiln_lime-electric,discriminator cut short or garbled
+kiln_hydrogen-fired,kiln_ceramic-hydrogen,discriminator cut short or garbled
+kiln_oxy-fuel-lime,kiln_lime-oxy-fuel,discriminator cut short or garbled
+kiln_rotary-lime,kiln_lime-rotary,discriminator cut short or garbled
+kiln_rotary-lime-with-preheater,kiln_lime-rotary-preheater,discriminator cut short or garbled
+kiln_steam-thermal,kiln_lumber-steam,discriminator cut short or garbled
+leaching-vessel_high-pressure,leaching-vessel_high-pressure-acid,discriminator cut short or garbled
+leaching-vessel_situ,leaching-vessel_in-situ,discriminator cut short or garbled
+lighting_fluorescent-high,lighting_fluorescent-hid,discriminator cut short or garbled
+management-system_gas-driven,pneumatic-device_gas-driven,equipment named the wrong device
+melting-furnace_cupola-gas,melting-furnace_cupola,discriminator cut short or garbled
+melting-furnace_flash-smelting,smelting-vessel_flash,equipment named the wrong device
+mobile-equipment_diesel-non-road,mobile-equipment_diesel,discriminator repeated the equipment
+mobile-equipment_forklift,mobile-equipment_gas-forklift,discriminator cut short or garbled
+mobile-equipment_hydrogen-fuel,mobile-equipment_hydrogen-fuel-cell,discriminator cut short or garbled
+precalciner_dry-rotary,kiln_dry-precalciner,equipment named the wrong device
+preheater_ladle-preheating,preheater_ladle,discriminator repeated the equipment
+press_advanced-mechanical,press_dewatering-advanced,discriminator cut short or garbled
+press_compressed-air,compressor_air-system-management,equipment named the wrong device
+press_fourdrinier-gap,paper-machine_fourdrinier-gap,equipment named the wrong device
+press_high-pressure-food,press_high-pressure-processing,discriminator cut short or garbled
+press_pipeline-compression,compressor_hydrogen-pipeline,equipment named the wrong device
+process-improvement_ammonia-oxidation,reactor_nitric-acid,equipment named the wrong device
+process-improvement_blending-into,process-improvement_hydrogen-blending,discriminator cut short or garbled
+process-improvement_drag-reducing,process-improvement_drag-reducing-agent,discriminator cut short or garbled
+process-improvement_electric-annealing,furnace_lehr-electric,equipment named the wrong device
+process-improvement_gas-fired,furnace_lehr,equipment named the wrong device
+process-improvement_hydrogen-liquefaction,liquefaction-train_hydrogen,equipment named the wrong device
+process-improvement_landfill-gas,process-improvement_landfill-gas-recovery,discriminator cut short or garbled
+process-improvement_log-chip,process-improvement_log-thawing,discriminator cut short or garbled
+process-improvement_nitric-acid,reactor_adipic-acid,equipment named the wrong device
+process-improvement_thermal-n2o,reactor_thermal-n2o-destruction,equipment named the wrong device
+pulper_low-energy,pulper_refiner-low-energy,discriminator cut short or garbled
+pulper_thermomechanical-pulping,pulper_thermomechanical,discriminator repeated the equipment
+radio-frequency-heater_electromagnetic-heating,radio-frequency-heater_electromagnetic,discriminator repeated the equipment
+radio-frequency-heater_microwave-assisted,radio-frequency-heater_baking,discriminator cut short or garbled
+radio-frequency-heater_microwave-drying,radio-frequency-heater_drying,discriminator repeated the equipment
+reactor_alcohol-jet,reactor_alcohol-to-jet,discriminator cut short or garbled
+reactor_bio-ethanol,reactor_ethanol-to-ethylene,discriminator cut short or garbled
+reactor_co2-methanol,reactor_co2-to-methanol,discriminator cut short or garbled
+reactor_delayed,reactor_delayed-coking,discriminator cut short or garbled
+reactor_electrolytic-hydrogen,reactor_haber-bosch-electrolytic,discriminator cut short or garbled
+reactor_fixed-bed,reactor_hydrotreating-fixed-bed,discriminator cut short or garbled
+reactor_fluid-flexi,reactor_fluid-coking,discriminator cut short or garbled
+reactor_htgr,reactor_nuclear-htgr,discriminator cut short or garbled
+reactor_hydroprocessing-hydrocracking,reactor_hydroprocessing,discriminator repeated the equipment
+reactor_hydrotreating-oils,reactor_hydrotreating-lipids,discriminator cut short or garbled
+reactor_low-pressure,reactor_haber-bosch-low-pressure,discriminator cut short or garbled
+reactor_methanol-jet,reactor_methanol-to-jet,discriminator cut short or garbled
+reactor_methanol-olefins,reactor_methanol-to-olefins,discriminator cut short or garbled
+reactor_microreactor,reactor_nuclear-micro,discriminator cut short or garbled
+reactor_small-modular,reactor_nuclear-small-modular,discriminator cut short or garbled
+reciprocating-engine_electric-motor,motor_field-electric,equipment named the wrong device
+reciprocating-engine_gas-driven,reciprocating-engine_pump-drive,discriminator cut short or garbled
+resistance-heater_electric-furnace,resistance-heater_furnace,discriminator repeated the equipment
+resistance-heater_electric-space,resistance-heater_space,discriminator repeated the equipment
+roaster_electric-oven,oven_electric,equipment named the wrong device
+rolling-mill_efficiency-moderate,rolling-mill_hot_efficiency-moderate,capture or efficiency step moved to the modifier slot
+separator_hydrotransport-warm,separator_warm-water-extraction,discriminator cut short or garbled
+separator_membrane-separation,air-separation-unit_membrane,equipment named the wrong device
+separator_paraffinic-froth,separator_paraffinic-froth-treatment,discriminator cut short or garbled
+separator_paste-dry-stack,separator_paste-tailings,discriminator cut short or garbled
+separator_sensor-ore,separator_ore-sorting,discriminator cut short or garbled
+separator_thickened-dry-stack-tailings,separator_dry-stack-tailings,discriminator repeated the equipment
+shaft-furnace_ccs-concentrated,shaft-furnace_direct-reduction_ccs-concentrated,capture or efficiency step moved to the modifier slot
+shaft-furnace_fluidized-bed-direct-reduction,reactor_fluidized-bed-direct-reduction,equipment named the wrong device
+smelting-vessel_smelter-power,electrolysis-cell_power-modulation,equipment named the wrong device
+smelting-vessel_top-submerged,smelting-vessel_top-submerged-lance,discriminator cut short or garbled
+steam-cracker_electrified-furnace,steam-cracker_electric,discriminator repeated the equipment
+steam-cracker_rotodynamic-reactor,steam-cracker_rotodynamic,discriminator repeated the equipment
+steam-reformer_ccs-concentrated,steam-reformer_methane_ccs-concentrated,capture or efficiency step moved to the modifier slot
+steam-reformer_reforming-haber,steam-reformer_ammonia,discriminator cut short or garbled
+vapour-recompressor_distillation-mechanical,vapour-recompressor_distillation,discriminator repeated the equipment
+vapour-recompressor_mechanical,vapour-recompressor,discriminator repeated the equipment
+vapour-recompressor_mechanical-evaporation,vapour-recompressor_evaporation,discriminator repeated the equipment
+ventilation-unit_demand,ventilation-unit_mine-on-demand,discriminator cut short or garbled
