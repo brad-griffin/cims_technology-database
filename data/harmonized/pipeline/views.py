@@ -54,7 +54,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=Fals
     for a in records.archetypes:
         k = a["archetype"]
         exs = ex_by_arch.get(k, [])
-        src = sorted({e["source-id"] for e in exs}, key=records.rank)
+        src = sorted({e["source-id"] for e in exs}, key=lambda s: (records.rank(s), s))
         arows.append(dict(a, **{
             "applies-to": applies_to(k, service),
             "n-examples": len(exs),

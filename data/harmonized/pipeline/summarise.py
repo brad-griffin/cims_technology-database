@@ -54,7 +54,7 @@ def summarise(rows, records, keys, examples_by_id):
                         for r in rs)
             sids = sorted({r.get("source-id", "") for r in rs} |
                           {r.get("via-source-id", "") for r in rs if r.get("via-source-id")},
-                          key=records.rank)
+                          key=lambda s: (records.rank(s), s))
             per.append({"example": eid, "central": c, "all": allv, "rank": srank,
                         "sources": sids})
         with_c = [p for p in per if p["central"] is not None]
@@ -62,14 +62,14 @@ def summarise(rows, records, keys, examples_by_id):
             central = median(p["central"] for p in with_c)
             how = f"median of {len(with_c)}"
         elif with_c:
-            best = min(with_c, key=lambda p: p["rank"])
+            best = min(with_c, key=lambda p: (p["rank"], p["example"]))
             central = best["central"]
             how = f"top-ranked: {records.short(best['sources'][0]) if best['sources'] else ''}"
         else:
             central, how = None, "range only"
         vals = {round(x, 9) for p in per for x in p["all"]}
         sources = []
-        for p in sorted(per, key=lambda p: p["rank"]):
+        for p in sorted(per, key=lambda p: (p["rank"], p["example"])):
             for s in p["sources"]:
                 if s and s not in sources:
                     sources.append(s)
