@@ -1,7 +1,7 @@
 """Turn the Bataille 2017 dump into the structured raw-data extraction.
 
 Run from the repo root:   python data/raw-data/other-reports/bataille-extract.py
-Reads the output of bataille-dump.py; writes the files populate.py consumes.
+Reads the output of bataille-dump.py; writes the files the database build (data/harmonized/pipeline/extract.py) reads.
 
 What the two sheets actually offer, which is narrower than their size suggests:
 

@@ -4,16 +4,16 @@
 
 Files:
 
-- `design/build/accounting_example.py`: the worked example in section 3, runnable. It
+- `docs/reporting-accounting/accounting_example.py`: the worked example in section 3, runnable. It
   builds the flow ledger of section 4 and reports it under each config. Run from the
-  repo root: `python design/build/accounting_example.py [--ledger out.csv]`.
-- `design/reporting-configs/`: the configs used here: `resd.yaml` (energy),
+  repo root: `python docs/reporting-accounting/accounting_example.py [--ledger out.csv]`.
+- `docs/reporting-accounting/configs/`: the configs used here: `resd.yaml` (energy),
   `nir-economic.yaml` (emissions, the target layout), `ipcc-2006.yaml` (emissions by
   IPCC category, kept to show a second convention) and `cims-origin.yaml` (today's
   outputs, for regression).
-- `design/context/2510002901_databaseLoadingData.csv`: StatCan RESD, Canada 2019 (TJ),
+- `docs/context/2510002901_databaseLoadingData.csv`: StatCan RESD, Canada 2019 (TJ),
   used for the conventions in section 2.
-- `design/context/EN_GHG_Econ_Canada.xlsx`, sheet "24": ECCC's NIR emissions by
+- `docs/context/EN_GHG_Econ_Canada.xlsx`, sheet "24": ECCC's NIR emissions by
   economic category and IPCC sector, 2024; the target layout for emissions.
 
 ## 1. The problem
@@ -450,5 +450,5 @@ whoever uses a supply node, not emissions, and the new names keep them distinct 
 - Survey 2196 reporting guide (2025): https://www.statcan.gc.ca/en/statistical-programs/document/2196_D1_T1_V12
 - Survey 5047 guide: https://www.statcan.gc.ca/en/statistical-programs/document/5047_D2_V15
 - IPCC 2006 Vol. 3 ch. 4: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf
-- ECCC, GHG emissions by economic category and IPCC sector: `design/context/EN_GHG_Econ_Canada.xlsx`
+- ECCC, GHG emissions by economic category and IPCC sector: `docs/context/EN_GHG_Econ_Canada.xlsx`
 - Canada NIR 1990-2022 Part 2: https://unfccc.int/sites/default/files/resource/2024NIR%20-%20Part%202.pdf

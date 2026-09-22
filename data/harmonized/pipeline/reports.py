@@ -63,6 +63,23 @@ def mapping_review(records, hier, loader, stamp, views, ex_result):
             A(f"- removed `{b}`")
         A("")
 
+    served = {r["node"] for r in views["application"]}
+    in_scope = []
+    for r in records.annotations:
+        if r.get("note") == "not served by the database":
+            continue
+        for b in split_list(r["branches"]):
+            for n in hier.expand(b):
+                if n not in served and n not in [x for x, _ in in_scope]:
+                    in_scope.append((n, r["annotation"]))
+    A("## Hierarchy nodes no archetype serves\n")
+    A("Nodes an annotation covers that no row of `records/archetype-service.csv` reaches.\n")
+    if not in_scope:
+        A("None.\n")
+    for n, ann in in_scope:
+        A(f"- `{Hierarchy.short(n)}` ({ann})")
+    A("")
+
     un = [e for e in exs.values() if e["mapping"] == "unmapped"]
     A("## Examples not yet mapped\n")
     if not un:
@@ -171,8 +188,9 @@ def vocabulary_md(records, hier, views):
         A(f"| `{f}` | {r['kind']} | {_md(r['label'])} | {n[f]} |")
     A("")
     A("## Archetypes\n")
-    A("Status: *quantified* (an example carries numbers), *named* (a source names it "
-      "without numbers), *gap* (no example yet). `applies-to` lists hierarchy nodes; `*` "
+    A("Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examples "
+      "carry numbers none of which could be put on its basis), *named* (a source names it "
+      "without numbers), *gap* (no example yet). `applies to` lists hierarchy nodes; `*` "
       "stands for one segment, usually the sector.\n")
     last = None
     for a in arows:

@@ -22,7 +22,7 @@ def _(mo):
     parameter, target, unit, value, value-min, value-max, formula, reference,
     note`) by entering, editing and exporting technologies one at a time.
 
-    The parameter list mirrors `data/harmonized/parameter.csv`. Change that
+    The parameter list mirrors `data/harmonized/records/vocabulary/parameter.csv`. Change that
     dictionary and the `PARAMETERS` list below together, or extractions stop
     lining up with the database they feed.
 
@@ -70,7 +70,7 @@ def _():
     # ---- Configuration -----------------------------------------------------
     # The standard parameter set (and default units). Edit to change the form.
     PARAMETERS = [
-        # Mirrors the parameter dictionary in data/harmonized/parameter.csv.
+        # Mirrors the parameter dictionary in data/harmonized/records/vocabulary/parameter.csv.
         # Change that dictionary and this list together.
         # -- identity / status ------------------------------------------
         ("description", ""),

@@ -19,8 +19,7 @@ direct-heater_fired-process,<sector>.natural-gas.product.supply.direct-heat,cros
 direct-heater_fired-process,<sector>.petroleum-refining.service.direct-heat,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_furnace,<sector>.petroleum-refining.service.direct-heat,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_rotodynamic,<sector>.petroleum-refining.service.direct-heat,cross-sector/heat-high-temp: direct-heat leaves
-direct-heater_thermal-oil,<sector>.natural-gas.product.supply.direct-heat,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_thermal-oil,<sector>.petroleum-refining.service.direct-heat,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_thermal-oil,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
 fuel-cell_chp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 furnace_regenerative-oxy-fuel,<sector>.petroleum-refining.service.direct-heat,cross-sector/heat-high-temp: direct-heat leaves
 gasifier_biomass-chp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves

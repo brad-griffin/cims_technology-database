@@ -83,8 +83,15 @@ direct-heater_fired-process,heat-supply,<sector>.natural-gas.product.supply.dire
 direct-heater_fired-process,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_rotodynamic,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
-direct-heater_thermal-oil,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_thermal-oil,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_thermal-oil,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
 fuel-cell_chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves

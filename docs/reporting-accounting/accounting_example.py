@@ -1,8 +1,8 @@
-"""Worked example for design/reporting-accounting.md: 100 GJ of coal through an
+"""Worked example for docs/reporting-accounting/reporting-accounting.md: 100 GJ of coal through an
 integrated BF-BOF steel plant, recorded as a flow ledger and then reported under
-several accounting conventions, each defined by a config in design/reporting-configs/.
+several accounting conventions, each defined by a config in docs/reporting-accounting/configs/.
 
-Run from the repo root:  python design/build/accounting_example.py [--ledger out.csv]
+Run from the repo root:  python docs/reporting-accounting/accounting_example.py [--ledger out.csv]
 
 The ledger is what the note proposes CIMS should record after each year's
 equilibrium: every flow in or out of a process (a node/tech), with its energy and
@@ -20,7 +20,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-CONFIGS = ROOT / "design" / "reporting-configs"
+CONFIGS = Path(__file__).resolve().parent / "configs"
 
 # ---------------------------------------------------------------- assumptions
 EF = {  # kg CO2 per GJ (carbon content, expressed as CO2)

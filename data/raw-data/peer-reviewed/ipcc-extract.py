@@ -1,7 +1,7 @@
 """Turn the IPCC Table 11.3 dump into the structured raw-data extraction.
 
 Run from the repo root:   python data/raw-data/peer-reviewed/ipcc-extract.py
-Reads the output of ipcc-dump.py; writes the files populate.py consumes.
+Reads the output of ipcc-dump.py; writes the files the database build (data/harmonized/pipeline/extract.py) reads.
 
 Table 11.3 is a mitigation-option table, not an engineering table, and it has to
 be read as one:
