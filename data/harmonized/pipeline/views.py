@@ -1,0 +1,142 @@
+"""The outputs people read: archetype tables and the wide views.
+
+wide-archetype.csv has ONE ROW PER ARCHETYPE by construction: it is a pivot of
+archetype-parameter.csv, whose key is the archetype. Each parameter gets a
+central value, and `_low`, `_high` and `_n` beside it (low and high only where
+the examples spread). Emission species are separate columns. Every cost and
+intensity is per unit of the archetype's own product (`product-unit`), so a
+column holds CAD per tonne on a kiln row and CAD per GJ on a boiler row: never
+sort, average or chart a cost or intensity column across families.
+
+Archetypes no example quantifies are listed in archetype.csv (the coverage),
+not in the wide views (what the database knows).
+"""
+from __future__ import annotations
+
+from collections import defaultdict
+
+from .common import OUTPUT, split_list, write
+from .hierarchy import Hierarchy
+from .normalise import target_unit
+
+IDENT = ["archetype", "label", "family", "equipment", "discriminator", "modifiers", "type",
+         "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
+         "n-examples", "sources"]
+
+
+def unit_label(param: str, target: str) -> str:
+    u = target_unit(param, "PU", "")
+    if "PU" in u:
+        return u.replace("PU-per-yr", "(product-unit per yr)").replace("PU", "product-unit") \
+                .replace("kPU/yr", "kt/yr (or MW when product-unit is GJ)")
+    return u
+
+
+def applies_to(key, service):
+    return "; ".join(Hierarchy.short(s["branch"]) for s in service.get(key, []))
+
+
+def build(records, hier, examples, summaries, flow_summaries, include_empty=False):
+    service = defaultdict(list)
+    for s in records.service:
+        service[s["archetype"]].append(s)
+    ex_by_arch = defaultdict(list)
+    for e in examples.values():
+        if e.get("archetype"):
+            ex_by_arch[e["archetype"]].append(e)
+    fam_order = {f: i for i, f in enumerate(records.families)}
+    param_order = {p: i for i, p in enumerate(records.parameters)}
+
+    # ---- archetype.csv: every archetype, with what the database holds ------
+    with_data = {s["archetype"] for s in summaries} | {s["archetype"] for s in flow_summaries}
+    with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
+    arows = []
+    for a in records.archetypes:
+        k = a["archetype"]
+        exs = ex_by_arch.get(k, [])
+        src = sorted({e["source-id"] for e in exs}, key=records.rank)
+        arows.append(dict(a, **{
+            "applies-to": applies_to(k, service),
+            "n-examples": len(exs),
+            "sources": "; ".join(records.short(s) for s in src),
+            "status": ("quantified" if k in with_data else
+                       "not pooled" if k in with_facts else
+                       "named" if exs else "gap")}))
+    arows.sort(key=lambda r: (fam_order.get(r["family"], 99), r["equipment"], r["archetype"]))
+    write(OUTPUT / "archetype.csv",
+          IDENT + ["status", "trl-basis", "description", "examples-named", "note"], arows)
+
+    # ---- archetype-application.csv: the long view, every node served ---------
+    app = []
+    ann_of = {}
+    for r in records.annotations:
+        for b in split_list(r["branches"]):
+            for n in hier.expand(b):
+                ann_of.setdefault(n, r["annotation"])
+    for a in arows:
+        for s in service.get(a["archetype"], []):
+            for n in hier.expand(s["branch"]):
+                app.append({"archetype": a["archetype"], "family": a["family"],
+                            "node": n, "annotation": ann_of.get(n, ""),
+                            "via": s["branch"] if "*" in s["branch"] else "",
+                            "note": s.get("note", "")})
+    write(OUTPUT / "archetype-application.csv",
+          ["archetype", "family", "node", "annotation", "via", "note"], app)
+
+    # ---- wide-archetype.csv -----------------------------------------------------
+    by_arch = defaultdict(dict)
+    colkeys = set()
+    for s in summaries:
+        base = s["parameter"] + (f"_{s['target']}" if s.get("target") else "")
+        by_arch[s["archetype"]][base] = s
+        colkeys.add((s["parameter"], s.get("target", ""), base))
+    colkeys = sorted(colkeys, key=lambda x: (param_order.get(x[0], 99), x[1]))
+    spread = {b for (_, _, b) in colkeys
+              if any(by_arch[a][b]["low"] for a in by_arch if b in by_arch[a])}
+    cols, units, groups = list(IDENT), {}, {c: "identity" for c in IDENT}
+    for p, t, b in colkeys:
+        extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
+        cols += extra
+        for c in extra:
+            units[c] = "" if c.endswith("_n") else unit_label(p, t)
+            groups[c] = records.parameters.get(p, {}).get("parameter-class", "")
+    wide = []
+    for a in arows:
+        if a["archetype"] not in with_data and not include_empty:
+            continue
+        row = {c: a.get(c, "") for c in IDENT}
+        for b, s in by_arch.get(a["archetype"], {}).items():
+            row[b], row[f"{b}_n"] = s["central"], s["n"]
+            if b in spread:
+                row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
+        wide.append(row)
+    write(OUTPUT / "wide-archetype.csv", cols, wide)
+    write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit"],
+          [{"column": c, "group": groups.get(c, ""), "unit": units.get(c, "")} for c in cols],
+          quiet=True)
+
+    # ---- wide-flow.csv: central values per commodity --------------------------
+    fby = defaultdict(dict)
+    fcols = set()
+    for s in flow_summaries:
+        c = ("in_" if s["direction"] == "input" else "out_") + s["commodity"]
+        fby[s["archetype"]][c] = s["central"] or ""
+        fby[s["archetype"]][c + "_n"] = s["n"]
+        fcols.add(c)
+    fcols = sorted(fcols, key=lambda c: (not c.startswith("in_"), c))
+    fident = ["archetype", "label", "family", "equipment", "product-unit", "sources"]
+    flow_cols = fident + [x for c in fcols for x in (c, c + "_n")]
+    frows = []
+    for a in arows:
+        if a["archetype"] in fby:
+            row = {c: a.get(c, "") for c in fident}
+            row.update(fby[a["archetype"]])
+            frows.append(row)
+    write(OUTPUT / "wide-flow.csv", flow_cols, frows)
+    funits = {c: ("" if c in fident or c.endswith("_n") else "per product-unit") for c in flow_cols}
+    fgroups = {c: ("identity" if c in fident else "inputs" if c.startswith("in_") else "outputs")
+               for c in flow_cols}
+    return {"archetype": (IDENT + ["status"], arows),
+            "wide-archetype": (cols, wide, groups, units),
+            "wide-flow": (flow_cols, frows, fgroups, funits),
+            "application": app}

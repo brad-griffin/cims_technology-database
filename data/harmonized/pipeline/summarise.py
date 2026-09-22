@@ -1,0 +1,84 @@
+"""Layer 3: one summarised value set per archetype and parameter.
+
+The layer is deliberately lossy: it summarises what the examples say about an
+archetype rather than keeping every source's number side by side. The rule:
+
+  * central  the median of the examples' values when three or more examples
+             carry one; otherwise the value from the example whose source ranks
+             highest in records/reference/source-priority.csv (a value that came
+             through a compilation carries the compilation's rank);
+  * low/high the smallest and largest value any example gives, including the
+             ranges sources report themselves; written only where the values
+             actually spread;
+  * n        the number of examples behind the numbers, always shown, so thin
+             evidence is visible.
+
+Within one example, an as-reported value is preferred to one derived from it,
+and several rows for the same quantity (sizes, cases) count as one example
+whose value is their median. Carrier-specific differences show up as range;
+where a difference is large enough that a model would choose between the two,
+they are two archetypes, not one wide range.
+"""
+from __future__ import annotations
+
+from collections import defaultdict
+from statistics import median
+
+from .common import fnum
+
+
+def _example_values(rows):
+    """(central, [all values]) for one example's rows of one quantity."""
+    rep = [r for r in rows if r.get("value-type") != "derived"] or rows
+    cents = [fnum(r["value-norm"]) for r in rep if fnum(r["value-norm"]) is not None]
+    allv = [x for r in rows for x in (fnum(r["value-norm"]), fnum(r["value-min-norm"]),
+                                      fnum(r["value-max-norm"])) if x is not None]
+    return (median(cents) if cents else None), allv
+
+
+def summarise(rows, records, keys, examples_by_id):
+    """Rows (already normalised, excluded ones skipped) -> one summary per
+    (archetype, *keys, unit-norm)."""
+    groups = defaultdict(lambda: defaultdict(list))
+    for r in rows:
+        if r.get("excluded") or not r.get("unit-norm"):
+            continue
+        k = (r["archetype"],) + tuple(r.get(x, "") for x in keys) + (r["unit-norm"],)
+        groups[k][r["example-id"]].append(r)
+    out = []
+    for k, by_ex in groups.items():
+        per = []
+        for eid, rs in by_ex.items():
+            c, allv = _example_values(rs)
+            srank = min(records.rank(r.get("via-source-id") or r.get("source-id", ""))
+                        for r in rs)
+            sids = sorted({r.get("source-id", "") for r in rs} |
+                          {r.get("via-source-id", "") for r in rs if r.get("via-source-id")},
+                          key=records.rank)
+            per.append({"example": eid, "central": c, "all": allv, "rank": srank,
+                        "sources": sids})
+        with_c = [p for p in per if p["central"] is not None]
+        if len(with_c) >= 3:
+            central = median(p["central"] for p in with_c)
+            how = f"median of {len(with_c)}"
+        elif with_c:
+            best = min(with_c, key=lambda p: p["rank"])
+            central = best["central"]
+            how = f"top-ranked: {records.short(best['sources'][0]) if best['sources'] else ''}"
+        else:
+            central, how = None, "range only"
+        vals = {round(x, 9) for p in per for x in p["all"]}
+        sources = []
+        for p in sorted(per, key=lambda p: p["rank"]):
+            for s in p["sources"]:
+                if s and s not in sources:
+                    sources.append(s)
+        row = dict(zip(("archetype",) + tuple(keys) + ("unit",), k))
+        row.update({"central": "" if central is None else f"{central:.6g}",
+                    "low": f"{min(vals):.6g}" if len(vals) > 1 else "",
+                    "high": f"{max(vals):.6g}" if len(vals) > 1 else "",
+                    "n": len(per), "central-from": how,
+                    "sources": "; ".join(sources),
+                    "examples": "; ".join(sorted(by_ex))})
+        out.append(row)
+    return out
