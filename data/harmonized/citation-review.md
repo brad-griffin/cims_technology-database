@@ -39,38 +39,42 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 
 | source | rows | correction |
 |---|---:|---|
-| US EPA 2010 | 618 | the reachable edition is dated September 2012, not 2010; UKERC's 2010 date may refer to an earlier printing |
-| CT 2011 | 431 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
-| Ren 2009 | 369 | handle 1874/32318; the repository record misspells 'Coal' as 'Ccoal' |
-| Johansson et al 2012 | 261 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
-| McKane and Hasanbeigi 2010 | 225 | prepared by Lawrence Berkeley National Laboratory for UNIDO |
-| CT 2010a | 221 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
-| Link 2008 | 156 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
-| ECRA 2009 | 139 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
-| IISI 1998 | 132 | WorldCat OCLC 43244655 |
-| Martin et al 2000 | 120 | October 2000. UKERC's 'Elliott, N.' and 'Thorn, J.' are misspellings. Absorbed the duplicate short form 'Martin et al 2000b' on 2026-08-29 |
+| US EPA 2010 | 614 | the reachable edition is dated September 2012, not 2010; UKERC's 2010 date may refer to an earlier printing |
+| CT 2011 | 430 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
+| Ren 2009 | 345 | handle 1874/32318; the repository record misspells 'Coal' as 'Ccoal' |
+| Johansson et al 2012 | 251 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
+| CT 2010a | 220 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
+| McKane and Hasanbeigi 2010 | 218 | prepared by Lawrence Berkeley National Laboratory for UNIDO |
+| Link 2008 | 152 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
+| ECRA 2009 | 135 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
+| IISI 1998 | 131 | WorldCat OCLC 43244655 |
+| ETSAP I02 | 114 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
+| Martin et al 2000 | 114 | October 2000. UKERC's 'Elliott, N.' and 'Thorn, J.' are misspellings. Absorbed the duplicate short form 'Martin et al 2000b' on 2026-08-29 |
 | EC 2012 | 113 | BAT conclusions adopted 2012, formally published 2013 as JRC Reference Report EUR 25521 EN, ISBN 978-92-79-26475-7. Absorbed the duplicate short form 'IPPC 2012' on 2026-08-29, whose DOI the modeller supplied and which is kept here; the other manifestation of the same BREF is registered as 10.2791/97469 |
-| UKERC 2013 | 92 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
-| EPA 2007 | 74 | September 2007; no report number printed on the cover |
+| ETSAP I07 | 103 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
+| UKERC 2013 | 75 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
+| EPA 2007 | 73 | September 2007; no report number printed on the cover |
 | IPCC 2022 | 62 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
-| Sharp et al 1999 | 58 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
-| EPA 2017 | 50 | September 2017; NEPIS document key P101DBCT |
+| ETSAP I03 | 60 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
+| Sharp et al 1999 | 56 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
+| EPA 2017 | 44 | September 2017; NEPIS document key P101DBCT |
 | MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
-| ETSAP I01 | 32 | May 2010; authorship read from the printed VITO contact addresses |
 | Collodi 2010 | 31 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
-| Birat et al 2008 | 30 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | Premkumar and Rangaiah 2009 | 30 | confirmed on the author's NUS publication list; DOI not seen verbatim |
-| Worrell et al 1999 | 26 | sponsored by US EPA |
-| Stemmermann et al 2010 | 23 | fifth author H. Möller is missing from the UKERC citation; no DOI |
-| Novacem 2011 | 21 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
+| Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
+| ETSAP I01 | 28 | May 2010; authorship read from the printed VITO contact addresses |
+| Worrell et al 1999 | 25 | sponsored by US EPA |
+| Stemmermann et al 2010 | 22 | fifth author H. Möller is missing from the UKERC citation; no DOI |
+| Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | IIP 2012 | 19 | the ietd.iipnetwork.org URL UKERC cites is dead; the database is archived under iipinetwork.org. Launch year unconfirmed |
 | Motelica et al 2012 | 16 | second author's initials are O. S. L. |
 | Ploegmakers et al 2013 | 16 | title, journal and DOI confirmed; publisher page returned 403 so the author list is unconfirmed |
-| AEA 2010 | 15 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
+| AEA 2010 | 14 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
 | Saygin et al 2012 | 13 | Saygin is sole author of the thesis; Gielen, Draeck, Worrell and Patel are co-authors of individual chapters |
 | DECC 2013 | 11 | published 25 July 2013; no TSO imprint or ISBN shown on the gov.uk record |
 | van den Brink et al 2002 | 11 | UKERC's title omits 'and N2O'; UKERC also misspells de Bruijn as de Bruijin |
+| Nishihata, H. | 9 | the held copy prints 'IEA-ETSAP and IRENA - Technology Policy Brief E19 - January 2013' on page 1, confirmed by the modeller. IRENA's website posts what appears to be the same brief under E12; the document is the authority |
 | De Luna et al 2019 | 8 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'De Luna et al 2019'. Not independently confirmed against the publisher. |
 | CE Delft 2010 | 6 | December 2010 |
 | Duxon 2007 | 3 | UKERC drops the second 'Grant C.' duplication of Lukey's initials |
@@ -98,15 +102,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | U.S. Energy Information Administration | 0 | consumption results released 31 March 2021 |
 | U.S. Energy Information Administration | 0 | the full title adds 'An Overview' |
 | U.S. Energy Information Administration | 0 | released in staged batches during 2025 |
-| Van Wortswinkel, L., & Nijs, W. | 0 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
-| Cochez, E., & Nijs, W. | 0 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | Lako, P. | 0 | authorship confirmed from the printed 'send comments to Paul Lako, Author' line; month unverified |
 | Lako, P. | 0 | the only reachable edition is the January 2015 IEA-ETSAP/IRENA brief; a 2010 ETSAP-only E05 may exist but could not be verified |
 | Lako, P. | 0 | May 2010; the ETSAP original is dead and this is a mirror |
 | Simbolotti, G. | 0 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | Simbolotti, G. | 0 | January 2013; 'preparation of the paper was led by Giorgio Simbolotti (ENEA)' |
-| Nishihata, H. | 0 | the held copy prints 'IEA-ETSAP and IRENA - Technology Policy Brief E19 - January 2013' on page 1, confirmed by the modeller. IRENA's website posts what appears to be the same brief under E12; the document is the authority |
-| Hagberg Börjesson, M., & Ahlgren, E. O. | 0 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Fasihi et al 2019 | 0 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Fasihi et al 2019'. Not independently confirmed against the publisher. |
 | Fechner and Kray 2012 | 0 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Fechner and Kray 2012'. Not independently confirmed against the publisher. |
 | Fritzson and Berntsson 2006b | 0 | published online 2005 |
@@ -139,18 +139,18 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 
 | source | rows | why |
 |---|---:|---|
-| Bataille 2017 | 479 | no public record of this database release found; held locally, so the copy in hand is the authority |
-| CT 2010b | 91 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
-| IISI 1996 | 55 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
+| Bataille 2017 | 424 | no public record of this database release found; held locally, so the copy in hand is the authority |
+| CT 2010b | 90 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
+| IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
+| ETSAP I10 | 34 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
 | Carbon Trust 2004 | 28 | ECG092 not traced; only ECG066 'Steam generation costs' was found. Guide offline with no archived copy |
 | AEA 2000 | 17 | no matching AEA publication found; title, client and report number all unconfirmed |
-| NBF 2007 | 17 | not located; Net Balance ceased trading in 2014. Zeobond hosts a later E-Crete LCA by start2see |
+| NBF 2007 | 16 | not located; Net Balance ceased trading in 2014. Zeobond hosts a later E-Crete LCA by start2see |
 | Khatir et al 2012a | 8 | conference paper not found; the journal version is Khatir et al., Applied Energy 112 (2013) 918-927, doi 10.1016/j.apenergy.2013.02.034 |
 | Walenta and Gartner 2011 | 6 | not found in any reachable proceedings record; UKERC's short form says 2011 but its own text says the 2007 Montreal congress |
 | NEDO 2008 | 5 | no catalogue or archived copy located; the Kawasaki imprint is consistent with NEDO's headquarters |
 | Carbon Trust 2007 | 0 | code and title not confirmed; guide offline with no archived copy |
 | DoE 1984 | 0 | no catalogue record, report number or digitised copy found for this pre-web ETSU report |
-| Rosenberg, E. | 0 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
 | FLSmidth 2006 | 0 | neither the presentation nor an IEA workshop page could be located |
 | Walenta 2011 | 0 | UKERC records no title, so no specific document is identifiable |

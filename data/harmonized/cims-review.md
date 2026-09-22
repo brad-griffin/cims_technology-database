@@ -192,103 +192,237 @@ process names the mapper has no vocabulary for; a few are placeholders in CIMS i
 
 ## 7. Missing from CIMS
 
-125 technologies in the harmonized database have no CIMS counterpart.
+237 technologies in the harmonized database have no CIMS counterpart.
 These are the additions worth considering, and the reason the database is worth having.
 
-**86 with data already extracted** — these can be added to CIMS now:
+**220 with data already extracted** — these can be added to CIMS now:
 
-| Technology | Label | Source |
-| - | - | - |
-| `autothermal-reformer` |  |  |
-| `basic-oxygen-furnace_efficiency-strong` |  |  |
-| `basic-oxygen-furnace_electricity_efficiency-moderate` |  |  |
-| `blast-furnace_blast-furnace-gas_efficiency-moderate` |  |  |
-| `blast-furnace_coal_efficiency-moderate` |  |  |
-| `blast-furnace_efficiency-moderate` |  |  |
-| `blast-furnace_top-gas-recycling` |  |  |
-| `blast-furnace_top-gas-recycling-ccs` |  |  |
-| `blast-furnace_waste-heat_efficiency-moderate` |  |  |
-| `boiler_biomass` |  |  |
-| `boiler_biomass_post-combustion` |  |  |
-| `boiler_coal_recovery` |  |  |
-| `boiler_fossil` |  |  |
-| `boiler_natural-gas_post-combustion` |  |  |
-| `boiler_natural-gas_recovery` |  |  |
-| `boiler_oil_recovery` |  |  |
-| `boiler_steam_efficiency-moderate` |  |  |
-| `boiler_steam_efficiency-strong` |  |  |
-| `capture-unit_post-combustion` |  |  |
-| `caster_efficiency-strong` |  |  |
-| `cleaning-system_efficiency-moderate` |  |  |
-| `cleaning-system_efficiency-strong` |  |  |
-| `coke-oven_coke-oven-gas_efficiency-moderate` |  |  |
-| `coke-oven_coke_efficiency-moderate` |  |  |
-| `combined-cycle_biomass_chp` |  |  |
-| `combined-cycle_coal_ccs` |  |  |
-| `combined-cycle_coal_chp` |  |  |
-| `combined-cycle_efficiency-moderate` |  |  |
-| `combustion-turbine_biogas` |  |  |
-| `combustion-turbine_landfill-gas` |  |  |
-| `combustion-turbine_natural-gas_chp` |  |  |
-| `distillation-column_efficiency-strong` |  |  |
-| `dryer_coke_efficiency-moderate` |  |  |
-| `dryer_efficiency-moderate` |  |  |
-| `dryer_efficiency-strong` |  |  |
-| `dryer_steam_efficiency-moderate` |  |  |
-| `dryer_waste-heat_efficiency-moderate` |  |  |
-| `dryer_waste-heat_efficiency-strong` |  |  |
-| `electric-arc-furnace_electricity_efficiency-moderate` |  |  |
-| `electrolysis-cell_electricity_ulcowin` |  |  |
-| `fuel-cell_hydrogen_chp` |  |  |
-| `fuel-cell_natural-gas_chp` |  |  |
-| `furnace_preheat` |  |  |
-| `gasifier_chp` |  |  |
-| `heat-pump_waste-heat_efficiency-strong` |  |  |
-| `kiln_bat` |  |  |
-| `kiln_efficiency-moderate` |  |  |
-| `kiln_efficiency-strong` |  |  |
-| `kiln_oxyfuel` |  |  |
-| `kiln_post-combustion` |  |  |
-| `kiln_waste-heat_post-combustion` |  |  |
-| `management-system_efficiency-moderate` |  |  |
-| `management-system_efficiency-strong` |  |  |
-| `management-system_electricity_efficiency-moderate` |  |  |
-| `melting-furnace` |  |  |
-| `microturbine` |  |  |
-| `microturbine_natural-gas_chp` |  |  |
-| `oven` |  |  |
-| `oven_efficiency-moderate` |  |  |
-| `oven_electricity_efficiency-moderate` |  |  |
-| `oven_waste-heat_efficiency-moderate` |  |  |
-| `pasteuriser` |  |  |
-| `pasteuriser_efficiency-moderate` |  |  |
-| `pasteuriser_efficiency-strong` |  |  |
-| `press_electricity_efficiency-moderate` |  |  |
-| `press_steam_efficiency-moderate` |  |  |
-| `press_steam_efficiency-strong` |  |  |
-| `pulper_efficiency-moderate` |  |  |
-| `reactor_efficiency-moderate` |  |  |
-| `reciprocating-engine_natural-gas_chp` |  |  |
-| `rolling-mill_efficiency-moderate` |  |  |
-| `rolling-mill_waste-heat_efficiency-moderate` |  |  |
-| `shaft-furnace_midrex` |  |  |
-| `shaft-furnace_natural-gas_ulcored-ccs` |  |  |
-| `sinter-plant_efficiency-moderate` |  |  |
-| `sinter-plant_waste-heat_efficiency-strong` |  |  |
-| `smelting-vessel_hisarna` |  |  |
-| `steam-cracker_biomass` |  |  |
-| `steam-cracker_coal` |  |  |
-| `steam-cracker_methanol` |  |  |
-| `steam-cracker_naphtha` |  |  |
-| `steam-cracker_oil` |  |  |
-| `steam-cracker_post-combustion` |  |  |
-| `steam-cracker_steam_efficiency-moderate` |  |  |
-| `steam-reformer_steam_efficiency-moderate` |  |  |
-| `steam-turbine` |  |  |
+| Technology | Source |
+| - | - |
+| `anaerobic-digester_biomass` | ipcc_2022_001 |
+| `autothermal-reformer` | ukerc_2013_001 |
+| `autothermal-reformer_ammonia` | bataille_2017_001 |
+| `basic-oxygen-furnace_efficiency-moderate` | ukerc_2013_001 |
+| `basic-oxygen-furnace_efficiency-strong` | ukerc_2013_001 |
+| `blast-furnace_biomass` | iea_2024_001 |
+| `blast-furnace_ccs` | bataille_2017_001 |
+| `blast-furnace_coal` | bataille_2017_001 |
+| `blast-furnace_coke_top-gas-recycling-ccs` | bataille_2017_001 |
+| `blast-furnace_coke_ulcowin` | bataille_2017_001 |
+| `blast-furnace_efficiency-moderate` | ukerc_2013_001 |
+| `blast-furnace_hisarna` | bataille_2017_001 |
+| `blast-furnace_hisarna-ccs` | bataille_2017_001 |
+| `blast-furnace_hydrogen_ccs` | iea_2024_001 |
+| `blast-furnace_plasma` | etsap_2010_002 |
+| `blast-furnace_top-gas-recycling` | ukerc_2013_001 |
+| `blast-furnace_top-gas-recycling-ccs` | ukerc_2013_001 |
+| `boiler_ammonia` | iea_2024_001 |
+| `boiler_biomass` | epa_2007_001 |
+| `boiler_biomass_ccs` | ukerc_2013_001 |
+| `boiler_by-product-gas` | bataille_2017_001 |
+| `boiler_by-product-gas_ccs` |  |
+| `boiler_coal_recovery` | etsap_2010_001 |
+| `boiler_efficiency-strong` | ukerc_2013_001 |
+| `boiler_natural-gas_recovery` | etsap_2010_001 |
+| `boiler_oil_recovery` | etsap_2010_001 |
+| `calciner` | iea_2024_001 |
+| `calciner_ccs` | ipcc_2022_001 |
+| `calciner_coal` | bataille_2017_001 |
+| `calciner_steam` | bataille_2017_001 |
+| `capture-unit_by-product-gas_ccs` |  |
+| `capture-unit_direct` | ipcc_2022_001 |
+| `capture-unit_hydrogen` | bataille_2017_001 |
+| `capture-unit_methanol` | iea_2024_001 |
+| `caster_efficiency-strong` | ukerc_2013_001 |
+| `chiller_oil` | bataille_2017_001 |
+| `cleaning-system_efficiency-moderate` | ukerc_2013_001 |
+| `cleaning-system_efficiency-strong` | ukerc_2013_001 |
+| `clinker-cooler` | etsap_2010_003 |
+| `coke-oven_coal` | etsap_2010_002 |
+| `coke-oven_efficiency-moderate` | ukerc_2013_001 |
+| `combined-cycle_biogas_chp` | bataille_2017_001 |
+| `combined-cycle_biomass_chp` | ukerc_2013_001 |
+| `combined-cycle_by-product-gas_ccs` |  |
+| `combined-cycle_by-product-gas_chp` |  |
+| `combined-cycle_coal_ccs` | ukerc_2013_001 |
+| `combined-cycle_coal_chp` | ukerc_2013_001 |
+| `combined-cycle_efficiency-moderate` | ukerc_2013_001 |
+| `combined-cycle_hydrogen_chp` | bataille_2017_001 |
+| `combustion-turbine_biogas` | epa_2007_001 |
+| `combustion-turbine_by-product-gas_chp` | bataille_2017_001 |
+| `combustion-turbine_efficiency-moderate` |  |
+| `combustion-turbine_natural-gas_chp` | epa_2017_001 |
+| `compressor_efficiency-moderate` | ukerc_2013_001 |
+| `compressor_efficiency-strong` |  |
+| `converter_coal` | bataille_2017_001 |
+| `conveyor_efficiency-moderate` |  |
+| `conveyor_efficiency-strong` |  |
+| `digester_bayer` | etsap_2012_001 |
+| `digester_bleached-dried` | etsap_2015_001 |
+| `digester_bleached-slush` | etsap_2015_001 |
+| `digester_unbleached-dried` | etsap_2015_001 |
+| `digester_unbleached-slush` | etsap_2015_001 |
+| `direct-heater_ammonia` | bataille_2017_001 |
+| `direct-heater_biogas` | bataille_2017_001 |
+| `direct-heater_biomass` | bataille_2017_001 |
+| `direct-heater_ccs` | bataille_2017_001 |
+| `direct-heater_coal` | bataille_2017_001 |
+| `direct-heater_coke` | bataille_2017_001 |
+| `direct-heater_efficiency-base` | bataille_2017_001 |
+| `direct-heater_efficiency-strong` | bataille_2017_001 |
+| `direct-heater_electricity` | bataille_2017_001 |
+| `direct-heater_hydrogen` | bataille_2017_001 |
+| `direct-heater_retrofit` | bataille_2017_001 |
+| `direct-heater_solar` | bataille_2017_001 |
+| `distillation-column_efficiency-strong` | ukerc_2013_001 |
+| `dryer_efficiency-base` | bataille_2017_001 |
+| `dryer_efficiency-moderate` | ukerc_2013_001 |
+| `dryer_efficiency-strong` | ukerc_2013_001 |
+| `electric-arc-furnace_efficiency-moderate` | ukerc_2013_001 |
+| `electric-arc-furnace_electricity` | bataille_2017_001 |
+| `electric-arc-furnace_electricity_midrex` | bataille_2017_001 |
+| `electric-arc-furnace_electricity_preheat` | bataille_2017_001 |
+| `electric-arc-furnace_hydrogen` | bataille_2017_001 |
+| `electric-arc-furnace_natural-gas_midrex` | bataille_2017_001 |
+| `electric-arc-furnace_natural-gas_ulcored-ccs` | bataille_2017_001 |
+| `electrolyser_electricity` | ipcc_2022_001 |
+| `electrolysis-cell_efficiency-base` |  |
+| `electrolysis-cell_electricity_inert-anode` | etsap_2012_001 |
+| `electrolysis-cell_electricity_prebake` | etsap_2012_001 |
+| `electrolysis-cell_electricity_prebake-no-scrubber` | etsap_2012_001 |
+| `electrolysis-cell_electricity_soderberg` | etsap_2012_001 |
+| `electrolysis-cell_electricity_soderberg-modified` | etsap_2012_001 |
+| `electrolysis-cell_electricity_soderberg-vss` | etsap_2012_001 |
+| `electrolysis-cell_electricity_ulcowin` | ukerc_2013_001 |
+| `electrolysis-cell_hydrogen` | iea_2024_001 |
+| `fan_efficiency-moderate` | ukerc_2013_001 |
+| `fan_efficiency-strong` | ukerc_2013_001 |
+| `fermenter_biomass` | ipcc_2022_001 |
+| `fuel-cell_electricity` | ipcc_2022_001 |
+| `fuel-cell_hydrogen_chp` | ukerc_2013_001 |
+| `fuel-cell_natural-gas_chp` | epa_2017_001 |
+| `furnace_preheat` | ukerc_2013_001 |
+| `gasifier_black-liquor` | iea_2024_001 |
+| `gasifier_black-liquor_chp` | etsap_2015_001 |
+| `gasifier_black-liquor_motor-fuel` | etsap_2015_001 |
+| `gasifier_chp` | ukerc_2013_001 |
+| `gasifier_coal` | iea_2024_001 |
+| `gasifier_efficiency-base` | bataille_2017_001 |
+| `gasifier_natural-gas` | bataille_2017_001 |
+| `grinding-mill_electricity_high-pressure-roll` | etsap_2010_003 |
+| `grinding-mill_electricity_vertical-roller` | etsap_2010_003 |
+| `heat-pump` | iea_2024_001 |
+| `heat-pump_efficiency-strong` | ukerc_2013_001 |
+| `heat-pump_electricity_direct` | etsap_2013_002 |
+| `heat-pump_waste-heat` | etsap_2015_001 |
+| `heat-recovery-unit_steam` | etsap_2015_001 |
+| `heat-recovery-unit_waste-heat` | bataille_2017_001 |
+| `kiln_bat` | ukerc_2013_001 |
+| `kiln_biomass` | ipcc_2022_001 |
+| `kiln_ccs` | ukerc_2013_001 |
+| `kiln_efficiency-moderate` | ukerc_2013_001 |
+| `kiln_efficiency-strong` | ukerc_2013_001 |
+| `kiln_fluidised-bed` | etsap_2010_003 |
+| `kiln_hydrogen` | ipcc_2022_001 |
+| `kiln_lepol` | etsap_2010_003 |
+| `kiln_long-dry` | etsap_2010_003 |
+| `kiln_municipal-waste` | ipcc_2022_001 |
+| `kiln_preheat` | etsap_2010_003 |
+| `kiln_semi-wet` | etsap_2010_003 |
+| `kiln_waste-heat_ccs` | ukerc_2013_001 |
+| `kiln_wet` | etsap_2010_003 |
+| `kiln_wet-precalciner` | etsap_2010_003 |
+| `lighting_efficiency-base` |  |
+| `lighting_efficiency-moderate` |  |
+| `lighting_efficiency-strong` |  |
+| `management-system_efficiency-moderate` | ukerc_2013_001 |
+| `management-system_efficiency-strong` | ukerc_2013_001 |
+| `melting-furnace` | ukerc_2013_001 |
+| `melting-furnace_electricity` | bataille_2017_001 |
+| `melting-furnace_secondary` | etsap_2012_001 |
+| `microturbine` | epa_2007_001 |
+| `microturbine_natural-gas_chp` | epa_2017_001 |
+| `microwave-heater_electricity` | iea_2024_001 |
+| `motor_efficiency-base` | bataille_2017_001 |
+| `motor_efficiency-moderate` | ukerc_2013_001 |
+| `motor_efficiency-strong` | bataille_2017_001 |
+| `oven` | ukerc_2013_001 |
+| `oven_anode-baking` | etsap_2012_001 |
+| `oven_efficiency-moderate` | ukerc_2013_001 |
+| `paper-machine` | bataille_2017_001 |
+| `paper-machine_kraft-paperboard` | etsap_2015_001 |
+| `paper-machine_newsprint` | etsap_2015_001 |
+| `pasteuriser` | ukerc_2013_001 |
+| `pasteuriser_efficiency-moderate` | ukerc_2013_001 |
+| `pasteuriser_efficiency-strong` | ukerc_2013_001 |
+| `photochemical-heater_electricity` | iea_2024_001 |
+| `plasma-torch_electricity` | ipcc_2022_001 |
+| `precalciner` | bataille_2017_001 |
+| `press_efficiency-base` | bataille_2017_001 |
+| `press_efficiency-strong` | ukerc_2013_001 |
+| `press_steam` | bataille_2017_001 |
+| `process-improvement_efficiency-base` | bataille_2017_001 |
+| `process-improvement_efficiency-moderate` | bataille_2017_001 |
+| `pulper_efficiency-moderate` | ukerc_2013_001 |
+| `pulper_recycled-slush` | etsap_2015_001 |
+| `pulper_tmp-dried` | etsap_2015_001 |
+| `pulper_tmp-slush` | etsap_2015_001 |
+| `pump_efficiency-moderate` | ukerc_2013_001 |
+| `radio-frequency-heater_electricity` | iea_2024_001 |
+| `reactor_black-liquor_lignin-extraction` | etsap_2015_001 |
+| `reactor_efficiency-moderate` | ukerc_2013_001 |
+| `reactor_electricity` | ipcc_2022_001 |
+| `reactor_geopolymer` | etsap_2010_003 |
+| `reactor_hydrogen` | ipcc_2022_001 |
+| `reactor_hydrogen_ccs` | ipcc_2022_001 |
+| `reactor_methanol` | ipcc_2022_001 |
+| `reactor_natural-gas` | ipcc_2022_001 |
+| `reciprocating-engine_natural-gas_chp` | epa_2017_001 |
+| `rolling-mill_efficiency-moderate` | ukerc_2013_001 |
+| `rotary-compression-heater_electricity` | iea_2024_001 |
+| `shaft-furnace` | iea_2024_001 |
+| `shaft-furnace_ammonia` | iea_2024_001 |
+| `shaft-furnace_by-product-gas_ccs` | ipcc_2022_001 |
+| `shaft-furnace_ccs` | iea_2024_001 |
+| `shaft-furnace_coal` | bataille_2017_001 |
+| `shaft-furnace_hydrogen` | ipcc_2022_001 |
+| `shaft-furnace_hyl` | etsap_2010_002 |
+| `shaft-furnace_midrex` | ukerc_2013_001 |
+| `shaft-furnace_natural-gas` | iea_2024_001 |
+| `shaft-furnace_natural-gas_ulcored-ccs` | ukerc_2013_001 |
+| `shaft-furnace_ulcored-ccs` | bataille_2017_001 |
+| `sinter-plant_efficiency-moderate` | ukerc_2013_001 |
+| `sinter-plant_efficiency-strong` | ukerc_2013_001 |
+| `smelting-vessel_coal_corex` | etsap_2010_002 |
+| `smelting-vessel_coal_corex-ccs` | etsap_2010_002 |
+| `smelting-vessel_coal_hismelt` | etsap_2010_002 |
+| `smelting-vessel_coal_tecnored` | etsap_2010_002 |
+| `smelting-vessel_coal_tecnored-chp` | etsap_2010_002 |
+| `smelting-vessel_electricity` | ipcc_2022_001 |
+| `smelting-vessel_hisarna` | ukerc_2013_001 |
+| `steam-cracker_biomass` | ukerc_2013_001 |
+| `steam-cracker_coal` | ukerc_2013_001 |
+| `steam-cracker_efficiency-strong` | bataille_2017_001 |
+| `steam-cracker_hydrogen` | bataille_2017_001 |
+| `steam-cracker_methanol` | ukerc_2013_001 |
+| `steam-cracker_natural-gas` | bataille_2017_001 |
+| `steam-cracker_oil` | ukerc_2013_001 |
+| `steam-cracker_steam_ccs` | bataille_2017_001 |
+| `steam-reformer_ammonia` | bataille_2017_001 |
+| `steam-reformer_ammonia_ccs` | bataille_2017_001 |
+| `steam-reformer_hydrogen` | bataille_2017_001 |
+| `steam-turbine` | epa_2017_001 |
+| `steam-turbine_coal_chp` | bataille_2017_001 |
+| `steam-turbine_municipal-waste_chp` | bataille_2017_001 |
+| `steam-turbine_steam_back-pressure` | etsap_2015_001 |
+| `steam-turbine_steam_condensing` | etsap_2015_001 |
+| `ultraviolet-curer_electricity` | iea_2024_001 |
+| `ventilation-unit_efficiency-moderate` |  |
+| `ventilation-unit_efficiency-strong` |  |
 
-**39 placeholders** — named in the design document as in scope, no local source yet:
+**17 placeholders** — named in the design document as in scope, no local source yet:
 
-`arc-heater_electricity`, `boiler_biomass_ccs`, `boiler_biomethane`, `boiler_black-liquor_recovery`, `boiler_electricity_tes`, `direct-heater_biomass_low-temp`, `direct-heater_biomass_medium-temp`, `direct-heater_biomethane_medium-temp`, `direct-heater_hydrogen_low-temp`, `direct-heater_hydrogen_medium-temp`, `direct-heater_natural-gas_low-temp`, `direct-heater_natural-gas_medium-temp`, `furnace_ammonia`, `furnace_biomass`, `furnace_hydrogen`, `gasifier_biomass_chp`, `geothermal-well_geothermal`, `heat-pump_electricity_direct`, `heat-pump_electricity_medium-temp`, `heat-recovery-unit_waste-heat`, `heat-recovery-unit_waste-heat_direct`, `microwave-heater_electricity`, `photochemical-heater_electricity_high-temp`, `photochemical-heater_electricity_low-temp`, `plasma-torch_electricity`, `radio-frequency-heater_electricity_low-temp`, `radio-frequency-heater_electricity_medium-temp`, `reactor_nuclear_htgr`, `reactor_nuclear_smr`, `resistance-heater_electricity_high-temp`, `resistance-heater_electricity_low-temp`, `resistance-heater_electricity_medium-temp`, `rotary-compression-heater_electricity`, `solar-collector_solar`, `solar-collector_solar_low-temp`, `solar-collector_solar_medium-temp`, `solar-concentrator_solar`, `ultraviolet-curer_electricity`, `vapour-recompressor_electricity`
+`arc-heater_electricity`, `boiler_biomethane`, `boiler_black-liquor_recovery`, `boiler_electricity_tes`, `direct-heater_biomethane`, `furnace_ammonia`, `furnace_biomass`, `furnace_hydrogen`, `gasifier_biomass_chp`, `geothermal-well_geothermal`, `heat-recovery-unit_waste-heat_direct`, `reactor_nuclear_htgr`, `reactor_nuclear_smr`, `resistance-heater_electricity`, `solar-collector_solar`, `solar-concentrator_solar`, `vapour-recompressor_electricity`
 
 The placeholders are concentrated in exactly the places a 20-year-old technology set
 would be thin: electric and hydrogen heat (`boiler_electricity`, `boiler_hydrogen`,

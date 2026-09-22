@@ -17,3 +17,8 @@ lb/MMBtu,t/GJ,0.000429904274476353,0,"lb to t, then per-MMBtu to per-GJ"
 months,years,0.08333333333333333,0,
 Nm3/unit,m3/unit,1,0,normal cubic metres kept as m3; conditions noted per source
 kg/unit,t/unit,0.001,0,species is carried in the target column
+t/d,kt/yr,0.365,0,"365 operating days per year (user, 2026-09-10): a nameplate rating, deliberately not derated - capacity-factor carries availability separately, and 330 d/yr would count it twice."
+kWh/t,GJ/t,0.0036,0,
+MWh/t,GJ/t,3.6,0,
+COP,%,100,0,"Coefficient of performance is useful energy out per unit in, so it is an efficiency; x100 puts it on the same % basis as a combustion efficiency. Values exceed 100% because the device moves heat rather than making it."
+MJ/t,GJ/t,0.001,0,
