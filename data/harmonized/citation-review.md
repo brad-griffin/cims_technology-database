@@ -20,11 +20,11 @@ Each pair below was confirmed to be one document and merged on 2026-08-29. The r
 
 ## Renames applied
 
-Same document, different name. A citation names an organisation as it was at publication, and an id keys on that citation, so a later rename of the issuer does not move the id. The retired id is superseded, not deleted, and its replacement is registered in the manifest with the reason.
+Same document, different name. A citation names an organization as it was at publication, and an id keys on that citation, so a later rename of the issuer does not move the id. The retired id is superseded, not deleted, and its replacement is registered in the manifest with the reason.
 
 | rename | why |
 |---|---|
-| `nlr_2018_001 -> nrel_2018_001` | NREL has since been renamed the National Laboratory of the Rockies, so the live host is data.nlr.gov, but a citation names the organisation as it was at publication. The id keys on the name at publication, which is also how the files sheet had registered the download |
+| `nlr_2018_001 -> nrel_2018_001` | NREL has since been renamed the National Laboratory of the Rockies, so the live host is data.nlr.gov, but a citation names the organization as it was at publication. The id keys on the name at publication, which is also how the files sheet had registered the download |
 | `collodi-wheeler_2010_001 -> collodi_2010_001` | UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author; Collodi is sole author |
 
 ## Where a web check lost to the document in hand

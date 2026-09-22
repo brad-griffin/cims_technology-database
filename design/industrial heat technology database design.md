@@ -348,7 +348,7 @@ because a source needed them, not speculatively.
 `combustion-turbine`         `compressor`                 `converter`
 `conveyor`                   `cooling-tower`              `crusher`
 `digester`                   `direct-heater`              `distillation-column`
-`dryer`                      `electric-arc-furnace`       `electrolyser`
+`dryer`                      `electric-arc-furnace`       `electrolyzer`
 `electrolysis-cell`          `evaporator`                 `fan`
 `fermenter`                  `flotation-cell`             `fuel-cell`
 `furnace`                    `gasifier`                   `geothermal-well`
@@ -365,7 +365,7 @@ because a source needed them, not speculatively.
 `solar-collector`            `solar-concentrator`         `space-heater`
 `steam-cracker`              `steam-reformer`             `steam-turbine`
 `transesterification-unit`   `ultraviolet-curer`          `vapour-recompressor`
-`ventilation-unit`           `oven`                       `pasteuriser`
+`ventilation-unit`           `oven`                       `pasteurizer`
 `pulper`                     `cleaning-system`            `management-system`
 `autothermal-reformer`       `clinker-cooler`       `process-improvement`
 
@@ -373,7 +373,7 @@ The management-system term is the one entry that is not a device. Sources
 record organisational measures — energy management systems, preventative
 maintenance, general good practice — as competing options with their own costs
 and savings, and the naming convention has no other slot for them. Added
-2026-08-27 for the UKERC Sector and Subsector rows; oven, pasteuriser, pulper
+2026-08-27 for the UKERC Sector and Subsector rows; oven, pasteurizer, pulper
 and cleaning-system were added in the same pass for the food, drink and paper
 tables. The process-improvement term is the second non-device entry, added
 2026-09-10: the Bataille pulp-and-paper sheet has an "Other production steps
@@ -438,7 +438,7 @@ where a source treats them as the input to a competing technology.
 `hyl`                        `tecnored`                   `tecnored-chp`
 `hismelt`                    `plasma`
 `long-dry`                   `lepol`                      `wet-precalciner`
-`fluidised-bed`              `vertical-roller`            `high-pressure-roll`
+`fluidized-bed`              `vertical-roller`            `high-pressure-roll`
 `geopolymer`                 `bleached-dried`             `bleached-slush`
 `unbleached-dried`           `unbleached-slush`           `tmp-dried`
 `tmp-slush`                  `recycled-slush`             `newsprint`
@@ -464,7 +464,7 @@ a capex range of 98 to 320 USD2000 per t-yr into a single meaningless number.
 
 Seven more followed on the same day for ETSAP I03, which prices and rates the
 cement kiln types separately: long-dry, lepol, wet-precalciner and
-fluidised-bed name kiln configurations the brief's own tables distinguish by
+fluidized-bed name kiln configurations the brief's own tables distinguish by
 thermal energy, capacity and air flow; vertical-roller and high-pressure-roll
 are the two state-of-the-art cement grinding mills; geopolymer is the
 alkali-activated binder. clinker-cooler joined the equipment list in the same

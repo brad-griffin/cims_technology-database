@@ -285,7 +285,6 @@ These are the additions worth considering, and the reason the database is worth 
 | `electric-arc-furnace_hydrogen` | bataille_2017_001 |
 | `electric-arc-furnace_natural-gas_midrex` | bataille_2017_001 |
 | `electric-arc-furnace_natural-gas_ulcored-ccs` | bataille_2017_001 |
-| `electrolyser_electricity` | ipcc_2022_001 |
 | `electrolysis-cell_efficiency-base` |  |
 | `electrolysis-cell_electricity_inert-anode` | etsap_2012_001 |
 | `electrolysis-cell_electricity_prebake` | etsap_2012_001 |
@@ -295,6 +294,7 @@ These are the additions worth considering, and the reason the database is worth 
 | `electrolysis-cell_electricity_soderberg-vss` | etsap_2012_001 |
 | `electrolysis-cell_electricity_ulcowin` | ukerc_2013_001 |
 | `electrolysis-cell_hydrogen` | iea_2024_001 |
+| `electrolyzer_electricity` | ipcc_2022_001 |
 | `fan_efficiency-moderate` | ukerc_2013_001 |
 | `fan_efficiency-strong` | ukerc_2013_001 |
 | `fermenter_biomass` | ipcc_2022_001 |
@@ -322,7 +322,7 @@ These are the additions worth considering, and the reason the database is worth 
 | `kiln_ccs` | ukerc_2013_001 |
 | `kiln_efficiency-moderate` | ukerc_2013_001 |
 | `kiln_efficiency-strong` | ukerc_2013_001 |
-| `kiln_fluidised-bed` | etsap_2010_003 |
+| `kiln_fluidized-bed` | etsap_2010_003 |
 | `kiln_hydrogen` | ipcc_2022_001 |
 | `kiln_lepol` | etsap_2010_003 |
 | `kiln_long-dry` | etsap_2010_003 |
@@ -352,9 +352,9 @@ These are the additions worth considering, and the reason the database is worth 
 | `paper-machine` | bataille_2017_001 |
 | `paper-machine_kraft-paperboard` | etsap_2015_001 |
 | `paper-machine_newsprint` | etsap_2015_001 |
-| `pasteuriser` | ukerc_2013_001 |
-| `pasteuriser_efficiency-moderate` | ukerc_2013_001 |
-| `pasteuriser_efficiency-strong` | ukerc_2013_001 |
+| `pasteurizer` | ukerc_2013_001 |
+| `pasteurizer_efficiency-moderate` | ukerc_2013_001 |
+| `pasteurizer_efficiency-strong` | ukerc_2013_001 |
 | `photochemical-heater_electricity` | iea_2024_001 |
 | `plasma-torch_electricity` | ipcc_2022_001 |
 | `precalciner` | bataille_2017_001 |

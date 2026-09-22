@@ -101,7 +101,7 @@ EQUIPMENT = [
     (r"anneal|galvaniz|reheat|\bsoaking pit\b|\bfurnace\b|"
      r"\bburner\b|\bcalciner\b",                                  "furnace"),
     (r"\bovens?\b",                                                "oven"),
-    (r"pasteuris|\bpaust\b",                                       "pasteuriser"),
+    (r"pasteuris|\bpaust\b",                                       "pasteurizer"),
     (r"stock preparation|\bpulpers?\b|pulping",                    "pulper"),
     (r"\bcip\b|clean[- ]in[- ]place|\bcleaning\b",                 "cleaning-system"),
     (r"energy management|preventative maintenance|good practice|"

@@ -428,7 +428,7 @@ t(*E,"Cement kiln with post-combustion capture","prospective","Amine or solid-so
 t(*E,"Cement kiln efficiency measures, strong","efficient variant","The preheater, cooler and gas-path upgrades that together take a kiln line well below its current fuel use.",
   "coal, petroleum coke, natural gas, alternative fuels","9","commercial","extra preheater stages; high-efficiency grate cooler; low-pressure-drop gas path","kiln_efficiency-strong","","harmonized","Bucket, not a single device: it groups the incremental measures on this technology that the roster files under this variant (design doc s6.2, about 15% energy saving separating moderate from strong). The measures themselves are in the examples column.")
 t(*E,"Fluidized-bed kiln","alternative","Sinters clinker in a fluidized bed rather than a rotating kiln, at lower temperature.",
-  "coal, natural gas","6-7","assessed (demonstration scale; modelled in CIMS)","","kiln_fluidised-bed","Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed","CIMS","")
+  "coal, natural gas","6-7","assessed (demonstration scale; modelled in CIMS)","","kiln_fluidized-bed","Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed","CIMS","")
 t(*E,"Oxy-fuel kiln","prospective","Fires on oxygen and recycled flue gas, so the kiln gas is CO2-rich.",
   "coal, natural gas, oxygen","7","iea_2024_001 row 338","","kiln_oxyfuel","","iea_2024_001","Oxy-firing concentrates the kiln gas, so the capture plant is the one on cross-sector co2-capture-concentrated and is not repeated here; the air separation unit is the host-side cost.")
 t(*E,"Electrified or indirectly heated calciner","prospective","Calcines the meal with electric heat or an indirectly heated vessel, separating process CO2 from flue gas.",
@@ -642,7 +642,7 @@ t(*E,"Autothermal reformer","prospective","Partial oxidation with oxygen in one 
 t(*E,"Coal or petroleum-coke gasification","conventional","Partial oxidation of solid feed to syngas, then shift.",
   "coal, petroleum coke, oxygen","9","iea_2024_001 row 280","","gasifier_coal","Petroleum Refining.Hydrogen (petcoke gasification)","iea_2024_001; CIMS","")
 t(*E,"Water electrolysis, low temperature","alternative","Alkaline or PEM stacks splitting water with electricity.",
-  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyser_electricity","","iea_2024_001","")
+  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyzer_electricity","","iea_2024_001","")
 S="pulp-and-paper"
 E=(S,"wood-preparation")
 t(*E,"Drum debarker and disc chipper","conventional","A rotating drum strips bark by tumbling the logs; disc chippers cut them to chips for screening.",
@@ -764,7 +764,7 @@ t(*E,"High-pressure acid leaching","alternative","Autoclave leaching of laterite
 t(*E,"In-situ leaching","alternative","Leaches the orebody in place, with no mining or milling.",
   "electricity; lixiviant","9","iea_2024_001 row 129","","","Potash.Separated Product.Raw Product.Solution Mining","iea_2024_001; CIMS","")
 t(*E,"Potash crystallization and flotation","conventional","Separates potash by flotation, or crystallizes it from hot brine.",
-  "steam, electricity","9","commercial","","crystalliser","Potash.Separated Product.{Flotation, Crystalization}","CIMS","")
+  "steam, electricity","9","commercial","","crystallizer","Potash.Separated Product.{Flotation, Crystalization}","CIMS","")
 t(*E,"Direct lithium extraction","prospective","Sorbents or membranes recover lithium from brine without evaporation ponds.",
   "electricity, heat","6","iea_2024_001 row 127","","","","iea_2024_001","")
 E=(S,"product-drying")
@@ -967,7 +967,7 @@ t(*E,"Steam methane reformer with capture on the shift gas","alternative","Captu
 t(*E,"Coal or petroleum-coke gasification","conventional","Partial oxidation of solid feed to syngas, then shift.",
   "coal, petroleum coke, oxygen","9","iea_2024_001 row 280","","gasifier_coal","Petroleum Refining.Hydrogen (petcoke gasification)","iea_2024_001; CIMS","")
 t(*E,"Water electrolysis, low temperature","alternative","Alkaline or PEM stacks splitting water with electricity.",
-  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyser_electricity","","iea_2024_001","")
+  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyzer_electricity","","iea_2024_001","")
 E=(S,"produced-water-handling")
 t(*E,"Disposal well injection","conventional","Pumps produced and flowback water to a disposal formation.",
   "electricity (injection pumps)","9","commercial","","pump","","harmonized","")
@@ -1174,7 +1174,7 @@ t(*E,"Steam methane reformer with capture on the shift gas","alternative","Captu
 t(*E,"Autothermal reformer","prospective","Partial oxidation with oxygen in one vessel; suits high capture rates.",
   "natural gas, oxygen","5","iea_2024_001 row 276","Air Products Alberta net-zero hydrogen complex (Edmonton)","autothermal-reformer","","iea_2024_001","Commercial for syngas; the IEA TRL is for the CCUS-enabled hydrogen configuration.")
 t(*E,"Water electrolysis, low temperature","alternative","Alkaline or PEM stacks splitting water with electricity.",
-  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyser_electricity","","iea_2024_001","")
+  "electricity, water","9","iea_2024_001 rows 261, 263","","electrolyzer_electricity","","iea_2024_001","")
 t(*E,"Solid-oxide electrolysis","prospective","High-temperature steam electrolysis with higher electrical efficiency.",
   "electricity, steam","8","iea_2024_001 row 264","","","","iea_2024_001","")
 t(*E,"Methane pyrolysis","prospective","Splits methane into hydrogen and solid carbon, with no CO2 to capture.",

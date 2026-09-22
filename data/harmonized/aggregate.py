@@ -21,7 +21,7 @@ technologies and 1,365 applications. R1-R4 are design doc D11, R5-R7 are D12:
       equipment - blast furnaces, kilns, steam crackers - and every technology
       in it is reassigned to the end use that same equipment already has, in
       the same sector where possible.
-  R4  Names generalise: the carrier is dropped from an efficiency-bucket
+  R4  Names generalize: the carrier is dropped from an efficiency-bucket
       variant, and a temperature-tier suffix is dropped because the end use
       already carries the tier. Merged technologies keep every source's fact
       rows, distinguished by source-id; the source ranking decides which is
@@ -76,7 +76,7 @@ OTHER_SERVICES_TECH = {
 OTHER_SERVICES_EQUIPMENT = {
     "converter": "material-conversion",        # the steel BOF converter vessel
     "flotation-cell": "material-preparation",  # mineral beneficiation
-    "pasteuriser": "process-heat-low-temp",    # food, roughly 70-90 degC
+    "pasteurizer": "process-heat-low-temp",    # food, roughly 70-90 degC
     "management-system": "machine-drive",      # site energy management systems
     # bakery and food ovens run about 100-230 degC, so the band is medium,
     # not high: filing them high was the equipment-name guess D11 warns about
@@ -87,7 +87,7 @@ OTHER_SERVICES_EQUIPMENT = {
 }
 
 # The state of the roster before this pass, for the review file. populate.py
-# canonicalises names as it reads, so by the time `rewrite` runs the roster is
+# canonicalizes names as it reads, so by the time `rewrite` runs the roster is
 # already collapsed and cannot count what it started from.
 BASELINE = {"technologies": 506, "applications": 1365, "service-nodes": 402,
             "date": "2026-08-29"}
@@ -159,7 +159,7 @@ def canon_tech(name: str) -> str:
 
     Pure and order-independent: it must give the same answer whether it is
     called while loading the first extraction or the last, because the fact
-    rows and the roster row are canonicalised in different passes.
+    rows and the roster row are canonicalized in different passes.
     """
     name = (name or "").strip()
     if not name:
@@ -229,7 +229,7 @@ def split_name(name: str, vocab_path) -> tuple[str, str, str]:
         return equipment, p[1], "_".join(p[2:])
     if len(p) == 2:
         # a term that is a variant and not a carrier is a variant; anything
-        # unrecognised stays a carrier, which is where an unlisted term has
+        # unrecognized stays a carrier, which is where an unlisted term has
         # always gone and is what validate-names.py reports on
         if p[1] in v["variant"] and p[1] not in v["carrier"]:
             return equipment, "", p[1]
@@ -409,7 +409,7 @@ def rewrite(steps, nodes, techs, apps, facts, flows, cons):
         "|---|---|---|---|",
         f"| as at {BASELINE['date']}, before this pass | {BASELINE['technologies']} | "
         f"{BASELINE['applications']} | {BASELINE['service-nodes']} |",
-        f"| after R4, names generalised | {counts['before'][0]} | {counts['before'][1]} | "
+        f"| after R4, names generalized | {counts['before'][0]} | {counts['before'][1]} | "
         f"{counts['before'][2]} |",
         f"| after R1-R3, sectors and end uses | {counts['after'][0]} | {counts['after'][1]} | "
         f"{counts['after'][2]} |",
@@ -428,7 +428,7 @@ def rewrite(steps, nodes, techs, apps, facts, flows, cons):
         "asked to cover. `placeholder` is a gap the design document declared; "
         "`unquantified` is a name a source offered without a number.",
         "",
-        "## R4 - names generalised",
+        "## R4 - names generalized",
         "",
         "| general name | aggregates |",
         "|---|---|",

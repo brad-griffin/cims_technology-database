@@ -117,7 +117,7 @@ def resolve(sector: str, end_use: str, step: str, tech: str,
     if sector == "chemicals" and end_use == "material-conversion":
         eu = cw.CHEMICALS_CONVERSION.get(equipment, "other-chemicals")
         return sector, [eu], "chemicals conversion by equipment"
-    # After the sector rules: a reformer, electrolyser or gasifier the sector
+    # After the sector rules: a reformer, electrolyzer or gasifier the sector
     # does not claim is hydrogen production -- on site where the host sector has
     # an end use for it, and the merchant hydrogen sector otherwise.
     if end_use == "material-conversion" and equipment in cw.HYDROGEN_SUPPLY_EQUIPMENT:

@@ -177,7 +177,7 @@ HAND_NAME = {
     "Electric or heat-pump treating": "heat-pump_oil-treating",
     "Turboexpander at pressure let-down": "turboexpander_pressure-let-down",
     "Shaft-furnace direct reduction": "shaft-furnace_direct-reduction",
-    "Fluidized-bed direct reduction": "shaft-furnace_fluidised-bed-direct-reduction",
+    "Fluidized-bed direct reduction": "shaft-furnace_fluidized-bed-direct-reduction",
     "Pellet induration (straight-grate, grate-kiln)": "pellet-plant_induration",
     "Gas turbine with heat-recovery steam generator":
         "combustion-turbine_heat-recovery-steam-generator",

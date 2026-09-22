@@ -161,7 +161,7 @@ The **CSVs stay flat**: no banner, no band rows, one header line, sorted by
 sector then end use then name. They are the machine-readable form of the same
 view, and a script reading `wide-technology.csv` sees an ordinary rectangle.
 
-**Units are harmonised here and only here.** The long tables keep every value
+**Units are harmonized here and only here.** The long tables keep every value
 in the unit its source reported (§6.3); the wide view is where they are made
 comparable, which is a different job and a lossy one.
 
@@ -294,7 +294,7 @@ column, and a quantified row missing its declared basis is marked
 Extractions that predate the basis rules are working through that backlog;
 `check-data.py` reports its size per source rather than failing on it.
 - `discount-rate` — the *source study's* rate, recorded whenever a value was
-  levelised or inverted, so the model's own hurdle rate is not applied twice.
+  levelized or inverted, so the model's own hurdle rate is not applied twice.
 
 ---
 
@@ -441,7 +441,7 @@ doc **D11** and implemented in `aggregate.py` — rename `all-industry` to
 `cross-sector`, hold the generic services (machine drive, facility services,
 refrigeration, steam and hot water including CHP) once on that sector instead
 of repeating them under every sector, retire the `other-services` residual bin,
-and generalise technology names by dropping the carrier from an efficiency
+and generalize technology names by dropping the carrier from an efficiency
 bucket and the tier suffix from a name whose end use already carries the tier.
 
 Two things make this safe to re-run and safe to argue with:

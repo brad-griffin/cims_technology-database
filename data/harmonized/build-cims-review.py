@@ -148,7 +148,7 @@ def main() -> None:
               "compressor": "centrifugal vs rotary vs reciprocating vs screw",
               "conveyor": "belt vs screw vs apron",
               "kiln": "rotary preheat vs rotary preheat with internals",
-              "roaster": "flash vs fluidised bed vs hearth",
+              "roaster": "flash vs fluidized bed vs hearth",
               "converter": "Pierce-Smith vs top-blown rotary",
           }.get(k, "see `note` in cims-map.csv"))
            for k, v in fam.most_common(12)]))

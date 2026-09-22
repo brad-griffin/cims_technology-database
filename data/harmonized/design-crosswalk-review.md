@@ -55,7 +55,7 @@ Naming follows section 5: `-` within a component, `_` between. With the carrier 
 
 `adsorber`, `annealing-furnace`, `binder`, `coating-line`, `drilling-rig`, `flare`, `fracturing-fleet`, `gas-treatment-unit`, `haul-truck`, `heat-exchanger`, `hoist`, `liquefaction-train`, `mobile-equipment`, `paste-plant`, `photovoltaic-array`, `pickling-line`, `separator`, `turboexpander`, `well`, `wind-turbine`
 
-**369 discriminators** are not existing variant or carrier terms. Section 6.2 treats a new term as a modelling decision, so the options are to add them, to widen the variant list into a free discriminator, or to shorten the names.
+**368 discriminators** are not existing variant or carrier terms. Section 6.2 treats a new term as a modelling decision, so the options are to add them, to widen the variant list into a free discriminator, or to shorten the names.
 
 ## What adoption would change
 
@@ -81,7 +81,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `evaporator_efficiency-moderate` | `vapour-recompressor_mechanical-evaporation` | mechanical vapour recompression is the named efficient option on chemical recovery |
 | `paper-machine_kraft-paperboard` | `press_fourdrinier-gap` | the grade is dropped; the design table has one paper machine |
 | `paper-machine_newsprint` | `press_fourdrinier-gap` | the grade is dropped; the design table has one paper machine |
-| `pasteuriser_efficiency-strong` | `heat-recovery-unit_regenerative-pasteurizers` | the moderate and strong buckets both land here; the design table has one efficient variant for pasteurizing |
+| `pasteurizer_efficiency-strong` | `heat-recovery-unit_regenerative-pasteurizers` | the moderate and strong buckets both land here; the design table has one efficient variant for pasteurizing |
 | `refining-furnace_electricity` | `converter_continuous-converting` | an electric refining furnace has no design row |
 | `sinter-plant_ccs` | `sinter-plant_strand` | carries ccs; the design table holds capture as its own end use (co2-capture-concentrated / -diffuse), so the fold keeps the device and the capture moves |
 | `smelting-vessel_ccs` | `smelting-vessel_bath-reduction` | the oxygen-blown route concentrates the stream, so the capture plant is co2-capture-concentrated. carries ccs; the design table holds capture as its own end use (co2-capture-concentrated / -diffuse), so the fold keeps the device and the capture moves |
@@ -246,7 +246,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `electrolysis-cell_sodium-chlorate` | Sodium chlorate cell | conventional | chemicals/electrochemical-products | -- | 0 |
 | `electrolysis-cell_solid-oxide` | Solid-oxide electrolysis | prospective | hydrogen/centralized-hydrogen-production | -- | 0 |
 | `electrolysis-cell_sx-ew` | Atmospheric leaching with solvent extraction and electrowinning | conventional | non-ferrous-metals/hydrometallurgy | `leaching-vessel` | 0 |
-| `electrolysis-cell_water-low-temperature` | Water electrolysis, low temperature | alternative | hydrogen/centralized-hydrogen-production; oil-and-gas/upgrader-hydrogen; petroleum-refining/refinery-hydrogen | `electrolyser_electricity` | 2 |
+| `electrolysis-cell_water-low-temperature` | Water electrolysis, low temperature | alternative | hydrogen/centralized-hydrogen-production; oil-and-gas/upgrader-hydrogen; petroleum-refining/refinery-hydrogen | `electrolyzer_electricity` | 2 |
 | `evaporator_multiple-effect` | Multiple-effect evaporators | conventional | pulp-and-paper/chemical-recovery | `evaporator` | 0 |
 | `evaporator_produced-water` | Evaporators and crystallizers | alternative | oil-and-gas/produced-water-handling | -- | 0 |
 | `fan_activated-sludge` | Activated sludge aeration | conventional | pulp-and-paper/effluent-treatment | -- | 0 |
@@ -307,7 +307,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `haul-truck_trolley-assist` | Trolley-assist haulage | alternative | mining/extraction-and-haulage | -- | 0 |
 | `haul-truck_truck-and-shovel` | Truck-and-shovel mining | conventional | oil-and-gas/oil-sands-mining-and-extraction | -- | 0 |
 | `heat-exchanger_aseptic-uht` | Aseptic and UHT processing | alternative | food-and-beverage/thermal-processing | -- | 0 |
-| `heat-exchanger_steam-heated` | Steam-heated kettles, retorts and plate heat exchangers | conventional | food-and-beverage/thermal-processing | `cleaning-system`; `pasteuriser` | 14 |
+| `heat-exchanger_steam-heated` | Steam-heated kettles, retorts and plate heat exchangers | conventional | food-and-beverage/thermal-processing | `cleaning-system`; `pasteurizer` | 14 |
 | `heat-pump_hot-water` | Heat pump for hot water and clean-in-place | alternative | food-and-beverage/thermal-processing | -- | 0 |
 | `heat-pump_industrial` | Industrial heat pump | alternative | cross-sector/heat-low-temp | -- | 0 |
 | `heat-pump_oil-treating` | Electric or heat-pump treating | alternative | oil-and-gas/oil-and-gas-production | -- | 0 |
@@ -331,7 +331,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `heat-recovery-unit_parallel-flow` | Parallel-flow regenerative shaft kiln | efficient variant | non-metallic-minerals/lime-calcination | -- | 0 |
 | `heat-recovery-unit_regenerative-oxy-fuel-burner` | Regenerative or oxy-fuel burner furnace | efficient variant | cross-sector/heat-high-temp | `furnace_preheat` | 22 |
 | `heat-recovery-unit_regenerative-oxy-fuel-melting` | Regenerative or oxy-fuel melting | efficient variant | non-ferrous-metals/melting-casting-and-fabrication | -- | 0 |
-| `heat-recovery-unit_regenerative-pasteurizers` | Regenerative heat recovery on pasteurizers | efficient variant | food-and-beverage/thermal-processing | `heat-pump_efficiency-strong`; `management-system_efficiency-strong`; `pasteuriser_efficiency-moderate`; `pasteuriser_efficiency-strong` | 60 |
+| `heat-recovery-unit_regenerative-pasteurizers` | Regenerative heat recovery on pasteurizers | efficient variant | food-and-beverage/thermal-processing | `heat-pump_efficiency-strong`; `management-system_efficiency-strong`; `pasteurizer_efficiency-moderate`; `pasteurizer_efficiency-strong` | 60 |
 | `heat-recovery-unit_regenerative-recuperative` | Regenerative or recuperative burners | efficient variant | other-industry/metal-melting-and-heat-treatment | -- | 0 |
 | `heat-recovery-unit_thermal-storage` | Electric thermal energy storage | prospective | cross-sector/heat-high-temp; cross-sector/heat-medium-temp | `boiler_electricity_tes` | 0 |
 | `heat-recovery-unit_turbine` | Turbine waste-heat recovery | efficient variant | oil-and-gas/lng-liquefaction | -- | 0 |
@@ -348,7 +348,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `kiln_efficiency-strong` | Cement kiln efficiency measures, strong | efficient variant | cement/clinker-production | `clinker-cooler`; `kiln_efficiency-strong` | 27 |
 | `kiln_electric` | Electric kiln | alternative | non-metallic-minerals/ceramic-firing | -- | 0 |
 | `kiln_electrified-lime` | Electrified lime kiln | prospective | pulp-and-paper/lime-kiln | -- | 0 |
-| `kiln_fluidized-bed` | Fluidized-bed kiln | alternative | cement/clinker-production | `kiln_fluidised-bed` | 1 |
+| `kiln_fluidized-bed` | Fluidized-bed kiln | alternative | cement/clinker-production | `kiln_fluidized-bed` | 1 |
 | `kiln_hydrogen-fired` | Hydrogen-fired kiln | prospective | non-metallic-minerals/ceramic-firing | -- | 0 |
 | `kiln_lime_ccs-diffuse` | Lime kiln with post-combustion capture | prospective | non-metallic-minerals/lime-calcination; pulp-and-paper/lime-kiln | -- | 0 |
 | `kiln_oxy-fuel` | Oxy-fuel kiln | prospective | cement/clinker-production | -- | 0 |
@@ -495,7 +495,7 @@ Where the fold costs something, or where the target is not the obvious one.
 | `separator_warm-lime-softening` | De-oiling and warm lime softening | conventional | oil-and-gas/produced-water-handling | -- | 0 |
 | `shaft-furnace_ccs-concentrated` | Gas-based direct reduction with capture on the CO2 removal unit | alternative | iron-and-steel/ironmaking | `shaft-furnace_by-product-gas_ccs`; `shaft-furnace_ccs` | 2 |
 | `shaft-furnace_direct-reduction` | Shaft-furnace direct reduction | conventional | iron-and-steel/ironmaking | `shaft-furnace_ammonia`; `shaft-furnace_coal`; `shaft-furnace_hydrogen`; `shaft-furnace_hyl`; `shaft-furnace_midrex`; `shaft-furnace_natural-gas`; `shaft-furnace_natural-gas_ulcored-ccs`; `shaft-furnace_ulcored-ccs` | 113 |
-| `shaft-furnace_fluidised-bed-direct-reduction` | Fluidized-bed direct reduction | prospective | iron-and-steel/ironmaking | `shaft-furnace` | 0 |
+| `shaft-furnace_fluidized-bed-direct-reduction` | Fluidized-bed direct reduction | prospective | iron-and-steel/ironmaking | `shaft-furnace` | 0 |
 | `sinter-plant_efficiency-moderate` | Sinter plant efficiency measures, moderate | efficient variant | iron-and-steel/agglomeration | `sinter-plant_efficiency-moderate` | 42 |
 | `sinter-plant_efficiency-strong` | Sinter plant efficiency measures, strong | efficient variant | iron-and-steel/agglomeration | `sinter-plant_efficiency-strong` | 26 |
 | `sinter-plant_strand` | Sinter strand | conventional | iron-and-steel/agglomeration | `sinter-plant`; `sinter-plant_ccs` | 1 |

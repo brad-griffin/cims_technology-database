@@ -15,7 +15,7 @@ from __future__ import annotations
 # --- sectors -------------------------------------------------------------
 # The design table adds biofuels and oil-and-gas.  Nothing in the current
 # layer carries either: the rows that belong to them arrived through CIMS and
-# were parked on chemicals and other-industry, so they are recognised by the
+# were parked on chemicals and other-industry, so they are recognized by the
 # CIMS sector they came from.
 SECTOR_MAP = {s: s for s in (
     "cross-sector", "iron-and-steel", "non-ferrous-metals", "cement",
@@ -50,7 +50,7 @@ POWER_ONLY_EQUIPMENT = {"combined-cycle", "reciprocating-engine", "microturbine"
 # `electrolysis-cell` and `fuel-cell` are deliberately out: they have homes in
 # the chemicals, steel and power end uses, and sweeping them in here filed an
 # ammonia reformer and a steel electrowinning cell as merchant hydrogen.
-HYDROGEN_SUPPLY_EQUIPMENT = {"electrolyser", "steam-reformer", "autothermal-reformer",
+HYDROGEN_SUPPLY_EQUIPMENT = {"electrolyzer", "steam-reformer", "autothermal-reformer",
                              "gasifier"}
 # biogas and RNG are a biofuels product, not a site service (2026-09-14)
 RNG_EQUIPMENT = {"anaerobic-digester", "fermenter"}
@@ -109,7 +109,7 @@ FACILITY_SPLIT = {"space-heater": "space-heating", "heat-pump": "space-heating",
 STEP_END_USE = {
     ("iron-and-steel", "coke-oven"): "cokemaking",
     ("iron-and-steel", "sinter-plant"): "agglomeration",
-    ("iron-and-steel", "pelletisation"): "agglomeration",
+    ("iron-and-steel", "pelletization"): "agglomeration",
     ("iron-and-steel", "agglomeration"): "agglomeration",
     ("iron-and-steel", "blast-furnace"): "ironmaking",
     ("iron-and-steel", "direct-reduction"): "ironmaking",
@@ -307,7 +307,7 @@ CHEMICALS_CONVERSION = {
     "autothermal-reformer": "ammonia-and-methanol",
     "reactor": "ammonia-and-methanol",
     "electrolysis-cell": "electrochemical-products",
-    "electrolyser": "electrochemical-products",
+    "electrolyzer": "electrochemical-products",
     "gasifier": "ammonia-and-methanol",
 }
 
@@ -416,10 +416,10 @@ HAND_TECH = {
         "sits on compressor-drive-engine, where the processing row it matched moved"),
     "oven": ("direct-heater_tunnel-deck", ""),
     "oven_efficiency-moderate": ("heat-recovery-unit_oven-exhaust", ""),
-    "pasteuriser": ("heat-exchanger_steam-heated", ""),
-    "pasteuriser_efficiency-moderate":
+    "pasteurizer": ("heat-exchanger_steam-heated", ""),
+    "pasteurizer_efficiency-moderate":
         ("heat-recovery-unit_regenerative-pasteurizers", ""),
-    "pasteuriser_efficiency-strong":
+    "pasteurizer_efficiency-strong":
         ("heat-recovery-unit_regenerative-pasteurizers",
          "the moderate and strong buckets both land here; the design table has one "
          "efficient variant for pasteurizing"),

@@ -309,7 +309,6 @@ electric-arc-furnace_hydrogen,iron-and-steel,material-conversion,,iron-and-steel
 electric-arc-furnace_natural-gas_midrex,iron-and-steel,material-conversion,,iron-and-steel,ironmaking,end use,application
 electric-arc-furnace_natural-gas_ulcored-ccs,iron-and-steel,material-conversion,,iron-and-steel,ironmaking,end use,application
 electric-arc-furnace_oil,non-ferrous-metals,process-heat-high-temp,smelt,non-ferrous-metals,pyrometallurgy,process step,application; cims-map
-electrolyser_electricity,cross-sector,material-conversion,,hydrogen,centralized-hydrogen-production,"hydrogen production, no host sector",application
 electrolysis-cell_efficiency-base,non-ferrous-metals,electrochemical,electrolysis,non-ferrous-metals,aluminum-smelting,process step,application; cims-map
 electrolysis-cell_electricity,chemicals,electrochemical,,chemicals,electrochemical-products,end use; chemicals conversion by equipment,application; cims-map
 electrolysis-cell_electricity,cross-sector,material-conversion,,hydrogen,centralized-hydrogen-production,"hydrogen production, no host sector; CIMS branch",application; cims-map
@@ -328,6 +327,7 @@ electrolysis-cell_electricity_soderberg-modified,non-ferrous-metals,electrochemi
 electrolysis-cell_electricity_soderberg-vss,non-ferrous-metals,electrochemical,electrolysis,non-ferrous-metals,aluminum-smelting,process step,application
 electrolysis-cell_electricity_ulcowin,iron-and-steel,material-conversion,,iron-and-steel,ironmaking,end use; process step,application
 electrolysis-cell_hydrogen,chemicals,material-conversion,,chemicals,electrochemical-products,chemicals conversion by equipment,application
+electrolyzer_electricity,cross-sector,material-conversion,,hydrogen,centralized-hydrogen-production,"hydrogen production, no host sector",application
 evaporator,chemicals,drying-and-separation,chlor-alkali-evaporation,chemicals,other-chemicals,end use,application; cims-map
 evaporator,pulp-and-paper,drying-and-separation,evaporator,pulp-and-paper,chemical-recovery,process step,application; cims-map
 evaporator_efficiency-moderate,pulp-and-paper,drying-and-separation,evaporator,pulp-and-paper,chemical-recovery,process step,application; cims-map
@@ -450,7 +450,7 @@ kiln_dry,non-metallic-minerals,process-heat-high-temp,dry-process-rotary-kiln,no
 kiln_efficiency-base,non-metallic-minerals,process-heat-high-temp,kilns,non-metallic-minerals,lime-calcination,split by equipment,application; cims-map
 kiln_efficiency-moderate,cement,process-heat-high-temp,dry-kiln,cement,clinker-production,process step,application
 kiln_efficiency-strong,cement,process-heat-high-temp,,cement,clinker-production,end use,application
-kiln_fluidised-bed,cement,process-heat-high-temp,dry-kiln,cement,clinker-production,process step,application
+kiln_fluidized-bed,cement,process-heat-high-temp,dry-kiln,cement,clinker-production,process step,application
 kiln_hydrogen,cement,material-conversion,,cement,clinker-production,end use,application
 kiln_lepol,cement,process-heat-high-temp,semi-dry-kiln,cement,clinker-production,process step,application
 kiln_long-dry,cement,process-heat-high-temp,dry-kiln,cement,clinker-production,process step,application
@@ -497,11 +497,11 @@ paper-machine,pulp-and-paper,forming-and-finishing,Finishing process,pulp-and-pa
 paper-machine,pulp-and-paper,material-conversion,,pulp-and-paper,chemical-recovery,end use,application
 paper-machine_kraft-paperboard,pulp-and-paper,material-conversion,paper-machine,pulp-and-paper,paper-forming,process step,application
 paper-machine_newsprint,pulp-and-paper,material-conversion,paper-machine,pulp-and-paper,paper-forming,process step,application
-pasteuriser,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
-pasteuriser_efficiency-moderate,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
-pasteuriser_efficiency-strong,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
+pasteurizer,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
+pasteurizer_efficiency-moderate,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
+pasteurizer_efficiency-strong,food-and-beverage,process-heat-low-temp,,food-and-beverage,thermal-processing,end use,application
 pellet-plant,iron-and-steel,material-conversion,,iron-and-steel,ironmaking,end use,application
-pellet-plant,iron-and-steel,material-conversion,pelletisation,iron-and-steel,agglomeration,process step,application
+pellet-plant,iron-and-steel,material-conversion,pelletization,iron-and-steel,agglomeration,process step,application
 pellet-plant,non-ferrous-metals,process-heat-high-temp,roast,non-ferrous-metals,pyrometallurgy,process step,application; cims-map
 photochemical-heater_electricity,cross-sector,process-heat-high-temp,,cross-sector,heat-high-temp,end use,application
 photochemical-heater_electricity,cross-sector,process-heat-low-temp,,cross-sector,heat-low-temp,end use,application

@@ -85,7 +85,7 @@ UNRESOLVED = {
                    "CCS study",
 }
 
-# Ids left behind when a short form was canonicalised. They stay registered in
+# Ids left behind when a short form was canonicalized. They stay registered in
 # the manifest (it is append-only and the history is worth keeping) but they are
 # superseded, not pending.
 SUPERSEDED = {
@@ -259,7 +259,7 @@ def main() -> int:
             # The verified record supersedes whatever UKERC or the manifest said,
             # but only in the full-citation column: the string it replaces is kept
             # verbatim so any correction is visible rather than silent, and so a
-            # reader tracing a number back to UKERC still recognises the wording.
+            # reader tracing a number back to UKERC still recognizes the wording.
             as_cited = full
             full = compose(v)
             if v.get("verification-note"):

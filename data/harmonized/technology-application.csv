@@ -343,7 +343,6 @@ electric-arc-furnace_hydrogen,iron-and-steel_material-conversion,iron-and-steel,
 electric-arc-furnace_natural-gas_midrex,iron-and-steel_material-conversion,iron-and-steel,material-conversion,,bataille_2017_001,,,
 electric-arc-furnace_natural-gas_ulcored-ccs,iron-and-steel_material-conversion,iron-and-steel,material-conversion,,bataille_2017_001,,,
 electric-arc-furnace_oil,non-ferrous-metals_process-heat-high-temp_smelt,non-ferrous-metals,process-heat-high-temp,smelt,,,,
-electrolyser_electricity,cross-sector_material-conversion,cross-sector,material-conversion,,ipcc_2022_001,,,
 electrolysis-cell_efficiency-base,non-ferrous-metals_electrochemical_electrolysis,non-ferrous-metals,electrochemical,electrolysis,,,,
 electrolysis-cell_electricity,chemicals_electrochemical,chemicals,electrochemical,,bataille_2017_001,,,
 electrolysis-cell_electricity,chemicals_electrochemical_caustic-process,chemicals,electrochemical,caustic-process,,,,
@@ -369,6 +368,7 @@ electrolysis-cell_electricity_soderberg-vss,non-ferrous-metals_electrochemical_e
 electrolysis-cell_electricity_ulcowin,iron-and-steel_material-conversion,iron-and-steel,material-conversion,,ipcc_2022_001,,,
 electrolysis-cell_electricity_ulcowin,iron-and-steel_material-conversion_integrated-steelworks,iron-and-steel,material-conversion,integrated-steelworks,ukerc_2013_001,,,
 electrolysis-cell_hydrogen,chemicals_material-conversion,chemicals,material-conversion,,iea_2024_001,,,
+electrolyzer_electricity,cross-sector_material-conversion,cross-sector,material-conversion,,ipcc_2022_001,,,
 evaporator,chemicals_drying-and-separation_chlor-alkali-evaporation,chemicals,drying-and-separation,chlor-alkali-evaporation,,,,
 evaporator,pulp-and-paper_drying-and-separation_evaporator,pulp-and-paper,drying-and-separation,evaporator,,,,
 evaporator,pulp-and-paper_process-heat-high-temp_recovery-furnace,pulp-and-paper,process-heat-high-temp,recovery-furnace,,,,
@@ -504,7 +504,7 @@ kiln_efficiency-base,non-metallic-minerals_process-heat-high-temp_kilns,non-meta
 kiln_efficiency-moderate,cement_process-heat-high-temp_dry-kiln,cement,process-heat-high-temp,dry-kiln,ukerc_2013_001,,,
 kiln_efficiency-moderate,cement_process-heat-high-temp_kiln,cement,process-heat-high-temp,kiln,ukerc_2013_001,,,
 kiln_efficiency-strong,cement_process-heat-high-temp,cement,process-heat-high-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'cement-subsector'.
-kiln_fluidised-bed,cement_process-heat-high-temp_dry-kiln,cement,process-heat-high-temp,dry-kiln,etsap_2010_003,,,
+kiln_fluidized-bed,cement_process-heat-high-temp_dry-kiln,cement,process-heat-high-temp,dry-kiln,etsap_2010_003,,,
 kiln_hydrogen,cement_material-conversion,cement,material-conversion,,ipcc_2022_001,,,
 kiln_lepol,cement_process-heat-high-temp_semi-dry-kiln,cement,process-heat-high-temp,semi-dry-kiln,etsap_2010_003,,,
 kiln_long-dry,cement_process-heat-high-temp_dry-kiln,cement,process-heat-high-temp,dry-kiln,etsap_2010_003,,,
@@ -551,11 +551,11 @@ paper-machine,pulp-and-paper_material-conversion,pulp-and-paper,material-convers
 paper-machine,pulp-and-paper_material-conversion_Alternative production route: dry sheet forming,pulp-and-paper,material-conversion,Alternative production route: dry sheet forming,bataille_2017_001,,,
 paper-machine_kraft-paperboard,pulp-and-paper_material-conversion_paper-machine,pulp-and-paper,material-conversion,paper-machine,etsap_2015_001,,,
 paper-machine_newsprint,pulp-and-paper_material-conversion_paper-machine,pulp-and-paper,material-conversion,paper-machine,etsap_2015_001,,,
-pasteuriser,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteuriser'.
-pasteuriser_efficiency-moderate,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteuriser'.
-pasteuriser_efficiency-strong,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteuriser'.
+pasteurizer,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteurizer'.
+pasteurizer_efficiency-moderate,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteurizer'.
+pasteurizer_efficiency-strong,food-and-beverage_process-heat-low-temp,food-and-beverage,process-heat-low-temp,,ukerc_2013_001,,,Reassigned from other-services; the source filed it under 'dairy-pasteurizer'.
 pellet-plant,iron-and-steel_material-conversion,iron-and-steel,material-conversion,,iea_2024_001,,,
-pellet-plant,iron-and-steel_material-conversion_pelletisation,iron-and-steel,material-conversion,pelletisation,etsap_2010_002,,,
+pellet-plant,iron-and-steel_material-conversion_pelletization,iron-and-steel,material-conversion,pelletization,etsap_2010_002,,,
 pellet-plant,non-ferrous-metals_process-heat-high-temp_roast,non-ferrous-metals,process-heat-high-temp,roast,,,,
 photochemical-heater_electricity,cross-sector_process-heat-high-temp,cross-sector,process-heat-high-temp,,iea_2024_001,,,
 photochemical-heater_electricity,cross-sector_process-heat-low-temp,cross-sector,process-heat-low-temp,,iea_2024_001,,,

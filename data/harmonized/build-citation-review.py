@@ -45,7 +45,7 @@ MERGED = [
 # replacement is registered in the manifest with the reason.
 RENAMED = [
     ("nlr_2018_001 -> nrel_2018_001", "NREL has since been renamed the National Laboratory "
-     "of the Rockies, so the live host is data.nlr.gov, but a citation names the organisation "
+     "of the Rockies, so the live host is data.nlr.gov, but a citation names the organization "
      "as it was at publication. The id keys on the name at publication, which is also how the "
      "files sheet had registered the download"),
     ("collodi-wheeler_2010_001 -> collodi_2010_001", "UKERC's 'Wheeler, F.' is the "
@@ -93,7 +93,7 @@ def main() -> int:
         A(f"| {sf} | `{ids}` | {why} |")
     A("")
     A("## Renames applied\n")
-    A("Same document, different name. A citation names an organisation as it was at "
+    A("Same document, different name. A citation names an organization as it was at "
       "publication, and an id keys on that citation, so a later rename of the issuer does "
       "not move the id. The retired id is superseded, not deleted, and its replacement is "
       "registered in the manifest with the reason.\n")

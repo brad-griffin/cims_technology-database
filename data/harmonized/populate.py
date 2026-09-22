@@ -99,9 +99,9 @@ def read_csv(p: Path) -> list[dict]:
     """Read an extraction or map file, applying the aggregation rules to the
     technology name and the sector as the row is read.
 
-    This is deliberately the ONLY place a name is canonicalised. The names
+    This is deliberately the ONLY place a name is canonicalized. The names
     appear in a dozen places downstream -- roster rows, node-map keys, fact
-    rows, flow rows, the `tech not in techs` guards -- and canonicalising some
+    rows, flow rows, the `tech not in techs` guards -- and canonicalizing some
     of them would silently drop every fact whose key no longer matched its
     roster row."""
     with p.open(encoding="utf-8-sig", newline="") as fh:
@@ -765,7 +765,7 @@ def main() -> int:
     placeholders = 0
     for name, end_use in design_doc_roster():
         # the roster is parsed out of the design document, not read through
-        # read_csv, so it is the one name source the canonicaliser has to be
+        # read_csv, so it is the one name source the canonicalizer has to be
         # applied to by hand. The tier is read off the ORIGINAL name below,
         # before the suffix is dropped.
         raw, name = name, canon_tech(name)
@@ -830,7 +830,7 @@ def main() -> int:
             r["value"] = f"{v:.6g}"
             evaluated += 1
 
-    # ---- normalise 'fraction' to '%' across the whole layer ---------------
+    # ---- normalize 'fraction' to '%' across the whole layer ---------------
     # A repo-wide unit convention, not a change of value: 0.87 fraction and 87%
     # are the same number written two ways, and having both in one column is
     # how a reader mistakes one for the other.
@@ -878,7 +878,7 @@ def main() -> int:
     changelog.append({"date": TODAY, "who": "claude", "table": "tech-parameter",
                       "record-id": "",
                       "change": f"evaluated {evaluated} arithmetic-only formulas into values; "
-                                f"normalised {scaled} rows from fraction to %",
+                                f"normalized {scaled} rows from fraction to %",
                       "reason": "the wide view needs a number to put costs on a per-capacity "
                                 "basis, and one unit convention per quantity",
                       "note": "formulas referring to other parameters are left for the "
@@ -1030,7 +1030,7 @@ def main() -> int:
                               "same map; the run fails if one does not resolve"})
 
     print(f"evaluated {evaluated} arithmetic-only formulas into values")
-    print(f"normalised {scaled} rows from fraction to %")
+    print(f"normalized {scaled} rows from fraction to %")
     print("populated:")
     write_csv("process-step.csv", sorted(steps.values(), key=lambda r: (r["sector"], r["process-step"])))
     write_csv("service-node.csv", sorted(nodes.values(), key=lambda r: r["service-node"]))
