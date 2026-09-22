@@ -61,3 +61,43 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 | 2026-08-26 | D2: costs used as reported and flagged; no Canada adjustment. | current | [D] |
 | 2026-08-26 | D1: CHP on steam, with electricity a co-product. | current | [D] |
 | 2026-08-26 | One naming rule: `-` within a component, `_` between components. | current | [D] §5 |
+
+## Open
+
+Decisions the restructure left for review. The build's
+`data/harmonized/output/mapping-review.md` keeps the live lists.
+
+- **Candidate merges.** These archetype pairs look like the same option placed on
+  two end uses. Apply the test in design.md §2 to each. If one fails, fold it into
+  the other: repoint its examples in `source-example.csv`, then delete the row.
+  - `boiler_electric` and `boiler_electric-injection-steam`
+  - `combustion-turbine_heat-recovery-steam-generator` and `combined-cycle_cogeneration`
+  - `heat-recovery-unit_dryer` and `heat-recovery-unit_dryer-exhaust`
+  - `heat-recovery-unit_oven-dryer` and `heat-recovery-unit_oven-exhaust`
+  - `ventilation-unit_mine-on-demand` and `ventilation-unit_demand-controlled`
+  - `haul-truck_diesel-fleet` and `haul-truck_truck-and-shovel`
+  - `separator_paste-tailings` and `separator_dry-stack-tailings`
+  - `distillation-column_heat-integrated` and `distillation-column_progressive`
+  - `induction-heater_melting-holding` and `melting-furnace_induction`
+  - `dryer_rotary-direct-fired` and `dryer_rotary-fluid-bed`
+  - `pellet-plant_induration`, `pellet-plant_straight-grate` and `pellet-plant_grate-kiln`
+  - `leaching-vessel_heap-atmospheric` and `electrolysis-cell_sx-ew`
+  - `grinding-mill_vertical-roller` and `grinding-mill_high-pressure-rolls`
+  - `radio-frequency-heater_drying` and `radio-frequency-heater_vacuum-drying`
+- **Discriminator definitions.** All of them are seeded from the archetype labels
+  and marked `reviewed = no` in `records/vocabulary/discriminator.csv`.
+- **Examples to check.** The mapping review lists 147 seeded mappings where the
+  example's own name points elsewhere. Of these, 73 are Bataille rows whose device
+  was assumed at extraction. The rest are folds the retired crosswalk made with no
+  better archetype available, for example oven and management-system efficiency
+  measures on `heat-recovery-unit_oven-exhaust`, and dryer efficiency buckets on
+  `kiln_lumber-continuous`.
+- **Basis conflicts.** Many archetypes have examples priced in two units, per
+  tonne and per GJ of capacity. The minority rows are not pooled; the mapping
+  review counts them under *Not pooled*. Changing an archetype's `product-unit`
+  changes which side pools.
+- **Service links with nothing to narrow them.** Archetypes linked to every node
+  of a former end use. Remove the links that do not apply.
+- **Carriers carried over from folded names.** Some are implausible, such as
+  `nuclear` on `boiler_ccs-diffuse`. Review the `carriers` column of
+  `records/archetype.csv`.
