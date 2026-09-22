@@ -296,6 +296,9 @@ def product_unit(su):
 
 
 def main():
+    if (REC / "archetype.csv").exists() and "--force" not in sys.argv:
+        sys.exit("records/archetype.csv exists: the records are hand-edited now and this "
+                 "migration would overwrite them. It ran once, on 2026-09-23.")
     tt = read(DESIGN / "end-use-technology-table.csv")
     seu = {r["end-use"]: r for r in read(DESIGN / "sector-end-use-table.csv")}
     seu_order = [r["end-use"] for r in read(DESIGN / "sector-end-use-table.csv")]

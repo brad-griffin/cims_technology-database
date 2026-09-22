@@ -46,7 +46,7 @@ ROOT = HERE.parent.parent.parent
 # Its filename is hyphenated, so it is loaded by path.
 import importlib.util as _ilu  # noqa: E402
 _spec = _ilu.spec_from_file_location(
-    "cims_map", ROOT / "data" / "harmonized" / "build-cims-map.py")
+    "cims_map", ROOT / "compare" / "cims-model-inputs" / "build-cims-map.py")
 cims_map = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(cims_map)
 

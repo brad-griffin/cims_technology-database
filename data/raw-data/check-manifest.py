@@ -63,18 +63,15 @@ def main() -> int:
             fail["file recorded but missing"].append(str(path))
 
     used = collections.Counter()
-    for name in ("tech-parameter.csv", "tech-flow.csv", "tech-constraint.csv",
-                 "technology.csv", "technology-application.csv"):
-        for r in read(HARMONIZED / name):
+    for path in (HARMONIZED / "output" / "example-parameter.csv",
+                 HARMONIZED / "output" / "example-flow.csv",
+                 HARMONIZED / "output" / "example-constraint.csv",
+                 HARMONIZED / "records" / "source-example.csv"):
+        for r in read(path):
             for col in ("source-id", "via-source-id"):
-                # technology-application records every source that put a
-                # technology on a node, so the cell is a "; "-joined list there
-                # and a single id everywhere else. Reading it whole reported ten
-                # joined strings as unregistered sources and made this check
-                # exit non-zero on correct data.
-                for sid in (s.strip() for s in (r.get(col) or "").split(";")):
-                    if sid:
-                        used[sid] += 1
+                sid = (r.get(col) or "").strip()
+                if sid:
+                    used[sid] += 1
     for sid in sorted(set(used) - set(ids)):
         fail["used in the database but not registered"].append(
             f"{sid} ({used[sid]} rows)")

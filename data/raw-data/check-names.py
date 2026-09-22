@@ -1,15 +1,15 @@
-"""Check every name in the repo against the convention in the design document.
+"""Check the names in the extraction layer and the CIMS YAML tree.
 
-Run from the repo root:   python design/validate-names.py
+Run from the repo root:   python data/raw-data/check-names.py
 
-The convention (design doc section 5):
+The convention (docs/design.md, Naming):
     '-' joins words within a component.  '_' separates components.
 
 Source data files are author_year_slug[_source]; the trailing '_meta' of a
 sidecar is a reserved marker, stripped before components are counted.
-
-The controlled vocabularies are read from section 6.2 of the design document,
-which is the single source of truth -- edit the document, not this script.
+Extraction technology names are equipment_carrier_variant with the terms in
+data/raw-data/extraction-vocabulary.csv. Archetype keys are checked by the
+database build (data/harmonized/build.py), not here.
 """
 from __future__ import annotations
 
@@ -18,8 +18,8 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-DOC = ROOT / "design" / "industrial heat technology database design.md"
+ROOT = Path(__file__).resolve().parent.parent.parent
+VOCAB_CSV = ROOT / "data" / "raw-data" / "extraction-vocabulary.csv"
 STM = ROOT / "data" / "service-technology-map"
 RAW = ROOT / "data" / "raw-data"
 TEMPLATE = RAW / "tech_data_input_template.py"
@@ -36,12 +36,11 @@ CUSTOM_PARAMS = {
     "heat-output-type", "energy-carrier", "equipment", "variant",
     "cost-basis", "capacity-basis",
 }
-_VOCAB = ROOT / "data" / "harmonized" / "vocabulary.csv"
-if _VOCAB.exists():
+_PARAMS = ROOT / "data" / "harmonized" / "records" / "vocabulary" / "parameter.csv"
+if _PARAMS.exists():
     import csv as _csv
-    with _VOCAB.open(encoding="utf-8-sig", newline="") as _fh:
-        CUSTOM_PARAMS |= {r["term"] for r in _csv.DictReader(_fh)
-                          if r["list-name"] == "parameter"}
+    with _PARAMS.open(encoding="utf-8-sig", newline="") as _fh:
+        CUSTOM_PARAMS |= {r["parameter"] for r in _csv.DictReader(_fh)}
 # Directories under service-technology-map that group branches without being
 # branch segments themselves (design doc section 3).
 GROUPING_DIRS = {"general-services"}
@@ -71,21 +70,12 @@ def fail(kind: str, where: str, msg: str) -> None:
 
 
 def load_vocabularies() -> dict[str, set[str]]:
-    if not DOC.exists():
-        sys.exit(f"design document not found at {DOC}")
-    text = DOC.read_text(encoding="utf-8")
-    try:
-        section = text[text.index("### 6.2 Controlled vocabularies"):text.index("### 6.3")]
-    except ValueError:
-        sys.exit("could not locate section 6.2 in the design document")
-    vocab: dict[str, set[str]] = {}
-    parts = re.split(r"\*\*(Equipment|Carrier|Variant)\*\*", section)
-    for i in range(1, len(parts), 2):
-        name, body = parts[i].lower(), parts[i + 1]
-        vocab[name] = {t for t in re.findall(r"`([^`]+)`", body) if TOKEN.match(t)}
-    missing = {"equipment", "carrier", "variant"} - vocab.keys()
-    if missing:
-        sys.exit(f"vocabularies not found in section 6.2: {sorted(missing)}")
+    if not VOCAB_CSV.exists():
+        sys.exit(f"extraction vocabulary not found at {VOCAB_CSV}")
+    vocab: dict[str, set[str]] = {"equipment": set(), "carrier": set(), "variant": set()}
+    with VOCAB_CSV.open(encoding="utf-8-sig", newline="") as fh:
+        for r in csv.DictReader(fh):
+            vocab.setdefault(r["list"], set()).add(r["term"])
     return vocab
 
 

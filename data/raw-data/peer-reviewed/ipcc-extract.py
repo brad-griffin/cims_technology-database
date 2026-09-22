@@ -68,7 +68,7 @@ STEM = "ipcc_2022_ar6-wgiii-chapter11"
 SOURCE_ID = "ipcc_2022_001"
 
 _spec = _ilu.spec_from_file_location(
-    "cims_map", ROOT / "data" / "harmonized" / "build-cims-map.py")
+    "cims_map", ROOT / "compare" / "cims-model-inputs" / "build-cims-map.py")
 cims_map = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(cims_map)
 

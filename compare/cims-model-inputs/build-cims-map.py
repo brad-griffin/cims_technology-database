@@ -22,7 +22,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
-DOC = ROOT / "design" / "industrial heat technology database design.md"
+VOCAB = ROOT / "data" / "raw-data" / "extraction-vocabulary.csv"
 
 # --- carrier detection: first match wins, so order matters -----------------
 CARRIER = [
@@ -229,13 +229,11 @@ SECTOR = {
 
 
 def vocabularies() -> dict[str, set[str]]:
-    text = DOC.read_text(encoding="utf-8")
-    section = text[text.index("### 6.2 Controlled vocabularies"):text.index("### 6.3")]
-    tok = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
-    out: dict[str, set[str]] = {}
-    parts = re.split(r"\*\*(Equipment|Carrier|Variant)\*\*", section)
-    for i in range(1, len(parts), 2):
-        out[parts[i].lower()] = {t for t in re.findall(r"`([^`]+)`", parts[i + 1]) if tok.match(t)}
+    """The extraction-name vocabularies (equipment, carrier, variant)."""
+    out: dict[str, set[str]] = {"equipment": set(), "carrier": set(), "variant": set()}
+    with VOCAB.open(encoding="utf-8-sig", newline="") as fh:
+        for r in csv.DictReader(fh):
+            out.setdefault(r["list"], set()).add(r["term"])
     return out
 
 

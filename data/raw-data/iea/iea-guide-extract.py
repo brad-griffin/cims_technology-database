@@ -40,7 +40,7 @@ SOURCE_ID = "iea_2024_001"
 YEARS = [2020, 2021, 2022, 2023, 2024]
 
 _spec = _ilu.spec_from_file_location(
-    "cims_map", ROOT / "data" / "harmonized" / "build-cims-map.py")
+    "cims_map", ROOT / "compare" / "cims-model-inputs" / "build-cims-map.py")
 cims_map = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(cims_map)
 
