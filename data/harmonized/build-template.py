@@ -70,7 +70,8 @@ LISTS: dict[str, list[str]] = {
     "constraint-basis": ["of-baseline-stock", "of-new-sales", "of-sector-output", "absolute"],
     "yes-no": ["yes", "no"],
     "confidence": ["high", "medium", "low"],
-    "status": ["placeholder", "draft", "review", "final", "superseded"],
+    "status": ["placeholder", "unquantified", "draft", "review", "final",
+               "superseded"],
 }
 
 # --- table definitions ---------------------------------------------------
@@ -141,6 +142,13 @@ table("technology-application", "link",
        ("end-use", "end-use", "Denormalised from the service node, for reading."),
        ("process-step", None, "Denormalised from the service node, for reading."),
        ("source-id", "source-id", "Which source places the technology at this node."),
+       ("reported-sectors", None,
+        "For a generic end use held once on cross-sector (aggregate.py, R2): the sectors the "
+        "sources actually reported it for, semicolon separated. Keeps the collapse reversible."),
+       ("reported-steps", None,
+        "For the same rows: the process steps the sources named, semicolon separated. These are "
+        "source wording (motor size bands, 'CHP plants'), not a controlled vocabulary, which is "
+        "why they do not survive as process-step."),
        ("note", None, "")])
 
 table("technology", "roster",
@@ -148,10 +156,6 @@ table("technology", "roster",
       "distinct equipment/carrier/variant combinations, not individual plant "
       "designs.",
       [("technology", None, "Key. equipment_carrier_variant, per design doc section 5."),
-       ("technology-label", None,
-        "The SOURCE's own name for this technology, verbatim - the CIMS technology name, "
-        "the UKERC description, the catalogue's wording. Blank where no source names it "
-        "differently from the key; it is not a prettified restatement of the key."),
        ("equipment", "equipment", "Restates name component 1. Never split the name to recover it."),
        ("energy-carrier", "carrier", "Restates name component 2."),
        ("variant", "variant", "Restates name component 3."),
@@ -181,6 +185,11 @@ table("technology", "roster",
        ("retrofit-applicable", "yes-no",
         "Retrofit and greenfield are separate technologies (D4); this flags that a retrofit twin exists."),
        ("source-id", "source-id", "Primary source for the roster entry itself."),
+       ("aggregated-from", None,
+        "The source names this general name aggregates, semicolon separated (aggregate.py, R4). "
+        "Blank where the name was always this general. Every aggregated technology keeps every "
+        "contributing source's fact rows, told apart by source-id and ranked by source-priority; "
+        "nothing is dropped on a merge."),
        ("status", "status", ""),
        ("note", None, "")])
 
@@ -213,7 +222,7 @@ table("commodity", "dictionary",
 table("tech-parameter", "fact",
       "The main fact table. One row per number. Long format: adding a "
       "parameter never adds a column.",
-      [("record-id", None, "Stable key, e.g. tp-0001. Cited by derived-from and by the changelog."),
+      [("record-id", None, "Stable key, tp-<source-id>-NNNN, e.g. tp-ukerc_2013_001-0042. Numbered within the source so an edit to one extraction does not renumber another. Cited by derived-from and by the changelog."),
        ("technology", "technology", "FK to technology."),
        ("parameter", "parameter", "FK to parameter."),
        ("context", None, "CIMS entry field. Include if applicable."),
@@ -249,7 +258,7 @@ table("tech-flow", "fact",
       "Input and output vectors: energy carriers, materials and emission "
       "species per unit of activity. UKERC carries this as 100+ sparse "
       "columns; here it is one row per non-zero flow.",
-      [("record-id", None, "Stable key, e.g. tf-0001."),
+      [("record-id", None, "Stable key, tf-<source-id>-NNNN, e.g. tf-ukerc_2013_001-0042."),
        ("technology", "technology", "FK to technology."),
        ("direction", "direction", "input or output."),
        ("commodity", "commodity", "FK to commodity."),
@@ -279,7 +288,7 @@ table("tech-flow", "fact",
 table("tech-constraint", "fact",
       "Adoption, stock and capacity limits. Feeds CIMS market-share bounds and "
       "the bound constraints of an optimization model.",
-      [("record-id", None, "Stable key, e.g. tc-0001."),
+      [("record-id", None, "Stable key, tc-<source-id>-NNNN, e.g. tc-ukerc_2013_001-0042."),
        ("technology", "technology", "FK to technology."),
        ("constraint", "constraint", ""),
        ("region", None, ""),
@@ -326,6 +335,12 @@ table("vocabulary", "dictionary",
 # any technology's numbers are.
 
 SECTORS = [
+    ("cross-sector", "Cross-sector",
+     "Technologies that supply the same service in any industrial sector - boilers, CHP units, "
+     "motors, lighting, space conditioning, refrigeration. Held once here rather than copied "
+     "into every sector. The generic end uses (aggregate.py, R2) live only on this sector, and "
+     "the sectors a source reported them for stay in technology-application.reported-sectors.",
+     "", "", ""),
     # sector, label, description, uktm, naics, isic
     ("iron-and-steel", "Iron and steel",
      "Coke making, ironmaking, steelmaking, casting and hot rolling. Excludes downstream fabrication.",
@@ -354,10 +369,6 @@ SECTORS = [
     ("mining", "Mining and mineral extraction",
      "Metal and non-metal mining, milling and on-site processing. Excludes oil and gas extraction.",
      "", "212", "07;08"),
-    ("all-industry", "All industry (cross-sector)",
-     "Technologies that supply the same service in any industrial sector - boilers, CHP units, "
-     "motors, lighting. Held once here rather than copied into every sector.",
-     "", "", ""),
     ("other-industry", "Other industry",
      "Manufacturing not covered by another sector: machinery, vehicles, textiles, wood products, construction.",
      "IOI", "", ""),
@@ -393,8 +404,6 @@ END_USES = [
      "Process cooling, chilling and refrigeration."),
     ("facility-services", "Facility services", "other-service", "GJ", "not-applicable",
      "Space conditioning, lighting and other non-process site energy use."),
-    ("other-services", "Other services", "other-service", "GJ", "not-applicable",
-     "Residual energy service, for balancing a sector's energy total. Should shrink as coverage grows."),
 ]
 
 PARAMETERS = [
@@ -438,11 +447,6 @@ PARAMETERS = [
     ("pressure-output", "Output pressure", "technical",
      "Pressure of delivered steam. Record the source's own unit.",
      "pressure", "psig", "", "optional", "", ""),
-    ("efficiency-part-load", "Part-load efficiency", "technical",
-     "Useful output per unit of energy input at the low end of the operating range. "
-     "Say which load point in note.",
-     "fraction", "%", "", "optional", "",
-     "Second point on the efficiency curve for part-load operation."),
     ("availability", "Annual availability", "technical",
      "Percentage of the hours in a year the unit is ABLE to run, after planned and "
      "unplanned outages. It is a property of the equipment, not of how it is operated: "
@@ -467,6 +471,12 @@ PARAMETERS = [
     ("opex-variable", "Variable operating cost", "cost",
      "Operating cost per unit of output, excluding purchased energy and feedstock.",
      "currency/output", "", "", "recommended", "", "Variable O&M coefficient."),
+    ("opex-total", "Total operating cost", "cost",
+     "Fixed and variable operating cost reported TOGETHER, where the source does not "
+     "split them. Say in the row note exactly what it includes - sources differ on "
+     "whether fuel, electricity, materials and depreciation are inside. Never record an "
+     "opex-fixed or opex-variable on top of an opex-total for the same technology and source.",
+     "currency/output", "", "cost-basis", "optional", "", "Operating cost coefficient."),
     ("capital-recovery", "Capital recovery factor", "cost",
      "Annualisation factor applied to capex. Record the source study's own factor, not the model's.",
      "fraction/time", "%/yr", "", "optional", "capital-recovery", ""),
@@ -482,18 +492,28 @@ PARAMETERS = [
      "fraction", "%", "", "optional", "", "Endogenous learning curve."),
     ("decommissioning-cost", "Decommissioning cost", "cost",
      "End-of-life cost per unit of capacity.", "currency/capacity", "", "cost-basis", "optional", "", ""),
-    ("emissions-factor", "Emissions factor", "emissions",
-     "Emissions per unit of energy input or product output. Species named in target.",
+    # Scope 1 only, four parameters, set by the user 2026-09-10 (D13). Species
+    # stays in `target` and is NOT converted to CO2e: co2, co2e and pfc are all
+    # carried as reported, because an explicit species is worth more columns
+    # than a single converted one. Non-GHG species are out of scope entirely.
+    ("emissions-combustion", "Combustion emissions factor", "emissions",
+     "Emissions from burning fuel at the technology, per unit of energy input or product "
+     "output. Species named in target. Excludes the process reaction, which is "
+     "emissions-process, and excludes purchased energy, which is out of scope.",
      "mass/energy", "t/GJ", "", "required", "emissions", "Emission coefficient."),
     ("emissions-process", "Process emissions factor", "emissions",
      "Emissions from the chemical reaction rather than fuel combustion, per unit of product.",
      "mass/mass", "t/t", "", "recommended", "emissions", ""),
-    ("emissions-indirect", "Indirect emissions factor", "emissions",
-     "Emissions attributable to purchased energy, chiefly grid electricity, per unit of "
-     "product output. Kept apart from emissions-factor so that a direct and an indirect "
-     "term are never summed as though both were combustion.",
-     "mass/mass", "t/t", "", "recommended", "",
-     "Reported separately, or dropped where the model already prices grid electricity."),
+    ("emissions-total", "Total direct emissions factor", "emissions",
+     "Combustion plus process emissions together, per unit of product, where a source "
+     "reports only the combined figure. Scope 1. NEVER record this alongside "
+     "emissions-combustion and emissions-process for the same technology and source - it "
+     "is the sum of them, and the three together double count.",
+     "mass/mass", "t/t", "", "optional", "emissions", ""),
+    ("emissions-captured", "Captured emissions factor", "emissions",
+     "Emissions captured rather than released, per unit of energy input or product output. "
+     "Species named in target. The counterpart of capture-rate as an absolute quantity.",
+     "mass/mass", "t/t", "", "optional", "emissions-removal", ""),
     ("capture-rate", "Capture rate", "emissions",
      "Fraction of the CO2 stream captured.", "fraction", "%", "", "optional",
      "emissions-removal", ""),
@@ -525,6 +545,13 @@ PARAMETERS = [
 COMMODITIES = [
     # commodity, label, class, unit, carrier, biogenic
     ("coal", "Coal", "energy", "GJ", "coal", "no"),
+    # materials and utilities the ETSAP industry briefs flow in and out; they were
+    # in tech-flow before they were in this list
+    ("air", "Air", "material", "t", "", "no"),
+    ("oil", "Fuel oil", "energy", "GJ", "oil", "no"),
+    ("bauxite", "Bauxite", "material", "t", "", "no"),
+    ("red-mud", "Red mud", "material", "t", "", "no"),
+    ("salt-slag", "Salt slag", "material", "t", "", "no"),
     ("coking-coal", "Coking coal", "energy", "GJ", "coal", "no"),
     ("coke", "Coke", "energy", "GJ", "coal", "no"),
     ("coke-breeze", "Coke breeze", "energy", "GJ", "coal", "no"),
@@ -867,7 +894,16 @@ def write_workbook(lists: dict[str, list[str]], data: dict[str, list[dict]] | No
             dv.add(f"{L}{first}:{L}{TABLE_ROWS}")
 
     apply_view(wb)
-    wb.save(WORKBOOK)
+    try:
+        wb.save(WORKBOOK)
+    except PermissionError:
+        # build-wide.py and build-source-list.py already degrade this way. This
+        # one did not, so an open Excel window aborted the run AFTER the CSVs
+        # were rewritten -- the tables were current and the workbook was not,
+        # with a traceback that looked like the whole build had failed.
+        print(f"  {WORKBOOK.name} is open in Excel; CSVs written, workbook not "
+              f"rebuilt. Close it and re-run to refresh the sheets.")
+        return
     print(f"  {WORKBOOK.name:24s} {len(wb.sheetnames)} sheets")
 
 

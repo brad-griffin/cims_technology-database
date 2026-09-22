@@ -29,11 +29,15 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import aggregate
+from aggregate import canon_sector, canon_tech
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 RAW = ROOT / "data" / "raw-data"
 DOC = ROOT / "design" / "industrial heat technology database design.md"
 TODAY = "2026-08-27"
+AGG_DAY = "2026-09-10"   # the aggregation pass
 
 END_USE_UNIT = {"steam-and-hot-water": "GJ", "process-heat-low-temp": "GJ",
                 "process-heat-medium-temp": "GJ", "process-heat-high-temp": "GJ",
@@ -74,9 +78,40 @@ def slug(x: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (x or "").lower()).strip("-")
 
 
+MONEY = re.compile(r"^(\d{4}_[A-Z]{3})")
+
+
+def currency_year(unit: str) -> str:
+    """The currency-year a money unit is expressed in, or "" if it is not money.
+
+    `currency` holds the currency-year and nothing else -- `2013_USD`, never
+    `2013_USD/kW`. What the money is per is the denominator of `unit`, which
+    already carries it; copying the whole unit into `currency` put the same
+    fact in two columns and gave the deflator a value it could not read. Every
+    block writes the column through here so there is one rule rather than five
+    spellings of it, and check-data.py re-tests the invariant on the file.
+    """
+    m = MONEY.match((unit or "").strip())
+    return m.group(1) if m else ""
+
+
 def read_csv(p: Path) -> list[dict]:
+    """Read an extraction or map file, applying the aggregation rules to the
+    technology name and the sector as the row is read.
+
+    This is deliberately the ONLY place a name is canonicalised. The names
+    appear in a dozen places downstream -- roster rows, node-map keys, fact
+    rows, flow rows, the `tech not in techs` guards -- and canonicalising some
+    of them would silently drop every fact whose key no longer matched its
+    roster row."""
     with p.open(encoding="utf-8-sig", newline="") as fh:
-        return list(csv.DictReader(fh))
+        rows = list(csv.DictReader(fh))
+    for r in rows:
+        if r.get("technology"):
+            r["technology"] = canon_tech(r["technology"])
+        if r.get("sector"):
+            r["sector"] = canon_sector(r["sector"])
+    return rows
 
 
 def write_csv(name: str, rows: list[dict]) -> None:
@@ -173,6 +208,7 @@ def trl_canonical(val: str, scale: str) -> tuple[str, str]:
 def main() -> int:
     global TRL_MAP, TRL_RANK
     TRL_MAP, TRL_RANK = trl_tables()
+    aggregate._VOCAB_PATH[0] = HERE / "vocabulary.csv"
     cims = read_csv(HERE / "cims-map.csv")
     steps, nodes, techs = {}, {}, {}
 
@@ -228,6 +264,7 @@ def main() -> int:
     def node_for(sector, end_use, step):
         if not sector:
             return ""
+        sector = canon_sector(sector)
         key = "_".join(x for x in (sector, end_use, step) if x)
         if key not in nodes:
             nodes[key] = {"service-node": key, "sector": sector, "end-use": end_use,
@@ -254,14 +291,11 @@ def main() -> int:
                 if v and not t.get(k):
                     t[k] = v
             return
-        parts = name.split("_")
+        equipment, carrier, variant = aggregate.split_name(name, HERE / "vocabulary.csv")
         techs[name] = {
             "technology": name,
-            # blank unless a source names it differently -- a label derived from the
-            # key is the key restated, and tells a reader nothing
-            "technology-label": kw.pop("label", ""),
-            "equipment": parts[0], "energy-carrier": parts[1] if len(parts) > 1 else "",
-            "variant": parts[2] if len(parts) > 2 else "",
+
+            "equipment": equipment, "energy-carrier": carrier, "variant": variant,
             "description": "", "role": "", "relationship-to-baseline": "",
             "baseline-technology": "",      # deliberately blank: every row is standalone
             "competes-with": "", "requires": "", "state-of-development": "", "trl": "",
@@ -300,8 +334,7 @@ def main() -> int:
         if r["action"] == "merge-review":
             note += f" Collapsed here from the CIMS technology {r['cims-technology']!r}, " \
                     "which CIMS distinguishes as a sub-type - see cims-review.md."
-        add_tech(r["technology"], node, source_id="", status="draft",
-                 label=r["cims-technology"], note=note)
+        add_tech(r["technology"], node, source_id="", status="draft", note=note)
         techs[r["technology"]]["note"] = techs[r["technology"]]["note"] or note
         cims_named += 1
 
@@ -316,8 +349,11 @@ def main() -> int:
             tech = (row.get("technology") or "").strip()
             if not tech:
                 continue
-            end_use = "steam-and-hot-water" if (row.get("process") or "") == "steam" \
-                      else "other-services"
+            # these four are boiler and CHP catalogues: everything in them
+            # raises steam or hot water, so an unlabelled row is steam, not a
+            # residual service. Sending them to other-services is what filled
+            # the bin these rules now retire.
+            end_use = "steam-and-hot-water"
             node = node_for(sector, end_use, "")
             add_tech(tech, node, source_id=source_id, status="draft")
             t = techs[tech]
@@ -337,12 +373,14 @@ def main() -> int:
                 continue
             n += 1
             note = (row.get("note") or "").strip()
-            cb = ""
-            if param == "capex":
-                m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
-                cb = m.group(1) if m else ""
+            # a note that names a cost basis is read whatever the parameter:
+            # which parameters REQUIRE one is parameter.csv's business, checked
+            # in one pass below, and refusing to read a basis the extractor
+            # wrote down would throw away the answer to that check
+            m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
+            cb = m.group(1) if m else ""
             unit = (row.get("unit") or "").strip()
-            cur = unit if re.match(r"^\d{4}_[A-Z]{3}", unit) else ""
+            cur = currency_year(unit)
             facts.append({
                 "record-id": f"tp-{n:04d}", "technology": tech, "parameter": param,
                 "target": (row.get("target") or "").strip(), "unit": unit,
@@ -357,11 +395,10 @@ def main() -> int:
                 "source-locator": (row.get("reference") or "").strip(),
                 "extraction-file": rel,
                 "via-source-id": VIA.get(source_id, ""), "confidence": "",
-                "status": "review" if (param == "capex" and not cb) else "draft",
-                "note": note + ("" if (param != "capex" or cb) else
-                        "  COST BASIS NOT RECORDED: this extraction predates the cost-basis rule "
-                        "(design doc 6.1). Marked for review rather than guessed - an equipment "
-                        "cost and an installed cost can differ by a factor of two."),
+                # a missing required basis is marked for review by the
+                # dictionary-driven pass below, not here: the rule is the same
+                # for every source and belongs in one place
+                "status": "draft", "note": note,
             })
 
     # ---- 2b. UKERC: parameters, flows and constraints --------------------
@@ -422,7 +459,7 @@ def main() -> int:
                 "formula": (row.get("formula") or "").strip(),
                 "cost-basis": "installed" if param.startswith(("capex", "opex")) else "",
                 "capacity-basis": "product-output" if param.startswith(("capex", "opex")) else "",
-                "currency": "2013_GBP" if unit.startswith("2013_GBP") else "",
+                "currency": currency_year(unit),
                 "region": "UK",
                 # UKERC is a compilation: the value belongs to whoever it cites
                 # (design doc D7). The original is the source; UKERC is the via.
@@ -527,7 +564,7 @@ def main() -> int:
                 "value-type": "reported", "formula": "",
                 "cost-basis": "installed" if cost else "",
                 "capacity-basis": "product-output" if cost else "",
-                "currency": "2010_GBP" if unit.startswith("2010_GBP") else "",
+                "currency": currency_year(unit),
                 "region": "UK",
                 "source-id": BAT_SRC, "via-source-id": "", "via-locator": "",
                 "source-file": f"{BAT_STEM}.xlsx",
@@ -581,7 +618,7 @@ def main() -> int:
                                                          row.get("value-max")) else "",
                 "value-type": "reported", "formula": "", "cost-basis": "",
                 "capacity-basis": "",
-                "currency": "2019_USD" if unit.startswith("2019_USD") else "",
+                "currency": currency_year(unit),
                 "region": "global",
                 # Two-level attribution (D7): where the chapter's footnote names
                 # the work behind a number, that work is the source and the
@@ -684,10 +721,8 @@ def main() -> int:
             n += 1
             unit = (row.get("unit") or "").strip()
             note = (row.get("note") or "").strip()
-            cb = ""
-            if param.startswith(("capex", "opex")):
-                m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
-                cb = m.group(1) if m else ""
+            m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
+            cb = m.group(1) if m else ""
             facts.append({
                 "record-id": f"tp-{n:04d}", "technology": tech, "parameter": param,
                 "target": (row.get("target") or "").strip(), "unit": unit, "value": val,
@@ -699,7 +734,7 @@ def main() -> int:
                 "formula": (row.get("formula") or "").strip(),
                 "cost-basis": cb,
                 "capacity-basis": "product-output" if param.startswith(("capex", "opex")) else "",
-                "currency": unit if re.match(r"^\d{4}_[A-Z]{3}", unit) else "",
+                "currency": currency_year(unit),
                 "region": "global",
                 "source-id": es_src, "via-source-id": "",
                 "source-file": base.name + ".pdf",
@@ -729,18 +764,29 @@ def main() -> int:
     # ---- 3. placeholders from the design document heat roster -----------
     placeholders = 0
     for name, end_use in design_doc_roster():
-        if name in techs:
-            continue
+        # the roster is parsed out of the design document, not read through
+        # read_csv, so it is the one name source the canonicaliser has to be
+        # applied to by hand. The tier is read off the ORIGINAL name below,
+        # before the suffix is dropped.
+        raw, name = name, canon_tech(name)
         # the variant carries the tier where the name has one, and it beats the
         # subsection: boiler_electricity_tes is listed under steam, while
         # direct-heater_hydrogen_low-temp names its own tier
         for tier, eu in (("low-temp", "process-heat-low-temp"),
                          ("medium-temp", "process-heat-medium-temp"),
                          ("high-temp", "process-heat-high-temp")):
-            if name.endswith("_" + tier):
+            if raw.endswith("_" + tier):
                 end_use = eu
                 break
-        node = node_for("all-industry", end_use, "")
+        node = node_for(aggregate.CROSS_SECTOR, end_use, "")
+        if name in techs:
+            # the tier suffix is gone from the name (R4) but the tier itself is
+            # not: direct-heater_natural-gas_medium-temp aggregates into
+            # direct-heater_natural-gas, and the medium-temperature service it
+            # was listed for has to survive as an application or the roster
+            # quietly stops offering a gas heater at that tier
+            add_tech(name, node)
+            continue
         add_tech(name, node, status="placeholder",
                  note="PLACEHOLDER. Named in section 4 of the design document as in scope, but no "
                       "local source has been extracted for it yet. Section 7 lists several of these "
@@ -846,6 +892,142 @@ def main() -> int:
     changelog.append({"date": TODAY, "who": "claude", "table": "tech-parameter", "record-id": "",
                       "change": f"{len(facts)} fact rows from ETSAP I01, EPA 2007, EPA 2017 and LBNL 2021",
                       "reason": "extractions completed 2026-08-27", "note": ""})
+
+    # ---- aggregation post-pass -------------------------------------------
+    # Rules R1-R3 need the whole database loaded: R3 resolves an unclassified
+    # application against the end uses the same equipment has elsewhere.
+    review, unresolved = aggregate.rewrite(steps, nodes, techs, apps, facts, fl, ct)
+    for t in techs.values():
+        t["aggregated-from"] = "; ".join(sorted(aggregate.AGGREGATED.get(t["technology"], ())))
+    (HERE / "aggregation-review.md").write_text("\n".join(review) + "\n", encoding="utf-8")
+    agg = sum(1 for t in techs.values() if t["aggregated-from"])
+    print(f"aggregation: {agg} technologies carry a name that aggregates others; "
+          f"{len(unresolved)} applications left unresolved")
+    changelog.append({"date": AGG_DAY, "who": "claude", "table": "technology", "record-id": "",
+                      "change": f"aggregation rules R1-R4 applied: {len(techs)} technologies, "
+                                f"{len(apps)} applications, {len(nodes)} service nodes",
+                      "reason": "roster had reached 506 technologies and 1,365 applications; "
+                                "user asked for a general roster of about 500 or fewer, generic "
+                                "end uses held once cross-sector, and other-services retired",
+                      "note": "rules documented at the top of aggregate.py; every reassignment "
+                              "listed in aggregation-review.md"})
+
+    # ---- basis requirement, read from the parameter dictionary -----------
+    # parameter.csv names, per parameter, the basis a number is meaningless
+    # without: a capex with no cost-basis could be an equipment cost or an
+    # installed one, and those differ by about a factor of two. The requirement
+    # is read from the dictionary rather than spelled out here, so adding a
+    # parameter is a row in parameter.csv and not an edit to five blocks of
+    # this file. A row missing its declared basis is marked for review -- not
+    # dropped, and not guessed. This does NOT fail the run: the extractions
+    # that predate the basis rules have a backfill pass of their own.
+    # check-data.py applies the same rule as a commit gate.
+    basis_req = {r["parameter"]: (r.get("basis-required") or "").strip()
+                 for r in read_csv(HERE / "parameter.csv")
+                 if (r.get("basis-required") or "").strip()}
+    BASIS_NOTE = ("  BASIS NOT RECORDED: parameter.csv requires a {col} for {param} "
+                  "and this extraction does not give one. Marked for review rather "
+                  "than guessed.")
+    no_basis = 0
+    for r in facts:
+        col = basis_req.get(r["parameter"], "")
+        # a basis says what a number is per; with no number there is nothing
+        # for it to qualify, so an unquantified row is not held against it
+        if not col or not (r.get("value") or r.get("value-min") or r.get("value-max")):
+            continue
+        if (r.get(col) or "").strip():
+            continue
+        no_basis += 1
+        if r.get("status") == "draft":
+            r["status"] = "review"
+        if "BASIS NOT RECORDED" not in (r.get("note") or ""):
+            r["note"] = (r.get("note") or "") + BASIS_NOTE.format(col=col,
+                                                                  param=r["parameter"])
+    print(f"basis: {no_basis} quantified rows are missing the basis parameter.csv "
+          f"requires, marked for review")
+    changelog.append({"date": TODAY, "who": "claude", "table": "tech-parameter",
+                      "record-id": "",
+                      "change": f"{no_basis} rows marked for review for a missing required basis",
+                      "reason": "parameter.csv declares which parameters need a cost-basis or a "
+                               "capacity-basis; the check now reads that column instead of "
+                               "hard-coding capex",
+                      "note": "check-data.py exits non-zero on the same condition"})
+
+    # ---- currency is a currency-year, and only that ----------------------
+    # Every block writes it through currency_year(), so a mismatch here means
+    # a later pass rewrote a unit without its currency. That is a bug in this
+    # file rather than in the data, so it stops the run.
+    bad_cur = [f"{r['record-id']}: unit {r.get('unit','')!r}, currency "
+               f"{r.get('currency','')!r}" for r in facts
+               if (r.get("currency") or "") != currency_year(r.get("unit", ""))]
+    if bad_cur:
+        print(f"  ERROR: {len(bad_cur)} rows where currency is not the currency-year "
+              f"of unit:", file=sys.stderr)
+        for x in bad_cur[:10]:
+            print(f"      {x}", file=sys.stderr)
+        return 1
+
+    # ---- record ids, stable within a source ------------------------------
+    def renumber(rows: list[dict], prefix: str) -> dict:
+        """Number each source's rows within its own block and return old -> new.
+
+        A single run-wide counter made tp-0421 mean "the 421st row this run
+        happened to produce", so adding one line to an early extraction
+        renumbered every row below it -- and every reference to them -- for a
+        reason that had nothing to do with those rows. Numbering within the
+        source keeps an edit's blast radius inside the source it edits:
+        tp-ukerc_2013_001-0042 is the 42nd row taken from UKERC. The ids are
+        still assigned by position within the block, so they are stable against
+        unrelated edits, not against a reordering of the same source.
+        """
+        seq, remap = defaultdict(int), {}
+        for r in rows:
+            sid = (r.get("source-id") or "").strip() or "unattributed"
+            seq[sid] += 1
+            new = f"{prefix}-{sid}-{seq[sid]:04d}"
+            remap[r["record-id"]] = new
+            r["record-id"] = new
+        return remap
+
+    remap = renumber(facts, "tp")
+    renumber(fl, "tf")
+    renumber(ct, "tc")
+    # derived-from is the only column that points at a record-id, and it points
+    # within tech-parameter. Rewriting it through the same map in the same pass
+    # is what keeps the derivation chain walkable across the renumbering. The
+    # column is declared as a semicolon-separated LIST, so it is split even
+    # though nothing writes more than one today.
+    dangling, remapped = [], 0
+    for r in facts:
+        refs = [x.strip() for x in (r.get("derived-from") or "").split(";") if x.strip()]
+        if not refs:
+            continue
+        out = []
+        for ref in refs:
+            if ref in remap:
+                out.append(remap[ref])
+                remapped += 1
+            else:
+                dangling.append(f"{r['record-id']} -> {ref}")
+        r["derived-from"] = "; ".join(out)
+    if dangling:
+        print(f"  ERROR: {len(dangling)} derived-from references do not resolve "
+              f"after renumbering:", file=sys.stderr)
+        for x in dangling[:10]:
+            print(f"      {x}", file=sys.stderr)
+        return 1
+    ids = [r["record-id"] for r in facts]
+    assert len(ids) == len(set(ids)), "record-id is not unique after renumbering"
+    print(f"record ids: {len(set(i.rsplit('-', 1)[0] for i in ids))} per-source blocks "
+          f"across {len(ids)} parameter rows; {remapped} derived-from links remapped")
+    changelog.append({"date": TODAY, "who": "claude", "table": "tech-parameter",
+                      "record-id": "",
+                      "change": "record-ids renumbered per source as "
+                                "tp-<source-id>-NNNN (likewise tf- and tc-)",
+                      "reason": "a run-wide counter renumbered unrelated rows whenever an "
+                                "early extraction changed, so no id could be cited",
+                      "note": f"{remapped} derived-from references rewritten through the "
+                              "same map; the run fails if one does not resolve"})
 
     print(f"evaluated {evaluated} arithmetic-only formulas into values")
     print(f"normalised {scaled} rows from fraction to %")

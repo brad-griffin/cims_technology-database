@@ -408,7 +408,13 @@ def add_sheet(rows, cols) -> None:
         r_i += 1
     ws.freeze_panes = ws.cell(6, first + 1).coordinate
     apply_view(wb)
-    wb.save(wb_path)
+    try:
+        wb.save(wb_path)
+    except PermissionError:
+        # the guard above catches an Excel lock on the READ; Excel allows the
+        # read and refuses the write, so the save needs its own
+        print("  workbook is open in Excel; CSV written, source-list sheet not rebuilt")
+        return
     print(f"  workbook: source-list added, {len(banded)} banded rows "
           f"({len(wb.sheetnames)} sheets)")
 

@@ -51,8 +51,13 @@ HERE = Path(__file__).resolve().parent
 # trl is on the common 1-9 ladder (see trl-scale-map.csv), so it can sit in a
 # comparison view; trl-as-reported and trl-scale stay in the roster table for
 # anyone auditing the mapping rather than comparing across technologies.
-ROSTER_COLS = ["technology-label", "equipment", "energy-carrier", "variant",
-               "state-of-development", "trl", "year-available", "status"]
+# technology-label and status were dropped 2026-09-10. The label held only the
+# first CIMS name that claimed a technology, chosen by load order, when up to 29
+# stood behind it -- CIMS names live in cims-map.csv until CIMS is properly
+# connected. status read `draft` on every row, because the view already filters
+# out `placeholder` and `unquantified`.
+ROSTER_COLS = ["equipment", "energy-carrier", "variant",
+               "state-of-development", "trl", "year-available"]
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:/(.+))?$")
 TARGET_CURRENCY = "2025_CAD"
 
@@ -101,8 +106,19 @@ class Units:
             if f is not None:
                 self.cur[r["from-currency"]] = (r["to-currency"], f)
 
+    def has_route(self, unit, target):
+        return unit == target or (unit, target) in self.phys
+
     def convert(self, value, unit, target):
-        """(value, unit) -> target unit, or None when no route exists."""
+        """(value, unit) -> target unit, or None when no route exists.
+
+        A None value with a valid route returns None, so callers must test the
+        ROUTE with has_route rather than the returned value. Testing the value
+        left every row that carries only a min and a max -- a range with no
+        central estimate, which ETSAP prints often -- unconverted and stranded
+        in its own column: capacity in kW and t/d, specific energy in MWh/t,
+        and three of the four heat-pump COPs were all sitting out for this
+        reason."""
         if value is None or unit == target:
             return value
         if (unit, target) in self.phys:
@@ -153,53 +169,60 @@ def scales(facts):
 
 
 def to_common_basis(value, lo, hi, unit, tech, sc):
-    """Put a money rate on the common basis: 2025_CAD per GJ of annual output
-    capacity. Returns (value, lo, hi, unit) unchanged when there is no route.
+    """Put a money rate on ONE UNIT OF THE TECHNOLOGY'S OWN OUTPUT.
 
-    Every source prices its technology against a different denominator -- per kW,
-    per tonne of annual product, per GJ, or as an absolute sum -- and those are
-    not interconvertible without knowing how much the thing makes. Dividing by
-    specific energy consumption or annual output supplies exactly that, and is
-    the only step here that is not arithmetic on the source's own numbers.
+    Set by the user 2026-09-10 (D13). The basis is per unit of output, in
+    whatever unit that technology's output is measured in: a tonne for a
+    process technology, a GJ for an energy service. It is deliberately NOT one
+    common denominator across the database.
+
+    What this replaced, and why: the old version manufactured a GJ denominator
+    for every cost by dividing a per-tonne rate by `specific-energy-consumption`
+    -- final energy INPUT per tonne of product. The absolute and per-kW routes
+    divided by annual OUTPUT instead. One column therefore mixed cost per GJ of
+    input with cost per GJ of output, quantities that differ by the efficiency
+    (about 1.18x for an 85% boiler, 3.5x for a heat pump), and 84 of the 86
+    populated cells were the input kind while the docstring claimed the output
+    kind. Converting the input ones to output was impossible in any case: of the
+    49 technologies on that route, exactly one carries an efficiency.
+
+    Dropping the division fixes it. A per-tonne rate is ALREADY per unit of
+    output, and is what 262 of the 784 cost rows say natively, so the harmonised
+    figure is now the source's own number. Only genuinely convertible
+    denominators are still converted: kWh to GJ, kW of rating to GJ delivered in
+    a year, and an absolute sum to a rate where the same source states an annual
+    output. Anything else keeps the unit it arrived in.
     """
     if not unit.startswith("2025_CAD"):
         return value, lo, hi, unit
     denom = unit.split("/", 1)[1] if "/" in unit else ""
-    sec, ao, cf = sc.get("sec"), sc.get("annual-output"), sc.get("cf")
-    scale = None
-    target = "2025_CAD/GJ-per-yr"
+    ao, cf = sc.get("annual-output"), sc.get("cf")
+    scale, target = None, None
 
-    if denom == "GJ-per-yr":
-        return value, lo, hi, unit
-    if denom == "GJ":                                  # a per-output cost
-        return value, lo, hi, unit
-    if denom == "kWh":                                 # variable cost per kWh
-        scale, target = GJ_PER_KWH, "2025_CAD/GJ"
-    elif denom == "kW":
-        # kW of capacity -> GJ delivered in a year. With no capacity factor the
-        # only defensible reading is nameplate, and the unit has to say so.
-        if cf:
-            scale, target = 1.0 / (GJ_PER_KW_YR * cf), "2025_CAD/GJ-per-yr"
+    if denom in ("GJ-per-yr", "GJ") or denom.endswith("-per-yr") or denom:
+        # already per unit of this technology's output -- a tonne of product, a
+        # GJ of service, a cubic metre of milk. Left exactly as reported.
+        if denom == "kWh":
+            scale, target = 1.0 / GJ_PER_KWH, "2025_CAD/GJ"
+        elif denom == "kW":
+            # a capacity RATING, not an output: kW -> GJ delivered in a year.
+            # With no capacity factor the only defensible reading is nameplate.
+            if cf:
+                scale, target = 1.0 / (GJ_PER_KW_YR * cf), "2025_CAD/GJ-per-yr"
+            else:
+                scale, target = 1.0 / GJ_PER_KW_YR, "2025_CAD/GJ-per-yr"
         else:
-            scale, target = 1.0 / GJ_PER_KW_YR, "2025_CAD/GJ-per-yr-nameplate"
-    elif denom.endswith("-per-yr"):
-        # Only divide by an energy throughput that is positive and not near
-        # zero. A technology whose net energy is negative (BOF gas recovery) or
-        # a rounding away from nothing would otherwise come back with a
-        # negative or explosive cost per GJ.
-        if sec is not None and sec > 0.05:
-            scale = 1.0 / sec
-        else:
-            return value, lo, hi, "2025_CAD/product-per-yr"
-    elif denom == "" and ao:
-        scale = 1.0 / ao                               # absolute cost -> per GJ/yr
+            return value, lo, hi, unit
+    elif not denom and ao:
+        # an absolute sum, made a rate by the annual output the source states
+        scale, target = 1.0 / ao, "2025_CAD/GJ-per-yr"
     if scale is None:
         return value, lo, hi, unit
     f = lambda x: None if x is None else x * scale
     return f(value), f(lo), f(hi), target
 
 
-def normalise(facts, params, units, sc, product_unit, refcap, refcap_used):
+def normalise(facts, params, units, sc, product_unit, out_unit):
     """One record per (technology, parameter, target, unit-after-conversion).
 
     Folds derived and as-reported values together, converts what it can, and
@@ -219,6 +242,7 @@ def normalise(facts, params, units, sc, product_unit, refcap, refcap_used):
         counts[(r["parameter"], r["target"])][(r["unit"] or "").strip()] += 1
     for k, c in counts.items():
         dominant[k] = c.most_common(1)[0][0]
+    seen_units = {k: set(c) for k, c in counts.items()}
 
     out = collections.defaultdict(list)
     for r in facts:
@@ -238,46 +262,15 @@ def normalise(facts, params, units, sc, product_unit, refcap, refcap_used):
                 d0 = unit.split("/", 1)[1] if "/" in unit else ""
                 if d0.endswith("-per-yr") and d0 != "GJ-per-yr":
                     product_unit.setdefault(r["technology"], d0[:-len("-per-yr")])
-                if r["parameter"] == "capex" and v is not None:
-                    # The capital cost of ONE unit at its own working size --
-                    # a boiler, a kiln, a plant -- which is what a modeller
-                    # asks for first. Either the source gave a whole-unit sum,
-                    # or a rate is multiplied by that technology's own capacity.
-                    tot, ref, refu = None, None, ""
-                    scl = sc.get(r["technology"], {})
-                    d1 = unit.split("/", 1)[1] if "/" in unit else ""
-                    # A rate must meet a scale from the SAME source. Pairing
-                    # UKERC's cost per GJ/yr with an EPA plant size produces a
-                    # total that reads as one source's finding and is neither's.
-                    same_kw = scl.get("kw@") == r["source-id"]
-                    same_ao = scl.get("annual-output@") == r["source-id"]
-                    if not d1:
-                        tot = v
-                        if same_kw:
-                            ref, refu = scl.get("kw"), "kW"
-                    elif d1 == "kW" and scl.get("kw") and same_kw:
-                        tot, ref, refu = v * scl["kw"], scl["kw"], "kW"
-                    elif d1 == "GJ-per-yr" and scl.get("annual-output") and same_ao:
-                        tot = v * scl["annual-output"]
-                        ref, refu = scl["annual-output"], "GJ/yr"
-                    elif d1.endswith("-per-yr"):
-                        rc = refcap.get(r["technology"])
-                        if rc:
-                            tot, ref, refu = v * rc[0], rc[0], rc[1]
-                    if tot is not None:
-                        out[(r["technology"], "capex-total", "", "2025_CAD")].append(
-                            {"value": tot, "min": None, "max": None,
-                             "source": r["source-id"], "derived": bool(r["formula"])})
-                        if ref is not None:
-                            refcap_used[r["technology"]] = (ref, refu)
-                was_absolute = "/" not in unit
+                elif d0 and not d0.endswith("-per-yr") and d0 not in ("kW", "kWh"):
+                    product_unit.setdefault(r["technology"], d0)
+                # capex-total is gone (D13). It was a derived column only, never
+                # a stored parameter, and it depended on reference-capacity.csv,
+                # every cell of which was blank. An absolute sum that cannot be
+                # made a rate now simply keeps its own unit instead of being
+                # dropped as a duplicate of a total that no longer exists.
                 v, lo, hi, unit = to_common_basis(
                     v, lo, hi, unit, r["technology"], sc.get(r["technology"], {}))
-                if was_absolute and "/" not in unit:
-                    # an absolute sum with no annual output to divide by: it is
-                    # already recorded in capex-total, so do not keep a second
-                    # copy in the rate column
-                    continue
         else:
             # Aim at the dictionary's unit; if there is no route to it, aim at
             # the unit most of this parameter's rows already use. That folds
@@ -285,12 +278,28 @@ def normalise(facts, params, units, sc, product_unit, refcap, refcap_used):
             # leaves genuinely different denominators in separate columns.
             cands = [params.get(r["parameter"], {}).get("unit-default", ""),
                      dominant.get((r["parameter"], r["target"]), "")]
-            for tgt in [c for c in cands if c]:
-                cv = units.convert(v, unit, tgt)
-                if cv is not None and tgt != unit:
-                    lo, hi = units.convert(lo, unit, tgt), units.convert(hi, unit, tgt)
-                    v, unit = cv, tgt
-                    break
+            # A generic "/unit" denominator is the source's shorthand for the
+            # technology's own product unit. Where that unit is a tonne, say so
+            # -- it lets GJ/unit, GJ/t, kWh/t and MWh/t become one column
+            # instead of four (D13, R-specific-energy). Where it is anything
+            # else (a cubic metre of milk, a thousand pounds of output, a GJ of
+            # service) the generic spelling is kept, because those genuinely
+            # are different denominators and must not be summed as tonnes.
+            if unit.endswith("/unit") and out_unit.get(r["technology"]) == "t":
+                unit = unit[:-len("/unit")] + "/t"
+            # ...and, failing those, any other unit this parameter already
+            # uses that is reachable from here. That is what folds t/d into
+            # kt/yr and kW into MW for `capacity`, where there is no single
+            # default because a mass throughput and a power rating are
+            # different dimensions and both are legitimate.
+            cands += sorted(seen_units.get((r["parameter"], r["target"]), set()))
+            for tgt in [c for c in cands if c and c != unit]:
+                if not units.has_route(unit, tgt):
+                    continue
+                v = units.convert(v, unit, tgt)
+                lo, hi = units.convert(lo, unit, tgt), units.convert(hi, unit, tgt)
+                unit = tgt
+                break
         key = (r["technology"], r["parameter"], r["target"], unit)
         out[key].append({"value": v, "min": lo, "max": hi, "source": r["source-id"],
                          "via": r.get("via-source-id", ""),
@@ -302,6 +311,18 @@ def main() -> int:
     techs = read("technology.csv")
     facts = read("tech-parameter.csv")
     flows = read("tech-flow.csv")
+    # The views show what the database KNOWS; the roster shows what it has been
+    # asked to cover. 187 of 415 technologies carried no parameter, flow or
+    # constraint row -- CIMS and source roster names that were never quantified
+    # -- and as blank rows they made the view about twice as long as its
+    # content. They keep their place in technology.csv, marked `placeholder` or
+    # `unquantified`. The test is on the data itself rather than on the status
+    # column, so the view cannot drift from what populate.py labelled.
+    # (User's request, 2026-09-10.)
+    with_data = ({r["technology"] for r in facts} | {r["technology"] for r in flows}
+                 | {r["technology"] for r in read("tech-constraint.csv")})
+    hidden = [t for t in techs if t["technology"] not in with_data]
+    techs = [t for t in techs if t["technology"] in with_data]
     nodes = {r["service-node"]: r for r in read("service-node.csv")}
     params = {r["parameter"]: r for r in read("parameter.csv")}
     # A technology can serve several sectors, so the roster holds it once and
@@ -311,8 +332,32 @@ def main() -> int:
     apps = collections.defaultdict(list)
     for a in read("technology-application.csv"):
         apps[a["technology"]].append(a)
-    placed = [(t, a) for t in techs for a in
-              (apps.get(t["technology"]) or [{"service-node": ""}])]
+
+    # ONE ROW PER (technology, sector, end use), with the process steps joined
+    # into a single cell (user's request, 2026-09-10). A technology serving six
+    # steps of one end use was six rows that differed in nothing but that cell:
+    # every fact column is keyed on the technology alone, so the other rows
+    # repeated the same numbers and made the technology look six times as
+    # common as it is. Collapsing them loses nothing.
+    def placements(t):
+        rows = apps.get(t["technology"])
+        if not rows:
+            return [{"sector": "", "end-use": "", "process-step": "", "nodes": []}]
+        by_band = {}
+        for a in rows:
+            n = nodes.get(a["service-node"], {})
+            band = (n.get("sector", ""), n.get("end-use", ""))
+            v = by_band.setdefault(band, {"sector": band[0], "end-use": band[1],
+                                          "steps": [], "nodes": []})
+            v["nodes"].append(a["service-node"])
+            step = n.get("process-step", "")
+            if step and step not in v["steps"]:
+                v["steps"].append(step)
+        for v in by_band.values():
+            v["process-step"] = "; ".join(sorted(v["steps"]))
+        return list(by_band.values())
+
+    placed = [(t, v) for t in techs for v in placements(t)]
     units = Units()
 
     prio = {r["source-id"]: r for r in read("source-priority.csv")}
@@ -333,79 +378,86 @@ def main() -> int:
     end_use_order = {r["end-use"]: i for i, r in enumerate(read("end-use.csv"))}
 
     sc = scales(facts)
-    product_unit, refcap_used = {}, {}
+    product_unit = {}
 
-    # A reference plant size per (sector, process step), for the sources that
-    # price per unit of annual product and never state a plant. Blank rows are
-    # the honest state: nothing here is guessed.
-    refcap_by_step = {}
-    rcp = HERE / "reference-capacity.csv"
-    if rcp.exists():
-        for r in read("reference-capacity.csv"):
-            c = fnum(r.get("capacity"))
-            if c:
-                refcap_by_step[(r["sector"], r["process-step"])] = (c, r.get("unit", ""))
-    refcap = {}
-    for t, a in placed:
-        n = nodes.get(a["service-node"], {})
-        hit = refcap_by_step.get((n.get("sector", ""), n.get("process-step", "")))
-        if hit:
-            # First node wins. A reference plant size is a property of the step,
-            # and a technology serving several steps has no single one; taking
-            # the first is arbitrary but at least stable and stated.
-            refcap.setdefault(t["technology"], hit)
+    # What one unit of each technology's output is measured in. A process
+    # technology makes tonnes; an energy service delivers GJ. Read off the
+    # service nodes the technology serves, so it is available even where no
+    # cost row has stated a denominator. Costs and specific energy are both
+    # expressed per unit of this (D13).
+    out_unit = {}
+    for t, v in placed:
+        for nid in v["nodes"]:
+            su = (nodes.get(nid, {}).get("service-unit") or "").strip()
+            if su:
+                out_unit.setdefault(t["technology"], su)
+                break
 
-    grouped = normalise(facts, params, units, sc, product_unit, refcap, refcap_used)
+    grouped = normalise(facts, params, units, sc, product_unit, out_unit)
 
     # one column per (parameter, target, unit); the commonest unit for a
     # parameter keeps the bare name, the rest are suffixed
     per_param = collections.defaultdict(collections.Counter)
     for (_, p, tg, u) in grouped:
         per_param[(p, tg)][u] += 1
-    # A money parameter ends up in at most four columns, each a different
-    # quantity rather than a different spelling of one: the common per-GJ/yr
-    # basis, a per-unit-of-product rate for rows with no energy throughput to
-    # divide by, a nameplate rate where no capacity factor is known, and an
-    # absolute sum where the source gave one.
-    # The canonical unit differs by parameter: a capital cost is per unit of
-    # annual CAPACITY, a variable operating cost is per unit of OUTPUT. Both
-    # were previously mapped to the bare column name, which collided.
-    def suffix_for(p, u):
-        canonical = "2025_CAD/GJ" if p.startswith("opex-variable") else "2025_CAD/GJ-per-yr"
-        other = "2025_CAD/GJ-per-yr" if p.startswith("opex-variable") else "2025_CAD/GJ"
-        return {canonical: "", other: "-per-capacity" if p.startswith("opex-variable")
-                                     else "-per-output",
-                "2025_CAD/product-per-yr": "-per-product",
-                "2025_CAD/GJ-per-yr-nameplate": "-nameplate",
-                "2025_CAD": "-total"}.get(u)
+    # ONE COLUMN PER COST PARAMETER (D13). Every per-output money unit shares
+    # the column, so it holds CAD/t for a blast furnace and CAD/GJ for a boiler
+    # and is read against `product-unit`. Within an end-use band the unit is
+    # effectively constant, which is what makes that workable; ACROSS bands the
+    # column must not be sorted, averaged or charted. An absolute sum is not a
+    # rate and keeps its own column.
+    def cost_col(u):
+        return u.startswith("2025_CAD") and "/" in u
     colname, colunit = {}, {}
     for (p, tg), counter in per_param.items():
         base = f"{p}_{tg}" if tg else p
+        money = p.startswith(("capex", "opex", "decommissioning"))
         main_unit = counter.most_common(1)[0][0]
+        if money:
+            rates = [u for u in counter if cost_col(u)]
+            main_unit = max(rates, key=lambda u: counter[u]) if rates else main_unit
         for u in counter:
             key = (p, tg, u)
-            suf = (suffix_for(p, u)
-                   if p.startswith(("capex", "opex", "decommissioning"))
-                   and not p.endswith("-total") else None)
-            if suf is not None:
-                colname[key] = base + suf
+            if money and cost_col(u):
+                colname[key] = base
+                # the column holds whatever each technology's output is
+                # measured in, so naming one unit in the header would be a lie
+                colunit[colname[key]] = "2025_CAD per unit of output (see product-unit)"
             else:
                 colname[key] = base if u == main_unit else f"{base}__{slug(u)}"
-            colunit[colname[key]] = u
+                colunit.setdefault(colname[key], u)
+    # Two units must never share a column by accident. `opex-variable` was
+    # doubled in the header for exactly that reason: 2025_CAD/GJ was mapped to
+    # the bare name by a suffix table and 2025_CAD/t reached the same name by
+    # being the commonest unit, so the header carried the name twice and both
+    # copies read the same cell -- one unit's values silently overwrote the
+    # other's. Deliberate sharing (the cost columns above) is fine; anything
+    # else falls back to the unit suffix.
+    seen = {}
+    for key in sorted(colname):
+        p, tg, u = key
+        name = colname[key]
+        if name in seen and seen[name] != ("cost" if p.startswith(
+                ("capex", "opex", "decommissioning")) and cost_col(u) else key):
+            if not (p.startswith(("capex", "opex", "decommissioning")) and cost_col(u)):
+                colname[key] = f"{name}__{slug(u)}"
+                colunit[colname[key]] = u
+                continue
+        seen[name] = ("cost" if p.startswith(("capex", "opex", "decommissioning"))
+                      and cost_col(u) else key)
 
-    order = sorted(colname.values(),
+    # cost parameters deliberately share one column across units, so the same
+    # name arrives several times; the view needs it once
+    order = sorted(dict.fromkeys(colname.values()),
                    key=lambda c: (list(params).index(c.split("__")[0].split("_")[0])
                                   if c.split("__")[0].split("_")[0] in params else 99, c))
     cols = (["technology", "sector", "end-use", "process-step"] + ROSTER_COLS
-            + ["product-unit", "reference-capacity", "reference-capacity-unit",
-               "sources", "via"] + order)
+            + ["product-unit", "sources", "via"] + order)
 
     rows = []
-    for t, a in placed:
-        node = nodes.get(a["service-node"], {})
-        row = {"technology": t["technology"], "sector": node.get("sector", ""),
-               "end-use": node.get("end-use", ""),
-               "process-step": node.get("process-step", "")}
+    for t, v in placed:
+        row = {"technology": t["technology"], "sector": v["sector"],
+               "end-use": v["end-use"], "process-step": v["process-step"]}
         row.update({c: t.get(c, "") for c in ROSTER_COLS})
         srcs, vias = set(), set()
         for (tech, p, tg, u), recs in grouped.items():
@@ -418,37 +470,53 @@ def main() -> int:
             c = colname[(p, tg, u)]
             if central:
                 row[c] = round(central["value"], 6)
-            if vals:
-                lo, hi = min(vals), max(vals)
-                if central is None or lo < central["value"]:
-                    row[f"{c}"] = row.get(c, "")
-                row[c + "_min"], row[c + "_max"] = round(lo, 6), round(hi, 6)
+            # A min/max pair is only information when the values behind the cell
+            # actually spread. One source reporting one number was writing
+            # min = max = that number, which happened on 58% of the filled pairs
+            # and reads as a measured range when it is a single point. The test
+            # is on the DISTINCT values, not on the number of records, so a
+            # single source's own reported range still prints, and two sources
+            # that agree exactly do not. (User's request, 2026-09-10.)
+            spread = {round(v, 6) for v in vals}
+            if len(spread) > 1:
+                row[c + "_min"], row[c + "_max"] = min(spread), max(spread)
             srcs.update(r["source"] for r in recs)
             vias.update(r["via"] for r in recs if r.get("via"))
-        row["product-unit"] = product_unit.get(t["technology"], "")
+        row["product-unit"] = (product_unit.get(t["technology"])
+                               or out_unit.get(t["technology"], ""))
         row["via"] = ", ".join(short(v) for v in sorted(vias, key=rank))
-        rc = refcap_used.get(t["technology"])
-        if rc:
-            row["reference-capacity"] = round(rc[0], 6)
-            row["reference-capacity-unit"] = rc[1]
         row["sources"] = ", ".join(short(s) for s in sorted(srcs, key=rank))
         rows.append(row)
 
-    # min/max columns are created above; fold them into the column order
+    # min/max columns are created above; fold them into the column order,
+    # skipping any pair no row fills. Since a pair is only written where the
+    # values spread, a parameter every source states as a single point now has
+    # no range at all, and two empty columns per parameter is a real cost in a
+    # sheet this wide.
+    used = {c for r in rows for c, v in r.items() if v != "" and c.endswith(("_min", "_max"))}
     full = []
     for c in cols:
         full.append(c)
-        if c in colunit:
+        if c in colunit and (f"{c}_min" in used or f"{c}_max" in used):
             full += [f"{c}_min", f"{c}_max"]
     cols = full
     for r in rows:
         for c in cols:
             r.setdefault(c, "")
 
+    # Technology sorts BEFORE process-step: the sheet bands on sector and end
+    # use only, so within an end-use band the reader sees one alphabetical run
+    # of technology names. Sorting on the step first split that run into blocks
+    # keyed on source wording ('Boilers', 'size-3') with no visible heading, so
+    # a name could not be found by scanning. (User's request, 2026-09-10.)
     rows.sort(key=lambda r: (sector_order.get(r["sector"], 99),
                              end_use_order.get(r["end-use"], 99),
-                             r["process-step"], r["technology"]))
+                             r["technology"], r["process-step"]))
     write("wide-technology.csv", cols, rows)
+    if hidden:
+        by = collections.Counter(t["status"] for t in hidden)
+        print(f"  {len(hidden)} technologies with no data left out of the views "
+              f"({', '.join(f'{v} {k}' for k, v in sorted(by.items()))})")
 
     # ---- wide technology x commodity ------------------------------------
     coms_in = sorted({r["commodity"] for r in flows if r["direction"] == "input"})
@@ -469,13 +537,11 @@ def main() -> int:
         if r.get("via-source-id"):
             fvia[r["technology"]].add(r["via-source-id"])
     frows = []
-    for t, a in placed:
+    for t, v in placed:
         if t["technology"] not in fby:
             continue
-        node = nodes.get(a["service-node"], {})
-        row = {"technology": t["technology"], "sector": node.get("sector", ""),
-               "end-use": node.get("end-use", ""),
-               "process-step": node.get("process-step", ""),
+        row = {"technology": t["technology"], "sector": v["sector"],
+               "end-use": v["end-use"], "process-step": v["process-step"],
                "per-unit": funit.get(t["technology"], ""),
                "sources": ", ".join(short(s) for s in
                                     sorted(fsrc[t["technology"]], key=rank)),
@@ -485,14 +551,12 @@ def main() -> int:
         frows.append(row)
     frows.sort(key=lambda r: (sector_order.get(r["sector"], 99),
                               end_use_order.get(r["end-use"], 99),
-                              r["process-step"], r["technology"]))
+                              r["technology"], r["process-step"]))
     write("wide-flow.csv", fcols, frows)
 
     pclass = {r["parameter"]: r["parameter-class"] for r in params.values()}
     ident = {"technology", "sector", "end-use", "process-step", "sources", "per-unit",
-             "product-unit", "reference-capacity", "reference-capacity-unit", "via",
-             *ROSTER_COLS}
-    pclass["capex-total"] = "cost"
+             "product-unit", "via", *ROSTER_COLS}
 
     def group_of(c):
         if c in ident:
@@ -522,6 +586,31 @@ def main() -> int:
         for c in sorted(units.missing):
             print(f"      {c} -> {TARGET_CURRENCY}")
     return 0
+
+
+# Number formats, by the magnitude of the value itself rather than by column:
+# 11 of the numeric columns span more than 1000x within themselves (capex runs
+# 0.000736 to 39,630), so one format per column would either round the small
+# values to zero or bury the large ones in decimals. Bands set by the user
+# 2026-09-10, holding roughly three significant figures throughout.
+NUM_FORMAT = [(1000, "#,##0"), (100, "#,##0"), (10, "#,##0.0"),
+              (1, "#,##0.00"), (0.1, "0.000"), (0.01, "0.0000")]
+SMALL_FORMAT = "0.00E+00"
+# A year is not a measurement and must never take a thousands separator -- 2035,
+# not 2,035. A TRL is a rung on a 1-9 ladder.
+PLAIN_INT_COLS = {"year-available", "trl"}
+
+
+def _number_format(v, col):
+    if col in PLAIN_INT_COLS:
+        return "0"
+    a = abs(v)
+    if a == 0:
+        return "0"
+    for lo, fmt in NUM_FORMAT:
+        if a >= lo:
+            return fmt
+    return SMALL_FORMAT
 
 
 def _cell(v):
@@ -603,8 +692,11 @@ def add_sheets(tables, groups, unitrow) -> None:
             uc = ws.cell(UNIT, j, unitrow.get(name, {}).get(c, ""))
             uc.fill, uc.font = TEAL, unit_font
             uc.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            # the process-step cell now holds every step the technology
+            # serves in this end use, joined; 20 characters cut most of them off
             ws.column_dimensions[get_column_letter(j)].width = (
-                42 if j == first else max(11, min(20, len(c) + 3)))
+                42 if j == first else 38 if c == "process-step"
+                else max(11, min(20, len(c) + 3)))
         ws.row_dimensions[HDR].height = 46
         ws.row_dimensions[UNIT].height = 26
 
@@ -628,14 +720,24 @@ def add_sheets(tables, groups, unitrow) -> None:
                 r += 1
                 last_end_use = end_use
             for j, col in enumerate(cols, start=first):
-                cell = ws.cell(r, j, _cell(row.get(col, "")))
+                val = _cell(row.get(col, ""))
+                cell = ws.cell(r, j, val)
                 cell.font = body_font
                 if j == first:
                     cell.alignment = Alignment(indent=1)
+                elif isinstance(val, (int, float)) and not isinstance(val, bool):
+                    cell.number_format = _number_format(val, col)
+                    cell.alignment = Alignment(horizontal="right")
             r += 1
         ws.freeze_panes = ws.cell(UNIT + 2, first + 1).coordinate
     apply_view(wb)
-    wb.save(wb_path)
+    try:
+        wb.save(wb_path)
+    except PermissionError:
+        # the guard above catches an Excel lock on the READ; Excel allows the
+        # read and refuses the write, so the save needs its own
+        print("  workbook is open in Excel; CSVs written, wide sheets not rebuilt")
+        return
     print(f"  workbook: {', '.join(tables)} rebuilt, units in the header row "
           f"({len(wb.sheetnames)} sheets)")
 

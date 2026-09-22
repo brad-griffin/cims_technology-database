@@ -187,8 +187,8 @@ def main() -> None:
     have = [t for t in missing if t["status"] != "placeholder"]
     A(f"**{len(have)} with data already extracted** — these can be added to CIMS now:")
     A("")
-    A(tbl(["Technology", "Label", "Source"],
-          [(f"`{t['technology']}`", t["technology-label"][:60], t["source-id"]) for t in have]))
+    A(tbl(["Technology", "Source"],
+          [(f"`{t['technology']}`", t["source-id"]) for t in have]))
     A("")
     A(f"**{len(ph)} placeholders** — named in the design document as in scope, no local source yet:")
     A("")

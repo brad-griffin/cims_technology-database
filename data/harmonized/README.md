@@ -25,7 +25,7 @@ Two representations of the same tables:
 - `*.csv` — the same tables, one file per table, header row identical to the
   workbook sheet. What scripts read.
 
-Four scripts build this layer, in order:
+The scripts that build and check this layer, in order:
 
 ```
 python data/harmonized/extract-cims-roster.py    # CIMS model inputs -> cims-roster.csv
@@ -35,6 +35,7 @@ python data/harmonized/populate.py               # roster + extractions -> popul
 python data/harmonized/build-cims-review.py      # map -> cims-review.md
 python data/harmonized/build-currency.py         # BoC + StatCan -> currency factors
 python data/harmonized/build-wide.py             # long tables -> wide views
+python data/raw-data/check-data.py               # validate the built tables (gate)
 ```
 
 `build-template.py` **preserves rows that are already there**: a populated
@@ -77,8 +78,9 @@ holds the `branch` string and the unit that demand is measured in.
 is the same dryer in food and in chemicals, so the roster holds it once and
 `technology-application` records every node it serves — one row per (technology,
 service node). Sector and end use are still never stored on the technology
-itself; anything that needs them joins through that table. 424 technologies
-currently hold 1,216 applications, 142 of them serving more than one sector.
+itself; anything that needs them joins through that table. 387 technologies
+currently hold 759 applications; the wide view shows the 216 with data as 376
+rows.
 
 The wide views therefore show a technology under each sector it serves, which is
 the same idiom the source list uses for a source cited in several sectors.
@@ -87,8 +89,8 @@ the same idiom the source list uses for a source cited in several sectors.
 
 | Table | Kind | What it holds |
 | - | - | - |
-| `sector` | registry | 10 industrial sectors, with UKTM / NAICS / ISIC crosswalks. Seeded. |
-| `end-use` | registry | 13 end uses, their service type, unit and temperature tier. Seeded. |
+| `sector` | registry | 10 industrial sectors plus `cross-sector`, with UKTM / NAICS / ISIC crosswalks. Seeded. |
+| `end-use` | registry | 12 end uses, their service type, unit and temperature tier. Seeded. |
 | `process-step` | registry | Sector-specific production stages. Empty. |
 | `service-node` | registry | sector × end-use × step, and the CIMS branch. Empty. |
 | `technology-application` | link | Where each technology applies: one row per technology × service node. Empty. |
@@ -108,15 +110,27 @@ Alongside the tables:
 | `cims-roster.csv` | Every distinct technology in the CIMS model inputs, region-collapsed. |
 | `cims-map.csv` | Each CIMS technology mapped onto the harmonized naming, with an action and a confidence. |
 | `cims-review.md` | The rename / merge / remove / add advice, generated from that map. |
-| `wide-technology.csv` | Wide view: one row per technology **per sector it serves**, one column per parameter plus `_min` / `_max`. |
-| `wide-flow.csv` | Wide view: one row per technology, one column per commodity, `in_` and `out_` prefixed. |
+| `wide-technology.csv` | Wide view: one row per technology **per (sector, end use) it serves**, one column per parameter plus `_min` / `_max`. |
+| `wide-flow.csv` | Wide view: one row per technology per (sector, end use), one column per commodity, `in_` and `out_` prefixed. |
+
+Rows are technologies with data; `placeholder` and `unquantified` entries are
+left out (R7 above). `technology-label` and `status` are not shown: the label
+held only the first CIMS name that claimed a technology, and status read
+`draft` on every row precisely because of that filter.
+
+**One row per (technology, sector, end use)** — the process steps the technology
+serves within that end use are joined into the `process-step` cell rather than
+split across rows (user, 2026-09-10). Every fact column is keyed on the
+technology alone, so a technology serving six steps used to be six rows
+repeating the same numbers, which made it look six times as common as it is.
+Rows sort sector → end use → technology → process step, and the sheet bands on
+sector and end use only, so each band reads as one alphabetical run of names.
 | `unit-conversion.csv` | Physical conversions used by the wide views. Exact constants. |
 | `trl-scale-map.csv` | Crosswalk from each source's readiness scale to the common 1-9 ladder, with the band definitions and where they came from. |
 | `reference-exchange-rate.csv` | Bank of Canada annual average rates to CAD, 2000–2025, USD and GBP. |
 | `reference-cpi.csv` | Statistics Canada all-items CPI, Canada, 2002=100, monthly and annual, 2000–2025. |
 | `currency-conversion.csv` | `YEAR_CUR` → `2025_CAD`, derived from those two by `build-currency.py`. |
 | `source-priority.csv` | Which source supplies a central estimate: broadest first, then most recent. |
-| `reference-capacity.csv` | Typical plant size per sector and process step, for turning a per-product rate into a total. Blank until filled. |
 
 ## 2a. The wide views
 
@@ -181,84 +195,35 @@ than a different spelling of one:
 | `capex` | 2025_CAD per GJ of annual output capacity | the common basis; 68 of 101 costed technologies |
 | `capex-per-product` | 2025_CAD per unit of annual product | no energy throughput to divide by. `product-unit` names the unit — t, m³, £k |
 | `capex-nameplate` | 2025_CAD per GJ/yr at nameplate | a per-kW cost with no capacity factor to convert it at actual output |
-| `capex-total` | 2025_CAD, absolute | **the capital cost of one unit at its working size** — a boiler, a kiln, a plant. `reference-capacity` and `reference-capacity-unit` say what size |
 
 The divisor is only used when it is positive and above 0.05 GJ per unit. A
 technology whose net energy is negative — blast furnace gas recovery, for
 instance — would otherwise come back with a negative cost per GJ.
 
-### capex-total: one unit at its working size
+### Costs are per unit of output
 
-`capex-total` is the number a modeller usually wants first — what one boiler,
-kiln or plant costs. It is formed either from a whole-unit sum the source
-stated, or by multiplying a rate by that technology's own capacity, and
-`reference-capacity` always says what size the total is for. Currently 18 of
-101 costed technologies have one: a 3.6 MW packaged boiler at 92,043 CAD
-(ETSAP I01), a 1,121 kW engine at 3.65M CAD (EPA 2017), a 9,950 kW gas turbine
-at 27.1M CAD.
+Every cost rate is expressed **per unit of the technology's own output** — a
+tonne for a process technology, a GJ for an energy service — as one column per
+cost parameter, read against `product-unit` (design doc D13, 2026-09-10).
 
-Two rules keep it honest:
+The previous basis manufactured a GJ denominator for every cost by dividing a
+per-tonne rate by `specific-energy-consumption`, which is final energy INPUT
+per tonne, while the absolute and per-kW routes divided by annual OUTPUT. One
+column mixed the two, and they differ by the technology's efficiency. Dropping
+the division also makes the figure the source's own: 262 of the 784 cost rows
+are natively per tonne.
 
-**A rate must meet a scale from the same source.** Pairing UKERC's cost per
-GJ/yr with an EPA plant size produces a total that reads as one source's
-finding and is neither's. Where the scale comes from a different source the
-total is not formed.
+**Do not sort, average or chart a cost column across end-use bands.** Within a
+band the unit is effectively constant — the energy services are all GJ, the
+process technologies all t — which is what makes a single column workable.
+Across bands the numbers are not commensurable. The same caution applies to
+`efficiency`, which since the COP fold spans 4.92 to 700 and mixes combustion
+efficiency, heating COP and one cooling COP.
 
-**Totals are never manufactured from a sector-wide rate.** Multiplying a UKERC
-rate by *its* own scale gives the cost of deploying across the whole UK sector
-— its integrated-steelworks baseline is 11.4 Mt/yr — not the cost of a plant.
-Numbers six orders of magnitude apart in one column would look comparable and
-are not.
-
-That is why the other 83 technologies have no total: UKERC prices per unit of
-annual product and never states a plant size. `reference-capacity.csv` lists
-the 44 process steps waiting for a typical plant capacity — cement dry kiln,
-integrated steelworks, steam cracker, and so on. Fill a row there and those
-technologies gain a `capex-total` on the next run. The rows are deliberately
-blank: nothing in that file is guessed.
-
-**Every source for a parameter folds into one column.** Derived and
-as-reported values sit together. The central value is the one from the
-highest-ranked source in `source-priority.csv`; `_min` and `_max` span every
-source's value and its own reported range. There is no source-id column — the
-long tables carry the ids.
-
-Two columns name the provenance, because a compilation is not a source:
-
-- `sources` — who produced the number. For anything reaching us through UKERC
-  that is the original UKERC cites: `IEAGHG 2013b` for top-gas-recycling with
-  capture, `CE Delft 2010, Link 2008` for HIsarna, `IISI 1998, Worrell et al
-  1999` for the sinter measures.
-- `via` — the compilation it came through, where there is one. UKERC 2013
-  appears here and nowhere else.
-
-UKERC's own reference strings are parsed into source identifiers by
-`data/raw-data/other-reports/ukerc-citations.py`, which mints one id per
-distinct original and registers all 69 in the manifest as documents we do not
-hold (design doc D7). It is fiddly parsing: `;` always separates citations and
-`,` usually does, but `Worrell et al 1999, 2010` is two Worrell papers rather
-than a second author, `Novacem 2011a, b` is two papers with the second written
-as a bare letter (both turned out to be the same paper as `Novacem 2011`, and
-all three are now one id), and the same source appears as both `IEA GHG 2008`
-and `IEAGHG 2008`. The mapping is written to
-`ukerc_2013_usable-energy-database_citations.csv` with the raw forms beside it
-so it can be checked, and seven ids are flagged as possibly one document —
-`NERA 2009`, `NERA and AEA 2009` and `NERA and EA 2009` are almost certainly
-the same report with a typo, but merging them is a reading of the source rather
-than a parsing rule.
-
-Ranking still follows the compilation: a value UKERC selected and harmonised
-carries UKERC's standing even though the number belongs to whoever UKERC cited.
-
-A parameter that names a **target** still gets one column per target, so
-`emissions-factor_co2` and `emissions-factor_nox` do not displace each other.
-Only parameters and commodities that carry data get columns, so the sheets
-track the database rather than the full dictionary.
-
-Column-by-column definitions are on the `readme` sheet of the workbook and as
-hover notes on each header cell.
-
----
+`capex-total` and `reference-capacity.csv` were removed in the same pass. The
+total was a derived column only, never a stored parameter, and every capacity
+cell in the table behind it was blank, so the route never fired. The table is
+archived under `data/raw-data/superseded/`.
 
 ## 2. Traceability
 
@@ -279,8 +244,15 @@ in this same layer), so a chain of derivation is walkable without rerunning
 anyone's arithmetic. `assumed` is the only value type that may sit without a
 `source-id`, and its `note` must say who assumed it and why.
 
-`record-id` exists so that a value can be cited, superseded and logged. Prefix
-by table: `tp-0001`, `tf-0001`, `tc-0001`.
+`record-id` exists so that a value can be cited, superseded and logged. It is
+`<prefix>-<source-id>-NNNN`, prefixed by table — `tp-ukerc_2013_001-0042`,
+`tf-...`, `tc-...` — and numbered within each source's own block. A single
+run-wide counter meant adding one line to an early extraction renumbered every
+row below it, so no id was safe to cite in a note, an issue or a paper; the
+per-source number keeps an edit's blast radius inside the source it edits.
+`populate.py` renumbers in one pass at the end of the run and rewrites every
+`derived-from` through the same old → new map, failing the run if a reference
+stops resolving.
 
 **The source register is `data/raw-data/source-details_sources.csv` plus
 `source-details_files.csv`, and this layer does not copy it.**
@@ -295,19 +267,32 @@ round-trip, which is why edits had to go through bespoke XML-editing helpers;
 CSV removes that fragility entirely. The workbook is kept unchanged in
 `data/raw-data/superseded/`. `python data/raw-data/check-manifest.py` validates
 the manifest against the disk and against this layer, and exits non-zero on a
-failure.
+failure. Beside it, `python data/raw-data/check-data.py` validates this layer
+against its own conventions — parameters defined in `parameter.csv`, the basis
+each one requires, `currency` as a bare currency-year, record-id shape and
+uniqueness, and every `derived-from` resolving — and also exits non-zero, so
+either can gate a commit. Neither runs the pipeline; both read what is on disk.
 
 Three flags stop the silent-pooling failures the design doc calls out:
 
-- `cost-basis` — required with every `capex`. `equipment` / `installed` /
-  `total-plant` / `overnight`. An equipment cost and an installed cost differ
-  by up to a factor of two and look identical in a spreadsheet.
+- `cost-basis` — `equipment` / `installed` / `total-plant` / `overnight`. An
+  equipment cost and an installed cost differ by up to a factor of two and look
+  identical in a spreadsheet.
 - `capacity-basis` — `thermal-input` / `thermal-output` / `product-output` /
   `electric-output`. A $/MW that does not say which is unusable.
-- `currency` — `YEAR_DENOMINATION`, e.g. `2018_USD`. Required with every
-  monetary value. **Values stay as reported**: no deflation, no currency
-  conversion, no Canada adjustment in this layer (design doc §6.3, decision
-  D2). Conversion happens once, at the CIMS `currency` parameter.
+- `currency` — the currency-year and **only** that: `2018_USD`, never
+  `2018_USD/kW`. What the money is per belongs to `unit`, which already carries
+  it. Required with every monetary value. **Values stay as reported**: no
+  deflation, no currency conversion, no Canada adjustment in this layer (design
+  doc §6.3, decision D2). Conversion happens once, at the CIMS `currency`
+  parameter.
+
+Which parameters require which basis is declared in `parameter.csv`, in its
+`basis-required` column — not hard-coded in the loader. `populate.py` reads that
+column, and a quantified row missing its declared basis is marked
+`status=review` with a `BASIS NOT RECORDED` note rather than dropped or guessed.
+Extractions that predate the basis rules are working through that backlog;
+`check-data.py` reports its size per source rather than failing on it.
 - `discount-rate` — the *source study's* rate, recorded whenever a value was
   levelised or inverted, so the model's own hurdle rate is not applied twice.
 
@@ -375,7 +360,7 @@ every parameter. The short version:
 | `capacity` × `capacity-factor` × 8760 | `output` | annual activity bound |
 | `efficiency`, or `tech-flow` input rows | `service-request`, one per carrier | input coefficients in the activity matrix |
 | `tech-flow` material rows | — | material balance rows |
-| `emissions-factor` (target = species) | `emissions` / `emissions-biomass` / `emissions-removal` | emission coefficients |
+| `emissions-combustion` / `emissions-process` / `emissions-total` / `emissions-captured` (target = species) | `emissions` / `emissions-biomass` / `emissions-removal` | emission coefficients, scope 1, species kept explicit |
 | `year-available` | `available` | investment window |
 | `tech-constraint` shares | `market-share-new-max` / `-min`, `market-share-total` | bound constraints |
 | `construction-time`, `cost-learning-rate` | — | investment lag, endogenous learning |
@@ -449,6 +434,51 @@ citation shown follows the tab and the disagreement is recorded rather than
 resolved.
 
 
+## 5b. Aggregation
+
+The roster is kept general on purpose. Four rules — R1 to R4, set out in design
+doc **D11** and implemented in `aggregate.py` — rename `all-industry` to
+`cross-sector`, hold the generic services (machine drive, facility services,
+refrigeration, steam and hot water including CHP) once on that sector instead
+of repeating them under every sector, retire the `other-services` residual bin,
+and generalise technology names by dropping the carrier from an efficiency
+bucket and the tier suffix from a name whose end use already carries the tier.
+
+Two things make this safe to re-run and safe to argue with:
+
+- **`aggregation-review.md` is regenerated on every `populate.py` run** and
+  lists every reassignment with the evidence behind it, plus every general name
+  and the source names it aggregates.
+- **Nothing is discarded.** The three fact tables are unchanged in length and
+  re-pointed at the general name, so a merged technology carries each source's
+  rows side by side, told apart by `source-id` and ranked by
+  `source-priority.csv`. The roster's `aggregated-from` column names what
+  collapsed into each entry, and `technology-application.reported-sectors` /
+  `reported-steps` keep the sector and step wording the sources actually used,
+  so R2 can be reversed without re-extracting.
+
+**R5 and R6 (design doc D12)** extend this: carriers collapse into fuel
+groups where they behave the same as a source of heat, and `post-combustion` /
+`oxyfuel` / `oxyfuel-ccs` collapse into one `ccs` variant. Both are
+deliberately conservative — `coke` stays out of `coal`, `black-liquor` out of
+`biomass`, `ammonia` and `methanol` out of any group, and the `-ccs` process
+routes (`hisarna-ccs`, `corex-ccs`, `ulcored-ccs`, `top-gas-recycling-ccs`)
+stay whole, because this database describes the plant stock that exists as well
+as the options that might replace it.
+
+**R7 — the roster and the views answer different questions.** 170 entries carry
+no parameter, flow or constraint row: 17 are `placeholder` (the design document
+declared them in scope, nothing extracted yet) and 153 are `unquantified` (a
+source named the technology and reported no number). They stay in
+`technology.csv`, because the CIMS names among them are what `cims-map.csv`
+points at, and the wide views leave them out. **The roster says what the
+database has been asked to cover; the view says what it knows.** The view
+filters on the presence of fact rows rather than on the status column, so it
+cannot drift from what `populate.py` labelled.
+
+To change a grouping decision, edit the rule tables at the top of
+`aggregate.py` and re-run — never the generated CSVs.
+
 ## 6. Two rules about shape
 
 **Every technology is standalone.** `baseline-technology` is left blank and each
@@ -466,8 +496,8 @@ is a grouping for the model, not a bin.
 
 **Placeholders.** A technology a source names as relevant but does not quantify
 is written with `status = placeholder` and no fact rows. The gap is then
-visible in the roster instead of being absent from it. 42 of the current
-technologies are placeholders, concentrated in electric and hydrogen heat,
+visible in the roster instead of being absent from it. 17 of the current
+technologies are placeholders, and a further 153 are `unquantified` (R7), concentrated in electric and hydrogen heat,
 industrial heat pumps, mechanical vapour recompression, solar thermal and
 nuclear process heat.
 
