@@ -403,6 +403,30 @@ def branch_rule(branch: str):
 # too, and the CIMS mapper files it as high-temperature process heat.
 CIMS_STEP_TO_HEAT_BANDS = {"direct-heat", "steam", "still-gas-steam"}
 
+# --- which hierarchy leaf a device belongs on -------------------------------
+# Only for the end uses whose leaves split one route from another, where the
+# words of a roster name do not say which (`blast-furnace` does not contain
+# "hot metal").  Keyed by (design sector, end use), then equipment -> the
+# leaf's trailing path.  Everything else is chosen by sector and by words.
+LEAF_BY_EQUIPMENT = {
+    ("iron-and-steel", "ironmaking"): {
+        "blast-furnace": "hot-metal", "converter": "hot-metal",
+        "smelting-vessel": "hot-metal", "shaft-furnace": "direct-reduced-iron",
+        "rotary-kiln": "direct-reduced-iron"},
+    ("iron-and-steel", "steelmaking"): {
+        "basic-oxygen-furnace": "molten-steel", "electric-arc-furnace": "molten-steel",
+        "melting-furnace": "molten-steel", "furnace": "ladle-preheating",
+        "refining-furnace": "ladle-refining"},
+    ("pulp-and-paper", "chemical-recovery"): {
+        "evaporator": "evaporator", "boiler": "recovery-furnace",
+        "gasifier": "recovery-furnace"},
+    ("cement", "clinker-production"): {
+        "kiln": "clinker", "calciner": "clinker", "precalciner": "clinker",
+        "grinding-mill": "clinker", "direct-heater": "kiln-heat"},
+    ("non-metallic-minerals", "lime-calcination"): {
+        "kiln": "lime", "direct-heater": "kiln-heat"},
+}
+
 # --- roster technologies the rules cannot place -------------------------
 # Folded onto the nearest design technology (the user, 2026-09-14).  The note
 # says what the fold costs, where it costs something.

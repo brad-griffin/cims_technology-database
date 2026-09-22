@@ -1,14 +1,21 @@
 """Crosswalk the harmonized layer onto the design tables, and report it.
 
-The design tables -- design/sector-end-use-table.csv (13 sectors plus
-cross-sector, 91 end uses as of 2026-09-16) and design/end-use-technology-table.csv
-(504 rows) -- become the controlled vocabulary of the
-harmonized layer, in place of the roster the sources grew.  This script works
-out where every existing service node, application and roster technology lands
-in that vocabulary and writes it out.
+The design tables -- design/sector-end-use-table.csv (end uses) and
+design/end-use-technology-table.csv (technologies) -- become the controlled
+vocabulary of the harmonized layer, in place of the roster the sources grew,
+and design/cims_hierarchy.csv sets the level of detail below them.  This
+script works out where every existing application and roster technology lands
+in that vocabulary and writes it out, down to the hierarchy leaf.
+
+The hierarchy is the definitive mapping (the user, 2026-09-22).  The CIMS
+model-input files predate it and will be brought into line with it, so
+cims-map.csv is not rebuilt: its rows are read only as the record of which
+roster technologies came from CIMS and on which legacy branch, and that
+legacy branch is used as evidence when choosing among hierarchy leaves, never
+as a target.
 
 IT WRITES NOTHING INTO THE HARMONIZED TABLES.  Output is
-design-crosswalk-review.md plus two crosswalk CSVs, for review before any
+design-crosswalk-review.md plus three crosswalk CSVs, for review before any
 adoption pass applies them (the user, 2026-09-14).
 
 Run from the repo root:  python data/harmonized/build-design-crosswalk.py
@@ -132,6 +139,147 @@ def resolve(sector: str, end_use: str, step: str, tech: str,
     return sector, [], "unmapped"
 
 
+# --- branch resolution ----------------------------------------------------
+# An application is taken from its design end use down to the hierarchy leaves
+# that end use is made of (design/cims-hierarchy-crosswalk.csv). Where there is
+# more than one, the source's own context chooses: first the sector it came
+# from, then the device, then the words of its name, process step and legacy CIMS branch against the
+# words of each leaf. What is still ambiguous is expanded to every remaining
+# leaf and flagged, rather than guessed.
+DESIGN = ROOT / "design"
+
+HARM_TO_HIER = {          # harmonized (source) sector -> hierarchy sectors
+    "iron-and-steel": {"iron-and-steel"}, "cement": {"industrial-minerals"},
+    "non-metallic-minerals": {"industrial-minerals"}, "chemicals": {"chemicals"},
+    "petroleum-refining": {"petroleum-refining"}, "pulp-and-paper": {"pulp-and-paper"},
+    "mining": {"mining", "coal-mining"}, "food-and-beverage": {"light-industrial"},
+    "other-industry": {"light-industrial", "iron-and-steel"},
+    "non-ferrous-metals": {"metal-smelting"}, "oil-and-gas": {"natural-gas", "petroleum-crude"},
+    "biofuels": {"biofuels"}, "hydrogen": {"hydrogen"},
+}
+LEGACY_TO_HIER = {        # first segment of a CIMS model-input branch
+    "Iron and Steel": "iron-and-steel", "Metal Smelting": "metal-smelting",
+    "Industrial Minerals": "industrial-minerals", "Chemical Products": "chemicals",
+    "Pulp and Paper": "pulp-and-paper", "Petroleum Refining": "petroleum-refining",
+    "Petroleum Crude": "petroleum-crude", "Natural Gas": "natural-gas", "Mining": "mining",
+    "Coal Mining": "coal-mining", "Light Industrial": "light-industrial",
+    "Ethanol": "biofuels", "Biodiesel": "biofuels", "Hydrogen": "hydrogen",
+    "Direct Air Capture": "direct-air-capture",
+}
+STOP = {"product", "products", "service", "services", "primary", "metals", "size",
+        "process", "the", "and", "of", "with", "other", "production", "supply"}
+
+
+def _stem(w: str) -> str:
+    """Crude, but enough to meet `roasting` with `roaster`, `smelting` with
+    `smelter` and `refining` with `refining-furnace`."""
+    for suf in ("ation", "ing", "ers", "er", "es", "s"):
+        if w.endswith(suf) and len(w) - len(suf) >= 4 and not w.endswith("ss"):
+            return w[: -len(suf)]
+    return w
+
+
+def _tok(text: str) -> set[str]:
+    """Words for matching a source context against a leaf: lower-cased, stop
+    words and numbers dropped, stemmed, and adjacent pairs joined so
+    'Pyro Metallurgy' meets `pyrometallurgy`."""
+    words = [w for w in re.split(r"[^a-z0-9]+", text.lower())
+             if w and not w.isdigit() and w not in STOP]
+    out = {_stem(w) for w in words}
+    out |= {_stem(a + b) for a, b in zip(words, words[1:])}
+    return out
+
+
+def load_hierarchy() -> dict:
+    """(design sector, end use) -> the hierarchy leaves that feed it."""
+    fp = {r["branch"]: r["data-filepath"] for r in rd(DESIGN / "cims_hierarchy.csv")}
+    out = collections.defaultdict(list)
+    for r in rd(DESIGN / "cims-hierarchy-crosswalk.csv"):
+        for t in (x.strip() for x in r["end-use"].split(";")):
+            if t:
+                s, eu = t.split("/", 1)
+                out[(s, eu)].append({"branch": r["branch"], "share": r["share"],
+                                     "role": r["role"],
+                                     "data-filepath": fp.get(r["branch"], "")})
+    return out
+
+
+def narrow(cands: list[dict], ctx: dict, tech: str = "", equipment: str = "",
+           key: tuple = ()) -> tuple[list[dict], str]:
+    """The leaves among `cands` this source context points at, and how.
+
+    Evidence in order: the sector the source came from; the equipment, where
+    design_crosswalk.LEAF_BY_EQUIPMENT names the leaf a device belongs on; then
+    the words of the roster name, the process step and the legacy branch
+    against the words of each leaf."""
+    if len(cands) <= 1:
+        return cands, "single node"
+    how = []
+    lb = ctx.get("legacy-branch", "")
+    head = lb.split(".")[0] if lb else ""
+    secs = ({LEGACY_TO_HIER[head]} if head in LEGACY_TO_HIER
+            else HARM_TO_HIER.get(ctx.get("from-sector", ""), set()))
+    pool = [c for c in cands if c["branch"].split(".")[1] in secs]
+    if pool and len(pool) < len(cands):
+        cands, how = pool, ["sector"]
+    hint = cw.LEAF_BY_EQUIPMENT.get(key, {}).get(equipment)
+    if len(cands) > 1 and hint:
+        pool = [c for c in cands if c["branch"].endswith("." + hint)]
+        if pool:
+            cands, how = pool, how + ["equipment"]
+    if len(cands) > 1:
+        words = _tok((lb.split(".", 1)[1] if "." in lb else "") + " "
+                     + ctx.get("from-process-step", "") + " " + tech)
+        # only the segments that tell the leaves apart: `ammonia-methanol`, the
+        # parent both ammonia and methanol sit under, must not score for either
+        segs = [c["branch"].split(".")[2:] for c in cands]
+        common = set(segs[0]).intersection(*segs[1:])
+        scored = [(len(set().union(set(), *(_tok(x) for x in sg if x not in common)) & words), c)
+                  for sg, c in zip(segs, cands)]
+        top = max(k for k, _ in scored)
+        if top:
+            pool = [c for k, c in scored if k == top]
+            if len(pool) < len(cands):
+                cands, how = pool, how + ["step"]
+    if len(cands) > 1:
+        how.append("expanded")
+    return cands, "; ".join(how)
+
+
+def branch_rows(app_rows: list[dict], contexts: dict, leaves: dict,
+                equip: dict) -> list[dict]:
+    """One row per (roster technology, hierarchy leaf)."""
+    out, seen = [], {}
+    for a in app_rows:
+        s, eu = a["design-sector"], a["design-end-use"]
+        if not eu:
+            continue
+        for ctx in contexts[(a["technology"], s, eu)]:
+            picked, how = narrow(leaves.get((s, eu), []), ctx, a["technology"],
+                                 equip.get(a["technology"], ""), (s, eu))
+            for c in picked:
+                key = (a["technology"], c["branch"], s, eu)
+                if key in seen:
+                    # several source contexts reach the same leaf: keep each
+                    # distinct piece of evidence once
+                    row = seen[key]
+                    for k, v in (("origin", ctx["origin"]), ("how", how)):
+                        parts = row[k].split("; ")
+                        parts += [x for x in v.split("; ") if x and x not in parts]
+                        row[k] = "; ".join(parts)
+                    continue
+                row = {"technology": a["technology"], "design-sector": s,
+                       "design-end-use": eu, "branch": c["branch"],
+                       "data-filepath": c["data-filepath"], "share": c["share"],
+                       "role": c["role"], "how": how, "origin": ctx["origin"],
+                       "from-sector": ctx["from-sector"],
+                       "from-process-step": ctx["from-process-step"],
+                       "legacy-branch": ctx.get("legacy-branch", "")}
+                seen[key] = row
+                out.append(row)
+    return out
+
+
 def main() -> int:
     aggregate._VOCAB_PATH[0] = HERE / "vocabulary.csv"
     seu = rd(dn.SEU)
@@ -174,8 +322,9 @@ def main() -> int:
     # uses need that step back (LNG compression against pipeline compression).
     seen, app_rows, unmapped_apps = {}, [], []
     reach = collections.defaultdict(set)            # roster tech -> design (sector, eu)
+    contexts = collections.defaultdict(list)        # (tech, sector, eu) -> source contexts
 
-    def place(t, s, eus, rule, origin, frm):
+    def place(t, s, eus, rule, origin, frm, legacy=""):
         if not eus:
             unmapped_apps.append({**frm, "technology": t})
             return
@@ -185,6 +334,10 @@ def main() -> int:
                 continue
             reach[t].add((s, eu))
             key = (t, s, eu)
+            ctx = {"origin": origin, "from-sector": frm["from-sector"],
+                   "from-process-step": frm["from-process-step"], "legacy-branch": legacy}
+            if ctx not in contexts[key]:
+                contexts[key].append(ctx)
             if key in seen:
                 row = seen[key]
                 if origin not in row["origin"]:
@@ -223,7 +376,11 @@ def main() -> int:
                                    equip.get(t, ""), variant.get(t, ""))
         place(t, s, eus, rule, "cims-map",
               {"from-sector": r["sector"], "from-end-use": r["end-use"],
-               "from-process-step": step})
+               "from-process-step": step}, legacy=r["cims-branch"])
+
+    # ---- 1b. applications down to hierarchy leaves ----------------------
+    leaves = load_hierarchy()
+    br_rows = branch_rows(app_rows, contexts, leaves, equip)
 
     # ---- 2. roster technologies onto design technologies ---------------
     # the design table's own roster-match column first
@@ -355,42 +512,12 @@ def main() -> int:
                           "other-candidates": "; ".join(cands[1:])})
     return write_review(seu, tt, names, label_rows, placements, app_rows,
                         unmapped_apps, tech_rows, orphans, tech, factcount,
-                        vocab, apps, design_eu, cims)
-
-
-def cims_branch_rows(cell: str, cims: list[dict]) -> tuple[list[dict], list[str]]:
-    """The cims-map rows sitting on the branches a design row names.
-
-    Since 2026-09-16 the design table writes CIMS services as paths in
-    design/cims_hierarchy.csv (lower-case, hyphenated,
-    `product`/`service` levels), with `{a, b}` alternatives and `(part)` /
-    `(proposed)` tags; cims-map.csv still carries the model-input spelling.
-    The two are matched loosely: on the last two path segments, slugged."""
-    def slug(s: str) -> str:
-        return re.sub(r"[^a-z0-9.]+", "-", s.lower()).strip("-")
-    branches, hits = [], []
-    for part in cell.split(";"):
-        part = re.split(r"\s*->\s*", part.strip())[0]
-        part = re.sub(r"\s*\(.*?\)", "", part)
-        if not part or part.lower().startswith("none"):
-            continue
-        branches.append(part)
-        m = re.match(r"^(.*?)\{(.*?)\}(.*)$", part)
-        expanded = ([m.group(1) + x.strip() + m.group(3) for x in m.group(2).split(",")]
-                    if m else [part])
-        for p in expanded:
-            segs = slug(p).split(".")
-            tail = ".".join(segs[-2:])
-            for r in cims:
-                b = slug(r["cims-branch"])
-                if b == tail or b.endswith("." + tail):
-                    hits.append(r)
-    return hits, branches
+                        vocab, apps, design_eu, br_rows, leaves)
 
 
 def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps,
                  tech_rows, orphans, tech, factcount, vocab, apps, design_eu,
-                 cims) -> int:
+                 br_rows, leaves) -> int:
     ccs_named = sum(1 for r in tech if r["technology"].endswith("_ccs"))
     ccs_as_carrier = sum(1 for r in tech if r["technology"].endswith("_ccs")
                          and r.get("energy-carrier") == "ccs")
@@ -412,6 +539,11 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
     wr(HERE / "design-crosswalk-application.csv",
        ["technology", "from-sector", "from-end-use", "from-process-step",
         "design-sector", "design-end-use", "rule", "origin"], app_rows)
+    wr(HERE / "design-crosswalk-branch.csv",
+       ["technology", "design-sector", "design-end-use", "branch", "data-filepath",
+        "share", "role", "how", "origin", "from-sector", "from-process-step",
+        "legacy-branch"],
+       sorted(br_rows, key=lambda r: (r["branch"], r["technology"])))
 
     out = []
     A = out.append
@@ -429,6 +561,7 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
     A(f"| End uses | 12 global | {len(seu)} sector-scoped |")
     A(f"| Technologies | {len(tech)} | {len(names)} |")
     A(f"| Applications | {len(apps)} | {len(app_rows)} |")
+    A(f"| Applications at hierarchy-leaf level | -- | {len(br_rows)} |")
     A("")
     A("The sectors gained are `biofuels` and `oil-and-gas`; the end uses become "
       "sector-scoped, so the cross-sector heat bands supply the sector end uses "
@@ -458,22 +591,65 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
         A("")
     A("## Design end uses with nothing in them")
     A("")
-    A("What CIMS holds on the branches each one names, and what the mapper did "
-      "with those rows. A `review` or `fuel-node` row is not in the harmonized "
-      "layer at all, so these end uses cannot be filled by re-labelling what is "
-      "already there -- `build-cims-map.py` has to place them first.")
+    A("The hierarchy leaves each one is made of, and where their technology data "
+      "would live. No roster application reaches them, so they are filled by new "
+      "extractions, or by the CIMS model inputs once those follow the hierarchy -- "
+      "not by re-labelling what the harmonized layer already holds.")
     A("")
-    A("| design end use | CIMS branches named | rows | what the mapper did |")
-    A("|---|---|---:|---|")
+    A("| design end use | hierarchy leaves | data folder |")
+    A("|---|---|---|")
     for r in seu:
-        if (r["sector"], r["end-use"]) in landed:
+        k = (r["sector"], r["end-use"])
+        if k in landed:
             continue
-        hits, branches = cims_branch_rows(r["cims-services"], cims)
-        acts = collections.Counter(x["action"] for x in hits)
+        ls = leaves.get(k, [])
         A(f"| `{r['sector']}` / `{r['end-use']}` | "
-          f"{'; '.join(f'`{b}`' for b in branches) or 'none named'} | {len(hits)} | "
-          f"{'; '.join(f'{a} {n}' for a, n in acts.most_common()) or '--'} |")
+          f"{'; '.join(sorted('`' + x['branch'].split('.', 1)[1] + '`' for x in ls)) or 'none'} | "
+          f"{'; '.join(sorted({'`' + x['data-filepath'].replace('data/service-technology-map/', '') + '`' for x in ls})) or '--'} |")
     A("")
+    # ---- the branch level ------------------------------------------------
+    per_app = collections.defaultdict(set)
+    how_of = collections.defaultdict(set)
+    for r in br_rows:
+        k = (r["technology"], r["design-sector"], r["design-end-use"])
+        per_app[k].add(r["branch"])
+        how_of[k].update(r["how"].split("; "))
+    one = sum(1 for v in per_app.values() if len(v) == 1)
+    single = sum(1 for k, v in per_app.items() if len(v) == 1 and how_of[k] == {"single node"})
+    all_leaves = {x["branch"] for v in leaves.values() for x in v}
+    reached = {r["branch"] for r in br_rows}
+    A("## Down to the hierarchy leaf")
+    A("")
+    A("Every application is taken from its design end use to the leaves of "
+      "`design/cims_hierarchy.csv` that end use is made of. Where there is more "
+      "than one, the source's own sector chooses first, then the device (a short "
+      "hint table in `design_crosswalk.py`), then the words of the roster name, "
+      "its process step and legacy CIMS branch against the leaf's; what is still "
+      "ambiguous is expanded to every remaining leaf, flagged, and not guessed. "
+      "The legacy branch is evidence only -- the hierarchy is the target.")
+    A("")
+    A(f"- **{one} of {len(per_app)}** applications land on exactly one leaf: "
+      f"{single} because their end use has only one, {one - single} after narrowing "
+      "by sector or step.")
+    A(f"- **{len(per_app) - one}** are expanded across several leaves, giving "
+      f"{len(br_rows)} leaf-level rows in `design-crosswalk-branch.csv`.")
+    A(f"- **{len(reached)} of {len(all_leaves)}** hierarchy leaves that feed an end "
+      "use receive at least one application.")
+    A("")
+    exp = collections.Counter()
+    for k, v in per_app.items():
+        if len(v) > 1:
+            exp[(k[1], k[2])] += 1
+    if exp:
+        A("Expanded applications by design end use -- mostly generic technologies "
+          "with no source sector, which legitimately apply on every sector's leaf, "
+          "and sector end uses whose leaves are product grades:")
+        A("")
+        A("| design end use | expanded applications | leaves |")
+        A("|---|---:|---:|")
+        for (s_, eu), n in exp.most_common():
+            A(f"| `{s_}` / `{eu}` | {n} | {len(leaves.get((s_, eu), []))} |")
+        A("")
     A("## Vocabulary the names need")
     A("")
     A(f"Naming follows section 5: `-` within a component, `_` between. With the "
@@ -493,7 +669,7 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
     A("## What adoption would change")
     A("")
     A("1. `build-template.py` -- `SECTORS` gains `biofuels` and `oil-and-gas`; "
-      "`END_USES` is replaced by the 73 design rows and gains a `sector` column, "
+      "`END_USES` is replaced by the design rows and gains a `sector` column, "
       "so `end-use.csv` becomes sector-scoped. `service-unit` and "
       "`temperature-tier` come from the design table's `service-unit` and "
       "`heat-tier` columns.")
@@ -510,9 +686,11 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
       "so the roster does not grow the names those rules exist to collapse. R3 "
       "(`other-services`) and R7 (`unquantified`) stay. R5 and R6 stay for the "
       "extraction rows, which still arrive spelled as their source spells them.")
-    A("5. `build-cims-map.py` -- the `review` and `fuel-node` rows behind the "
-      "empty end uses above have to be placed, and the mapper's end-use table "
-      "now targets the design vocabulary.")
+    A("5. `service-node.csv` -- one node per hierarchy leaf, its `branch` filled "
+      "from `design-crosswalk-branch.csv`; the process step comes from the leaf, "
+      "not from the source's label. `cims-map.csv` is not rebuilt: the model "
+      "inputs predate the hierarchy, so its rows stay as the record of where the "
+      "CIMS-sourced roster came from.")
     A("6. The crosswalk tables in `design_crosswalk.py` and the names in "
       "`design_names*.py` become the adoption rules; the two CSVs beside this "
       "file are their output.")
@@ -582,8 +760,9 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
       "`...Processing.Compression` and `...Transmission.Compression` are one "
       "application row with a joined `reported-steps` cell, while the design "
       "table puts them in three different end uses. CIMS placements here are "
-      "therefore resolved from `cims-map.csv` by branch, not from the merged "
-      "application row. An adoption pass has to do the same.")
+      "therefore resolved from each `cims-map.csv` row's legacy branch, not from "
+      "the merged application row, and that branch is kept on the leaf-level "
+      "rows as evidence.")
     A("- **One efficiency bucket sits on a node it does not belong to.** "
       "`rolling-mill_efficiency-moderate` reaches `mining` / "
       "`separation-and-processing` through a mining forming-and-finishing node, "
