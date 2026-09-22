@@ -14,9 +14,10 @@ roster technologies came from CIMS and on which legacy branch, and that
 legacy branch is used as evidence when choosing among hierarchy leaves, never
 as a target.
 
-IT WRITES NOTHING INTO THE HARMONIZED TABLES.  Output is
-design-crosswalk-review.md plus three crosswalk CSVs, for review before any
-adoption pass applies them (the user, 2026-09-14).
+It writes design-crosswalk-review.md and three crosswalk CSVs; it does not
+touch the harmonized tables itself. populate.py applies it on every run
+(adopt.py), handing it the source roster in memory; run standalone, it reads
+that roster from source-roster/.
 
 Run from the repo root:  python data/harmonized/build-design-crosswalk.py
 """
@@ -167,7 +168,12 @@ LEGACY_TO_HIER = {        # first segment of a CIMS model-input branch
     "Direct Air Capture": "direct-air-capture",
 }
 STOP = {"product", "products", "service", "services", "primary", "metals", "size",
-        "process", "the", "and", "of", "with", "other", "production", "supply"}
+        "process", "the", "and", "of", "with", "other", "production", "supply",
+        # energy words say what a device burns or delivers, not where it sits:
+        # `heat-pump` must not pick `natural-gas.product.supply.direct-heat` for
+        # sharing the word heat. `steam` stays, since steam leaves are a real home.
+        "heat", "direct", "fired", "fuel", "natural", "gas", "electric",
+        "electricity", "power", "efficiency", "moderate", "strong", "base"}
 
 
 def _stem(w: str) -> str:
@@ -263,7 +269,12 @@ def branch_rows(app_rows: list[dict], contexts: dict, leaves: dict,
                     # several source contexts reach the same leaf: keep each
                     # distinct piece of evidence once
                     row = seen[key]
-                    for k, v in (("origin", ctx["origin"]), ("how", how)):
+                    for k, v in (("origin", ctx["origin"]), ("how", how),
+                                 ("source-id", ctx["source-id"]),
+                                 ("from-sector", ctx["from-sector"]),
+                                 ("from-end-use", ctx["from-end-use"]),
+                                 ("from-process-step", ctx["from-process-step"]),
+                                 ("legacy-branch", ctx.get("legacy-branch", ""))):
                         parts = row[k].split("; ")
                         parts += [x for x in v.split("; ") if x and x not in parts]
                         row[k] = "; ".join(parts)
@@ -272,15 +283,26 @@ def branch_rows(app_rows: list[dict], contexts: dict, leaves: dict,
                        "design-end-use": eu, "branch": c["branch"],
                        "data-filepath": c["data-filepath"], "share": c["share"],
                        "role": c["role"], "how": how, "origin": ctx["origin"],
-                       "from-sector": ctx["from-sector"],
+                       "from-sector": ctx["from-sector"], "from-end-use": ctx["from-end-use"],
                        "from-process-step": ctx["from-process-step"],
-                       "legacy-branch": ctx.get("legacy-branch", "")}
+                       "legacy-branch": ctx.get("legacy-branch", ""),
+                       "source-id": ctx["source-id"]}
                 seen[key] = row
                 out.append(row)
     return out
 
 
-def main() -> int:
+# The roster as the sources grew it, before adoption. populate.py writes it
+# here, and hands the same rows to main() in memory when it runs the adoption.
+ROSTER = HERE / "source-roster"
+
+
+def main(tech: list[dict] | None = None, apps: list[dict] | None = None,
+         facts: dict | None = None) -> dict:
+    """Build the crosswalk and write it out. Returns what an adoption pass needs.
+
+    Standalone, it reads the source roster from source-roster/ and counts facts
+    from the adopted fact tables by their roster-technology column."""
     aggregate._VOCAB_PATH[0] = HERE / "vocabulary.csv"
     seu = rd(dn.SEU)
     tt = rd(dn.TECHTABLE)
@@ -288,10 +310,11 @@ def main() -> int:
     names = dn.build_names(tt, vocab, hand.EQUIPMENT_BY_LABEL,
                            hand.MERGE_LABEL, hand.HAND_NAME)
 
-    tech = rd(HERE / "technology.csv")
-    apps = rd(HERE / "technology-application.csv")
+    tech = tech if tech is not None else rd(ROSTER / "technology.csv")
+    apps = apps if apps is not None else rd(ROSTER / "technology-application.csv")
     cims = rd(HERE / "cims-map.csv")
-    facts = {n: rd(HERE / f"tech-{n}.csv") for n in ("parameter", "flow", "constraint")}
+    if facts is None:
+        facts = {n: rd(HERE / f"tech-{n}.csv") for n in ("parameter", "flow", "constraint")}
 
     equip = {r["technology"]: r.get("equipment", "") for r in tech}
     variant = {r["technology"]: r.get("variant", "") for r in tech}
@@ -300,7 +323,7 @@ def main() -> int:
     factcount = collections.Counter()
     for rows in facts.values():
         for r in rows:
-            factcount[r.get("technology", "")] += 1
+            factcount[r.get("roster-technology") or r.get("technology", "")] += 1
 
 
     # design tables, indexed
@@ -335,7 +358,9 @@ def main() -> int:
             reach[t].add((s, eu))
             key = (t, s, eu)
             ctx = {"origin": origin, "from-sector": frm["from-sector"],
-                   "from-process-step": frm["from-process-step"], "legacy-branch": legacy}
+                   "from-end-use": frm["from-end-use"],
+                   "from-process-step": frm["from-process-step"], "legacy-branch": legacy,
+                   "source-id": frm.get("source-id", "")}
             if ctx not in contexts[key]:
                 contexts[key].append(ctx)
             if key in seen:
@@ -346,7 +371,8 @@ def main() -> int:
                     row["rule"] += "; " + rule
                 continue
             row = {"technology": t, "design-sector": s, "design-end-use": eu,
-                   "rule": rule, "origin": origin, **frm}
+                   "rule": rule, "origin": origin,
+                   **{k: v for k, v in frm.items() if k != "source-id"}}
             seen[key] = row
             app_rows.append(row)
 
@@ -356,7 +382,8 @@ def main() -> int:
                                equip.get(t, ""), variant.get(t, ""))
         place(t, s, eus, rule, "application",
               {"from-sector": a["sector"], "from-end-use": a["end-use"],
-               "from-process-step": a["process-step"]})
+               "from-process-step": a["process-step"],
+               "source-id": a.get("source-id", "")})
 
     for r in cims:
         if r["action"] not in {"retain", "merge", "merge-review"} or not r["sector"]:
@@ -411,6 +438,13 @@ def main() -> int:
         v = variant.get(t, "") or (
             carrier.get(t, "") if carrier.get(t, "") in vocab.get("variant", ()) else "")
 
+        def by_carrier(pool):
+            """Sorted, the rows whose energy inputs name the roster's carrier
+            first: a plain electric pump is the standard motor, not the
+            gas-turbine drive that happens to sort first."""
+            c = carrier.get(t, "").replace("-", " ")
+            return sorted(pool, key=lambda n: (not (c and c in names[by_name[n]]["carriers"]), n))
+
         def prefer(pool):
             """Within a pool, the row that matches the roster variant, else the
             conventional row, else the pool."""
@@ -434,7 +468,7 @@ def main() -> int:
                 pref = [n for n in pool
                         if any(x["type"] == "conventional"
                                for x in label_rows[by_name[n]])]
-            return sorted(pref or pool)
+            return by_carrier(pref or pool)
 
         def strict(pool):
             """Only a row that matches the roster variant or is the conventional
@@ -446,9 +480,9 @@ def main() -> int:
                 hit = [n for n in pool if v in n]
             else:
                 hit = []
-            return sorted(hit or [n for n in pool
-                                  if any(x["type"] == "conventional"
-                                         for x in label_rows[by_name[n]])])
+            return by_carrier(hit or [n for n in pool
+                                      if any(x["type"] == "conventional"
+                                             for x in label_rows[by_name[n]])])
 
         if not cands and v.startswith("efficiency-") and v != "efficiency-base":
             # the design table now carries `<equipment>_efficiency-moderate` and
@@ -471,8 +505,48 @@ def main() -> int:
             # cement kiln belongs on the conventional clinker row, not on the
             # one other design row that happens to be spelled `kiln`.
             eu_pool = [n for n in by_name if placements[n] & reach.get(t, set())]
+            # ...but the device beats the end use where the end use's claim is
+            # weak: when the device has exactly one plain row there (a heat pump
+            # on the low-temperature band is the industrial heat pump, not the
+            # fuel-fired boiler that is the band's conventional row); when the
+            # roster only placed it on generic cross-sector bands (a steam
+            # cracker the old roster filed under steam); or when its own sector
+            # holds the device on another end use (a pulper bucket filed under
+            # chemical recovery). The wet-kiln case still reaches the clinker
+            # row, because no cement kiln row is conventional.
+            bucket = v.startswith("efficiency-") and v != "efficiency-base"
+
+            def plain(pl):
+                """Rows of the device's own kind: no capture row for a device
+                without capture, no efficient variant for one that is not a
+                bucket."""
+                own_c = carrier.get(t, "")
+
+                def other_carrier(n):
+                    disc = "-" + (n.split("_", 1)[1] if "_" in n else "") + "-"
+                    return any(f"-{c}-" in disc and c != own_c for c in vocab.get("carrier", ()))
+                return [n for n in pl
+                        if ("ccs" not in n or v == "ccs") and not other_carrier(n)
+                        and (bucket or ("_efficiency-" not in n and not all(
+                            x["type"] == "efficient variant" for x in label_rows[by_name[n]])))]
+
+            def one_home(pl):
+                """The rows all sit on one design end use, so the device's home
+                is not a guess."""
+                homes = {frozenset(placements[n]) for n in pl}
+                return pl if len(homes) == 1 else []
+            sectors_t = {s_ for s_, _ in reach.get(t, set())}
+            same_sector = [n for n in pool if {s_ for s_, _ in placements[n]} & sectors_t]
+            only_cross = sectors_t == {"cross-sector"}
             if strict(here):
                 cands, how = strict(here), "equipment, same end use"
+            elif len(plain(here)) == 1:
+                cands, how = plain(here), "equipment, same end use (its only row)"
+            elif only_cross and (len(strict(pool)) == 1 if bucket
+                                 else (strict(pool) or len(plain(pool)) == 1)):
+                cands, how = (strict(pool) or plain(pool)), "equipment, over a generic band"
+            elif not only_cross and one_home(strict(same_sector)):
+                cands, how = strict(same_sector), "equipment, same sector"
             elif eu_pool:
                 cands, how = prefer(eu_pool), "end use, conventional row"
             elif here:
@@ -510,9 +584,12 @@ def main() -> int:
                           "variant": variant.get(t, ""), "status": status.get(t, ""),
                           "fact-rows": factcount[t], "matched-by": how,
                           "other-candidates": "; ".join(cands[1:])})
-    return write_review(seu, tt, names, label_rows, placements, app_rows,
+    write_review(seu, tt, names, label_rows, placements, app_rows,
                         unmapped_apps, tech_rows, orphans, tech, factcount,
                         vocab, apps, design_eu, br_rows, leaves)
+    return {"names": names, "label_rows": label_rows, "tech_rows": tech_rows,
+            "app_rows": app_rows, "br_rows": br_rows, "leaves": leaves,
+            "seu": seu, "vocab": vocab, "factcount": factcount}
 
 
 def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps,
@@ -541,19 +618,21 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
         "design-sector", "design-end-use", "rule", "origin"], app_rows)
     wr(HERE / "design-crosswalk-branch.csv",
        ["technology", "design-sector", "design-end-use", "branch", "data-filepath",
-        "share", "role", "how", "origin", "from-sector", "from-process-step",
-        "legacy-branch"],
+        "share", "role", "how", "origin", "source-id", "from-sector", "from-end-use",
+        "from-process-step", "legacy-branch"],
        sorted(br_rows, key=lambda r: (r["branch"], r["technology"])))
 
     out = []
     A = out.append
     A("# Adopting the design tables as the harmonized vocabulary")
     A("")
-    A("Generated by `build-design-crosswalk.py`. **Nothing in `data/harmonized/` "
-      "has been changed.** This is the crosswalk an adoption pass would apply, "
-      "written out for review first (the user, 2026-09-14).")
+    A("Generated by `build-design-crosswalk.py`. **Applied** by `populate.py` "
+      "through `adopt.py` since 2026-09-22: the harmonized tables are the design "
+      "vocabulary, and the roster the sources grew is kept in `source-roster/`. "
+      "This file is the record of how each source name, application and fact "
+      "got where it is.")
     A("")
-    A("## What changes")
+    A("## What changed")
     A("")
     A(f"| | now | design |")
     A("|---|---:|---:|")
@@ -666,34 +745,21 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
       "options are to add them, to widen the variant list into a free "
       "discriminator, or to shorten the names.")
     A("")
-    A("## What adoption would change")
+    A("## How the adoption applies it")
     A("")
-    A("1. `build-template.py` -- `SECTORS` gains `biofuels` and `oil-and-gas`; "
-      "`END_USES` is replaced by the design rows and gains a `sector` column, "
-      "so `end-use.csv` becomes sector-scoped. `service-unit` and "
-      "`temperature-tier` come from the design table's `service-unit` and "
-      "`heat-tier` columns.")
-    A("2. Section 6.2 of the design document -- the equipment terms listed above, "
-      "and a decision on the discriminators.")
-    A("3. `populate.py` -- `END_USE_UNIT` is read from the design table rather "
-      "than held as a dict; `node_for` keys on the design end use; the roster is "
-      "seeded from the design technology table, so `add_tech` attaches a source's "
-      "technology to an existing design row instead of creating one. "
-      "`design_doc_roster()` (section 4 of the design doc) is superseded by the "
-      "design technology table.")
-    A("4. `aggregate.py` -- R2 and R4 are subsumed: the design table already says "
-      "which end uses are cross-sector and already holds the carrier as a list, "
-      "so the roster does not grow the names those rules exist to collapse. R3 "
-      "(`other-services`) and R7 (`unquantified`) stay. R5 and R6 stay for the "
-      "extraction rows, which still arrive spelled as their source spells them.")
-    A("5. `service-node.csv` -- one node per hierarchy leaf, its `branch` filled "
-      "from `design-crosswalk-branch.csv`; the process step comes from the leaf, "
-      "not from the source's label. `cims-map.csv` is not rebuilt: the model "
-      "inputs predate the hierarchy, so its rows stay as the record of where the "
-      "CIMS-sourced roster came from.")
-    A("6. The crosswalk tables in `design_crosswalk.py` and the names in "
-      "`design_names*.py` become the adoption rules; the two CSVs beside this "
-      "file are their output.")
+    A("1. `build-template.py` seeds `sector` with the design table's sectors and "
+      "`end-use` from the design table itself, with a `sector` column; section 6.2 "
+      "gained the equipment terms the design names use.")
+    A("2. `adopt.py`, inside `populate.py`, writes the source roster to "
+      "`source-roster/`, runs this crosswalk on it, and replaces the roster with "
+      "one row per design technology, the service nodes with one per (end use, "
+      "hierarchy leaf), and the applications with `design-crosswalk-branch.csv` "
+      "plus the design table's own placements.")
+    A("3. Every fact moves onto its design technology and keeps the source name in "
+      "`roster-technology`; the wide views show one row per source name.")
+    A("4. `cims-map.csv` is not rebuilt: the hierarchy is the target, and the "
+      "model inputs will follow it.")
+    A("5. `check-data.py` holds the result to the design vocabulary and the hierarchy.")
     A("")
     A("## Folds that carry a note")
     A("")
@@ -792,4 +858,4 @@ def write_review(seu, tt, names, label_rows, placements, app_rows, unmapped_apps
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
