@@ -9,7 +9,8 @@ the script fails if one does not. cims_services.py then writes the table's
 Run from the repo root:  python design/build/hierarchy_crosswalk.py [output.csv]
 Writes design/cims-hierarchy-crosswalk.csv with one row per in-scope hierarchy leaf,
 plus one row per node the proposal adds to the hierarchy (status proposed-new, or
-existing once it appears). Prints leaves that match no rule; exits 1 if there are any.
+existing once it appears). Prints leaves that match no rule and end uses no leaf reaches;
+exits 1 if there are any.
 Re-run whenever cims_hierarchy.csv changes.
 
 Columns
@@ -499,6 +500,13 @@ def main():
     stray = sorted({x for r in rows for x in r[2].split("; ") if x and x not in ids})
     if stray:
         print("  END USES NOT IN THE TABLE:", ", ".join(stray))
+        return 1
+    # the other direction: the hierarchy governs the level of detail, so an end
+    # use no hierarchy node feeds is one the model cannot represent
+    fed = {x for r in rows for x in r[2].split("; ") if x}
+    orphan = sorted(ids - fed)
+    if orphan:
+        print("  END USES WITH NO HIERARCHY NODE:", ", ".join(orphan))
         return 1
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
