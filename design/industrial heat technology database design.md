@@ -236,10 +236,21 @@ components are counted, so no `source` component may be called `meta`. Note the
 first component is an author code for a paper (`bataille`) and an institution
 code for a report (`epa`, `lbnl`, `nrel`) — whichever is how the document is
 normally cited.
-| Technology name | `equipment_carrier_variant` | `combustion-turbine_landfill-gas`, `boiler_natural-gas_ccs` |
+| Technology name, extraction | `equipment_carrier_variant` | `combustion-turbine_landfill-gas`, `boiler_natural-gas_ccs` |
+| Technology name, harmonized roster | `equipment_discriminator` | `boiler_fuel-fired`, `compressor_reciprocating-gas` |
 | Technology YAML file | = the technology name | `boiler_natural-gas.yaml` |
 | Branch string | = the folder path, dotted | `.process-heat.low-temp` |
 | Parameter name | one component | `capacity-factor`, `temperature-output` |
+
+**Two technology name forms (2026-09-22).** An extraction names a technology the
+way its source does, equipment_carrier_variant, and those names stay on the fact
+rows as roster-technology. The harmonized roster is the design technology table
+(design/end-use-technology-table.csv), whose rows are named
+equipment_discriminator: the carrier is not a name component there but a list on
+the row, because one design technology takes many fuels, and the discriminator is
+the word that tells it apart from the other rows of the same equipment. Both
+forms obey the one rule above; the rest of this section describes the extraction
+form.
 
 Technology names run **general to specific**: equipment, then the carrier that
 discriminates within it, then any further variant. Carrier and variant are both
@@ -339,7 +350,7 @@ below were added so that CIMS technologies, the UKTM sheet of the Bataille
 database and the UKERC technology tables can all be named. Terms were added
 because a source needed them, not speculatively.
 
-**Equipment** — the device that produces the heat or performs the process (81 terms):
+**Equipment** — the device that produces the heat or performs the process (101 terms):
 
 `air-separation-unit`        `anaerobic-digester`         `arc-heater`
 `basic-oxygen-furnace`       `blast-furnace`              `boiler`
@@ -369,8 +380,21 @@ because a source needed them, not speculatively.
 `pulper`                     `cleaning-system`            `management-system`
 `autothermal-reformer`       `clinker-cooler`       `process-improvement`
 
+`adsorber`                   `annealing-furnace`          `binder`
+`coating-line`               `drilling-rig`               `flare`
+`fracturing-fleet`           `gas-treatment-unit`         `haul-truck`
+`heat-exchanger`             `hoist`                      `liquefaction-train`
+`mobile-equipment`           `paste-plant`                `photovoltaic-array`
+`pickling-line`              `separator`                  `turboexpander`
+`well`                       `wind-turbine`
+
+The last twenty were added 2026-09-22 with the adoption of the design technology
+table as the harmonized roster: they are the devices that table names in the
+sectors it brought into scope (oil and gas, mining, on-site power, finishing
+lines) and that no earlier source needed.
+
 The management-system term is the one entry that is not a device. Sources
-record organisational measures — energy management systems, preventative
+record organizational measures — energy management systems, preventative
 maintenance, general good practice — as competing options with their own costs
 and savings, and the naming convention has no other slot for them. Added
 2026-08-27 for the UKERC Sector and Subsector rows; oven, pasteurizer, pulper

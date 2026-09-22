@@ -94,10 +94,13 @@ table("sector", "registry",
        ("note", None, "")])
 
 table("end-use", "registry",
-      "The energy service or process function a technology delivers. Global "
-      "vocabulary: the same end use recurs across sectors.",
-      [("end-use", None, "Key."),
+      "The energy service or process function a technology delivers, scoped to a "
+      "sector (design/sector-end-use-table.csv, read at build time). Generic "
+      "services -- the heat bands, machine drive, space conditioning, CO2 capture "
+      "-- are held once, on cross-sector.",
+      [("end-use", None, "Key. Unique across sectors."),
        ("end-use-label", None, "Display name."),
+       ("sector", "sector", "FK to sector: the sector the end use belongs to."),
        ("service-type", "service-type", "heat-supply, process, or other-service."),
        ("service-unit-default", None, "Unit the service demand is measured in (GJ, t)."),
        ("temperature-tier", "temperature-tier", "Tier where the end use is tier-specific."),
@@ -120,11 +123,12 @@ table("process-step", "registry",
 table("service-node", "registry",
       "sector x end-use (x process-step): the demand node technologies compete "
       "at, and the join point to the CIMS branch tree.",
-      [("service-node", None, "Key. Convention: sector_end-use[_process-step]."),
+      [("service-node", None, "Key. sector_end-use_process-step, where the process step "
+        "is the CIMS hierarchy leaf (design/cims_hierarchy.csv) without its <sector>. prefix."),
        ("sector", "sector", "FK to sector."),
        ("end-use", "end-use", "FK to end-use."),
        ("process-step", None, "FK to process-step. Blank where the end use is not step-specific."),
-       ("branch", None, "CIMS branch string, dotted (see design doc section 3). Blank if not in CIMS."),
+       ("branch", None, "The CIMS hierarchy leaf, exactly as design/cims_hierarchy.csv writes it."),
        ("service-unit", None, "Unit of service demand at this node. Technology output must match."),
        ("service-description", None, "What is demanded here, in one line."),
        ("note", None, "")])
@@ -155,10 +159,14 @@ table("technology", "roster",
       "One row per technology. The detail level is the Bataille UKTM sheet: "
       "distinct equipment/carrier/variant combinations, not individual plant "
       "designs.",
-      [("technology", None, "Key. equipment_carrier_variant, per design doc section 5."),
+      [("technology", None, "Key. equipment_discriminator, the design technology table's "
+        "name (design doc section 5). Source names are kept on the fact rows, in roster-technology."),
+       ("technology-label", None, "The design technology table's label."),
        ("equipment", "equipment", "Restates name component 1. Never split the name to recover it."),
-       ("energy-carrier", "carrier", "Restates name component 2."),
-       ("variant", "variant", "Restates name component 3."),
+       ("energy-carrier", None, "Carrier list, semicolon separated, section 6.2 terms: every "
+        "carrier a folded source name or the design row's energy inputs name."),
+       ("variant", None, "The discriminator, name component 2. Free text in the naming "
+        "rule's form; the section 6.2 variant terms are used where they fit."),
        ("description", None, "What the technology is and how it differs from the baseline."),
        ("role", "role", "baseline, incumbent, new, improvement, alternative-route."),
        ("relationship-to-baseline", "relationship-to-baseline",
@@ -186,7 +194,8 @@ table("technology", "roster",
         "Retrofit and greenfield are separate technologies (D4); this flags that a retrofit twin exists."),
        ("source-id", "source-id", "Primary source for the roster entry itself."),
        ("aggregated-from", None,
-        "The source names this general name aggregates, semicolon separated (aggregate.py, R4). "
+        "The source roster names folded into this design technology, semicolon separated "
+        "(adopt.py), with the names those had already aggregated (aggregate.py, R4). "
         "Blank where the name was always this general. Every aggregated technology keeps every "
         "contributing source's fact rows, told apart by source-id and ranked by source-priority; "
         "nothing is dropped on a merge."),
@@ -224,6 +233,9 @@ table("tech-parameter", "fact",
       "parameter never adds a column.",
       [("record-id", None, "Stable key, tp-<source-id>-NNNN, e.g. tp-ukerc_2013_001-0042. Numbered within the source so an edit to one extraction does not renumber another. Cited by derived-from and by the changelog."),
        ("technology", "technology", "FK to technology."),
+       ("roster-technology", None, "The name the source roster gave it before adoption "
+        "(equipment_carrier_variant). Tells apart the carrier-specific facts a design "
+        "technology holds side by side."),
        ("parameter", "parameter", "FK to parameter."),
        ("context", None, "CIMS entry field. Include if applicable."),
        ("sub-context", None, "CIMS entry field. Include if applicable."),
@@ -260,6 +272,7 @@ table("tech-flow", "fact",
       "columns; here it is one row per non-zero flow.",
       [("record-id", None, "Stable key, tf-<source-id>-NNNN, e.g. tf-ukerc_2013_001-0042."),
        ("technology", "technology", "FK to technology."),
+       ("roster-technology", None, "The source roster's name before adoption (see tech-parameter)."),
        ("direction", "direction", "input or output."),
        ("commodity", "commodity", "FK to commodity."),
        ("value", None, "Quantity per unit of the denominator named in per-unit."),
@@ -290,6 +303,7 @@ table("tech-constraint", "fact",
       "the bound constraints of an optimization model.",
       [("record-id", None, "Stable key, tc-<source-id>-NNNN, e.g. tc-ukerc_2013_001-0042."),
        ("technology", "technology", "FK to technology."),
+       ("roster-technology", None, "The source roster's name before adoption (see tech-parameter)."),
        ("constraint", "constraint", ""),
        ("region", None, ""),
        ("year", None, "Blank = applies throughout."),
@@ -335,19 +349,15 @@ table("vocabulary", "dictionary",
 # any technology's numbers are.
 
 SECTORS = [
+    # sector, label, description, uktm, naics, isic -- in the design table's order
     ("cross-sector", "Cross-sector",
-     "Technologies that supply the same service in any industrial sector - boilers, CHP units, "
-     "motors, lighting, space conditioning, refrigeration. Held once here rather than copied "
-     "into every sector. The generic end uses (aggregate.py, R2) live only on this sector, and "
-     "the sectors a source reported them for stay in technology-application.reported-sectors.",
+     "Services any industrial sector draws on -- the heat bands, machine drive, space "
+     "conditioning, lighting, on-site power, mobile equipment and CO2 capture. Held once "
+     "here; the sector end uses reference them through draws-on in the design table.",
      "", "", ""),
-    # sector, label, description, uktm, naics, isic
     ("iron-and-steel", "Iron and steel",
-     "Coke making, ironmaking, steelmaking, casting and hot rolling. Excludes downstream fabrication.",
+     "Coke making, ironmaking, steelmaking, casting and rolling. Excludes downstream fabrication.",
      "IIS", "3311;3312", "241"),
-    ("non-ferrous-metals", "Non-ferrous metals",
-     "Primary and secondary aluminum, copper, zinc, nickel and other non-ferrous smelting and refining.",
-     "INF", "3313;3314", "242"),
     ("cement", "Cement",
      "Clinker production, grinding and blending. Split from non-metallic minerals because the kiln dominates.",
      "ICM", "32731", "2394"),
@@ -357,54 +367,66 @@ SECTORS = [
     ("chemicals", "Chemicals",
      "Petrochemicals, industrial gases, ammonia and fertilizer, and other bulk and fine chemicals.",
      "ICH", "325", "20"),
+    ("biofuels", "Biofuels",
+     "Ethanol, biodiesel, renewable diesel and SAF, and renewable natural gas production.",
+     "", "325193", "2011"),
+    ("hydrogen", "Hydrogen",
+     "Centralized hydrogen production and its distribution by pipeline to industrial users. "
+     "On-site hydrogen stays in the sector that makes it.",
+     "", "325120", "2011"),
     ("petroleum-refining", "Petroleum refining",
      "Crude distillation, conversion, treating and utilities at refineries.",
      "", "32411", "192"),
     ("pulp-and-paper", "Pulp and paper",
      "Pulping, papermaking, drying and converting.",
      "IPP", "322", "17"),
+    ("mining", "Mining (including coal mining)",
+     "Metal, non-metal and coal mining, milling and on-site processing. Excludes oil and gas extraction.",
+     "", "212", "05;07;08"),
+    ("oil-and-gas", "Oil and gas",
+     "Extraction, oil sands, gas processing and LNG, and oil and gas pipelines.",
+     "", "211;213111;486", "06;0910;4930"),
     ("food-and-beverage", "Food and beverage",
      "Food processing, beverage production and tobacco.",
      "IFD", "311;312", "10;11;12"),
-    ("mining", "Mining and mineral extraction",
-     "Metal and non-metal mining, milling and on-site processing. Excludes oil and gas extraction.",
-     "", "212", "07;08"),
+    ("non-ferrous-metals", "Non-ferrous metals",
+     "Primary and secondary aluminum, copper, zinc, nickel and other non-ferrous smelting and refining.",
+     "INF", "3313;3314", "242"),
     ("other-industry", "Other industry",
      "Manufacturing not covered by another sector: machinery, vehicles, textiles, wood products, construction.",
      "IOI", "", ""),
 ]
 
-END_USES = [
-    # end-use, label, service-type, unit, tier, description
-    ("steam-and-hot-water", "Steam and hot water", "heat-supply", "GJ", "not-applicable",
-     "Indirect heat raised in a boiler or CHP unit and distributed as steam or hot water. "
-     "One branch, not tiered (design doc D3); steam conditions ride as temperature-output and "
-     "pressure-output. CHP sits here with electricity as a secondary output (D1)."),
-    ("process-heat-low-temp", "Process heat, low temperature", "heat-supply", "GJ", "low-temp",
-     "Direct heat delivered below 150 degC."),
-    ("process-heat-medium-temp", "Process heat, medium temperature", "heat-supply", "GJ", "medium-temp",
-     "Direct heat delivered between 150 and 400 degC."),
-    ("process-heat-high-temp", "Process heat, high temperature", "heat-supply", "GJ", "high-temp",
-     "Direct heat delivered above 400 degC."),
-    ("drying-and-separation", "Drying and separation", "heat-supply", "GJ", "not-applicable",
-     "Moisture removal and thermal separation. Kept distinct from process heat because both "
-     "sources treat it as its own service and non-thermal routes compete here."),
-    ("material-preparation", "Material preparation", "process", "t", "not-applicable",
-     "Upstream conditioning of feed: sintering, pelletizing, coke making, crushing and grinding."),
-    ("material-conversion", "Material conversion", "process", "t", "not-applicable",
-     "The chemical or metallurgical transformation at the core of the sector: reduction, "
-     "calcination, cracking, reforming, pulping, smelting."),
-    ("forming-and-finishing", "Forming and finishing", "process", "t", "not-applicable",
-     "Casting, rolling, drawing, sheet forming, coating and finishing."),
-    ("electrochemical", "Electrochemical processing", "process", "t", "not-applicable",
-     "Electrolytic reduction and electrowinning."),
-    ("machine-drive", "Machine drive", "other-service", "GJ", "not-applicable",
-     "Motors, pumps, fans, compressors and conveying."),
-    ("refrigeration-and-cooling", "Refrigeration and cooling", "other-service", "GJ", "not-applicable",
-     "Process cooling, chilling and refrigeration."),
-    ("facility-services", "Facility services", "other-service", "GJ", "not-applicable",
-     "Space conditioning, lighting and other non-process site energy use."),
-]
+
+# End uses come from the design table, not from this file: that table is the
+# vocabulary (the user, 2026-09-14), and holding a second copy here is how the
+# two drifted before. service-type and temperature-tier are derived from it.
+DESIGN_END_USES = ROOT / "design" / "sector-end-use-table.csv"
+
+
+def _tier(text: str) -> str:
+    """The first tier the design table names; its heat-tier cell can list
+    several, dominant first, with remarks in brackets."""
+    for t in re.findall(r"(low-temp|medium-temp|high-temp)", text or ""):
+        return t
+    return "not-applicable"
+
+
+def design_end_uses() -> list[tuple]:
+    with DESIGN_END_USES.open(encoding="utf-8-sig", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    out = []
+    for r in rows:
+        if r["sector"] == "cross-sector":
+            kind = "heat-supply" if r["end-use"].startswith("heat-") else "other-service"
+        else:
+            kind = "process"
+        out.append((r["end-use"], r["end-use-label"], r["sector"], kind, r["service-unit"],
+                    _tier(r["heat-tier"]), r["covers"], r["note"]))
+    return out
+
+
+END_USES = design_end_uses()
 
 PARAMETERS = [
     # parameter, label, class, definition, unit-dimension, unit-default,
@@ -650,9 +672,8 @@ SEEDS = {
         ["sector", "sector-label", "description", "uktm-code", "naics-2017", "isic-rev4", "note"],
         list(r) + [""])) for r in SECTORS],
     "end-use": [dict(zip(
-        ["end-use", "end-use-label", "service-type", "service-unit-default",
-         "temperature-tier", "description", "note"],
-        list(r) + [""])) for r in END_USES],
+        ["end-use", "end-use-label", "sector", "service-type", "service-unit-default",
+         "temperature-tier", "description", "note"], r)) for r in END_USES],
     "parameter": [dict(zip(
         ["parameter", "parameter-label", "parameter-class", "definition", "unit-dimension",
          "unit-default", "basis-required", "requirement", "cims-parameter",
