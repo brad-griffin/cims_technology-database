@@ -130,6 +130,8 @@ def normalise(facts, examples, records, units) -> None:
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
         unit = unit.replace("/unit", f"/{pu}")
+        if not unit and tgt == "dimensionless":
+            unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
         m = MONEY.match(unit)
         if m:
