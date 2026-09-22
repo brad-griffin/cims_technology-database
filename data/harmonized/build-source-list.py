@@ -189,10 +189,12 @@ def main() -> int:
     # would otherwise read as "registered, not yet used" while sitting on 65
     # technologies.
     for r in R("technology.csv"):
-        sid = (r.get("source-id") or "").strip()
-        if sid:
-            used[sid] += 1
-            sectors[sid].update(tech_sectors.get(r["technology"], ()))
+        # since the adoption a design technology lists every source behind the
+        # names folded into it, ;-separated, so the cell is split
+        for sid in (x.strip() for x in (r.get("source-id") or "").split(";")):
+            if sid:
+                used[sid] += 1
+                sectors[sid].update(tech_sectors.get(r["technology"], ()))
     for fn in ("tech-parameter.csv", "tech-flow.csv", "tech-constraint.csv"):
         for r in R(fn):
             sid = (r.get("source-id") or "").strip()
