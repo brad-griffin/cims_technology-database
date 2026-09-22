@@ -1,0 +1,52 @@
+# Energy balance in the layout of StatCan's Report on Energy Supply and Demand
+# (table 25-10-0029-01). Read by design/build/accounting_example.py; the same keys
+# are proposed for the CIMS reporting package (design/reporting-accounting.md, section 6).
+name: RESD (StatCan 25-10-0029-01)
+energy:
+  production_row: Production
+  commodities:
+    # report_as: the RESD fuel column. A commodity without it is not reported, e.g.
+    # blast-furnace and BOF gas, whose energy RESD leaves inside coke and coal use.
+    coal-metallurgical:
+      report_as: Coal
+      class: primary
+      check_disposition: [Transformed to coke and manufactured gases, Iron and steel manufacturing]
+    natural-gas: {report_as: Natural gas, class: primary}
+    coke: {report_as: Coke, class: secondary}
+    coke-oven-gas: {report_as: Coke oven gas, class: secondary}
+    blast-furnace-gas: {class: internal}
+    bof-gas: {class: internal}
+    process-gas: {class: internal, expand: true}   # reported as the gases it is made of
+    electricity: {report_as: "Secondary electricity, thermal", class: secondary}
+    steam: {class: internal}      # steam used on site; only steam sold is a RESD fuel
+    hot-metal: {class: material}
+    coal-tar: {class: non-energy}
+  processes:
+    # account: the final-demand row for the process's own energy use.
+    # transformation: inputs listed in `feed` go to the transformation row instead,
+    # and the process's energy outputs are reported as Production.
+    # StatCan books the whole coal charge of coke ovens as transformed; the COG the
+    # ovens burn (underfiring) stays iron-and-steel final demand.
+    coke-ovens:
+      account: Iron and steel manufacturing
+      transformation:
+        row: Transformed to coke and manufactured gases
+        feed: [coal-metallurgical]
+    blast-furnace: {account: Iron and steel manufacturing}
+    bof: {account: Iron and steel manufacturing}
+    process-gas: {report: false}   # a pool; the gas is reported where it is burned
+    reheating: {account: Iron and steel manufacturing}
+    steam-cogen: {account: Iron and steel manufacturing}
+  # Cogeneration: any process that delivers heat or steam and produces electricity as
+  # a by-product (a negative request to electricity). Its fuel is split between
+  # electricity (transformation) and heat (final demand) by the incremental fuel to
+  # electricity method: the heat is charged the fuel a reference boiler would need for
+  # it, and the rest of the fuel is the increment for electricity. The electricity is
+  # reported as Production. (StatCan takes the split respondents report; see the
+  # design note.)
+  cogeneration:
+    heat_outputs: [steam, heat]
+    electricity_output: electricity
+    method: incremental_fuel_to_electricity
+    reference_boiler_efficiency: 0.80
+    electricity_row: Transformed to electricity by industry

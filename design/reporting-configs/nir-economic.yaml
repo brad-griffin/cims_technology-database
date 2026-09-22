@@ -1,0 +1,56 @@
+# Emissions in the layout of ECCC's "Relationship between GHG emissions by Canada's
+# Economic Sectors and IPCC Sectors" (EN_GHG_Econ_Canada.xlsx, sheet "24";
+# design/context/). Rows are economic categories; columns are the IPCC sub-sectors
+# the sheet splits each row into. Every process at an iron and steel plant, coke
+# ovens included, reports in the Iron and Steel row (decision, 2026-09-21).
+#
+# Column rules are tried in order; the first match wins. A match can test where the
+# carbon was emitted (emitted_at), whether it was burned for heat or lost another way
+# (kind: combustion | process), a process its carbon passed through (path_includes)
+# and the purchased fuel it came from (fuel).
+name: NIR by economic category (ECCC table 24)
+emissions:
+  layout: matrix
+  total_equals: emitted
+  stored_carbon: none            # carbon left in tar and steel is not an emission
+  rows:
+    # process -> economic category. In CIMS this would map hierarchy branches
+    # (e.g. <region>.iron-and-steel.*) rather than single processes.
+    default: "Heavy Industry: Iron and Steel"
+  columns:                       # the sheet's column order; only columns with values are printed
+    - "Energy: Stationary Combustion"
+    - "Energy: Industrial Cogeneration (Electricity)"
+    # "Energy: Industrial Cogeneration (Steam for Sale)" is not reported: CIMS does
+    # not model steam sold to other sites.
+    - "Energy: Transport"
+    - "Energy: Fugitive"
+    - "IPPU: Metal Production"
+    - "IPPU: Non-Energy Products from Fuels and Solvent Use"
+  cogeneration:
+    # Any process that delivers heat or steam and produces electricity as a by-product
+    # is cogeneration. Its emissions are split between electricity and heat with the
+    # same method as the energy config (incremental fuel to electricity, 80% reference
+    # boiler); rules match the shares with `use: electricity` / `use: heat`.
+    heat_outputs: [steam, heat]
+    electricity_output: electricity
+    method: incremental_fuel_to_electricity
+    reference_boiler_efficiency: 0.80
+  rules:
+    # All carbon charged to the blast furnace (coke, injected coal) is metal
+    # production, including the BFG and BOF gas later burned for heat: Canada reports
+    # the reductant coke under 2.C.1.b because its share cannot be separated.
+    - match: {path_includes: blast-furnace}
+      column: "IPPU: Metal Production"
+    # The electricity share of cogeneration. It comes after the blast-furnace rule, so
+    # BFG and BOF gas burned in cogeneration are reported as metal production
+    # (decision, 2026-09-21); only other fuels' electricity share lands here.
+    - match: {use: electricity}
+      column: "Energy: Industrial Cogeneration (Electricity)"
+    # Coke-oven carbon lost other than by burning (leaks, pushing, quenching):
+    # IPCC 1.B.1.b, solid fuel transformation.
+    - match: {emitted_at: coke-ovens, kind: process}
+      column: "Energy: Fugitive"
+    # Everything else burned for heat: oven underfiring, and COG and natural gas in
+    # reheating furnaces and in the heat share of cogeneration.
+    - match: {}
+      column: "Energy: Stationary Combustion"

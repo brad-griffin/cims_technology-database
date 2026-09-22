@@ -1,0 +1,15 @@
+# What CIMS reports today: quantities and emissions traced back to the fuels a
+# sector buys. Kept so the reporting package can be checked against the existing
+# requested_quantities and emissions_total_cumul_* outputs.
+name: CIMS current (purchased-fuel origin)
+energy:
+  method: purchases
+  account: Iron and steel (all uses)
+  commodities:
+    coal-metallurgical: {report_as: Coal}
+    natural-gas: {report_as: Natural gas}
+emissions:
+  group_by: fuel
+  fuels: {coal-metallurgical: Coal, natural-gas: Natural gas}
+  stored_carbon: emitted     # today's code charges the carbon in tar and steel as emitted
+  total_equals: carbon_in
