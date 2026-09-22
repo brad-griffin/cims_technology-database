@@ -307,10 +307,33 @@ def normalize(facts, params, units, sc, product_unit, out_unit):
     return out
 
 
+SEP = " | "
+
+
 def main() -> int:
     techs = read("technology.csv")
     facts = read("tech-parameter.csv")
     flows = read("tech-flow.csv")
+    cons = read("tech-constraint.csv")
+    # ONE VIEW ROW PER (design technology, source roster name). Since the
+    # adoption (2026-09-22) a design technology holds the facts of every source
+    # name folded into it -- boiler_fuel-fired carries boiler_natural-gas,
+    # boiler_oil and boiler_coal side by side -- and one cell per parameter
+    # would pick one fuel's number and hide the rest. Each fact is keyed here on
+    # both names; the view prints them in `technology` and `roster-technology`.
+    variants = collections.defaultdict(list)
+    for r in facts + flows + cons:
+        rt = r.get("roster-technology") or ""
+        k = r["technology"] + (SEP + rt if rt and rt != r["technology"] else "")
+        if k not in variants[r["technology"]]:
+            variants[r["technology"]].append(k)
+        r["technology"] = k
+    expanded = []
+    for t in techs:
+        for k in variants.get(t["technology"], []) or [t["technology"]]:
+            expanded.append(dict(t, _design=t["technology"], technology=k,
+                                 **{"roster-technology": k.split(SEP, 1)[1] if SEP in k else ""}))
+    techs = expanded
     # The views show what the database KNOWS; the roster shows what it has been
     # asked to cover. 187 of 415 technologies carried no parameter, flow or
     # constraint row -- CIMS and source roster names that were never quantified
@@ -320,7 +343,7 @@ def main() -> int:
     # column, so the view cannot drift from what populate.py labelled.
     # (User's request, 2026-09-10.)
     with_data = ({r["technology"] for r in facts} | {r["technology"] for r in flows}
-                 | {r["technology"] for r in read("tech-constraint.csv")})
+                 | {r["technology"] for r in cons})
     hidden = [t for t in techs if t["technology"] not in with_data]
     techs = [t for t in techs if t["technology"] in with_data]
     nodes = {r["service-node"]: r for r in read("service-node.csv")}
@@ -340,7 +363,7 @@ def main() -> int:
     # repeated the same numbers and made the technology look six times as
     # common as it is. Collapsing them loses nothing.
     def placements(t):
-        rows = apps.get(t["technology"])
+        rows = apps.get(t["_design"])
         if not rows:
             return [{"sector": "", "end-use": "", "process-step": "", "nodes": []}]
         by_band = {}
@@ -355,8 +378,28 @@ def main() -> int:
                 v["steps"].append(step)
         for v in by_band.values():
             v["process-step"] = "; ".join(sorted(v["steps"]))
+        # a source name is shown only on the end uses its own source placed it
+        # on, not on every end use the design technology serves
+        own = src_bands.get(t.get("roster-technology", ""))
+        if own and any(b in own for b in by_band):
+            return [v for b, v in by_band.items() if b in own]
         return list(by_band.values())
 
+    # where each source roster name's data applies, from the design crosswalk
+    # (a CIMS name the roster later folded is followed through aggregated-from)
+    src_bands = collections.defaultdict(set)
+    alias = {}
+    roster = HERE / "source-roster" / "technology.csv"
+    if roster.exists():
+        with roster.open(encoding="utf-8-sig", newline="") as fh:
+            for r in csv.DictReader(fh):
+                for a in (x.strip() for x in r["aggregated-from"].split(";")):
+                    if a:
+                        alias.setdefault(a, r["technology"])
+    for r in read("design-crosswalk-branch.csv"):
+        src_bands[alias.get(r["technology"], r["technology"])].add(
+            (r["design-sector"], r["design-end-use"]))
+        src_bands[r["technology"]].add((r["design-sector"], r["design-end-use"]))
     placed = [(t, v) for t in techs for v in placements(t)]
     units = Units()
 
@@ -451,13 +494,13 @@ def main() -> int:
     order = sorted(dict.fromkeys(colname.values()),
                    key=lambda c: (list(params).index(c.split("__")[0].split("_")[0])
                                   if c.split("__")[0].split("_")[0] in params else 99, c))
-    cols = (["technology", "sector", "end-use", "process-step"] + ROSTER_COLS
+    cols = (["technology", "roster-technology", "sector", "end-use", "process-step"] + ROSTER_COLS
             + ["product-unit", "sources", "via"] + order)
 
     rows = []
     for t, v in placed:
-        row = {"technology": t["technology"], "sector": v["sector"],
-               "end-use": v["end-use"], "process-step": v["process-step"]}
+        row = {"technology": t["_design"], "roster-technology": t["roster-technology"],
+               "sector": v["sector"], "end-use": v["end-use"], "process-step": v["process-step"]}
         row.update({c: t.get(c, "") for c in ROSTER_COLS})
         srcs, vias = set(), set()
         for (tech, p, tg, u), recs in grouped.items():
@@ -511,7 +554,7 @@ def main() -> int:
     # a name could not be found by scanning. (User's request, 2026-09-10.)
     rows.sort(key=lambda r: (sector_order.get(r["sector"], 99),
                              end_use_order.get(r["end-use"], 99),
-                             r["technology"], r["process-step"]))
+                             r["technology"], r["roster-technology"], r["process-step"]))
     write("wide-technology.csv", cols, rows)
     if hidden:
         by = collections.Counter(t["status"] for t in hidden)
@@ -521,7 +564,7 @@ def main() -> int:
     # ---- wide technology x commodity ------------------------------------
     coms_in = sorted({r["commodity"] for r in flows if r["direction"] == "input"})
     coms_out = sorted({r["commodity"] for r in flows if r["direction"] == "output"})
-    fcols = (["technology", "sector", "end-use", "process-step", "per-unit",
+    fcols = (["technology", "roster-technology", "sector", "end-use", "process-step", "per-unit",
               "sources", "via"]
              + [f"in_{c}" for c in coms_in] + [f"out_{c}" for c in coms_out])
     fby, funit, fsrc, fvia = (collections.defaultdict(dict), {},
@@ -540,7 +583,8 @@ def main() -> int:
     for t, v in placed:
         if t["technology"] not in fby:
             continue
-        row = {"technology": t["technology"], "sector": v["sector"],
+        row = {"technology": t["_design"], "roster-technology": t["roster-technology"],
+               "sector": v["sector"],
                "end-use": v["end-use"], "process-step": v["process-step"],
                "per-unit": funit.get(t["technology"], ""),
                "sources": ", ".join(short(s) for s in
@@ -551,11 +595,11 @@ def main() -> int:
         frows.append(row)
     frows.sort(key=lambda r: (sector_order.get(r["sector"], 99),
                               end_use_order.get(r["end-use"], 99),
-                              r["technology"], r["process-step"]))
+                              r["technology"], r["roster-technology"], r["process-step"]))
     write("wide-flow.csv", fcols, frows)
 
     pclass = {r["parameter"]: r["parameter-class"] for r in params.values()}
-    ident = {"technology", "sector", "end-use", "process-step", "sources", "per-unit",
+    ident = {"technology", "roster-technology", "sector", "end-use", "process-step", "sources", "per-unit",
              "product-unit", "via", *ROSTER_COLS}
 
     def group_of(c):

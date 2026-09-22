@@ -48,22 +48,22 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Link 2008 | 152 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | ECRA 2009 | 135 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
 | IISI 1998 | 131 | WorldCat OCLC 43244655 |
-| ETSAP I02 | 114 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | Martin et al 2000 | 114 | October 2000. UKERC's 'Elliott, N.' and 'Thorn, J.' are misspellings. Absorbed the duplicate short form 'Martin et al 2000b' on 2026-08-29 |
 | EC 2012 | 113 | BAT conclusions adopted 2012, formally published 2013 as JRC Reference Report EUR 25521 EN, ISBN 978-92-79-26475-7. Absorbed the duplicate short form 'IPPC 2012' on 2026-08-29, whose DOI the modeller supplied and which is kept here; the other manifestation of the same BREF is registered as 10.2791/97469 |
-| ETSAP I07 | 103 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
-| UKERC 2013 | 75 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
-| EPA 2007 | 73 | September 2007; no report number printed on the cover |
-| IPCC 2022 | 62 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
-| ETSAP I03 | 60 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
+| ETSAP I02 | 108 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
+| ETSAP I07 | 90 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
+| EPA 2007 | 69 | September 2007; no report number printed on the cover |
 | Sharp et al 1999 | 56 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
-| EPA 2017 | 44 | September 2017; NEPIS document key P101DBCT |
+| IPCC 2022 | 54 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
+| ETSAP I03 | 51 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
+| EPA 2017 | 41 | September 2017; NEPIS document key P101DBCT |
+| UKERC 2013 | 40 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
 | Collodi 2010 | 31 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
 | Premkumar and Rangaiah 2009 | 30 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
-| ETSAP I01 | 28 | May 2010; authorship read from the printed VITO contact addresses |
 | Worrell et al 1999 | 25 | sponsored by US EPA |
+| ETSAP I01 | 22 | May 2010; authorship read from the printed VITO contact addresses |
 | Stemmermann et al 2010 | 22 | fifth author H. Möller is missing from the UKERC citation; no DOI |
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | IIP 2012 | 19 | the ietd.iipnetwork.org URL UKERC cites is dead; the database is archived under iipinetwork.org. Launch year unconfirmed |
@@ -74,8 +74,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Saygin et al 2012 | 13 | Saygin is sole author of the thesis; Gielen, Draeck, Worrell and Patel are co-authors of individual chapters |
 | DECC 2013 | 11 | published 25 July 2013; no TSO imprint or ISBN shown on the gov.uk record |
 | van den Brink et al 2002 | 11 | UKERC's title omits 'and N2O'; UKERC also misspells de Bruijn as de Bruijin |
-| Nishihata, H. | 9 | the held copy prints 'IEA-ETSAP and IRENA - Technology Policy Brief E19 - January 2013' on page 1, confirmed by the modeller. IRENA's website posts what appears to be the same brief under E12; the document is the authority |
 | De Luna et al 2019 | 8 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'De Luna et al 2019'. Not independently confirmed against the publisher. |
+| Nishihata, H. | 8 | the held copy prints 'IEA-ETSAP and IRENA - Technology Policy Brief E19 - January 2013' on page 1, confirmed by the modeller. IRENA's website posts what appears to be the same brief under E12; the document is the authority |
 | CE Delft 2010 | 6 | December 2010 |
 | Duxon 2007 | 3 | UKERC drops the second 'Grant C.' duplication of Lukey's initials |
 | Abbas and Wan Daud 2010 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Abbas and Wan Daud 2010'. Not independently confirmed against the publisher. |
@@ -139,11 +139,11 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 
 | source | rows | why |
 |---|---:|---|
-| Bataille 2017 | 424 | no public record of this database release found; held locally, so the copy in hand is the authority |
+| Bataille 2017 | 370 | no public record of this database release found; held locally, so the copy in hand is the authority |
 | CT 2010b | 90 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
 | IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
-| ETSAP I10 | 34 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
+| ETSAP I10 | 31 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
 | Carbon Trust 2004 | 28 | ECG092 not traced; only ECG066 'Steam generation costs' was found. Guide offline with no archived copy |
 | AEA 2000 | 17 | no matching AEA publication found; title, client and report number all unconfirmed |
 | NBF 2007 | 16 | not located; Net Balance ceased trading in 2014. Zeobond hosts a later E-Crete LCA by start2see |

@@ -31,7 +31,8 @@ The scripts that build and check this layer, in order:
 python data/harmonized/extract-cims-roster.py    # CIMS model inputs -> cims-roster.csv
 python data/harmonized/build-cims-map.py         # roster -> cims-map.csv (rules engine)
 python data/harmonized/build-template.py         # schema -> empty tables + workbook
-python data/harmonized/populate.py               # roster + extractions -> populated tables
+python data/harmonized/populate.py               # roster + extractions -> populated tables,
+                                                 #   then adopt.py: design vocabulary + hierarchy
 python data/harmonized/build-cims-review.py      # map -> cims-review.md
 python data/harmonized/build-currency.py         # BoC + StatCan -> currency factors
 python data/harmonized/build-wide.py             # long tables -> wide views
@@ -51,50 +52,54 @@ Edit the schema in `build-template.py`, not in Excel, and re-run.
 
 ## 1. Structure
 
-### Grouping: sector → end use → technology
+### Grouping: sector → end use → hierarchy leaf → technology
 
 ```
-sector                iron-and-steel, cement, chemicals, … (10)
-  end-use             the service delivered: steam-and-hot-water,
-                      process-heat-high-temp, material-conversion, … (13)
-    process-step      optional, sector-specific: blast-furnace,
-                      clinker-kiln, steam-cracker …
-      service-node    the demand node where technologies compete;
-                      carries the CIMS branch string
-        technology    equipment_carrier_variant, held once and applied
-                      to every service node it serves
+sector                the design table's 13 sectors plus cross-sector (14)
+  end-use             design/sector-end-use-table.csv, sector-scoped (94);
+                      generic services -- heat bands, machine drive, space
+                      conditioning, CO2 capture -- held once on cross-sector
+    process-step      a leaf of design/cims_hierarchy.csv, which sets the
+                      level of detail below the end use (265)
+      service-node    one per (end use, hierarchy leaf); `branch` is the leaf,
+                      exactly as the hierarchy writes it (280)
+        technology    a row of design/end-use-technology-table.csv, named
+                      equipment_discriminator, held once and applied to
+                      every service node it serves (448)
 ```
 
-`end-use` is a *global* vocabulary — "high temperature heat" means the same
-thing in chemicals and in non-metallic minerals, exactly as in the Bataille
-UKTM sheet, so technologies are comparable across sectors. Anything genuinely
-sector-specific goes in `process-step`, which is where a material balance
-attaches (sinter → hot metal → liquid steel).
+**The vocabulary is the design tables, not the sources (adopted 2026-09-22).**
+`populate.py` first builds the roster the sources grew -- their own
+equipment_carrier_variant names, on the old twelve global end uses -- and then
+`adopt.py` replaces it: every source name folds onto a design technology,
+every application moves onto the hierarchy leaves of its design end use, and
+every fact moves onto its design technology while keeping the source's own
+name in `roster-technology`. The roster as it stood before adoption is kept
+in `source-roster/`, and the crosswalk that did the folding, with its review,
+beside this file (section 5c).
 
-`service-node` is the join to CIMS: it is one sector × end use (× step), and it
-holds the `branch` string and the unit that demand is measured in.
+`service-node` is the join to CIMS: one design end use at one leaf of the
+hierarchy, holding that leaf in `branch` and the unit demand is measured in.
+A leaf split across end uses (`light-industrial.service.heat` feeds six) gives
+one node per end use.
 
-**A technology can serve several of them** (design doc D10). A natural gas dryer
-is the same dryer in food and in chemicals, so the roster holds it once and
-`technology-application` records every node it serves — one row per (technology,
-service node). Sector and end use are still never stored on the technology
-itself; anything that needs them joins through that table. 387 technologies
-currently hold 759 applications; the wide view shows the 216 with data as 376
-rows.
-
-The wide views therefore show a technology under each sector it serves, which is
-the same idiom the source list uses for a source cited in several sectors.
+**A technology can serve several of them** (design doc D10). The roster holds
+it once and `technology-application` records every node it serves. 448 design
+technologies hold 2,762 applications: those a source placed, on the leaves the
+crosswalk chose, and those only the design table places, on every leaf of the
+end use. 124 technologies carry data; the wide view shows them as 463 rows,
+one per source name folded in (section 2a).
 
 ### Tables
 
 | Table | Kind | What it holds |
 | - | - | - |
-| `sector` | registry | 10 industrial sectors plus `cross-sector`, with UKTM / NAICS / ISIC crosswalks. Seeded. |
-| `end-use` | registry | 12 end uses, their service type, unit and temperature tier. Seeded. |
-| `process-step` | registry | Sector-specific production stages. Empty. |
-| `service-node` | registry | sector × end-use × step, and the CIMS branch. Empty. |
+| `sector` | registry | 13 sectors plus `cross-sector`, with UKTM / NAICS / ISIC crosswalks. Seeded. |
+| `end-use` | registry | The design table's 94 end uses, each with its sector, service type, unit and temperature tier. Seeded from the design table. |
+| `process-step` | registry | The CIMS hierarchy leaves the end uses are made of. Written by `adopt.py`. |
+| `service-node` | registry | One per (end use, hierarchy leaf), with the leaf in `branch`. Written by `adopt.py`. |
 | `technology-application` | link | Where each technology applies: one row per technology × service node. Empty. |
-| `technology` | roster | One row per technology. Empty. |
+| `technology` | roster | One row per design technology, with its label, carrier list and the source names folded into it (`aggregated-from`). |
 | `parameter` | dictionary | 27 parameters: definition, unit dimension, CIMS target, optimization use. Seeded. |
 | `commodity` | dictionary | 73 energy carriers, materials and emission species. Seeded. |
 | `tech-parameter` | fact | The main table. One row per number. Empty. |
@@ -109,8 +114,13 @@ Alongside the tables:
 | - | - |
 | `cims-roster.csv` | Every distinct technology in the CIMS model inputs, region-collapsed. |
 | `cims-map.csv` | Each CIMS technology mapped onto the harmonized naming, with an action and a confidence. |
-| `cims-review.md` | The rename / merge / remove / add advice, generated from that map. |
-| `wide-technology.csv` | Wide view: one row per technology **per (sector, end use) it serves**, one column per parameter plus `_min` / `_max`. |
+| `cims-review.md` | The rename / merge / remove / add advice, generated from that map against `source-roster/`. |
+| `source-roster/` | The roster the sources grew, before adoption: `technology`, `technology-application`, `service-node` and `process-step` in the same schema. |
+| `design-crosswalk-technology.csv` | Each source roster name and the design technology it folds onto, with the rule that chose it. |
+| `design-crosswalk-application.csv` | Each source application and the design end use it lands on. |
+| `design-crosswalk-branch.csv` | The same, taken down to the hierarchy leaf, with how the leaf was chosen. |
+| `design-crosswalk-review.md` | The crosswalk explained: coverage, folds, empty end uses, the leaf level. |
+| `wide-technology.csv` | Wide view: one row per technology **per source name folded into it, per (sector, end use)** that source placed it on, one column per parameter plus `_min` / `_max`. |
 | `wide-flow.csv` | Wide view: one row per technology per (sector, end use), one column per commodity, `in_` and `out_` prefixed. |
 
 Rows are technologies with data; `placeholder` and `unquantified` entries are
@@ -125,6 +135,14 @@ technology alone, so a technology serving six steps used to be six rows
 repeating the same numbers, which made it look six times as common as it is.
 Rows sort sector → end use → technology → process step, and the sheet bands on
 sector and end use only, so each band reads as one alphabetical run of names.
+
+**Since the adoption, one row per source name as well** (2026-09-22). A design
+technology holds the facts of every source name folded into it --
+`boiler_fuel-fired` carries `boiler_natural-gas`, `boiler_oil` and the rest --
+so the views key each fact on both names, print the second in
+`roster-technology`, and show a source name only under the end uses its own
+source placed it on. One cell per parameter would otherwise pick one fuel's
+number and hide the others.
 | `unit-conversion.csv` | Physical conversions used by the wide views. Exact constants. |
 | `trl-scale-map.csv` | Crosswalk from each source's readiness scale to the common 1-9 ladder, with the band definitions and where they came from. |
 | `reference-exchange-rate.csv` | Bank of Canada annual average rates to CAD, 2000–2025, USD and GBP. |
@@ -478,6 +496,42 @@ cannot drift from what `populate.py` labelled.
 
 To change a grouping decision, edit the rule tables at the top of
 `aggregate.py` and re-run — never the generated CSVs.
+
+## 5c. The design vocabulary and the CIMS hierarchy
+
+`adopt.py` runs inside `populate.py`, after the aggregation post-pass, and
+does five things: writes the pre-adoption roster to `source-roster/`; runs
+`build-design-crosswalk.py` on those rows; replaces the roster with the design
+technology table; replaces the service nodes and process steps with the
+hierarchy leaves; and rewrites every application and fact onto them.
+
+- **A source name folds onto the nearest design technology** and is listed in
+  that row's `aggregated-from`; nothing is dropped. The rule that chose each
+  fold is in `design-crosswalk-technology.csv`: the design table's own
+  `roster-match` column first, then hand maps and efficiency buckets, then the
+  same device on the same end use, over a generic band, or in the same sector,
+  and only then the end use's conventional row. Each fact keeps the name it
+  arrived under in `roster-technology`, so a design technology's
+  carrier-specific numbers stay apart.
+- **The carrier is a list on the row, not a name component.** `energy-carrier`
+  holds every section 6.2 carrier a folded source name or the design row's
+  energy inputs name; `variant` holds the name's discriminator.
+- **The hierarchy is the definitive mapping.** `cims-map.csv` is not rebuilt
+  against it: the CIMS model inputs predate it, so its rows stay as the record
+  of where the CIMS-sourced roster came from, and a row's legacy branch is used
+  only as evidence when choosing a leaf.
+- **Where a source does not say which leaf**, the application is applied on
+  every leaf of the end use and flagged `expanded` in the crosswalk -- a
+  generic boiler on every sector's steam leaf, for instance. The application's
+  `note` says how its leaf was chosen.
+- **Placeholders are the design rows no source quantifies** (263), and
+  `unquantified` the ones a source names without a number (61). Both stay in
+  the roster and out of the wide views.
+
+`check-data.py` holds the adoption to this: end uses equal to the design
+table's, every technology carrying a design-table label, every node on a
+hierarchy leaf, every application and fact pointing at a technology and node
+that exist, and every fact carrying its `roster-technology`.
 
 ## 6. Two rules about shape
 

@@ -162,23 +162,108 @@ cost-basis,overnight,declared-here,
 cost-basis,not-applicable,declared-here,
 direction,input,declared-here,
 direction,output,declared-here,
-end-use,steam-and-hot-water,declared-here,read from its own table
-end-use,process-heat-low-temp,declared-here,read from its own table
-end-use,process-heat-medium-temp,declared-here,read from its own table
-end-use,process-heat-high-temp,declared-here,read from its own table
-end-use,drying-and-separation,declared-here,read from its own table
-end-use,material-preparation,declared-here,read from its own table
-end-use,material-conversion,declared-here,read from its own table
-end-use,forming-and-finishing,declared-here,read from its own table
-end-use,electrochemical,declared-here,read from its own table
-end-use,machine-drive,declared-here,read from its own table
-end-use,refrigeration-and-cooling,declared-here,read from its own table
-end-use,facility-services,declared-here,read from its own table
+end-use,heat-low-temp,declared-here,read from its own table
+end-use,heat-medium-temp,declared-here,read from its own table
+end-use,heat-high-temp,declared-here,read from its own table
+end-use,on-site-power-generation,declared-here,read from its own table
+end-use,pumps,declared-here,read from its own table
+end-use,fans-and-blowers,declared-here,read from its own table
+end-use,compressed-air,declared-here,read from its own table
+end-use,materials-handling,declared-here,read from its own table
+end-use,materials-processing,declared-here,read from its own table
+end-use,space-heating,declared-here,read from its own table
+end-use,space-cooling,declared-here,read from its own table
+end-use,lighting,declared-here,read from its own table
+end-use,mobile-equipment,declared-here,read from its own table
+end-use,co2-capture-concentrated,declared-here,read from its own table
+end-use,co2-capture-diffuse,declared-here,read from its own table
+end-use,direct-air-capture,declared-here,read from its own table
+end-use,cokemaking,declared-here,read from its own table
+end-use,agglomeration,declared-here,read from its own table
+end-use,ironmaking,declared-here,read from its own table
+end-use,steelmaking,declared-here,read from its own table
+end-use,steel-oxygen-supply,declared-here,read from its own table
+end-use,casting,declared-here,read from its own table
+end-use,reheating,declared-here,read from its own table
+end-use,rolling,declared-here,read from its own table
+end-use,annealing-and-coating,declared-here,read from its own table
+end-use,clinker-production,declared-here,read from its own table
+end-use,cement-grinding-and-blending,declared-here,read from its own table
+end-use,lime-calcination,declared-here,read from its own table
+end-use,glass-melting,declared-here,read from its own table
+end-use,glass-forming-and-finishing,declared-here,read from its own table
+end-use,ceramic-firing,declared-here,read from its own table
+end-use,drying-and-low-temp-calcining,declared-here,read from its own table
+end-use,steam-cracking,declared-here,read from its own table
+end-use,ammonia-and-methanol,declared-here,read from its own table
+end-use,electrochemical-products,declared-here,read from its own table
+end-use,other-chemicals,declared-here,read from its own table
+end-use,nitric-and-adipic-acid,declared-here,read from its own table
+end-use,ethanol-production,declared-here,read from its own table
+end-use,biodiesel-production,declared-here,read from its own table
+end-use,renewable-diesel-and-saf,declared-here,read from its own table
+end-use,renewable-natural-gas,declared-here,read from its own table
+end-use,centralized-hydrogen-production,declared-here,read from its own table
+end-use,hydrogen-distribution,declared-here,read from its own table
+end-use,crude-distillation,declared-here,read from its own table
+end-use,conversion-and-treating,declared-here,read from its own table
+end-use,refinery-hydrogen,declared-here,read from its own table
+end-use,wood-preparation,declared-here,read from its own table
+end-use,chemical-pulping,declared-here,read from its own table
+end-use,mechanical-pulping,declared-here,read from its own table
+end-use,recycled-pulping,declared-here,read from its own table
+end-use,chemical-recovery,declared-here,read from its own table
+end-use,lime-kiln,declared-here,read from its own table
+end-use,paper-forming,declared-here,read from its own table
+end-use,paper-drying,declared-here,read from its own table
+end-use,effluent-treatment,declared-here,read from its own table
+end-use,extraction-and-haulage,declared-here,read from its own table
+end-use,comminution,declared-here,read from its own table
+end-use,separation-and-processing,declared-here,read from its own table
+end-use,product-drying,declared-here,read from its own table
+end-use,pelletizing,declared-here,read from its own table
+end-use,ventilation-and-air-heating,declared-here,read from its own table
+end-use,water-and-tailings-management,declared-here,read from its own table
+end-use,drilling-and-well-services,declared-here,read from its own table
+end-use,oil-and-gas-production,declared-here,read from its own table
+end-use,produced-water-handling,declared-here,read from its own table
+end-use,venting,declared-here,read from its own table
+end-use,flaring,declared-here,read from its own table
+end-use,fugitive-emissions,declared-here,read from its own table
+end-use,in-situ-bitumen,declared-here,read from its own table
+end-use,oil-sands-mining-and-extraction,declared-here,read from its own table
+end-use,bitumen-upgrading,declared-here,read from its own table
+end-use,upgrader-hydrogen,declared-here,read from its own table
+end-use,gas-processing,declared-here,read from its own table
+end-use,lng-liquefaction,declared-here,read from its own table
+end-use,gas-pipelines,declared-here,read from its own table
+end-use,field-engines,declared-here,read from its own table
+end-use,compressor-drive-engine,declared-here,read from its own table
+end-use,compressor-drive-turbine,declared-here,read from its own table
+end-use,oil-pipelines,declared-here,read from its own table
+end-use,thermal-processing,declared-here,read from its own table
+end-use,baking-frying-and-roasting,declared-here,read from its own table
+end-use,drying,declared-here,read from its own table
+end-use,refrigeration,declared-here,read from its own table
+end-use,alumina-refining,declared-here,read from its own table
+end-use,aluminum-smelting,declared-here,read from its own table
+end-use,anode-production,declared-here,read from its own table
+end-use,pyrometallurgy,declared-here,read from its own table
+end-use,smelter-oxygen-supply,declared-here,read from its own table
+end-use,electric-smelting,declared-here,read from its own table
+end-use,hydrometallurgy,declared-here,read from its own table
+end-use,melting-casting-and-fabrication,declared-here,read from its own table
+end-use,metal-melting-and-heat-treatment,declared-here,read from its own table
+end-use,drying-curing-and-forming,declared-here,read from its own table
+end-use,wood-drying-and-pressing,declared-here,read from its own table
+equipment,adsorber,design-doc-6.2,
 equipment,air-separation-unit,design-doc-6.2,
 equipment,anaerobic-digester,design-doc-6.2,
+equipment,annealing-furnace,design-doc-6.2,
 equipment,arc-heater,design-doc-6.2,
 equipment,autothermal-reformer,design-doc-6.2,
 equipment,basic-oxygen-furnace,design-doc-6.2,
+equipment,binder,design-doc-6.2,
 equipment,blast-furnace,design-doc-6.2,
 equipment,boiler,design-doc-6.2,
 equipment,calciner,design-doc-6.2,
@@ -187,6 +272,7 @@ equipment,caster,design-doc-6.2,
 equipment,chiller,design-doc-6.2,
 equipment,cleaning-system,design-doc-6.2,
 equipment,clinker-cooler,design-doc-6.2,
+equipment,coating-line,design-doc-6.2,
 equipment,coke-oven,design-doc-6.2,
 equipment,combined-cycle,design-doc-6.2,
 equipment,combustion-turbine,design-doc-6.2,
@@ -198,6 +284,7 @@ equipment,crusher,design-doc-6.2,
 equipment,digester,design-doc-6.2,
 equipment,direct-heater,design-doc-6.2,
 equipment,distillation-column,design-doc-6.2,
+equipment,drilling-rig,design-doc-6.2,
 equipment,dryer,design-doc-6.2,
 equipment,electric-arc-furnace,design-doc-6.2,
 equipment,electrolysis-cell,design-doc-6.2,
@@ -205,28 +292,39 @@ equipment,electrolyzer,design-doc-6.2,
 equipment,evaporator,design-doc-6.2,
 equipment,fan,design-doc-6.2,
 equipment,fermenter,design-doc-6.2,
+equipment,flare,design-doc-6.2,
 equipment,flotation-cell,design-doc-6.2,
+equipment,fracturing-fleet,design-doc-6.2,
 equipment,fuel-cell,design-doc-6.2,
 equipment,furnace,design-doc-6.2,
+equipment,gas-treatment-unit,design-doc-6.2,
 equipment,gasifier,design-doc-6.2,
 equipment,geothermal-well,design-doc-6.2,
 equipment,grinding-mill,design-doc-6.2,
+equipment,haul-truck,design-doc-6.2,
+equipment,heat-exchanger,design-doc-6.2,
 equipment,heat-pump,design-doc-6.2,
 equipment,heat-recovery-unit,design-doc-6.2,
+equipment,hoist,design-doc-6.2,
 equipment,induction-heater,design-doc-6.2,
 equipment,kiln,design-doc-6.2,
 equipment,leaching-vessel,design-doc-6.2,
 equipment,lighting,design-doc-6.2,
+equipment,liquefaction-train,design-doc-6.2,
 equipment,management-system,design-doc-6.2,
 equipment,melting-furnace,design-doc-6.2,
 equipment,microturbine,design-doc-6.2,
 equipment,microwave-heater,design-doc-6.2,
+equipment,mobile-equipment,design-doc-6.2,
 equipment,motor,design-doc-6.2,
 equipment,oven,design-doc-6.2,
 equipment,paper-machine,design-doc-6.2,
+equipment,paste-plant,design-doc-6.2,
 equipment,pasteurizer,design-doc-6.2,
 equipment,pellet-plant,design-doc-6.2,
 equipment,photochemical-heater,design-doc-6.2,
+equipment,photovoltaic-array,design-doc-6.2,
+equipment,pickling-line,design-doc-6.2,
 equipment,plasma-torch,design-doc-6.2,
 equipment,precalciner,design-doc-6.2,
 equipment,preheater,design-doc-6.2,
@@ -242,6 +340,7 @@ equipment,resistance-heater,design-doc-6.2,
 equipment,roaster,design-doc-6.2,
 equipment,rolling-mill,design-doc-6.2,
 equipment,rotary-compression-heater,design-doc-6.2,
+equipment,separator,design-doc-6.2,
 equipment,shaft-furnace,design-doc-6.2,
 equipment,sinter-plant,design-doc-6.2,
 equipment,smelting-vessel,design-doc-6.2,
@@ -252,9 +351,12 @@ equipment,steam-cracker,design-doc-6.2,
 equipment,steam-reformer,design-doc-6.2,
 equipment,steam-turbine,design-doc-6.2,
 equipment,transesterification-unit,design-doc-6.2,
+equipment,turboexpander,design-doc-6.2,
 equipment,ultraviolet-curer,design-doc-6.2,
 equipment,vapour-recompressor,design-doc-6.2,
 equipment,ventilation-unit,design-doc-6.2,
+equipment,well,design-doc-6.2,
+equipment,wind-turbine,design-doc-6.2,
 heat-output-type,steam,declared-here,
 heat-output-type,hot-water,declared-here,
 heat-output-type,direct,declared-here,
@@ -306,14 +408,17 @@ role,improvement,declared-here,
 role,alternative-route,declared-here,
 sector,cross-sector,declared-here,read from its own table
 sector,iron-and-steel,declared-here,read from its own table
-sector,non-ferrous-metals,declared-here,read from its own table
 sector,cement,declared-here,read from its own table
 sector,non-metallic-minerals,declared-here,read from its own table
 sector,chemicals,declared-here,read from its own table
+sector,biofuels,declared-here,read from its own table
+sector,hydrogen,declared-here,read from its own table
 sector,petroleum-refining,declared-here,read from its own table
 sector,pulp-and-paper,declared-here,read from its own table
-sector,food-and-beverage,declared-here,read from its own table
 sector,mining,declared-here,read from its own table
+sector,oil-and-gas,declared-here,read from its own table
+sector,food-and-beverage,declared-here,read from its own table
+sector,non-ferrous-metals,declared-here,read from its own table
 sector,other-industry,declared-here,read from its own table
 service-type,heat-supply,declared-here,
 service-type,process,declared-here,

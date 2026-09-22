@@ -38,6 +38,7 @@ RAW = ROOT / "data" / "raw-data"
 DOC = ROOT / "design" / "industrial heat technology database design.md"
 TODAY = "2026-08-27"
 AGG_DAY = "2026-09-10"   # the aggregation pass
+ADOPT_DAY = "2026-09-22" # the adoption of the design vocabulary
 
 END_USE_UNIT = {"steam-and-hot-water": "GJ", "process-heat-low-temp": "GJ",
                 "process-heat-medium-temp": "GJ", "process-heat-high-temp": "GJ",
@@ -911,6 +912,28 @@ def main() -> int:
                                 "end uses held once cross-sector, and other-services retired",
                       "note": "rules documented at the top of aggregate.py; every reassignment "
                               "listed in aggregation-review.md"})
+
+    # ---- adoption: the design vocabulary, down to the hierarchy leaf ------
+    # Everything above builds the roster the sources grew. adopt.py writes that
+    # to source-roster/, runs the design crosswalk on it, and replaces the
+    # roster, the service nodes and the process steps with the design tables
+    # and the CIMS hierarchy leaves; every fact moves onto its design
+    # technology and keeps its source name in roster-technology.
+    import adopt
+    sids = {r["term"] for r in read_csv(HERE / "vocabulary.csv") if r["list-name"] == "source-id"}
+    ad = adopt.adopt(steps, nodes, techs, apps, facts, fl, ct, sids)
+    print(f"adoption: {ad['folded']} source roster names onto {ad['technologies']} design "
+          f"technologies ({ad['with-facts']} with facts, {ad['placeholders']} placeholders); "
+          f"{ad['nodes']} service nodes on hierarchy leaves; {ad['applications']} applications "
+          f"({ad['design-only']} from design placements alone)")
+    changelog.append({"date": ADOPT_DAY, "who": "claude", "table": "technology", "record-id": "",
+                      "change": f"design vocabulary adopted: {ad['technologies']} design "
+                                f"technologies, {ad['nodes']} service nodes, "
+                                f"{ad['applications']} applications",
+                      "reason": "the design tables are the vocabulary and the CIMS hierarchy sets "
+                                "the level of detail (the user, 2026-09-14 and 2026-09-22)",
+                      "note": "adopt.py; the pre-adoption roster is in source-roster/, the "
+                              "crosswalk and its review beside this file"})
 
     # ---- basis requirement, read from the parameter dictionary -----------
     # parameter.csv names, per parameter, the basis a number is meaningless

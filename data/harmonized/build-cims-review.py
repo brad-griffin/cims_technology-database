@@ -2,7 +2,7 @@
 
 Run from the repo root:   python data/harmonized/build-cims-review.py
 
-Reads cims-map.csv and technology.csv; writes cims-review.md.  Everything in
+Reads cims-map.csv and source-roster/technology.csv; writes cims-review.md.  Everything in
 the document is derived, so re-running it after the mapper changes keeps the
 advice and the data in step.
 """
@@ -20,7 +20,9 @@ CARRIER_WORDS = r"(ng|natural gas|oil|hfo|heavy fuel oil|electric|electricity|co
 
 def main() -> None:
     m = R("cims-map.csv")
-    techs = R("technology.csv")
+    # the CIMS mapper names technologies in the source roster's spelling, so
+    # the comparison is against the roster before adoption (adopt.py)
+    techs = R("source-roster/technology.csv")
     by_action = collections.Counter(r["action"] for r in m)
     ind = [r for r in m if r["action"] != "out-of-scope"]
 
