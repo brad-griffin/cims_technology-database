@@ -1,0 +1,304 @@
+branch,status,end-use,share,role,suggested-branch,table-change,note
+<sector>.biodiesel.product.transesterification,existing,biofuels/biodiesel-production,whole,end-use,,,
+<sector>.biodiesel.service.agricultural-input,existing,,,feedstock,,,
+<sector>.biodiesel.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.biodiesel.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.biodiesel.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.biodiesel.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.chemicals.product.adipic-acid,existing,chemicals/nitric-and-adipic-acid,whole,end-use,,new end use,N2O process emissions
+<sector>.chemicals.product.ammonia-methanol.ammonia,existing,chemicals/ammonia-and-methanol,whole,end-use,,,
+<sector>.chemicals.product.ammonia-methanol.methanol,existing,chemicals/ammonia-and-methanol,whole,end-use,,,
+<sector>.chemicals.product.chlor-alkali.caustic-evaporation,existing,chemicals/electrochemical-products,whole,end-use,,,
+<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,existing,chemicals/electrochemical-products,whole,end-use,,,
+<sector>.chemicals.product.hydrogen-peroxide,existing,chemicals/other-chemicals,whole,end-use,,,
+<sector>.chemicals.product.nitric-acid,existing,chemicals/nitric-and-adipic-acid,whole,end-use,,new end use,N2O process emissions
+<sector>.chemicals.product.petrochemicals.all-polymerization,existing,chemicals/other-chemicals,whole,end-use,,,
+<sector>.chemicals.product.petrochemicals.btx-reforming,existing,chemicals/other-chemicals,whole,end-use,,,
+<sector>.chemicals.product.petrochemicals.intermediate-production,existing,chemicals/other-chemicals,whole,end-use,,,
+<sector>.chemicals.product.petrochemicals.steam-cracking,existing,chemicals/steam-cracking,whole,end-use,,,
+<sector>.chemicals.product.sodium-chlorate,existing,chemicals/electrochemical-products,whole,end-use,,,
+<sector>.chemicals.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.chemicals.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.chemicals.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.chemicals.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.chemicals.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.chemicals.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.chemicals.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.chemicals.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.chemicals.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.chemicals.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.chemicals.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.chemicals.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.coal-mining.product.coal-preparation.drying,existing,mining/product-drying,whole,end-use,,,"rotary, spray and fluidized-bed dryers on gas, coal or electricity (the old metallurgical-finishing.cleaning node)"
+<sector>.coal-mining.product.coal-preparation.tailings-disposal,existing,mining/water-and-tailings-management,whole,end-use,,move from separation-and-processing,
+<sector>.coal-mining.product.coal-preparation.washing,existing,mining/separation-and-processing,whole,end-use,,,"wash mill, on electricity"
+<sector>.coal-mining.product.raw-product.extraction,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.coal-mining.product.raw-product.mine-ventilation,existing,mining/ventilation-and-air-heating,whole,end-use,,,
+<sector>.coal-mining.product.simplified-extraction,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.coal-mining.product.simplified-production,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.coal-mining.product.size-reduced-product.crushing,existing,mining/comminution,whole,end-use,,,
+<sector>.coal-mining.product.size-reduced-product.milling,existing,mining/comminution,whole,end-use,,,
+<sector>.coal-mining.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.coal-mining.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.coal-mining.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.coal-mining.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.coal-mining.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.coal-mining.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.coal-mining.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.coal-mining.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.coal-mining.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.coal-mining.service.mine-haulage,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.construction.product.transport,existing,cross-sector/mobile-equipment,whole,end-use,,,
+<sector>.direct-air-capture.product.co2-removal,existing,cross-sector/direct-air-capture,whole,end-use,,,
+<sector>.ethanol.product.fermentation,existing,biofuels/ethanol-production,whole,end-use,,,
+<sector>.ethanol.service.agricultural-input,existing,,,feedstock,,,
+<sector>.ethanol.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.ethanol.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.ethanol.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.ethanol.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.hydrogen.product.centralized-hydrogen,existing,hydrogen/centralized-hydrogen-production,whole,end-use,,id centralised -> centralized,
+<sector>.hydrogen.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.hydrogen.service.distribution,existing,hydrogen/hydrogen-distribution,whole,end-use,,add (was none),
+<sector>.hydrogen.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.hydrogen.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.industrial-minerals.product.cement.clinker,existing,cement/clinker-production,whole,end-use,,,
+<sector>.industrial-minerals.product.cement.grinding,existing,cement/cement-grinding-and-blending,whole,end-use,,,
+<sector>.industrial-minerals.product.ceramics.dryer,existing,non-metallic-minerals/drying-and-low-temp-calcining,whole,end-use,,,
+<sector>.industrial-minerals.product.ceramics.kiln,existing,non-metallic-minerals/ceramic-firing,whole,end-use,,new end use,
+<sector>.industrial-minerals.product.glass.form-and-finish,existing,non-metallic-minerals/glass-forming-and-finishing,whole,end-use,,new end use,
+<sector>.industrial-minerals.product.glass.furnaces,existing,non-metallic-minerals/glass-melting,whole,end-use,,new end use,
+<sector>.industrial-minerals.product.gypsum,existing,non-metallic-minerals/drying-and-low-temp-calcining,whole,end-use,,,
+<sector>.industrial-minerals.product.lime,existing,non-metallic-minerals/lime-calcination,whole,end-use,,,
+<sector>.industrial-minerals.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.industrial-minerals.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.industrial-minerals.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.industrial-minerals.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.industrial-minerals.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.industrial-minerals.service.kiln-heat,existing,cement/clinker-production; non-metallic-minerals/lime-calcination,part,end-use,,add here; drop from melting-and-firing and drying-and-low-temp-calcining,requested only by the clinker and lime kilns
+<sector>.industrial-minerals.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.industrial-minerals.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.industrial-minerals.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.industrial-minerals.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,existing,iron-and-steel/annealing-and-coating,whole,end-use,,,
+<sector>.iron-and-steel.product.continuous-cast.casting,existing,iron-and-steel/casting,whole,end-use,,,
+<sector>.iron-and-steel.product.continuous-cast.cold-rolling,existing,iron-and-steel/rolling,whole,end-use,,,
+<sector>.iron-and-steel.product.continuous-cast.hot-rolling,existing,iron-and-steel/rolling,whole,end-use,,,
+<sector>.iron-and-steel.product.foundry,existing,other-industry/metal-melting-and-heat-treatment,whole,end-use,,add,the row covers foundry melting
+<sector>.iron-and-steel.product.molten-steel,existing,iron-and-steel/steelmaking,whole,end-use,,,
+<sector>.iron-and-steel.service.agglomeration,existing,iron-and-steel/agglomeration,whole,end-use,,,
+<sector>.iron-and-steel.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.iron-and-steel.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.iron-and-steel.service.coke,existing,iron-and-steel/cokemaking,whole,end-use,,,
+<sector>.iron-and-steel.service.direct-reduced-iron,existing,iron-and-steel/ironmaking,whole,end-use,,,
+<sector>.iron-and-steel.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.iron-and-steel.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.iron-and-steel.service.fuel-blend.process-gas,existing,,,fuel-routing,,,"by-product fuel; its heat is counted on the steam, reheating and direct-heat nodes it feeds"
+<sector>.iron-and-steel.service.hot-metal,existing,iron-and-steel/ironmaking,whole,end-use,,,
+<sector>.iron-and-steel.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.iron-and-steel.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.iron-and-steel.service.ladle-preheating,existing,iron-and-steel/steelmaking,whole,end-use,,,
+<sector>.iron-and-steel.service.ladle-refining,existing,iron-and-steel/steelmaking,whole,end-use,,,
+<sector>.iron-and-steel.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.iron-and-steel.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.iron-and-steel.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.iron-and-steel.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.iron-and-steel.service.oxygen,existing,iron-and-steel/steel-oxygen-supply,whole,end-use,,,
+<sector>.iron-and-steel.service.reheating,existing,iron-and-steel/reheating,whole,end-use,,,
+<sector>.iron-and-steel.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.light-industrial.product.electronics-and-other,existing,other-industry/drying-curing-and-forming,whole,end-use,,,product-to-process approximation
+<sector>.light-industrial.product.food-tobacco-and-beverage,existing,food-and-beverage/thermal-processing; food-and-beverage/baking-frying-and-roasting; food-and-beverage/drying; food-and-beverage/refrigeration,part,end-use,,,aggregate only
+<sector>.light-industrial.product.furniture-printing-and-machinery,existing,other-industry/metal-melting-and-heat-treatment,whole,end-use,,,product-to-process approximation
+<sector>.light-industrial.product.leather-and-textiles,existing,other-industry/drying-curing-and-forming,whole,end-use,,,product-to-process approximation
+<sector>.light-industrial.product.rubber-and-plastics,existing,other-industry/drying-curing-and-forming,whole,end-use,,,product-to-process approximation
+<sector>.light-industrial.product.transportation-equipment,existing,other-industry/metal-melting-and-heat-treatment,whole,end-use,,,product-to-process approximation
+<sector>.light-industrial.product.wood-products,existing,other-industry/wood-drying-and-pressing,whole,end-use,,,
+<sector>.light-industrial.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.light-industrial.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.light-industrial.service.heat,existing,cross-sector/heat-medium-temp; cross-sector/heat-high-temp; other-industry/metal-melting-and-heat-treatment; other-industry/drying-curing-and-forming,part,heat-supply,,,
+<sector>.light-industrial.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.light-industrial.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.light-industrial.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.light-industrial.service.machine-drive,existing,cross-sector/materials-processing,whole,end-use,,,"CIMS light industry has one undifferentiated motive-power service, not the five MECS categories"
+<sector>.light-industrial.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,existing,non-ferrous-metals/alumina-refining,whole,end-use,,,
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,existing,non-ferrous-metals/aluminum-smelting,whole,end-use,,id aluminium -> aluminum,
+<sector>.metal-smelting.product.aluminum.recycle,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.copper.hydrometallurgy,existing,non-ferrous-metals/hydrometallurgy,whole,end-use,,,titanium-slag keeps its leach: the roast-leach upgrade to UGS slag is real
+<sector>.metal-smelting.product.copper.melt-cast,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.copper.pyrometallurgy.refining,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.lead.melt-cast,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.lead.pyrometallurgy.refining,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.magnesium.electrolysis,existing,non-ferrous-metals/hydrometallurgy,whole,end-use,,hydrometallurgy: widen electrowinning to cover molten-salt electrolysis,"molten-salt MgCl2 cells (Magnola to 2003, Norsk Hydro Becancour to 2007); carries an SF6 cover-gas factor of 0.001565 t per unit"
+<sector>.metal-smelting.product.magnesium.melt-cast,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.magnesium.thermal-reduction,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,"silicothermic retort (Timminco Haley, to about 2008)"
+<sector>.metal-smelting.product.nickel.hydrometallurgy,existing,non-ferrous-metals/hydrometallurgy,whole,end-use,,,titanium-slag keeps its leach: the roast-leach upgrade to UGS slag is real
+<sector>.metal-smelting.product.nickel.melt-cast,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.product.titanium-slag.hydrometallurgy,existing,non-ferrous-metals/hydrometallurgy,whole,end-use,,,titanium-slag keeps its leach: the roast-leach upgrade to UGS slag is real
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,existing,non-ferrous-metals/electric-smelting,whole,end-use,,,"Rio Tinto Fer et Titane, Sorel-Tracy: ilmenite smelted to titanium slag in electric furnaces, pig iron taken as a co-product carrying no energy of its own"
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,existing,non-ferrous-metals/electric-smelting,whole,end-use,,,"Rio Tinto Fer et Titane, Sorel-Tracy: ilmenite smelted to titanium slag in electric furnaces, pig iron taken as a co-product carrying no energy of its own"
+<sector>.metal-smelting.product.zinc.hydrometallurgy,existing,non-ferrous-metals/hydrometallurgy,whole,end-use,,,titanium-slag keeps its leach: the roast-leach upgrade to UGS slag is real
+<sector>.metal-smelting.product.zinc.melt-cast,existing,non-ferrous-metals/melting-casting-and-fabrication,whole,end-use,,,"magnesium melt-cast carries the SF6 cover-gas factor (0.0078 t per unit, five times the cell factor): the emission the NIR keeps reporting after 2007"
+<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,existing,non-ferrous-metals/pyrometallurgy,whole,end-use,,,
+<sector>.metal-smelting.service.anode-production,existing,non-ferrous-metals/anode-production,whole,end-use,,,
+<sector>.metal-smelting.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.metal-smelting.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.metal-smelting.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.metal-smelting.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.metal-smelting.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.metal-smelting.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.metal-smelting.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.metal-smelting.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.metal-smelting.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.metal-smelting.service.oxygen,existing,non-ferrous-metals/smelter-oxygen-supply,whole,end-use,,,
+<sector>.metal-smelting.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.mining.product.aggregate.open-pit,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.diamond.open-pit,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.diamond.underground,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.metal.open-pit,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.metal.underground,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.potash.conventional,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.potash.solution,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.uranium.open-pit,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.product.uranium.underground,existing,mining/extraction-and-haulage,whole,end-use,,,the mine itself; its energy sits on the services it requests
+<sector>.mining.service.compaction,existing,mining/separation-and-processing,whole,end-use,,,
+<sector>.mining.service.crushing,existing,mining/comminution,whole,end-use,,,
+<sector>.mining.service.crystallization,existing,mining/separation-and-processing,whole,end-use,,,
+<sector>.mining.service.drying,existing,mining/product-drying,whole,end-use,,,
+<sector>.mining.service.extraction,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.mining.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.mining.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.mining.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.mining.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.mining.service.leaching,existing,mining/separation-and-processing,whole,end-use,,,
+<sector>.mining.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.mining.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.mining.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.mining.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.mining.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.mining.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.mining.service.milling,existing,mining/comminution,whole,end-use,,,
+<sector>.mining.service.mine-haulage.open-pit,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.mining.service.mine-haulage.underground,existing,mining/extraction-and-haulage,whole,end-use,,,
+<sector>.mining.service.on-site-power,existing,cross-sector/on-site-power-generation,whole,end-use,,,
+<sector>.mining.service.pelletizing,existing,mining/pelletizing,whole,end-use,,,
+<sector>.mining.service.separation,existing,mining/separation-and-processing,whole,end-use,,,
+<sector>.mining.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.mining.service.tailings-disposal,existing,mining/water-and-tailings-management,whole,end-use,,,
+<sector>.natural-gas.product.distribution,existing,oil-and-gas/gas-pipelines,whole,end-use,,,
+<sector>.natural-gas.product.supply.direct-heat,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,,
+<sector>.natural-gas.product.supply.drilling,existing,oil-and-gas/drilling-and-well-services,whole,end-use,,,
+<sector>.natural-gas.product.supply.extraction.coalbed-methane,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,compressed-air: drop extraction compression,
+<sector>.natural-gas.product.supply.extraction.conventional,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,compressed-air: drop extraction compression,
+<sector>.natural-gas.product.supply.extraction.shale,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,compressed-air: drop extraction compression,
+<sector>.natural-gas.product.supply.extraction.tight,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,compressed-air: drop extraction compression,
+<sector>.natural-gas.product.supply.flaring,existing,oil-and-gas/flaring,whole,end-use,,new end use (split from venting-and-flaring),
+<sector>.natural-gas.product.supply.formation-co2,existing,oil-and-gas/gas-processing,whole,end-use,,moved 2026-09-18,the CO2 in the raw gas and the capture-or-vent decision at the plant; the capture itself is natural-gas.service.ccs_concentrated
+<sector>.natural-gas.product.supply.fugitive,existing,oil-and-gas/fugitive-emissions,whole,end-use,,,
+<sector>.natural-gas.product.supply.gas-compression,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,compressed-air: drop extraction compression,
+<sector>.natural-gas.product.supply.lng-liquefaction,existing,oil-and-gas/lng-liquefaction,whole,end-use,,,
+<sector>.natural-gas.product.supply.off-road-transport,existing,cross-sector/mobile-equipment,whole,end-use,,,
+<sector>.natural-gas.product.supply.processing,existing,oil-and-gas/gas-processing,whole,end-use,,,
+<sector>.natural-gas.product.supply.venting.blowdowns,existing,oil-and-gas/venting,whole,end-use,,"new end use (split from venting-and-flaring); drop controls, blowdowns and liquid unloading from production","pumping: pneumatic vs electric, requested by processing and transmission"
+<sector>.natural-gas.product.supply.venting.controls,existing,oil-and-gas/venting,whole,end-use,,"new end use (split from venting-and-flaring); drop controls, blowdowns and liquid unloading from production","pumping: pneumatic vs electric, requested by processing and transmission"
+<sector>.natural-gas.product.supply.venting.liquid-unloading,existing,oil-and-gas/venting,whole,end-use,,"new end use (split from venting-and-flaring); drop controls, blowdowns and liquid unloading from production","pumping: pneumatic vs electric, requested by processing and transmission"
+<sector>.natural-gas.product.supply.venting.other-diffuse-venting,existing,oil-and-gas/venting,whole,end-use,,"new end use (split from venting-and-flaring); drop controls, blowdowns and liquid unloading from production","pumping: pneumatic vs electric, requested by processing and transmission"
+<sector>.natural-gas.product.supply.venting.other-point-venting,existing,oil-and-gas/venting,whole,end-use,,"new end use (split from venting-and-flaring); drop controls, blowdowns and liquid unloading from production","pumping: pneumatic vs electric, requested by processing and transmission"
+<sector>.natural-gas.product.supply.well-tests,existing,oil-and-gas/drilling-and-well-services,whole,end-use,,,
+<sector>.natural-gas.product.transmission,existing,oil-and-gas/gas-pipelines,whole,end-use,,,
+<sector>.natural-gas.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.natural-gas.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.natural-gas.service.compressor-drive.engine,existing,oil-and-gas/oil-and-gas-production; oil-and-gas/gas-processing; oil-and-gas/gas-pipelines,part,end-use,,add,"compressor drivers for extraction, processing and transmission compression; `.engine` is the reciprocating fleet (10-year life) and `.turbine` the centrifugal one (30-year life), each with an electric-motor alternative, and the three compression nodes request exogenous shares of the two"
+<sector>.natural-gas.service.compressor-drive.turbine,existing,oil-and-gas/oil-and-gas-production; oil-and-gas/gas-processing; oil-and-gas/gas-pipelines,part,end-use,,add,"compressor drivers for extraction, processing and transmission compression; `.engine` is the reciprocating fleet (10-year life) and `.turbine` the centrifugal one (30-year life), each with an electric-motor alternative, and the three compression nodes request exogenous shares of the two"
+<sector>.natural-gas.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.natural-gas.service.fuel-blend.gasoline,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.natural-gas.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.natural-gas.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.petroleum-crude.product.bitumen.in-situ,existing,oil-and-gas/in-situ-bitumen,whole,end-use,,,
+<sector>.petroleum-crude.product.bitumen.mining,existing,oil-and-gas/oil-sands-mining-and-extraction,whole,end-use,,,
+<sector>.petroleum-crude.product.bitumen.upgrading,existing,oil-and-gas/bitumen-upgrading,whole,end-use,,,
+<sector>.petroleum-crude.product.exploration,existing,oil-and-gas/drilling-and-well-services,whole,end-use,,,
+<sector>.petroleum-crude.product.heavy,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,,
+<sector>.petroleum-crude.product.light-medium.offshore,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,,
+<sector>.petroleum-crude.product.light-medium.onshore,existing,oil-and-gas/oil-and-gas-production,whole,end-use,,,
+<sector>.petroleum-crude.product.transmission,existing,oil-and-gas/oil-pipelines,whole,end-use,,,
+<sector>.petroleum-crude.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.petroleum-crude.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.petroleum-crude.service.field-engines,existing,oil-and-gas/drilling-and-well-services; oil-and-gas/oil-and-gas-production; oil-and-gas/in-situ-bitumen; oil-and-gas/bitumen-upgrading,part,end-use,,add (was unmapped),"stationary engines (20-year life; requested per well, per m3 and by upgraders); the oil-sands mining request moves to service.mine-haulage"
+<sector>.petroleum-crude.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.petroleum-crude.service.fuel-blend.gasoline,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.petroleum-crude.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.petroleum-crude.service.fuel-blend.still-gas,existing,,,fuel-routing,,,"by-product fuel; its heat is counted on the steam, reheating and direct-heat nodes it feeds"
+<sector>.petroleum-crude.service.hydrogen,existing,oil-and-gas/upgrader-hydrogen,whole,end-use,,,
+<sector>.petroleum-crude.service.mine-haulage,existing,oil-and-gas/oil-sands-mining-and-extraction,whole,end-use,,add,mine fleet; haul fleets stay in their sector
+<sector>.petroleum-crude.service.produced-water,existing,oil-and-gas/produced-water-handling,whole,end-use,,,
+<sector>.petroleum-crude.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.petroleum-refining.product.alkylates,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.isomerization,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.asphalt,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,existing,petroleum-refining/crude-distillation,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.petroleum-fractions.lubes,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.product.reforming,existing,petroleum-refining/conversion-and-treating,whole,end-use,,,
+<sector>.petroleum-refining.service.ccs.concentrated,existing,cross-sector/co2-capture-concentrated,whole,end-use,,"one node per stream since 2026-09-18, so no end use takes only part of a CCS service",
+<sector>.petroleum-refining.service.ccs.diffuse,existing,cross-sector/co2-capture-diffuse,whole,end-use,,,
+<sector>.petroleum-refining.service.direct-heat,existing,cross-sector/heat-medium-temp; cross-sector/heat-high-temp,part,heat-supply,,,
+<sector>.petroleum-refining.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.petroleum-refining.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.petroleum-refining.service.fuel-blend.still-gas,existing,,,fuel-routing,,,"by-product fuel; its heat is counted on the steam, reheating and direct-heat nodes it feeds"
+<sector>.petroleum-refining.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.petroleum-refining.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.petroleum-refining.service.hydrogen,existing,petroleum-refining/refinery-hydrogen,whole,end-use,,,
+<sector>.petroleum-refining.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.petroleum-refining.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.petroleum-refining.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.petroleum-refining.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
+<sector>.pulp-and-paper.product.paper.coated.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.coated.forming,existing,pulp-and-paper/paper-forming,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.linerboard.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.linerboard.forming,existing,pulp-and-paper/paper-forming,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.newsprint.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.newsprint.forming,existing,pulp-and-paper/paper-forming,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.tissue.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.tissue.forming,existing,pulp-and-paper/paper-forming,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.uncoated.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.paper.uncoated.forming,existing,pulp-and-paper/paper-forming,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.bleaching,existing,pulp-and-paper/chemical-pulping,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.drying,existing,pulp-and-paper/paper-drying,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,existing,pulp-and-paper/chemical-pulping,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.pulping-mechanical,existing,pulp-and-paper/mechanical-pulping,whole,end-use,,new end use (split),
+<sector>.pulp-and-paper.product.pulp.pulping-recycled,existing,pulp-and-paper/recycled-pulping,whole,end-use,,new end use (split),
+<sector>.pulp-and-paper.product.pulp.pulping-semi-chemical,existing,pulp-and-paper/chemical-pulping,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.washing,existing,pulp-and-paper/chemical-pulping,whole,end-use,,,
+<sector>.pulp-and-paper.product.pulp.wood-preparation,existing,pulp-and-paper/wood-preparation,whole,end-use,,new end use (was in chemical-pulping),
+<sector>.pulp-and-paper.service.chemical-recovery.evaporator,existing,pulp-and-paper/chemical-recovery,whole,end-use,,,
+<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,existing,pulp-and-paper/lime-kiln,whole,end-use,,,
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,existing,pulp-and-paper/chemical-recovery,whole,end-use,,,
+<sector>.pulp-and-paper.service.effluent-treatment,existing,pulp-and-paper/effluent-treatment,whole,end-use,,,
+<sector>.pulp-and-paper.service.fuel-blend.diesel,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.pulp-and-paper.service.fuel-blend.methane,existing,,,fuel-blend,,"renewable-natural-gas, renewable-diesel-and-saf: drop",blends a commodity into supply
+<sector>.pulp-and-paper.service.hvac.space-cooling,existing,cross-sector/space-cooling,whole,end-use,,,
+<sector>.pulp-and-paper.service.hvac.space-heating,existing,cross-sector/space-heating,whole,end-use,,ventilation-and-air-heating: drop mining space heating,
+<sector>.pulp-and-paper.service.lighting,existing,cross-sector/lighting,whole,end-use,,,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,existing,cross-sector/compressed-air,whole,end-use,,,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,existing,cross-sector/fans-and-blowers,whole,end-use,,,
+<sector>.pulp-and-paper.service.machine-drive.materials-handling,existing,cross-sector/materials-handling,whole,end-use,,,
+<sector>.pulp-and-paper.service.machine-drive.materials-processing,existing,cross-sector/materials-processing,whole,end-use,,,
+<sector>.pulp-and-paper.service.machine-drive.pumps,existing,cross-sector/pumps,whole,end-use,,id pumping -> pumps,
+<sector>.pulp-and-paper.service.steam,existing,cross-sector/heat-low-temp; cross-sector/heat-medium-temp,part,heat-supply,,in-situ-bitumen: drop petroleum-crude steam,
