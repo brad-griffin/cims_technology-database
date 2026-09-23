@@ -52,7 +52,7 @@ gate a commit.
 | `archetype.csv` | Every archetype with its parsed key, the nodes it applies to, its examples and its status. |
 | `archetype-parameter.csv`, `archetype-flow.csv` | The summaries. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
-| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes and end uses no archetype serves. `wide-archetype-columns.csv` gives each column's group and unit. |
+| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
 | `set-aside-efficiency.csv` | UKERC costs set aside until an efficiency factor is established, with each example's fuel use per tonne. |

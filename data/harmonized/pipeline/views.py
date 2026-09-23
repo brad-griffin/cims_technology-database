@@ -8,10 +8,8 @@ intensity is per unit of the archetype's own product (`product-unit`), so a
 column holds CAD per tonne on a kiln row and CAD per GJ on a boiler row: never
 sort, average or chart a cost or intensity column across families.
 
-Every archetype has a row, blank or not, and every end use (hierarchy
-annotation) that no archetype serves gets a row of its own with status "no
-archetype", so the table shows the whole coverage. `--quantified-only` restricts
-it to archetypes with pooled numbers.
+Every archetype has a row, blank or not. `--quantified-only` restricts it to
+archetypes with pooled numbers.
 """
 from __future__ import annotations
 
@@ -108,15 +106,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             if b in spread:
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
         wide.append(row)
-    if include_empty:
-        served = {s["end-use"] for s in records.service}
-        for r in records.annotations:
-            if r["annotation"] not in served:
-                wide.append({"label": r["label"], "family": "no-archetype",
-                             "end-uses": r["annotation"],
-                             "applies-to": "; ".join(Hierarchy.short(b) for b in
-                                                     split_list(r["branches"])),
-                             "product": r["service-unit"], "status": "no archetype"})
     write(OUTPUT / "wide-archetype.csv", cols, wide)
     write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit"],
           [{"column": c, "group": groups.get(c, ""), "unit": units.get(c, "")} for c in cols],
