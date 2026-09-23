@@ -285,12 +285,14 @@ and `source-details_files.csv`. The build takes source ids from there.
 
 ## 9. Reading the outputs
 
-- `wide-archetype.csv` has one row per archetype with pooled numbers.
-  `archetype.csv` lists every archetype and its status:
+- `wide-archetype.csv` has one row per archetype, including blank ones, plus one
+  row for each end use no archetype serves. `end-uses` names the annotation
+  groups each archetype serves. `status` (also in `archetype.csv`) is one of:
   - `quantified`: it has pooled numbers;
   - `named`: a source names it without numbers;
   - `not pooled`: its numbers could not be pooled;
-  - `gap`: it has no example yet.
+  - `gap`: it has no example yet;
+  - `no archetype`: an end use no archetype serves.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against
   `product-unit`.

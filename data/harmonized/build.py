@@ -2,8 +2,10 @@
 
     python data/harmonized/build.py            everything
     python data/harmonized/build.py --check    stop after the checks (no outputs)
-    python data/harmonized/build.py --all-rows the wide views also list archetypes
-                                               no example quantifies
+    python data/harmonized/build.py --quantified-only
+                                               the wide view lists only archetypes with
+                                               pooled numbers (default: every archetype,
+                                               and every end use without one)
 
 Stages (docs/pipeline.md):
   1. hierarchy   stamp records/cims_hierarchy.csv, report what changed, and hold
@@ -148,7 +150,7 @@ def main(argv) -> int:
     for e in L.examples.values():
         e["n-facts"] = nf.get(e["example-id"], 0)
     print("views")
-    v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--all-rows" in argv)
+    v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--quantified-only" not in argv)
     print("reports")
     srcs = sources.source_list(rec, L.examples, (L.facts, L.flows, L.cons))
     sources.citation_review(srcs)
@@ -185,7 +187,7 @@ def main(argv) -> int:
          "example-constraint": (CONS_COLS, L.cons),
          "archetype-application": (["archetype", "family", "node", "annotation", "via", "note"],
                                    v["application"])},
-        {**fam, "": "(not tied to one family)"}))
+        {**fam, "": "(not tied to one family)", "no-archetype": "End uses no archetype serves"}))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
           f"{q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns")

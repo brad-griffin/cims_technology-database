@@ -83,26 +83,26 @@ combustion-turbine_heat-recovery-steam-generator,heat-supply,<sector>.petroleum-
 combustion-turbine_heat-recovery-steam-generator,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_heat-recovery-steam-generator,heat-supply,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 direct-heater_air-water,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_efficiency-moderate,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_efficiency-moderate,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_efficiency-strong,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_efficiency-strong,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_electric-process,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_electric-process,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_electric-process,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_fired-process,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_fired-process,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_fired-process,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
-direct-heater_rotodynamic,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
-direct-heater_thermal-oil,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
-direct-heater_thermal-oil,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_rotodynamic,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_thermal-oil,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
+direct-heater_thermal-oil,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
 fuel-cell_chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -112,7 +112,7 @@ fuel-cell_chp,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*
 fuel-cell_chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 fuel-cell_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-furnace_regenerative-oxy-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
+furnace_regenerative-oxy-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 gasifier_biomass-chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 gasifier_biomass-chp,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 gasifier_biomass-chp,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -140,15 +140,15 @@ heat-pump_industrial,heat-supply,<sector>.mining.service.steam,heat-low-temp,<se
 heat-pump_industrial,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_industrial,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_industrial,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-heat-pump_steam-generating,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_steam-generating,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 heat-recovery-unit,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-recovery-unit,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-recovery-unit,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -158,11 +158,11 @@ heat-recovery-unit,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sect
 heat-recovery-unit,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-recovery-unit,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-recovery-unit,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-induction-heater,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
-plasma-torch,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
-radio-frequency-heater_electromagnetic,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-medium-temp: direct-heat leaves
+induction-heater,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+plasma-torch,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+radio-frequency-heater_electromagnetic,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 radio-frequency-heater_electromagnetic,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-reactor_nuclear-htgr,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: steam leaves
+reactor_nuclear-htgr,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 reactor_nuclear-small-modular,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_nuclear-small-modular,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_nuclear-small-modular,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -181,7 +181,7 @@ reciprocating-engine_chp,heat-supply,<sector>.mining.service.steam,heat-low-temp
 reciprocating-engine_chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reciprocating-engine_chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reciprocating-engine_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-resistance-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: direct-heat leaves
+resistance-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 solar-collector,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -191,16 +191,16 @@ solar-collector,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>
 solar-collector,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-solar-concentrator_high-temperature,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator_thermal,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_high-temperature,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_thermal,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -210,16 +210,16 @@ steam-turbine_back-pressure,heat-supply,<sector>.mining.service.steam,heat-low-t
 steam-turbine_back-pressure,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-thermal-storage_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-high-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+thermal-storage_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 vapour-recompressor,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 vapour-recompressor,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 vapour-recompressor,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -734,7 +734,7 @@ binder_blended-cement,cement,<sector>.industrial-minerals.product.cement.grindin
 binder_calcined-clay,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 binder_carbonated,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 calciner_indirect,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
-calciner_indirect,cement,<sector>.industrial-minerals.service.kiln-heat,clinker-production,,non-metallic-minerals/lime-calcination: the leaves its sources placed it on
+calciner_indirect,cement,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,,non-metallic-minerals/lime-calcination: the leaves its sources placed it on
 grinding-mill_ball,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 grinding-mill_vertical-roller,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 grinding-mill_vertical-roller,cement,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
@@ -905,7 +905,7 @@ digester_semi-chemical,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulpi
 digester_semi-chemical,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-semi-chemical,chemical-pulping,,pulp-and-paper/chemical-pulping: the leaf its name or label names
 dryer_electric-air,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: the leaves its sources placed it on
 dryer_electric-air,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,pulp-and-paper/paper-drying: the leaves its sources placed it on
-dryer_electric-air,pulp-and-paper,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
+dryer_electric-air,pulp-and-paper,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
 dryer_gas-fired-hood,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_gas-fired-hood,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_gas-fired-hood,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
@@ -918,7 +918,7 @@ dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.d
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
-dryer_heat-pump,pulp-and-paper,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
+dryer_heat-pump,pulp-and-paper,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
 dryer_hood-heat-recovery,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_hood-heat-recovery,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_hood-heat-recovery,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
@@ -981,7 +981,7 @@ reactor_oxygen-delignification,pulp-and-paper,<sector>.pulp-and-paper.product.pu
 separator_clarifier,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment,effluent-treatment,,pulp-and-paper/effluent-treatment: every leaf of the end use
 separator_lignin-extraction,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the leaves its sources placed it on
 vapour-recompressor_evaporation,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,pulp-and-paper/chemical-recovery: the leaf its name or label names
-vapour-recompressor_evaporation,pulp-and-paper,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
+vapour-recompressor_evaporation,pulp-and-paper,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
 adsorber_direct-lithium,mining,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
 adsorber_direct-lithium,mining,<sector>.mining.service.compaction,separation-and-processing,,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
 adsorber_direct-lithium,mining,<sector>.mining.service.crystallization,separation-and-processing,,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
@@ -1208,23 +1208,23 @@ chiller_absorption,food-and-beverage,<sector>.light-industrial.service.refrigera
 chiller_high-efficiency,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
 chiller_vapour-compression,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
 cleaning-system_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
-dryer_spray-drum-belt,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
+dryer_spray-drum-belt,food-and-beverage,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
 heat-exchanger_aseptic-uht,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 heat-exchanger_steam-heated,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 heat-pump_hot-water,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
-heat-recovery-unit_oven-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
+heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
+heat-recovery-unit_oven-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 microwave-heater_ohmic-infrared,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
-oven_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,as its host oven_tunnel-deck
-oven_electric,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
-oven_indirect-fired,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
-oven_tunnel-deck,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
+oven_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,as its host oven_tunnel-deck
+oven_electric,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
+oven_indirect-fired,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
+oven_tunnel-deck,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 pasteurizer_regenerative,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 press_high-pressure-processing,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
-radio-frequency-heater_baking,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
-radio-frequency-heater_drying,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
+radio-frequency-heater_baking,food-and-beverage,<sector>.light-industrial.service.heat,baking-frying-and-roasting,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
+radio-frequency-heater_drying,food-and-beverage,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
 calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: every leaf of non-ferrous-metals/pyrometallurgy; no evidence to narrow it
 converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: every leaf of non-ferrous-metals/pyrometallurgy; no evidence to narrow it
@@ -1320,20 +1320,20 @@ smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.p
 smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 solar-collector_bayer,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
-dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/drying-curing-and-forming: every leaf of the end use
-dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,as its host dryer_direct-fired
-dryer_veneer-strand,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
-furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
+dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use
+dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,as its host dryer_direct-fired
+dryer_veneer-strand,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
 furnace_regenerative-burners,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-furnace_regenerative-burners,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-induction-heater_heat-treatment,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
-kiln_lumber-continuous,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
-kiln_lumber-heat-pump,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
-kiln_lumber-steam,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+furnace_regenerative-burners,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
+induction-heater_heat-treatment,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
+kiln_lumber-continuous,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+kiln_lumber-heat-pump,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+kiln_lumber-steam,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
 melting-furnace_cupola,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
+melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
 melting-furnace_electric-arc,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-melting-furnace_electric-arc,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
+melting-furnace_electric-arc,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -1341,7 +1341,7 @@ melting-furnace_induction,other-industry,<sector>.metal-smelting.product.magnesi
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-press_all-electric,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/drying-curing-and-forming: every leaf of the end use
-press_hot-platen,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
-ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/drying-curing-and-forming: every leaf of the end use
+melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
+press_all-electric,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use
+press_hot-platen,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use

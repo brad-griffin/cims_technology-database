@@ -18,7 +18,7 @@ which is the definitive list.
 | 2. Examples | One row per technology as a source presents it, and the archetype it is an example of. Its facts sit beside it, converted to the archetype's basis. | `data/harmonized/records/source-example.csv` (the mapping); `data/harmonized/output/example-*.csv` (the facts) |
 | 3. Archetypes | The vocabulary, the hierarchy nodes each archetype serves, and one summarised value set per archetype and parameter. | `data/harmonized/records/archetype*.csv`; `data/harmonized/output/archetype-*.csv` |
 
-The wide view, `data/harmonized/output/wide-archetype.csv`, has one row per archetype.
+The wide view, `data/harmonized/output/wide-archetype.csv`, has one row per archetype, blank ones included.
 The Excel workbook, `data/harmonized/output/technology-database.xlsx`, holds the same
 tables with the wide views banded by family.
 

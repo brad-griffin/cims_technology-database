@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | The wide view lists every archetype, blank ones included, and every end use no archetype serves. Each service link names its end use (`archetype-service.csv`, `end-use` column). Supersedes the 2026-09-10 rule that the view shows quantified technologies only. | current | this restructure |
 | 2026-09-23 | UKERC measure costs pool only as whole-plant costs (UKERC's own baseline for the host step plus the measure), for the 7 archetypes in `ukerc-host-baseline.csv`. The rest are set aside for a host-plant cost. 23 UKERC and Bataille measure buckets remapped (`archive/scripts/remap_2026-09-23_ukerc-buckets.py`): 7 new host efficiency-bucket archetypes, 7 examples marked `(none)` as organizational or out-of-scope measures. | current | this restructure |
 | 2026-09-23 | Bataille's six "technology based on low-temperature steam" rows are not examples of `combined-cycle_chp` (`(none)`). Negative costs are savings against a baseline and are not pooled. | current | this restructure |
 | 2026-09-23 | UKERC costs on energy-service archetypes that need an efficiency factor are set aside (`set-aside = needs-efficiency`), both the per-tonne rows and their per-GJ-of-fuel restatements, until factors are established. | current | this restructure |

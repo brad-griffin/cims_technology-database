@@ -89,6 +89,10 @@ class Records:
                 fail["archetype-service path not in the hierarchy"].append(
                     f"{s['archetype']}: {s['branch']}")
         ids = {r["annotation"] for r in self.annotations}
+        for s in self.service:
+            if s.get("end-use") not in ids:
+                fail["archetype-service end-use not an annotation id"].append(
+                    f"{s['archetype']}: {s.get('end-use', '')!r}")
         for r in self.annotations:
             for b in split_list(r["branches"]):
                 if not hier.expand(b):

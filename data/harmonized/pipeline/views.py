@@ -8,8 +8,10 @@ intensity is per unit of the archetype's own product (`product-unit`), so a
 column holds CAD per tonne on a kiln row and CAD per GJ on a boiler row: never
 sort, average or chart a cost or intensity column across families.
 
-Archetypes no example quantifies are listed in archetype.csv (the coverage),
-not in the wide views (what the database knows).
+Every archetype has a row, blank or not, and every end use (hierarchy
+annotation) that no archetype serves gets a row of its own with status "no
+archetype", so the table shows the whole coverage. `--quantified-only` restricts
+it to archetypes with pooled numbers.
 """
 from __future__ import annotations
 
@@ -19,9 +21,9 @@ from .common import OUTPUT, split_list, write
 from .hierarchy import Hierarchy
 from .normalise import target_unit
 
-IDENT = ["archetype", "label", "family", "equipment", "discriminator", "modifiers", "type",
-         "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
-         "n-examples", "sources"]
+IDENT = ["archetype", "label", "family", "end-uses", "equipment", "discriminator", "modifiers",
+         "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
+         "n-examples", "status", "sources"]
 
 
 def unit_label(param: str, target: str) -> str:
@@ -36,7 +38,7 @@ def applies_to(key, service):
     return "; ".join(Hierarchy.short(s["branch"]) for s in service.get(key, []))
 
 
-def build(records, hier, examples, summaries, flow_summaries, include_empty=False):
+def build(records, hier, examples, summaries, flow_summaries, include_empty=True):
     service = defaultdict(list)
     for s in records.service:
         service[s["archetype"]].append(s)
@@ -57,6 +59,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=Fals
         src = sorted({e["source-id"] for e in exs}, key=lambda s: (records.rank(s), s))
         arows.append(dict(a, **{
             "applies-to": applies_to(k, service),
+            "end-uses": "; ".join(dict.fromkeys(s["end-use"] for s in service.get(k, []))),
             "n-examples": len(exs),
             "sources": "; ".join(records.short(s) for s in src),
             "status": ("quantified" if k in with_data else
@@ -64,20 +67,15 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=Fals
                        "named" if exs else "gap")}))
     arows.sort(key=lambda r: (fam_order.get(r["family"], 99), r["equipment"], r["archetype"]))
     write(OUTPUT / "archetype.csv",
-          IDENT + ["status", "trl-basis", "description", "examples-named", "note"], arows)
+          IDENT + ["trl-basis", "description", "examples-named", "note"], arows)
 
     # ---- archetype-application.csv: the long view, every node served ---------
     app = []
-    ann_of = {}
-    for r in records.annotations:
-        for b in split_list(r["branches"]):
-            for n in hier.expand(b):
-                ann_of.setdefault(n, r["annotation"])
     for a in arows:
         for s in service.get(a["archetype"], []):
             for n in hier.expand(s["branch"]):
                 app.append({"archetype": a["archetype"], "family": a["family"],
-                            "node": n, "annotation": ann_of.get(n, ""),
+                            "node": n, "annotation": s.get("end-use", ""),
                             "via": s["branch"] if "*" in s["branch"] else "",
                             "note": s.get("note", "")})
     write(OUTPUT / "archetype-application.csv",
@@ -110,6 +108,15 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=Fals
             if b in spread:
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
         wide.append(row)
+    if include_empty:
+        served = {s["end-use"] for s in records.service}
+        for r in records.annotations:
+            if r["annotation"] not in served:
+                wide.append({"label": r["label"], "family": "no-archetype",
+                             "end-uses": r["annotation"],
+                             "applies-to": "; ".join(Hierarchy.short(b) for b in
+                                                     split_list(r["branches"])),
+                             "product": r["service-unit"], "status": "no archetype"})
     write(OUTPUT / "wide-archetype.csv", cols, wide)
     write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit"],
           [{"column": c, "group": groups.get(c, ""), "unit": units.get(c, "")} for c in cols],
