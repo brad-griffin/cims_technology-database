@@ -60,11 +60,11 @@ SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per t
 FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
                    "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
-# UK TIMES (via Bataille) prices its "improvement technologies" and add-ons as
-# the cost of adding them to an existing plant, like UKERC's measures.
-ADD_ON = _re.compile(r"^(Improvement technology \d+ for existing|[^.]*\badd-on for existing)")
-ADD_ON_NOTE = ("set aside: needs a host-plant cost. UK TIMES prices this improvement as the cost "
-               "of adding it to an existing plant, not as a whole plant")
+# A cost with cost-basis `incremental` is the cost of adding something to an
+# existing plant (a UK TIMES improvement or add-on, or an example listed in
+# records/reference/incremental-cost.csv), so it is not a whole-plant cost.
+INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this as the cost of "
+                    "adding it to an existing plant, not as a whole plant")
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
 
 
@@ -146,6 +146,12 @@ def normalise(facts, examples, records, units) -> None:
             mw = v / 1000 if r["unit"] == "kW" else v
             scale[r["example-id"]].setdefault("mw-out", (mw, r["record-id"]))
     by_id = {r["record-id"]: r for r in facts}
+    incremental = {r["example-id"] for r in read(REFERENCE / "incremental-cost.csv")}
+    if incremental - set(examples):
+        raise SystemExit(f"incremental-cost.csv names unknown examples: {incremental - set(examples)}")
+    for r in facts:
+        if r["example-id"] in incremental and r["parameter"] in PER_CAPACITY | PER_OUTPUT:
+            r["cost-basis"] = "incremental"
 
     for r in facts:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
@@ -256,9 +262,9 @@ def normalise(facts, examples, records, units) -> None:
                 and (r.get("excluded") or "").startswith("cost per t")):
             r["excluded"] = SET_ASIDE
     for r in facts:
-        if (r["parameter"] in PER_CAPACITY | PER_OUTPUT and ADD_ON.search(r.get("note") or "")
+        if (r["parameter"] in PER_CAPACITY | PER_OUTPUT and r.get("cost-basis") == "incremental"
                 and r.get("excluded") != "no number"):
-            r["set-aside"], r["excluded"] = "needs-host-cost", ADD_ON_NOTE
+            r["set-aside"], r["excluded"] = "needs-host-cost", INCREMENTAL_NOTE
             continue
         if r.get("set-aside") == "needs-host-cost" and r.get("excluded") != "no number":
             r["excluded"] = NEEDS_HOST

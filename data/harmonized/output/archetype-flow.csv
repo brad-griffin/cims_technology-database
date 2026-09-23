@@ -397,6 +397,8 @@ kiln_dry-precalciner,input,natural-gas,GJ/t,0.0338723,,,1,top-ranked: ECRA 2009,
 kiln_dry-precalciner,input,petroleum-coke,GJ/t,0.114342,,,1,top-ranked: ECRA 2009,ecra_2009_001; ukerc_2013_001,ukerc_2013_001:kiln_bat@dry-kiln
 kiln_dry-precalciner,input,raw-meal,t/t,1.57,1.5,1.6,1,top-ranked: ETSAP I03,etsap_2010_003,etsap_2010_003:kiln_dry@clinker-kiln
 kiln_dry-precalciner,input,renewable-fuel,GJ/t,0.30627,,,1,top-ranked: ECRA 2009,ecra_2009_001; ukerc_2013_001,ukerc_2013_001:kiln_bat@dry-kiln
+kiln_legacy,input,air,m3/t,,1900,2300,3,range only,etsap_2010_003,etsap_2010_003:kiln_lepol@clinker-kiln; etsap_2010_003:kiln_semi-wet@clinker-kiln; etsap_2010_003:kiln_wet-precalciner@clinker-kiln
+kiln_legacy,input,electricity,GJ/t,,0.0432,0.072,1,range only,etsap_2010_003,etsap_2010_003:kiln_lepol@clinker-kiln
 kiln_dry-precalciner_ccs-diffuse,input,burning-oil,GJ/t,0.0127116,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,clinker,t/t,0.85583,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,coal,GJ/t,6.05667,1.88356,6.65416,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant

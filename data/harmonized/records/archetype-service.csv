@@ -863,3 +863,12 @@ paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.produc
 paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,as its host paper-machine_fourdrinier-gap
 paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,as its host paper-machine_fourdrinier-gap
 paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+kiln_legacy,<sector>.industrial-minerals.product.cement.clinker,clinker-production,as kiln_dry-precalciner
+direct-heater_solid-fuel,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,as direct-heater_air-water
+direct-heater_solid-fuel,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,as direct-heater_fired-process
+direct-heater_solid-fuel,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,as direct-heater_fired-process
+direct-heater_solid-fuel,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,as direct-heater_furnace
+direct-heater_solid-fuel_efficiency-strong,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,as direct-heater_efficiency-strong
+direct-heater_solid-fuel_efficiency-strong,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,as direct-heater_efficiency-strong
+dryer_solid-fuel,<sector>.light-industrial.service.heat,drying-curing-and-forming,as dryer_direct-fired
+dryer_solid-fuel_efficiency-strong,<sector>.light-industrial.service.heat,drying-curing-and-forming,as dryer_direct-fired_efficiency-strong

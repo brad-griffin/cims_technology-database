@@ -94,6 +94,12 @@ direct-heater_fired-process,heat-supply,<sector>.natural-gas.product.supply.dire
 direct-heater_fired-process,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_furnace,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_rotodynamic,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_solid-fuel,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,as direct-heater_air-water
+direct-heater_solid-fuel,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,as direct-heater_fired-process
+direct-heater_solid-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,as direct-heater_fired-process
+direct-heater_solid-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,as direct-heater_furnace
+direct-heater_solid-fuel_efficiency-strong,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,as direct-heater_efficiency-strong
+direct-heater_solid-fuel_efficiency-strong,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,as direct-heater_efficiency-strong
 direct-heater_thermal-oil,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
 direct-heater_thermal-oil,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
 direct-heater_thermal-oil,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,"cross-sector/heat-medium-temp: service.steam covers steam, hot water and thermal oil"
@@ -748,6 +754,7 @@ kiln_dry-precalciner_ccs-diffuse,cement,<sector>.industrial-minerals.product.cem
 kiln_dry-precalciner_efficiency-moderate,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_dry-precalciner_efficiency-strong,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_fluidized-bed,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
+kiln_legacy,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,as kiln_dry-precalciner
 kiln_oxy-fuel,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 calciner_flash-fluid,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: every leaf of non-metallic-minerals/drying-and-low-temp-calcining; no evidence to narrow it
 calciner_flash-fluid,non-metallic-minerals,<sector>.industrial-minerals.product.gypsum,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: every leaf of non-metallic-minerals/drying-and-low-temp-calcining; no evidence to narrow it
@@ -1323,6 +1330,8 @@ solar-collector_bayer,non-ferrous-metals,<sector>.metal-smelting.product.aluminu
 dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use
 dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,as its host dryer_direct-fired
 dryer_direct-fired_efficiency-strong,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,as its host dryer_direct-fired
+dryer_solid-fuel,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,as dryer_direct-fired
+dryer_solid-fuel_efficiency-strong,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,as dryer_direct-fired_efficiency-strong
 dryer_veneer-strand,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
 furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
 furnace_regenerative-burners,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it

@@ -24,6 +24,10 @@ from collections import defaultdict
 
 from .common import RAW, REFERENCE, currency_year, read
 
+# UK TIMES (via Bataille) prices its "improvement technologies" and add-ons as
+# the cost of adding them to an existing plant: cost-basis incremental.
+UKTM_ADD_ON = re.compile(r"^(Improvement technology \d+ for existing|[^.]*\badd-on for existing)")
+
 # --- the extractions, in load order (record ids are numbered in this order) --
 TEMPLATE_FILES = [
     ("gov-usa/epa/epa_2007_biomass-chp-technologies-catalog.csv", "epa_2007_001"),
@@ -269,7 +273,8 @@ class Loader:
                          "value-max": (row.get("value-max") or "").strip(),
                          "uncertainty-type": "collapsed-rows" if row.get("value-min") else "",
                          "value-type": "reported", "formula": "",
-                         "cost-basis": "installed" if cost else "",
+                         "cost-basis": ("" if not cost else "incremental"
+                                        if UKTM_ADD_ON.search(note) else "installed"),
                          "capacity-basis": "product-output" if cost else "",
                          "currency": currency_year(unit),
                          "source-id": sid, "via-source-id": "", "via-locator": "",

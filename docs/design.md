@@ -188,8 +188,11 @@ are abated, or when a policy instrument treats them separately.
   per £k of output) is never pooled.
 - A cost the source states as the cost of adding an improvement to an existing
   plant (UKERC measures, UK TIMES "improvement technologies" and add-ons via
-  Bataille) is incremental. It is set aside as `needs-host-cost` unless the same
-  source gives the host plant's cost, in which case a whole-plant row is derived.
+  Bataille) is incremental: `cost-basis` is `incremental`. UK TIMES rows are marked
+  from their notes at extraction; any other example is listed, with its reason, in
+  `records/reference/incremental-cost.csv`. It is set aside as `needs-host-cost`
+  unless the same source gives the host plant's cost, in which case a whole-plant
+  row is derived.
 - A cost per GJ of energy use is never turned into a cost per tonne by dividing by
   specific energy consumption: that mixes input and output bases.
 - A number in another unit is converted only with a factor **the same source gives

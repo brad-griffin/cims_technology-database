@@ -31,5 +31,25 @@ Bataille/UKTM "Improvement technology" and "add-on" costs are incremental (preca
 - leaching-vessel_heap-atmospheric, electrolysis-cell_advanced-anodes -> copper/nickel/zinc hydrometallurgy (now magnesium electrolysis); bioleaching and HPAL drop magnesium and titanium-slag; adsorber_direct-lithium drop coal washing, compaction and metal hydrometallurgy.
 - flotation-cell_froth add mining.service.separation; steam-reformer_efficiency-moderate and autothermal-reformer add ammonia (their UKERC examples are ammonia reformers).
 
-## To flag for the user
+## Follow-up rulings (user, 2026-09-23)
+
+Applied by `archive/scripts/followup_2026-09-23_kilns-solid-fuel.py`:
+
+- **Legacy cement kilns.** Wet, semi-wet, Lepol, wet-precalciner and long dry
+  kilns get one archetype, `kiln_legacy`. They were in use in Canada after 2000:
+  NRCan's cement benchmark guide (2001) counts two wet kilns operating in May 1999,
+  and the 2014 Multi-Sector Air Pollutants Regulations RIAS names wet and long dry
+  kilns among the kiln types in Canada. ETSAP gives their energy use (median 4.5
+  GJ/t clinker against 3.5 for the precalciner kiln) but no cost.
+- **Bataille kiln with post-combustion capture** is an add-on: its cost is
+  incremental (`records/reference/incremental-cost.csv`) and set aside.
+- **Solid fuels.** `direct-heater_solid-fuel`, `dryer_solid-fuel` and their
+  `_efficiency-strong` variants take the UK TIMES coal, coke, biomass and coal-tar
+  units, which UK TIMES costs as one fuel-handling class.
+- **UKERC BAT kiln.** The copies listed under the semi-wet and semi-dry baselines
+  are marked (none); the dry-kiln copy stays.
+- IEA's high-temperature direct heaters moved from the low-temperature air or water
+  heater to `direct-heater_furnace`.
+
+## Flagged at the review (now resolved or in decisions.md)
 Legacy cement kilns; Tecnored; bataille kiln post-combustion 74 vs ~900-1200; three identical UKERC BAT-kiln rows counted as three examples; solid-fuel variants (coal, biomass) pooled with gas heaters; FCC has no hierarchy node (sits on coking/hydrocracking).
