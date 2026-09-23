@@ -364,7 +364,7 @@ autothermal-reformer,<sector>.petroleum-refining.service.hydrogen,petroleum-refi
 autothermal-reformer,<sector>.hydrogen.product.centralized-hydrogen,hydrogen/centralized-hydrogen-production: every leaf of the end use
 direct-heater_electrified-crude,<sector>.petroleum-refining.product.petroleum-fractions.distillation,petroleum-refining/crude-distillation: every leaf of the end use
 distillation-column_atmospheric-vacuum,<sector>.petroleum-refining.product.petroleum-fractions.distillation,petroleum-refining/crude-distillation: every leaf of the end use
-distillation-column_progressive,<sector>.petroleum-refining.product.petroleum-fractions.distillation,petroleum-refining/crude-distillation: every leaf of the end use
+distillation-column_heat-integrated,<sector>.petroleum-refining.product.petroleum-fractions.distillation,petroleum-refining/crude-distillation: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-refining.service.hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-crude.service.hydrogen,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,<sector>.hydrogen.product.centralized-hydrogen,hydrogen/centralized-hydrogen-production: every leaf of the end use
@@ -488,14 +488,14 @@ conveyor_in-pit-crushing,<sector>.mining.product.uranium.open-pit,mining/extract
 conveyor_in-pit-crushing,<sector>.mining.service.mine-haulage.open-pit,mining/extraction-and-haulage: the leaf its name or label names
 direct-heater_mine-air-electric,<sector>.coal-mining.product.raw-product.mine-ventilation,mining/ventilation-and-air-heating: every leaf of the end use
 direct-heater_mine-air-fired,<sector>.coal-mining.product.raw-product.mine-ventilation,mining/ventilation-and-air-heating: every leaf of the end use
-dryer_rotary-fluid-bed,<sector>.coal-mining.product.coal-preparation.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-dryer_rotary-fluid-bed,<sector>.mining.service.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+dryer_rotary-direct-fired,<sector>.coal-mining.product.coal-preparation.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+dryer_rotary-direct-fired,<sector>.mining.service.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 flotation-cell_froth,<sector>.coal-mining.product.coal-preparation.washing,mining/separation-and-processing: the leaves its sources placed it on
 flotation-cell_potash-crystallization,<sector>.mining.service.crystallization,mining/separation-and-processing: the leaf its name or label names
-grinding-mill_high-pressure-rolls,<sector>.coal-mining.product.size-reduced-product.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
-grinding-mill_high-pressure-rolls,<sector>.coal-mining.product.size-reduced-product.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
-grinding-mill_high-pressure-rolls,<sector>.mining.service.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
-grinding-mill_high-pressure-rolls,<sector>.mining.service.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
+grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
+grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
+grinding-mill_vertical-roller,<sector>.mining.service.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
+grinding-mill_vertical-roller,<sector>.mining.service.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_sag-ball,<sector>.coal-mining.product.size-reduced-product.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_sag-ball,<sector>.coal-mining.product.size-reduced-product.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_sag-ball,<sector>.mining.service.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
@@ -529,8 +529,8 @@ haul-truck_hydrogen-fuel-cell,<sector>.mining.service.mine-haulage.underground,m
 haul-truck_trolley-assist,<sector>.coal-mining.service.mine-haulage,mining/extraction-and-haulage: the leaf its name or label names
 haul-truck_trolley-assist,<sector>.mining.service.mine-haulage.open-pit,mining/extraction-and-haulage: the leaf its name or label names
 haul-truck_trolley-assist,<sector>.mining.service.mine-haulage.underground,mining/extraction-and-haulage: the leaf its name or label names
-heat-recovery-unit_dryer,<sector>.coal-mining.product.coal-preparation.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-heat-recovery-unit_dryer,<sector>.mining.service.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+heat-recovery-unit_dryer-exhaust,<sector>.coal-mining.product.coal-preparation.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+heat-recovery-unit_dryer-exhaust,<sector>.mining.service.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 heat-recovery-unit_exhaust-air,<sector>.coal-mining.product.raw-product.mine-ventilation,mining/ventilation-and-air-heating: every leaf of the end use
 hoist_shaft-hoisting,<sector>.coal-mining.product.raw-product.extraction,mining/extraction-and-haulage: every leaf of mining/extraction-and-haulage; no evidence to narrow it
 hoist_shaft-hoisting,<sector>.coal-mining.product.simplified-extraction,mining/extraction-and-haulage: every leaf of mining/extraction-and-haulage; no evidence to narrow it
@@ -567,8 +567,7 @@ mobile-equipment_underground-battery,<sector>.mining.product.metal.underground,m
 mobile-equipment_underground-battery,<sector>.mining.product.uranium.underground,mining/extraction-and-haulage: the leaf its name or label names
 mobile-equipment_underground-battery,<sector>.mining.service.mine-haulage.underground,mining/extraction-and-haulage: the leaf its name or label names
 pellet-plant_cooler-heat-recovery,<sector>.mining.service.pelletizing,mining/pelletizing: every leaf of the end use
-pellet-plant_grate-kiln,<sector>.mining.service.pelletizing,mining/pelletizing: every leaf of the end use
-pellet-plant_straight-grate,<sector>.mining.service.pelletizing,mining/pelletizing: every leaf of the end use
+pellet-plant_induration,<sector>.mining.service.pelletizing,mining/pelletizing: every leaf of the end use
 press_dewatering,<sector>.coal-mining.product.coal-preparation.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 press_dewatering,<sector>.mining.service.drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 pump_mine-dewatering,<sector>.coal-mining.product.coal-preparation.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
@@ -580,22 +579,22 @@ separator_ore-sorting,<sector>.coal-mining.product.size-reduced-product.crushing
 separator_ore-sorting,<sector>.coal-mining.product.size-reduced-product.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 separator_ore-sorting,<sector>.mining.service.crushing,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 separator_ore-sorting,<sector>.mining.service.milling,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
-separator_paste-tailings,<sector>.coal-mining.product.coal-preparation.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
-separator_paste-tailings,<sector>.mining.service.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
+separator_dry-stack-tailings,<sector>.coal-mining.product.coal-preparation.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
+separator_dry-stack-tailings,<sector>.mining.service.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_reverse-osmosis,<sector>.coal-mining.product.coal-preparation.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_reverse-osmosis,<sector>.mining.service.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_tailings-reclaim,<sector>.coal-mining.product.coal-preparation.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_tailings-reclaim,<sector>.mining.service.tailings-disposal,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_thickening-filtration,<sector>.mining.service.separation,mining/separation-and-processing: the leaf its name or label names
-ventilation-unit_mine-on-demand,<sector>.coal-mining.product.raw-product.mine-ventilation,mining/ventilation-and-air-heating: every leaf of the end use
+ventilation-unit_demand-controlled,<sector>.coal-mining.product.raw-product.mine-ventilation,mining/ventilation-and-air-heating: every leaf of the end use
 adsorber_molecular-sieve,<sector>.natural-gas.product.supply.formation-co2,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 adsorber_molecular-sieve,<sector>.natural-gas.product.supply.processing,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 boiler_direct-contact,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
-boiler_electric-injection-steam,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
+boiler_electric,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
 boiler_once-through,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
 chiller_electric-motor,<sector>.natural-gas.product.supply.lng-liquefaction,oil-and-gas/lng-liquefaction: every leaf of the end use
 chiller_gas-turbine,<sector>.natural-gas.product.supply.lng-liquefaction,oil-and-gas/lng-liquefaction: every leaf of the end use
-combined-cycle_cogeneration,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
+combustion-turbine_heat-recovery-steam-generator,<sector>.petroleum-crude.product.bitumen.in-situ,oil-and-gas/in-situ-bitumen: every leaf of the end use
 combustion-turbine_drive-high-efficiency,<sector>.natural-gas.service.compressor-drive.turbine,oil-and-gas/compressor-drive-turbine: every leaf of the end use
 compressor_blowdown-recovery,<sector>.natural-gas.product.supply.venting.blowdowns,oil-and-gas/venting: the leaf its name or label names
 compressor_boil-off-recovery,<sector>.natural-gas.product.supply.lng-liquefaction,oil-and-gas/lng-liquefaction: every leaf of the end use
@@ -647,7 +646,7 @@ gas-treatment-unit_glycol-dehydration,<sector>.natural-gas.product.supply.format
 gas-treatment-unit_glycol-dehydration,<sector>.natural-gas.product.supply.processing,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 haul-truck_electric-autonomous,<sector>.petroleum-crude.product.bitumen.mining,oil-and-gas/oil-sands-mining-and-extraction: every leaf of oil-and-gas/oil-sands-mining-and-extraction; no evidence to narrow it
 haul-truck_electric-autonomous,<sector>.petroleum-crude.service.mine-haulage,oil-and-gas/oil-sands-mining-and-extraction: every leaf of oil-and-gas/oil-sands-mining-and-extraction; no evidence to narrow it
-haul-truck_truck-and-shovel,<sector>.petroleum-crude.product.bitumen.mining,oil-and-gas/oil-sands-mining-and-extraction: the leaf its name or label names
+haul-truck_diesel-fleet,<sector>.petroleum-crude.product.bitumen.mining,oil-and-gas/oil-sands-mining-and-extraction: the leaf its name or label names
 heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.coalbed-methane,oil-and-gas/oil-and-gas-production: every leaf of oil-and-gas/oil-and-gas-production; no evidence to narrow it
 heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.conventional,oil-and-gas/oil-and-gas-production: every leaf of oil-and-gas/oil-and-gas-production; no evidence to narrow it
 heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.shale,oil-and-gas/oil-and-gas-production: every leaf of oil-and-gas/oil-and-gas-production; no evidence to narrow it
@@ -764,7 +763,7 @@ electrolysis-cell_multipolar-chloride,<sector>.metal-smelting.product.aluminum.p
 electrolysis-cell_power-modulation,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_prebaked-anode,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_soderberg,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,non-ferrous-metals/aluminum-smelting: every leaf of the end use
-electrolysis-cell_sx-ew,<sector>.metal-smelting.product.magnesium.electrolysis,non-ferrous-metals/hydrometallurgy: the leaf its name or label names
+leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.magnesium.electrolysis,non-ferrous-metals/hydrometallurgy: the leaf its name or label names
 furnace_anode-baking,<sector>.metal-smelting.service.anode-production,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking-electric,<sector>.metal-smelting.service.anode-production,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_homogenizing,<sector>.metal-smelting.product.aluminum.recycle,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -781,12 +780,12 @@ furnace_twin-chamber,<sector>.metal-smelting.product.nickel.melt-cast,non-ferrou
 furnace_twin-chamber,<sector>.metal-smelting.product.zinc.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 heat-recovery-unit_off-gas,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,non-ferrous-metals/electric-smelting: every leaf of non-ferrous-metals/electric-smelting; no evidence to narrow it
 heat-recovery-unit_off-gas,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,non-ferrous-metals/electric-smelting: every leaf of non-ferrous-metals/electric-smelting; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.aluminum.recycle,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.copper.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.lead.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.magnesium.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.nickel.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-induction-heater_melting-holding,<sector>.metal-smelting.product.zinc.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.aluminum.recycle,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.copper.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.lead.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.magnesium.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.nickel.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_induction,<sector>.metal-smelting.product.zinc.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,<sector>.metal-smelting.product.aluminum.recycle,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,<sector>.metal-smelting.product.copper.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,<sector>.metal-smelting.product.lead.melt-cast,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -829,7 +828,6 @@ dryer_veneer-strand,<sector>.light-industrial.service.heat,other-industry/wood-d
 furnace_heat-treatment,<sector>.light-industrial.service.heat,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
 furnace_regenerative-burners,<sector>.iron-and-steel.product.foundry,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
 furnace_regenerative-burners,<sector>.light-industrial.service.heat,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
-heat-recovery-unit_oven-dryer,<sector>.light-industrial.service.heat,other-industry/drying-curing-and-forming: every leaf of the end use
 induction-heater_heat-treatment,<sector>.light-industrial.service.heat,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
 kiln_lumber-continuous,<sector>.light-industrial.service.heat,other-industry/wood-drying-and-pressing: every leaf of the end use
 kiln_lumber-heat-pump,<sector>.light-industrial.service.heat,other-industry/wood-drying-and-pressing: every leaf of the end use
@@ -842,5 +840,4 @@ melting-furnace_induction,<sector>.iron-and-steel.product.foundry,other-industry
 melting-furnace_induction,<sector>.light-industrial.service.heat,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
 press_all-electric,<sector>.light-industrial.service.heat,other-industry/drying-curing-and-forming: every leaf of the end use
 press_hot-platen,<sector>.light-industrial.service.heat,other-industry/wood-drying-and-pressing: every leaf of the end use
-radio-frequency-heater_vacuum-drying,<sector>.light-industrial.service.heat,other-industry/wood-drying-and-pressing: every leaf of the end use
 ultraviolet-curer_infrared,<sector>.light-industrial.service.heat,other-industry/drying-curing-and-forming: every leaf of the end use

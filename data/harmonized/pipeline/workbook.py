@@ -19,9 +19,13 @@ BOOK = OUTPUT / "technology-database.xlsx"
 NUM_FORMAT = [(1000, "#,##0"), (100, "#,##0"), (10, "#,##0.0"),
               (1, "#,##0.00"), (0.1, "0.000"), (0.01, "0.0000")]
 PLAIN_INT = {"trl", "year-available", "n-examples", "n"}
+# identifiers and counts, not measurements: no thousands separator, no decimals
+GENERAL = {"year", "rows-in-database"}
 
 
 def _fmt(v, col):
+    if col in GENERAL:
+        return "General"
     if col in PLAIN_INT or col.endswith("_n"):
         return "0"
     a = abs(v)

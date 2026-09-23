@@ -31,6 +31,7 @@ The documents that recorded each decision, dated by when the work started:
 | - | - |
 | `migrate_2026-09-23_archetypes.py` | The one-time migration that wrote `data/harmonized/records/` from the design tables and the adopted roster. It refuses to run again. |
 | `archetype-renames-2026-09-23.csv` | Every archetype key renamed by that migration, with the reason. |
+| `merge_2026-09-23_candidates.py`, `archetype-merges-2026-09-23.csv` | The one-time fold of the candidate merges the user approved, and its log. |
 | `sector-2026-09-22.csv` | The retired sector dictionary the families were seeded from. |
 | `retired-pipeline/` | The build before the restructure: `populate.py`, `aggregate.py`, `adopt.py`, the design crosswalk, `build-template.py`, `build-wide.py` and the rest. |
 | `design-build/` | The scripts that generated the design tables and their markdown. |

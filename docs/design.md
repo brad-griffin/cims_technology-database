@@ -209,7 +209,9 @@ the 2025 rate.
 - `emissions-captured`.
 
 Species stay explicit in `target` (`co2`, `co2e`, `pfc`) and are not converted to
-CO2e.
+CO2e. The exception is `emissions-reduction-potential`: it is one percentage,
+whether the source counted CO2 alone or CO2-equivalent, so its species are pooled
+into one column.
 
 **Discount rates:** record the source study's own rate and replicate it when
 inverting a levelized cost. Apply the model's hurdle rate only afterwards.

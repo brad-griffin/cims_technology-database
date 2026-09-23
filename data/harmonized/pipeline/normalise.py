@@ -36,6 +36,9 @@ PER_OUTPUT = {"opex-variable", "opex-total"}
 PERCENT = {"efficiency", "efficiency-chp", "capacity-factor", "availability", "capture-rate",
            "emissions-reduction-potential", "load-range-min", "discount-rate",
            "cost-learning-rate", "capital-recovery", "degradation-rate"}
+# A share of emissions avoided is one percentage whether the source counted CO2
+# alone or CO2-equivalent, so the species is not a column of its own here.
+SPECIES_POOLED = {"emissions-reduction-potential"}
 GJ_PER_KW_YR = 8760 * 0.0036
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
 
@@ -93,8 +96,8 @@ def _num(r):
 
 
 def normalise(facts, examples, records, units) -> None:
-    """Adds value-norm, value-min-norm, value-max-norm, unit-norm and excluded
-    to each fact row, in place."""
+    """Adds value-norm, value-min-norm, value-max-norm, unit-norm, target-norm
+    and excluded to each fact row, in place."""
     # per example, what turns a rating or an absolute sum into a rate
     scale = defaultdict(dict)
     for r in facts:
@@ -108,7 +111,10 @@ def normalise(facts, examples, records, units) -> None:
 
     for r in facts:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
-                  "unit-norm": "", "excluded": "", "conversion": ""})
+                  "unit-norm": "", "excluded": "", "conversion": "",
+                  "target-norm": r.get("target", "")})
+        if r["parameter"] in SPECIES_POOLED:
+            r["target-norm"] = ""
         v, lo, hi = _num(r)
         if v is None and lo is None and hi is None:
             r["excluded"] = "no number"

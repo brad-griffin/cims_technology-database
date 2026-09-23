@@ -20,6 +20,8 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | The 14 candidate merges are applied: 15 archetypes folded into their pairs (`archive/scripts/archetype-merges-2026-09-23.csv`). None had examples. | current | this restructure |
+| 2026-09-23 | `emissions-reduction-potential` pools CO2 and CO2e into one percentage. | current | this restructure |
 | 2026-09-23 | Hierarchy nodes plus family tags: archetypes link to hierarchy paths directly. The former cross-sector end uses become families; the sector/end-use table becomes annotations on hierarchy paths. | current | this restructure |
 | 2026-09-23 | Central value: the median of three or more examples, else the top-ranked source. Low and high span all examples and reported ranges. n is always shown. | current | this restructure |
 | 2026-09-23 | Ordered multiple modifiers: `efficiency-*`, then `ccs-*`, then `retrofit` (`blast-furnace_top-gas-recycling_ccs-diffuse` is legal). This settles the open question on D4. | current | this restructure |
@@ -67,23 +69,6 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 Decisions the restructure left for review. The build's
 `data/harmonized/output/mapping-review.md` keeps the live lists.
 
-- **Candidate merges.** These archetype pairs look like the same option placed on
-  two end uses. Apply the test in design.md §2 to each. If one fails, fold it into
-  the other: repoint its examples in `source-example.csv`, then delete the row.
-  - `boiler_electric` and `boiler_electric-injection-steam`
-  - `combustion-turbine_heat-recovery-steam-generator` and `combined-cycle_cogeneration`
-  - `heat-recovery-unit_dryer` and `heat-recovery-unit_dryer-exhaust`
-  - `heat-recovery-unit_oven-dryer` and `heat-recovery-unit_oven-exhaust`
-  - `ventilation-unit_mine-on-demand` and `ventilation-unit_demand-controlled`
-  - `haul-truck_diesel-fleet` and `haul-truck_truck-and-shovel`
-  - `separator_paste-tailings` and `separator_dry-stack-tailings`
-  - `distillation-column_heat-integrated` and `distillation-column_progressive`
-  - `induction-heater_melting-holding` and `melting-furnace_induction`
-  - `dryer_rotary-direct-fired` and `dryer_rotary-fluid-bed`
-  - `pellet-plant_induration`, `pellet-plant_straight-grate` and `pellet-plant_grate-kiln`
-  - `leaching-vessel_heap-atmospheric` and `electrolysis-cell_sx-ew`
-  - `grinding-mill_vertical-roller` and `grinding-mill_high-pressure-rolls`
-  - `radio-frequency-heater_drying` and `radio-frequency-heater_vacuum-drying`
 - **Discriminator definitions.** All of them are seeded from the archetype labels
   and marked `reviewed = no` in `records/vocabulary/discriminator.csv`.
 - **Examples to check.** The mapping review lists 147 seeded mappings where the
