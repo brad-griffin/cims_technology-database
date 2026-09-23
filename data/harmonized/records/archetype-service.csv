@@ -841,3 +841,24 @@ melting-furnace_induction,<sector>.light-industrial.service.heat,other-industry/
 press_all-electric,<sector>.light-industrial.service.heat,other-industry/drying-curing-and-forming: every leaf of the end use
 press_hot-platen,<sector>.light-industrial.service.heat,other-industry/wood-drying-and-pressing: every leaf of the end use
 ultraviolet-curer_infrared,<sector>.light-industrial.service.heat,other-industry/drying-curing-and-forming: every leaf of the end use
+boiler_fuel-fired_efficiency-moderate,<sector>.*.service.steam,as its host boiler_fuel-fired
+steam-cracker_fired-tubular_efficiency-moderate,<sector>.chemicals.product.petrochemicals.steam-cracking,as its host steam-cracker_fired-tubular
+oven_efficiency-moderate,<sector>.light-industrial.service.heat,as its host oven_tunnel-deck
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.paper.coated.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.paper.linerboard.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.paper.newsprint.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.paper.tissue.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.paper.uncoated.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,<sector>.pulp-and-paper.product.pulp.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.paper.coated.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.paper.linerboard.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.paper.newsprint.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.paper.tissue.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.paper.uncoated.drying,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,<sector>.pulp-and-paper.product.pulp.drying,as its host dryer_steam-heated
+dryer_direct-fired_efficiency-moderate,<sector>.light-industrial.service.heat,as its host dryer_direct-fired
+paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.coated.forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.linerboard.forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.newsprint.forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.tissue.forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.uncoated.forming,as its host paper-machine_fourdrinier-gap

@@ -22,6 +22,7 @@ gate a commit.
 | 3 | extract | `pipeline/extract.py` | Reads every extraction as reported and keeps each source's own technology name. |
 | 4 | clean | `pipeline/facts.py` | Evaluates arithmetic-only formulas, spells each unit one way, writes fractions as %, links derived rows to their source rows, flags missing bases, and numbers records within each source. |
 | 5 | examples | `pipeline/examples.py` | Attaches each example to the archetype `records/source-example.csv` names. Appends new examples with a blank archetype. |
+| 5b | whole-plant | `pipeline/wholeplant.py` | Adds UKERC's host baseline cost to each measure cost where `records/reference/ukerc-host-baseline.csv` allows, as a derived row (`tp-<source>-wNNN`). It sets the other measure costs aside. |
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py` | Puts every fact on its archetype's basis, or excludes it with the reason. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
@@ -53,6 +54,7 @@ gate a commit.
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
+| `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
 | `set-aside-efficiency.csv` | UKERC costs set aside until an efficiency factor is established, with each example's fuel use per tonne. |
 | `mapping-review.md` | How examples reach archetypes, what was not pooled, and what needs a decision. |
 | `currency-conversion.csv`, `hierarchy-stamp.csv` | The factors and the snapshot the build used. |

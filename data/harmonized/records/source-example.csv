@@ -157,7 +157,7 @@ bataille_2017_001:dryer_coal_efficiency-strong@production-processes-drying-separ
 bataille_2017_001:dryer_coke_efficiency-base@production-processes-drying-separation,bataille_2017_001,dryer_coke_efficiency-base,Production processes: Drying & separation,dryer_gas-fired-hood,,fact rows,
 bataille_2017_001:dryer_coke_efficiency-strong@production-processes-drying-separation,bataille_2017_001,dryer_coke_efficiency-strong,Production processes: Drying & separation,dryer_kiln-waste-heat,,fact rows,
 bataille_2017_001:dryer_efficiency-base@production-processes-dryer-including-improvement-processes,bataille_2017_001,dryer_efficiency-base,Production processes: Dryer (including improvement processes),dryer_gas-fired-hood,,fact rows,
-bataille_2017_001:dryer_efficiency-moderate@production-processes-dryer-including-improvement-processes,bataille_2017_001,dryer_efficiency-moderate,Production processes: Dryer (including improvement processes),kiln_lumber-continuous,,fact rows,
+bataille_2017_001:dryer_efficiency-moderate@production-processes-dryer-including-improvement-processes,bataille_2017_001,dryer_efficiency-moderate,Production processes: Dryer (including improvement processes),dryer_steam-heated_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 bataille_2017_001:dryer_electricity_efficiency-base@other-chemicals-production-processes-drying-separation,bataille_2017_001,dryer_electricity_efficiency-base,"Other chemicals: production processes, drying & separation",dryer_gas-fired-hood,,fact rows,
 bataille_2017_001:dryer_electricity_efficiency-base@production-processes-drying-separation,bataille_2017_001,dryer_electricity_efficiency-base,Production processes: Drying & separation,dryer_gas-fired-hood,,fact rows,
 bataille_2017_001:dryer_electricity_efficiency-strong@other-chemicals-production-processes-drying-separation,bataille_2017_001,dryer_electricity_efficiency-strong,"Other chemicals: production processes, drying & separation",dryer_kiln-waste-heat,,fact rows,
@@ -174,7 +174,7 @@ bataille_2017_001:dryer_lpg_efficiency-base@production-processes-drying-separati
 bataille_2017_001:dryer_lpg_efficiency-strong@production-processes-drying-separation,bataille_2017_001,dryer_lpg_efficiency-strong,Production processes: Drying & separation,dryer_kiln-waste-heat,,fact rows,
 bataille_2017_001:dryer_natural-gas_efficiency-base@other-chemicals-production-processes-drying-separation,bataille_2017_001,dryer_natural-gas_efficiency-base,"Other chemicals: production processes, drying & separation",dryer_gas-fired-hood,,fact rows,
 bataille_2017_001:dryer_natural-gas_efficiency-base@production-processes-drying-separation,bataille_2017_001,dryer_natural-gas_efficiency-base,Production processes: Drying & separation,dryer_gas-fired-hood,,fact rows,
-bataille_2017_001:dryer_natural-gas_efficiency-moderate@all-industry,bataille_2017_001,dryer_natural-gas_efficiency-moderate,all-industry,kiln_lumber-continuous,,name,
+bataille_2017_001:dryer_natural-gas_efficiency-moderate@all-industry,bataille_2017_001,dryer_natural-gas_efficiency-moderate,all-industry,dryer_direct-fired_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 bataille_2017_001:dryer_natural-gas_efficiency-strong@other-chemicals-production-processes-drying-separation,bataille_2017_001,dryer_natural-gas_efficiency-strong,"Other chemicals: production processes, drying & separation",dryer_kiln-waste-heat,,fact rows,
 bataille_2017_001:dryer_natural-gas_efficiency-strong@production-processes-drying-separation,bataille_2017_001,dryer_natural-gas_efficiency-strong,Production processes: Drying & separation,dryer_kiln-waste-heat,,fact rows,
 bataille_2017_001:dryer_oil_efficiency-base@other-chemicals-production-processes-drying-separation,bataille_2017_001,dryer_oil_efficiency-base,"Other chemicals: production processes, drying & separation",dryer_gas-fired-hood,,fact rows,
@@ -446,10 +446,10 @@ ukerc_2013_001:blast-furnace_top-gas-recycling-ccs@integrated-steelworks,ukerc_2
 ukerc_2013_001:blast-furnace_waste-heat_efficiency-moderate@blast-furnace,ukerc_2013_001,blast-furnace_waste-heat_efficiency-moderate,Blast furnace,blast-furnace_efficiency-moderate,,fact rows,
 ukerc_2013_001:boiler_biomass@boilers,ukerc_2013_001,boiler_biomass,Boilers,boiler_solid-fuel,,fact rows,
 ukerc_2013_001:boiler_biomass_post-combustion@steam-cracker,ukerc_2013_001,boiler_biomass_post-combustion,Steam cracker,boiler_ccs-diffuse,,fact rows,
-ukerc_2013_001:boiler_efficiency-moderate@boilers,ukerc_2013_001,boiler_efficiency-moderate,Boilers,boiler_condensing,,fact rows,
+ukerc_2013_001:boiler_efficiency-moderate@boilers,ukerc_2013_001,boiler_efficiency-moderate,Boilers,boiler_fuel-fired_efficiency-moderate,,corrected,"was boiler_condensing, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:boiler_natural-gas_post-combustion@steam-cracker,ukerc_2013_001,boiler_natural-gas_post-combustion,Steam cracker,boiler_ccs-diffuse,,fact rows,
-ukerc_2013_001:boiler_steam_efficiency-moderate@steam-system,ukerc_2013_001,boiler_steam_efficiency-moderate,Steam system,boiler_condensing,,fact rows,
-ukerc_2013_001:boiler_steam_efficiency-strong@undefined-sector-boilers,ukerc_2013_001,boiler_steam_efficiency-strong,Undefined sector boilers,boiler_condensing,,fact rows,
+ukerc_2013_001:boiler_steam_efficiency-moderate@steam-system,ukerc_2013_001,boiler_steam_efficiency-moderate,Steam system,(none),,corrected,"was boiler_condensing, remapped 2026-09-23: steam distribution efficiency, out of scope (design.md section 1)"
+ukerc_2013_001:boiler_steam_efficiency-strong@undefined-sector-boilers,ukerc_2013_001,boiler_steam_efficiency-strong,Undefined sector boilers,heat-pump_industrial,,corrected,"was boiler_condensing, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:capture-unit_post-combustion@steam-cracker,ukerc_2013_001,capture-unit_post-combustion,Steam cracker,capture-unit_amine,,fact rows,
 ukerc_2013_001:caster@continuous-casting-hot-rolling-not-including-heavy-section,ukerc_2013_001,caster,"Continuous casting, Hot rolling (not including heavy section)",caster_continuous,,corrected,"was rolling-mill_continuous-casting (retired crosswalk fold), corrected 2026-09-23"
 ukerc_2013_001:caster_efficiency-strong@continuous-casting,ukerc_2013_001,caster_efficiency-strong,Continuous casting,rolling-mill_thin-slab,,fact rows,
@@ -467,12 +467,12 @@ ukerc_2013_001:compressor_electricity_efficiency-moderate@motors-compressors,uke
 ukerc_2013_001:distillation-column_efficiency-strong@benzene-separation-process,ukerc_2013_001,distillation-column_efficiency-strong,Benzene separation process,distillation-column_heat-integrated,,fact rows,
 ukerc_2013_001:dryer@dryer,ukerc_2013_001,dryer,Dryer,dryer_gas-fired-hood,,fact rows,
 ukerc_2013_001:dryer@sector,ukerc_2013_001,dryer,Sector,dryer_gas-fired-hood,,fact rows,
-ukerc_2013_001:dryer_coke_efficiency-moderate@iron-manufacture,ukerc_2013_001,dryer_coke_efficiency-moderate,Iron manufacture,kiln_lumber-continuous,,fact rows,
-ukerc_2013_001:dryer_efficiency-moderate@dryer,ukerc_2013_001,dryer_efficiency-moderate,Dryer,kiln_lumber-continuous,,fact rows,
-ukerc_2013_001:dryer_efficiency-strong@dryer,ukerc_2013_001,dryer_efficiency-strong,Dryer,dryer_kiln-waste-heat,,fact rows,
-ukerc_2013_001:dryer_steam_efficiency-moderate@dryer,ukerc_2013_001,dryer_steam_efficiency-moderate,Dryer,kiln_lumber-continuous,,fact rows,
-ukerc_2013_001:dryer_waste-heat_efficiency-moderate@dryer,ukerc_2013_001,dryer_waste-heat_efficiency-moderate,Dryer,kiln_lumber-continuous,,fact rows,
-ukerc_2013_001:dryer_waste-heat_efficiency-strong@drying-systems,ukerc_2013_001,dryer_waste-heat_efficiency-strong,Drying systems,dryer_kiln-waste-heat,,fact rows,
+ukerc_2013_001:dryer_coke_efficiency-moderate@iron-manufacture,ukerc_2013_001,dryer_coke_efficiency-moderate,Iron manufacture,coke-oven_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:dryer_efficiency-moderate@dryer,ukerc_2013_001,dryer_efficiency-moderate,Dryer,dryer_steam-heated_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:dryer_efficiency-strong@dryer,ukerc_2013_001,dryer_efficiency-strong,Dryer,dryer_steam-heated_efficiency-strong,,corrected,"was dryer_kiln-waste-heat, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:dryer_steam_efficiency-moderate@dryer,ukerc_2013_001,dryer_steam_efficiency-moderate,Dryer,dryer_steam-heated_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:dryer_waste-heat_efficiency-moderate@dryer,ukerc_2013_001,dryer_waste-heat_efficiency-moderate,Dryer,dryer_steam-heated_efficiency-moderate,,corrected,"was kiln_lumber-continuous, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:dryer_waste-heat_efficiency-strong@drying-systems,ukerc_2013_001,dryer_waste-heat_efficiency-strong,Drying systems,heat-recovery-unit_dryer-exhaust,,corrected,"was dryer_kiln-waste-heat, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:electric-arc-furnace@subsector,ukerc_2013_001,electric-arc-furnace,Subsector,electric-arc-furnace,,fact rows,
 ukerc_2013_001:electric-arc-furnace_electricity_efficiency-moderate@electric-arc-furnace,ukerc_2013_001,electric-arc-furnace_electricity_efficiency-moderate,Electric arc furnace,electric-arc-furnace_high-efficiency,,fact rows,
 ukerc_2013_001:electrolysis-cell_electricity_ulcowin@integrated-steelworks,ukerc_2013_001,electrolysis-cell_electricity_ulcowin,Integrated steelworks,electrolysis-cell_iron-electrowinning,,fact rows,
@@ -495,12 +495,12 @@ ukerc_2013_001:kiln_efficiency-strong@cement-subsector,ukerc_2013_001,kiln_effic
 ukerc_2013_001:kiln_oxyfuel@cement-plant,ukerc_2013_001,kiln_oxyfuel,Cement plant,kiln_dry-precalciner_ccs-diffuse,,fact rows,
 ukerc_2013_001:kiln_post-combustion@cement-plant,ukerc_2013_001,kiln_post-combustion,Cement plant,kiln_dry-precalciner_ccs-diffuse,,fact rows,
 ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant,ukerc_2013_001,kiln_waste-heat_post-combustion,Cement plant,kiln_dry-precalciner_ccs-diffuse,,fact rows,
-ukerc_2013_001:management-system_efficiency-moderate@bakery-non-ovens-including-cooler,ukerc_2013_001,management-system_efficiency-moderate,"Bakery - non ovens, including cooler",heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:management-system_efficiency-moderate@dairy,ukerc_2013_001,management-system_efficiency-moderate,Dairy,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:management-system_efficiency-moderate@subsector,ukerc_2013_001,management-system_efficiency-moderate,Subsector,heat-recovery-unit_oven-exhaust,,fact rows,
+ukerc_2013_001:management-system_efficiency-moderate@bakery-non-ovens-including-cooler,ukerc_2013_001,management-system_efficiency-moderate,"Bakery - non ovens, including cooler",(none),,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: an organizational measure (good practice, maintenance, energy management), not a technology option"
+ukerc_2013_001:management-system_efficiency-moderate@dairy,ukerc_2013_001,management-system_efficiency-moderate,Dairy,(none),,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: an organizational measure (good practice, maintenance, energy management), not a technology option"
+ukerc_2013_001:management-system_efficiency-moderate@subsector,ukerc_2013_001,management-system_efficiency-moderate,Subsector,(none),,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: an organizational measure (good practice, maintenance, energy management), not a technology option"
 ukerc_2013_001:management-system_efficiency-strong@undefined-sector,ukerc_2013_001,management-system_efficiency-strong,Undefined sector,pasteurizer_regenerative,,fact rows,
-ukerc_2013_001:management-system_electricity_efficiency-moderate@bakery,ukerc_2013_001,management-system_electricity_efficiency-moderate,Bakery,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:management-system_electricity_efficiency-moderate@sector,ukerc_2013_001,management-system_electricity_efficiency-moderate,Sector,heat-recovery-unit_oven-exhaust,,fact rows,
+ukerc_2013_001:management-system_electricity_efficiency-moderate@bakery,ukerc_2013_001,management-system_electricity_efficiency-moderate,Bakery,(none),,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: an organizational measure (good practice, maintenance, energy management), not a technology option"
+ukerc_2013_001:management-system_electricity_efficiency-moderate@sector,ukerc_2013_001,management-system_electricity_efficiency-moderate,Sector,pump_optimization,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:melting-furnace@electric-arc-furnace,ukerc_2013_001,melting-furnace,Electric arc furnace,melting-furnace_cupola,,fact rows,
 ukerc_2013_001:motor_electricity_efficiency-moderate@hot-rolling,ukerc_2013_001,motor_electricity_efficiency-moderate,Hot rolling,motor_premium-efficiency,,fact rows,
 ukerc_2013_001:motor_electricity_efficiency-moderate@motors-fans,ukerc_2013_001,motor_electricity_efficiency-moderate,Motors - Fans,motor_premium-efficiency,,fact rows,
@@ -508,11 +508,11 @@ ukerc_2013_001:motor_electricity_efficiency-moderate@motors-pumps,ukerc_2013_001
 ukerc_2013_001:motor_electricity_variable-speed@motors-fans,ukerc_2013_001,motor_electricity_variable-speed,Motors - Fans,motor_variable-speed,,fact rows,
 ukerc_2013_001:motor_electricity_variable-speed@motors-pumps,ukerc_2013_001,motor_electricity_variable-speed,Motors - Pumps,motor_variable-speed,,fact rows,
 ukerc_2013_001:oven@bakery-indirect-ovens,ukerc_2013_001,oven,Bakery - indirect ovens,oven_tunnel-deck,,fact rows,
-ukerc_2013_001:oven_efficiency-moderate@bakery-direct-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - direct ovens,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:oven_efficiency-moderate@bakery-indirect-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - indirect ovens,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:oven_efficiency-moderate@bakery-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - ovens,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:oven_efficiency-moderate@bakery-oven,ukerc_2013_001,oven_efficiency-moderate,Bakery -oven,heat-recovery-unit_oven-exhaust,,fact rows,
-ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens,ukerc_2013_001,oven_electricity_efficiency-moderate,Bakery - ovens,heat-recovery-unit_oven-exhaust,,fact rows,
+ukerc_2013_001:oven_efficiency-moderate@bakery-direct-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - direct ovens,oven_efficiency-moderate,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:oven_efficiency-moderate@bakery-indirect-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - indirect ovens,oven_efficiency-moderate,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:oven_efficiency-moderate@bakery-ovens,ukerc_2013_001,oven_efficiency-moderate,Bakery - ovens,oven_efficiency-moderate,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:oven_efficiency-moderate@bakery-oven,ukerc_2013_001,oven_efficiency-moderate,Bakery -oven,oven_efficiency-moderate,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
+ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens,ukerc_2013_001,oven_electricity_efficiency-moderate,Bakery - ovens,fan_optimization,,corrected,"was heat-recovery-unit_oven-exhaust, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:oven_waste-heat_efficiency-moderate@bakery-indirect-ovens,ukerc_2013_001,oven_waste-heat_efficiency-moderate,Bakery - indirect ovens,heat-recovery-unit_oven-exhaust,,fact rows,
 ukerc_2013_001:oven_waste-heat_efficiency-moderate@bakery-ovens,ukerc_2013_001,oven_waste-heat_efficiency-moderate,Bakery - ovens,heat-recovery-unit_oven-exhaust,,fact rows,
 ukerc_2013_001:pasteurizer@dairy-pasteuriser,ukerc_2013_001,pasteurizer,Dairy - Pasteuriser,heat-exchanger_steam-heated,,fact rows,
@@ -521,7 +521,7 @@ ukerc_2013_001:pasteurizer_efficiency-strong@dairy-pasteuriser,ukerc_2013_001,pa
 ukerc_2013_001:press_efficiency-moderate@press,ukerc_2013_001,press_efficiency-moderate,Press,press_shoe-extended,,fact rows,
 ukerc_2013_001:press_electricity_efficiency-moderate@press,ukerc_2013_001,press_electricity_efficiency-moderate,Press,press_shoe-extended,,fact rows,
 ukerc_2013_001:press_steam_efficiency-moderate@press,ukerc_2013_001,press_steam_efficiency-moderate,Press,press_shoe-extended,,fact rows,
-ukerc_2013_001:press_steam_efficiency-strong@press,ukerc_2013_001,press_steam_efficiency-strong,Press,boiler_condensing,,fact rows,
+ukerc_2013_001:press_steam_efficiency-strong@press,ukerc_2013_001,press_steam_efficiency-strong,Press,paper-machine_fourdrinier-gap_efficiency-strong,,corrected,"was boiler_condensing, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:pulper_efficiency-moderate@stock-preparation,ukerc_2013_001,pulper_efficiency-moderate,Stock preparation,pulper_refiner-low-energy,,fact rows,
 ukerc_2013_001:pump_electricity_efficiency-moderate@motors-pumps,ukerc_2013_001,pump_electricity_efficiency-moderate,Motors - Pumps,pump_optimization,,fact rows,
 ukerc_2013_001:pump_electricity_efficiency-moderate@vacuum-systems,ukerc_2013_001,pump_electricity_efficiency-moderate,Vacuum systems,pump_optimization,,fact rows,
@@ -546,6 +546,6 @@ ukerc_2013_001:steam-cracker_naphtha@steam-cracker,ukerc_2013_001,steam-cracker_
 ukerc_2013_001:steam-cracker_oil@steam-cracker,ukerc_2013_001,steam-cracker_oil,Steam cracker,steam-cracker_fired-tubular,,fact rows,
 ukerc_2013_001:steam-cracker_post-combustion@steam-cracker,ukerc_2013_001,steam-cracker_post-combustion,Steam cracker,steam-cracker_ccs-diffuse,,fact rows,
 ukerc_2013_001:steam-cracker_steam@steam-cracker,ukerc_2013_001,steam-cracker_steam,Steam cracker,steam-cracker_fired-tubular,,fact rows,
-ukerc_2013_001:steam-cracker_steam_efficiency-moderate@steam-cracker,ukerc_2013_001,steam-cracker_steam_efficiency-moderate,Steam cracker,boiler_condensing,,fact rows,
+ukerc_2013_001:steam-cracker_steam_efficiency-moderate@steam-cracker,ukerc_2013_001,steam-cracker_steam_efficiency-moderate,Steam cracker,steam-cracker_fired-tubular_efficiency-moderate,,corrected,"was boiler_condensing, remapped 2026-09-23: the retired crosswalk's fold did not describe it"
 ukerc_2013_001:steam-reformer_steam_efficiency-moderate@steam-reformer-ammonia,ukerc_2013_001,steam-reformer_steam_efficiency-moderate,Steam reformer (Ammonia),steam-reformer_efficiency-moderate,,fact rows,
 ukerc_2013_001:steam-reformer_steam_efficiency-moderate@steam-reformer-hydrogen,ukerc_2013_001,steam-reformer_steam_efficiency-moderate,Steam reformer (Hydrogen),steam-reformer_efficiency-moderate,,fact rows,

@@ -36,6 +36,15 @@ boiler_fuel-fired,heat-supply,<sector>.mining.service.steam,heat-low-temp,<secto
 boiler_fuel-fired,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_fuel-fired,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_fuel-fired,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
+boiler_fuel-fired_efficiency-moderate,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,as its host boiler_fuel-fired
 boiler_solid-fuel,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_solid-fuel,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_solid-fuel,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -814,6 +823,7 @@ steam-cracker_catalytic-naphtha,chemicals,<sector>.chemicals.product.petrochemic
 steam-cracker_ccs-diffuse,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_electric,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,chemicals/steam-cracking: every leaf of the end use
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,as its host steam-cracker_fired-tubular
 steam-cracker_rotodynamic,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,chemicals/steam-cracking: every leaf of the end use
 steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,,chemicals/ammonia-and-methanol: every leaf of chemicals/ammonia-and-methanol; no evidence to narrow it
 steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,,chemicals/ammonia-and-methanol: every leaf of chemicals/ammonia-and-methanol; no evidence to narrow it
@@ -921,6 +931,18 @@ dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprin
 dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,as its host dryer_steam-heated
+dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,as its host dryer_steam-heated
 evaporator_multiple-effect,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 fan_activated-sludge,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment,effluent-treatment,,pulp-and-paper/effluent-treatment: every leaf of the end use
 fan_fine-bubble,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment,effluent-treatment,,pulp-and-paper/effluent-treatment: every leaf of the end use
@@ -934,6 +956,11 @@ paper-machine_fourdrinier-gap,pulp-and-paper,<sector>.pulp-and-paper.product.pap
 paper-machine_fourdrinier-gap,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
 paper-machine_fourdrinier-gap,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
 paper-machine_fourdrinier-gap,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
+paper-machine_fourdrinier-gap_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.forming,paper-forming,,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.forming,paper-forming,,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,,as its host paper-machine_fourdrinier-gap
 press_dewatering-advanced,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
 press_dewatering-advanced,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
 press_dewatering-advanced,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,,pulp-and-paper/paper-forming: every leaf of pulp-and-paper/paper-forming; no evidence to narrow it
@@ -1190,6 +1217,7 @@ heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.mining.service.dryin
 heat-recovery-unit_dryer-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/drying: every leaf of the end use
 heat-recovery-unit_oven-exhaust,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 microwave-heater_ohmic-infrared,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
+oven_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,as its host oven_tunnel-deck
 oven_electric,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 oven_indirect-fired,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 oven_tunnel-deck,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
@@ -1293,6 +1321,7 @@ smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.p
 smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 solar-collector_bayer,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/drying-curing-and-forming: every leaf of the end use
+dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,as its host dryer_direct-fired
 dryer_veneer-strand,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/wood-drying-and-pressing: every leaf of the end use
 furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat,thermal-processing,,other-industry/metal-melting-and-heat-treatment: the leaf its name or label names
 furnace_regenerative-burners,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it

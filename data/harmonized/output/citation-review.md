@@ -39,9 +39,9 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 
 | source | rows | correction |
 |---|---:|---|
-| UKERC 2013 | 3801 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
+| UKERC 2013 | 3814 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | US EPA 2010 | 614 | the reachable edition is dated September 2012, not 2010; UKERC's 2010 date may refer to an earlier printing |
-| CT 2011 | 430 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
+| CT 2011 | 434 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
 | Ren 2009 | 345 | handle 1874/32318; the repository record misspells 'Coal' as 'Ccoal' |
 | Johansson et al 2012 | 251 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | CT 2010a | 220 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
@@ -59,8 +59,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | EPA 2017 | 39 | September 2017; NEPIS document key P101DBCT |
 | IPCC 2022 | 38 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
 | MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
-| Collodi 2010 | 31 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
-| Premkumar and Rangaiah 2009 | 30 | confirmed on the author's NUS publication list; DOI not seen verbatim |
+| Collodi 2010 | 33 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
+| Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | Worrell et al 1999 | 25 | sponsored by US EPA |
 | ETSAP I01 | 22 | May 2010; authorship read from the printed VITO contact addresses |
@@ -140,7 +140,7 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 | source | rows | why |
 |---|---:|---|
 | Bataille 2017 | 342 | no public record of this database release found; held locally, so the copy in hand is the authority |
-| CT 2010b | 90 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
+| CT 2010b | 92 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
 | IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
 | Carbon Trust 2004 | 28 | ECG092 not traced; only ECG066 'Steam generation costs' was found. Guide offline with no archived copy |

@@ -130,10 +130,29 @@ def mapping_review(records, hier, loader, stamp, views, ex_result):
         A(f"| {_md(why)} | {n} |")
     A("")
 
-    aside = defaultdict(list)
+    aside, host = defaultdict(list), defaultdict(list)
+    whole = [r for r in loader.facts if r.get("derived-kind") == "whole-plant"]
     for r in loader.facts:
-        if r.get("set-aside"):
+        if r.get("set-aside") == "needs-efficiency":
             aside[r["archetype"]].append(r["record-id"])
+        elif r.get("set-aside") == "needs-host-cost":
+            host[r["archetype"]].append(r["record-id"])
+    A("## Whole-plant costs for UKERC measures\n")
+    A("A UKERC measure's cost is the cost of adding it to a plant. Where "
+      "`records/reference/ukerc-host-baseline.csv` names the archetype's host step and UKERC "
+      "states one baseline cost for it, the whole-plant cost (baseline + measure) is a derived "
+      "row, and that row is what pools.\n")
+    A("| row | archetype | formula | unit |\n|---|---|---|---|")
+    for r in whole:
+        A(f"| `{r['record-id']}` | `{r['archetype']}` | {r['formula']} | {r['unit']} |")
+    A("")
+    A("## Set aside: needs a host-plant cost\n")
+    A("UKERC measure costs whose host has no baseline cost in the source, or whose archetype "
+      "is not a host with measures added. Out of the summaries until a host cost is "
+      "established; the worklist is `set-aside-host-cost.csv`.\n")
+    for a_, ids in sorted(host.items()):
+        A(f"- `{a_}`: {len(ids)} rows")
+    A("")
     A("## Set aside: needs an efficiency factor\n")
     A("UKERC costs on energy-service archetypes. UKERC states them per tonne of the host "
       "plant's product, with the fuel used per tonne; its per-GJ figures are per GJ of "

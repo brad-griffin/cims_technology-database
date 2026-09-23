@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | UKERC measure costs pool only as whole-plant costs (UKERC's own baseline for the host step plus the measure), for the 7 archetypes in `ukerc-host-baseline.csv`. The rest are set aside for a host-plant cost. 23 UKERC and Bataille measure buckets remapped (`archive/scripts/remap_2026-09-23_ukerc-buckets.py`): 7 new host efficiency-bucket archetypes, 7 examples marked `(none)` as organizational or out-of-scope measures. | current | this restructure |
 | 2026-09-23 | Bataille's six "technology based on low-temperature steam" rows are not examples of `combined-cycle_chp` (`(none)`). Negative costs are savings against a baseline and are not pooled. | current | this restructure |
 | 2026-09-23 | UKERC costs on energy-service archetypes that need an efficiency factor are set aside (`set-aside = needs-efficiency`), both the per-tonne rows and their per-GJ-of-fuel restatements, until factors are established. | current | this restructure |
 | 2026-09-23 | Costs in another unit convert only with the same source's own output factor; no second-basis columns and no hand-set bridge factors. Derived rows that restate another row are labelled duplicates (99 UKERC per-GJ costs). | current | this restructure |
@@ -83,13 +84,13 @@ Decisions the restructure left for review. The build's
 - **Efficiency factors for the set-aside UKERC costs.** 65 rows on 13
   energy-service archetypes wait for an efficiency factor
   (`output/set-aside-efficiency.csv`).
-- **Incremental measure costs.** UKERC's efficiency-measure costs are the cost of
-  adding the measure to a baseline plant, not an absolute plant cost. They are
-  pooled on 22 archetypes, mostly `efficiency-*` buckets, where every example is
-  a measure. On three they sit beside absolute costs from other sources:
-  `kiln_lumber-continuous`, `electric-arc-furnace_high-efficiency` and
-  `press_shoe-extended`. Decide whether bucket archetypes carry incremental
-  costs, and whether to separate the three mixed ones.
+- **Host-plant costs for the set-aside UKERC measures.** 68 rows wait for a
+  host cost (`output/set-aside-host-cost.csv`): blast furnace, hot rolling, coke
+  oven, sinter, BOF, EAF, bakery ovens and others.
+- **UKERC's paper dryer baseline.** `dryer_steam-heated_efficiency-*` pool at about
+  1,310 CAD per t/yr because UKERC's "Dryer" baseline is £500/t. The host archetype
+  `dryer_steam-heated` has one other example at 22 CAD. Check what UKERC's baseline
+  covers (the whole paper machine?) before relying on either.
 - **Costs with no output factor.** About 55 cost rows and 121 flow rows are
   stated per tonne of a host plant's product (or per m3, per GBP k) and their
   source gives no output factor, so they are not pooled.

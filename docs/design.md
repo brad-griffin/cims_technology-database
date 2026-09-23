@@ -69,7 +69,11 @@ vendor designs and product names are never archetypes.
 
 **Standalone values.** Every archetype carries absolute values. None is stored as
 a delta against a baseline. A negative cost is a saving against a baseline and is
-not pooled.
+not pooled. An efficiency measure's cost (the cost of adding it to a plant) pools
+only as a **whole-plant cost**: the host plant's cost from the same source plus the
+measure's. `records/reference/ukerc-host-baseline.csv` names which archetype is
+which UKERC host step. A measure whose source gives no host cost is set aside
+(`set-aside = needs-host-cost`, listed in `output/set-aside-host-cost.csv`).
 
 ## 3. Naming
 

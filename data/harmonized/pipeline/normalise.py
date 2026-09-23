@@ -30,6 +30,7 @@ from collections import defaultdict
 
 from .common import REFERENCE, fnum, read
 from .currency import MONEY, TARGET
+from .wholeplant import NEEDS_HOST
 
 PER_CAPACITY = {"capex", "opex-fixed", "decommissioning-cost"}
 PER_OUTPUT = {"opex-variable", "opex-total"}
@@ -138,7 +139,8 @@ def normalise(facts, examples, records, units) -> None:
             r["target-norm"] = ""
         parent = by_id.get(r.get("derived-from", ""))
         r["duplicate-of"] = (parent["record-id"] if parent and r.get("value-type") == "derived"
-                             and parent["parameter"] == r["parameter"] else "")
+                             and parent["parameter"] == r["parameter"]
+                             and not r.get("derived-kind") else "")
         v, lo, hi = _num(r)
         if v is None and lo is None and hi is None:
             r["excluded"] = "no number"
@@ -232,7 +234,13 @@ def normalise(facts, examples, records, units) -> None:
                 and (r.get("excluded") or "").startswith("cost per t")):
             r["excluded"] = SET_ASIDE
     for r in facts:
-        r["set-aside"] = "needs-efficiency" if r.get("excluded") == SET_ASIDE else ""
+        if r.get("set-aside") == "needs-host-cost" and r.get("excluded") != "no number":
+            r["excluded"] = NEEDS_HOST
+        elif r.get("whole-plant") and r.get("excluded") != "no number":
+            r["excluded"] = (f"incremental: the whole-plant row {r['whole-plant']} adds the "
+                             "host plant's baseline cost")
+        elif r.get("excluded") == SET_ASIDE:
+            r["set-aside"] = "needs-efficiency"
     for r in facts:
         if r.get("excluded") == SET_ASIDE:
             continue

@@ -31,12 +31,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pipeline import (checks, currency, examples, extract, facts, hierarchy,  # noqa: E402
-                      normalise, records, reports, sources, summarise, views, workbook)
+                      normalise, records, reports, sources, summarise, views, wholeplant,
+                      workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
-             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "set-aside", "duplicate-of", "uncertainty-type",
+             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "set-aside", "duplicate-of", "whole-plant", "uncertainty-type",
              "value-type", "formula", "derived-from", "cost-basis", "capacity-basis", "currency",
              "discount-rate", "region", "year", "source-id", "source-file", "source-locator",
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]
@@ -79,6 +80,9 @@ def main(argv) -> int:
         print(f"  {len(ex['stale'])} rows in source-example.csv match no extraction: "
               + ", ".join(ex["stale"][:5]))
 
+    wp = wholeplant.derive(L)
+    print(f"  UKERC measures: {wp.get('whole-plant rows', 0)} whole-plant rows derived, "
+          f"{wp.get('set aside', 0)} measure costs set aside for a host-plant cost")
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     backlog = fail.pop("_backlog")
@@ -113,13 +117,18 @@ def main(argv) -> int:
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
     write(OUTPUT / "example.csv", EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"]))
     write(OUTPUT / "example-parameter.csv", FACT_COLS, L.facts)
+    write(OUTPUT / "set-aside-host-cost.csv",
+          ["archetype", "example-id", "record-id", "parameter", "value", "unit", "source-id",
+           "via-source-id", "source-locator", "note"],
+          sorted((r for r in L.facts if r.get("set-aside") == "needs-host-cost"),
+                 key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     # the worklist for establishing efficiency factors later
     sec = {}
     for r in L.facts:
         if r["parameter"] == "specific-energy-consumption" and r.get("value"):
             sec.setdefault(r["example-id"], f"{r['value']} {r['unit']}")
     aside = [dict(r, **{"fuel-per-unit": sec.get(r["example-id"], "")})
-             for r in L.facts if r.get("set-aside")]
+             for r in L.facts if r.get("set-aside") == "needs-efficiency"]
     write(OUTPUT / "set-aside-efficiency.csv",
           ["archetype", "example-id", "record-id", "parameter", "value", "unit",
            "fuel-per-unit", "duplicate-of", "formula", "source-id", "via-source-id",
