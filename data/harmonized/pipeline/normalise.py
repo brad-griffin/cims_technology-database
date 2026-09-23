@@ -45,6 +45,11 @@ OUTPUT_BASES = {"thermal-output", "electric-output", "product-output"}
 # technology consumes, not of what it delivers (D13).
 import re as _re
 FUEL_INPUT_DIVISOR = _re.compile(r"^\s*[\d.eE+-]+\s*/\s*[\d.eE+-]+\s*$")
+# An archetype carries absolute costs (design §2). A negative cost is a change
+# against a baseline plant -- UKERC's measure costs are the cost of adding the
+# measure, and a negative O&M is the saving it brings -- so it is not pooled.
+NEGATIVE_COST = ("negative cost: a saving against the baseline plant, not the "
+                 "archetype's own absolute cost")
 SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per tonne of the "
              "host plant's product and only the fuel used per tonne; per GJ of output needs "
              "the efficiency (output = fuel x efficiency), which UKERC does not give")
@@ -206,6 +211,8 @@ def normalise(facts, examples, records, units) -> None:
         r["unit-norm"], r["conversion"] = tgt, note
         if (r.get("status") or "") == "review" and "BASIS NOT RECORDED" in (r.get("note") or ""):
             r["excluded"] = "a required basis (cost-basis or capacity-basis) is not recorded"
+        elif p in PER_CAPACITY | PER_OUTPUT and any(x is not None and x < 0 for x in (v, lo, hi)):
+            r["excluded"] = NEGATIVE_COST
         if r["duplicate-of"] and FUEL_INPUT_DIVISOR.search(r.get("formula") or "") and pu == "GJ":
             r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
             r["excluded"] = SET_ASIDE

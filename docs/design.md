@@ -68,7 +68,8 @@ vendor designs and product names are never archetypes.
   top-gas recycling, bath smelting.
 
 **Standalone values.** Every archetype carries absolute values. None is stored as
-a delta against a baseline.
+a delta against a baseline. A negative cost is a saving against a baseline and is
+not pooled.
 
 ## 3. Naming
 

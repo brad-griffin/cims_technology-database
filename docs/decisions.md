@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | Bataille's six "technology based on low-temperature steam" rows are not examples of `combined-cycle_chp` (`(none)`). Negative costs are savings against a baseline and are not pooled. | current | this restructure |
 | 2026-09-23 | UKERC costs on energy-service archetypes that need an efficiency factor are set aside (`set-aside = needs-efficiency`), both the per-tonne rows and their per-GJ-of-fuel restatements, until factors are established. | current | this restructure |
 | 2026-09-23 | Costs in another unit convert only with the same source's own output factor; no second-basis columns and no hand-set bridge factors. Derived rows that restate another row are labelled duplicates (99 UKERC per-GJ costs). | current | this restructure |
 | 2026-09-23 | The 14 candidate merges are applied: 15 archetypes folded into their pairs (`archive/scripts/archetype-merges-2026-09-23.csv`). None had examples. | current | this restructure |
@@ -82,6 +83,13 @@ Decisions the restructure left for review. The build's
 - **Efficiency factors for the set-aside UKERC costs.** 65 rows on 13
   energy-service archetypes wait for an efficiency factor
   (`output/set-aside-efficiency.csv`).
+- **Incremental measure costs.** UKERC's efficiency-measure costs are the cost of
+  adding the measure to a baseline plant, not an absolute plant cost. They are
+  pooled on 22 archetypes, mostly `efficiency-*` buckets, where every example is
+  a measure. On three they sit beside absolute costs from other sources:
+  `kiln_lumber-continuous`, `electric-arc-furnace_high-efficiency` and
+  `press_shoe-extended`. Decide whether bucket archetypes carry incremental
+  costs, and whether to separate the three mixed ones.
 - **Costs with no output factor.** About 55 cost rows and 121 flow rows are
   stated per tonne of a host plant's product (or per m3, per GBP k) and their
   source gives no output factor, so they are not pooled.
