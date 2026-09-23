@@ -20,11 +20,6 @@ heat-pump_industrial,output,steam,GJ/GJ,1,,,1,top-ranked: Norman 2013,norman_201
 combustion-turbine_simple-cycle_efficiency-moderate,input,hydrogen,GJ/GJ,1.54783,,,1,top-ranked: DECC 2013,decc_2013_001; ukerc_2013_001,ukerc_2013_001:combined-cycle_efficiency-moderate@chp-for-mercury-cell-process-chlorine
 combustion-turbine_simple-cycle_efficiency-moderate,output,electricity,GJ/GJ,0.333754,,,1,top-ranked: DECC 2013,decc_2013_001; ukerc_2013_001,ukerc_2013_001:combined-cycle_efficiency-moderate@chp-for-mercury-cell-process-chlorine
 combustion-turbine_simple-cycle_efficiency-moderate,output,steam,GJ/GJ,0.666246,,,1,top-ranked: DECC 2013,decc_2013_001; ukerc_2013_001,ukerc_2013_001:combined-cycle_efficiency-moderate@chp-for-mercury-cell-process-chlorine
-compressor_air-system-management,input,electricity,GJ/GJ,14.5352,0.118766,15.4703,1,top-ranked: CT 2011,ct_2011_001; mckane-hasanbeigi_2010_001; ukerc_2013_001,ukerc_2013_001:compressor_electricity_efficiency-moderate@compressed-air
-fan_optimization,input,electricity,GJ/GJ,0.05472,0.05472,0.0710051,2,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:fan_electricity_efficiency-strong@bakery-cooler; ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens
-fan_optimization,input,gas-oil,GJ/GJ,0.44321,,,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens
-fan_optimization,input,heavy-fuel-oil,GJ/GJ,0.00378707,,,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens
-fan_optimization,input,natural-gas,GJ/GJ,1.11216,,,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_electricity_efficiency-moderate@bakery-ovens
 motor_premium-efficiency,input,electricity,GJ/GJ,2.42718,,,1,top-ranked: McKane and Hasanbeigi 2010,mckane-hasanbeigi_2010_001; ukerc_2013_001,ukerc_2013_001:motor_electricity_efficiency-moderate@hot-rolling
 motor_variable-speed,input,electricity,GJ/GJ,2.12862,2.08333,2.17391,1,top-ranked: McKane and Hasanbeigi 2010,mckane-hasanbeigi_2010_001; ukerc_2013_001,ukerc_2013_001:motor_electricity_variable-speed@motors-pumps
 pump_optimization,input,electricity,GJ/GJ,2.17391,0.462603,2.43902,1,top-ranked: CT 2011,ct_2011_001; mckane-hasanbeigi_2010_001; ukerc_2013_001,ukerc_2013_001:pump_electricity_efficiency-moderate@motors-pumps
@@ -485,7 +480,6 @@ pulper_thermomechanical,input,steam,GJ/t,3,0.5,3,2,top-ranked: ETSAP I07,etsap_2
 pulper_thermomechanical,output,biomass-solid,GJ/t,0,0,5.3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
 pulper_thermomechanical,output,electricity,GJ/t,0.4,0,0.4,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
 compressor_electric-drive-reciprocating,input,electricity,GJ/GJ,13.8274,,,1,top-ranked: McKane and Hasanbeigi 2010,mckane-hasanbeigi_2010_001; ukerc_2013_001,ukerc_2013_001:compressor_electricity@motors-compressors
-cleaning-system_efficiency-moderate,input,steam,GJ/t,0.091675,0.0554972,0.091675,2,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:cleaning-system_efficiency-moderate@dairy-cip; ukerc_2013_001:cleaning-system_efficiency-strong@dairy-cip
 heat-exchanger_steam-heated,input,electricity,GJ/m3,0.0288278,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:pasteurizer@dairy-pasteuriser
 heat-pump_hot-water,input,coal,GJ/t,0.00315573,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,electricity,GJ/t,0.247644,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
@@ -493,7 +487,6 @@ heat-pump_hot-water,input,gas-oil,GJ/t,0.026322,0.00752566,0.0451183,1,top-ranke
 heat-pump_hot-water,input,heavy-fuel-oil,GJ/t,0.00743055,0.00495707,0.00990402,1,top-ranked: CT 2010b,ct_2010_003; fritzson-berntsson_2006_002; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,natural-gas,GJ/t,0.191147,0.114885,0.267409,1,top-ranked: CT 2010b,ct_2010_003; fritzson-berntsson_2006_002; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,steam,GJ/t,0.77759,,,1,top-ranked: Fritzson and Berntsson 2006a,fritzson-berntsson_2006_002; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
-heat-recovery-unit_dryer-exhaust,input,steam,GJ/t,0.171219,,,1,top-ranked: Martin et al 2000,martin_2000_001; ukerc_2013_001,ukerc_2013_001:dryer_waste-heat_efficiency-strong@drying-systems
 heat-recovery-unit_oven-exhaust,input,electricity,GJ/t,0.0953003,0.0754005,0.1152,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_waste-heat_efficiency-moderate@bakery-indirect-ovens
 heat-recovery-unit_oven-exhaust,input,gas-oil,GJ/t,0.492395,0.417295,0.577154,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_waste-heat_efficiency-moderate@bakery-indirect-ovens
 heat-recovery-unit_oven-exhaust,input,heavy-fuel-oil,GJ/t,0.00420734,0.00356564,0.00493158,1,top-ranked: CT 2010a,ct_2010_002; ukerc_2013_001,ukerc_2013_001:oven_waste-heat_efficiency-moderate@bakery-indirect-ovens
@@ -506,15 +499,7 @@ oven_efficiency-moderate,input,electricity,GJ/t,0.0734179,0.0216,0.1152,1,top-ra
 oven_efficiency-moderate,input,gas-oil,GJ/t,0.436838,0.190837,0.531322,1,top-ranked: CT 2010a,ct_2010_002; khatir_2012_002; ukerc_2013_001,ukerc_2013_001:oven_efficiency-moderate@bakery-ovens
 oven_efficiency-moderate,input,heavy-fuel-oil,GJ/t,0.00373262,0.00163063,0.00453995,1,top-ranked: CT 2010a,ct_2010_002; khatir_2012_002; ukerc_2013_001,ukerc_2013_001:oven_efficiency-moderate@bakery-ovens
 oven_efficiency-moderate,input,natural-gas,GJ/t,1.09617,0.478872,1.33326,1,top-ranked: CT 2010a,ct_2010_002; khatir_2012_002; ukerc_2013_001,ukerc_2013_001:oven_efficiency-moderate@bakery-ovens
-pasteurizer_regenerative,input,coal,GJ/m3,0.0595185,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,electricity,GJ/m3,1.39674,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,gas-oil,GJ/m3,0.234147,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,heavy-fuel-oil,GJ/m3,0.0625565,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,natural-gas,GJ/m3,3.32751,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,renewable-fuel,GJ/m3,0.00622701,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,input,steam,GJ/m3,0.0924349,0.086837,1.95345,3,median of 3,aea_2000_001; ukerc_2013_001; ct_2010_003,ukerc_2013_001:management-system_efficiency-strong@undefined-sector; ukerc_2013_001:pasteurizer_efficiency-moderate@dairy-pasteuriser; ukerc_2013_001:pasteurizer_efficiency-strong@dairy-pasteuriser
-pasteurizer_regenerative,output,electricity,GJ/m3,1.53488,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
-pasteurizer_regenerative,output,steam,GJ/m3,1.95345,,,1,top-ranked: AEA 2000,aea_2000_001; ukerc_2013_001,ukerc_2013_001:management-system_efficiency-strong@undefined-sector
+pasteurizer_regenerative,input,steam,GJ/m3,0.0924349,0.086837,0.0924349,2,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:pasteurizer_efficiency-moderate@dairy-pasteuriser; ukerc_2013_001:pasteurizer_efficiency-strong@dairy-pasteuriser
 digester_bayer,input,bauxite,t/t,4,,,1,top-ranked: ETSAP I10,etsap_2012_001,etsap_2012_001:digester_bayer@alumina-refining
 digester_bayer,output,red-mud,t/t,,0.6,1.5,1,range only,etsap_2012_001,etsap_2012_001:digester_bayer@alumina-refining
 electrolysis-cell_prebaked-anode,input,alumina,t/t,,1.9,1.93,1,range only,etsap_2012_001,etsap_2012_001:electrolysis-cell_electricity_prebake@electrolysis

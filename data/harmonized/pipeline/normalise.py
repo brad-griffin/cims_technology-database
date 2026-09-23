@@ -18,8 +18,11 @@ Target units, where pu is the archetype's product-unit:
   lifetime, construction-time       years
   temperature, pressure             degC, bar
 
-A source's generic `/unit` denominator means its own product unit and is read
-as pu. A row missing the basis parameter.csv requires for it (status review,
+A source's generic `/unit` denominator means the service unit the source
+reports for that step (UKERC: t of product, GJ, m3). It is read as that unit,
+and as pu only when the source names none; a row per tonne on a GJ archetype is
+therefore not pooled. A service unit that is not a physical product (UKERC's
+"£k" of output) is never pooled. A row missing the basis parameter.csv requires for it (status review,
 BASIS NOT RECORDED) is not pooled: an equipment cost and an installed cost
 differ by up to a factor of two. It is converted where possible and marked
 excluded until the basis is read back out of its source.
@@ -57,6 +60,14 @@ SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per t
 FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
                    "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
+PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
+
+
+def service_unit(example: dict | None, pu: str) -> str:
+    """What a source's generic `unit` denominator stands for in this example."""
+    su = ((example or {}).get("service-unit-reported") or "").strip()
+    su = UNIT_ALIAS.get(su, su)
+    return su or pu
 
 
 def target_unit(param: str, pu: str, default: str) -> str:
@@ -161,7 +172,13 @@ def normalise(facts, examples, records, units) -> None:
             continue
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
-        unit = unit.replace("/unit", f"/{pu}")
+        if "/unit" in unit:
+            su = service_unit(examples.get(r["example-id"]), pu)
+            if su not in PHYSICAL_SERVICE:
+                r["excluded"] = (f"per unit of the source's service ({su}), which is not a "
+                                 "physical product")
+                continue
+            unit = unit.replace("/unit", f"/{su}")
         if not unit and tgt == "dimensionless":
             unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
@@ -256,7 +273,7 @@ def normalise(facts, examples, records, units) -> None:
 FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the archetype's own unit
 
 
-def normalise_flows(flows, records, units) -> None:
+def normalise_flows(flows, records, units, examples=None) -> None:
     """Flows per unit of the archetype's product: energy in GJ, mass in t,
     gas volumes in m3."""
     for r in flows:
@@ -273,7 +290,8 @@ def normalise_flows(flows, records, units) -> None:
         pu = a["product-unit"]
         per = (r.get("per-unit") or "").strip()
         per = UNIT_ALIAS.get(per, per)
-        per = pu if per in FLOW_PER_UNIT else per
+        if per in FLOW_PER_UNIT:
+            per = service_unit((examples or {}).get(r.get("example-id", "")), pu)
         if per != pu:
             r["excluded"] = f"per {per}, but the archetype's product is measured in {pu}"
             continue

@@ -110,7 +110,7 @@ def main(argv) -> int:
         print(f"  no currency factor for {', '.join(skipped)}; those rows are not pooled")
     units = normalise.Units(factors)
     normalise.normalise(L.facts, L.examples, rec, units)
-    normalise.normalise_flows(L.flows, rec, units)
+    normalise.normalise_flows(L.flows, rec, units, L.examples)
     print("summarise")
     psum = summarise.summarise(L.facts, rec, ("parameter", "target-norm"), L.examples)
     for r in psum:
