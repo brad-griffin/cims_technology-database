@@ -36,7 +36,7 @@ from pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
-             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "duplicate-of", "uncertainty-type",
+             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "set-aside", "duplicate-of", "uncertainty-type",
              "value-type", "formula", "derived-from", "cost-basis", "capacity-basis", "currency",
              "discount-rate", "region", "year", "source-id", "source-file", "source-locator",
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]
@@ -113,6 +113,18 @@ def main(argv) -> int:
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
     write(OUTPUT / "example.csv", EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"]))
     write(OUTPUT / "example-parameter.csv", FACT_COLS, L.facts)
+    # the worklist for establishing efficiency factors later
+    sec = {}
+    for r in L.facts:
+        if r["parameter"] == "specific-energy-consumption" and r.get("value"):
+            sec.setdefault(r["example-id"], f"{r['value']} {r['unit']}")
+    aside = [dict(r, **{"fuel-per-unit": sec.get(r["example-id"], "")})
+             for r in L.facts if r.get("set-aside")]
+    write(OUTPUT / "set-aside-efficiency.csv",
+          ["archetype", "example-id", "record-id", "parameter", "value", "unit",
+           "fuel-per-unit", "duplicate-of", "formula", "source-id", "via-source-id",
+           "source-locator", "note"],
+          sorted(aside, key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     write(OUTPUT / "example-flow.csv", FLOW_COLS, L.flows)
     write(OUTPUT / "example-constraint.csv", CONS_COLS, L.cons)
     order = {a["archetype"]: i for i, a in enumerate(rec.archetypes)}

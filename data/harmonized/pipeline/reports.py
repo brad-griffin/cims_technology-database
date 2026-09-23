@@ -130,20 +130,20 @@ def mapping_review(records, hier, loader, stamp, views, ex_result):
         A(f"| {_md(why)} | {n} |")
     A("")
 
-    fuel = defaultdict(list)
+    aside = defaultdict(list)
     for r in loader.facts:
-        if (r.get("conversion") or "").startswith("POOLED ON A FUEL-INPUT BASIS") and not r.get("excluded"):
-            fuel[r["archetype"]].append(r["record-id"])
-    A("## Pooled on a fuel-input basis\n")
-    A("UKERC states these costs per tonne of the host plant's product; the per-GJ figure "
-      "is that cost divided by the fuel used per tonne, so it is per GJ of fuel INPUT. "
-      "They are pooled on energy-service archetypes, where the basis is per GJ of output; "
-      "per GJ of output each would be higher by 1/efficiency, and UKERC gives no "
-      "efficiency. The per-tonne row is in `duplicate-of`.\n")
-    if not fuel:
+        if r.get("set-aside"):
+            aside[r["archetype"]].append(r["record-id"])
+    A("## Set aside: needs an efficiency factor\n")
+    A("UKERC costs on energy-service archetypes. UKERC states them per tonne of the host "
+      "plant's product, with the fuel used per tonne; its per-GJ figures are per GJ of "
+      "fuel input. Per GJ of output needs the efficiency, which UKERC does not give, so "
+      "they are out of the summaries until a factor is established. The worklist, with "
+      "each example's fuel use per tonne, is `set-aside-efficiency.csv`.\n")
+    if not aside:
         A("None.\n")
-    for a, ids in sorted(fuel.items()):
-        A(f"- `{a}`: {len(ids)} rows ({', '.join(ids[:3])}{', ...' if len(ids) > 3 else ''})")
+    for a_, ids in sorted(aside.items()):
+        A(f"- `{a_}`: {len(ids)} rows")
     A("")
 
     A("## Service links with nothing to narrow them\n")

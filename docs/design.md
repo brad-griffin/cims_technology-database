@@ -187,6 +187,11 @@ are abated, or when a policy instrument treats them separately.
   used.
 - A derived row that restates another row of the same example in another unit is
   a **duplicate**. It names that row in `duplicate-of` and is not pooled.
+- **Set aside until an efficiency is known.** UKERC costs on energy-service
+  archetypes are stated per tonne of the host plant's product, with only its fuel
+  use per tonne, and UKERC's per-GJ restatements are per GJ of fuel input. Neither
+  pools until an efficiency factor is established. They carry
+  `set-aside = needs-efficiency`, and `output/set-aside-efficiency.csv` lists them.
 
 **Target units** (pu is the product unit):
 

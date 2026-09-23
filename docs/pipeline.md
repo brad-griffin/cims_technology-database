@@ -53,6 +53,7 @@ gate a commit.
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
+| `set-aside-efficiency.csv` | UKERC costs set aside until an efficiency factor is established, with each example's fuel use per tonne. |
 | `mapping-review.md` | How examples reach archetypes, what was not pooled, and what needs a decision. |
 | `currency-conversion.csv`, `hierarchy-stamp.csv` | The factors and the snapshot the build used. |
 | `technology-database.xlsx` | The workbook. |

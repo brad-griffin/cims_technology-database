@@ -45,9 +45,11 @@ OUTPUT_BASES = {"thermal-output", "electric-output", "product-output"}
 # technology consumes, not of what it delivers (D13).
 import re as _re
 FUEL_INPUT_DIVISOR = _re.compile(r"^\s*[\d.eE+-]+\s*/\s*[\d.eE+-]+\s*$")
-FUEL_INPUT_NOTE = ("POOLED ON A FUEL-INPUT BASIS: {parent} per tonne divided by the source's "
-                   "fuel use per tonne; per GJ of output it would be lower by the efficiency, "
-                   "which the source does not give")
+SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per tonne of the "
+             "host plant's product and only the fuel used per tonne; per GJ of output needs "
+             "the efficiency (output = fuel x efficiency), which UKERC does not give")
+FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
+                   "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
 
 
@@ -206,11 +208,27 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = "a required basis (cost-basis or capacity-basis) is not recorded"
         if r["duplicate-of"] and FUEL_INPUT_DIVISOR.search(r.get("formula") or "") and pu == "GJ":
             r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
+            r["excluded"] = SET_ASIDE
     # A derived row that restates its parent in another unit adds no information.
     # UKERC's per-GJ costs are the per-tonne cost divided by the fuel used per
     # tonne, i.e. per GJ of fuel INPUT. Where the parent could not be pooled either,
     # the reason stays the parent's.
+    # The per-tonne rows those came from are set aside with them: on an
+    # energy-service archetype both need the same missing efficiency.
+    sec = {r["example-id"] for r in facts if r["parameter"] == "specific-energy-consumption"
+           and (r.get("value") or "").strip()}
     for r in facts:
+        a = records.by_key.get(r.get("archetype", ""))
+        if (a and a["product-unit"] == "GJ" and r["parameter"] in PER_CAPACITY | PER_OUTPUT
+                and "ukerc" in (r.get("via-source-id") or r.get("source-id") or "")
+                and r["example-id"] in sec and r.get("value-type") != "derived"
+                and (r.get("excluded") or "").startswith("cost per t")):
+            r["excluded"] = SET_ASIDE
+    for r in facts:
+        r["set-aside"] = "needs-efficiency" if r.get("excluded") == SET_ASIDE else ""
+    for r in facts:
+        if r.get("excluded") == SET_ASIDE:
+            continue
         if r.get("duplicate-of") and r["excluded"] and r["excluded"] != "no number":
             par = by_id[r["duplicate-of"]]
             how = ("its per-tonne cost divided by fuel use per tonne"
