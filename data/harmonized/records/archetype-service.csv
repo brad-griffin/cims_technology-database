@@ -292,11 +292,9 @@ distillation-column_heat-pumped,<sector>.chemicals.product.hydrogen-peroxide,oth
 distillation-column_heat-pumped,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
 distillation-column_heat-pumped,<sector>.chemicals.product.petrochemicals.btx-reforming,other-chemicals,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
 distillation-column_heat-pumped,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
-electrolysis-cell_chlor-alkali-membrane,<sector>.chemicals.product.sodium-chlorate,electrochemical-products,chemicals/electrochemical-products: the leaves its sources placed it on
+electrolysis-cell_chlor-alkali-membrane,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,corrected 2026-09-23: membrane cells make chlorine and caustic soda
 electrolysis-cell_oxygen-depolarized,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,chemicals/electrochemical-products: the leaf its name or label names
-electrolysis-cell_sodium-chlorate,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,chemicals/electrochemical-products: every leaf of chemicals/electrochemical-products; no evidence to narrow it
-electrolysis-cell_sodium-chlorate,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,chemicals/electrochemical-products: every leaf of chemicals/electrochemical-products; no evidence to narrow it
-electrolysis-cell_sodium-chlorate,<sector>.chemicals.product.sodium-chlorate,electrochemical-products,chemicals/electrochemical-products: every leaf of chemicals/electrochemical-products; no evidence to narrow it
+electrolysis-cell_sodium-chlorate,<sector>.chemicals.product.sodium-chlorate,electrochemical-products,corrected 2026-09-23: the sodium chlorate leaf
 gasifier_biomass-methanol,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,chemicals/ammonia-and-methanol: every leaf of chemicals/ammonia-and-methanol; no evidence to narrow it
 gasifier_biomass-methanol,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,chemicals/ammonia-and-methanol: every leaf of chemicals/ammonia-and-methanol; no evidence to narrow it
 reactor_adipic-acid,<sector>.chemicals.product.adipic-acid,nitric-and-adipic-acid,chemicals/nitric-and-adipic-acid: every leaf of chemicals/nitric-and-adipic-acid; no evidence to narrow it
@@ -362,6 +360,7 @@ process-improvement_hydrogen-blending,<sector>.hydrogen.service.distribution,hyd
 reactor_methane-pyrolysis,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
 autothermal-reformer,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
 autothermal-reformer,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
+autothermal-reformer,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,added 2026-09-23: its UKERC example is an ammonia-plant reformer
 direct-heater_electrified-crude,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,petroleum-refining/crude-distillation: every leaf of the end use
 distillation-column_atmospheric-vacuum,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,petroleum-refining/crude-distillation: every leaf of the end use
 distillation-column_heat-integrated,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,petroleum-refining/crude-distillation: every leaf of the end use
@@ -393,6 +392,7 @@ reactor_hydroprocessing,<sector>.petroleum-refining.product.petroleum-fractions.
 reactor_hydroprocessing,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,petroleum-refining/conversion-and-treating: the leaf its name or label names
 steam-reformer_efficiency-moderate,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
+steam-reformer_efficiency-moderate,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,added 2026-09-23: its UKERC host is the ammonia reformer
 steam-reformer_methane,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
 steam-reformer_methane,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 steam-reformer_methane,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
@@ -470,16 +470,8 @@ separator_clarifier,<sector>.pulp-and-paper.service.effluent-treatment,effluent-
 separator_lignin-extraction,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,pulp-and-paper/chemical-recovery: the leaves its sources placed it on
 vapour-recompressor_evaporation,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,pulp-and-paper/chemical-recovery: the leaf its name or label names
 vapour-recompressor_evaporation,<sector>.light-industrial.service.heat,drying,food-and-beverage/drying: every leaf of the end use
-adsorber_direct-lithium,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
-adsorber_direct-lithium,<sector>.mining.service.compaction,separation-and-processing,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
-adsorber_direct-lithium,<sector>.mining.service.crystallization,separation-and-processing,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
-adsorber_direct-lithium,<sector>.mining.service.leaching,separation-and-processing,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
-adsorber_direct-lithium,<sector>.mining.service.separation,separation-and-processing,mining/separation-and-processing: every leaf of mining/separation-and-processing; no evidence to narrow it
-adsorber_direct-lithium,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-adsorber_direct-lithium,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-adsorber_direct-lithium,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-adsorber_direct-lithium,<sector>.metal-smelting.product.titanium-slag.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-adsorber_direct-lithium,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
+adsorber_direct-lithium,<sector>.mining.service.separation,separation-and-processing,corrected 2026-09-23: lithium from brine: separation and crystallization
+adsorber_direct-lithium,<sector>.mining.service.crystallization,separation-and-processing,corrected 2026-09-23: lithium from brine: separation and crystallization
 conveyor_in-pit-crushing,<sector>.mining.product.aggregate.open-pit,extraction-and-haulage,mining/extraction-and-haulage: the leaf its name or label names
 conveyor_in-pit-crushing,<sector>.mining.product.diamond.open-pit,extraction-and-haulage,mining/extraction-and-haulage: the leaf its name or label names
 conveyor_in-pit-crushing,<sector>.mining.product.metal.open-pit,extraction-and-haulage,mining/extraction-and-haulage: the leaf its name or label names
@@ -491,6 +483,7 @@ direct-heater_mine-air-fired,<sector>.coal-mining.product.raw-product.mine-venti
 dryer_rotary-direct-fired,<sector>.coal-mining.product.coal-preparation.drying,product-drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_rotary-direct-fired,<sector>.mining.service.drying,product-drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 flotation-cell_froth,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,mining/separation-and-processing: the leaves its sources placed it on
+flotation-cell_froth,<sector>.mining.service.separation,separation-and-processing,added 2026-09-23: froth flotation of metal ores
 flotation-cell_potash-crystallization,<sector>.mining.service.crystallization,separation-and-processing,mining/separation-and-processing: the leaf its name or label names
 grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.milling,comminution,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
@@ -548,19 +541,18 @@ hoist_shaft-hoisting,<sector>.mining.product.uranium.underground,extraction-and-
 hoist_shaft-hoisting,<sector>.mining.service.extraction,extraction-and-haulage,mining/extraction-and-haulage: every leaf of mining/extraction-and-haulage; no evidence to narrow it
 hoist_shaft-hoisting,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,mining/extraction-and-haulage: every leaf of mining/extraction-and-haulage; no evidence to narrow it
 hoist_shaft-hoisting,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,mining/extraction-and-haulage: every leaf of mining/extraction-and-haulage; no evidence to narrow it
-leaching-vessel_bioleaching,<sector>.mining.service.leaching,separation-and-processing,mining/separation-and-processing: the leaf its name or label names
-leaching-vessel_bioleaching,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_bioleaching,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_bioleaching,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_bioleaching,<sector>.metal-smelting.product.titanium-slag.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_bioleaching,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_heap-atmospheric,<sector>.mining.service.leaching,separation-and-processing,mining/separation-and-processing: the leaf its name or label names
-leaching-vessel_high-pressure-acid,<sector>.mining.service.leaching,separation-and-processing,mining/separation-and-processing: the leaf its name or label names
-leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.titanium-slag.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
-leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,non-ferrous-metals/hydrometallurgy: every leaf of non-ferrous-metals/hydrometallurgy; no evidence to narrow it
+leaching-vessel_bioleaching,<sector>.mining.service.leaching,separation-and-processing,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
+leaching-vessel_bioleaching,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
+leaching-vessel_bioleaching,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
+leaching-vessel_bioleaching,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
+leaching-vessel_heap-atmospheric,<sector>.mining.service.leaching,separation-and-processing,"corrected 2026-09-23: heap leaching with SX-EW: copper, nickel and zinc"
+leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: heap leaching with SX-EW: copper, nickel and zinc"
+leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: heap leaching with SX-EW: copper, nickel and zinc"
+leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: heap leaching with SX-EW: copper, nickel and zinc"
+leaching-vessel_high-pressure-acid,<sector>.mining.service.leaching,separation-and-processing,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
+leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
+leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
+leaching-vessel_high-pressure-acid,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_in-situ,<sector>.mining.service.leaching,separation-and-processing,mining/separation-and-processing: the leaf its name or label names
 mobile-equipment_underground-battery,<sector>.mining.product.diamond.underground,extraction-and-haulage,mining/extraction-and-haulage: the leaf its name or label names
 mobile-equipment_underground-battery,<sector>.mining.product.metal.underground,extraction-and-haulage,mining/extraction-and-haulage: the leaf its name or label names
@@ -757,13 +749,14 @@ electric-arc-furnace_open-arc-dc,<sector>.metal-smelting.product.titanium-slag.p
 electric-arc-furnace_open-arc-dc,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,non-ferrous-metals/electric-smelting: every leaf of non-ferrous-metals/electric-smelting; no evidence to narrow it
 electric-arc-furnace_submerged-arc,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,electric-smelting,non-ferrous-metals/electric-smelting: every leaf of non-ferrous-metals/electric-smelting; no evidence to narrow it
 electric-arc-furnace_submerged-arc,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,non-ferrous-metals/electric-smelting: every leaf of non-ferrous-metals/electric-smelting; no evidence to narrow it
-electrolysis-cell_advanced-anodes,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,non-ferrous-metals/hydrometallurgy: the leaf its name or label names
+electrolysis-cell_advanced-anodes,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
+electrolysis-cell_advanced-anodes,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
+electrolysis-cell_advanced-anodes,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
 electrolysis-cell_inert-anode,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_multipolar-chloride,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_power-modulation,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_prebaked-anode,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 electrolysis-cell_soderberg,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
-leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,non-ferrous-metals/hydrometallurgy: the leaf its name or label names
 furnace_anode-baking,<sector>.metal-smelting.service.anode-production,anode-production,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking-electric,<sector>.metal-smelting.service.anode-production,anode-production,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_homogenizing,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -862,3 +855,11 @@ paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.
 paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,as its host paper-machine_fourdrinier-gap
 paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,as its host paper-machine_fourdrinier-gap
 paper-machine_fourdrinier-gap_efficiency-strong,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+smelting-vessel_bath-reduction_ccs-concentrated,<sector>.iron-and-steel.service.hot-metal,ironmaking,as its host smelting-vessel_bath-reduction
+smelting-vessel_two-stage_ccs-concentrated,<sector>.iron-and-steel.service.hot-metal,ironmaking,as its host smelting-vessel_two-stage
+dryer_direct-fired_efficiency-strong,<sector>.light-industrial.service.heat,drying-curing-and-forming,as its host dryer_direct-fired
+paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.coated.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.linerboard.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.newsprint.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,as its host paper-machine_fourdrinier-gap
+paper-machine_fourdrinier-gap_efficiency-moderate,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,as its host paper-machine_fourdrinier-gap

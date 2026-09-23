@@ -182,7 +182,14 @@ are abated, or when a policy instrument treats them separately.
   an energy service, `m3` where the product is a volume.
 - Every example is converted to it. What cannot be converted is excluded, with the
   reason on the row.
-- A source's generic `/unit` denominator is read as the product unit.
+- A source's generic `/unit` denominator is read as the service unit that source
+  reports for the step (UKERC: t of product, GJ or m3), and as the product unit only
+  when the source names none. A service unit that is not a physical product (UKERC's
+  per £k of output) is never pooled.
+- A cost the source states as the cost of adding an improvement to an existing
+  plant (UKERC measures, UK TIMES "improvement technologies" and add-ons via
+  Bataille) is incremental. It is set aside as `needs-host-cost` unless the same
+  source gives the host plant's cost, in which case a whole-plant row is derived.
 - A cost per GJ of energy use is never turned into a cost per tonne by dividing by
   specific energy consumption: that mixes input and output bases.
 - A number in another unit is converted only with a factor **the same source gives

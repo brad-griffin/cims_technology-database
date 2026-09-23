@@ -60,6 +60,11 @@ SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per t
 FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
                    "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
+# UK TIMES (via Bataille) prices its "improvement technologies" and add-ons as
+# the cost of adding them to an existing plant, like UKERC's measures.
+ADD_ON = _re.compile(r"^(Improvement technology \d+ for existing|[^.]*\badd-on for existing)")
+ADD_ON_NOTE = ("set aside: needs a host-plant cost. UK TIMES prices this improvement as the cost "
+               "of adding it to an existing plant, not as a whole plant")
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
 
 
@@ -251,6 +256,10 @@ def normalise(facts, examples, records, units) -> None:
                 and (r.get("excluded") or "").startswith("cost per t")):
             r["excluded"] = SET_ASIDE
     for r in facts:
+        if (r["parameter"] in PER_CAPACITY | PER_OUTPUT and ADD_ON.search(r.get("note") or "")
+                and r.get("excluded") != "no number"):
+            r["set-aside"], r["excluded"] = "needs-host-cost", ADD_ON_NOTE
+            continue
         if r.get("set-aside") == "needs-host-cost" and r.get("excluded") != "no number":
             r["excluded"] = NEEDS_HOST
         elif r.get("whole-plant") and r.get("excluded") != "no number":

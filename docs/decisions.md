@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | Assignment review: 201 examples re-homed, 4 archetypes added (HIsarna and COREX with capture, direct-fired dryer strong, paper machine moderate), 10 archetypes' hierarchy links corrected; `/unit` read as the source's own service unit; UK TIMES add-on costs set aside for a host cost. Script `archive/scripts/review_2026-09-23_assignments.py`. | current | [docs/assignment-review-2026-09-23.md](assignment-review-2026-09-23.md) |
 | 2026-09-23 | The wide view lists every archetype, blank ones included (end uses no archetype serves are not listed). Each service link names its end use (`archetype-service.csv`, `end-use` column). Supersedes the 2026-09-10 rule that the view shows quantified technologies only. | current | this restructure |
 | 2026-09-23 | UKERC measure costs pool only as whole-plant costs (UKERC's own baseline for the host step plus the measure), for the 7 archetypes in `ukerc-host-baseline.csv`. The rest are set aside for a host-plant cost. 23 UKERC and Bataille measure buckets remapped (`archive/scripts/remap_2026-09-23_ukerc-buckets.py`): 7 new host efficiency-bucket archetypes, 7 examples marked `(none)` as organizational or out-of-scope measures. | current | this restructure |
 | 2026-09-23 | Bataille's six "technology based on low-temperature steam" rows are not examples of `combined-cycle_chp` (`(none)`). Negative costs are savings against a baseline and are not pooled. | current | this restructure |
@@ -97,6 +98,14 @@ Decisions the restructure left for review. The build's
   source gives no output factor, so they are not pooled.
 - **Service links with nothing to narrow them.** Archetypes linked to every node
   of a former end use. Remove the links that do not apply.
+- **Assignment review decisions** ([assignment-review-2026-09-23.md](assignment-review-2026-09-23.md)):
+  legacy cement kilns (wet, semi-wet, Lepol, wet-precalciner, long dry) and
+  Tecnored are left unmapped until you decide whether they get archetypes; the
+  Bataille kiln post-combustion cost (74 CAD per t/yr against 900-1,200 for the
+  others) looks incremental; UKERC's three BAT-kiln rows carry one number and
+  count as three examples; coal and biomass variants are pooled with gas on the
+  direct heaters and dryers (their capex is 5-10 times higher); UK TIMES dry sheet
+  forming now sets the paper-machine central.
 - **Carriers carried over from folded names.** Some are implausible, such as
   `nuclear` on `boiler_ccs-diffuse`. Review the `carriers` column of
   `records/archetype.csv`.
