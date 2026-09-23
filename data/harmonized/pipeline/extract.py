@@ -129,9 +129,10 @@ class Loader:
                 continue
             note = (row.get("note") or "").strip()
             m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
+            cap = re.search(r"CAPACITY BASIS:\s*([a-z-]+)", note)
             unit = (row.get("unit") or "").strip()
             self.fact(ex, parameter=param, target=(row.get("target") or "").strip(),
-                      unit=unit, value=val,
+                      unit=unit, value=val, **{"capacity-basis": cap.group(1) if cap else ""},
                       **{"value-min": (row.get("value-min") or "").strip(),
                          "value-max": (row.get("value-max") or "").strip(),
                          "uncertainty-type": "reported-range" if (row.get("value-min") or
@@ -356,6 +357,7 @@ class Loader:
             unit = (row.get("unit") or "").strip()
             note = (row.get("note") or "").strip()
             m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
+            cap = re.search(r"CAPACITY BASIS:\s*([a-z-]+)", note)
             self.fact(ex, parameter=param, target=(row.get("target") or "").strip(),
                       unit=unit, value=val, region="global",
                       **{"value-min": (row.get("value-min") or "").strip(),
@@ -365,7 +367,8 @@ class Loader:
                          "value-type": "derived" if row.get("formula") else "reported",
                          "formula": (row.get("formula") or "").strip(),
                          "cost-basis": m.group(1) if m else "",
-                         "capacity-basis": "product-output" if param.startswith(("capex", "opex")) else "",
+                         "capacity-basis": cap.group(1) if cap else
+                         "product-output" if param.startswith(("capex", "opex")) else "",
                          "currency": currency_year(unit),
                          "source-id": sid, "via-source-id": "",
                          "source-file": base + ".pdf",

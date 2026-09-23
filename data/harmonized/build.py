@@ -36,7 +36,7 @@ from pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
-             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "uncertainty-type",
+             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "duplicate-of", "uncertainty-type",
              "value-type", "formula", "derived-from", "cost-basis", "capacity-basis", "currency",
              "discount-rate", "region", "year", "source-id", "source-file", "source-locator",
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]

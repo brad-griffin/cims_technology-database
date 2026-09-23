@@ -180,6 +180,13 @@ are abated, or when a policy instrument treats them separately.
 - A source's generic `/unit` denominator is read as the product unit.
 - A cost per GJ of energy use is never turned into a cost per tonne by dividing by
   specific energy consumption: that mixes input and output bases.
+- A number in another unit is converted only with a factor **the same source gives
+  for the same example**, on an output basis: an output capacity (`capacity-basis`
+  thermal-, electric- or product-output), an annual output, a capacity factor. A
+  factor from another source, or an energy input standing in for an output, is never
+  used.
+- A derived row that restates another row of the same example in another unit is
+  a **duplicate**. It names that row in `duplicate-of` and is not pooled.
 
 **Target units** (pu is the product unit):
 

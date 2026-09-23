@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-23 | Costs in another unit convert only with the same source's own output factor; no second-basis columns and no hand-set bridge factors. Derived rows that restate another row are labelled duplicates (99 UKERC per-GJ costs). | current | this restructure |
 | 2026-09-23 | The 14 candidate merges are applied: 15 archetypes folded into their pairs (`archive/scripts/archetype-merges-2026-09-23.csv`). None had examples. | current | this restructure |
 | 2026-09-23 | `emissions-reduction-potential` pools CO2 and CO2e into one percentage. | current | this restructure |
 | 2026-09-23 | Hierarchy nodes plus family tags: archetypes link to hierarchy paths directly. The former cross-sector end uses become families; the sector/end-use table becomes annotations on hierarchy paths. | current | this restructure |
@@ -77,10 +78,13 @@ Decisions the restructure left for review. The build's
   better archetype available, for example oven and management-system efficiency
   measures on `heat-recovery-unit_oven-exhaust`, and dryer efficiency buckets on
   `kiln_lumber-continuous`.
-- **Basis conflicts.** Many archetypes have examples priced in two units, per
-  tonne and per GJ of capacity. The minority rows are not pooled; the mapping
-  review counts them under *Not pooled*. Changing an archetype's `product-unit`
-  changes which side pools.
+- **Pooled on a fuel-input basis.** 29 UKERC cost rows on energy-service
+  archetypes are per GJ of fuel input, not of output (listed in the mapping
+  review). Keep them pooled, or leave them out as duplicates of their per-tonne
+  rows?
+- **Costs with no output factor.** About 55 cost rows and 121 flow rows are
+  stated per tonne of a host plant's product (or per m3, per GBP k) and their
+  source gives no output factor, so they are not pooled.
 - **Service links with nothing to narrow them.** Archetypes linked to every node
   of a former end use. Remove the links that do not apply.
 - **Carriers carried over from folded names.** Some are implausible, such as

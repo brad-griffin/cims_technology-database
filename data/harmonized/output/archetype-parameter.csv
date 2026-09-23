@@ -14,8 +14,9 @@ boiler_electric,efficiency,,%,99,,,1,top-ranked: LBNL 2021,lbnl_2021_001,lbnl_20
 boiler_electric,emissions-reduction-potential,,%,99,,,1,top-ranked: IPCC 2022,ipcc_2022_001,ipcc_2022_001:boiler_electricity@other-manufacturing
 boiler_electric,lifetime,,years,20,,,1,top-ranked: LBNL 2021,lbnl_2021_001,lbnl_2021_001:boiler_electricity@steam
 boiler_fuel-fired,availability,,%,90.5,87,94,2,top-ranked: ETSAP I01,etsap_2010_001,etsap_2010_001:boiler_natural-gas@steam; etsap_2010_001:boiler_oil@steam
+boiler_fuel-fired,capacity,,MW,3.57342,,,2,top-ranked: ETSAP I01,etsap_2010_001,etsap_2010_001:boiler_natural-gas@steam; etsap_2010_001:boiler_oil@steam
 boiler_fuel-fired,capacity-factor,,%,95,,,1,top-ranked: LBNL 2021,lbnl_2021_001,lbnl_2021_001:boiler_fossil@steam
-boiler_fuel-fired,capex,,2025_CAD/GJ-per-yr,31.0283,8.15205,53.9045,4,median of 4,bataille_2017_001,bataille_2017_001:boiler_blast-furnace-gas@boilers; bataille_2017_001:boiler_coke-oven-gas@boilers; bataille_2017_001:boiler_hydrogen@boilers; bataille_2017_001:boiler_natural-gas@boilers
+boiler_fuel-fired,capex,,2025_CAD/GJ-per-yr,8.15205,1.09039,53.9045,6,median of 6,bataille_2017_001; etsap_2010_001,bataille_2017_001:boiler_blast-furnace-gas@boilers; bataille_2017_001:boiler_coke-oven-gas@boilers; bataille_2017_001:boiler_hydrogen@boilers; bataille_2017_001:boiler_natural-gas@boilers; etsap_2010_001:boiler_natural-gas@steam; etsap_2010_001:boiler_oil@steam
 boiler_fuel-fired,construction-time,,years,2.91667,1.83333,4,2,top-ranked: ETSAP I01,etsap_2010_001,etsap_2010_001:boiler_natural-gas@steam; etsap_2010_001:boiler_oil@steam
 boiler_fuel-fired,efficiency,,%,80,75,89.6,5,median of 5,lbnl_2021_001; etsap_2010_001,etsap_2010_001:boiler_natural-gas@steam; etsap_2010_001:boiler_natural-gas_recovery@steam; etsap_2010_001:boiler_oil@steam; etsap_2010_001:boiler_oil_recovery@steam; lbnl_2021_001:boiler_fossil@steam
 boiler_fuel-fired,lifetime,,years,35,,,1,top-ranked: LBNL 2021,lbnl_2021_001,lbnl_2021_001:boiler_fossil@steam

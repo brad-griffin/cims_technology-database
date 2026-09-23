@@ -40,6 +40,14 @@ PERCENT = {"efficiency", "efficiency-chp", "capacity-factor", "availability", "c
 # alone or CO2-equivalent, so the species is not a column of its own here.
 SPECIES_POOLED = {"emissions-reduction-potential"}
 GJ_PER_KW_YR = 8760 * 0.0036
+OUTPUT_BASES = {"thermal-output", "electric-output", "product-output"}
+# A derived cost written "<cost per t> / <GJ per t>" is per GJ of what the
+# technology consumes, not of what it delivers (D13).
+import re as _re
+FUEL_INPUT_DIVISOR = _re.compile(r"^\s*[\d.eE+-]+\s*/\s*[\d.eE+-]+\s*$")
+FUEL_INPUT_NOTE = ("POOLED ON A FUEL-INPUT BASIS: {parent} per tonne divided by the source's "
+                   "fuel use per tonne; per GJ of output it would be lower by the efficiency, "
+                   "which the source does not give")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
 
 
@@ -96,9 +104,10 @@ def _num(r):
 
 
 def normalise(facts, examples, records, units) -> None:
-    """Adds value-norm, value-min-norm, value-max-norm, unit-norm, target-norm
-    and excluded to each fact row, in place."""
-    # per example, what turns a rating or an absolute sum into a rate
+    """Adds value-norm, value-min-norm, value-max-norm, unit-norm, target-norm,
+    duplicate-of and excluded to each fact row, in place."""
+    # per example, what turns a rating or an absolute sum into a rate: the
+    # SOURCE'S OWN factors only, and only on an output basis
     scale = defaultdict(dict)
     for r in facts:
         v = fnum(r.get("value"))
@@ -108,6 +117,11 @@ def normalise(facts, examples, records, units) -> None:
             scale[r["example-id"]].setdefault("annual-output", v)
         elif r["parameter"] == "capacity-factor":
             scale[r["example-id"]].setdefault("cf", v / 100 if v > 1.5 else v)
+        elif (r["parameter"] == "capacity" and r.get("unit") in ("MW", "kW")
+              and r.get("capacity-basis") in OUTPUT_BASES):
+            mw = v / 1000 if r["unit"] == "kW" else v
+            scale[r["example-id"]].setdefault("mw-out", (mw, r["record-id"]))
+    by_id = {r["record-id"]: r for r in facts}
 
     for r in facts:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
@@ -115,6 +129,9 @@ def normalise(facts, examples, records, units) -> None:
                   "target-norm": r.get("target", "")})
         if r["parameter"] in SPECIES_POOLED:
             r["target-norm"] = ""
+        parent = by_id.get(r.get("derived-from", ""))
+        r["duplicate-of"] = (parent["record-id"] if parent and r.get("value-type") == "derived"
+                             and parent["parameter"] == r["parameter"] else "")
         v, lo, hi = _num(r)
         if v is None and lo is None and hi is None:
             r["excluded"] = "no number"
@@ -165,8 +182,15 @@ def normalise(facts, examples, records, units) -> None:
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("annual-output"):
                 factor = f / sc["annual-output"]
                 note = "absolute sum over the annual output the same source states"
+            elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("mw-out"):
+                mw, rid = sc["mw-out"]
+                cf = sc.get("cf")
+                factor = f / (mw * GJ_PER_KW_YR * 1000 * (cf or 1.0))
+                note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
+                        f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
             else:
-                r["excluded"] = f"cost per {d or 'plant'} cannot be put per {td}"
+                r["excluded"] = (f"cost per {d or 'plant'} cannot be put per {td}: the source "
+                                 "gives no output factor to convert it with")
                 continue
         else:
             route = units.physical(unit, tgt)
@@ -180,6 +204,20 @@ def normalise(facts, examples, records, units) -> None:
         r["unit-norm"], r["conversion"] = tgt, note
         if (r.get("status") or "") == "review" and "BASIS NOT RECORDED" in (r.get("note") or ""):
             r["excluded"] = "a required basis (cost-basis or capacity-basis) is not recorded"
+        if r["duplicate-of"] and FUEL_INPUT_DIVISOR.search(r.get("formula") or "") and pu == "GJ":
+            r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
+    # A derived row that restates its parent in another unit adds no information.
+    # UKERC's per-GJ costs are the per-tonne cost divided by the fuel used per
+    # tonne, i.e. per GJ of fuel INPUT. Where the parent could not be pooled either,
+    # the reason stays the parent's.
+    for r in facts:
+        if r.get("duplicate-of") and r["excluded"] and r["excluded"] != "no number":
+            par = by_id[r["duplicate-of"]]
+            how = ("its per-tonne cost divided by fuel use per tonne"
+                   if FUEL_INPUT_DIVISOR.search(r.get("formula") or "")
+                   else "the same number in another unit")
+            r["excluded"] = (f"duplicate of the row in duplicate-of: {how}"
+                             + ("" if not par.get("excluded") else "; that row is not pooled either"))
 
 
 FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the archetype's own unit

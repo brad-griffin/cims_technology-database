@@ -130,6 +130,22 @@ def mapping_review(records, hier, loader, stamp, views, ex_result):
         A(f"| {_md(why)} | {n} |")
     A("")
 
+    fuel = defaultdict(list)
+    for r in loader.facts:
+        if (r.get("conversion") or "").startswith("POOLED ON A FUEL-INPUT BASIS") and not r.get("excluded"):
+            fuel[r["archetype"]].append(r["record-id"])
+    A("## Pooled on a fuel-input basis\n")
+    A("UKERC states these costs per tonne of the host plant's product; the per-GJ figure "
+      "is that cost divided by the fuel used per tonne, so it is per GJ of fuel INPUT. "
+      "They are pooled on energy-service archetypes, where the basis is per GJ of output; "
+      "per GJ of output each would be higher by 1/efficiency, and UKERC gives no "
+      "efficiency. The per-tonne row is in `duplicate-of`.\n")
+    if not fuel:
+        A("None.\n")
+    for a, ids in sorted(fuel.items()):
+        A(f"- `{a}`: {len(ids)} rows ({', '.join(ids[:3])}{', ...' if len(ids) > 3 else ''})")
+    A("")
+
     A("## Service links with nothing to narrow them\n")
     A("An archetype placed on an end use made of several hierarchy nodes, where neither "
       "its route, its name nor its sources said which. It is linked to every node; "
