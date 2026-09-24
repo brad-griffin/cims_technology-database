@@ -1,0 +1,26 @@
+column,parameter-as-printed,year,value,unit,reference,note
+OCGT,"Net Efficiency (LHV), %",2010,35-42,%,"p.4, Table 3 (Data Projections)",
+CCGT,"Net Efficiency (LHV), %",2010,52-60,%,"p.4, Table 3 (Data Projections)",out of scope
+OCGT,"Investment cost, incl. IDC",2010,900,2008_USD/kW,"p.4, Table 3 (Data Projections)",COST BASIS: total-plant. CAPACITY BASIS: electric-output. p.1 and p.3 give the same 2020/2030 values.
+CCGT,"Investment cost, incl. IDC",2010,1100,2008_USD/kW,"p.4, Table 3 (Data Projections)",out of scope; COST BASIS: total-plant. CAPACITY BASIS: electric-output.
+OCGT,Total production cost,2010,100,2008_USD/MWh,"p.4, Table 3 (Data Projections)","levelised; CONFLICT: the current-values block, p.1 and p.3 all give 200-225 (typical 210) - 100 cannot be the same 2010 cost"
+CCGT,Total production cost,2010,72.5,2008_USD/MWh,"p.4, Table 3 (Data Projections)",levelised; out of scope
+OCGT and CCGT,"Market share, % global electricity output",2010,20,%,"p.4, Table 3 (Data Projections)",merged across OCGT and CCGT; all gas-fired power
+OCGT,"Net Efficiency (LHV), %",2020,<=45,%,"p.4, Table 3 (Data Projections)",printed '≤ 45' on a line slightly above the row
+CCGT,"Net Efficiency (LHV), %",2020,<=64,%,"p.4, Table 3 (Data Projections)",out of scope; printed '≤ 64' slightly above the row
+OCGT,"Investment cost, incl. IDC",2020,850,2008_USD/kW,"p.4, Table 3 (Data Projections)",COST BASIS: total-plant. CAPACITY BASIS: electric-output. p.1 and p.3 give the same 2020/2030 values.
+CCGT,"Investment cost, incl. IDC",2020,1000,2008_USD/kW,"p.4, Table 3 (Data Projections)",out of scope; COST BASIS: total-plant. CAPACITY BASIS: electric-output.
+OCGT,Total production cost,2020,95,2008_USD/MWh,"p.4, Table 3 (Data Projections)",levelised
+CCGT,Total production cost,2020,70,2008_USD/MWh,"p.4, Table 3 (Data Projections)",levelised; out of scope
+OCGT and CCGT,"Market share, % global electricity output",2020,18,%,"p.4, Table 3 (Data Projections)",merged across OCGT and CCGT; all gas-fired power
+OCGT,"Net Efficiency (LHV), %",2030,<=45,%,"p.4, Table 3 (Data Projections)",printed '≤ 45' on a line slightly above the row
+CCGT,"Net Efficiency (LHV), %",2030,<=64,%,"p.4, Table 3 (Data Projections)",out of scope; printed '≤ 64' slightly above the row
+OCGT,"Investment cost, incl. IDC",2030,800,2008_USD/kW,"p.4, Table 3 (Data Projections)",COST BASIS: total-plant. CAPACITY BASIS: electric-output. p.1 and p.3 give the same 2020/2030 values.
+CCGT,"Investment cost, incl. IDC",2030,900,2008_USD/kW,"p.4, Table 3 (Data Projections)",out of scope; COST BASIS: total-plant. CAPACITY BASIS: electric-output.
+OCGT,Total production cost,2030,95,2008_USD/MWh,"p.4, Table 3 (Data Projections)",levelised
+CCGT,Total production cost,2030,70,2008_USD/MWh,"p.4, Table 3 (Data Projections)",levelised; out of scope
+OCGT and CCGT,"Market share, % global electricity output",2030,15,%,"p.4, Table 3 (Data Projections)",merged across OCGT and CCGT; all gas-fired power
+OCGT,O&M cost (text),2010,36,2008_USD/kW,p.3,per kW per year; 4% of investment
+OCGT,O&M cost (text),2030,32,2008_USD/kW,p.3,per kW per year; 4% of investment
+CCGT,O&M cost (text),2010,44,2008_USD/kW,p.3,out of scope; per kW per year
+CCGT,O&M cost (text),2030,36,2008_USD/kW,p.3,out of scope; per kW per year

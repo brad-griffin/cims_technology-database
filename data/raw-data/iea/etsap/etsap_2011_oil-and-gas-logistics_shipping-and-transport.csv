@@ -1,0 +1,80 @@
+item,value,value-min,value-max,unit,reference,note
+Panamax tanker size,,50000,80000,DWT,"p.2, Table 1",Transport - out of scope.
+Aframax tanker size,,80000,119000,DWT,"p.2, Table 1",
+Suezmax tanker size,,120000,150000,DWT,"p.2, Table 1",
+VLCC size,,150000,320000,DWT,"p.2, Table 1",
+ULCC size,,320000,,DWT,"p.2, Table 1","Printed '>320,000'."
+[>200 kDWT] Oil tanker average weight,303,,,kDWT,"p.2, Table 2",
+[>200 kDWT] Oil tanker average distance,9000,,,km,"p.2, Table 2",
+[>200 kDWT] Oil tanker fuel consumption,2.2,,,g/t-km,"p.2, Table 2","Summary Table 9 reverses the size order (2.2 for 75,000-120,000 DWT ... 3.8 for >200,000) - copy error; Table 2 is the record."
+[>200 kDWT] Oil tanker CO2 emission,3.8,,,gCO2/t-km,"p.2, Table 2",
+[120-200 kDWT] Oil tanker average weight,155,,,kDWT,"p.2, Table 2",
+[120-200 kDWT] Oil tanker average distance,5500,,,km,"p.2, Table 2",
+[120-200 kDWT] Oil tanker fuel consumption,2.3,,,g/t-km,"p.2, Table 2","Summary Table 9 reverses the size order (2.2 for 75,000-120,000 DWT ... 3.8 for >200,000) - copy error; Table 2 is the record."
+[120-200 kDWT] Oil tanker CO2 emission,4.1,,,gCO2/t-km,"p.2, Table 2",
+[75-120 kDWT] Oil tanker average weight,98,,,kDWT,"p.2, Table 2",
+[75-120 kDWT] Oil tanker average distance,2000,,,km,"p.2, Table 2",
+[75-120 kDWT] Oil tanker fuel consumption,3.8,,,g/t-km,"p.2, Table 2","Summary Table 9 reverses the size order (2.2 for 75,000-120,000 DWT ... 3.8 for >200,000) - copy error; Table 2 is the record."
+[75-120 kDWT] Oil tanker CO2 emission,6.6,,,gCO2/t-km,"p.2, Table 2",
+"[45 kDWT] New-built tanker price, 1995",34,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[45 kDWT] New-built tanker price, 2000",29,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[45 kDWT] New-built tanker price, 2005",43,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[45 kDWT] New-built tanker price, 2006",47,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[45 kDWT] New-built tanker price, 2007",52,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[45 kDWT] New-built tanker price, 2008",48,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 1995",43,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 2000",41,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 2005",58,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 2006",81,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 2007",72,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[110 kDWT] New-built tanker price, 2008",76,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 1995",85,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 2000",76,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 2005",120,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 2006",130,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 2007",145,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"[300 kDWT] New-built tanker price, 2008",151,,,USD-million,"p.2, Table 3",Nominal; no currency year stated.
+"New 150,000 m3 LNG ship price, 1985",200,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 1990",225,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 2000",165,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 2005",205,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 2006",220,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 2007",220,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"New 150,000 m3 LNG ship price, 2008",245,,,USD-million,"p.4, Table 6",Printed 'US$ 10^6' with the exponent on a separate line.
+"[steam turbine] LNG carrier operating cost, Maintenance, loaded",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, Maintenance, loaded",38.6,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine] LNG carrier operating cost, Maintenance, ballast",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, Maintenance, ballast",35.9,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine] LNG carrier operating cost, System oil, loaded",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, System oil, loaded",7.3,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine] LNG carrier operating cost, System oil, ballast",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, System oil, ballast",6.6,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine] LNG carrier operating cost, Cylinder oil, loaded",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, Cylinder oil, loaded",35.1,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine] LNG carrier operating cost, Cylinder oil, ballast",0,,,USD/h,"p.5, Table 7",No fuel cost; no currency year.
+"[dual fuel electric] LNG carrier operating cost, Cylinder oil, ballast",35.1,,,USD/h,"p.5, Table 7","Summary Table 9 relabels this 'Slow Speed Diesel' and sums the three items (81 loaded, 78 ballast)."
+"[steam turbine, loaded] 150,000 m3 LNG carrier CO2 emissions",702,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, loaded] 150,000 m3 LNG carrier CO2 emissions",467,,,kg/km,"p.5, Table 8",
+"[steam turbine, loaded] 150,000 m3 LNG carrier HFO consumption",433,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, loaded] 150,000 m3 LNG carrier HFO consumption",69,,,kg/km,"p.5, Table 8",
+"[steam turbine, loaded] 150,000 m3 LNG carrier Diesel consumption",0,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, loaded] 150,000 m3 LNG carrier Diesel consumption",129,,,kg/km,"p.5, Table 8",Summary Table 9 prints loaded diesel as 29 (copy error; Table 8 says 129).
+"[steam turbine, loaded] 150,000 m3 LNG carrier Natural gas consumption",269,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, loaded] 150,000 m3 LNG carrier Natural gas consumption",269,,,kg/km,"p.5, Table 8",
+"[steam turbine, ballast] 150,000 m3 LNG carrier CO2 emissions",746,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, ballast] 150,000 m3 LNG carrier CO2 emissions",422,,,kg/km,"p.5, Table 8",
+"[steam turbine, ballast] 150,000 m3 LNG carrier HFO consumption",611,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, ballast] 150,000 m3 LNG carrier HFO consumption",43,,,kg/km,"p.5, Table 8",
+"[steam turbine, ballast] 150,000 m3 LNG carrier Diesel consumption",0,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, ballast] 150,000 m3 LNG carrier Diesel consumption",245,,,kg/km,"p.5, Table 8",
+"[steam turbine, ballast] 150,000 m3 LNG carrier Natural gas consumption",134,,,kg/km,"p.5, Table 8",
+"[dual fuel electric, ballast] 150,000 m3 LNG carrier Natural gas consumption",134,,,kg/km,"p.5, Table 8",
+"Oil tanker productivity, 2008",6.7,,,t oil per DWT per yr,p.1,"7.7 in 2000, 7.1 in 2006, 7.5 in 2007."
+Oil tanker speed,14,,,knots,p.1,= 7.2 m/s.
+Average age of wrecked tankers 1998-2008,29.1,,,years,p.2,Summary Table 9 calls this the tanker lifetime (29).
+"Average age of oil tankers, 1 Jan 2009",17.6,,,years,p.2,
+"LNG carrier lifetime, commercial vessel",25,,,years,p.4,Low-speed diesel engines up to 40 years.
+LNG carrier diesel propulsion extra cost,,1,2,USD-million,p.4,Versus steam turbine; no currency year.
+LNG carrier speed,20,,,knots,p.4,= 10.3 m/s.
+Rail transport energy,1.0,,,% of energy transported,p.2,No distance basis.
+Truck transport energy,3.2,,,% of energy transported,p.2,No distance basis.

@@ -1,0 +1,70 @@
+technology,case,cost-as-printed,year,value,value-min,value-max,unit,reference,note
+solar-concentrator_parabolic-trough,PT no storage,investment cost,current,,4500,8000,2010_USD/kWe,"p.13, Table 6","Power plant incl. power block; COST BASIS not stated (total plant). CONFLICTS: text p.6 4,600-7,100 (Hinkley, Turchi, capacity factor 20-25%); IRENA 5,500-8,000; Table 4 (assumptions) 4,600."
+solar-concentrator_parabolic-trough,PT 6-8 h storage,investment cost,current,,7300,9000,2010_USD/kWe,"p.13, Table 6","Text p.6: 4-6.5 h storage USD7,300 to over 9,000/kW; IRENA 7,500-8,500; Table 4 (6 h) 7,100-9,800."
+solar-concentrator_tower,ST 6-9 h storage,investment cost,current,,6300,7700,2010_USD/kWe,"p.13, Table 6","Text p.6 agrees (capacity factor 41-54%). Table 4 (6-7.5 h) 6,300-7,500."
+solar-concentrator_tower,ST 12-15 h storage,investment cost,current,,9000,10500,2010_USD/kWe,"p.13, Table 6","Text p.6 agrees (capacity factor 68-79%). Table 4 9,000-10,500."
+solar-concentrator_parabolic-trough,cost breakdown,investment cost share: solar field,current,38,,,%,"p.13, Table 6","~38% (support structure 11%, receivers 7%, mirrors 6.5%, HT system 5.5%, HT fluid 2%); p.7 text (Ernst & Young, 50 MW Andasol-type, 7.5 h): 38.5% (10.7/7.1/6.4/5.4/2.1). The breakdown columns are merged cells spanning PT (left) and ST (right)."
+solar-concentrator_parabolic-trough,cost breakdown,investment cost share: thermal storage,current,11,,,%,"p.13, Table 6","~11%, if any (salt 5%, tanks 2%); p.7 text 10.5%. The breakdown columns are merged cells spanning PT (left) and ST (right)."
+solar-concentrator_parabolic-trough,cost breakdown,"investment cost share: power block, BoP, grid",current,14,,,%,"p.13, Table 6",~14%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_parabolic-trough,cost breakdown,investment cost share: labour,current,17,,,%,"p.13, Table 6",~17%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_parabolic-trough,cost breakdown,"investment cost share: EPC, financing",current,20,,,%,"p.13, Table 6",~20%; p.7 text 19.5%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,investment cost share: solar field,current,33,,,%,"p.13, Table 6",~33% (support structure and mirrors). The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,investment cost share: central receiver,current,17,,,%,"p.13, Table 6",~17%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,investment cost share: thermal storage,current,9,,,%,"p.13, Table 6",~9%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,"investment cost share: power block, BoP, grid",current,11,,,%,"p.13, Table 6",~11%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,investment cost share: labour,current,14,,,%,"p.13, Table 6",~14%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+solar-concentrator_tower,cost breakdown,"investment cost share: EPC, financing",current,16,,,%,"p.13, Table 6",~16%. The breakdown columns are merged cells spanning PT (left) and ST (right).
+"(CSP, all)",all,O&M cost,current,,25,35,2010_USD/MWh,"p.13, Table 6","Printed 'USD(2010)/MWh'; merged across all columns. p.8 text: SEGS O&M about USD 0.04/kWh (Cohen, 1999); fixed O&M 10-11% of LCOE, personnel and consumables 4-6%."
+solar-concentrator_parabolic-trough,PT no storage,LCOE 2011,2011,,300,350,2010_USD/MWh,"p.13, Table 6",Text p.8 (IRENA): 300-370 in 2011 - CONFLICT with 300-350.
+solar-concentrator_parabolic-trough,PT 6-8 h storage,LCOE 2011,2011,,210,350,2010_USD/MWh,"p.13, Table 6",Text p.8: 210-370 in 2011 for 6 h storage (printed 'a&-h storage').
+solar-concentrator_tower,ST 6-9 h storage,LCOE 2011,2011,,220,280,2010_USD/MWh,"p.13, Table 6",Text p.8: ST 6-7.5 h storage 220-280.
+solar-concentrator_tower,ST 12-15 h storage,LCOE 2011,2011,,170,240,2010_USD/MWh,"p.13, Table 6",
+solar-concentrator_parabolic-trough,IEA 2010a,"LCOE (Table 3, IRENA 2012 compilation)",2011,,200,295,USD/MWh,"p.8, Table 3",10% discount rate; currency year per footnote 19 (2010 US$)
+solar-concentrator_parabolic-trough,IEA 2010a,"LCOE (Table 3, IRENA 2012 compilation)",2020,,100,140,USD/MWh,"p.8, Table 3",10% discount rate
+solar-concentrator_parabolic-trough,Fichtner 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,220,240,USD/MWh,"p.8, Table 3","South Africa, 8% discount rate; currency year per footnote 19 (2010 US$)"
+solar-concentrator_parabolic-trough,India,"LCOE (Table 3, IRENA 2012 compilation)",2011,,330,360,USD/MWh,"p.8, Table 3",wet/dry cooling; currency year per footnote 19 (2010 US$)
+solar-concentrator_parabolic-trough,Morocco,"LCOE (Table 3, IRENA 2012 compilation)",2011,,220,230,USD/MWh,"p.8, Table 3",wet/dry cooling; currency year per footnote 19 (2010 US$)
+solar-concentrator_parabolic-trough,Kutscher 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,220,,USD/MWh,"p.8, Table 3",United States; 2011 has Low only; currency year per footnote 19 (2010 US$)
+solar-concentrator_parabolic-trough,Kutscher 2010,"LCOE (Table 3, IRENA 2012 compilation)",2020,,100,110,USD/MWh,"p.8, Table 3",United States; 2011 has Low only
+solar-concentrator_parabolic-trough,Hinkley 2011,"LCOE (Table 3, IRENA 2012 compilation)",2011,,210,,USD/MWh,"p.8, Table 3","Australia, 7% discount rate; only the Low columns are filled (x-coordinates) - the plain-text layer reads '210 130' as if 2011 Low/High; currency year per footnote 19 (2010 US$)"
+solar-concentrator_parabolic-trough,Hinkley 2011,"LCOE (Table 3, IRENA 2012 compilation)",2020,,130,,USD/MWh,"p.8, Table 3","Australia, 7% discount rate; only the Low columns are filled (x-coordinates) - the plain-text layer reads '210 130' as if 2011 Low/High"
+solar-concentrator_parabolic-trough,AT Kearney 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,230,320,USD/MWh,"p.8, Table 3",; currency year per footnote 19 (2010 US$)
+solar-concentrator_parabolic-trough,AT Kearney 2010,"LCOE (Table 3, IRENA 2012 compilation)",2020,,130,160,USD/MWh,"p.8, Table 3",
+solar-concentrator_tower,Fichtner 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,185,202,USD/MWh,"p.8, Table 3","South Africa, 8% discount rate; currency year per footnote 19 (2010 US$)"
+solar-concentrator_tower,India,"LCOE (Table 3, IRENA 2012 compilation)",2011,,270,280,USD/MWh,"p.8, Table 3",wet/dry cooling; currency year per footnote 19 (2010 US$)
+solar-concentrator_tower,Morocco,"LCOE (Table 3, IRENA 2012 compilation)",2011,,220,220,USD/MWh,"p.8, Table 3",wet/dry cooling; currency year per footnote 19 (2010 US$)
+solar-concentrator_tower,Kolb 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,160,170,USD/MWh,"p.8, Table 3",United States; currency year per footnote 19 (2010 US$)
+solar-concentrator_tower,Kolb 2010,"LCOE (Table 3, IRENA 2012 compilation)",2020,,80,90,USD/MWh,"p.8, Table 3",United States
+solar-concentrator_tower,Hinkley 2011,"LCOE (Table 3, IRENA 2012 compilation)",2011,,210,,USD/MWh,"p.8, Table 3","Australia, 7% discount rate; only Low columns filled; currency year per footnote 19 (2010 US$)"
+solar-concentrator_tower,Hinkley 2011,"LCOE (Table 3, IRENA 2012 compilation)",2020,,160,,USD/MWh,"p.8, Table 3","Australia, 7% discount rate; only Low columns filled"
+solar-concentrator_tower,AT Kearney 2010,"LCOE (Table 3, IRENA 2012 compilation)",2011,,230,320,USD/MWh,"p.8, Table 3",identical to the PT AT Kearney row; currency year per footnote 19 (2010 US$)
+solar-concentrator_tower,AT Kearney 2010,"LCOE (Table 3, IRENA 2012 compilation)",2020,,130,160,USD/MWh,"p.8, Table 3",identical to the PT AT Kearney row
+solar-concentrator_parabolic-trough,No storage,capacity factor (assumption),,20-25,,,%,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,No storage,investment cost (assumption),2011,4600,,,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,No storage,investment cost (assumption),2015,,3900,4100,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,6h storage,capacity factor (assumption),,40-53,,,%,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,6h storage,investment cost (assumption),2011,,7100,9800,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,6h storage,investment cost (assumption),2015,,6300,8300,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_tower,6-7.5h storage,capacity factor (assumption),,40-53,,,%,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_tower,6-7.5h storage,investment cost (assumption),2011,,6300,7500,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_tower,6-7.5h storage,investment cost (assumption),2015,,5700,6400,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_tower,12-15h storage,capacity factor (assumption),,65-80,,,%,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_tower,12-15h storage,investment cost (assumption),2011,,9000,10500,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",'12-15h stor.ge' misprint in the row label
+solar-concentrator_tower,12-15h storage,investment cost (assumption),2015,,8100,9000,USD/kW,"p.11, Table 4 (second 'Table 4', Assumptions for LCOE Analysis)",
+solar-concentrator_parabolic-trough,"6 h storage, interest 5.5%",LCOE at 40% capacity factor,,220,,,USD/MWh,"p.11, Table 5",Referred to in the p.9 text as 'Table 6'.
+solar-concentrator_parabolic-trough,"6 h storage, interest 5.5%",LCOE at 53% capacity factor,,160,,,USD/MWh,"p.11, Table 5",
+solar-concentrator_parabolic-trough,"6 h storage, interest 10%",LCOE at 40% capacity factor,,310,,,USD/MWh,"p.11, Table 5",Referred to in the p.9 text as 'Table 6'.
+solar-concentrator_parabolic-trough,"6 h storage, interest 10%",LCOE at 53% capacity factor,,230,,,USD/MWh,"p.11, Table 5",
+solar-concentrator_parabolic-trough,"6 h storage, interest 12.8%",LCOE at 40% capacity factor,,370,,,USD/MWh,"p.11, Table 5",Referred to in the p.9 text as 'Table 6'.
+solar-concentrator_parabolic-trough,"6 h storage, interest 12.8%",LCOE at 53% capacity factor,,280,,,USD/MWh,"p.11, Table 5",
+solar-concentrator_parabolic-trough,"IEA estimate, all CSP",investment cost,current,,4200,8500,USD/kW,p.2,"p.6 gives the IEA range for large PT as 4,200-8,400 - CONFLICT (8,500 vs 8,400)."
+solar-concentrator_parabolic-trough,"IRENA, no storage, 2010-2011",investment cost,current,,5500,8000,USD/kW,"p.2, p.6",
+solar-concentrator_parabolic-trough,"IRENA, with storage (6 h)",investment cost,current,,7500,8500,USD/kW,"p.2, p.6",
+solar-concentrator_parabolic-trough,SEGS (1984),investment cost,historic,,3000,4000,USD/kW,p.6,Cohen 1999
+solar-concentrator_parabolic-trough,"50 MW, 7.5 h storage (Andasol-type)",investment cost,current,7280,,,USD/kW,p.7,"US$364 million (Ernst & Young and Fraunhofer, 2011)"
+solar-concentrator_parabolic-trough,large PT (IEA),LCOE,current,,200,295,USD/MWh,p.8,"30-year lifetime, 10% interest"
+"(CSP, all)",ESTELA-Greenpeace,LCOE,current,,190,290,USD/MWh,p.8,high and low DNI respectively
+solar-concentrator_parabolic-trough,SEGS 80 MW,LCOE,current,180,,,USD/MWh,p.8,
+solar-concentrator_parabolic-trough,"Spain, new 50 MW",LCOE,planned,,300,350,USD/MWh,p.8,
+"(CSP, all)",concrete/refractory storage at 400-500 degC,storage cost,prospective,40,,,USD/kWh,p.8,printed 'USd40/kWh'; advanced storage option
+"(CSP, all)",storage value,incremental value of dispatch,current,,15,65,USD/MWh,p.9,Richter 2011

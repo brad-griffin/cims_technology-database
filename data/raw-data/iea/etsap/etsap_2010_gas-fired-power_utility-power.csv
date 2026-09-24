@@ -1,0 +1,22 @@
+column,parameter-as-printed,value,value-min,value-max,unit,reference,note
+CCGT,Efficiency,,52,60,%,"p.4, Table 3","OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). LHV at full load; 50-52% at 50% load vs 58-59% at full load (p.1, p.3); 1700 degC-class turbines 62-65% (p.2)."
+CCGT,Construction time,27,24,30,months,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Merged with OCGT.
+CCGT,Technical lifetime,30,,,years,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Merged.
+CCGT,Load (capacity) factor,,20,60,%,"p.4, Table 3","OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). CONFLICT: p.1 says 50-60%, p.3 4200-5200 full-load hours (48-59%)."
+CCGT,Max. (plant) availability,92,,,%,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Merged.
+CCGT,Typical (capacity) size,,60,430,MWe,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype).
+CCGT,CO2 and other GHG emissions,,340,400,kg/MWh,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Per MWh of electricity.
+CCGT,NOx,30,,,g/MWh,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Non-GHG. CONFLICT: Table 2 gives 0.30 g/kWh (= 300 g/MWh) without SCR and 0.13 g/kWh with SCR - ten times higher.
+CCGT,"Investment cost, incl. IDC",1100,1000,1250,2008_USD/kW,"p.4, Table 3; p.3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). COST BASIS: total-plant. CAPACITY BASIS: electric-output. Printed '1000 - 1250; Typical 1100 (2010)'. p.1/p.3: rose from about $800/kWe in 2002 to $1100/kWe in 2009; EBR (2009) EUR 700 million for 870 MWe = EUR 800/kWe.
+CCGT,O&M cost (fixed and variable),44,,,2008_USD/kW,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Per kW per year; 4% of investment.
+CCGT,Fuel cost,,30,45,2008_USD/MWh,"p.4, Table 3",OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). At a gas price of $5.0-6.5/GJ (p.3).
+CCGT,Total production cost,72.5,65,80,2008_USD/MWh,"p.4, Table 3","OUT OF SCOPE: grid-scale combined-cycle power (no power-only combined-cycle archetype). Typical given three ways: $73 (p.1), $72 (p.3), 72.5 (Table 3)."
+CCGT,NOx without SCR (Table 2),52.5,,,mg/m3,"p.4, Table 2",Non-GHG. Also 45 g/GJ fuel and 0.30 g/kWh.
+CCGT,NOx with SCR (Table 2),23,,,mg/m3,"p.4, Table 2",Non-GHG. Also 20 g/GJ fuel and 0.13 g/kWh.
+OCGT,Load (capacity) factor,,10,20,%,"p.4, Table 3","NOT LOADED: peak-load UTILITY DUTY, an operating pattern rather than an equipment property; not transferable to on-site industrial generation. p.1 says 'typically 10%', p.3 'typically 800 full-load hours' (9%)."
+OCGT,NOx,50,,,g/MWh,"p.4, Table 3",Non-GHG.
+OCGT,Fuel cost,,45,70,2008_USD/MWh,"p.4, Table 3",per MWh of electricity
+OCGT,Total production cost,210,200,225,2008_USD/MWh,"p.4, Table 3",levelised; see the projections conflict (100 for 2010)
+OCGT and CCGT,Economic lifetime,25,,,years,"p.4, Table 3",merged
+OCGT and CCGT,Installed (existing) capacity,1168,,,GWe,"p.4, Table 3","printed '1168 (end of 2007)', merged; all gas-fired generation capacity"
+OCGT and CCGT,Market share,20,,,%,"p.4, Table 3",merged; p.1 says about 21% of world electricity is gas-based

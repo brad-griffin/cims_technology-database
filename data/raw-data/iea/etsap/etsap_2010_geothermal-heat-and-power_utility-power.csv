@@ -1,0 +1,16 @@
+plant-type,parameter-as-printed,value,value-min,value-max,unit,reference,note
+dry steam plants,typical capacity,,50,60,MWe,p.2,"OUT OF SCOPE: utility geothermal power (dry-steam, flash, hybrid). '110-MWe plants have been commissioned' (EGEC, 2009). Condensing turbines. Only Larderello and The Geysers are vapour-dominated."
+dry steam plants,largest units,110,,,MWe,p.2,"OUT OF SCOPE: utility geothermal power (dry-steam, flash, hybrid)."
+flash plants,typical capacity,,2,45,MWe,p.2,"OUT OF SCOPE: utility geothermal power (dry-steam, flash, hybrid). DiPippo, 1999."
+combined-cycle or hybrid plants,typical capacity,,,10,MWe,p.2,"OUT OF SCOPE: utility geothermal power (dry-steam, flash, hybrid). 'from a few MW up to 10 MWe' (Lund, 1999; DiPippo, 1999)."
+"geothermal power (US, all types)",levelised cost of electricity,89,68,118,USD/MWh,p.3,"OUT OF SCOPE: utility geothermal power (dry-steam, flash, hybrid). Sener et al (2009); no currency year printed. Italy and Iceland at least 20-30% lower."
+geothermal power (Table 5 BIN),Total production cost,,80,110,2008_USD/MWh,"p.5, Table 5",levelised; BIN column
+geothermal heat (Table 5 HP),Total production cost,,25,75,2008_USD/MWh,"p.5, Table 5","levelised, per MWh of heat; p.1 and p.3 give about $45/MWh"
+geothermal power (Table 5 BIN),Market share,0.25,,,%,"p.5, Table 5",BIN column; p.2 says geothermal power is 0.25% of global generation
+geothermal heat (Table 5 HP),Market share,N/A,,,,"p.5, Table 5",
+(all),Fuel cost,N/A,,,2008_USD/MWh,"p.5, Table 5",N/A in all three columns
+(all),CO2 and other GHG emissions,Negligible,,,kg/MWh,"p.5, Table 5",all three columns. Non-condensable CO2 in geothermal fluid is not discussed (Thain 2009 in the references is on emission factors)
+(all),SO2,Negligible,,,g/MWh,"p.5, Table 5",all three columns; non-GHG
+(all),Installed (existing) capacity,,9,10,GWe,"p.5, Table 5",printed '9-10 (all types)' in the BIN column
+heat plant,Installed (existing) capacity,18,,,GWth,"p.5, Table 5",printed '18 (estimate)'; row label 'GWe (GWth)'
+(all),Average capacity aging,Differs from country to country,,,,"p.5, Table 5",merged

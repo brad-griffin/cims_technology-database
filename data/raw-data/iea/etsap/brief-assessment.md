@@ -22,7 +22,13 @@ extraction), **PARTIAL** (a few in-scope rows), **BACKGROUND** (nothing usable i
   storage components are add-on measures (`incremental`, pooled only with the base system's cost from the
   same source); road-vehicle components are not proxies for mobile equipment. All 16 proposed archetypes
   were added, including the optional biogas upgrader.
-- **Still to extract (PARTIAL):** E07, E02, E10, E17, E14, P12, I09, P02, P03, P04, P06, I12, I13, P09, P10.
+- **Extracted 2026-09-24, not yet loaded:** E07, E02, E10, E17, E14, P12, I09, P02, P03, P04, P06, I12, I13, P09, P10.
+  Each main file holds only the in-scope rows; utility power, transport, levelized costs, life-cycle
+  emissions, projections and anything without an archetype went to sidecars, listed in each `_meta.csv`.
+  Content with no archetype, reported rather than forced: geothermal CHP (E07), sorption/thermochemical
+  waste-heat storage (E17), CO2 transport and storage (E14), partial-oxidation hydrogen (P12), coal-to-methanol
+  (I09), direct coal liquefaction (P06), LNG regasification (P03), thermal desalination MSF/MED (I12).
+  P04 gives no numbers by refinery complexity class; its whole-refinery rows are on `refinery_oil`.
 
 ## Summary
 

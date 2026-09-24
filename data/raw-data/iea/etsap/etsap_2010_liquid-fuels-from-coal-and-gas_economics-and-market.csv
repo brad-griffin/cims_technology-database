@@ -1,0 +1,26 @@
+process,technology,parameter-as-printed,value,value-min,value-max,unit,reference,note
+Coal-to-liquids plants (Table 2),gasifier_coal_fischer-tropsch,"[800 MWth] Coal cost, $/GJ input",,0.9,1.3,2006_USD/GJ,"p.4, Table 2",Fuel price.
+Gas-to-liquids plants (Table 2),reactor_natural-gas_fischer-tropsch,"[800 MWth] Natural gas cost, $/GJ input",,4,8,2006_USD/GJ,"p.4, Table 2",Fuel price.
+Coal-to-liquids plants (Table 2),gasifier_coal_fischer-tropsch,"[2400 MWth] Coal cost, $/GJ input",,0.9,1.3,2006_USD/GJ,"p.4, Table 2",Fuel price.
+Gas-to-liquids plants (Table 2),reactor_natural-gas_fischer-tropsch,"[2400 MWth] Natural gas cost, $/GJ input",,4,8,2006_USD/GJ,"p.4, Table 2",Fuel price.
+Coal-to-liquids plants (Table 2),gasifier_coal_fischer-tropsch,"[4800 MWth] Coal cost, $/GJ input",,0.9,1.3,2006_USD/GJ,"p.4, Table 2",Fuel price.
+Gas-to-liquids plants (Table 2),reactor_natural-gas_fischer-tropsch,"[4800 MWth] Natural gas cost, $/GJ input",,4,8,2006_USD/GJ,"p.4, Table 2",Fuel price.
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,"Investment, 50,000 bbl/d CTL plant",4.1,,,2006_USD-billion,p.1; p.3,
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,Share of coal preparation and gasification in investment,50,,,%,p.1; p.3,"'almost 50%'. p.3: a GTL plant would cost 'approximately half' - CONFLICT with Table 2, where GTL capex is about one third of CTL."
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,Return on investment at $61/bbl crude (2006 US$),19.8,,,%,p.1; p.3,"NPV > $1.5 bn, payback 5 years (p.3)."
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,Crude price for ROI > 10%,37,,,2006_USD/bbl,p.1; p.3,
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,Crude price for ROI > 15%,47,,,2006_USD/bbl,p.1; p.3,
+"NETL commercial-scale Fischer-Tropsch plant, Illinois No. 6 coal (Table 1)",gasifier_coal_fischer-tropsch,Coal price assumed,37,27,46,USD/ton,p.3,Base $37/ton; sensitivity $27-46/ton. Short or metric ton not stated.
+Coal-to-liquids plants (Table 2),gasifier_coal_fischer-tropsch,Capital cost in developing countries vs OECD,,60,90,%,p.3,Couch (2008).
+Coal-to-liquids plants (Table 2),gasifier_coal_fischer-tropsch,Labour cost vs OECD,,20,40,%,p.3,Couch (2008).
+Direct coal liquefaction (text),(none),Liquid yield,,60,70,% by weight of dry coal,p.2; p.3,No archetype for direct liquefaction; no costs given.
+Direct coal liquefaction (text),(none),"Yield, bituminous coal",500,,,l/t,p.3,"'approximately 500 l/t ... a little less using sub-bituminous coal' (Couch, 2008)."
+Direct coal liquefaction (text),(none),Single-stage reactor temperature,450,,,degC,p.1,"Reactor temperature, not delivered heat. Coal:solvent molar ratio about 2:1."
+Market (text),,World CTL capacity,15,,,GWth,p.2,Almost entirely South Africa (Sasol).
+Market (text),,GTL capacity in operation,13,,,Mt,p.1; p.3,'almost 13 Mt (19 GWth)'.
+Market (text),,GTL under construction or commissioning by 2010,9,,,Mt/yr,p.1; p.3,"'9 Mt (11 GWth)', Pearl, Qatar."
+Market (text),,Shenhua DCL plant,6,,,kt coal/d,p.2,1.4 GWth; 1 Mt/y liquids; operation tests completed 2008.
+Market (text),,Yitai ICL plant,160000,,,t/y liquids,p.2,"Printed '160.000 t/y' (thousands dot) and '0,22 GWth' (decimal comma)."
+Market (text),,Low-temperature FT reactor temperature,,200,250,degC,p.1,"Reactor temperature, not delivered heat; maximises diesel."
+Market (text),,High-temperature FT reactor temperature,,300,350,degC,p.1,Reactor temperature; maximises gasoline.
+Market (text),,Gasification temperature / pressure,,800,1800,degC,p.2,10-100 bar.

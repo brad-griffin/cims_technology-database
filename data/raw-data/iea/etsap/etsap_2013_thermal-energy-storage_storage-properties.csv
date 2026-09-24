@@ -1,0 +1,49 @@
+technology,case,parameter-as-printed,value,value-min,value-max,unit,reference,note
+thermal-storage_sensible,Table 1 'Sensible (hot water)',storage capacity (energy density by mass),,10,50,kWh/t,"p.3, Table 1",no database parameter
+thermal-storage_sensible,Table 1 'Sensible (hot water)',storage period,d/m,,,,"p.3, Table 1",days to months. CONFLICT: Table 8 prints 'd - y'.
+thermal-storage_phase-change,Table 1 'PCM',storage capacity (energy density by mass),,50,150,kWh/t,"p.3, Table 1",
+thermal-storage_phase-change,Table 1 'PCM',storage period,h/m,,,,"p.3, Table 1",hours to months. CONFLICT: Table 8 prints 'h - w'.
+thermal-storage_sensible,"sensible, typical",energy density by volume,25,,,kWh/m3,p.4,
+thermal-storage_phase-change,melting (e.g. ice),energy density by volume,100,,,kWh/m3,"p.2, p.4",
+thermal-storage_sensible,hot-water tanks,charging temperature,,80,90,degC,p.3,"STORE TEMPERATURE, not a delivered-heat temperature; heat pumps can extend discharge down to about 10 degC"
+thermal-storage_sensible,molten salt,maximum storage temperature,,,550,degC,p.4,STORE TEMPERATURE; refers to ETSAP E10 (CSP)
+thermal-storage_sensible,general,operating temperature range of TES,,-40,400,degC,"p.2, p.4",'from -40 degC to more than 400 degC'; applies to all TES types
+thermal-storage_phase-change,industrial R&D,high-temperature PCM,,150,,degC,p.4,'above 150 degC'
+thermal-storage_sensible,evacuated super-insulation R&D,thermal loss rate (lambda),0.01,,,W/mK,p.3,at 90 degC and 0.1 mbar
+thermal-storage_phase-change,Table 2: Ice,melting temperature,0,,,degC,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Ice,melting enthalpy,333,,,kJ/kg,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Ice,density,0.92,,,g/cm3,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Na-acetate trihydrate,melting temperature,58,,,degC,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Na-acetate trihydrate,melting enthalpy,250,,,kJ/kg,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Na-acetate trihydrate,density,1.3,,,g/cm3,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Paraffin,melting temperature,,-5,120,degC,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Paraffin,melting enthalpy,,150,240,kJ/kg,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Paraffin,density,0.77,,,g/cm3,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Erytritol,melting temperature,118,,,degC,"p.4, Table 2",printed 'Erytritol' (erythritol)
+thermal-storage_phase-change,Table 2: Erytritol,melting enthalpy,340,,,kJ/kg,"p.4, Table 2",
+thermal-storage_phase-change,Table 2: Erytritol,density,1.3,,,g/cm3,"p.4, Table 2",
+thermal-storage_sensible,Table 7: hot water tanks (buffers),market/R&D status,95/5,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_sensible,Table 7: large water tanks (seasonal),market/R&D status,25/75,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_sensible,Table 7: UTES,market/R&D status,25/75,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_sensible,Table 7: high temp. solids,market/R&D status,10/90,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_sensible,Table 7: high temp. liquids,market/R&D status,50/50,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_phase-change,Table 7: cold storage (ice),market/R&D status,90/10,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_phase-change,Table 7: cold storage (other),market/R&D status,75/25,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_phase-change,Table 7: passive cooling (buildings),market/R&D status,75/25,,,%,"p.7, Table 7",status as market share / R&D share
+thermal-storage_phase-change,Table 7: high temp. PCM (waste heat),market/R&D status,0/100,,,%,"p.7, Table 7",status as market share / R&D share
+(all TES),Table 6: seasonal storage,cycles per year,1,,,cycles/yr,"p.7, Table 6",
+(all TES),Table 6: seasonal storage,5-year energy savings,500,,,kWh,"p.7, Table 6",100 kWh store
+(all TES),Table 6: seasonal storage,5-year economic savings,25,,,2013_EUR,"p.7, Table 6","at EUR 0.05/kWh thermal energy price; CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: seasonal storage,maximum affordable investment cost,0.25,,,2013_EUR/kWh,"p.7, Table 6","NOT A COST: the break-even investment for a 100 kWh store with a 5-year payback (Table 6 column 'Invest. cost EUR/kWh'). Do not record as capex. CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: daily storage,cycles per year,300,,,cycles/yr,"p.7, Table 6",
+(all TES),Table 6: daily storage,5-year energy savings,"150,000",,,kWh,"p.7, Table 6",100 kWh store
+(all TES),Table 6: daily storage,5-year economic savings,7500,,,2013_EUR,"p.7, Table 6","at EUR 0.05/kWh thermal energy price; CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: daily storage,maximum affordable investment cost,75,,,2013_EUR/kWh,"p.7, Table 6","NOT A COST: the break-even investment for a 100 kWh store with a 5-year payback (Table 6 column 'Invest. cost EUR/kWh'). Do not record as capex. CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: short-term storage (3 cycles/day),cycles per year,900,,,cycles/yr,"p.7, Table 6",
+(all TES),Table 6: short-term storage (3 cycles/day),5-year energy savings,"450,000",,,kWh,"p.7, Table 6",100 kWh store
+(all TES),Table 6: short-term storage (3 cycles/day),5-year economic savings,"22,500",,,2013_EUR,"p.7, Table 6","at EUR 0.05/kWh thermal energy price; CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: short-term storage (3 cycles/day),maximum affordable investment cost,225,,,2013_EUR/kWh,"p.7, Table 6","NOT A COST: the break-even investment for a 100 kWh store with a 5-year payback (Table 6 column 'Invest. cost EUR/kWh'). Do not record as capex. CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: buffer storage (10 cycles/day),cycles per year,"3,000",,,cycles/yr,"p.7, Table 6",
+(all TES),Table 6: buffer storage (10 cycles/day),5-year energy savings,"1,500,000",,,kWh,"p.7, Table 6",100 kWh store
+(all TES),Table 6: buffer storage (10 cycles/day),5-year economic savings,"75,000",,,2013_EUR,"p.7, Table 6","at EUR 0.05/kWh thermal energy price; CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "
+(all TES),Table 6: buffer storage (10 cycles/day),maximum affordable investment cost,750,,,2013_EUR/kWh,"p.7, Table 6","NOT A COST: the break-even investment for a 100 kWh store with a 5-year payback (Table 6 column 'Invest. cost EUR/kWh'). Do not record as capex. CURRENCY YEAR NOT STATED anywhere in the brief for EUR figures; 2013_EUR is the publication year (January 2013), a flagged judgement. The underlying source [1]/[12] is Hauer, 2010-2011. "

@@ -1,0 +1,23 @@
+technology,parameter-as-printed,year,value,value-min,value-max,unit,reference,note
+solar-concentrator_parabolic-trough,efficiency (m. salt HTF),2020-30,,16,18,%,"p.13, Table 6 (Data Projections)",
+solar-concentrator_tower,efficiency (m. salt HTF),2020-30,20,,,%,"p.13, Table 6 (Data Projections)",
+solar-concentrator_tower,efficiency (sh steam HTF),2020-30,28,,,%,"p.13, Table 6 (Data Projections)",
+solar-concentrator_tower,efficiency (gas HTF + GTCC),2020-30,,35,40,%,"p.13, Table 6 (Data Projections)",
+solar-concentrator_linear-fresnel,efficiency (sh steam HTF),2020-30,15,,,%,"p.13, Table 6 (Data Projections)",
+solar-concentrator_dish,efficiency,2020-30,,30,,%,"p.13, Table 6 (Data Projections)",printed '>30 (40)'
+(PT and ST),capacity factor,2020-30,,32,39,%,"p.13, Table 6 (Data Projections)",merged cell across PT and ST; '(>50)' for 2050; FR and SD 'na'
+"(PT, ST, FR)",lifetime,2020-30,,30,40,yr,"p.13, Table 6 (Data Projections)","merged cell centred under ST, spanning PT-FR (as rendered)"
+solar-concentrator_dish,lifetime,2020-30,,20,30,yr,"p.13, Table 6 (Data Projections)",
+solar-concentrator_parabolic-trough,investment cost (no storage),2015,,3900,4100,USD/kW,"p.13, Table 6 (Data Projections)",No currency year for projections; 2010 US$ by extension (judgement)
+solar-concentrator_parabolic-trough,investment cost (6-8h storage),2015,,6300,8300,USD/kW,"p.13, Table 6 (Data Projections)",No currency year for projections; 2010 US$ by extension (judgement)
+solar-concentrator_tower,investment cost (6-9h storage),2015,,5700,6400,USD/kW,"p.13, Table 6 (Data Projections)",No currency year for projections; 2010 US$ by extension (judgement)
+solar-concentrator_tower,investment cost (12-15h storage),2015,,8100,9000,USD/kW,"p.13, Table 6 (Data Projections)",No currency year for projections; 2010 US$ by extension (judgement)
+solar-concentrator_parabolic-trough,LCOE (no storage),2015,,260,330,USD/MWh,"p.13, Table 6 (Data Projections)","Text p.8-9 gives 2015 LCOE PT no storage 260-340 (CONFLICT with 260-330), ST 6-7.5 h 170-240 (CONFLICT with 175-240)"
+solar-concentrator_parabolic-trough,LCOE (6-8h storage),2015,,180,310,USD/MWh,"p.13, Table 6 (Data Projections)",
+solar-concentrator_tower,LCOE (6-9h storage),2015,,175,240,USD/MWh,"p.13, Table 6 (Data Projections)","Text p.8-9 gives 2015 LCOE PT no storage 260-340 (CONFLICT with 260-330), ST 6-7.5 h 170-240 (CONFLICT with 175-240)"
+solar-concentrator_tower,LCOE (12-15h storage),2015,,150,205,USD/MWh,"p.13, Table 6 (Data Projections)",
+"(CSP, all)",investment cost reduction,2020-2030,,30,50,%,"p.13, Table 6 (Data Projections)","larger plants, scale, learning; about 12% from 50 to 100 MW and 20% from 50 to 200 MW"
+"(CSP, all)",LCOE reduction,2020-2030,,40,55,%,"p.13, Table 6 (Data Projections)",A.T. Kearney and ESTELA 2010
+"(CSP, all)",global capacity,2020,150,,,GW,"p.13, Table 6 (Data Projections)","text p.11 gives 148 GW, p.11 also 147 GW (IEA roadmap)"
+"(CSP, all)",global capacity,2030,337,,,GW,"p.13, Table 6 (Data Projections)",p.2 gives about 350 GW
+"(CSP, all)",global capacity,2050,1100,,,GW,"p.13, Table 6 (Data Projections)","text p.11: 1,090 GW"

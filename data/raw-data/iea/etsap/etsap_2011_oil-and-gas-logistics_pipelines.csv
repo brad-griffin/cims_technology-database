@@ -1,0 +1,24 @@
+item,value,value-min,value-max,unit,reference,note
+"[2008] Oil pipeline cost, materials",650,,,USD-thousand/km,"p.3, Table 4","Average of proposed US projects [13]; nominal. Pipe, not a technology."
+"[2008] Oil pipeline cost, labour",835,,,USD-thousand/km,"p.3, Table 4",
+"[2008] Oil pipeline cost, miscellaneous",520,,,USD-thousand/km,"p.3, Table 4",
+"[2008] Oil pipeline cost, ROW and damages",96,,,USD-thousand/km,"p.3, Table 4",
+"[2008] Oil pipeline cost, total",2101,,,USD-thousand/km,"p.3, Table 4",
+"[2009] Oil pipeline cost, materials",815,,,USD-thousand/km,"p.3, Table 4",
+"[2009] Oil pipeline cost, labour",879,,,USD-thousand/km,"p.3, Table 4",
+"[2009] Oil pipeline cost, miscellaneous",471,,,USD-thousand/km,"p.3, Table 4",
+"[2009] Oil pipeline cost, ROW and damages",151,,,USD-thousand/km,"p.3, Table 4",
+"[2009] Oil pipeline cost, total",2316,,,USD-thousand/km,"p.3, Table 4",Average of 21 onshore projects.
+Oil pipeline lifetime,,25,40,years,"p.2; p.6, Table 9",
+"Oil pump station spacing, onshore",,32,160,km,"p.2; p.6, Table 9",Summary Table 9 prints 'Every 32 to 160 meter' - should be km.
+Oil pipeline flow speed,,1,6,m/s,p.2,
+Oil pipeline inner diameter,,100,1200,mm,p.2,4-48 inches.
+Gas pipeline lifetime,,30,50,years,"p.5; p.6, Table 9",
+"Gas compressor station spacing, onshore",,65,160,km,p.5,
+"Gas pipeline leakage, Russia",1.4,,,% per 6000 km,p.5,"Natural gas leakage rate, highest reported (Russian pipelines) [32]. Fugitive methane, but a pipe property with no technology archetype here."
+Gas pipeline operating pressure (X70 steel),,,75,bar,p.5,
+"Gas transport cost, 1000 km, 20 bcm/yr, X-70",0.47,,,USD/MMBtu,p.5,"CONFLICT: the text says X-100 cuts cost by 20%, yet gives $0.8/MMBtu for X-100; Fig. 4 shows about 0.3-0.5. Levelized."
+"Gas transport cost, 1000 km, 20 bcm/yr, X-100",0.8,,,USD/MMBtu,p.5,See the X-70 row.
+Gas pipeline cost per km (summary only),,194,226,USD-million/km,"p.6, Table 9",Printed 'US$ 194 - 226*10^6' - no source in the body and implausible (100 times the oil pipeline figure).
+"Norway gas export pipelines, total length",4954,,,km,p.5,Seven pipelines; Langeled 1200 km.
+"Norway pipeline gas export, 2007",86.7,,,bcm,p.5,Operating cost printed '4101 thousand NOK' - implausibly low (probably million NOK).

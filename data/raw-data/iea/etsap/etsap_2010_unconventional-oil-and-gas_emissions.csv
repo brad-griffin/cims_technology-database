@@ -1,0 +1,13 @@
+item,value,value-min,value-max,unit,reference,note
+"Oil sand production, CO2 (Table 3)",,9.3,15.8,gCO2/MJ,"p.5, Table 3; p.7, Table 5","Production-stage emissions per MJ of oil (ASPO Netherlands 2009 [23]); the route (mining or in-situ, with or without upgrading) is not stated, so no single archetype. Summary Table 5 prints 'gCO2eq/MJ, with natural gas as the energy input'; Table 3 prints gCO2/MJ."
+"Extra heavy oil production, CO2 (Table 3)",,9.3,15.8,gCO2/MJ,"p.5, Table 3",Identical to oil sand.
+"Oil shale production, CO2 (Table 3)",,13.0,50.0,gCO2/MJ,"p.5, Table 3; p.1",Summary Table 5 prints 13.0-15.0 (copy error); Table 3 and the Highlights say 13-50. Oil shale is out of scope for Canada.
+"Synthetic crude, surface mining and upgrading",,10.2,26.9,gCO2/MJ,p.5; Fig. 3,Charpentier et al. 2009 review of 13 studies [22]; = 62-164 kgCO2/bbl (consistent at 6.1 GJ/bbl). Combines two archetypes (extraction + upgrader); study boundaries vary - not loaded.
+"Synthetic crude, surface mining and upgrading",,62,164,kgCO2/bbl,p.5; Fig. 3,
+"Synthetic crude, in-situ and upgrading",,16.2,28.9,gCO2/MJ,p.5; Fig. 3,= 99-176 kgCO2/bbl. In-situ route not split into SAGD and CSS.
+"Synthetic crude, in-situ and upgrading",,99,176,kgCO2/bbl,p.5; Fig. 3,
+Conventional oil production,,4.4,4.7,gCO2/MJ,p.5; Fig. 3,"DEFECT: printed '(27 and 58 kgCO2/bbl)'; 58 kg/bbl is about 9.5 g/MJ, not 4.7 (Fig. 3's 'GHGenius' conventional bar is about 58)."
+Conventional oil production,,27,58,kgCO2/bbl,p.5; Fig. 3,See the g/MJ row.
+Heavy oil production with natural-gas steam,14,,,gCO2/MJ,p.4,"'given a natural gas consumption of 45 m3 per barrel' [1] (WEC 2007); heavy oil generally, route not named."
+"Heavy oil production, natural gas use",45,,,m3/bbl,p.4,Implied by the 14 gCO2/MJ figure.
+"Tar sand and heavy oil, life-cycle incl. combustion",,28,46,gCO2/MJ,p.4; Fig. 2,"Includes 20 gCO2/MJ from fuel combustion - LIFE-CYCLE, not Scope 1. Oil shale 44-69."

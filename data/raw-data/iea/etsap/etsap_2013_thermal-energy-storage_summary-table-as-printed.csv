@@ -1,0 +1,17 @@
+row-as-printed,STES,PCM,TCS,unit,reference,note
+Storage Capacity,10 - 50,50 - 150,120 - 250,kWh/t,"p.9, Table 8",agrees with Table 1
+Thermal Power,0.001 - 10,0.001 - 1,0.01 - 1,MW,"p.9, Table 8",agrees with Table 1
+Efficiency,50 - 90,75 - 90,75 -100,%,"p.9, Table 8",agrees with Table 1
+"Storage Period (h,d,w,m)",d - y,h - w,h - d,,"p.9, Table 8","CONFLICTS with Table 1 (d/m, h/m, h/d)"
+Cost,0.1 - 10,ott-50,8 - 100,EUR/kWh,"p.9, Table 8",'ott-50' is a spreadsheet date corruption of '10-50' (Italian 'ott' = October)
+Technical lifetime,10-30+,10-30+,10-30+,yr,"p.9, Table 8",merged across all columns; used in the main file
+Load (capacity) factor,80,80,55,%,"p.9, Table 8",not used: no basis in the body
+Max. (plant) availability,95,95,95,%,"p.9, Table 8",not used: no basis in the body
+Typical (capacity) size,25,0.5,100,MWe,"p.9, Table 8","not used: per MW ELECTRIC, contradicting Table 1's 0.001-10 / 0.001-1 / 0.01-1 MW thermal power"
+Installed capacity,9-10 (all types),<<1,18 (estimate),GWe (GWth),"p.9, Table 8",not used: 18 GW of thermochemical storage contradicts Table 7 (5/95 market/R&D) and p.2 ('mostly under development')
+Investment cost,3400 - 4500,"6000 - 15,000",1000 - 3000,2008_USD/kW,"p.9, Table 8","not used: per kW, contradicting the EUR/kWh body costs; ranks TCS cheapest, against p.2 and p.6"
+O&M cost (fixed & variable),120,250,20 - 60,2008_USD/kW/a,"p.9, Table 8",not used
+Fuel cost,N/A,N/A,N/A,$/MWh,"p.9, Table 8",
+Economic lifetime,20,20,20,yr,"p.9, Table 8",merged across all columns
+Total production cost,80 - 110,120 - 300,25 - 75,2008_USD/MWh,"p.9, Table 8","not used: levelised, and inconsistent with the body"
+Market share,0.25,Negligible,N/A,%,"p.9, Table 8",

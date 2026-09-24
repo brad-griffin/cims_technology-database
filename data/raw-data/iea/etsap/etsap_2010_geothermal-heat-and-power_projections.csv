@@ -1,0 +1,29 @@
+column,parameter-as-printed,year,value,unit,reference,note
+BIN,"Investment cost, incl. interest during construction",2010,4000,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output.
+CHP,"Investment cost, incl. interest during construction",2010,10000,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output. Out of scope (geothermal CHP).
+HP,"Investment cost, incl. interest during construction",2010,1800,2008_USD/kW,"p.5, Table 5 (Data Projections)","COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: thermal-output (per kWth, p.3)."
+BIN,Total production cost,2010,90,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised
+CHP,Total production cost,2010,200,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised; out of scope
+HP,Total production cost,2010,45,2008_USD/MWh,"p.5, Table 5 (Data Projections)","levelised, per MWh of heat"
+BIN,"Market share, % of global electricity output",2010,~1/4,%,"p.5, Table 5 (Data Projections)","printed with fraction glyphs ('~¼', '~½')"
+CHP,"Market share, % of global electricity output",2010,<<1,%,"p.5, Table 5 (Data Projections)",
+HP,"Market share, % of global electricity output",2010,,%,"p.5, Table 5 (Data Projections)",blank cell (a heat plant has no electricity share)
+BIN,"Investment cost, incl. interest during construction",2020,3500,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output.
+CHP,"Investment cost, incl. interest during construction",2020,8000,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output. Out of scope (geothermal CHP).
+HP,"Investment cost, incl. interest during construction",2020,1500,2008_USD/kW,"p.5, Table 5 (Data Projections)","COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: thermal-output (per kWth, p.3). p.4: declining to $1500/kWth by 2020."
+BIN,Total production cost,2020,79,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised
+CHP,Total production cost,2020,160,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised; out of scope
+HP,Total production cost,2020,37.5,2008_USD/MWh,"p.5, Table 5 (Data Projections)","levelised, per MWh of heat"
+BIN,"Market share, % of global electricity output",2020,~1/2,%,"p.5, Table 5 (Data Projections)","printed with fraction glyphs ('~¼', '~½')"
+CHP,"Market share, % of global electricity output",2020,<<1,%,"p.5, Table 5 (Data Projections)",
+HP,"Market share, % of global electricity output",2020,,%,"p.5, Table 5 (Data Projections)",blank cell (a heat plant has no electricity share)
+BIN,"Investment cost, incl. interest during construction",2030,3100,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output.
+CHP,"Investment cost, incl. interest during construction",2030,6400,2008_USD/kW,"p.5, Table 5 (Data Projections)",COST BASIS: total-plant (incl. interest during construction). CAPACITY BASIS: electric-output. Out of scope (geothermal CHP). p.3-4: dropping to $6400/kWe in 2030.
+HP,"Investment cost, incl. interest during construction",2030,,2008_USD/kW,"p.5, Table 5 (Data Projections)",COLUMN ABSENT: the 2030 block has only BIN and CHP columns - there is no HP column for 2030 in the PDF (x-coordinates). The Lako template's rightmost projection column is cut off.
+BIN,Total production cost,2030,70,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised
+CHP,Total production cost,2030,130,2008_USD/MWh,"p.5, Table 5 (Data Projections)",levelised; out of scope
+HP,Total production cost,2030,,2008_USD/MWh,"p.5, Table 5 (Data Projections)",COLUMN ABSENT: the 2030 block has only BIN and CHP columns - there is no HP column for 2030 in the PDF (x-coordinates). The Lako template's rightmost projection column is cut off.
+BIN,"Market share, % of global electricity output",2030,1-2,%,"p.5, Table 5 (Data Projections)",
+CHP,"Market share, % of global electricity output",2030,<1,%,"p.5, Table 5 (Data Projections)",
+HP,"Market share, % of global electricity output",2030,,%,"p.5, Table 5 (Data Projections)",COLUMN ABSENT: the 2030 block has only BIN and CHP columns - there is no HP column for 2030 in the PDF (x-coordinates). The Lako template's rightmost projection column is cut off.
+power (conventional),Investment cost (text),2030,3150,2008_USD/kW,p.3,"p.3: conventional geothermal power 'could come down modestly to $3150/kWe in 2030' - CONFLICTS with 3,100 for BIN in Table 5's 2030 block"
