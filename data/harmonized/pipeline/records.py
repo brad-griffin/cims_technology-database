@@ -80,7 +80,12 @@ class Records:
                     fail["carrier not in vocabulary/carrier.csv"].append(f"{k}: {c}")
             if not a.get("product-unit"):
                 fail["archetype with no product-unit"].append(k)
-            if not any(s["archetype"] == k for s in self.service):
+            serves = any(s["archetype"] == k for s in self.service)
+            if a["type"] == "component":
+                # a part priced only to assemble whole-plant costs; never offered to the model
+                if serves:
+                    fail["component archetype serves a hierarchy node"].append(k)
+            elif not serves:
                 fail["archetype serves no hierarchy node"].append(k)
         for s in self.service:
             if s["archetype"] not in self.by_key:

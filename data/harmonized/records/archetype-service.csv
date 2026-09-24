@@ -872,3 +872,23 @@ direct-heater_solid-fuel_efficiency-strong,<sector>.natural-gas.product.supply.d
 direct-heater_solid-fuel_efficiency-strong,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,as direct-heater_efficiency-strong
 dryer_solid-fuel,<sector>.light-industrial.service.heat,drying-curing-and-forming,as dryer_direct-fired
 dryer_solid-fuel_efficiency-strong,<sector>.light-industrial.service.heat,drying-curing-and-forming,as dryer_direct-fired_efficiency-strong
+well_sagd,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,oil-and-gas/in-situ-bitumen: every leaf of the end use
+well_cyclic-steam,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,oil-and-gas/in-situ-bitumen: every leaf of the end use
+reactor_integrated-upgrader,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,oil-and-gas/bitumen-upgrading: every leaf of the end use
+refinery_hydroskimming,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,whole refinery: product unit t crude processed
+refinery_conversion,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,whole refinery: product unit t crude processed
+refinery_conversion,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,whole refinery: its conversion units
+refinery_deep-conversion,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,whole refinery: product unit t crude processed
+refinery_deep-conversion,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,whole refinery: its coking units
+mine_open-pit-coal,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,mining/extraction-and-haulage: the coal leaves
+mine_open-pit-coal,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,mining/extraction-and-haulage: the coal leaves
+mine_underground-coal,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,mining/extraction-and-haulage: the coal leaves
+mine_underground-coal,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,mining/extraction-and-haulage: the coal leaves
+process-improvement_coal-mine-methane-drainage,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,methane control on coal extraction; a coal-mine methane node is requested
+pellet-plant_wood,<sector>.light-industrial.service.heat,wood-drying-and-pressing,other-industry/wood-drying-and-pressing: pellet mills are wood-products manufacturing
+reactor_torrefaction,<sector>.light-industrial.service.heat,wood-drying-and-pressing,as pellet-plant_wood
+gasifier_coal-methanation,<sector>.natural-gas.product.supply.processing,gas-processing,provisional: no synthetic-fuels node yet
+gasifier_coal-to-liquids,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,provisional: no synthetic-fuels node yet
+reactor_gas-to-liquids,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,provisional: no synthetic-fuels node yet
+geothermal-well_binary-power,<sector>.mining.service.on-site-power,on-site-power-generation,cross-sector/on-site-power-generation: every leaf of the end use
+anaerobic-digester_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves

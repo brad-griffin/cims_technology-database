@@ -797,6 +797,9 @@ source and `via-source-id` for the compilation actually read, with
 `via-locator` giving the row or cell. Consequence: originals appear in the
 manifest as registered-but-unheld sources; a prioritized list of documents worth
 obtaining is maintained at `data/harmonized/download-wishlist.md`.
+*[Amended 2026-09-23: that file no longer exists. The list of documents to
+obtain is `data/raw-data/to-get.csv`; downloaded documents that yielded no data
+are recorded in `data/raw-data/background-register.csv`. See docs/design.md §7.]*
 
 **D8 — Three rules on the shape of the harmonized roster (2026-08-27).**
 (a) *Every technology is standalone.* `baseline-technology` stays blank and each

@@ -75,6 +75,36 @@ measure's. `records/reference/ukerc-host-baseline.csv` names which archetype is
 which UKERC host step. A measure whose source gives no host cost is set aside
 (`set-aside = needs-host-cost`, listed in `output/set-aside-host-cost.csv`).
 
+**Add-ons and components.**
+- Storage added to a base system (a battery on PV, a thermal store on an electric
+  heater) is an add-on measure: its cost is `incremental` and pools only as a
+  whole-plant cost with the base system's cost from the same source, as above.
+- An example has every part its archetype names. A PV system without storage is not
+  an example of `photovoltaic-array_battery-storage`.
+- Road-vehicle components (engines, batteries, drivetrains) are not proxies for
+  mobile equipment.
+
+**Whole-plant archetypes** (a whole mine, refinery or upgrader) are alternatives to
+the unit archetypes inside them. A model uses one framing or the other, never both.
+
+**Components and assembled whole-plant costs.**
+- A `component` archetype (type `component`) is a part priced only to build
+  whole-plant costs: `anaerobic-digester`, `separator_biogas-upgrading`. It serves no
+  hierarchy node and is never offered to the model; the build refuses a component
+  that links to a node. Components stay out of the wide views.
+- `records/reference/whole-plant-assembly.csv` lists each whole-plant cost to build
+  from components: the whole-plant archetype, the source, the parameter and unit,
+  and the component rows (example, case, and a multiplier where the denominators
+  differ). The build writes the sum as a derived row (`tp-<source-id>-aNNN`) whose
+  `derived-from` names every component row.
+- Components are added only within one source, and a different denominator is
+  reconciled only with that source's own factor. Components from different sources,
+  different currency-years or an unreconciled unit stop the build.
+- Where the source also prints the total, the assembled row is a consistency check:
+  a duplicate of the printed row, not pooled.
+- An example whose source prices the whole plant (digester and engine together) is
+  an example of the whole-plant archetype (`anaerobic-digester_chp`), not of a part.
+
 ## 3. Naming
 
 **The one rule, everywhere:** `-` joins words within a component; `_` separates
@@ -272,7 +302,21 @@ number, numbered within the source (`tp-ukerc_2013_001-0042`), so an edit to one
 source never renumbers another.
 
 **Registration.** Every source is registered in `data/raw-data/source-details_sources.csv`
-and `source-details_files.csv`. The build takes source ids from there.
+and `source-details_files.csv`. The build takes source ids from there. The
+manifest records what the database draws on: sources that provide data, the
+originals a compilation cites (registered but not held), and sources queued for
+extraction.
+
+**Documents to get.** Documents worth obtaining are listed in
+`data/raw-data/to-get.csv`, with priority, the source that cites each one, and
+what it would supply. A document leaves the list when it is downloaded and
+registered.
+
+**Background documents.** A downloaded document that yields nothing for the
+database goes to `data/raw-data/background-no-data-extracted/` and is recorded
+in `data/raw-data/background-register.csv` (why it has no data, what little it
+has), not in `source-details_files.csv`. Its source row stays only if a
+compilation cites it as an original.
 
 ## 8. Readiness
 
@@ -295,7 +339,9 @@ and `source-details_files.csv`. The build takes source ids from there.
 
 ## 9. Reading the outputs
 
-- `wide-archetype.csv` has one row per archetype, including blank ones. `end-uses`
+- `wide-archetype.csv` has one row per archetype, including blank ones, except
+  `component` archetypes, which are intermediate parts and stay out of both wide views
+  (they remain in `archetype.csv` and the long tables). `end-uses`
   names the annotation groups each archetype serves. `status` (also in
   `archetype.csv`) is one of:
   - `quantified`: it has pooled numbers;

@@ -23,6 +23,7 @@ gate a commit.
 | 4 | clean | `pipeline/facts.py` | Evaluates arithmetic-only formulas, spells each unit one way, writes fractions as %, links derived rows to their source rows, flags missing bases, and numbers records within each source. |
 | 5 | examples | `pipeline/examples.py` | Attaches each example to the archetype `records/source-example.csv` names. Appends new examples with a blank archetype. |
 | 5b | whole-plant | `pipeline/wholeplant.py` | Adds UKERC's host baseline cost to each measure cost where `records/reference/ukerc-host-baseline.csv` allows, as a derived row (`tp-<source>-wNNN`). It sets the other measure costs aside. |
+| 5c | assembly | `pipeline/assembly.py` | Sums one source's component costs into a whole-plant cost as listed in `records/reference/whole-plant-assembly.csv`, as a derived row (`tp-<source>-aNNN`). Stops the build on components from another source, another currency-year or an unreconciled unit. |
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py` | Puts every fact on its archetype's basis, or excludes it with the reason. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
@@ -62,7 +63,10 @@ gate a commit.
 
 ## How to
 
-**Add a source.**
+**Add a source.** Pick it from `data/raw-data/to-get.csv` where it is listed there,
+and remove it from that list once it is held. If the document turns out to hold
+nothing usable, move it to `data/raw-data/background-no-data-extracted/` and add
+a row to `data/raw-data/background-register.csv` instead of registering it.
 1. Register it in `data/raw-data/source-details_sources.csv` and `_files.csv`.
 2. Extract it to a long CSV in the template format (`data/raw-data/tech_data_input_template.py`). A multi-context source also gets a `_nodes.csv`.
 3. Add its loader to `pipeline/extract.py`: a file in the template format needs one line in `TEMPLATE_FILES`.

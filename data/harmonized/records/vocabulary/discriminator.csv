@@ -35,8 +35,10 @@ bayer,Bayer digestion on fossil steam; Solar thermal in the Bayer process,no
 bayer-biomass,Biomass-fired Bayer heat,no
 bayer-electric,Electrified Bayer heat,no
 bayer-hydrogen,Hydrogen in the Bayer process,no
+binary-power,Geothermal binary-cycle power,no
 bio-pitch,Bio-pitch and bio-coke anodes,no
 biocarbon-reductant,Biocarbon reductant,no
+biogas-upgrading,Biogas upgrading,no
 bioleaching,Bioleaching,no
 biomass-chp,Biomass gasifier CHP,no
 biomass-methanation,Biomass gasification with methanation,no
@@ -67,7 +69,10 @@ clarifier,Clarification and sludge dewatering,no
 claus,Claus sulphur recovery,no
 co2-dehydration,Dehydration and compression,no
 co2-to-methanol,CO2-to-methanol,no
+coal-methanation,Coal gasification with methanation,no
+coal-mine-methane-drainage,Coal-mine methane drainage and use,no
 coal-petroleum-coke,Coal or petroleum-coke gasification,no
+coal-to-liquids,Coal-to-liquids,no
 cold,Cold rolling mill,no
 compressor-station-power,Compressor-station waste-heat power,no
 condensing,Condensing boiler; Condensing steam turbine,no
@@ -75,14 +80,17 @@ constant-volume,Constant-volume fan system,no
 continuous,Continuous annealing line; Continuous casting; Continuous converting,no
 continuous-casting,Continuous casting and rolling,no
 continuous-kraft,Continuous kraft digester,no
+conversion,Conversion (cracking) refinery,no
 cooler-heat-recovery,Induration with cooler heat recovery,no
 coupled-pickling,Coupled pickling and tandem cold mill,no
 cryogenic-condensation,Cryogenic separation,no
 cryogenic-flue-gas,Cryogenic post-combustion capture,no
 crystallizer,Evaporators and crystallizers,no
 cupola,Cupola or gas-fired melting furnace,no
+cyclic-steam,Cyclic steam stimulation,no
 dac-liquid-solvent,Liquid-solvent DAC,no
 dac-solid-sorbent,Solid-sorbent DAC,no
+deep-conversion,Deep-conversion (coking) refinery,no
 delayed-coking,Delayed coking,no
 demand-controlled,Demand-controlled ventilation,no
 dewatering,Mechanical dewatering before drying,no
@@ -156,6 +164,7 @@ gas-engine-drive,Reciprocating gas-engine compressor,no
 gas-fired-hood,"Gas-fired hood, infrared or air dryer",no
 gas-forklift,Propane or natural gas forklift,no
 gas-suspension,Gas-suspension calciner,no
+gas-to-liquids,Gas-to-liquids,no
 gas-turbine,Gas-turbine-driven refrigeration,no
 gas-turbine-drive,Gas-turbine compressor station,no
 gasoline-propane,Gasoline or propane field engine,no
@@ -196,6 +205,7 @@ hydrogen-fired,Hydrogen-fired furnace,no
 hydrogen-fuel-cell,Hydrogen fuel-cell equipment; Hydrogen fuel-cell haulage,no
 hydrogen-pipeline,Pipeline compression and transmission,no
 hydroprocessing,Hydroprocessing (hydrocracking and hydrotreating),no
+hydroskimming,Hydroskimming refinery,no
 hydrothermal-liquefaction,Hydrothermal liquefaction,no
 hydrotreating-fixed-bed,Fixed-bed hydrotreating,no
 hydrotreating-lipids,Hydrotreating of oils and fats (HEFA/HVO),no
@@ -211,6 +221,7 @@ inert-anode,Inert anode cell,no
 infrared,Infrared or ultraviolet curing,no
 ingot,Ingot casting,no
 instrument-air,Instrument air or electric actuation,no
+integrated-upgrader,Whole bitumen upgrader,no
 iron-electrowinning,Low-temperature iron electrowinning,no
 kiln-waste-heat,Kiln waste-heat drying,no
 ladle,Ladle preheating,no
@@ -267,6 +278,7 @@ ohmic-infrared,"Ohmic, microwave or infrared heating",no
 oil-treating,Electric or heat-pump treating,no
 once-through,Once-through field boiler,no
 open-arc-dc,Open-arc DC furnace,no
+open-pit-coal,Open-pit coal mine,no
 optimization,Fan system optimization; Pump system optimization,no
 ore-sorting,Sensor-based ore sorting,no
 oven-exhaust,Oven exhaust heat recovery,no
@@ -307,6 +319,7 @@ reversible,Reversible heat pump,no
 rotary-direct-fired,Direct-fired rotary dryer or calciner,no
 rotodynamic,Rotodynamic heater; Rotodynamic cracking reactor,no
 sag-ball,SAG and ball mill circuit,no
+sagd,Steam-assisted gravity drainage,no
 semi-chemical,Semi-chemical and sulphite pulping,no
 shaft-hoisting,Shaft hoisting,no
 shoe-extended,Shoe (extended-nip) press,no
@@ -341,6 +354,7 @@ thickening-filtration,Thickening and filtration,no
 thin-slab,Thin-slab casting with direct rolling,no
 top-gas-recycling,Top-gas recycling oxygen blast furnace,no
 top-submerged-lance,Top-submerged-lance bath smelting,no
+torrefaction,Biomass torrefaction,no
 trolley-assist,Trolley-assist haulage,no
 tunnel-deck,Direct-fired tunnel or deck oven,no
 tunnel-roller,Tunnel or roller kiln,no
@@ -348,6 +362,7 @@ turbine-exhaust,Turbine waste-heat recovery,no
 twin-chamber,Twin-chamber furnace with decoating,no
 two-stage,Two-stage smelting reduction,no
 underground-battery,Underground battery-electric equipment,no
+underground-coal,Underground coal mine,no
 vapour-compression,Vapour-compression chiller or refrigeration plant,no
 vapour-recovery,Vapour recovery unit,no
 variable-speed,Variable-speed drive; Variable-speed fans; Variable-speed pump drives,no
@@ -356,3 +371,4 @@ vertical-roller,Vertical roller mill or high-pressure grinding rolls,no
 warm-lime-softening,De-oiling and warm lime softening,no
 warm-water-extraction,Hydrotransport and warm-water extraction,no
 waste-heat,Waste-heat power (ORC or steam Rankine),no
+wood,Wood pellet mill,no

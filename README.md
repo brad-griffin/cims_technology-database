@@ -39,7 +39,7 @@ rewrites it.
 | Folder | Contents |
 | - | - |
 | `docs/` | [design.md](docs/design.md): the rules. [pipeline.md](docs/pipeline.md): the build, and how to add a source or change a mapping. [vocabulary.md](docs/vocabulary.md): generated from the records. [decisions.md](docs/decisions.md): one line per decision, linked to its record. [hierarchy-change-requests.md](docs/hierarchy-change-requests.md): what the database asks of the CIMS hierarchy. |
-| `data/raw-data/` | Source documents, the source manifest and the extractions (layer 1). |
+| `data/raw-data/` | Source documents, the source manifest and the extractions (layer 1). `to-get.csv` lists documents still to obtain; `background-register.csv` records downloaded documents that yielded no data, kept in `background-no-data-extracted/`. |
 | `data/harmonized/` | The database: `records/` (edited), `pipeline/` and `build.py` (code), `output/` (generated). |
 | `data/service-technology-map/` | The CIMS YAML technology files. |
 | `compare/cims-model-inputs/` | A later stage, parked: CIMS model-input technologies to be compared with the database. Not an input to it. |

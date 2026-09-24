@@ -27,6 +27,8 @@ includes every node requested so far:
 | A node for ferroalloys and silicon metal under `metal-smelting` | Electric smelting of them has no CIMS node; only titanium slag does. | 2026-09-16 |
 | Food and beverage process steps under `light-industrial` | CIMS has the aggregate demand only. Heat, refrigeration and drive are carried by the light-industrial services. | 2026-09-16 |
 | Mine air heating as its own service, or a documented home | No CIMS node. The mining ventilation end use carries it for now. | 2026-09-16 |
+| A synthetic-fuels node (coal-to-SNG, coal-to-liquids, gas-to-liquids) | `gasifier_coal-methanation`, `gasifier_coal-to-liquids` and `reactor_gas-to-liquids` are linked provisionally to gas processing and crude distillation. | 2026-09-23 |
+| A coal-mine methane node under `coal-mining` | `process-improvement_coal-mine-methane-drainage` is linked to coal extraction for now; seam methane is a distinct emission. | 2026-09-23 |
 | On-site power for offshore platforms (`petroleum-crude`) | The other candidate beside `mining.service.on-site-power`. Oil-sands cogeneration is CHP and stays on steam. | 2026-09-16 |
 | Confirm `industrial-minerals.product.ceramics` warrants its own branch in every province | Check against NRCan's NAICS 3271 industrial energy series. | 2026-09-18 |
 
