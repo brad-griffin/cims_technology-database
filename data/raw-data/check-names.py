@@ -53,8 +53,8 @@ VOCABULARY_SCOPE = {"general-services"}
 # the publisher_year_slug convention (design doc section 8, item 3). Everything
 # here is reported as a skip count, never silently ignored.
 ORIGINAL_NAME_DIRS = {
-    "mecs", "energy_commodities", "nir", "ceedc", "flowcharts", "archive",
-    "etsap", "91_2018", "97_2018", "118_2019", "__marimo__", "__pycache__",
+    "energy_commodities", "nir", "ceedc", "archive",
+    "__marimo__", "__pycache__",
     # superseded/ archives retired artefacts under the names they had when they
     # were retired -- renaming them would break the link to the code and notes
     # that reference them, so the naming rule does not apply inside it.
@@ -135,7 +135,7 @@ def main() -> int:
                 header = fh.readline().strip()
         except (OSError, UnicodeDecodeError):
             continue
-        if not header.startswith("process,technology,parameter"):
+        if header.split(",")[:3] != ["process", "technology", "parameter"]:
             continue
         try:
             with path.open(encoding="utf-8-sig", newline="") as fh:
@@ -222,6 +222,12 @@ def main() -> int:
         parts = path.stem.split("_")
         rel = path.relative_to(ROOT).as_posix()
         if parts and parts[-1] == "meta":     # reserved sidecar marker
+            parts = parts[:-1]
+        elif len(parts) == 5 and path.suffix.lower() == ".csv" and any(
+                (path.parent / ("_".join(parts[:-1]) + ext)).exists() for ext in (".pdf", ".html", ".xlsx")):
+            # An extraction sidecar (<source stem>_nodes.csv, _flows.csv, ...) of a
+            # four-component source file: the last component names the sidecar, as
+            # '_meta' does, and is not counted.
             parts = parts[:-1]
         if not 3 <= len(parts) <= 4:
             fail("filename", rel,

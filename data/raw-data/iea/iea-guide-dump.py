@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SRC = HERE / "iea_2023_clean-tech-guide.csv"
+SRC = HERE / "iea_2024_clean-energy-technology-guide.csv"
 STEM = "iea_2024_clean-tech-guide"
 YEARS = [2020, 2021, 2022, 2023, 2024]
 LEVELS = ["scale", "sector", "category", "sub-category", "detail"]
