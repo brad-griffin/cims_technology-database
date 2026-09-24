@@ -45,6 +45,13 @@ ETSAP_BRIEFS = [
     ("iea/etsap/etsap_2015_pulp-and-paper", "etsap_2015_001"),
     ("iea/etsap/etsap_2012_aluminium-production", "etsap_2012_001"),
     ("iea/etsap/etsap_2013_heat-pumps", "etsap_2013_002"),
+    # extracted 2026-09-23/24 from the ETSAP brief assessment
+    ("iea/etsap/etsap_2010_combined-heat-and-power", "etsap_2010_004"),
+    ("iea/etsap/etsap_2010_biomass-for-heat-and-power", "etsap_2010_005"),
+    ("iea/etsap/etsap_2013_stationary-fuel-cells", "etsap_2013_004"),
+    ("iea/etsap/etsap_2010_syngas-from-coal", "etsap_2010_011"),
+    ("iea/etsap/etsap_2014_coal-mining-and-logistics", "etsap_2014_002"),
+    ("iea/etsap/etsap_2013_biogas-and-bio-syngas", "etsap_2013_012"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

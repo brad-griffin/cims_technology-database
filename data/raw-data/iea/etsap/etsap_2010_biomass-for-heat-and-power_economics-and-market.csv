@@ -1,0 +1,15 @@
+column,parameter-as-printed,value,value-min,value-max,unit,reference,note
+BP,Fuel cost,,30,50,2008_USD/MWh,"p.7, Table 4","per MWh, basis not stated"
+ADCHP,Fuel cost,,40,60,2008_USD/MWh,"p.7, Table 4","per MWh, basis not stated"
+BP,Total production cost,,100,130,2008_USD/MWh,"p.7, Table 4",levelised at 10%
+ADCHP,Total production cost,,140,200,2008_USD/MWh,"p.7, Table 4","levelised at 10%. p.4: about $190/MWh in 2008, about $150/MWh in 2020 (Fig. 13, RWE 2009 - Fig. 13 itself is in EUR/MWh)"
+BP,Economic lifetime,20,,,years,"p.7, Table 4",merged across all three columns
+ADCHP,Economic lifetime,20,,,years,"p.7, Table 4",merged across all three columns
+BP,Installed (existing) capacity,30,,,GWe,"p.7, Table 4",
+ADCHP,Installed (existing) capacity,4,,,GWe,"p.7, Table 4",
+BP,Market share,~1,,,,"p.7, Table 4",
+ADCHP,Market share,<<1,,,,"p.7, Table 4",
+(all),Average capacity aging,Differs from country to country.,,,,"p.7, Table 4",merged
+(all biomass),Global biomass electricity,257,,,TWh/yr,p.1,"IEA 2009a; p.4 says 259 TWh in 2007, 840 TWh in 2030"
+(all biomass),Direct heat to industry and residential from biomass and waste,4.5,,,EJ,p.1,105 Mtoe
+(all biomass),Heat from biomass CHP,,2,3,EJ,p.1,47-70 Mtoe

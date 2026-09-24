@@ -1,0 +1,81 @@
+table,item,column,value,unit,reference,note
+Table 1,Methane CH4 (in volume),Biogas,50-70%*,,"p.4, Table 1",* From carbohydrates ~50%; fat and proteins ~70%; manure 60-65%; energy crops 50-60%; default value 60%.
+Table 1,Methane CH4 (in volume),Landfill gas,35-65%,,"p.4, Table 1",
+Table 1,Methane CH4 (in volume),Natural gas,80-90%,,"p.4, Table 1",
+Table 1,Carbon dioxide CO2 (in volume),Biogas,25-45%,,"p.4, Table 1",
+Table 1,Carbon dioxide CO2 (in volume),Landfill gas,15-50%,,"p.4, Table 1",
+Table 1,Carbon dioxide CO2 (in volume),Natural gas,0.7-1,,"p.4, Table 1","Natural gas CO2 and N2 printed without '%' ('0.7-1', '0-14')."
+Table 1,Water vapour (in volume),Biogas,1-5%,,"p.4, Table 1",
+Table 1,Water vapour (in volume),Landfill gas,-,,"p.4, Table 1",
+Table 1,Water vapour (in volume),Natural gas,<1%,,"p.4, Table 1",
+Table 1,Oxygen O2 (in volume),Biogas,<2%,,"p.4, Table 1",
+Table 1,Oxygen O2 (in volume),Landfill gas,0-5%,,"p.4, Table 1",
+Table 1,Oxygen O2 (in volume),Natural gas,0,,"p.4, Table 1",
+Table 1,Nitrogen (in volume),Biogas,<2%,,"p.4, Table 1",
+Table 1,Nitrogen (in volume),Landfill gas,5-40%,,"p.4, Table 1",
+Table 1,Nitrogen (in volume),Natural gas,0-14,,"p.4, Table 1","Natural gas CO2 and N2 printed without '%' ('0.7-1', '0-14')."
+Table 1,Hydrogen sulphide (ppm),Biogas,0-4000,,"p.4, Table 1",
+Table 1,Hydrogen sulphide (ppm),Landfill gas,0-100,,"p.4, Table 1",
+Table 1,Hydrogen sulphide (ppm),Natural gas,<3,,"p.4, Table 1",
+Table 1,Ammonia (ppm),Biogas,100,,"p.4, Table 1",
+Table 1,Ammonia (ppm),Landfill gas,5,,"p.4, Table 1",
+Table 1,Ammonia (ppm),Natural gas,0,,"p.4, Table 1",
+Table 1,Hydrogen (in volume),Biogas,<1%,,"p.4, Table 1",
+Table 1,Hydrogen (in volume),Landfill gas,<3%,,"p.4, Table 1",
+Table 1,Hydrogen (in volume),Natural gas,0,,"p.4, Table 1",
+Table 1,Other hydrocarbons (in volume),Biogas,0,,"p.4, Table 1",
+Table 1,Other hydrocarbons (in volume),Landfill gas,0,,"p.4, Table 1",
+Table 1,Other hydrocarbons (in volume),Natural gas,3-10,,"p.4, Table 1",
+Table 1,Lower heating value (kWh/Nm3),Biogas,6.5,,"p.4, Table 1",
+Table 1,Lower heating value (kWh/Nm3),Landfill gas,4.4,,"p.4, Table 1",
+Table 1,Lower heating value (kWh/Nm3),Natural gas,9-11,,"p.4, Table 1",
+Table 1,Wobbe index - upper (kWh/Nm3),Biogas,6-10,,"p.4, Table 1",
+Table 1,Wobbe index - upper (kWh/Nm3),Landfill gas,5-7,,"p.4, Table 1",
+Table 1,Wobbe index - upper (kWh/Nm3),Natural gas,12-15,,"p.4, Table 1",
+Table 6,Water Scrubb.,CH4 (%) - methane content of product,95-99%,%,"p.8, Table 6",Product purity; not a recovery rate.
+Table 6,Amine Scrubb.,CH4 (%) - methane content of product,close to 100%,%,"p.8, Table 6",Product purity; not a recovery rate.
+Table 6,Pressure Swing Adsorp.,CH4 (%) - methane content of product,98-99%,%,"p.8, Table 6",Product purity; not a recovery rate.
+Table 6,Membrane Separ.,CH4 (%) - methane content of product,98%,%,"p.8, Table 6",Product purity; not a recovery rate.
+Table 6,Organic Scrubb.,CH4 (%) - methane content of product,95-99%,%,"p.8, Table 6",Product purity; not a recovery rate.
+Table 2,Covered Lagoon,feedstock type / description / technology level,Liquid Feedstock; Usually non-heated; production varies with temperature fluctuations; Low,,"p.5, Table 2",Feedstock-type header spans columns: 'Liquid Feedstock' over the first three digester types.
+Table 2,Upflow Sludge Blanket,feedstock type / description / technology level,"Liquid Feedstock; Microorganisms agglomerated in granules in suspension, in the digester; Medium",,"p.5, Table 2",Feedstock-type header spans columns: 'Liquid Feedstock' over the first three digester types.
+Table 2,Fixed Film,feedstock type / description / technology level,Liquid Feedstock; Methane forming bacteria grow on a medium (e.g. plastic film) and liquids pass through the medium; Medium,,"p.5, Table 2",Feedstock-type header spans columns: 'Liquid Feedstock' over the first three digester types.
+Table 2,Complete Mix,feedstock type / description / technology level,"Slurry Waste (<10% solids); Content regularly mixed, by motor-driven impeller or pumps; Medium",,"p.5, Table 2",Feedstock-type header spans columns: 'Liquid Feedstock' over the first three digester types.
+Table 2,Plug Flow,feedstock type / description / technology level,Semi-Solid Waste; Constant feedstock additions force the material to move through the tank and be digested; Low,,"p.5, Table 2",Feedstock-type header spans columns: 'Liquid Feedstock' over the first three digester types.
+Table 3,Germany,Plant capacity (Nm3/h raw gas); number of plants,148186; 117,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Sweden,Plant capacity (Nm3/h raw gas); number of plants,28025; 56,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,The Netherlands,Plant capacity (Nm3/h raw gas); number of plants,16720; 21,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Switzerland,Plant capacity (Nm3/h raw gas); number of plants,2225; 15,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,USA,Plant capacity (Nm3/h raw gas); number of plants,79600; 14,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Austria,Plant capacity (Nm3/h raw gas); number of plants,2210; 10,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Japan,Plant capacity (Nm3/h raw gas); number of plants,2400; 6,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,South Korea,Plant capacity (Nm3/h raw gas); number of plants,1710; 4,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Canada,Plant capacity (Nm3/h raw gas); number of plants,1600; 3,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,France,Plant capacity (Nm3/h raw gas); number of plants,1400; 3,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Norway,Plant capacity (Nm3/h raw gas); number of plants,1250; 3,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,United Kingdom,Plant capacity (Nm3/h raw gas); number of plants,650; 3,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Finland,Plant capacity (Nm3/h raw gas); number of plants,50; 3,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Spain,Plant capacity (Nm3/h raw gas); number of plants,4000; 1,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Iceland,Plant capacity (Nm3/h raw gas); number of plants,700; 1,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Denmark,Plant capacity (Nm3/h raw gas); number of plants,300; 1,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 3,Total,Plant capacity (Nm3/h raw gas); number of plants,291026; 261,Nm3/h; plants,"p.5, Table 3","Two country columns printed side by side; totals check (291,026 Nm3/h, 261 plants)."
+Table 8,Energy crops,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),27**; 978 | 27 (100%) | 50; 1799 | ,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,Manure and other agriculture residues,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),32; 1145 | 9 (28%) | 104; 3743 | ,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,Total agriculture,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),59; 2123 |  | ;  | 630; 23,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,"Municipal waste, food processing, landfill gas",EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),10; 360 | 4 (40%) | 72; 2591 | ,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,Industrial waste,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),3; 108 | 1.5 (50%) | 32; 1152 | ,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,Sewage sludge,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),6; 216 | 4 (66%) | 16; 576 | ,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,Total other waste,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),19; 684 | 9.5 (50%) | 120; 4319 | 370; 13,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 8,TOTAL,EU27 potential (bcm CH4; PJ) | EU27 used 2020 (bcm) | China potential (bcm; PJ) | World (bcm; 'PJ'),78; 2807*** | 46 (59%) | 274; 9861 | 1000; 36,,"p.10, Table 8","DEFECT: the World column's energy values (23, 13, 36) are headed 'PJ' but are EJ (630 bcm x ~36 MJ/m3 = 22.7 EJ); world primary energy 2010 printed as 532 in the same column (EJ). ** 5 of 25 million ha used for biogas crops; *** 3.6 PJ per million inhabitants excl. energy crops."
+Table 9,Biogas from municipal organic waste,Processing; Transport & Distribution,20; 3,gCO2eq/MJ,"p.10, Table 9","LIFE-CYCLE default emission factors (EU RED Annex V) - not Scope 1, not loaded."
+Table 9,Biogas from wet manure,Processing; Transport & Distribution,11; 5,gCO2eq/MJ,"p.10, Table 9","LIFE-CYCLE default emission factors (EU RED Annex V) - not Scope 1, not loaded."
+Table 9,Biogas from dry manure,Processing; Transport & Distribution,11; 4,gCO2eq/MJ,"p.10, Table 9","LIFE-CYCLE default emission factors (EU RED Annex V) - not Scope 1, not loaded."
+text,Gasifier scale,fixed bed,up to 1 MWth (updraft up to 40 MWth; downdraft does not scale beyond 1 MWth),MWth,p.3,IRENA 2012
+text,Gasifier scale,15 largest biomass gasifiers,"5 have 1-4 PJ/year (Finland, Germany, Netherlands, Belgium)",PJ/yr,p.3,Vakkilainen 2013
+text,Gasifier,updraft tar content,10-20% volatile oils (tar),,p.3,
+text,Europe biogas,digesters in operation 2012,"almost 12,400 (8,400 in Germany), 2,250 sewage sludge facilities",,p.9,EBA 2013
+text,Europe biogas,electricity 2011,"35.9 TWh (60% power plants, 40% CHP)",TWh,p.9,
+text,USA biogas,electricity 2012,9.1 GWh,GWh,p.9,Printed '9.1 GWh' - implausibly small for >500 facilities; probably TWh (unverified).
+text,India,small gasifiers for electricity,> 155 MW,MW,p.9,REN21 2013
+text,Anaerobic digestion,inhibiting concentrations,NH4+NH3 >1000 mg N/l; SO4 >500 mg/l; H2S >250 mg/l; Cr >130; Na >3500; Mg >3000; Zn >350; Cu >10 mg/l,mg/l,p.2,Jorgensen 2009
+text,Anaerobic digestion,operating conditions,"pH 6.5-8.0; C/N 20-30; retention up to 20 days thermophilic, >20 days mesophilic",,p.2,

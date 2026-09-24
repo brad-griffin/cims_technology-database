@@ -1,0 +1,18 @@
+item,value,value-min,value-max,unit,reference,note
+"Heating value, anthracite",,27.70,32.56,TJ/kt,"p.3, Table 1","Printed 'Typical coal high/low heating values'; columns 'Low' and 'High' are the range ends, not LHV and HHV."
+"Heating value, bituminous",,24.42,32.56,TJ/kt,"p.3, Table 1",
+"Heating value, sub-bituminous",,19.31,26.75,TJ/kt,"p.3, Table 1",
+"Heating value, lignite",,14.65,19.31,TJ/kt,"p.3, Table 1","p.3 text: some lignites are 5.2 (Greece) to 13.6 (Canada) TJ/kt, below this range."
+"Heat content, US coking coal",27.7,,,TJ/kt,p.3,Sulphur 0.9 wt%.
+"Heat content, US average coal (weighted)",24.47,,,TJ/kt,p.7,Used by Jaramillo for the transport factors.
+"Recovery rate, US coal mining average",82,,,%,p.4; p.12,"Share of the deposit recovered - a resource figure, not an energy efficiency."
+"Recovery rate, surface mining",,90,,%,p.2; p.12,'90% and above'.
+US coal mining energy use,512,,,PJ/yr,p.5,BCS 2007; does not reconcile with 0.391 GJ/t (see main-file note).
+"Energy savings potential, US coal mining",49,,,%,p.5; p.12,"About 250 PJ/yr of 512; largest potentials in grinding and diesel materials handling. Energy, not emissions - no parameter home."
+"Energy savings potential, US coal mining",250,,,PJ/yr,p.5,'approximately'.
+Underground share of world coal production,60,,,%,p.2,
+Surface share of US coal mined,70,,,%,p.7,'almost 70%'.
+"Coal production, Canada, 2010",68,,,Mt,"p.3, Table 3","Metric tonnes (Table 3 'M metric tons'); world 7,216."
+"Recoverable reserves, Canada, 2009",6.6,,,Gt,"p.3, Table 2",Table 2 unit printed '(metric tons)' but values are billions of metric tons; world 858.3 (summary p.12 says 859.3).
+Methane explosive threshold,5,,,%,p.5,Ventilation keeps CH4 below 1%.
+Diesel emission coefficient,2.70,,,kg CO2e/L,p.5,EPA 2011; residual fuel oil 2.98 kg CO2e/L.

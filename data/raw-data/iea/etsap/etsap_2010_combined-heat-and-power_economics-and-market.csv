@@ -1,0 +1,19 @@
+process,technology,parameter-as-printed,value,value-min,value-max,unit,reference,note
+Gas-fired industrial CHP,combustion-turbine_natural-gas_chp,net fuel cost,,40,60,2008_USD/MWh,"p.5, Table 3","per MWh, basis (electricity or total output) not stated; no database parameter"
+Gas-fired industrial CHP,combustion-turbine_natural-gas_chp,net production cost,70,65,75,2008_USD/MWh,"p.5, Table 3",levelised at the table's 10% interest rate; no database parameter
+Gas-fired industrial CHP,combined-cycle_natural-gas_chp,net fuel cost,,30,45,2008_USD/MWh,"p.5, Table 3","per MWh, basis (electricity or total output) not stated; no database parameter"
+Gas-fired industrial CHP,combined-cycle_natural-gas_chp,net production cost,67.5,60,75,2008_USD/MWh,"p.5, Table 3",levelised at the table's 10% interest rate; no database parameter
+Coal-based industrial CHP,steam-turbine_coal_chp,net fuel cost,,20,25,2008_USD/MWh,"p.5, Table 4","per MWh, basis (electricity or total output) not stated; no database parameter"
+Coal-based industrial CHP,steam-turbine_coal_chp,net production cost,62.5,45,75,2008_USD/MWh,"p.5, Table 4",levelised at the table's 10% interest rate; no database parameter
+Gas-fired ICE CHP,reciprocating-engine_natural-gas_chp,net fuel cost,,40,60,2008_USD/MWh,"p.5, Table 4","per MWh, basis (electricity or total output) not stated; no database parameter"
+Gas-fired ICE CHP,reciprocating-engine_natural-gas_chp,net production cost,75,65,85,2008_USD/MWh,"p.5, Table 4",levelised at the table's 10% interest rate; no database parameter
+Gas-fired industrial CHP,combustion-turbine_natural-gas_chp,economic lifetime,20,,,years,"p.5, Table 3",merged across GT and CCGT
+Gas-fired industrial CHP,combined-cycle_natural-gas_chp,economic lifetime,20,,,years,"p.5, Table 3",merged across GT and CCGT
+Coal-based industrial CHP,steam-turbine_coal_chp,economic lifetime,25,,,years,"p.5, Table 4",
+Gas-fired ICE CHP,reciprocating-engine_natural-gas_chp,economic lifetime,15,,,years,"p.5, Table 4",
+Gas-fired industrial CHP,(GT CHP and CCGT CHP together),"market share, %",~6,,,%,"p.5, Table 3",merged; CONFLICTS with ~7 for 2010 in the projections block
+Coal-based industrial CHP / Gas-fired ICE CHP,(FBC and gas engine together),"market share, %",~6,,,%,"p.5, Table 4",merged; CONFLICTS with ~2 for 2010 in the projections block
+Gas-fired industrial CHP,(GT CHP and CCGT CHP together),installed (existing) capacity,N/A,,,GWe,"p.5, Table 3",merged
+Gas-fired ICE CHP,reciprocating-engine_natural-gas_chp,installed (existing) capacity,146,,,GWe,"p.5, Table 4","printed '146 (2003, incl. power only)', under the gas-engine column only (x-coordinates); a global figure including power-only engines"
+Combined heat and power,(all CHP),share of global power generation,9,,,%,p.1,"IEA, 2008"
+Combined heat and power,(all CHP),energy saving vs separate production,,15,30,%,p.3-4,OPET 2007; Siemens 2009

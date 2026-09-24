@@ -1,0 +1,18 @@
+process,technology,parameter-as-printed,value,value-min,value-max,unit,reference,note
+Stationary fuel cell systems,fuel-cell_natural-gas_molten-carbonate,typical O&M cost,500,,,2010_USD/yr,"p.8, Table 3","NOT LOADED: printed '$500/year [26]' with NO system size, so it cannot be put per kWe. Ref [26] (Upreti 2012)."
+Stationary fuel cell systems,fuel-cell_natural-gas_phosphoric-acid,typical O&M cost,700,,,2010_USD/yr,"p.8, Table 3","NOT LOADED: printed '$700/year [26]' with NO system size, so it cannot be put per kWe."
+Stationary fuel cell systems,fuel-cell_natural-gas_solid-oxide,start time from cold,60,,,min,"p.8, Table 3",Printed '60 [19]'; no database parameter.
+Stationary fuel cell systems,fuel-cell_natural-gas_molten-carbonate,start time from cold,No start/stop,,,,"p.8, Table 3","p.4: must be kept at temperature even on standby, lowering average efficiency when not base-loaded."
+Stationary fuel cell systems,fuel-cell_natural-gas_phosphoric-acid,start time from cold,Assume as PEMFC,,,,"p.8, Table 3",i.e. 20 min by the PEMFC cell; no database parameter.
+Stationary fuel cell systems,fuel-cell_natural-gas_pem,units shipped in 2011,20400,,,units,"p.2, Table 1",Global shipments [6]. PEMFC column is 'PEMFC & HT PEMFC'; SOFC column is 'IT SOFC & SOFC'.
+Stationary fuel cell systems,fuel-cell_natural-gas_pem,capacity shipped in 2011,49.2,,,MWe,"p.2, Table 1",Global shipments [6].
+Stationary fuel cell systems,fuel-cell_natural-gas_solid-oxide,units shipped in 2011,600,,,units,"p.2, Table 1",Global shipments [6]. PEMFC column is 'PEMFC & HT PEMFC'; SOFC column is 'IT SOFC & SOFC'.
+Stationary fuel cell systems,fuel-cell_natural-gas_solid-oxide,capacity shipped in 2011,10.6,,,MWe,"p.2, Table 1",Global shipments [6].
+Stationary fuel cell systems,fuel-cell_natural-gas_molten-carbonate,units shipped in 2011,<500,,,units,"p.2, Table 1",Global shipments [6]. PEMFC column is 'PEMFC & HT PEMFC'; SOFC column is 'IT SOFC & SOFC'.
+Stationary fuel cell systems,fuel-cell_natural-gas_molten-carbonate,capacity shipped in 2011,44.5,,,MWe,"p.2, Table 1",Global shipments [6].
+Stationary fuel cell systems,fuel-cell_natural-gas_phosphoric-acid,units shipped in 2011,<500,,,units,"p.2, Table 1",Global shipments [6]. PEMFC column is 'PEMFC & HT PEMFC'; SOFC column is 'IT SOFC & SOFC'.
+Stationary fuel cell systems,fuel-cell_natural-gas_phosphoric-acid,capacity shipped in 2011,4.6,,,MWe,"p.2, Table 1",Global shipments [6].
+Stationary fuel cell systems,fuel-cell_natural-gas_phosphoric-acid,platinum share of system cost,,10,15,%,p.4,Platinum loadings account for 10-15% of total PAFC system cost [14].
+Stationary fuel cell systems,(all chemistries),stack share of system cost,,10,20,%,p.4,"'For some systems, only 10-20% of total system cost is in the stack for small and large applications' [16, 17]."
+Stationary fuel cell systems,"(large systems, all chemistries)",larger system cost range (Highlights),,4000,12500,USD/kWe,p.1,"Highlights summary spanning MCFC/PAFC ($4,000-4,500) and SOFC >100 kWe ($7,000-12,500); no currency year on p.1."
+Stationary fuel cell systems,(all chemistries),SOFC reported peak electrical efficiency,60,,,%,p.3,"'reported electrical efficiencies up to 60% [10]' (CFCL generator, 2009); majority 40-50% net AC."
