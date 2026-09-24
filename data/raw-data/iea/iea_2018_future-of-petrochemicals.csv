@@ -1,0 +1,39 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+High-value chemicals,steam-cracker_naphtha,description,,,"naphtha steam cracking to high-value chemicals (ethylene, propylene, BTX)",,,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_naphtha,capex,,2017_USD/t-per-yr,2050,,,,"p.33, Figure 2.6 notes",COST BASIS: total-plant. Per tonne of HVC capacity per year. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+High-value chemicals,steam-cracker_naphtha,opex-fixed,,fraction/yr,,0.025,0.05,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_naphtha,lifetime,,years,25,,,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_naphtha,specific-energy-consumption,,GJ/t,,12,19,,"p.33, Figure 2.6 notes","PROCESS energy per tonne of HVC (fuel, steam and electricity) on a NET basis, assuming full use of the fuel gas in the product stream; feedstock excluded. "
+High-value chemicals,steam-cracker_ethane,description,,,"ethane steam cracking; yields about 50% more HVCs than naphtha, mostly ethylene",,,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_ethane,capex,,2017_USD/t-per-yr,1500,,,,"p.33, Figure 2.6 notes",COST BASIS: total-plant. Per tonne of HVC capacity per year. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+High-value chemicals,steam-cracker_ethane,opex-fixed,,fraction/yr,,0.025,0.05,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_ethane,lifetime,,years,25,,,,"p.33, Figure 2.6 notes",
+High-value chemicals,steam-cracker_ethane,specific-energy-consumption,,GJ/t,,14,17,,"p.33, Figure 2.6 notes","PROCESS energy per tonne of HVC (fuel, steam and electricity) on a NET basis, assuming full use of the fuel gas in the product stream; feedstock excluded. THE REPORT PRINTS THIS RANGE AGAINST 'naphtha steam cracking' a second time; by elimination (the notes list naphtha, then naphtha again, then MTO, and ethane is the only other process costed) it is the ethane cracker's. A reading, flagged."
+High-value chemicals,reactor_methanol_mto,description,,,methanol-to-olefins (MTO),,,,"p.33, Figure 2.6 notes",
+High-value chemicals,reactor_methanol_mto,capex,,2017_USD/t-per-yr,1000,,,,"p.33, Figure 2.6 notes",COST BASIS: total-plant. Per tonne of HVC capacity per year. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+High-value chemicals,reactor_methanol_mto,opex-fixed,,fraction/yr,,0.025,0.05,,"p.33, Figure 2.6 notes",
+High-value chemicals,reactor_methanol_mto,lifetime,,years,25,,,,"p.33, Figure 2.6 notes",
+High-value chemicals,reactor_methanol_mto,specific-energy-consumption,,GJ/t,11,,,,"p.33, Figure 2.6 notes","PROCESS energy per tonne of HVC (fuel, steam and electricity) on a NET basis, assuming full use of the fuel gas in the product stream; feedstock excluded. "
+High-value chemicals,steam-cracker_naphtha,state-of-development,,,existing,,,,p.33,
+Ammonia,steam-reformer_ammonia,description,,,natural gas steam reforming ammonia plant,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,steam-reformer_ammonia,capex,,2017_USD/t-per-yr,860,,,,"PDF p.111, Figure 5.17 notes",COST BASIS: total-plant. Per tonne of ammonia capacity per year. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+Ammonia,steam-reformer_ammonia,opex-fixed,,fraction/yr,,0.025,0.05,,"PDF p.111, Figure 5.17 notes",
+Ammonia,steam-reformer_ammonia,lifetime,,years,25,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,gasifier_biomass,description,,,biomass gasification route to ammonia,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,gasifier_biomass,capex,,2017_USD/t-per-yr,6000,,,,"PDF p.111, Figure 5.17 notes",COST BASIS: total-plant. Per tonne of ammonia capacity per year - 3-12 times the electrolytic route's capex per unit of ammonia (PDF p.112). The route is 15-40% more energy-intensive per tonne of ammonia than electrolysis. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+Ammonia,gasifier_biomass,opex-fixed,,fraction/yr,,0.025,0.05,,"PDF p.111, Figure 5.17 notes",
+Ammonia,gasifier_biomass,lifetime,,years,25,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,air-separation-unit,description,,,air separation unit supplying nitrogen to an electrolytic ammonia plant,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,air-separation-unit,capex,,2017_USD/t-per-yr,95,,,,"PDF p.111, Figure 5.17 notes",COST BASIS: equipment. Per tonne of AMMONIA; the report also prints USD 9/t of nitrogen. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+Ammonia,air-separation-unit,opex-fixed,,fraction/yr,,0.025,0.05,,"PDF p.111, Figure 5.17 notes",
+Ammonia,air-separation-unit,lifetime,,years,25,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,electrolyzer_electricity,description,,,water electrolysis for hydrogen to ammonia,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,electrolyzer_electricity,capex,,2017_USD/kW,,480,1400,,"PDF p.111, Figure 5.17 notes","COST BASIS: installed. Per kW of ELECTRICAL INPUT capacity (the report states electrolysis capex per unit of electricity input, unlike the others). Projected to fall 65% between 2017 and 2050. From Bazzanella and Ausfelder 2017 and Schmidt et al. 2017. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year)."
+Ammonia,electrolyzer_electricity,opex-fixed,,fraction/yr,,0.025,0.05,,"PDF p.111, Figure 5.17 notes",
+Ammonia,electrolyzer_electricity,lifetime,,years,25,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,capture-unit_ammonia,description,,,"CO2 capture on an ammonia plant, 90% capture applied to each source",,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,capture-unit_ammonia,capex,,2017_USD/t-per-yr,,50,270,,"PDF p.111, Figure 5.17 notes",COST BASIS: total-plant. Per tonne of CO2 captured per year; the range spans concentrated process CO2 (low end) and dilute energy-related CO2 (high end). CO2 transport and storage adds USD 20/t captured. Fixed OPEX 2.5-5.0% of capex; discount rate 8%; 25-year design life for all equipment; capex assumed constant over time and between regions. Currency year not stated; 2017_USD assumed (the report's price base year).
+Ammonia,capture-unit_ammonia,opex-fixed,,fraction/yr,,0.025,0.05,,"PDF p.111, Figure 5.17 notes",
+Ammonia,capture-unit_ammonia,lifetime,,years,25,,,,"PDF p.111, Figure 5.17 notes",
+Ammonia,electrolyzer_electricity,efficiency,,fraction,0.66,,0.82,,"PDF p.111, Figure 5.17 notes, PDF p.112",HHV basis: 66% today rising to 82% by 2050 (PDF p.112); the figure spans 66-82%. Recorded as today's value with the 2050 figure as max.
+Ammonia,capture-unit_ammonia,capture-rate,,fraction,0.90,,,,"PDF p.111, Figure 5.17 notes",

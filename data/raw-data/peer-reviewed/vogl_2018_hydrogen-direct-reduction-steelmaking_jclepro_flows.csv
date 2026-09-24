@@ -1,0 +1,7 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+H-DR steelmaking,shaft-furnace_hydrogen,input,pellets,1504,kg/unit,t,,,,,p.739,,"iron ore pellets (95% hematite, 5% inert) per tonne of liquid steel at 100% HBI. At a 50:50 HBI/scrap charge: 738 kg pellets and 536 kg scrap."
+H-DR steelmaking,shaft-furnace_hydrogen,input,hydrogen,51,kg/unit,t,,,,,p.739,,"produced in the plant's own electrolyser, so not a purchased input; no H2 losses assumed. 25 kg at a 50:50 HBI/scrap charge."
+H-DR steelmaking,shaft-furnace_hydrogen,input,electricity,3.48,MWh/unit,t,,,,,p.739,,whole plant including the electrolyser; see the specific-energy-consumption row
+H-DR steelmaking,shaft-furnace_hydrogen,input,lime,50,kg/unit,t,,,,,p.738,,lime to the EAF
+H-DR steelmaking,shaft-furnace_hydrogen,input,electrodes,2,kg/unit,t,,,,,p.739,,"graphite electrodes, from Remus et al. 2013; 8 EUR/tLS"
+H-DR steelmaking,shaft-furnace_hydrogen,output,oxygen,411,kg/unit,t,,,yes,,p.741,,by-product of the electrolyser; 60% assumed sold

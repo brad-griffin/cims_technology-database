@@ -1,0 +1,18 @@
+technology-class,study,capacity-t-per-yr,capex-eur-per-t-yr,opex-pct,lifetime-yr,electricity-kwh-per-t,heat-kwh-per-t,cost-year,cost-reported-eur-per-t,cost-recalculated-eur-per-t,reference,note
+HT aqueous,Keith et al. 2006,280000,,,20,,,2005,376,,Table 4,
+HT aqueous,Holmes and Keith 2012,1000000,,,,,,,258,,Table 4,electricity 60 EUR/MWh
+HT aqueous,Socolow et al. 2011 (optimistic),1000000,1583,4,20,494,2250,2011,309,314,Table 4,plus 2.88 EUR/t variable opex
+HT aqueous,Socolow et al. 2011 (pessimistic),1000000,2086,4,20,494,2250,2011,395,388,Table 4,installation factor 6 instead of 4.5
+HT aqueous,Mazzotti et al. 2013,1000000,,,,,1840,2013,283-300,,Table 4,three packing materials
+HT aqueous,Carbon Engineering 2018c,,,,,1500,0,large-scale,75-113,,Table 4,compressed to 150 bar
+HT aqueous,"Keith et al. 2018 config 1, first plant",1000000,1032,3.7,25,0,2450,2018,"151, 209",200,Table 4,"natural gas, 150 bar; costs at 7.5% and 12.5% annuity"
+HT aqueous,"Keith et al. 2018 config 1, Nth plant",1000000,714,3.8,25,0,2450,2018,"114, 153",158,Table 4,
+HT aqueous,Keith et al. 2018 config 2,1000000,625,3.7,25,366,1460,2018,"110-112, 137-147",139,Table 4,grid electricity 27-54 EUR/MWh
+HT aqueous,Keith et al. 2018 config 3,1000000,549,3.8,25,77,1460,2018,"85-87, 115-117",115,Table 4,"no compression, free O2"
+LT solid sorbent,Roestenberg 2015 (Antecy),3600,1220,,25,694,2083,2015,,"244, 203",Table 4,recalculated; second figure with free waste heat
+LT solid sorbent,Roestenberg 2015 (Antecy),360000,730,,25,694,2083,2015,,"177, 135",Table 4,
+LT solid sorbent,Kintisch 2014; Ping et al. 2018 (Global Thermostat),,,,,150-260,1170-1410,first plant,<113,,Table 4,
+LT solid sorbent,Climeworks 2018b,300,,,20,200-300,1500-2000,2014,,,Table 4,target 75 EUR/t at large scale
+moisture swing,Lackner 2009,365,421,,10,306,,2009,144,99,Table 4,electricity 38 EUR/MWh
+generic,House et al. 2011,,,,,3156,,2011,750,,Table 4,225 in 2050
+generic,Nemet and Brandt 2012,500000,330,4,50,,,2029,45,,Table 4,"23 in 2050, 14 in 2100"

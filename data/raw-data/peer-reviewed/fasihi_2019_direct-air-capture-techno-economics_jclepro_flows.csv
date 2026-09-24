@@ -1,0 +1,6 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Direct air capture,capture-unit_dac-solid-sorbent,input,electricity,250,kWh/unit,t,,,,,Table 7,,"per tonne of CO2 captured, 2020"
+Direct air capture,capture-unit_electricity_dac-liquid-solvent,input,electricity,1535,kWh/unit,t,,,,,Table 7,,"per tonne of CO2 captured, 2020"
+Direct air capture,capture-unit_dac-solid-sorbent,input,waste-heat,1750,kWh/unit,t,,,,,Table 7,,"LOW-TEMPERATURE HEAT, thermal kWh at about 100 degC. The paper supplies it by a heat pump (in which case it is electricity at COP 3.0) or free waste heat; recorded as waste-heat because the commodity list has no generic low-temperature heat."
+Direct air capture,capture-unit_dac-solid-sorbent,output,co2-captured,1,t/unit,t,,,,,Table 2,,"at 1 bar, >99% purity; no compression"
+Direct air capture,capture-unit_electricity_dac-liquid-solvent,output,co2-captured,1,t/unit,t,,,,,Table 1,,"at 1 bar, >97% purity; no compression"
