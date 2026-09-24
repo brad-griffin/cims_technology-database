@@ -77,7 +77,6 @@ SUPERSEDED = {
     "novacem_2011_003": "novacem_2011_001",
     "ippc_2012_001": "ec_2012_001",
     # Renamed 2026-08-29: the issuer was misidentified, not the document.
-    "nlr_2018_001": "nrel_2018_001",
     "collodi-wheeler_2010_001": "collodi_2010_001",
     # the held file is the 2024 edition, not the 2026 one it was registered as
     "iea_2026_002": "iea_2024_001",
@@ -164,14 +163,10 @@ MERGED = [
      "one iron and steel BREF; 'EC' names the issuer where 'IPPC' names a directive"),
 ]
 
-# Renames, not merges: the document is the same, the attribution was wrong. Both
-# were applied 2026-08-29. The retired id is superseded, not deleted, and the
+# Renames, not merges: the document is the same, the attribution was wrong. It
+# was applied 2026-08-29. The retired id is superseded, not deleted, and the
 # replacement is registered in the manifest with the reason.
 RENAMED = [
-    ("nlr_2018_001 -> nrel_2018_001", "NREL has since been renamed the National Laboratory "
-     "of the Rockies, so the live host is data.nlr.gov, but a citation names the organization "
-     "as it was at publication. The id keys on the name at publication, which is also how the "
-     "files sheet had registered the download"),
     ("collodi-wheeler_2010_001 -> collodi_2010_001", "UKERC's 'Wheeler, F.' is the "
      "affiliation Foster Wheeler mis-parsed as a second author; Collodi is sole author"),
 ]
