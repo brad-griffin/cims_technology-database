@@ -1,4 +1,13 @@
 archetype,family,node,annotation,via,note
+anaerobic-digester_chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+anaerobic-digester_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_ccs-diffuse,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_ccs-diffuse,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 boiler_ccs-diffuse,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -237,6 +246,7 @@ vapour-recompressor,heat-supply,<sector>.petroleum-refining.service.steam,heat-l
 vapour-recompressor,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_simple-cycle,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 combustion-turbine_simple-cycle_efficiency-moderate,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
+geothermal-well_binary-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 photovoltaic-array_battery-storage,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 reactor_nuclear-micro,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 reciprocating-engine_diesel-generator,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
@@ -895,6 +905,11 @@ reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,<sector>.petrole
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
+refinery_conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
+refinery_conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,whole refinery: its conversion units
+refinery_deep-conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
+refinery_deep-conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,,whole refinery: its coking units
+refinery_hydroskimming,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
 steam-reformer_efficiency-moderate,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 steam-reformer_efficiency-moderate,petroleum-refining,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,,added 2026-09-23: its UKERC host is the ammonia reformer
 steam-reformer_methane,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
@@ -1073,6 +1088,10 @@ leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.copper
 leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_in-situ,mining,<sector>.mining.service.leaching,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
+mine_open-pit-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
+mine_open-pit-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
+mine_underground-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
+mine_underground-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mobile-equipment_underground-battery,mining,<sector>.mining.product.diamond.underground,extraction-and-haulage,,mining/extraction-and-haulage: the leaf its name or label names
 mobile-equipment_underground-battery,mining,<sector>.mining.product.metal.underground,extraction-and-haulage,,mining/extraction-and-haulage: the leaf its name or label names
 mobile-equipment_underground-battery,mining,<sector>.mining.product.uranium.underground,extraction-and-haulage,,mining/extraction-and-haulage: the leaf its name or label names
@@ -1080,6 +1099,7 @@ mobile-equipment_underground-battery,mining,<sector>.mining.service.mine-haulage
 pellet-plant_cooler-heat-recovery,mining,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 press_dewatering,mining,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 press_dewatering,mining,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,methane control on coal extraction; a coal-mine methane node is requested
 pump_mine-dewatering,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 pump_mine-dewatering,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_gravity-magnetic,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
@@ -1149,6 +1169,8 @@ gas-treatment-unit_claus,oil-and-gas,<sector>.natural-gas.product.supply.formati
 gas-treatment-unit_claus,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
+gasifier_coal-methanation,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,provisional: no synthetic-fuels node yet
+gasifier_coal-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,provisional: no synthetic-fuels node yet
 haul-truck_electric-autonomous,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,oil-and-gas/oil-sands-mining-and-extraction: every leaf of oil-and-gas/oil-sands-mining-and-extraction; no evidence to narrow it
 haul-truck_electric-autonomous,oil-and-gas,<sector>.petroleum-crude.service.mine-haulage,oil-sands-mining-and-extraction,,oil-and-gas/oil-sands-mining-and-extraction: every leaf of oil-and-gas/oil-sands-mining-and-extraction; no evidence to narrow it
 heat-pump_oil-treating,oil-and-gas,<sector>.natural-gas.product.supply.extraction.coalbed-methane,oil-and-gas-production,,oil-and-gas/oil-and-gas-production: every leaf of oil-and-gas/oil-and-gas-production; no evidence to narrow it
@@ -1181,7 +1203,9 @@ pump_plunger-lift,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid
 pump_variable-speed,oil-and-gas,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 reactor_ebullated-bed-hydrocracking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_fluid-coking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
+reactor_gas-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,provisional: no synthetic-fuels node yet
 reactor_hydrotreating-fixed-bed,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
+reactor_integrated-upgrader,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_nuclear-steam,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 reactor_partial-upgrading,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reciprocating-engine_diesel-field,oil-and-gas,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
@@ -1206,7 +1230,9 @@ turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.forma
 turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 turboexpander_pressure-let-down,oil-and-gas,<sector>.natural-gas.product.distribution,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
 turboexpander_pressure-let-down,oil-and-gas,<sector>.natural-gas.product.transmission,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
+well_cyclic-steam,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_disposal-injection,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
+well_sagd,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_solvent-assisted,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_solvent-only,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 chiller_absorption,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
@@ -1352,6 +1378,8 @@ melting-furnace_induction,other-industry,<sector>.metal-smelting.product.nickel.
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,,other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it
+pellet-plant_wood,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: pellet mills are wood-products manufacturing
 press_all-electric,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use
 press_hot-platen,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,other-industry/wood-drying-and-pressing: every leaf of the end use
+reactor_torrefaction,other-industry,<sector>.light-industrial.service.heat,wood-drying-and-pressing,,as pellet-plant_wood
 ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat,drying-curing-and-forming,,other-industry/drying-curing-and-forming: every leaf of the end use
