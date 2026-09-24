@@ -274,6 +274,12 @@ def normalise(facts, examples, records, units) -> None:
         elif r.get("excluded") == SET_ASIDE:
             r["set-aside"] = "needs-efficiency"
     for r in facts:
+        if r.get("assembly-duplicate"):
+            # an assembled sum the source also prints: a check, not a second value
+            r["duplicate-of"] = r["assembly-duplicate"]
+            r["excluded"] = ("assembly check: the sum of this source's component costs, "
+                             "which it also prints as a total (duplicate-of); not pooled")
+            continue
         if r.get("excluded") == SET_ASIDE:
             continue
         if r.get("duplicate-of") and r["excluded"] and r["excluded"] != "no number":

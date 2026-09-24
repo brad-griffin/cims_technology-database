@@ -11,7 +11,7 @@ from collections import Counter, defaultdict
 
 from .common import currency_year, split_list
 
-RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|w\d{3})$")
+RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|[wa]\d{3})$")
 
 
 def draws_on_targets(cell: str) -> list[str]:

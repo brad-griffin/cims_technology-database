@@ -8,8 +8,10 @@ intensity is per unit of the archetype's own product (`product-unit`), so a
 column holds CAD per tonne on a kiln row and CAD per GJ on a boiler row: never
 sort, average or chart a cost or intensity column across families.
 
-Every archetype has a row, blank or not. `--quantified-only` restricts it to
-archetypes with pooled numbers.
+Every archetype has a row, blank or not, except `component` archetypes: they are
+intermediate parts priced only to assemble whole-plant costs, so they stay out of
+both wide views (they remain in archetype.csv and the long tables).
+`--quantified-only` restricts the wide view to archetypes with pooled numbers.
 """
 from __future__ import annotations
 
@@ -98,6 +100,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             groups[c] = records.parameters.get(p, {}).get("parameter-class", "")
     wide = []
     for a in arows:
+        if a["type"] == "component":
+            continue
         if a["archetype"] not in with_data and not include_empty:
             continue
         row = {c: a.get(c, "") for c in IDENT}
@@ -124,7 +128,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     flow_cols = fident + [x for c in fcols for x in (c, c + "_n")]
     frows = []
     for a in arows:
-        if a["archetype"] in fby:
+        if a["archetype"] in fby and a["type"] != "component":
             row = {c: a.get(c, "") for c in fident}
             row.update(fby[a["archetype"]])
             frows.append(row)

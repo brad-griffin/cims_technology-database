@@ -31,7 +31,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (checks, currency, examples, extract, facts, hierarchy,  # noqa: E402
+from pipeline import (assembly, checks, currency, examples, extract, facts, hierarchy,  # noqa: E402
                       normalise, records, reports, sources, summarise, views, wholeplant,
                       workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
@@ -84,6 +84,11 @@ def main(argv) -> int:
     wp = wholeplant.derive(L)
     print(f"  UKERC measures: {wp.get('whole-plant rows', 0)} whole-plant rows derived, "
           f"{wp.get('set aside', 0)} measure costs set aside for a host-plant cost")
+    asm = assembly.derive(L)
+    if asm:
+        print(f"  assembled whole-plant costs: {asm.get('rows', 0)} rows derived, "
+              f"{asm.get('checks', 0)} consistency checks against printed totals"
+              + (f" ({asm['check mismatches']} differ)" if asm.get("check mismatches") else ""))
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     backlog = fail.pop("_backlog")
