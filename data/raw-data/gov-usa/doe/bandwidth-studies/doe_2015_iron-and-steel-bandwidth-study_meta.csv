@@ -1,0 +1,7 @@
+parameter,value
+licence,Public domain (US federal government)
+citation,"U.S. Department of Energy, Advanced Manufacturing Office (2015). Bandwidth Study on Energy Use and Potential Energy Saving Opportunities in U.S. Iron and Steel Manufacturing. Prepared by Energetics Incorporated (K. Jamison, C. Kramer, S. Brueske, A. Fisher). Washington, DC: U.S. DOE."
+source-id,doe_2015_001
+band-mapping,"CT -> variant efficiency-base; SOA -> bat; PM -> efficiency-strong (R&D, not commercial). The thermodynamic minimum is a physical floor, not a technology, and sits in _thermodynamic-minimum. PM rows carry the PM lower limit as value and the SOA value as max, since the study defines the PM band as SOA down to the lower limit."
+unit-note,Table A1 prints MMBtu per SHORT ton with GJ per metric tonne in brackets; the bracketed GJ/t is recorded and the MMBtu figure is in each note. Onsite energy; primary energy with offsite losses is in Table 4-2 but not extracted.
+extraction-note,Printed page = PDF page - 16. The master table's CT column is headed 'CY' in the PDF (a typo for CT).

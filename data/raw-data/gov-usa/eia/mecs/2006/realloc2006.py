@@ -6,7 +6,7 @@ The problem
 -----------
 The 2006 footprint charts publish only two generation-loss totals per sector -- one for
 steam generation and one for electricity generation -- with no breakdown by source.
-mecs_energy_footprint_2006.csv books that whole combined figure against `cogeneration`
+doe_2012_mecs-2006-energy-footprint.csv books that whole combined figure against `cogeneration`
 and leaves `boilers` and `other` at zero.  Any efficiency derived from those rows is
 therefore meaningless, and negative wherever a sector ran mostly boilers.  From 2010
 onward the charts split the loss by source themselves, so only 2006 needs this treatment.
@@ -37,20 +37,23 @@ completion, since a negative loss would poison any efficiency computed from it. 
 
 Inputs and outputs
 ------------------
-Reads  mecs_energy_footprint_2006.csv  (no PDF or spreadsheet dependency; the flows this
+Reads  doe_2012_mecs-2006-energy-footprint.csv  (no PDF or spreadsheet dependency; the flows this
 calculation relies on were checked against the flowchart PDFs in a separate pass).
-Writes mecs_energy_footprint_2006_realloc.csv and a per-row change log.
+Writes doe_2012_mecs-2006-energy-footprint-realloc.csv and a per-row change log
+(doe_2012_mecs-2006-generation-loss-realloc-log.csv), beside this script.
 """
 
 import csv
 import io
+import os
 import sys
 
 import pandas as pd
 
-SRC = '/mnt/user-data/uploads/mecs/mecs_energy_footprint_2006.csv'
-OUT = 'mecs_energy_footprint_2006_realloc.csv'
-LOG = 'mecs_2006_generation_loss_reallocation.csv'
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'doe_2012_mecs-2006-energy-footprint.csv')
+OUT = os.path.join(HERE, 'doe_2012_mecs-2006-energy-footprint-realloc.csv')
+LOG = os.path.join(HERE, 'doe_2012_mecs-2006-generation-loss-realloc-log.csv')
 
 raw = open(SRC, newline='').read()
 rows = list(csv.reader(io.StringIO(raw)))

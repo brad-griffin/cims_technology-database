@@ -1,0 +1,8 @@
+parameter,value
+licence,Public domain (US federal government)
+citation,"U.S. Department of Energy, Advanced Manufacturing Office (2015). Bandwidth Study on Energy Use and Potential Energy Saving Opportunities in U.S. Chemical Manufacturing. Prepared by Energetics Incorporated (S. Brueske, C. Kramer, A. Fisher). Washington, DC: U.S. DOE."
+source-id,doe_2015_004
+band-mapping,"CT -> variant efficiency-base; SOA -> bat; PM -> efficiency-strong (R&D, not commercial). The thermodynamic minimum is a physical floor, not a technology, and sits in _thermodynamic-minimum. PM rows carry the PM lower limit as value and the SOA value as max, since the study defines the PM band as SOA down to the lower limit."
+unit-note,"Btu per POUND of product, as printed (1 Btu/lb = 0.002326 GJ/t). Onsite process energy EXCLUDING feedstock energy. 'N/A' PM/TM cells are left blank."
+naming-note,"Process = chemical name. Most chemicals use the generic equipment 'reactor'; named equipment only where the route is unambiguous (steam cracker for ethylene/propylene, SMR for ammonia and hydrogen, chlor-alkali cell, ASU, carbon black furnace, soda ash calciner, fermenter for ethanol, distillation for aromatics/C4s)."
+extraction-note,"Table A1a and Table A1b disagree on the PM lower limits of propylene, styrene, mixed xylenes and paraxylene; A1a is followed (flagged on the rows)."

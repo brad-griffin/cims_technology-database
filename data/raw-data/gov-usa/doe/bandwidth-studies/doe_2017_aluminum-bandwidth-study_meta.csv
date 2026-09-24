@@ -1,0 +1,6 @@
+parameter,value
+licence,Public domain (US federal government)
+citation,"U.S. Department of Energy, Advanced Manufacturing Office (2017). Bandwidth Study on Energy Use and Potential Energy Saving Opportunities in U.S. Aluminum Manufacturing. Prepared by Energetics Incorporated (S. Das, C. Dollinger, A. Fisher, S. Brueske). Washington, DC: U.S. DOE."
+source-id,doe_2017_001
+band-mapping,"CT -> variant efficiency-base; SOA -> bat; PM -> efficiency-strong (R&D, not commercial). The thermodynamic minimum is a physical floor, not a technology, and sits in _thermodynamic-minimum. PM rows carry the PM lower limit as value and the SOA value as max, since the study defines the PM band as SOA down to the lower limit."
+unit-note,"Btu per POUND, as printed (1 Btu/lb = 2.326 MJ/t = 0.002326 GJ/t). Onsite energy excluding feedstock."

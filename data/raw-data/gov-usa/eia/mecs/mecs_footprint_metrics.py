@@ -4,7 +4,7 @@ Derive share and efficiency metrics from the MECS energy-footprint CSVs.
 
 Background
 ----------
-Each `mecs_energy_footprint_<year>.csv` is a Sankey energy-flow diagram flattened into
+Each `doe_<pub-year>_mecs-<year>-energy-footprint.csv` is a Sankey energy-flow diagram flattened into
 rows.  For one manufacturing sector in one survey year, energy is:
 
     import              purchased from offsite (fuel, electricity, steam)
@@ -158,18 +158,20 @@ One file per survey year
 Every column here is a share of a group total, so the same row arriving twice inflates
 its own denominator.  Point the script at one file per year: an original and a revised
 copy of the same year cannot both be used.  Scanning a directory only picks up files
-named `mecs_energy_footprint_<4-digit year>.csv`, the output path is excluded even if
+named `doe_<4-digit year>_mecs-<4-digit year>-energy-footprint.csv` (in the folder or its
+per-year subfolders), the output path is excluded even if
 named explicitly, and any duplicate row that still gets through aborts the run.
 
 Usage
 -----
   python mecs_footprint_metrics.py INPUT...  [-o OUTPUT.csv] [--per-year] [--threshold 10]
 
-  python mecs_footprint_metrics.py mecs_energy_footprint_*.csv -o mecs_energy_footprint_metrics.csv
-  python mecs_footprint_metrics.py ./mecs_data_dir --per-year
+  python mecs_footprint_metrics.py . -o emrg_2026_mecs-footprint-metrics.csv
+  python mecs_footprint_metrics.py 20*/doe_*_mecs-*-energy-footprint.csv --per-year
 
-Table 5.4 is looked for at <tables-dir>/<year>/table5_4.xls[x]; --tables-dir defaults to
-the folder the first input file came from, and --no-fuel-by-end-use turns the pass off.
+Table 5.4 is looked for at <tables-dir>/<year>/eia_<pub-year>_mecs-<year>-table-5-4.xls[x];
+--tables-dir defaults to the mecs folder (the parent of the per-year folder the first input
+file came from, or that folder itself if it is not a year folder), and --no-fuel-by-end-use turns the pass off.
 """
 
 from __future__ import annotations
@@ -354,7 +356,7 @@ def add_metrics(df: pd.DataFrame, threshold: float = DEFAULT_THRESHOLD) -> pd.Da
 # Its rows are a two-level hierarchy (subtotals followed by their components).  Only the
 # leaves are read; the subtotal rows would double-count.
 
-TABLE54_FILE_GLOB = "[Tt]able5_4.xls*"
+TABLE54_FILE_GLOB = "eia_[0-9][0-9][0-9][0-9]_mecs-[0-9][0-9][0-9][0-9]-table-5-4.xls*"
 TABLE54_SHEET = "Table 5.4"
 
 # Table 5.4 end use -> the footprint's (end_use_1, end_use_2)
@@ -722,14 +724,15 @@ def residual_fuel_rows(footprint: pd.DataFrame, sector_rows: pd.DataFrame,
                                  # a scanned directory yields YEAR files only, never
                                  # this script's own output or a derived copy sitting
                                  # in the same folder
-YEAR_FILE_GLOB = "mecs_energy_footprint_[0-9][0-9][0-9][0-9].csv"
+YEAR_FILE_GLOB = "doe_[0-9][0-9][0-9][0-9]_mecs-[0-9][0-9][0-9][0-9]-energy-footprint.csv"
 
 
 def expand_inputs(paths: list[str], exclude: str | None = None) -> list[str]:
     """Resolve the command line into a de-duplicated list of CSV paths.
 
     Accepts explicit files, shell-style globs, or a directory.  A directory is scanned
-    with a deliberately strict pattern -- `mecs_energy_footprint_<4-digit year>.csv` --
+    with a deliberately strict pattern -- `doe_<year>_mecs-<year>-energy-footprint.csv`, at
+    its top level or one folder down (the per-year folders) --
     so that outputs of this script, `_corrected` / `_realloc` variants and anything else
     derived from the year files are not swept up alongside them.  Reading the same rows
     twice would silently double every denominator.
@@ -740,7 +743,8 @@ def expand_inputs(paths: list[str], exclude: str | None = None) -> list[str]:
     files: list[str] = []
     for p in paths:
         if os.path.isdir(p):
-            files += sorted(glob.glob(os.path.join(p, YEAR_FILE_GLOB)))
+            files += sorted(glob.glob(os.path.join(p, YEAR_FILE_GLOB))
+                            + glob.glob(os.path.join(p, "*", YEAR_FILE_GLOB)))
         elif any(ch in p for ch in "*?["):
             files += sorted(glob.glob(p))
         else:
@@ -806,8 +810,8 @@ def main() -> None:
         description="Add share and efficiency metrics to the MECS energy-footprint CSVs.",
     )
     ap.add_argument("inputs", nargs="+",
-                    help="CSV files, a glob, or a directory containing mecs_energy_footprint_*.csv")
-    ap.add_argument("-o", "--output", default="mecs_energy_footprint_metrics.csv",
+                    help="CSV files, a glob, or a directory containing doe_*_mecs-*-energy-footprint.csv")
+    ap.add_argument("-o", "--output", default="emrg_2026_mecs-footprint-metrics.csv",
                     help="output CSV path (default: %(default)s)")
     ap.add_argument("--per-year", action="store_true",
                     help="write one output file per input year instead of a single combined file")
@@ -816,7 +820,7 @@ def main() -> None:
                          "to be computed (default: %(default)s)")
     ap.add_argument("--tables-dir", default=None,
                     help="folder holding the per-year subfolders with Table 5.4 "
-                         "(default: the folder the first input file came from)")
+                         "(default: the mecs folder the first input file sits in or under)")
     ap.add_argument("--no-fuel-by-end-use", action="store_true",
                     help="skip the Table 5.4 pass and emit footprint rows only")
     ap.add_argument("--keep-source-file", action="store_true",
@@ -830,7 +834,10 @@ def main() -> None:
     out = add_metrics(df, threshold=args.threshold)
 
     if not args.no_fuel_by_end_use:
-        tables_dir = args.tables_dir or os.path.dirname(os.path.abspath(files[0]))
+        first_dir = os.path.dirname(os.path.abspath(files[0]))
+        if re.fullmatch(r"\d{4}", os.path.basename(first_dir)):   # a per-year folder
+            first_dir = os.path.dirname(first_dir)
+        tables_dir = args.tables_dir or first_dir
         print(f"reading Table 5.4 from {tables_dir}", file=sys.stderr)
         extra = fuel_by_end_use_rows(df, tables_dir)
         if len(extra):

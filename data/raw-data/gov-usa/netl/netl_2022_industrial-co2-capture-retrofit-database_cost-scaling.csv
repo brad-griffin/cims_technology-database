@@ -1,0 +1,28 @@
+parameter,ammonia,cement,ethanol,hydrogen,natural-gas-with-agr,reference
+"CO2 Capture System ScalerA,Q, x1,000 $/TPD",1632.62,1632.62,–,1157.98,–,Cost Parameters row 5
+CO2 Capture System Exponent1,0.6,0.6,–,0.6,–,Cost Parameters row 6
+"CO2 Compression Cost ScalerQ, x1,000 $/TPD",198.451,243.195,157.709,203.993,251.063,Cost Parameters row 7
+CO2 Compression Cost Exponent1,0.61,0.61,0.61,0.61,0.61,Cost Parameters row 8
+"LP Steam Boiler ScalerQ, x1,000 $/TPD",76.2088,76.2088,–,83.1223,–,Cost Parameters row 9
+LP Steam Boiler Exponent,0.7,0.7,–,0.7,–,Cost Parameters row 10
+"Cooling Water Cost ScalerQ, x1,000 $/TPD",9.27735,31.4859,11.5069,25.1911,8.34477,Cost Parameters row 11
+Cooling Water Cost Exponent,0.7,0.7,0.7,0.7,0.7,Cost Parameters row 12
+"Pre-Cooler Cost ScalerQ, x1,000 $/TPD",0,0,1.52948,0,–,Cost Parameters row 13
+Pre-Cooler Cost Exponent,0.7,0.7,0.7,0.7,–,Cost Parameters row 14
+"After-Cooler Cost ScalerP,9, x1,000 $/TPD",–,0.980267,–,1.26512,0.951988,Cost Parameters row 15
+After-Cooler Cost Exponent,–,0.7,–,0.7,0.7,Cost Parameters row 16
+"BOP Cost ScalerQ, x1,000 $/TPD",114.522,162.034,184.181,121.361,95.298,Cost Parameters row 17
+BoP Exponent,0.7,0.7,0.7,0.7,0.7,Cost Parameters row 18
+TOC/TPC Cost Basis Multiplier,1.21983,1.21087,1.22069,1.21267,1.21515,Cost Parameters row 19
+"Incremental Fixed O&M Labor, %TPC",0.0226745,0.011904,0.0351484,0.0176494,0.0197385,Cost Parameters row 21
+"Incremental Fixed O&M Taxes & Ins, %TPC",0.02,0.02,0.0199996,0.0199999,0.0200006,Cost Parameters row 22
+"Incremental Variable O&M Chemicals and WasteA,Q, %TPC",0.0234379,0.00931889,0.00107949,0.00428673,0.0100131,Cost Parameters row 23
+"Incremental Variable O&M Maintenance MaterialB, %TPC",0.0112941,0.0112941,0.0112939,0.0112941,0.0112945,Cost Parameters row 24
+"Electrical Auxiliary Load, kWh/lb-CO₂",0.047936,0.0528182,0.05125,0.0437864,0.0374521,Cost Parameters row 26
+"     Wet Cooling Tower Electrical Auxiliary Load, %",0.01603,0.102086,0.0189702,0.0826727,0.0178134,Cost Parameters row 27
+"Purchased Natural gas, MMBtu/lb-CO₂",0.00160651,0.00160651,–,0.00109637,–,Cost Parameters row 28
+Dry / Wet Cooling Cost Ratio2,2.2,2.2,2.2,2.2,2.2,Cost Parameters row 30
+"Dry / Wet Cooling Perf Ratio3,4,C",3.5,3.5,3.5,3.5,3.5,Cost Parameters row 31
+"     Fan Electrical Auxiliary Load, %5",0.333333,0.341033,0.341033,0.341033,0.341033,Cost Parameters row 32
+"Process emissions subject to controlD,E,6,8,9, %",0.66,1,1.3,1,1,Cost Parameters row 33
+"EPA CO2 Emissions units per unit of ProductionF,7,9, lb-CO2/lb-product",1.86992,0.922,0.737162,10.5,0.148733,Cost Parameters row 34

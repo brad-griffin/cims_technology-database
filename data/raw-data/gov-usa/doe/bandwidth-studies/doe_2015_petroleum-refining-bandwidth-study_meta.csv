@@ -1,0 +1,6 @@
+parameter,value
+licence,Public domain (US federal government)
+citation,"U.S. Department of Energy, Advanced Manufacturing Office (2015). Bandwidth Study on Energy Use and Potential Energy Saving Opportunities in U.S. Petroleum Refining. Prepared by Energetics Incorporated (S. Brueske, C. Kramer, A. Fisher). Washington, DC: U.S. DOE."
+source-id,doe_2015_002
+band-mapping,"CT -> variant efficiency-base; SOA -> bat; PM -> efficiency-strong (R&D, not commercial). The thermodynamic minimum is a physical floor, not a technology, and sits in _thermodynamic-minimum. PM rows carry the PM lower limit as value and the SOA value as max, since the study defines the PM band as SOA down to the lower limit."
+unit-note,"Btu per BARREL, as printed. The service unit is volume (m3 in the node map, the design's volume product unit); 1 bbl = 0.158987 m3. Negative TM values mean the reactions are net exothermic."

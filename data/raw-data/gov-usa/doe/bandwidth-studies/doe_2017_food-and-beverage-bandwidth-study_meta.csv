@@ -1,0 +1,7 @@
+parameter,value
+licence,Public domain (US federal government)
+citation,"U.S. Department of Energy, Advanced Manufacturing Office (2017). Bandwidth Study on Energy Use and Potential Energy Savings Opportunities in U.S. Food and Beverage Manufacturing. Prepared by Energetics Incorporated (C. Dollinger, N. Ward, B. Levie, A. Talapatra, S. Brueske). Washington, DC: U.S. DOE."
+source-id,doe_2017_003
+band-mapping,"CT -> variant efficiency-base; SOA -> bat; PM -> efficiency-strong (R&D, not commercial). The thermodynamic minimum is a physical floor, not a technology, and sits in _thermodynamic-minimum. PM rows carry the PM lower limit as value and the SOA value as max, since the study defines the PM band as SOA down to the lower limit."
+unit-note,"Btu per POUND of product (1 Btu/lb = 0.002326 GJ/t), except beer and wine in Btu per BARREL. Corn wet milling intensities are per lb of CORN PROCESSED (the 'corn grind'), not per lb of oil. Negative TM values (freezing, fermentation) mean the step releases energy thermodynamically."
+naming-note,"Process names are 'product - step'. Equipment terms were assigned by keyword from the step name (evaporation -> evaporator, pasteurization/sterilization -> pasteurizer, freezing/refrigeration/cooling/storage -> chiller, blanching/cooking/frying/scalding -> direct-heater, etc.); steps with no clear equipment (packaging, sealing, sorting, dressing) use the generic process-improvement. Review before mapping to archetypes."
