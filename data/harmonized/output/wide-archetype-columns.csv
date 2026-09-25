@@ -20,6 +20,8 @@ lifetime,technical,years
 lifetime_low,technical,years
 lifetime_high,technical,years
 lifetime_n,technical,
+lifetime_stack,technical,years
+lifetime_stack_n,technical,
 capacity,technical,product-unit/yr
 capacity_low,technical,product-unit/yr
 capacity_high,technical,product-unit/yr
@@ -46,6 +48,14 @@ efficiency_electricity_high,technical,%
 efficiency_electricity_n,technical,
 efficiency_heat,technical,%
 efficiency_heat_n,technical,
+efficiency_hydrogen,technical,%
+efficiency_hydrogen_low,technical,%
+efficiency_hydrogen_high,technical,%
+efficiency_hydrogen_n,technical,
+efficiency_net,technical,%
+efficiency_net_low,technical,%
+efficiency_net_high,technical,%
+efficiency_net_n,technical,
 efficiency_steam,technical,%
 efficiency_steam_low,technical,%
 efficiency_steam_high,technical,%
@@ -62,10 +72,24 @@ specific-energy-consumption,technical,GJ/product-unit
 specific-energy-consumption_low,technical,GJ/product-unit
 specific-energy-consumption_high,technical,GJ/product-unit
 specific-energy-consumption_n,technical,
+specific-energy-consumption_electricity,technical,GJ/product-unit
+specific-energy-consumption_electricity_low,technical,GJ/product-unit
+specific-energy-consumption_electricity_high,technical,GJ/product-unit
+specific-energy-consumption_electricity_n,technical,
+specific-energy-consumption_heat,technical,GJ/product-unit
+specific-energy-consumption_heat_n,technical,
+specific-energy-consumption_natural-gas,technical,GJ/product-unit
+specific-energy-consumption_natural-gas_n,technical,
 temperature-output,technical,degC
 temperature-output_low,technical,degC
 temperature-output_high,technical,degC
 temperature-output_n,technical,
+temperature-min,technical,
+temperature-min_n,technical,
+temperature-max,technical,
+temperature-max_low,technical,
+temperature-max_high,technical,
+temperature-max_n,technical,
 pressure-output,technical,bar
 pressure-output_low,technical,bar
 pressure-output_high,technical,bar
@@ -74,6 +98,10 @@ availability,technical,%
 availability_low,technical,%
 availability_high,technical,%
 availability_n,technical,
+load-range-min,technical,%
+load-range-min_low,technical,%
+load-range-min_high,technical,%
+load-range-min_n,technical,
 capex,cost,2025_CAD/(product-unit per yr)
 capex_low,cost,2025_CAD/(product-unit per yr)
 capex_high,cost,2025_CAD/(product-unit per yr)
@@ -117,6 +145,8 @@ emissions-process_co2_low,emissions,t/product-unit
 emissions-process_co2_high,emissions,t/product-unit
 emissions-process_co2_n,emissions,
 emissions-total_ch4,emissions,t/product-unit
+emissions-total_ch4_low,emissions,t/product-unit
+emissions-total_ch4_high,emissions,t/product-unit
 emissions-total_ch4_n,emissions,
 emissions-total_co2,emissions,t/product-unit
 emissions-total_co2_low,emissions,t/product-unit
@@ -128,6 +158,10 @@ emissions-captured_co2,emissions,t/product-unit
 emissions-captured_co2_low,emissions,t/product-unit
 emissions-captured_co2_high,emissions,t/product-unit
 emissions-captured_co2_n,emissions,
+capture-rate,emissions,%
+capture-rate_low,emissions,%
+capture-rate_high,emissions,%
+capture-rate_n,emissions,
 capture-rate_ch4,emissions,%
 capture-rate_ch4_low,emissions,%
 capture-rate_ch4_high,emissions,%

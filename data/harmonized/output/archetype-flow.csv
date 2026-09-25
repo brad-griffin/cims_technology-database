@@ -30,10 +30,15 @@ capture-unit_amine,input,ethane,t/t,0.380398,,,1,top-ranked: Johansson et al 201
 capture-unit_amine,input,gas-oil,GJ/t,1.9771,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
 capture-unit_amine,input,heavy-fuel-oil,GJ/t,0.922951,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
 capture-unit_amine,input,naphtha,t/t,0.401595,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
-capture-unit_amine,input,natural-gas,GJ/t,27.5382,26.235,28.8415,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
+capture-unit_amine,input,natural-gas,GJ/t,27.5382,6.2,28.8415,2,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001; etsap_2010_007,etsap_2010_007:capture-unit_natural-gas_post-combustion@refineries-uk-study; ukerc_2013_001:capture-unit_post-combustion@steam-cracker
 capture-unit_amine,input,petrochemical-feedstock,t/t,0.034803,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
 capture-unit_amine,output,electricity,GJ/t,6.94433,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
 capture-unit_amine,output,steam,GJ/t,1.4,,,1,top-ranked: Johansson et al 2012,johansson_2012_001; ukerc_2013_001,ukerc_2013_001:capture-unit_post-combustion@steam-cracker
+capture-unit_dac-liquid-solvent,input,electricity,GJ/t,5.526,,,1,top-ranked: Fasihi et al 2019,fasihi_2019_001,fasihi_2019_001:capture-unit_electricity_dac-liquid-solvent@direct-air-capture
+capture-unit_dac-liquid-solvent,output,co2-captured,t/t,1,,,1,top-ranked: Fasihi et al 2019,fasihi_2019_001,fasihi_2019_001:capture-unit_electricity_dac-liquid-solvent@direct-air-capture
+capture-unit_dac-solid-sorbent,input,electricity,GJ/t,0.9,,,1,top-ranked: Fasihi et al 2019,fasihi_2019_001,fasihi_2019_001:capture-unit_dac-solid-sorbent@direct-air-capture
+capture-unit_dac-solid-sorbent,input,waste-heat,GJ/t,6.3,,,1,top-ranked: Fasihi et al 2019,fasihi_2019_001,fasihi_2019_001:capture-unit_dac-solid-sorbent@direct-air-capture
+capture-unit_dac-solid-sorbent,output,co2-captured,t/t,1,,,1,top-ranked: Fasihi et al 2019,fasihi_2019_001,fasihi_2019_001:capture-unit_dac-solid-sorbent@direct-air-capture
 basic-oxygen-furnace_efficiency-moderate,input,coke-oven-gas,GJ/t,0.0669871,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:basic-oxygen-furnace_electricity_efficiency-moderate@basic-oxygen-furnace
 basic-oxygen-furnace_efficiency-moderate,input,electricity,GJ/t,0.0756875,-0.003,0.154375,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:basic-oxygen-furnace_electricity_efficiency-moderate@basic-oxygen-furnace
 basic-oxygen-furnace_efficiency-moderate,input,hot-metal,t/t,0.448949,0.00854754,0.88935,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:basic-oxygen-furnace_electricity_efficiency-moderate@basic-oxygen-furnace
@@ -402,7 +407,7 @@ kiln_legacy,input,electricity,GJ/t,,0.0432,0.072,1,range only,etsap_2010_003,ets
 kiln_dry-precalciner_ccs-diffuse,input,burning-oil,GJ/t,0.0127116,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,clinker,t/t,0.85583,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,coal,GJ/t,6.05667,1.88356,6.65416,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
-kiln_dry-precalciner_ccs-diffuse,input,electricity,GJ/t,0.421996,0.421572,0.422137,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
+kiln_dry-precalciner_ccs-diffuse,input,electricity,GJ/t,0.421572,0.2,0.422137,3,median of 3,ieaghg_2008_001; ukerc_2013_001; etsap_2010_007,etsap_2010_007:kiln_post-combustion@cement-production; ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,fossil-waste,GJ/t,1.10122,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,gas-oil,GJ/t,0.0205629,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,gypsum,t/t,0.0471874,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
@@ -411,7 +416,7 @@ kiln_dry-precalciner_ccs-diffuse,input,natural-gas,GJ/t,0.0343338,,,2,top-ranked
 kiln_dry-precalciner_ccs-diffuse,input,petroleum-coke,GJ/t,0.1159,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,pulverized-fuel-ash,t/t,0.0496709,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,renewable-fuel,GJ/t,0.310443,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
-kiln_dry-precalciner_ccs-diffuse,input,steam,GJ/t,3.82951,2.89666,4.37658,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
+kiln_dry-precalciner_ccs-diffuse,input,steam,GJ/t,2.89666,1.5,4.37658,3,median of 3,ieaghg_2008_001; ukerc_2013_001; etsap_2010_007,etsap_2010_007:kiln_post-combustion@cement-production; ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,input,supplementary-cementitious-material,t/t,0.000690426,,,2,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant; ukerc_2013_001:kiln_waste-heat_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,output,electricity,GJ/t,0.852448,0.421856,1.28304,1,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant
 kiln_dry-precalciner_ccs-diffuse,output,steam,GJ/t,3.82951,3.28244,4.37658,1,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_post-combustion@cement-plant
@@ -456,7 +461,12 @@ kiln_oxy-fuel,input,pulverized-fuel-ash,t/t,0.0496709,,,1,top-ranked: IEAGHG 200
 kiln_oxy-fuel,input,renewable-fuel,GJ/t,0.310443,,,1,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_oxyfuel@cement-plant
 kiln_oxy-fuel,input,supplementary-cementitious-material,t/t,0.000690426,,,1,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_oxyfuel@cement-plant
 kiln_oxy-fuel,output,electricity,GJ/t,0.0199692,,,1,top-ranked: IEAGHG 2008,ieaghg_2008_001; ukerc_2013_001,ukerc_2013_001:kiln_oxyfuel@cement-plant
+autothermal-reformer_ccs-concentrated,input,electricity,GJ/t,1.50156,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:autothermal-reformer_ammonia_ccs@ammonia-production
+autothermal-reformer_ccs-concentrated,input,natural-gas,GJ/t,27.94,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:autothermal-reformer_ammonia_ccs@ammonia-production
 distillation-column_heat-integrated,input,steam,GJ/t,1.79267,,,1,top-ranked: Premkumar and Rangaiah 2009,premkumar-rangaiah_2009_001; ukerc_2013_001,ukerc_2013_001:distillation-column_efficiency-strong@benzene-separation-process
+reactor_ethanol-to-ethylene,input,ethanol,t/t,1.74,,,1,top-ranked: etsap_2013_009,etsap_2013_009,etsap_2013_009:reactor_ete@ethanol-to-ethylene-ete-plants-text-p-3-p-5
+reactor_haber-bosch-electrolytic,input,electricity,GJ/t,36,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:reactor_electricity_haber-bosch@ammonia-production
+reactor_haber-bosch-electrolytic,output,steam,GJ/t,1.6,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:reactor_electricity_haber-bosch@ammonia-production
 reactor_nitric-acid,input,ammonia,t/t,0.286,,,1,top-ranked: UKERC 2013,ukerc_2013_001; van-den-brink_2002_001,ukerc_2013_001:reactor_efficiency-moderate@otswald-process-nitric-acid
 reactor_nitric-acid,output,n2o,t/t,0.005,,,1,top-ranked: UKERC 2013,ukerc_2013_001; van-den-brink_2002_001,ukerc_2013_001:reactor_efficiency-moderate@otswald-process-nitric-acid
 reactor_nitric-acid,output,steam,GJ/t,1.6,,,1,top-ranked: UKERC 2013,ukerc_2013_001; van-den-brink_2002_001,ukerc_2013_001:reactor_efficiency-moderate@otswald-process-nitric-acid
@@ -492,6 +502,15 @@ steam-cracker_fired-tubular_efficiency-moderate,input,naphtha,t/t,0.401595,,,1,t
 steam-cracker_fired-tubular_efficiency-moderate,input,natural-gas,GJ/t,13.8678,13.7385,14.1611,1,top-ranked: Motelica et al 2012,motelica_2012_001; ploegmakers_2013_001; premkumar-rangaiah_2009_001; ukerc_2013_001,ukerc_2013_001:steam-cracker_steam_efficiency-moderate@steam-cracker
 steam-cracker_fired-tubular_efficiency-moderate,input,petrochemical-feedstock,t/t,0.034803,,,1,top-ranked: Motelica et al 2012,motelica_2012_001; ploegmakers_2013_001; premkumar-rangaiah_2009_001; ukerc_2013_001,ukerc_2013_001:steam-cracker_steam_efficiency-moderate@steam-cracker
 steam-cracker_fired-tubular_efficiency-moderate,output,steam,GJ/t,1.4,,,1,top-ranked: Motelica et al 2012,motelica_2012_001; ploegmakers_2013_001; premkumar-rangaiah_2009_001; ukerc_2013_001,ukerc_2013_001:steam-cracker_steam_efficiency-moderate@steam-cracker
+steam-reformer_ammonia,input,electricity,GJ/t,0.30852,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia@ammonia-production
+steam-reformer_ammonia,input,natural-gas,GJ/t,32.13,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia@ammonia-production
+steam-reformer_ammonia,output,steam,GJ/t,4.81,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia@ammonia-production
+steam-reformer_ammonia_ccs-concentrated,input,electricity,GJ/t,0.96696,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia_ccs@ammonia-production
+steam-reformer_ammonia_ccs-concentrated,input,natural-gas,GJ/t,32.13,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia_ccs@ammonia-production
+steam-reformer_ammonia_ccs-concentrated,output,steam,GJ/t,3.13,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:steam-reformer_ammonia_ccs@ammonia-production
+gasifier_biomass-methanation,input,biomass-solid,GJ/GJ,1.464,,,1,top-ranked: van der Meijden et al 2011,van-der-meijden_2011_001,van-der-meijden_2011_001:gasifier_biomass_allothermal@bio-methane-sng-from-wood
+compressor_hydrogen-pipeline,input,electricity,GJ/GJ,,0.1,0.15,1,range only,etsap_2014_003,etsap_2014_003:compressor_hydrogen@hydrogen-compression-for-tube-trailers-or-pipelines-p-5-text
+liquefaction-train_hydrogen,input,electricity,GJ/GJ,,0.3,0.4,1,range only,etsap_2014_003,etsap_2014_003:liquefaction-train_hydrogen@hydrogen-liquefaction-for-liquid-tankers-p-5-text
 autothermal-reformer,input,electricity,GJ/t,0.342623,0.117275,0.567971,1,top-ranked: Martin et al 2000,martin_2000_001; ukerc_2013_001,ukerc_2013_001:autothermal-reformer@steam-reformer-ammonia
 autothermal-reformer,input,gas-oil,GJ/t,0.95273,,,1,top-ranked: Martin et al 2000,martin_2000_001; ukerc_2013_001,ukerc_2013_001:autothermal-reformer@steam-reformer-ammonia
 autothermal-reformer,input,heavy-fuel-oil,GJ/t,0.444754,,,1,top-ranked: Martin et al 2000,martin_2000_001; ukerc_2013_001,ukerc_2013_001:autothermal-reformer@steam-reformer-ammonia
@@ -539,6 +558,10 @@ pulper_thermomechanical,input,oil,GJ/t,3.2,0.004,3.2,2,top-ranked: ETSAP I07,ets
 pulper_thermomechanical,input,steam,GJ/t,3,0.5,3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
 pulper_thermomechanical,output,biomass-solid,GJ/t,0,0,5.3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
 pulper_thermomechanical,output,electricity,GJ/t,0.4,0,0.4,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
+separator_warm-water-extraction,input,oil-sand,t/m3,,,,1,range only,etsap_2010_010,etsap_2010_010:separator_warm-water-extraction@oil-sand-surface-mining-with-hot-water-extraction-text
+well_sagd,input,natural-gas,GJ/m3,,6.29,7.86,1,range only,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
+well_sagd,input,steam,m3/m3,3.2,,,1,top-ranked: etsap_2010_010,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
+well_cyclic-steam,input,steam,m3/m3,3.4,,,1,top-ranked: etsap_2010_010,etsap_2010_010,etsap_2010_010:well_cyclic-steam@cyclic-steam-stimulation-css-thermal-in-situ-recovery-canadian-oil-sands-text
 heat-exchanger_steam-heated,input,electricity,GJ/m3,0.0288278,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:pasteurizer@dairy-pasteuriser
 heat-pump_hot-water,input,coal,GJ/t,0.00315573,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,electricity,GJ/t,0.247644,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
@@ -566,3 +589,5 @@ electrolysis-cell_prebaked-anode,input,electricity,GJ/t,,46.44,55.8,1,range only
 electrolysis-cell_prebaked-anode,input,electrodes,t/t,,0.4,0.45,1,range only,etsap_2012_001,etsap_2012_001:electrolysis-cell_electricity_prebake@electrolysis
 electrolysis-cell_soderberg,input,electricity,GJ/t,,52.2,61.2,1,range only,etsap_2012_001,etsap_2012_001:electrolysis-cell_electricity_soderberg@electrolysis
 melting-furnace_reverberatory-rotary,output,salt-slag,t/t,0.5,,,1,top-ranked: ETSAP I10,etsap_2012_001,etsap_2012_001:melting-furnace_secondary@secondary-aluminium
+pellet-plant_wood,input,electricity,GJ/t,0.465,0.32,0.7,3,median of 3,etsap_2013_010,etsap_2013_010:pellet-plant_biomass@pellet-production-and-torrefaction-table-10-summary; etsap_2013_010:pellet-plant_biomass@pellet-production-from-sawdust-40-000-t-yr-table-5; etsap_2013_010:pellet-plant_biomass@pellets-production-table-4
+reactor_torrefaction,input,electricity,GJ/t,0.95,0.9468,0.95,2,top-ranked: etsap_2013_010,etsap_2013_010,etsap_2013_010:reactor_biomass_torrefaction@pellet-production-and-torrefaction-table-10-summary; etsap_2013_010:reactor_biomass_torrefaction@pellets-production-table-4

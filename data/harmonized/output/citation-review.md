@@ -42,8 +42,10 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | US EPA 2010 | 614 | the reachable edition is dated September 2012, not 2010; UKERC's 2010 date may refer to an earlier printing |
 | CT 2011 | 434 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
 | Ren 2009 | 345 | handle 1874/32318; the repository record misspells 'Coal' as 'Ccoal' |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Dollinger, C., Ward, N., Levie, B., Talapatra, A., and Brueske, S.) | 279 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
 | Johansson et al 2012 | 251 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | CT 2010a | 220 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 218 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
 | McKane and Hasanbeigi 2010 | 218 | prepared by Lawrence Berkeley National Laboratory for UNIDO |
 | Link 2008 | 152 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | ECRA 2009 | 135 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
@@ -53,63 +55,90 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | ETSAP I02 | 106 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | ETSAP I07 | 87 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Labriet, M. | 80 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
+| Vaillancourt, K. | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | Lako, P. | 66 | authorship confirmed from the printed 'send comments to Paul Lako, Author' line; month unverified |
 | EPA 2007 | 65 | September 2007; no report number printed on the cover |
 | Vaillancourt, K. | 65 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | Sharp et al 1999 | 56 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
+| Blesl, M., & Bruchof, D. | 53 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | ETSAP I03 | 49 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | EPA 2017 | 39 | September 2017; NEPIS document key P101DBCT |
 | Blesl, M., & Bruchof, D. | 38 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
+| Labriet, M. | 38 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
 | IPCC 2022 | 38 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
 | MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
+| Simbolotti, G. | 34 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Collodi 2010 | 33 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
+| International Energy Agency | 32 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
 | Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
+| IEA 2018a | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2018_future-of-petrochemicals.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
+| National Energy Technology Laboratory | 28 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Jamison, K., Kramer, C., Brueske, S., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Das, S., Dollinger, C., Fisher, A., and Brueske, S.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_aluminum-bandwidth-study.pdf |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Schwartz, H., Ward, N., Levie, B., Chadwell, B., and Brueske, S.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study.pdf |
+| IEA 2019f | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2019_future-of-hydrogen.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
+| Vogl et al 2018 | 26 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/vogl_2018_hydrogen-direct-reduction-steelmaking_jclepro.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
+| Lako, P. | 25 | May 2010; the ETSAP original is dead and this is a mirror |
 | Worrell et al 1999 | 25 | sponsored by US EPA |
+| Simbolotti, G. | 23 | January 2013; 'preparation of the paper was led by Giorgio Simbolotti (ENEA)' |
+| Philibert 2017a | 23 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/philibert_2017_renewable-energy-for-industry_iea.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | ETSAP I01 | 22 | May 2010; authorship read from the printed VITO contact addresses |
 | Lako, P. | 22 | the only reachable edition is the January 2015 IEA-ETSAP/IRENA brief; a 2010 ETSAP-only E05 may exist but could not be verified |
 | Hawkes, A., & Brett, D. | 22 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
+| Broeren, M. | 22 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line; the header prints I08 although the file and series index give I09 |
 | Stemmermann et al 2010 | 22 | fifth author H. Möller is missing from the UKERC citation; no DOI |
+| Isaka, M. | 20 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | IIP 2012 | 19 | the ietd.iipnetwork.org URL UKERC cites is dead; the database is archived under iipinetwork.org. Launch year unconfirmed |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Miller, T., Kramer, C., and Fisher, A.) | 18 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_pulp-and-paper-bandwidth-study.pdf |
+| Fasihi et al 2019 | 18 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/fasihi_2019_direct-air-capture-techno-economics_jclepro.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Motelica et al 2012 | 16 | second author's initials are O. S. L. |
 | Ploegmakers et al 2013 | 16 | title, journal and DOI confirmed; publisher page returned 403 so the author list is unconfirmed |
+| Zoulias, M. | 15 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
 | AEA 2010 | 14 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
+| Simbolotti, G. | 13 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | Saygin et al 2012 | 13 | Saygin is sole author of the thesis; Gielen, Draeck, Worrell and Patel are co-authors of individual chapters |
+| Seljom, P. | 12 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'August 2011'; authors from the 'Please send comments to' line |
+| Armijo and Philibert 2020 | 11 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | DECC 2013 | 11 | published 25 July 2013; no TSO imprint or ISBN shown on the gov.uk record |
+| Lehne and Preston 2018 | 11 | confirmed 2026-09-22 against the held copy, data/raw-data/other-reports/lehne-preston_2018_making-concrete-change_chatham-house.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | van den Brink et al 2002 | 11 | UKERC's title omits 'and N2O'; UKERC also misspells de Bruijn as de Bruijin |
+| van der Meijden et al 2011 | 11 | confirmed 2026-09-22 against the held copy, data/raw-data/other-reports/van-der-meijden_2011_bio-methane-from-wood_ecn.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
+| Seebregts, A.J. | 9 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2010'; authors from the 'Please send comments to' line |
+| Moore 2017 | 9 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/moore_2017_thermal-hydrogen_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | De Luna et al 2019 | 8 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'De Luna et al 2019'. Not independently confirmed against the publisher. |
 | Nishihata, H. | 8 | the held copy prints 'IEA-ETSAP and IRENA - Technology Policy Brief E19 - January 2013' on page 1, confirmed by the modeller. IRENA's website posts what appears to be the same brief under E12; the document is the authority |
+| Hauer, A. | 8 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
+| U.S. Department of Energy | 7 | September 2022; OSTI record 1961393 |
+| Leeson et al 2017 | 7 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/leeson_2017_industrial-ccs-techno-economics_ijggc.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | CE Delft 2010 | 6 | December 2010 |
+| U.S. EPA Combined Heat and Power Partnership | 6 | confirmed 2026-09-23 against the held copy, data/raw-data/gov-usa/epa/epa_2022_waste-heat-to-power.pdf; 'Last Updated: April 2022' |
+| Broeren, M. | 6 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
+| Seljom, P. | 4 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | Duxon 2007 | 3 | UKERC drops the second 'Grant C.' duplication of Lukey's initials |
+| Habert et al 2020 | 3 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/habert_2020_cement-concrete-decarbonization_nat-rev-earth-environ.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Abbas and Wan Daud 2010 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Abbas and Wan Daud 2010'. Not independently confirmed against the publisher. |
+| Amin et al 2011 | 2 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/amin_2011_methane-catalytic-cracking-review_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Axelson et al 2018 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Axelson et al 2018'. Not independently confirmed against the publisher. |
 | Bazzanella and Ausfelder 2017 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Bazzanella and Ausfelder 2017'. Not independently confirmed against the publisher. |
 | Birat 2012 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Birat 2012'. Not independently confirmed against the publisher. |
 | Fischedick et al 2014b | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Fischedick et al 2014b'. Not independently confirmed against the publisher. |
 | Keith et al 2018 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Keith et al 2018'. Not independently confirmed against the publisher. |
 | Li et al 2019 | 2 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Li et al 2019'. Not independently confirmed against the publisher. |
+| Roemer, J., Mungyeko Bisulandu, B.-J.R., Rousse, D.R., Pellerin, M., Bozorg, M., and Ilinca, A. | 1 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/roemer_2026_mining-energy-decarbonization-review_energies.pdf |
 | AEA 2011 | 0 | title begins '2011 Guidelines'; co-published by Defra, not DECC alone |
 | AEA 2012b | 0 | first published 27 June 2012 |
-| Amin et al 2011 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/amin_2011_methane-catalytic-cracking-review_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| Armijo and Philibert 2020 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Ashik et al 2015 | 0 | confirmed 2026-09-23 against the held copy, data/raw-data/background-no-data-extracted/ashik_2015_thermocatalytic-methane-decomposition-review_rser.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Bataille, C. | 0 | published online 2019, issue year 2020; a corrected republication exists as 10.1002/wcc.684 |
 | Smillie, S., Alberga, D., Loken, R., Bharadwaj, S., Clark, T., & Mahone, A. | 0 | October 2024; the recorded title was incomplete |
 | Dalsgard et al 2000 | 0 | journal is Applied Thermodynamics, not Thermodynamics; third author is Qvale, not Qvake |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: October 2012) |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: January-February 2014; the all-manufacturing diagram revised June 2015) |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Jamison, K., Kramer, C., Brueske, S., and Fisher, A.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Miller, T., Kramer, C., and Fisher, A.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_pulp-and-paper-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Das, S., Dollinger, C., Fisher, A., and Brueske, S.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_aluminum-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Schwartz, H., Ward, N., Levie, B., Chadwell, B., and Brueske, S.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Dollinger, C., Ward, N., Levie, B., Talapatra, A., and Brueske, S.) | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: September 2018) |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: December 2021; the petrochemicals diagram revised October 2022) |
-| U.S. Department of Energy | 0 | September 2022; OSTI record 1961393 |
 | U.S. Energy Information Administration | 0 | the 2002 data year is confirmed; the archive page gave no verbatim release date |
 | U.S. Energy Information Administration | 0 | the 2006 data year is confirmed; the release year may be 2009 rather than 2010 |
 | U.S. Energy Information Administration | 0 | released 19 March 2013 |
@@ -117,47 +146,18 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | U.S. Energy Information Administration | 0 | consumption results released 31 March 2021 |
 | U.S. Energy Information Administration | 0 | the full title adds 'An Overview' |
 | U.S. Energy Information Administration | 0 | released in staged batches during 2025 |
-| U.S. EPA Combined Heat and Power Partnership | 0 | confirmed 2026-09-23 against the held copy, data/raw-data/gov-usa/epa/epa_2022_waste-heat-to-power.pdf; 'Last Updated: April 2022' |
-| Lako, P. | 0 | May 2010; the ETSAP original is dead and this is a mirror |
-| Simbolotti, G. | 0 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
-| Seebregts, A.J. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2010'; authors from the 'Please send comments to' line |
-| Seljom, P. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
-| Blesl, M., & Bruchof, D. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
-| Seljom, P. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'August 2011'; authors from the 'Please send comments to' line |
-| Simbolotti, G. | 0 | January 2013; 'preparation of the paper was led by Giorgio Simbolotti (ENEA)' |
-| Hauer, A. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
-| Broeren, M. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line; the header prints I08 although the file and series index give I09 |
-| Isaka, M. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
-| Broeren, M. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
-| Labriet, M. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
-| Simbolotti, G. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
-| Vaillancourt, K. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
-| Zoulias, M. | 0 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
-| Fasihi et al 2019 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/fasihi_2019_direct-air-capture-techno-economics_jclepro.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Fechner and Kray 2012 | 0 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Fechner and Kray 2012'. Not independently confirmed against the publisher. |
 | Fritzson and Berntsson 2006b | 0 | published online 2005 |
-| Habert et al 2020 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/habert_2020_cement-concrete-decarbonization_nat-rev-earth-environ.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | HPTSTCJ 2010 | 0 | March 2010; the issuer spells its name 'Center' |
 | IEA 2012 | 0 | published 28 May 2012 |
-| IEA 2018a | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2018_future-of-petrochemicals.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| IEA 2019f | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2019_future-of-hydrogen.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| International Energy Agency | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
 | iea_2026_002 | 0 | the recorded title abbreviates 'Technology' to 'Tech'; a continuously updated data tool with no edition label |
 | Khatir et al 2012b | 0 | title and journal confirmed via indexed listings; volume, pages and DOI unconfirmed |
-| Leeson et al 2017 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/leeson_2017_industrial-ccs-techno-economics_ijggc.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| Lehne and Preston 2018 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/other-reports/lehne-preston_2018_making-concrete-change_chatham-house.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| Moore 2017 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/moore_2017_thermal-hydrogen_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | NERA and AEA 2009 | 0 | July 2009; named authors supplement UKERC's corporate attribution |
-| National Energy Technology Laboratory | 0 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
 | Natural Resources Canada | 0 | a dataset, not a report; published 13 August 2025, modified 25 September 2025 |
 | McMillan, C., & Narwade, V. | 0 | confirmed 2026-09-23 against the saved data catalog page ('Cite This Dataset'); publisher named as it was at publication (NREL, now the National Laboratory of the Rockies) |
 | McMillan, C. | 0 | confirmed 2026-09-23 against the saved data catalog page ('Cite This Dataset') |
-| Philibert 2017a | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/philibert_2017_renewable-energy-for-industry_iea.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Philibert 2017b | 0 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Philibert 2017b'. Not independently confirmed against the publisher. |
-| Roemer, J., Mungyeko Bisulandu, B.-J.R., Rousse, D.R., Pellerin, M., Bozorg, M., and Ilinca, A. | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/roemer_2026_mining-energy-decarbonization-review_energies.pdf |
 | Renewable Thermal Collaborative | 0 | updated September 2023 |
-| van der Meijden et al 2011 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/other-reports/van-der-meijden_2011_bio-methane-from-wood_ecn.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
-| Vogl et al 2018 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/vogl_2018_hydrogen-direct-reduction-steelmaking_jclepro.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Von Weizsacker 2009 | 0 | ISBN 978-1-84407-591-1; second author is Charlie Hargroves, not K. |
 | Wilson et al 2003 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/background-no-data-extracted/wilson_2003_regulating-geologic-co2-storage_est.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Worrell et al 2010 | 0 | the eScholarship copy is dated 2011 |
