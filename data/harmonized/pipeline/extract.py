@@ -52,6 +52,50 @@ ETSAP_BRIEFS = [
     ("iea/etsap/etsap_2010_syngas-from-coal", "etsap_2010_011"),
     ("iea/etsap/etsap_2014_coal-mining-and-logistics", "etsap_2014_002"),
     ("iea/etsap/etsap_2013_biogas-and-bio-syngas", "etsap_2013_012"),
+    # the remaining partial briefs, extracted 2026-09-24
+    ("iea/etsap/etsap_2010_geothermal-heat-and-power", "etsap_2010_006"),
+    ("iea/etsap/etsap_2010_gas-fired-power", "etsap_2010_008"),
+    ("iea/etsap/etsap_2013_concentrating-solar-power", "etsap_2013_001"),
+    ("iea/etsap/etsap_2013_thermal-energy-storage", "etsap_2013_005"),
+    ("iea/etsap/etsap_2010_co2-capture-and-storage", "etsap_2010_007"),
+    ("iea/etsap/etsap_2014_hydrogen-production-and-distribution", "etsap_2014_003"),
+    ("iea/etsap/etsap_2013_bio-methanol", "etsap_2013_007"),
+    ("iea/etsap/etsap_2010_liquid-fuels-from-coal-and-gas", "etsap_2010_012"),
+    ("iea/etsap/etsap_2010_unconventional-oil-and-gas", "etsap_2010_010"),
+    ("iea/etsap/etsap_2011_oil-and-gas-logistics", "etsap_2011_001"),
+    ("iea/etsap/etsap_2014_oil-refineries", "etsap_2014_001"),
+    ("iea/etsap/etsap_2013_renewable-desalination", "etsap_2013_008"),
+    ("iea/etsap/etsap_2013_bio-ethylene", "etsap_2013_009"),
+    ("iea/etsap/etsap_2013_biomass-production-and-logistics", "etsap_2013_010"),
+    ("iea/etsap/etsap_2013_liquid-biofuels", "etsap_2013_011"),
+]
+# other extractions in the ETSAP-brief shape (process/technology rows, _nodes, _flows),
+# loaded by the same reader: (stem, source id, region of the data)
+BRIEF_SHAPE = [
+    ("gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study", "doe_2015_001", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study", "doe_2015_002", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2015_pulp-and-paper-bandwidth-study", "doe_2015_003", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study", "doe_2015_004", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2017_aluminum-bandwidth-study", "doe_2017_001", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study", "doe_2017_002", "US"),
+    ("gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study", "doe_2017_003", "US"),
+    ("gov-usa/doe/doe_2022_industrial-decarbonization-roadmap", "doe_2022_001", "US"),
+    ("gov-usa/epa/epa_2022_waste-heat-to-power", "epa_2022_001", "US"),
+    ("gov-usa/netl/netl_2022_industrial-co2-capture-retrofit-database", "netl_2022_001", "US"),
+    ("iea/iea_2018_future-of-petrochemicals", "iea_2018_001", "global"),
+    ("iea/iea_2019_future-of-hydrogen", "iea_2019_002", "global"),
+    ("iea/iea_2021_ammonia-technology-roadmap", "iea_2021_001", "global"),
+    ("iea/philibert_2017_renewable-energy-for-industry_iea", "philibert_2017_001", "global"),
+    ("other-reports/lehne-preston_2018_making-concrete-change_chatham-house", "lehne-preston_2018_001", "global"),
+    ("other-reports/van-der-meijden_2011_bio-methane-from-wood_ecn", "van-der-meijden_2011_001", "global"),
+    ("peer-reviewed/amin_2011_methane-catalytic-cracking-review_ijhe", "amin_2011_001", "global"),
+    ("peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe", "armijo-philibert_2020_001", "global"),
+    ("peer-reviewed/fasihi_2019_direct-air-capture-techno-economics_jclepro", "fasihi_2019_001", "global"),
+    ("peer-reviewed/habert_2020_cement-concrete-decarbonization_nat-rev-earth-environ", "habert_2020_001", "global"),
+    ("peer-reviewed/leeson_2017_industrial-ccs-techno-economics_ijggc", "leeson_2017_001", "global"),
+    ("peer-reviewed/moore_2017_thermal-hydrogen_ijhe", "moore_2017_001", "global"),
+    ("peer-reviewed/roemer_2026_mining-energy-decarbonization-review_energies", "roemer_2026_001", "global"),
+    ("peer-reviewed/vogl_2018_hydrogen-direct-reduction-steelmaking_jclepro", "vogl_2018_001", "global"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")
@@ -348,11 +392,13 @@ class Loader:
             if note and not ex["description"]:
                 ex["description"] = note.split(".")[0]
 
-    def etsap_brief(self, stem, sid):
+    def etsap_brief(self, stem, sid, region="global"):
         nm = self.nodes(stem, sid)
         if not nm:
             return
         base = stem.split("/")[-1]
+        held = [p.name for p in (RAW / stem).parent.glob(base + ".*") if p.suffix != ".csv"]
+        src_file = held[0] if held else base + ".pdf"
         for row in read(RAW / f"{stem}.csv"):
             key = (row.get("process", ""), row["technology"])
             if key not in nm:
@@ -371,7 +417,7 @@ class Loader:
             m = re.search(r"COST BASIS:\s*([a-z-]+)", note)
             cap = re.search(r"CAPACITY BASIS:\s*([a-z-]+)", note)
             self.fact(ex, parameter=param, target=(row.get("target") or "").strip(),
-                      unit=unit, value=val, region="global",
+                      unit=unit, value=val, region=region,
                       **{"value-min": (row.get("value-min") or "").strip(),
                          "value-max": (row.get("value-max") or "").strip(),
                          "uncertainty-type": "reported-range" if (row.get("value-min") or
@@ -383,7 +429,7 @@ class Loader:
                          "product-output" if param.startswith(("capex", "opex")) else "",
                          "currency": currency_year(unit),
                          "source-id": sid, "via-source-id": "",
-                         "source-file": base + ".pdf",
+                         "source-file": src_file,
                          "source-locator": (row.get("reference") or "").strip(),
                          "extraction-file": f"data/raw-data/{stem}.csv",
                          "confidence": "", "status": "draft", "note": note})
@@ -401,8 +447,8 @@ class Loader:
                 "value-min": row["value-min"], "value-max": row["value-max"],
                 "co-product": row["co-product"],
                 "value-type": "derived" if row["formula"] else "reported",
-                "formula": row["formula"], "region": "global",
-                "source-id": sid, "via-source-id": "", "source-file": base + ".pdf",
+                "formula": row["formula"], "region": region,
+                "source-id": sid, "via-source-id": "", "source-file": src_file,
                 "source-locator": row["reference"], "status": "draft", "note": row["note"]})
 
 
@@ -416,4 +462,6 @@ def load() -> Loader:
     L.iea_guide()
     for stem, sid in ETSAP_BRIEFS:
         L.etsap_brief(stem, sid)
+    for stem, sid, region in BRIEF_SHAPE:
+        L.etsap_brief(stem, sid, region)
     return L

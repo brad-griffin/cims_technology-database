@@ -69,7 +69,7 @@ nothing usable, move it to `data/raw-data/background-no-data-extracted/` and add
 a row to `data/raw-data/background-register.csv` instead of registering it.
 1. Register it in `data/raw-data/source-details_sources.csv` and `_files.csv`.
 2. Extract it to a long CSV in the template format (`data/raw-data/tech_data_input_template.py`). A multi-context source also gets a `_nodes.csv`.
-3. Add its loader to `pipeline/extract.py`: a file in the template format needs one line in `TEMPLATE_FILES`.
+3. Add its loader to `pipeline/extract.py`: a file in the template format needs one line in `TEMPLATE_FILES`. A file in the ETSAP-brief shape (process/technology rows with `_nodes` and optional `_flows`) needs one line in `ETSAP_BRIEFS`, or in `BRIEF_SHAPE` with the region of its data for a non-ETSAP source.
 4. Build. The new examples are appended to `records/source-example.csv` with a blank archetype.
 5. Fill in each new example's `archetype` (or `(none)`), then build again.
 6. Give the source a row in `records/reference/source-priority.csv`.
