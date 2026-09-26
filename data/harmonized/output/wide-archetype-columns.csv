@@ -114,6 +114,8 @@ opex-variable,cost,2025_CAD/product-unit
 opex-variable_low,cost,2025_CAD/product-unit
 opex-variable_high,cost,2025_CAD/product-unit
 opex-variable_n,cost,
+opex-variable_labour,cost,2025_CAD/product-unit
+opex-variable_labour_n,cost,
 opex-total,cost,2025_CAD/product-unit
 opex-total_low,cost,2025_CAD/product-unit
 opex-total_high,cost,2025_CAD/product-unit
@@ -167,11 +169,17 @@ capture-rate_ch4_low,emissions,%
 capture-rate_ch4_high,emissions,%
 capture-rate_ch4_n,emissions,
 capture-rate_co2,emissions,%
+capture-rate_co2_low,emissions,%
+capture-rate_co2_high,emissions,%
 capture-rate_co2_n,emissions,
 abatement-cost,economic,2025_CAD/t-CO2-eq
 abatement-cost_low,economic,2025_CAD/t-CO2-eq
 abatement-cost_high,economic,2025_CAD/t-CO2-eq
 abatement-cost_n,economic,
+cost-levelized_co2,economic,
+cost-levelized_co2_low,economic,
+cost-levelized_co2_high,economic,
+cost-levelized_co2_n,economic,
 emissions-reduction-potential,emissions,%
 emissions-reduction-potential_low,emissions,%
 emissions-reduction-potential_high,emissions,%

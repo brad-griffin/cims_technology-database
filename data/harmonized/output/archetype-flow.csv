@@ -151,7 +151,7 @@ caster_continuous,input,crude-steel,t/t,1.0599,,,1,top-ranked: UKERC 2013,ukerc_
 caster_continuous,input,electricity,GJ/t,0.171,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:caster@continuous-casting-hot-rolling-not-including-heavy-section
 caster_continuous,input,natural-gas,GJ/t,0.0321445,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:caster@continuous-casting-hot-rolling-not-including-heavy-section
 caster_continuous,output,hot-rolled-steel,t/t,1,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:caster@continuous-casting-hot-rolling-not-including-heavy-section
-coke-oven_by-product,output,coke-oven-gas,m3/t,419,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:coke-oven_coal@coking
+coke-oven_by-product,output,coke-oven-gas,m3/t,,406.25,433.33,1,range only,etsap_2010_002,etsap_2010_002:coke-oven_coal@coking
 coke-oven_efficiency-moderate,input,blast-furnace-gas,GJ/t,0.587015,0.587015,1.62028,3,median of 3,iisi_1998_001; ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:coke-oven_coke-oven-gas_efficiency-moderate@coke-oven; ukerc_2013_001:coke-oven_coke_efficiency-moderate@coke-oven; ukerc_2013_001:dryer_coke_efficiency-moderate@iron-manufacture
 coke-oven_efficiency-moderate,input,coke,GJ/t,10.9907,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:dryer_coke_efficiency-moderate@iron-manufacture
 coke-oven_efficiency-moderate,input,coke-breeze,GJ/t,2.86275,,,1,top-ranked: UKERC 2013,ukerc_2013_001; us-epa_2010_001,ukerc_2013_001:dryer_coke_efficiency-moderate@iron-manufacture
@@ -522,13 +522,13 @@ steam-reformer_efficiency-moderate,input,heavy-fuel-oil,GJ/t,1.06884,0.649043,1.
 steam-reformer_efficiency-moderate,input,natural-gas,GJ/t,24.5866,11.3478,37.8255,1,top-ranked: Collodi 2010,collodi_2010_001; ukerc_2013_001,ukerc_2013_001:steam-reformer_steam_efficiency-moderate@steam-reformer-ammonia
 steam-reformer_efficiency-moderate,input,steam,GJ/t,12.3908,10.5861,14.1954,1,top-ranked: Collodi 2010,collodi_2010_001; ukerc_2013_001,ukerc_2013_001:steam-reformer_steam_efficiency-moderate@steam-reformer-ammonia
 steam-reformer_efficiency-moderate,output,steam,GJ/t,3.9,,,1,top-ranked: Collodi 2010,collodi_2010_001; ukerc_2013_001,ukerc_2013_001:steam-reformer_steam_efficiency-moderate@steam-reformer-ammonia
-digester_continuous-kraft,input,biomass-solid,GJ/t,4.05,3.2,5.3,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,input,black-liquor,GJ/t,16,13.3,17.5,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,input,electricity,GJ/t,0.8,0.4,1.2,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,input,oil,GJ/t,1.9,1.4,2,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,input,steam,GJ/t,11.65,7.8,14.8,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,output,biomass-solid,GJ/t,5.9,1.4,8.8,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
-digester_continuous-kraft,output,electricity,GJ/t,1.5,1,2.4,4,median of 4,etsap_2015_001,etsap_2015_001:digester_bleached-dried@chemical-pulping; etsap_2015_001:digester_bleached-slush@chemical-pulping; etsap_2015_001:digester_unbleached-dried@chemical-pulping; etsap_2015_001:digester_unbleached-slush@chemical-pulping
+digester_continuous-kraft,input,biomass-solid,GJ/t,5,3.2,5.3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,input,black-liquor,GJ/t,16.55,13.3,17.5,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,input,electricity,GJ/t,0.8,0.4,1.2,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,input,oil,GJ/t,1.9,1.4,2,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,input,steam,GJ/t,11.65,7.8,14.8,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,output,biomass-solid,GJ/t,6.65,1.4,8.8,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
+digester_continuous-kraft,output,electricity,GJ/t,1.8,1,2.4,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:digester_bleached@chemical-pulping; etsap_2015_001:digester_unbleached@chemical-pulping
 dryer_steam-heated_efficiency-strong,input,electricity,GJ/t,0.420564,,,1,top-ranked: CT 2011,ct_2011_001; ukerc_2013_001,ukerc_2013_001:dryer_efficiency-strong@dryer
 dryer_steam-heated_efficiency-strong,input,steam,GJ/t,3.77288,,,1,top-ranked: CT 2011,ct_2011_001; ukerc_2013_001,ukerc_2013_001:dryer_efficiency-strong@dryer
 dryer_steam-heated_efficiency-moderate,input,electricity,GJ/t,0.420564,0.241564,0.420564,3,median of 3,ct_2011_001; ukerc_2013_001,ukerc_2013_001:dryer_efficiency-moderate@dryer; ukerc_2013_001:dryer_steam_efficiency-moderate@dryer; ukerc_2013_001:dryer_waste-heat_efficiency-moderate@dryer
@@ -552,12 +552,12 @@ pulper_recycled-fibre,input,steam,GJ/t,0.3,,,1,top-ranked: ETSAP I07,etsap_2015_
 pulper_recycled-fibre,output,biomass-solid,GJ/t,0.9,,,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_recycled-slush@recycled-pulping
 pulper_recycled-fibre,output,electricity,GJ/t,0.03,,,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_recycled-slush@recycled-pulping
 pulper_refiner-low-energy,input,electricity,GJ/t,0.545512,0.520525,0.547573,1,top-ranked: CT 2011,ct_2011_001; ukerc_2013_001,ukerc_2013_001:pulper_efficiency-moderate@stock-preparation
-pulper_thermomechanical,input,biomass-solid,GJ/t,0.7,0.7,5.904,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
-pulper_thermomechanical,input,electricity,GJ/t,4.3,4.3,7.9,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
-pulper_thermomechanical,input,oil,GJ/t,3.2,0.004,3.2,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
-pulper_thermomechanical,input,steam,GJ/t,3,0.5,3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
-pulper_thermomechanical,output,biomass-solid,GJ/t,0,0,5.3,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
-pulper_thermomechanical,output,electricity,GJ/t,0.4,0,0.4,2,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp-dried@mechanical-pulping; etsap_2015_001:pulper_tmp-slush@mechanical-pulping
+pulper_thermomechanical,input,biomass-solid,GJ/t,3.302,0.7,5.904,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
+pulper_thermomechanical,input,electricity,GJ/t,6.1,4.3,7.9,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
+pulper_thermomechanical,input,oil,GJ/t,1.602,0.004,3.2,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
+pulper_thermomechanical,input,steam,GJ/t,1.75,0.5,3,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
+pulper_thermomechanical,output,biomass-solid,GJ/t,2.65,0,5.3,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
+pulper_thermomechanical,output,electricity,GJ/t,0.2,0,0.4,1,top-ranked: ETSAP I07,etsap_2015_001,etsap_2015_001:pulper_tmp@mechanical-pulping
 separator_warm-water-extraction,input,oil-sand,t/m3,,,,1,range only,etsap_2010_010,etsap_2010_010:separator_warm-water-extraction@oil-sand-surface-mining-with-hot-water-extraction-text
 well_sagd,input,natural-gas,GJ/m3,,6.29,7.86,1,range only,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
 well_sagd,input,steam,m3/m3,3.2,,,1,top-ranked: etsap_2010_010,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
@@ -591,3 +591,14 @@ electrolysis-cell_soderberg,input,electricity,GJ/t,,52.2,61.2,1,range only,etsap
 melting-furnace_reverberatory-rotary,output,salt-slag,t/t,0.5,,,1,top-ranked: ETSAP I10,etsap_2012_001,etsap_2012_001:melting-furnace_secondary@secondary-aluminium
 pellet-plant_wood,input,electricity,GJ/t,0.465,0.32,0.7,3,median of 3,etsap_2013_010,etsap_2013_010:pellet-plant_biomass@pellet-production-and-torrefaction-table-10-summary; etsap_2013_010:pellet-plant_biomass@pellet-production-from-sawdust-40-000-t-yr-table-5; etsap_2013_010:pellet-plant_biomass@pellets-production-table-4
 reactor_torrefaction,input,electricity,GJ/t,0.95,0.9468,0.95,2,top-ranked: etsap_2013_010,etsap_2013_010,etsap_2013_010:reactor_biomass_torrefaction@pellet-production-and-torrefaction-table-10-summary; etsap_2013_010:reactor_biomass_torrefaction@pellets-production-table-4
+gasifier_coal-ammonia,input,coal,GJ/t,34,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:gasifier_coal@ammonia-production
+gasifier_coal-ammonia,input,electricity,GJ/t,4,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:gasifier_coal@ammonia-production
+gasifier_coal-ammonia,output,steam,GJ/t,1,,,1,top-ranked: iea_2021_001,iea_2021_001,iea_2021_001:gasifier_coal@ammonia-production
+reactor_haber-bosch-loop,input,electricity,GJ/t,3.24,,,1,top-ranked: Armijo and Philibert 2020,armijo-philibert_2020_001,armijo-philibert_2020_001:reactor_electricity_haber-bosch@ammonia-synthesis
+shaft-furnace_electrolytic-hydrogen,input,electricity,GJ/t,3.06,3.06,12.528,2,top-ranked: Philibert 2017a,philibert_2017_001; vogl_2018_001,philibert_2017_001:shaft-furnace_hydrogen@iron-and-steel; vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+shaft-furnace_electrolytic-hydrogen,input,electrodes,t/t,0.002,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+shaft-furnace_electrolytic-hydrogen,input,iron-ore,t/t,1.4,,,1,top-ranked: Philibert 2017a,philibert_2017_001,philibert_2017_001:shaft-furnace_hydrogen@iron-and-steel
+shaft-furnace_electrolytic-hydrogen,input,lime,t/t,0.05,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+shaft-furnace_electrolytic-hydrogen,input,pellets,t/t,1.504,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+shaft-furnace_electrolytic-hydrogen,output,oxygen,t/t,0.411,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+pipeline_co2,input,electricity,GJ/t,,0.2,0.5,1,range only,etsap_2010_007,etsap_2010_007:pipeline_co2@co2-transportation-p-5-text

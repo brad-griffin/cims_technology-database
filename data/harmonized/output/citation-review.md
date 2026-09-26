@@ -52,7 +52,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | IISI 1998 | 131 | WorldCat OCLC 43244655 |
 | Martin et al 2000 | 114 | October 2000. UKERC's 'Elliott, N.' and 'Thorn, J.' are misspellings. Absorbed the duplicate short form 'Martin et al 2000b' on 2026-08-29 |
 | EC 2012 | 113 | BAT conclusions adopted 2012, formally published 2013 as JRC Reference Report EUR 25521 EN, ISBN 978-92-79-26475-7. Absorbed the duplicate short form 'IPPC 2012' on 2026-08-29, whose DOI the modeller supplied and which is kept here; the other manifestation of the same BREF is registered as 10.2791/97469 |
-| ETSAP I02 | 106 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
+| ETSAP I02 | 104 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | ETSAP I07 | 87 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Labriet, M. | 80 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
 | Vaillancourt, K. | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
@@ -61,7 +61,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Vaillancourt, K. | 65 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | Sharp et al 1999 | 56 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
 | Blesl, M., & Bruchof, D. | 53 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
-| ETSAP I03 | 49 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
+| ETSAP I03 | 46 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | EPA 2017 | 39 | September 2017; NEPIS document key P101DBCT |
 | Blesl, M., & Bruchof, D. | 38 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | Labriet, M. | 38 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
@@ -73,6 +73,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | IEA 2018a | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2018_future-of-petrochemicals.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
+| Simbolotti, G. | 28 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | National Energy Technology Laboratory | 28 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Jamison, K., Kramer, C., Brueske, S., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
@@ -99,7 +100,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Zoulias, M. | 15 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
 | AEA 2010 | 14 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
-| Simbolotti, G. | 13 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | Saygin et al 2012 | 13 | Saygin is sole author of the thesis; Gielen, Draeck, Worrell and Patel are co-authors of individual chapters |
 | Seljom, P. | 12 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'August 2011'; authors from the 'Please send comments to' line |
 | Armijo and Philibert 2020 | 11 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
@@ -173,7 +173,7 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 | IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
 | Carbon Trust 2004 | 28 | ECG092 not traced; only ECG066 'Steam generation costs' was found. Guide offline with no archived copy |
-| ETSAP I10 | 25 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
+| ETSAP I10 | 24 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
 | AEA 2000 | 17 | no matching AEA publication found; title, client and report number all unconfirmed |
 | NBF 2007 | 16 | not located; Net Balance ceased trading in 2014. Zeobond hosts a later E-Crete LCA by start2see |
 | Khatir et al 2012a | 8 | conference paper not found; the journal version is Khatir et al., Applied Energy 112 (2013) 918-927, doi 10.1016/j.apenergy.2013.02.034 |
