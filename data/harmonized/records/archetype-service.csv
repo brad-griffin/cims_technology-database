@@ -892,3 +892,23 @@ gasifier_coal-to-liquids,<sector>.petroleum-refining.product.petroleum-fractions
 reactor_gas-to-liquids,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,provisional: no synthetic-fuels node yet
 geothermal-well_binary-power,<sector>.mining.service.on-site-power,on-site-power-generation,cross-sector/on-site-power-generation: every leaf of the end use
 anaerobic-digester_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+heat-exchanger_steam-heated_efficiency-strong,<sector>.light-industrial.service.heat,thermal-processing,as heat-exchanger_steam-heated
+reactor_polymerization-extrusion_efficiency-strong,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,as reactor_polymerization-extrusion
+cleaning-system,<sector>.light-industrial.service.heat,thermal-processing,as cleaning-system_efficiency-moderate
+reactor_ethylene-oxidation,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,ethylene oxide/glycol is an intermediate
+reactor_anthraquinone-autoxidation,<sector>.chemicals.product.hydrogen-peroxide,other-chemicals,the leaf its name or label names
+reactor_urea-synthesis,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,provisional: no urea node; hierarchy change request
+gasifier_biomass-ammonia,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,whole plant
+gasifier_coal-ammonia,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,whole plant
+shaft-furnace_electrolytic-hydrogen,<sector>.iron-and-steel.product.molten-steel,steelmaking,whole route per t steel
+binder_sulphoaluminate,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,as the other binders
+binder_hydrothermal-silicate,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,as the other binders
+combustion-turbine_oxy-fuel,<sector>.mining.service.on-site-power,on-site-power-generation,cross-sector/on-site-power-generation: every leaf of the end use
+steam-reformer_ammonia_efficiency-strong,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,as steam-reformer_ammonia
+steam-reformer_ammonia_efficiency-strong,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,as steam-reformer_ammonia
+reactor_ecf-bleaching,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,the leaf its name or label names
+reactor_integrated-upgrader_ccs-concentrated,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,as reactor_integrated-upgrader
+pipeline_co2,<root>.transmission.co2-pipeline-and-storage.*,co2-transport-and-storage,every route leaf
+well_co2-storage,<root>.transmission.co2-pipeline-and-storage.*,co2-transport-and-storage,every route leaf
+geothermal-well_enhanced,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
+geothermal-well_enhanced,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
