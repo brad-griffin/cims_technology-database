@@ -29,14 +29,20 @@ excluded until the basis is read back out of its source.
 """
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 
-from .common import REFERENCE, fnum, read
-from .currency import MONEY, TARGET
+from .common import REFERENCE, fnum, read, split_list
+from . import convert
+from .currency import TARGET
 from .wholeplant import NEEDS_HOST
 
 PER_CAPACITY = {"capex", "opex-fixed", "decommissioning-cost"}
-PER_OUTPUT = {"opex-variable", "opex-total"}
+PER_OUTPUT = {"opex-variable", "opex-total", "cost-levelized"}
+# parameters stated per unit of a product (or of product capacity): a basis factor
+# (records/reference/example-conversion.csv) applies to these
+PER_PRODUCT = {"specific-energy-consumption", "capacity", "annual-output"}
+EXTENSIVE = {"capacity", "annual-output"}
 PERCENT = {"efficiency", "efficiency-chp", "capacity-factor", "availability", "capture-rate",
            "emissions-reduction-potential", "load-range-min", "discount-rate",
            "cost-learning-rate", "capital-recovery", "degradation-rate"}
@@ -109,6 +115,7 @@ class Units:
             if f is not None:
                 self.table[(r["from-unit"], r["to-unit"])] = (f, fnum(r["offset"]) or 0.0)
         self.cur = cur_factors
+        self.factors = convert.Factors()
 
     def physical(self, unit, target):
         """(factor, offset) from unit to target, or None."""
@@ -176,6 +183,25 @@ def normalise(facts, examples, records, units) -> None:
         pdef = records.parameters.get(p, {})
         tgt = target_unit(p, pu, pdef.get("unit-default", "") or r.get("unit", ""))
         unit = (r.get("unit") or "").strip()
+        exrow, flist = units.factors.for_row(a["archetype"], r["example-id"])
+        exf = [f for f in flist if exrow and f["factor-id"] in split_list(exrow.get("factor-id", ""))]
+        alias = dict(x.split("=", 1) for x in split_list((exrow or {}).get("unit-alias", "")) if "=" in x)
+        per_product = (p in PER_PRODUCT or p in PER_CAPACITY or p in PER_OUTPUT
+                       or (p.startswith("emissions-") and p != "emissions-reduction-potential"))
+        if exrow and exrow.get("factor-id") == "none" and per_product:
+            r["excluded"] = ("reported per a product the archetype does not make, and no factor "
+                             "links the two: " + (exrow.get("note") or ""))
+            continue
+        if (p == "cost-levelized" and a.get("family") == "heat-supply"
+                and re.search(r"/(k|M)Wh\b", unit)
+                and not re.search(r"per MWh of heat", r.get("note") or "", re.I)):
+            r["excluded"] = ("a cost per unit of electricity (or of unstated output) on an archetype "
+                             "whose product is heat: a CHP plant's cost per MWh of electricity is not "
+                             "a cost per GJ of heat")
+            continue
+        bf = convert.basis_factor(exf) if per_product else None
+        species_ok = a.get("product", "").lower().startswith("t co2") or "CO2" in tgt
+        used = []
         if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")):
             # an emission factor per GJ of FUEL; the archetype's basis is per GJ
             # of OUTPUT, and the two differ by the efficiency (D13)
@@ -193,13 +219,13 @@ def normalise(facts, examples, records, units) -> None:
         if not unit and tgt == "dimensionless":
             unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
-        m = MONEY.match(unit)
+        m = convert.MONEY.match(unit)
         if m:
-            cur = m.group(0)
+            cur = f"{m.group(1)}_{m.group(2)}"
             if cur not in units.cur:
                 r["excluded"] = f"no currency factor for {cur}"
                 continue
-            f = units.cur[cur]
+            f = units.cur[cur] * convert.MULT[m.group(3)]
             d = unit.split("/", 1)[1] if "/" in unit else ""
             td = tgt.split("/", 1)[1] if "/" in tgt else ""
             sc = scale.get(r["example-id"], {})
@@ -226,15 +252,31 @@ def normalise(facts, examples, records, units) -> None:
                 note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
                         f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
             else:
-                r["excluded"] = (f"cost per {d or 'plant'} cannot be put per {td}: the source "
-                                 "gives no output factor to convert it with")
-                continue
+                ext = convert.intensive(unit, tgt, flist, species_ok, alias) if d else None
+                if not ext:
+                    r["excluded"] = (f"cost per {d or 'plant'} cannot be put per {td}: the source "
+                                     "gives no output factor to convert it with")
+                    continue
+                factor, used = f * ext[0], ext[1]
+                note = f"per {d} -> per {td}"
         else:
             route = units.physical(unit, tgt)
             if route is None:
-                r["excluded"] = f"no conversion from {unit or '(none)'} to {tgt}"
-                continue
+                ext = (convert.extensive(unit, tgt, flist, alias) if p in EXTENSIVE
+                       else convert.intensive(unit, tgt, flist, species_ok, alias))
+                if not ext:
+                    r["excluded"] = f"no conversion from {unit or '(none)'} to {tgt}"
+                    continue
+                route, used = (ext[0], 0.0), ext[1]
             factor, offset = route
+        if bf:
+            # the source reports per another product (per t aluminium on an alumina
+            # archetype): per-product numbers divide by it, capacities multiply
+            factor = factor * bf[0] if p in EXTENSIVE else factor / bf[0]
+            used.append(bf[1])
+        if used:
+            note = (note + "; " if note else "") + "factor " + ", ".join(dict.fromkeys(used)) + \
+                " (records/reference/conversion-factor.csv)"
         conv = lambda x: None if x is None else x * factor + offset
         r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
             "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
@@ -246,6 +288,34 @@ def normalise(facts, examples, records, units) -> None:
         if r["duplicate-of"] and FUEL_INPUT_DIVISOR.search(r.get("formula") or "") and pu == "GJ":
             r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
             r["excluded"] = SET_ASIDE
+    # A fixed O&M the source gives as a percentage of capital per year is put on the
+    # example's own capital cost -- the same source's number, so it is only a
+    # derivation -- where the example has one pooled capex (or one per case).
+    capex = defaultdict(list)
+    for r in facts:
+        if r["parameter"] == "capex" and r.get("value-norm") and not r.get("excluded"):
+            capex[r["example-id"]].append(r)
+    for r in facts:
+        u = (r.get("unit") or "").strip()
+        if r["parameter"] != "opex-fixed" or not u.startswith("%") or r.get("value-norm"):
+            continue
+        cands = capex.get(r["example-id"], [])
+        case = re.match(r"^\[([^\]]+)\]", r.get("note") or "")
+        if case and len(cands) > 1:
+            cands = [c for c in cands if (c.get("note") or "").startswith(f"[{case.group(1)}]")]
+        if len({c["value-norm"] for c in cands}) != 1:
+            r["excluded"] = ("percentage of capital cost: the example has "
+                             + ("no pooled capital cost" if not cands else "several capital costs")
+                             + " to put it on")
+            continue
+        c = cands[0]
+        v, lo, hi = _num(r)
+        cv = fnum(c["value-norm"])
+        r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
+            "" if x is None else f"{x / 100 * cv:.6g}" for x in (v, lo, hi))
+        r["unit-norm"] = c["unit-norm"]
+        r["excluded"] = ""
+        r["conversion"] = f"percentage of the example's capital cost {c['record-id']} per year"
     # A derived row that restates its parent in another unit adds no information.
     # UKERC's per-GJ costs are the per-tonne cost divided by the fuel used per
     # tonne, i.e. per GJ of fuel INPUT. Where the parent could not be pooled either,

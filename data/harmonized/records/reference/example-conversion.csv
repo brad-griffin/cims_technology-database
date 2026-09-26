@@ -1,0 +1,29 @@
+example-id,factor-id,unit-alias,note
+doe_2015_002:reactor_efficiency-base@alkylation,cf-gasoline-volume,,per barrel of alkylate produced
+doe_2015_002:reactor_bat@alkylation,cf-gasoline-volume,,per barrel of alkylate produced
+doe_2015_002:reactor_efficiency-base@isomerization,cf-gasoline-volume,,per barrel of isomerate produced
+doe_2015_002:reactor_bat@isomerization,cf-gasoline-volume,,per barrel of isomerate produced
+doe_2015_003:evaporator_efficiency-base@liquor-evaporation,cf-bls-per-pulp,,per short ton of chemical pulp
+doe_2015_003:evaporator_bat@liquor-evaporation,cf-bls-per-pulp,,per short ton of chemical pulp
+doe_2015_003:kiln_efficiency-base@pulping-chemical-preparation,none,,per short ton of chemical pulp; no sourced factor for reburned lime per t pulp
+doe_2015_003:kiln_bat@pulping-chemical-preparation,none,,per short ton of chemical pulp; no sourced factor for reburned lime per t pulp
+doe_2017_001:reactor_efficiency-base@raw-material-beneficiation,cf-alumina-per-aluminium,,per lb of primary aluminium
+doe_2017_001:reactor_bat@raw-material-beneficiation,cf-alumina-per-aluminium,,per lb of primary aluminium
+doe_2017_001:furnace_efficiency-base@reductant-production,cf-anode-per-aluminium,,per lb of primary aluminium
+doe_2017_001:furnace_bat@reductant-production,cf-anode-per-aluminium,,per lb of primary aluminium
+doe_2017_002:grinding-mill_efficiency-base@dry-process-kiln-feed-preparation,cf-cement-per-rawmeal,,per lb of raw meal
+doe_2017_002:grinding-mill_efficiency-base@dry-process-fuel-preparation,none,,"per lb of fuel prepared, not per t of cement"
+doe_2017_002:grinding-mill_bat@dry-process-kiln-feed-preparation,cf-cement-per-rawmeal,,per lb of raw meal
+doe_2017_002:grinding-mill_bat@dry-process-fuel-preparation,none,,"per lb of fuel prepared, not per t of cement"
+doe_2017_002:grinding-mill_efficiency-base@wet-process-kiln-feed-preparation,cf-cement-per-rawmeal,,per lb of raw meal
+doe_2017_002:grinding-mill_efficiency-base@wet-process-fuel-preparation,none,,"per lb of fuel prepared, not per t of cement"
+doe_2017_002:grinding-mill_bat@wet-process-kiln-feed-preparation,cf-cement-per-rawmeal,,per lb of raw meal
+doe_2017_002:grinding-mill_bat@wet-process-fuel-preparation,none,,"per lb of fuel prepared, not per t of cement"
+doe_2017_003:evaporator_efficiency-base@corn-wet-milling-steepwater-evaporation,none,,per lb of corn; the archetype is measured per t of black liquor solids
+doe_2017_003:evaporator_efficiency-base@evaporated-and-dry-milk-concentration,none,,per lb of dairy product; the archetype is measured per t of black liquor solids
+doe_2017_003:pasteurizer_efficiency-base@fluid-milk-pasteurization,cf-milk-density,,per lb of fluid milk
+doe_2017_003:direct-heater_efficiency-base@beer-brewhouse,,bbl=bbl-beer,per US beer barrel
+doe_2017_003:evaporator_bat@corn-wet-milling-steepwater-evaporation,none,,per lb of corn; the archetype is measured per t of black liquor solids
+doe_2017_003:evaporator_bat@evaporated-and-dry-milk-concentration,none,,per lb of dairy product; the archetype is measured per t of black liquor solids
+doe_2017_003:pasteurizer_bat@fluid-milk-pasteurization,cf-milk-density,,per lb of fluid milk
+doe_2017_003:direct-heater_bat@beer-brewhouse,,bbl=bbl-beer,per US beer barrel

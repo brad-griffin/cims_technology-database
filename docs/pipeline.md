@@ -25,7 +25,7 @@ gate a commit.
 | 5b | whole-plant | `pipeline/wholeplant.py` | Adds UKERC's host baseline cost to each measure cost where `records/reference/ukerc-host-baseline.csv` allows, as a derived row (`tp-<source>-wNNN`). It sets the other measure costs aside. |
 | 5c | assembly | `pipeline/assembly.py` | Sums one source's component costs into a whole-plant cost as listed in `records/reference/whole-plant-assembly.csv`, as a derived row (`tp-<source>-aNNN`). Stops the build on components from another source, another currency-year or an unreconciled unit. |
 | 6 | checks | `pipeline/checks.py` | The gate. |
-| 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py` | Puts every fact on its archetype's basis, or excludes it with the reason. |
+| 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
 | 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |

@@ -1,0 +1,171 @@
+"""Unit and product conversions beyond the plain table in unit-conversion.csv.
+
+Two kinds, both recorded on the row they were used for (column `conversion`):
+
+  * units: a unit written as a numerator over a basis, the basis optionally a rate
+    (`Btu/lb`, `2013_USD-thousand/m3-per-h`, `Nm3/h`), converted token by token
+    with the definitions below (NIST SP 811 / Handbook 44). These are exact.
+  * products: a physical property of a product that links two kinds of quantity
+    (hydrogen's heating value links t and GJ; ethanol's density links m3 and t)
+    or two products (alumina per tonne of aluminium). Each is a row of
+    records/reference/conversion-factor.csv with its source. A factor applies to
+    the archetypes named in its `applies-to`, or to the examples that
+    records/reference/example-conversion.csv names; an example entry wins over an
+    archetype one, and `none` there means the example is reported per a product
+    the archetype does not make, so its per-product numbers are not pooled.
+
+Design rule (design.md s5, amended 2026-09-26): a factor from another source is
+used only through conversion-factor.csv, never inline.
+"""
+from __future__ import annotations
+
+import re
+from collections import defaultdict
+
+from .common import REFERENCE, fnum, read, split_list
+
+# token -> (dimension, size in the base unit: GJ, t, m3, yr)
+ATOM = {
+    "GJ": ("energy", 1.0), "MJ": ("energy", 1e-3), "kJ": ("energy", 1e-6),
+    "TJ": ("energy", 1e3), "PJ": ("energy", 1e6), "kWh": ("energy", 0.0036),
+    "MWh": ("energy", 3.6), "GWh": ("energy", 3600.0), "Btu": ("energy", 1.055056e-6),
+    "kBtu": ("energy", 1.055056e-3), "MMBtu": ("energy", 1.055056), "mmBtu": ("energy", 1.055056),
+    "t": ("mass", 1.0), "kt": ("mass", 1e3), "Mt": ("mass", 1e6), "kg": ("mass", 1e-3),
+    "g": ("mass", 1e-6), "lb": ("mass", 4.5359237e-4), "ton": ("mass", 0.90718474),
+    "short-ton": ("mass", 0.90718474),
+    "m3": ("volume", 1.0), "Nm3": ("volume", 1.0), "l": ("volume", 1e-3), "L": ("volume", 1e-3),
+    "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
+    "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
+    "bbl-beer": ("volume", 0.117347765),
+    "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
+    "d": ("time", 1 / 365), "day": ("time", 1 / 365),
+}
+# mass of a named species: `t-CO2` is a tonne of CO2. It meets a plain `t` only on
+# an archetype whose product is that species.
+SPECIES = re.compile(r"^(t|kg|kt|Mt)-(CO2(?:-eq)?|CO2e|CH4)$")
+MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion))?")
+MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9}
+
+
+def atom(tok, alias=None):
+    tok = (alias or {}).get(tok, tok)
+    m = SPECIES.match(tok)
+    if m:
+        return ATOM[m.group(1)][0], ATOM[m.group(1)][1], m.group(2).replace("CO2e", "CO2-eq")
+    if tok in ATOM:
+        return ATOM[tok][0], ATOM[tok][1], ""
+    return None
+
+
+def split_rate(s):
+    """'m3-per-h' -> ('m3', 'h'); 'm3' -> ('m3', None)."""
+    if "-per-" in s:
+        a, b = s.split("-per-", 1)
+        return a, b
+    return s, None
+
+
+class Factors:
+    def __init__(self):
+        self.rows = {r["factor-id"]: r for r in read(REFERENCE / "conversion-factor.csv")}
+        self.by_arch = defaultdict(list)
+        for r in self.rows.values():
+            r["_f"] = fnum(r["factor"])
+            for a in split_list(r.get("applies-to", "")):
+                self.by_arch[a].append(r)
+        self.by_example = {}
+        for r in read(REFERENCE / "example-conversion.csv"):
+            self.by_example[r["example-id"]] = r
+
+    def for_row(self, archetype, example_id):
+        """(example entry or None, [factor rows]) -- example factors first."""
+        e = self.by_example.get(example_id)
+        out = []
+        if e:
+            out += [self.rows[f] for f in split_list(e.get("factor-id", "")) if f in self.rows]
+        return e, out + self.by_arch.get(archetype, [])
+
+
+def qty_ratio(x, tx, factors, species_ok, alias=None):
+    """How many `tx` make one `x` (e.g. x='lb', tx='t' -> 4.536e-4), bridging two
+    kinds of quantity with at most one product factor. Returns (ratio, factor-id)."""
+    a, b = atom(x, alias), atom(tx, alias)
+    if not a or not b:
+        return None
+    if a[2] and not b[2] and not species_ok:
+        return None
+    if a[0] == b[0]:
+        return a[1] / b[1], ""
+    for f in factors:
+        fu, tu = atom(f["from-unit"]), atom(f["to-unit"])
+        if not fu or not tu or f["_f"] in (None, 0):
+            continue
+        if fu[0] == a[0] and tu[0] == b[0]:
+            return a[1] / fu[1] * f["_f"] * tu[1] / b[1], f["factor-id"]
+        if tu[0] == a[0] and fu[0] == b[0]:
+            return a[1] / tu[1] / f["_f"] * fu[1] / b[1], f["factor-id"]
+    return None
+
+
+def basis_factor(example_factors):
+    """A same-kind product factor (1 t aluminium = 1.908 t alumina) named for the
+    example: it changes which product the numbers are per, not the unit."""
+    for f in example_factors:
+        fu, tu = atom(f["from-unit"]), atom(f["to-unit"])
+        if fu and tu and fu[0] == tu[0] and f["_f"]:
+            return f["_f"] * fu[1] / tu[1], f["factor-id"]
+    return None
+
+
+def intensive(unit, tgt, factors, species_ok, alias=None):
+    """A quantity per unit of product or capacity: numerator over basis. Money
+    numerators are left to the caller (returns the basis part only when num is
+    money). Returns (multiplier, [factor ids]) or None."""
+    if "/" not in unit or "/" not in tgt:
+        return None
+    num, den = unit.split("/", 1)
+    tnum, tden = tgt.split("/", 1)
+    used = []
+    if MONEY.match(num):
+        nr = 1.0
+    else:
+        r = qty_ratio(num, tnum, [], True, alias)
+        if not r:
+            return None
+        nr = r[0]
+    x, p = split_rate(den)
+    tx, tp = split_rate(tden)
+    if (p is None) != (tp is None):
+        return None
+    pr = 1.0
+    if p:
+        r = qty_ratio(tp, p, [], True)       # how many p in one tp
+        if not r:
+            return None
+        pr = r[0]
+    q = qty_ratio(x, tx, factors, species_ok, alias)
+    if not q:
+        return None
+    if q[1]:
+        used.append(q[1])
+    # per (x/p) -> per (tx/tp): one x/p is q tx per p, i.e. q*pr tx per tp
+    return nr / (q[0] * pr), used
+
+
+def extensive(unit, tgt, factors, alias=None):
+    """A rate (a capacity): `Nm3/h` -> MW, `Ml/yr` -> kt/yr, `kb/d` -> m3/yr."""
+    if tgt == "MW":
+        tgt, extra = "GJ/h", 1 / 3.6
+    else:
+        extra = 1.0
+        if "/" not in tgt:              # annual output: the archetype's unit per year
+            tgt += "/yr"
+    if "/" not in unit or "/" not in tgt:
+        return None
+    num, per = unit.split("/", 1)
+    tnum, tper = tgt.split("/", 1)
+    q = qty_ratio(num, tnum, factors, True, alias)
+    t = qty_ratio(tper, per, [], True)          # how many `per` in one `tper`
+    if not q or not t:
+        return None
+    return q[0] * t[0] * extra, [q[1]] if q[1] else []

@@ -230,11 +230,23 @@ are abated, or when a policy instrument treats them separately.
   row is derived.
 - A cost per GJ of energy use is never turned into a cost per tonne by dividing by
   specific energy consumption: that mixes input and output bases.
-- A number in another unit is converted only with a factor **the same source gives
-  for the same example**, on an output basis: an output capacity (`capacity-basis`
-  thermal-, electric- or product-output), an annual output, a capacity factor. A
-  factor from another source, or an energy input standing in for an output, is never
-  used.
+- A number in another unit is converted with exact unit definitions (Btu, lb, short
+  ton, barrel; `pipeline/convert.py`), with a factor **the same source gives for the
+  same example** on an output basis (an output capacity, an annual output, a capacity
+  factor), or with a **product factor** from `records/reference/conversion-factor.csv`
+  (amended 2026-09-26). Each product factor is a physical property with its source:
+  a heating value (t or Nm3 of hydrogen to GJ), a density (m3 of ethanol to t), an
+  energy content (t of LNG to MMBtu), or a product ratio (t of alumina per t of
+  aluminium). It applies to the archetypes its `applies-to` names, or to the
+  examples `records/reference/example-conversion.csv` names; there `none` marks an
+  example reported per a product the archetype does not make, which is not pooled.
+  The row names the factor in `conversion`. An energy input standing in for an
+  output is never used, and no factor is written inline in code or in a note.
+- A fixed O&M a source gives as a percentage of capital per year is put on the same
+  example's pooled capital cost.
+- **Levelized costs** (`cost-levelized`) are shown with the costs. They are pooled
+  only with each other, never with capex or opex, and a levelized cost per unit of
+  electricity is not pooled on an archetype whose product is heat.
 - A derived row that restates another row of the same example in another unit is
   a **duplicate**. It names that row in `duplicate-of` and is not pooled.
 - **Set aside until an efficiency is known.** UKERC costs on energy-service
