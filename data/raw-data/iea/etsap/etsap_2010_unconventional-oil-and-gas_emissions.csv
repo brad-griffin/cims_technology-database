@@ -6,8 +6,8 @@ item,value,value-min,value-max,unit,reference,note
 "Synthetic crude, surface mining and upgrading",,62,164,kgCO2/bbl,p.5; Fig. 3,
 "Synthetic crude, in-situ and upgrading",,16.2,28.9,gCO2/MJ,p.5; Fig. 3,= 99-176 kgCO2/bbl. In-situ route not split into SAGD and CSS.
 "Synthetic crude, in-situ and upgrading",,99,176,kgCO2/bbl,p.5; Fig. 3,
-Conventional oil production,,4.4,4.7,gCO2/MJ,p.5; Fig. 3,"DEFECT: printed '(27 and 58 kgCO2/bbl)'; 58 kg/bbl is about 9.5 g/MJ, not 4.7 (Fig. 3's 'GHGenius' conventional bar is about 58)."
-Conventional oil production,,27,58,kgCO2/bbl,p.5; Fig. 3,See the g/MJ row.
+Conventional oil production,,4.4,4.7,gCO2/MJ,p.5; Fig. 3,"The paired per-barrel figures are printed '(27 and 58 kgCO2/bbl)'; 58 is a misprint for 28 (modeller's decision 2026-09-25, see the kgCO2/bbl row). The g/MJ values are kept as printed."
+Conventional oil production,,27,28,kgCO2/bbl,p.5; Fig. 3,"MISPRINT CORRECTED (modeller's decision 2026-09-25): the brief prints '(27 and 58 kgCO2/bbl)'; 58 is taken as a misprint for 28, since 4.7 gCO2/MJ x about 6.1 GJ/bbl = about 28.7 kg/bbl (and 4.4 x 6.1 = 26.8, matching the printed 27). Fig. 3 does show a conventional-oil bar near 58 (GHGenius), so the text may have mixed two studies; the g/MJ pair 4.4-4.7 is kept as printed."
 Heavy oil production with natural-gas steam,14,,,gCO2/MJ,p.4,"'given a natural gas consumption of 45 m3 per barrel' [1] (WEC 2007); heavy oil generally, route not named."
 "Heavy oil production, natural gas use",45,,,m3/bbl,p.4,Implied by the 14 gCO2/MJ figure.
 "Tar sand and heavy oil, life-cycle incl. combustion",,28,46,gCO2/MJ,p.4; Fig. 2,"Includes 20 gCO2/MJ from fuel combustion - LIFE-CYCLE, not Scope 1. Oil shale 44-69."

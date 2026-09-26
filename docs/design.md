@@ -196,6 +196,11 @@ are abated, or when a policy instrument treats them separately.
 ## 5. Parameters, units and bases
 
 **Layer 1 keeps values as reported:**
+- only values the source prints, or values derived using only values the source
+  prints (a sum, ratio or unit conversion), stored as `derived` with the `formula` and
+  a note naming the printed inputs. Never a midpoint invented for a printed range, an
+  outside factor or an assumption. A whole-plant cost the build assembles from
+  component rows is not also summed by hand in the extraction;
 - the source's own unit;
 - money in `YEAR_CUR` (`2013_GBP`), with `currency` holding the currency-year only;
 - no deflation or exchange.
