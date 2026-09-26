@@ -1,20 +1,10 @@
 process,technology,item-as-printed,value,value-min,value-max,unit,reference,note
-Synthetic gas production costs,,Biomethane from wastes - production cost,,13.6,16.8,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,,Biomethane from 10% purchased maize silage - production cost,,19.8,22.7,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,,Biomethane from mostly maize silage - production cost,,22.2,28.2,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,,Raw gas - production cost,,13.4,21.7,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,,Upgrading - production cost,,5.1,8.3,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,,Biomethane (raw gas+upgrading+ grid connection) - production cost,,19.1,31.1,USD/GJ,"p.11, Table 10",Levelized production cost - no parameter. Currency year not stated.
-Synthetic gas production costs,process-improvement_landfill-gas,Collected landfill gas - production cost,,1.8,6.9,USD/GJ,"p.11, Table 10","Printed HIGH-TO-LOW '6.9-1.8', stored low-high. Second line '1.4-4.9 cents/m3'; the two ranges are not in a constant ratio (1.29 and 1.41 USD/GJ per cent/m3)."
 Synthetic gas production costs,process-improvement_landfill-gas,Collected landfill gas - production cost,,1.4,4.9,US cents/m3,"p.11, Table 10",See above.
-Landfill around 5 MW,reciprocating-engine_landfill-gas,Electricity price (LCOE) incl. power gen.,9.8,,,US cents/kWh,"p.11, Table 10",Currency year not stated.
 Landfill around 5 MW,reciprocating-engine_landfill-gas,Fixed O&M cost,,11,20,% of investment cost,"p.11, Table 10","Per year, read from the column heading."
-AD around 1 MW,reciprocating-engine_biogas_chp,Electricity price (LCOE) incl. power gen.,,5.9,18.6,US cents/kWh,"p.11, Table 10",
 Capital cost of CHP added to a digester,reciprocating-engine_biogas_chp,Investment cost,25,,,% of digester capital cost,"p.11, Table 10","Incremental add-on (+25%); the digester capex is per m3/h of raw gas, so no whole-plant row is derived."
 Anaerobic digestion,anaerobic-digester_biogas,Annual fixed O&M,,2,7,% of investment cost per yr,p.5; Table 10,
 Landfill gas collection and flaring,process-improvement_landfill-gas,Investment cost,6,,,USD/m3,p.6,"US EPA 2012. DENOMINATOR NOT STATED ('USD 6/m3' - m3 of gas per year, per hour or of landfill volume?) - not loaded. Currency year not stated."
 Landfill gas collection and flaring,process-improvement_landfill-gas,Annual O&M cost,1,,,USD/m3,p.6,As above.
-Bio-SNG gasification,gasifier_biomass_methanation,Production cost (feedstock excluded),,15,20,USD/GJ bio-SNG,p.6; p.1,"Heyne 2013. Expected to fall 10-15% over 10-15 years (p.1). Cost shares: pretreatment ~5%, gasification 35%, methanation 10%, gas cleaning and upgrade 35%, steam cycle 15%."
 Bio-SNG gasification with power,gasifier_biomass_methanation,Prime mover additional cost,,5,15,% of total cost,p.6,IRENA 2012.
 Bio-SNG gasification,gasifier_biomass_methanation,"Capex reduction, gasification and tar reformation equipment",,10,15,% over 10-15 years,p.6,Projection.
 Biogas upgrading,separator_biogas,Cost reduction by 2020,,10,20,%,p.6,Reduces biomethane-for-vehicles production cost by only 1-5% in 2020 (IRENA 2013).
