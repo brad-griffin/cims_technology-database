@@ -1,0 +1,32 @@
+page,sector,option,footnote,ghg-reduction,trl,breakeven-estimate,year,ipcc-2022-technology,compared-with-ipcc-2022-table-11-3
+8,Cross cutting,CCUS of postcombustion CO2 diluted in nitrogen,a,Up to 90%,6-7,<=$120/tonne,2025,capture-unit_post-combustion,same
+8,Cross cutting,CCUS of concentrated CO2,a,99%,9,<=$40/tonne,Today,capture-unit,same
+8,Cross cutting,H2 prod: Steam or autothermal CH4 reforming w/CCS,a,SMR <=90% ATR >90%,"6*, 9**","56% @ <=$40/tonne chem**, <=$120 heat*, +20%/kg",<=2025,steam-reformer_natural-gas_ccs,same
+8,Cross cutting,H2 prod: Coal with CCUS,a,<=90%,6,"(ditto), +25-50%/kg",<=2025,gasifier_coal_ccs,same (the IPCC extraction reads +25-50%/kg as 25-50 USD/t)
+8,Cross cutting,H2 prod: Alkaline or PEM electrolysis,b,99%,9,~$50/tonne or < $20-30/MWh,Today,electrolyzer_electricity,same
+8,Cross cutting,H2 prod: Reversible solid oxide fuel electrolysis,b,99%,6-8,~$40/tonne or < $40/MWh,2025,fuel-cell_electricity,same
+8,Cross cutting,H2 prod: CH4 pyrolysis or catalytic cracking,c,99%,5,?,2030?,reactor_natural-gas,same
+8,Cross cutting,Hydrogen as CH4 replacement,,<=10%,9,See above,Today,,no IPCC technology row
+8,Cross cutting,Biogas or liquid replacement hydrocarbons,,60-90%,9,"Biomass $/GJ; >= $50/tonne, uncertain",Today,,no IPCC technology row
+8,Cross cutting,"Anaerobic digestion/fermentation: CH4, CH3OH, C2H5OH",d,Up to -99%,9,Biomass cost,Today,anaerobic-digester_biomass; fermenter_biomass,same
+8,Cross cutting,Methane or methanol from H2 and COx (CCUS for excess). Maximum -50% reduction if C source is FF,,50-99%,6-9,Cost: H2 and COx,Today,reactor_hydrogen_ccs,same
+8,Cross cutting,850 C woody biomass gasification w/CCS for excess carbon,e,Could be negative,7-8,"~$50-75/tonne, uncertain",2025,gasifier_biomass_ccs,year differs: IPCC Today
+8,Cross cutting,Direct air capture for short and long chain CoOxHy,f,Up to 99%,3,"Cost: E, H2, COx ~$94-232/tonne",<=2030,capture-unit_direct,same
+8,Iron and steel,BF-BOF w/top gas recirculation and CCUS,g,60%,6-7,$70-130/tonne,2025,blast-furnace_top-gas-recycling-ccs,year differs: IPCC 2025-2030
+8,Iron and steel,Hisarna with concentrated CCUS,h,80-90%,7,$40-70/tonne,2025,smelting-vessel_hisarna-ccs,same
+8,Iron and steel,Hydrogen Direct Reduced Iron (DRI) Electric Arc Furnace (EAF),i,99%,4-6,34-68 EUR/tonne and 40 EUR/MWh,2030,shaft-furnace_hydrogen,"DIFFERS: IPCC TRL 7, 39-79 USD/t, 2025"
+8,Iron and steel,"Aqueous (e.g., SIDERWIN) or molten oxide (e.g., Boston metals) electrolysis",j,99%,3-5,?,2035-40,electrolysis-cell_electricity_ulcowin,same
+8,Cement and concrete,Building design to minimize concrete,,25 to 50%,9,Low,Today,,strategy
+8,Cement and concrete,"Alternative lower GHG fuels, for example, waste",,40%,9,Cost of alt. Fuels,Today,kiln_municipal-waste,same
+8,Cement and concrete,"CCUS for process heating and CaCO3 calcination CO2 (e.g., LEILAC, possible retrofit)",a,"99% calc., <=90% heat",5-7,<=$40/tonne calc. <=$120/tonne heat,2025,calciner_ccs,same values; the IPCC extraction keeps only the calcination figure
+8,Cement and concrete,"Clinker substitution (e.g., limestone + calcined clays)",k,<=40%,9,Near zero,Today,,strategy
+8,Cement and concrete,Use of multi sized and well dispersed aggregates,k,Up to 75%,9,Near zero,Today,,strategy
+8,Cement and concrete,Magnesium or ultramafic cements,,Negative?,1-4,?,2040,,no IPCC technology row
+8,Aluminum and other nonferrous,Inert electrodes + green electricity,l,100%,6-7,Relatively low,2024,electrolysis-cell_electricity,same
+9,Aluminum and other nonferrous,Hydro/electrolytic smelting (w/CO2 CCUS if necessary),,Up to 99%,3-9,Ore specific,<2030,smelting-vessel_electricity,same
+9,Chemicals,Catalysis of ammonia from low/zero GHG hydrogen H2,m,<=99%,9,Cost of H2,Today,reactor_hydrogen,same
+9,Chemicals,"Electrocatalysis: CH4, CH3OH, C2H5OH, CO, olefins",n,Up to 99%,3,"Cost: E, H2, COx",2030,reactor_electricity,same
+9,Chemicals,Catalysis of olefins from: (m)ethanol; H2 and COx directly,,9%,"9,3",Cost: H2 and COx,<2030,reactor_methanol,same
+9,Pulp and paper,"Full biomass firing, inc. lime kilns",,90-99%,9,~$50/tonne,Today,kiln_biomass,DIFFERS: IPCC 60-75%
+9,Other manufacturing,"Electrification using current tech (boilers, heat pumps)",,99%,9,Cost: E vs. NG,Today,boiler_electricity; heat-pump_electricity,year differs: IPCC 2025
+9,Other manufacturing,"Using new tech (induction, plasma heating)",,99%,3-6,,2025,induction-heater_electricity; plasma-torch_electricity,same

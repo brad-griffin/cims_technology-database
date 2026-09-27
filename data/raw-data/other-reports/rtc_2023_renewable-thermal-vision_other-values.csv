@@ -1,0 +1,14 @@
+subject,parameter,unit,value,reference,note
+fuels: biomass / RNG / power-to-gas / hydrogen / biodiesel / bioethanol,maximum achievable temperature,degC,"500 (alt. 1,000) / 1,950 / 1,950 / 2,100 / 2,200 / 2,000 (alt. 2,200)",p.11,fuel flame temperatures; not attached to equipment
+"electric resistance (generic: boilers, furnaces)",maximum achievable temperature,degC,"1,800",p.11,"not attached to the electric boiler example: it is the ceiling for resistance heating generally, not for a boiler"
+thermal storage vendors: Brenmiller / Antora / Rondo,"storage temperature, up to",degC,"750 / 1,500 / 1,500",p.184,"vendor descriptions; storage-medium temperatures, not delivered heat"
+Rondo thermal battery,efficiency; standing loss,%; %/day,98; 2,p.184,vendor claim
+CO2 capture cost curve assumptions,WACC; utilisation; lifetime,%; %; years,8; 85; 20,p.109,no capture costs are printed on the curve
+solvent regeneration heat,temperature; share of capture cost,degC; %,~120; 20-50,p.112,Global CCS Institute
+US 45Q credit (IRA),tax credit,USD/t CO2,85,p.115,
+CCUS learning,cost reduction per doubling of deployment,%,~12,p.115,BCG
+LCOH structure,fuel share of LCOH for most technologies,%,~90,p.12,"except solar thermal, thermal storage and hydrogen"
+heat pump vs gas payback,"simple payback, many US states",years,<5,p.138,
+US industrial thermal emissions 2018,total,Mt CO2e,758,p.9,"refineries 276, chemicals 152, iron & steel 102, food 50, paper 33, cement 17"
+US industrial thermal emissions 2018 by temperature,high (>500 degC) / medium (130-500) / low (<130),Mt CO2e,217 / 360 / 181,p.10,chart corrected September 2023
+solar thermal capital cost,lowest capex by output temperature,USD/kW-thermal,"about 500 at 0 degC rising to about 1,900 at 700 degC",p.172,"chart only, no printed values; ARENA"

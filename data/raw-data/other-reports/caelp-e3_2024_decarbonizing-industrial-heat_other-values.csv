@@ -1,0 +1,13 @@
+subject,parameter,unit,value,reference,note
+industrial heat pump,capex (cost function),2021_USD/kW,1186.2*capacity_kW**-0.113,"p.59 (PDF p.63), Fig. 37, fn 75","capital cost as a function of heating capacity, reproduced from Zuberi et al. (2022/2023) US food-manufacturing heat pump study; plotted 0-5,000 kW (about 950 $/kW near zero to about 455 at 5,000 kW). Not loaded: a value needs a chosen capacity, which the report takes facility by facility."
+electric thermal storage,input-to-output capacity ratio,ratio,3.5,p.22,
+electric thermal storage,storage duration,h,36,p.22,
+electric thermal storage,power CAPEX,2022_USD/kW,300,"p.58, App. A.1",component of the derived 480 $/kW in the main file
+electric thermal storage,storage CAPEX,2022_USD/kWh,5,"p.58, App. A.1",component of the derived 480 $/kW in the main file
+electric thermal storage,grid access charge on wind/solar LCOE,2022_USD/MWh,1.50,"p.22, fn 34",E3 estimate
+electric resistance boiler,efficiency relative to gas boiler,%,+15,p.21,electric boilers assumed 15% more efficient than gas boilers; the gas boiler efficiency itself is not printed
+heat pump COP method,Carnot fraction; source temperature; approach,%; degC; K,50; 20; 5,"p.20, fn 27",
+"RNG price, landfill / wastewater sludge / food waste / animal manure",total delivered price,2022_USD/MMBtu,17.50 / 18.68 / 39.80 / 63.53,"p.24, Table 3",fossil gas at 3 $/MMBtu plus LCFS and RFS credit values; wastewater sludge is the base case
+"US industrial natural gas price, AEO Reference / Low Oil and Gas Supply",average 2025-2050,2022_USD/MMBtu,4.50 / 6.75,p.37-38,
+manufacturing indirect heat,share below 200 degC,%,80,"p.7, p.18",
+GHGRP boilers,share >10 MMBtu/h older than 40 years,%,47,"p.30-31, fn 43",ORNL 2005 boiler population study

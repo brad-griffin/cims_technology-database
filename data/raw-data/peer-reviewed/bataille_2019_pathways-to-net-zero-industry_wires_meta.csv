@@ -1,0 +1,6 @@
+parameter,value
+licence,(c) 2019 Wiley Periodicals - publisher copyright; check before redistribution
+citation,"Bataille, C. G. F. (2020). Physical and policy pathways to net-zero emissions industry. WIREs Climate Change, 11(2), e633. https://doi.org/10.1002/wcc.633 (accepted December 2019)"
+source-id,bataille_2019_001
+extraction-note,"Table 1 (pp.8-9) is the paper's only technology-parameter content: GHG reduction, TRL, breakeven carbon price and year for 31 options. IPCC AR6 WGIII Chapter 11 Table 11.3 (ipcc_2022_001, extracted and loaded) is its updated successor: the same rows and the same footnote sources. Table 1 is therefore kept as printed in _table-1.csv, row by row against the IPCC extraction, and is NOT loaded, so one compilation is not pooled twice. Two rows differ in value (H2-DRI-EAF breakeven, TRL and year; pulp and paper biomass firing 90-99% vs 60-75%) and four in year only. Whether to load the differing rows is left open. _other-values.csv holds the quantitative statements in the text. Locators are the journal page numbers (N of 20)."
+source-defects,"(1) Table 1 misspells Furnace as Furnance. (2) The H2-DRI breakeven mixes EUR/t and EUR/MWh with no currency year. (3) Coal-with-CCUS breakeven is a ditto mark plus +25-50%/kg (a hydrogen cost increase, not a carbon price)."

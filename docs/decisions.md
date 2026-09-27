@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-09-26 | Extracted and loaded CAELP/E3 2024 and RTC 2023. IPCC AR6 Table 11.3 stands; nothing from Bataille 2019 is added (Table 1 kept only as a not-loaded comparison sidecar). A figure printed more than once in a source is pooled once (CAELP RNG and H2 boilers `(none)`). CAELP CHP `(none)` until the EPA 2013 fact sheet gives its basis; CAELP 140-200 degC heat pumps on `heat-pump_steam-generating`. 112 gap-filling sources for iron and steel, chemicals and pulp and paper added to `to-get.csv`. | current | modeller 2026-09-26 |
 | 2026-09-26 | `electrolysis-cell_limestone-decarbonation` dropped; the Sublime route (`binder_electrochemical`) is the electrochemical cement option. | current | modeller 2026-09-26 |
 | 2026-09-26 | Metal-smelting capture node added to the hierarchy snapshot; `dryer_supercritical-co2` removed (TRL 2, below scope). | current | modeller 2026-09-26 |
 | 2026-09-26 | Added `smelting-vessel_low-shaft` (Tecnored), `binder_electrochemical` (Sublime) and `kiln_calcium-silicate-feed` (Brimstone). Aluminium rolling skipped. E14 whole-chain abatement costs stay on their host archetypes with a note; reformer examples at about 90% capture are set aside (`example-conversion.csv`, factor-id `set-aside`). | current | modeller 2026-09-26 |

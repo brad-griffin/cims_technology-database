@@ -87,6 +87,8 @@ BRIEF_SHAPE = [
     ("iea/iea_2021_ammonia-technology-roadmap", "iea_2021_001", "global"),
     ("iea/philibert_2017_renewable-energy-for-industry_iea", "philibert_2017_001", "global"),
     ("other-reports/lehne-preston_2018_making-concrete-change_chatham-house", "lehne-preston_2018_001", "global"),
+    ("other-reports/caelp-e3_2024_decarbonizing-industrial-heat", "caelp_2024_001", "US"),
+    ("other-reports/rtc_2023_renewable-thermal-vision", "rtc_2023_001", "US"),
     ("other-reports/van-der-meijden_2011_bio-methane-from-wood_ecn", "van-der-meijden_2011_001", "global"),
     ("peer-reviewed/amin_2011_methane-catalytic-cracking-review_ijhe", "amin_2011_001", "global"),
     ("peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe", "armijo-philibert_2020_001", "global"),
