@@ -105,6 +105,8 @@ the unit archetypes inside them. A model uses one framing or the other, never bo
 - An example whose source prices the whole plant (digester and engine together) is
   an example of the whole-plant archetype (`anaerobic-digester_chp`), not of a part.
 
+**Reference archetypes.** Type `reference` keeps the numbers for a step the CIMS hierarchy does not resolve (food evaporation). Like a component it serves no hierarchy node, but it is shown in the wide view.
+
 ## 3. Naming
 
 **The one rule, everywhere:** `-` joins words within a component; `_` separates

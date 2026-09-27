@@ -125,6 +125,11 @@ TYPOS = {"Evolutionaru": "Evolutionary", "Costs increase.": "Cost increase",
              "Reduction of net energy demand and emissions"}
 
 
+BINDER_ROWS = {"C-CS2": "binder_magnesium-oxide", "C-CS3": "binder_alkali-activated",
+               "C-CS4": "binder_hydrothermal-silicate", "C-CS5": "binder_sulphoaluminate",
+               "C-CS6": "binder_sulphoaluminate"}
+
+
 def _slug(x: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", (x or "").lower()).strip("-")
 
@@ -281,6 +286,9 @@ def finish(tech, flows, typo_hits):
             if not name:
                 unnamed.append((uid, desc, step))
                 continue
+            # UKERC files the alternative binders (C-CS2 to C-CS6) under the kiln
+            # step; each is its own binder route (modeller, 2026-09-26)
+            name = BINDER_ROWS.get(uid, name)
             named[key] = dict(d, name=name)
 
     # ---- 2. bucket the measures ----------------------------------------
