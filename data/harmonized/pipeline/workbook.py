@@ -46,9 +46,10 @@ def _cell(v):
         return v
 
 
-def write_book(banded: dict, flat: dict, families: dict) -> str:
+def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None) -> str:
     warnings.filterwarnings("ignore")
     import openpyxl
+    from openpyxl.comments import Comment
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
 
@@ -77,6 +78,9 @@ def write_book(banded: dict, flat: dict, families: dict) -> str:
                 cell = ws.cell(row_i, j, val)
                 cell.fill, cell.font = fill, font
                 cell.alignment = Alignment(horizontal="left", vertical="bottom", wrap_text=True)
+                note = ((notes or {}).get(name) or {}).get(c) if row_i == 4 else None
+                if note:
+                    cell.comment = Comment(note, "technology database", width=320, height=160)
             ws.column_dimensions[get_column_letter(j)].width = (
                 36 if j == first else 60 if c in ("full-citation", "applies-to", "description", "note")
                 else max(10, min(20, len(c) + 3)))

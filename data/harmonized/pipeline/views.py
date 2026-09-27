@@ -65,7 +65,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "status": ("quantified" if k in with_data else
                        "not pooled" if k in with_facts else
                        "named" if exs else "gap")}))
-    arows.sort(key=lambda r: (fam_order.get(r["family"], 99), r["equipment"], r["archetype"]))
+    # families alphabetically by the label a reader sees (modeller, 2026-09-26)
+    fam_label = {f: (r.get("label") or f).lower() for f, r in records.families.items()}
+    arows.sort(key=lambda r: (fam_label.get(r["family"], r["family"]), r["equipment"], r["archetype"]))
     write(OUTPUT / "archetype.csv",
           IDENT + ["trl-basis", "description", "examples-named", "note"], arows)
 
@@ -91,13 +93,20 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     colkeys = sorted(colkeys, key=lambda x: (param_order.get(x[0], 99), x[1]))
     spread = {b for (_, _, b) in colkeys
               if any(by_arch[a][b]["low"] for a in by_arch if b in by_arch[a])}
-    cols, units, groups = list(IDENT), {}, {c: "identity" for c in IDENT}
+    cols, units, groups, notes = list(IDENT), {}, {c: "identity" for c in IDENT}, {}
     for p, t, b in colkeys:
         extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
         cols += extra
         for c in extra:
             units[c] = "" if c.endswith("_n") else unit_label(p, t)
             groups[c] = records.parameters.get(p, {}).get("parameter-class", "")
+        # the parameter's note goes on its central column only, not on _low/_high/_n
+        pdef = records.parameters.get(p, {})
+        notes[b] = " ".join(x for x in (
+            pdef.get("definition", ""),
+            f"Species: {t}." if t else "",
+            "Central value: the median of three or more examples, otherwise the value from the "
+            "highest-ranked source; low and high are the widest values any example gives.") if x)
     wide = []
     for a in arows:
         if a["type"] == "component":
@@ -111,8 +120,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
         wide.append(row)
     write(OUTPUT / "wide-archetype.csv", cols, wide)
-    write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit"],
-          [{"column": c, "group": groups.get(c, ""), "unit": units.get(c, "")} for c in cols],
+    write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit", "note"],
+          [{"column": c, "group": groups.get(c, ""), "unit": units.get(c, ""),
+            "note": notes.get(c, "")} for c in cols],
           quiet=True)
 
     # ---- wide-flow.csv: central values per commodity --------------------------
@@ -138,5 +148,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                for c in flow_cols}
     return {"archetype": (IDENT + ["status"], arows),
             "wide-archetype": (cols, wide, groups, units),
+            "wide-archetype-notes": notes,
             "wide-flow": (flow_cols, frows, fgroups, funits),
             "application": app}

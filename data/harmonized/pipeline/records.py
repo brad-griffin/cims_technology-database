@@ -81,10 +81,12 @@ class Records:
             if not a.get("product-unit"):
                 fail["archetype with no product-unit"].append(k)
             serves = any(s["archetype"] == k for s in self.service)
-            if a["type"] == "component":
-                # a part priced only to assemble whole-plant costs; never offered to the model
+            if a["type"] in ("component", "reference"):
+                # a component is a part priced only to assemble whole-plant costs; a
+                # reference archetype keeps numbers for a step the hierarchy does not
+                # resolve. Neither is offered to the model.
                 if serves:
-                    fail["component archetype serves a hierarchy node"].append(k)
+                    fail[f"{a['type']} archetype serves a hierarchy node"].append(k)
             elif not serves:
                 fail["archetype serves no hierarchy node"].append(k)
         for s in self.service:

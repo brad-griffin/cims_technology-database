@@ -191,7 +191,8 @@ def main(argv) -> int:
          "example-constraint": (CONS_COLS, L.cons),
          "archetype-application": (["archetype", "family", "node", "annotation", "via", "note"],
                                    v["application"])},
-        {**fam, "": "(not tied to one family)"}))
+        {**fam, "": "(not tied to one family)"},
+        {"wide-archetype": v["wide-archetype-notes"]}))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
           f"{q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns")

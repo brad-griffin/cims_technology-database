@@ -261,6 +261,13 @@ def normalise(facts, examples, records, units) -> None:
                 note = f"per {d} -> per {td}"
         else:
             route = units.physical(unit, tgt)
+            if route is None and p == "lifetime" and unit in ("hours", "h", "hr"):
+                # an operating life in hours (a stack life): years at the example's
+                # own capacity factor, or running continuously where it gives none
+                cf = scale.get(r["example-id"], {}).get("cf")
+                route, note = (1 / (8760 * (cf or 1.0)), 0.0), (
+                    f"operating hours at the example's {cf:.0%} capacity factor" if cf
+                    else "operating hours at 8,760 h per year (no capacity factor given)")
             if route is None:
                 ext = (convert.extensive(unit, tgt, flist, alias) if p in EXTENSIVE
                        else convert.intensive(unit, tgt, flist, species_ok, alias))
@@ -316,6 +323,25 @@ def normalise(facts, examples, records, units) -> None:
         r["unit-norm"] = c["unit-norm"]
         r["excluded"] = ""
         r["conversion"] = f"percentage of the example's capital cost {c['record-id']} per year"
+    # A parent the build cannot convert (a cost per plant) whose pooled derived row
+    # restates it per unit of capacity is a duplicate of that row, not a gap.
+    kids = defaultdict(list)
+    for r in facts:
+        if r.get("value-type") == "derived" and r.get("value-norm") and not r.get("excluded"):
+            kids[(r["example-id"], r["parameter"])].append(r)
+    for r in facts:
+        e = r.get("excluded") or ""
+        if not e or e == "no number" or r.get("value-type") == "derived":
+            continue
+        if not (e.startswith("cost per") or e.startswith("no conversion")):
+            continue
+        val = (r.get("value") or "").strip()
+        for k in kids.get((r["example-id"], r["parameter"]), []):
+            f = k.get("formula") or ""
+            if k.get("derived-from") == r["record-id"] or (val and re.match(rf"^\s*\(?{re.escape(val)}\b", f)):
+                r["duplicate-of"], k["duplicate-of"] = k["record-id"], ""
+                r["excluded"] = f"restated in the pooled derived row {k['record-id']} (duplicate-of); not pooled twice"
+                break
     # A derived row that restates its parent in another unit adds no information.
     # UKERC's per-GJ costs are the per-tonne cost divided by the fuel used per
     # tonne, i.e. per GJ of fuel INPUT. Where the parent could not be pooled either,
