@@ -74,11 +74,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | International Energy Agency | 32 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
 | Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
+| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
 | IEA 2018a | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2018_future-of-petrochemicals.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Vogl et al 2018 | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/vogl_2018_hydrogen-direct-reduction-steelmaking_jclepro.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Isaka, M. | 28 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Jamison, K., Kramer, C., Brueske, S., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
-| U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Das, S., Dollinger, C., Fisher, A., and Brueske, S.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_aluminum-bandwidth-study.pdf |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Schwartz, H., Ward, N., Levie, B., Chadwell, B., and Brueske, S.) | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study.pdf |
 | Lako, P. | 27 | May 2010; the ETSAP original is dead and this is a mirror |

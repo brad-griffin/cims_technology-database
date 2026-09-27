@@ -390,6 +390,9 @@ smelting-vessel_two-stage_ccs-concentrated,input,sinter,t/t,0.75,,,1,top-ranked:
 smelting-vessel_two-stage_ccs-concentrated,output,blast-furnace-gas,GJ/t,10.9,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_corex-ccs@smelting-reduction
 smelting-vessel_two-stage_ccs-concentrated,output,co2-captured,t/t,0.763,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_corex-ccs@smelting-reduction
 smelting-vessel_two-stage_ccs-concentrated,output,slag,t/t,0.35,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_corex-ccs@smelting-reduction
+binder_alkali-activated,input,electricity,GJ/t,0.207302,,,1,top-ranked: NBF 2007,nbf_2007_001; ukerc_2013_001,ukerc_2013_001:binder_alkali-activated@cement-subsector-2030-kiln-efficiency
+binder_alkali-activated,input,gas-oil,GJ/t,0.29994,,,1,top-ranked: NBF 2007,nbf_2007_001; ukerc_2013_001,ukerc_2013_001:binder_alkali-activated@cement-subsector-2030-kiln-efficiency
+binder_alkali-activated,input,olivine,t/t,1.2,,,1,top-ranked: NBF 2007,nbf_2007_001; ukerc_2013_001,ukerc_2013_001:binder_alkali-activated@cement-subsector-2030-kiln-efficiency
 grinding-mill_vertical-roller,input,gypsum,t/t,0.05,,,1,top-ranked: ETSAP I03,etsap_2010_003,etsap_2010_003:grinding-mill_electricity_vertical-roller@cement-grinding
 kiln_dry-precalciner,input,air,m3/t,,2100,2200,1,range only,etsap_2010_003,etsap_2010_003:kiln_dry@clinker-kiln
 kiln_dry-precalciner,input,burning-oil,GJ/t,0.0125407,,,1,top-ranked: ECRA 2009,ecra_2009_001; ukerc_2013_001,ukerc_2013_001:kiln_bat@dry-kiln
@@ -562,7 +565,6 @@ separator_warm-water-extraction,input,oil-sand,t/m3,,,,1,range only,etsap_2010_0
 well_sagd,input,natural-gas,GJ/m3,,6.29,7.86,1,range only,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
 well_sagd,input,steam,m3/m3,3.2,,,1,top-ranked: etsap_2010_010,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
 well_cyclic-steam,input,steam,m3/m3,3.4,,,1,top-ranked: etsap_2010_010,etsap_2010_010,etsap_2010_010:well_cyclic-steam@cyclic-steam-stimulation-css-thermal-in-situ-recovery-canadian-oil-sands-text
-heat-exchanger_steam-heated,input,electricity,GJ/m3,0.0288278,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:pasteurizer@dairy-pasteuriser
 heat-pump_hot-water,input,coal,GJ/t,0.00315573,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,electricity,GJ/t,0.247644,,,1,top-ranked: CT 2010b,ct_2010_003; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
 heat-pump_hot-water,input,gas-oil,GJ/t,0.026322,0.00752566,0.0451183,1,top-ranked: CT 2010b,ct_2010_003; fritzson-berntsson_2006_002; ukerc_2013_001,ukerc_2013_001:heat-pump_waste-heat_efficiency-strong@meat-heating-systems
@@ -601,4 +603,24 @@ shaft-furnace_electrolytic-hydrogen,input,iron-ore,t/t,1.4,,,1,top-ranked: Phili
 shaft-furnace_electrolytic-hydrogen,input,lime,t/t,0.05,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
 shaft-furnace_electrolytic-hydrogen,input,pellets,t/t,1.504,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
 shaft-furnace_electrolytic-hydrogen,output,oxygen,t/t,0.411,,,1,top-ranked: Vogl et al 2018,vogl_2018_001,vogl_2018_001:shaft-furnace_hydrogen@h-dr-steelmaking
+binder_sulphoaluminate,input,burning-oil,GJ/t,0.00921734,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,clinker,t/t,0.620572,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,coal,GJ/t,1.36579,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,electricity,GJ/t,0.0527479,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,fossil-waste,GJ/t,0.798508,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,gas-oil,GJ/t,0.0149104,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,ggbfs,t/t,0.120139,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,gypsum,t/t,0.0342161,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,limestone,t/t,0.296677,0.0343061,0.559048,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,natural-gas,GJ/t,0.0248959,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,petroleum-coke,GJ/t,0.0840405,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,pulverized-fuel-ash,t/t,0.0407667,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,renewable-fuel,GJ/t,0.225106,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_sulphoaluminate,input,supplementary-cementitious-material,t/t,0.000500636,,,1,top-ranked: Sharp et al 1999,sharp_1999_001; ukerc_2013_001,ukerc_2013_001:binder_sulphoaluminate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,clinker,t/t,0.182818,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,coal,GJ/t,1.11999,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,electricity,GJ/t,0.194781,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,limestone,t/t,0.231,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,quartz,t/t,0.5,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
+binder_hydrothermal-silicate,input,renewable-fuel,GJ/t,1.11999,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
 pipeline_co2,input,electricity,GJ/t,,0.2,0.5,1,range only,etsap_2010_007,etsap_2010_007:pipeline_co2@co2-transportation-p-5-text
