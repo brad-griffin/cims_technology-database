@@ -12,6 +12,12 @@ Nothing generates these files, so this checks the things that quietly rot:
   * a source-id used in the harmonized database that is not registered;
   * rows out of alphabetical order.
 
+The reference manifest, source-details_reference.csv, is checked here too: the
+constants, conversion data and currency series behind the conversions, kept apart
+from the technology sources (design.md s5). Its ids must not repeat the main
+manifest's, and a file it says is held must exist. That every factor's source is
+registered is checked by the build (pipeline/checks.py).
+
 Exit status is non-zero if anything fails, so it can gate a commit.
 """
 from __future__ import annotations
@@ -25,6 +31,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SOURCES = HERE / "source-details_sources.csv"
 FILES = HERE / "source-details_files.csv"
+REFERENCE = HERE / "source-details_reference.csv"
 HARMONIZED = ROOT / "data" / "harmonized"
 
 
@@ -62,6 +69,20 @@ def main() -> int:
         if not path.exists():
             fail["file recorded but missing"].append(str(path))
 
+    ref = read(REFERENCE)
+    rids = [d["source_id"] for d in ref]
+    if len(rids) != len(set(rids)):
+        fail["duplicate source_id in the reference manifest"] = [
+            k for k, v in collections.Counter(rids).items() if v > 1]
+    if rids != sorted(rids):
+        fail["reference manifest not in alphabetical order"] = ["sort by source_id"]
+    for k in sorted(set(rids) & set(ids)):
+        fail["registered in both the main and the reference manifest"].append(k)
+    for d in ref:
+        held = (d.get("file_on_disk") or "").strip()
+        if held and not (ROOT / held).exists():
+            fail["reference file recorded but missing"].append(held)
+
     used = collections.Counter()
     for path in (HARMONIZED / "output" / "example-parameter.csv",
                  HARMONIZED / "output" / "example-flow.csv",
@@ -77,7 +98,7 @@ def main() -> int:
             f"{sid} ({used[sid]} rows)")
 
     print(f"  {len(srcs)} sources, {len(files)} files, "
-          f"{len(used)} source-ids used in the database")
+          f"{len(used)} source-ids used in the database; {len(ref)} reference sources")
     unused = sorted(set(ids) - set(used))
     print(f"  {len(set(ids) & set(used))} registered sources are used; "
           f"{len(unused)} are registered and not yet used")

@@ -176,13 +176,13 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
 | `anaerobic-digester_chp` | Anaerobic digestion with engine CHP (whole plant) | alternative | biomass; municipal-waste | 9 | *.service.steam | quantified |
-| `boiler_ccs-diffuse` | Boiler with post-combustion capture | prospective | biomass; natural-gas; coal; nuclear; by-product-gas; oil | 5 | *.service.steam | quantified |
+| `boiler_ccs-diffuse` | Boiler with post-combustion capture | prospective | biomass; natural-gas; coal; nuclear; by-product-gas; oil | 5 | *.service.steam | named |
 | `boiler_condensing` | Condensing boiler | efficient variant | natural-gas; biomethane; hydrogen | 9 | *.service.steam | gap |
 | `boiler_electric` | Electric boiler | alternative | electricity | 9 | *.service.steam; petroleum-crude.product.bitumen.in-situ | quantified |
 | `boiler_fuel-fired` | Fuel-fired boiler | conventional | natural-gas; oil; by-product-gas; hydrogen; ammonia; biomethane | 9 | *.service.steam | quantified |
 | `boiler_fuel-fired_efficiency-moderate` | Fuel-fired boiler efficiency measures, moderate | efficient variant | natural-gas; oil; by-product-gas; hydrogen; ammonia; biomethane | 9 | *.service.steam | quantified |
 | `boiler_solid-fuel` | Solid-fuel boiler | conventional | biomass; coal; municipal-waste | 9 | *.service.steam | quantified |
-| `combined-cycle_ccs-diffuse` | CHP with post-combustion capture | prospective | coal; natural-gas; by-product-gas; biogas | 8 | *.service.steam | quantified |
+| `combined-cycle_ccs-diffuse` | CHP with post-combustion capture | prospective | coal; natural-gas; by-product-gas; biogas | 8 | *.service.steam | gap |
 | `combined-cycle_chp` | Combined-cycle CHP | conventional | biomass; coal; steam; natural-gas; biogas; hydrogen; waste-heat; by-product-gas | 9 | *.service.steam | quantified |
 | `combustion-turbine_heat-recovery-steam-generator` | Gas turbine with heat-recovery steam generator | conventional | natural-gas; by-product-gas; biogas; landfill-gas | 9 | *.service.steam; petroleum-crude.product.bitumen.in-situ | quantified |
 | `direct-heater_air-water` | Direct-fired air or water heater | conventional | natural-gas; hydrogen; biomethane; biogas; liquid-biomass; lpg; oil | 9 | natural-gas.product.supply.direct-heat | quantified |
@@ -202,20 +202,20 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `geothermal-well_direct-use` | Geothermal direct use | prospective | geothermal | 8 | *.service.steam | quantified |
 | `geothermal-well_enhanced` | Enhanced geothermal system (heat) | prospective | geothermal | 6 | *.service.steam; *.service.steam | gap |
 | `heat-pump_industrial` | Industrial heat pump | alternative | electricity; waste-heat | 9 | *.service.steam | quantified |
-| `heat-pump_steam-generating` | Steam-generating heat pump | prospective |  | 7 | *.service.steam | gap |
+| `heat-pump_steam-generating` | Steam-generating heat pump | prospective |  | 7 | *.service.steam | quantified |
 | `heat-recovery-unit` | Waste-heat recovery unit | conventional | waste-heat; steam; oil; hydrogen; natural-gas; coal | 9 | *.service.steam | not pooled |
 | `induction-heater` | Induction heating | alternative | electricity | 9 | petroleum-refining.service.direct-heat | gap |
 | `plasma-torch` | Electric arc or plasma heating | prospective | electricity | 6 | petroleum-refining.service.direct-heat | quantified |
-| `radio-frequency-heater_electromagnetic` | Electromagnetic heating (microwave, radio-frequency, infrared) | alternative | electricity | 9 | natural-gas.product.supply.direct-heat; petroleum-refining.service.direct-heat | named |
+| `radio-frequency-heater_electromagnetic` | Electromagnetic heating (microwave, radio-frequency, infrared) | alternative | electricity | 9 | natural-gas.product.supply.direct-heat; petroleum-refining.service.direct-heat | quantified |
 | `reactor_nuclear-htgr` | High-temperature gas-cooled reactor | prospective | nuclear | 8 | petroleum-refining.service.direct-heat | gap |
-| `reactor_nuclear-small-modular` | Small modular reactor CHP | prospective | nuclear | 7-8 | *.service.steam | gap |
+| `reactor_nuclear-small-modular` | Small modular reactor CHP | prospective | nuclear | 7-8 | *.service.steam | quantified |
 | `reciprocating-engine_chp` | Reciprocating engine CHP | conventional | natural-gas; biogas; landfill-gas | 9 | *.service.steam | quantified |
 | `resistance-heater_furnace` | Electric resistance furnace | alternative | electricity | 9 | petroleum-refining.service.direct-heat | gap |
 | `solar-collector` | Solar thermal collectors | alternative | solar | 9 | *.service.steam | quantified |
 | `solar-concentrator_high-temperature` | Concentrating solar for high-temperature heat | prospective | solar | 6 | petroleum-refining.service.direct-heat | quantified |
 | `solar-concentrator_thermal` | Concentrating solar thermal | prospective | solar | 7-9 | *.service.steam | quantified |
 | `steam-turbine_back-pressure` | Back-pressure or extraction steam turbine | conventional | biomass; coal; municipal-waste; steam; natural-gas; oil; black-liquor; by-product-gas | 9 | *.service.steam | quantified |
-| `thermal-storage_electric` | Electric thermal energy storage | prospective | electricity | 8 | *.service.steam; petroleum-refining.service.direct-heat | gap |
+| `thermal-storage_electric` | Electric thermal energy storage | prospective | electricity | 8 | *.service.steam; petroleum-refining.service.direct-heat | quantified |
 | `thermal-storage_heat-charged` | Thermal energy storage charged with heat | alternative | steam; waste-heat | 8 | *.service.steam; *.service.steam | quantified |
 | `vapour-recompressor` | Mechanical vapour recompression | alternative | electricity | 9 | *.service.steam | quantified |
 
@@ -534,7 +534,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `furnace_regenerative-burners` | Regenerative or recuperative burners | efficient variant | natural-gas | 9 | iron-and-steel.product.foundry; light-industrial.service.heat | gap |
 | `induction-heater_heat-treatment` | Electric or induction heat treatment | alternative | electricity | 9 | light-industrial.service.heat | quantified |
 | `kiln_lumber-continuous` | Continuous kiln with heat recovery | efficient variant | biomass; natural-gas | 9 | light-industrial.service.heat | gap |
-| `kiln_lumber-heat-pump` | Dehumidification or heat-pump kiln | alternative | electricity | 8 | light-industrial.service.heat | gap |
+| `kiln_lumber-heat-pump` | Dehumidification or heat-pump kiln | alternative | electricity | 8 | light-industrial.service.heat | quantified |
 | `kiln_lumber-steam` | Steam or thermal-oil lumber kiln | conventional |  | 9 | light-industrial.service.heat | gap |
 | `melting-furnace_cupola` | Cupola or gas-fired melting furnace | conventional | coke; natural-gas | 9 | iron-and-steel.product.foundry; light-industrial.service.heat | gap |
 | `melting-furnace_electric-arc` | Electric arc melting furnace | alternative | electricity | 9 | iron-and-steel.product.foundry; light-industrial.service.heat | gap |

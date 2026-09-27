@@ -9,7 +9,8 @@ from __future__ import annotations
 import re
 from collections import Counter, defaultdict
 
-from .common import currency_year, split_list
+from .common import RAW, REFERENCE, currency_year, read, split_list
+from . import convert
 
 RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|[wa]\d{3})$")
 
@@ -72,6 +73,63 @@ def run(records, hier, loader, ex_result) -> dict[str, list[str]]:
         if r["commodity"] not in records.commodities:
             fail["flow commodity not in vocabulary/commodity.csv"].append(
                 f"{r['record-id']}: {r['commodity']}")
+    conversion_references(fail, records, loader)
     fail = {k: v for k, v in fail.items() if v}
     fail["_backlog"] = backlog
     return fail
+
+
+def conversion_references(fail, records, loader) -> None:
+    """The conversion factors, the tables that apply them, and the separate
+    manifest of the reference sources behind them (design.md s5)."""
+    ref = read(RAW / "source-details_reference.csv")
+    main = {r["source_id"] for r in read(RAW / "source-details_sources.csv")}
+    rid = [r["source_id"] for r in ref]
+    for k, n in Counter(rid).items():
+        if n > 1:
+            fail["duplicate source_id in source-details_reference.csv"].append(k)
+    if rid != sorted(rid):
+        fail["source-details_reference.csv not in alphabetical order"].append("sort by source_id")
+    for k in set(rid) & main:
+        fail["source registered in both the reference and the main manifest"].append(k)
+    F = convert.Factors()
+    backed = set()
+    for fid, f in F.rows.items():
+        if f.get("class") not in convert.CLASSES:
+            fail["conversion factor with no valid class"].append(f"{fid}: {f.get('class')}")
+        sids = split_list(f.get("source-id", ""))
+        if not sids:
+            fail["conversion factor with no source-id"].append(fid)
+        for sid in sids:
+            backed.add(sid)
+            if sid not in rid and sid not in main:
+                fail["conversion factor source-id not registered"].append(f"{fid}: {sid}")
+        dims = {(convert.atom(u) or ("",))[0] for u in (f["from-unit"], f["to-unit"])}
+        if "energy" in dims and "HHV" not in (f.get("basis") or ""):
+            fail["energy factor not on a higher-heating-value basis"].append(fid)
+        for a in split_list(f.get("applies-to", "")):
+            if a not in records.by_key:
+                fail["conversion factor applies to an unknown archetype"].append(f"{fid}: {a}")
+    for r in ref:
+        if r["source_id"] not in backed and "currency" not in (r.get("used_for") or ""):
+            fail["reference source backs no conversion factor"].append(r["source_id"])
+        if (r.get("file_on_disk") or "").strip() and not (RAW.parent.parent / r["file_on_disk"]).exists():
+            fail["reference file recorded but missing"].append(r["file_on_disk"])
+    for r in read(REFERENCE / "example-conversion.csv"):
+        for x in split_list(r.get("factor-id", "")):
+            if x not in F.rows and x not in ("none", "set-aside"):
+                fail["example-conversion names an unknown factor"].append(f"{r['example-id']}: {x}")
+        if r["example-id"] not in loader.examples:
+            fail["example-conversion names an unknown example"].append(r["example-id"])
+    for r in read(REFERENCE / "heating-value-stream.csv"):
+        if r["archetype"] not in records.by_key:
+            fail["heating-value-stream names an unknown archetype"].append(r["archetype"])
+        for x in (r.get("fuel-in", ""), r.get("product-out", "")):
+            if x and (x not in F.rows or F.rows[x]["from-unit"] != "GJ-LHV"):
+                fail["heating-value-stream names a factor that is not an HHV/LHV ratio"].append(
+                    f"{r['archetype']}: {x}")
+    for r in read(REFERENCE / "efficiency-bridge.csv"):
+        if r["example-id"] not in loader.examples:
+            fail["efficiency-bridge names an unknown example"].append(r["example-id"])
+        if r.get("bridge") not in ("yes", "no"):
+            fail["efficiency-bridge: bridge must be yes or no"].append(r["example-id"])

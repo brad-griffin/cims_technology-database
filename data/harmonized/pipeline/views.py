@@ -39,6 +39,8 @@ def applies_to(key, service):
 
 
 def build(records, hier, examples, summaries, flow_summaries, include_empty=True):
+    """Also returns `flagged`: the (archetype, column) cells of the wide view whose
+    pooled value rests on at least one factor from outside its source."""
     service = defaultdict(list)
     for s in records.service:
         service[s["archetype"]].append(s)
@@ -93,7 +95,15 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     colkeys = sorted(colkeys, key=lambda x: (param_order.get(x[0], 99), x[1]))
     spread = {b for (_, _, b) in colkeys
               if any(by_arch[a][b]["low"] for a in by_arch if b in by_arch[a])}
-    cols, units, groups, notes = list(IDENT), {}, {c: "identity" for c in IDENT}, {}
+    cols, units, groups, notes = list(IDENT) + ["external-conversions"], {}, {c: "identity" for c in IDENT}, {}
+    groups["external-conversions"] = "identity"
+    notes["external-conversions"] = (
+        "Parameters whose pooled value rests on a conversion factor from outside the source "
+        "(a heating value, a density, a process ratio, a pooled efficiency or an assumption), "
+        "as examples so converted / examples pooled. Those values are in italics in the "
+        "workbook. Which factors: archetype-parameter.csv (external-factors); how each example "
+        "was converted: example-parameter.csv (conversion, conversion-class, "
+        "conversion-factors).")
     for p, t, b in colkeys:
         extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
         cols += extra
@@ -107,17 +117,23 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             f"Species: {t}." if t else "",
             "Central value: the median of three or more examples, otherwise the value from the "
             "highest-ranked source; low and high are the widest values any example gives.") if x)
-    wide = []
+    wide, flagged = [], set()
     for a in arows:
         if a["type"] == "component":
             continue
         if a["archetype"] not in with_data and not include_empty:
             continue
         row = {c: a.get(c, "") for c in IDENT}
+        ext = []
         for b, s in by_arch.get(a["archetype"], {}).items():
             row[b], row[f"{b}_n"] = s["central"], s["n"]
             if b in spread:
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
+            if s.get("n-external"):
+                ext.append((b, f"{b} {s['n-external']}/{s['n']}"))
+                flagged |= {(a["archetype"], c) for c in (b, f"{b}_low", f"{b}_high")}
+        order = {c: i for i, c in enumerate(cols)}
+        row["external-conversions"] = "; ".join(t for _, t in sorted(ext, key=lambda x: order.get(x[0], 0)))
         wide.append(row)
     write(OUTPUT / "wide-archetype.csv", cols, wide)
     write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit", "note"],
@@ -149,5 +165,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     return {"archetype": (IDENT + ["status"], arows),
             "wide-archetype": (cols, wide, groups, units),
             "wide-archetype-notes": notes,
+            "flagged": flagged,
             "wide-flow": (flow_cols, frows, fgroups, funits),
             "application": app}

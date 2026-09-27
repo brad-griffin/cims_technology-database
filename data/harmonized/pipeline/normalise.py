@@ -33,7 +33,7 @@ import re
 from collections import defaultdict
 
 from .common import REFERENCE, fnum, read, split_list
-from . import convert
+from . import bridge, convert, heating
 from .currency import TARGET
 from .wholeplant import NEEDS_HOST
 
@@ -72,6 +72,16 @@ UNIT_ALIAS = {"tonnes of mixed product": "t"}
 INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this as the cost of "
                     "adding it to an existing plant, not as a whole plant")
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
+# a cost per unit of power rating, as a multiple of "per kW"
+PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
+CASE = re.compile(r"^\s*(?:\[([^\]]+)\]|UKERC ([A-Z]+-[A-Z0-9]+):)")
+
+
+def case_of(r) -> str:
+    """The case a row belongs to within its example: a leading [case] in the note,
+    or UKERC's row code."""
+    m = CASE.match(r.get("note") or "")
+    return (m.group(1) or m.group(2)) if m else ""
 
 
 def service_unit(example: dict | None, pu: str) -> str:
@@ -116,6 +126,7 @@ class Units:
                 self.table[(r["from-unit"], r["to-unit"])] = (f, fnum(r["offset"]) or 0.0)
         self.cur = cur_factors
         self.factors = convert.Factors()
+        self.streams = heating.Streams(self.factors)
 
     def physical(self, unit, target):
         """(factor, offset) from unit to target, or None."""
@@ -152,18 +163,58 @@ def normalise(facts, examples, records, units) -> None:
               and r.get("capacity-basis") in OUTPUT_BASES):
             mw = v / 1000 if r["unit"] == "kW" else v
             scale[r["example-id"]].setdefault("mw-out", (mw, r["record-id"]))
+        if r["parameter"] == "capacity":
+            scale[r["example-id"]].setdefault("caps", []).append(r)
     by_id = {r["record-id"]: r for r in facts}
-    incremental = {r["example-id"] for r in read(REFERENCE / "incremental-cost.csv")}
-    if incremental - set(examples):
-        raise SystemExit(f"incremental-cost.csv names unknown examples: {incremental - set(examples)}")
+    # an example, or one case of it (`case`: a leading [case] in the note, or
+    # UKERC's row code), whose costs are the cost of adding something to a plant
+    inc_rows = read(REFERENCE / "incremental-cost.csv")
+    incremental = {(r["example-id"], (r.get("case") or "").strip()) for r in inc_rows}
+    unknown = {e for e, _ in incremental} - set(examples)
+    if unknown:
+        raise SystemExit(f"incremental-cost.csv names unknown examples: {unknown}")
     for r in facts:
-        if r["example-id"] in incremental and r["parameter"] in PER_CAPACITY | PER_OUTPUT:
+        if (((r["example-id"], "") in incremental or (r["example-id"], case_of(r)) in incremental)
+                and r["parameter"] in PER_CAPACITY | PER_OUTPUT):
             r["cost-basis"] = "incremental"
+    bridged = {r["example-id"]: r for r in read(REFERENCE / "efficiency-bridge.csv")}
+
+    def own_capacity(r, sc, pu, flist, alias):
+        """The same source's capacity for this case as (pu per year, record-id,
+        [factor ids], capacity basis), or None. The capacity row must be the only
+        one for the case; its basis is its own, else the cost row's."""
+        caps = sc.get("caps", [])
+        c = case_of(r)
+        if c:
+            caps = [x for x in caps if case_of(x) == c]
+        caps = [x for x in caps if fnum(x.get("value")) is not None]
+        if len(caps) != 1:
+            return None
+        x = caps[0]
+        basis = x.get("capacity-basis") or r.get("capacity-basis") or ""
+        if basis not in OUTPUT_BASES | heating.INPUT_BASES:
+            return None
+        tcap = target_unit("capacity", pu, "")
+        cu = (x.get("unit") or "").strip()
+        route = units.physical(cu, tcap)
+        ids = []
+        if route is None:
+            ext = convert.extensive(cu, tcap, flist, alias)
+            if not ext:
+                return None
+            route, ids = (ext[0], 0.0), ext[1]
+        v = fnum(x["value"]) * route[0]
+        per_yr = v * GJ_PER_KW_YR * 1000 if tcap == "MW" else v * 1000 if tcap.startswith("k") else v
+        if tcap == "MW" and sc.get("cf"):
+            per_yr *= sc["cf"]
+        return per_yr, x["record-id"], ids, basis
 
     for r in facts:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
                   "unit-norm": "", "excluded": "", "conversion": "",
-                  "target-norm": r.get("target", "")})
+                  "target-norm": r.get("target", ""), "heating-value": "",
+                  "conversion-class": "", "conversion-factors": ""})
+        cls, bridge_kind, slip = [], "", None
         if r["parameter"] in SPECIES_POOLED:
             r["target-norm"] = ""
         parent = by_id.get(r.get("derived-from", ""))
@@ -207,11 +258,12 @@ def normalise(facts, examples, records, units) -> None:
         used = []
         if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")):
             # an emission factor per GJ of FUEL; the archetype's basis is per GJ
-            # of OUTPUT, and the two differ by the efficiency (D13)
-            r["excluded"] = "per GJ of fuel input, not per GJ of output"
-            continue
+            # of OUTPUT, and the two differ by the efficiency (D13): the
+            # efficiency bridge (pipeline/bridge.py) divides by it
+            bridge_kind = "per-input"
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
+        host = bridged.get(r["example-id"], {})
         if "/unit" in unit:
             su = service_unit(examples.get(r["example-id"]), pu)
             if su not in PHYSICAL_SERVICE:
@@ -219,6 +271,11 @@ def normalise(facts, examples, records, units) -> None:
                                  "physical product")
                 continue
             unit = unit.replace("/unit", f"/{su}")
+            if (host.get("bridge") == "yes" and pu == "GJ" and su == "t"
+                    and p != "specific-energy-consumption"):
+                # per tonne of the host plant's product, approved for the bridge:
+                # converted per tonne here, per GJ of output in bridge.py
+                tgt, bridge_kind = target_unit(p, "t", tgt), "host-tonne"
         if not unit and tgt == "dimensionless":
             unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
@@ -238,30 +295,59 @@ def normalise(facts, examples, records, units) -> None:
                 factor, note = f, f"per {pu} read as per {pu} of annual capacity"
             elif p in PER_OUTPUT and d == f"{pu}-per-yr":
                 factor, note = f, f"annual cost per {pu}/yr is a cost per {pu}"
-            elif p in PER_CAPACITY and d == "kW" and pu == "GJ":
+            elif p in PER_CAPACITY and d in PER_POWER:
                 cf = sc.get("cf")
-                factor = f / (GJ_PER_KW_YR * (cf or 1.0))
-                note = (f"per kW at a {cf:.0%} capacity factor" if cf
-                        else "per kW at nameplate (no capacity factor)")
+                factor = f * PER_POWER[d] / (GJ_PER_KW_YR * (cf or 1.0))
+                note = (f"per {d} at a {cf:.0%} capacity factor" if cf
+                        else f"per {d} at nameplate (no capacity factor)")
+                if cf:
+                    cls.append("same-source")
+                if pu != "GJ":
+                    # a power rating in the product's energy (kW of hydrogen) put
+                    # per unit of product with the product's heating value
+                    q = convert.qty_ratio(pu, "GJ", flist, species_ok, alias)
+                    if not q:
+                        r["excluded"] = (f"cost per {d} cannot be put per {td}: no factor gives "
+                                         f"the energy in a {pu} of this archetype's product")
+                        continue
+                    factor *= q[0]
+                    used += q[1]
+                    note += f"; per GJ/yr -> per {pu}/yr"
             elif p in PER_OUTPUT and d == "kWh" and pu == "GJ":
                 factor, note = f / 0.0036, "per kWh -> per GJ"
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("annual-output"):
                 factor = f / sc["annual-output"]
                 note = "absolute sum over the annual output the same source states"
+                cls.append("same-source")
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("mw-out"):
                 mw, rid = sc["mw-out"]
                 cf = sc.get("cf")
                 factor = f / (mw * GJ_PER_KW_YR * 1000 * (cf or 1.0))
                 note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
                         f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
+                cls.append("same-source")
+            elif p in PER_CAPACITY and not d and (oc := own_capacity(r, sc, pu, flist, alias)):
+                per_yr, rid, ids, basis = oc
+                factor, used = f / per_yr, used + ids
+                note = f"absolute sum over the source's own capacity for this case ({rid})"
+                cls.append("same-source")
+                if basis in heating.INPUT_BASES:
+                    bridge_kind = "per-input"
             else:
                 ext = convert.intensive(unit, tgt, flist, species_ok, alias) if d else None
                 if not ext:
                     r["excluded"] = (f"cost per {d or 'plant'} cannot be put per {td}: the source "
                                      "gives no output factor to convert it with")
                     continue
-                factor, used = f * ext[0], ext[1]
+                factor, used = f * ext[0], used + ext[1]
                 note = f"per {d} -> per {td}"
+        elif (p.startswith("emissions-") and unit == "%" and (r.get("target") or "").lower() == "ch4"
+              and tgt.startswith("t/") and (q := convert.qty_ratio("t", pu, flist, True, alias))):
+            # a methane SLIP: the share of the methane handled that is lost. Per unit
+            # of methane delivered that is s/(1-s) of it, put per GJ with the heating value
+            slip, used = q[0], used + q[1]
+            factor, offset = 1.0, 0.0
+            note = "methane slip s% of the methane handled: s/(1-s) t lost per t delivered, per GJ"
         else:
             route = units.physical(unit, tgt)
             if route is None and p == "lifetime" and unit in ("hours", "h", "hr"):
@@ -271,23 +357,59 @@ def normalise(facts, examples, records, units) -> None:
                 route, note = (1 / (8760 * (cf or 1.0)), 0.0), (
                     f"operating hours at the example's {cf:.0%} capacity factor" if cf
                     else "operating hours at 8,760 h per year (no capacity factor given)")
+                cls.append("same-source" if cf else "assumption")
+                if not cf:
+                    used.append("assume:continuous-operation")
             if route is None:
                 ext = (convert.extensive(unit, tgt, flist, alias) if p in EXTENSIVE
                        else convert.intensive(unit, tgt, flist, species_ok, alias))
                 if not ext:
                     r["excluded"] = f"no conversion from {unit or '(none)'} to {tgt}"
                     continue
-                route, used = (ext[0], 0.0), ext[1]
+                route, used = (ext[0], 0.0), used + ext[1]
             factor, offset = route
+        if p in EXTENSIVE and pu == "GJ" and r.get("capacity-basis") in heating.INPUT_BASES:
+            bridge_kind = "capacity-in"
+        if (p in PER_CAPACITY and pu == "GJ" and not bridge_kind
+                and r.get("capacity-basis") in heating.INPUT_BASES):
+            bridge_kind = "per-input"
+        how = heating.kind(p, unit, pu, r.get("capacity-basis") or "", per_product)
+        if how:
+            hv = heating.reported(r.get("note") or "")
+            r["heating-value"] = hv or "not stated"
+            if hv == "LHV":
+                h = units.streams.to_hhv(a["archetype"], how, pu)
+                if h is None:
+                    r["excluded"] = ("reported on a lower-heating-value basis; "
+                                     "records/reference/heating-value-stream.csv names no fuel or "
+                                     "product for this archetype to put it on HHV with")
+                    continue
+                factor, offset = factor * h[0], offset * h[0]
+                if slip:
+                    slip /= h[0]
+                used += h[1]
+                note = (note + "; " if note else "") + "LHV -> HHV"
         if bf:
             # the source reports per another product (per t aluminium on an alumina
             # archetype): per-product numbers divide by it, capacities multiply
             factor = factor * bf[0] if p in EXTENSIVE else factor / bf[0]
             used.append(bf[1])
-        if used:
-            note = (note + "; " if note else "") + "factor " + ", ".join(dict.fromkeys(used)) + \
+        factor_ids = [u for u in used if u in units.factors.rows]
+        if factor_ids:
+            note = (note + "; " if note else "") + "factor " + ", ".join(dict.fromkeys(factor_ids)) + \
                 " (records/reference/conversion-factor.csv)"
-        conv = lambda x: None if x is None else x * factor + offset
+        if m or factor != 1.0 or offset or unit != (r.get("unit") or "").strip():
+            cls.append("unit")
+        cls += [units.factors.cls.get(u) or ("assumption" if u.startswith("assume:") else "")
+                for u in used]
+        r["conversion-class"] = convert.weakest(cls)
+        r["conversion-factors"] = "; ".join(dict.fromkeys(used))
+        if bridge_kind:
+            r["_bridge"] = bridge_kind
+        if slip:
+            conv = lambda x: None if x is None else (x / 100) / (1 - x / 100) / slip * factor
+        else:
+            conv = lambda x: None if x is None else x * factor + offset
         r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
             "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
         r["unit-norm"], r["conversion"] = tgt, note
@@ -297,7 +419,11 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = NEGATIVE_COST
         if r["duplicate-of"] and FUEL_INPUT_DIVISOR.search(r.get("formula") or "") and pu == "GJ":
             r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
-            r["excluded"] = SET_ASIDE
+            r["_fuel_input"] = r["duplicate-of"]
+            r["excluded"] = "per GJ of fuel input"          # settled in the last pass
+    # per GJ of fuel input, per unit of input capacity and (where approved) per
+    # tonne of a host plant's product -> per GJ of output, by the efficiency
+    bridge.apply(facts, records, examples, units)
     # A fixed O&M the source gives as a percentage of capital per year is put on the
     # example's own capital cost -- the same source's number, so it is only a
     # derivation -- where the example has one pooled capex (or one per case).
@@ -326,6 +452,8 @@ def normalise(facts, examples, records, units) -> None:
         r["unit-norm"] = c["unit-norm"]
         r["excluded"] = ""
         r["conversion"] = f"percentage of the example's capital cost {c['record-id']} per year"
+        r["conversion-class"] = convert.weakest([c.get("conversion-class", ""), "same-source"])
+        r["conversion-factors"] = c.get("conversion-factors", "")
     # A parent the build cannot convert (a cost per plant) whose pooled derived row
     # restates it per unit of capacity is a duplicate of that row, not a gap.
     kids = defaultdict(list)
@@ -360,6 +488,15 @@ def normalise(facts, examples, records, units) -> None:
                 and r["example-id"] in sec and r.get("value-type") != "derived"
                 and (r.get("excluded") or "").startswith("cost per t")):
             r["excluded"] = SET_ASIDE
+    # examples reviewed for the bridge and not approved: their per-tonne numbers
+    # are the host process's, not the equipment's (efficiency-bridge.csv)
+    for r in facts:
+        b = bridged.get(r["example-id"])
+        e = r.get("excluded") or ""
+        if b and b.get("bridge") == "no" and (e == SET_ASIDE or e.startswith("cost per t")
+                                            or re.match(r"no conversion from \S+/t to \S+/GJ", e)):
+            r["excluded"] = "not bridged: " + (b.get("note") or "")
+            r["set-aside"] = "not-bridged"
     for r in facts:
         if (r["parameter"] in PER_CAPACITY | PER_OUTPUT and r.get("cost-basis") == "incremental"
                 and r.get("excluded") != "no number"):
@@ -372,6 +509,8 @@ def normalise(facts, examples, records, units) -> None:
                              "host plant's baseline cost")
         elif r.get("excluded") == SET_ASIDE:
             r["set-aside"] = "needs-efficiency"
+            r["excluded"] = SET_ASIDE + (". Not yet reviewed for the efficiency bridge: list the "
+                                         "example in records/reference/efficiency-bridge.csv")
     for r in facts:
         if r.get("assembly-duplicate"):
             # an assembled sum the source also prints: a check, not a second value
@@ -379,7 +518,18 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = ("assembly check: the sum of this source's component costs, "
                              "which it also prints as a total (duplicate-of); not pooled")
             continue
-        if r.get("excluded") == SET_ASIDE:
+        if r.get("_fuel_input"):
+            # a per-GJ-of-fuel-input restatement: a duplicate of its parent, which
+            # carries the reason if it is not pooled either
+            r["duplicate-of"] = r["_fuel_input"]
+            par = by_id[r["duplicate-of"]]
+            r["set-aside"] = ""
+            r["value-norm"] = r["value-min-norm"] = r["value-max-norm"] = ""
+            r["excluded"] = ("duplicate of the row in duplicate-of: its cost divided by the source's "
+                             "fuel use (per GJ of fuel input)"
+                             + ("" if not par.get("excluded") else "; that row is not pooled either"))
+            continue
+        if r.get("excluded", "").startswith(SET_ASIDE) or r.get("set-aside") == "not-bridged":
             continue
         if r.get("duplicate-of") and r["excluded"] and r["excluded"] != "no number":
             par = by_id[r["duplicate-of"]]

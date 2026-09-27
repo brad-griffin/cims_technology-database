@@ -60,6 +60,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | EPA 2007 | 65 | September 2007; no report number printed on the cover |
 | Vaillancourt, K. | 65 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | Sharp et al 1999 | 56 | UKERC gives initials as J., C., R.; published initials are J. H., C. D., R. |
+| CAELP/E3 2024 | 55 | October 2024; the recorded title was incomplete |
 | Blesl, M., & Bruchof, D. | 55 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | ETSAP I03 | 46 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | Blesl, M., & Bruchof, D. | 43 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
@@ -93,6 +94,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | ETSAP I01 | 22 | May 2010; authorship read from the printed VITO contact addresses |
 | Hawkes, A., & Brett, D. | 22 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Stemmermann et al 2010 | 22 | fifth author H. Möller is missing from the UKERC citation; no DOI |
+| RTC 2023 | 21 | updated September 2023 |
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | Zoulias, M. | 19 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
 | IIP 2012 | 19 | the ietd.iipnetwork.org URL UKERC cites is dead; the database is archived under iipinetwork.org. Launch year unconfirmed |
@@ -133,7 +135,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | AEA 2012b | 0 | first published 27 June 2012 |
 | Ashik et al 2015 | 0 | confirmed 2026-09-23 against the held copy, data/raw-data/background-no-data-extracted/ashik_2015_thermocatalytic-methane-decomposition-review_rser.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Bataille, C. | 0 | published online 2019, issue year 2020; a corrected republication exists as 10.1002/wcc.684 |
-| Smillie, S., Alberga, D., Loken, R., Bharadwaj, S., Clark, T., & Mahone, A. | 0 | October 2024; the recorded title was incomplete |
 | Dalsgard et al 2000 | 0 | journal is Applied Thermodynamics, not Thermodynamics; third author is Qvale, not Qvake |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: October 2012) |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated | 0 | confirmed 2026-09-23 against the held sector diagrams (title block and 'Last Revised' line: January-February 2014; the all-manufacturing diagram revised June 2015) |
@@ -157,7 +158,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | McMillan, C., & Narwade, V. | 0 | confirmed 2026-09-23 against the saved data catalog page ('Cite This Dataset'); publisher named as it was at publication (NREL, now the National Laboratory of the Rockies) |
 | McMillan, C. | 0 | confirmed 2026-09-23 against the saved data catalog page ('Cite This Dataset') |
 | Philibert 2017b | 0 | transcribed from the reference list of IPCC AR6 WGIII Chapter 11, which cites it in Table 11.3 as 'Philibert 2017b'. Not independently confirmed against the publisher. |
-| Renewable Thermal Collaborative | 0 | updated September 2023 |
 | Von Weizsacker 2009 | 0 | ISBN 978-1-84407-591-1; second author is Charlie Hargroves, not K. |
 | Wilson et al 2003 | 0 | confirmed 2026-09-22 against the held copy, data/raw-data/background-no-data-extracted/wilson_2003_regulating-geologic-co2-storage_est.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Worrell et al 2010 | 0 | the eScholarship copy is dated 2011 |

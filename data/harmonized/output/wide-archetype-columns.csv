@@ -16,6 +16,7 @@ product,identity,,
 n-examples,identity,,
 status,identity,,
 sources,identity,,
+external-conversions,identity,,"Parameters whose pooled value rests on a conversion factor from outside the source (a heating value, a density, a process ratio, a pooled efficiency or an assumption), as examples so converted / examples pooled. Those values are in italics in the workbook. Which factors: archetype-parameter.csv (external-factors); how each example was converted: example-parameter.csv (conversion, conversion-class, conversion-factors)."
 lifetime,technical,years,"Expected technical service life of the installed equipment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 lifetime_low,technical,years,
 lifetime_high,technical,years,

@@ -15,7 +15,13 @@ Two kinds, both recorded on the row they were used for (column `conversion`):
     the archetype does not make, so its per-product numbers are not pooled.
 
 Design rule (design.md s5, amended 2026-09-26): a factor from another source is
-used only through conversion-factor.csv, never inline.
+used only through conversion-factor.csv, never inline. Each factor has a `class`
+(CLASSES below) and a `source-id` registered in data/raw-data/
+source-details_reference.csv (or, for a factor a technology source prints about
+its own product, in the main manifest). A conversion may chain at most two
+factors (hydrogen in kW -> GJ/yr -> t/yr needs one; a mole of hydrogen -> GJ one).
+
+Energy is on a higher-heating-value basis throughout (design.md s5, 2026-09-26).
 """
 from __future__ import annotations
 
@@ -37,6 +43,7 @@ ATOM = {
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
     "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
     "bbl-beer": ("volume", 0.117347765),
+    "mol-H2": ("amount-h2", 1.0),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),
 }
@@ -45,6 +52,20 @@ ATOM = {
 SPECIES = re.compile(r"^(t|kg|kt|Mt)-(CO2(?:-eq)?|CO2e|CH4)$")
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion))?")
 MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9}
+
+# How much a converted number rests on, weakest last. `unit` is a definition
+# (Btu, lb, barrel) or the currency method; `same-source` a factor the same source
+# gives for the same example; `property` a physical property of a product;
+# `ratio` a typical process ratio; `internal` a value pooled in this database
+# from other examples; `assumption` a value chosen where no source fixes it.
+# Anything from `property` on is EXTERNAL to the source's own numbers.
+CLASSES = ["unit", "same-source", "property", "ratio", "internal", "assumption"]
+EXTERNAL = set(CLASSES[2:])
+
+
+def weakest(classes):
+    cs = [c for c in classes if c in CLASSES]
+    return max(cs, key=CLASSES.index) if cs else ""
 
 
 def atom(tok, alias=None):
@@ -68,6 +89,7 @@ def split_rate(s):
 class Factors:
     def __init__(self):
         self.rows = {r["factor-id"]: r for r in read(REFERENCE / "conversion-factor.csv")}
+        self.cls = {k: (r.get("class") or "") for k, r in self.rows.items()}
         self.by_arch = defaultdict(list)
         for r in self.rows.values():
             r["_f"] = fnum(r["factor"])
@@ -86,24 +108,41 @@ class Factors:
         return e, out + self.by_arch.get(archetype, [])
 
 
+def _edges(factors):
+    """Each factor as an edge between two dimensions: (dim-from, dim-to, k, id),
+    where one base unit of dim-from is k base units of dim-to; both directions."""
+    out = []
+    for f in factors:
+        fu, tu = atom(f["from-unit"]), atom(f["to-unit"])
+        if not fu or not tu or f.get("_f") in (None, 0) or fu[0] == tu[0]:
+            continue
+        k = f["_f"] * tu[1] / fu[1]
+        out += [(fu[0], tu[0], k, f["factor-id"]), (tu[0], fu[0], 1 / k, f["factor-id"])]
+    return out
+
+
 def qty_ratio(x, tx, factors, species_ok, alias=None):
     """How many `tx` make one `x` (e.g. x='lb', tx='t' -> 4.536e-4), bridging two
-    kinds of quantity with at most one product factor. Returns (ratio, factor-id)."""
+    kinds of quantity with at most two product factors. Returns (ratio, [factor ids])."""
     a, b = atom(x, alias), atom(tx, alias)
     if not a or not b:
         return None
     if a[2] and not b[2] and not species_ok:
         return None
     if a[0] == b[0]:
-        return a[1] / b[1], ""
-    for f in factors:
-        fu, tu = atom(f["from-unit"]), atom(f["to-unit"])
-        if not fu or not tu or f["_f"] in (None, 0):
-            continue
-        if fu[0] == a[0] and tu[0] == b[0]:
-            return a[1] / fu[1] * f["_f"] * tu[1] / b[1], f["factor-id"]
-        if tu[0] == a[0] and fu[0] == b[0]:
-            return a[1] / tu[1] / f["_f"] * fu[1] / b[1], f["factor-id"]
+        return a[1] / b[1], []
+    edges = _edges(factors)
+    paths = [(a[0], a[1], [])]
+    for _ in range(2):
+        nxt = []
+        for dim, val, ids in paths:
+            for d0, d1, k, fid in edges:
+                if d0 != dim or fid in ids:
+                    continue
+                if d1 == b[0]:
+                    return val * k / b[1], ids + [fid]
+                nxt.append((d1, val * k, ids + [fid]))
+        paths = nxt
     return None
 
 
@@ -129,10 +168,11 @@ def intensive(unit, tgt, factors, species_ok, alias=None):
     if MONEY.match(num):
         nr = 1.0
     else:
-        r = qty_ratio(num, tnum, [], True, alias)
+        r = qty_ratio(num, tnum, factors, True, alias)
         if not r:
             return None
         nr = r[0]
+        used += r[1]
     x, p = split_rate(den)
     tx, tp = split_rate(tden)
     if (p is None) != (tp is None):
@@ -146,8 +186,7 @@ def intensive(unit, tgt, factors, species_ok, alias=None):
     q = qty_ratio(x, tx, factors, species_ok, alias)
     if not q:
         return None
-    if q[1]:
-        used.append(q[1])
+    used += q[1]
     # per (x/p) -> per (tx/tp): one x/p is q tx per p, i.e. q*pr tx per tp
     return nr / (q[0] * pr), used
 
@@ -168,4 +207,4 @@ def extensive(unit, tgt, factors, alias=None):
     t = qty_ratio(tper, per, [], True)          # how many `per` in one `tper`
     if not q or not t:
         return None
-    return q[0] * t[0] * extra, [q[1]] if q[1] else []
+    return q[0] * t[0] * extra, q[1]

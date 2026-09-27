@@ -31,14 +31,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (assembly, checks, currency, examples, extract, facts, hierarchy,  # noqa: E402
-                      normalise, records, reports, sources, summarise, views, wholeplant,
-                      workbook)
+from pipeline import (assembly, checks, currency, examples, extract, factoruse, facts,  # noqa: E402
+                      hierarchy, normalise, records, reports, sources, summarise, views,
+                      wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
-             "value-max-norm", "unit-norm", "target-norm", "conversion", "excluded", "set-aside", "duplicate-of", "whole-plant", "uncertainty-type",
+             "value-max-norm", "unit-norm", "target-norm", "conversion", "heating-value",
+             "conversion-class", "conversion-factors", "excluded", "set-aside", "duplicate-of", "whole-plant", "uncertainty-type",
              "value-type", "formula", "derived-from", "cost-basis", "capacity-basis", "currency",
              "discount-rate", "region", "year", "source-id", "source-file", "source-locator",
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]
@@ -54,7 +55,8 @@ EX_COLS = ["example-id", "archetype", "mapping", "source-id", "source-technology
            "detail", "sector-reported", "end-use-reported", "step-reported",
            "service-unit-reported", "description", "trl", "trl-as-reported", "trl-scale",
            "state-of-development", "year-available", "extraction-file", "note"]
-SUM_COLS = ["central", "low", "high", "n", "central-from", "sources", "examples"]
+SUM_COLS = ["central", "low", "high", "n", "n-external", "central-from", "external-factors",
+            "sources", "examples"]
 
 
 def main(argv) -> int:
@@ -116,6 +118,10 @@ def main(argv) -> int:
     units = normalise.Units(factors)
     normalise.normalise(L.facts, L.examples, rec, units)
     normalise.normalise_flows(L.flows, rec, units, L.examples)
+    pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
+    cc = Counter(r.get("conversion-class") or "as reported" for r in pooled)
+    print("  pooled parameter rows by conversion class: "
+          + ", ".join(f"{k} {cc[k]}" for k in ["as reported"] + normalise.convert.CLASSES if cc[k]))
     print("summarise")
     psum = summarise.summarise(L.facts, rec, ("parameter", "target-norm"), L.examples)
     for r in psum:
@@ -134,13 +140,14 @@ def main(argv) -> int:
         if r["parameter"] == "specific-energy-consumption" and r.get("value"):
             sec.setdefault(r["example-id"], f"{r['value']} {r['unit']}")
     aside = [dict(r, **{"fuel-per-unit": sec.get(r["example-id"], "")})
-             for r in L.facts if r.get("set-aside") == "needs-efficiency"]
+             for r in L.facts if r.get("set-aside") in ("needs-efficiency", "not-bridged")]
     write(OUTPUT / "set-aside-efficiency.csv",
           ["archetype", "example-id", "record-id", "parameter", "value", "unit",
-           "fuel-per-unit", "duplicate-of", "formula", "source-id", "via-source-id",
-           "source-locator", "note"],
+           "fuel-per-unit", "set-aside", "excluded", "duplicate-of", "formula", "source-id",
+           "via-source-id", "source-locator", "note"],
           sorted(aside, key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     write(OUTPUT / "example-flow.csv", FLOW_COLS, L.flows)
+    factoruse.write_outputs(L.facts, units.factors)
     write(OUTPUT / "example-constraint.csv", CONS_COLS, L.cons)
     order = {a["archetype"]: i for i, a in enumerate(rec.archetypes)}
     psum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
@@ -179,7 +186,9 @@ def main(argv) -> int:
     print("  " + workbook.write_book(
         {"wide-archetype": (wcols, wrows, wgroups, wunits, "family", "equipment",
                             banner + " One row per archetype; costs and intensities are per "
-                            "product-unit, so never compare them across families."),
+                            "product-unit, so never compare them across families. Energy is on "
+                            "a higher heating value. Italic values rest on a conversion factor "
+                            "from outside the source (see external-conversions)."),
          "wide-flow": (fcols, frows, fgroups, funits, "family", "equipment", banner),
          "archetype": (acols, arows, {}, {}, "family", "equipment", banner),
          "source-list": (sources.COLS, src_band, {}, {}, "_band", "", banner)},
@@ -192,7 +201,8 @@ def main(argv) -> int:
          "archetype-application": (["archetype", "family", "node", "annotation", "via", "note"],
                                    v["application"])},
         {**fam, "": "(not tied to one family)"},
-        {"wide-archetype": v["wide-archetype-notes"]}))
+        {"wide-archetype": v["wide-archetype-notes"]},
+        {"wide-archetype": v["flagged"]}))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
           f"{q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns")

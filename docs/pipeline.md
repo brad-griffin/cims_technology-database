@@ -25,7 +25,7 @@ gate a commit.
 | 5b | whole-plant | `pipeline/wholeplant.py` | Adds UKERC's host baseline cost to each measure cost where `records/reference/ukerc-host-baseline.csv` allows, as a derived row (`tp-<source>-wNNN`). It sets the other measure costs aside. |
 | 5c | assembly | `pipeline/assembly.py` | Sums one source's component costs into a whole-plant cost as listed in `records/reference/whole-plant-assembly.csv`, as a derived row (`tp-<source>-aNNN`). Stops the build on components from another source, another currency-year or an unreconciled unit. |
 | 6 | checks | `pipeline/checks.py` | The gate. |
-| 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. |
+| 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py`, `pipeline/heating.py`, `pipeline/bridge.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. LHV numbers go to HHV (`heating-value-stream.csv`); numbers per unit of input go per GJ of output by the efficiency bridge (`efficiency-bridge.csv`). Each row records its `conversion-class` and `conversion-factors`. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
 | 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |
@@ -42,7 +42,8 @@ gate a commit.
 | `records/hierarchy-annotation.csv` | annotation group of hierarchy paths | `annotation` |
 | `records/cims_hierarchy.csv` | hierarchy node (the CIMS snapshot) | `branch` |
 | `records/vocabulary/*.csv` | term: equipment, discriminator, modifier, carrier, the other lists, parameter, commodity | the term |
-| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references | |
+| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype, the efficiency-bridge review | |
+| `data/raw-data/source-details_reference.csv` | reference source behind a conversion factor or the currency conversion (kept apart from the technology sources; `used_for` says which, `file_on_disk` names a held table) | `source_id` |
 
 ## Outputs (generated)
 
@@ -56,7 +57,9 @@ gate a commit.
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
-| `set-aside-efficiency.csv` | UKERC costs set aside until an efficiency factor is established, with each example's fuel use per tonne. |
+| `set-aside-efficiency.csv` | UKERC numbers per tonne of a host plant's product: `needs-efficiency` (not yet reviewed for the bridge) or `not-bridged` (reviewed; the reason is in `excluded`), with each example's fuel use per tonne. |
+| `conversion-factor-use.csv` | Each conversion factor, pooled efficiency and assumption, with its class and the pooled rows, examples and archetypes that rest on it. |
+| `reference-source-list.csv` | Each reference source, the factors it backs (or `currency-conversion.csv`) and the pooled rows that rest on it. |
 | `mapping-review.md` | How examples reach archetypes, what was not pooled, and what needs a decision. |
 | `currency-conversion.csv`, `hierarchy-stamp.csv` | The factors and the snapshot the build used. |
 | `technology-database.xlsx` | The workbook. |

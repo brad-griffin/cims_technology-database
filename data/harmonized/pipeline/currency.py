@@ -12,6 +12,12 @@ from the currency the estimate was published in. The two reference tables are
 copied verbatim from the CIMS repository (data/processed_data/deflator_exchange/);
 refresh them there, not by hand. Coverage is 2000-2025 for CAD, USD, GBP, EUR,
 JPY, INR and CNY; anything else is reported and left unconverted.
+
+The series behind the two tables are registered in the reference manifest
+(data/raw-data/source-details_reference.csv), with the conversion factors' sources:
+the World Bank GDP deflator (the ECB's for EUR), and exchange rates from the Bank
+of Canada to 2017 and Statistics Canada from 2017. Each row of
+currency-conversion.csv names the ones it rests on.
 """
 from __future__ import annotations
 
@@ -21,6 +27,12 @@ from .common import OUTPUT, REFERENCE, read, write
 
 TARGET_YEAR, TARGET_CUR = 2025, "CAD"
 TARGET = f"{TARGET_YEAR}_{TARGET_CUR}"
+DEFLATOR_SOURCE = {"EUR": "ecb_2026_001"}           # every other currency: the World Bank
+DEFLATOR_DEFAULT = "world-bank_2026_001"
+
+
+def exchange_source(year: int) -> str:
+    return "can-statcan_2026_001" if year >= 2017 else "bank-of-canada_2026_001"
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})")
 
 
@@ -49,7 +61,9 @@ def factors(fact_rows) -> tuple[dict[str, float], list[str]]:
                      "factor": f"{inflate * fx:.6f}",
                      "method": f"deflator {cur} {deflator[(cur, TARGET_YEAR)]:.6g}/"
                                f"{deflator[(cur, year)]:.6g} = {inflate:.6g}, then x {fx:.6g} "
-                               f"{pair} ({TARGET_YEAR})"})
-    write(OUTPUT / "currency-conversion.csv", ["from-currency", "to-currency", "factor", "method"],
-          rows)
+                               f"{pair} ({TARGET_YEAR})",
+                     "source-id": "; ".join([DEFLATOR_SOURCE.get(cur, DEFLATOR_DEFAULT)]
+                                            + ([exchange_source(TARGET_YEAR)] if cur != TARGET_CUR else []))})
+    write(OUTPUT / "currency-conversion.csv",
+          ["from-currency", "to-currency", "factor", "method", "source-id"], rows)
     return out, skipped

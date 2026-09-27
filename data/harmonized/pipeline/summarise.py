@@ -11,7 +11,12 @@ archetype rather than keeping every source's number side by side. The rule:
              ranges sources report themselves; written only where the values
              actually spread;
   * n        the number of examples behind the numbers, always shown, so thin
-             evidence is visible.
+             evidence is visible;
+  * n-external  how many of those examples reached the archetype's basis only
+             through a factor from outside the source (a heating value, a
+             process ratio, a pooled efficiency, an assumption: conversion-class
+             `property` or weaker), and `external-factors` which ones. The
+             example's own row in example-parameter.csv says exactly how.
 
 Within one example, an as-reported value is preferred to one derived from it,
 and several rows for the same quantity (sizes, cases) count as one example
@@ -25,6 +30,25 @@ from collections import defaultdict
 from statistics import median
 
 from .common import fnum
+from . import convert
+
+_CLS = None
+
+
+def external_ids(row) -> list[str]:
+    """The factors on a pooled row that come from outside its source."""
+    global _CLS
+    if _CLS is None:
+        _CLS = convert.Factors().cls
+    if row.get("conversion-class") not in convert.EXTERNAL:
+        return []
+    out = []
+    for x in (row.get("conversion-factors") or "").split(";"):
+        x = x.strip()
+        if (_CLS.get(x) in convert.EXTERNAL or x.startswith("assume:")
+                or (x.startswith("eff:") and not x.startswith("eff:same-example"))):
+            out.append(x.split("=")[0])
+    return out
 
 
 def _example_values(rows):
@@ -55,8 +79,9 @@ def summarise(rows, records, keys, examples_by_id):
             sids = sorted({r.get("source-id", "") for r in rs} |
                           {r.get("via-source-id", "") for r in rs if r.get("via-source-id")},
                           key=lambda s: (records.rank(s), s))
+            ext = [x for r in rs for x in external_ids(r)]
             per.append({"example": eid, "central": c, "all": allv, "rank": srank,
-                        "sources": sids})
+                        "sources": sids, "external": ext})
         with_c = [p for p in per if p["central"] is not None]
         if len(with_c) >= 3:
             central = median(p["central"] for p in with_c)
@@ -78,6 +103,8 @@ def summarise(rows, records, keys, examples_by_id):
                     "low": f"{min(vals):.6g}" if len(vals) > 1 else "",
                     "high": f"{max(vals):.6g}" if len(vals) > 1 else "",
                     "n": len(per), "central-from": how,
+                    "n-external": sum(1 for p in per if p["external"]),
+                    "external-factors": "; ".join(dict.fromkeys(x for p in per for x in p["external"])),
                     "sources": "; ".join(sources),
                     "examples": "; ".join(sorted(by_ex))})
         out.append(row)

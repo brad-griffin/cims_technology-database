@@ -1,0 +1,28 @@
+factor-id,class,quantity,from-unit,to-unit,factor,factor-low,factor-high,basis,source-id,rows-pooled,examples,archetypes
+cf-h2-hhv-mass,property,"hydrogen, higher heating value",t,GJ,141.79,,,"HHV, 25 degC, water condensed",nist_2026_001,10,7,electrolyzer_low-temperature; gasifier_ccs-concentrated; gasifier_coal-petroleum-coke; steam-reformer_methane
+cf-h2-hhv-volume,property,"hydrogen, higher heating value per normal cubic metre",Nm3,GJ,0.012747,,,"HHV; gas at 0 degC, 1.013 bar",nist_2026_001; air-liquide_2026_001,1,1,electrolyzer_low-temperature
+cf-h2-hhv-molar,property,"hydrogen, higher heating value per mole",mol-H2,GJ,2.8583e-4,,,"HHV, 25 degC",nist_2026_001,1,1,reactor_methane-pyrolysis
+cf-methane-hhv-mass,property,"methane, higher heating value",t,GJ,55.53,,,"HHV, 25 degC",nist_2026_001,4,4,separator_biogas-upgrading
+cf-methane-hhv-volume,property,"methane, higher heating value per normal cubic metre",Nm3,GJ,0.03981,0.03971,0.03981,"HHV; gas at 0 degC, 1 atm",nist_2026_001; air-liquide_2026_001,0,0,
+cf-methane-density,property,methane density,m3,t,0.000717,0.000668,0.000717,"gas at 0 degC, 1 atm (low: 20 degC)",air-liquide_2026_001,2,2,mine_open-pit-coal; mine_underground-coal
+cf-biogas-raw-energy,assumption,"raw biogas from anaerobic digestion, energy per cubic metre",m3,GJ,0.02389,0.01792,0.02986,HHV; 60% methane (45-75%),iea_2020_001; nist_2026_001; air-liquide_2026_001,3,2,anaerobic-digester; separator_biogas-upgrading
+cf-crude-volume,property,"crude oil, barrels per tonne",t,bbl,7.32,,,"conventional crude, average specific gravity",unsd_2022_001,12,12,distillation-column_atmospheric-vacuum; reactor_catalytic-reforming; reactor_delayed-coking; reactor_fluid-catalytic-cracking; reactor_hydroprocessing
+cf-gasoline-volume,property,"motor gasoline (alkylate, isomerate), barrels per tonne",t,bbl,8.50,,,about 0.74 t/m3,unsd_2022_001,4,4,reactor_alkylation-isomerization
+cf-lng-energy,property,"LNG, energy per tonne",t,MMBtu,52,,52.6,gross (HHV),spglobal_2024_001; doe-afdc_2026_001,5,1,chiller_gas-turbine
+cf-ethanol-density,property,fuel ethanol density,m3,t,0.794,,,"E100, 15 degC",jrc_2020_001,0,0,
+cf-fame-density,property,biodiesel (FAME) density,m3,t,0.890,0.860,0.900,15 degC; EN 14214 limits,dieselnet_2026_001; jrc_2020_001,0,0,
+cf-paraffinic-diesel-density,property,"paraffinic diesel (Fischer-Tropsch, HVO) density",m3,t,0.780,0.765,0.800,15 degC; EN 15940 class A,iea-amf_2026_001; jrc_2020_001,0,0,
+cf-ctl-liquids-energy,property,"Fischer-Tropsch liquids (CTL/GTL), energy per barrel",bbl,GJ,5.76,,,as the source states output (basis not stated; read as HHV),etsap_2010_012,2,1,gasifier_coal-to-liquids
+cf-alumina-per-aluminium,ratio,alumina per tonne of primary aluminium,t,t,1.908,1.889,2.0,t alumina per t liquid aluminium,european-aluminium_2018_001,2,2,digester_bayer
+cf-anode-per-aluminium,ratio,net anode consumption per tonne of primary aluminium,t,t,0.413,,,t anode per t liquid aluminium,european-aluminium_2018_001,2,2,furnace_anode-baking
+cf-cement-per-rawmeal,ratio,cement per tonne of kiln raw meal,t,t,0.7310,0.6536,0.7310,1 / (raw meal per clinker x clinker per cement),eippcb_2010_001; usgs_2011_001; usgs_2005_001,4,4,grinding-mill_ball; grinding-mill_vertical-roller
+cf-bls-per-pulp,ratio,black liquor dry solids per tonne of kraft pulp,t,t,1.5,1.0,1.75,t dry solids per air-dried t of pulp,tappi_2008_001,2,2,evaporator_multiple-effect
+cf-milk-density,property,fluid milk density,m3,t,1.031,,,whole milk,usda_1992_001,11,5,cleaning-system_efficiency-moderate; heat-exchanger_steam-heated; heat-pump_hot-water; pasteurizer_regenerative
+cf-beer-barrel,unit,US beer barrel,bbl-beer,m3,0.117347765,,,"31 US gallons, exact",nist_2026_002,0,0,
+cf-hhv-lhv-hydrogen,property,"hydrogen, HHV per LHV",GJ-LHV,GJ-HHV,1.1820,,,ratio of heating values,nist_2026_001,5,4,electrolyzer_low-temperature
+cf-hhv-lhv-methane,property,"methane, natural gas, biogas and SNG: HHV per LHV",GJ-LHV,GJ-HHV,1.1096,,,ratio of heating values,nist_2026_001; ipcc_2006_001,17,8,fuel-cell_chp; gasifier_biomass-methanation; reciprocating-engine_chp
+cf-hhv-lhv-methanol,property,"methanol, HHV per LHV",GJ-LHV,GJ-HHV,1.1379,,,ratio of heating values,nist_2026_001,0,0,
+cf-hhv-lhv-solid-liquid,property,"coal, oil and solid biomass: HHV per LHV",GJ-LHV,GJ-HHV,1.0526,,,ratio of heating values,ipcc_2006_001,7,3,gasifier_biomass-methanation
+assume:continuous-operation,assumption,continuous operation,,,,,,,,4,4,electrolyzer_low-temperature; fuel-cell_chp
+eff:reciprocating-engine_chp,internal,pooled efficiency of reciprocating-engine_chp,,,,,,,,1,1,reciprocating-engine_chp
+eff:same-example,same-source,the example's own efficiency,,,,,,,,7,6,boiler_fuel-fired; boiler_solid-fuel; electrolyzer_low-temperature; gasifier_biomass-methanation; reciprocating-engine_chp

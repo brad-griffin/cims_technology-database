@@ -227,7 +227,8 @@ are abated, or when a policy instrument treats them separately.
   plant (UKERC measures, UK TIMES "improvement technologies" and add-ons via
   Bataille) is incremental: `cost-basis` is `incremental`. UK TIMES rows are marked
   from their notes at extraction; any other example is listed, with its reason, in
-  `records/reference/incremental-cost.csv`. It is set aside as `needs-host-cost`
+  `records/reference/incremental-cost.csv` (with `case` set where only one case of
+  the example is incremental: a leading `[case]` in the note, or UKERC's row code). It is set aside as `needs-host-cost`
   unless the same source gives the host plant's cost, in which case a whole-plant
   row is derived.
 - A cost per GJ of energy use is never turned into a cost per tonne by dividing by
@@ -244,6 +245,53 @@ are abated, or when a policy instrument treats them separately.
   example reported per a product the archetype does not make, which is not pooled.
   The row names the factor in `conversion`. An energy input standing in for an
   output is never used, and no factor is written inline in code or in a note.
+  A conversion may chain at most two factors (kW of hydrogen -> GJ/yr -> t/yr).
+- **Every factor has a class** (amended 2026-09-26), and every converted row
+  records the weakest class it rests on (`conversion-class`) and the factors
+  themselves (`conversion-factors`): `unit` (a definition, or the currency method),
+  `same-source` (the same source's own output, capacity, capacity factor or
+  efficiency for the example), `property` (a heating value, density or molar
+  mass), `ratio` (a typical process ratio), `internal` (a value pooled in this
+  database from other examples), `assumption` (a value chosen where no source
+  fixes it). From `property` on the factor is **external** to the source. The
+  archetype summaries count the examples that rest on an external factor
+  (`n-external`) and name the factors (`external-factors`); the wide view lists
+  them in one column, `external-conversions`, and the workbook shows those values
+  in italics. `output/conversion-factor-use.csv` says how many pooled rows each
+  factor carries.
+- **Reference sources are registered apart** from the technology sources, in
+  `data/raw-data/source-details_reference.csv`: the constants, densities and
+  ratios behind the factors, and the deflator and exchange-rate series behind the
+  currency conversion (`used_for` says which), are not evidence about a technology.
+  `currency-conversion.csv` names the series each currency factor rests on. Each factor's
+  `source-id` resolves there (or, for a factor a technology source prints about its
+  own product, in the main manifest); an id may not be in both, and a reference
+  source that backs no factor fails the build. `output/reference-source-list.csv`
+  lists them with the factors each backs.
+- **Energy is on a higher heating value (HHV)** (amended 2026-09-26). A number the
+  source states on HHV is used as it is; one whose basis the source does not state
+  is read as HHV; one stated on LHV is converted with the HHV/LHV ratios of the fuel
+  in and the product out that `records/reference/heating-value-stream.csv` names
+  for the archetype (`pipeline/heating.py`), and is not pooled on an archetype with
+  no row there. `heating-value` records the basis as the source gave it (HHV, LHV
+  or `not stated`) on every row whose value depends on it. Every energy factor in
+  `conversion-factor.csv` is on HHV.
+- **The efficiency bridge** (amended 2026-09-26; `pipeline/bridge.py`). A number
+  stated per unit of energy input -- an emission factor per GJ of fuel, a cost per
+  kW of input capacity (`capacity-basis` thermal-input or electric-input), a
+  capacity rated on its input -- is put per GJ of output with the efficiency: the
+  example's own where the same source gives one, otherwise the archetype's pooled
+  central value (class `internal`). For a CHP archetype the efficiency is the total
+  less the electric one, since its product is the heat. A number per tonne of a
+  host plant's product with only the plant's fuel use per tonne (UKERC) is bridged
+  only for the examples marked `yes` in `records/reference/efficiency-bridge.csv`:
+  the per-tonne number must be the equipment's own, not the whole host process's.
+  A specific energy use is never bridged; it would only restate the efficiency.
+- An absolute cost is put per unit of capacity with the same source's capacity for
+  the same case (a leading `[case]` in the note, or UKERC's row code); a capacity
+  rated on input is then bridged.
+- A methane slip (a % of the methane handled that is lost) is put per GJ of methane
+  delivered as s/(1-s) divided by the heating value.
 - A fixed O&M a source gives as a percentage of capital per year is put on the same
   example's pooled capital cost.
 - **Levelized costs** (`cost-levelized`) are shown with the costs. They are pooled
@@ -253,9 +301,11 @@ are abated, or when a policy instrument treats them separately.
   a **duplicate**. It names that row in `duplicate-of` and is not pooled.
 - **Set aside until an efficiency is known.** UKERC costs on energy-service
   archetypes are stated per tonne of the host plant's product, with only its fuel
-  use per tonne, and UKERC's per-GJ restatements are per GJ of fuel input. Neither
-  pools until an efficiency factor is established. They carry
-  `set-aside = needs-efficiency`, and `output/set-aside-efficiency.csv` lists them.
+  use per tonne. They carry `set-aside = needs-efficiency` until the example is
+  reviewed in `efficiency-bridge.csv`, and `set-aside = not-bridged` (with the
+  reason) where the review found the per-tonne numbers to be the host process's.
+  UKERC's per-GJ restatements (per GJ of fuel input) are duplicates of the
+  per-tonne rows. `output/set-aside-efficiency.csv` lists both.
 
 **Target units** (pu is the product unit):
 
@@ -321,7 +371,8 @@ number, numbered within the source (`tp-ukerc_2013_001-0042`), so an edit to one
 source never renumbers another.
 
 **Registration.** Every source is registered in `data/raw-data/source-details_sources.csv`
-and `source-details_files.csv`. The build takes source ids from there. The
+and `source-details_files.csv`; a reference source (a constant, a conversion
+factor's source, a currency series) in `source-details_reference.csv` instead. The build takes source ids from there. The
 manifest records what the database draws on: sources that provide data, the
 originals a compilation cites (registered but not held), and sources queued for
 extraction.
