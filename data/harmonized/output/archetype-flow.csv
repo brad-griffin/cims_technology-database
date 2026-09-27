@@ -624,3 +624,7 @@ binder_hydrothermal-silicate,input,limestone,t/t,0.231,,,1,top-ranked: Stemmerma
 binder_hydrothermal-silicate,input,quartz,t/t,0.5,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
 binder_hydrothermal-silicate,input,renewable-fuel,GJ/t,1.11999,,,1,top-ranked: Stemmermann et al 2010,stemmermann_2010_001; ukerc_2013_001,ukerc_2013_001:binder_hydrothermal-silicate@cement-subsector-2030-kiln-efficiency
 pipeline_co2,input,electricity,GJ/t,,0.2,0.5,1,range only,etsap_2010_007,etsap_2010_007:pipeline_co2@co2-transportation-p-5-text
+smelting-vessel_low-shaft,input,electricity,GJ/t,0.252,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_tecnored@smelting-reduction
+smelting-vessel_low-shaft,input,lime,t/t,0.006,,,2,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_tecnored-chp@smelting-reduction; etsap_2010_002:smelting-vessel_coal_tecnored@smelting-reduction
+smelting-vessel_low-shaft,input,pellets,t/t,1.78,,,2,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_tecnored-chp@smelting-reduction; etsap_2010_002:smelting-vessel_coal_tecnored@smelting-reduction
+smelting-vessel_low-shaft,output,electricity,GJ/t,3.798,,,1,top-ranked: ETSAP I02,etsap_2010_002,etsap_2010_002:smelting-vessel_coal_tecnored-chp@smelting-reduction

@@ -22,6 +22,7 @@ binder_alkali-activated,cement,<sector>.industrial-minerals.product.cement.grind
 binder_blended-cement,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 binder_calcined-clay,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 binder_carbonated,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
+binder_electrochemical,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,as the other binders
 binder_hydrothermal-silicate,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,as the other binders
 binder_sulphoaluminate,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,as the other binders
 calciner_indirect,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
@@ -33,6 +34,7 @@ grinding-mill_vertical-roller,cement,<sector>.coal-mining.product.size-reduced-p
 grinding-mill_vertical-roller,cement,<sector>.coal-mining.product.size-reduced-product.milling,comminution,,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_vertical-roller,cement,<sector>.mining.service.crushing,comminution,,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
 grinding-mill_vertical-roller,cement,<sector>.mining.service.milling,comminution,,mining/comminution: every leaf of mining/comminution; no evidence to narrow it
+kiln_calcium-silicate-feed,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,as kiln_dry-precalciner
 kiln_dry-precalciner,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_dry-precalciner_ccs-diffuse,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_dry-precalciner_efficiency-moderate,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
@@ -565,6 +567,7 @@ sinter-plant_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.ag
 sinter-plant_strand,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 smelting-vessel_bath-reduction,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 smelting-vessel_bath-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host smelting-vessel_bath-reduction
+smelting-vessel_low-shaft,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as the other smelting-reduction routes
 smelting-vessel_two-stage,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 smelting-vessel_two-stage_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host smelting-vessel_two-stage
 lighting_fluorescent-hid,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
