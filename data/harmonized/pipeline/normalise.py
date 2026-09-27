@@ -188,6 +188,9 @@ def normalise(facts, examples, records, units) -> None:
         alias = dict(x.split("=", 1) for x in split_list((exrow or {}).get("unit-alias", "")) if "=" in x)
         per_product = (p in PER_PRODUCT or p in PER_CAPACITY or p in PER_OUTPUT
                        or (p.startswith("emissions-") and p != "emissions-reduction-potential"))
+        if exrow and exrow.get("factor-id") == "set-aside":
+            r["excluded"] = "example set aside by the modeller: " + (exrow.get("note") or "")
+            continue
         if exrow and exrow.get("factor-id") == "none" and per_product:
             r["excluded"] = ("reported per a product the archetype does not make, and no factor "
                              "links the two: " + (exrow.get("note") or ""))

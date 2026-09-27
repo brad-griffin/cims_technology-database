@@ -941,3 +941,6 @@ electrolysis-cell_electrolytic-smelting,<sector>.metal-smelting.product.lead.pyr
 electrolysis-cell_electrolytic-smelting,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,as smelting-vessel_flash
 thermal-storage_heat-charged,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 thermal-storage_heat-charged,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
+smelting-vessel_low-shaft,<sector>.iron-and-steel.service.hot-metal,ironmaking,as the other smelting-reduction routes
+binder_electrochemical,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,as the other binders
+kiln_calcium-silicate-feed,<sector>.industrial-minerals.product.cement.clinker,clinker-production,as kiln_dry-precalciner
