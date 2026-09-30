@@ -1,0 +1,25 @@
+process,technology,item,value,unit,reference,note
+Crude-steel routes,route_bf-bof,"energy intensity, worldsteel methodology (primary-energy electricity at 9.8 GJ/MWh)",22.7,GJ/t,"p.42, Box 1.3","reprinted from worldsteel, adjusted to IEA boundary"
+Crude-steel routes,route_scrap-eaf,"energy intensity, worldsteel methodology",5.2,GJ/t,"p.42, Box 1.3",reprinted from worldsteel
+Crude-steel routes,route_gas-dri-eaf,"energy intensity, worldsteel methodology",21.8,GJ/t,"p.42, Box 1.3",reprinted from worldsteel
+Crude-steel routes,route_bf-bof,CO2 intensity direct + indirect (IEA; worldsteel identical),2.2,t CO2/t,"p.43, Box 1.3",
+Crude-steel routes,route_scrap-eaf,CO2 intensity direct + indirect (IEA; worldsteel identical),0.3,t CO2/t,"p.43, Box 1.3",
+Crude-steel routes,route_gas-dri-eaf,CO2 intensity direct + indirect (IEA; worldsteel identical),1.4,t CO2/t,"p.43, Box 1.3",
+Crude-steel routes,route_bf-bof,indirect CO2 from electricity and imported heat,1.0,t CO2/t,p.37,
+Crude-steel routes,route_gas-dri-eaf,indirect CO2 from electricity at 538 g/kWh,0.4,t CO2/t,p.37,
+Crude-steel routes,route_scrap-eaf,indirect CO2 from electricity,0.3,t CO2/t,p.38,
+Crude-steel routes,route_coal-dri-eaf,direct CO2 vs gas-based DRI-EAF,almost 3x,ratio,p.37,no absolute value printed
+Sector,(sector average),"energy intensity of crude steel 2019 (sectoral, incl. finishing)",19,GJ/t,p.40; p.72,
+Sector,(sector average),direct CO2 intensity 2019 (sectoral),1.4,t CO2/t,p.37; p.74,0.6 t indirect; 2.0 direct+indirect
+Sector,(sector average),SDS 2050 energy intensity / direct CO2 intensity,12 / 0.6,GJ/t / t CO2/t,p.74,"STEPS 2050: 16 GJ/t, 1.1 t CO2/t"
+Near-zero routes,(CCUS routes),"levelised cost of alternative routes with CCUS, India",360-650,USD/t crude steel,"p.135, Box 3.2",electricity USD 30-90/MWh
+Near-zero routes,(all),cost premium of near-zero routes over commercial counterparts,10-50,%,p.107-108,no CO2 price
+Near-zero routes,route_h2-dri-eaf,break-even electricity price vs gas DRI with CCUS at USD 6/MBtu gas,35,USD/MWh,p.108-109,
+Near-zero routes,route_h2-dri-eaf,grid CO2 intensity assumed for indirect emissions,144,gCO2/kWh,"p.108, Fig. 2.11 notes",SDS 2035 global average
+Assumptions,(all),energy prices Fig. 1.3/2.11: gas 2-10 USD/MBtu; thermal coal 35-80 USD/tce; coking coal 75-155 USD/tce; electricity 30-90 USD/MWh; scrap 200-300 USD/t; iron ore 60-100 USD/t,,,p.31; p.108,
+Assumptions,(all),CO2 transport and storage cost,20,USD/t CO2 captured,p.108-109,
+Assumptions,(all),Fig. 2.12 central prices: gas 6 USD/MBtu; thermal coal 70 USD/tce; coking coal 140 USD/tce; electricity 45 USD/MWh; capacity factor 95%,,,p.109,
+Box 3.2 India VRE (2035),electrolyzer_india-vre,electrolyser CAPEX / LHV efficiency incl. compression to 60 bar,500 / 70,USD/kW / %,"p.138, Box 3.2",2035 SDS scenario values
+Box 3.2 India VRE (2035),(system),solar PV CAPEX 360 USD/kW; wind CAPEX 980 USD/kW; H2 storage CAPEX 0.4 USD/kWh (cavern) and 15 USD/kWh (steel tanks); LCOH 1.7-2.1 USD/kg; grid electricity 68 USD/MWh and 184 gCO2/kWh,,,"p.137-138, Box 3.2",
+Box 3.2 India VRE (2035),(system),"site table: solar CF 23-24%; wind CF 15-46%; electrolyser CF 40-41%; LCOE solar 19-20, wind 28-89 USD/MWh",,,"p.137, Box 3.2 table",
+Electrolysers,(sector),electricity for 17 Mt H2 in 2050 at 45 MWh/t,720,TWh,p.88,

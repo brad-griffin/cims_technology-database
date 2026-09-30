@@ -1,0 +1,24 @@
+process,technology,sector,end-use,process-step,service-unit
+401.a Post-combustion carbon capture retrofit - 100 MW(th) WtE or biomass CHP plant,capture-unit_post-combustion-chp-100mwth,heat-supply,co2-capture,post-combustion capture,t
+401.b Post-combustion carbon capture retrofit - 500 MW(th) biomass-fired boiler,capture-unit_post-combustion-biomass-500mwth,heat-supply,co2-capture,post-combustion capture,t
+401.c Post-combustion carbon capture - Retrofit 4500 ton clinker per day cement kiln,capture-unit_post-combustion-cement-kiln,cement,co2-capture,post-combustion capture,t
+402.a Oxy-fuel carbon capture - Retrofit 500 MW biomass boiler excluding ASU,capture-unit_oxy-fuel-biomass-boiler,heat-supply,co2-capture,oxy-fuel capture,t
+402.b Oxy-fuel carbon capture - Retrofit 3000 ton clinker per day cement kiln excluding ASU,capture-unit_oxy-fuel-cement-kiln,cement,co2-capture,oxy-fuel capture,t
+403.a Liquid Absorption Direct Air Capture Plant,capture-unit_dac-liquid-solvent,co2-capture,co2-capture,direct air capture,t
+403.b Solid Adsorption Direct Air Capture Plant,capture-unit_dac-solid-sorbent,co2-capture,co2-capture,direct air capture,t
+411 Liquefaction for biogas plant retrofit,liquefaction-unit_co2-biogas,co2-capture,co2-capture,"CO2 conditioning (compression, drying, liquefaction)",t
+412 Intermediate storage for truck transport from biogas plant,storage-tank_co2-intermediate,co2-capture,co2-transport-and-storage,intermediate storage,t
+421 CO2 pipeline transport,pipeline_co2,co2-capture,co2-transport-and-storage,transport,t
+422 CO2 road transport by tanker truck,truck_co2-tanker,co2-capture,co2-transport-and-storage,transport,t
+423 CO2 ship transportation,ship_co2-carrier,co2-capture,co2-transport-and-storage,transport,t
+CO2 terminals,terminal_co2-port,co2-capture,co2-transport-and-storage,transport,t
+451.1a Onshore Storage (1 Mt/y),well_co2-storage-onshore-1mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.1b Onshore Storage (3 Mt/y),well_co2-storage-onshore-3mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.1c Onshore Storage (5 Mt/y),well_co2-storage-onshore-5mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.2a Near shore Storage (1 Mt/y),well_co2-storage-nearshore-1mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.2b Near shore Storage (3 Mt/y),well_co2-storage-nearshore-3mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.2c Near shore Storage (5 Mt/y),well_co2-storage-nearshore-5mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.3a Offshore Storage in depleted oil/gas fields  (1 Mt/y),well_co2-storage-offshore-1mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.3b Offshore Storage in depleted oil/gas fields  (3 Mt/y),well_co2-storage-offshore-3mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.3c Offshore Storage in depleted oil/gas fields  (5 Mt/y),well_co2-storage-offshore-5mt,co2-capture,co2-transport-and-storage,geological storage,t
+451.3d Offshore Storage in depleted oil/gas fields  (5 Mt/y) - Re-use existing gas pipeline,well_co2-storage-offshore-5mt-reuse,co2-capture,co2-transport-and-storage,geological storage,t

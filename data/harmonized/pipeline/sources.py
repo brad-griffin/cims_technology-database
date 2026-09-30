@@ -260,6 +260,24 @@ def source_list(records, examples, fact_tables) -> list[dict]:
     for r in rows:
         if not r.get("full-citation") and not r.get("note"):
             r["note"] = "no full citation available"
+    # a source with no family gets the reason in its note
+    for r in rows:
+        if r.get("families"):
+            continue
+        n = int(r.get("rows-in-database") or 0)
+        if r.get("role") == "superseded":
+            why = "no family: superseded, so nothing from it is loaded"
+        elif n == 0 and r.get("held-locally") == "yes":
+            why = ("no family: held, but nothing from it is loaded yet (queued for extraction, "
+                   "or registered as background/documentation)")
+        elif n == 0 and r.get("role") == "cited by UKERC":
+            why = "no family: cited in the UKERC reference list, but no UKERC row that reaches the database cites it"
+        elif n == 0:
+            why = "no family: registered but not held and not yet used in the database"
+        else:
+            why = (f"no family: its {n} row(s) sit only on examples not mapped to an archetype "
+                   "((none) in records/source-example.csv), so they inform no family")
+        r["note"] = "; ".join(x for x in (why, r.get("note", "")) if x)
     write(OUTPUT / "source-list.csv", COLS, rows)
     return rows
 

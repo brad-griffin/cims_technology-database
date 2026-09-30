@@ -1,0 +1,45 @@
+process,technology,sector,end-use,process-step,service-unit
+80 AEC 10 MW: Hydrogen production via alkaline electrolysis (AEC) for 10 MW plant,electrolyzer_aec-10mw,hydrogen,electrochemical,,GJ
+80 AEC 100 MW: Hydrogen production via alkaline electrolysis (AEC) for 100 MW plant,electrolyzer_aec-100mw,hydrogen,electrochemical,,GJ
+80 AEC 1 GW: Hydrogen production via alkaline electrolysis (AEC) for 1 GW plant,electrolyzer_aec-1gw,hydrogen,electrochemical,,GJ
+80 PEMEC 10 MW: Hydrogen production via PEMEC electrolysis for 10 MW plant,electrolyzer_pem-10mw,hydrogen,electrochemical,,GJ
+80 PEMEC 100 MW: Hydrogen production via PEMEC electrolysis for 100 MW plant,electrolyzer_pem-100mw,hydrogen,electrochemical,,GJ
+80 PEMEC 1 GW: Hydrogen production via PEMEC electrolysis for 1 GW plant,electrolyzer_pem-1gw,hydrogen,electrochemical,,GJ
+80 SOEC 10 MW: Hydrogen production via solid oxide electrolysis (SOEC) for 10 MW plant,electrolyzer_soec-10mw,hydrogen,electrochemical,,GJ
+80 SOEC 100 MW: Hydrogen production via solid oxide electrolysis (SOEC) for 100 MW plant,electrolyzer_soec-100mw,hydrogen,electrochemical,,GJ
+80 PEMEC 10 MW (Off. decent.): Hydrogen production via PEMEC electrolysis for 10 MW plant,electrolyzer_pem-offshore-decentral-10mw,hydrogen,electrochemical,,GJ
+80 PEMEC 10 MW (Off. cent.): Hydrogen production via PEMEC electrolysis for 100 MW plant,electrolyzer_pem-offshore-central-100mw,hydrogen,electrochemical,,GJ
+"81 Biogas, Basic Plant, small: Biogas plant, Basic plant, small [~ 3,000 Nm3 CH4/h]",anaerobic-digester_basic-small,biofuels,material-conversion,,GJ
+"81 Biogas, Basic Plant, large: Biogas plant, Basic plant, large [~ 6,000 Nm3 CH4/h]",anaerobic-digester_basic-large,biofuels,material-conversion,,GJ
+"81 Biogas, Scen. A, small: Biogas plant, Scenario A, small plant (~ 3,000 Nm3 CH4/h)",anaerobic-digester_scenario-a-small,biofuels,material-conversion,,GJ
+"81 Biogas, Scen. A, large: Biogas plant, Scenario A, large plant [~ 6,000 Nm3 CH4/h]",anaerobic-digester_scenario-a-large,biofuels,material-conversion,,GJ
+"81 Biogas, Scen. B, small: Biogas plant, Scenario B, small plant (~ 3,000 Nm3 CH4/h)",anaerobic-digester_scenario-b-small,biofuels,material-conversion,,GJ
+"81 Biogas, Scen. B, large: Biogas plant, Scenario B, large plant [~ 6,000 Nm3 CH4/h]",anaerobic-digester_scenario-b-large,biofuels,material-conversion,,GJ
+"83 Gasif. Fixed Bed, Producer: Gasifier, biomass, producer gas, small - medium scale",gasifier_producer-gas-fixed-bed,biofuels,material-conversion,,GJ
+86 Fast Pyrolysis Wood: Fast pyrolysis (25 MW) - Wood feedstock,pyrolysis-reactor_fast-wood,biofuels,material-conversion,,t
+86 Fast Pyrolysis Straw: Fast pyrolysis (25 MW) - Straw feedstock,pyrolysis-reactor_fast-straw,biofuels,material-conversion,,t
+86 Catalytic Pyrolysis Wood: Fast catalytic pyrolysis (25 MW) - wood feedstock,pyrolysis-reactor_catalytic-wood,biofuels,material-conversion,,t
+87 Slow Pyrolysis Large Garden: Large scale slow pyrolysis (20 MW) - Garden waste feedstock,pyrolysis-reactor_slow-garden-waste-20mw,biofuels,material-conversion,,t
+87 Slow Pyrolysis Large Straw: Large scale slow pyrolysis (20 MW) - Straw feedstock,pyrolysis-reactor_slow-straw-20mw,biofuels,material-conversion,,t
+87 Slow Pyrolysis Large Digesta: Large scale slow pyrolysis (20 MW) - Digestate feedstock,pyrolysis-reactor_slow-digestate-20mw,biofuels,material-conversion,,t
+87 Slow Pyrolysis Small Straw: Small scale slow pyrolysis (1 MW) - Straw feedstock,pyrolysis-reactor_slow-straw-1mw,biofuels,material-conversion,,t
+87 Slow Pyrolysis Small Digesta: Small scale slow pyrolysis (1 MW) - Digestate feedstock,pyrolysis-reactor_slow-digestate-1mw,biofuels,material-conversion,,t
+89 Hydrothermal Liquefaction: Bio Oil,reactor_hydrothermal-liquefaction,biofuels,material-conversion,,t
+"91 Upgrading Biogas, small: Biogas upgrading - Amine scrubber [~3,000 Nm3 CH4/h]",separator_biogas-upgrading-amine-small,biofuels,drying-and-separation,,GJ
+"91 Upgrading Biogas, large: Biogas upgrading - Amine scrubber [~6,000 Nm3 CH4/h)",separator_biogas-upgrading-amine-large,biofuels,drying-and-separation,,GJ
+92 Methanation of Biogas: SNG from Biogas,reactor_biogas-catalytic-methanation,biofuels,material-conversion,,GJ
+93 Biomethanation of Biogas: Electro-methane from biomethanation of biogas,reactor_biogas-biomethanation,biofuels,material-conversion,,GJ
+"94 Methanation of Syngas: Gasifier, biomass, bio-SNG, medium - large scale",gasifier_biomass-sng,biofuels,material-conversion,,GJ
+95 Methanol from biomass gasif.: Bio Methanol,gasifier_biomass-methanol,chemicals,material-conversion,,t
+96 Methanol from hydrogen and C: Methanol from hydrogen and carbon dioxide,reactor_co2-hydrogen-to-methanol,chemicals,material-conversion,,t
+97 Methanol from biogas and hyd: Methanol from biogas and hydrogen,reactor_biogas-hydrogen-to-methanol,chemicals,material-conversion,,t
+98 Ammonia from hydrogen: Green Ammonia plant: Hydrogen to ammonia (excl. electrolyzer and excl. ASU),reactor_ammonia-synthesis-from-hydrogen,chemicals,material-conversion,,t
+"99 Jet fuel from biomass gasif.: Gasifier, biomass, Fischer Tropsch liquid fuels, large scale",gasifier_biomass-fischer-tropsch,biofuels,material-conversion,,t
+100 Jet Fuel from hydrogen: Hydrogen to Jet Fuel,reactor_hydrogen-to-jet-fuel,biofuels,material-conversion,,t
+100 Jet Fuel from electricity: Power to Jet Fuel,reactor_power-to-jet-fuel,biofuels,material-conversion,,t
+101 FAME biodiesel (veg. oil): Vegetable Oil FAME,transesterification-unit_vegetable-oil,biofuels,material-conversion,,t
+102 FAME biodiesel (UCO & anima: UCO and Animal Fat FAME,transesterification-unit_uco-animal-fat,biofuels,material-conversion,,t
+103 HVO jet fuel: HVO Jet Fuel,reactor_hvo-jet-fuel,biofuels,material-conversion,,t
+104 HVO renewable diesel: HVO / renwable diesel,reactor_hvo-renewable-diesel,biofuels,material-conversion,,t
+105 First generation ethanol: 1st Generation Ethanol,fermenter_first-generation-ethanol,biofuels,material-conversion,,t
+106 Cellulosic ethanol: Cellulosic Ethanol,fermenter_cellulosic-ethanol,biofuels,material-conversion,,t

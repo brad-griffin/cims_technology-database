@@ -1,0 +1,31 @@
+subject,parameter,unit,value,reference,note
+"Heat-recovery coke plant, Haverhill OH",coke output; steam,tonnes/yr; tonne/hr,"450,000; 200","p.17, Sect. VII.B","No operating hours printed, so steam per t coke not derived"
+"Heat-recovery coke plant, Granite City IL",coke output; superheated steam,tonnes/yr; tonne/hr,"590,000; 225","p.17, Sect. VII.B",
+Coke plants (COG not used for underfiring),CO2 from other combustion units,t CO2/t coke,0.35,p.D-9,EPA estimate
+Coke plants,IPCC factor assuming all COG burned,t CO2/t coke,0.56,p.D-9,IPCC 2007
+Coke pushing,CO2 emission factor,t CO2/t coal; t CO2/t coke,0.008; 0.01,p.D-9,AP-42 (EPA 2008a)
+Blast furnace gas combustion,CO2 emission factor,t CO2/TJ,260,p.D-8,IPCC 2007
+Blast furnace,coke and coal per ton iron,ton/ton,0.5-0.65,p.D-2,Coke and coal combined; no single commodity
+Blast furnace slag,liquid slag per ton pig iron; temperature,ton/ton; degC,"0.25-0.30; 1,450",p.19,
+BFG composition,N2; CO; CO2,%,60; 28; 12,p.D-2,
+COG composition,H2; CH4; CO; CO2,%,47; 32; 6; 2,p.D-7,
+Coke oven gas,share used to underfire ovens,%,35-40 (about one-third),p.3; p.D-7,p.16 says approximately 40%
+BOF process,unavoidable CO2 from steelmaking,t CO2/t steel,0.11-0.16,p.20,
+BOF heat and fuel gas recovery,CO2 reduction from natural gas and electricity,t CO2/t steel,0.05,p.20,
+Tundish heating,efficiency combustion-heated; induction-heated,%,20; 98,p.22,
+Cold tundish practice (Brazil),natural gas reduction,%,78,p.22,
+Single chamber system coking reactor,thermal efficiency improvement,%,from 38 to 70,p.16,Ambiguous wording; under development
+Electrolysis (ULCOS),comparison energy of whole conventional mill,GJ/t liquid steel,15-20,p.A-1,
+ULCOS programme,CO2 reduction aim,%,at least 50,p.A-1,
+CCS,reduction in overall process energy efficiency,%,up to 30,p.A-1,AISI 2011
+Wheeling-Pittsburgh EAF at integrated plant,steel output,tonnes/hr,300,p.A-3,
+Nucor St. James complex,investment,USD billion,3.4,p.A-3,"Mixed complex (DRI, pellets, BF, coke ovens, steel mill); no capacity printed"
+DRI/EAF route vs integrated (DOE 2008),reductions CO; VOC; SO2; NOx; Hg,%,96; 87; 78; 65; 58,p.A-3,CO2 (41%) loaded in main file
+Thermochemical recuperation R&D,contract value,USD million,4.5,p.A-4,
+Metallic iron nodule technology,energy vs rotary hearth,%,up to 30 less,p.A-5,
+Integrated mill GHG sources,BF stoves; misc combustion; other process; electricity,%,43; 30; 15; 12,p.3,
+EAF mill GHG sources,electricity; misc natural-gas combustion; EAF,%,50; 40; 10,p.3,
+U.S. iron and steel sector 2010,process; misc combustion; indirect; total,million short tons CO2/yr,93; 40; 31; 117,"p.D-10, Table D-4",Sector totals by facility type in Table D-4
+U.S. iron and steel CHP,nameplate capacity coke; steel; total,MW,"363; 1,087; 1,449","p.B-6, Table B-4",
+U.S. plant capacities,coke; integrated steelmaking; EAF,tpy,"20,553,235; 64,112,000; 81,072,800",Tables B-1 to B-3,
+Industry energy intensity,reduction since 1990,%,30,p.9,AISI 2011

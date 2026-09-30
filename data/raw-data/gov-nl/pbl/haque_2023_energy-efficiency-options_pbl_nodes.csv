@@ -1,0 +1,10 @@
+process,technology,sector,end-use,process-step,service-unit
+"Conversion assumptions for P6-25 savings (Appendix A, Table 18)",heat-pump_high-temperature,heat-supply,process-heat-low-temp,heat pump,GJ
+"Conversion assumptions for P6-25 savings (Appendix A, Table 18)",vapour-recompressor_waste-steam,heat-supply,steam-and-hot-water,vapour recompression,GJ
+"Conversion assumptions for P6-25 savings (Appendix A, Table 18)",boiler_gas,heat-supply,steam-and-hot-water,boiler,GJ
+"Conversion assumptions for P6-25 savings (Appendix A, Table 18)",boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+Heat pump readiness by delivery temperature (s.1.2),heat-pump_below-90c,heat-supply,process-heat-low-temp,heat pump,GJ
+Heat pump readiness by delivery temperature (s.1.2),heat-pump_up-to-150c,heat-supply,process-heat-medium-temp,heat pump,GJ
+Heat pump readiness by delivery temperature (s.1.2),heat-pump_above-150c,heat-supply,process-heat-medium-temp,heat pump,GJ
+Natural gas production compressors (s.3.8.5),compressor_gas-diesel-drive,oil-and-gas,machine-drive,compression,GJ
+Natural gas production compressors (s.3.8.5),compressor_electric-drive,oil-and-gas,machine-drive,compression,GJ

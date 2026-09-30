@@ -1,0 +1,15 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,input,electricity,1.5513,kWh/unit,kg,,,,,"p.S27-S29, Table S10",,per kg recycled PET. Refrigeration duty is listed separately in kWh and is not loaded.
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,input,natural-gas,0.0425,m3/unit,kg,,,,,"p.S27-S29, Table S10",,per kg recycled PET. used for re-polymerization
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,input,steam,3.6732,kg/unit,kg,,,,,"p.S27-S29, Table S10",,per kg recycled PET.
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,input,waste-plastic,1.3843,kg/unit,kg,,,,,"p.S27-S29, Table S10",,"PET flake after bale-to-flake pre-treatment (Table S5), per kg recycled PET"
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,input,electricity,0.0899,kWh/unit,kg,,,,,"p.S27-S29, Table S12",,per kg recycled PET. Refrigeration duty is listed separately in kWh and is not loaded.
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,input,natural-gas,0.0462,m3/unit,kg,,,,,"p.S27-S29, Table S12",,per kg recycled PET.
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,input,steam,0.0947,kg/unit,kg,,,,,"p.S27-S29, Table S12",,per kg recycled PET.
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,input,waste-plastic,1.2312,kg/unit,kg,,,,,"p.S27-S29, Table S12",,"PET flake after bale-to-flake pre-treatment (Table S5), per kg recycled PET"
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,input,electricity,0.1714,kWh/unit,kg,,,,,"p.S27-S29, Table S13",,per kg recycled PET. Refrigeration duty is listed separately in kWh and is not loaded.
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,input,natural-gas,0.1425,m3/unit,kg,,,,,"p.S27-S29, Table S13",,per kg recycled PET.
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,input,steam,10.42,kg/unit,kg,,,,,"p.S27-S29, Table S13",,per kg recycled PET.
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,input,waste-plastic,1.2044,kg/unit,kg,,,,,"p.S27-S29, Table S13",,"PET flake after bale-to-flake pre-treatment (Table S5), per kg recycled PET"
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,output,methanol,0.3417,kg/unit,kg,,,yes,,"p.S29, Table S13",,"methanol recovered, per kg recycled PET"
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,input,methanol,0.5215,kg/unit,kg,,,,,"p.S29, Table S13",,per kg recycled PET

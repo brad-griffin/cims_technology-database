@@ -1,0 +1,27 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,description,,,natural gas-fired reheating furnace for steel billets (benchmark),,,,"p.4175-4176, Table 1",
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,trl,,,9,,,,"p.4175, Table 1",fully mature
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,capacity,,t/yr,800000,,,100*8000,"p.4179, Table 4",DERIVED: billet throughput 100 t/h x 8000 h/yr (both printed). CAPACITY BASIS: product-output
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,capex,,2025_USD,10000000,,,,"p.4179, Table 3","COST BASIS: total-plant. Plant CAPEX including furnace hardware, installation and supply-infrastructure upgrades (p.4177); order-of-magnitude estimate from literature and vendor data. Year of analysis 2025 (Table 4)."
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,efficiency,,%,60,,,,"p.4179, Table 4; p.4177-4178",furnace efficiency (the paper cites 40-85% for industrial furnaces)
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,specific-energy-consumption,natural-gas,kWh/t,507,,,,"p.4179, Table 4",natural gas specific energy per tonne of billet; Table 1 gives 1.4-1.8 GJ/t cold charge and 0.6-0.8 GJ/t hot charge
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,lifetime,,years,20,,,,"p.4179, Table 4",plant life
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,discount-rate,,%,7,,,,"p.4177; Table 4",
+Billet reheating (Tables 1-4),furnace_reheating_natural-gas,cost-levelized,,2025_USD/t,31,,,,p.4179 and abstract,"levelized cost of heating per tonne of steel; INCLUDES a carbon price of 60 USD/t CO2 on the gas (Tables 2, 4); natural gas 27 USD/MWh"
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,description,,,hydrogen-fired reheating furnace using electrolytic hydrogen,,,,"p.4175-4176, Table 1",
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,trl,,,5-7,,,,"p.4175, Table 1",pilot-scale trials; full-scale 100% H2 not yet proven
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,capacity,,t/yr,800000,,,100*8000,"p.4179, Table 4",DERIVED as for the gas furnace. CAPACITY BASIS: product-output
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,capex,,2025_USD,14000000,,,,"p.4179, Table 3","COST BASIS: total-plant. As for the gas furnace; excludes the electrolyser (hydrogen is bought at 3 USD/kg)."
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,efficiency,,%,62,,,,"p.4179, Table 4",H2 furnace efficiency
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,lifetime,,years,20,,,,"p.4179, Table 4",
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,discount-rate,,%,7,,,,p.4177,
+Billet reheating (Tables 1-4),furnace_reheating_hydrogen,cost-levelized,,2025_USD/t,76,,,,p.4179 and abstract,levelized cost of heating per tonne of steel at a hydrogen price of 3 USD/kg
+Billet reheating (Tables 1-4),induction-heater_static-field,description,,,induction reheating of billets with an added static magnetic field,,,,"p.4175-4176, Table 1",
+Billet reheating (Tables 1-4),induction-heater_static-field,trl,,,7-9,,,,"p.4175, Table 1",TRL 7-9 for conventional induction heating of slabs and billets; low for the static-field variant (conceptual)
+Billet reheating (Tables 1-4),induction-heater_static-field,capacity,,t/yr,800000,,,100*8000,"p.4179, Table 4",DERIVED as for the gas furnace. CAPACITY BASIS: product-output
+Billet reheating (Tables 1-4),induction-heater_static-field,capex,,2025_USD,20000000,,,,"p.4179, Table 3","COST BASIS: total-plant. Includes grid and transformer upgrades (Table 4 lists 500,000 USD/MW for transformer/grid upgrade)."
+Billet reheating (Tables 1-4),induction-heater_static-field,efficiency,,%,85,,,,"p.4175, Table 1","electrical-to-thermal efficiency printed as '> 85%'"
+Billet reheating (Tables 1-4),induction-heater_static-field,specific-energy-consumption,electricity,MWh/t,0.5,,,,"p.4179, Table 4","Table 1: 350-400 kWh/t for billets, 450-500 kWh/t for slabs"
+Billet reheating (Tables 1-4),induction-heater_static-field,lifetime,,years,20,,,,"p.4179, Table 4",
+Billet reheating (Tables 1-4),induction-heater_static-field,discount-rate,,%,7,,,,p.4177,
+Billet reheating (Tables 1-4),induction-heater_static-field,cost-levelized,,2025_USD/t,41,,,,p.4179 and abstract,"levelized cost of heating per tonne of steel at 70 USD/MWh electricity, including carbon on grid electricity (0.03 t/MWh at 60 USD/t)"

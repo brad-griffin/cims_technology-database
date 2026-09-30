@@ -7,7 +7,8 @@ then
   * stamps the snapshot it used (row count and a content hash) in
     output/hierarchy-stamp.csv,
   * reports the nodes added and removed since the last build, against the copy
-    it keeps in output/cims_hierarchy.previous.csv, and
+    output/cims_hierarchy.csv, the copy the last build wrote (views.py rewrites it
+    after this comparison), and
   * fails if any archetype-service row or annotation points at a path the
     snapshot no longer has.
 
@@ -19,11 +20,11 @@ node). A pattern must match at least one node.
 from __future__ import annotations
 
 import hashlib
-import shutil
 
 from .common import HIERARCHY, OUTPUT, read, write
 
-PREVIOUS = OUTPUT / "cims_hierarchy.previous.csv"
+# written by views.build(); read here before this build overwrites it
+PREVIOUS = OUTPUT / "cims_hierarchy.csv"
 
 
 class Hierarchy:
@@ -62,6 +63,4 @@ def stamp(h: Hierarchy) -> dict:
             "sha256-16": h.digest,
             "added-since-last-build": "; ".join(added),
             "removed-since-last-build": "; ".join(removed)}], quiet=True)
-    OUTPUT.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(h.path, PREVIOUS)
     return {"added": added, "removed": removed, "first-build": not prev}

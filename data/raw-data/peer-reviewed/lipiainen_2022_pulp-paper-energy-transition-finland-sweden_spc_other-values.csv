@@ -1,0 +1,34 @@
+case,item,unit,value,reference,note
+Reference SEC by product grade (Table 1),pulp-mill_mechanical primary energy consumption,MWh/t,2.95,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),pulp-mill_chemical primary energy consumption,MWh/t,5.21,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),pulp-mill_recycled-fibre primary energy consumption,MWh/t,1.11,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),paper-mill_household-sanitary primary energy consumption,MWh/t,3.4,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),paper-mill_newsprint primary energy consumption,MWh/t,1.84,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),paper-mill_printing-writing primary energy consumption,MWh/t,3.82,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),paper-mill_packaging-board primary energy consumption,MWh/t,2.78,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+Reference SEC by product grade (Table 1),paper-mill_other-papers primary energy consumption,MWh/t,3.33,"p.423, Table 1","Primary energy basis (conversion factors 0.40 for electricity and 0.80 for heat production, Fracaro et al. 2012); not a final-energy SEC. reprinted from Farla et al. (1997)"
+"Recovery boiler fleet, Finland and Sweden (Section 3.2.4)",boiler_recovery-fleet-finland-2017 black liquor dry solids content 2017,%,79,p.428,
+"Recovery boiler fleet, Finland and Sweden (Section 3.2.4)",Finland fleet 2002 average: capacity / steam temperature / pressure / dry solids,tds/d / degC / bar / %,1706 / 481 / 83 / 77,p.428,historical 2002 value
+"Recovery boiler fleet, Finland and Sweden (Section 3.2.4)",boiler_recovery-fleet-sweden-2017 black liquor dry solids content 2017,%,74,p.428,
+"Recovery boiler fleet, Finland and Sweden (Section 3.2.4)",Sweden fleet 2002 average: capacity / steam temperature / pressure / dry solids,tds/d / degC / bar / %,1214 / 440 / 51 / 69,p.428,historical 2002 value
+Stopped recovery boilers 2002-2017,Sweden (11 boilers): steam temperature / pressure / dry solids,degC / bar / %,448 / 55 / 68,p.428,
+Stopped recovery boilers 2002-2017,Finland (8 boilers): steam temperature / pressure / dry solids,degC / bar / %,479 / 82 / 75,p.428,
+Individual plants,Aanekoski recovery boiler capacity,tds/d,7200,p.428,biggest in northern hemisphere; over 1 TWh/a excess sellable electricity (IRENA 2018)
+Individual plants,"Recovery boiler total capacity 2017, Finland / Sweden",tds/d,44560 / 48820,p.427,
+Individual plants,Aanekoski lime kiln gasifier,MW,85,p.427,covers the full lime kiln fuel demand
+Individual plants,Pietarsaari lime kiln gasifier (1983),MW,35,p.427,main fuel now pitch oil
+Individual plants,Joutseno lime kiln producer gas CO2 reduction,t CO2/a,60000,p.427,Seppala (2010)
+Individual plants,Enocell lime kiln oil saving (sawdust),t/d,70-90,p.427,
+Individual plants,Oulu lime kiln pitch oil / hydrogen,GWh/a,~119 / ~51,p.427,
+Individual plants,Varkaus lime kiln oil replaced with producer gas,GWh/a,80,p.427,
+Sector indicators,"Electricity per t paper 2002 -> 2017, Finland",MWh/t,1.94 -> 1.80,p.424,sector total / paper production
+Sector indicators,"Electricity per t paper 2002 -> 2017, Sweden",MWh/t,2.12 -> 1.95,p.424,
+Sector indicators,"Primary energy per t paper 2002 -> 2017, Finland",MWh/t,9.76 -> 9.02,p.424,
+Sector indicators,"Primary energy per t paper 2002 -> 2017, Sweden",MWh/t,9.57 -> 8.91,p.424,
+Sector indicators,"Fossil CO2 per t paper 2002 -> 2017, Finland",kg CO2/t,410 -> 290,p.424,fossil fuel combustion in mills only
+Sector indicators,"Fossil CO2 per t paper 2002 -> 2017, Sweden",kg CO2/t,200 -> 60,p.424-426,
+Sector indicators,"Fossil CO2 per t product 2017, CEPI / Finland+Sweden",kg CO2/t,303 / 132,p.429,CEPI 2019
+Sector indicators,Swedish PPI fossil fuel use,MWh/t product,0.1,p.424,
+Sector indicators,"Biofuel share of fuel mix 2002 -> 2017, Sweden / Finland",%,87 -> 96 / 72 -> 85,p.424,
+Sector indicators,"Electricity tax for industry, Sweden / Finland",cent/kWh,0.05 / 0.703,p.426,Espensen et al. 2014
+Method,"Primary energy conversion factors, electricity / heat",-,0.40 / 0.80,p.423,Fracaro et al. 2012

@@ -1,0 +1,114 @@
+action,archetype,branch,confidence,reason,status
+remove,gasifier_biomass-methanol,<sector>.chemicals.product.ammonia-methanol.ammonia,high,methanol route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,reactor_syngas-methanol,<sector>.chemicals.product.ammonia-methanol.ammonia,high,methanol route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,reactor_haber-bosch-electrolytic,<sector>.chemicals.product.ammonia-methanol.methanol,high,ammonia route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,reactor_haber-bosch-low-pressure,<sector>.chemicals.product.ammonia-methanol.methanol,high,ammonia route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,steam-reformer_ammonia,<sector>.chemicals.product.ammonia-methanol.methanol,high,ammonia route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,steam-reformer_ammonia_ccs-concentrated,<sector>.chemicals.product.ammonia-methanol.methanol,high,ammonia route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,steam-reformer_ammonia_efficiency-strong,<sector>.chemicals.product.ammonia-methanol.methanol,high,ammonia route; given every leaf of the old ammonia-and-methanol end use,applied 2026-09-30
+remove,reactor_adipic-acid,<sector>.chemicals.product.nitric-acid,high,adipic acid plant,applied 2026-09-30
+remove,reactor_thermal-n2o-destruction,<sector>.chemicals.product.nitric-acid,high,thermal destruction of adipic acid off-gas; nitric plants use catalytic abatement,applied 2026-09-30
+remove,digester_batch-kraft,<sector>.pulp-and-paper.product.pulp.pulping-semi-chemical,high,kraft is chemical pulping,applied 2026-09-30
+remove,reactor_plastics-pyrolysis,<sector>.chemicals.product.hydrogen-peroxide,high,makes a cracker feedstock; not these products,applied 2026-09-30
+remove,reactor_plastics-pyrolysis,<sector>.chemicals.product.petrochemicals.btx-reforming,high,makes a cracker feedstock; not these products,applied 2026-09-30
+remove,reactor_plastics-pyrolysis,<sector>.chemicals.product.petrochemicals.all-polymerization,high,makes a cracker feedstock; not these products,applied 2026-09-30
+remove,reactor_plastics-pyrolysis,<sector>.chemicals.product.petrochemicals.intermediate-production,high,makes a cracker feedstock; not these products,applied 2026-09-30
+add,reactor_plastics-pyrolysis,<sector>.chemicals.product.petrochemicals.steam-cracking,medium,pyrolysis oil substitutes cracker naphtha,applied 2026-09-30
+remove,reactor_chemical-depolymerization,<sector>.chemicals.product.hydrogen-peroxide,high,PET/PS depolymerization to monomer,applied 2026-09-30
+remove,reactor_chemical-depolymerization,<sector>.chemicals.product.petrochemicals.btx-reforming,high,PET/PS depolymerization to monomer,applied 2026-09-30
+remove,reactor_chemical-depolymerization,<sector>.chemicals.product.petrochemicals.all-polymerization,medium,"output is monomer (intermediate-production), not polymer",applied 2026-09-30
+remove,distillation-column_fired-heater,<sector>.chemicals.product.hydrogen-peroxide,medium,no fired-heater distillation in the anthraquinone process,applied 2026-09-30
+remove,gas-treatment-unit_sulphur-recovery,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,high,Claus/amine unit belongs on sulphur-recovery only,applied 2026-09-30
+remove,gas-treatment-unit_sulphur-recovery,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,high,Claus/amine unit belongs on sulphur-recovery only,applied 2026-09-30
+remove,gas-treatment-unit_acid-gas-advanced,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,high,acid gas removal is not cracking,applied 2026-09-30
+remove,gas-treatment-unit_acid-gas-advanced,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,high,acid gas removal is not cracking,applied 2026-09-30
+add,gas-treatment-unit_acid-gas-advanced,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,high,where refinery acid gas treating sits,applied 2026-09-30
+remove,reactor_hydroprocessing,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,high,hydrotreating is desulphurization; sulphur recovery is the Claus unit,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.magnesium.thermal-reduction,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_peirce-smith,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.magnesium.thermal-reduction,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,converter_continuous,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,high,matte converting is part of copper and nickel smelting only,applied 2026-09-30
+remove,direct-heater_hydrogen-ancillary,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,medium,"described as holding, roasting and refining furnaces, not the smelter",applied 2026-09-30
+remove,direct-heater_hydrogen-ancillary,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,medium,"described as holding, roasting and refining furnaces, not the smelter",applied 2026-09-30
+remove,direct-heater_hydrogen-ancillary,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,medium,"described as holding, roasting and refining furnaces, not the smelter",applied 2026-09-30
+remove,furnace_twin-chamber,<sector>.metal-smelting.product.copper.melt-cast,high,decoating furnace for aluminum scrap,applied 2026-09-30
+remove,furnace_twin-chamber,<sector>.metal-smelting.product.lead.melt-cast,high,decoating furnace for aluminum scrap,applied 2026-09-30
+remove,furnace_twin-chamber,<sector>.metal-smelting.product.magnesium.melt-cast,high,decoating furnace for aluminum scrap,applied 2026-09-30
+remove,furnace_twin-chamber,<sector>.metal-smelting.product.nickel.melt-cast,high,decoating furnace for aluminum scrap,applied 2026-09-30
+remove,furnace_twin-chamber,<sector>.metal-smelting.product.zinc.melt-cast,high,decoating furnace for aluminum scrap,applied 2026-09-30
+remove,furnace_homogenizing,<sector>.metal-smelting.product.lead.melt-cast,medium,"billet homogenizing before extrusion/rolling is aluminum, copper and magnesium practice",applied 2026-09-30
+remove,furnace_homogenizing,<sector>.metal-smelting.product.zinc.melt-cast,medium,"billet homogenizing before extrusion/rolling is aluminum, copper and magnesium practice",applied 2026-09-30
+remove,furnace_homogenizing,<sector>.metal-smelting.product.nickel.melt-cast,medium,"billet homogenizing before extrusion/rolling is aluminum, copper and magnesium practice",applied 2026-09-30
+remove,rolling-mill_ring,<sector>.metal-smelting.product.lead.melt-cast,medium,"ring rolling is forging of steel, titanium, nickel alloy, aluminum rings",applied 2026-09-30
+remove,rolling-mill_ring,<sector>.metal-smelting.product.zinc.melt-cast,medium,"ring rolling is forging of steel, titanium, nickel alloy, aluminum rings",applied 2026-09-30
+remove,rolling-mill_ring,<sector>.metal-smelting.product.magnesium.melt-cast,medium,"ring rolling is forging of steel, titanium, nickel alloy, aluminum rings",applied 2026-09-30
+remove,electric-arc-furnace_open-arc-dc,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,high,smelting furnace or its charge/off-gas; not the roasting step,applied 2026-09-30
+remove,electric-arc-furnace_submerged-arc,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,high,smelting furnace or its charge/off-gas; not the roasting step,applied 2026-09-30
+remove,heat-recovery-unit_off-gas,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,high,smelting furnace or its charge/off-gas; not the roasting step,applied 2026-09-30
+remove,process-improvement_biocarbon-reductant,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,high,smelting furnace or its charge/off-gas; not the roasting step,applied 2026-09-30
+remove,process-improvement_pre-reduction,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,medium,pre-reduction is done in the roasting/pre-treatment step,applied 2026-09-30
+remove,separator_warm-water-extraction,<sector>.petroleum-crude.service.mine-haulage,high,"extraction/tailings, not haulage; already on bitumen.mining",applied 2026-09-30
+remove,separator_paraffinic-froth-treatment,<sector>.petroleum-crude.service.mine-haulage,high,"extraction/tailings, not haulage; already on bitumen.mining",applied 2026-09-30
+remove,separator_non-aqueous,<sector>.petroleum-crude.service.mine-haulage,high,"extraction/tailings, not haulage; already on bitumen.mining",applied 2026-09-30
+remove,separator_dry-stack-tailings,<sector>.petroleum-crude.service.mine-haulage,high,"extraction/tailings, not haulage; already on bitumen.mining",applied 2026-09-30
+remove,direct-heater_line-heater,<sector>.natural-gas.product.supply.gas-compression,high,"production equipment, not compression",applied 2026-09-30
+remove,heat-pump_oil-treating,<sector>.natural-gas.product.supply.gas-compression,high,"production equipment, not compression",applied 2026-09-30
+remove,pump_artificial-lift,<sector>.natural-gas.product.supply.gas-compression,high,"production equipment, not compression",applied 2026-09-30
+remove,heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.coalbed-methane,high,oil treating duty,applied 2026-09-30
+remove,heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.conventional,high,oil treating duty,applied 2026-09-30
+remove,heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.shale,high,oil treating duty,applied 2026-09-30
+remove,heat-pump_oil-treating,<sector>.natural-gas.product.supply.extraction.tight,high,oil treating duty,applied 2026-09-30
+remove,pump_artificial-lift,<sector>.natural-gas.product.supply.extraction.conventional,medium,gas wells use plunger lift (pump_plunger-lift on liquid-unloading); keep coalbed-methane dewatering,applied 2026-09-30
+remove,pump_artificial-lift,<sector>.natural-gas.product.supply.extraction.shale,medium,gas wells use plunger lift (pump_plunger-lift on liquid-unloading); keep coalbed-methane dewatering,applied 2026-09-30
+remove,pump_artificial-lift,<sector>.natural-gas.product.supply.extraction.tight,medium,gas wells use plunger lift (pump_plunger-lift on liquid-unloading); keep coalbed-methane dewatering,applied 2026-09-30
+remove,adsorber_molecular-sieve,<sector>.natural-gas.product.supply.formation-co2,high,"dehydration/NGL/sulphur, not the CO2 removed from raw gas; stays on processing",applied 2026-09-30
+remove,gas-treatment-unit_claus,<sector>.natural-gas.product.supply.formation-co2,high,"dehydration/NGL/sulphur, not the CO2 removed from raw gas; stays on processing",applied 2026-09-30
+remove,gas-treatment-unit_glycol-dehydration,<sector>.natural-gas.product.supply.formation-co2,high,"dehydration/NGL/sulphur, not the CO2 removed from raw gas; stays on processing",applied 2026-09-30
+remove,turboexpander_ngl-recovery,<sector>.natural-gas.product.supply.formation-co2,high,"dehydration/NGL/sulphur, not the CO2 removed from raw gas; stays on processing",applied 2026-09-30
+remove,compressor_instrument-air,<sector>.natural-gas.product.supply.venting.blowdowns,medium,replaces gas-driven pneumatics: controls only,applied 2026-09-30
+remove,compressor_instrument-air,<sector>.natural-gas.product.supply.venting.liquid-unloading,medium,replaces gas-driven pneumatics: controls only,applied 2026-09-30
+remove,compressor_instrument-air,<sector>.natural-gas.product.supply.venting.other-diffuse-venting,medium,replaces gas-driven pneumatics: controls only,applied 2026-09-30
+remove,compressor_instrument-air,<sector>.natural-gas.product.supply.venting.other-point-venting,medium,replaces gas-driven pneumatics: controls only,applied 2026-09-30
+remove,compressor_vapour-recovery,<sector>.natural-gas.product.supply.venting.blowdowns,medium,tank and process vapours: other-point-venting,applied 2026-09-30
+remove,compressor_vapour-recovery,<sector>.natural-gas.product.supply.venting.controls,medium,tank and process vapours: other-point-venting,applied 2026-09-30
+remove,compressor_vapour-recovery,<sector>.natural-gas.product.supply.venting.liquid-unloading,medium,tank and process vapours: other-point-venting,applied 2026-09-30
+remove,compressor_vapour-recovery,<sector>.natural-gas.product.supply.venting.other-diffuse-venting,medium,tank and process vapours: other-point-venting,applied 2026-09-30
+remove,flare_enclosed-combustor,<sector>.natural-gas.product.supply.venting.blowdowns,medium,tank vapours and unloading gas,applied 2026-09-30
+remove,flare_enclosed-combustor,<sector>.natural-gas.product.supply.venting.controls,medium,tank vapours and unloading gas,applied 2026-09-30
+remove,flare_enclosed-combustor,<sector>.natural-gas.product.supply.venting.other-diffuse-venting,medium,tank vapours and unloading gas,applied 2026-09-30
+remove,fracturing-fleet_electric,<sector>.natural-gas.product.supply.well-tests,medium,"fracturing is completion, not well testing",applied 2026-09-30
+remove,furnace_ladle-metallurgy,<sector>.iron-and-steel.service.ladle-preheating,high,ladle furnace refines steel; swapped,applied 2026-09-30
+add,furnace_ladle-metallurgy,<sector>.iron-and-steel.service.ladle-refining,high,ladle furnace refines steel,applied 2026-09-30
+remove,preheater_ladle,<sector>.iron-and-steel.service.ladle-refining,high,preheating only,applied 2026-09-30
+remove,electrolysis-cell_molten-oxide,<sector>.iron-and-steel.service.direct-reduced-iron,medium,produces liquid iron (hot-metal),applied 2026-09-30
+remove,melting-furnace_electric-smelting,<sector>.iron-and-steel.service.direct-reduced-iron,medium,consumes DRI and produces hot metal,applied 2026-09-30
+remove,grinding-mill_sag-ball,<sector>.mining.service.crushing,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_sag-ball,<sector>.coal-mining.product.size-reduced-product.crushing,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_sag-ball,<sector>.coal-mining.product.size-reduced-product.milling,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_stirred,<sector>.mining.service.crushing,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_stirred,<sector>.coal-mining.product.size-reduced-product.crushing,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_stirred,<sector>.coal-mining.product.size-reduced-product.milling,high,hard-rock grinding mills: milling only; not coal preparation,applied 2026-09-30
+remove,grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.crushing,medium,"coal prep uses crushers and breakers, not HPGR/VRM",applied 2026-09-30
+remove,grinding-mill_vertical-roller,<sector>.coal-mining.product.size-reduced-product.milling,medium,"coal prep uses crushers and breakers, not HPGR/VRM",applied 2026-09-30
+remove,separator_ore-sorting,<sector>.mining.service.milling,medium,"sorting sits after crushing, ahead of the mill",applied 2026-09-30
+remove,separator_ore-sorting,<sector>.coal-mining.product.size-reduced-product.milling,medium,"sorting sits after crushing, ahead of the mill",applied 2026-09-30
+remove,calciner_flash-fluid,<sector>.industrial-minerals.product.ceramics.dryer,medium,its only example is the IEA cement calciner,applied 2026-09-30
+remove,calciner_flash-fluid,<sector>.industrial-minerals.product.gypsum,medium,its only example is the IEA cement calciner,applied 2026-09-30
+add,calciner_flash-fluid,<sector>.industrial-minerals.product.cement.clinker,medium,its only example is the IEA cement calciner,applied 2026-09-30
+add,dryer_rotary-direct-fired,<sector>.industrial-minerals.product.gypsum,medium,description covers gypsum calcining; gypsum would otherwise be empty,applied 2026-09-30
+remove,dryer_gas-fired-hood,<sector>.pulp-and-paper.product.paper.linerboard.drying,medium,Yankee hoods and air dryers are tissue and coating,applied 2026-09-30
+remove,dryer_gas-fired-hood,<sector>.pulp-and-paper.product.paper.newsprint.drying,medium,Yankee hoods and air dryers are tissue and coating,applied 2026-09-30
+remove,dryer_gas-fired-hood,<sector>.pulp-and-paper.product.paper.uncoated.drying,medium,Yankee hoods and air dryers are tissue and coating,applied 2026-09-30
+remove,dryer_gas-fired-hood,<sector>.pulp-and-paper.product.pulp.drying,medium,Yankee hoods and air dryers are tissue and coating,applied 2026-09-30
+remove,dryer_electric-air,<sector>.pulp-and-paper.product.paper.newsprint.drying,medium,hoods and air dryers are tissue and coating,applied 2026-09-30
+add,dryer_electric-air,<sector>.pulp-and-paper.product.paper.tissue.drying,medium,hoods and air dryers are tissue and coating,applied 2026-09-30

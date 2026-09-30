@@ -1,0 +1,16 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Ethylene production (Table 2),steam-cracker_naphtha,description,,,conventional naphtha steam cracker fuelled by its own off-gases,,,,"p.2-4, Fig. 1a",
+Ethylene production (Table 2),steam-cracker_naphtha,capex,,2015_EUR/t-per-yr,1488,,,,"p.5, Table 2","COST BASIS: total-plant. Capital cost per tonne of annual ethylene capacity, average of the paper's refs [12,32,57-59]. Currency year not stated; 2015 (the scenario start year) assumed. CAPACITY BASIS: product-output"
+Ethylene production (Table 2),steam-cracker_naphtha,opex-fixed,,2015_EUR/t-per-yr,76.42,,,,"p.5, Table 2",operational cost per year per tonne of annual capacity. CAPACITY BASIS: product-output
+Ethylene production (Table 2),steam-cracker_naphtha,lifetime,,years,30,,,,p.4,default plant life
+Ethylene production (Table 2),steam-cracker_naphtha,cost-levelized,,2015_EUR/t,650.4,,,,p.7 (Fig. 7B),levelized cost of ethylene at the start of the scenario period (rising to 1144 by 2050 in the base scenario as naphtha prices rise)
+Ethylene production (Table 2),steam-cracker_electrified,description,,,"steam cracker with the fired furnace replaced by electric heaters; the off-gases are exported and burnt for power",,,,"p.2-4, Fig. 1b",
+Ethylene production (Table 2),steam-cracker_electrified,cost-levelized,,2015_EUR/t,1400,,,,p.7 (Fig. 7B),levelized cost of ethylene at the start of the scenario period (1743 by 2050 in the base scenario); fixed costs taken as for the conventional cracker (Table 2 lists only one cracker cost)
+Ethylene production (Table 2),steam-cracker_electrified,lifetime,,years,30,,,,p.4,default plant life
+Hydrogen for OCM-PtG (Table 2),electrolyzer_pem,description,,,"PEM electrolyser, 500 MW, run at constant or flexible load, 0.72 MWh H2 per MWh electricity",,,,p.3,
+Hydrogen for OCM-PtG (Table 2),electrolyzer_pem,capex,,2015_EUR/kW,1000,,,,"p.5, Table 2","COST BASIS: total-plant. Per kW electric (Table 2 header prints 'EUR kWh-1 el', read as per kW); 750 from 2030. CAPACITY BASIS: electric-input"
+Hydrogen for OCM-PtG (Table 2),electrolyzer_pem,opex-fixed,,2015_EUR/kW,178,,,,"p.5, Table 2",operational cost per year per kW electric. CAPACITY BASIS: electric-input
+Hydrogen for OCM-PtG (Table 2),electrolyzer_pem,efficiency,,%,72,,,,p.3,MWh H2 per MWh electricity (heating-value basis not stated)
+Hydrogen for OCM-PtG (Table 2),electrolyzer_pem,capacity,,MW,500,,,,p.3,CAPACITY BASIS: electric-input
+Direct air capture for OCM-PtG (Table 2),capture-unit_dac-sorbent,description,,,"direct air capture on amine-enhanced cellulose sorbent (Climeworks concept)",,,,p.3,
+Direct air capture for OCM-PtG (Table 2),capture-unit_dac-sorbent,capex,,2015_EUR/t-per-yr,1440,,,,"p.5, Table 2","COST BASIS: total-plant. Per tonne CO2 per year of capture capacity; 180 from 2040. CAPACITY BASIS: product-output"

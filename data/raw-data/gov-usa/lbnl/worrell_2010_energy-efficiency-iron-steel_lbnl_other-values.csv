@@ -1,0 +1,55 @@
+process,technology,item,value,unit,reference,note
+"Energy use by process, IISI 1998 (Table 4-1)",sinter-plant_strand,net primary energy use (average; min-max),1.4-1.6 (1.6),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",coke-oven_by-product,net primary energy use (average; min-max),3.1-4.4,MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",hot-blast-stove_blast-furnace,net primary energy use (average; min-max),1.4-1.7 (1.5),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",blast-furnace,net primary energy use (average; min-max),9.9-10.4 (10.0),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",basic-oxygen-furnace,net primary energy use (average; min-max),0.06-0.5 (0.3),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",electric-arc-furnace,net primary energy use (average; min-max),3.2-5.2 (3.9),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",caster_continuous,net primary energy use (average; min-max),0.1-0.15 (0.12),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",furnace_reheating,net primary energy use (average; min-max),0.7-1.4 (1.1),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+"Energy use by process, IISI 1998 (Table 4-1)",rolling-mill_hot,net primary energy use (average; min-max),0.6-1.2 (0.8),MBtu/short-ton product,"p.16, Table 4-1","Net primary energy, electricity converted at U.S. grid efficiency (footnote 6); not loaded because fuel and electricity are loaded as final energy. reprinted from IISI (1998)"
+Iron ore preparation (Chapter 15),sinter-plant_strand,"primary energy, average of seven efficient plants (IISI 1998)",1.8,GJ/t sinter,p.74,
+Iron ore preparation (Chapter 15),sinter-plant_strand,theoretical minimum energy for agglomeration (Fruehan et al. 2000),1.2,GJ/t,p.74,
+Coke making (Chapter 16),coke-oven_by-product,"total primary energy input, average of five most efficient plants (IISI 1998)",3.6,MBtu/short-ton dry coke,p.77,
+Coke making (Chapter 16),coke-oven_by-product,theoretical minimum energy for coke making (Fruehan et al. 2000),2.0,GJ/t,p.77,
+Iron making (Chapter 17),hot-blast-stove_blast-furnace,"primary energy, six efficient stove batteries (IISI 1998)",1.8,GJ/t hot metal,p.81,
+Iron making (Chapter 17),blast-furnace,"primary energy, six efficient blast furnaces (IISI 1998)",11.6,GJ/t hot metal,p.81,
+Iron making (Chapter 17),blast-furnace,share of U.S. iron and steel energy use in hot metal production,34,%,p.81,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace,"average total primary energy, 16 facilities / 27 EAFs (IISI 1998); 89% electrical, 11% fossil",4.6,GJ/t liquid steel,p.88,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace,"electricity for oxygen production, additional (IISI 1998)",3,% of EAF primary energy,p.88,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace,"annual improvement in specific electricity use of U.S. EAFs 1990-2002 (0.7 stock turnover, 0.5 retrofit)",1.3,%/yr,p.88,
+Casting (Chapter 20),caster_continuous,efficient continuous casting machines (IISI 1998),0.14,GJ/t,p.95,
+Hot rolling (Section 21.1),furnace_reheating,"average total primary energy, seven sites (IISI 1998)",1.2,GJ/t cast steel,p.98,
+Hot rolling (Section 21.1),rolling-mill_hot,assumed electricity demand of hot rolling (de Almeida and Fonseca 1997),220,kWh/t hot rolled steel,p.98,
+Long-term opportunities (Chapter 22),,"energy use of a whole conventional mill, for comparison with electrolysis (Hu et al. 2006)",15-20,GJ/t liquid steel,p.105,
+Coke making (Section 3.2),coke-oven_by-product,coke oven gas formed per tonne of coal (IPCC 2008),360,Nm3/t coal,p.11,
+Coke making (Section 3.2),coke-oven_by-product,coke oven gas calorific value (Spakman et al. 1997),19-20,MJ/Nm3,p.11,
+Coke making (Section 3.2),coke-oven_by-product,coke oven battery typical capacity,30,t coal,p.11,
+Iron production (Section 3.3),blast-furnace,blast furnace gas production (IPPC 2001),1200-2000,Nm3/t pig iron,"p.12, p.84",
+Iron production (Section 3.3),blast-furnace,blast furnace gas heating value,~3 (LHV); 2.7-4.0,MJ/Nm3,"p.12, p.84",
+Iron production (Section 3.3),blast-furnace,"capacity, smallest / state-of-the-art furnaces",0.55 / 2-4,Mt pig iron/yr,p.12,
+Iron production (Section 3.3),blast-furnace,blast pressure / pressure drop over furnace,3-5 / 1-2,bar,p.11,
+Iron production (Section 3.3),hot-blast-stove_blast-furnace,dome temperature / hot blast temperature,1100-1500 / 900-1350,degC,p.11,
+Iron making (Chapter 17),blast-furnace,"liquid slag per t pig iron, at about 1450 degC",0.25-0.30,t/t pig iron,p.84,
+Steel production - primary (Section 3.4),basic-oxygen-furnace,oxygen required per tonne liquid steel,55,Nm3/t,p.12,
+Steel production - primary (Section 3.4),basic-oxygen-furnace,vessel capacity,100-300,t,p.12,
+Steel production - primary (Section 3.4),basic-oxygen-furnace,hot metal ratio,65-90,%,p.13,
+Steelmaking - BOF (Chapter 18),basic-oxygen-furnace,BOF gas flow / CO content / heating value,50-100 Nm3/t; 70-80% CO; 8.8 MJ/Nm3,,p.87,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace,"air ingress in a standard 150 t EAF, 1-h heat (Huber et al. 2006)",30000,Nm3,p.93,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace,industrial furnace electricity consumption used in the airtight-operation assessment,496,kWh/t,p.93,
+Steelmaking - EAF (Chapter 19),electric-arc-furnace_dc,electrode consumption (NEDO 2008),1-2,kg/t molten steel,p.93,
+Casting (Chapter 20),caster_strip,commercial capacities: Castrip (Nucor Crawfordsville) / Eurostrip / Nippon Hikari,540 / 550 / 420,kton/yr (short tons),p.96-97,
+Casting (Chapter 20),preheater_tundish-combustion,"share of U.S. steel continuously cast, 2008",97,%,p.95,
+Hot rolling (Section 21.1),,electricity to produce 1 Nm3 gaseous oxygen (Von Scheele 2006),0.5,kWh/Nm3,p.100,
+Coke making (Chapter 16),coke-oven_heat-recovery,"steam output, Haverhill OH plant",200,t/h,p.79,
+Coke making (Chapter 16),coke-oven_heat-recovery,Granite City IL plant (construction from 2008): coke / superheated steam,"650,000 short ton/yr; 225 t/h (printed 500,000 lb)",,p.79,
+Coke making (Chapter 16),coke-oven_heat-recovery,share of worldwide cokemaking capacity operated as heat- or non-recovery plants,6,%,p.79,
+CHP (Section 10.3),gas-turbine_low-calorific-gas,gross electrical generation efficiency before internal compressor loads,45,% (LHV),p.47,
+CHP (Section 10.3),gas-turbine_low-calorific-gas,NOx emissions,20,ppm,p.47,
+CHP (Section 10.3),,"natural gas expansion turbine at Corus (1994): 2 MW, about 11,000 MWh electricity from up to 12,500 MWh low-temperature waste heat",88,% of heat input produced as electricity,p.49,
+CHP (Section 10.3),,steam turbine: 18 degF decrease in inlet temperature reduces efficiency (Patel and Nath 2000),1.1,%,p.48,
+Steam systems (Chapter 10),boiler_steel-industry,share of steam from CHP / steam share of integrated-mill energy,11 / up to 10,%,p.38,
+Steam systems (Chapter 10),boiler_steel-industry,"steam system inputs lost (generation 19, distribution 15, conversion 10)",44,%,"p.17, p.38",
+Water use (Chapter 6),,water use per ton of steel incl. recycled / fresh water,313 / 54-96,m3/t,p.26,
+Energy use (Chapter 4),,"U.S. iron and steel primary energy use, 2006",1470,PJ,p.15,
+Emissions (Chapter 5),,"direct emissions of U.S. iron and steel incl. coke ovens, 2005 (7 Mt process)",91,Mt CO2,p.24,

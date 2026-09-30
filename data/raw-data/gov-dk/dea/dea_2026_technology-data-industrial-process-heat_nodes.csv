@@ -1,0 +1,16 @@
+process,technology,sector,end-use,process-step,service-unit
+"1.1 Heat pump up to 60 degC, 40 K lift",heat-pump_electricity_60c,all-industry,steam-and-hot-water,,GJ
+"1.2 Combined heating and cooling heat pump up to 80 degC, 75 K lift",heat-pump_heating-cooling_80c,all-industry,steam-and-hot-water,,GJ
+2.a High-temperature heat pump up to 125 degC,heat-pump_high-temperature_125c,all-industry,steam-and-hot-water,,GJ
+2.b High-temperature heat pump up to 150 degC,heat-pump_high-temperature_150c,all-industry,steam-and-hot-water,,GJ
+"4 Mechanical vapour recompression, 5 K",vapour-recompressor_mvr,all-industry,steam-and-hot-water,,GJ
+"5.1a Electric boiler 0.4-0.69 kV, steam 1-12 bar",boiler_electric-steam_low-voltage,all-industry,steam-and-hot-water,,GJ
+"5.1b Electric boiler 10 kV, steam 1-12 bar",boiler_electric-steam_10kv,all-industry,steam-and-hot-water,,GJ
+"5.2a Electric boiler 0.4-0.69 kV, hot water",boiler_electric-hot-water_low-voltage,all-industry,steam-and-hot-water,,GJ
+"5.2b Electric boiler 10 kV, hot water",boiler_electric-hot-water_10kv,all-industry,steam-and-hot-water,,GJ
+"6.1 Boiler, gas and oil",boiler_natural-gas-oil,all-industry,steam-and-hot-water,,GJ
+"6.2 Boiler, biomass",boiler_biomass,all-industry,steam-and-hot-water,,GJ
+"6.3 Boiler, coal",boiler_coal,all-industry,steam-and-hot-water,,GJ
+"7.1 Direct firing, natural gas",direct-heater_natural-gas,all-industry,process-heat-high-temp,,GJ
+"7.2 Direct firing, solid fuels",direct-heater_solid-fuel,all-industry,process-heat-high-temp,,GJ
+7.3 Direct electric firing (resistance heating of process air),direct-heater_electric,all-industry,process-heat-high-temp,,GJ

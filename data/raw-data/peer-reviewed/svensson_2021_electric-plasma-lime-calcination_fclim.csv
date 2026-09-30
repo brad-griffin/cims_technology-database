@@ -1,0 +1,25 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,description,,,"electric plasma calcination of lime mud (LimeArc concept: plasma generator, calcination reactor, CO2 recycle, steam slaker) replacing the rotary lime kiln",,,,"p.3-5, Fig. 2-3",
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,capacity,,t/yr,121500,,,,"p.6, Table 1",lime production (t CaO/yr). CAPACITY BASIS: product-output
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,capex,,2019_EUR-million,23.3,,,,"p.15, Table 4","COST BASIS: installed. Total investment incl. assembly, installation, construction and auxiliary equipment: plasma generators 9.5 (5 modules of 5 MW), cyclones and reactor 2.5, heat exchangers and filter 2.2, CO2 recycle compressors 1.2, dryer and steam slaker 7.7. From Bjotveit et al. (2003), updated to 2019 with CEPCI (p.9). Without carbon capture."
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,opex-fixed,,2019_EUR-million,0.1,,,,"p.15, Table 4",O&M per year (4% of annualized investment). CAPACITY BASIS: product-output
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,specific-energy-consumption,electricity,kJ/kg,5490,,,5300+190,p.7,"DERIVED: plasma generator 5,300 kJ/kg CaO plus 190 kJ/kg CaO for the two CO2-recycle compressors (both printed; interpolated from Bjotveit et al. 2003)"
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,lifetime,,years,25,,,,p.9,economic lifetime of equipment
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,discount-rate,,%,6,,,,p.9,
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_electric-plasma,temperature-output,,degC,950,,,,p.4,calcination reaction temperature
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,description,,,electric plasma calcination as above at the larger market pulp mill,,,,p.3-5,
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,capacity,,t/yr,208200,,,,"p.6, Table 1",CAPACITY BASIS: product-output
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,capex,,2019_EUR-million,33.9,,,,"p.15, Table 4","COST BASIS: installed. Plasma generators 15.0 (8 modules of 5 MW), cyclones and reactor 3.5, heat exchangers and filter 3.2, compressors 1.8, dryer and steam slaker 10.6. As for the integrated mill."
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,opex-fixed,,2019_EUR-million,0.2,,,,"p.15, Table 4",O&M per year. CAPACITY BASIS: product-output
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,specific-energy-consumption,electricity,kJ/kg,5490,,,5300+190,p.7,as for the integrated mill (same per-kg figures)
+Market pulp mill (208.2 kt CaO/yr),kiln_electric-plasma,lifetime,,years,25,,,,p.9,
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_lime-rotary,description,,,"conventional rotary lime kiln, the reinvestment alternative (fired with fuel oil or tall oil pitch)",,,,"p.9, Table 5",
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_lime-rotary,capacity,,t/yr,121500,,,,"p.6, Table 1",CAPACITY BASIS: product-output
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_lime-rotary,capex,,2019_EUR-million,55.8,,,,"p.15, Table 5","COST BASIS: installed. Rotary lime kiln incl. assembly, installation, construction and auxiliary equipment (Bjotveit et al. 2003, CEPCI to 2019)."
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_lime-rotary,opex-fixed,,2019_EUR-million,0.2,,,,"p.15, Table 5",O&M per year. CAPACITY BASIS: product-output
+Integrated pulp and paper mill (121.5 kt CaO/yr),kiln_lime-rotary,lifetime,,years,40,,,,p.9,
+Market pulp mill (208.2 kt CaO/yr),kiln_lime-rotary,description,,,conventional rotary lime kiln (fuel oil or sawdust) at the market pulp mill,,,,"p.9, Table 5",
+Market pulp mill (208.2 kt CaO/yr),kiln_lime-rotary,capacity,,t/yr,208200,,,,"p.6, Table 1",CAPACITY BASIS: product-output
+Market pulp mill (208.2 kt CaO/yr),kiln_lime-rotary,capex,,2019_EUR-million,77,,,,"p.15, Table 5",COST BASIS: installed. As for the integrated mill.
+Market pulp mill (208.2 kt CaO/yr),kiln_lime-rotary,opex-fixed,,2019_EUR-million,0.3,,,,"p.15, Table 5",O&M per year. CAPACITY BASIS: product-output
+Market pulp mill (208.2 kt CaO/yr),kiln_lime-rotary,lifetime,,years,40,,,,p.9,

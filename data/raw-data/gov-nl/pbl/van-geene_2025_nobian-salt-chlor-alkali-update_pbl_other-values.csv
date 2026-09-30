@@ -1,0 +1,25 @@
+process,technology,item,value,unit,reference,note
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,"salt extracted 2023, Nobian Hengelo (all locations)",1652,kt,"p.5, Table 2.1",2016: 1300+320+830 kt at three locations
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,"salt extracted 2023, Nobian Delfzijl (all locations)",2020,kt,"p.5, Table 2.1",
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,total annual salt extraction 2016,5450,kt,"p.5, Table 2.1",
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,total annual salt extraction 2023,3672,kt,"p.5, Table 2.1",
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,purified brine input to brine vaporisation,4.3,kt per 1.025 kt undried salt,"p.9, Fig. 3.2","20 degC, 25 wt% salt"
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,cooled water output of brine vaporisation,3.1,t (as printed) per 1.025 kt undried salt,"p.9, Fig. 3.2",printed as '3.1 t'; mass balance suggests kt
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,MVR investment per location (SDE++ based),120,EUR-million,"p.10, s.3.1",report's own estimate from EUR 1346/kWth; total EUR 240 million for both locations
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,maximum subsidy for MVR project,147.5,EUR-million,"p.10, s.3.1",
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,e-flex capacity created by MVRs in Delfzijl,14,MW,"p.9, s.3.1",
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,brine vaporisation share of salt-production energy demand,95,%,"p.8, s.3.1",reprinted from Scherpbier & Eerens (2021a)
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,MVR steam requirement lower than MEE by,95,%,"p.8, s.3.1",'can be 95% lower'
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,natural gas demand of salt production 2023,7.5,PJ/yr,"p.12, Table 3.3",2030: 0
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,electricity demand of salt production 2023,0.8,PJ/yr,"p.12, Table 3.3",2030: 2.3
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,electricity demand of chlorine production 2023,4.2,PJ/yr,"p.12, Table 3.3",2030: 3.7; assumes 15% of 2023 chlorine made by zero-gap
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_forced-circulation,electricity demand of European chlor-alkali industry,9.5,TJ/kt Cl2,"p.10, s.3.2",reprinted from Euro Chlor (2024); electrolysis about 90% of it
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,electrolyser capacity Nobian Rotterdam,180,MW,"p.10, s.3.2",provides 25 MW e-flex; +25 MW e-flex and 18 MW grid capacity after replacement
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,investment first twelve zero-gap electrolysers,116,EUR-million,"p.10, s.3.2",about EUR 25 million subsidy; early 2027
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,chlorine production capacity Nobian Delfzijl (2016),120,kt/yr,"p.6, Table 2.2","caustic 130, hydrogen 4 kt/yr; text p.11 says 'around 100 kt'"
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,caustic soda / hydrogen capacity Nobian Botlek (2016),700 / 18,kt/yr,"p.6, Table 2.2",2023 estimated production 490 / 12.5 kt
+"Brine recovery from wastewater (project Delsalto, Nobian Delfzijl)",separator_brine-recovery,discharge reduction sodium salt,104,kt/yr,"p.11, Table 3.2","ethylenediamine 57 t, ammonia 8 t; at full Delamine capacity"
+"Brine recovery from wastewater (project Delsalto, Nobian Delfzijl)",separator_brine-recovery,water saved from less salt extraction,350000,m3/yr,"p.11, s.3.3",
+Nobian Netherlands,,CO2 from CHP plants Delfzijl and Hengelo in 2020,550,kt/yr,"p.12, s.3.4",tailor-made agreement reduction 524 kt by 2030 vs 2020
+Nobian Netherlands,,Rotterdam on-site CHP emissions 2023,100,kt CO2,p.13,NEa 2024
+Nobian Netherlands,,total decarbonisation investment in tailor-made agreement,642,EUR-million,p.4,max EUR 185 million subsidy 2025-2029

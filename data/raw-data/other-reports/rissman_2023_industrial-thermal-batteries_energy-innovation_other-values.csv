@@ -1,0 +1,38 @@
+technology,item,value,unit,reference,note
+thermal-battery_electric,storage temperature,up to 1800,degC,p.7 (ref 12),Storage (not delivery) temperature; reprinted from Electrified Thermal Solutions (ref 12)
+thermal-battery_electric,heat loss (self-discharge),<1,%/day,p.7 (ref 11),"""less than 1 percent per day for some systems"""
+thermal-battery_electric,share of combustion heat demand addressable,93,%,p.1,at least 93% of industrial heat supplied by combustible fuels
+thermal-battery_electric,theoretical displacement potential,11600,PJ/yr,"p.1, p.8",75% of US industrial non-feedstock energy demand
+thermal-battery_electric,"input/output equipment adder (optimized, large scale)",17,USD/kWh,p.14,
+thermal-battery_electric,capacity needed per 100 TWh (~450 PJ fuel) of process heat,30 GW input; 360 GWh storage,,p.31,
+thermal-battery_electric-modeled,capital recovery equivalents,"7% WACC over 10 yr, or 11% over 15 yr",,p.16,financing equivalents of CRF 14%; not an equipment lifetime
+thermal-battery_generation-following-ca,curtailment / excess generation,47.3 / 89.8,%,p.19,99% reliability
+thermal-battery_generation-following-tx,curtailment / excess generation,10.7 / 12.0,%,p.19,99% reliability
+thermal-battery_generation-following-ca,wind/solar capacity; energy fraction,0/100; 0/100,%,p.17 Table 1,
+thermal-battery_generation-following-tx,wind/solar capacity; energy fraction,57/43; 69/31,%,p.17 Table 1,
+thermal-battery_generation-following-ca,LCOH components: useful elec; curtailed elec; heat losses; input eqpt; storage; heat delivery,19.25; 17.07; 3.67; 10.57; 6.78; 4.84,2023_USD/MWh,p.21 Figure 10,
+thermal-battery_generation-following-tx,LCOH components: useful elec; curtailed elec; heat losses; input eqpt; storage; heat delivery,18.3; 2.21; 1.95; 4.85; 2.91; 4.84,2023_USD/MWh,p.21 Figure 10,
+thermal-battery_generation-following-ca,"heat cost, grid electricity at retail (energy only)",169,2023_USD/MWh,p.22 Figure 11,"excludes capital; error bar HP COP 2.5 to induction 90%, bounds not printed"
+thermal-battery_generation-following-ca,"heat cost, natural gas at retail (energy only)",60,2023_USD/MWh,p.22 Figure 11,75% efficiency; excludes capital
+thermal-battery_generation-following-tx,"heat cost, grid electricity at retail (energy only)",70,2023_USD/MWh,p.22 Figure 11; p.27,
+thermal-battery_generation-following-tx,"heat cost, natural gas at retail (energy only)",22,2023_USD/MWh,p.22 Figure 11; p.28,
+thermal-battery_price-hunting-tx-2020,charge rate,3.5,x steady output,p.26,
+thermal-battery_price-hunting-tx-2020,mean elec price without / with battery,30.80 / 10.50,USD/MWh,p.26-27 Table 2,
+thermal-battery_price-hunting-tx-2022,mean elec price without / with battery,62.35 / 27.18,USD/MWh,p.27 Table 2,
+thermal-battery_price-hunting-tx-2020,grid access charges; levelized capital; RTE penalty,5.00; 12.86; 1.49,USD/MWh,p.27 Table 2,
+thermal-battery_price-hunting-tx-2022,grid access charges; levelized capital; RTE penalty,5.00; 12.86; 2.37,USD/MWh,p.27 Table 2,
+thermal-battery_price-hunting-tx-2022,optimal config with 2022 prices,"5x charge, 36 h",,p.27,
+thermal-battery_price-hunting-tx-2020,"future optimal config (40 USD/kW, 1.5 USD/kWh)","6x charge, 60 h; elec cost 7.09 USD/MWh",,p.26-27,
+thermal-battery_price-hunting-tx-2020,"theoretical minimum wholesale cost (24x, 60 h)",3,USD/MWh,p.26,
+thermal-battery_price-hunting-tx-2020,ancillary services revenue,9-20,USD/MWh of services,p.28 (ref 27),
+thermal-battery_price-hunting-tx-2022,illustrative example,"1 MW steady output (950 kW after 95% eff.), 36 MWh storage, 3.5 MW charge",,p.24,
+heat-pump_industrial-75c-lift,common upper temperature of commercial units,80-100,degC,p.4 fn iii,
+heat-pump_industrial-75c-lift,share of US process heat demand reachable (<=165 degC),27-35,%,p.5 (ref 3 for 35%),
+boiler_100hp-nrel,levelized capital adder,~1,USD/MWh delivered heat,p.23,
+heater_natural-gas-average,"carbon price effect: 51 USD/t CO2 (SCC 2020, 3%)",~10,USD/MWh heat,p.23 (ref 26),
+thermal-battery_electric,45X credit effect on LCOH (thermal / 22 / 44 kWh-e equiv.),27 / 6 / 12,USD/MWh-thermal,p.33 fn xxi,
+(context),US industrial prices 2022: electricity; natural gas; coal,25.77; 7.73; 2.95-5.73,USD/GJ,p.6 (ref 6),
+thermal-battery_generation-following-ca,storage duration,84,h,p.19,"Storage duration: hours of steady-state thermal output stored (least-cost point on 99% reliability curve). CAPACITY BASIS: thermal-output (hours of output, not a power rating)."
+thermal-battery_generation-following-tx,storage duration,36,h,p.19,"Storage duration: hours of steady-state thermal output stored (least-cost point on 99% reliability curve). This is the 36 h used by CAELP/E3 2024. CAPACITY BASIS: thermal-output (hours of output, not a power rating)."
+thermal-battery_price-hunting-tx-2020,storage duration,24,h,p.26,"Storage duration of optimal (3.5x charge rate, 24 h) configuration. CAPACITY BASIS: thermal-output (hours of output, not a power rating)."
+thermal-battery_price-hunting-tx-2022,storage duration,24,h,p.26,"Storage duration of optimal (3.5x charge rate, 24 h) configuration. CAPACITY BASIS: thermal-output (hours of output, not a power rating)."

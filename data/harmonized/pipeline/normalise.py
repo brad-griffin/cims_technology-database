@@ -539,6 +539,26 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = (f"duplicate of the row in duplicate-of: {how}"
                              + ("" if not par.get("excluded") else "; that row is not pooled either"))
 
+    # A figure one source prints more than once for the same archetype (the same
+    # cost for several technologies, one lifetime for a whole table) is pooled
+    # once (modeller, 2026-09-26 and 2026-09-29). The first example in record
+    # order keeps it; the others point to it in duplicate-of.
+    first = {}
+    for r in facts:
+        if r.get("excluded") or r.get("archetype") in ("", "(none)", None):
+            continue
+        norm = (r.get("value-norm"), r.get("value-min-norm"), r.get("value-max-norm"))
+        if not any(norm):
+            continue
+        k = (r["archetype"], r.get("source-id"), r["parameter"], r.get("target-norm", ""),
+             r.get("unit-norm"), *norm)
+        if k not in first:
+            first[k] = r
+        elif first[k]["example-id"] != r["example-id"]:
+            r["duplicate-of"] = first[k]["record-id"]
+            r["excluded"] = (f"repeat: the source prints the same figure for "
+                             f"{first[k]['example-id']} (duplicate-of); pooled once")
+
 
 FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the archetype's own unit
 

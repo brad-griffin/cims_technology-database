@@ -1,0 +1,4 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+2 Cokemaking,coke-oven_heat-recovery,output,electricity,,MWh/unit,t,0.63,0.7,yes,630/1000 ; 700/1000,"p.38, Sect. 2.8",Electrical power production about 630-700 kwh/t coke,kWh/t coke rescaled to MWh/unit; co-product electricity from HRSG steam
+3.2 Alternative ironmaking,rotary-kiln_coal-dri,input,coal,0.8,t/unit,t,,,,800/1000,"p.58, Sect. 3.2.7",coal consumption is about 800 kg/t DRI,kg/t rescaled to t/unit
+4.2 EAF steelmaking,electric-arc-furnace_ecoarc,input,electrodes,,t/unit,t,0.0008,0.001,,0.8/1000 ; 1.0/1000,"p.92, Sect. 4.2.10",Low electrode consumption: 0.8-1.0 kg/ton (AC ECOARC),vendor claim; kg/t rescaled

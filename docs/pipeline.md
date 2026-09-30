@@ -17,7 +17,7 @@ gate a commit.
 
 | # | Stage | Module | What it does |
 | -: | - | - | - |
-| 1 | hierarchy | `pipeline/hierarchy.py` | Loads `records/cims_hierarchy.csv`, stamps it (`output/hierarchy-stamp.csv`), and lists the nodes added and removed since the last build against `output/cims_hierarchy.previous.csv`. |
+| 1 | hierarchy | `pipeline/hierarchy.py` | Loads `records/cims_hierarchy.csv`, stamps it (`output/hierarchy-stamp.csv`), and lists the nodes added and removed since the last build against `output/cims_hierarchy.csv`, the copy the last build wrote. |
 | 2 | records | `pipeline/records.py` | Loads the archetypes, service links, annotations and vocabularies, and checks each archetype key and path. |
 | 3 | extract | `pipeline/extract.py` | Reads every extraction as reported and keeps each source's own technology name. |
 | 4 | clean | `pipeline/facts.py` | Evaluates arithmetic-only formulas, spells each unit one way, writes fractions as %, links derived rows to their source rows, flags missing bases, and numbers records within each source. |
@@ -27,7 +27,7 @@ gate a commit.
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py`, `pipeline/heating.py`, `pipeline/bridge.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. LHV numbers go to HHV (`heating-value-stream.csv`); numbers per unit of input go per GJ of output by the efficiency bridge (`efficiency-bridge.csv`). Each row records its `conversion-class` and `conversion-factors`. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
-| 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
+| 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `cims_hierarchy.csv`, `cims_hierarchy_technology.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |
 | 11 | workbook | `pipeline/workbook.py` | Writes `technology-database.xlsx`, last. It is never read back. |
 
@@ -54,6 +54,7 @@ gate a commit.
 | `archetype.csv` | Every archetype with its parsed key, the nodes it applies to, its examples and its status. |
 | `archetype-parameter.csv`, `archetype-flow.csv` | The summaries. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
+| `cims_hierarchy.csv`, `cims_hierarchy_technology.csv` | The CIMS hierarchy snapshot the build used, and the same with `technology` as the second column: each node repeated once per archetype serving it, blank where none does. |
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |

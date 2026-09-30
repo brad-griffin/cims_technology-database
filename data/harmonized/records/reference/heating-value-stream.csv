@@ -12,3 +12,15 @@ gasifier_biomass-methanation,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methane,wood in;
 gasifier_biomass-methanol,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methanol,wood in; methanol out
 shaft-furnace_electrolytic-hydrogen,,,energy use is electricity; the LHV in the source note describes the electrolyser
 reactor_haber-bosch-loop,,,energy use is electricity; LHV in the source notes describes the hydrogen feed
+boiler_fuel-fired,cf-hhv-lhv-methane,,gas-fired in the sources that state LHV (DEA gas/oil boiler; natural gas is the main fuel)
+boiler_solid-fuel,cf-hhv-lhv-solid-liquid,,biomass or coal fuel
+direct-heater_fired-process,cf-hhv-lhv-methane,,natural gas burners
+direct-heater_solid-fuel,cf-hhv-lhv-solid-liquid,,solid fuels
+steam-reformer_ammonia,cf-hhv-lhv-methane,,energy use is natural gas feed plus fuel
+anaerobic-digester,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methane,wet biomass or manure in; biogas (a methane fuel) out
+separator_biogas-upgrading,cf-hhv-lhv-methane,cf-hhv-lhv-methane,biogas in; biomethane out
+reactor_co2-to-methanol,cf-hhv-lhv-hydrogen,cf-hhv-lhv-methanol,hydrogen (and CO2) in; methanol out
+transesterification-unit_alkali-catalyzed,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,vegetable oil or fats in; biodiesel out
+reactor_hydrotreating-lipids,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,lipids in; HVO out
+reactor_hydrothermal-liquefaction,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,wet biomass in; biocrude out
+capture-unit_dac-liquid-solvent,cf-hhv-lhv-methane,,natural gas fires the calciner

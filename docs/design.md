@@ -91,7 +91,8 @@ the unit archetypes inside them. A model uses one framing or the other, never bo
 - A `component` archetype (type `component`) is a part priced only to build
   whole-plant costs: `anaerobic-digester`, `separator_biogas-upgrading`. It serves no
   hierarchy node and is never offered to the model; the build refuses a component
-  that links to a node. Components stay out of the wide views.
+  that links to a node. Components are shown in the wide views with `applies-to`
+  reading `no connection` (2026-09-30; they were left out before).
 - `records/reference/whole-plant-assembly.csv` lists each whole-plant cost to build
   from components: the whole-plant archetype, the source, the parameter and unit,
   and the component rows (example, case, and a multiplier where the denominators
@@ -105,7 +106,9 @@ the unit archetypes inside them. A model uses one framing or the other, never bo
 - An example whose source prices the whole plant (digester and engine together) is
   an example of the whole-plant archetype (`anaerobic-digester_chp`), not of a part.
 
-**Reference archetypes.** Type `reference` keeps the numbers for a step the CIMS hierarchy does not resolve (food evaporation). Like a component it serves no hierarchy node, but it is shown in the wide view.
+**Reference archetypes.** Type `reference` keeps the numbers for a step the CIMS hierarchy does not resolve (food evaporation). Like a component it serves no hierarchy node, and it is shown in the wide view.
+
+**No connection.** Any archetype that serves no hierarchy node (a component, a reference archetype, or one whose route the hierarchy leaves out, such as coal gasification to SNG) stays in the database; its `applies-to` reads `no connection`. It has no row in `cims_hierarchy_technology.csv`.
 
 ## 3. Naming
 
@@ -409,9 +412,8 @@ compilation cites it as an original.
 
 ## 9. Reading the outputs
 
-- `wide-archetype.csv` has one row per archetype, including blank ones, except
-  `component` archetypes, which are intermediate parts and stay out of both wide views
-  (they remain in `archetype.csv` and the long tables). `end-uses`
+- `wide-archetype.csv` has one row per archetype, including blank ones and
+  those that serve no hierarchy node (`applies-to` reads `no connection`). `end-uses`
   names the annotation groups each archetype serves. `status` (also in
   `archetype.csv`) is one of:
   - `quantified`: it has pooled numbers;

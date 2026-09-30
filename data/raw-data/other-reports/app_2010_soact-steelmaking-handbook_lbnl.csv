@@ -1,0 +1,50 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+2 Cokemaking,coke-oven_scope21,description,,,"SCOPE21 super coke oven: rapid coal preheating, rapid carbonization and medium-temperature coke heating replacing conventional coke ovens (Japanese national programme).",,,,"p.29-30, Sect. 2.1",
+2 Cokemaking,coke-oven_scope21,state-of-development,,,Mature,,,,"p.29-30, Sect. 2.1","""Commercial Status"" as printed on the sheet"
+2 Cokemaking,coke-oven_heat-recovery,description,,,"Heat-recovery (non-recovery) coke battery: volatiles burned in the horizontal oven, hot gases raise high-pressure steam in HRSGs for heat or power; 48 h coking cycle.",,,,"p.38-39, Sect. 2.8",
+2 Cokemaking,coke-oven_heat-recovery,state-of-development,,,Mature,,,,"p.38-39, Sect. 2.8","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,smelting-vessel_bath-generic,description,,,"Smelting reduction processes (Ausmelt Ausiron, HIsmelt, CCF, DIOS, COREX): ore pre-reduced by gases from a hot bath, then melted in the bath; no coke or sinter needed.",,,,"p.52, Sect. 3.2.1",
+3.2 Alternative ironmaking,smelting-vessel_bath-generic,state-of-development,,,Emerging,,,,"p.52, Sect. 3.2.1","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,rotary-hearth_fastmet,description,,,"FASTMET coal-based direct reduction in a rotary hearth furnace, with hot DRI fed to a melter for hot metal.",,,,"p.53, Sect. 3.2.2",
+3.2 Alternative ironmaking,rotary-hearth_fastmet,state-of-development,,,None provided,,,,"p.53, Sect. 3.2.2","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,rotary-hearth_fastmet,emissions-total,nox,kg/t,,0.3,1.5,,"p.53, Sect. 3.2.2",per t hot metal
+3.2 Alternative ironmaking,rotary-hearth_fastmet,emissions-total,pm,kg/t,0.3,,,,"p.53, Sect. 3.2.2","PM10, per t hot metal"
+3.2 Alternative ironmaking,rotary-hearth_itmk3,description,,,ITmk3 process: rotary hearth furnace melting low-grade ore and coal into iron nuggets (97% Fe) separated from gangue.,,,,"p.54, Sect. 3.2.3",
+3.2 Alternative ironmaking,rotary-hearth_itmk3,state-of-development,,,Emerging,,,,"p.54, Sect. 3.2.3","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,straight-hearth_psh,description,,,Paired Straight Hearth furnace: coal-based tall-bed reduction making metallized pellets for EAF or smelting.,,,,"p.55, Sect. 3.2.4",
+3.2 Alternative ironmaking,straight-hearth_psh,state-of-development,,,Emerging,,,,"p.55, Sect. 3.2.4","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,straight-hearth_psh,emissions-reduction-potential,co2,%,33.3,,,100/3,"p.55, Sect. 3.2.4","""total CO2 emissions per ton of hot metal ... expected to decrease by one third"" vs BF route, PSH used as pre-reducer with a smelter; expected, not measured"
+3.2 Alternative ironmaking,smelting-vessel_corex,description,,,Corex two-stage smelting reduction: DRI shaft furnace above a coal melter-gasifier; export gas used for cogeneration or extra DRI.,,,,"p.56, Sect. 3.2.5",
+3.2 Alternative ironmaking,smelting-vessel_corex,state-of-development,,,Mature; 5 installations in the world (4 in APP countries),,,,"p.56, Sect. 3.2.5","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,smelting-vessel_corex,emissions-reduction-potential,co2,%,20,,,,"p.56, Sect. 3.2.5",~20% lower CO2 per t combined product (hot metal + DRI) vs blast furnace route
+3.2 Alternative ironmaking,smelting-vessel_finex,description,,,"Finex multistage smelting reduction: four fluidized beds reduce ore fines to DRI, compacted and melted in a coal melter-gasifier.",,,,"p.57, Sect. 3.2.6",
+3.2 Alternative ironmaking,smelting-vessel_finex,state-of-development,,,"One 1.5 million tonne per annum plant in operation at Posco, Korea",,,,"p.57, Sect. 3.2.6","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,smelting-vessel_finex,capacity,,t/yr,1500000,,,,"p.57, Sect. 3.2.6",Capacity of the single operating plant (Posco); hot metal
+3.2 Alternative ironmaking,rotary-kiln_coal-dri,description,,,"SL/RN rotary kiln direct reduction: ore and coal co-charged to an inclined kiln heated to 1000-1100 degC, producing sponge iron (83-92% metallization).",,,,"p.58, Sect. 3.2.7",
+3.2 Alternative ironmaking,rotary-kiln_coal-dri,state-of-development,,,Mature,,,,"p.58, Sect. 3.2.7","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,rotary-kiln_coal-dri,capacity,,t/yr,,225000,300000,,"p.58, Sect. 3.2.7","Maximum kiln capacity: ""does not exceed 225,000-300,000 t/annum"", depending on metallization"
+3.2 Alternative ironmaking,shaft-furnace_hyl-coal,description,,,Coal-based HYL: HYL shaft reactor fed by reducing gas from an oxygen-blown coal gasifier with shift and CO2 removal.,,,,"p.59, Sect. 3.2.8",
+3.2 Alternative ironmaking,shaft-furnace_hyl-coal,state-of-development,,,Emerging,,,,"p.59, Sect. 3.2.8","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,shaft-furnace_hyl-zero-reforming,description,,,"Natural gas-based zero-reforming HYL (Energiron): ~8 bar shaft with in-situ self-reforming of natural gas; hot DRI, HBI or cold DRI with 1.5-5% carbon.",,,,"p.60, Sect. 3.2.9",
+3.2 Alternative ironmaking,shaft-furnace_hyl-zero-reforming,state-of-development,,,Mature,,,,"p.60, Sect. 3.2.9","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,shaft-furnace_midrex-coal,description,,,Coal-based Midrex: Midrex shaft fed by oxygen-blown coal gasifier gas cleaned of CO2 (prototype on Corex gas at Saldanha).,,,,"p.61, Sect. 3.2.10",
+3.2 Alternative ironmaking,shaft-furnace_midrex-coal,state-of-development,,,Emerging; one prototype operates with reducing gas from a Corex melter-gasifier (Saldanha Steel),,,,"p.61, Sect. 3.2.10","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,shaft-furnace_midrex-co2-removal,description,,,Natural gas-based Midrex with an amine CO2 removal system on the top gas (low-CO2 option).,,,,"p.62-63, Sect. 3.2.11",
+3.2 Alternative ironmaking,shaft-furnace_midrex-co2-removal,state-of-development,,,Mature,,,,"p.62-63, Sect. 3.2.11","""Commercial Status"" as printed on the sheet"
+3.2 Alternative ironmaking,shaft-furnace_midrex-co2-removal,emissions-captured,co2,kg/t,250,,,,"p.62, Sect. 3.2.11","Stack CO2 reduced by 250 kg/t DRI by the removal system (removed stream can go to EOR, storage or pipeline). reprinted from Kopfle and Metius 2010 (Midrex)"
+3.2 Alternative ironmaking,shaft-furnace_midrex-co2-removal,emissions-reduction-potential,co2,%,50,,,,"p.62, Sect. 3.2.11","""about 50 percent"" of stack CO2 per t DRI vs standard Midrex. reprinted from Kopfle and Metius 2010 (Midrex)"
+4.2 EAF steelmaking,electric-arc-furnace_ecoarc,description,,,ECOARC (JP Steel Plantech): semi-airtight arc furnace with a scrap preheating shaft and off-gas post-combustion.,,,,"p.92, Sect. 4.2.10",
+4.2 EAF steelmaking,electric-arc-furnace_ecoarc,state-of-development,,,Emerging,,,,"p.92, Sect. 4.2.10","""Commercial Status"" as printed on the sheet"
+4.2 EAF steelmaking,electric-arc-furnace_ecoarc,specific-energy-consumption,electricity,kWh/t,200,,,,"p.92, Sect. 4.2.10","""Low power consumption: 200 kWh/ton @40m3N/ton oxygen""; vendor claim; heating-value basis not stated (electricity)"
+4.2 EAF steelmaking,electric-arc-furnace_primary-energy-melter,description,,,"Scrap-based primary-energy melter (SMS Siemag): counter-current shaft melts scrap with oxy-fuel combustion, superheating in a separate small arc furnace.",,,,"p.85, Sect. 4.2.5",
+4.2 EAF steelmaking,electric-arc-furnace_primary-energy-melter,state-of-development,,,Emerging,,,,"p.85, Sect. 4.2.5","""Commercial Status"" as printed on the sheet"
+5.2 Casting,caster_castrip,description,,,Castrip direct casting of thin strip from liquid steel.,,,,"p.94, Sect. 5.2.1",
+5.2 Casting,caster_castrip,state-of-development,,,Emerging,,,,"p.94, Sect. 5.2.1","""Commercial Status"" as printed on the sheet"
+5.2 Casting,rolling-mill_thin-slab,description,,,Thin slab casting and direct hot rolling (TSCR) vs the conventional hot strip route.,,,,"p.95, Sect. 5.2.2",
+5.2 Casting,rolling-mill_thin-slab,state-of-development,,,Mature,,,,"p.95, Sect. 5.2.2","""Commercial Status"" as printed on the sheet"
+9 General energy savings,combined-cycle_steel-offgas,description,,,"Gas turbine combined cycle adapted to burn low-calorific steel off-gases (COG, BFG, BOF gas), e.g. MHI 145 MW at Kawasaki Chiba.",,,,"p.119, Sect. 9.2",
+9 General energy savings,combined-cycle_steel-offgas,state-of-development,,,Mature,,,,"p.119, Sect. 9.2","""Commercial Status"" as printed on the sheet"
+9 General energy savings,combined-cycle_steel-offgas,efficiency,,%,33,,,,"p.119, Sect. 9.2",Electrical efficiency after internal compressor loads (gross 45% in _other-values). LHV. reprinted from Mitsubishi Heavy Industries 1993
+9 General energy savings,combined-cycle_steel-offgas,capex,,USD/kW,1090,,,,"p.119, Sect. 9.2","""Investments for turbine systems are $1090/kWe"". Price year not stated. COST BASIS NOT STATED. CAPACITY BASIS: electric-output. reprinted from Anonymous 1997c"
+9 General energy savings,psa_cog-hydrogen,description,,,Hydrogen recovery from coke oven gas (~55% H2) by pressure swing adsorption.,,,,"p.121, Sect. 9.4",
+9 General energy savings,psa_cog-hydrogen,state-of-development,,,Emerging,,,,"p.121, Sect. 9.4","""Commercial Status"" as printed on the sheet"

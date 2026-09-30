@@ -1,0 +1,21 @@
+process,technology,sector,end-use,process-step,service-unit
+Industrial thermal battery (general characterisation),thermal-battery_electric,heat-supply,process-heat-high-temp,,MWh
+Modeled thermal battery cost assumptions,thermal-battery_electric-modeled,heat-supply,process-heat-high-temp,,MWh
+"Generation-following thermal battery, California Central Valley (off-grid solar only)",thermal-battery_generation-following-ca,heat-supply,process-heat-high-temp,,MWh
+"Generation-following thermal battery, West Texas (off-grid wind and solar)",thermal-battery_generation-following-tx,heat-supply,process-heat-high-temp,,MWh
+"Price-hunting grid-connected thermal battery, West Texas, 2020 wholesale prices",thermal-battery_price-hunting-tx-2020,heat-supply,process-heat-high-temp,,MWh
+"Price-hunting grid-connected thermal battery, West Texas, 2022 wholesale prices",thermal-battery_price-hunting-tx-2022,heat-supply,process-heat-high-temp,,MWh
+Heat cost comparison assumptions (Figure 11),heater_natural-gas-average,all-industry,process-heat-medium-temp,,MWh
+Heat cost comparison assumptions (Figure 11),furnace_natural-gas-no-heat-recovery,all-industry,process-heat-high-temp,,MWh
+Heat cost comparison assumptions (Figure 11),boiler_natural-gas-condensate-recovery,all-industry,steam-and-hot-water,,MWh
+Heat cost comparison assumptions (Figure 11),boiler_electric-resistance-immersion,all-industry,steam-and-hot-water,,MWh
+Heat cost comparison assumptions (Figure 11),heat-pump_industrial-75c-lift,all-industry,steam-and-hot-water,,MWh
+Heat cost comparison assumptions (Figure 11),furnace_induction-or-arc,all-industry,process-heat-high-temp,,MWh
+Heat cost comparison assumptions (Figure 11),heater_dielectric,all-industry,process-heat-medium-temp,,MWh
+Heat cost comparison assumptions (Figure 11),heater_laser,all-industry,process-heat-high-temp,,MWh
+Heat cost comparison assumptions (Figure 11),boiler_100hp-nrel,all-industry,steam-and-hot-water,,MWh
+Fleet-average efficiency assumptions for the electrification estimate (footnote xviii),boiler_combustion-fleet-average,all-industry,steam-and-hot-water,,MWh
+Fleet-average efficiency assumptions for the electrification estimate (footnote xviii),heat-pump_boiler-replacement,all-industry,steam-and-hot-water,,MWh
+Fleet-average efficiency assumptions for the electrification estimate (footnote xviii),process-heater_combustion-fleet-average,all-industry,process-heat-high-temp,,MWh
+Fleet-average efficiency assumptions for the electrification estimate (footnote xviii),process-heater_electric-mix,all-industry,process-heat-high-temp,,MWh
+Lithium-ion battery (comparison),battery_lithium-ion,all-industry,other-services,,MWh

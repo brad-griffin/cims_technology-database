@@ -33,6 +33,10 @@ capacity-factor,technical,%,"Annual output as a fraction of output at rated capa
 capacity-factor_low,technical,%,
 capacity-factor_high,technical,%,
 capacity-factor_n,technical,,
+annual-output,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+annual-output_low,technical,product-unit,
+annual-output_high,technical,product-unit,
+annual-output_n,technical,,
 annual-output_biogas,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 annual-output_biogas_n,technical,,
 annual-output_electricity,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -83,15 +87,29 @@ specific-energy-consumption_electricity,technical,GJ/product-unit,"Total final e
 specific-energy-consumption_electricity_low,technical,GJ/product-unit,
 specific-energy-consumption_electricity_high,technical,GJ/product-unit,
 specific-energy-consumption_electricity_n,technical,,
+specific-energy-consumption_fuel,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_fuel_low,technical,GJ/product-unit,
+specific-energy-consumption_fuel_high,technical,GJ/product-unit,
+specific-energy-consumption_fuel_n,technical,,
 specific-energy-consumption_heat,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_heat_low,technical,GJ/product-unit,
+specific-energy-consumption_heat_high,technical,GJ/product-unit,
 specific-energy-consumption_heat_n,technical,,
+specific-energy-consumption_hydrogen,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_hydrogen_n,technical,,
 specific-energy-consumption_natural-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
+specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_n,technical,,
+specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_steam_n,technical,,
 temperature-output,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-output_low,technical,degC,
 temperature-output_high,technical,degC,
 temperature-output_n,technical,,
 temperature-min,technical,,"Low end where the source gives a range. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+temperature-min_low,technical,,
+temperature-min_high,technical,,
 temperature-min_n,technical,,
 temperature-max,technical,,"High end where the source gives a range. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-max_low,technical,,
@@ -143,6 +161,8 @@ construction-time,cost,years,"Years from investment decision to commissioning. C
 construction-time_low,cost,years,
 construction-time_high,cost,years,
 construction-time_n,cost,,
+emissions-combustion_ch4,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-combustion_ch4_n,emissions,,
 emissions-combustion_co2,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-combustion_co2_low,emissions,t/product-unit,
 emissions-combustion_co2_high,emissions,t/product-unit,
@@ -151,6 +171,10 @@ emissions-combustion_co2e,emissions,t/product-unit,"Emissions from burning fuel 
 emissions-combustion_co2e_low,emissions,t/product-unit,
 emissions-combustion_co2e_high,emissions,t/product-unit,
 emissions-combustion_co2e_n,emissions,,
+emissions-combustion_n2o,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: n2o. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-combustion_n2o_n,emissions,,
+emissions-combustion_nox,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: nox. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-combustion_nox_n,emissions,,
 emissions-combustion_pfc,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: pfc. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-combustion_pfc_low,emissions,t/product-unit,
 emissions-combustion_pfc_high,emissions,t/product-unit,
@@ -163,6 +187,10 @@ emissions-process_co2,emissions,t/product-unit,"Emissions from the chemical reac
 emissions-process_co2_low,emissions,t/product-unit,
 emissions-process_co2_high,emissions,t/product-unit,
 emissions-process_co2_n,emissions,,
+emissions-process_n2o,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: n2o. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-process_n2o_low,emissions,t/product-unit,
+emissions-process_n2o_high,emissions,t/product-unit,
+emissions-process_n2o_n,emissions,,
 emissions-total_ch4,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-total_ch4_low,emissions,t/product-unit,
 emissions-total_ch4_high,emissions,t/product-unit,

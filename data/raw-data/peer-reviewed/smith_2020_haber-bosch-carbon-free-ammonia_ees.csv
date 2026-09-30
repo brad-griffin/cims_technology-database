@@ -1,0 +1,12 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Ammonia synthesis,steam-reformer_ammonia,description,,,methane-fed Haber-Bosch ammonia plant (best available technique),,,,p.335,
+Ammonia synthesis,steam-reformer_ammonia,specific-energy-consumption,natural-gas,GJ/t,,27.4,31.8,,"p.335, Fig. 3","energy requirement of current BAT per tonne NH3 (natural gas feed plus fuel), the paper's LHV-based ledger; theoretical minimum 22.2 GJ/t"
+Ammonia synthesis,reactor_haber-bosch-electric,description,,,"electrically driven Haber-Bosch: alkaline or PEM electrolysis, PSA nitrogen, electric compressors, 150 bar loop",,,,"p.334-336, Fig. 4",
+Ammonia synthesis,reactor_haber-bosch-electric,specific-energy-consumption,electricity,GJ/t,38.2,,,35.5+2.7,p.334,"DERIVED sum as printed: 35.5 GJ/t NH3 for hydrogen at a 60% efficient electrolyser plus about 2.7 GJ/t for N2 separation and loop compressors"
+Ammonia synthesis,reactor_haber-bosch-electric,trl,,,8,,,,"p.336, Fig. 4",label for the low-pressure (10 bar) alkaline electrolysis with high-pressure HB configuration
+Ammonia synthesis,reactor_haber-bosch-absorption,description,,,"medium-pressure (20 bar) Haber-Bosch loop with ammonia separated by absorption in metal halides (MgCl2 or CaCl2) instead of condensation",,,,"p.338-339, Fig. 5",
+Ammonia synthesis,reactor_haber-bosch-absorption,trl,,,4-5,,,,"p.338, Fig. 5",TRL label printed on Fig. 5 for the 20 bar absorption process
+Ammonia synthesis,reactor_haber-bosch-absorption,pressure-output,,bar,20,,,,"p.338, Fig. 5 caption",loop pressure (reactor at 400 degC; absorber at 200 degC and 19 bar)
+Ammonia synthesis,reactor_haber-bosch-in-situ-absorption,description,,,"low-pressure (3 bar) Haber-Bosch with in situ ammonia absorption in the reactor (250-300 degC)",,,,"p.338-339, Fig. 5",
+Ammonia synthesis,reactor_haber-bosch-in-situ-absorption,trl,,,1-3,,,,"p.338, Fig. 5",
+Ammonia synthesis,reactor_haber-bosch-in-situ-absorption,pressure-output,,bar,3,,,,"p.338, Fig. 5 caption",

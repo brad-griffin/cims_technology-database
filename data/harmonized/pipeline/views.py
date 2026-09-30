@@ -1,4 +1,4 @@
-"""The outputs people read: archetype tables and the wide views.
+"""The outputs people read: archetype tables, the hierarchy with its technologies and the wide views.
 
 wide-archetype.csv has ONE ROW PER ARCHETYPE by construction: it is a pivot of
 archetype-parameter.csv, whose key is the archetype. Each parameter gets a
@@ -8,16 +8,16 @@ intensity is per unit of the archetype's own product (`product-unit`), so a
 column holds CAD per tonne on a kiln row and CAD per GJ on a boiler row: never
 sort, average or chart a cost or intensity column across families.
 
-Every archetype has a row, blank or not, except `component` archetypes: they are
-intermediate parts priced only to assemble whole-plant costs, so they stay out of
-both wide views (they remain in archetype.csv and the long tables).
+Every archetype has a row, blank or not, including `component` archetypes
+(intermediate parts priced to assemble whole-plant costs) and any archetype that
+serves no hierarchy node: its `applies-to` reads NO_CONNECTION (2026-09-30).
 `--quantified-only` restricts the wide view to archetypes with pooled numbers.
 """
 from __future__ import annotations
 
 from collections import defaultdict
 
-from .common import OUTPUT, split_list, write
+from .common import OUTPUT, read, split_list, write
 from .hierarchy import Hierarchy
 from .normalise import target_unit
 
@@ -34,8 +34,12 @@ def unit_label(param: str, target: str) -> str:
     return u
 
 
+NO_CONNECTION = "no connection"
+
+
 def applies_to(key, service):
-    return "; ".join(Hierarchy.short(s["branch"]) for s in service.get(key, []))
+    """The nodes an archetype serves, or NO_CONNECTION when it serves none."""
+    return "; ".join(Hierarchy.short(s["branch"]) for s in service.get(key, [])) or NO_CONNECTION
 
 
 def build(records, hier, examples, summaries, flow_summaries, include_empty=True):
@@ -85,6 +89,27 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     write(OUTPUT / "archetype-application.csv",
           ["archetype", "family", "node", "annotation", "via", "note"], app)
 
+    # ---- cims_hierarchy.csv and cims_hierarchy_technology.csv -----------------
+    # cims_hierarchy.csv is the snapshot as the build used it. The technology
+    # version keeps its row order, with `technology` as the second column: a node
+    # is repeated once per archetype serving it; a node nothing serves appears
+    # once with `technology` blank.
+    by_node = defaultdict(list)
+    for r in app:
+        if r["archetype"] not in by_node[r["node"]]:
+            by_node[r["node"]].append(r["archetype"])
+    hrows = read(hier.path)
+    hcols = [c for c in (list(hrows[0]) if hrows else ["branch"]) if c != "technology"]
+    write(OUTPUT / "cims_hierarchy.csv", hcols, hrows)
+    tech = []
+    for h in hrows:
+        b = (h.get("branch") or "").strip()
+        if not b:
+            continue
+        for t in sorted(by_node.get(b, [])) or [""]:
+            tech.append(dict(h, technology=t))
+    write(OUTPUT / "cims_hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
+
     # ---- wide-archetype.csv -----------------------------------------------------
     by_arch = defaultdict(dict)
     colkeys = set()
@@ -119,8 +144,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "highest-ranked source; low and high are the widest values any example gives.") if x)
     wide, flagged = [], set()
     for a in arows:
-        if a["type"] == "component":
-            continue
         if a["archetype"] not in with_data and not include_empty:
             continue
         row = {c: a.get(c, "") for c in IDENT}
@@ -154,7 +177,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     flow_cols = fident + [x for c in fcols for x in (c, c + "_n")]
     frows = []
     for a in arows:
-        if a["archetype"] in fby and a["type"] != "component":
+        if a["archetype"] in fby:
             row = {c: a.get(c, "") for c in fident}
             row.update(fby[a["archetype"]])
             frows.append(row)

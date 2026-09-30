@@ -1,0 +1,5 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,input,electricity,0.57561,GJ/unit,t,,,,0.59/1.025,"p.9, Fig. 3.2",0.59 TJ per 1.025 kt undried salt,heating-value basis not stated
+"Salt production: brine vaporisation with MVR (Nobian Delfzijl and Hengelo, tailor-made agreement)",vapour-recompressor_brine-salt,input,steam,0.429268,GJ/unit,t,,,,0.44/1.025,"p.9, Fig. 3.2",0.44 TJ heat per 1.025 kt undried salt,printed as 'Heat'; supplied as steam to the MEE (s.3.1). heating-value basis not stated
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_forced-circulation,input,electricity,8.6,GJ/unit,t,,,,,"p.11, Table 3.1",8.6 TJ/kt chlorine,per t chlorine gas (80% chlorine)
+Chlor-alkali electrolysis (Nobian Rotterdam/Botlek),electrolysis-cell_zero-gap,input,electricity,7.3,GJ/unit,t,,,,,"p.11, Table 3.1",7.3 TJ/kt chlorine,per t chlorine gas (80% chlorine)

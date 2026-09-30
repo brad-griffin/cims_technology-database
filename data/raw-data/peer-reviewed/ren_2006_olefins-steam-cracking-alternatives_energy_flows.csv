@@ -1,0 +1,7 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Current steam cracking by feedstock (Table 2),steam-cracker_ethane,input,ethane,1.2195,t/unit,t,,,,1/0.82,"p.433, Table 2",HVC yield 82 wt% (typical),"feed per t HVC from the typical HVC yield; mass basis, final yields"
+Current steam cracking by feedstock (Table 2),steam-cracker_ethane,output,hydrogen,0.0524,t/unit,t,,,yes,0.043/0.82,"p.433, Table 2",hydrogen yield 4.3 wt%,co-product per t HVC
+Current steam cracking by feedstock (Table 2),steam-cracker_ethane,output,methane,0.0512,t/unit,t,,,yes,0.042/0.82,"p.433, Table 2",methane yield 4.2 wt%,co-product per t HVC (fuel grade)
+Current steam cracking by feedstock (Table 2),steam-cracker_naphtha,input,naphtha,1.8182,t/unit,t,,,,1/0.55,"p.433, Table 2",HVC yield 55 wt% (typical),"feed per t HVC from the typical HVC yield; mass basis, final yields"
+Current steam cracking by feedstock (Table 2),steam-cracker_naphtha,output,hydrogen,0.0182,t/unit,t,,,yes,0.01/0.55,"p.433, Table 2",hydrogen yield 1 wt%,co-product per t HVC
+Current steam cracking by feedstock (Table 2),steam-cracker_naphtha,output,methane,,t/unit,t,0.2364,0.2545,yes,0.13/0.55; 0.14/0.55,"p.433, Table 2",methane yield 13-14 wt%,co-product per t HVC (fuel grade)

@@ -87,8 +87,8 @@ class Records:
                 # resolve. Neither is offered to the model.
                 if serves:
                     fail[f"{a['type']} archetype serves a hierarchy node"].append(k)
-            elif not serves:
-                fail["archetype serves no hierarchy node"].append(k)
+            # any other archetype may serve no node (a route the hierarchy leaves out);
+            # it stays in the database with applies-to "no connection" (2026-09-30)
         for s in self.service:
             if s["archetype"] not in self.by_key:
                 fail["archetype-service row for an unknown archetype"].append(s["archetype"])

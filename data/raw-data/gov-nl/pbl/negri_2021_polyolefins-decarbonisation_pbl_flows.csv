@@ -1,0 +1,12 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_ldpe-high-pressure,input,electricity,3.43,GJ/unit,t,,,,,"p.24, Table 13",3.43 MJ per kg,heating-value basis not stated
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_ldpe-high-pressure,output,steam,0.29,GJ/unit,t,,,yes,-(-0.29),"p.24, Table 13",-0.29 MJ steam per kg,net steam export (printed as negative demand)
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_lldpe-solution,input,electricity,1.27,GJ/unit,t,,,,,"p.24, Table 13",1.27 MJ per kg,heating-value basis not stated
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_lldpe-solution,input,steam,0.69,GJ/unit,t,,,,,"p.24, Table 13",0.69 MJ heat per kg,printed as 'Heat demand'
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_hdpe-slurry,input,electricity,1.55,GJ/unit,t,,,,,"p.24, Table 13",1.55 MJ per kg,heating-value basis not stated
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_hdpe-slurry,input,steam,1.34,GJ/unit,t,,,,,"p.24, Table 13",1.34 MJ heat per kg,printed as 'Heat demand'
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_pp-gas-phase,input,electricity,1.29,GJ/unit,t,,,,,"p.24, Table 13",1.29 MJ per kg,heating-value basis not stated
+"Polyolefin polymerisation (Dutch producers Dow, SABIC, Ducor)",reactor_pp-gas-phase,input,steam,0.59,GJ/unit,t,,,,,"p.24, Table 13",0.59 MJ heat per kg,printed as 'Heat demand'
+Ethylene and propylene production by naphtha steam cracking,steam-cracker_naphtha,input,electricity,0.76,GJ/unit,t,,,,,"p.17, Table 8",0.76 MJ per kg ethylene,reprinted from PlasticsEurope (2012)
+Ethylene and propylene production by naphtha steam cracking,steam-cracker_naphtha,input,steam,12.6,GJ/unit,t,,,,,"p.17, Table 8",12.60 MJ per kg ethylene,reprinted from PlasticsEurope (2012)
+Bio-based ethylene (Table 20 comparison),gasifier_biowaste-mto,input,biomass-solid,4,t/unit,t,,,,,"p.43, s.4.2.6",4 kg biomass feedstock per kg light olefins,reprinted from Xiang et al. (2015); per t light olefins

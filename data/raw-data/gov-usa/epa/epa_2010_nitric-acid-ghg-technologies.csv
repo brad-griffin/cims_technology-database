@@ -1,0 +1,11 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Nitric acid production,reactor_nitric-acid_uncontrolled,description,,,"nitric acid plant (ammonia oxidation over Pt-Rh gauze) without N2O abatement",,,,"p.3-6, Tables 1-2",
+Nitric acid production,reactor_nitric-acid_uncontrolled,emissions-process,n2o,kg/t,8.9,4,19,,"p.6, Table 2","uncontrolled N2O per tonne 100% HNO3, average and range of 49 CDM project test reports (IPCC 2006 default used by EPA: 9 kg/t)"
+N2O abatement - secondary (in the ammonia burner),catalytic-n2o_secondary,description,,,"secondary N2O control: a catalyst below the ammonia-oxidation gauze or an extended reactor, decomposing N2O as it forms",,,,"p.9-12, Table 4",
+N2O abatement - secondary (in the ammonia burner),catalytic-n2o_secondary,emissions-reduction-potential,n2o,%,76,9,98,,"p.12, Table 4","average and range of N2O reduction across 37 CDM test periods (Table 3 summarises 70-90%)"
+N2O abatement - secondary (in the ammonia burner),catalytic-n2o_secondary,emissions-process,n2o,lb/ton,4.1,0.15,11.6,,"p.12, Table 4","N2O after control per short ton 100% HNO3, CDM average and range"
+N2O abatement - secondary (in the ammonia burner),catalytic-n2o_secondary,state-of-development,,,commercial,,,,"p.9, Table 3",demonstrated in practice
+N2O abatement - tertiary (tail gas catalytic reduction),catalytic-n2o_tertiary,description,,,"tertiary N2O control: a catalytic reactor on the tail gas upstream or downstream of the expander (NSCR, EnviNOx, Shell C-NAT and similar)",,,,"p.13-16, Table 6",
+N2O abatement - tertiary (tail gas catalytic reduction),catalytic-n2o_tertiary,emissions-reduction-potential,n2o,%,94,88,98,,"p.15, Table 6","average and range of N2O reduction, 11 CDM projects (Table 3: >80%)"
+N2O abatement - tertiary (tail gas catalytic reduction),catalytic-n2o_tertiary,emissions-process,n2o,lb/ton,1.2,0.41,2.2,,"p.15, Table 6","N2O after control per short ton 100% HNO3, CDM average and range"
+N2O abatement - tertiary (tail gas catalytic reduction),catalytic-n2o_tertiary,state-of-development,,,commercial,,,,"p.9, Table 3",

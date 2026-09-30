@@ -1,0 +1,35 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Low-temperature industrial heat (Table 3),boiler_natural-gas,description,,,natural gas steam boiler,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),boiler_natural-gas,efficiency,,%,95,,,0.95*100,"p.15, Table 3",printed as 0.95; heating-value basis not stated
+Low-temperature industrial heat (Table 3),boiler_natural-gas,capacity-factor,,%,22.8,,,2000/8760*100,"p.15, Table 3",DERIVED from 2000 full-load hours per year (printed)
+Low-temperature industrial heat (Table 3),boiler_natural-gas,capex,,2021_USD/kW,234,,,,"p.15, Table 3","COST BASIS: equipment. 'Capital expenditures (excluding installation/integration costs)'; German prices, taken as similar to US. CAPACITY BASIS: thermal-output"
+Low-temperature industrial heat (Table 3),boiler_natural-gas,opex-variable,,2021_USD/MWh,6,,,,"p.15, Table 3","non-energy opex per MWh of heat output (staffing and maintenance), printed as $/MWhth"
+Low-temperature industrial heat (Table 3),boiler_natural-gas,cost-levelized,,2021_USD/MWh,36,,,,"p.15, Table 3","total cost per MWh of heat output: capex 12 + non-energy opex 6 + fuel 18 (EIA AEO 2022 gas price)"
+Low-temperature industrial heat (Table 3),chp_natural-gas,description,,,natural gas combined heat and power (prime mover not stated),,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),chp_natural-gas,efficiency,,%,85,,,0.85*100,"p.15, Table 3",printed as 0.85 (overall efficiency implied)
+Low-temperature industrial heat (Table 3),chp_natural-gas,capacity-factor,,%,68.5,,,6000/8760*100,"p.15, Table 3",DERIVED from 6000 full-load hours
+Low-temperature industrial heat (Table 3),chp_natural-gas,capex,,2021_USD/kW,900,,,,"p.15, Table 3",COST BASIS: equipment. As for the boiler; whether the kW is electric or thermal is not stated.
+Low-temperature industrial heat (Table 3),chp_natural-gas,opex-variable,,2021_USD/MWh,3,,,,"p.15, Table 3",non-energy opex per MWh of heat output
+Low-temperature industrial heat (Table 3),chp_natural-gas,cost-levelized,,2021_USD/MWh,50,,,,"p.15, Table 3",total cost per MWh of heat output
+Low-temperature industrial heat (Table 3),boiler_electric,description,,,electric boiler,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),boiler_electric,efficiency,,%,99,,,0.99*100,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),boiler_electric,capacity-factor,,%,22.8,,,2000/8760*100,"p.15, Table 3",DERIVED from 2000 full-load hours
+Low-temperature industrial heat (Table 3),boiler_electric,capex,,2021_USD/kW,175,,,,"p.15, Table 3",COST BASIS: equipment. As for the gas boiler. CAPACITY BASIS: thermal-output
+Low-temperature industrial heat (Table 3),boiler_electric,opex-variable,,2021_USD/MWh,3,,,,"p.15, Table 3",non-energy opex per MWh of heat output
+Low-temperature industrial heat (Table 3),boiler_electric,cost-levelized,,2021_USD/MWh,92,,,,"p.15, Table 3",total cost per MWh of heat output (electricity 75)
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,description,,,industrial heat pump delivering 80-100 degC,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,efficiency,,%,370,,,3.7*100,"p.15, Table 3",COP 3.7
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,capacity-factor,,%,68.5,,,6000/8760*100,"p.15, Table 3",DERIVED from 6000 full-load hours
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,capex,,2021_USD/kW,700,,,,"p.15, Table 3",COST BASIS: equipment. As for the gas boiler. CAPACITY BASIS: thermal-output
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,opex-variable,,2021_USD/MWh,2,,,,"p.15, Table 3",non-energy opex per MWh of heat output
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,cost-levelized,,2021_USD/MWh,41,,,,"p.15, Table 3",total cost per MWh of heat output
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,temperature-min,,degC,80,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),heat-pump_80-100c,temperature-max,,degC,100,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,description,,,industrial heat pump delivering 100-180 degC,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,efficiency,,%,220,,,2.2*100,"p.15, Table 3",COP 2.2
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,capacity-factor,,%,68.5,,,6000/8760*100,"p.15, Table 3",DERIVED from 6000 full-load hours
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,capex,,2021_USD/kW,870,,,,"p.15, Table 3",COST BASIS: equipment. As for the gas boiler. CAPACITY BASIS: thermal-output
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,opex-variable,,2021_USD/MWh,3,,,,"p.15, Table 3",non-energy opex per MWh of heat output
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,cost-levelized,,2021_USD/MWh,60,,,,"p.15, Table 3",total cost per MWh of heat output
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,temperature-min,,degC,100,,,,"p.15, Table 3",
+Low-temperature industrial heat (Table 3),heat-pump_100-180c,temperature-max,,degC,180,,,,"p.15, Table 3",

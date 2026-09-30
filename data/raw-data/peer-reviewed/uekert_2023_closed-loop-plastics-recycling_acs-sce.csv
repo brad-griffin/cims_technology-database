@@ -1,0 +1,16 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,description,,,"PET depolymerization by PET hydrolase enzyme to terephthalic acid and ethylene glycol, with re-polymerization to recycled PET (Aspen Plus model, 150 t/d feed)",,,,p.S2-S3; Table S10,Enzymatic hydrolysis of PET
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,trl,,,4,,,,"p.S43, Table S27",authors' TRL assessment
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,cost-levelized,,2020_USD/kg,2.01,,,,"p.S43, Table S27","minimum selling price of recycled PET from discounted cash flow (10% IRR, 30-yr life, Table S20). CURRENCY YEAR NOT PRINTED: 2020 assumed from the 2016-2020 price data the model uses (Figs. S9, S12). Standard deviation printed separately (not a range)."
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,lifetime,,years,30,,,,"p.S37, Table S20",plant life in the cash-flow model
+PET chemical recycling (150 t/d bale feed),reactor_enzymatic-hydrolysis_pet,discount-rate,,%,10,,,,"p.S37, Table S20",IRR used for the minimum selling price
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,description,,,"PET glycolysis to BHET with ethylene glycol, then re-polymerization to recycled PET (Aspen Plus model, 150 t/d feed)",,,,p.S2-S3; Table S12,Glycolysis of PET
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,trl,,,5,,,,"p.S43, Table S27",authors' TRL assessment
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,cost-levelized,,2020_USD/kg,0.96,,,,"p.S43, Table S27","minimum selling price of recycled PET from discounted cash flow (10% IRR, 30-yr life, Table S20). CURRENCY YEAR NOT PRINTED: 2020 assumed from the 2016-2020 price data the model uses (Figs. S9, S12). Standard deviation printed separately (not a range)."
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,lifetime,,years,30,,,,"p.S37, Table S20",plant life in the cash-flow model
+PET chemical recycling (150 t/d bale feed),reactor_glycolysis_pet,discount-rate,,%,10,,,,"p.S37, Table S20",IRR used for the minimum selling price
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,description,,,"PET methanolysis to DMT and ethylene glycol, then re-polymerization to recycled PET (Aspen Plus model, 150 t/d feed)",,,,p.S2-S3; Table S13,Methanolysis of PET
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,trl,,,7,,,,"p.S43, Table S27",authors' TRL assessment
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,cost-levelized,,2020_USD/kg,1.05,,,,"p.S43, Table S27","minimum selling price of recycled PET from discounted cash flow (10% IRR, 30-yr life, Table S20). CURRENCY YEAR NOT PRINTED: 2020 assumed from the 2016-2020 price data the model uses (Figs. S9, S12). Standard deviation printed separately (not a range)."
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,lifetime,,years,30,,,,"p.S37, Table S20",plant life in the cash-flow model
+PET chemical recycling (150 t/d bale feed),reactor_methanolysis_pet,discount-rate,,%,10,,,,"p.S37, Table S20",IRR used for the minimum selling price

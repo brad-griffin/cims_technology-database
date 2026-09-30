@@ -1,0 +1,17 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),gasifier_biomass-lime-kiln,description,,,"circulating fluidized bed gasifier with biomass-residue dryer, supplying producer gas as the sole lime kiln fuel",,,,"p.4035-4036, Fig. 4",
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),gasifier_biomass-lime-kiln,capex,,2017_USD-million,40.3,,,,"p.4040, Table 2","COST BASIS: incremental. Investment in the fuel-supply system (drying, gasifier) added to an existing lime kiln, from recent projects and vendor data (+/-30%). The kiln itself is not costed. Currency year not stated; 2017_USD assumed from publication."
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),gasifier_biomass-lime-kiln,opex-fixed,,%/yr,5,,,,p.4040,O&M 5% of investment per year
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),gasifier_biomass-lime-kiln,lifetime,,years,20,,,,p.4040,
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),gasifier_biomass-lime-kiln,discount-rate,,%,10,,,,p.4040,interest rate
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),lignin-separation_lignoboost,description,,,"lignin separation from black liquor (LignoBoost-type), lignin fired as the sole lime kiln fuel",,,,"p.4037-4038",
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),lignin-separation_lignoboost,capex,,2017_USD-million,73,,,,"p.4040, Table 2",COST BASIS: total-plant. Lignin separation plant (+/-30%). Currency year assumed as above.
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),lignin-separation_lignoboost,capacity,,t/d,280,,,,"p.4041, Table 3",lignin production. CAPACITY BASIS: product-output
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),lignin-separation_lignoboost,opex-fixed,,%/yr,5,,,,p.4040,
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),lignin-separation_lignoboost,lifetime,,years,20,,,,p.4040,
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,description,,,"alkaline water electrolysis plant using the mill's excess power, hydrogen covering 72% of kiln heat (oxygen by-product used in the mill)",,,,"p.4038-4039",
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,capex,,2017_USD-million,69.4,,,,"p.4040, Table 2",COST BASIS: total-plant. Electrolyser plant (+/-30%). Currency year assumed as above.
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,capacity,,MW,79,,,,"p.4041, Table 3",power consumption. CAPACITY BASIS: electric-input
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,annual-output,,t,13300,,,38*350,"p.4041, Table 3; p.4040","DERIVED: hydrogen production 38 t/d x 8400 h/yr / 24 = 350 d/yr (both printed)"
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,opex-fixed,,%/yr,5,,,,p.4040,
+Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3),electrolyzer_alkaline,lifetime,,years,20,,,,p.4040,
