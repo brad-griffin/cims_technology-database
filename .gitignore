@@ -35,3 +35,23 @@ __marimo__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Primary documents. The source PDFs, workbooks and saved web pages stay on
+# disk beside their extractions but are not tracked: git holds only what was
+# extracted from them (the CSVs and their _meta/_nodes sidecars) and the
+# manifest that says where each document came from (source-details_*.csv).
+data/raw-data/**/*.pdf
+data/raw-data/**/*.doc
+data/raw-data/**/*.docx
+data/raw-data/**/*.xls
+data/raw-data/**/*.xlsx
+data/raw-data/**/*.xlsm
+data/raw-data/**/*.ods
+data/raw-data/**/*.html
+data/raw-data/**/*.mhtml
+docs/context/*.xlsx
+# the retired manifest workbook is the project's own file, not a source document
+!data/raw-data/superseded/source_details.xlsx
+# intake folders: documents waiting to be processed
+data/raw-data/_high/
+data/raw-data/_medium/
