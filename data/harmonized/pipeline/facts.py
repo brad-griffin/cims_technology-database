@@ -42,6 +42,11 @@ def _arith(expr):
 
 def clean(facts, flows, cons) -> dict:
     stats = defaultdict(int)
+    # "REVIEW:" in an extraction note marks the row for review; it is still pooled
+    for r in facts + flows + cons:
+        if "REVIEW:" in (r.get("note") or "") and r.get("status") == "draft":
+            r["status"] = "review"
+            stats["rows marked REVIEW"] += 1
     for r in facts:
         if not r.get("value") and r.get("formula"):
             v = _arith(r["formula"])

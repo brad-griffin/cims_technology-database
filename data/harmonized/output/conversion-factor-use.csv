@@ -24,11 +24,10 @@ cf-hhv-lhv-methane,property,"methane, natural gas, biogas and SNG: HHV per LHV",
 cf-hhv-lhv-methanol,property,"methanol, HHV per LHV",GJ-LHV,GJ-HHV,1.1379,,,ratio of heating values,nist_2026_001,2,2,gasifier_biomass-methanol; reactor_co2-to-methanol
 cf-hhv-lhv-solid-liquid,property,"coal, oil and solid biomass: HHV per LHV",GJ-LHV,GJ-HHV,1.0526,,,ratio of heating values,ipcc_2006_001,30,18,anaerobic-digester; boiler_solid-fuel; direct-heater_solid-fuel; gasifier_biomass-methanation; gasifier_biomass-methanol; reactor_hydrothermal-liquefaction; reactor_hydrotreating-lipids; transesterification-unit_alkali-catalyzed
 assume:continuous-operation,assumption,continuous operation,,,,,,,,4,4,electrolyzer_low-temperature; fuel-cell_chp
-eff:boiler_condensing,internal,pooled efficiency of boiler_condensing,,,,,,,,1,1,boiler_condensing
-eff:boiler_fuel-fired,internal,pooled efficiency of boiler_fuel-fired,,,,,,,,10,10,boiler_fuel-fired
-eff:combustion-turbine_heat-recovery-steam-generator,internal,pooled efficiency of combustion-turbine_heat-recovery-steam-generator,,,,,,,,5,5,combustion-turbine_heat-recovery-steam-generator
+eff:boiler_fuel-fired,internal,pooled efficiency of boiler_fuel-fired,,,,,,,,11,11,boiler_fuel-fired
+eff:boiler_fuel-fired_efficiency-moderate,internal,pooled efficiency of boiler_fuel-fired_efficiency-moderate,,,,,,,,1,1,boiler_fuel-fired_efficiency-moderate
+eff:combustion-turbine_heat-recovery-steam-generator,internal,pooled efficiency of combustion-turbine_heat-recovery-steam-generator,,,,,,,,7,7,combustion-turbine_heat-recovery-steam-generator
 eff:direct-heater_air-water,internal,pooled efficiency of direct-heater_air-water,,,,,,,,1,1,direct-heater_air-water
-eff:direct-heater_thermal-oil,internal,pooled efficiency of direct-heater_thermal-oil,,,,,,,,1,1,direct-heater_thermal-oil
 eff:electrolyzer_low-temperature,internal,pooled efficiency of electrolyzer_low-temperature,,,,,,,,3,1,electrolyzer_low-temperature
 eff:reciprocating-engine_chp,internal,pooled efficiency of reciprocating-engine_chp,,,,,,,,1,1,reciprocating-engine_chp
 eff:same-example,same-source,the example's own efficiency,,,,,,,,43,19,boiler_fuel-fired; boiler_solid-fuel; electrolyzer_low-temperature; electrolyzer_solid-oxide; gasifier_biomass-methanation; reciprocating-engine_chp; thermal-storage_electric
