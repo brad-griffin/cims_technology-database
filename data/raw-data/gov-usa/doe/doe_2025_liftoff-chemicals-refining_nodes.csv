@@ -1,0 +1,61 @@
+process,technology,sector,end-use,process-step,service-unit
+"MACC key inputs and assumptions (App. C, Table 2)",steam-reformer_methane,hydrogen,material-conversion,steam methane reforming,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2030",electrolyzer_low-temperature,hydrogen,electrochemical,electrolysis,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2050",electrolyzer_low-temperature,hydrogen,electrochemical,electrolysis,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2030 CCS",capture-unit_ngp-concentrated,natural-gas,co2-capture,capture and compression,t
+"MACC key inputs and assumptions (App. C, Table 2): 2050 CCS",capture-unit_ngp-concentrated,natural-gas,co2-capture,capture and compression,t
+"MACC key inputs and assumptions (App. C, Table 2): 2030 CCS",capture-unit_ammonia-process-stream,chemicals,co2-capture,capture and compression,t
+"MACC key inputs and assumptions (App. C, Table 2): 2050 CCS",capture-unit_ammonia-process-stream,chemicals,co2-capture,capture and compression,t
+"MACC key inputs and assumptions (App. C, Table 2): 2030 CCS",capture-unit_fcc-flue-gas,petroleum-refining,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): 2050 CCS",capture-unit_fcc-flue-gas,petroleum-refining,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): 2030 CCS",capture-unit_steam-cracker-flue-gas,chemicals,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): 2050 CCS",capture-unit_steam-cracker-flue-gas,chemicals,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): 2030 CCS",capture-unit_smr-process-and-flue,petroleum-refining,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): 2050 CCS",capture-unit_smr-process-and-flue,petroleum-refining,co2-capture,post-combustion capture,t
+"MACC key inputs and assumptions (App. C, Table 2): CCS",pipeline_co2-transport-and-storage,co2-capture,co2-transport-and-storage,transport and geological storage,t
+"MACC key inputs and assumptions (App. C, Table 2): 2030 electrification",boiler_electric,heat-supply,steam-and-hot-water,electric boiler,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2050 electrification",boiler_electric,heat-supply,steam-and-hot-water,electric boiler,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2030 electrification",thermal-storage_electric-low-pressure,heat-supply,steam-and-hot-water,thermal energy storage,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2050 electrification",thermal-storage_electric-low-pressure,heat-supply,steam-and-hot-water,thermal energy storage,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2030 electrification",thermal-storage_electric-high-pressure,heat-supply,steam-and-hot-water,thermal energy storage,GJ
+"MACC key inputs and assumptions (App. C, Table 2): 2050 electrification",thermal-storage_electric-high-pressure,heat-supply,steam-and-hot-water,thermal energy storage,GJ
+2030 MACC without IRA (Fig. 16): petroleum-refining,steam-reformer_methane_ccs-concentrated,petroleum-refining,material-conversion,steam methane reforming,GJ
+2030 MACC with IRA (Fig. 17): petroleum-refining,steam-reformer_methane_ccs-concentrated,petroleum-refining,material-conversion,steam methane reforming,GJ
+2030 MACC without IRA (Fig. 16): chemicals,steam-reformer_ammonia_ccs-concentrated,chemicals,material-conversion,,t
+2030 MACC with IRA (Fig. 17): chemicals,steam-reformer_ammonia_ccs-concentrated,chemicals,material-conversion,,t
+"2050 MACC, IRA expired (Fig. 18): chemicals",steam-reformer_ammonia_ccs-concentrated,chemicals,material-conversion,,t
+2030 MACC without IRA (Fig. 16): petroleum-refining,reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,material-conversion,,t
+2030 MACC with IRA (Fig. 17): petroleum-refining,reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,material-conversion,,t
+"2050 MACC, IRA expired (Fig. 18): petroleum-refining",reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,material-conversion,,t
+2030 MACC without IRA (Fig. 16): petroleum-refining,direct-heater_ccs-diffuse,petroleum-refining,material-conversion,,t
+2030 MACC with IRA (Fig. 17): petroleum-refining,direct-heater_ccs-diffuse,petroleum-refining,material-conversion,,t
+"2050 MACC, IRA expired (Fig. 18): petroleum-refining",direct-heater_ccs-diffuse,petroleum-refining,material-conversion,,t
+2030 MACC without IRA (Fig. 16): chemicals,steam-cracker_ccs-diffuse,chemicals,material-conversion,,t
+2030 MACC with IRA (Fig. 17): chemicals,steam-cracker_ccs-diffuse,chemicals,material-conversion,,t
+"2050 MACC, IRA expired (Fig. 18): chemicals",steam-cracker_ccs-diffuse,chemicals,material-conversion,,t
+2030 MACC without IRA (Fig. 16): petroleum-refining,electrolyzer_low-temperature,petroleum-refining,electrochemical,electrolysis,GJ
+2030 MACC with IRA (Fig. 17): petroleum-refining,electrolyzer_low-temperature,petroleum-refining,electrochemical,electrolysis,GJ
+"2050 MACC, IRA expired (Fig. 18): petroleum-refining",electrolyzer_low-temperature,petroleum-refining,electrochemical,electrolysis,GJ
+2030 MACC without IRA (Fig. 16): chemicals,electrolyzer_low-temperature-ammonia,chemicals,electrochemical,electrolysis,GJ
+2030 MACC with IRA (Fig. 17): chemicals,electrolyzer_low-temperature-ammonia,chemicals,electrochemical,electrolysis,GJ
+"2050 MACC, IRA expired (Fig. 18): chemicals",electrolyzer_low-temperature-ammonia,chemicals,electrochemical,electrolysis,GJ
+2030 MACC without IRA (Fig. 16): chemicals,thermal-storage_electric-onsite-renewables,chemicals,steam-and-hot-water,thermal energy storage,GJ
+2030 MACC with IRA (Fig. 17): chemicals,thermal-storage_electric-onsite-renewables,chemicals,steam-and-hot-water,thermal energy storage,GJ
+"2050 MACC, IRA expired (Fig. 18): chemicals",thermal-storage_electric-onsite-renewables,chemicals,steam-and-hot-water,thermal energy storage,GJ
+2030 MACC without IRA (Fig. 16): petroleum-refining,thermal-storage_electric-onsite-renewables,petroleum-refining,steam-and-hot-water,thermal energy storage,GJ
+2030 MACC with IRA (Fig. 17): petroleum-refining,thermal-storage_electric-onsite-renewables,petroleum-refining,steam-and-hot-water,thermal energy storage,GJ
+"2050 MACC, IRA expired (Fig. 18): petroleum-refining",thermal-storage_electric-onsite-renewables,petroleum-refining,steam-and-hot-water,thermal energy storage,GJ
+2030 MACC without IRA (Fig. 16): natural-gas,capture-unit_ngp-concentrated,natural-gas,co2-capture,capture and compression,t
+2030 MACC with IRA (Fig. 17): natural-gas,capture-unit_ngp-concentrated,natural-gas,co2-capture,capture and compression,t
+"2050 MACC, IRA expired (Fig. 18): natural-gas",capture-unit_ngp-concentrated,natural-gas,co2-capture,capture and compression,t
+"Cost gap to breakeven, refinery example (Fig. 30)",electrolyzer_low-temperature,petroleum-refining,electrochemical,electrolysis,GJ
+"Cost gap to breakeven, refinery example (Fig. 30)",capture-unit_refinery-dilute,petroleum-refining,co2-capture,post-combustion capture,t
+"Cost gap to breakeven, refinery example (Fig. 30)",thermal-storage_electric-onsite-renewables,petroleum-refining,steam-and-hot-water,thermal energy storage,GJ
+"Cost gap to breakeven, refinery example (Fig. 30)",direct-heater_hydrogen-high-temperature,petroleum-refining,process-heat-high-temp,fired heater,GJ
+"Cost gap to breakeven, refinery example (Fig. 30)",thermal-storage_electric-high-temperature,petroleum-refining,process-heat-high-temp,thermal energy storage,GJ
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",electrolyzer_low-temperature,hydrogen,electrochemical,electrolysis,GJ
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",steam-cracker_electric,chemicals,material-conversion,steam cracking,t
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",thermal-storage_electric-onsite-renewables,heat-supply,steam-and-hot-water,thermal energy storage,GJ
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",reactor_nuclear-small-modular,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",reactor_nuclear-htgr,heat-supply,process-heat-high-temp,combined heat and power,GJ
+"Technology and adoption readiness (Fig. 34, Fig. 20; Sect. 4b)",heat-pump_vapour-compression-topping,heat-supply,process-heat-high-temp,heat pump,GJ

@@ -1,0 +1,73 @@
+process,technology,sector,end-use,process-step,service-unit
+"Ammonia, conventional steam reforming (Sect. 2.2.3, 2.3, Tables 2.6, 2.8, 2.9)",steam-reformer_ammonia,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, steam reforming in general (Sect. 2.3.1, Table 2.6, German UBA 2000)",steam-reformer_ammonia,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, steam reforming, process licensor range (Sect. 2.3.1, Table 2.6, Uhde 2004)",steam-reformer_ammonia,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia plant example, 1350 t/d fired primary reformer commissioned 1993 (Table 2.6)",steam-reformer_ammonia,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, advanced conventional process (Sect. 2.4.1, Table 2.6)",steam-reformer_ammonia_advanced-conventional,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, reduced primary reforming with increased process air (Sect. 2.4.2, Table 2.6)",steam-reformer_ammonia_reduced-primary,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, heat exchange autothermal reforming (Sect. 2.4.3, Table 2.6)",autothermal-reformer_ammonia_heat-exchange,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, partial oxidation of heavy hydrocarbons (Sect. 2.2.4, Table 2.6)",gasifier_heavy-oil-ammonia,chemicals,material-conversion,ammonia-synthesis,t
+"Ammonia, revamp of a 20-year-old 1100 t/d reduced primary reforming plant (Sect. 2.4.4)",steam-reformer_ammonia_revamp,chemicals,material-conversion,ammonia-synthesis,t
+Ammonia production using hydrogen from water electrolysis (Sect. 2.4.26),reactor_haber-bosch-electrolytic,chemicals,material-conversion,ammonia-synthesis,t
+"Nitric acid, M/M plant (Sect. 3.3, Tables 3.5 and 3.7)",reactor_nitric-acid,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, H/H plant (Sect. 3.3, Tables 3.5 and 3.7)",reactor_nitric-acid,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, M/H plant (Sect. 3.3, Tables 3.5 and 3.7)",reactor_nitric-acid,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, low/medium dual pressure L/M plant (Sect. 3.3, Table 3.7)",reactor_nitric-acid,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, EU average (Sect. 3.3, Table 3.7)",reactor_nitric-acid,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, N2O decomposition by extension of the reactor chamber, Yara Porsgrunn (Sect. 3.4.5)",reactor_nitric-acid_extended-chamber,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor (Sect. 3.4.6)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor, Yara Ambes (Table 3.12)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor, Yara Montoir (Table 3.12)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor, BASF Antwerp SZ2 (Table 3.12)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor, Grande Paroisse Rouen (Table 3.12)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, catalytic N2O decomposition in the oxidation reactor, Lovochemie KD6 (Table 3.12)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, combined NOx and N2O abatement in tail gases, AMI Linz (Sect. 3.4.7)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, non-selective catalytic reduction (NSCR) of NOx and N2O in tail gases (Sect. 3.4.8)",reactor_catalytic-n2o_nscr,chemicals,material-conversion,nitric-acid,t
+"Nitric acid, combined NOx and N2O abatement with hydrocarbons, emerging (Sect. 3.6.1)",reactor_catalytic-n2o,chemicals,material-conversion,nitric-acid,t
+"Urea, conventional total recycling process, typical figures (Sect. 8.3, Stamicarbon 2004)",reactor_urea-synthesis_conventional,chemicals,material-conversion,urea,t
+"Urea, conventional total recycle (Toyo), BASF Ludwigshafen (Tables 8.5-8.7)",reactor_urea-synthesis_conventional,chemicals,material-conversion,urea,t
+"Urea, existing conventional plant before revamp (Toyo revamp study, Table 8.17)",reactor_urea-synthesis_conventional,chemicals,material-conversion,urea,t
+"Urea, revamp to CO2 stripping, Case 2 (Toyo revamp study, Table 8.17)",reactor_urea-synthesis_co2-stripping-revamp,chemicals,material-conversion,urea,t
+"Urea, revamp to CO2 stripping, Case 3 (Toyo revamp study, Table 8.17)",reactor_urea-synthesis_co2-stripping-revamp,chemicals,material-conversion,urea,t
+"Urea, revamp of conventional 1065 t/d plant to CO2 stripping, PIC Kuwait (Table 8.16)",reactor_urea-synthesis_co2-stripping-revamp,chemicals,material-conversion,urea,t
+"Urea, CO2 stripping, CO2 compression by steam turbine (Tables 8.3-8.6, infoMil 2001)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, CO2 stripping, CO2 compression by electromotor (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, CO2 stripping, CO2 compression by steam turbine (Tables 8.5-8.6, Austrian UBA 2002)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, CO2 stripping, CO2 compression by electromotor (Tables 8.5-8.6, Austrian UBA 2002)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, Stamicarbon CO2 stripping, SKW Piesteritz (Tables 8.5-8.7)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, Stamicarbon CO2 stripping (Table 8.7, German UBA 2001)",reactor_urea-synthesis_co2-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping (Snamprogetti), Austrian UBA (Tables 8.3-8.6)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, Snamprogetti NH3 stripping, Yara Brunsbuettel (Tables 8.5-8.7)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping, CO2 compression by steam turbine (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping, CO2 compression by steam turbine, prilling (Table 8.7, Snamprogetti 1999)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping, CO2 compression by electromotor, prilling (Table 8.7, Snamprogetti 1999)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping, CO2 compression by steam turbine, granulation (Table 8.7, Snamprogetti 1999)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, NH3 stripping, CO2 compression by electromotor, granulation (Table 8.7, Snamprogetti 1999)",reactor_urea-synthesis_nh3-stripping,chemicals,material-conversion,urea,t
+"Urea, ACES process, CO2 compression by steam turbine (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_aces,chemicals,material-conversion,urea,t
+"Urea, ACES process, CO2 compression by electromotor (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_aces,chemicals,material-conversion,urea,t
+"Urea, ACES21 CO2 stripping with spout fluid bed granulation, all pumps steam-driven (Table 8.7, Toyo 2003)",reactor_urea-synthesis_aces,chemicals,material-conversion,urea,t
+"Urea, ACES21 CO2 stripping with spout fluid bed granulation, CO2 pump steam-driven (Table 8.7, Toyo 2003)",reactor_urea-synthesis_aces,chemicals,material-conversion,urea,t
+"Urea, IDR process, CO2 compression by electromotor (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_idr,chemicals,material-conversion,urea,t
+"Urea, IDR process, CO2 compression by steam turbine (Tables 8.5-8.6, infoMil 2001)",reactor_urea-synthesis_idr,chemicals,material-conversion,urea,t
+"Urea, specification for new plants (Tables 8.3, 8.7, Uhde 2004)",reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"Urea, modern total recycling stripping process (Sect. 8.4.8, Kongshaug 1998)",reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"Urea, European average (Sect. 8.4.8, Kongshaug 1998)",reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"AN, European average (Sect. 9.4.3, Table 9.3)",reactor_ammonium-nitrate,chemicals,material-conversion,fertilizer,t
+"AN, modern plants (Sect. 9.4.3, Table 9.3)",reactor_ammonium-nitrate,chemicals,material-conversion,fertilizer,t
+"Solid AN, new facility (Table 9.3, EFMA 2000)",reactor_ammonium-nitrate,chemicals,material-conversion,fertilizer,t
+"CAN (Table 9.3, EFMA 2000 / infoMil 2001)",reactor_ammonium-nitrate_can,chemicals,material-conversion,fertilizer,t
+"CAN, AMI Linz (Table 9.3)",reactor_ammonium-nitrate_can,chemicals,material-conversion,fertilizer,t
+"ANS only (Table 9.3, EFMA 2000)",reactor_ammonium-nitrate_solution,chemicals,material-conversion,fertilizer,t
+"AN, new plant, vacuum neutralisation (Sect. 9.4.3, Table 9.8)",reactor_ammonium-nitrate_vacuum-neutraliser,chemicals,material-conversion,fertilizer,t
+"AN, new plant, pressure neutralisation at 2 bar with direct heat recovery (Sect. 9.4.3, Table 9.8)",reactor_ammonium-nitrate_pressure-neutraliser,chemicals,material-conversion,fertilizer,t
+"AN, new plant, pressure neutralisation at 4 bar with clean steam production (Sect. 9.4.3, Table 9.8)",reactor_ammonium-nitrate_pressure-neutraliser,chemicals,material-conversion,fertilizer,t
+"NPK, granulation with a pipe reactor, 1200 t/d plant (Sect. 7.3, Table 7.3, EFMA 2000)",reactor_npk_pipe-reactor,chemicals,material-conversion,fertilizer,t
+"NPK, mixed acid route with rock digestion, 1200 t/d plant (Sect. 7.3, Table 7.3, EFMA 2000)",reactor_npk_mixed-acid,chemicals,material-conversion,fertilizer,t
+"NPK, drum granulation with ammoniation, 1200 t/d plant (Sect. 7.3, Table 7.3, EFMA 2000)",reactor_npk_drum-granulation,chemicals,material-conversion,fertilizer,t
+"NPK, mixed acid route, steam/water granulation (Table 7.3, infoMil 2001)",reactor_npk_mixed-acid,chemicals,material-conversion,fertilizer,t
+"NPK, nitrophosphate route, chemical granulation (Table 7.3, infoMil 2001)",reactor_npk_nitrophosphate,chemicals,material-conversion,fertilizer,t
+"NP/NPK, nitrophosphate route, AMI Linz (Table 7.3)",reactor_npk_nitrophosphate,chemicals,material-conversion,fertilizer,t
+"Sulphuric acid, double contact process based on sulphur burning (Sect. 4.4.15)",reactor_sulphuric-acid_double-contact,chemicals,material-conversion,sulphuric-acid,t
+"Phosphoric acid, wet process (Sect. 5.3, Table 5.5, EFMA 2000)",reactor_phosphoric-acid_wet,chemicals,material-conversion,phosphoric-acid,t
+"Phosphoric acid, thermal process via elemental phosphorus, Thermphos Vlissingen (Sect. 5.4.15, Tables 5.11-5.12)",furnace_phosphorus-electric,chemicals,material-conversion,phosphoric-acid,t
+"Hydrofluoric acid from fluorspar (Sect. 6.3.1, Table 6.4)",kiln_hydrofluoric-acid,chemicals,material-conversion,hydrofluoric-acid,t

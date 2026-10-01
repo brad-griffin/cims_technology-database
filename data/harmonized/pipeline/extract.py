@@ -140,6 +140,16 @@ BRIEF_SHAPE = [
     ("other-reports/larson_2006_gasification-biorefining-kraft-pulp-paper_princeton", "larson_2006_001", "US"),
     ("gov-usa/lbnl/khrushch_1999_chp-carbon-reduction-chemicals-pulp-paper_lbnl", "khrushch_1999_001", "US"),
     ("other-reports/app_2010_soact-steelmaking-handbook_lbnl", "app_2010_001", "global"),
+    ("gov-usa/doe/doe_2023_liftoff-industrial-decarbonization", "doe_2023_001", "US"),
+    ("gov-usa/doe/doe_2025_liftoff-chemicals-refining", "doe_2025_001", "US"),
+    ("gov-eu/jrc/boulamanti_2017_chemicals-prospective-scenarios_jrc", "boulamanti_2017_001", "EU"),
+    ("gov-usa/lbnl/kramer_2009_energy-efficiency-pulp-paper_lbnl", "kramer_2009_001", "US"),
+    ("gov-eu/jrc/falcke_2017_lvoc-bref_jrc", "falcke_2017_001", "EU"),
+    ("gov-eu/jrc/jrc_2022_ferrous-metals-processing-bref", "jrc_2022_001", "EU"),
+    ("gov-eu/jrc/remus_2013_iron-steel-bref_jrc", "remus_2013_001", "EU"),
+    ("gov-eu/jrc/suhr_2015_pulp-paper-bref_jrc", "suhr_2015_001", "EU"),
+    ("gov-eu/jrc/jrc_2007_lvic-aaf-bref", "jrc_2007_002", "EU"),
+    ("gov-eu/jrc/jrc_2007_polymers-bref", "jrc_2007_003", "EU"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

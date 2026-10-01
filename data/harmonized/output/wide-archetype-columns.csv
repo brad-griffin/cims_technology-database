@@ -90,6 +90,24 @@ specific-energy-consumption_bioliquid_high,technical,GJ/product-unit,
 specific-energy-consumption_bioliquid_n,technical,,
 specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_biomass-solid_n,technical,,
+specific-energy-consumption_blast-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: blast-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_blast-furnace-gas_low,technical,GJ/product-unit,
+specific-energy-consumption_blast-furnace-gas_high,technical,GJ/product-unit,
+specific-energy-consumption_blast-furnace-gas_n,technical,,
+specific-energy-consumption_by-product-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: by-product-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_by-product-gas_low,technical,GJ/product-unit,
+specific-energy-consumption_by-product-gas_high,technical,GJ/product-unit,
+specific-energy-consumption_by-product-gas_n,technical,,
+specific-energy-consumption_coal,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: coal. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_coal_n,technical,,
+specific-energy-consumption_coke,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: coke. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_coke_low,technical,GJ/product-unit,
+specific-energy-consumption_coke_high,technical,GJ/product-unit,
+specific-energy-consumption_coke_n,technical,,
+specific-energy-consumption_coke-oven-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: coke-oven-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_coke-oven-gas_low,technical,GJ/product-unit,
+specific-energy-consumption_coke-oven-gas_high,technical,GJ/product-unit,
+specific-energy-consumption_coke-oven-gas_n,technical,,
 specific-energy-consumption_electricity,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_electricity_low,technical,GJ/product-unit,
 specific-energy-consumption_electricity_high,technical,GJ/product-unit,
@@ -112,7 +130,13 @@ specific-energy-consumption_natural-gas,technical,GJ/product-unit,"Total final e
 specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_n,technical,,
+specific-energy-consumption_oil,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: oil. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_oil_low,technical,GJ/product-unit,
+specific-energy-consumption_oil_high,technical,GJ/product-unit,
+specific-energy-consumption_oil_n,technical,,
 specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_steam_low,technical,GJ/product-unit,
+specific-energy-consumption_steam_high,technical,GJ/product-unit,
 specific-energy-consumption_steam_n,technical,,
 temperature-output,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-output_low,technical,degC,
@@ -164,6 +188,18 @@ cost-levelized_co2,cost,2025_CAD/product-unit,"Cost per unit of product or servi
 cost-levelized_co2_low,cost,2025_CAD/product-unit,
 cost-levelized_co2_high,cost,2025_CAD/product-unit,
 cost-levelized_co2_n,cost,,
+cost-levelized_co2-captured,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: co2-captured. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_co2-captured_low,cost,2025_CAD/product-unit,
+cost-levelized_co2-captured_high,cost,2025_CAD/product-unit,
+cost-levelized_co2-captured_n,cost,,
+cost-levelized_delivered,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: delivered. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_delivered_low,cost,2025_CAD/product-unit,
+cost-levelized_delivered_high,cost,2025_CAD/product-unit,
+cost-levelized_delivered_n,cost,,
+cost-levelized_delivered-net-of-45V,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: delivered-net-of-45V. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_delivered-net-of-45V_low,cost,2025_CAD/product-unit,
+cost-levelized_delivered-net-of-45V_high,cost,2025_CAD/product-unit,
+cost-levelized_delivered-net-of-45V_n,cost,,
 discount-rate,cost,%,"Financial rate used by the source when levelizing. Recorded so a levelized cost can be inverted without double-counting the model's own hurdle rate. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 discount-rate_low,cost,%,
 discount-rate_high,cost,%,
@@ -198,6 +234,10 @@ emissions-process_co2,emissions,t/product-unit,"Emissions from the chemical reac
 emissions-process_co2_low,emissions,t/product-unit,
 emissions-process_co2_high,emissions,t/product-unit,
 emissions-process_co2_n,emissions,,
+emissions-process_co2e,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-process_co2e_low,emissions,t/product-unit,
+emissions-process_co2e_high,emissions,t/product-unit,
+emissions-process_co2e_n,emissions,,
 emissions-process_n2o,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: n2o. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-process_n2o_low,emissions,t/product-unit,
 emissions-process_n2o_high,emissions,t/product-unit,
@@ -210,6 +250,10 @@ emissions-total_co2,emissions,t/product-unit,"Combustion plus process emissions 
 emissions-total_co2_low,emissions,t/product-unit,
 emissions-total_co2_high,emissions,t/product-unit,
 emissions-total_co2_n,emissions,,
+emissions-total_co2e,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species: co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-total_co2e_low,emissions,t/product-unit,
+emissions-total_co2e_high,emissions,t/product-unit,
+emissions-total_co2e_n,emissions,,
 emissions-total_n2o,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species: n2o. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-total_n2o_n,emissions,,
 emissions-captured_co2,emissions,t/product-unit,"Emissions captured rather than released, per unit of energy input or product output. Species named in target. The counterpart of capture-rate as an absolute quantity. Species: co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -236,6 +280,10 @@ abatement-cost_co2,economic,2025_CAD/t-CO2-eq,"Cost of avoiding one tonne of CO2
 abatement-cost_co2_low,economic,2025_CAD/t-CO2-eq,
 abatement-cost_co2_high,economic,2025_CAD/t-CO2-eq,
 abatement-cost_co2_n,economic,,
+abatement-cost_co2e,economic,2025_CAD/t-CO2-eq,"Cost of avoiding one tonne of CO2-eq by using this technology instead of the incumbent, as the source reports it. NOT a capital or operating cost and never interchangeable with one: it already nets the technology's costs against the incumbent's and divides by the emissions avoided, so the incumbent it was measured against belongs in the note. Added 2026-08-29 for IPCC AR6 Chapter 11 Table 11.3, which reports costs only in this form. Species: co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+abatement-cost_co2e_low,economic,2025_CAD/t-CO2-eq,
+abatement-cost_co2e_high,economic,2025_CAD/t-CO2-eq,
+abatement-cost_co2e_n,economic,,
 emissions-reduction-potential,emissions,%,"Reduction in GHG emissions this option can deliver relative to current practice, as a percentage. A ceiling on what the option can do, not a projection of what it will do. Where a source says these are multiplicative rather than additive across options -- as IPCC AR6 Table 11.3 does -- they must not be summed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-reduction-potential_low,emissions,%,
 emissions-reduction-potential_high,emissions,%,

@@ -1,0 +1,78 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,input,coal,,t/unit,t,1.22,1.35,,1220/1000; 1350/1000,"p.224, Table 5.2",Coal (dry) 1220-1350 kg/t coke,
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,output,coke-oven-gas,,Nm3/unit,t,360,518,yes,,"p.224, Table 5.2",COG 360-518 Nm3/t coke,
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,output,coke-oven-gas,,MJ/unit,t,7200,9000,yes,,"p.224, Table 5.2",Energy 7 200-9 000 MJ,Energy of the COG output (unit printed as MJ; per t coke by context)
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,output,steam,,MJ/unit,t,9,267,yes,,"p.224, Table 5.2 note 4",Steam 9-267/1500 MJ/t coke,1500 MJ/t for one plant with coke dry quenching
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,output,benzole-and-tars,,t/unit,t,0.026,0.048,yes,26/1000; 48/1000,"p.224, Table 5.2",Tar 26-48 kg/t coke,[commodity printed as tar]
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,output,benzole-and-tars,,t/unit,t,0.0091,0.014,yes,9.1/1000; 14/1000,"p.224, Table 5.2",Light oil (BTX) 9.1-14 kg/t coke,[commodity printed as benzole]
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,input,coal,42119,MJ/unit,t,,,,,"p.234, Fig. 5.11",Coal 42119,MJ/t dry coke
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,output,coke,29294,MJ/unit,t,,,,,"p.234, Fig. 5.11",Coke + coke breeze 29294,product energy content
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,output,coke-oven-gas,8660,MJ/unit,t,,,yes,,"p.234, Fig. 5.11",Coke oven gas 8660,
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,output,benzole-and-tars,1421,MJ/unit,t,,,yes,,"p.234, Fig. 5.11",Crude tar 1421,[commodity printed as tar]
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,output,benzole-and-tars,481,MJ/unit,t,,,yes,,"p.234, Fig. 5.11",Crude benzene 481,[commodity printed as benzole]
+Coke dry quenching (Sect. 5.3.14),heat-recovery-unit_coke-dry-quenching,output,steam,0.5,t/unit,t,,,yes,,"p.269, Sect. 5.3.14",about 0.5 tonne steam/t coke,Recovered steam (93 bar) used for power generation
+Coke dry quenching (Sect. 5.3.14),heat-recovery-unit_coke-dry-quenching,output,electricity,160,kWh/unit,t,,,yes,320000000/2000000,"p.270, Sect. 5.3.14",approximately 320 000 MWh/yr for 2 Mt/yr coke at 100% steam utilisation,Derived: 320 000 MWh / 2 Mt coke
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,coke,0.359,t/unit,t,0.282,0.515,,359/1000; 282/1000; 515/1000,"p.304, Table 6.1",coke 359 (282-515) kg/t HM,kg/t HM converted to t/t; weighted average with max/min
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,coal,0.162,t/unit,t,0.0,0.232,,162/1000; 0/1000; 232/1000,"p.304, Table 6.1",coal 162 (0-232) kg/t HM,kg/t HM converted to t/t; weighted average with max/min; tuyere injection
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,oil,0.0301,t/unit,t,0.0,0.116,,30.1/1000; 0/1000; 116/1000,"p.304, Table 6.1",oil 30.1 (0-116) kg/t HM,kg/t HM converted to t/t; weighted average with max/min; tuyere injection
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,coke-oven-gas,0.0011,t/unit,t,0.0,0.0469,,1.1/1000; 0/1000; 46.9/1000,"p.304, Table 6.1",coke-oven-gas 1.1 (0-46.9) kg/t HM,kg/t HM converted to t/t; weighted average with max/min; tuyere injection
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,natural-gas,0.0022,t/unit,t,0.0,0.0056,,2.2/1000; 0/1000; 5.6/1000,"p.304, Table 6.1",natural-gas 2.2 (0-5.6) kg/t HM,kg/t HM converted to t/t; weighted average with max/min; tuyere injection
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,oxygen,0.0544,t/unit,t,0.0,0.0851,,54.4/1000; 0/1000; 85.1/1000,"p.304, Table 6.1",oxygen 54.4 (0-85.1) kg/t HM,kg/t HM converted to t/t; weighted average with max/min
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,sinter,1.088,t/unit,t,0.116,1.621,,1088/1000; 116/1000; 1621/1000,"p.304, Table 6.1",sinter 1088 (116-1621) kg/t HM,kg/t HM converted to t/t; weighted average with max/min
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,pellets,0.358,t/unit,t,0.0,0.972,,358/1000; 0/1000; 972/1000,"p.304, Table 6.1",pellets 358 (0-972) kg/t HM,kg/t HM converted to t/t; weighted average with max/min
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,input,iron-ore,0.18,t/unit,t,0.0,0.684,,180/1000; 0/1000; 684/1000,"p.304, Table 6.1",iron-ore 180 (0-684) kg/t HM,kg/t HM converted to t/t; weighted average with max/min
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,output,blast-furnace-gas,,MJ/unit,t,3377,6061,yes,,"p.305, Table 6.2",BF gas 3377-6061 MJ/t HM,16 installations
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,output,electricity,,MJ/unit,t,40,91,yes,,"p.305, Table 6.2",Electricity 40-91 MJ/t HM,Top-gas pressure recovery output; 6 installations
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,output,slag,,t/unit,t,0.15,0.3466,yes,150/1000; 346.6/1000,"p.305, Table 6.2",Slag 150.0-346.6 kg/t HM,
+"Blast furnace example with PCI and top gas pressure recovery, 1986 (Table 6.16)",blast-furnace,output,electricity,0.35,GJ/unit,t,,,yes,,"p.316, Table 6.16",Electricity output 0.35 GJ/t HM,Top gas pressure recovery
+"Blast furnace example with PCI and top gas pressure recovery, 1986 (Table 6.16)",blast-furnace,output,blast-furnace-gas,5.15,GJ/unit,t,,,yes,,"p.316, Table 6.16",BF gas 5.15 GJ/t HM,
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,input,hot-metal,,t/unit,t,0.788,0.931,,788/1000; 931/1000,"p.369, Table 7.3",Hot metal 788-931 kg/t LS,
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,input,scrap-steel,,t/unit,t,0.101,0.34,,101/1000; 340/1000,"p.369, Table 7.3",Scrap 101-340 kg/t LS,[commodity printed as scrap]
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,input,oxygen,,Nm3/unit,t,49.5,70,,,"p.369, Table 7.3",Oxygen 49.5-70 m3/t LS,unit printed as m3
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,input,blast-furnace-gas,,Nm3/unit,t,1.84,17.6,,,"p.369, Table 7.3",BF gas 1.84-17.6 m3/t LS,unit printed as m3
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,output,basic-oxygen-furnace-gas,,MJ/unit,t,350,700,yes,,"p.369, Table 7.3",BOF gas (0) 350-700 MJ/t LS,BOF gas; zero when not recovered [commodity printed as by-product-gas]
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,output,steam,,MJ/unit,t,124,335,yes,,"p.369, Table 7.3",Steam (0) 124-335 MJ/t LS,High value with non-suppressed combustion and heat recovery
+BOF and continuous casting energy (Sect. 7.2.2.4),basic-oxygen-furnace,output,basic-oxygen-furnace-gas,,GJ/unit,t,,0.7,yes,,"p.383, Sect. 7.2.2.4",energy recovery can be as high as 0.7 GJ/t LS,BOF gas and/or waste heat recovery in a modern plant [commodity printed as by-product-gas]
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,scrap-steel,,t/unit,t,1.039,1.232,,1039/1000; 1232/1000,"p.429, Table 8.1",scrap 1039-1232 kg/t LS,kg/t LS converted to t/t [commodity printed as scrap]
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,hot-metal,,t/unit,t,0.0,0.153,,0/1000; 153/1000,"p.429, Table 8.1",pig-iron 0-153 kg/t LS,kg/t LS converted to t/t [commodity printed as pig-iron]
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,direct-reduced-iron,,t/unit,t,0.0,0.215,,0/1000; 215/1000,"p.429, Table 8.1",dri 0-215 kg/t LS,kg/t LS converted to t/t [commodity printed as dri]
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,coal,,t/unit,t,0.003,0.028,,3/1000; 28/1000,"p.429, Table 8.1",coal 3-28 kg/t LS,kg/t LS converted to t/t; coal incl. anthracite and coke
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,electrodes,,t/unit,t,0.002,0.006,,2/1000; 6/1000,"p.429, Table 8.1",electrodes 2-6 kg/t LS,kg/t LS converted to t/t
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,oxygen,,Nm3/unit,t,5,65,,,"p.429, Table 8.1",Oxygen 5-65 m3/t LS,unit printed as m3
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,input,steam,,t/unit,t,0.033,0.36,,33/1000; 360/1000,"p.429, Table 8.1",Steam 33-360 kg/t LS,Only plants with vacuum secondary metallurgy (note 3)
+"Scrap preheating, Consteel Plant 1 (Table 8.15)",electric-arc-furnace_consteel,input,oxygen,35.5,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 35.5 Nm3/t LS,
+"Scrap preheating, Consteel Plant 1 (Table 8.15)",electric-arc-furnace_consteel,input,electrodes,0.0008,t/unit,t,,,,0.8/1000,"p.455, Table 8.15",Electrode 0.8 kg/t LS,kg converted to t
+"Scrap preheating, Consteel Plant 2 (Table 8.15)",electric-arc-furnace_consteel,input,oxygen,33,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 33 Nm3/t LS,
+"Scrap preheating, Consteel Plant 2 (Table 8.15)",electric-arc-furnace_consteel,input,electrodes,0.0009,t/unit,t,,,,0.9/1000,"p.455, Table 8.15",Electrode 0.9 kg/t LS,kg converted to t
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_consteel,input,oxygen,34,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 34 Nm3/t LS,
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_consteel,input,electrodes,0.0014,t/unit,t,,,,1.4/1000,"p.455, Table 8.15",Electrode 1.4 kg/t LS,kg converted to t
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% hot metal (Table 8.15)",electric-arc-furnace_consteel,input,oxygen,35,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 35 Nm3/t LS,
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% hot metal (Table 8.15)",electric-arc-furnace_consteel,input,electrodes,0.0012,t/unit,t,,,,1.2/1000,"p.455, Table 8.15",Electrode 1.2 kg/t LS,kg converted to t
+"Scrap preheating, Fuchs-Coss Plant (Table 8.15)",electric-arc-furnace_shaft,input,oxygen,38,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 38 Nm3/t LS,
+"Scrap preheating, Fuchs-Coss Plant (Table 8.15)",electric-arc-furnace_shaft,input,electrodes,0.0012,t/unit,t,,,,1.2/1000,"p.455, Table 8.15",Electrode 1.2 kg/t LS,kg converted to t
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 100% scrap (Table 8.15)",electric-arc-furnace_finger-shaft,input,oxygen,34,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 34 Nm3/t LS,
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 100% scrap (Table 8.15)",electric-arc-furnace_finger-shaft,input,electrodes,0.0013,t/unit,t,,,,1.3/1000,"p.455, Table 8.15",Electrode 1.3 kg/t LS,kg converted to t
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_finger-shaft,input,oxygen,37,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 37 Nm3/t LS,
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_finger-shaft,input,electrodes,0.0011,t/unit,t,,,,1.1/1000,"p.455, Table 8.15",Electrode 1.1 kg/t LS,kg converted to t
+"Scrap preheating, SIMETAL Finger Shaft Plant 2 (Table 8.15)",electric-arc-furnace_finger-shaft,input,oxygen,44,Nm3/unit,t,,,,,"p.455, Table 8.15",Oxygen 44 Nm3/t LS,
+"Scrap preheating, SIMETAL Finger Shaft Plant 2 (Table 8.15)",electric-arc-furnace_finger-shaft,input,electrodes,0.0008,t/unit,t,,,,0.8/1000,"p.455, Table 8.15",Electrode 0.8 kg/t LS,kg converted to t
+"Corex plant, Iscor Pretoria, lump ore (Table 10.3)",smelting-vessel_corex,input,coal,1.08,t/unit,t,,,,1080/1000,"p.527, Table 10.3",Coal consumption 1080 kg/t HM (Cfix 615),
+"Corex plant, Iscor Pretoria, lump ore (Table 10.3)",smelting-vessel_corex,input,oxygen,540,Nm3/unit,t,,,,,"p.527, Table 10.3",O2 540 Nm3/t HM,
+"Corex plant, Iscor Pretoria, lump ore (Table 10.3)",smelting-vessel_corex,output,process-off-gas,1750,Nm3/unit,t,,,yes,,"p.527, Table 10.3","Export gas 1750 Nm3/t HM, LCV 7.5","LCV printed with unit MJ/t HM, read as MJ/Nm3 (text p.526: 7.5 MJ/Nm3); 45% CO, 32% CO2, 16% H2 [commodity printed as export-gas]"
+"Corex plant, Iscor Pretoria, pellets (Table 10.3)",smelting-vessel_corex,input,coal,1.0,t/unit,t,,,,1000/1000,"p.527, Table 10.3",Coal consumption 1000 kg/t HM (Cfix 570),
+"Corex plant, Iscor Pretoria, pellets (Table 10.3)",smelting-vessel_corex,input,oxygen,500,Nm3/unit,t,,,,,"p.527, Table 10.3",O2 500 Nm3/t HM,
+"Corex plant, Iscor Pretoria, pellets (Table 10.3)",smelting-vessel_corex,output,process-off-gas,1710,Nm3/unit,t,,,yes,,"p.527, Table 10.3","Export gas 1710 Nm3/t HM, LCV 7.5","LCV printed with unit MJ/t HM, read as MJ/Nm3 (text p.526: 7.5 MJ/Nm3); 45% CO, 32% CO2, 16% H2 [commodity printed as export-gas]"
+"Smelting reduction under development, HIsmelt (Australia) (Table 10.5)",smelting-vessel_hismelt,input,coal,,t/unit,t,0.63,0.7,,630/1000; 700/1000,"p.529, Table 10.5",Coal consumption 630-700 kg/t HM,
+"Smelting reduction under development, HIsmelt (Australia) (Table 10.5)",smelting-vessel_hismelt,output,process-off-gas,1850,Nm3/unit,t,,,yes,,"p.529, Table 10.5","Off-gas 1850 Nm3/t HM, calorific value 1.44 MJ/Nm3",[commodity printed as off-gas]
+"Smelting reduction under development, HIsmelt (Australia) (Table 10.5)",smelting-vessel_hismelt,output,process-off-gas,2.7,GJ/unit,t,,,yes,,"p.529, Table 10.5",Energy output 2.7 GJ/t HM,Net energy consumption printed as NA [commodity printed as energy]
+"Smelting reduction under development, DIOS (Japan) (Table 10.5)",smelting-vessel_dios,input,coal,0.95,t/unit,t,,,,950/1000,"p.529, Table 10.5",Coal consumption 950 kg/t HM,
+"Smelting reduction under development, DIOS (Japan) (Table 10.5)",smelting-vessel_dios,input,oxygen,500,Nm3/unit,t,,,,,"p.529, Table 10.5",Oxygen 500 Nm3/t HM,
+"Smelting reduction under development, DIOS (Japan) (Table 10.5)",smelting-vessel_dios,output,process-off-gas,2080,Nm3/unit,t,,,yes,,"p.529, Table 10.5","Off-gas 2080 Nm3/t HM, calorific value 3.74 MJ/Nm3",[commodity printed as off-gas]
+"Smelting reduction under development, DIOS (Japan) (Table 10.5)",smelting-vessel_dios,output,process-off-gas,7.8,GJ/unit,t,,,yes,,"p.529, Table 10.5",Energy output 7.8 GJ/t HM,Net energy consumption printed as NA [commodity printed as energy]
+"Smelting reduction under development, AISI-DOE/CCF (US/Netherlands) (Table 10.5)",smelting-vessel_ccf,input,coal,,t/unit,t,0.7,0.75,,700/1000; 750/1000,"p.529, Table 10.5",Coal consumption 700-750 kg/t HM,
+"Smelting reduction under development, AISI-DOE/CCF (US/Netherlands) (Table 10.5)",smelting-vessel_ccf,input,oxygen,,Nm3/unit,t,430,680,,,"p.529, Table 10.5",Oxygen 430-680 Nm3/t HM,
+"Smelting reduction under development, AISI-DOE/CCF (US/Netherlands) (Table 10.5)",smelting-vessel_ccf,output,process-off-gas,4.0,GJ/unit,t,,,yes,,"p.529, Table 10.5",Energy output 4.0 GJ/t HM,Net energy consumption printed as NA [commodity printed as energy]
+"Smelting reduction under development, ROMELT (Russia) (Table 10.5)",smelting-vessel_romelt,input,coal,,t/unit,t,0.9,1.2,,900/1000; 1200/1000,"p.529, Table 10.5",Coal consumption 900-1200 kg/t HM,
+"Smelting reduction under development, ROMELT (Russia) (Table 10.5)",smelting-vessel_romelt,input,oxygen,,Nm3/unit,t,750,850,,,"p.529, Table 10.5",Oxygen 750-850 Nm3/t HM,
+"Primus residue smelting plant, Differdange (Table 2.13)",smelting-vessel_primus,input,coal,0.3,t/unit,t,,,,300/1000,"p.72, Table 2.13",Coal consumption 300 kg/t,MHF; denominator not printed
+"Hydrogen direct reduction with electrolysis, ULCOS (Sect. 11.1.1.2)",shaft-furnace_electrolytic-hydrogen,input,hydrogen,1050,Nm3/unit,t,,,,,"p.540, Sect. 11.1.1.2",1050 Nm3 of H2/t of DRI,per t DRI (not per t steel)

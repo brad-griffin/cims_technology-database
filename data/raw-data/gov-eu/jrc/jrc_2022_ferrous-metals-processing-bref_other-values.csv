@@ -1,0 +1,20 @@
+process,technology,item,value,unit,reference,note
+Reheating furnaces (Sect. 2.2.3.2),furnace_reheating,Largest walking beam furnace thermal input (voestalpine Linz),180,MW,"p.60, Sect. 2.2.3.2",Throughput 420 t/h; pushers of 200 MWth also in operation. reprinted from EUROFER 1998
+Oxy-fuel combustion (Sect. 2.4.2.5),air-separation-unit,Electricity for gaseous oxygen production,278,kWh/t O2,"p.146, Sect. 2.4.2.5",0.4 kWh/Nm3 O2; liquid oxygen 800 kWh/t (1.14 kWh/Nm3). reprinted from EUROFER 2020
+Reheating furnaces (Sect. 2.4.2.13),furnace_reheating,Loss through water-cooled stock transport systems,6-12,% of fuel input,"p.161, Sect. 2.4.2.13",Up to 20-25 % near end of campaign. reprinted from ETSU 1993
+Regenerative and recuperative burners (Sect. 8.5.4.3),furnace_reheating,"Furnace thermal efficiency, regenerative burners or central recuperator with long preheat zone",80,%,"p.587, Sect. 8.5.4.3; p.139, Sect. 2.4.2.3",reprinted from EUROFER 1998
+Regenerative and recuperative burners (Sect. 8.5.4.3),furnace_reheating,"Furnace thermal efficiency, recuperative burners",65,%,"p.587, Sect. 8.5.4.3",Air preheat up to 550-620 degC. reprinted from EUROFER 1998
+Reheating furnaces (Sect. 2.5.1),furnace_reheating,"Energy input wasted through walls, doors and exhaust gas",20-30,%,"p.210, Sect. 2.5.1",Exhaust 250-400 degC after recuperator.
+ORC (Sect. 2.5.1),steam-turbine_waste-heat_orc,"Net annualised energy savings, NatSteel ORC",650000-750000,USD/yr,"p.211, Sect. 2.5.1",PRICE YEAR NOT STATED. reprinted from Wong 2013
+ORC (Sect. 2.5.1),steam-turbine_waste-heat_orc,"Electricity saved, Badische Stahlwerke ORC, 2017",60000,kWh/yr,"p.211, Sect. 2.5.1",1 400 000 kWh/yr expected but not achieved. reprinted from Menges et al. 2017
+ORC (Sect. 2.5.1),steam-turbine_waste-heat_orc,EU-27 potential recovery with ORC at 209 rolling mills,310,MW,"p.211, Sect. 2.5.1",reprinted from Campana et al. 2013
+Batch annealing (Sect. 3.5.1),annealing-furnace_hydrogen-bell,Share of heating energy stored in coils after heating,70,%,"p.333, Sect. 3.5.1",reprinted from Schmidt 2016
+Batch galvanising (Sect. 8.5.3.6),furnace_galvanising-kettle,Flue-gas heat loss of fuel-fired kettle furnace,45-55,% of gross calorific input,"p.578, Sect. 8.5.3.6",Electric heating losses about 15 % of metered power; bath surface losses 15-25 % of heat transferred.
+"Batch galvanising thin film (Sect. 6.4.5.5, Table 6.8)",coating-line_batch-galvanising,"Energy, thin-film (Zn-5%Al) galvanising, first year 2017",10.5,kWh/m2,"p.497, Table 6.8",Per m2 of coated surface; capital cost factor 1.1-1.3 x standard process. reprinted from EGGA 2022
+Wire drawing (Sect. 4.3.2),,"Specific energy consumption, wire drawing lines",39-1062,MJ/t,"p.344, Sect. 4.3.2",5 plants; no archetype for wire drawing.
+Jet vapour deposition (Sect. 5.5.1),coating-line_jet-vapour-deposition,"Installation cost, new JVD line (ArcelorMittal Kessales)",> 60,EUR million,"p.435, Sect. 5.5.1",Lower bound only; emerging technique; no capacity or price year. reprinted from ArcelorMittal Kessales 2017
+Acid regeneration (Sect. 8.6.5),separator_acid-retardation,"Electricity, acid retardation (ion exchange)",0.25-0.40,kWh/kg Fe,"p.621, Sect. 8.6.5",Per kg iron removed.
+Acid regeneration (Sect. 8.6.5),separator_diffusion-dialysis,"Electricity, diffusion dialysis",0.1-0.23,kWh/kg Fe,"p.622, Sect. 8.6.5",Per kg iron removed.
+Slab slitting (Sect. 2.4.1.5),,Gas and oxygen consumption of slab slitting,1.6 / 2.7,Nm3/t slab,"p.134, Sect. 2.4.1.5","reprinted from AT, TWG member 1999"
+Annex 11.6,,Net calorific values used to convert SEC data,NG 36.80 MJ/Nm3; COG 19.00 MJ/Nm3; BFG 3.30 MJ/Nm3; BOF gas 9.00 MJ/Nm3; oil 40.00 GJ/t; LPG 46.00 GJ/t,,"p.820, Annex 11.6",Establishes the LHV basis of the data-collection SEC figures.
+"Thin slab casting (Sect. 2.4.2.17, Figure 2.96)",rolling-mill_thin-slab,"Energy of conventional HSM vs ESP and CSP (fuel gas, electricity, caster)",not loaded,kWh/t,"p.172, Figure 2.96",Bar chart without printed values (Kordzadeh 2016); not loaded.

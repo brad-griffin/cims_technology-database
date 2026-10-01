@@ -1,0 +1,131 @@
+process,technology,sector,end-use,process-step,service-unit
+"Nitric acid, Ostwald process consumption (Sect. 5.1.2, Tables 19, 22)",reactor_nitric-acid_single-pressure,chemicals,material-conversion,nitric acid,t
+"Nitric acid, Ostwald process consumption (Sect. 5.1.2, Tables 19, 22)",reactor_nitric-acid_high-pressure,chemicals,material-conversion,nitric acid,t
+"Nitric acid, Ostwald process consumption (Sect. 5.1.2, Tables 19, 22)",reactor_nitric-acid_dual-pressure,chemicals,material-conversion,nitric acid,t
+"Nitric acid, IPCC default N2O emission factors (Table 21)",reactor_nitric-acid_atmospheric,chemicals,material-conversion,nitric acid,t
+"Nitric acid, IPCC default N2O emission factors (Table 21)",reactor_nitric-acid_medium-pressure,chemicals,material-conversion,nitric acid,t
+"Nitric acid, IPCC default N2O emission factors (Table 21)",reactor_nitric-acid_high-pressure,chemicals,material-conversion,nitric acid,t
+"Nitric acid, IPCC default N2O emission factors (Table 21)",reactor_nitric-acid_nscr,chemicals,material-conversion,nitric acid,t
+"Nitric acid, IPCC default N2O emission factors (Table 21)",reactor_catalytic-n2o_tail-gas,chemicals,material-conversion,nitric acid N2O abatement,t
+"Nitric acid N2O abatement BATs (Sect. 5.1.3, Table 23)",reactor_catalytic-n2o_primary,chemicals,material-conversion,nitric acid N2O abatement,t
+"Nitric acid N2O abatement BATs (Sect. 5.1.3, Table 23)",reactor_catalytic-n2o_secondary,chemicals,material-conversion,nitric acid N2O abatement,t
+"Nitric acid N2O abatement BATs (Sect. 5.1.3, Table 23)",reactor_catalytic-n2o_tertiary,chemicals,material-conversion,nitric acid N2O abatement,t
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",gasifier_heavy-oil-ammonia,chemicals,material-conversion,ammonia,t
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",gasifier_coal-ammonia,chemicals,material-conversion,ammonia,t
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",autothermal-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"Ammonia from electricity (Sect. 5.2.3-5.2.4, Table 28)",reactor_haber-bosch-electrolytic,chemicals,material-conversion,ammonia,t
+"Ammonia from electricity (Sect. 5.2.3-5.2.4, Table 28)",electrolysis-cell_solid-state-ammonia,chemicals,material-conversion,ammonia,t
+"Steam cracking, values used in the study (Sect. 5.3.2, Tables 32, 35)",steam-cracker_fired-tubular_ethane,chemicals,material-conversion,steam cracking,t
+"Steam cracking, values used in the study (Sect. 5.3.2, Tables 32, 35)",steam-cracker_fired-tubular_naphtha,chemicals,material-conversion,steam cracking,t
+"Steam cracking, values used in the study (Sect. 5.3.2, Tables 32, 35)",steam-cracker_fired-tubular_gas-oil,chemicals,material-conversion,steam cracking,t
+"Steam cracking, values used in the study (Sect. 5.3.2, Tables 32, 35)",steam-cracker_fired-tubular_propane,chemicals,material-conversion,steam cracking,t
+"Steam cracking SEC overview, Ren et al. 2006 (Table 34)",steam-cracker_fired-tubular_ethane,chemicals,material-conversion,steam cracking,t
+"Steam cracking SEC overview, Ren et al. 2006 (Table 34)",steam-cracker_fired-tubular_naphtha,chemicals,material-conversion,steam cracking,t
+"Steam cracking SEC overview, IEA 2007 (Table 34)",steam-cracker_fired-tubular_ethane,chemicals,material-conversion,steam cracking,t
+"Steam cracking SEC overview, IEA 2007 (Table 34)",steam-cracker_fired-tubular_naphtha,chemicals,material-conversion,steam cracking,t
+"Steam cracking SEC overview, IEA 2007 (Table 34)",steam-cracker_fired-tubular_gas-oil,chemicals,material-conversion,steam cracking,t
+Propylene from refinery fluid catalytic cracking (Sect. 5.3.2),reactor_fluid-catalytic-cracking_propylene,chemicals,material-conversion,fluid catalytic cracking,t
+"Fluid catalytic cracking utilities, refinery BREF (Sect. 5.3.2)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,fluid catalytic cracking,t
+"Acrylonitrile, Sohio ammoxidation (Sect. 5.3.2, Tables 33, 36)",reactor_ammoxidation-acrylonitrile,chemicals,material-conversion,acrylonitrile,t
+Olefin innovative routes (Sect. 5.3.4),reactor_methanol-to-olefins,chemicals,material-conversion,olefins,t
+Olefin innovative routes (Sect. 5.3.4),reactor_ethanol-to-ethylene,chemicals,material-conversion,olefins,t
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",steam-reformer_methane,chemicals,material-conversion,hydrogen,kg
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",steam-reformer_naphtha,chemicals,material-conversion,hydrogen,kg
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",autothermal-reformer,chemicals,material-conversion,hydrogen,kg
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",gasifier_coal-hydrogen,chemicals,material-conversion,hydrogen,kg
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",gasifier_heavy-oil-hydrogen,chemicals,material-conversion,hydrogen,kg
+Hydrogen from electrolysis (Sect. 5.4.3),electrolyzer_alkaline,hydrogen,electrochemical,hydrogen,kg
+Hydrogen from electrolysis (Sect. 5.4.3),electrolyzer_pem,hydrogen,electrochemical,hydrogen,kg
+Hydrogen from electrolysis (Sect. 5.4.3),electrolyzer_solid-oxide,hydrogen,electrochemical,hydrogen,t
+Hydrogen from electrolysis (Sect. 5.4.3),electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen,kg
+"Hydrogen BATs and innovative technologies (Sect. 5.4.3-5.4.4, Table 43)",steam-reformer_methane,chemicals,material-conversion,hydrogen,t
+"Hydrogen BATs and innovative technologies (Sect. 5.4.3-5.4.4, Table 43)",reactor_catalytic-partial-oxidation,chemicals,material-conversion,hydrogen,t
+"Hydrogen BATs and innovative technologies (Sect. 5.4.3-5.4.4, Table 43)",steam-reformer_membrane,chemicals,material-conversion,hydrogen,t
+"Hydrogen BATs and innovative technologies (Sect. 5.4.3-5.4.4, Table 43)",gasifier_biomass-hydrogen,chemicals,material-conversion,hydrogen,kg
+"Hydrogen BATs and innovative technologies (Sect. 5.4.3-5.4.4, Table 43)",reactor_biomass-pyrolysis-hydrogen,chemicals,material-conversion,hydrogen,kg
+"Methanol production, IPCC defaults (Table 42)",steam-reformer_methanol,chemicals,material-conversion,methanol,t
+"Methanol production, IPCC defaults (Table 42)",steam-reformer_methanol_primary-reform,chemicals,material-conversion,methanol,t
+"Methanol production, IPCC defaults (Table 42)",gasifier_oil-methanol,chemicals,material-conversion,methanol,t
+"Methanol production, IPCC defaults (Table 42)",gasifier_coal-methanol,chemicals,material-conversion,methanol,t
+"Methanol production, IPCC defaults (Table 42)",gasifier_lignite-methanol,chemicals,material-conversion,methanol,t
+"Methanol production, IPCC defaults (Table 42)",steam-reformer_methanol_ammonia-integrated,chemicals,material-conversion,ammonia,t
+"Adipic acid, consumption and emissions (Sect. 5.5.2, Tables 45, 47)",reactor_adipic-acid,chemicals,material-conversion,adipic acid,t
+"Adipic acid, consumption and emissions (Sect. 5.5.2, Tables 45, 47)",reactor_adipic-acid_phenol,chemicals,material-conversion,adipic acid,t
+"Adipic acid N2O abatement and new routes (Sect. 5.5.3-5.5.4, Table 48)",reactor_catalytic-n2o,chemicals,material-conversion,adipic acid N2O abatement,t
+"Adipic acid N2O abatement and new routes (Sect. 5.5.3-5.5.4, Table 48)",reactor_thermal-n2o-destruction,chemicals,material-conversion,adipic acid N2O abatement,t
+"Adipic acid N2O abatement and new routes (Sect. 5.5.3-5.5.4, Table 48)",reactor_n2o-recycling,chemicals,material-conversion,adipic acid N2O abatement,t
+"Adipic acid N2O abatement and new routes (Sect. 5.5.3-5.5.4, Table 48)",reactor_adipic-acid_one-step,chemicals,material-conversion,adipic acid,t
+"Adipic acid N2O abatement, Schneider et al. 2010 (Sect. 5.5.3 text)",reactor_catalytic-n2o,chemicals,material-conversion,adipic acid N2O abatement,t
+"Adipic acid N2O abatement, Schneider et al. 2010 (Sect. 5.5.3 text)",reactor_thermal-n2o-destruction,chemicals,material-conversion,adipic acid N2O abatement,t
+"Adipic acid N2O abatement, Schneider et al. 2010 (Sect. 5.5.3 text)",reactor_n2o-recycling,chemicals,material-conversion,adipic acid N2O abatement,t
+"Soda ash, Solvay process (Sect. 5.6.2, Tables 51-52)",reactor_solvay-soda-ash,chemicals,material-conversion,soda ash,t
+"Aromatics, per tonne of aromatics (Sect. 5.7.2, Tables 57, 59)",distillation-column_aromatics-pygas,chemicals,material-conversion,aromatics,t
+"Aromatics, per tonne of aromatics (Sect. 5.7.2, Tables 57, 59)",distillation-column_aromatics-reformate,chemicals,material-conversion,aromatics,t
+"Aromatics, per tonne of benzene, Serpec-cc 2009 (Table 57)",distillation-column_aromatics-pygas,chemicals,material-conversion,aromatics,t
+"Aromatics, per tonne of benzene, Serpec-cc 2009 (Table 57)",distillation-column_aromatics-reformate,chemicals,material-conversion,aromatics,t
+"Aromatics energy integration BAT (Sect. 5.7.3, Table 60)",distillation-column_heat-integrated_aromatics-pygas,chemicals,material-conversion,aromatics,t
+"Aromatics energy integration BAT (Sect. 5.7.3, Table 60)",distillation-column_heat-integrated_aromatics-reformate,chemicals,material-conversion,aromatics,t
+"Carbon black, furnace black process (Sect. 5.8.2, Tables 63-64)",reactor_furnace-black,chemicals,material-conversion,carbon black,t
+"Carbon black and hydrogen by plasma, Gasplas (Sect. 5.8.4)",plasma-torch_methane-decomposition,chemicals,material-conversion,carbon black and hydrogen,kg
+"Chlor-alkali cell technologies (Sect. 5.9.2, Table 67)",electrolysis-cell_mercury,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali cell technologies (Sect. 5.9.2, Table 67)",electrolysis-cell_diaphragm,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali cell technologies (Sect. 5.9.2, Table 67)",electrolysis-cell_chlor-alkali-membrane,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali BATs and ITs (Sect. 5.9.3-5.9.4, Table 68)",electrolysis-cell_chlor-alkali-membrane,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali BATs and ITs (Sect. 5.9.3-5.9.4, Table 68)",electrolysis-cell_chlor-alkali-membrane_mercury-conversion,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali BATs and ITs (Sect. 5.9.3-5.9.4, Table 68)",electrolysis-cell_chlor-alkali-membrane_diaphragm-conversion,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali BATs and ITs (Sect. 5.9.3-5.9.4, Table 68)",electrolysis-cell_chlor-alkali-membrane_bipolar,chemicals,material-conversion,chlor-alkali,t
+"Chlor-alkali BATs and ITs (Sect. 5.9.3-5.9.4, Table 68)",electrolysis-cell_oxygen-depolarized,chemicals,material-conversion,chlor-alkali,t
+"Ethylene oxide and MEG, values used in the study (Sect. 5.10.2, Tables 73, 75)",reactor_ethylene-oxidation,chemicals,material-conversion,ethylene oxide and MEG,t
+"Ethylene oxide and MEG, values used in the study (Sect. 5.10.2, Tables 73, 75)",reactor_ethylene-oxide-hydration,chemicals,material-conversion,ethylene oxide and MEG,t
+"Ethylene oxide, IPCC default emission factors (Table 74)",reactor_ethylene-oxidation_oxygen,chemicals,material-conversion,ethylene oxide and MEG,t
+"Ethylene oxide, IPCC default emission factors (Table 74)",reactor_ethylene-oxidation_air,chemicals,material-conversion,ethylene oxide and MEG,t
+"Ethylene oxide/MEG, Shell OMEGA process (Sect. 5.10.3, Table 76)",reactor_ethylene-oxidation_omega,chemicals,material-conversion,ethylene oxide and MEG,t
+"EDC and VCM, values used in the study (Sect. 5.11.2, Tables 80-81)",reactor_ethylene-dichloride,chemicals,material-conversion,EDC/VCM,t
+"EDC and VCM, values used in the study (Sect. 5.11.2, Tables 80-81)",furnace_vinyl-chloride,chemicals,material-conversion,EDC/VCM,t
+"Integrated EDC/VCM production, EC 2014d (Table 78)",furnace_vinyl-chloride_integrated,chemicals,material-conversion,EDC/VCM,t
+"PVC polymerisation (Sect. 5.12.2, Tables 84-85)",reactor_polymerization-extrusion_pvc-suspension,chemicals,material-conversion,PVC,t
+"PVC polymerisation (Sect. 5.12.2, Tables 84-85)",reactor_polymerization-extrusion_pvc-emulsion,chemicals,material-conversion,PVC,t
+PVC recycling (Sect. 5.13.2-5.13.3),separator_pvc-mechanical-recycling,chemicals,material-conversion,PVC,t
+PVC recycling (Sect. 5.13.2-5.13.3),separator_pvc-solvent-recycling,chemicals,material-conversion,PVC,t
+"Ethylbenzene and styrene (Sect. 5.14.2, Tables 91-93)",reactor_ethylbenzene-alkylation,chemicals,material-conversion,ethylbenzene and styrene,t
+"Ethylbenzene and styrene (Sect. 5.14.2, Tables 91-93)",reactor_ethylbenzene-dehydrogenation,chemicals,material-conversion,ethylbenzene and styrene,t
+"Styrene, Exelus ExSyM process (Sect. 5.14.4, Table 94)",reactor_toluene-methanol-styrene,chemicals,material-conversion,ethylbenzene and styrene,t
+"Styrene, Exelus ExSyM process (Sect. 5.14.4, Table 94)",reactor_ethylbenzene-dehydrogenation,chemicals,material-conversion,ethylbenzene and styrene,t
+"CHP default parameters (Sect. 4.5.1, Tables 8, 10)",combustion-turbine_heat-recovery-steam-generator_combined-cycle,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP default parameters (Sect. 4.5.1, Tables 8, 10)",steam-turbine_back-pressure,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP default parameters (Sect. 4.5.1, Tables 8, 10)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP default parameters (Sect. 4.5.1, Tables 8, 10)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, Serpec-cc 2009 (Table 9)",combustion-turbine_heat-recovery-steam-generator_combined-cycle-gt100mw,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, Serpec-cc 2009 (Table 9)",combustion-turbine_heat-recovery-steam-generator_combined-cycle-50-100mw,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, Serpec-cc 2009 (Table 9)",combustion-turbine_heat-recovery-steam-generator_25-50mw,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, Serpec-cc 2009 (Table 9)",combustion-turbine_heat-recovery-steam-generator_lt25mw,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, IEA ETSAP 2010 (Table 9)",combustion-turbine_heat-recovery-steam-generator_combined-cycle,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, IEA ETSAP 2010 (Table 9)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, IEA ETSAP 2010 (Table 9)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, EPA 2015 (Table 9)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, EPA 2015 (Table 9)",steam-turbine_back-pressure,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CHP costs, EPA 2015 (Table 9)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration (cross-cutting),kW
+"CCS as innovative technology (Sect. 4.5.2, Table 11)",steam-reformer_ammonia_ccs-concentrated,chemicals,co2-capture,ammonia (CO2 capture),t
+"CCS as innovative technology (Sect. 4.5.2, Table 11)",steam-reformer_methane_ccs-concentrated,chemicals,co2-capture,hydrogen (CO2 capture),t
+"CCS as innovative technology (Sect. 4.5.2, Table 11)",reactor_ethylene-oxidation_ccs-concentrated,chemicals,co2-capture,ethylene oxide and MEG (CO2 capture),t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_nitric-acid_dual-pressure,chemicals,material-conversion,nitric acid,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",steam-cracker_fired-tubular,chemicals,material-conversion,steam cracking,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ammoxidation-acrylonitrile,chemicals,material-conversion,acrylonitrile,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_adipic-acid,chemicals,material-conversion,adipic acid,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",steam-reformer_methane,chemicals,material-conversion,hydrogen,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_syngas-methanol,chemicals,material-conversion,methanol,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_solvay-soda-ash,chemicals,material-conversion,soda ash,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",distillation-column_aromatics-reformate,chemicals,material-conversion,aromatics,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_furnace-black,chemicals,material-conversion,carbon black,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ethylene-oxidation,chemicals,material-conversion,ethylene oxide and MEG,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ethylene-oxide-hydration,chemicals,material-conversion,ethylene oxide and MEG,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ethylene-dichloride,chemicals,material-conversion,EDC/VCM,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",furnace_vinyl-chloride,chemicals,material-conversion,EDC/VCM,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_polymerization-extrusion_pvc-suspension,chemicals,material-conversion,PVC,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ethylbenzene-alkylation,chemicals,material-conversion,ethylbenzene and styrene,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",reactor_ethylbenzene-dehydrogenation,chemicals,material-conversion,ethylbenzene and styrene,t
+"Investment costs of new plants (Sect. 6.2, Table 95)",electrolysis-cell_chlor-alkali,chemicals,material-conversion,chlor-alkali,t

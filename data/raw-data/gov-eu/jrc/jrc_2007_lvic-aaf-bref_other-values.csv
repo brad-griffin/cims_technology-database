@@ -1,0 +1,21 @@
+process,technology,item,value,unit,reference,note
+Ammonia (Table 2.3),steam-reformer_ammonia,"Net primary energy, natural gas steam reforming (best achieved)",28,GJ(LHV)/t NH3,"p.37, Table 2.3",Primary energy basis; relative investment 1. reprinted from European Commission 1997
+Ammonia (Table 2.3),gasifier_heavy-oil-ammonia,"Net primary energy, heavy hydrocarbon partial oxidation",38,GJ(LHV)/t NH3,"p.37, Table 2.3",Relative investment 1.5. reprinted from European Commission 1997
+Ammonia (Table 2.3),gasifier_coal-ammonia,"Net primary energy, coal partial oxidation",48,GJ(LHV)/t NH3,"p.37, Table 2.3",Relative investment 2-3 vs steam reforming. reprinted from European Commission 1997
+Ammonia BAT (Table 2.14),,"BAT-associated net energy consumption, conventional, reduced primary or heat exchange autothermal reforming",27.6-31.8,GJ(LHV)/t NH3,"p.93, Table 2.14",May vary up to +/-1.5 GJ; steady state after revamp or overhaul
+Ammonia (Sect. 2.4.4),steam-reformer_ammonia_revamp,Fuel + feed before revamp,36.0,GJ/t NH3,"p.65, Sect. 2.4.4",
+Ammonia (Sect. 2.1),,"EU ammonia production, 2001",11,Mt/yr,"p.35, Sect. 2.1",About 50 plants
+Nitric acid (Sect. 3.2.6),reactor_nitric-acid,Theoretical energy release NH3 to HNO3,6.3,GJ/t 100 % HNO3,"p.99, Sect. 3.2.6",
+Nitric acid (Table 3.4),reactor_nitric-acid,"Energy export, modern M/H plant (as HP steam)",2.4,GJ/t 100 % HNO3,"p.99, Table 3.4",reprinted from Austrian UBA 2001; Kongshaug 1998
+Nitric acid (Table 3.4),reactor_nitric-acid,Average net energy export of European plants,1.6,GJ/t 100 % HNO3,"p.99, Table 3.4",
+Nitric acid (Table 3.4),reactor_nitric-acid,"Energy export, best plants 30 years ago",1.1,GJ/t 100 % HNO3,"p.99, Table 3.4",
+Nitric acid (Table 3.6),reactor_nitric-acid,M/H plant 300000 t/yr: electric compression; other energy; steam production,5; 0.55; 43,MWh/h; MWh/h; t steam/h (42 bar/520 C),"p.101, Table 3.6","Operating hours not printed, so not converted per t"
+Nitric acid (Table 3.6),reactor_nitric-acid,L/M plant 180000 t/yr: steam-driven compression; other energy; steam production,20; 0.60; 25,t steam/h; MWh/h; t steam/h (23 bar/350 C),"p.101, Table 3.6","Operating hours not printed, so not converted per t"
+Nitric acid (Table 3.7),reactor_nitric-acid,"N2O, a few outdated plants",10-19,kg/t 100 % HNO3,"p.103, Table 3.7",reprinted from IPCC 2000
+Nitric acid BAT (Table 3.14),,"BAT-associated N2O, new M/M, M/H, H/H plants",0.12-0.6,kg/t 100 % HNO3,"p.140, Table 3.14",20-100 ppmv; campaign average
+Nitric acid BAT (Table 3.14),,"BAT-associated N2O, existing M/M, M/H, H/H plants",0.12-1.85,kg/t 100 % HNO3,"p.140, Table 3.14",20-300 ppmv; split view: industry and one Member State want 2.5 kg/t for existing plants
+Nitric acid (Sect. 3.4.8),reactor_catalytic-n2o_nscr,NSCR catalyst price,98000-131000,EUR/m3,"p.131, Sect. 3.4.8",USD 106000-143000/m3; 1.20 m3 for 48235 m3/h; natural gas 290 m3/h. reprinted from infoMil 2001
+Urea (Table 8.7),reactor_urea-synthesis,"Total energy, best plants 30 years ago",4.6,GJ/t urea,"p.331, Table 8.7",reprinted from Kongshaug 1998
+Sulphuric acid (Table 4.17),reactor_sulphuric-acid_double-contact,Recoverable HP steam; recoverable LP heat from acid cooling,3.1-3.4; 2.1-2.4,GJ/t 100 % H2SO4,"p.196, Table 4.17","1000 t/d, 11 % SO2 sulphur burning. reprinted from Austrian UBA 2001"
+HF (Table 6.4),kiln_hydrofluoric-acid,Refrigeration,2-3,GJ/t HF,"p.263, Table 6.4",reprinted from CEFIC 2000
+Superphosphates (Table 10.3),,"Energy, directly granulated SSP; directly granulated TSP",1.4; 2.0,GJ/t product,"p.390, Table 10.3",SSP: 0.4 powder + 1.0 granulation; TSP: 0.3 powder + 1.0 granulation + 0.7 evaporation. reprinted from infoMil 2001

@@ -1,0 +1,41 @@
+process,technology,item,value,unit,reference,note
+"MACC CCS assumptions (App. A, pp.89-90)",,levelized 45Q tax credit,48.26,USD/t CO2 sequestered,"p.89, App. A",$85/t for 12 yr levelized at 10% WACC from 2030
+"MACC CCS assumptions (App. A, pp.89-90)",,CO2 transport and storage cost,~10-40,USD/t CO2 sequestered,"p.89, App. A","GCCSI 2019, BNEF 2022; 2022 dollars"
+"MACC CCS assumptions (App. A, pp.89-90)",gas-treatment-unit_ccs-concentrated,capture cost for NGP,~(20)-10,USD/t CO2 sequestered,"p.90, App. A",C&R Liftoff; negative lower bound implies 45Q included; near-duplicate of App. B
+"MACC CCS assumptions (App. A, pp.89-90)",steam-reformer_ammonia_ccs-concentrated,capture cost for ammonia,~110-140,USD/t CO2 sequestered,"p.90, App. A",near-duplicate of App. B 108-140
+"MACC CCS assumptions (App. A, pp.89-90)",steam-reformer_methane_ccs-concentrated,CCS refining SMR,~85-116,USD/t CO2 sequestered,"p.90, App. A",near-duplicate of App. B 86-118
+"MACC CCS assumptions (App. A, pp.89-90)",direct-heater_ccs-diffuse,CCS refining process heating,~95-126,USD/t CO2 sequestered,"p.90, App. A",
+"MACC CCS assumptions (App. A, pp.89-90)",reactor_fluid-catalytic-cracking_ccs-diffuse,CCS refining FCC,~95-126,USD/t CO2 sequestered,"p.90, App. A",
+"MACC CCS assumptions (App. A, pp.89-90)",blast-furnace_ccs-diffuse,CCS BF-BOF with 45Q,~37-111,USD/t CO2 sequestered,"p.90, App. A",
+"MACC CCS assumptions (App. A, pp.89-90)",shaft-furnace_direct-reduction_ccs-concentrated,"CCS NG DRI/HBI incl. capture, T&S + 45Q",~140-300,USD/t CO2 sequestered,"p.90, App. A",
+"MACC CCS assumptions (App. A, pp.89-90)",electrolysis-cell_prebaked-anode_ccs-diffuse,"CCS Hall-Heroult incl. capture, T&S + 45Q",~140-300,USD/t CO2 sequestered,"p.90, App. A",
+"MACC CCS assumptions (App. A, pp.89-90)",furnace_glass-regenerative_ccs-diffuse,CCS glass melting furnace (two rows),~175-300; ~140-300,USD/t CO2 sequestered,"p.90, App. A",both rows labelled +45Q; first likely pre-45Q by analogy with Al and DRI rows - not loaded
+"CCS power demand (p.29, fn 59)",steam-reformer_ammonia_ccs-concentrated,"capture power, ammonia plant",~6 MW per plant; ~13 W per t CO2,MW; W per (t CO2/yr),p.29,"plant 653,000 t NH3/yr, 0.46 MTPA CO2 for capture after urea; reciprocating compression"
+"CCS power demand (p.29, fn 59)",blast-furnace_ccs-diffuse,"capture power, coke oven + BF",~63 MW per plant; ~16 W per t CO2,MW; W per (t CO2/yr),p.29,"steel mill 2.54 MTPA capacity, 3.91 MTPA CO2; separate coke-oven and BF capture systems"
+CCS cost outlook (p.28),,CCS retrofit cost reduction FOAK to NOAK by 2040 (high-cost-of-capture),~45,%,p.28 fn 57-58,EFI Foundation
+Hydrogen assumptions,,2030 hydrogen cost estimate,2.02-3.08,USD/kg H2,"p.28, Fig. 3a.i.2 note 4",DOE Clean Hydrogen Liftoff (2022 McKinsey model)
+Hydrogen assumptions,,2030 hydrogen with CCS cost,86-140,USD/ton (as printed),"p.28, Fig. 3a.i.2 note 2",meaning (per t CO2 abated?) ambiguous
+Hydrogen assumptions,,levelized 45V tax credit,1.80,USD/kg H2,"p.91, App. A","10% WACC, 10 yr credit, 20 yr life"
+Hydrogen assumptions,,hydrogen transport and storage,0.4-1.4,USD/kg H2,"p.91, App. A",
+Hydrogen assumptions,,electrolyzer capex reduction through 2030,~60-80,%,p.21,
+"Steel capex assumptions (App. A, p.94)",steel-mill_h2-dri-eaf,hydrogen for H2 DRI/HBI plant,96k,t H2,"p.94, App. A",period (annual?) not stated
+"Steel capex assumptions (App. A, p.94)",steel-mill_h2-dri-eaf,electrolyzer assumption,0.40,USD/kg,"p.94, App. A",Hydrogen Liftoff; meaning not explained
+"Steel capex assumptions (App. A, p.94)",steel-mill_bf-bof,BF-BOF shutdown cost,3.5,USD billion,"p.94, App. A",placeholder assumption
+"Steel capex assumptions (App. A, p.93)",,2021 U.S. capacity BF-BOF / EAF / NG-DRI,26 / 60 / 5,MT,"p.93, App. A","8 BF-BOF facilities (12 furnaces), 90 EAFs, 3 NG-DRI facilities"
+"Steel route emissions (Fig. 3.3.1, p.44)",,residual emissions BF-BOF+CCS; scrap+EAF; NG-DRI-CCS+EAF; H2-DRI+EAF,~0.3; <0.1; <0.1; <0.1,t CO2/t steel (axis printed kg CO2/ton),"p.44, Fig. 3.3.1",assumes 100% grid decarbonisation and 90% capture
+"Steel (Fig. 3.3.2, p.45)",,scrap use in U.S. EAFs,~0.7,t/t steel,"p.45, Fig. 3.3.2 note 3",
+"Steel (Fig. 3.3.2, p.45)",,NG DRI-EAF; hydrogen DRI-EAF,~100-150; ~150-250,USD/t (unit unclear),"p.45, Fig. 3.3.2 note 5",text p.45: DRI emissions abated with clean H2 ~$100-250/tCO2 after IRA
+Steel (p.43),,BF-BOF maximum scrap / DRI-HBI share of charge,~20 / ~10,%,p.43 fn 82,
+"Heat requirements (Fig. 3a.ii.5, p.32)",,highest heat requirement: chemicals; refining; iron and steel; cement; pulp and paper; aluminum; glass,1000; 800; 1600; 1450; 1100; 1000; 1600,degC,"p.32, Fig. 3a.ii.5",general maximum for current processes
+"TES case (Fig. 3a.ii.6, p.33)",thermal-storage_electric,natural gas price state min / national avg / state max,13 / 19 / 40,USD/MWh,"p.33, Fig. 3a.ii.6",EIA 2021 industrial
+"TES case (Fig. 3a.ii.6, p.33)",thermal-storage_electric,electricity price savings required for breakeven,32-59,USD/MWh,"p.33, Fig. 3a.ii.6",
+"TES case (Fig. 3a.ii.6, p.33)",thermal-storage_electric,fixed O&M,2,% of capex per year,"p.33, Fig. 3a.ii.6 note 3",assumed; no LDES Council data
+Refining (p.42),,target cost of electrifying low-temperature heat by 2040,<30,USD/MWh,p.42,
+Industry-total capex (App. B),compressor_instrument-air,NGP instrument air systems total capex,56,USD million,"p.98, App. B",industry-wide
+Industry-total capex (App. B),compressor_flare-gas-recovery,refining repurpose flaring gas total capex,478,USD million,"p.100, App. B",industry-wide
+"Boiler asset base (App. A, p.95)",,F&B boiler capacity; number of boilers; electrification potential,"250k; 7,500; 110k",MMBtu/hr; boilers; MWh,"p.95, App. A",NREL 2022
+"Boiler asset base (App. A, p.95)",,wood and paper boiler capacity; number,480k; 6k,MMBtu/hr; boilers,"p.95, App. A",NREL 2022
+"Glass capex (App. A, p.96)",,total capex (row label: emission intensity),223-742,USD/(t glass/y),"p.96, App. A","oxyfuel, CCS and hydrogen for flat and container glass; scope unclear"
+"Alternative fuel (App. A, p.91)",,biomethane price,12.5-15,USD/GJ,"p.91, App. A",
+Cement (p.21; p.91),,clinker-to-cement ratio U.S. / EU; modelled target,89 / 76; 50,%,p.21; p.91,
+"NGP compressor (App. B, p.97)",,steam turbine drive efficiency (incumbent),35,%,"p.97, App. B",

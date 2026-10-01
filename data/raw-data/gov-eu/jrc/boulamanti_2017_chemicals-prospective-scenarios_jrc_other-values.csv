@@ -1,0 +1,51 @@
+process,technology,item,value,unit,reference,note
+"Nitric acid, Ostwald process consumption (Sect. 5.1.2, Tables 19, 22)",reactor_nitric-acid_single-pressure,electricity-related emissions; total incl. electricity,0.004; 1.504,tCO2e/t HNO3,"p.38, Table 22","Indirect, not loaded."
+"Nitric acid, Ostwald process consumption (Sect. 5.1.2, Tables 19, 22)",reactor_nitric-acid_dual-pressure,electricity-related emissions; total incl. electricity,0.004; 1.604,tCO2e/t HNO3,"p.38, Table 22","Indirect, not loaded."
+Nitric acid (Sect. 5.1.2),,tail gas N2O after absorption,600-3000,mg/Nm3,"p.37, Table 20",Flow 3100-3400 Nm3/t HNO3. reprinted from EC 2007c; EFMA 2000a
+Nitric acid (Sect. 5.1.2),,EU-28 nitric acid N2O emissions 2013 (2012),4950 (6578),ktCO2e,p.38,reprinted from EEA 2015
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",steam-reformer_ammonia,electricity-related emissions; printed total,0.04; 1.65,tCO2e/t NH3,"p.47, Table 27",Total includes electricity.
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",gasifier_heavy-oil-ammonia,electricity-related emissions; printed total,0.07; 2.77,tCO2e/t NH3,"p.47, Table 27",Total includes electricity.
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",reactor_urea-synthesis,urea synthesis emissions (electricity; direct process; total),0.03; 0.01; 0.04,tCO2e (header per t NH3; row is urea),"p.47, Table 27",Unit ambiguous in the table; literature urea factors 0.323-0.785 t/t include ammonia production.
+"Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27)",gasifier_heavy-oil-ammonia,energy of heavy oil / coal process relative to gas,1.3 / 1.7,ratio,p.47,reprinted from IEA 2007
+Steam cracking SEC overview (Table 34),steam-cracker_fired-tubular_ethane,SEC and CO2 per t HVC (Ren; IEA),"16-19 GJ, 1.0-1.2 tCO2; 12.5-21 GJ",per t HVC,"p.60, Table 34",
+Steam cracking SEC overview (Table 34),steam-cracker_fired-tubular_naphtha,SEC and CO2 per t HVC (Ren; IEA),"14-17 GJ, 1.6-1.8 tCO2; 14-22 GJ",per t HVC,"p.60, Table 34",
+Steam cracking SEC overview (Table 34),steam-cracker_fired-tubular_gas-oil,SEC per t HVC (IEA),18-23,GJ/t HVC,"p.60, Table 34",
+Steam cracking SEC overview (Table 34),steam-cracker_fired-tubular_naphtha,energy split / exergy losses,"pyrolysis 2/3, compression 15%, separation 1/5; exergy loss about 15 GJ/t (75% in pyrolysis)",,p.60,By-product fuels 20-25% of naphtha energy (about 10 GJ/t naphtha); ethane cracking imports about 15% of SEC. reprinted from Ren et al. 2006
+Steam cracking (Table 31),,ethylene yield by feed (ethane; propane; naphtha; AGO; VGO),81; 38-46; 27-39; 25-28; 23-24,%,"p.58, Table 31",Full product slate per 453.6 kt/y ethylene plant in Table 31. reprinted from ACC 2004
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",,CO2 factors: steam reforming of methane; partial oxidation of octane,7.33; 12.35,tCO2/t H2,"p.71, Table 41",reprinted from Kothari et al. 2008 et al.
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",,by-product hydrogen (chlorate and chlor-alkali) emissions: electricity; direct,1.24; 0.001,tCO2e/t H2,p.71,"Ecoinvent v2.0, mass allocation."
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",,biological water-gas shift processing cost,3.4,USD/kg H2,p.75,reprinted from Saxena et al. 2009
+"Hydrogen production routes (Sect. 5.4.2, Tables 40-41)",,sulphur-iodine cycle efficiency,about 47,%,p.76,reprinted from Mathias and Brown 2003
+"Adipic acid, consumption and emissions (Sect. 5.5.2, Tables 45, 47)",reactor_adipic-acid,electricity; steam production; total emissions,0.15; 1.44; 33.66,tCO2e/t,"p.79, Table 47",
+"Adipic acid, consumption and emissions (Sect. 5.5.2, Tables 45, 47)",reactor_adipic-acid_phenol,electricity; steam production; total emissions,0.10; 0.90; 33.06,tCO2e/t,"p.79, Table 47",
+"Adipic acid, consumption and emissions (Sect. 5.5.2, Tables 45, 47)",reactor_adipic-acid,EPA uncontrolled factors: oxidation reactor CO2/N2O; fume sweep CO2/N2O; scrubbers CO2,60/290; 2.6/1.3; 14 and 3.7,kg/t adipic acid,"p.79, Table 46",CH4 0.08 and 0.05. reprinted from EPA 1995
+Adipic acid N2O abatement (Table 49),,N2O destruction factor / utilisation: catalytic; thermal; recycle to nitric; recycle to adipic,92.5/89; 98.5/97; 98.5/94; 94/89,%,"p.80, Table 49",reprinted from IPCC 2006b
+Adipic acid (Sect. 5.5.3),,EU-28 adipic acid emissions 2007; 2013,8.96; 0.61,MtCO2e,p.81,reprinted from EEA 2009; 2015
+"Soda ash, Solvay process (Sect. 5.6.2, Tables 51-52)",reactor_solvay-soda-ash,electricity-related emissions,0.04,tCO2e/t,"p.86, Table 52",
+"Soda ash, Solvay process (Sect. 5.6.2, Tables 51-52)",reactor_solvay-soda-ash,stand-alone process CO2; CO from calcination; NH3 slip,200-300; 4-20; <1.5,kg/t,p.85-86,reprinted from Cefic 2004
+"Soda ash, Solvay process (Sect. 5.6.2, Tables 51-52)",reactor_solvay-soda-ash,process water; cooling water,1.9-2.4; 50-100,m3/t,p.85,reprinted from Cefic 2004
+"Aromatics (Sect. 5.7.2, Tables 58-59)",distillation-column_aromatics-pygas,electricity; steam production; total emissions,0.007; 0.28; 0.56,tCO2e/t aromatics,"p.95, Table 59",
+"Aromatics (Sect. 5.7.2, Tables 58-59)",distillation-column_aromatics-reformate,electricity; steam production; total emissions,0.005; 0.27; 0.39,tCO2e/t aromatics,"p.95, Table 59",
+"Aromatics (Sect. 5.7.2, Tables 58-59)",,benchmark: BTX from pygas; reformate; xylenes loop (direct+heat),0.34-0.38; 0.26; 0.50,tCO2/t aromatics,"p.94, Table 58",With electricity: 0.37-0.43; 0.28; 0.65. reprinted from Ecofys 2009
+"Aromatics (Sect. 5.7.2, Tables 58-59)",,EU BTX process and steam emissions 2011,6.6 Mt on 11.7 Mt (0.56 t/t),MtCO2e,p.94,reprinted from Benner et al. 2012
+Carbon black (Sect. 5.8.3),reactor_furnace-black,tail-gas energy recoverable,17-30,GJ/t CB,p.101,reprinted from EC 2007c
+Carbon black (Sect. 5.8.3),reactor_furnace-black,gross investment: flares; incinerators; boilers; CHP,0.5-1.5; 5-15; 10-15; 15-25,2002_EUR-million,p.102,"Boiler 100 bar, 530 degC: EUR 115 000 (2002)/(t steam/h) at 100 t/h, 70 000 at 200 t/h. Table 65 CHP: EUR 16 118 600. reprinted from EC 2007c"
+"Chlor-alkali cell technologies (Sect. 5.9.2, Table 67)",,electricity-related emissions: mercury; diaphragm; membrane,1.721; 1.325; 1.232,tCO2e/t Cl2,"p.108, Table 67",Indirect; totals 1.721; 1.448; 1.269.
+"Chlor-alkali cell technologies (Sect. 5.9.2, Table 67)",,EU chlor-alkali electricity 2010,35,TWh,p.107,17% of chemical sector final electricity. reprinted from EC 2014c
+Ethylene oxide and MEG (Table 75),reactor_ethylene-oxidation,electricity-related emissions; total,0.16; 0.88,tCO2e/t EO,"p.115, Table 75",
+Ethylene oxide and MEG (Table 75),reactor_ethylene-oxide-hydration,electricity; steam production; total emissions,0.04; 0.58; 1.11,tCO2e/t MEG,"p.115, Table 75",
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",reactor_ethylene-dichloride,electricity-related emissions; total,0.04; 0.34,tCO2/t EDC,"p.121, Table 81",
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",furnace_vinyl-chloride,steam; electricity; total,0.036; 0.09; 0.33,tCO2/t VCM,"p.121, Table 81",
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",,PVC electricity-related emissions; total (suspension; emulsion),"0.12, 0.30; 0.23, 0.77",tCO2/t PVC,"p.126, Table 85",
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",,virgin PVC chain energy by configuration,15.4-27.9 (average 22.2),GJ/t PVC,"p.133-134, Table 89",Average emission factor 2.8 tCO2/t; EDC/VCM balanced 5.4 GJ/t VCM; polymerisation 3.4 (S) and 9.3 (E) GJ/t.
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",reactor_ethylbenzene-alkylation,steam; electricity; total emissions,74.2; 13.2; 196.8,kgCO2/t,"p.139, Table 93",
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",reactor_ethylbenzene-dehydrogenation,steam; electricity; total emissions,460.0; 55.8; 515.8,kgCO2/t,"p.139, Table 93",EU average EB/styrene 0.887 t/t (Ecofys 2009 recalculated).
+"EDC/VCM/PVC/EB-styrene emissions (Tables 81, 85, 89, 93)",,recycled PVC price 2012,0.41-0.55,2012_USD/lb,p.133,reprinted from Plastics News 2016
+"CHP (Sect. 4.5.1, Table 10)",,CHP electrical efficiency: combined cycle; gas turbine; internal combustion engine; steam turbine,0.41; 0.27; 0.38; 0.25,fraction,"p.25, Table 10","Primary energy savings: CC 22.2-41.4%, GT 19.4-40.4%, ICE 34.0-53.0%, ST 28.2-53.4%."
+"CHP (Sect. 4.5.1, Table 10)",,EU chemical sector CHP in database,495 installations; 20 027.85 MW gross / 19 083.24 MW net,MWe,p.23,CHP load factor 0.39 (EU 2013).
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,fuel emission factors: natural gas; naphtha; HFO; gas/diesel oil; electricity; steam,0.0561; 0.0733; 0.0774; 0.0741; 0.465 (per MWh); 0.072,tCO2/GJ,"p.16, Table 6",LHV: 48.0; 44.5; 40.4; 43.0 MJ/kg.
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,ETS benchmarks: nitric; ethylene/HVC; ammonia; adipic; hydrogen; soda ash; aromatics; carbon black; EO/MEG; VCM; PVC-S; PVC-E; styrene; chlorine,0.302; 0.702; 1.618; 2.790; 8.850; 0.843; 0.155; 1.954; 0.512; 0.204; 0.085; 0.238; 0.527; 1.144,tCO2e/t product,"p.17-18, Table 7",reprinted from EC 2011b; 2012d
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,operating lifetime used for depreciation of investments,10,years,"p.146, Sect. 6.2",Assumed (Sinnott 2005); not a technology lifetime.
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,capacity scaling exponent for investment,0.6 (range 0.4-0.9),,"p.146, Sect. 6.2",reprinted from Perry 2008
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,fixed cost shares: maintenance; insurance; local rates; royalties,5-10; 1-2; 1-2; 1,% of capital cost per year,p.146,reprinted from Sinnott 2005
+"Methodology and benchmarks (Sect. 4.2-4.6, 6.2)",,"typical CO2 capture cost: industrial; pure CO2 (NH3, H2); flue gas; petrochemical; compression adder",28-42; 3; 36; 32-36; 6-10,2004_EUR/tCO2,"p.26, Sect. 4.5.2",reprinted from Ecofys and TNO 2004

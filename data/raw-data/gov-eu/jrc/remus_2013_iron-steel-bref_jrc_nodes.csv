@@ -1,0 +1,50 @@
+process,technology,sector,end-use,process-step,service-unit
+"Sinter plants EU-25 2004 (Sect. 3.2.1, Tables 3.2 and 3.4)",sinter-plant_strand,iron-and-steel,material-preparation,sintering,t
+"Sinter plants, energy survey 2004 (Sect. 3.2.2.4)",sinter-plant_strand,iron-and-steel,material-preparation,sintering,t
+"Pellet plants EU-25 2004, three sites (Table 4.1; Sect. 4.2.2.4)",pellet-plant_induration,iron-and-steel,material-preparation,pelletising,t
+"Pellet plant in integrated steelworks, NL (Table 4.1, note 3)",pellet-plant_induration,iron-and-steel,material-preparation,pelletising,t
+"Standalone pellet plants, Sweden magnetite (Table 4.1, note 5)",pellet-plant_induration,iron-and-steel,material-preparation,pelletising,t
+Coke oven plants EU 2005 (Table 5.2),coke-oven_by-product,iron-and-steel,material-conversion,cokemaking,t
+"Coke oven plant example, 1.4 Mt/yr (Fig. 5.11)",coke-oven_by-product,iron-and-steel,material-conversion,cokemaking,t
+Heat recovery coking (Sect. 5.3.11),coke-oven_heat-recovery,iron-and-steel,material-conversion,cokemaking,t
+Coke dry quenching (Sect. 5.3.14),heat-recovery-unit_coke-dry-quenching,iron-and-steel,material-conversion,cokemaking,t
+Blast furnaces EU 2004 (Tables 6.1 and 6.2),blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+"Blast furnace example with PCI and top gas pressure recovery, 1986 (Table 6.16)",blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+Comparison of ironmaking routes (Table 10.6),blast-furnace_integrated-route,iron-and-steel,material-conversion,ironmaking,t
+"Top gas recycling blast furnace, ULCOS (Sect. 11.1.1.1)",blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,ironmaking,t
+CO2 capture and storage on the blast furnace (Sect. 11.1.2),blast-furnace_top-gas-recycling-ccs,iron-and-steel,material-conversion,ironmaking,t
+"Basic oxygen steelmaking EU 2004, 21 plants (Table 7.3)",basic-oxygen-furnace,iron-and-steel,material-conversion,steelmaking,t
+BOF and continuous casting energy (Sect. 7.2.2.4),basic-oxygen-furnace,iron-and-steel,material-conversion,steelmaking,t
+BOF and continuous casting energy (Sect. 7.2.2.4),caster_continuous,iron-and-steel,material-conversion,casting,t
+BOF and continuous casting energy (Sect. 7.2.2.4),preheater_ladle,iron-and-steel,process-heat-high-temp,ladle-preheating,t
+Near net shape strip casting (Sect. 7.3.11),caster_strip,iron-and-steel,material-conversion,casting,t
+Electric arc furnaces EU 2004 (Table 8.1),electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+EAF energy balance example (Sect. 8.2.2.4),electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"EAF increased energy efficiency, Esch-Belval (Sect. 8.3.1)",electric-arc-furnace_dc,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, Consteel Plant 1 (Table 8.15)",electric-arc-furnace_consteel,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, Consteel Plant 2 (Table 8.15)",electric-arc-furnace_consteel,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_consteel,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, Consteel Plant 3, 80% scrap/20% hot metal (Table 8.15)",electric-arc-furnace_consteel,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, Fuchs-Coss Plant (Table 8.15)",electric-arc-furnace_shaft,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 100% scrap (Table 8.15)",electric-arc-furnace_finger-shaft,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, SIMETAL Finger Shaft Plant 1, 80% scrap/20% pig iron (Table 8.15)",electric-arc-furnace_finger-shaft,iron-and-steel,material-conversion,steelmaking,t
+"Scrap preheating, SIMETAL Finger Shaft Plant 2 (Table 8.15)",electric-arc-furnace_finger-shaft,iron-and-steel,material-conversion,steelmaking,t
+"Direct reduction processes, Midrex (Table 10.2)",shaft-furnace_midrex,iron-and-steel,material-conversion,ironmaking,t
+"Direct reduction processes, HyL III (Table 10.2)",shaft-furnace_hyl,iron-and-steel,material-conversion,ironmaking,t
+"Direct reduction processes, Fastmet/Inmetco (Table 10.2)",furnace_rotary-hearth,iron-and-steel,material-conversion,ironmaking,t
+"Direct reduction processes, Finmet (Table 10.2)",reactor_finmet,iron-and-steel,material-conversion,ironmaking,t
+Comparison of ironmaking routes (Table 10.6),shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+Comparison of ironmaking routes (Table 10.6),smelting-vessel_corex,iron-and-steel,material-conversion,ironmaking,t
+"Corex plant, Iscor Pretoria, lump ore (Table 10.3)",smelting-vessel_corex,iron-and-steel,material-conversion,ironmaking,t
+"Corex plant, Iscor Pretoria, pellets (Table 10.3)",smelting-vessel_corex,iron-and-steel,material-conversion,ironmaking,t
+Corex process (Sect. 10.2.1),smelting-vessel_corex,iron-and-steel,material-conversion,ironmaking,t
+"Smelting reduction under development, HIsmelt (Australia) (Table 10.5)",smelting-vessel_hismelt,iron-and-steel,material-conversion,ironmaking,t
+"Smelting reduction under development, DIOS (Japan) (Table 10.5)",smelting-vessel_dios,iron-and-steel,material-conversion,ironmaking,t
+"Smelting reduction under development, AISI-DOE/CCF (US/Netherlands) (Table 10.5)",smelting-vessel_ccf,iron-and-steel,material-conversion,ironmaking,t
+"Smelting reduction under development, ROMELT (Russia) (Table 10.5)",smelting-vessel_romelt,iron-and-steel,material-conversion,ironmaking,t
+"Primus residue smelting plant, Differdange (Table 2.13)",smelting-vessel_primus,iron-and-steel,material-conversion,ironmaking,t
+"Electrolysis of iron ore, ULCOS (Sect. 11.1.1.2)",electrolysis-cell_iron-ore,iron-and-steel,material-conversion,ironmaking,t
+"Hydrogen direct reduction with electrolysis, ULCOS (Sect. 11.1.1.2)",shaft-furnace_electrolytic-hydrogen,iron-and-steel,material-conversion,ironmaking,t
+Super coke oven SCOPE 21 (Sect. 11.3.1),coke-oven_scope21,iron-and-steel,material-conversion,cokemaking,t
+"Process gas-fired power plants in steelworks (Sect. 2.2, Table 2.1)",steam-turbine_by-product-gas-boiler,iron-and-steel,power-generation,by-product gas utilization,GJ
+"Process gas-fired power plants in steelworks (Sect. 2.2, Table 2.2)",combined-cycle_by-product-gas-chp,iron-and-steel,power-generation,by-product gas utilization,GJ

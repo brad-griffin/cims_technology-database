@@ -1,0 +1,12 @@
+process,technology,item,value,unit,reference,note
+"Best available technology energy use, Jacobs and IPST 2006 (Table E.1)",,"wastewater and utilities, best available technology energy use (electricity; steam; direct fuel)",82; 0.95; 0,kWh/short-ton; MMBtu/short-ton; MMBtu/short-ton,"p.164, Table E.1",Per short ton of product (basis not specified further). Not loaded: no technology. reprinted from Jacobs and IPST (2006); NCASI (2009)
+"Energy use by sub-sector, 2002 (Table 4.1)",,"total energy use, U.S. pulp and paper industry 2002 (black liquor 820; natural gas 434; wood and bark 319; coal 234; net electricity 177; residual oil 93; distillate 13; other 138)",2227,TBtu,"p.25, Table 4.1","Adapted from U.S. DOE (2007a, 2001a)"
+"End use energy breakdown, 2002 (Table 4.2)",,fuels to boilers / direct fuel / net boiler output / process steam / electricity,1917 / 134 / 1287 / 1026 / 339,TBtu,"p.25-26, Table 4.2",Jacobs and IPST (2006)
+Energy consumption and end uses (Sect. 4.2),digester_kraft_bleached-softwood,"total steam, electricity and direct fuel, kraft pulp (Jacobs and IPST 2006)",10-12,MMBtu/short-ton,p.27,Mixed carriers (no single carrier target); not loaded
+Energy consumption and end uses (Sect. 4.2),pulper_thermomechanical,"total energy, mechanical and TMP pulps",10-11,MMBtu/short-ton,p.27,Mixed carriers; not loaded
+Energy consumption and end uses (Sect. 4.2),pulper_recycled-fibre_occ,"total energy, recycled pulps",1-4,MMBtu/short-ton,p.27,Mixed carriers; not loaded
+Energy consumption and end uses (Sect. 4.2),,"total energy, papermaking in integrated mills, by grade",6-9,MMBtu/short-ton,p.27,Mixed carriers; drying about two-thirds of papermaking energy
+CO2 emission factors (Table 4.3),,"CO2 emission factors: distillate 73,276; residual 78,951; natural gas 52,346; coal 97,701; coke 102,209; LPG 63,124; purchased steam 86,850; U.S. grid electricity 178,300",see item,t CO2/TBtu,"p.29, Table 4.3","Adapted from U.S. DOE (2008b); fuel factors, not technology parameters"
+Energy-related GHG emissions (Sect. 4.3),,"energy-related GHG emissions, U.S. pulp and paper 2002",94,Mt CO2e,p.29,Excludes biomass CO2 and lime kiln process CO2
+Pulping (Sect. 3.2),,pulping yields: mechanical 85-95%; chemical 45-50% bleachable (70% brown); semi-chemical 55-85%,see item,%,"p.14, Table 3.1",U.S. DOE (2005a)
+Chemical recovery (Sect. 3.3),boiler_recovery,black liquor heating value after concentration,"6,000-7,000",Btu/lb,p.18,Biermann (1996); heating-value basis not stated

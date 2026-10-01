@@ -1,0 +1,16 @@
+process,technology,item,value,unit,reference,note
+"Blast furnace example with PCI and top gas pressure recovery, 1986 (Table 6.16)",blast-furnace,total gross energy input,18.67,GJ/t HM,"p.316, Table 6.16",coke + coal + hot blast + electricity
+Integrated steelworks (Sect. 1),,"specific energy demand, modern integrated steelworks 2004",18,GJ/t liquid steel,p.15,Down from 23 GJ/t in 1980. reprinted from Luengen 2005
+EAF steelmaking (Sect. 1),,average EAF electricity,1.8,GJ/t liquid steel,p.15,Plus about 0.5 GJ/t fossil fuel input
+Sinter plants (Table 3.2),sinter-plant_strand,electricity for fans,39.4 (30-91),MJ/t sinter,"p.95, Table 3.2",
+Sinter plants (Sect. 3.2.2.4),sinter-plant_strand,heat for ignition,70-85,MJ/t sinter,p.114,reprinted from Poland 2007
+Pellet plant NL (Sect. 4.3.8),pellet-plant_induration,gross energy consumption,1.4 (0.7 recuperated + 0.7 fuel),GJ/t pellet,p.202,
+Heat recovery coking (Sect. 5.3.11),coke-oven_heat-recovery,investment for the energy facility (part of the USD 365 million),140,1998_USD-million,p.255,Power plant component
+"Coke dry quenching, Raahe (Sect. 5.3.14)",heat-recovery-unit_coke-dry-quenching,steam production 93 bar / 8 bar,470000 / 50000,t/yr,p.269,About 15 MW electricity
+Blast furnace (Sect. 6.2.2.4),blast-furnace,reducing agent demand EU-15 2002,486 (453-514),kg/t HM,p.315,
+Blast furnace gas (Tables 6.7-6.8),blast-furnace,CO2 content of BF gas,400-900,kg/t HM,p.307-308,"17-25 vol%; gas 1200-2000 Nm3/t HM, LCV 2.7-4.0 MJ/Nm3 (p.339)"
+Blast furnace (Sect. 10),blast-furnace,minimum coke rate,260,kg/t HM,p.521,
+Steelworks gases (Table 2.5),,LCV of BF gas / COG / BOF gas,2600-4000 / 9000-19000 / 8184,kJ/Nm3,p.32,
+CCS economics (Sect. 11.1.2),,industrial capture cost (IPCC),25-115,2002_USD/t CO2 net captured,p.542,Transport 1-8 USD/t per 250 km; storage 0.5-29 USD/t. reprinted from Metz et al. 2005
+EAF (Sect. 8.2.2.4),electric-arc-furnace,sensible heat in off-gas,140,kWh/t LS,p.445,
+Electrolysis of iron ore (Sect. 11.1.1.2),electrolysis-cell_iron-ore,CO2 with coal power (1000 g/kWh) / CO2-free power,4.5 / 0.027,t CO2/t steel,p.540,
