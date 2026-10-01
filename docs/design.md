@@ -421,6 +421,17 @@ Rules in force (2026-09-30):
   in `records/fill/host-archetype.csv`. Hosts were proposed by name (the
   archetype less its last modifier) and need confirming; the rest are
   `unmapped`.
+- `est-sibling-lifetime`, `est-sibling-construction-time`,
+  `est-sibling-capacity-factor` (2026-10-01): the median sourced value of the
+  nearest siblings (same equipment and discriminator, else same equipment; same
+  product unit). The range spans the siblings' values and at least +/-25% of the
+  central. These parameters depend little on carrier or variant; capex and O&M
+  are not copied between siblings without a ratio from a source that prices both.
+- **Back-test.** Every sibling rule is also run on the cells that have a sourced
+  value, as if they had none (`output/fill-backtest.csv`; the build prints the
+  hit rates). The widen fraction is set so about 90% of sourced values fall in
+  the range. At 25% (2026-10-01): lifetime 96/108, construction time 29/32,
+  capacity factor 15/17; 71% of centrals within 25% of the sourced value.
 
 ## 7. Traceability
 

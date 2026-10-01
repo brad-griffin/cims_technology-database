@@ -183,7 +183,84 @@ def m_host_increment(rule, a, have, ctx):
              "sources": "; ".join(dict.fromkeys(srcs)), "external": []}]
 
 
-METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
+def _siblings(a, p, ctx, exclude=None):
+    """(tier, [sibling rows]) -- the nearest archetypes with a SOURCED value of p:
+    tier 1 same equipment and discriminator, tier 2 same equipment; always the
+    same product unit."""
+    A = ctx["arch"]
+    for tier, same in ((1, ("equipment", "discriminator")), (2, ("equipment",))):
+        rows = []
+        for k, h in ctx["have"].items():
+            if k in (a["archetype"], exclude) or k not in A:
+                continue
+            b = A[k]
+            if b["product-unit"] != a["product-unit"] or any(b[f] != a[f] for f in same):
+                continue
+            r = h.get((p, ""))
+            if r and r.get("grade") == "sourced" and fnum(r.get("central")) is not None:
+                rows.append((k, r))
+        if rows:
+            return tier, rows
+    return None, []
+
+
+def _sibling_estimate(rows, widen, cap=None):
+    cs = [fnum(r["central"]) for _, r in rows]
+    c = median(cs)
+    lows = [fnum(r.get("low")) for _, r in rows if fnum(r.get("low")) is not None] + cs
+    highs = [fnum(r.get("high")) for _, r in rows if fnum(r.get("high")) is not None] + cs
+    lo, hi = min(lows + [c * (1 - widen)]), max(highs + [c * (1 + widen)])
+    if cap is not None:
+        hi = min(hi, cap)
+    return c, lo, hi
+
+
+def m_sibling(rule, a, have, ctx):
+    """The median of the nearest siblings' sourced values; the range spans theirs
+    and at least +/- `widen` of the central (set from the back-test)."""
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    tier, rows = _siblings(a, p, ctx)
+    if not rows:
+        return []
+    widen = fnum(rule.get("widen")) or 0.0
+    c, lo, hi = _sibling_estimate(rows, widen, 100.0 if p in ("capacity-factor", "availability") else None)
+    return [{"parameter": p, "target": "", "central": c, "low": lo, "high": hi,
+             "inputs": [f"tier {tier}: " + ", ".join(k for k, _ in rows)],
+             "grades": ["sourced"],
+             "sources": "; ".join(dict.fromkeys(x for _, r in rows for x in split_list(r.get("sources", "")))),
+             "external": []}]
+
+
+def backtest(records, rules_, have, ctx):
+    """Each sibling rule run on the cells that HAVE a sourced value, as if they had
+    none: how often the sourced value falls inside the estimate's range, and how
+    far the central is from it. Rows for output/fill-backtest.csv."""
+    out = []
+    for rule in rules_:
+        if rule.get("method") != "sibling":
+            continue
+        p = rule["parameter"]
+        widen = fnum(rule.get("widen")) or 0.0
+        for a in records.archetypes:
+            r = have.get(a["archetype"], {}).get((p, ""))
+            if not r or r.get("grade") != "sourced" or fnum(r.get("central")) is None:
+                continue
+            tier, rows = _siblings(a, p, ctx)
+            if not rows:
+                continue
+            c, lo, hi = _sibling_estimate(rows, widen, 100.0 if p in ("capacity-factor", "availability") else None)
+            t = fnum(r["central"])
+            out.append({"rule-id": rule["rule-id"], "archetype": a["archetype"], "parameter": p,
+                        "sourced": _g(t), "estimate": _g(c), "low": _g(lo), "high": _g(hi),
+                        "inside": "yes" if lo <= t <= hi else "no",
+                        "ratio": _g(c / t) if t else "", "tier": tier,
+                        "siblings": "; ".join(k for k, _ in rows)})
+    return out
+
+
+METHODS = {"sibling": m_sibling, "inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
            "host-increment": m_host_increment}
 
 
@@ -249,8 +326,9 @@ def apply(psum, records, target_unit, facts=()) -> dict:
                 and fnum(r.get("value-norm")) is not None):
             increments.setdefault((r["archetype"], r["parameter"]), []).append(r)
     ctx = {"factors": convert.Factors(), "have": have, "increments": increments,
+           "arch": records.by_key,
            "hosts": {h["archetype"]: h for h in read(FILL / "host-archetype.csv")}}
-    stats = {}
+    stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"], have, ctx)}
     for rule in rules():
         if rule.get("status") != "active":
             continue

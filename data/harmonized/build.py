@@ -136,7 +136,15 @@ def main(argv) -> int:
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
     print("fill")
     fst = fill.apply(psum, rec, normalise.target_unit, L.facts)
+    bt = fst.pop("_backtest")
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
+    for rid in dict.fromkeys(b["rule-id"] for b in bt):
+        rs = [b for b in bt if b["rule-id"] == rid]
+        near = sum(1 for b in rs if b["ratio"] and 0.75 <= float(b["ratio"]) <= 1.25)
+        print(f"  back-test {rid}: {sum(b['inside'] == 'yes' for b in rs)}/{len(rs)} sourced "
+              f"values inside the estimate's range, {near}/{len(rs)} within 25%")
+    write(OUTPUT / "fill-backtest.csv", ["rule-id", "archetype", "parameter", "sourced", "estimate",
+                                         "low", "high", "inside", "ratio", "tier", "siblings"], bt)
     write(OUTPUT / "example.csv", EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"]))
     write(OUTPUT / "example-parameter.csv", FACT_COLS, L.facts)
     write(OUTPUT / "set-aside-host-cost.csv",
