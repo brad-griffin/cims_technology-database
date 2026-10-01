@@ -1,0 +1,25 @@
+process,technology,sector,end-use,process-step,service-unit
+"Aerobic treatment (Sect. 3.3.2.3.5.4, Tables 3.117 and 3.121)",fan_activated-sludge_complete-mix,chemicals,effluent-treatment,biological treatment,m3
+"Aerobic treatment (Sect. 3.3.2.3.5.4, Tables 3.117 and 3.121)",fan_activated-sludge_sequencing-batch,chemicals,effluent-treatment,biological treatment,m3
+"Aerobic treatment (Sect. 3.3.2.3.5.4, Tables 3.117 and 3.121)",separator_membrane-bioreactor,chemicals,effluent-treatment,biological treatment,m3
+"Aerobic treatment (Sect. 3.3.2.3.5.4, Tables 3.117 and 3.121)",separator_biofilter-fixed-bed,chemicals,effluent-treatment,biological treatment,m3
+"Activated sludge process, chemical-sector WWTPs (Sect. 3.3.3.1, Tables 3.130 and 3.133)",fan_activated-sludge,chemicals,effluent-treatment,biological treatment,m3
+"Membrane bioreactor, Sanofi-Chimie Aramon FR (Sect. 3.3.3.2, Table 3.137)",separator_membrane-bioreactor,chemicals,effluent-treatment,biological treatment,m3
+"Membrane bioreactor, Roche Diagnostics Penzberg DE (Sect. 3.3.3.2)",separator_membrane-bioreactor,chemicals,effluent-treatment,biological treatment,m3
+"Anaerobic treatment (Sect. 3.3.2.3.5.2, Table 3.111)",anaerobic-digester_effluent,chemicals,effluent-treatment,biological treatment,m3
+"Stripping (Sect. 3.3.2.3.4.17, Tables 3.98 and 3.101)",separator_stripping-air,chemicals,effluent-treatment,physico-chemical pretreatment,m3
+"Stripping (Sect. 3.3.2.3.4.17, Tables 3.98 and 3.101)",separator_stripping-steam,chemicals,effluent-treatment,physico-chemical pretreatment,m3
+"Evaporation (Sect. 3.3.2.3.4.15, Table 3.93)",evaporator_waste-water-multiple-effect,chemicals,effluent-treatment,physico-chemical pretreatment,t
+"Wet air oxidation (Sect. 3.3.2.3.4.4.3, Table 3.63)",reactor_wet-air-oxidation,chemicals,effluent-treatment,physico-chemical pretreatment,m3
+"Thermal oxidation (Sect. 3.5.1.3.5, Tables 3.202 and 3.206)",gas-treatment-unit_thermal-oxidation-straight,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Thermal oxidation (Sect. 3.5.1.3.5, Tables 3.202 and 3.206)",gas-treatment-unit_thermal-oxidation-regenerative,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Thermal oxidation (Sect. 3.5.1.3.5, Tables 3.202 and 3.206)",gas-treatment-unit_thermal-oxidation-recuperative,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Catalytic oxidation (Sect. 3.5.1.3.6, Tables 3.208 and 3.211)",gas-treatment-unit_catalytic-oxidation,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Catalytic oxidation (Sect. 3.5.1.3.6, Tables 3.208 and 3.211)",gas-treatment-unit_catalytic-oxidation-straight,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Catalytic oxidation (Sect. 3.5.1.3.6, Tables 3.208 and 3.211)",gas-treatment-unit_catalytic-oxidation-regenerative,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Catalytic oxidation (Sect. 3.5.1.3.6, Tables 3.208 and 3.211)",gas-treatment-unit_catalytic-oxidation-recuperative,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Flaring (Sect. 3.5.1.6, Table 3.298)",flare_elevated,chemicals,waste-gas-treatment,flaring,Nm3
+"Central waste gas incineration, Plant 1 DE (Sect. 3.5.2, Table 3.299)",gas-treatment-unit_thermal-oxidation-straight,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Central waste gas incineration, Plant 2 DE (Sect. 3.5.2, Table 3.299)",gas-treatment-unit_thermal-oxidation-straight,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Central waste gas incineration, Plant 3 DE (Sect. 3.5.2, Table 3.299)",gas-treatment-unit_thermal-oxidation-straight,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3
+"Central waste gas incineration, Plant 4 DE (Sect. 3.5.2, Table 3.299)",gas-treatment-unit_thermal-oxidation-steam-raising,chemicals,waste-gas-treatment,end-of-pipe-abatement,Nm3

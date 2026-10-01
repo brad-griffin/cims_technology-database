@@ -1,0 +1,18 @@
+process,technology,sector,end-use,process-step,service-unit
+"Gas transmission compressor stations, gas-turbine vs electric drive (s.4.2.1)",compressor_gas-turbine-drive,oil-and-gas,machine-drive,gas-transmission-compression,GJ
+"Gas transmission compressor stations, gas-turbine vs electric drive (s.4.2.1)",compressor_electric-drive-centrifugal,oil-and-gas,machine-drive,gas-compression,GJ
+"Groningen Long Term project production clusters (s.3.1.3, s.4.2.1)",compressor_electric-drive-centrifugal,oil-and-gas,machine-drive,gas-compression,GJ
+Wijngaarden compressor station (s.4.2.1),compressor_electric-drive-centrifugal,oil-and-gas,machine-drive,gas-compression,GJ
+"Electric compressor installation, US example (s.4.2.1, EPA 2011)",compressor_electric-drive_1-3mw,oil-and-gas,machine-drive,gas-compression,GJ
+"Mobile recompression unit, Gasunie (s.4.1.3)",compressor_blowdown-recovery,oil-and-gas,methane-control,venting-avoidance,m3
+"Mobile flaring, Gasunie (s.4.1.1)",flare_mobile,oil-and-gas,methane-control,venting-avoidance,m3
+"Leak detection and repair, Gasunie (s.4.1.2)",management-system_leak-detection,oil-and-gas,methane-control,fugitive-emissions,GJ
+Zero-emission control valves at metering stations (s.4.1.4),valve_zero-emission,oil-and-gas,methane-control,fugitive-emissions,GJ
+"Gas receiving station preheating, conventional indirect water bath heater (s.4.2.2)",direct-heater_indirect-water-bath,oil-and-gas,process-heat-low-temp,gas-preheating-pressure-reduction,m3
+"Solar thermal with storage and turboexpander, Messina pressure reduction station (App. 3, Tables 7-8)",direct-heater_gas-preheater_auxiliary,oil-and-gas,process-heat-low-temp,gas-preheating-pressure-reduction,GJ
+"Vortex tube with vertical ground heat exchanger, Iranian pressure reduction station (s.4.2.2)",heat-exchanger_ground-coupled-vortex-tube,oil-and-gas,process-heat-low-temp,gas-preheating-pressure-reduction,m3
+"Solar thermal with storage, Akand pressure reduction station (App. 3)",solar-collector_flat-plate_gas-preheat,oil-and-gas,process-heat-low-temp,gas-preheating-pressure-reduction,GJ
+"Solar thermal with storage and turboexpander, Messina pressure reduction station (App. 3, Tables 7-8)",solar-collector_evacuated-tube_gas-preheat,oil-and-gas,process-heat-low-temp,gas-preheating-pressure-reduction,GJ
+"Solar thermal with storage and turboexpander, Messina pressure reduction station (App. 3, Tables 7-8)",turboexpander_pressure-let-down,oil-and-gas,power-generation,pressure-let-down,MWh
+Nitrogen production for H-gas to L-gas conversion (s.3.2),air-separation-unit_cryogenic-low-pressure,oil-and-gas,drying-and-separation,nitrogen-production-gas-conversion,m3
+Nitrogen production for H-gas to L-gas conversion (s.3.2),air-separation-unit_cryogenic-high-pressure,oil-and-gas,drying-and-separation,nitrogen-production-gas-conversion,m3

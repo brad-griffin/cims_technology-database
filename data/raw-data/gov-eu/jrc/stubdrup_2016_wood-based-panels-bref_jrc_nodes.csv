@@ -1,0 +1,18 @@
+process,technology,sector,end-use,process-step,service-unit
+"Particleboard drying (Sect. 3.1.4, Table 3.2)",dryer_veneer-strand,other-industry,drying-and-separation,particle drying,m3
+"Particleboard drying, indirectly heated dryers (Sect. 3.1.4, Table 3.2 footnotes)",dryer_steam_indirect,other-industry,drying-and-separation,particle drying,m3
+"OSB strand drying (Sect. 3.1.4, Table 3.2)",dryer_veneer-strand,other-industry,drying-and-separation,strand drying,m3
+"MDF fibre drying (Sect. 3.1.4, Table 3.2)",dryer_fibre-tube,other-industry,drying-and-separation,fibre drying,m3
+"MDF fibre drying, per tonne dry fibre (Sect. 3.1.4, Table 3.3)",dryer_fibre-tube,other-industry,drying-and-separation,fibre drying,t
+"MDF fibre refining (Sect. 3.1.4, Table 3.2)",pulper_mdf-refiner,other-industry,material-preparation,fibre refining,m3
+"MDF fibre refining, per tonne dry fibre (Sect. 3.1.4, Table 3.3)",pulper_mdf-refiner,other-industry,material-preparation,fibre refining,t
+"MDF fibre refining and drying combined (Sect. 3.1.4, Table 3.3)",pulper_mdf-refiner-dryer,other-industry,material-preparation,fibre refining and drying,t
+"Particleboard pressing (Sect. 3.1.4, Table 3.2)",press_hot-platen,other-industry,forming-and-finishing,hot pressing,m3
+"OSB pressing (Sect. 3.1.4, Table 3.2)",press_hot-platen,other-industry,forming-and-finishing,hot pressing,m3
+"MDF pressing (Sect. 3.1.4, Table 3.2)",press_hot-platen,other-industry,forming-and-finishing,hot pressing,m3
+Biomass-fired CHP plant for indirect drying (Sect. 4.6.4),steam-turbine_biomass_chp,other-industry,steam-and-hot-water,on-site CHP,GJ
+Hot gas generators for directly heated dryers (Sect. 2.6),direct-heater_biomass_dust-burner,other-industry,drying-and-separation,hot gas generation for drying,GJ
+Thermal-oil heating for presses (Sect. 2.6),reciprocating-engine_natural-gas_thermal-oil,other-industry,steam-and-hot-water,thermal oil heating,GJ
+"UTWS combined heat and dryer system, plant D012 particleboard (Sect. 4.2.2.3, Table 4.2)",dryer_veneer-strand_utws,other-industry,drying-and-separation,particle drying,m3
+"UTWS combined heat and dryer system, plant D096 OSB (Sect. 4.2.2.3, Table 4.2)",dryer_veneer-strand_utws,other-industry,drying-and-separation,particle drying,m3
+"Superheated steam dryers, emerging (Sect. 6.1)",dryer_steam_superheated,other-industry,drying-and-separation,particle drying,m3

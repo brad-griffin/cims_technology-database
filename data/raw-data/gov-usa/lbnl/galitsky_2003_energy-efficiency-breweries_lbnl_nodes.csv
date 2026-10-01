@@ -1,0 +1,29 @@
+process,technology,sector,end-use,process-step,service-unit
+Process description (Sect. 3),heat-exchanger_mash-vessel_decoction,food-and-beverage,process-heat-low-temp,mashing,m3
+Process description (Sect. 3),heat-exchanger_mash-vessel_infusion,food-and-beverage,process-heat-low-temp,mashing,m3
+Process description (Sect. 3),heat-exchanger_wort-kettle,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Process description (Sect. 3),pasteurizer_tunnel,food-and-beverage,process-heat-low-temp,pasteurization,m3
+Wort boiling and cooling (Sect. 6.2),vapour-recompressor_wort-kettle_thermal,food-and-beverage,process-heat-low-temp,wort boiling,m3 (water evaporated)
+Wort boiling and cooling (Sect. 6.2),vapour-recompressor_wort-kettle_mechanical,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Merlin wort boiling comparison (Sect. 6.2),heat-exchanger_wort-kettle,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Merlin wort boiling comparison (Sect. 6.2),heat-exchanger_wort-kettle_merlin,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Merlin wort boiling comparison (Sect. 6.2),heat-exchanger_wort-kettle_merlin-energy-storage,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Low pressure wort boiling (Sect. 6.2),heat-exchanger_wort-kettle_low-pressure,food-and-beverage,process-heat-low-temp,mashing and wort boiling,m3
+"Wort stripping trials, Interbrew (Sect. 6.2)",heat-exchanger_wort-kettle_with-mashing,food-and-beverage,process-heat-low-temp,mashing and wort boiling,m3
+"Wort stripping trials, Interbrew (Sect. 6.2)",heat-exchanger_wort-kettle_stripping,food-and-beverage,process-heat-low-temp,mashing and wort boiling,m3
+"Wort stripping, other studies (Sect. 6.2)",heat-exchanger_wort-kettle_stripping,food-and-beverage,process-heat-low-temp,wort boiling,m3
+Wort cooling (Sect. 6.2),heat-exchanger_wort-cooler_single-stage,food-and-beverage,refrigeration-and-cooling,wort cooling,m3
+Wort cooling (Sect. 6.2),heat-exchanger_wort-cooler_two-stage,food-and-beverage,refrigeration-and-cooling,wort cooling,m3
+"Fermentation (Sect. 3, 6.3)",fermenter_beer,food-and-beverage,material-conversion,fermentation,m3
+Beer processing (Sect. 6.4),separator_microfiltration,food-and-beverage,drying-and-separation,clarification and sterilization,m3
+Alcohol-free beer production (Sect. 6.4),separator_reverse-osmosis_dealcoholization,food-and-beverage,drying-and-separation,dealcoholization,m3
+Alcohol-free beer production (Sect. 6.4),separator_dialysis_dealcoholization,food-and-beverage,drying-and-separation,dealcoholization,m3
+Pasteurization (Sect. 6.4),pasteurizer_flash,food-and-beverage,process-heat-low-temp,pasteurization,m3
+Pasteurization cost comparison (Sect. 6.4),pasteurizer_tunnel,food-and-beverage,process-heat-low-temp,pasteurization,m3
+Keg washing (Sect. 6.5),cleaning-system_keg-washer_steam-purge,food-and-beverage,process-heat-low-temp,keg washing,keg
+Keg washing (Sect. 6.5),cleaning-system_keg-washer_steam-air-purge,food-and-beverage,process-heat-low-temp,keg washing,keg
+Plant energy assumptions (Table 8 notes),boiler_fuel-fired,food-and-beverage,steam-and-hot-water,steam generation,GJ
+Plant energy assumptions (Table 8 notes),brewery_us-average,food-and-beverage,end-use,whole brewery,m3
+Other utilities (Sect. 7.3-7.4),chiller_absorption,food-and-beverage,refrigeration-and-cooling,refrigeration,kW
+Future technologies (Sect. 9),press_high-pressure-processing,food-and-beverage,process-heat-low-temp,sterilization,m3
+Anaerobic wastewater treatment (Sect. 7.4),anaerobic-digester_effluent,food-and-beverage,other-services,wastewater treatment,m3

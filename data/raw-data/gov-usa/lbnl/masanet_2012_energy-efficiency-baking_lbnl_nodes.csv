@@ -1,0 +1,67 @@
+process,technology,sector,end-use,process-step,service-unit
+"Bread and rolls, NAICS 311812 (Table 3)",motor_mixer,food-and-beverage,machine-drive,mixing,t
+"Bread and rolls, NAICS 311812 (Table 3)",fermenter_dough-room,food-and-beverage,process-heat-low-temp,fermentation,t
+"Bread and rolls, NAICS 311812 (Table 3)",motor_shaper,food-and-beverage,machine-drive,shaping,t
+"Bread and rolls, NAICS 311812 (Table 3)",proofer_steam-heated,food-and-beverage,process-heat-low-temp,proofing,t
+"Bread and rolls, NAICS 311812 (Table 3)",oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,t
+"Bread and rolls, NAICS 311812 (Table 3)",fan_product-cooling,food-and-beverage,machine-drive,cooling,t
+"Bread and rolls, NAICS 311812 (Table 3)",motor_slicer,food-and-beverage,machine-drive,slicing,t
+"Bread and rolls, NAICS 311812 (Table 3)",motor_packaging,food-and-beverage,machine-drive,packaging,t
+"Bread and rolls, NAICS 311812 (Table 3)",bakery-line_bread-rolls,food-and-beverage,material-conversion,whole bakery line,t
+"Cakes, NAICS 311812 (Table 4)",motor_mixer,food-and-beverage,machine-drive,mixing,t
+"Cakes, NAICS 311812 (Table 4)",heat-exchanger_form-and-chill,food-and-beverage,process-heat-low-temp,form and chill,t
+"Cakes, NAICS 311812 (Table 4)",oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,t
+"Cakes, NAICS 311812 (Table 4)",cleaning-system,food-and-beverage,process-heat-low-temp,pan washing,t
+"Cakes, NAICS 311812 (Table 4)",motor_finishing,food-and-beverage,machine-drive,finishing,t
+"Cakes, NAICS 311812 (Table 4)",motor_packaging,food-and-beverage,machine-drive,packaging,t
+"Cakes, NAICS 311812 (Table 4)",bakery-line_cakes,food-and-beverage,material-conversion,whole bakery line,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",motor_mixer,food-and-beverage,machine-drive,mixing,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",heat-exchanger_form-and-chill,food-and-beverage,process-heat-low-temp,form and chill,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",chiller_freezer,food-and-beverage,refrigeration-and-cooling,freezing,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",cleaning-system,food-and-beverage,process-heat-low-temp,pan washing,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",motor_finishing,food-and-beverage,machine-drive,finishing,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",motor_packaging,food-and-beverage,machine-drive,packaging,t
+"Frozen cakes, pies and other pastries, NAICS 311813 (Table 5)",bakery-line_frozen-cakes-pies,food-and-beverage,material-conversion,whole bakery line,t
+"Cookies and crackers, NAICS 311821 (Table 6)",motor_mixer,food-and-beverage,machine-drive,mixing,t
+"Cookies and crackers, NAICS 311821 (Table 6)",motor_shaper,food-and-beverage,machine-drive,shaping,t
+"Cookies and crackers, NAICS 311821 (Table 6)",oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,t
+"Cookies and crackers, NAICS 311821 (Table 6)",fan_product-cooling,food-and-beverage,machine-drive,cooling,t
+"Cookies and crackers, NAICS 311821 (Table 6)",motor_packaging,food-and-beverage,machine-drive,packaging,t
+"Cookies and crackers, NAICS 311821 (Table 6)",bakery-line_cookies-crackers,food-and-beverage,material-conversion,whole bakery line,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",motor_mixer,food-and-beverage,machine-drive,mixing,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",chiller_dough-cooling,food-and-beverage,refrigeration-and-cooling,mixing,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",fermenter_dough-room,food-and-beverage,process-heat-low-temp,fermentation,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",motor_shaper,food-and-beverage,machine-drive,shaping,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",proofer_steam-heated,food-and-beverage,process-heat-low-temp,proofing,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",fan_product-cooling,food-and-beverage,machine-drive,cooling,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",motor_slicer,food-and-beverage,machine-drive,slicing,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",motor_packaging,food-and-beverage,machine-drive,packaging,t
+"Measured roll bakery, per pound of dough, Northeast Foods (Table 2)",bakery-line_rolls-measured,food-and-beverage,material-conversion,whole bakery line,t
+Oven and dryer heating types (Sect. 6.1.4),oven_gas-burner,food-and-beverage,process-heat-medium-temp,baking,t
+Oven and dryer heating types (Sect. 6.1.4),oven_steam-heated,food-and-beverage,process-heat-medium-temp,baking,t
+Radio frequency ovens (Sect. 6.1.12),radio-frequency-heater_baking,food-and-beverage,process-heat-medium-temp,baking,t
+Emerging technologies (Sect. 6.1.19),oven_infrared,food-and-beverage,process-heat-medium-temp,baking,t
+Self generation (Sect. 5.1.8),combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,steam generation,GJ
+Self generation (Sect. 5.1.8),steam-turbine_back-pressure,heat-supply,steam-and-hot-water,steam generation,GJ
+Self generation (Sect. 5.1.8),chiller_absorption,food-and-beverage,refrigeration-and-cooling,tri-generation,GJ
+Self generation (Sect. 5.1.8),chiller_adsorption,food-and-beverage,refrigeration-and-cooling,tri-generation,GJ
+Self generation (Sect. 5.1.8),photovoltaic-array,heat-supply,power-generation,on-site generation,GJ
+"Backpressure turbines case study, Morning Star Packing (Sect. 5.1.8)",steam-turbine_back-pressure,food-and-beverage,power-generation,steam pressure let-down,GJ
+"Tri-generation case study, Ghirardelli Chocolate (Sect. 5.1.8)",reciprocating-engine_chp,food-and-beverage,power-generation,on-site generation,GJ
+"Tri-generation case study, Ghirardelli Chocolate (Sect. 5.1.8)",chiller_absorption,food-and-beverage,refrigeration-and-cooling,tri-generation,GJ
+"Case study, Kettle Foods photovoltaic system (Sect. 5.1.8)",photovoltaic-array,heat-supply,power-generation,on-site generation,GJ
+Building HVAC heat recovery (Sect. 5.1.2),heat-recovery-unit_heat-pipe,food-and-beverage,other-services,building HVAC,GJ
+Building HVAC heat recovery (Sect. 5.1.2),heat-recovery-unit_run-around-loop,food-and-beverage,other-services,building HVAC,GJ
+Lighting sources (Table 7),lighting_incandescent,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_halogen,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_compact-fluorescent,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_fluorescent-t12,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_fluorescent-t8,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_fluorescent-t5,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_mercury-vapour,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_induction,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_high-pressure-sodium,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_metal-halide,food-and-beverage,other-services,lighting,GJ
+Lighting sources (Table 7),lighting_led,food-and-beverage,other-services,lighting,GJ

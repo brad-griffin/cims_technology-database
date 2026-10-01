@@ -1,0 +1,23 @@
+process,technology,item,value,unit,reference,note
+"General energy management techniques (Sect. 2.2.1, 2.12.2)",,share of electricity requirement generated from flash-furnace waste heat boiler steam at a copper smelter,25 (10.5 MWe),% (MWe),"p.51, Sect. 2.2.1",Example copper smelter; steam also used in the concentrate dryer.
+Primary aluminium process control (Sect. 2.12.3.1),,reduction in PFC emissions since 1990 (primary aluminium),80,%,"p.114, Sect. 2.12.3.1",According to one report (COM 2007).
+"Primary aluminium electrolysis, input ranges (Sect. 4.2.3.1, Table 4.9)",electrolysis-cell_prebaked-anode,"AlF3 consumption, prebake",13-30,kg/t Al,"p.398, Table 4.9",
+"Primary aluminium electrolysis, input ranges (Sect. 4.2.3.1, Table 4.9)",electrolysis-cell_soderberg,"AlF3 consumption, Soderberg",18-25,kg/t Al,"p.398, Table 4.9",
+"Primary aluminium electrolysis, input ranges (Sect. 4.2.3.1, Table 4.9)",electrolysis-cell_prebaked-anode,"cathode life, prebake / Soderberg",5-8 / 4-6,years,"p.398, Table 4.9","Pot lining life, not plant lifetime."
+"Primary aluminium electrolysis, input ranges (Sect. 4.2.3.1, Table 4.9)",,power for alumina production,< 10,GJ/t Al,"p.398, Table 4.9",Printed per t Al in the electrolysis table.
+"Primary aluminium, carbon monoxide (Sect. 4.2.3.2.9)",electrolysis-cell_prebaked-anode,"CO generated before reoxidation to CO2, modern smelter",100-150,kg/t Al,"p.404, Sect. 4.2.3.2.9",
+"Primary aluminium, Soderberg retrofit (Sect. 4.3.3.3)",electrolysis-cell_soderberg,"cost of latest European Soderberg upgrade projects (dry paste, point feed, hooding, scrubbers)",250-600,USD/t,"p.446, Sect. 4.3.3.3","Emission-control retrofit, incremental; denominator not stated (presumably t Al capacity); price year not stated (publication 2017)."
+Secondary aluminium furnaces (Table 4.28),melting-furnace_fuel_crucible,"holding furnace energy use, fuel-heated crucible (H)",1.7-3.5,GJ/t metal,"p.418-419, Table 4.28",
+Secondary aluminium furnaces (Table 4.28),melting-furnace_electricity_crucible-resistance,"holding furnace energy use, resistance / induction crucible (H)",0.4 / 0.9-1.2,GJ/t metal,"p.418-419, Table 4.28","Printed '0.4/0.9-1.2 (H), (b)/(c)'."
+"Secondary aluminium, skimmings/dross treatment (Table 4.26)",,energy consumption of skimmings/dross treatment,300-800,MJ/t,"p.416, Table 4.26",reprinted from Al input 2008
+Salt slag recycling (Sect. 4.2.5.3),,energy for full salt slag recycling (fuel and electricity),1900-3845,MJ/t salt slag,"p.422, Sect. 4.2.5.3",Partial recycling averages 81 MJ/t salt slag.
+"Secondary aluminium, liquid metal delivery (Sect. 4.2.4.4)",,additional energy to deliver liquid metal in crucibles,20-30,%,"p.417, Sect. 4.2.4.4",
+Lead heat recovery (Sect. 5.3.8.1),shaft-furnace_coke_secondary-lead,heat recovery reported in shaft furnace operations,up to 40,GWh/yr,"p.597, Sect. 5.3.8.1",Waste heat boiler; no throughput given.
+Zinc roaster heat recovery (Sect. 6.3.1.2),electrolysis-cell_zinc_rle,typical energy recovery rate for a RLE plant (waste heat boiler on roaster),3.5,MJ/t Zn,p.687,"As printed; implausibly low, unit possibly GJ/t."
+Fuming furnace for secondary ZnO from copper smelter slag (Table 6.7),,CO2 output,150,kt/yr,"p.636, Table 6.7","Copper slag 290-300 kt/yr, coal 45-50 kt/yr, zinc clinker 40 kt/yr. reprinted from IZA 2012"
+"Ferro-chrome, coke drying (Sect. 8.2.1)",,external energy for coke drying in a shaft furnace,200 kWh/t coke = 100 kWh/t FeCr,kWh/t,p.820,
+"Silicon furnace energy balance (Sect. 8.2.6, Fig. 8.20)",electric-arc-furnace_submerged-arc_silicon-metal,share of energy consumed retained as chemical energy in FeSi/Si product,32 (68 lost as off-gas and cooling-water heat),%,p.839,10 MWe silicon furnace energy flowsheet.
+"Energy recovery, Norwegian ferro-alloys industry (Table 8.28)",,"electrical energy used / possible recovery / actual recovery, 16 plants (1989)",8480 / 3148 / 595,GWh/yr,"p.841, Table 8.28",FeSi 9 plants 4940/1880/298; Si metal 3 plants 1250/378/1; FeMn-SiMn 4 plants 2290/890/476. reprinted from Kolbeinsen et al. 1995
+"Nickel refinery, Plant E (Sect. 9.3.1 energy)",refinery_nickel_matte-refining,district heating delivered from the sulphuric acid plant / anolyte cooling heat exchanger capacity,40 000-45 000 / 40 000-50 000,MWh/yr,"p.952, Sect. 9.3.1",Exothermic chlorine leach contributes 12 MW for building heating.
+"Copper smelting furnace waste heat boiler, cost (Table 13.17)",,"total installation cost of a smelting furnace waste heat boiler (100 000 Nm3/h, 1300-1350 degC inlet, 35 t/h steam)",7.0-8.0,EUR million,"p.1133, Table 13.17",Price year not stated.
+Copper industry abatement costs (Annex 13.3.1),,bag filter specific power consumption,2-3,kWh/1000 m3 off-gas,p.1127,

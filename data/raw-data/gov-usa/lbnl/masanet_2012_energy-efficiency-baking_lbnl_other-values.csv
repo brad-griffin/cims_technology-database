@@ -1,0 +1,30 @@
+process,technology,item,value,unit,reference,note
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,NAICS 31181 bread and bakery product manufacturing: cost of purchased fuels,224423,2010_USD-thousand,"p.4, Table 1","Also: employees 187,309; cost of materials 12,824,198; value of shipments 33,137,919 ($1,000). reprinted from U.S. Census Bureau (2011)"
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,NAICS 31181: cost of purchased electricity,383916,2010_USD-thousand,"p.4, Table 1",reprinted from U.S. Census Bureau (2011)
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,NAICS 31181: quantity of electricity purchased,4597092,MWh,"p.4, Table 1","Printed in 1,000 kWh. reprinted from U.S. Census Bureau (2011)"
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,"NAICS 31182 cookie, cracker and pasta manufacturing: cost of purchased fuels",94786,2010_USD-thousand,"p.4, Table 1","Also: employees 45,453; cost of materials 8,762,415; value of shipments 20,281,586 ($1,000). Includes pasta. reprinted from U.S. Census Bureau (2011)"
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,NAICS 31182: cost of purchased electricity,168703,2010_USD-thousand,"p.4, Table 1",reprinted from U.S. Census Bureau (2011)
+"U.S. baking industry economic and energy purchase data, 2010 (Table 1)",,NAICS 31182: quantity of electricity purchased,2456380,MWh,"p.4, Table 1","Printed in 1,000 kWh. reprinted from U.S. Census Bureau (2011)"
+Commercial baking and energy use (Sect. 2),,Output of a single large bread bakery at full capacity,300000,lb/day,p.3,Over 100 varieties.
+Commercial baking and energy use (Sect. 2),oven_tunnel-deck,"Baking share of total energy, non-frozen products",26-78,%,p.5,Freezing is the largest share for frozen products.
+"Cookies and crackers, NAICS 311821 (Table 6)",,Shortening storage fuel,9.0,BTU/lb product,"p.7, Table 6",Included in the line fuel total 1800.2 (loaded). reprinted from Sikirica et al. (2003)
+Tables 2-6 percent-of-total columns,,Percent of total energy by step,see tables,%,"p.6-7, Tables 2-6",Not loaded. Table 2 percentages do not match its BTU values (e.g. Proof 25.5% with 6.8 BTU/lb); Table 5 grand total 1750.5 does not equal the column totals (2250.5).
+Process heating (Sect. 6.1.4),oven_tunnel-deck,Oven and dryer share of bakery energy,more than 10% of total; 26-75% of process-specific,%,p.64,Whitaker (2011c)
+Process heating (Sect. 6.1.4),,Dryer energy relative to thermodynamic requirement,2-3,times,p.64,Whitaker (2011c)
+Process heating (Sect. 6.1.4),oven_tunnel-deck,Oven energy relative to thermodynamic requirement,5 or more,times,p.64,Whitaker (2011c)
+Process heating (Sect. 6.1.4),,Delivered electricity efficiency (primary basis),about 30,%,p.64,Power plant and transmission losses. Whitaker (2011c)
+Proofing (Sect. 6.1.3),proofer_steam-heated,Proofer conditions,about 40 degC; 70-80% humidity,,p.63,EMIAA (1998)
+Steam systems (Sect. 5.1.6),oven_tunnel-deck,"Oven exhaust temperature, U.S. bread plant",about 650,degF,p.45,Base (2012)
+Operating conditions (Sect. 6.1.7),oven_tunnel-deck,Oven heat-up time reduction at one bakery,20-25 (cabinet ovens); 40-50 (tunnel ovens),min,p.66,CoA (2001)
+Cooling and freezing (Sect. 6.1.13),chiller_freezer,"Freezing time, spiral vs cryogenic tunnel freezer",45 vs 15,min,p.71,Atchley (2011b)
+Frozen storage (Sect. 6.1.17),,Freezer unoccupied share observed in audits,up to 95,%,p.73,CoA (2000a)
+Compressed air (Sect. 5.1.4),,Compressed air end-to-end efficiency,about 10,%,p.32,U.S. DOE (2003)
+Compressed air (Sect. 5.1.4),,Unloaded rotary screw compressor power,15-35,% of full-load power,p.36,U.S. DOE (2003)
+Compressed air (Sect. 5.1.4),,Compressor electricity converted to heat,80-93,%,p.38,U.S. DOE (2003)
+Compressed air (Sect. 5.1.4),,Recoverable heat per 100 cfm of compressor capacity,50000,Btu/h,p.39,U.S. DOE (2003)
+Compressed air (Sect. 5.1.4),,"Leak losses at 2,500 h/yr and 6 bar for 0.5/1/2/4 mm holes",250/1100/4500/11250,kWh/yr,p.34,CADDET (1997)
+Self generation (Sect. 5.1.8),combustion-turbine_heat-recovery-steam-generator,Steam-injected gas turbine (STIG) power increase,about 33,%,p.57,Typical STIG size starts around 5 MW. Wilis and Scott (2000)
+Self generation (Sect. 5.1.8),steam-turbine_back-pressure,Backpressure turbine applicability threshold,3000 lb/h steam; 100 psi pressure drop,,p.59,U.S. DOE (2001c)
+"Case study, Kettle Foods photovoltaic system (Sect. 5.1.8)",photovoltaic-array,Avoided CO2 emissions,around 2500,short-ton CO2,p.59,"Period not stated (annual or lifetime unclear); $8,400/yr energy cost savings. FIRE (2005c)"
+Self generation (Sect. 5.1.8),,Frito-Lay Modesto solar concentrating steam for Sun Chips line,nearly 15 million,Btu/yr,p.60,As printed; looks too small for a full line (possible unit slip). Salerno (2008)
+Radio frequency ovens (Sect. 6.1.12),radio-frequency-heater_baking,RF oven frequency,"around 40,000,000",Hz,p.70,ECOW (2000b)

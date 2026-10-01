@@ -1,0 +1,38 @@
+process,technology,item,value,unit,reference,note
+"Olive-pomace oil refining, reported installations (Sect. 12.3.1)",,"specific energy consumption, three installations",0.29-13.11,MWh/t products,"p.556, Sect. 12.3.1",Range too wide/unspecified to load.
+"Breweries, heat consumption by department, brewhouse (Sect. 4.3.1, Table 4.1)",,"heat consumption, literature range (MJ/hl beer)",84-113,MJ/hl,"p.306, Table 4.1","Literature range, breweries 20 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, brewhouse (Sect. 4.3.1, Table 4.1)",,"heat consumption, measured range (MJ/hl beer)",50-80,MJ/hl,"p.306, Table 4.1","Measured range, breweries 300 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, bottling installation (Sect. 4.3.1, Table 4.1)",,"heat consumption, literature range (MJ/hl beer)",25-46,MJ/hl,"p.306, Table 4.1","Literature range, breweries 20 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, bottling installation (Sect. 4.3.1, Table 4.1)",,"heat consumption, measured range (MJ/hl beer)",38-58,MJ/hl,"p.306, Table 4.1","Measured range, breweries 300 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, kegging installation (Sect. 4.3.1, Table 4.1)",,"heat consumption, literature range (MJ/hl beer)",8-13,MJ/hl,"p.306, Table 4.1","Literature range, breweries 20 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, kegging installation (Sect. 4.3.1, Table 4.1)",,"heat consumption, measured range (MJ/hl beer)",NI,MJ/hl,"p.306, Table 4.1","Measured range, breweries 300 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, total brewery (Sect. 4.3.1, Table 4.1)",,"heat consumption, literature range (MJ/hl beer)",162-243,MJ/hl,"p.306, Table 4.1","Literature range, breweries 20 000-500 000 hl/yr. reprinted from Germany 2002"
+"Breweries, heat consumption by department, total brewery (Sect. 4.3.1, Table 4.1)",,"heat consumption, measured range (MJ/hl beer)",183-233,MJ/hl,"p.306, Table 4.1","Measured range, breweries 300 000-500 000 hl/yr. reprinted from Germany 2002"
+"FDM sector, on-site CHP (Sect. 2.3.2.1.4)",,"CHP energy efficiency, up to",90,%,"p.83, Sect. 2.3.2.1.4",New CHP saves at least 10 % of the fuel versus separate production; UK CHP can cut total energy bills 20 %; example brewery 16.2 % energy cost saving.
+Biogas CHP in a dairy (Sect. 2.3.2.1.2),,total cost of biogas CHP plant,1 million,EUR,"p.82, Sect. 2.3.2.1.2","""for a CHP plant that generates 600 kWh of electrical and 600 kWh of thermal energy"" - printed in kWh (likely kW); not loaded because the capacity unit is ambiguous. PRICE YEAR NOT STATED."
+"Evaporators, MVR, Finnish dairy (Sect. 2.3.2.2.4.1)",vapour-recompressor_electricity_mvr-evaporator,water evaporated per unit of energy,100-125,kg water per 1 kW (printed),"p.96, Sect. 2.3.2.2.4.1","""the MVR can evaporate 100-125 kg of water using 1 kW of energy"" - unit ambiguous (kW vs kWh); not loaded."
+Whey evaporation installation #406 (Sect. 5.4.4),vapour-recompressor_electricity_mvr-evaporator,MVR compressor motor electricity,3500,MWh/yr,"p.386, Sect. 5.4.4",MVR preconcentration 6 % to 35 % solids then TVR to 60 %; throughput not stated.
+Brewery wort boiling with MVR vapour condensation (Sect. 2.3.2.2.4.1),,share of brewhouse electricity used by vapour compressor,about one third,fraction,"p.96, Sect. 2.3.2.2.4.1",
+"Evaporation and drying, general (Annex 19.2.5.1)",,theoretical energy to evaporate water,0.611,kWh/kg (2.2 MJ/kg),"p.745, Sect. 19.2.5.1",
+"Evaporation and drying, general (Annex 19.2.5.1)",,"energy to evaporate water in practice, depending on evaporation method and dryer type",0.556-0.972,kWh/kg water (2.0-3.5 MJ/kg),"p.745, Sect. 19.2.5.1","Generic range, no technology; not loaded."
+"Vapour recompression, general (Annex 19.2.5.1)",,"ratio of recovered energy to energy input (performance figure), up to",40,ratio,"p.747, Sect. 19.2.5.1",
+Sugar beet pulp drying (Sect. 15.4.1.4),dryer_rotary-direct-fired_beet-pulp-htd,water to evaporate per t dried pulp at 25 % / 35 % pressed-pulp solids,2.6 / 1.6,t water/t dried pulp,"p.613, Sect. 15.4.1.4",To 90 % solids.
+"Sugar beet pulp drying, LTD and HTD (Table 15.2)",,air/water evaporated ratio LTD / HTD,89.9 / 3.2,kg/kg,"p.614, Table 15.2",Germany 2002
+"Juice second pasteurisation at 95 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,cooling load,183,kW,"p.570, Table 13.1",Capacity 22 000 l/h; 4 000 h/yr.
+"Juice second pasteurisation at 95 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,energy cost per year,99000,EUR/yr,"p.570, Table 13.1",Steam EUR 0.035/kg; cooling EUR 0.025/kWh; 4 000 h/yr.
+"Juice second pasteurisation at 80 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,cooling load,107,kW,"p.570, Table 13.1",Capacity 22 000 l/h; 4 000 h/yr.
+"Juice second pasteurisation at 80 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,energy cost per year,80000,EUR/yr,"p.570, Table 13.1",Steam EUR 0.035/kg; cooling EUR 0.025/kWh; 4 000 h/yr.
+"Vegetable oil refining, once-through vacuum system (Sect. 11.2.2.3.3)",separator_steam_deodorizer-vacuum-once-through,total energy for vacuum generation vs alkaline closed circuit,about 15 % lower,%,"p.524, Sect. 11.2.2.3.3",
+"Vegetable oil refining, closed-circuit alternatives (Sect. 11.2.2.3.1)",,specific energy consumption increase of closed-circuit vs once-through,10-20,%,"p.520, Sect. 11.2.2.3.1",reprinted from COM 2006
+"Oilseed extraction, mineral oil scrubber (Sect. 11.4.2.4.4)",,steam and electricity of the mineral-oil hexane scrubber,25 kg steam/t + 0.5 kWh/t,per t seeds,"p.547, Sect. 11.4.2.4.4",Air-abatement unit; not loaded.
+Dairies (Sect. 5.3.1),,share of dairy energy as thermal (fossil-fuel steam and hot water) / electricity,80 / 20,%,"p.349, Sect. 5.3.1",Nordic Council 2001
+Fish processing (Sect. 7.3.2),,share of energy dependent on production / constant,80 / 20,%,"p.416, Sect. 7.3.2",Nordic Council 2015
+Dry pasta (Sect. 16.1.2),,air conditioning of workspace,35-50,kWh/t products,"p.627, Sect. 16.1.2",TWG 2017
+Dry pasta (Sect. 16.1.2),,"installed thermal power, typical installation > 300 t/day",at least 6 (up to 20),MW,"p.627, Sect. 16.1.2",Single boilers 2-5 MW; CHP 5-20 MW thermal input.
+"Brewing, CO2 recovery (Sect. 4.4.4.3)",,energy to generate a tonne of CO2 for in-house use,about 140,kWh/t CO2,"p.329, Sect. 4.4.4.3",
+"Brewing, CO2 recovery (Sect. 4.4.4.3)",,CO2 emission reduction from recovery,around 2,kg/hl beer (20 kg/m3),"p.329, Sect. 4.4.4.3",
+"Frozen vegetables, storage (Sect. 8.3.1)",,electricity for frozen storage,20-65,kWhe per m3 storage per year,"p.451, Sect. 8.3.1",Van Bael 1998
+"Frozen vegetables, transport and sorting (Sect. 8.3.5.3)",,electricity for transport / sorting / washing / cutting,2-14 / 0-20 / 0-5 / up to 9,kWhe/t frozen vegetables,"p.458-459, Sect. 8.3.5.3",Van Bael 1998
+Heat recovery from cooling systems (Sect. 2.1.2.2.1),,water temperature achievable from refrigeration heat recovery,50-60,degC,"p.18, Sect. 2.1.2.2.1",
+"Large German dairy, two-stage drying (Sect. 5.4.2.8)",dryer_spray-fluid-bed_two-stage,energy required to evaporate 1 t water (as stated),about 600,kWh/t water,"p.370, Sect. 5.4.2.8",Stated as near-theoretical reference.
+Sugar beet (Sect. 15.2.2),,dried pulp yield at 90 % solids,5.6,kg per 100 kg sugar beet,"p.595, Sect. 15.2.2",

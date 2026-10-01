@@ -1,0 +1,32 @@
+process,technology,item,value,unit,reference,note
+U.S. distilling sector (Ch.2),,"energy expenditure, 2018",60,USD-million/yr,"p.3, Ch.2",Almost $60 million annually (U.S. Economic Census 2018); $49 million in 2007 (p.139).
+U.S. distilling sector (Ch.2),,electricity consumption,370,GWh/yr,"p.3, Ch.2",About 370 GWh annually (U.S. Economic Census 2018).
+U.S. distilling sector (Ch.2),,"share of fuel used for hot water and steam (mashing/cooking, distillation, dry house)",>90,%,"p.3, Ch.2",Jacques et al. (2003)
+U.S. distilling sector (Ch.2),,"share of fuel for drying and evaporation (dry house), upper bound",30,%,"p.5, Ch.2","Depending on plant layout, up to 30%. Jacques et al. (2003)"
+U.S. distilling sector (App. B),,"fuel share of energy cost, 2007 -> 2018",65 -> 50,%,"p.3, p.139",p.3 says fuel share fell from 60% to 50%; p.139 says electricity share rose from 35% to 50% (implying fuel 65%); inconsistent.
+U.S. distilling sector (App. A),,whiskey production 2020,220,million proof gallons,"p.132, App. A","U.S. TTB (2020); brandy 14, rum/gin/vodka 12 million proof gallons."
+"BIER 2012 benchmark (Ch.13, App. A)",distillery_column-still,"continuous column distillation energy, average (min-max)",8.0 (2.8-8.0),MJ/L (80 proof),"p.103, Ch.13; p.137, App. A",Same sample as p.5 10-29 kBtu/gal; average equals the maximum (defect). Labelled distillation process although p.5 calls it total distillery energy. Not loaded (p.5 range loaded).
+"BIER 2012 benchmark (Ch.13, App. A)",distillery_pot-still,"pot distillation energy, average (min-max)",9.6 (8.0-30.8),MJ/L (80 proof),"p.103, Ch.13; p.137, App. A",9.6 equals the all-distillery average 34.4 kBtu/gal (p.5). Not loaded.
+Process description (App. A),distillery_beverage-spirits,spirit yield per bushel of grain (56 lb corn),5 gal 100 proof (9.5 L pure alcohol),per bushel,"p.137, App. A",Loaded as a grain input flow.
+Process description (App. A),distillery_beverage-spirits,stillage volume relative to ethanol produced,10,L/L,"p.137, App. A",Approximately 10 times. Krzywonos et al. (2009)
+Process description (App. A),distillery_beverage-spirits,fermentation time,3 (up to 4-5),days,"p.136, App. A","Beer at 8-9% alcohol, up to 10-11% with longer fermentation."
+Process description (Ch.2),distillery_beverage-spirits,distillation temperature,78-85,degC,"p.7, Fig.1; p.136",Alcohol boils at 172-185 degF.
+Byproducts (Ch.15),dryer_stillage,energy to remove water in dryer vs evaporator,4,ratio,"p.120, Ch.15",Could take four times more energy in the dryer than in an evaporator. Jacques et al. (2003)
+Byproducts (Ch.15),,wet distillers grain moisture,68-75,%,"p.121, Ch.15",
+Byproducts (Ch.15),evaporator_single-effect,thin stillage total solids in -> out,5-10 -> 30-50,%,"p.122, Ch.15",Monceaux and Kuehner (2009); Glenfarclas pot ale 4% -> 45% (p.123).
+Byproducts (Ch.15),dryer_stillage,DDGS final moisture,7-8,%,"p.122, Ch.15",Wet grains dried to about 5% then coated with solubles.
+Byproducts (Ch.15),,stillage temperature leaving still,104,degC,"p.122, Ch.15",220 degF superheated liquid; flash heat 104-100 degC.
+Byproducts (Ch.15),anaerobic-digester_biogas-heat,biogas composition,"50% CH4, 50% CO2",,"p.128, Ch.15",
+Byproducts (Ch.15),anaerobic-digester_biogas-heat,Glendullan biogas production,2000000,m3/yr,"p.129, Ch.15","Gives 8,000 MWh thermal (loaded as annual-output); 4 kWh thermal per m3 biogas implied."
+Byproducts (Ch.15),anaerobic-digester_pot-ale,Dailuaine share of site electricity / CO2 reduction,40% / 250,% / t CO2,"p.129, Ch.15",Gunes et al. (2019)
+Byproducts (Ch.15),anaerobic-digester_biomass-combustion,Roseisle share of steam load,84,%,"p.129, Ch.15",
+Byproducts (Ch.15),anaerobic-digester_chp,Cameron Bridge share of site electricity / steam,95 / 98,%,"p.129, Ch.15",
+Vapor recompression (Ch.13),vapour-recompressor_thermal,share of thermo-compressor outlet steam that is recovered heat,25,%,"p.106, Ch.13",About 25% depending on design. Jacques et al. (2003)
+Vapor recompression (Ch.13),vapour-recompressor_distillation,MVR operating cost as share of investment cost,2-7,%/yr of capex,"p.107, Ch.13","Hackensellner (2000); no investment cost printed, so not loadable as opex."
+Jameson Midleton (Ch.13),distillation-column_vacuum-mvr,CO2 avoided / fuel savings,37000 / 5.5,t CO2/yr / EUR-million/yr,"p.108, Ch.13",Compared with the traditional process; no price year.
+Electric boilers (Ch.9),boiler_electric_electrode,Diageo Lebanon KY distillery capacity / CO2 avoided,10 / 117000,million proof gal/yr / t CO2/yr,"p.72, Ch.9",Jet electrode boilers on 100% renewable electricity by 2030. Klein (2020)
+CHP (Ch.9),,CHP total efficiency vs separate heat and power,>80 vs 50,%,"p.75, Ch.9",Generic CHP statement.
+Waste heat to power (Ch.9),,steam Rankine cycle source temperature; minimum,130-180; 60-70,degC,"p.77, Ch.9",SWEP (2019); no WHP technology numbers.
+"Fuel CO2 coefficients (Ch.9, Table 4)",,natural gas / diesel and heating oil / bituminous coal / subbituminous / lignite / anthracite,117 / 161 / 206 / 214 / 215 / 229,lb CO2/MMBtu,"p.73, Table 4","U.S. EIA (2020); fuel properties, heating-value basis not stated."
+Steam distribution (Ch.9),,flash steam energy as share of condensate energy,10-40,%,"p.80, Ch.9",
+Low-temperature drying (Ch.15),,SolarWall air preheat above ambient,up to 55,degC,"p.126, Ch.15",100 degF printed as 55 degC (should be 100 F rise = 55.6 K).

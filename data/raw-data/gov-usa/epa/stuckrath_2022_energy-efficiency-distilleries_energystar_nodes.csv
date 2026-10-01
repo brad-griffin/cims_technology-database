@@ -1,0 +1,31 @@
+process,technology,sector,end-use,process-step,service-unit
+"U.S. distillery energy intensity, Jacques et al. 2003 (Ch.2, p.5)",distillery_beverage-spirits,food-and-beverage,material-conversion,whole distillery,L
+"International distillery benchmark, BIER 2012 (Ch.2, p.5)",distillery_column-still,food-and-beverage,material-conversion,whole distillery,L
+"International distillery benchmark, BIER 2012 (Ch.2, p.5)",distillery_pot-still,food-and-beverage,material-conversion,whole distillery,L
+"International distillery benchmark, BIER 2012 (Ch.2, p.5)",distillery_beverage-spirits,food-and-beverage,material-conversion,whole distillery,L
+"International bottling benchmark, BIER 2012 (App. A, p.138)",bottling-line_spirits,food-and-beverage,other-services,bottling,L
+"Mash cooking (Ch.12, p.96-97; App. A, p.136)",heat-exchanger_steam-heated_mash-cooker-pressure,food-and-beverage,process-heat-low-temp,cooking and mashing,t
+"Mash cooking (Ch.12, p.96-97; App. A, p.136)",heat-exchanger_steam-heated_mash-cooker-atmospheric,food-and-beverage,process-heat-low-temp,cooking and mashing,t
+"Vapor recompression in distilling (Ch.13, p.106-108)",vapour-recompressor_thermal,food-and-beverage,steam-and-hot-water,distillation,GJ
+"Vapor recompression in distilling (Ch.13, p.106-108)",vapour-recompressor_distillation,food-and-beverage,process-heat-low-temp,distillation,GJ
+"Jameson Midleton distillery expansion (Ch.13 case studies, p.108, p.111)",distillation-column_vacuum-mvr,food-and-beverage,material-conversion,distillation,L
+"MGP Ingredients Atchison grain neutral spirits distillation (Ch.13 case study, p.110)",distillation-column_pressure-cascade,food-and-beverage,material-conversion,distillation,L
+"Stillage drying (App. A, p.137)",dryer_stillage,food-and-beverage,drying-and-separation,byproduct drying,t
+"Low-temperature belt drying of spent grains (Ch.15, p.126)",dryer_belt-low-temperature,food-and-beverage,drying-and-separation,byproduct drying,t
+"Thin stillage evaporation (Ch.15, p.123)",evaporator_single-effect,food-and-beverage,drying-and-separation,byproduct evaporation,t
+"Dailuaine distillery, Scotland, Diageo anaerobic digestion plants table (Ch.15 case study, p.129)",anaerobic-digester_pot-ale,food-and-beverage,steam-and-hot-water,byproduct bio-energy,GJ
+"Roseisle distillery, Scotland, Diageo anaerobic digestion plants table (Ch.15 case study, p.129)",anaerobic-digester_biomass-combustion,food-and-beverage,steam-and-hot-water,byproduct bio-energy,GJ
+"Cameron Bridge distillery, Scotland, Diageo anaerobic digestion plants table (Ch.15 case study, p.129)",anaerobic-digester_chp,food-and-beverage,steam-and-hot-water,byproduct bio-energy,GJ
+"Glendullan distillery, Scotland, Diageo anaerobic digestion plants table (Ch.15 case study, p.129)",anaerobic-digester_biogas-heat,food-and-beverage,steam-and-hot-water,byproduct bio-energy,GJ
+"Electric boilers (Ch.9, p.72)",boiler_electric,food-and-beverage,steam-and-hot-water,steam supply,GJ
+"Electric boilers (Ch.9, p.72)",boiler_electric_electrode,food-and-beverage,steam-and-hot-water,steam supply,GJ
+"Combined heat and power (Ch.9, p.76)",combustion-turbine_heat-recovery-steam-generator,food-and-beverage,steam-and-hot-water,cogeneration,GJ
+"Combined heat and power (Ch.9, p.76)",reciprocating-engine_chp,food-and-beverage,steam-and-hot-water,cogeneration,GJ
+"Solar steam, Four Fathers Distillery Jacksonville (Ch.9 case study, p.74)",solar-collector_compound-parabolic,food-and-beverage,steam-and-hot-water,steam supply,GJ
+"Biomass boiler, Dewar's Aberfeldy Distillery (Ch.9 case study, p.74)",boiler_solid-fuel_biomass,food-and-beverage,steam-and-hot-water,steam supply,GJ
+"Chillers (Ch.8, p.52-53)",chiller_high-efficiency,food-and-beverage,refrigeration-and-cooling,process cooling,GJ
+"Chillers (Ch.8, p.52-53)",chiller_vapour-compression_standard,food-and-beverage,refrigeration-and-cooling,process cooling,GJ
+"Chillers (Ch.8, p.52-53)",chiller_electric-drive-centrifugal,food-and-beverage,refrigeration-and-cooling,process cooling,GJ
+"Chillers (Ch.8, p.52-53)",chiller_absorption,food-and-beverage,refrigeration-and-cooling,process cooling,GJ
+"Chiller plant optimization, Green Proving Ground (Ch.8, p.60)",chiller_chilled-water_optimized,food-and-beverage,refrigeration-and-cooling,process cooling,GJ
+"Process description (App. A, p.135-138)",distillery_beverage-spirits,food-and-beverage,material-conversion,whole distillery,L

@@ -164,6 +164,23 @@ BRIEF_SHAPE = [
     ("gov-usa/epa/worrell_2015_energy-efficiency-petroleum-refineries_energystar", "worrell_2015_001", "US"),
     ("gov-usa/epa/kermeli_2016_energy-efficiency-metal-casting_energystar", "kermeli_2016_001", "US"),
     ("gov-eu/jrc/aries_2024_smitheries-foundries-bref_jrc", "aries_2024_001", "EU"),
+    ("gov-eu/jrc/cusano_2017_non-ferrous-metals-bref_jrc", "cusano_2017_001", "EU"),
+    ("gov-eu/jrc/lecomte_2017_large-combustion-plants-bref_jrc", "lecomte_2017_001", "EU"),
+    ("gov-eu/jrc/giner-santonja_2019_food-drink-milk-bref_jrc", "giner-santonja_2019_001", "EU"),
+    ("gov-usa/lbnl/masanet_2012_energy-efficiency-baking_lbnl", "masanet_2012_001", "US"),
+    ("gov-usa/epa/stuckrath_2022_energy-efficiency-distilleries_energystar", "stuckrath_2022_001", "US"),
+    ("gov-usa/lbnl/galitsky_2003_energy-efficiency-breweries_lbnl", "galitsky_2003_001", "US"),
+    ("gov-usa/lbnl/galitsky_2003_energy-efficiency-corn-wet-milling_lbnl", "galitsky_2003_002", "US"),
+    ("gov-usa/lbnl/galitsky_2008_energy-efficiency-pharmaceutical_lbnl", "galitsky_2008_001", "US"),
+    ("gov-eu/jrc/brinkmann_2016_common-waste-water-gas-bref_jrc", "brinkmann_2016_001", "EU"),
+    ("gov-eu/jrc/daginnus_2023_common-waste-gas-chemical-bref_jrc", "daginnus_2023_001", "EU"),
+    ("gov-eu/jrc/stubdrup_2016_wood-based-panels-bref_jrc", "stubdrup_2016_001", "EU"),
+    ("gov-eu/jrc/neuwahl_2019_waste-incineration-bref_jrc", "neuwahl_2019_001", "EU"),
+    ("gov-eu/jrc/pinasseau_2018_waste-treatment-bref_jrc", "pinasseau_2018_001", "EU"),
+    ("gov-dk/dea/dea_2026_technology-data-electricity-district-heat", "dea_2026_006", "Denmark"),
+    ("gov-dk/dea/dea_2026_technology-data-heating-installations", "dea_2026_007", "Denmark"),
+    ("gov-dk/dea/dea_2026_technology-review-non-road-machinery", "dea_2026_005", "Denmark"),
+    ("gov-nl/pbl/joshi_2022_midden-onshore-gas-oil_pbl", "joshi_2022_001", "Netherlands"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

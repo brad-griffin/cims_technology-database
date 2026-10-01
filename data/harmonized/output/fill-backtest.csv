@@ -1,17 +1,23 @@
 rule-id,archetype,parameter,sourced,estimate,low,high,inside,ratio,inputs
-est-sibling-lifetime,boiler_electric,lifetime,20,22.5,15,40,yes,1.125,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
+est-sibling-lifetime,boiler_electric,lifetime,20,25,15,40,yes,1.25,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
 est-sibling-lifetime,boiler_fuel-fired,lifetime,25,20,15,25,yes,0.8,tier 1: boiler_fuel-fired_efficiency-moderate
 est-sibling-lifetime,boiler_fuel-fired_efficiency-moderate,lifetime,20,25,18.75,40,yes,1.25,tier 1: boiler_fuel-fired
-est-sibling-lifetime,boiler_solid-fuel,lifetime,22.5,20,10,40,yes,0.888889,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
-est-sibling-lifetime,combustion-turbine_heat-recovery-steam-generator,lifetime,20,30,22.5,37.5,no,1.5,"tier 2: combustion-turbine_simple-cycle_efficiency-moderate, combustion-turbine_simple-cycle"
+est-sibling-lifetime,boiler_solid-fuel,lifetime,25,20,10,40,yes,0.8,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
+est-sibling-lifetime,combustion-turbine_heat-recovery-steam-generator,lifetime,22.5,27.5,20.625,34.375,yes,1.22222,"tier 2: combustion-turbine_simple-cycle_efficiency-moderate, combustion-turbine_simple-cycle"
 est-sibling-lifetime,direct-heater_electric-process,lifetime,20,15,10,20,yes,0.75,"tier 2: direct-heater_solid-fuel, direct-heater_fired-process"
 est-sibling-lifetime,direct-heater_fired-process,lifetime,15,17.5,10,21.875,yes,1.16667,"tier 2: direct-heater_solid-fuel, direct-heater_electric-process"
 est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,17.5,10,21.875,yes,1.16667,"tier 2: direct-heater_electric-process, direct-heater_fired-process"
 est-sibling-lifetime,gasifier_biomass-chp,lifetime,25,20,10,30,yes,0.8,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids, gasifier_biomass-waste"
+est-sibling-lifetime,heat-pump_industrial,lifetime,20,20,15,40,yes,1,tier 2: heat-pump_space-heating
+est-sibling-lifetime,reciprocating-engine_chp,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: reciprocating-engine_diesel-generator
+est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,25,18.75,31.25,yes,1,tier 2: steam-turbine_condensing
 est-sibling-lifetime,thermal-storage_electric,lifetime,25,20,10,50,yes,0.8,tier 2: thermal-storage_heat-charged
 est-sibling-lifetime,anaerobic-digester_chp,lifetime,15,12,9,20,yes,0.8,tier 2: anaerobic-digester
-est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,30,30,22.5,37.5,yes,1,tier 1: combustion-turbine_simple-cycle_efficiency-moderate
-est-sibling-lifetime,combustion-turbine_simple-cycle_efficiency-moderate,lifetime,30,30,22.5,37.5,yes,1,tier 1: combustion-turbine_simple-cycle
+est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,25,30,22.5,37.5,yes,1.2,tier 1: combustion-turbine_simple-cycle_efficiency-moderate
+est-sibling-lifetime,combustion-turbine_simple-cycle_efficiency-moderate,lifetime,30,25,18.75,31.25,yes,0.833333,tier 1: combustion-turbine_simple-cycle
+est-sibling-lifetime,reciprocating-engine_diesel-generator,lifetime,25,20,15,25,yes,0.8,tier 2: reciprocating-engine_chp
+est-sibling-lifetime,steam-turbine_condensing,lifetime,25,25,18.75,40,yes,1,tier 2: steam-turbine_back-pressure
+est-sibling-lifetime,heat-pump_space-heating,lifetime,20,20,12,40,yes,1,tier 2: heat-pump_industrial
 est-sibling-lifetime,capture-unit_amine,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent"
 est-sibling-lifetime,capture-unit_chemical-solvent,lifetime,25,25,15,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_dac-solid-sorbent"
 est-sibling-lifetime,capture-unit_dac-liquid-solvent,lifetime,25,25,15,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent"
@@ -107,17 +113,22 @@ est-sibling-lifetime,binder_sulphoaluminate,lifetime,28.75,32.5,24.375,40.625,ye
 est-sibling-lifetime,binder_hydrothermal-silicate,lifetime,32.5,30.625,22.9688,38.2812,yes,0.942308,"tier 2: binder_alkali-activated, binder_sulphoaluminate"
 est-sibling-lifetime,thermal-storage_heat-charged,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: thermal-storage_electric
 est-sibling-lifetime,smelting-vessel_low-shaft,lifetime,20,25,18.75,31.25,yes,1.25,"tier 2: smelting-vessel_bath-reduction, smelting-vessel_bath-reduction_ccs-concentrated"
-est-sibling-construction-time,boiler_electric,construction-time,0.5,0.6,0.02,4,yes,1.2,"tier 2: boiler_solid-fuel, boiler_fuel-fired"
-est-sibling-construction-time,boiler_fuel-fired,construction-time,0.2,0.75,0.5,4,no,3.75,"tier 2: boiler_solid-fuel, boiler_electric"
-est-sibling-construction-time,boiler_solid-fuel,construction-time,1,0.35,0.02,4,yes,0.35,"tier 2: boiler_electric, boiler_fuel-fired"
-est-sibling-construction-time,combustion-turbine_heat-recovery-steam-generator,construction-time,2,2.25,1.6875,2.8125,yes,1.125,tier 2: combustion-turbine_simple-cycle
+est-sibling-construction-time,boiler_electric,construction-time,0.5,1.85417,0.02,25,yes,3.70833,"tier 2: boiler_solid-fuel, boiler_fuel-fired"
+est-sibling-construction-time,boiler_fuel-fired,construction-time,1.70833,1.25,0.5,4,yes,0.731709,"tier 2: boiler_solid-fuel, boiler_electric"
+est-sibling-construction-time,boiler_solid-fuel,construction-time,2,1.10417,0.02,25,yes,0.552083,"tier 2: boiler_electric, boiler_fuel-fired"
+est-sibling-construction-time,combustion-turbine_heat-recovery-steam-generator,construction-time,2,0.2,0.15,2.5,yes,0.1,tier 2: combustion-turbine_simple-cycle
 est-sibling-construction-time,direct-heater_electric-process,construction-time,0.04,0.01,0.001,0.04,yes,0.25,"tier 2: direct-heater_solid-fuel, direct-heater_fired-process"
 est-sibling-construction-time,direct-heater_fired-process,construction-time,0.01,0.025,0.001,0.04,yes,2.5,"tier 2: direct-heater_solid-fuel, direct-heater_electric-process"
 est-sibling-construction-time,direct-heater_solid-fuel,construction-time,0.01,0.025,0.01,0.04,yes,2.5,"tier 2: direct-heater_electric-process, direct-heater_fired-process"
+est-sibling-construction-time,gasifier_biomass-chp,construction-time,0.3,4,2.5,5,no,13.3333,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids"
+est-sibling-construction-time,reciprocating-engine_chp,construction-time,1,1,0.75,1.25,yes,1,tier 2: reciprocating-engine_diesel-generator
+est-sibling-construction-time,steam-turbine_back-pressure,construction-time,2.41667,5,1,6.25,yes,2.06896,tier 2: steam-turbine_condensing
 est-sibling-construction-time,thermal-storage_electric,construction-time,1,1,0.75,2,yes,1,tier 2: thermal-storage_heat-charged
 est-sibling-construction-time,anaerobic-digester_chp,construction-time,2,2,1.5,2.5,yes,1,tier 2: anaerobic-digester
-est-sibling-construction-time,combustion-turbine_simple-cycle,construction-time,2.25,2,1.5,2.5,yes,0.888889,tier 2: combustion-turbine_heat-recovery-steam-generator
-est-sibling-construction-time,geothermal-well_binary-power,construction-time,2,2,1,3,yes,1,tier 2: geothermal-well_enhanced
+est-sibling-construction-time,combustion-turbine_simple-cycle,construction-time,0.2,2,1,3,no,10,tier 2: combustion-turbine_heat-recovery-steam-generator
+est-sibling-construction-time,reciprocating-engine_diesel-generator,construction-time,1,1,0.5,1.5,yes,1,tier 2: reciprocating-engine_chp
+est-sibling-construction-time,steam-turbine_condensing,construction-time,5,2.41667,0.5,5.5,yes,0.483334,tier 2: steam-turbine_back-pressure
+est-sibling-construction-time,geothermal-well_binary-power,construction-time,2,4.5,1,5.625,yes,2.25,tier 2: geothermal-well_enhanced
 est-sibling-construction-time,capture-unit_amine,construction-time,3,2,1.5,2.5,no,0.666667,"tier 2: capture-unit_dac-liquid-solvent, capture-unit_dac-solid-sorbent"
 est-sibling-construction-time,capture-unit_dac-liquid-solvent,construction-time,2,2.5,1.875,3.125,yes,1.25,"tier 2: capture-unit_amine, capture-unit_dac-solid-sorbent"
 est-sibling-construction-time,capture-unit_dac-solid-sorbent,construction-time,2,2.5,1.875,3.125,yes,1.25,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent"
@@ -125,19 +136,19 @@ est-sibling-construction-time,gasifier_biomass-methanol,construction-time,2.5,2.
 est-sibling-construction-time,reactor_co2-to-methanol,construction-time,2,2,1.5,2.5,yes,1,"tier 2: reactor_hydrotreating-lipids, reactor_haber-bosch-loop, reactor_hydrothermal-liquefaction"
 est-sibling-construction-time,fermenter_grain-dry-mill,construction-time,2,2,1.5,2.5,yes,1,tier 2: fermenter_lignocellulosic-enzymatic
 est-sibling-construction-time,fermenter_lignocellulosic-enzymatic,construction-time,2,2,1.5,2.5,yes,1,tier 2: fermenter_grain-dry-mill
-est-sibling-construction-time,gasifier_biomass-methanation,construction-time,2.5,4,3,5,no,1.6,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_coal-to-liquids"
+est-sibling-construction-time,gasifier_biomass-methanation,construction-time,2.5,4,0.3,5,yes,1.6,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_coal-to-liquids"
 est-sibling-construction-time,gasifier_fischer-tropsch,construction-time,2,2.5,1.875,3.125,yes,1.25,"tier 2: gasifier_black-liquor, gasifier_biomass-methanol"
 est-sibling-construction-time,reactor_hydrothermal-liquefaction,construction-time,2,2,1.5,2.5,yes,1,"tier 2: reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_haber-bosch-loop"
 est-sibling-construction-time,reactor_hydrotreating-lipids,construction-time,2,2,1.5,2.5,yes,1,"tier 2: reactor_co2-to-methanol, reactor_haber-bosch-loop, reactor_hydrothermal-liquefaction"
 est-sibling-construction-time,anaerobic-digester,construction-time,2,2,1.5,2.5,yes,1,tier 2: anaerobic-digester_chp
 est-sibling-construction-time,electrolyzer_solid-oxide,construction-time,3,2.75,1.5,3.75,yes,0.916667,tier 2: electrolyzer_low-temperature
 est-sibling-construction-time,electrolyzer_low-temperature,construction-time,2.75,3,2.25,3.75,yes,1.09091,tier 2: electrolyzer_solid-oxide
-est-sibling-construction-time,gasifier_coal-petroleum-coke,construction-time,4,4,2.5,5,yes,1,"tier 2: gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids"
+est-sibling-construction-time,gasifier_coal-petroleum-coke,construction-time,4,3.25,0.3,4.0625,yes,0.8125,"tier 2: gasifier_biomass-chp, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids"
 est-sibling-construction-time,gasifier_black-liquor,construction-time,2.5,2.25,1.6875,2.8125,yes,0.9,"tier 2: gasifier_biomass-methanol, gasifier_fischer-tropsch"
-est-sibling-construction-time,gasifier_coal-methanation,construction-time,4,4,2.5,5,yes,1,"tier 2: gasifier_coal-petroleum-coke, gasifier_biomass-methanation, gasifier_coal-to-liquids"
-est-sibling-construction-time,gasifier_coal-to-liquids,construction-time,4,4,2.5,5,yes,1,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation"
+est-sibling-construction-time,gasifier_coal-methanation,construction-time,4,3.25,0.3,4.0625,yes,0.8125,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke, gasifier_biomass-methanation, gasifier_coal-to-liquids"
+est-sibling-construction-time,gasifier_coal-to-liquids,construction-time,4,3.25,0.3,4.0625,yes,0.8125,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation"
 est-sibling-construction-time,reactor_haber-bosch-loop,construction-time,2,2,1.5,2.5,yes,1,"tier 2: reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_hydrothermal-liquefaction"
-est-sibling-construction-time,geothermal-well_enhanced,construction-time,2,2,1,3,yes,1,tier 2: geothermal-well_binary-power
+est-sibling-construction-time,geothermal-well_enhanced,construction-time,4.5,2,1,3,no,0.444444,tier 2: geothermal-well_binary-power
 est-sibling-construction-time,thermal-storage_heat-charged,construction-time,1,1,0.5,2,yes,1,tier 2: thermal-storage_electric
 est-sibling-capacity-factor,boiler_electric,capacity-factor,22.8,63.5,22.8,95,yes,2.78509,"tier 2: boiler_solid-fuel, boiler_fuel-fired"
 est-sibling-capacity-factor,boiler_fuel-fired,capacity-factor,32,58.9,22.8,95,yes,1.84062,"tier 2: boiler_solid-fuel, boiler_electric"

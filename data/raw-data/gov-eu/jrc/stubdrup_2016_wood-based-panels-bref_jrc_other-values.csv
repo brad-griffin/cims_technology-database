@@ -1,0 +1,27 @@
+process,technology,item,value,unit,reference,note
+"Particleboard site level (Sect. 3.1.4, Table 3.2)",,site-level electricity consumption,0.07 - 0.24,MWh/m3 finished panel,"p.68, Table 3.2","Whole site, all operations; no wood-panel whole-plant archetype exists. Source WBP industry 2012."
+"Particleboard site level (Sect. 3.1.4, Table 3.2)",,site-level power share of total energy,10 - 46,%,"p.68, Table 3.2",
+"Particleboard site level (Sect. 3.1.4, Table 3.2)",,site-level heat consumption,0.18 - 1.73,MWh/m3 finished panel,"p.68, Table 3.2",Whole site; heating-value basis not stated.
+"Particleboard site level (Sect. 3.1.4, Table 3.2)",,site-level heat share of total energy,54 - 90,%,"p.68, Table 3.2",
+"OSB site level (Sect. 3.1.4, Table 3.2)",,site-level electricity consumption,0.10 - 0.13,MWh/m3 finished panel,"p.68, Table 3.2","Whole site, all operations; no wood-panel whole-plant archetype exists. Source WBP industry 2012."
+"OSB site level (Sect. 3.1.4, Table 3.2)",,site-level power share of total energy,14 - 54,%,"p.68, Table 3.2",
+"OSB site level (Sect. 3.1.4, Table 3.2)",,site-level heat consumption,0.11 - 0.69,MWh/m3 finished panel,"p.68, Table 3.2",Whole site; heating-value basis not stated.
+"OSB site level (Sect. 3.1.4, Table 3.2)",,site-level heat share of total energy,46 - 86,%,"p.68, Table 3.2",
+"MDF site level (Sect. 3.1.4, Table 3.2)",,site-level electricity consumption,0.25 - 0.76,MWh/m3 finished panel,"p.68, Table 3.2","Whole site, all operations; no wood-panel whole-plant archetype exists. Source WBP industry 2012."
+"MDF site level (Sect. 3.1.4, Table 3.2)",,site-level power share of total energy,13 - 64,%,"p.68, Table 3.2",
+"MDF site level (Sect. 3.1.4, Table 3.2)",,site-level heat consumption,0.30 - 2.90,MWh/m3 finished panel,"p.68, Table 3.2",Whole site; heating-value basis not stated. MDF dry process only.
+"MDF site level (Sect. 3.1.4, Table 3.2)",,site-level heat share of total energy,36 - 87,%,"p.68, Table 3.2",
+"Site level (Sect. 3.1.4, Table 3.2)",,annual site heat consumption PB / OSB / MDF,28 000-750 000 / 33 000-112 000 / 231 000-887 000,MWh/yr,"p.68, Table 3.2","Annual site power PB 11 000-101 000, OSB 35 000-49 000, MDF 53 000-230 000 MWh."
+"Shares of site energy by step (Sect. 3.1.4, Table 3.2)",,% of total site: drying power / heat,PB 6-50 / 34-90; OSB 22-36 / ND; MDF 9-28 / 28-58,%,"p.68, Table 3.2","Refining power/heat MDF 16-45 / 10-60; pressing power/heat PB 12-38 / 7-15, OSB 13-50 / ND, MDF 3-22 / 7-15."
+Upstream and downstream activities (Sect. 3.1.4),,"share of total energy for chipping, milling, downstream processing and abatement",15 - 50,%,"p.69, Sect. 3.1.4","""from 15 % to up to half"", mainly electricity."
+Drying theory (Sect. 2.2.2.1),,theoretical heat to dry 1 t wood from 60 % to 3 % moisture,1.3,GJ/t,"p.35, Sect. 2.2.2.1","Latent heat of evaporation about 2260 kJ/kg; recycled wood needs less than half. Theoretical, not measured."
+"Panel densities (Sect. 1.1, Table 1.1)",,density PB / OSB / MDF / HDF / LDF,500-800 / 580-680 / 700-800 / >800 / <650,kg/m3,"p.6, Table 1.1","Hardboard 900-1100, mediumboard 400-900, softboard 140-400, rigidboard 100-240, flexboard 50. Only same-source factor for m3 to t (ranges only)."
+"Panel composition (Sect. 3.1.3, Table 3.1)",,wood share of raw panel weight PB / MDF / OSB,83-88 / 82 / 86-92,%,"p.67, Table 3.1",Resin 6-8 / 10 / 2-3 %; water 5-7 / 7 / 5-7 %.
+"Chip dryer characteristics (Sect. 2.2.1, Figure 2.6)",,drying capacity by dryer type,rotary bundle 1-9; tube bundle 10-18; single-pass drum <=40; three-pass <=25; flash tube pre-dryer 2-14; jet tube <=10,t/h,"p.32, Figure 2.6",Numbers printed in the figure table (indicative); temperatures up to 200/160/450/400/500/approx. 500 degC. reprinted from Thoemen 2010
+Dryer sizes (Sect. 2.2.1),,dryer evaporation capacity / dry throughput,up to 40 t water/h; 10-50 t dry wood/h,t/h,"p.32, Sect. 2.2.1",
+Energy production (Sect. 2.6),,combustion plant size range,10 - >50,MW,"p.52, Sect. 2.6",Plants producing hot gas for direct dryers and heating thermal oil; basis not stated.
+Biomass-fired CHP plant for indirect drying (Sect. 4.6.4),steam-turbine_biomass_chp,annual wood biomass fuel consumption,250 000,t/yr,"p.199, Sect. 4.6.4","For the 40 MW plant (""approximate yearly fuel consumption""); not per unit so not a flow row."
+Greenfield plant cost (Sect. 1.4.4),,investment for a new medium-sized panel plant,>150,EUR million,"p.15, Sect. 1.4.4",About 20 % for emission reduction equipment; O&M of abatement can exceed EUR 3 million/yr. Capacity and price year not stated.
+"Cost structure (Sect. 1.4.3, Table 1.4)",,"energy share of direct material costs, 2009",26,%,"p.15, Table 1.4","Wood 31 %, resin 43 %."
+Refiner plant auxiliaries (Sect. 2.2.3.1),pulper_mdf-refiner,dewatering screws and pumps electrical demand,20 - 40,kW,"p.37, Sect. 2.2.3.1",For a throughput of up to 400 m3/h.
+Plant capacity convention (Sect. 1.4.2),,production days per year used for capacity,335,d/yr,"p.11, Sect. 1.4.2",600 m3/day corresponds to 201 000 m3/yr.

@@ -1,0 +1,43 @@
+process,technology,sector,end-use,process-step,service-unit
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",conveyor_corn-receiving,food-and-beverage,material-handling,corn receiving,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",leaching-vessel_corn-steeping,food-and-beverage,process-heat-low-temp,steeping,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",evaporator_steepwater,food-and-beverage,process-heat-low-temp,steepwater evaporation,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",grinding-mill_degermination-first-grind,food-and-beverage,machine-drive,germ recovery,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",grinding-mill_degermination-second-grind,food-and-beverage,machine-drive,germ recovery,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",separator_germ-washing,food-and-beverage,machine-drive,germ recovery,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",dryer_steam-tube_germ,food-and-beverage,process-heat-low-temp,germ drying,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",separator_fiber-recovery,food-and-beverage,machine-drive,fiber recovery,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",press_screw_fiber,food-and-beverage,machine-drive,fiber dewatering,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",separator_centrifuge-gluten,food-and-beverage,machine-drive,starch-gluten separation,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",dryer_flash_gluten,food-and-beverage,process-heat-low-temp,gluten drying,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",separator_hydrocyclone-starch,food-and-beverage,machine-drive,starch washing,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",dryer_flash_starch,food-and-beverage,process-heat-low-temp,starch drying,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",dryer_rotary-direct-fired_gluten-feed,food-and-beverage,process-heat-low-temp,feed drying,t
+"Corn wet milling process energy, 100,000 bu/day plant (Table 5)",refinery_corn-wet-milling,food-and-beverage,whole-plant,corn wet milling,t
+Germ drying (Sect. 3),dryer_steam-tube_germ,food-and-beverage,process-heat-low-temp,germ drying,t
+Dryer and evaporator bases for dewatering savings (Table 9),dryer_steam-tube_germ,food-and-beverage,process-heat-low-temp,germ drying,t
+Dryer and evaporator bases for dewatering savings (Table 9),evaporator_steepwater,food-and-beverage,process-heat-low-temp,steepwater evaporation,t
+Dryer and evaporator bases for dewatering savings (Table 9),dryer_flash_fiber-gluten,food-and-beverage,process-heat-low-temp,fiber and gluten drying,t
+"Dryer efficiencies, direct vs indirect heating (Table 10)",dryer_direct-fired,food-and-beverage,process-heat-low-temp,drying,GJ
+"Dryer efficiencies, direct vs indirect heating (Table 10)",dryer_indirect_steam-air,food-and-beverage,process-heat-low-temp,drying,t
+"Dryer efficiencies, direct vs indirect heating (Table 10)",dryer_indirect_thermal-fluid-air,food-and-beverage,process-heat-low-temp,drying,t
+"Dryer efficiencies, direct vs indirect heating (Table 10)",dryer_indirect_air-air,food-and-beverage,process-heat-low-temp,drying,t
+Multiple effect evaporator efficiencies (Table 11),evaporator_single-effect,food-and-beverage,process-heat-low-temp,evaporation,t
+Multiple effect evaporator efficiencies (Table 11),evaporator_multiple-effect_two-effect,food-and-beverage,process-heat-low-temp,evaporation,t
+Multiple effect evaporator efficiencies (Table 11),evaporator_multiple-effect_three-effect,food-and-beverage,process-heat-low-temp,evaporation,t
+Multiple effect evaporator efficiencies (Table 11),evaporator_multiple-effect_four-effect,food-and-beverage,process-heat-low-temp,evaporation,t
+Multiple effect evaporator efficiencies (Table 11),evaporator_multiple-effect_five-effect,food-and-beverage,process-heat-low-temp,evaporation,t
+"Mechanical vapour recompression, Sunmore Meieri dairy, Norway (Sect. 5.5)",vapour-recompressor_mvr,food-and-beverage,process-heat-low-temp,evaporation,t
+"Mechanical vapour recompression, Cerestar Benelux, Sas van Gent (Sect. 5.5)",vapour-recompressor_mvr,food-and-beverage,process-heat-low-temp,evaporation,t
+"Steepwater concentration, 350,000 gal (Table 12)",vapour-recompressor_mvr_steepwater,food-and-beverage,process-heat-low-temp,steepwater evaporation,m3
+"Steepwater concentration, 350,000 gal (Table 12)",evaporator_reverse-osmosis-mvr,food-and-beverage,process-heat-low-temp,steepwater evaporation,m3
+Ethanol dehydration (Sect. 5.3),adsorber_molecular-sieve-ethanol,food-and-beverage,separation,ethanol dehydration,m3
+Ethanol dehydration (Sect. 5.3),distillation-column_rectification-solvent-extraction,food-and-beverage,separation,ethanol dehydration,m3
+Combined heat and power (Sect. 5.1),steam-turbine_back-pressure,food-and-beverage,steam,steam supply,GJ
+Combined heat and power (Sect. 5.1),combustion-turbine_heat-recovery-steam-generator,food-and-beverage,steam,steam supply,GJ
+Combined heat and power (Sect. 5.1),combustion-turbine_steam-injected,food-and-beverage,steam,steam supply,GJ
+"Germ drying with CHP exhaust, CPC Nederland, Sas van Gent (Sect. 5.5)",dryer_fluidized-bed_chp-exhaust,food-and-beverage,process-heat-low-temp,germ drying,t
+"Anaerobic wastewater treatment, Ogilvie flour mill, Candiac QC (Sect. 5.1)",anaerobic-digester_effluent,food-and-beverage,wastewater,effluent treatment,GJ
+"Beet pulp dewatering and drying, British Sugar Wissington (Sect. 5.4)",press_screw_dewatering,food-and-beverage,machine-drive,pulp dewatering,t
+"Beet pulp dewatering and drying, British Sugar Wissington (Sect. 5.4)",dryer_rotary_beet-pulp,food-and-beverage,process-heat-low-temp,pulp drying,t
+Pollution control (Sect. 5.7),heat-recovery-unit_regenerative-thermal-oxidizer,food-and-beverage,pollution-control,dryer exhaust treatment,GJ

@@ -1,0 +1,78 @@
+process,technology,sector,end-use,process-step,service-unit
+"Animal feed, compound feed (BAT conclusions, Table 17.2)",refinery_compound-feed,food-and-beverage,whole-plant,compound feed production,t
+"Animal feed, dry pet food (BAT conclusions, Table 17.2)",refinery_dry-pet-food,food-and-beverage,whole-plant,dry pet food production,t
+"Animal feed, wet pet food (BAT conclusions, Table 17.2)",refinery_wet-pet-food,food-and-beverage,whole-plant,wet pet food production,t
+"Brewing (BAT conclusions, Table 17.5)",refinery_brewery,food-and-beverage,whole-plant,brewing,hl
+"Dairies, market milk (BAT conclusions, Table 17.8)",refinery_dairy-market-milk,food-and-beverage,whole-plant,market milk dairy,t
+"Dairies, cheese (BAT conclusions, Table 17.8)",refinery_dairy-cheese,food-and-beverage,whole-plant,cheese dairy,t
+"Dairies, powder (BAT conclusions, Table 17.8)",refinery_dairy-powder,food-and-beverage,whole-plant,milk/whey powder dairy,t
+"Dairies, fermented milk (BAT conclusions, Table 17.8)",refinery_dairy-fermented-milk,food-and-beverage,whole-plant,fermented milk dairy,t
+"Fruit and vegetables, potato processing excluding starch (BAT conclusions, Table 17.12)",refinery_potato-processing,food-and-beverage,whole-plant,potato processing,t
+"Fruit and vegetables, tomato processing (BAT conclusions, Table 17.12)",refinery_tomato-processing,food-and-beverage,whole-plant,tomato processing,t
+"Grain milling (BAT conclusions, Table 17.14)",refinery_grain-milling,food-and-beverage,whole-plant,grain milling,t
+"Meat processing (BAT conclusions, Table 17.16)",refinery_meat-processing,food-and-beverage,whole-plant,meat processing,t
+"Oilseed processing, integrated crushing and refining of rapeseed and/or sunflower seed (BAT conclusions, Table 17.19)",refinery_oilseed-rapeseed-sunflower,food-and-beverage,whole-plant,oilseed crushing and refining,t
+"Oilseed processing, integrated crushing and refining of soybeans (BAT conclusions, Table 17.19)",refinery_oilseed-soybean,food-and-beverage,whole-plant,oilseed crushing and refining,t
+"Vegetable oil, stand-alone refining (BAT conclusions, Table 17.19)",refinery_oil-refining,food-and-beverage,whole-plant,vegetable oil refining,t
+"Soft drinks and nectar/juice from processed fruit and vegetables (BAT conclusions, Table 17.23)",refinery_soft-drinks,food-and-beverage,whole-plant,soft drinks and juice,hl
+"Starch, potato processing for native starch only (BAT conclusions, Table 17.25)",refinery_starch-potato,food-and-beverage,whole-plant,potato starch,t
+"Starch, maize and/or wheat processing for native starch with modified and/or hydrolysed starch (BAT conclusions, Table 17.25)",refinery_starch-maize-wheat,food-and-beverage,whole-plant,maize/wheat starch,t
+"Sugar beet processing (BAT conclusions, Table 17.28)",refinery_sugar-beet,food-and-beverage,whole-plant,sugar beet processing,t
+"Ethanol production / distilleries, reported installations (Sect. 6.3.1)",refinery_distillery,food-and-beverage,whole-plant,ethanol/spirits distillery,t
+"Distilled beverages, pot stills (Sect. 6.3.1)",distillation-column_steam_pot-still,food-and-beverage,drying-and-separation,spirit distillation,l
+"Fish and shellfish processing, filleting (Sect. 7.3.2)",refinery_fish-filleting,food-and-beverage,whole-plant,fish filleting,t
+"Fish and shellfish processing, canning (Sect. 7.3.2)",refinery_fish-canning,food-and-beverage,whole-plant,fish canning,t
+"Fruit and vegetables, Spanish tomato paste, powder and concentrate installations (Sect. 8.3.1)",refinery_tomato-processing,food-and-beverage,whole-plant,tomato processing,t
+Dry pasta installations covered by Directive 2010/75/EU (Sect. 16.1.2),refinery_dry-pasta,food-and-beverage,whole-plant,dry pasta production,t
+Natural tartaric acid production (Sect. 16.5.7.2),refinery_tartaric-acid,food-and-beverage,whole-plant,tartaric acid production,t
+"Olive oil extraction, two- and three-phase systems (Sect. 12.2)",refinery_olive-oil-mill,food-and-beverage,whole-plant,olive oil extraction,t
+"Breweries, heat consumption by department, brewhouse (Sect. 4.3.1, Table 4.1)",heat-exchanger_steam_brewhouse,food-and-beverage,process-heat-low-temp,"brewing, brewhouse",hl
+"Breweries, heat consumption by department, bottling installation (Sect. 4.3.1, Table 4.1)",cleaning-system_steam_bottling,food-and-beverage,process-heat-low-temp,"brewing, bottling installation",hl
+"Breweries, heat consumption by department, kegging installation (Sect. 4.3.1, Table 4.1)",cleaning-system_steam_kegging,food-and-beverage,process-heat-low-temp,"brewing, kegging installation",hl
+"Breweries, heat consumption by department, total brewery (Sect. 4.3.1, Table 4.1)",refinery_brewery,food-and-beverage,whole-plant,"brewing, total brewery",hl
+"Large German brewery with mash infusion, brewhouse wort preparation (Sect. 4.4.1.1, Table 4.3)",heat-exchanger_steam_mash-infusion,food-and-beverage,process-heat-low-temp,"brewing, brewhouse wort preparation",hl
+"Large German brewery with mash infusion, total consumption (Sect. 4.4.1.1, Table 4.3)",refinery_brewery,food-and-beverage,whole-plant,brewing,hl
+"FDM sector, heat generators (Sect. 2.1.2)",boiler_fuel-fired,food-and-beverage,steam-and-hot-water,site steam and hot water supply,GJ
+"FDM sector, on-site CHP (Sect. 2.1.2)",boiler_chp,food-and-beverage,steam-and-hot-water,site CHP,GJ
+"Sugar manufacturing, boiler-house CHP (Sect. 2.3.2.1.4)",boiler_chp,food-and-beverage,steam-and-hot-water,sugar factory CHP,GJ
+"Evaporators, single-stage (Sect. 2.3.2.2.4)",evaporator_steam_single-stage,food-and-beverage,drying-and-separation,evaporation (liquid concentration),t
+"Evaporators, single-stage (Annex 19.2.5.1)",evaporator_steam_single-stage,food-and-beverage,drying-and-separation,evaporation (liquid concentration),t
+"Evaporators, double-effect (Annex 19.2.5.1)",evaporator_steam_double-effect,food-and-beverage,drying-and-separation,evaporation (liquid concentration),t
+"Evaporators, triple-effect (Annex 19.2.5.1)",evaporator_steam_triple-effect,food-and-beverage,drying-and-separation,evaporation (liquid concentration),t
+"Dairy multi-effect evaporators, TVR 3 stages (Sect. 2.3.2.2.4, Table 2.41)",evaporator_steam_tvr-3-stage,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Dairy multi-effect evaporators, TVR 4 stages (Sect. 2.3.2.2.4, Table 2.41)",evaporator_steam_tvr-4-stage,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Dairy multi-effect evaporators, TVR 5 stages (Sect. 2.3.2.2.4, Table 2.41)",evaporator_steam_tvr-5-stage,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Dairy multi-effect evaporators, TVR 6 stages (Sect. 2.3.2.2.4, Table 2.41)",evaporator_steam_tvr-6-stage,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Dairy multi-effect evaporators, TVR 7 stages (Sect. 2.3.2.2.4, Table 2.41)",evaporator_steam_tvr-7-stage,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Dairy multi-effect evaporators, MVR single-stage (Sect. 2.3.2.2.4, Table 2.41)",vapour-recompressor_electricity_mvr-evaporator,food-and-beverage,drying-and-separation,milk/whey evaporation,t
+"Evaporators, mechanical vapour recompression (Sect. 2.3.2.2.4.1)",vapour-recompressor_electricity_mvr-evaporator,food-and-beverage,drying-and-separation,evaporation (liquid concentration),t
+"Japanese dairy milk powder evaporator, MVR (Sect. 2.3.2.2.4.1)",vapour-recompressor_electricity_mvr-evaporator,food-and-beverage,drying-and-separation,milk evaporation,t
+"Japanese dairy milk powder evaporator, TVR (Sect. 2.3.2.2.4.1)",evaporator_steam_tvr-4-stage,food-and-beverage,drying-and-separation,milk evaporation,t
+"Large German dairy, two-stage milk and whey powder drying (Sect. 5.4.2.8)",dryer_spray-fluid-bed_two-stage,food-and-beverage,drying-and-separation,milk/whey powder drying,t
+"Sugar beet pulp, high-temperature drying (Sect. 15.4.1.4)",dryer_rotary-direct-fired_beet-pulp-htd,food-and-beverage,drying-and-separation,beet pulp drying,t
+"Green fodder dehydration, high-temperature rotary drum dryer (Sect. 3.2.4.2)",dryer_rotary-direct-fired_green-fodder,food-and-beverage,drying-and-separation,green fodder drying,t
+"Green fodder dehydration, recycling of waste gas from the dryer (Sect. 3.4.1)",heat-recovery-unit_dryer-exhaust_gas-recycling,food-and-beverage,drying-and-separation,green fodder drying,t
+"Green fodder dehydration, use of waste heat for predrying (Sect. 3.4.1)",heat-recovery-unit_dryer-exhaust_predryer,food-and-beverage,drying-and-separation,green fodder drying,t
+"Distillery, drying of distillers dried grains with solubles (Sect. 6.4.2.1, Table 6.2)",dryer_steam_ddgs,food-and-beverage,drying-and-separation,DDGS drying,t
+"Example dairy, milk pasteurisation without regeneration (Sect. 5.4.2.5)",heat-exchanger_steam_milk-pasteurizer,food-and-beverage,process-heat-low-temp,milk pasteurisation,t
+"Example dairy, milk pasteurisation with regenerative heat exchange (Sect. 5.4.2.5)",pasteurizer_steam_regenerative,food-and-beverage,process-heat-low-temp,milk pasteurisation,t
+"Example dairy, UHT milk without heat recovery (Sect. 5.4.2.5)",heat-exchanger_steam_uht,food-and-beverage,process-heat-low-temp,UHT milk treatment,t
+"Example dairy, UHT milk with heat exchange from vacuum-expansion steam (Sect. 5.4.2.5)",heat-exchanger_steam_uht,food-and-beverage,process-heat-low-temp,UHT milk treatment,t
+"UHT unit with direct steam injection, 15 000 l/h, normal water circulation (Sect. 5.4.2.6, Table 5.6)",heat-exchanger_steam_uht,food-and-beverage,process-heat-low-temp,UHT milk treatment,m3
+"Juice second pasteurisation at 95 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,food-and-beverage,process-heat-low-temp,juice pasteurisation,m3
+"Juice second pasteurisation at 80 degC for 15 s, 22 000 l/h (Sect. 13.5.1, Table 13.1)",pasteurizer_steam_juice,food-and-beverage,process-heat-low-temp,juice pasteurisation,m3
+"Frozen vegetables, belt blancher with water cooling (Sect. 8.2.2)",heat-exchanger_steam_blancher-belt-water-cooled,food-and-beverage,process-heat-low-temp,vegetable blanching,t
+"Frozen vegetables, belt blancher with air cooling (Sect. 8.2.2)",heat-exchanger_steam_blancher-belt-air-cooled,food-and-beverage,process-heat-low-temp,vegetable blanching,t
+"Frozen vegetables, drum blancher (Sect. 8.2.2)",heat-exchanger_steam_blancher-drum,food-and-beverage,process-heat-low-temp,vegetable blanching,t
+"Frozen vegetables, steam peeling (Sect. 8.2.1)",heat-exchanger_steam_peeler,food-and-beverage,process-heat-low-temp,vegetable peeling,t
+"Frozen vegetables, wet caustic peeling (Sect. 8.2.1)",heat-exchanger_steam_caustic-peeler,food-and-beverage,process-heat-low-temp,vegetable peeling,t
+"Frozen vegetables, deep freezing (Sect. 8.3.1)",chiller_electricity_freezing-tunnel,food-and-beverage,refrigeration,vegetable deep freezing,t
+"Bakery ovens, two-year study of 51 ovens (Sect. 16.2.1)",oven_natural-gas_bakery,food-and-beverage,process-heat-high-temp,baking,t
+"Oilseed extraction, desolventiser-toaster and downstream meal drying (Sect. 11.4.2.4.2, Table 11.10)",dryer_steam_desolventiser-toaster,food-and-beverage,drying-and-separation,oilseed meal desolventising,t
+"Vegetable oil refining, deodoriser vacuum generation, alkaline closed-circuit cooling system, German example installation (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-alkaline-closed,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, alkaline closed-circuit cooling system, reported data (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-alkaline-closed,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, single wet scrubber with dry/ice condensing (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-dry-condensing,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, double scrubber with once-through cooling (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-once-through,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, alkaline recirculation system with two boosters at 2 mbar (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-alkaline-closed,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, chilled alkaline recirculation system at 2 mbar, installation #274 (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-chilled-alkaline,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t
+"Vegetable oil refining, deodoriser vacuum generation, once-through system with two boosters at 2 mbar (Sect. 11.2.2.3)",separator_steam_deodorizer-vacuum-once-through,food-and-beverage,drying-and-separation,oil deodorisation vacuum,t

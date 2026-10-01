@@ -1,0 +1,13 @@
+process,technology,sector,end-use,process-step,service-unit
+Cogeneration (Sect. 5.11),steam-turbine_back-pressure,chemicals,steam-and-hot-water,cogeneration,GJ
+Cogeneration (Sect. 5.11),combustion-turbine_heat-recovery-steam-generator,chemicals,steam-and-hot-water,cogeneration,GJ
+Cogeneration (Sect. 5.11),combustion-turbine_steam-injected,chemicals,steam-and-hot-water,cogeneration,GJ
+"Refrigeration, absorption chillers (Sect. 5.8)",chiller_absorption,chemicals,refrigeration-and-cooling,chilled water,GJ
+Trigeneration (Sect. 5.11),chiller_absorption,chemicals,refrigeration-and-cooling,chilled water,GJ
+Trigeneration (Sect. 5.11),chiller_adsorption,chemicals,refrigeration-and-cooling,chilled water,GJ
+Power recovery turbines (Sect. 5.11),steam-turbine_back-pressure-micro,chemicals,power-generation,steam pressure let-down,GJ
+"Flue gas heat recovery, Merck Elkton VA (Sect. 5.10)",boiler_fuel-fired_economizer-air-preheat,chemicals,steam-and-hot-water,boiler house,GJ
+HVAC heat recovery systems (Sect. 5.2),ventilation-unit_heat-recovery_wheel,chemicals,space-heating,HVAC make-up air,GJ
+HVAC heat recovery systems (Sect. 5.2),ventilation-unit_heat-recovery_heat-pipe,chemicals,space-heating,HVAC make-up air,GJ
+HVAC heat recovery systems (Sect. 5.2),ventilation-unit_heat-recovery_run-around-loop,chemicals,space-heating,HVAC make-up air,GJ
+"Natural gas engine-driven air compressors, Ultra Creative Corp. Brooklyn NY (Sect. 5.6)",compressor_air-gas-engine-drive,chemicals,machine-drive,compressed air,GJ

@@ -1,0 +1,60 @@
+process,technology,sector,end-use,process-step,service-unit
+01 Supercritical pulverized coal extraction CHP (medium),steam-turbine_condensing_coal-extraction,heat-supply,steam-and-hot-water,,GJ
+"04 Gas turbine, simple cycle, CHP (large)",combustion-turbine_heat-recovery-steam-generator_simple-cycle-large,heat-supply,steam-and-hot-water,,GJ
+"04 Gas turbine, simple cycle, CHP (small to medium)",combustion-turbine_heat-recovery-steam-generator_simple-cycle-small-medium,heat-supply,steam-and-hot-water,,GJ
+"04 Gas turbine, simple cycle, CHP (micro)",combustion-turbine_heat-recovery-steam-generator_simple-cycle-micro,heat-supply,steam-and-hot-water,,GJ
+"05 Gas turbine combined cycle, extraction CHP (large)",combustion-turbine_heat-recovery-steam-generator_combined-cycle-extraction,heat-supply,steam-and-hot-water,,GJ
+"05 Gas turbine combined cycle, back-pressure CHP (medium)",combustion-turbine_heat-recovery-steam-generator_combined-cycle-back-pressure,heat-supply,steam-and-hot-water,,GJ
+"06 Gas engine CHP, natural gas",reciprocating-engine_chp_natural-gas,heat-supply,steam-and-hot-water,,GJ
+"06 Gas engine CHP, biogas",reciprocating-engine_chp_biogas,heat-supply,steam-and-hot-water,,GJ
+"08 Waste-to-energy CHP, back-pressure (large, 40/80 degC)",steam-turbine_back-pressure_waste-large-40c,heat-supply,steam-and-hot-water,,GJ
+"08 Waste-to-energy CHP, back-pressure (large, 50/100 degC)",steam-turbine_back-pressure_waste-large-50c,heat-supply,steam-and-hot-water,,GJ
+"08 Waste-to-energy CHP, back-pressure (medium)",steam-turbine_back-pressure_waste-medium,heat-supply,steam-and-hot-water,,GJ
+"08 Waste-to-energy CHP, back-pressure (small)",steam-turbine_back-pressure_waste-small,heat-supply,steam-and-hot-water,,GJ
+08 Waste-to-energy heat-only boiler (small),boiler_solid-fuel_waste,heat-supply,steam-and-hot-water,,GJ
+"09a Biomass CHP, back-pressure, wood chips (large, 40/80 degC)",steam-turbine_back-pressure_wood-chips-large-40c,heat-supply,steam-and-hot-water,,GJ
+"09a Biomass CHP, back-pressure, wood chips (large, 50/100 degC)",steam-turbine_back-pressure_wood-chips-large-50c,heat-supply,steam-and-hot-water,,GJ
+"09a Biomass CHP, back-pressure, wood chips (medium)",steam-turbine_back-pressure_wood-chips-medium,heat-supply,steam-and-hot-water,,GJ
+"09a Biomass CHP, back-pressure, wood chips (small)",steam-turbine_back-pressure_wood-chips-small,heat-supply,steam-and-hot-water,,GJ
+"09b Biomass CHP, back-pressure, wood pellets (large, 40/80 degC)",steam-turbine_back-pressure_wood-pellets-large-40c,heat-supply,steam-and-hot-water,,GJ
+"09b Biomass CHP, back-pressure, wood pellets (large, 50/100 degC)",steam-turbine_back-pressure_wood-pellets-large-50c,heat-supply,steam-and-hot-water,,GJ
+"09b Biomass CHP, back-pressure, wood pellets (medium)",steam-turbine_back-pressure_wood-pellets-medium,heat-supply,steam-and-hot-water,,GJ
+"09b Biomass CHP, back-pressure, wood pellets (small)",steam-turbine_back-pressure_wood-pellets-small,heat-supply,steam-and-hot-water,,GJ
+"09c Biomass CHP, back-pressure, straw (large, 40/80 degC)",steam-turbine_back-pressure_straw-large-40c,heat-supply,steam-and-hot-water,,GJ
+"09c Biomass CHP, back-pressure, straw (large, 50/100 degC)",steam-turbine_back-pressure_straw-large-50c,heat-supply,steam-and-hot-water,,GJ
+"09c Biomass CHP, back-pressure, straw (medium)",steam-turbine_back-pressure_straw-medium,heat-supply,steam-and-hot-water,,GJ
+"09c Biomass CHP, back-pressure, straw (small)",steam-turbine_back-pressure_straw-small,heat-supply,steam-and-hot-water,,GJ
+"09 Biomass heat-only boiler (wood chips, small)",boiler_solid-fuel_wood-chips-small,heat-supply,steam-and-hot-water,,GJ
+"09 Biomass heat-only boiler (wood chips, medium)",boiler_solid-fuel_wood-chips-medium,heat-supply,steam-and-hot-water,,GJ
+"09 Biomass heat-only boiler (wood chips, large)",boiler_solid-fuel_wood-chips-large,heat-supply,steam-and-hot-water,,GJ
+"09 Biomass heat-only boiler (wood pellets, small)",boiler_solid-fuel_wood-pellets,heat-supply,steam-and-hot-water,,GJ
+"09 Biomass heat-only boiler (straw, small)",boiler_solid-fuel_straw,heat-supply,steam-and-hot-water,,GJ
+"09a Biomass CHP, extraction, wood chips (large)",steam-turbine_condensing_wood-chips-extraction,heat-supply,steam-and-hot-water,,GJ
+"09b Biomass CHP, extraction, wood pellets (large)",steam-turbine_condensing_wood-pellets-extraction,heat-supply,steam-and-hot-water,,GJ
+"10 Stirling engine CHP, gasified biomass",gasifier_biomass-chp_stirling,heat-supply,steam-and-hot-water,,GJ
+"11 Solid oxide fuel cell CHP, natural gas/biogas",fuel-cell_chp_sofc-biogas,heat-supply,steam-and-hot-water,,GJ
+"12 Low-temperature PEM fuel cell CHP, hydrogen",fuel-cell_chp_pem-hydrogen,heat-supply,steam-and-hot-water,,GJ
+"20 Onshore wind turbine, utility scale",wind-turbine_onshore-utility,heat-supply,power-generation,,GJ
+"22 Rooftop PV with co-located battery, commercial and industrial",photovoltaic-array_battery-storage_rooftop-commercial,heat-supply,power-generation,,GJ
+"40 Compression heat pump for district heating (air source, 1 MW)",heat-pump_industrial_air-source-1mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (air source, 3 MW)",heat-pump_industrial_air-source-3mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (air source, 10 MW)",heat-pump_industrial_air-source-10mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (industrial waste heat, 1 MW)",heat-pump_industrial_waste-heat-1mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (industrial waste heat, 3 MW)",heat-pump_industrial_waste-heat-3mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (industrial waste heat, 10 MW)",heat-pump_industrial_waste-heat-10mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (seawater, 20 MW)",heat-pump_industrial_seawater-20mw,heat-supply,steam-and-hot-water,,GJ
+"40 Compression heat pump for district heating (seawater, 50-100 MW)",heat-pump_industrial_seawater-50-100mw,heat-supply,steam-and-hot-water,,GJ
+"41 Electric boiler (small, low voltage)",boiler_electric_small,heat-supply,steam-and-hot-water,,GJ
+"41 Electric boiler (large, electrode)",boiler_electric_large,heat-supply,steam-and-hot-water,,GJ
+"44 District heating boiler, natural gas",boiler_fuel-fired_natural-gas,heat-supply,steam-and-hot-water,,GJ
+"47 District heating boiler, oil",boiler_fuel-fired_oil,heat-supply,steam-and-hot-water,,GJ
+"45 Geothermal district heating with electric heat pump (1200 m, 80/40 degC)",geothermal-well_enhanced_heat-pump-1200m-80c,heat-supply,steam-and-hot-water,,GJ
+"45 Geothermal district heating with electric heat pump (2000 m, 80/40 degC)",geothermal-well_enhanced_heat-pump-2000m-80c,heat-supply,steam-and-hot-water,,GJ
+"45 Geothermal district heating with electric heat pump (1200 m, 70/35 degC)",geothermal-well_enhanced_heat-pump-1200m-70c,heat-supply,steam-and-hot-water,,GJ
+"45 Geothermal district heating with electric heat pump (2000 m, 70/35 degC)",geothermal-well_enhanced_heat-pump-2000m-70c,heat-supply,steam-and-hot-water,,GJ
+"45 Geothermal district heating with electric heat pump (large scale, 2000 m, 80/40 degC)",geothermal-well_enhanced_heat-pump-large-2000m-80c,heat-supply,steam-and-hot-water,,GJ
+46 Solar district heating (flat-plate collector field),solar-collector_district-heating,heat-supply,steam-and-hot-water,,GJ
+50 Diesel engine farm (peak and reserve),reciprocating-engine_diesel-generator_engine-farm,heat-supply,power-generation,,GJ
+51 Natural gas engine plant (peak and reserve),reciprocating-engine_natural-gas-generator_peak,heat-supply,power-generation,,GJ
+"52 Open-cycle gas turbine, natural gas (peak and reserve)",combustion-turbine_simple-cycle_natural-gas,heat-supply,power-generation,,GJ
+"52 Open-cycle gas turbine, light fuel oil (peak and reserve)",combustion-turbine_simple-cycle_light-fuel-oil,heat-supply,power-generation,,GJ
