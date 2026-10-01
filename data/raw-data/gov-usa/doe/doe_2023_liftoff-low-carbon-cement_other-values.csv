@@ -1,0 +1,36 @@
+process,technology,item,value,unit,reference,note
+Sector context,,U.S. cement production 2022,~95,Mt,p.11,
+Sector context,,U.S. cement consumption 2022,~120,Mt,p.11,
+Sector context,,average cement price 2022,130,USD/t,p.11,USGS
+Sector context,,U.S. cement sector CO2 emissions,~70,Mt CO2/yr,p.9,
+Sector context,,share of emissions from calcination / kiln fuel,51 / 34,%,"p.10, Fig. 2.1","EPA 2021 facility data; USGS 2015: 58% process, 42% energy (8% electricity, 34% fuels)"
+Sector context,,U.S. kilns (excl. Puerto Rico) / mean age,120 / 36,count / yr,p.11,
+Sector context,,large modern kiln clinker capacity,~0.75-1.5,Mt clinker/yr,p.11,about two-thirds of capacity
+Sector context,kiln_dry-precalciner,opportunity cost of one year downtime,~100-200,USD-million,p.18,1-1.5 MTPA plant at $130/t
+Sector context,kiln_dry-precalciner,clinker cost (Fig. 3.2),69,USD/t,"p.26, Fig. 3.2",printed label; App. A.2 all-in clinker cost 69.3 $/t
+Sector context,,SCM costs (Fig. 3.2): limestone / fly ash / GGBFS / natural pozzolans / calcined clay,7 / 42 / 55 / 11 / 31,USD/t,"p.26, Fig. 3.2",printed labels; substitution ranges 5-15 / 30-35 / 45-95 / 30-40 / 30-40 %
+Track A blends (Fig. 3.3),binder_blended-cement_portland-limestone,savings from SCM substitution,6,USD/t cement,"p.27, Fig. 3.3",incremental value 9 $M/yr at 1.5 Mt plant
+Track A blends (Fig. 3.3),binder_blended-cement_fly-ash,savings from SCM substitution,7,USD/t cement,"p.27, Fig. 3.3",11 $M/yr at 1.5 Mt plant
+Track A blends (Fig. 3.3),binder_blended-cement_steel-slag,savings from SCM substitution,6,USD/t cement,"p.27, Fig. 3.3",10 $M/yr at 1.5 Mt plant
+Track A blends (Fig. 3.3),binder_calcined-clay,savings from SCM substitution,20,USD/t cement,"p.27, Fig. 3.3","31 $M/yr; fn 28: with $50-200M capex savings ~$14-19/t, with 200 km clay transport ~$4-11/t"
+Track A blends (Fig. 3.3),binder_blended-cement_natural-pozzolan,savings from SCM substitution,18,USD/t cement,"p.27, Fig. 3.3",26 $M/yr at 1.5 Mt plant
+Track A,,investment per plant for all Track A measures,25-60,USD-million,"p.29, fn 34",~$10M kiln bypass for alternative fuels + $15-50M clinker substitution; outliers $100-200M+
+Track A,kiln_dry-precalciner_waste-fuel,waste/biomass fuels cost impact,-1 to 1,USD/t cement,p.14,without policy incentives
+Track A,kiln_dry-precalciner_hydrogen,clean hydrogen share without major overhaul,~5-20,% of fuel mix,p.14,
+Track A,kiln_dry-precalciner_biomass,biomass 20% of coal content nationwide abatement,4.3,Mt CO2/yr,p.29,fruit stones and nut shells supply could offset 2.7 Mt CO2/yr
+App. A.1 scenario outputs,kiln_dry-precalciner_efficiency-moderate,abatement cost 2030 Scenario 1 / 2050 scenario,-31.1 / -31.1,USD/t CO2,pp.56-58,"2050: 20% efficiency improvement, 6.7 Mt CO2"
+App. A.1 scenario outputs,kiln_dry-precalciner_biomass,abatement cost 2030 Scenario 1 / 2050 scenario,161.5 / 30.1,USD/t CO2,pp.56-58,"biomass 5% (S1), 20% (2050) of fuel"
+App. A.1 scenario outputs,kiln_dry-precalciner_waste-fuel,abatement cost 2030 Scenario 1 / 2050 scenario,-4.6 / -9.7,USD/t CO2,pp.56-58,"waste 35% (S1), 50% (2050) of fuel"
+App. A.1 scenario outputs,binder_blended-cement,abatement cost 2030 Scenario 1 / 2050 scenario,-54.0 / -59.9,USD/t CO2,pp.56-58,"clinker 75% (S1), 60% (2050)"
+App. A.1 scenario outputs,,annual savings to industry S1 / S2 / 2050,691.59 / 1246.47 / 1866.14,USD-million/yr,pp.56-58,
+Economic deep dives (App. A.2),,coal / petcoke / natural gas cost,60 / 163.8 / 7.6,USD/t / USD/t / USD/MMBtu,p.59,EIA; Argus; EIA 2022 industrial
+Economic deep dives (App. A.2),,coal / petcoke / natural gas emission factor,96.1 / 97.5 / 56.1,kg CO2/GJ,p.59,IPCC 2006 Table 2.3
+Economic deep dives (App. A.2),,coal / petcoke / secondary fuel heat value,28.5 / 32.0 / 35.0,GJ/t,p.59,basis not stated
+Economic deep dives (App. A.2),,combined fuel emission intensity,90.9,kg CO2/GJ (printed kgCO2/tonne),p.60,unit printed as kgCO2/tonne combined fuel; value is per GJ
+Economic deep dives (App. A.2),kiln_dry-precalciner_biomass,max biomass share of fuel,60,%,p.61,limited by wood heat value 14.7 GJ/t; biomass $41/t
+Economic deep dives (App. A.2),kiln_clay-calcination,silo capex / raw material storage capex,8 / 1,USD-million per plant,p.64,industry expert input
+Track B CCUS (Sect. 3.a.iii),capture-unit_amine,capital cost per t CO2 12-yr vs 30-yr payback,55-65 / 45-50,USD/t CO2,p.31,
+Track B CCUS (Sect. 3.a.iii),capture-unit_amine,cost of capture + T&S per t cement,88.32-117.67,USD/t cement,"p.67, Table B.1",without 45Q; net of 45Q 25.74-55.09
+Track B CCUS (Sect. 3.a.iii),,"alternative capture (oxyfuel, CaL etc.) cost",~40-60,USD/t CO2,"p.32, fn 37",20 studies 2006-2020 not harmonized; reprinted from DOE Industrial Decarbonization Roadmap
+Track B CCUS (Sect. 3.a.iii),,CCU cost gap net of 60 $/t 45Q,~50-60 / ~35-45,USD/t CO2 / USD/t cement,p.32,
+App. C capital formation,,CCUS or alt-production demo capex per plant,500-1000,USD-million,"p.70, Table C",

@@ -1,0 +1,37 @@
+process,technology,item,value,unit,reference,note
+U.S. petroleum refining industry (Ch. 1-4),,"operating refineries, January 2012",144,refineries,p.1,EIA
+U.S. petroleum refining industry (Ch. 1-4),,total final energy consumption 2011,3138,TBtu,p.21,Estimated from EIA data
+U.S. petroleum refining industry (Ch. 1-4),,"total primary energy consumption 2011 (grid at 32%, steam at 77%)",3512,TBtu,p.21,
+U.S. petroleum refining industry (Ch. 1-4),,energy purchases 2010,9,USD-billion,p.20,U.S. Census ASM
+U.S. petroleum refining industry (Ch. 1-4),,CO2 emissions from fuel combustion and electricity 2011,231,Mt CO2,p.26,About 16% of U.S. industrial CO2 (U.S. EPA 2012)
+U.S. petroleum refining industry (Ch. 1-4),,onsite electricity generation 2010 (about 29% of onsite power use),18,TWh,p.22,U.S. Census (2011)
+U.S. petroleum refining industry (Ch. 1-4),,"crude distillation capacity, 1 Jan 2012",17322178,bbl/calendar day,"p.19, Table 2",EIA; Table 2 gives capacities of all process units
+U.S. petroleum refining industry (Ch. 1-4),,share of steam in onsite energy use,30,%,p.41,
+U.S. petroleum refining industry (Ch. 1-4),,share of refinery fuel used in furnaces,60-70,%,p.57,Petrick and Pellegrino (1999)
+U.S. petroleum refining industry (Ch. 1-4),,share of electricity used by motors,>80,%,p.66,"Pumps 60%, compressors 15%, fans 9%, other 16% of motor use"
+U.S. petroleum refining industry (Ch. 1-4),,share of electricity used by pumps,48,%,p.71,Xenergy (1998)
+U.S. petroleum refining industry (Ch. 1-4),,compressor electricity use,5800,GWh/yr (about 12% of refinery electricity),p.79,
+U.S. petroleum refining industry (Ch. 1-4),,refrigeration and cooling share of electricity,5-6,%,p.93,
+U.S. petroleum refining industry (Ch. 1-4),,lighting and other utilities share of electricity,<3,%,p.89,
+U.S. petroleum refining industry (Ch. 1-4),,economic energy efficiency potential (benchmarking),10-20,%,p.28,"Utilities 30%, fired heaters 20%, process optimization 15%, heat exchangers 15%, motors 10%, other 10% of the potential"
+U.S. petroleum refining industry (Ch. 1-4),,installed refinery CHP capacity,6700,MWe,p.92,"ICF International (2010); further potential 5,700 MWe (Onsite 2000); high-temperature CHP potential 34 GW (Zollar 2002)"
+U.S. petroleum refining industry (Ch. 1-4),,FCC and hydrocracker power recovery potential,170 (FCC) + 29 (hydrocracker),MW,p.40,About 720 + 250 GWh/yr. Bailey and Worrell (2005)
+U.S. petroleum refining industry (Ch. 1-4),,fresh water use per unit product,1-2.5,gallon water per gallon product,p.106,
+Estimated 2011 U.S. refinery energy balance (Table 3),boiler_fuel-fired,boiler efficiency assumed in the energy balance,77,%,"p.25, Table 3 note 5",Authors' assumption used to convert steam to boiler fuel; heating-value basis not stated
+Estimated 2011 U.S. refinery energy balance (Table 3),combustion-turbine_simple-cycle,cogeneration electric efficiency assumed (large single-cycle gas turbines),32,%,"p.25, Table 3 note 4",Authors' assumption
+Estimated 2011 U.S. refinery energy balance (Table 3),,"public grid efficiency incl. T&D losses (10,660 Btu/kWh)",32,%,"p.25, Table 3 note 3","Solomon uses 9,090 Btu/kWh"
+Estimated 2011 U.S. refinery energy balance (Table 3),,total process site use: fuel / steam / electricity,"1,780 TBtu / 905 TBtu / 52,291 GWh",,"p.24, Table 3","Final 3,133 TBtu, primary 3,512 TBtu; per-process final and primary columns not loaded (steam converted at 77% boiler efficiency)"
+Estimated 2011 U.S. refinery energy balance (Table 3),,site steam generation: cogeneration / boilers,28.6 / 717.7,TBtu,"p.24, Table 3","Cogeneration fuel 65.0 TBtu, boiler fuel 932.1 TBtu, purchased steam 158.3 TBtu, purchased electricity 46,195 GWh, cogenerated 6,096 GWh"
+Process description (Ch. 3),reactor_fluid-coking,share of produced coke burnt for process heat,15-25,%,p.16,
+Process description (Ch. 3),reactor_visbreaking,soaker furnace energy use relative to coil furnace,about 15% less,,p.16,
+Process heaters (Ch. 10),direct-heater_fired-process,theoretical maximum furnace efficiency (HHV),92,%,p.57,Petrick and Pellegrino (1999)
+Heat exchangers and process integration (Ch. 9),distillation-column_atmospheric,"additional heating load from fouling, 100,000 bbl/d CDU",13.0,MJ/bbl,p.51,12.3 kBtu/bbl. Panchal and Huangfu (2000)
+Power recovery (Sect. 7.2),,"FCC power recovery turbine capacity, Valero St. Charles",36,MW,p.39,Elliot (2008); Petro-Canada Edmonton turbo expander 'saving around 18 TBtu annually' is implausible
+"CHP, ExxonMobil Baytown TX (Sect. 18.1)",combustion-turbine_heat-recovery-steam-generator,steam output,560000,lb/h,p.93,
+CHP (Sect. 18.1),combustion-turbine_heat-recovery-steam-generator,ExxonMobil Beaumont CHP: power / steam,470 MW / 3.1 million lb/h,,p.93,Only 110 MW used on site
+CHP (Sect. 18.1),combustion-turbine_heat-recovery-steam-generator,BP Texas City CHP: power / steam,564 MW / 3.1 million lb/h,,p.94,
+Turbine pre-coupling (Sect. 18.4),combustion-turbine_reformer-precoupled,Air Products/Technip Port Arthur: power / hydrogen / steam,100 MW / 110 million scfd / 1.2 million lb/h,,p.96,Peltier (2007)
+"Gas expansion turbine, Corus IJmuiden steel mill (Sect. 18.2)",turboexpander_pressure-let-down,waste heat delivered to the gas (maximum),12500,MWh/yr,p.95,Guide states 88% of the maximum heat input emerged as electricity
+Gasification (Sect. 18.5),gasifier_residue-igcc,Shell Pernis IGCC: residue / power / hydrogen,1650 t/d / 117 MWe / 285 t hydrogen,,p.97,Hydrogen period not stated
+CO2 capture in refineries (Ch. 20),,"share of refinery CO2 from large stacks (FCC, furnaces, gas turbines, utilities)",30-50,%,p.104,van Straelen et al. (2010)
+CO2 capture in refineries (Ch. 20),,"share of refinery CO2 from hydrogen production units (high pressure, high concentration)",5-20,%,p.104,van Straelen et al. (2010)

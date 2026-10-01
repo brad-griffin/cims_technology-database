@@ -1,0 +1,30 @@
+process,technology,item,value,unit,reference,note
+"Refinery sector (Sect. 3.1, 3.10)",,"EU-27 refinery CO2 emissions 2007 (excl. RO, BG)",135,Mt CO2,"p.127, Sect. 3.1.2.1",115 Mt in 1990
+"Refinery sector (Sect. 3.1, 3.10)",,share of crude feedstock burnt in the refinery,3-9,%,"p.120, Sect. 3.1.1.1",
+"Refinery sector (Sect. 3.1, 3.10)",,share of process energy in atmospheric + vacuum distillation,35-40,%,"p.120, Sect. 3.1.1.1",
+"Refinery sector (Sect. 3.1, 3.10)",,share of energy spent in hydrotreating,20-25,%,"p.120, Sect. 3.1.1.1",on average
+"Refinery sector (Sect. 3.1, 3.10)",,energy use of deep conversion vs hydroskimming refineries,10 vs 3,% of crude intake,"p.180, Sect. 3.10.2",reprinted from WB 1998
+"Refinery sector (Sect. 3.1, 3.10)",,share of refinery CO2 from power plants,42,%,"p.185, Sect. 3.10.3.1",
+"Refinery sector (Sect. 3.1, 3.10)",,best specific energy by products method (2008),2.4-2.9,GJ/t,"p.179, Sect. 3.10.1",actual values 1-4.8 GJ/t
+"Refinery sector (Sect. 3.1, 3.10)",,"Solomon EII, 41 EU refineries",65-124 (avg 93),index,"p.179, Sect. 3.10.1",world top 10% <=75 (2005)
+"Refinery sector (Sect. 3.1, 3.10)",,energy per Mt crude treated (Figure 3.1),1.5-4,million GJ,"p.120, Figure 3.1",CO2 0.1-0.4 Mt per Mt crude; TWG questionnaires 2008
+"Refinery sector (Sect. 3.1, 3.10)",,boilers share of refinery energy requirements,10-20,%,"p.68, Sect. 2.10",
+Refinery fuels (Table 3.59),,CO2 factor refinery fuel gas,2.83 kg/kg; 43 kg/GJ,,"p.185, Table 3.59",30 H2/35 C1/35 C2 % v/v. The 43 kg/GJ is as printed (low vs NG 56); basis not stated. reprinted from CONCAWE 1999; Dekkers 2000
+Refinery fuels (Table 3.59),,CO2 factor natural gas,2.75 kg/kg; 56 kg/GJ,,"p.185, Table 3.59",
+Refinery fuels (Table 3.59),,CO2 factor LPG,3.02 kg/kg; 64 kg/GJ,,"p.185, Table 3.59",
+Refinery fuels (Table 3.59),,CO2 factor distillate fuel oil,3.22 kg/kg; 74 kg/GJ,,"p.185, Table 3.59",
+Refinery fuels (Table 3.59),,CO2 factor residual fuel,3.26 kg/kg; 79 kg/GJ,,"p.185, Table 3.59",
+Refinery fuels (Table 3.59),,CO2 factor coke,3.30 kg/kg; 117 kg/GJ,,"p.185, Table 3.59",
+Refinery fuels (Table 3.54),,calorific value refinery fuel gas,29-49,MJ/kg,"p.181, Table 3.54",hydrogen gas 55-70 (LHV); FCC catalyst coke 38-40; liquid refinery fuel 40
+FCC feed hydrotreatment (Sect. 4.5.1),reactor_hydroprocessing,refinery energy before/after adding a 3 Mt/yr hydrocracker and 220 000 t/yr SMR,2 -> 2.5,GJ/t refined,"p.266, Sect. 4.5.1",
+"FCC feed hydrotreatment (Sect. 4.5.1, Table 4.10 NB)",steam-reformer_methane,new hydrogen plant for a 2 500 kt/yr FCC feed hydrotreater or hydrocracker,60-75,EUR-million,"p.268, Table 4.10",H2 capacity not stated; costs updated CONCAWE 2010
+Progressive distillation (Sect. 4.19.1),distillation-column_progressive,"investment, 11.45 Mt/yr incl. atmospheric and vacuum distillation, gas plant and rectification",41000-55000,EUR per t/yr (as printed),"p.434, Sect. 4.19.1",US Gulf Coast 1998. UNIT DOUBT: per t/yr gives EUR 470-630 billion for the unit; probably per t/h or per bpd. Not loaded
+Hydrovisbreaking (Table 4.78),reactor_visbreaking,"investment normal vs hydro visbreaker, 750 kt/yr",85000 vs 115000,EUR per t/yr (as printed),"p.464, Table 4.78","1994 US Gulf Coast, battery limits incl. desalting and topping. UNIT DOUBT as for progressive distillation; not loaded"
+Progressive distillation (Sect. 4.19.1),distillation-column_progressive,"overall energy consumption, conventional vs progressive",1.7-2.0 vs 1.15,t fuel eq./100 t crude,"p.433, Sect. 4.19.1","Arabian light, 10 Mt/yr; primary-energy based (TOE with electricity at 39%)"
+Progressive distillation (Table 4.68),distillation-column_progressive,"total primary energy, Heavy Arabian / Ekofisk",1.04 / 1.48,TOE/100 t,"p.434, Table 4.68","Electricity at 39% power plant yield, LP steam 0.581 kWh/kg; TOE = 11.6 MWh"
+Sulphur recovery (Table 4.82),gas-treatment-unit_sulphur-recovery,"Claus recovery efficiency, 2 / 3 reactors (median)",96.1 / 97.0,% H2S converted,"p.484, Table 4.82",reprinted from CONCAWE 4/09
+Sulphur recovery (Sect. 4.23.5.2.1),gas-treatment-unit_sulphur-recovery,"CO2 cost of three Claus reactors, 100 t/d SRU",8.5,t CO2/day,"p.484, Sect. 4.23.5.2.1",to cut 4.8 t S/day emitted
+Sulphur recovery (Table 4.83),gas-treatment-unit_sulphur-recovery,"incremental CO2 per incremental SO2, 2-stage Claus + 3rd stage / SuperClaus / cat. oxidation / sub-dew point / amine TGCU",0.25 / 0.25 / 0.31 / 0.55 / 0.75,t CO2/t SO2,"p.484, Table 4.83",100 t/d SRU basis
+Sulphur recovery (Sect. 3.23.2),gas-treatment-unit_sulphur-recovery,"share of crude sulphur recovered in SRU, EU median 2007-2008",44.7,%,"p.216, Sect. 3.23.2",5th-95th percentile 10.7-79.9%
+Emerging CCS (Sect. 6.15),,extra energy for CCS on power plants (NGCC / PC / IGCC),11-22 / 24-40 / 14-25,%,"p.658, Sect. 6.15",reprinted from IPCC; capture 80-90%
+Alkylation costs (Table 6.1),reactor_alkylation-isomerization,"utility and chemical cost per t alkylate, H2SO4 / HF / solid acid",47.28-61.14 / 24.6-25.96 / 36.02,2008_USD/t,"p.643, Table 6.1",US project evaluation 2008

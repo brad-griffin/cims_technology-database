@@ -150,6 +150,20 @@ BRIEF_SHAPE = [
     ("gov-eu/jrc/suhr_2015_pulp-paper-bref_jrc", "suhr_2015_001", "EU"),
     ("gov-eu/jrc/jrc_2007_lvic-aaf-bref", "jrc_2007_002", "EU"),
     ("gov-eu/jrc/jrc_2007_polymers-bref", "jrc_2007_003", "EU"),
+    ("gov-usa/doe/doe_2023_liftoff-low-carbon-cement", "doe_2023_002", "US"),
+    ("gov-eu/jrc/schorcht_2013_cement-lime-magnesia-bref_jrc", "schorcht_2013_001", "EU"),
+    ("other-reports/csi-ecra_2017_cement-technology-papers", "csi-ecra_2017_001", "global"),
+    ("iea/iea_2018_cement-technology-roadmap_iea", "iea_2018_002", "global"),
+    ("peer-reviewed/voldsund_2019_cement-co2-capture-comparison_energies", "voldsund_2019_001", "EU"),
+    ("gov-usa/epa/worrell_2013_energy-efficiency-cement_energystar", "worrell_2013_001", "US"),
+    ("gov-usa/lbnl/kermeli_2011_energy-efficiency-concrete_lbnl", "kermeli_2011_001", "US"),
+    ("gov-eu/jrc/scalet_2013_glass-bref_jrc", "scalet_2013_001", "EU"),
+    ("gov-usa/lbnl/worrell_2008_energy-efficiency-glass_lbnl", "worrell_2008_001", "US"),
+    ("gov-eu/jrc/jrc_2007_ceramics-bref", "jrc_2007_004", "EU"),
+    ("gov-eu/jrc/barthe_2015_refining-bref_jrc", "barthe_2015_001", "EU"),
+    ("gov-usa/epa/worrell_2015_energy-efficiency-petroleum-refineries_energystar", "worrell_2015_001", "US"),
+    ("gov-usa/epa/kermeli_2016_energy-efficiency-metal-casting_energystar", "kermeli_2016_001", "US"),
+    ("gov-eu/jrc/aries_2024_smitheries-foundries-bref_jrc", "aries_2024_001", "EU"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

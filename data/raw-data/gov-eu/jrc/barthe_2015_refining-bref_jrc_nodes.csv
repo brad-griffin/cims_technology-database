@@ -1,0 +1,55 @@
+process,technology,sector,end-use,process-step,service-unit
+"EU refineries sample 2008 (Sect. 3.1.1.1, Table 3.2)",refinery_oil,petroleum-refining,material-conversion,whole refinery,t
+"EU utility ranges, atmospheric distillation (Sect. 3.19, Table 3.77)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,t
+"EU utility ranges, vacuum distillation (Sect. 3.19, Table 3.77)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,t
+TOTAL Mitteldeutschland crude distillation unit (Table 3.78),distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,t
+TOTAL Mitteldeutschland vacuum distillation unit (Table 3.78),distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,t
+"US typical utilities per t crude (Sect. 4.19.1, Table 4.69)",distillation-column_atmospheric-vacuum,petroleum-refining,material-conversion,crude distillation,t
+"Conventional crude distillation, 10 Mt/yr, Arabian light (Sect. 4.19.1)",distillation-column_atmospheric-vacuum,petroleum-refining,material-conversion,crude distillation,t
+"Progressive crude distillation, 10 Mt/yr, Arabian light (Sect. 4.19.1)",distillation-column_progressive,petroleum-refining,material-conversion,crude distillation,t
+"Progressive crude distillation, Heavy Arabian, 6.5 Mt/yr (Table 4.68)",distillation-column_progressive,petroleum-refining,material-conversion,crude distillation,t
+"Progressive crude distillation, Ekofisk, 5 Mt/yr (Table 4.68)",distillation-column_progressive,petroleum-refining,material-conversion,crude distillation,t
+"EU utility ranges, catalytic cracking (Sect. 3.5.1, Table 3.33)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,t
+"EU FCC regenerator CO2 (Sect. 3.5.2.1, Table 3.35)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,t
+"EU utility ranges, residue catalytic cracking (Sect. 3.5.1, Table 3.33)",reactor_residue-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,t
+"EU utility ranges, catalytic reforming (Sect. 3.6, Table 3.42)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,t
+"EU utility ranges, delayed coking (Sect. 3.7, Table 3.44)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,t
+"EU utility ranges, flexicoking (Sect. 3.7, Table 3.45)",reactor_flexicoking,petroleum-refining,material-conversion,coking,t
+"EU utility ranges, visbreaking (Sect. 3.22.1, Table 3.84)",reactor_visbreaking,petroleum-refining,material-conversion,visbreaking,t
+TOTAL Mitteldeutschland visbreaker (Table 3.85),reactor_visbreaking,petroleum-refining,material-conversion,visbreaking,t
+Soaker visbreaker (Sect. 4.22.1.2),reactor_visbreaking-soaker,petroleum-refining,material-conversion,visbreaking,t
+"Visbreaker utilities per m3, normal vs hydrovisbreaker (Table 4.78)",reactor_visbreaking,petroleum-refining,material-conversion,visbreaking,m3
+"Visbreaker utilities per m3, normal vs hydrovisbreaker (Table 4.78)",reactor_hydrovisbreaking,petroleum-refining,material-conversion,visbreaking,m3
+"Thermal gas oil unit, OMV Schwechat (Sect. 4.22.2)",reactor_thermal-gas-oil,petroleum-refining,material-conversion,visbreaking,m3
+"EU utility ranges, naphtha hydrotreating (Sect. 3.13.1, Table 3.63)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,t
+"EU utility ranges, distillate hydrotreating (Sect. 3.13.1, Table 3.63)",reactor_hydrotreating_distillate,petroleum-refining,material-conversion,hydrotreating,t
+"EU utility ranges, residue hydrotreating (Sect. 3.13.1, Table 3.63)",reactor_hydrotreating_residue,petroleum-refining,material-conversion,hydrotreating,t
+OMV Schwechat naphtha hydrotreater 2007 (Table 3.65),reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,t
+OMV Schwechat middle distillate hydrotreater 2007 (Table 3.65),reactor_hydrotreating_distillate,petroleum-refining,material-conversion,hydrotreating,t
+OMV Schwechat vacuum gas oil hydrotreater 2007 (Table 3.65),reactor_hydrotreating_vacuum-gas-oil,petroleum-refining,material-conversion,hydrotreating,t
+"FCC feed hydrotreatment, 3 Mt/yr example (Sect. 4.5.1, questionnaire 32)",reactor_hydrotreating_fcc-feed,petroleum-refining,material-conversion,hydrotreating,t
+"FCC feed hydrotreatment, 1.05 Mt/yr example (Sect. 4.5.1, questionnaire 36)",reactor_hydrotreating_fcc-feed,petroleum-refining,material-conversion,hydrotreating,t
+"FCC feed hydrotreater costs by size (Sect. 4.5.1, Table 4.10)",reactor_hydrotreating_fcc-feed,petroleum-refining,material-conversion,hydrotreating,t
+"Hydrotreating of a 1.5 Mt/yr FCC feed by configuration (Sect. 4.5.1, Table 4.11)",reactor_hydrotreating_distillate,petroleum-refining,material-conversion,hydrotreating,t
+"Hydrotreating of a 1.5 Mt/yr FCC feed by configuration (Sect. 4.5.1, Table 4.11)",reactor_hydrotreating_residue,petroleum-refining,material-conversion,hydrotreating,t
+"EU utility ranges, hydrocracking (Sect. 3.13.2, Table 3.66)",reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,t
+"EU utility ranges, residue hydroconversion (Sect. 3.13.2, Table 3.66)",reactor_hydroconversion_residue,petroleum-refining,material-conversion,hydrocracking,t
+"Steam reforming, large recent units (Sect. 3.14, Table 3.67)",steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,t
+"Steam methane reforming, net energy (Sect. 4.14.1)",steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,Nm3
+Steam methane reforming CO2 (Sect. 4.14.1),steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,t
+"Petroleum coke gasification to hydrogen (Sect. 3.14, Figure 3.35)",gasifier_petroleum-coke,petroleum-refining,material-conversion,hydrogen production,t
+Oil gasification combined cycle (Sect. 4.14.3),gasifier_igcc-heavy-oil,petroleum-refining,other-services,power generation,GJ
+"IGCC plant in a European refinery (Sect. 4.10.3.4, Table 4.44)",gasifier_igcc-heavy-oil,petroleum-refining,other-services,power generation,GJ
+"Sulphur recovery unit, 20 000 t/yr typical (Sect. 4.23.5.2.1, Table 4.85)",gas-treatment-unit_sulphur-recovery,petroleum-refining,material-conversion,sulphur recovery,t
+"New SRU including TGTU, >99% recovery (Sect. 4.23.5.2.2, Table 4.91)",gas-treatment-unit_sulphur-recovery,petroleum-refining,material-conversion,sulphur recovery,t
+"Alkylation utilities, sulphuric acid (Sect. 3.2, Table 3.19)",reactor_alkylation_sulphuric-acid,petroleum-refining,material-conversion,alkylation,t
+"Alkylation utilities, hydrofluoric acid (Sect. 3.2, Table 3.19)",reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,t
+"Alkylation utilities, solid acid (Sect. 3.2, Table 3.19)",reactor_alkylation_solid-acid,petroleum-refining,material-conversion,alkylation,t
+"HF alkylation unit costs (Sect. 4.2.1, Table 4.3)",reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,t
+"H2SO4 alkylation unit costs (Sect. 4.2.2, Tables 4.4-4.5)",reactor_alkylation_sulphuric-acid,petroleum-refining,material-conversion,alkylation,m3
+"EU utility ranges, isomerisation (Sect. 3.16, Table 3.71)",reactor_isomerization,petroleum-refining,material-conversion,isomerisation,t
+"EU utility ranges, etherification (Sect. 3.11, Table 3.61)",reactor_etherification,petroleum-refining,material-conversion,etherification,t
+"EU utility ranges, gas separation (Sect. 3.12)",distillation-column_gas-plant,petroleum-refining,material-conversion,gas separation,t
+Refinery steam generation (Sect. 3.10.2),boiler_fuel-fired,petroleum-refining,steam-and-hot-water,steam generation,t
+"Refinery fired heaters and boilers (Sect. 2.10, Sect. 4.10.3.1)",direct-heater_fired-process,petroleum-refining,process-heat-high-temp,fired heater,GJ
+Fired heaters with air preheat and flue gas cooled near dew point (Sect. 4.10.3.1),direct-heater_air-preheat,petroleum-refining,process-heat-high-temp,fired heater,GJ

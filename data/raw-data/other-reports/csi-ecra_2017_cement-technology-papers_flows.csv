@@ -1,0 +1,24 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+TP 12 Alternative de-carbonated raw materials,kiln_dry-precalciner_decarbonated-raw-materials,input,slag,,t,t,0.2,0.3,,,"p.62, TP 12",GBFS 0.2 to 0.3 [t/t cli],Granulated blast furnace slag input per t clinker.
+TP 13 Fuel switching (coal to oil or gas),kiln_dry-precalciner_fuel-switch-gas,input,coal,-115,kg,t,,,,,"p.66, TP 13",Hard coal decrease of 115 [kg/t cli],Change vs base case.
+TP 13 Fuel switching (coal to oil or gas),kiln_dry-precalciner_fuel-switch-gas,input,heavy-fuel-oil,70,kg,t,,,,,"p.66, TP 13",Fuel oil or increase of 70 [kg/t cli],Change vs base case; alternative to natural gas.
+TP 13 Fuel switching (coal to oil or gas),kiln_dry-precalciner_fuel-switch-gas,input,natural-gas,84,Nm3,t,,,,,"p.66, TP 13",Natural gas increase of 84 [Nm3],"Change vs base case, per t clinker."
+TP 14 Alternative fuels incl. biomass,kiln_dry-precalciner_alternative-fuels-65pct,input,non-renewable-waste,0.12,t,t,,,,,"p.69, TP 14",Alternative fuel mix including 30% to 40% biomass increase of 0.12 [t/t cli],"Change vs base case; RDF, plastics, tyres, sewage sludge (mixed fossil/biogenic)."
+TP 14 Alternative fuels incl. biomass,kiln_dry-precalciner_alternative-fuels-65pct,input,coal,-0.06,t,t,,,,,"p.69, TP 14",Fossil fuel decrease of 0.06 [t/t cli],"Change vs base case; coal, petcoke, natural gas."
+TP 30 Optimised use of grinding aids,process-improvement_grinding-aids,input,solvent-amine,,t,t,0.0002,0.0005,,,"p.107, TP 30",Grinding aid 0.0002 to 0.0005 [t/t cem],Grinding aid (amines or glycols) per t cement; solvent-amine is the nearest commodity term.
+TP 31 Clinker reduction by GBFS,binder_blended-cement_gbfs,input,ggbfs,,t,t,,0.70,,,"p.109, TP 31",Material input [t/t cem],GBFS per t cement
+TP 34 Clinker reduction by fly ash,binder_blended-cement_fly-ash,input,pulverized-fuel-ash,,t,t,0.25,0.35,,,"p.118, TP 34",Material input [t/t cem],fly ash per t cement
+TP 35 Clinker reduction by natural pozzolanas,binder_blended-cement_natural-pozzolana,input,supplementary-cementitious-material,,t,t,,0.35,,,"p.121, TP 35",Material input [t/t cem],natural pozzolanas per t cement
+TP 37 Clinker reduction by limestone,binder_blended-cement_limestone,input,limestone,,t,t,0,0.10,,,"p.127, TP 37",Material input [t/t cem],limestone per t cement
+TP 36 Clinker reduction by calcined pozzolanas,binder_calcined-clay,input,supplementary-cementitious-material,,t,t,,0.35,,,"p.124, TP 36",calcined clays up to 0.35 [t/t cem],Calcined clay per t cement.
+TP 36 Clinker reduction by calcined pozzolanas,binder_calcined-clay_limestone,input,supplementary-cementitious-material,,t,t,,0.35,,,"p.124, TP 36",calcined clays up to 0.35 [t/t cem],Calcined clay; in sum with limestone 0.50 t/t cem.
+TP 36 Clinker reduction by calcined pozzolanas,binder_calcined-clay_limestone,input,limestone,,t,t,,0.15,,,"p.124, TP 36",combined with limestone up to 0.15 [t/t cem],
+TP 33 Very high/very low lime saturation factor,kiln_dry-precalciner_low-lsf,input,raw-meal,1.53,t,t,,,,,"p.115, TP 33","Raw meal with LSF reduced by 10 units nearly same amount (1,53) [t/t cli]",Raw meal per t clinker.
+TP 41 Belite cements,kiln_dry-precalciner_belite-clinker,input,raw-meal,1.51,t,t,,,,,"p.137, TP 41",as for conventional Portland cement nearly same amount (1.51) [t/t cli],Raw meal per t clinker.
+TP 39 Cements based on carbonation of calcium silicates,binder_carbonated,input,raw-meal,1.38,t,t,,,,,"p.133, TP 39","low calcium raw meal (limestone, quartz) 1,38 [t/t cli]",Raw meal per t clinker.
+TP 43 Oxyfuel technology,kiln_oxy-fuel,input,oxygen,,t,t,0.25,0.3,,,"p.142, TP 43",Oxygen 0.25 to 0.3 [t/t cli],Oxygen per t clinker.
+TP 43 Oxyfuel technology,kiln_oxy-fuel_retrofit,input,oxygen,,t,t,0.25,0.3,,,"p.142, TP 43",Oxygen 0.25 to 0.3 [t/t cli],Oxygen per t clinker.
+TP 44 Post-combustion capture by absorption,kiln_dry-precalciner_ccs-amine,input,solvent-amine,,t,t,0.001,0.004,,,"p.145, TP 44",replacement of absorbent 0.001 - 0.004 [t/t cli],Absorbent make-up per t clinker.
+TP 46 Calcium looping,capture-unit_calcium-looping,input,limestone,0.8,t,t,,,,,"p.151, TP 46",Make-up limestone ca. 0.8 [t/t cli],Sorbent make-up per t clinker.
+TP 46 Calcium looping,capture-unit_calcium-looping,input,oxygen,0.06,t,t,,,,,"p.151, TP 46",Oxygen 0.06 [t/t cli],Per t clinker.
+TP 47 Mineral carbonation,capture-unit_mineral-carbonation,input,olivine,,t,t,1.5,2.5,,,"p.154, TP 47",Ca or Mg silicates 1.5 to 2.5 or more [t/t cli],Silicate mineral per t clinker (olivine as nearest term); 1.8-3 t per t CO2.

@@ -1,0 +1,56 @@
+process,technology,item,value,unit,reference,note
+U.S. metal casting industry (Ch.2),,energy spend 2011,1.3,USD-billion,p.3,"Purchased fuels $424 million, electricity $908 million (U.S. Census 2012)"
+U.S. metal casting industry (Ch.2),,energy share of operating costs,5-7,%,p.3,Robison (2010); heat treatment 50-70% of energy costs
+U.S. metal casting industry (Ch.2),,"final energy shares 2010: natural gas / electricity / coke, breeze and other",47 / 39 / 14,%,p.3,EIA (2013a)
+U.S. metal casting industry (Ch.2),,energy intensity 2002-2011 (read from chart),,MBtu/short-ton,"p.4, Figures 1-2",Not loaded: values only read from chart; footnote 4 says fuel energy contents are HHV
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_gray-iron,total purchased energy,9.59,MMBtu/short-ton,"p.95, Table 5",Printed total; for the three cupola rows it differs from the sum of carriers by 0.01-0.08 (source rounding/defect)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_gray-iron,total primary energy,13.44,MMBtu/short-ton,"p.95, Table 5",Includes energy to generate electricity
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_ductile-iron,total purchased energy,10.51,MMBtu/short-ton,"p.95, Table 5",Printed total; for the three cupola rows it differs from the sum of carriers by 0.01-0.08 (source rounding/defect)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_ductile-iron,total primary energy,14.66,MMBtu/short-ton,"p.95, Table 5",Includes energy to generate electricity
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_ductile-iron-pipe,total purchased energy,5.98,MMBtu/short-ton,"p.95, Table 5",Printed total; for the three cupola rows it differs from the sum of carriers by 0.01-0.08 (source rounding/defect)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_cupola_ductile-iron-pipe,total primary energy,6.84,MMBtu/short-ton,"p.95, Table 5",Includes energy to generate electricity
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_induction_ductile-iron,total purchased energy,14.66,MMBtu/short-ton,"p.95, Table 5",Printed total; for the three cupola rows it differs from the sum of carriers by 0.01-0.08 (source rounding/defect)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_induction_ductile-iron,total primary energy,30.54,MMBtu/short-ton,"p.95, Table 5",Includes energy to generate electricity
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_induction_gray-iron,total purchased energy,18.39,MMBtu/short-ton,"p.95, Table 5",Printed total; for the three cupola rows it differs from the sum of carriers by 0.01-0.08 (source rounding/defect)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",foundry_induction_gray-iron,total primary energy,40.34,MMBtu/short-ton,"p.95, Table 5",Includes energy to generate electricity
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",,high-capacity cupola foundries energy use,6.0-10.5,MMBtu/short-ton,p.95,Text restatement of Table 5 totals (whole foundry)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",,"U.S. iron foundries energy 2010: total / electricity / natural gas / coke, breeze and other",45 / 19 / 14 / 12,TBtu,p.95,EIA (2013a)
+"Iron foundry energy use, Eppich 2004 (App. B, Table 5)",,iron melted by furnace 2003: cupola / induction / arc and other,60 / 36 / 4,%,p.95,Schifo and Radia (2004)
+"Energy use in a typical ferrous foundry (App. B, Table 6)",,share of plant energy: melting and heat treating / production accessories / air compressors / lighting / HVAC / others,50-70 / 10-20 / 3-10 / 2-5 / 5-20 / 8-15,%,"p.96, Table 6",Tapola et al. (2010)
+"Steel foundry electricity breakdown (App. B, Tables 7-8)",,arc furnaces share of electricity (EAF steel foundry) / induction furnaces share (induction steel foundry),47 / 51,%,"p.96-97, Tables 7-8",Monroe et al. (2008)
+"Steel foundry energy use, Schifo and Radia 2004 (App. B, Table 9)",foundry_induction_stainless-steel,total energy / total primary energy,49.1 / 97.8,MMBtu/short-ton,"p.97, Table 9",
+"Steel foundry energy use, Schifo and Radia 2004 (App. B, Table 9)",foundry_electric-arc_low-carbon-steel,total energy / total primary energy,20.7 / 40.7,MMBtu/short-ton,"p.97, Table 9",
+"Steel foundry energy use, Schifo and Radia 2004 (App. B, Table 9)",foundry_induction_low-carbon-steel,total energy / total primary energy,17.3 / 32.2,MMBtu/short-ton,"p.97, Table 9",
+"Steel foundry energy use, Schifo and Radia 2004 (App. B, Table 9)",foundry_average_low-carbon-steel,total energy / total primary energy,19.0 / 36.5,MMBtu/short-ton,"p.97, Table 9",
+"Steel foundry energy use, Schifo and Radia 2004 (App. B, Table 9)",foundry_induction_stainless-steel,natural gas as printed,267.2,MMBtu/short-ton,"p.97, Table 9",Typo; 26.7 loaded (total minus electricity)
+Steel foundries (App. B),,"small European steel foundries (<7,000 t/yr) energy use",17-26,MMBtu/short-ton,p.97,Foundrybench (2011b); audits cut energy 15-20%
+Steel foundries (App. B),,"theoretical electricity to melt steel to 1,600 degC",342,kWh/short-ton,p.97,U.S. DOE (2005b)
+"Aluminum foundry energy use (App. B, Table 10)",foundry_hpdc_liquid-delivery,total energy / total primary energy,45.8 / 68.6,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_hpdc_solid-delivery,total energy / total primary energy,31.9 / 44.2,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_permanent-mold_sand-cores,total energy / total primary energy,71.9 / 94.5,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_lost-foam_facility-4,total energy / total primary energy,74.1 / 109.1,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_hpdc_facility-5,total energy / total primary energy,31.7 / 56.4,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_lost-foam_facility-6,total energy / total primary energy,42.6 / 76.2,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",foundry_unknown_germany,total energy / total primary energy,13.4 / 27.6,MMBtu/short-ton,"p.99, Table 10",
+"Aluminum foundry energy use (App. B, Table 10)",,high pressure die casting actual practice energy intensity,32-46,MMBtu/short-ton,p.99,Common practice for aluminum casting in general 30-70 MBtu/ton
+"Aluminum foundry energy use (App. B, Table 10)",,U.S. aluminum foundries energy 2010: total / natural gas / electricity,27 / 19 / 7,TBtu,p.98,EIA (2013a)
+"Aluminum foundry energy use (App. B, Table 10)",,die casting foundry energy breakdown: melting / holding / die casting / trim / non-process,55 / 22 / 11 / 3 / 9,%,"p.98, Figure 8",Printed labels; Schifo and Radia (2004)
+"Aluminum foundry energy use (App. B, Table 10)",,aluminum melted by furnace: reverberatory / stack / crucible or induction,90 / 5 / 5,%,p.99,Schifo and Radia (2004)
+Furnace performance (Ch.11-19),melting-furnace_cupola,metal loss,3-12,%,p.56,BCS (2005); induction 1-2%
+Furnace performance (Ch.11-19),melting-furnace_cupola,cooling water share of energy input,10-15,%,p.51,Foundrybench (2011b)
+Furnace performance (Ch.11-19),melting-furnace_induction,coil electric losses,up to 20,% of input power,p.51,Foundrybench (2011b)
+Furnace performance (Ch.11-19),melting-furnace_induction,heat loss to cooling water,20-25,% of energy use,p.69,CIPEC (2003)
+Furnace performance (Ch.11-19),melting-furnace_induction,loss through walls (modern medium frequency),8,% of energy input,p.70,Caballero (2011)
+Furnace performance (Ch.11-19),melting-furnace_induction,power density to melt a cold charge in about 30 min,"680-1,000",kW/short-ton,p.67,BCS (2005)
+Furnace performance (Ch.11-19),melting-furnace_induction_batch-steel,electricity with rusty steel scrap,"over 1,090",kWh/short-ton,p.55,ETSU (2000)
+Furnace performance (Ch.11-19),melting-furnace_stack,"electricity use (50% ingot, 50% returns, bath 720 degC)",600,kWh/short-ton,p.79,"Printed as 'electricity use'; stack melters are fuel-fired and 600 kWh/ton = about 1,024 Btu/lb, close to the gas use quoted for stack melters, so the carrier is doubtful; not loaded. White et al. (2008)"
+Furnace performance (Ch.11-19),melting-furnace_reverberatory_dry-hearth,energy use melting large sows,1500,Btu/lb,p.79,"Printed '(1,500/lb)'"
+Furnace performance (Ch.11-19),melting-furnace_reverberatory,efficiency range cited for scrap-to-caster comparison,20-45,%,p.52,U.S. DOE (2011)
+Furnace performance (Ch.11-19),melting-furnace_crucible-gas-fired,efficiency in a gas vs electric cost comparison,28,%,p.76,Nealon (2011); electric resistance 84%
+Furnace performance (Ch.11-19),,holding vessel energy: conduction-heated vs typical,10 vs 30-40,Btu/short-ton/h,p.52-53,U.S. DOE (2011); units as printed (implausibly small)
+Furnace performance (Ch.11-19),,fuel-fired furnace waste heat above 140 degC,30,% of energy input,p.50,Pehnt et al. (2010)
+Furnace performance (Ch.11-19),,idling high-pressure die casting machine,14,kW,p.50,Eppich (2004)
+Furnace performance (Ch.11-19),,cost of holding 1 t liquid iron for 1 h (Germany),0.5,EUR,p.57,Tanneberger (2010)
+Furnace performance (Ch.11-19),,oxygen price,0.25,USD/m3,p.63,Foundrybench (2011b)
+Furnace performance (Ch.11-19),,tapping temperature: iron / steel / aluminum,<1566 / 1621-1677 / 760,degC,"p.94, Table 1 (appendix numbering)",Eppich (2004); Schifo and Radia (2004)
+Furnace performance (Ch.11-19),,casting yield range ferrous and non-ferrous,30-90,%,p.93,Yield and scrap losses about 37% of foundry energy use in 2003 (Schifo and Radia 2004)

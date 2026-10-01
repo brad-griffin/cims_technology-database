@@ -1,0 +1,59 @@
+process,technology,sector,end-use,process-step,service-unit
+Reference plant (Annex II),kiln_dry-precalciner_reference-plant,cement,process-heat-high-temp,clinker-production,t
+Reference plant (Annex II),kiln_dry-precalciner_reference-plant-1-mt-per-yr,cement,process-heat-high-temp,clinker-production,t
+Reference plant (Annex II),kiln_dry-precalciner_reference-plant-0-5-mt-per-yr,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_dry-preheater_3-cyclone-stages,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_dry-preheater_4-cyclone-stages,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_dry-preheater_5-cyclone-stages,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_dry-preheater_6-cyclone-stages,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_dry-precalciner_gnr-2014-average,cement,process-heat-high-temp,clinker-production,t
+Thermal efficiency state of the art (SOTA Paper 1),kiln_wet_long,cement,process-heat-high-temp,wet-kiln,t
+TP 1 Raw mix burnability (mineralisers),process-improvement_kiln_mineralisers,cement,process-heat-high-temp,clinker-production,t
+TP 2 Change from long kilns to preheater/precalciner kilns,kiln_dry-precalciner_conversion-from-long-kiln,cement,process-heat-high-temp,clinker-production,t
+TP 3 Preheater modification (low pressure drop cyclones),preheater_low-pressure-drop-cyclones,cement,process-heat-high-temp,clinker-production,t
+TP 4 Additional preheater cyclone stage(s),preheater_additional-cyclone-stage,cement,process-heat-high-temp,clinker-production,t
+TP 5 Increase of kiln capacity,kiln_dry-precalciner_6000-tpd-replacing-smaller,cement,process-heat-high-temp,clinker-production,t
+TP 6 Mono-channel to multi-channel burner,burner_multi-channel,cement,process-heat-high-temp,clinker-production,t
+TP 7 Oxygen enrichment,kiln_dry-precalciner_oxygen-enrichment,cement,process-heat-high-temp,clinker-production,t
+TP 8 Efficient clinker cooler,clinker-cooler_grate-optimisation,cement,process-heat-high-temp,clinker-production,t
+TP 8 Efficient clinker cooler,clinker-cooler_reciprocating-grate,cement,process-heat-high-temp,clinker-production,t
+TP 9 Waste heat recovery: Steam,steam-turbine_waste-heat-recovery,cement,other-services,waste-heat-power,t
+TP 10 Waste heat recovery: ORC,steam-turbine_orc,cement,other-services,waste-heat-power,t
+TP 11 Waste heat recovery: Kalina Cycle,steam-turbine_kalina,cement,other-services,waste-heat-power,t
+TP 12 Alternative de-carbonated raw materials,kiln_dry-precalciner_decarbonated-raw-materials,cement,process-heat-high-temp,clinker-production,t
+TP 13 Fuel switching (coal to oil or gas),kiln_dry-precalciner_fuel-switch-gas,cement,process-heat-high-temp,clinker-production,t
+TP 14 Alternative fuels incl. biomass,kiln_dry-precalciner_alternative-fuels-65pct,cement,process-heat-high-temp,clinker-production,t
+TP 15 Pre-treatment of alternative fuel,dryer_alternative-fuel,cement,process-heat-high-temp,fuel-preparation,t
+TP 16 Gasification or pre-combustion of alternative fuels,gasifier_alternative-fuel-precombustion,cement,process-heat-high-temp,fuel-preparation,t
+TP 17 Hydrothermal carbonisation and torrefaction,reactor_hydrothermal-carbonisation,cement,process-heat-high-temp,fuel-preparation,t
+TP 18 Plant automation/control,management-system_kiln-process-control,cement,process-heat-high-temp,clinker-production,t
+TP 19 Variable speed drives,motor_variable-speed,cement,other-services,motors-and-drives,t
+TP 20 Auxiliary system efficiency,compressor_air-system-optimisation,cement,other-services,auxiliaries,t
+TP 22 Plant operation with renewable power,grinding-mill_flexible-operation,cement,forming-and-finishing,finish-grinding,t
+TP 23 VRM and roller presses for cement grinding,grinding-mill_vertical-roller,cement,forming-and-finishing,finish-grinding,t
+TP 24 High efficiency separators,separator_high-efficiency,cement,forming-and-finishing,finish-grinding,t
+TP 25 Optimisation of ball mill operating parameters,grinding-mill_ball_optimisation,cement,forming-and-finishing,finish-grinding,t
+TP 26 Separate grinding of raw material components,grinding-mill_raw-separate-grinding,cement,material-preparation,raw-grinding,t
+TP 28 Separate grinding and blending by fineness,grinding-mill_fine-fraction-blending,cement,forming-and-finishing,finish-grinding,t
+TP 30 Optimised use of grinding aids,process-improvement_grinding-aids,cement,forming-and-finishing,finish-grinding,t
+TP 29 Optimised particle size distribution,binder_blended-cement_psd-optimised,cement,forming-and-finishing,finish-grinding,t
+TP 31 Clinker reduction by GBFS,binder_blended-cement_gbfs,cement,material-conversion,cement-grinding,t
+TP 34 Clinker reduction by fly ash,binder_blended-cement_fly-ash,cement,material-conversion,cement-grinding,t
+TP 35 Clinker reduction by natural pozzolanas,binder_blended-cement_natural-pozzolana,cement,material-conversion,cement-grinding,t
+TP 37 Clinker reduction by limestone,binder_blended-cement_limestone,cement,material-conversion,cement-grinding,t
+TP 36 Clinker reduction by calcined pozzolanas,binder_calcined-clay,cement,material-conversion,cement-grinding,t
+TP 36 Clinker reduction by calcined pozzolanas,binder_calcined-clay_limestone,cement,material-conversion,cement-grinding,t
+TP 33 Very high/very low lime saturation factor,kiln_dry-precalciner_low-lsf,cement,process-heat-high-temp,clinker-production,t
+TP 41 Belite cements,kiln_dry-precalciner_belite-clinker,cement,process-heat-high-temp,clinker-production,t
+TP 38 Alkali-activated binders,binder_alkali-activated,cement,material-conversion,alternative-binder,t
+TP 39 Cements based on carbonation of calcium silicates,binder_carbonated,cement,material-conversion,alternative-binder,t
+TP 40 Pre-hydrated calcium silicates,binder_hydrothermal-silicate,cement,material-conversion,alternative-binder,t
+TP 42 Belite calcium sulfoaluminate clinker,binder_sulphoaluminate,cement,material-conversion,alternative-binder,t
+TP 43 Oxyfuel technology,kiln_oxy-fuel,cement,process-heat-high-temp,clinker-production,t
+TP 43 Oxyfuel technology,kiln_oxy-fuel_retrofit,cement,process-heat-high-temp,clinker-production,t
+TP 43 Oxyfuel technology,precalciner_oxy-fuel-partial,cement,process-heat-high-temp,clinker-production,t
+TP 44 Post-combustion capture by absorption,kiln_dry-precalciner_ccs-amine,cement,process-heat-high-temp,clinker-production,t
+TP 45 Post-combustion capture by membranes,capture-unit_membrane,cement,co2-capture,co2-capture,t
+TP 46 Calcium looping,capture-unit_calcium-looping,cement,co2-capture,co2-capture,t
+TP 47 Mineral carbonation,capture-unit_mineral-carbonation,cement,co2-capture,co2-capture,t
+TP 49 CO2 use: power-to-gas,reactor_co2-methanation,cement,other-services,co2-use,t

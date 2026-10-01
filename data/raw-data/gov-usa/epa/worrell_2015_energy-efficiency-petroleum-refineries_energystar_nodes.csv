@@ -1,0 +1,45 @@
+process,technology,sector,end-use,process-step,service-unit
+Estimated 2011 U.S. refinery energy balance (Table 3),separator_desalter,petroleum-refining,material-conversion,crude desalting,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_thermal-cracking,petroleum-refining,material-conversion,coking and visbreaking,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_hydrotreating,petroleum-refining,material-conversion,hydrotreating,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),separator_solvent-deasphalting,petroleum-refining,material-conversion,deasphalting,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_alkylation,petroleum-refining,material-conversion,alkylation,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_aromatics,petroleum-refining,material-conversion,aromatics,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),blowing-unit_asphalt,petroleum-refining,material-conversion,asphalt production,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),reactor_isomerization,petroleum-refining,material-conversion,isomerization,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),separator_lube-oil,petroleum-refining,material-conversion,lubricant production,bbl
+Estimated 2011 U.S. refinery energy balance (Table 3),steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,lb
+Estimated 2011 U.S. refinery energy balance (Table 3),gas-treatment-unit_sulphur-recovery,petroleum-refining,material-conversion,sulfur recovery,short-ton
+Estimated 2011 U.S. refinery energy balance (Table 3),distillation-column_atmospheric-vacuum,petroleum-refining,material-conversion,crude and vacuum distillation,bbl
+Process description (Ch. 3),separator_desalter,petroleum-refining,material-conversion,crude desalting,bbl
+Process description (Ch. 3),reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+Process description (Ch. 3),reactor_visbreaking,petroleum-refining,material-conversion,visbreaking,bbl
+Process description (Ch. 3),reactor_fluid-coking,petroleum-refining,material-conversion,coking,bbl
+Process heaters (Ch. 10),direct-heater_fired-process,petroleum-refining,process-heat-high-temp,fired heaters,GJ
+Process heaters (Ch. 10),direct-heater_fired-process_air-preheat,petroleum-refining,process-heat-high-temp,fired heaters,GJ
+Distillation (Ch. 11),distillation-column_progressive-crude,petroleum-refining,material-conversion,crude distillation,bbl
+Distillation (Ch. 11),distillation-column_dividing-wall,petroleum-refining,material-conversion,product separation,t
+Distillation (Ch. 11),distillation-column_heat-integrated-internal,petroleum-refining,material-conversion,product separation,t
+"Power recovery, hydrocracker at Zeeland Refinery Vlissingen (Sect. 7.2)",turboexpander_hydrocracker-power-recovery,petroleum-refining,power-generation,power recovery,kW
+Combined heat and power (Sect. 18.1),combustion-turbine_heat-recovery-steam-generator,petroleum-refining,steam-and-hot-water,cogeneration,kW
+"CHP, ExxonMobil Baytown TX (Sect. 18.1)",combustion-turbine_heat-recovery-steam-generator,petroleum-refining,steam-and-hot-water,cogeneration,MW
+"CHP, BP Whiting IN (Sect. 18.1)",combustion-turbine_heat-recovery-steam-generator,petroleum-refining,steam-and-hot-water,cogeneration,MW
+"Gas expansion turbine, Corus IJmuiden steel mill (Sect. 18.2)",turboexpander_pressure-let-down,all-industry,power-generation,natural gas pressure let-down,kW
+Steam expansion turbines (Sect. 18.3),steam-turbine_back-pressure-micro,all-industry,power-generation,steam pressure let-down,kW
+Turbine pre-coupling (Sect. 18.4),combustion-turbine_reformer-precoupled,petroleum-refining,power-generation,hydrogen production and cogeneration,kW
+Turbine pre-coupling (Sect. 18.4),combustion-turbine_high-temperature-chp,petroleum-refining,process-heat-high-temp,fired heaters,kW
+"Gasification, Marano 2003 case (Sect. 18.5)",gasifier_residue-hydrogen,petroleum-refining,material-conversion,hydrogen production,short-ton
+"Gasification, Marano 2003 case (Sect. 18.5)",gasifier_residue-igcc,petroleum-refining,power-generation,residue gasification,short-ton
+"Gasification, Domenichini and Mancuso 2008 case (Sect. 18.5)",gasifier_residue-igcc,petroleum-refining,power-generation,residue gasification,short-ton
+CO2 capture in refineries (Ch. 20),capture-unit_post-combustion-refinery-stacks,petroleum-refining,co2-capture,CO2 capture,t
+CO2 capture in refineries (Ch. 20),gasifier_hydrogen_ccs-concentrated,petroleum-refining,co2-capture,CO2 capture,t
+CO2 capture in refineries (Ch. 20),reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,co2-capture,CO2 capture,t
+CO2 capture in refineries (Ch. 20),reactor_fluid-catalytic-cracking-oxy-fuel,petroleum-refining,co2-capture,CO2 capture,t
+CO2 capture in refineries (Ch. 20),direct-heater_ccs-diffuse,petroleum-refining,co2-capture,CO2 capture,t
+CO2 capture in refineries (Ch. 20),direct-heater_pre-combustion-oxy-fuel,petroleum-refining,co2-capture,CO2 capture,t
+Process changes and design (Sect. 19.1),reactor_slurry-phase-hydrocracking,petroleum-refining,material-conversion,residue hydrocracking,bbl

@@ -1,0 +1,40 @@
+process,technology,sector,end-use,process-step,service-unit
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker,t
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_dry-preheater,cement,process-heat-high-temp,clinker,t
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_semi-dry_lepol,cement,process-heat-high-temp,clinker,t
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_long-dry,cement,process-heat-high-temp,clinker,t
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_wet,cement,process-heat-high-temp,clinker,t
+"Cement kilns EU-27 fuel energy use (Sect. 1.3.3.1, Table 1.18)",kiln_shaft_special-cement,cement,process-heat-high-temp,clinker,t
+"Kiln systems, optimised conditions (Sect. 1.4.2.1.1)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker,t
+"Process selection, Padeswood Works UK (Sect. 1.4.2.3)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker,t
+"Process selection, Padeswood Works UK (Sect. 1.4.2.3)",kiln_wet,cement,process-heat-high-temp,clinker,t
+"Cement clinker CO2 and raw materials, EU (Sect. 1.3.2 and 1.3.4.4.1, Table 1.15)",kiln_rotary-clinker_eu-average,cement,process-heat-high-temp,clinker,t
+Cement plant electricity demand (Sect. 1.3.3.2),cement-plant,cement,motor-drive,cement grinding,t
+"Fluidised bed cement kiln, emerging (Sect. 1.5.1)",kiln_fluidized-bed,cement,process-heat-high-temp,clinker,t
+"Cement waste heat power, Slite plant Sweden (Sect. 1.4.2.4 and 6.2.3.1)",steam-turbine_waste-heat_steam-cycle,cement,electricity-generation,waste heat recovery,GJ
+"Cement waste heat power, Lengfurt plant Germany (Sect. 1.4.2.4 and 6.2.3.2)",steam-turbine_waste-heat_orc,cement,electricity-generation,waste heat recovery,GJ
+"Cement waste heat power, general economics (Sect. 1.4.2.4)",steam-turbine_waste-heat,cement,electricity-generation,waste heat recovery,GJ
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-annular-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-mixed-feed-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25)",kiln_lime-other-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Dolime kilns EU-27 (Table 2.25),kiln_lime-dolomitic,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Gas suspension calcination kiln, Norsk Hydro Porsgrunn (Sect. 2.2.7.4.6)",kiln_lime-gas-suspension,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Dead burned dolime (Sect. 2.3.2.1),kiln_dolime-dead-burned,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Austrian lime kilns 2004 (Annex 6.3.2.3, Table 6.32)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Austrian lime kilns 2004 (Annex 6.3.2.3, Table 6.32)",kiln_lime-annular-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Austrian lime kilns 2004 (Annex 6.3.2.3, Table 6.32)",kiln_lime-other-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Spanish lime kilns (Annex 6.3.2.3, Table 6.33)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Spanish lime kilns (Annex 6.3.2.3, Table 6.33)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Spanish lime kilns (Annex 6.3.2.3, Table 6.33)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Spanish lime kilns (Annex 6.3.2.3, Table 6.33)",kiln_lime-annular-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Spanish lime kilns (Annex 6.3.2.3, Table 6.33)",kiln_lime-other-shaft,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Captive lime kilns in the Kraft pulp industry (Sect. 2.2.10.2),kiln_lime-rotary,pulp-and-paper,process-heat-high-temp,chemical recovery lime kiln,t
+Lime hydrating and grinding (Sect. 2.3.2.2-2.3.2.3),reactor_lime-hydrating,non-metallic-minerals,motor-drive,lime hydrating,t
+Lime hydrating and grinding (Sect. 2.3.2.2-2.3.2.3),grinding-mill_lime,non-metallic-minerals,motor-drive,lime grinding,t
+Emerging techniques in the lime industry (Sect. 2.5),kiln_lime-fluidized-bed,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Emerging techniques in the lime industry (Sect. 2.5),calciner_flash_lime,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Magnesia (MgO) dry process route EU (Sect. 3.3),kiln_magnesium-oxide,magnesia,process-heat-high-temp,magnesia calcining/sintering,t
+Magnesia (MgO) dry process route EU (Sect. 3.3),electric-arc-furnace_fused-magnesia,magnesia,process-heat-high-temp,fused magnesia,t

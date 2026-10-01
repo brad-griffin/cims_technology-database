@@ -200,6 +200,10 @@ cost-levelized_delivered-net-of-45V,cost,2025_CAD/product-unit,"Cost per unit of
 cost-levelized_delivered-net-of-45V_low,cost,2025_CAD/product-unit,
 cost-levelized_delivered-net-of-45V_high,cost,2025_CAD/product-unit,
 cost-levelized_delivered-net-of-45V_n,cost,,
+capital-recovery,cost,%,"Annualization factor applied to capex. Record the source study's own factor, not the model's. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capital-recovery_low,cost,%,
+capital-recovery_high,cost,%,
+capital-recovery_n,cost,,
 discount-rate,cost,%,"Financial rate used by the source when levelizing. Recorded so a levelized cost can be inverted without double-counting the model's own hurdle rate. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 discount-rate_low,cost,%,
 discount-rate_high,cost,%,
