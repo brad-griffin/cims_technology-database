@@ -44,7 +44,8 @@ def applies_to(key, service):
 
 def build(records, hier, examples, summaries, flow_summaries, include_empty=True):
     """Also returns `flagged`: the (archetype, column) cells of the wide view whose
-    pooled value rests on at least one factor from outside its source."""
+    pooled value rests on at least one factor from outside its source; and
+    `graded`: {(archetype, column): grade} for the cells the fill step wrote."""
     service = defaultdict(list)
     for s in records.service:
         service[s["archetype"]].append(s)
@@ -56,7 +57,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     param_order = {p: i for i, p in enumerate(records.parameters)}
 
     # ---- archetype.csv: every archetype, with what the database holds ------
-    with_data = {s["archetype"] for s in summaries} | {s["archetype"] for s in flow_summaries}
+    with_data = ({s["archetype"] for s in summaries if s.get("grade", "sourced") == "sourced"}
+                 | {s["archetype"] for s in flow_summaries})
+    with_fill = {s["archetype"] for s in summaries if s.get("grade", "sourced") != "sourced"}
     with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
     arows = []
     for a in records.archetypes:
@@ -69,6 +72,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "n-examples": len(exs),
             "sources": "; ".join(records.short(s) for s in src),
             "status": ("quantified" if k in with_data else
+                       "estimated" if k in with_fill else
                        "not pooled" if k in with_facts else
                        "named" if exs else "gap")}))
     # families alphabetically by the label a reader sees (modeller, 2026-09-26)
@@ -120,12 +124,18 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     colkeys = sorted(colkeys, key=lambda x: (param_order.get(x[0], 99), x[1]))
     spread = {b for (_, _, b) in colkeys
               if any(by_arch[a][b]["low"] for a in by_arch if b in by_arch[a])}
-    cols, units, groups, notes = list(IDENT) + ["external-conversions"], {}, {c: "identity" for c in IDENT}, {}
-    groups["external-conversions"] = "identity"
+    cols, units, groups, notes = list(IDENT) + ["external-conversions", "filled"], {}, {c: "identity" for c in IDENT}, {}
+    groups["external-conversions"] = groups["filled"] = "identity"
+    notes["filled"] = (
+        "Parameters with no sourced value, filled by the fill step and graded: identity "
+        "(calculated from this archetype's own values), estimated (from other archetypes or a "
+        "class rule) or guess (a judgement). Shaded in the workbook; their _n is 0. Rule, "
+        "inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, "
+        "rationale); rules in records/fill/.")
     notes["external-conversions"] = (
         "Parameters whose pooled value rests on a conversion factor from outside the source "
         "(a heating value, a density, a process ratio, a pooled efficiency or an assumption), "
-        "as examples so converted / examples pooled. Those values are in italics in the "
+        "as examples so converted / examples pooled. Those values are shaded purple in the "
         "workbook. Which factors: archetype-parameter.csv (external-factors); how each example "
         "was converted: example-parameter.csv (conversion, conversion-class, "
         "conversion-factors).")
@@ -142,13 +152,17 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             f"Species: {t}." if t else "",
             "Central value: the median of three or more examples, otherwise the value from the "
             "highest-ranked source; low and high are the widest values any example gives.") if x)
-    wide, flagged = [], set()
+    wide, flagged, graded = [], set(), {}
     for a in arows:
         if a["archetype"] not in with_data and not include_empty:
             continue
         row = {c: a.get(c, "") for c in IDENT}
-        ext = []
+        ext, filled = [], []
         for b, s in by_arch.get(a["archetype"], {}).items():
+            g = s.get("grade", "sourced")
+            if g != "sourced":
+                filled.append((b, f"{b} {g}"))
+                graded.update({(a["archetype"], c): g for c in (b, f"{b}_low", f"{b}_high")})
             row[b], row[f"{b}_n"] = s["central"], s["n"]
             if b in spread:
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
@@ -157,6 +171,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 flagged |= {(a["archetype"], c) for c in (b, f"{b}_low", f"{b}_high")}
         order = {c: i for i, c in enumerate(cols)}
         row["external-conversions"] = "; ".join(t for _, t in sorted(ext, key=lambda x: order.get(x[0], 0)))
+        row["filled"] = "; ".join(t for _, t in sorted(filled, key=lambda x: order.get(x[0], 0)))
         wide.append(row)
     write(OUTPUT / "wide-archetype.csv", cols, wide)
     write(OUTPUT / "wide-archetype-columns.csv", ["column", "group", "unit", "note"],
@@ -189,5 +204,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "wide-archetype": (cols, wide, groups, units),
             "wide-archetype-notes": notes,
             "flagged": flagged,
+            "graded": graded,
             "wide-flow": (flow_cols, frows, fgroups, funits),
             "application": app}

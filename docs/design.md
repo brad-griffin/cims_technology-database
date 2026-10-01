@@ -234,8 +234,15 @@ are abated, or when a policy instrument treats them separately.
   the example is incremental: a leading `[case]` in the note, or UKERC's row code). It is set aside as `needs-host-cost`
   unless the same source gives the host plant's cost, in which case a whole-plant
   row is derived.
-- A cost per GJ of energy use is never turned into a cost per tonne by dividing by
-  specific energy consumption: that mixes input and output bases.
+- A cost per GJ of energy is put per tonne with specific energy consumption (or a
+  per-tonne cost per GJ by dividing by it) only when both count the same GJ: the
+  same stream (the same fuel, heat or electricity), the same side (input or
+  output) and the same scope (the equipment the cost covers, not the whole host
+  process). The check is stated per example and the converted value is graded
+  `identity`. Otherwise it is not converted: that would mix input and output
+  bases (D13). A cost per GJ of a product's own energy content (per MWh of
+  methanol) is not this case; it converts with the product's heating value.
+  Amended 2026-09-30; no example qualifies yet.
 - A number in another unit is converted with exact unit definitions (Btu, lb, short
   ton, barrel; `pipeline/convert.py`), with a factor **the same source gives for the
   same example** on an output basis (an output capacity, an annual output, a capacity
@@ -259,8 +266,8 @@ are abated, or when a policy instrument treats them separately.
   fixes it). From `property` on the factor is **external** to the source. The
   archetype summaries count the examples that rest on an external factor
   (`n-external`) and name the factors (`external-factors`); the wide view lists
-  them in one column, `external-conversions`, and the workbook shows those values
-  in italics. `output/conversion-factor-use.csv` says how many pooled rows each
+  them in one column, `external-conversions`, and the workbook shades those values
+  purple (italics until 2026-09-30). `output/conversion-factor-use.csv` says how many pooled rows each
   factor carries.
 - **Reference sources are registered apart** from the technology sources, in
   `data/raw-data/source-details_reference.csv`: the constants, densities and
@@ -279,6 +286,15 @@ are abated, or when a policy instrument treats them separately.
   no row there. `heating-value` records the basis as the source gave it (HHV, LHV
   or `not stated`) on every row whose value depends on it. Every energy factor in
   `conversion-factor.csv` is on HHV.
+  Amended 2026-09-30: an LHV specific energy use takes the ratio of the carrier it
+  names in `target` (1 for electricity, heat and steam), not the archetype's fuel;
+  before, an LHV electricity or steam use was raised by the fuel's ratio. On a
+  per-tonne archetype a cost per kW or MWh of the product's own energy, and a
+  MWh-per-MWh energy use, are put on HHV (divided by the product's ratio) before
+  the product's HHV per tonne puts them per tonne, which returns the source's own
+  LHV per tonne exactly. A cost per kW of an INPUT (`capacity-basis` thermal- or
+  electric-input) on a per-tonne archetype is never put per tonne with the
+  product's heating value.
 - **The efficiency bridge** (amended 2026-09-26; `pipeline/bridge.py`). A number
   stated per unit of energy input -- an emission factor per GJ of fuel, a cost per
   kW of input capacity (`capacity-basis` thermal-input or electric-input), a
@@ -358,6 +374,54 @@ For each archetype and parameter:
 Within one example, an as-reported value is preferred to one derived from it. Several
 rows for the same quantity (sizes, cases) count as one example, taking their median.
 
+## 6a. Filling empty cells
+
+The aim is a value in most or all parameters. Where the examples give none, the
+fill step (`pipeline/fill.py`, after the summaries) may write one, graded by how
+it was reached. Adopted 2026-09-30.
+
+| Grade | What it means |
+| - | - |
+| `sourced` | Pooled from examples, as in section 6. |
+| `identity` | Calculated from the archetype's own values by a definition or a physical relation: 100 / efficiency, fuel use times its emission factor, combustion plus process emissions. |
+| `estimated` | Borrowed or scaled from another archetype, or set by a class rule: a host plant's cost plus an increment, a sibling's lifetime. |
+| `guess` | A judgement with a range and a rationale, in `records/fill/fill-judgement.csv`. |
+
+Rules:
+- A fill is written only where there is no sourced value, and is recomputed on
+  every build, so a new source displaces it with no edit. Examples and extractions
+  are never changed.
+- A fill takes the worst grade among its rule and its inputs. Estimated rules take
+  sourced inputs only; an identity may use a filled input and inherits its grade.
+- Every rule is a row of `records/fill/fill-rule.csv`: grade, method, scope,
+  formula, rationale, and `status` (active or off). A rule found to give wrong
+  values is turned off with the reason, not deleted.
+- Section 5 still binds: units and product units must match, a cost per GJ goes
+  per tonne only under the same-GJ condition, and no regional adjustment.
+- A filled row has `n` = 0, `central-from` saying how it was reached, and `inputs`
+  naming the cells and factors it used with their grades.
+- A guess needs `central` within a stated `low`-`high`, a rationale and an author.
+  A guess on a cell that has since gained a sourced or calculated value is not
+  used.
+
+Rules in force (2026-09-30):
+- `id-sec-from-efficiency`: energy use per GJ of output = 100 / efficiency, on
+  energy-service archetypes other than CHP.
+- `id-efficiency-from-sec`: OFF. A pooled energy use with no carrier is not
+  reliably the total input per GJ of output, so its inverse gave a 7% motor
+  efficiency and 154% for the methane reformer.
+- `id-combustion-co2-from-fuel`: carrier-specific fossil energy use times the
+  carrier's CO2 factor (IPCC 2006 defaults put on HHV, `cf-ef-co2-<carrier>` in
+  `conversion-factor.csv`). Not where process emissions are recorded, where an
+  unnamed `fuel` is part of the energy use, or on reformers, gasifiers and
+  reactors, whose fuel may be a feedstock.
+- `id-total-from-parts`: total emissions = combustion + process, same species.
+- `est-host-increment-capex`, `est-host-increment-opex-fixed`: an incremental
+  cost (`set-aside-host-cost.csv`) plus the pooled cost of the host plant named
+  in `records/fill/host-archetype.csv`. Hosts were proposed by name (the
+  archetype less its last modifier) and need confirming; the rest are
+  `unmapped`.
+
 ## 7. Traceability
 
 Every fact row carries:
@@ -418,8 +482,13 @@ compilation cites it as an original.
   `archetype.csv`) is one of:
   - `quantified`: it has pooled numbers;
   - `named`: a source names it without numbers;
+  - `estimated`: it has no sourced numbers, only filled ones (section 6a);
   - `not pooled`: its numbers could not be pooled;
   - `gap`: it has no example yet.
+- `filled` lists the parameters the fill step wrote and their grade; in the
+  workbook those cells are shaded (identity blue, estimated orange, guess red;
+  purple marks a sourced value converted with an external factor)
+  and their `_n` is 0.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against
   `product-unit`.

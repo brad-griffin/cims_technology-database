@@ -255,7 +255,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `fermenter_steel-offgas` | Gas fermentation of steel off-gases to ethanol | alternative | blast-furnace-gas; by-product-gas | 9 | iron-and-steel.service.ccs.concentrated | named |
 | `furnace_ladle-metallurgy` | Ladle metallurgy furnace | conventional | electricity | 9 | iron-and-steel.service.ladle-refining | gap |
 | `furnace_reheating` | Reheating furnace, fuel-fired | conventional | oil; natural-gas | 9 | iron-and-steel.service.reheating | quantified |
-| `furnace_reheating_efficiency-moderate` | Reheating furnace efficiency measures, moderate | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | not pooled |
+| `furnace_reheating_efficiency-moderate` | Reheating furnace efficiency measures, moderate | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | estimated |
 | `furnace_reheating_efficiency-strong` | Reheating furnace efficiency measures, strong | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | quantified |
 | `induction-heater_reheating` | Induction reheating | alternative | electricity | 9 | iron-and-steel.service.reheating | quantified |
 | `induction-heater_strip-heating` | Induction strip heating | alternative | electricity | 9 | iron-and-steel.product.continuous-cast.annealing-and-coating | gap |

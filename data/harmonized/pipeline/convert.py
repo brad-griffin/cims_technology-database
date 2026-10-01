@@ -51,6 +51,7 @@ ATOM = {
 # an archetype whose product is that species.
 SPECIES = re.compile(r"^(t|kg|kt|Mt)-(CO2(?:-eq)?|CO2e|CH4)$")
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion))?")
+POWER = {"kW": 0.0036, "MW": 3.6, "GW": 3600.0}   # GJ per hour
 MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9}
 
 # How much a converted number rests on, weakest last. `unit` is a definition
@@ -199,6 +200,10 @@ def extensive(unit, tgt, factors, alias=None):
         extra = 1.0
         if "/" not in tgt:              # annual output: the archetype's unit per year
             tgt += "/yr"
+    if unit in POWER and tgt != "GJ/h":
+        # a power rating in the product's energy (MW of methanol) as an annual
+        # capacity at nameplate, put in product units with its heating value
+        unit, extra = "GJ/h", extra * POWER[unit]
     if "/" not in unit or "/" not in tgt:
         return None
     num, per = unit.split("/", 1)

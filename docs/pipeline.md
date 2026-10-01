@@ -27,6 +27,7 @@ gate a commit.
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py`, `pipeline/heating.py`, `pipeline/bridge.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. LHV numbers go to HHV (`heating-value-stream.csv`); numbers per unit of input go per GJ of output by the efficiency bridge (`efficiency-bridge.csv`). Each row records its `conversion-class` and `conversion-factors`. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
+| 8b | fill | `pipeline/fill.py` | Grades every summary `sourced`, then writes graded values (identity, estimated, guess) into empty cells by the rules in `records/fill/fill-rule.csv`, the hosts in `records/fill/host-archetype.csv` and the judgements in `records/fill/fill-judgement.csv`. Never overwrites a sourced value. |
 | 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `cims_hierarchy.csv`, `cims_hierarchy_technology.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |
 | 11 | workbook | `pipeline/workbook.py` | Writes `technology-database.xlsx`, last. It is never read back. |
@@ -43,6 +44,9 @@ gate a commit.
 | `records/cims_hierarchy.csv` | hierarchy node (the CIMS snapshot) | `branch` |
 | `records/vocabulary/*.csv` | term: equipment, discriminator, modifier, carrier, the other lists, parameter, commodity | the term |
 | `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype, the efficiency-bridge review | |
+| `records/fill/fill-rule.csv` | fill rule: grade, method, scope, formula, rationale, status | `rule-id` |
+| `records/fill/host-archetype.csv` | archetype with incremental costs, and the host plant they are added to | `archetype` |
+| `records/fill/fill-judgement.csv` | a guessed value: central within low-high, rationale, author | `archetype`, `parameter`, `target` |
 | `data/raw-data/source-details_reference.csv` | reference source behind a conversion factor or the currency conversion (kept apart from the technology sources; `used_for` says which, `file_on_disk` names a held table) | `source_id` |
 
 ## Outputs (generated)
@@ -52,7 +56,7 @@ gate a commit.
 | `example.csv` | Every example, with its archetype, its source's context and the readiness it reports. |
 | `example-parameter.csv`, `example-flow.csv`, `example-constraint.csv` | Every fact as reported, and converted to the archetype's basis (`*-norm`), or `excluded` with the reason. |
 | `archetype.csv` | Every archetype with its parsed key, the nodes it applies to, its examples and its status. |
-| `archetype-parameter.csv`, `archetype-flow.csv` | The summaries. |
+| `archetype-parameter.csv`, `archetype-flow.csv` | The summaries; `archetype-parameter.csv` also holds the filled rows, with `grade`, `method`, `rule-id`, `inputs` and `rationale`. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
 | `cims_hierarchy.csv`, `cims_hierarchy_technology.csv` | The CIMS hierarchy snapshot the build used, and the same with `technology` as the second column: each node repeated once per archetype serving it, blank where none does. |
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |

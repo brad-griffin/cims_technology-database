@@ -10,7 +10,7 @@ import re
 from collections import Counter, defaultdict
 
 from .common import RAW, REFERENCE, currency_year, read, split_list
-from . import convert
+from . import convert, fill
 
 RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|[wa]\d{3})$")
 
@@ -33,6 +33,7 @@ def draws_on_targets(cell: str) -> list[str]:
 
 def run(records, hier, loader, ex_result) -> dict[str, list[str]]:
     fail = defaultdict(list, records.check(hier))
+    fill.check(records, fail)
     for x in ex_result["unknown"]:
         fail["source-example row names an unknown archetype"].append(x)
     ids = {r["annotation"] for r in records.annotations}

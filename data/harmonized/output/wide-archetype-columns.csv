@@ -16,7 +16,8 @@ product,identity,,
 n-examples,identity,,
 status,identity,,
 sources,identity,,
-external-conversions,identity,,"Parameters whose pooled value rests on a conversion factor from outside the source (a heating value, a density, a process ratio, a pooled efficiency or an assumption), as examples so converted / examples pooled. Those values are in italics in the workbook. Which factors: archetype-parameter.csv (external-factors); how each example was converted: example-parameter.csv (conversion, conversion-class, conversion-factors)."
+external-conversions,identity,,"Parameters whose pooled value rests on a conversion factor from outside the source (a heating value, a density, a process ratio, a pooled efficiency or an assumption), as examples so converted / examples pooled. Those values are shaded purple in the workbook. Which factors: archetype-parameter.csv (external-factors); how each example was converted: example-parameter.csv (conversion, conversion-class, conversion-factors)."
+filled,identity,,"Parameters with no sourced value, filled by the fill step and graded: identity (calculated from this archetype's own values), estimated (from other archetypes or a class rule) or guess (a judgement). Shaded in the workbook; their _n is 0. Rule, inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, rationale); rules in records/fill/."
 lifetime,technical,years,"Expected technical service life of the installed equipment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 lifetime_low,technical,years,
 lifetime_high,technical,years,
@@ -83,6 +84,12 @@ specific-energy-consumption,technical,GJ/product-unit,"Total final energy input 
 specific-energy-consumption_low,technical,GJ/product-unit,
 specific-energy-consumption_high,technical,GJ/product-unit,
 specific-energy-consumption_n,technical,,
+specific-energy-consumption_bioliquid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: bioliquid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_bioliquid_low,technical,GJ/product-unit,
+specific-energy-consumption_bioliquid_high,technical,GJ/product-unit,
+specific-energy-consumption_bioliquid_n,technical,,
+specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_biomass-solid_n,technical,,
 specific-energy-consumption_electricity,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_electricity_low,technical,GJ/product-unit,
 specific-energy-consumption_electricity_high,technical,GJ/product-unit,
@@ -96,7 +103,11 @@ specific-energy-consumption_heat_low,technical,GJ/product-unit,
 specific-energy-consumption_heat_high,technical,GJ/product-unit,
 specific-energy-consumption_heat_n,technical,,
 specific-energy-consumption_hydrogen,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_hydrogen_low,technical,GJ/product-unit,
+specific-energy-consumption_hydrogen_high,technical,GJ/product-unit,
 specific-energy-consumption_hydrogen_n,technical,,
+specific-energy-consumption_methanol,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: methanol. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_methanol_n,technical,,
 specific-energy-consumption_natural-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,

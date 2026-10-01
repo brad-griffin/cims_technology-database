@@ -14,9 +14,19 @@ What changes, with r = HHV/LHV of a stream (1 for electricity, heat or a
 stream the table leaves blank):
 
   efficiency, efficiency-chp        x r_out / r_in      (output over input energy)
-  specific energy use (energy/pu)   x r_in, and / r_out when pu is GJ of product
+  specific energy use (energy/pu)   x r_in, and / r_out when it is per unit of
+                                    product ENERGY (pu is GJ, or MWh/MWh on a
+                                    per-tonne archetype)
   a cost or emission per GJ of pu   / r_out
+  a cost per kW or MWh of product   / r_out, before the product's heating value
+    on a per-tonne archetype          puts it per tonne (amended 2026-09-30)
   capacity or output in energy      x r_out (output basis), x r_in (input basis)
+
+r_in for a specific energy use is the ratio of the carrier the row names in
+`target` (CARRIER_RATIO): 1 for electricity, heat and steam, which have no
+heating value, and the archetype's `fuel-in` only for a carrier the map does not
+know or a row with no target. Before 2026-09-30 every target took `fuel-in`, so
+an LHV electricity or steam use was raised by the fuel's ratio.
 
 Anything else (a cost per tonne, a lifetime) does not depend on the basis, and
 its `heating-value` cell stays blank.
@@ -35,6 +45,21 @@ HHV = re.compile(r"\bHHV\b|higher heating value|gross calorific", re.I)
 ENERGY = {"GJ", "MJ", "kJ", "TJ", "PJ", "kWh", "MWh", "GWh", "Btu", "kBtu", "MMBtu", "mmBtu"}
 ENERGY_RATE = {"MW", "kW", "W", "GW", "MWth", "kWth", "GJ/h", "MJ/h", "MJ/s", "GJ/yr", "TJ/yr", "PJ/yr"}
 EFFICIENCY = {"efficiency", "efficiency-chp"}
+# a power or energy denominator: a cost per kW or per MWh of the product
+ENERGY_DEN = ENERGY | {"kW-yr", "MW-yr", "kW-per-yr", "MWth", "kWth", "kW", "MW", "W", "GW"}
+# HHV/LHV ratio factor by the carrier a specific energy use names ("" = no heating value)
+NO_HV = {"electricity", "heat", "steam", "cooling", "hot-water", "waste-heat", "solar",
+         "geothermal", "nuclear"}
+CARRIER_RATIO = {
+    **{c: "" for c in NO_HV},
+    **{c: "cf-hhv-lhv-methane" for c in ("natural-gas", "biogas", "biomethane", "methane",
+                                          "renewable-natural-gas", "landfill-gas", "sng")},
+    "hydrogen": "cf-hhv-lhv-hydrogen", "methanol": "cf-hhv-lhv-methanol",
+    "ammonia": "cf-hhv-lhv-ammonia", "ethanol": "cf-hhv-lhv-ethanol",
+    **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "naphtha",
+                                               "petroleum-coke", "biomass", "biomass-solid",
+                                               "bioliquid", "liquid-biomass", "fuel-oil")},
+}
 INPUT_BASES = {"thermal-input", "electric-input"}
 
 
@@ -64,6 +89,11 @@ def kind(param: str, unit: str, pu: str, capacity_basis: str, per_pu: bool) -> s
         return "capacity-in" if capacity_basis in INPUT_BASES else "capacity-out"
     if pu == "GJ" and per_pu:
         return "per-product"
+    den = (unit or "").split("/", 1)[1] if "/" in (unit or "") else ""
+    if (per_pu and den in ENERGY_DEN and param.startswith(("capex", "opex", "cost-"))
+            and capacity_basis not in INPUT_BASES):
+        # a cost per kW or MWh of the product's own energy on a per-tonne archetype
+        return "per-product"
     return ""
 
 
@@ -78,21 +108,25 @@ class Streams:
         f = self.factors.rows.get(fid)
         return fnum(f["factor"]) if f else None
 
-    def to_hhv(self, archetype: str, how: str, pu: str):
+    def to_hhv(self, archetype: str, how: str, pu: str, target: str = "", unit: str = ""):
         """(multiplier, [factor ids]) that puts an LHV number on HHV, or None when
         the archetype's streams are not recorded."""
         s = self.rows.get(archetype)
         if not s:
             return None
         fin, fout = s.get("fuel-in", "").strip(), s.get("product-out", "").strip()
+        if how == "energy-use" and (target or "").strip() in CARRIER_RATIO:
+            fin = CARRIER_RATIO[target.strip()]
         rin, rout = self._r(fin), self._r(fout)
         if rin is None or rout is None:
             return None
+        den = unit.split("/", 1)[1] if "/" in unit else ""
+        per_energy = pu == "GJ" or den in ENERGY
         m = {"efficiency": rout / rin,
-             "energy-use": rin / (rout if pu == "GJ" else 1.0),
+             "energy-use": rin / (rout if per_energy else 1.0),
              "per-product": 1 / rout,
              "capacity-out": rout,
              "capacity-in": rin}[how]
-        used = {"efficiency": [fout, fin], "energy-use": [fin] + ([fout] if pu == "GJ" else []),
+        used = {"efficiency": [fout, fin], "energy-use": [fin] + ([fout] if per_energy else []),
                 "per-product": [fout], "capacity-out": [fout], "capacity-in": [fin]}[how]
         return m, [u for u in used if u]

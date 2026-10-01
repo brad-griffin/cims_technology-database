@@ -16,6 +16,8 @@ Stages (docs/pipeline.md):
   6. checks      the gate: any failure stops the build here
   7. normalise   every fact on its archetype's basis (currency, units, product)
   8. summarise   one value set per archetype and parameter (layer 3)
+     fill        graded values for empty cells: identity, estimated, guess
+                 (records/fill/)
   9. views       archetype, application and the wide views
  10. reports     source list, citation review, mapping review, docs/vocabulary.md
  11. workbook    the Excel workbook, last, from the outputs
@@ -32,7 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pipeline import (assembly, checks, currency, examples, extract, factoruse, facts,  # noqa: E402
-                      hierarchy, normalise, records, reports, sources, summarise, views,
+                      fill, hierarchy, normalise, records, reports, sources, summarise, views,
                       wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
 
@@ -57,6 +59,7 @@ EX_COLS = ["example-id", "archetype", "mapping", "source-id", "source-technology
            "state-of-development", "year-available", "extraction-file", "note"]
 SUM_COLS = ["central", "low", "high", "n", "n-external", "central-from", "external-factors",
             "sources", "examples"]
+FILL_COLS = ["grade", "method", "rule-id", "inputs", "rationale"]
 
 
 def main(argv) -> int:
@@ -131,6 +134,9 @@ def main(argv) -> int:
     for r in psum:
         r["target"] = r.pop("target-norm")
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
+    print("fill")
+    fst = fill.apply(psum, rec, normalise.target_unit, L.facts)
+    print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
     write(OUTPUT / "example.csv", EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"]))
     write(OUTPUT / "example-parameter.csv", FACT_COLS, L.facts)
     write(OUTPUT / "set-aside-host-cost.csv",
@@ -157,7 +163,7 @@ def main(argv) -> int:
     psum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
     fsum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["direction"], r["commodity"]))
     write(OUTPUT / "archetype-parameter.csv",
-          ["archetype", "parameter", "target", "unit"] + SUM_COLS, psum)
+          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, psum)
     write(OUTPUT / "archetype-flow.csv",
           ["archetype", "direction", "commodity", "unit"] + SUM_COLS, fsum)
     nf = Counter(r["example-id"] for r in L.facts + L.flows + L.cons
@@ -198,12 +204,14 @@ def main(argv) -> int:
         {"wide-archetype": (wcols, wrows, wgroups, wunits, "family", "equipment",
                             banner + " One row per archetype; costs and intensities are per "
                             "product-unit, so never compare them across families. Energy is on "
-                            "a higher heating value. Italic values rest on a conversion factor "
-                            "from outside the source (see external-conversions)."),
+                            "a higher heating value. Shading: purple = sourced, but converted with a "
+                            "factor from outside the source (see external-conversions); blue = "
+                            "identity (calculated from the archetype's own values); orange = "
+                            "estimated; red = guess (see filled). Unshaded = sourced as reported."),
          "wide-flow": (fcols, frows, fgroups, funits, "family", "equipment", banner),
          "archetype": (acols, arows, {}, {}, "family", "equipment", banner),
          "source-list": (sources.COLS, src_band, {}, {}, "_band", "", banner)},
-        {"archetype-parameter": (["archetype", "parameter", "target", "unit"] + SUM_COLS, psum),
+        {"archetype-parameter": (["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, psum),
          "archetype-flow": (["archetype", "direction", "commodity", "unit"] + SUM_COLS, fsum),
          "example": (EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"])),
          "example-parameter": (FACT_COLS, L.facts),
@@ -213,10 +221,11 @@ def main(argv) -> int:
                                    v["application"])},
         {**fam, "": "(not tied to one family)"},
         {"wide-archetype": v["wide-archetype-notes"]},
-        {"wide-archetype": v["flagged"]}))
+        {"wide-archetype": v["flagged"]},
+        {"wide-archetype": v["graded"]}))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
-          f"{q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns")
+          f"{q['estimated']} estimated only, {q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns")
     return 0
 
 

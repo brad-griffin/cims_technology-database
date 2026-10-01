@@ -47,9 +47,11 @@ def _cell(v):
 
 
 def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None,
-               flags: dict | None = None) -> str:
-    """`flags`: {sheet: {(archetype, column)}} -- cells shown in italics because
-    their value rests on a conversion factor from outside the source."""
+               flags: dict | None = None, grades: dict | None = None) -> str:
+    """`flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
+    their value rests on a conversion factor from outside the source.
+    `grades`: {sheet: {(archetype, column): grade}} -- cells the fill step wrote,
+    shaded by grade (identity blue, estimated orange, guess red)."""
     warnings.filterwarnings("ignore")
     import openpyxl
     from openpyxl.comments import Comment
@@ -61,9 +63,12 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     f_head, f_grp = Font(sz=12, bold=True, color="FFFFFF"), Font(sz=10, bold=True, color="FFFFFF", italic=True)
     f_unit, f_band = Font(sz=10, color="D6E6E6"), Font(sz=16, bold=True, color="1F3B57")
     f_sub, f_body = Font(sz=11, bold=True, color="0E5A4E"), Font(sz=11)
-    f_ext = Font(sz=11, italic=True, color="5B3A8C")
     f_warn = Font(sz=11, bold=True, color="7A5C00")
     rule = Border(bottom=Side(style="thin", color="006666"))
+    EXT_FILL = PatternFill("solid", fgColor="E4DFEC")      # sourced, external factor
+    GRADE_FILL = {"identity": PatternFill("solid", fgColor="DDEBF7"),
+                  "estimated": PatternFill("solid", fgColor="FCE4D6"),
+                  "guess": PatternFill("solid", fgColor="F8CBAD")}
 
     wb = openpyxl.Workbook()
     wb.remove(wb.active)
@@ -107,8 +112,12 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
             for j, col in enumerate(cols, start=first):
                 val = _cell(row.get(col, ""))
                 cell = ws.cell(r, j, val)
-                cell.font = (f_ext if (row.get("archetype"), col) in (flags or {}).get(name, ())
-                             else f_body)
+                cell.font = f_body
+                g = (grades or {}).get(name, {}).get((row.get("archetype"), col))
+                if g in GRADE_FILL:
+                    cell.fill = GRADE_FILL[g]
+                elif (row.get("archetype"), col) in (flags or {}).get(name, ()):
+                    cell.fill = EXT_FILL
                 if j == first:
                     cell.alignment = Alignment(indent=1)
                 elif isinstance(val, (int, float)) and not isinstance(val, bool):

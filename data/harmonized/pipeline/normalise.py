@@ -302,6 +302,16 @@ def normalise(facts, examples, records, units) -> None:
                         else f"per {d} at nameplate (no capacity factor)")
                 if cf:
                     cls.append("same-source")
+                if pu != "GJ" and r.get("capacity-basis") in heating.INPUT_BASES:
+                    # per kW of an INPUT (hydrogen fed to an ammonia loop): the
+                    # product's heating value does not apply. Only the same
+                    # source's input per unit of product could convert it, and
+                    # only if it counts the same stream (design s5, 2026-09-30).
+                    r["excluded"] = (f"cost per {d} of input capacity cannot be put per {td}: "
+                                     "the product's heating value does not apply to an input "
+                                     "rating, and the source gives no input of this stream per "
+                                     f"{pu} of product")
+                    continue
                 if pu != "GJ":
                     # a power rating in the product's energy (kW of hydrogen) put
                     # per unit of product with the product's heating value
@@ -378,7 +388,7 @@ def normalise(facts, examples, records, units) -> None:
             hv = heating.reported(r.get("note") or "")
             r["heating-value"] = hv or "not stated"
             if hv == "LHV":
-                h = units.streams.to_hhv(a["archetype"], how, pu)
+                h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit)
                 if h is None:
                     r["excluded"] = ("reported on a lower-heating-value basis; "
                                      "records/reference/heating-value-stream.csv names no fuel or "
