@@ -427,11 +427,24 @@ Rules in force (2026-09-30):
   product unit). The range spans the siblings' values and at least +/-25% of the
   central. These parameters depend little on carrier or variant; capex and O&M
   are not copied between siblings without a ratio from a source that prices both.
-- **Back-test.** Every sibling rule is also run on the cells that have a sourced
+Parked methods (written and back-tested, status `off`; set a rule `active` to use it):
+- `est-modifier-ratio-capex` (parked 2026-10-01; would fill 4 cells): a variant (`<base>_<modifier>`) takes
+  its base archetype's sourced capex times the median variant/base ratio from
+  sources that price both a base and its variant with the same modifier (two
+  pairs or more). The O&M version is off: it filled nothing and caught 2 of 5.
+  Costs are not copied between siblings that differ by carrier: no source in
+  the database prices both members of such a pair on a usable basis.
+- `est-cost-ratio-opex-fixed` (parked 2026-10-01; would fill 42 cells): capex times the median fixed-O&M
+  share of capex among archetypes with both sourced (same equipment, else
+  family, else all; pools of five or more); range is the pool's smallest to
+  largest share. Weak: typical error a factor of 1.7, so these are placeholders.
+- **Back-test.** Every borrowing rule is also run on the cells that have a sourced
   value, as if they had none (`output/fill-backtest.csv`; the build prints the
   hit rates). The widen fraction is set so about 90% of sourced values fall in
   the range. At 25% (2026-10-01): lifetime 96/108, construction time 29/32,
   capacity factor 15/17; 71% of centrals within 25% of the sourced value.
+  The parked ratio rules tested at: modifier-ratio capex 9/10 (3 within 25%);
+  O&M share 71/87 (24 within 25%). The build back-tests active rules only.
 
 ## 7. Traceability
 

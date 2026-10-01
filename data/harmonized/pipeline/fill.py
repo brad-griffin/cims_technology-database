@@ -183,85 +183,180 @@ def m_host_increment(rule, a, have, ctx):
              "sources": "; ".join(dict.fromkeys(srcs)), "external": []}]
 
 
-def _siblings(a, p, ctx, exclude=None):
-    """(tier, [sibling rows]) -- the nearest archetypes with a SOURCED value of p:
-    tier 1 same equipment and discriminator, tier 2 same equipment; always the
+def _siblings(a, p, ctx):
+    """(tier, [(archetype, row)]) -- the nearest archetypes with a SOURCED value of
+    p: tier 1 same equipment and discriminator, tier 2 same equipment; always the
     same product unit."""
     A = ctx["arch"]
     for tier, same in ((1, ("equipment", "discriminator")), (2, ("equipment",))):
         rows = []
         for k, h in ctx["have"].items():
-            if k in (a["archetype"], exclude) or k not in A:
+            if k == a["archetype"] or k not in A:
                 continue
             b = A[k]
             if b["product-unit"] != a["product-unit"] or any(b[f] != a[f] for f in same):
                 continue
             r = h.get((p, ""))
-            if r and r.get("grade") == "sourced" and fnum(r.get("central")) is not None:
+            if _sourced(r):
                 rows.append((k, r))
         if rows:
             return tier, rows
     return None, []
 
 
-def _sibling_estimate(rows, widen, cap=None):
+def _sourced(r):
+    return bool(r) and r.get("grade") == "sourced" and fnum(r.get("central")) is not None
+
+
+def _quantile(xs, q):
+    xs = sorted(xs)
+    if len(xs) == 1:
+        return xs[0]
+    i = q * (len(xs) - 1)
+    lo = int(i)
+    return xs[lo] + (xs[min(lo + 1, len(xs) - 1)] - xs[lo]) * (i - lo)
+
+
+CAP100 = ("capacity-factor", "availability")
+
+
+# ---- estimators: methods that borrow from OTHER archetypes. Each returns
+# {central, low, high, inputs, sources} for archetype `a` from sourced values of
+# other archetypes only, so the same function back-tests a cell that has a
+# sourced value (that value is never in its own pool).
+
+def e_sibling(rule, a, ctx):
+    """The median of the nearest siblings' sourced values; the range spans theirs
+    and at least +/- `widen` of the central."""
+    p = rule["parameter"]
+    tier, rows = _siblings(a, p, ctx)
+    if not rows:
+        return None
+    widen = fnum(rule.get("widen")) or 0.0
     cs = [fnum(r["central"]) for _, r in rows]
     c = median(cs)
     lows = [fnum(r.get("low")) for _, r in rows if fnum(r.get("low")) is not None] + cs
     highs = [fnum(r.get("high")) for _, r in rows if fnum(r.get("high")) is not None] + cs
     lo, hi = min(lows + [c * (1 - widen)]), max(highs + [c * (1 + widen)])
-    if cap is not None:
-        hi = min(hi, cap)
-    return c, lo, hi
+    if p in CAP100:
+        hi = min(hi, 100.0)
+    return {"central": c, "low": lo, "high": hi,
+            "inputs": [f"tier {tier}: " + ", ".join(k for k, _ in rows)],
+            "sources": [x for _, r in rows for x in split_list(r.get("sources", ""))]}
 
 
-def m_sibling(rule, a, have, ctx):
-    """The median of the nearest siblings' sourced values; the range spans theirs
-    and at least +/- `widen` of the central (set from the back-test)."""
+def e_cost_ratio(rule, a, ctx):
+    """p = base parameter x the median p/base ratio of archetypes with BOTH sourced,
+    from the nearest pool of at least `min-pool` (same equipment, then family,
+    then all). Range: the pool's `widen` and 1-`widen` quantiles."""
+    p, base = rule["parameter"], split_list(rule["inputs"])[0]
+    sc = _scope(rule)
+    need = int(sc.get("min-pool", "3"))
+    b = ctx["have"].get(a["archetype"], {}).get((base, ""))
+    if not _sourced(b):
+        return None
+    bc = fnum(b["central"])
+    A = ctx["arch"]
+    ratios = {}
+    for k, h in ctx["have"].items():
+        if k == a["archetype"] or k not in A:
+            continue
+        x, y = h.get((base, "")), h.get((p, ""))
+        if _sourced(x) and _sourced(y) and fnum(x["central"]) > 0 \
+                and x["unit"].split("/")[-1] == y["unit"].split("/")[-1]:
+            ratios[k] = fnum(y["central"]) / fnum(x["central"])
+    for level in ("equipment", "family", None):
+        pool = {k: v for k, v in ratios.items() if level is None or A[k][level] == a[level]}
+        if len(pool) >= need or level is None:
+            break
+    if not pool:
+        return None
+    q = fnum(rule.get("widen")) or 0.0
+    vs = list(pool.values())
+    m = median(vs)
+    return {"central": bc * m, "low": bc * _quantile(vs, q), "high": bc * _quantile(vs, 1 - q),
+            "inputs": [_input(b, base),
+                       f"{p}/{base} median {m:.4g} of {len(pool)} archetypes "
+                       f"({'same ' + level if level else 'all'})"],
+            "sources": split_list(b.get("sources", ""))}
+
+
+def e_modifier_ratio(rule, a, ctx):
+    """A variant (`base_<modifier>`) = its base archetype's sourced value x the
+    median variant/base ratio that single sources give where they price BOTH a
+    base and its variant with the same modifier. Needs `min-pool` such pairs.
+    Range: the smallest and largest of those ratios, applied to the base's range."""
     p = rule["parameter"]
-    if (p, "") in have:
-        return []
-    tier, rows = _siblings(a, p, ctx)
-    if not rows:
-        return []
-    widen = fnum(rule.get("widen")) or 0.0
-    c, lo, hi = _sibling_estimate(rows, widen, 100.0 if p in ("capacity-factor", "availability") else None)
-    return [{"parameter": p, "target": "", "central": c, "low": lo, "high": hi,
-             "inputs": [f"tier {tier}: " + ", ".join(k for k, _ in rows)],
-             "grades": ["sourced"],
-             "sources": "; ".join(dict.fromkeys(x for _, r in rows for x in split_list(r.get("sources", "")))),
-             "external": []}]
+    parts = a["archetype"].split("_")
+    if len(parts) < 2:
+        return None
+    mod, base = parts[-1], "_".join(parts[:-1])
+    b = ctx["have"].get(base, {}).get((p, ""))
+    if not _sourced(b):
+        return None
+    sc = _scope(rule)
+    need = int(sc.get("min-pool", "2"))
+    ratios = [(r, sid, v) for (r, sid, v) in ctx["mod_ratios"].get((mod, p), [])
+              if v != a["archetype"]]
+    if len(ratios) < need:
+        return None
+    rs = [r for r, _, _ in ratios]
+    m = median(rs)
+    bc, bl, bh = _vals(b)
+    bl = bc if bl is None else bl
+    bh = bc if bh is None else bh
+    return {"central": bc * m, "low": bl * min(rs), "high": bh * max(rs),
+            "inputs": [_input(b, f"{base} {p}"),
+                       f"_{mod}/base median {m:.4g} from {len(rs)} same-source pairs: "
+                       + ", ".join(f"{v} ({sid})" for _, sid, v in ratios)],
+            "sources": split_list(b.get("sources", ""))}
+
+
+ESTIMATORS = {"sibling": e_sibling, "cost-ratio": e_cost_ratio, "modifier-ratio": e_modifier_ratio}
+
+
+def _estimated(fn):
+    def m(rule, a, have, ctx):
+        p = rule["parameter"]
+        if (p, "") in have:
+            return []
+        e = fn(rule, a, ctx)
+        if not e:
+            return []
+        return [{"parameter": p, "target": "", "central": e["central"], "low": e["low"],
+                 "high": e["high"], "inputs": e["inputs"], "grades": ["sourced"],
+                 "sources": "; ".join(dict.fromkeys(e["sources"])), "external": []}]
+    return m
 
 
 def backtest(records, rules_, have, ctx):
-    """Each sibling rule run on the cells that HAVE a sourced value, as if they had
-    none: how often the sourced value falls inside the estimate's range, and how
-    far the central is from it. Rows for output/fill-backtest.csv."""
+    """Each borrowing rule run on the cells that HAVE a sourced value, as if they
+    had none: does the sourced value fall inside the estimate's range, and how far
+    is the central from it. Rows for output/fill-backtest.csv."""
     out = []
     for rule in rules_:
-        if rule.get("method") != "sibling":
+        fn = ESTIMATORS.get(rule.get("method"))
+        if not fn:
             continue
         p = rule["parameter"]
-        widen = fnum(rule.get("widen")) or 0.0
         for a in records.archetypes:
             r = have.get(a["archetype"], {}).get((p, ""))
-            if not r or r.get("grade") != "sourced" or fnum(r.get("central")) is None:
+            if not _sourced(r) or not _in_scope(rule, a, {}):
                 continue
-            tier, rows = _siblings(a, p, ctx)
-            if not rows:
+            e = fn(rule, a, ctx)
+            if not e:
                 continue
-            c, lo, hi = _sibling_estimate(rows, widen, 100.0 if p in ("capacity-factor", "availability") else None)
-            t = fnum(r["central"])
+            t, c, lo, hi = fnum(r["central"]), e["central"], e["low"], e["high"]
             out.append({"rule-id": rule["rule-id"], "archetype": a["archetype"], "parameter": p,
                         "sourced": _g(t), "estimate": _g(c), "low": _g(lo), "high": _g(hi),
-                        "inside": "yes" if lo <= t <= hi else "no",
-                        "ratio": _g(c / t) if t else "", "tier": tier,
-                        "siblings": "; ".join(k for k, _ in rows)})
+                        "inside": "yes" if min(lo, hi) <= t <= max(lo, hi) else "no",
+                        "ratio": _g(c / t) if t else "", "inputs": "; ".join(e["inputs"])})
     return out
 
 
-METHODS = {"sibling": m_sibling, "inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
-           "host-increment": m_host_increment}
+METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
+           "host-increment": m_host_increment,
+           **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
 
 
 def rules():
@@ -325,8 +420,23 @@ def apply(psum, records, target_unit, facts=()) -> dict:
         if (r.get("set-aside") == "needs-host-cost" and r.get("archetype")
                 and fnum(r.get("value-norm")) is not None):
             increments.setdefault((r["archetype"], r["parameter"]), []).append(r)
+    # same-source variant/base ratios: (modifier, parameter) -> [(ratio, source, variant)]
+    per = {}
+    for r in facts:
+        v = fnum(r.get("value-norm"))
+        if v is None or r.get("excluded") or r.get("target-norm") or not r.get("archetype"):
+            continue
+        per.setdefault((r["source-id"], r["archetype"], r["parameter"], r["unit-norm"]), []).append(v)
+    mod_ratios = {}
+    for (sid, k, p, u), vs in per.items():
+        parts = k.split("_")
+        if len(parts) < 2:
+            continue
+        bv = per.get((sid, "_".join(parts[:-1]), p, u))
+        if bv and median(bv) > 0:
+            mod_ratios.setdefault((parts[-1], p), []).append((median(vs) / median(bv), sid, k))
     ctx = {"factors": convert.Factors(), "have": have, "increments": increments,
-           "arch": records.by_key,
+           "arch": records.by_key, "mod_ratios": mod_ratios,
            "hosts": {h["archetype"]: h for h in read(FILL / "host-archetype.csv")}}
     stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"], have, ctx)}
     for rule in rules():

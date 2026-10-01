@@ -144,7 +144,7 @@ def main(argv) -> int:
         print(f"  back-test {rid}: {sum(b['inside'] == 'yes' for b in rs)}/{len(rs)} sourced "
               f"values inside the estimate's range, {near}/{len(rs)} within 25%")
     write(OUTPUT / "fill-backtest.csv", ["rule-id", "archetype", "parameter", "sourced", "estimate",
-                                         "low", "high", "inside", "ratio", "tier", "siblings"], bt)
+                                         "low", "high", "inside", "ratio", "inputs"], bt)
     write(OUTPUT / "example.csv", EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"]))
     write(OUTPUT / "example-parameter.csv", FACT_COLS, L.facts)
     write(OUTPUT / "set-aside-host-cost.csv",
