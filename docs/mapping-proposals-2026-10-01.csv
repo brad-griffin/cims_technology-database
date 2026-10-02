@@ -1,0 +1,556 @@
+kind,source-id,technology,proposal,confidence,note
+NEW,doe_2023_001,furnace_glass-regenerative_ccs-diffuse,NEW: furnace_glass-regenerative_ccs-diffuse,medium,host with capture; no glass ccs archetype
+NEW,boulamanti_2017_001,electrolysis-cell_solid-state-ammonia,NEW: electrolysis-cell_solid-state-ammonia,low,SSAS uses 7.5 vs 12 MWh/t (over 15% less) than electrolytic Haber-Bosch; early development.
+NEW,boulamanti_2017_001,steam-reformer_membrane,NEW: steam-reformer_membrane,low,"Membrane reforming saves about 20% energy versus SMR (passes the 15% test); demonstration stage, capex only."
+NEW,boulamanti_2017_001,gasifier_coal-methanol,NEW: gasifier_coal-methanol,medium,Coal-to-methanol needs about twice the feedstock energy of gas reforming (71.6 vs 33-37 GJ/t) and emits 5.3 tCO2/t; no archetype.
+NEW,boulamanti_2017_001,gasifier_lignite-methanol,NEW: gasifier_coal-methanol,medium,Lignite variant of coal-to-methanol.
+NEW,boulamanti_2017_001,electrolysis-cell_mercury,NEW: electrolysis-cell_chlor-alkali-mercury,low,"Mercury cells use 3000-4400 kWh/t (over 15% above membrane); legacy, phased out."
+NEW,boulamanti_2017_001,electrolysis-cell_diaphragm,NEW: electrolysis-cell_chlor-alkali-diaphragm,medium,Diaphragm cells need 2.7-5.3 t steam/t Cl2 vs 0.5-1.7 (total energy over 15% above membrane); still in North American stock.
+NEW,boulamanti_2017_001,reactor_ethylene-oxidation_ccs-concentrated,NEW: reactor_ethylene-oxidation_ccs-concentrated,medium,"Capture on the EO process CO2 stream (host with capture modifier, design s.2); 50% assumed."
+NEW,kramer_2009_001,pulper_stone-groundwood,NEW: pulper_stone-groundwood,medium,"No groundwood archetype: SGW steam 3 MMBtu/t vs TMP 0.58 (far above 15%), legacy mechanical route still in Canadian stock."
+NEW,falcke_2017_001,reactor_hcl-oxidation,NEW: reactor_hcl-oxidation,low,"Chlorine from by-product HCl at about 165 kWh/t vs 2 000+ kWh/t for membrane electrolysis (energy differs far more than 15 %); serves isocyanate/VCM HCl recycling, not a chlor-alkali replacement - coordinator to decide"
+NEW,jrc_2022_001,coating-line_batch-galvanising,NEW: coating-line_batch-hot-dip,low,batch galvanising of fabrications is a different route from continuous strip coating; energy and product differ
+NEW,jrc_2022_001,coating-line_batch-galvanising,NEW: coating-line_batch-hot-dip,low,see whole-plant row
+NEW,remus_2013_001,furnace_rotary-hearth,NEW: furnace_rotary-hearth-direct-reduction,medium,rotary hearth on fines/concentrates with coal: 20% more energy than Midrex and different equipment
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,"No pulp-dryer archetype; market pulp drying is 2.2-3 GJ/ADt, about 25 % of kraft mill heat."
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,
+NEW,suhr_2015_001,digester_sulphite,NEW: digester_sulphite,medium,"Acid/bisulphite cooking: different liquor, base and recovery chemistry from kraft; cooking steam 2.3-2.6 GJ/ADt vs 1.6-2.0 for kraft (>15 %); legacy Canadian sulphite/dissolving mills."
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,
+NEW,suhr_2015_001,digester_sulphite,NEW: digester_sulphite,medium,"Acid/bisulphite cooking: different liquor, base and recovery chemistry from kraft; cooking steam 2.3-2.6 GJ/ADt vs 1.6-2.0 for kraft (>15 %); legacy Canadian sulphite/dissolving mills."
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,
+NEW,suhr_2015_001,pulper_groundwood,NEW: pulper_groundwood,medium,No groundwood archetype; electricity below TMP with no steam recovery (up to 20 % as hot water only); legacy Canadian stock.
+NEW,suhr_2015_001,pulper_groundwood-pressurised,NEW: pulper_groundwood,medium,Pressurised variant of groundwood.
+NEW,suhr_2015_001,pulper_groundwood-pressurised-super,NEW: pulper_groundwood,medium,
+NEW,suhr_2015_001,dryer_market-pulp,NEW: dryer_market-pulp,medium,
+NEW,suhr_2015_001,dryer_through-air,NEW: dryer_through-air,medium,"TAD drying uses roughly 2-3 times the energy of Yankee/hood drying (well above 15 %); premium tissue; distinct equipment. Values are whole-mill (8 mills, most also run conventional machines)."
+NEW,suhr_2015_001,dryer_through-air,NEW: dryer_through-air,medium,Whole-mill figures.
+NEW,jrc_2007_002,gasifier_heavy-oil-ammonia,NEW: gasifier_oil-ammonia,low,Net energy 35-38 GJ/t vs 28-31 for SMR (>15%) and different feed and CO2 per t; but no oil-based ammonia in Canada - coordinator may prefer (none)
+NEW,jrc_2007_002,reactor_urea-synthesis_conventional,NEW: reactor_urea-total-recycle,medium,Conventional total recycle (no HP stripping): steam 1.3-1.8 t/t and total 5.5 GJ/t vs 0.6-0.9 t/t and 3.1-3.8 GJ/t for stripping plants (>15%); legacy type
+NEW,jrc_2007_002,reactor_urea-synthesis_conventional,NEW: reactor_urea-total-recycle,medium,Conventional total recycle (no HP stripping): steam 1.3-1.8 t/t and total 5.5 GJ/t vs 0.6-0.9 t/t and 3.1-3.8 GJ/t for stripping plants (>15%); legacy type
+NEW,jrc_2007_002,reactor_urea-synthesis_conventional,NEW: reactor_urea-total-recycle,medium,Conventional total recycle (no HP stripping): steam 1.3-1.8 t/t and total 5.5 GJ/t vs 0.6-0.9 t/t and 3.1-3.8 GJ/t for stripping plants (>15%); legacy type
+NEW,jrc_2007_002,reactor_ammonium-nitrate,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_can,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_can,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_solution,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_vacuum-neutraliser,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_pressure-neutraliser,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+NEW,jrc_2007_002,reactor_ammonium-nitrate_pressure-neutraliser,NEW: reactor_ammonium-nitrate,medium,AN/CAN plant per t product; chemicals.product.fertilizer has no archetype; different energy and emission profile from urea
+low,doe_2023_001,process-improvement_fuel-efficiency_chlor-alkali,(none),low,generic fuel-efficiency measure on mid-temperature heat; no host archetype or product-unit numbers
+low,doe_2023_001,process-improvement_fuel-efficiency_ammonia,(none),low,~10% saving would be a moderate bucket; ammonia has only steam-reformer_ammonia_efficiency-strong
+low,doe_2023_001,compressor_electric-drive-centrifugal,compressor_electric-drive-centrifugal,low,compressor type not stated (centrifugal vs reciprocating); cost includes wind + LDES supply
+low,doe_2023_001,process-improvement_rod-packing-replacement,compressor_efficient-reciprocating,low,methane measure with zero capex; abatement cost only
+low,doe_2023_001,wind-turbine_onsite-ldes,(none),low,wind plus LDES supply; no archetype with that scope (wind-turbine has no storage)
+low,doe_2023_001,wind-turbine_onsite-ldes,(none),low,wind plus LDES supply
+low,doe_2023_001,boiler_electric_wind-ldes-thermal-storage,thermal-storage_electric,low,bundles wind+LDES power with e-boiler+TES heat
+low,doe_2023_001,boiler_electric_wind-ldes-thermal-storage,thermal-storage_electric,low,bundles wind+LDES power with e-boiler+TES heat
+low,doe_2023_001,direct-heater_ccs-diffuse,direct-heater_ccs-diffuse,low,cost is a proxy copied from the cracker; not an independent estimate
+low,doe_2023_001,electrolyzer_low-temperature,electrolyzer_low-temperature,low,abatement cost of substituting electrolytic H2; electrolyzer type and product-unit numbers not given
+low,doe_2023_001,process-improvement_fuel-efficiency_refining,(none),low,generic fuel-efficiency measure across the refinery
+low,doe_2023_001,boiler_electric_wind-ldes-thermal-storage,thermal-storage_electric,low,bundles wind+LDES power with e-boiler+TES heat
+low,doe_2023_001,blast-furnace_dri-charge,blast-furnace_efficiency-moderate,low,"charge substitution, not an efficiency measure; limited to ~10% of charge"
+low,doe_2023_001,steel-mill_bf-bof,(none),low,"whole integrated route (coke, BF, BOF); no whole-route archetype - unit archetypes are blast-furnace and basic-oxygen-furnace"
+low,doe_2023_001,steel-mill_bf-bof-ccs,blast-furnace_ccs-diffuse,low,whole-route plant cost including CCS; archetype holds host-side facts for the BF only
+low,doe_2023_001,steel-mill_h2-dri-eaf,shaft-furnace_electrolytic-hydrogen,low,"cost covers DRI shaft, EAF and electrolyzer; archetype is the shaft furnace only"
+low,doe_2023_001,steel-mill_ng-dri-ccs-eaf,shaft-furnace_direct-reduction_ccs-concentrated,low,cost covers DRI with CCS and EAF
+low,doe_2023_001,caster_compact-strip-production,rolling-mill_thin-slab,low,CSP = compact strip production (thin-slab caster); includes water treatment
+low,doe_2023_001,steel-mill_eaf-flat,electric-arc-furnace,low,"route average including iron units (DRI/pig iron), not the furnace alone"
+low,doe_2023_001,steel-mill_eaf-long,electric-arc-furnace,low,"route average including iron units (DRI/pig iron), not the furnace alone"
+low,doe_2023_001,direct-heater_electric-process,direct-heater_electric-process,low,"equipment varies by use case; cost is a 1.5x multiplier on electric steam generation, not an equipment estimate"
+low,doe_2023_001,process-improvement_alternative-fuel_food,(none),low,fuel switch on existing equipment (carrier change)
+low,doe_2023_001,process-improvement_electricity-efficiency_food,(none),low,generic electricity efficiency bundle
+low,doe_2023_001,management-system_real-time-energy,(none),low,energy-management system
+low,doe_2023_001,dryer_electric-air,dryer_electric-air,low,hot-air + infrared dryer; carrier not stated
+low,doe_2023_001,pulper_recycled-fibre_occ-stock-prep,pulper_recycled-fibre,low,"upgrade of an OCC line; measure, not whole pulper"
+low,doe_2023_001,pump_turbo-blower-vacuum,(none),low,vacuum system component of the paper machine
+low,doe_2023_001,process-improvement_energy-efficiency_pulp-paper,(none),low,generic bundle
+low,doe_2023_001,pulper_new-technology,(none),low,measure on pulper
+low,doe_2023_001,dryer_hood-heat-recovery,dryer_hood-heat-recovery,low,drying hood upgrade; heat recovery not stated
+low,doe_2023_001,fan_radial-blower,(none),low,component measure
+low,doe_2023_001,boiler_fuel-fired_biomethane,boiler_fuel-fired,low,fuel switch to biomethane on a gas boiler (carrier)
+low,doe_2023_001,wind-turbine_onsite-ldes,(none),low,wind plus LDES supply
+low,doe_2023_001,kiln_dry-precalciner_biomass,kiln_dry-precalciner,low,"fuel-mix change on the kiln (carrier), with bypass capex"
+low,doe_2023_001,kiln_dry-precalciner_waste-fuel,kiln_dry-precalciner,low,"fuel-mix change on the kiln (carrier), with bypass capex"
+low,doe_2023_001,process-improvement_energy-efficiency_aluminum-secondary,(none),low,generic bundle
+low,doe_2023_001,melting-furnace_electric,melting-furnace_induction,low,"label printed as Electrical gas heating; Fig. 3.7.3 note 1 lists resistance, induction and plasma furnaces"
+low,doe_2023_001,process-improvement_recycling_aluminum,(none),low,raw-material substitution
+low,doe_2023_001,electrolysis-cell_efficiency-measures,(none),low,generic bundle on old U.S. smelters
+low,doe_2023_001,digester_bayer_efficiency-measures,(none),low,generic bundle
+low,doe_2023_001,calciner_alumina_efficiency-measures,(none),low,generic bundle
+low,doe_2023_001,process-improvement_cullet-recycling,(none),low,raw-material substitution
+low,doe_2023_001,furnace_glass-regenerative_biomethane-forming,(none),low,"forming step, not melting"
+low,doe_2023_001,furnace_glass-regenerative_biomethane,furnace_glass-regenerative,low,fuel switch (carrier) on the gas melting furnace
+low,doe_2023_001,furnace_hydrogen-forming,(none),low,forming step
+low,doe_2023_001,heat-recovery-unit_glass-furnace,(none),low,no glass heat-recovery archetype; abatement cost only
+low,doe_2025_001,capture-unit_ngp-concentrated,compressor_co2-dehydration,low,Host stream already >90% CO2 (NGP); cost scope (compression/dehydration only or more) not stated; EFI cost.
+low,doe_2025_001,capture-unit_ngp-concentrated,compressor_co2-dehydration,low,Host stream already >90% CO2 (NGP); cost scope (compression/dehydration only or more) not stated; EFI cost.
+low,doe_2025_001,capture-unit_ammonia-process-stream,compressor_co2-dehydration,low,Ammonia SMR stream; text p.40 and MACC fn 9 treat it as concentrated but capture technology and scope not stated; cost level is high for a pure stream - check EFI basis.
+low,doe_2025_001,capture-unit_ammonia-process-stream,compressor_co2-dehydration,low,Ammonia SMR stream; text p.40 and MACC fn 9 treat it as concentrated but capture technology and scope not stated; cost level is high for a pure stream - check EFI basis.
+low,doe_2025_001,capture-unit_smr-process-and-flue,capture-unit_amine,low,Covers process stream AND steam-production flue gas (90% overall); mixed concentrated/dilute scope matches neither capture-unit archetype exactly.
+low,doe_2025_001,capture-unit_smr-process-and-flue,capture-unit_amine,low,Covers process stream AND steam-production flue gas (90% overall); mixed concentrated/dilute scope matches neither capture-unit archetype exactly.
+low,doe_2025_001,pipeline_co2-transport-and-storage,(none),low,Combined pipeline transport + storage; no combined archetype (pipeline_co2 and well_co2-storage are separate).
+low,doe_2025_001,electrolyzer_low-temperature-ammonia,reactor_haber-bosch-electrolytic,low,"Abatement of replacing SMR with electrolytic H2 + ASU feeding Haber-Bosch; abatement of the hydrogen switch only, not a whole-plant figure."
+low,doe_2025_001,electrolyzer_low-temperature-ammonia,reactor_haber-bosch-electrolytic,low,"Abatement of replacing SMR with electrolytic H2 + ASU feeding Haber-Bosch; abatement of the hydrogen switch only, not a whole-plant figure."
+low,doe_2025_001,electrolyzer_low-temperature-ammonia,reactor_haber-bosch-electrolytic,low,"Abatement of replacing SMR with electrolytic H2 + ASU feeding Haber-Bosch; abatement of the hydrogen switch only, not a whole-plant figure."
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation (mid-temperature evaporation heat and power).
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation (mid-temperature evaporation heat and power).
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation (mid-temperature evaporation heat and power).
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation; replaces on-site power/CHP and fuel-fired heat.
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation; replaces on-site power/CHP and fuel-fired heat.
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,Scope includes on-site wind generation + LDES/TES + heat generation; replaces on-site power/CHP and fuel-fired heat.
+low,doe_2025_001,capture-unit_ngp-concentrated,compressor_co2-dehydration,low,Abatement of capturing the separated associated CO2 at gas processing; scope not stated.
+low,doe_2025_001,capture-unit_ngp-concentrated,compressor_co2-dehydration,low,Abatement of capturing the separated associated CO2 at gas processing; scope not stated.
+low,doe_2025_001,capture-unit_ngp-concentrated,compressor_co2-dehydration,low,Abatement of capturing the separated associated CO2 at gas processing; scope not stated.
+low,doe_2025_001,capture-unit_refinery-dilute,capture-unit_amine,low,Refinery dilute-source CCS incl. T&S ($/t CO2 stored); solvent not named; mixed-source scope.
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,On-site power + storage for low/mid-temperature heat; scope includes generation.
+low,doe_2025_001,direct-heater_hydrogen-high-temperature,direct-heater_fired-process,low,"Hydrogen as fuel in fired heaters (a carrier on the fired heater); value is the H2 fuel cost, not the heater."
+low,doe_2025_001,thermal-storage_electric-onsite-renewables,thermal-storage_electric,low,
+low,doe_2025_001,heat-pump_vapour-compression-topping,heat-pump_industrial,low,Vapour-compression topping of nuclear-supplied heat to cracking/regeneration temperatures; temperature range beyond a typical industrial heat pump.
+low,boulamanti_2017_001,reactor_nitric-acid_nscr,reactor_nitric-acid,low,"Plant with NSCR tail-gas treatment (not a BAT: CH4 slip, extra fuel); residual N2O factor only."
+low,boulamanti_2017_001,autothermal-reformer_ammonia,autothermal-reformer,low,Only ATR ammonia electricity (0.2 GJ/t).
+low,boulamanti_2017_001,steam-reformer_naphtha,steam-reformer_methane,low,Naphtha-fed steam reformer; carrier differs from the archetype.
+low,boulamanti_2017_001,reactor_catalytic-partial-oxidation,autothermal-reformer,low,Short-contact-time catalytic partial oxidation; capex derived by the source as SMR minus 15%.
+low,boulamanti_2017_001,reactor_biomass-pyrolysis-hydrogen,gasifier_biomass-waste,low,Biomass pyrolysis to hydrogen; nearest is the gasification archetype.
+low,boulamanti_2017_001,steam-reformer_methanol_ammonia-integrated,reactor_syngas-methanol,low,"Emission factor only, methanol integrated with ammonia."
+low,boulamanti_2017_001,reactor_ethylene-oxide-hydration,reactor_ethylene-oxidation,low,MEG section/plant per t MEG; partial unit of the EO/glycol archetype.
+low,boulamanti_2017_001,reactor_ethylene-dichloride,distillation-column_fired-heater,low,"EDC chlorination/oxychlorination; nearest intermediate-production archetype, scope differs."
+low,boulamanti_2017_001,furnace_vinyl-chloride,distillation-column_fired-heater,low,"EDC cracking and VCM separation; nearest intermediate-production archetype, scope differs."
+low,boulamanti_2017_001,furnace_vinyl-chloride_integrated,distillation-column_fired-heater,low,Integrated EDC/VCM per t VCM.
+low,boulamanti_2017_001,reactor_ethylbenzene-alkylation,distillation-column_fired-heater,low,Ethylbenzene alkylation utilities; nearest intermediate-production archetype.
+low,boulamanti_2017_001,reactor_ethylbenzene-dehydrogenation,distillation-column_fired-heater,low,Styrene dehydrogenation utilities; nearest intermediate-production archetype.
+low,boulamanti_2017_001,reactor_ethylbenzene-dehydrogenation,distillation-column_fired-heater,low,Styrene dehydrogenation utilities; nearest intermediate-production archetype.
+low,boulamanti_2017_001,reactor_ethylene-oxide-hydration,reactor_ethylene-oxidation,low,MEG section/plant per t MEG; partial unit of the EO/glycol archetype.
+low,boulamanti_2017_001,reactor_ethylene-dichloride,distillation-column_fired-heater,low,"EDC chlorination/oxychlorination; nearest intermediate-production archetype, scope differs."
+low,boulamanti_2017_001,furnace_vinyl-chloride,distillation-column_fired-heater,low,"EDC cracking and VCM separation; nearest intermediate-production archetype, scope differs."
+low,boulamanti_2017_001,reactor_ethylbenzene-alkylation,distillation-column_fired-heater,low,Ethylbenzene alkylation utilities; nearest intermediate-production archetype.
+low,boulamanti_2017_001,reactor_ethylbenzene-dehydrogenation,distillation-column_fired-heater,low,Styrene dehydrogenation utilities; nearest intermediate-production archetype.
+low,kramer_2009_001,digester_sulfite,digester_semi-chemical,low,Whole sulfite pulping route at BAT (cooking through chemical recovery; direct fuel shows recovery/lime use included); archetype covers the sulphite digester only.
+low,kramer_2009_001,digester_kraft_bleached-softwood,digester_continuous-kraft,low,"Whole bleached kraft pulping route at BAT (cooking, washing, bleaching, evaporation, recovery and lime kiln; the direct fuel is the lime kiln) - scope far wider than the digester archetype. A whole-route kraft archetype would fit."
+low,kramer_2009_001,digester_kraft_bleached-hardwood,digester_continuous-kraft,low,Whole bleached kraft pulping route at BAT (direct fuel = lime kiln); scope wider than the digester archetype.
+low,kramer_2009_001,digester_kraft_unbleached,digester_continuous-kraft,low,Whole unbleached kraft pulping route at BAT (direct fuel = lime kiln); scope wider than the digester archetype.
+low,kramer_2009_001,paper-machine_linerboard,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_recycled-board,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_bleached-folding-boxboard,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_kraft-paper,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_special-industrial,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_gypsum-board,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_corrugated-medium,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_printing-writing,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_newsprint,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_groundwood-specialties,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_coated-groundwood,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_coated-freesheet,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_boxboard-unbleached,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_tissue,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,paper-machine_other-paper-board,paper-machine_fourdrinier-gap,low,"Whole papermaking operation (stock preparation, forming, pressing, steam drying, finishing; direct fuel = gas hoods/coating dryers) - spans paper-machine_fourdrinier-gap and dryer_steam-heated; needs a split."
+low,kramer_2009_001,process-improvement_log-thawing_live-steam,process-improvement_log-thawing,low,"This is the live-steam incumbent; the gap archetype is thawing with recovered heat, which the source says can replace this steam (saving and capex in _measures). Use as the displaced duty only."
+low,falcke_2017_001,reactor_pygas-hydrogenation,(none),low,Pygas hydrotreating unit; no archetype for this step (BTX node archetypes are distillation trains)
+low,falcke_2017_001,reactor_ethylene-oxidation_air,reactor_ethylene-oxidation,low,"Air-based route; CO2 leaves diluted with nitrogen, unlike the archetype; feed ratio only"
+low,falcke_2017_001,fermenter_sugar-starch,fermenter_grain-dry-mill,low,Range spans sugar and starch routes; per litre; low end is dry mill
+low,jrc_2022_001,induction-heater_wire-heating,induction-heater_strip-heating,low,"wire, not strip lines"
+low,jrc_2022_001,rolling-mill_thin-slab,rolling-mill_thin-slab,low,"SEC covers the reheating furnace only, not the whole cast-roll line"
+low,jrc_2022_001,furnace_soaking-pit,caster_ingot,low,soaking pit is the reheating part of the ingot route only
+low,remus_2013_001,electric-arc-furnace_consteel,electric-arc-furnace_high-efficiency,low,scrap-preheating EAF; hot metal in the charge (or a theoretical figure) distorts electricity
+low,remus_2013_001,electric-arc-furnace_shaft,electric-arc-furnace_high-efficiency,low,scrap-preheating EAF; hot metal in the charge (or a theoretical figure) distorts electricity
+low,remus_2013_001,smelting-vessel_dios,smelting-vessel_two-stage,low,"pilot data; coal and oxygen flows only, no net energy printed"
+low,remus_2013_001,smelting-vessel_romelt,smelting-vessel_bath-reduction,low,"pilot data; coal and oxygen flows only, no net energy printed"
+low,remus_2013_001,electrolysis-cell_iron-ore,electrolysis-cell_molten-oxide,low,generic order-of-magnitude estimate; electrolysis type not stated
+low,remus_2013_001,coke-oven_scope21,coke-oven_efficiency-strong,low,new oven concept with coal preheating and CDQ; only a relative 20% energy saving printed (in _measures)
+low,suhr_2015_001,reactor_tcf-bleaching,reactor_ecf-bleaching,low,"TCF, not ECF; the source says TCF needs slightly more steam."
+low,suhr_2015_001,kiln_lime-lignin-fired,kiln_lime-rotary,low,Fuel switch to lignin; no numbers.
+low,suhr_2015_001,process-improvement_log-thawing,process-improvement_log-thawing,low,"Numbers are the conventional live-steam/hot-water thawing load (the baseline), not the waste-heat option; per m3 wood and per ADt."
+low,suhr_2015_001,reactor_sulphite-bleaching,reactor_ecf-bleaching,low,"Sulphite pulp bleaching (peroxide/TCF typical), no O2 delignification."
+low,suhr_2015_001,boiler_recovery_sulphite,boiler_recovery,low,Mg-sulphite recovery boiler with SO2 recovery; electricity includes FGD.
+low,suhr_2015_001,boiler_recovery_sulphite,boiler_recovery,low,Mg-sulphite recovery boiler with SO2 recovery; electricity includes FGD.
+low,suhr_2015_001,pulper_refiner-mechanical,pulper_thermomechanical,low,"Atmospheric refining, little steam recovery."
+low,suhr_2015_001,paper-machine_newsprint,dryer_steam-heated,low,"Whole paper machine: heat is drying steam, electricity is machine drives and vacuum; split across forming and drying archetypes."
+low,suhr_2015_001,paper-machine_newsprint,dryer_steam-heated,low,Whole paper machine (drying steam plus drives/vacuum).
+low,suhr_2015_001,paper-machine_fine-coated,dryer_steam-heated,low,Whole paper machine incl. coater and gas dryers.
+low,suhr_2015_001,paper-machine_high-consistency,paper-machine_waterless,low,"HC forming, not dry or foam forming; no absolute numbers."
+low,suhr_2015_001,fan_activated-sludge,fan_activated-sludge,low,Per t COD removed; archetype product unit GJ.
+low,suhr_2015_001,fan_activated-sludge_long-term,fan_activated-sludge,low,Per ADt pulp; archetype product unit GJ.
+low,suhr_2015_001,fan_activated-sludge_biofilm,fan_activated-sludge,low,Per ADt pulp; BAS is a compact variant.
+low,suhr_2015_001,anaerobic-digester_effluent,anaerobic-digester_effluent,low,Per t COD removed; archetype product unit GJ.
+low,suhr_2015_001,fan_activated-sludge,fan_activated-sludge,low,Whole treatment plant priced per pulp capacity; archetype is aeration in GJ.
+low,suhr_2015_001,anaerobic-digester_effluent,anaerobic-digester_effluent,low,Priced per t paper served; archetype unit GJ.
+low,jrc_2007_002,reactor_nitric-acid_extended-chamber,reactor_thermal-n2o-destruction,low,Homogeneous thermal decomposition in the nitric acid burner; the thermal archetype is defined for adipic acid off-gas only. Could also be a reactor_nitric-acid variant (new plants only)
+low,jrc_2007_003,reactor_pp-slurry-alcohol-wash,reactor_polymerization-extrusion,low,Only a steam flow for the recovery section is printed (about 1 t steam/t PP); legacy speciality process.
+low,jrc_2007_003,reciprocating-engine_diesel_chp,reciprocating-engine_chp,low,Diesel carrier not on the archetype; reprinted from 1982 data.
+low,jrc_2007_003,steam-turbine_chp,steam-turbine_back-pressure,low,Only electrical conversion efficiency printed; back-pressure vs condensing not stated.
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,high,Recuperative mean 6.3 GJ/t vs 4.6-4.8 for regenerative (>15% higher); legacy unit melters common in small furnaces
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,high,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,recuperative without extra heat recovery
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,Sector mix: gas-fired recuperative (some with boost up to 20%) and about 50-55% oxy-fuel furnaces; type not split
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,CFGF furnace type mix
+NEW,scalet_2013_001,furnace_glass-recuperative_lonox,NEW: furnace_glass-recuperative,medium,Recuperative special design; at normal operation SEC similar to a comparable regenerative furnace (source)
+NEW,scalet_2013_001,furnace_glass-recuperative_lonox,NEW: furnace_glass-recuperative,medium,LoNOX example
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,glass wool recuperative
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,"air-fuel frit furnaces, most with recuperative air preheat (470-570 degC, p.78)"
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,recuperative/oxy mix
+NEW,scalet_2013_001,melting-furnace_hot-blast-cupola,NEW: melting-furnace_hot-blast-cupola,medium,"Coke-fired hot blast cupola: different fuel (coke) and emissions kind (CO, H2S, afterburner) from any glass furnace archetype; value covers all stone wool furnaces (mostly cupolas)"
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,"frit air-fuel, mostly recuperative"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,container furnaces generally (mostly regenerative); type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,"conventional domestic furnaces, type not stated (regenerative or recuperative)"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,fossil-fuel-fired soda-lime domestic furnace; type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,large fossil-fuel special glass furnaces; type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,"fossil furnaces, type not stated"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,"fossil furnaces, type not stated (mostly regenerative)"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated; excludes pot furnaces and day tanks (10-30 GJ/t)
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-all-types,(none),low,all glass wool furnace types pooled
+NEW,schorcht_2013_001,kiln_lime-long-rotary,NEW: kiln_lime-long-rotary,medium,Legacy long rotary lime kiln (about 29 in EU-27 in 2008); 6.0-9.2 GJ/t is ~18 % above the preheater rotary kiln midpoint (design §2 energy test). Closest existing key is pulp kiln_lime-rotary (lime-mud feed) - different feed
+NEW,schorcht_2013_001,kiln_lime-long-rotary,NEW: kiln_lime-long-rotary,medium,see EU-27 row
+NEW,csi-ecra_2017_001,steam-turbine_waste-heat-recovery,NEW: steam-turbine_waste-heat-recovery,medium,"Power generation from kiln/cooler waste heat, per t clinker; no WHR power archetype exists."
+NEW,csi-ecra_2017_001,steam-turbine_orc,NEW: steam-turbine_waste-heat-recovery,medium,"Power generation from kiln/cooler waste heat, per t clinker; no WHR power archetype exists."
+NEW,csi-ecra_2017_001,steam-turbine_kalina,NEW: steam-turbine_waste-heat-recovery,medium,"Power generation from kiln/cooler waste heat, per t clinker; no WHR power archetype exists."
+NEW,csi-ecra_2017_001,reactor_hydrothermal-carbonisation,NEW: reactor_hydrothermal-carbonisation,low,Biomass fuel upgrading per t char; outside current archetypes.
+NEW,csi-ecra_2017_001,capture-unit_membrane,NEW: capture-unit_membrane,low,"All-electric (up to 300 kWh/t cli), no regeneration heat; research stage; values per t clinker."
+NEW,csi-ecra_2017_001,capture-unit_mineral-carbonation,NEW: capture-unit_mineral-carbonation,low,Capture plus permanent storage in one step; R&D stage.
+NEW,csi-ecra_2017_001,reactor_co2-methanation,NEW: reactor_co2-methanation,low,Single feasibility study; outside cement product scope.
+NEW,iea_2018_002,capture-unit_membrane,NEW: capture-unit_membrane,low,"Membrane post-combustion capture, lab scale; no diffuse-stream membrane capture archetype"
+NEW,iea_2018_002,reactor_mineral-carbonation,NEW: reactor_mineral-carbonation,low,"CO2 mineralisation per t CO2; storage route, different emissions kind"
+NEW,iea_2018_002,binder_magnesium-silicate,NEW: binder_magnesium-silicate,low,MOMS; R&D only; net-negative curing CO2 differs in kind
+NEW,voldsund_2019_001,kiln_dry-precalciner_calcium-looping-integrated,NEW: kiln_calcium-looping,medium,Integrated CaL rebuilds the calciner/preheater so the kiln itself concentrates its CO2 (like oxy-fuel); coal +68% vs its reference and power export: fails the 15% test against every existing kiln archetype.
+NEW,voldsund_2019_001,capture-unit_membrane-liquefaction,NEW: capture-unit_membrane,medium,"No membrane post-combustion capture archetype; all-electric 1.23-1.44 GJ/t CO2, operating principle (membrane enrichment plus liquefaction) differs from cryogenic-flue-gas desublimation. Fallback: capture-unit_cryogenic-flue-gas (low)."
+NEW,kermeli_2011_001,kiln_steam-curing,NEW: kiln_steam-curing,low,"Concrete curing kiln/chamber with boiler (CMU, natural gas, per m3). No existing archetype covers low-temperature steam curing of concrete products (precast, blocks, pipes are Canadian stock); would have no hierarchy node unless a concrete-products node is added."
+NEW,kermeli_2011_001,kiln_steam-curing_high-pressure,NEW: kiln_steam-curing,low,"Autoclave curing, 0.712 GJ/m3 (20% above low-pressure); could be a separate archetype under the 15% test, but autoclaves are being replaced; kept with the same proposal."
+NEW,kermeli_2011_001,kiln_steam-curing_low-pressure,NEW: kiln_steam-curing,low,"Low-pressure (atmospheric) steam curing, 0.593 GJ/m3; same NEW proposal."
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,high,Recuperative mean 6.3 GJ/t vs 4.6-4.8 for regenerative (>15% higher); legacy unit melters common in small furnaces
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,high,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Table 3.8 guide value, per kg melted glass"
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,recuperative without extra heat recovery
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,Sector mix: gas-fired recuperative (some with boost up to 20%) and about 50-55% oxy-fuel furnaces; type not split
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,CFGF furnace type mix
+NEW,scalet_2013_001,furnace_glass-recuperative_lonox,NEW: furnace_glass-recuperative,medium,Recuperative special design; at normal operation SEC similar to a comparable regenerative furnace (source)
+NEW,scalet_2013_001,furnace_glass-recuperative_lonox,NEW: furnace_glass-recuperative,medium,LoNOX example
+NEW,scalet_2013_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,glass wool recuperative
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,"air-fuel frit furnaces, most with recuperative air preheat (470-570 degC, p.78)"
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,recuperative/oxy mix
+NEW,scalet_2013_001,melting-furnace_hot-blast-cupola,NEW: melting-furnace_hot-blast-cupola,medium,"Coke-fired hot blast cupola: different fuel (coke) and emissions kind (CO, H2S, afterburner) from any glass furnace archetype; value covers all stone wool furnaces (mostly cupolas)"
+NEW,scalet_2013_001,furnace_glass-fuel-fired,NEW: furnace_glass-recuperative,low,"frit air-fuel, mostly recuperative"
+NEW,worrell_2008_001,furnace_glass-direct-fired,NEW: furnace_glass-direct-fired,low,"Direct melter, 12.0 MMBtu/ton vs 5.5 regenerative in the same segment (more than double); the guide never defines the type, so the design is uncertain. Segment: Specialty glass; per short ton of glass, converted to t."
+NEW,worrell_2008_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Recuperative air-fuel furnace: 7.0 (wool) and 10.5 (textile) MMBtu/ton vs 5.6 oxy-fuel in the same segments; text says recuperative furnaces are less fuel efficient than regenerative. More than 15% from both neighbours; fiberglass legacy type. Segment: Fiberglass insulation; per short ton of glass, converted to t."
+NEW,worrell_2008_001,furnace_glass-recuperative,NEW: furnace_glass-recuperative,medium,"Recuperative air-fuel furnace: 7.0 (wool) and 10.5 (textile) MMBtu/ton vs 5.6 oxy-fuel in the same segments; text says recuperative furnaces are less fuel efficient than regenerative. More than 15% from both neighbours; fiberglass legacy type. Segment: Textile and reinforcement fibers; per short ton of glass, converted to t."
+NEW,jrc_2007_004,kiln_intermittent_brick-roof-tile,NEW: kiln_intermittent,low,Printed 500-900 kJ/kg is far below the tunnel kilns in the same section although intermittent kilns are called less efficient; doubtful value.
+NEW,jrc_2007_004,kiln_tunnel_combined-heat-recycling,NEW: kiln_tunnel-roller_efficiency-strong,low,Drying + firing natural gas 840-1050 kJ/kg vs 1000-2500 for clay blocks (Table 2.2); single German brickworks; the BREF says it cannot be generalised.
+NEW,jrc_2007_004,dryer_ceramic_pipe-dn100-150,NEW: dryer_ceramic-hot-air,medium,Ceramic ware dryer (hot-air chamber/tunnel); no existing per-t ware-dryer archetype (dryer_kiln-waste-heat is per GJ).
+NEW,jrc_2007_004,dryer_ceramic_pipe-dn200-300,NEW: dryer_ceramic-hot-air,medium,Ceramic ware dryer (hot-air chamber/tunnel); no existing per-t ware-dryer archetype (dryer_kiln-waste-heat is per GJ).
+NEW,jrc_2007_004,dryer_ceramic_pipe-dn500-fittings,NEW: dryer_ceramic-hot-air,medium,Ceramic ware dryer (hot-air chamber/tunnel); no existing per-t ware-dryer archetype (dryer_kiln-waste-heat is per GJ).
+NEW,jrc_2007_004,dryer_chamber_fireclay,NEW: dryer_ceramic-hot-air,medium,Periodic chamber dryer for refractories.
+NEW,jrc_2007_004,dryer_chamber_silica,NEW: dryer_ceramic-hot-air,medium,Periodic chamber dryer for refractories.
+NEW,jrc_2007_004,dryer_tunnel_fireclay,NEW: dryer_ceramic-hot-air,medium,Continuous tunnel dryer for refractories.
+NEW,jrc_2007_004,dryer_tunnel_magnesite,NEW: dryer_ceramic-hot-air,medium,Continuous tunnel dryer for refractories.
+NEW,jrc_2007_004,kiln_shuttle_silica-brick,NEW: kiln_intermittent,medium,Shuttle kiln; fireclay 7600 kJ/kg vs 3200 in the tunnel kiln of Table 2.11 (>15 % difference).
+NEW,jrc_2007_004,kiln_shuttle_high-alumina-brick,NEW: kiln_intermittent,medium,Shuttle kiln; fireclay 7600 kJ/kg vs 3200 in the tunnel kiln of Table 2.11 (>15 % difference).
+NEW,jrc_2007_004,kiln_shuttle_fireclay-brick,NEW: kiln_intermittent,medium,Shuttle kiln; fireclay 7600 kJ/kg vs 3200 in the tunnel kiln of Table 2.11 (>15 % difference).
+NEW,jrc_2007_004,kiln_rotary_expanded-clay,NEW: kiln_rotary-expanded-clay,medium,Rotary expansion kiln; product per m3 of aggregate; no archetype for expanded clay / lightweight aggregate.
+NEW,jrc_2007_004,dryer_tile,NEW: dryer_ceramic-hot-air,medium,Ceramic ware dryer.
+NEW,jrc_2007_004,dryer_tile,NEW: dryer_ceramic-hot-air,medium,Ceramic ware dryer.
+NEW,jrc_2007_004,kiln_shuttle_porcelain,NEW: kiln_intermittent,medium,"Shuttle kiln, porcelain, 1400 degC."
+NEW,jrc_2007_004,dryer_chamber_sanitaryware,NEW: dryer_ceramic-hot-air,medium,Periodic chamber dryer.
+NEW,jrc_2007_004,kiln_shuttle_sanitaryware,NEW: kiln_intermittent,medium,Shuttle kiln.
+NEW,jrc_2007_004,kiln_tunnel_sanitaryware-fibre-insulated,NEW: kiln_tunnel-roller_efficiency-strong,medium,About 45 % below the conventional tunnel kiln in the same table; improved-design measures of Sect. 4.1.1.
+NEW,jrc_2007_004,kiln_shuttle_sanitaryware-repair-firing,NEW: kiln_intermittent,medium,Shuttle kiln.
+NEW,jrc_2007_004,kiln_shuttle_sanitaryware-first-firing,NEW: kiln_intermittent,medium,Shuttle kiln.
+NEW,jrc_2007_004,kiln_shuttle_electrical-insulator,NEW: kiln_intermittent,medium,"Shuttle kiln, technical ceramics."
+NEW,barthe_2015_001,reactor_visbreaking,NEW: reactor_visbreaking,medium,Thermal residue cracking without coke make; fuel 400-800 MJ/t vs 800-1200 for delayed coking (>15% lower)
+NEW,barthe_2015_001,reactor_visbreaking,NEW: reactor_visbreaking,medium,Single plant
+NEW,barthe_2015_001,reactor_visbreaking-soaker,NEW: reactor_visbreaking,medium,Soaker variant; 30-35% less energy than coil visbreaking
+NEW,barthe_2015_001,reactor_visbreaking,NEW: reactor_visbreaking,medium,Per m3 feed; feed is topped heavy Canadian crude
+NEW,barthe_2015_001,reactor_hydrovisbreaking,NEW: reactor_visbreaking,low,Hydrogen-assisted variant; tested at a 2 Mt/yr visbreaker in Curacao
+NEW,barthe_2015_001,reactor_thermal-gas-oil,NEW: reactor_visbreaking,low,Deeper thermal conversion variant; only a capex per bpd printed
+NEW,worrell_2015_001,combustion-turbine_high-temperature-chp,NEW: combustion-turbine_direct-heat-chp,low,"Gas-turbine CHP supplying refinery direct heat (furnace duty) instead of steam; serves petroleum-refining.service.direct-heat, which no CHP archetype covers. Only an incremental cost here."
+NEW,kermeli_2016_001,melting-furnace_crucible-gas-fired,NEW: melting-furnace_crucible-gas-fired,medium,"2,500-4,000 Btu/lb is roughly double a reverberatory (1,500-1,975) and unlike a cupola; melting-furnace_cupola description lumps gas-fired foundry furnaces but its energy basis differs by far more than 15%."
+NEW,kermeli_2016_001,melting-furnace_crucible-electric-resistance,NEW: melting-furnace_electric-resistance,medium,"Resistance-heated metal melter (716-887 Btu/lb); resistance-heater_furnace is a GJ heat-service archetype and melting-furnace_induction uses a different principle (energy similar, so it could alternatively be an example of melting-furnace_induction)."
+NEW,kermeli_2016_001,melting-furnace_stack,NEW: melting-furnace_stack,high,"Shaft-preheating aluminum melter at 955 Btu/lb vs 1,975 for the reverberatory in the same test (>15% difference); efficiency 40-50% vs 20-25%."
+NEW,kermeli_2016_001,melting-furnace_stack,NEW: melting-furnace_stack,high,"Shaft-preheating aluminum melter at 955 Btu/lb vs 1,975 for the reverberatory in the same test (>15% difference); efficiency 40-50% vs 20-25%."
+NEW,kermeli_2016_001,melting-furnace_stack,NEW: melting-furnace_stack,high,"Shaft-preheating aluminum melter at 955 Btu/lb vs 1,975 for the reverberatory in the same test (>15% difference); efficiency 40-50% vs 20-25%."
+NEW,kermeli_2016_001,melting-furnace_reverberatory_radiant-roof-improved,NEW: melting-furnace_reverberatory-rotary_efficiency-strong,medium,"Lining, sow preheat hearth and metal circulation on a reverberatory: 18% saving (1,500 to 1,225 Btu/lb), the strong efficiency bucket; no such archetype exists."
+NEW,kermeli_2016_001,melting-furnace_reverberatory_electric-radiant-roof,NEW: melting-furnace_electric-resistance,medium,"Electric radiant-roof reverberatory (750 Btu/lb), resistance-heated melter."
+NEW,kermeli_2016_001,melting-furnace_reverberatory_electric-radiant-roof-circulation,NEW: melting-furnace_electric-resistance,medium,"Electric radiant-roof reverberatory with metal circulation (687 Btu/lb, 8% saving)."
+NEW,kermeli_2016_001,melting-furnace_isothermal,NEW: melting-furnace_isothermal,medium,"Immersion-heater electric melting at 552 Btu/lb, about 26% below the electric radiant-roof reverberatory (750); one installation only."
+NEW,aries_2024_001,melting-furnace_natural-gas_oxyfuel,NEW: melting-furnace_rotary-oxy-fuel,medium,gas/oil oxy-fuel rotary melting of cast iron: 600-800 kWh/t vs 950-1200 for the coke cupola (>15 % lower) and natural-gas combustion rather than coke emissions; existing melting-furnace_regenerative-oxy-fuel serves non-ferrous nodes only
+NEW,aries_2024_001,shaft-furnace_natural-gas_preheat,NEW: melting-furnace_shaft-preheat,medium,gas-fired aluminium shaft melter with charge preheating in the stack: 540-900 kWh/t vs 975-1 150 for the hearth-type and 600-1 250 for rotary (>15 % lower); not air-preheat or oxy-fuel
+NEW,aries_2024_001,shaft-furnace_natural-gas_preheat,NEW: melting-furnace_shaft-preheat,medium,gas-fired aluminium shaft melter with charge preheating in the stack: 540-900 kWh/t vs 975-1 150 for the hearth-type and 600-1 250 for rotary (>15 % lower); not air-preheat or oxy-fuel
+NEW,aries_2024_001,melting-furnace_natural-gas_oxyfuel,NEW: melting-furnace_rotary-oxy-fuel,medium,see Table 2.25 rotary row
+NEW,aries_2024_001,shaft-furnace_natural-gas_preheat,NEW: melting-furnace_shaft-preheat,medium,see Table 2.26 shaft row
+NEW,aries_2024_001,shaft-furnace_natural-gas_preheat,NEW: melting-furnace_shaft-preheat,medium,see Table 2.26 shaft row
+NEW,aries_2024_001,shaft-furnace_natural-gas_preheat,NEW: melting-furnace_shaft-preheat,medium,single-plant comparison
+NEW,aries_2024_001,melting-furnace_natural-gas_oxyfuel,NEW: melting-furnace_rotary-oxy-fuel,medium,BAT-AEPL range
+NEW,aries_2024_001,melting-furnace_natural-gas_oxyfuel,NEW: melting-furnace_rotary-oxy-fuel,medium,small foundry (1 t/h) cost comparison
+low,doe_2023_002,calciner_electric,calciner_indirect,low,covers precalciner AND kiln electrification together; only TRL and abatement potential
+low,doe_2023_002,binder_alternative-production-method,(none),low,generic class spanning kiln_calcium-silicate-feed and binder_electrochemical; no single archetype
+low,doe_2023_002,binder_alternative-chemistry,(none),low,generic class spanning several binder archetypes
+low,doe_2023_002,binder_ordinary-portland,(none),low,reference blend (OPC); no archetype for plain OPC grinding
+low,doe_2023_002,kiln_dry-precalciner_tire-derived-fuel,(none),low,fuel-handling add-on cost only; partial unit of kiln_dry-precalciner
+low,doe_2023_002,kiln_dry-precalciner_waste-plastic,(none),low,fuel-handling add-on cost only; partial unit
+low,doe_2023_002,binder_alternative-production-method,(none),low,generic class; no single archetype (kiln_calcium-silicate-feed / binder_electrochemical)
+low,schorcht_2013_001,kiln_rotary-clinker_eu-average,kiln_dry-precalciner,low,"EU average over all kiln types (not precalciner-specific); process CO2 share is kiln-independent, total/combustion are not"
+low,schorcht_2013_001,kiln_lime-annular-shaft,kiln_lime-parallel-flow,low,"Single-shaft kiln; midpoint 4.1 GJ/t is ~11 % above PFRK (3.7), so under design §2 an example of the nearest archetype - but different equipment from the PFRK label; coordinator to decide (or NEW kiln_lime-shaft)"
+low,schorcht_2013_001,kiln_lime-mixed-feed-shaft,kiln_lime-parallel-flow,low,Coke-fired single shaft kiln (also sugar-industry captive kilns); midpoint ~9 % above PFRK; different equipment and solid fuel; coordinator to decide
+low,schorcht_2013_001,kiln_lime-annular-shaft,kiln_lime-parallel-flow,low,ASK - see EU-27 row note
+low,schorcht_2013_001,kiln_lime-annular-shaft,kiln_lime-parallel-flow,low,ASK - see EU-27 row note
+low,csi-ecra_2017_001,kiln_dry-precalciner_conversion-from-long-kiln,kiln_dry-precalciner,low,"Conversion retrofit of a legacy kiln; capex incremental with no capacity stated (indicative for capacities below 2 Mt/a). Savings 900-2,800 MJ/t vs long kilns."
+low,csi-ecra_2017_001,kiln_dry-precalciner_decarbonated-raw-materials,kiln_dry-precalciner_efficiency-moderate,low,Raw-material measure cutting process CO2; site specific.
+low,csi-ecra_2017_001,kiln_dry-precalciner_fuel-switch-gas,kiln_dry-precalciner,low,Carrier variant of the kiln; values are changes vs coal.
+low,csi-ecra_2017_001,kiln_dry-precalciner_alternative-fuels-65pct,kiln_dry-precalciner,low,Carrier variant of the kiln; values are changes vs base case.
+low,csi-ecra_2017_001,binder_blended-cement_psd-optimised,binder_blended-cement,low,Measure on blended cement; values are changes.
+low,csi-ecra_2017_001,kiln_dry-precalciner_low-lsf,kiln_dry-precalciner,low,Product-recipe variant; values are changes.
+low,csi-ecra_2017_001,kiln_dry-precalciner_belite-clinker,kiln_dry-precalciner,low,Product variant; energy within 15% of the kiln.
+low,csi-ecra_2017_001,precalciner_oxy-fuel-partial,kiln_oxy-fuel,low,Capture rate only; partial capture (55-75%) differs in kind from full oxyfuel (90-99%); coordinator may prefer a NEW archetype.
+low,iea_2018_002,kiln_belite,kiln_dry-precalciner,low,"Belite clinker burnt in a conventional PC kiln with modified raw mix; <10% thermal saving so not a new archetype by the 15% test, but product differs from PC clinker"
+low,voldsund_2019_001,kiln_dry-precalciner_calcium-looping-tail-end,kiln_dry-precalciner_ccs-diffuse,low,"Tail-end CaL is post-combustion on the stack, but whole-plant coal more than doubles (7100 vs 3241 kJ/kg) and it exports power; may deserve its own archetype or be framed as capture-unit_calcium-looping plus host."
+low,worrell_2013_001,kiln_dry,kiln_dry-precalciner,low,"U.S. 2009 average over long dry, preheater and precalciner kilns (not disaggregated) - a stock mix, not the archetype technology."
+low,worrell_2013_001,grinding-mill_finish_wet-plant,grinding-mill_ball,low,U.S. wet-plant average finish grinding; mill mix not stated (mostly ball mills).
+low,worrell_2013_001,grinding-mill_finish_dry-plant,grinding-mill_ball,low,"U.S. dry-plant average finish grinding; mix of ball mills, roller presses and VRMs."
+low,worrell_2013_001,grinding-mill_vertical-roller_raw,grinding-mill_vertical-roller,low,"Same equipment as the archetype but raw meal grinding per t raw material, not cement grinding."
+low,worrell_2013_001,grinding-mill_hpgr-v-separator_raw,grinding-mill_vertical-roller,low,"HPGR on raw meal, per t raw material."
+low,worrell_2013_001,grinding-mill_horizontal-roller_raw,grinding-mill_vertical-roller,low,"Horomill on raw meal, per t raw material."
+low,worrell_2013_001,grinding-mill_ball_raw,grinding-mill_ball,low,"Ball mill on raw meal at one plant, per t raw material."
+low,worrell_2013_001,grinding-mill_hpgr_raw,grinding-mill_vertical-roller,low,"HPGR on raw meal at one plant, per t raw material."
+low,worrell_2013_001,grinding-mill_hpgr-ball-combined,grinding-mill_vertical-roller,low,HPGR plus ball mill circuit sits between the two mill archetypes.
+low,worrell_2013_001,grinding-mill_hpgr-open_ball-closed,grinding-mill_vertical-roller,low,HPGR pre-grinding with ball mill (one study; per-ton unit uncertain).
+low,worrell_2013_001,grinding-mill_hpgr-open-partial-recycle_ball-closed,grinding-mill_vertical-roller,low,HPGR with ball mill circuit.
+low,worrell_2013_001,grinding-mill_hpgr-hybrid,grinding-mill_vertical-roller,low,HPGR with ball mill circuit.
+low,worrell_2013_001,grinding-mill_hpgr-closed_ball-closed,grinding-mill_vertical-roller,low,HPGR with ball mill circuit.
+low,worrell_2013_001,grinding-mill_hpgr-semi-finish,grinding-mill_vertical-roller,low,HPGR semi-finish with ball mill.
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,container furnaces generally (mostly regenerative); type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,"conventional domestic furnaces, type not stated (regenerative or recuperative)"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,fossil-fuel-fired soda-lime domestic furnace; type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,large fossil-fuel special glass furnaces; type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,"fossil furnaces, type not stated"
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated; excludes pot furnaces and day tanks (10-30 GJ/t)
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-fuel-fired,furnace_glass-regenerative,low,type not stated
+low,scalet_2013_001,furnace_glass-all-types,(none),low,all glass wool furnace types pooled
+low,worrell_2008_001,furnace_glass-lonox-melter,furnace_glass-regenerative,low,The guide does not say how the LoNOx melter preheats its air (recuperative in the wider literature); includes cullet preheating.
+low,worrell_2008_001,furnace_lehr,furnace_lehr,low,Scope includes polishing; specialty products.
+low,jrc_2007_004,kiln_tunnel_porcelain-biscuit,kiln_tunnel-roller,low,"Porcelain kilns use 12500-25000 kJ/kg, 5-10 times brick/tile tunnel kilns (setting density 60-100 kg/m3); may need its own archetype or a product split."
+low,jrc_2007_004,kiln_tunnel_porcelain-glost,kiln_tunnel-roller,low,"Porcelain kilns use 12500-25000 kJ/kg, 5-10 times brick/tile tunnel kilns (setting density 60-100 kg/m3); may need its own archetype or a product split."
+low,jrc_2007_004,kiln_tunnel-fast_porcelain-glost-a,kiln_tunnel-roller,low,"Porcelain kilns use 12500-25000 kJ/kg, 5-10 times brick/tile tunnel kilns (setting density 60-100 kg/m3); may need its own archetype or a product split."
+low,jrc_2007_004,kiln_tunnel-fast_porcelain-glost-b,kiln_tunnel-roller,low,"Porcelain kilns use 12500-25000 kJ/kg, 5-10 times brick/tile tunnel kilns (setting density 60-100 kg/m3); may need its own archetype or a product split."
+low,jrc_2007_004,microwave-heater_kiln-assisted,kiln_ceramic-electric,low,"Emerging, descriptive only; hybrid microwave plus gas/electric heating."
+low,barthe_2015_001,refinery_oil,(none),low,"Mixed configurations (hydroskimming to deep conversion, Nelson 1.6-13.5) pooled in one sample; cannot be assigned to refinery_hydroskimming/conversion/deep-conversion without per-site configuration. Coordinator could map single sites by Nelson index if wanted."
+low,barthe_2015_001,distillation-column_vacuum,distillation-column_atmospheric-vacuum,low,"Vacuum unit only, per t of atmospheric residue feed, not per t crude; partial unit of the archetype"
+low,barthe_2015_001,distillation-column_vacuum,distillation-column_atmospheric-vacuum,low,"Single plant, vacuum unit only, per t atmospheric residue"
+low,barthe_2015_001,boiler_fuel-fired,boiler_fuel-fired,low,Per t steam; archetype is per GJ and steam conditions are not given
+low,worrell_2015_001,steam-reformer_methane,steam-reformer_methane,low,"Per lb of hydrogen (throughput in million lb/yr). Unclear whether 'Fuel' includes the natural gas feedstock (EIA reports feedstock gas separately since 2008); 45,000 Btu/lb is below H2 HHV (about 61,000 Btu/lb), so probably reformer fuel only. Archetype product unit is GJ of H2: needs H2 heating value."
+low,worrell_2015_001,distillation-column_heat-integrated-internal,distillation-column_heat-pumped,low,"HIDiC is a form of internal vapour recompression (heat pump); pilot only, no numbers loaded."
+low,worrell_2015_001,combustion-turbine_reformer-precoupled,combustion-turbine_heat-recovery-steam-generator,low,Turbine exhaust feeds a reformer furnace rather than a plain HRSG; scope differs.
+low,worrell_2015_001,direct-heater_pre-combustion-oxy-fuel,(none),low,Two capture routes reported together; no archetype for oxy-fuel or pre-combustion refinery heaters.
+low,kermeli_2016_001,melting-furnace_electric_steel-foundry,melting-furnace_electric-arc,low,"Melting electricity for steel foundries in general: 82% arc furnaces, the rest induction, so scope mixes two archetypes."
+low,aries_2024_001,melting-furnace_natural-gas,melting-furnace_reverberatory-rotary,low,small fuel-fired crucible; same carrier but crucible equipment and very low efficiency
+low,aries_2024_001,melting-furnace_natural-gas,melting-furnace_reverberatory-rotary,low,small fuel-fired crucible; same carrier but crucible equipment and very low efficiency
+low,aries_2024_001,resistance-heater_furnace,resistance-heater_furnace,low,electric resistance crucible melter; archetype is a GJ heat-supply option on the refinery node
+low,aries_2024_001,resistance-heater_furnace,resistance-heater_furnace,low,electric resistance crucible melter; archetype is a GJ heat-supply option on the refinery node
+low,aries_2024_001,melting-furnace_crucible,melting-furnace_reverberatory-rotary,low,"crucible type, mixed heating (gas, oil, electricity); very low efficiency"
+low,aries_2024_001,melting-furnace_natural-gas,melting-furnace_reverberatory-rotary,low,small gas-fired crucible
+low,aries_2024_001,resistance-heater_furnace,resistance-heater_furnace,low,electric resistance crucible; archetype is a GJ heat-supply option on the refinery node
+low,aries_2024_001,melting-furnace_reverberatory-rotary,melting-furnace_reverberatory-rotary,low,incremental measures on the reverberatory furnace (18 % less fuel); no efficiency bucket exists for this archetype
+low,aries_2024_001,resistance-heater_furnace,resistance-heater_furnace,low,electric radiant-roof melter; archetype is a GJ heat-supply option on the refinery node
+low,aries_2024_001,resistance-heater_furnace,resistance-heater_furnace,low,electric radiant-roof melter; archetype is a GJ heat-supply option on the refinery node
+low,aries_2024_001,melting-furnace_electric,melting-furnace_electric-arc,low,one range for EAF and induction together
+NEW,lecomte_2017_001,combined-cycle_gas-oil-new-unit,NEW: combined-cycle,low,Power-only combined cycle on gas oil; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_gas-oil-existing-unit,NEW: combined-cycle,low,Power-only combined cycle on gas oil; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_50-600mwth-new-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_50-600mwth-existing-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_600mwth-plus-new-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_600mwth-plus-existing-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_by-product-gas-new-unit,NEW: combined-cycle,medium,Power-only CCGT on steelworks gases; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_by-product-gas-existing-unit,NEW: combined-cycle,medium,Power-only CCGT on steelworks gases; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_recent,NEW: combined-cycle,medium,Power-only combined cycle; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_condensing,NEW: combined-cycle,medium,Power-only CCGT; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_hrsg-iso,NEW: combined-cycle,medium,Power-only combined cycle; see NEW proposal.
+low,lecomte_2017_001,steam-turbine_back-pressure_lignite-gt-1000mwth-to-2010,steam-turbine_back-pressure,low,Large lignite CHP units with low heat share (45-50 % total utilisation): mostly condensing units with heat extraction; weak fit to an industrial back-pressure CHP.
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,Copper (and nickel) electrorefining is a distinct electrolytic refining step in Canadian stock; no archetype covers refining (electrolytic-smelting is leach/EW replacing smelting)
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,See above
+NEW,cusano_2017_001,refining-furnace_oil_anode,NEW: refining-furnace_anode,low,"Fuel-fired anode (fire-refining) furnace, a step in Canadian copper smelters; flows only (kg oil/t Cu)"
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle,NEW: electrolysis-cell_zinc-electrowinning,high,"RLE zinc (roasting+leach+electrowinning) is the Canadian zinc route (Valleyfield, Trail, Flin Flon) and has no base archetype; electrolysis-cell_advanced-anodes is only its improvement"
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle,NEW: electrolysis-cell_zinc-electrowinning,high,Full hydrometallurgical RLE
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle-waelz,NEW: electrolysis-cell_zinc-electrowinning,medium,RLE plus pyrometallurgical residue treatment; about double the energy of full hydro RLE (coke-based Waelz step)
+NEW,cusano_2017_001,refinery_nickel_matte-refining,NEW: refinery_nickel-matte,medium,"Nickel matte refining (hydrometallurgical leach plus electrowinning/carbonyl) is Canadian stock (Sudbury, Fort Saskatchewan, Long Harbour) with no archetype"
+NEW,cusano_2017_001,refinery_nickel_chlorine-leach,NEW: refinery_nickel-matte,medium,Single plant
+NEW,cusano_2017_001,refinery_nickel_chlorine-leach,NEW: refinery_nickel-matte,medium,"Single plant, likely same as Eramet refinery"
+NEW,cusano_2017_001,refinery_nickel_matte-refining,NEW: refinery_nickel-matte,medium,
+NEW,cusano_2017_001,refinery_nickel_matte-refining,NEW: refinery_nickel-matte,medium,Per t of Ni+Cu+Co
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining-starter-sheet,NEW: electrolysis-cell_electrorefining,medium,Copper tankhouse capex per t/yr cathode
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,Copper tankhouse capex per t/yr cathode
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,Copper tankhouse capex per t/yr cathode
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,Copper tankhouse capex per t/yr cathode
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining,NEW: electrolysis-cell_electrorefining,medium,Copper tankhouse capex per t/yr cathode
+NEW,cusano_2017_001,electrolysis-cell_copper_electrorefining_retrofit,NEW: electrolysis-cell_electrorefining,low,Incremental retrofit cost
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle,NEW: electrolysis-cell_zinc-electrowinning,high,Whole RLE zinc plant capex
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle,NEW: electrolysis-cell_zinc-electrowinning,high,Whole RLE zinc plant capex
+NEW,cusano_2017_001,electrolysis-cell_zinc_rle,NEW: electrolysis-cell_zinc-electrowinning,high,Whole RLE zinc plant capex
+NEW,lecomte_2017_001,combined-cycle_gas-oil-new-unit,NEW: combined-cycle,low,Power-only combined cycle on gas oil; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_gas-oil-existing-unit,NEW: combined-cycle,low,Power-only combined cycle on gas oil; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_50-600mwth-new-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_50-600mwth-existing-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_600mwth-plus-new-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_600mwth-plus-existing-unit,NEW: combined-cycle,medium,Power-only CCGT; no archetype. 46-60.5 % vs 33-41.5 % for simple cycle (>15 % difference).
+NEW,lecomte_2017_001,combined-cycle_by-product-gas-new-unit,NEW: combined-cycle,medium,Power-only CCGT on steelworks gases; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_by-product-gas-existing-unit,NEW: combined-cycle,medium,Power-only CCGT on steelworks gases; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_recent,NEW: combined-cycle,medium,Power-only combined cycle; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_condensing,NEW: combined-cycle,medium,Power-only CCGT; see NEW proposal.
+NEW,lecomte_2017_001,combined-cycle_hrsg-iso,NEW: combined-cycle,medium,Power-only combined cycle; see NEW proposal.
+NEW,giner-santonja_2019_001,refinery_starch-maize-wheat,NEW: refinery_corn-wet-milling,medium,"Whole-plant maize/wheat starch with modified/hydrolysed starch per t raw material; same NEW key another extraction proposed (corn wet milling, Ontario stock)"
+NEW,giner-santonja_2019_001,refinery_sugar-beet,NEW: refinery_sugar-beet,medium,"Whole-plant beet sugar factory SEC (heat+electricity) per t beets; Canadian stock (Taber, AB); alternative to unit dryers/evaporators, never both"
+NEW,stuckrath_2022_001,distillery_beverage-spirits,NEW: distillery_beverage-spirits,medium,"Whole beverage distillery per litre of pure alcohol. No spirits archetype; fermenter_grain-dry-mill is fuel ethanol (t), which the source says is less energy intensive (p.5). Thermal 19.5-20.9 MJ/L pure alcohol here."
+NEW,stuckrath_2022_001,distillery_column-still,NEW: distillery_beverage-spirits,medium,Column-still variant of the proposed spirits archetype; whole-distillery total energy per L pure alcohol (international sample).
+NEW,stuckrath_2022_001,distillery_pot-still,NEW: distillery_beverage-spirits,low,Pot-still distilleries reach 3-4x the column-still upper bound; may deserve its own archetype (malt/craft). Whole-distillery total energy per L pure alcohol.
+NEW,stuckrath_2022_001,distillery_beverage-spirits,NEW: distillery_beverage-spirits,medium,"Sample average across column and pot stills, per L pure alcohol."
+NEW,stuckrath_2022_001,distillery_beverage-spirits,NEW: distillery_beverage-spirits,medium,Carries only the grain input flow (flows file).
+NEW,galitsky_2003_002,refinery_corn-wet-milling,NEW: refinery_corn-wet-milling,medium,"Whole-plant corn wet mill (food sector). No archetype; corn wet mills are in Canadian stock (Ontario). Alternative to the unit dryers/evaporator above, never both."
+NEW,galitsky_2003_002,evaporator_reverse-osmosis-mvr,NEW: evaporator_reverse-osmosis,low,Membrane pre-concentration cuts electricity 70% and thermal energy 60% vs MVR alone (passes the 15% test); 1988 study.
+NEW,brinkmann_2016_001,separator_membrane-bioreactor,NEW: separator_membrane-bioreactor,medium,MBR replaces the clarifier with MF/UF membranes; energy use about twice conventional activated sludge (Table 3.117 note 6; Aramon MBR 3.8 kWh/m3 vs CAS 0.7-4.0). Fails the 15 % test against fan_activated-sludge. Same mapping for all MBR examples.
+NEW,brinkmann_2016_001,separator_membrane-bioreactor,NEW: separator_membrane-bioreactor,medium,Pharmaceutical plant MBR (two 3 600 m3 MBRs); energy given for whole WWTP and MBR only.
+NEW,brinkmann_2016_001,separator_membrane-bioreactor,NEW: separator_membrane-bioreactor,low,"Six-tank activated sludge cascade whose last tank is an MBR, plus an oxygen-aerated high-load first stage: mostly conventional activated sludge."
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-straight,NEW: gas-treatment-unit_thermal-oxidiser,medium,"Straight (no heat recovery) VOC oxidiser on chemical vents, per 1 000 Nm3/h of waste gas; burns support fuel (scope-1 CO2). Nearest existing is flare_enclosed-combustor (oil and gas, GJ). No chemicals waste-gas node in the hierarchy."
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-regenerative,NEW: gas-treatment-unit_regenerative-oxidiser,medium,Ceramic-bed regenerative oxidiser with 90-97 % preheat recovery vs none in a straight oxidiser: support fuel differs far more than 15 %; electricity 1.5-2.25 vs 3-8 kWh/1 000 Nm3.
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-recuperative,NEW: gas-treatment-unit_thermal-oxidiser,medium,Recuperative oxidiser with 50-80 % preheat recovery; pooled with the straight oxidiser as a heat-recovery variant (could instead justify its own archetype on fuel).
+NEW,brinkmann_2016_001,gas-treatment-unit_catalytic-oxidation,NEW: gas-treatment-unit_catalytic-oxidiser,medium,Catalytic VOC oxidiser (type not specified) at 300-500 degC instead of 750-1 000 degC: support fuel differs by well over 15 % from a thermal oxidiser.
+NEW,brinkmann_2016_001,gas-treatment-unit_catalytic-oxidation-straight,NEW: gas-treatment-unit_catalytic-oxidiser,medium,Straight catalytic oxidiser; heat-recovery variant of the catalytic oxidiser.
+NEW,brinkmann_2016_001,gas-treatment-unit_catalytic-oxidation-regenerative,NEW: gas-treatment-unit_catalytic-oxidiser,medium,Regenerative catalytic oxidiser; heat-recovery variant of the catalytic oxidiser.
+NEW,brinkmann_2016_001,gas-treatment-unit_catalytic-oxidation-recuperative,NEW: gas-treatment-unit_catalytic-oxidiser,medium,Recuperative catalytic oxidiser; heat-recovery variant of the catalytic oxidiser.
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-straight,NEW: gas-treatment-unit_thermal-oxidiser,low,"Central thermal oxidiser for several installations with scrubbing; only plant-level cost and hourly consumption, capacity known only as measured stack flow."
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-straight,NEW: gas-treatment-unit_thermal-oxidiser,low,"Central thermal oxidiser for several installations with scrubbing; only plant-level cost and hourly consumption, capacity known only as measured stack flow."
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-straight,NEW: gas-treatment-unit_thermal-oxidiser,low,"Central thermal oxidiser for several installations with scrubbing; only plant-level cost and hourly consumption, capacity known only as measured stack flow."
+NEW,brinkmann_2016_001,gas-treatment-unit_thermal-oxidation-steam-raising,NEW: gas-treatment-unit_thermal-oxidiser,low,"Central thermal oxidiser for several installations with scrubbing; only plant-level cost and hourly consumption, capacity known only as measured stack flow. Raises 30-40 bar steam from the heat."
+NEW,stubdrup_2016_001,pulper_mdf-refiner,NEW: pulper_fibreboard-refiner,medium,"MDF refiner plant (pre-cooking, steam cooking, disc refining); electricity 0.13-0.4 MWh/t dry fibre is far below TMP pulping, so not pulper_thermomechanical."
+NEW,stubdrup_2016_001,pulper_mdf-refiner,NEW: pulper_fibreboard-refiner,medium,Per t dry fibre; see Table 3.2 row.
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Capex of whole MSWI by FGC type and size (Germany)."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Own electricity and heat demand per t waste."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal."
+NEW,neuwahl_2019_001,boiler_solid-fuel_msw,NEW: incinerator_waste-to-energy,medium,"Whole waste-to-energy plant (reception, furnace-boiler, FGC, turbine) quantified per tonne of waste, not per GJ of steam; no archetype has this scope/unit. See NEW proposal. Fossil CO2 per t MSW."
+NEW,neuwahl_2019_001,boiler_oxyfuel_flameless-pressurised,NEW: boiler_oxyfuel_waste,low,"Pressurised oxy-combustion of waste gives a CO2-rich, low-volume flue gas (capture-ready); emerging, single plant. Coordinator may prefer (none)."
+NEW,dea_2026_005,mobile-equipment_hydrogen_combustion-engine,NEW: mobile-equipment_hydrogen-combustion,medium,"Engine-only efficiency; Spark-ignited hydrogen ICE: engine efficiency 30-40% vs 40-50% diesel and 40-60% fuel cell (>15% energy difference), no CO2 from combustion; no existing archetype"
+NEW,dea_2026_005,mobile-equipment_hydrogen_combustion-engine,NEW: mobile-equipment_hydrogen-combustion,medium,"Spark-ignited hydrogen ICE: engine efficiency 30-40% vs 40-50% diesel and 40-60% fuel cell (>15% energy difference), no CO2 from combustion; no existing archetype"
+NEW,joshi_2022_001,heat-exchanger_ground-coupled-vortex-tube,NEW: heat-exchanger_ground-coupled-gas-preheat,low,vortex tube + ground heat exchanger preheat; cuts preheater gas 80-88% (>=15%); no non-fired gas-preheat archetype
+low,cusano_2017_001,leaching-vessel_chloride_hydrocopper,electrolysis-cell_electrolytic-smelting,low,Hydrometallurgical alternative to smelting; state only
+low,cusano_2017_001,melting-furnace_fuel_shaft,melting-furnace_reverberatory-rotary,low,Foundry shaft melter; different design; depends on mode of operation
+low,cusano_2017_001,melting-furnace_electricity_crucible-resistance,melting-furnace_induction,low,"Electric resistance crucible, not induction"
+low,cusano_2017_001,smelting-vessel_coal_qsl,smelting-vessel_top-submerged-lance,low,"Oxygen bath smelting of lead concentrate, bottom-blown rather than lance; coal 110 kg/t not coke"
+low,cusano_2017_001,melting-furnace_natural-gas_rotary-battery,melting-furnace_reverberatory-rotary,low,Secondary lead smelting-reduction in a rotary furnace incl. battery breaking; archetype covers Al/Cu melting
+low,cusano_2017_001,melting-furnace_natural-gas_reverberatory-lead,melting-furnace_reverberatory-rotary,low,Secondary lead smelting in a reverberatory furnace; archetype covers Al/Cu melting
+low,cusano_2017_001,smelting-vessel_coal_qsl,smelting-vessel_top-submerged-lance,low,QSL bottom-blown bath reactor
+low,cusano_2017_001,melting-furnace_natural-gas_rotary-battery,melting-furnace_reverberatory-rotary,low,Secondary lead rotary smelting
+low,cusano_2017_001,electrolysis-cell_lead_battery-recycling,electrolysis-cell_electrolytic-smelting,low,Electrochemical route replacing pyrometallurgical secondary lead; state only
+low,cusano_2017_001,plasma-torch_electricity_dc-plasma-dust,electric-arc-furnace_open-arc-dc,low,DC plasma shaft furnace on residues
+low,cusano_2017_001,electric-arc-furnace_submerged-arc_ferro-nickel,electric-arc-furnace_submerged-arc,low,FeNi electric smelting (RKEF-type) with drying/calcination included; CO2 figure doubtful
+low,cusano_2017_001,smelting-vessel_fuel_nickel-matte,smelting-vessel_flash,low,"Generic nickel matte smelting range, any smelting unit"
+low,cusano_2017_001,furnace_fuel_electrode-baking,furnace_anode-baking,low,"Electrode/shape baking (up to 40 % pitch, 1-2 degC/h) rather than aluminium anode baking"
+low,cusano_2017_001,smelting-vessel_flash_flash-converting-1994,converter_continuous,low,"Whole smelter complex (handling, smelting, converting, anode plant, slag cleaning, acid plant); archetype is the smelting unit; flash converting replaces PS converters"
+low,cusano_2017_001,smelting-vessel_flash_flash-converting-1998,converter_continuous,low,"Whole smelter complex (handling, smelting, converting, anode plant, slag cleaning, acid plant); archetype is the smelting unit; flash converting replaces PS converters"
+low,cusano_2017_001,smelting-vessel_flash_ronnskar-expansion,smelting-vessel_flash,low,Brownfield expansion of whole smelter-refinery
+low,cusano_2017_001,smelting-vessel_coal_qsl,smelting-vessel_top-submerged-lance,low,QSL bath smelter with acid plant
+low,cusano_2017_001,leaching-vessel_sulphide_activox-cesl,electrolysis-cell_electrolytic-smelting,low,Hydrometallurgical alternative to nickel smelting; state only
+low,lecomte_2017_001,steam-turbine_back-pressure_lignite-gt-1000mwth-to-2010,steam-turbine_back-pressure,low,Large lignite CHP units with low heat share (45-50 % total utilisation): mostly condensing units with heat extraction; weak fit to an industrial back-pressure CHP.
+low,giner-santonja_2019_001,cleaning-system_steam_bottling,cleaning-system,low,Bottle washer and tunnel pasteuriser together; scope mixes cleaning and pasteurising; per hl
+low,giner-santonja_2019_001,boiler_chp,(none),low,"Prime mover not specified (steam turbine, gas turbine, engine); cannot pick one CHP archetype"
+low,giner-santonja_2019_001,boiler_chp,steam-turbine_back-pressure,low,"Boiler plus turbine CHP in sugar industry is typically back-pressure steam turbine, but not stated"
+low,giner-santonja_2019_001,dryer_rotary-direct-fired_green-fodder,dryer_spray-drum-belt,low,"Only temperatures, no energy; direct-fired drum dryer"
+low,giner-santonja_2019_001,dryer_steam_ddgs,dryer_distillers-grain,low,Conventional DDGS drying (no heat recovery/heat pump stated); archetype is the heat-recovery variant
+low,giner-santonja_2019_001,heat-exchanger_steam_uht,heat-exchanger_aseptic-uht,low,Only capacity; energy figures are for water-circulation mode (in measures)
+low,giner-santonja_2019_001,pasteurizer_steam_juice,pasteurizer_regenerative,low,Juice pasteuriser per m3; regeneration not stated
+low,giner-santonja_2019_001,pasteurizer_steam_juice,pasteurizer_regenerative,low,Juice pasteuriser per m3; regeneration not stated
+low,giner-santonja_2019_001,chiller_electricity_freezing-tunnel,chiller_vapour-compression,low,Freezing tunnel per t product; archetype per GJ of cooling
+low,giner-santonja_2019_001,oven_natural-gas_bakery,oven_tunnel-deck,low,Range spans direct and indirect-fired ovens (two archetypes)
+low,masanet_2012_001,chiller_freezer,chiller_vapour-compression,low,"Refrigeration energy per t of product, not per GJ of cooling delivered (archetype product unit GJ); compressor type not stated."
+low,masanet_2012_001,chiller_dough-cooling,chiller_vapour-compression,low,"Refrigeration energy per t of product, not per GJ of cooling delivered (archetype product unit GJ); compressor type not stated."
+low,masanet_2012_001,oven_gas-burner,oven_tunnel-deck,low,"Burner (heating element) efficiency only, not oven thermal efficiency; firing mode not stated."
+low,masanet_2012_001,photovoltaic-array,photovoltaic-array_battery-storage,low,PV without storage; archetype includes battery storage.
+low,masanet_2012_001,steam-turbine_back-pressure,steam-turbine_back-pressure,low,"Let-down turbines on an existing steam system: capex covers turbines only, archetype includes the boiler. Food plant, not a bakery."
+low,masanet_2012_001,photovoltaic-array,photovoltaic-array_battery-storage,low,PV without storage; archetype includes battery storage.
+low,masanet_2012_001,lighting_induction,lighting_fluorescent-hid,low,Induction lamp is neither fluorescent tube nor HID.
+low,masanet_2012_001,lighting_led,lighting_led-controls,low,LED lamp without controls; efficacy 10-120 lm/W as printed in 2012.
+low,stuckrath_2022_001,heat-exchanger_steam-heated_mash-cooker-pressure,heat-exchanger_steam-heated,low,Steam-heated cooking vessel; only the cooking temperature is given.
+low,stuckrath_2022_001,heat-exchanger_steam-heated_mash-cooker-atmospheric,heat-exchanger_steam-heated,low,Steam-heated cooking vessel; only the cooking temperature is given.
+low,stuckrath_2022_001,distillation-column_vacuum-mvr,vapour-recompressor_distillation,low,Whole new distillation process (vacuum cascade + MVR + other upgrades) at one plant; the 40% CO2 cut is not attributable to MVR alone.
+low,stuckrath_2022_001,dryer_stillage,dryer_spray-drum-belt,low,"Generic stillage dryer; number is per t WATER evaporated, not per t product. dryer_distillers-grain is the heat-recovery/heat-pump variant and does not fit the generic figure."
+low,stuckrath_2022_001,dryer_belt-low-temperature,dryer_distillers-grain,low,"Waste-heat-capable low-temperature dryer for distillers grains; per t WATER removed, not per t product."
+low,stuckrath_2022_001,evaporator_single-effect,evaporator_food,low,"Single-effect baseline; steam per t WATER evaporated, not per t product. Multiple-effect/TVR/MVR evaporators described qualitatively only."
+low,stuckrath_2022_001,anaerobic-digester_pot-ale,anaerobic-digester_chp,low,"Pot-ale AD supplying 40% of site electricity, but CHP not stated; capacity basis unclear."
+low,galitsky_2003_001,pasteurizer_tunnel,heat-exchanger_steam-heated,low,"In-container tunnel pasteurizer on steam/hot water; archetype lists plate pasteurizers, unit t."
+low,galitsky_2003_001,vapour-recompressor_wort-kettle_thermal,(none),low,"Motive steam per m3 of water evaporated, not per beer; no thermal-VR archetype."
+low,galitsky_2003_001,vapour-recompressor_wort-kettle_mechanical,vapour-recompressor_evaporation,low,MVR on a wort kettle; archetype is pulp/evaporation MVR per t; electricity denominator ambiguous. Alternative: heat-exchanger_steam-heated_efficiency-strong.
+low,galitsky_2003_001,heat-exchanger_wort-cooler_single-stage,(none),low,"Wort cooler electricity only, part of refrigeration load; chiller archetypes are per GJ cooling."
+low,galitsky_2003_001,heat-exchanger_wort-cooler_two-stage,(none),low,As single-stage.
+low,galitsky_2003_001,fermenter_beer,(none),low,Fermentation process CO2 (biogenic) only; no beer fermentation archetype (fermenter_grain-dry-mill is ethanol).
+low,galitsky_2003_001,separator_microfiltration,(none),low,"Generic microfiltration electricity, not brewery-specific; no matching archetype."
+low,galitsky_2003_001,separator_reverse-osmosis_dealcoholization,(none),low,Dealcoholization utilities cost; out of archetype scope.
+low,galitsky_2003_001,separator_dialysis_dealcoholization,(none),low,As RO.
+low,galitsky_2003_001,pasteurizer_tunnel,heat-exchanger_steam-heated,low,"In-container tunnel pasteurizer on steam/hot water; archetype lists plate pasteurizers, unit t."
+low,galitsky_2003_001,cleaning-system_keg-washer_steam-purge,(none),low,"Purge steam only, per keg; partial unit of cleaning-system."
+low,galitsky_2003_001,cleaning-system_keg-washer_steam-air-purge,(none),low,As steam-purge.
+low,galitsky_2003_001,brewery_us-average,(none),low,Whole-brewery average fuel; no whole-brewery archetype. Coordinator may consider a NEW brewery archetype if CIMS food sector needs one.
+low,galitsky_2003_002,dryer_steam-tube_germ,dryer_spray-drum-belt,low,"Food-product dryer archetype (light-industrial heat); scope here is screw press plus dryer, per t of corn ground, not per t of germ dried; steam plus fuel."
+low,galitsky_2003_002,dryer_flash_gluten,dryer_spray-drum-belt,low,"Hot-gas food dryer; scope includes thickening/filtration electricity; per t of corn ground, not per t of gluten meal."
+low,galitsky_2003_002,dryer_flash_starch,dryer_spray-drum-belt,low,Hot-gas food dryer; per t of corn ground (not per t of starch); includes dewatering electricity.
+low,galitsky_2003_002,dryer_rotary-direct-fired_gluten-feed,dryer_spray-drum-belt,low,Direct-fired rotary feed dryer; dryer_rotary-direct-fired is a mineral dryer; per t of corn ground.
+low,galitsky_2003_002,dryer_steam-tube_germ,dryer_spray-drum-belt,low,Per t of water evaporated (not per t product); steam-heated indirect food dryer.
+low,galitsky_2003_002,dryer_steam-tube_germ,dryer_spray-drum-belt,low,Per t of water evaporated; steam-heated indirect food dryer.
+low,galitsky_2003_002,dryer_flash_fiber-gluten,dryer_spray-drum-belt,low,Direct-fired hot-gas food dryer; per t of water evaporated.
+low,galitsky_2003_002,dryer_indirect_steam-air,dryer_steam-heated,low,Steam-heated indirect dryer; archetype is the paper-machine can dryer.
+low,galitsky_2003_002,dryer_indirect_thermal-fluid-air,(none),low,No thermal-fluid dryer archetype.
+low,galitsky_2003_002,dryer_indirect_air-air,(none),low,No indirect air-air dryer archetype.
+low,galitsky_2003_002,evaporator_single-effect,evaporator_food,low,Food evaporator (corn); per t of water evaporated - check archetype denominator. Single effect is below the archetype's multiple-effect/MVR scope.
+low,galitsky_2003_002,vapour-recompressor_mvr,evaporator_food,low,"Corn MVR; incremental cost vs three-effect evaporator, needs host cost; capacity basis ambiguous."
+low,galitsky_2003_002,vapour-recompressor_mvr_steepwater,evaporator_food,low,"Per gal of light steepwater feed, not per t of water evaporated or product."
+low,galitsky_2003_002,dryer_fluidized-bed_chp-exhaust,heat-recovery-unit_dryer-exhaust,low,"Dryer heated by CHP exhaust; no capacity for the cost, so it cannot be normalised."
+low,galitsky_2003_002,dryer_rotary_beet-pulp,dryer_spray-drum-belt,low,Hot-gas food/feed dryer; per t of water evaporated; firing type not stated.
+low,galitsky_2008_001,combustion-turbine_steam-injected,combustion-turbine_heat-recovery-steam-generator,low,"STIG variant; only a minimum typical size (5 MW). Steam is injected into the turbine rather than exported, so scope differs."
+low,galitsky_2008_001,boiler_fuel-fired_economizer-air-preheat,boiler_fuel-fired_efficiency-moderate,low,"Single plant case, efficiency ""approaching"" 95% with feed-water and combustion-air preheat; basis not stated."
+low,brinkmann_2016_001,fan_activated-sludge_complete-mix,fan_activated-sludge,low,"Whole complete-mix activated sludge WWTP priced per m3 of waste water or per plant; archetype is the aeration duty in GJ, so scope and product unit differ."
+low,brinkmann_2016_001,fan_activated-sludge_sequencing-batch,fan_activated-sludge,low,Sequencing batch activated sludge plant priced per plant (30 m3/d); archetype is aeration in GJ.
+low,brinkmann_2016_001,fan_activated-sludge,fan_activated-sludge,low,"Whole activated sludge WWTP (clarifiers, aeration, sludge handling) per m3 or per kg COD abated; archetype is the aeration duty in GJ."
+low,brinkmann_2016_001,anaerobic-digester_effluent,anaerobic-digester_effluent,low,UASB pretreatment of high-strength chemical effluent priced per plant and per m3; archetype product unit GJ; no biogas yield per unit printed.
+low,brinkmann_2016_001,evaporator_waste-water-multiple-effect,evaporator_crystallizer,low,"Steam-heated multiple-effect (vacuum) evaporation of waste water; archetype is MVR produced-water evaporation (oil and gas) in GJ, and is electrically driven."
+low,brinkmann_2016_001,flare_elevated,flare,low,"Elevated safety flare at chemical plants (10-100 h/yr), priced per 1 000 Nm3/h; archetype is continuous oil-and-gas flaring per GJ (17 MJ/Nm3 basis printed could convert)."
+low,daginnus_2023_001,gas-treatment-unit_thermal-oxidation-straight,flare_enclosed-combustor,low,"Closest archetype (enclosed burner destroying process vapours) but that archetype is oil-and-gas per GJ; here VOC abatement in chemical plants with only temperature and waste-gas flow (Nm3/h), no energy or cost; nothing converts to the product unit. Probably (none)."
+low,stubdrup_2016_001,dryer_fibre-tube,dryer_veneer-strand,low,"Blowline tube dryer for MDF fibre; archetype names veneer, strands and particles, not fibre. Per m3 panel."
+low,stubdrup_2016_001,dryer_fibre-tube,dryer_veneer-strand,low,"Fibre tube dryer per t dry fibre (unit t matches, but fibre drying is not named in the archetype)."
+low,stubdrup_2016_001,pulper_mdf-refiner-dryer,(none),low,Sum of refiner and fibre dryer as printed; mapping it would double count the two unit examples. Kept for reference.
+low,stubdrup_2016_001,steam-turbine_biomass_chp,steam-turbine_back-pressure,low,Biomass CHP raising steam and power; turbine type and MW basis not stated.
+low,stubdrup_2016_001,reciprocating-engine_natural-gas_thermal-oil,reciprocating-engine_chp,low,Gas engine heating thermal oil; whether power is also generated is not stated.
+low,stubdrup_2016_001,dryer_veneer-strand_utws,dryer_veneer-strand,low,"Heat-recovering closed-loop dryer; source gives no energy-saving figure, so the 15% test cannot be applied."
+low,stubdrup_2016_001,dryer_veneer-strand_utws,dryer_veneer-strand,low,"Heat-recovering closed-loop dryer; source gives no energy-saving figure, so the 15% test cannot be applied."
+low,stubdrup_2016_001,dryer_steam_superheated,(none),low,"Emerging, no numbers."
+low,neuwahl_2019_001,kiln_rotary_hazardous-waste,steam-turbine_condensing,low,"HW rotary kiln plants with turbines; energy basis but destruction-oriented; two of three electricity-only, one CHP. Coordinator may prefer (none)."
+low,neuwahl_2019_001,boiler_fluidized-bed_sewage-sludge,steam-turbine_condensing,low,"Sewage-sludge FB plants; low efficiency, waste-treatment oriented. Coordinator may prefer (none)."
+low,neuwahl_2019_001,kiln_rotary_hazardous-waste,boiler_solid-fuel,low,Energy-basis efficiency of the waste-fired plant. Destruction-oriented plant; boiler efficiency only.
+low,neuwahl_2019_001,boiler_fluidized-bed_sewage-sludge,boiler_solid-fuel,low,Energy-basis efficiency of the waste-fired plant. Destruction-oriented plant; boiler efficiency only.
+low,neuwahl_2019_001,steam-turbine_extraction_msw-hybrid,steam-turbine_back-pressure,low,"Extraction-condensing hybrid, whole plant; could equally be condensing."
+low,neuwahl_2019_001,steam-turbine_chp_msw,steam-turbine_back-pressure,low,Turbine type not stated; net (not gross) efficiency.
+low,neuwahl_2019_001,steam-turbine_chp_msw-condensation-heat-pump,steam-turbine_back-pressure,low,Turbine type not stated; net (not gross) efficiency.
+low,neuwahl_2019_001,boiler_solid-fuel_msw-steam-export,steam-turbine_back-pressure,low,Heat-led WtE with some power; turbine type not stated. Annual operating data.
+low,pinasseau_2018_001,anaerobic-digester,anaerobic-digester,low,"Product-unit mismatch: numbers are per t waste input, archetype is per GJ biogas; no plant-matched yield to convert (only one plant 80-120 Nm3/t with unknown CH4). Electricity use only; useful as a sanity range for digester parasitic load."
+low,dea_2026_006,combustion-turbine_heat-recovery-steam-generator_simple-cycle-micro,combustion-turbine_heat-recovery-steam-generator,low,Simple-cycle gas turbine with a flue-gas heat exchanger (hot water or steam) for CHP; the catalogue's heat side is district-heating water rather than process steam. Micro turbines are far below industrial scale.
+low,dea_2026_007,boiler_liquid-biomass,space-heater_fuel-fired,low,"Fires bio-oil; space-heater_fuel-fired carriers do not list liquid-biomass. Hydronic boiler plant (boiler, pumps, DHW tank) heating an apartment block; the source unit also covers hot tap water. Mapped to the space-heating node archetype rather than boiler_fuel-fired (which serves *.service.steam); coordinator may prefer boiler_fuel-fired."
+low,dea_2026_005,mobile-equipment_natural-gas_spark-ignition,mobile-equipment_gas-forklift,low,"Spark-ignition natural gas/biomethane engine, but tractors and harvesters, not forklifts; archetype is forklift-specific"
+low,joshi_2022_001,compressor_electric-drive_1-3mw,compressor_electric-drive-reciprocating,low,"US 1.3 MW electric compressors, compressor type not stated (US gathering/boosting context suggests reciprocating); costs only"
+low,joshi_2022_001,flare_mobile,flare_enclosed-combustor,low,mobile flare destroying gas that would be vented during pipeline maintenance; displaces venting like an enclosed combustor but is an open mobile flare; description only
+low,joshi_2022_001,direct-heater_gas-preheater_auxiliary,direct-heater_line-heater,low,auxiliary gas-fired preheater at an Italian pressure reduction station; capacity/efficiency only
+low,joshi_2022_001,air-separation-unit_cryogenic-low-pressure,air-separation-unit,low,cryogenic ASU for nitrogen; per m3 N2 while the archetype product unit is GJ (oxygen service)
+low,joshi_2022_001,air-separation-unit_cryogenic-high-pressure,air-separation-unit,low,cryogenic ASU for nitrogen; per m3 N2 while the archetype product unit is GJ (oxygen service)

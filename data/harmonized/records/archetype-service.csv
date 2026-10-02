@@ -792,3 +792,79 @@ thermal-storage_heat-charged,<sector>.*.service.steam,heat-medium-temp,cross-sec
 smelting-vessel_low-shaft,<sector>.iron-and-steel.service.hot-metal,ironmaking,as the other smelting-reduction routes
 binder_electrochemical,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,as the other binders
 kiln_calcium-silicate-feed,<sector>.industrial-minerals.product.cement.clinker,clinker-production,as kiln_dry-precalciner
+combined-cycle,<sector>.mining.service.on-site-power,on-site-power-generation,copied from steam-turbine_condensing 2026-10-01
+digester_sulphite,<sector>.pulp-and-paper.product.pulp.pulping-chemical,chemical-pulping,copied from digester_continuous-kraft 2026-10-01
+distillery_beverage-spirits,<sector>.light-industrial.product.food-tobacco-and-beverage,thermal-processing,added 2026-10-01
+dryer_ceramic-hot-air,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,added 2026-10-01
+dryer_market-pulp,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,added 2026-10-01
+dryer_through-air,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,added 2026-10-01
+electrolysis-cell_chlor-alkali-diaphragm,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,added 2026-10-01
+electrolysis-cell_electrorefining,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,pyrometallurgy,added 2026-10-01
+electrolysis-cell_zinc-electrowinning,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,added 2026-10-01
+furnace_glass-recuperative,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,copied from furnace_glass-regenerative 2026-10-01
+furnace_glass-regenerative_ccs-diffuse,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,copied from furnace_glass-regenerative 2026-10-01
+furnace_rotary-hearth-direct-reduction,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,added 2026-10-01
+gasifier_coal-methanol,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,added 2026-10-01
+kiln_calcium-looping,<sector>.industrial-minerals.product.cement.clinker,clinker-production,copied from kiln_oxy-fuel 2026-10-01
+kiln_intermittent,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,copied from kiln_tunnel-roller 2026-10-01
+kiln_lime-long-rotary,<sector>.industrial-minerals.product.lime,lime-calcination,copied from kiln_lime-rotary-preheater 2026-10-01
+kiln_rotary-expanded-clay,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,added 2026-10-01
+kiln_tunnel-roller_efficiency-strong,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,copied from kiln_tunnel-roller 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_crucible-gas-fired,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_electric-resistance,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_hot-blast-cupola,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,added 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_isothermal,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_reverberatory-rotary_efficiency-strong,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_rotary-oxy-fuel,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,copied from melting-furnace_cupola 2026-10-01
+melting-furnace_rotary-oxy-fuel,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,copied from melting-furnace_cupola 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_shaft-preheat,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_reverberatory-rotary 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.iron-and-steel.product.foundry,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+melting-furnace_stack,<sector>.light-industrial.service.heat,metal-melting-and-heat-treatment,copied from melting-furnace_induction 2026-10-01
+mobile-equipment_hydrogen-combustion,<sector>.construction.product.transport,mobile-equipment,copied from mobile-equipment_hydrogen-fuel-cell 2026-10-01
+mobile-equipment_hydrogen-combustion,<sector>.natural-gas.product.supply.off-road-transport,mobile-equipment,copied from mobile-equipment_hydrogen-fuel-cell 2026-10-01
+pulper_fibreboard-refiner,<sector>.light-industrial.product.wood-products,wood-drying-and-pressing,added 2026-10-01
+pulper_groundwood,<sector>.pulp-and-paper.product.pulp.pulping-mechanical,mechanical-pulping,copied from pulper_thermomechanical 2026-10-01
+reactor_ammonium-nitrate,<sector>.chemicals.product.fertilizer,other-chemicals,added 2026-10-01
+reactor_ethylene-oxidation_ccs-concentrated,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,copied from reactor_ethylene-oxidation 2026-10-01
+reactor_urea-total-recycle,<sector>.chemicals.product.urea,other-chemicals,copied from reactor_urea-synthesis 2026-10-01
+reactor_visbreaking,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,added 2026-10-01
+refinery_nickel-matte,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,pyrometallurgy,added 2026-10-01
+refinery_sugar-beet,<sector>.light-industrial.product.food-tobacco-and-beverage,thermal-processing,added 2026-10-01
+separator_membrane-bioreactor,<sector>.pulp-and-paper.service.effluent-treatment,effluent-treatment,added 2026-10-01

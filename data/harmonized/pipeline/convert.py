@@ -39,6 +39,10 @@ ATOM = {
     "t": ("mass", 1.0), "kt": ("mass", 1e3), "Mt": ("mass", 1e6), "kg": ("mass", 1e-3),
     "g": ("mass", 1e-6), "lb": ("mass", 4.5359237e-4), "ton": ("mass", 0.90718474),
     "short-ton": ("mass", 0.90718474),
+    # an air-dried tonne (90% dry) is the pulp industry's product tonne; the pulp
+    # archetypes' "t pulp" is that tonne (modeller 2026-10-01)
+    "ADt": ("mass", 1.0), "ADMT": ("mass", 1.0),
+    "kcal": ("energy", 4.1868e-6), "Mcal": ("energy", 4.1868e-3), "Gcal": ("energy", 4.1868),
     "m3": ("volume", 1.0), "Nm3": ("volume", 1.0), "l": ("volume", 1e-3), "L": ("volume", 1e-3),
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
     "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
