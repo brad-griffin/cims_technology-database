@@ -3,11 +3,11 @@ steam,steam-turbine_biomass,description,,steam back-pressure turbine,,,syngas fr
 steam,steam-turbine_biomass,trl,,9,,Table 6-1,commercialization status: numerous models available
 steam,steam-turbine_biomass,state-of-development,,existing,,,
 steam,steam-turbine_biomass,year-available,year,1930,,,introduced in 1920s; assume widely available after
-steam,steam-turbine_biomass,capacity,MW,3,,,medium plant
+steam,steam-turbine_biomass,capacity,MW,3,,,medium plant CAPACITY BASIS: electric-output (EPA 2007 sizes the steam-turbine CHP case by electric capacity; the annual output is that capacity at 90%; basis read back 2026-10-02).
 steam,steam-turbine_biomass,capacity-factor,fraction,0.9,,,
-steam,steam-turbine_biomass,annual-output,GJ,85147.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,steam-turbine_biomass,annual-output,GJ,85147.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,"CAPACITY BASIS: electric-output (annual electricity: 3 MW x 8760 h x 0.9 = 85,147 GJ; basis read back 2026-10-02)."
 steam,steam-turbine_biomass,capex,2007_USD,27708000,,,"REVIEW: this is the same 27,708,000 2007_USD figure recorded against gasifier_biomass, and its own note says 'gasifier + prep yard' - it is a whole-plant cost, not the turbine's. Attributing it to both double-counts the plant. Left as extracted pending a check of EPA 2007 Table 5-16 for a turbine-only cost."
-steam,steam-turbine_biomass,opex-fixed,2007_USD,1109500,,,"medium plant, gasifier + prep yard"
+steam,steam-turbine_biomass,opex-fixed,2007_USD,1109500,,,"medium plant, gasifier + prep yard CAPACITY BASIS: electric-output (fixed O&M of the steam-turbine CHP case, sized by electric capacity; basis read back 2026-10-02)."
 steam,steam-turbine_biomass,efficiency,fraction,0.75,,Table 6-2,effective electrical efficiency
 steam,steam-turbine_biomass,efficiency-chp,fraction,0.795,,Table 6-2,overall efficiency of chp system
 steam,boiler_biomass,description,,industrial biomass steam boiler,,,
@@ -15,11 +15,11 @@ steam,boiler_biomass,trl,,9,,page 31,introduced in 1920s; assume technology is m
 steam,boiler_biomass,state-of-development,,existing,,,
 steam,boiler_biomass,year-available,year,1930,,,introduced in 1920s; assume widely available after
 steam,boiler_biomass,lifetime,years,35,,,25-40+ years
-steam,boiler_biomass,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",Table 5-7,"medium plant, boiler only; steam output to energy, using 1,020 Btu/lb of useful heat"
+steam,boiler_biomass,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",Table 5-7,"medium plant, boiler only; steam output to energy, using 1,020 Btu/lb of useful heat CAPACITY BASIS: thermal-output (the note gives heat or steam output; basis read back 2026-10-02)."
 steam,boiler_biomass,capacity-factor,fraction,0.95,,Table 5-7,"medium plant, boiler only"
-steam,boiler_biomass,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,boiler_biomass,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,"CAPACITY BASIS: thermal-output (annual steam: 62 MW x 8760 h x 0.95 = 1,857,470 GJ; basis read back 2026-10-02)."
 steam,boiler_biomass,capex,2007_USD,23430000,,Table 5-4,"medium plant, boiler + prep yard"
-steam,boiler_biomass,opex-fixed,2007_USD,1415000,,Table 5-6,"medium plant, boiler + prep yard"
+steam,boiler_biomass,opex-fixed,2007_USD,1415000,,Table 5-6,"medium plant, boiler + prep yard CAPACITY BASIS: thermal-output (fixed O&M of the boiler case, sized by steam output; basis read back 2026-10-02)."
 steam,boiler_biomass,efficiency,fraction,0.77,,Table 5-7,"medium plant, boiler only"
 steam,boiler_biomass,temperature-output,C,293,,calc based on steam flow data,
 steam,boiler_biomass,pressure-output,psig,750,,Table 5-4,
@@ -27,33 +27,33 @@ steam,combustion-turbine_biogas,description,,biogas combustion turbine,,,syngas 
 steam,combustion-turbine_biogas,trl,,9,,Table 6-1,commercialization status: numerous models available
 steam,combustion-turbine_biogas,state-of-development,,commercial,,,
 steam,combustion-turbine_biogas,year-available,year,1980,,page 66,introduced in 1920s; widely available after
-steam,combustion-turbine_biogas,capacity,MW,10,,,medium plant
+steam,combustion-turbine_biogas,capacity,MW,10,,,medium plant CAPACITY BASIS: electric-output (gas-turbine CHP sized by electric capacity; basis read back 2026-10-02).
 steam,combustion-turbine_biogas,capacity-factor,fraction,0.9,,,
-steam,combustion-turbine_biogas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,combustion-turbine_biogas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 10 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,combustion-turbine_biogas,capex,2007_USD,9000000.0,"round(600*capacity*1000*1.5,0)",,medium plant; 50% more than natural gas turbine
-steam,combustion-turbine_biogas,opex-fixed,2007_USD,827820.0,"round(0.006*annual_output/GJ_per_MWh*1000*1.75,0)",,medium plant; 75% more than natural gas turbine
+steam,combustion-turbine_biogas,opex-fixed,2007_USD,827820.0,"round(0.006*annual_output/GJ_per_MWh*1000*1.75,0)",,"medium plant; 75% more than natural gas turbine CAPACITY BASIS: electric-output (fixed O&M of the gas-turbine CHP case, sized by electric capacity; basis read back 2026-10-02)."
 steam,combustion-turbine_biogas,efficiency,fraction,0.312,,Table 6-3,effective electrical efficiency
 steam,combustion-turbine_biogas,efficiency-chp,fraction,0.73,,Table 6-3,overall efficiency of chp system
 steam,combustion-turbine_natural-gas,description,,natural gas combustion turbine,,,
 steam,combustion-turbine_natural-gas,trl,,9,,Table 6-1,commercialization status: numerous models available
 steam,combustion-turbine_natural-gas,state-of-development,,commercial,,,
 steam,combustion-turbine_natural-gas,year-available,year,1980,,page 66,introduced in 1920s; widely available after
-steam,combustion-turbine_natural-gas,capacity,MW,10,,,medium plant
+steam,combustion-turbine_natural-gas,capacity,MW,10,,,medium plant CAPACITY BASIS: electric-output (gas-turbine CHP sized by electric capacity; basis read back 2026-10-02).
 steam,combustion-turbine_natural-gas,capacity-factor,fraction,0.9,,,
-steam,combustion-turbine_natural-gas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,combustion-turbine_natural-gas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 10 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,combustion-turbine_natural-gas,capex,2007_USD,6000000,"round(600*capacity*1000,0)",,medium plant
-steam,combustion-turbine_natural-gas,opex-fixed,2007_USD,473040.0,"round(0.006*annual_output/GJ_per_MWh*1000,0)",,medium plant
+steam,combustion-turbine_natural-gas,opex-fixed,2007_USD,473040.0,"round(0.006*annual_output/GJ_per_MWh*1000,0)",,"medium plant CAPACITY BASIS: electric-output (fixed O&M of the gas-turbine CHP case, sized by electric capacity; basis read back 2026-10-02)."
 steam,combustion-turbine_natural-gas,efficiency,fraction,0.312,,Table 6-3,effective electrical efficiency
 steam,combustion-turbine_natural-gas,efficiency-chp,fraction,0.73,,Table 6-3,overall efficiency of chp system
 steam,combustion-turbine_landfill-gas,description,,medium-GJ landfill combustion turbine,,,landfill gas and wasterwater treatment gas
 steam,combustion-turbine_landfill-gas,trl,,9,,Table 6-1,commercialization status: numerous models available
 steam,combustion-turbine_landfill-gas,state-of-development,,commercial,,,
 steam,combustion-turbine_landfill-gas,year-available,year,1980,,page 66,introduced in 1920s; widely available after
-steam,combustion-turbine_landfill-gas,capacity,MW,10,,,medium plant
+steam,combustion-turbine_landfill-gas,capacity,MW,10,,,medium plant CAPACITY BASIS: electric-output (gas-turbine CHP sized by electric capacity; basis read back 2026-10-02).
 steam,combustion-turbine_landfill-gas,capacity-factor,fraction,0.9,,,
-steam,combustion-turbine_landfill-gas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,combustion-turbine_landfill-gas,annual-output,GJ,283824.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 10 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,combustion-turbine_landfill-gas,capex,2007_USD,7200000.0,"round(600*capacity*1000*1.2,0)",,medium plant; slightly higher than natural gas turbines; assume 20% increase
-steam,combustion-turbine_landfill-gas,opex-fixed,2007_USD,614952.0,"round(0.006*annual_output/GJ_per_MWh*1000*1.3,0)",,medium plant; less than the 75% more than natural gas turbine for low-GJ gas; assume 30% increase
+steam,combustion-turbine_landfill-gas,opex-fixed,2007_USD,614952.0,"round(0.006*annual_output/GJ_per_MWh*1000*1.3,0)",,"medium plant; less than the 75% more than natural gas turbine for low-GJ gas; assume 30% increase CAPACITY BASIS: electric-output (fixed O&M of the gas-turbine CHP case, sized by electric capacity; basis read back 2026-10-02)."
 steam,combustion-turbine_landfill-gas,efficiency,fraction,0.312,,Table 6-3,effective electrical efficiency
 steam,combustion-turbine_landfill-gas,efficiency-chp,fraction,0.73,,Table 6-3,overall efficiency of chp system
 steam,gasifier_biomass,description,,industrial biomass gasifier,,,syngas from thermal gasification
@@ -71,31 +71,31 @@ steam,reciprocating-engine,description,,internal combustion engine_spark ignitio
 steam,reciprocating-engine,trl,,9,,Table 6-1,commercialization status: numerous models available
 steam,reciprocating-engine,state-of-development,,commercial,,,
 steam,reciprocating-engine,year-available,year,1950,,,assumption
-steam,reciprocating-engine,capacity,MW,1,,Table 6-5,
+steam,reciprocating-engine,capacity,MW,1,,Table 6-5,CAPACITY BASIS: electric-output (CHP system sized by electric capacity; basis read back 2026-10-02).
 steam,reciprocating-engine,capacity-factor,fraction,0.9,,,assumption
-steam,reciprocating-engine,annual-output,GJ,28382.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,reciprocating-engine,annual-output,GJ,28382.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 1 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,reciprocating-engine,capex,2018_USD,720000,"round(capacity*1000*720,0)",Table 6-5,
-steam,reciprocating-engine,opex-fixed,2018_USD,70955.0,"round(annual_output/GJ_per_MWh*1000*0.009,0)",Table 6-5,
+steam,reciprocating-engine,opex-fixed,2018_USD,70955.0,"round(annual_output/GJ_per_MWh*1000*0.009,0)",Table 6-5,"CAPACITY BASIS: electric-output (fixed O&M of the CHP system, sized by electric capacity; basis read back 2026-10-02)."
 steam,reciprocating-engine,efficiency,fraction,0.335,,Table 6-5,
 steam,reciprocating-engine,efficiency-chp,fraction,0.7,,Table 6-5,
 steam,microturbine,description,,microturbine,,,syngas from thermal gasification
 steam,microturbine,trl,,8,,Table 6-1,commercialization status: limited models available
 steam,microturbine,state-of-development,,commercial,,,
 steam,microturbine,year-available,year,1999,,page 69,
-steam,microturbine,capacity,MW,0.1,,Table 6-4,
+steam,microturbine,capacity,MW,0.1,,Table 6-4,CAPACITY BASIS: electric-output (microturbine sized by electric capacity; basis read back 2026-10-02).
 steam,microturbine,capacity-factor,fraction,0.9,,,assumption
-steam,microturbine,annual-output,GJ,2838.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,microturbine,annual-output,GJ,2838.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 0.1 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,microturbine,capex,2018_USD,135000.0,"round(capacity*1000*1350,0)",Table 6-4,
-steam,microturbine,opex-fixed,2018_USD,11825.0,"round(annual_output/GJ_per_MWh*1000*0.015,0)",Table 6-4,
+steam,microturbine,opex-fixed,2018_USD,11825.0,"round(annual_output/GJ_per_MWh*1000*0.015,0)",Table 6-4,"CAPACITY BASIS: electric-output (fixed O&M of the microturbine, sized by electric capacity; basis read back 2026-10-02)."
 steam,microturbine,efficiency,fraction,0.252,,Table 6-4,
 steam,microturbine,efficiency-chp,fraction,0.62,,Table 6-4,
 steam,fuel-cell,description,,fuel cell,,,syngas from thermal gasification
 steam,fuel-cell,trl,,7,,Table 6-1,commercialization status: commercial introduction
 steam,fuel-cell,state-of-development,,commercial,,,
-steam,fuel-cell,capacity,MW,0.25,,Table 6-6,
+steam,fuel-cell,capacity,MW,0.25,,Table 6-6,CAPACITY BASIS: electric-output (fuel cell sized by electric capacity; basis read back 2026-10-02).
 steam,fuel-cell,capacity-factor,fraction,0.9,,,assumption
-steam,fuel-cell,annual-output,GJ,7096.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,fuel-cell,annual-output,GJ,7096.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,CAPACITY BASIS: electric-output (annual electricity: 0.25 MW x 8760 h x 0.9; basis read back 2026-10-02).
 steam,fuel-cell,capex,2018_USD,1275000.0,"round(capacity*1000*5100,0)",Table 6-6,
-steam,fuel-cell,opex-fixed,2018_USD,84758.0,"round(annual_output/GJ_per_MWh*1000*0.043,0)",Table 6-6,
+steam,fuel-cell,opex-fixed,2018_USD,84758.0,"round(annual_output/GJ_per_MWh*1000*0.043,0)",Table 6-6,"CAPACITY BASIS: electric-output (fixed O&M of the fuel cell, sized by electric capacity; basis read back 2026-10-02)."
 steam,fuel-cell,efficiency,fraction,0.43,,Table 6-6,
 steam,fuel-cell,efficiency-chp,fraction,0.65,,Table 6-6,

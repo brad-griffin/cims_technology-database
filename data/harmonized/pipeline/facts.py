@@ -20,11 +20,14 @@ UNIT_SPELLING = {"C": "degC", "c": "degC", "degrees C": "degC",
                  # added 2026-10-02: spellings only, no change of quantity
                  "tCO2/t": "t/t", "short-t/yr": "short-ton/yr", "g/GJ_i": "g/GJ"}
 # trailing species spellings in a money unit (EUR/t-co2e is EUR/t-CO2-eq)
-SPECIES_SPELLING = (("/t-co2e", "/t-CO2-eq"), ("/t-co2eq", "/t-CO2-eq"))
+SPECIES_SPELLING = (("/t-co2e", "/t-CO2-eq"), ("/t-co2eq", "/t-CO2-eq"), ("/t-co2", "/t-CO2"))
 FRACTION = {"fraction": "%", "fraction/yr": "%/yr"}
 BASIS_NOTE = ("  BASIS NOT RECORDED: parameter.csv requires a {col} for {param} "
               "and this extraction does not give one. Marked for review rather "
               "than guessed.")
+
+ASSUMED_INSTALLED = ("  COST BASIS ASSUMED: installed. The source does not state one; unstated "
+                     "capex is taken as installed (modeller 2026-10-02).")
 
 
 def _arith(expr):
@@ -88,6 +91,15 @@ def clean(facts, flows, cons) -> dict:
             if src:
                 r["derived-from"] = src
                 stats["derived rows linked"] += 1
+
+    # a capital cost whose source states no cost basis is taken as installed
+    # (modeller 2026-10-02): the usual basis of a published capex, and marked so
+    for r in facts:
+        if (r["parameter"] == "capex" and not (r.get("cost-basis") or "").strip()
+                and (r.get("value") or r.get("value-min") or r.get("value-max"))):
+            r["cost-basis"] = "installed"
+            r["note"] = (r.get("note") or "") + ASSUMED_INSTALLED
+            stats["capex cost basis assumed installed"] += 1
 
     # the basis each parameter requires, read from the dictionary
     basis_req = {r["parameter"]: (r.get("basis-required") or "").strip()

@@ -45,7 +45,7 @@ gate a commit.
 | `records/vocabulary/*.csv` | term: equipment, discriminator, modifier, carrier, the other lists, parameter, commodity | the term |
 | `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype, the efficiency-bridge review | |
 | `records/fill/fill-rule.csv` | fill rule: grade, method, scope, formula, rationale, status | `rule-id` |
-| `records/fill/host-archetype.csv` | archetype with incremental costs, and the host plant they are added to | `archetype` |
+| `records/fill/host-archetype.csv` | archetype with incremental costs, or a host plant with capture, and the host plant whose cost it takes | `archetype` |
 | `records/fill/fill-judgement.csv` | a guessed value: central within low-high, rationale, author | `archetype`, `parameter`, `target` |
 | `data/raw-data/source-details_reference.csv` | reference source behind a conversion factor or the currency conversion (kept apart from the technology sources; `used_for` says which, `file_on_disk` names a held table) | `source_id` |
 
@@ -62,6 +62,7 @@ gate a commit.
 | `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
+| `ccs-addon-cost.csv` | Costs sources give on host plants with capture: capture cost, set aside to move to a co2-capture archetype. |
 | `set-aside-efficiency.csv` | UKERC numbers per tonne of a host plant's product: `needs-efficiency` (not yet reviewed for the bridge) or `not-bridged` (reviewed; the reason is in `excluded`), with each example's fuel use per tonne. |
 | `fill-backtest.csv` | Each sibling rule run on cells that have a sourced value: the estimate, its range, and whether the sourced value falls inside. |
 | `conversion-factor-use.csv` | Each conversion factor, pooled efficiency and assumption, with its class and the pooled rows, examples and archetypes that rest on it. |

@@ -44,6 +44,7 @@ PER_OUTPUT = {"opex-variable", "opex-total", "cost-levelized"}
 PER_PRODUCT = {"specific-energy-consumption", "capacity", "annual-output"}
 EXTENSIVE = {"capacity", "annual-output"}
 PERCENT = {"efficiency", "efficiency-chp", "capacity-factor", "availability", "capture-rate",
+           "share-to-capture",
            "emissions-reduction-potential", "load-range-min", "discount-rate",
            "cost-learning-rate", "capital-recovery", "degradation-rate"}
 # A share of emissions avoided is one percentage whether the source counted CO2
@@ -66,6 +67,12 @@ SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per t
 FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
                    "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
+# a note saying a cost per MWh is per MWh of HEAT (2026-10-02: the test used to be
+# the literal "per MWh of heat", which excluded MWh-th, kWh th and levelized cost
+# of heat)
+HEAT_DENOMINATED = re.compile(r"per MWh of heat|MWh[- ]?th\b|kWh[- ]?th\b|MWh thermal|"
+                              r"cost of (delivered )?heat|LCOH|per MWh of thermal|"
+                              r"MWh heat|of thermal energy delivered", re.I)
 # A cost with cost-basis `incremental` is the cost of adding something to an
 # existing plant (a UK TIMES improvement or add-on, or an example listed in
 # records/reference/incremental-cost.csv), so it is not a whole-plant cost.
@@ -75,6 +82,32 @@ PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
 CASE = re.compile(r"^\s*(?:\[([^\]]+)\]|UKERC ([A-Z]+-[A-Z0-9]+):)")
+
+
+def is_capture(a) -> bool:
+    """A capture-plant archetype (the co2-capture family): it holds the add-on's cost."""
+    return bool(a) and a.get("family") == "co2-capture"
+
+
+def is_ccs_host(a) -> bool:
+    """A host plant with capture (a _ccs- modifier outside the co2-capture family).
+    In CIMS it differs from its host only by a service request to the capture
+    archetype, so it holds the host plant's cost and none of the capture plant's."""
+    return bool(a) and "_ccs-" in a["archetype"] and a.get("family") != "co2-capture"
+
+
+# a capture-rate that is not a share of CO2 (landfill gas collection): left as
+# it is and listed for review in docs/sanity-check-list.csv
+CAPTURE_RATE_NOT_CO2 = {"process-improvement_landfill-gas-recovery"}
+SHARE_NOTE = ("  PARAMETER: the source's capture rate on this host, recorded as share-to-capture "
+              "(the share of the host's CO2 sent to capture; taken equal to the plant-level "
+              "rate the source gives, modeller 2026-10-02).")
+# Costs that, on a host-with-capture archetype, would carry capture cost
+CCS_HOST_COSTS = {"capex", "opex-fixed", "opex-variable", "opex-total", "cost-levelized"}
+CCS_HOST_NOTE = ("CCS add-on cost: this archetype holds only the host plant's cost (the same as "
+                 "without capture unless a source shows a significant difference); the capture "
+                 "plant's cost belongs to the co2-capture archetype it requests (modeller "
+                 "2026-10-02). Listed in output/ccs-addon-cost.csv to move to a capture archetype")
 
 
 def case_of(r) -> str:
@@ -175,6 +208,20 @@ def normalise(facts, examples, records, units) -> None:
             scale[r["example-id"]].setdefault("eff-h", (v, r["record-id"]))
         elif r["parameter"] == "efficiency-chp":
             scale[r["example-id"]].setdefault("eff-chp", (v, r["record-id"]))
+    # capture split (modeller 2026-10-02): the host records the share of its CO2
+    # sent to capture, the capture plant its own capture-rate; their product is
+    # the plant-level rate, not recorded. A capture-rate a source gives on any
+    # other archetype is plant-level, so it is recorded as the host's share.
+    for r in facts:
+        a = records.by_key.get(r.get("archetype", ""))
+        if (r["parameter"] == "capture-rate" and not (r.get("target") or "").strip()
+                and (not a or a["archetype"] not in CAPTURE_RATE_NOT_CO2)):
+            r["target"] = "co2"     # a capture rate with no species named is of CO2
+        if (r["parameter"] == "capture-rate" and a and not is_capture(a)
+                and a["archetype"] not in CAPTURE_RATE_NOT_CO2):
+            r["parameter"] = "share-to-capture"
+            if SHARE_NOTE.strip() not in (r.get("note") or ""):
+                r["note"] = (r.get("note") or "") + SHARE_NOTE
     by_id = {r["record-id"]: r for r in facts}
     # an example, or one case of it (`case`: a leading [case] in the note, or
     # UKERC's row code), whose costs are the cost of adding something to a plant
@@ -188,6 +235,7 @@ def normalise(facts, examples, records, units) -> None:
                 and r["parameter"] in PER_CAPACITY | PER_OUTPUT):
             r["cost-basis"] = "incremental"
     bridged = {r["example-id"]: r for r in read(REFERENCE / "efficiency-bridge.csv")}
+    chp_levelized_total = {r["record-id"] for r in read(REFERENCE / "chp-levelized-total.csv")}
 
     def heat_per_power(sc):
         """kW of heat per kW of electricity for a CHP example, from the same
@@ -299,9 +347,11 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = ("reported per a product the archetype does not make, and no factor "
                              "links the two: " + (exrow.get("note") or ""))
             continue
+        chp_total = (p == "cost-levelized" and r["record-id"] in chp_levelized_total
+                     and heat_product(a, pu))
         if (p == "cost-levelized" and a.get("family") == "heat-supply"
-                and re.search(r"/(k|M)Wh\b", unit)
-                and not re.search(r"per MWh of heat", r.get("note") or "", re.I)):
+                and re.search(r"/(k|M)Wh\b", unit) and not chp_total
+                and not HEAT_DENOMINATED.search(r.get("note") or "")):
             r["excluded"] = ("a cost per unit of electricity (or of unstated output) on an archetype "
                              "whose product is heat: a CHP plant's cost per MWh of electricity is not "
                              "a cost per GJ of heat")
@@ -316,6 +366,18 @@ def normalise(facts, examples, records, units) -> None:
             bridge_kind = "per-input"
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
+        # steam reported as a MASS (kg or t of steam per unit of product): put in GJ
+        # with the steam enthalpy in conversion-factor.csv (cf-steam-enthalpy,
+        # 2026-10-02) before any other conversion
+        steam_pre = None
+        if p == "specific-energy-consumption" and (r.get("target") or "") == "steam" \
+                and "/" in unit:
+            num_, den_ = unit.split("/", 1)
+            at_ = convert.atom(num_)
+            sf_ = units.factors.rows.get("cf-steam-enthalpy")
+            if at_ and at_[0] == "mass" and sf_:
+                steam_pre = at_[1] * fnum(sf_["factor"])
+                unit = "GJ/" + den_
         host = bridged.get(r["example-id"], {})
         if "/unit" in unit:
             su = service_unit(examples.get(r["example-id"]), pu)
@@ -415,6 +477,17 @@ def normalise(facts, examples, records, units) -> None:
                 note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
                         f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
                 cls.append("same-source")
+            elif (p in PER_CAPACITY and d == "yr" and p != "capex"
+                  and (oc := own_capacity(r, sc, pu, flist, alias))):
+                # an annual sum (fixed O&M in EUR-million/yr) over the same source's
+                # annual capacity for the case: a cost per unit of capacity per year
+                # (added 2026-10-02)
+                per_yr, rid, ids, basis = oc
+                factor, used = f / per_yr, used + ids
+                note = f"annual sum over the source's own capacity for this case ({rid})"
+                cls.append("same-source")
+                if basis in heating.INPUT_BASES:
+                    bridge_kind = "per-input"
             elif p in PER_CAPACITY and not d and (oc := own_capacity(r, sc, pu, flist, alias)):
                 per_yr, rid, ids, basis = oc
                 factor, used = f / per_yr, used + ids
@@ -458,6 +531,21 @@ def normalise(facts, examples, records, units) -> None:
                     continue
                 route, used = (ext[0], 0.0), used + ext[1]
             factor, offset = route
+        if chp_total and factor is not None:
+            # the whole CHP plant's levelized cost per MWh of ELECTRICITY, no heat
+            # credit (records/reference/chp-levelized-total.csv): per GJ of heat is
+            # the same annual cost over heat = electricity x heat-to-power ratio
+            hp = hp_for(scale.get(r["example-id"], {}), a)
+            if not hp:
+                r["excluded"] = ("CHP levelized cost per unit of electricity; no "
+                                 "heat-to-power ratio")
+                continue
+            factor /= hp[0]
+            note = (note + "; " if note else "") + (
+                f"whole-plant cost per unit of electricity / heat-to-power ratio {hp[0]:.3g} "
+                "(records/reference/chp-levelized-total.csv)")
+            cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
+            used.append(hp[1])
         if (p == "capacity" and r.get("capacity-basis") == "electric-output"
                 and heat_product(a, pu) and factor is not None):
             # a CHP unit rated in MW electric, on an archetype whose product is heat
@@ -496,6 +584,10 @@ def normalise(facts, examples, records, units) -> None:
             # archetype): per-product numbers divide by it, capacities multiply
             factor = factor * bf[0] if p in EXTENSIVE else factor / bf[0]
             used.append(bf[1])
+        if steam_pre:
+            factor *= steam_pre
+            used.append("cf-steam-enthalpy")
+            note = (note + "; " if note else "") + "steam mass x enthalpy"
         factor_ids = [u for u in used if u in units.factors.rows]
         if factor_ids:
             note = (note + "; " if note else "") + "factor " + ", ".join(dict.fromkeys(factor_ids)) + \
@@ -599,8 +691,37 @@ def normalise(facts, examples, records, units) -> None:
                                             or re.match(r"no conversion from \S+/t to \S+/GJ", e)):
             r["excluded"] = "not bridged: " + (b.get("note") or "")
             r["set-aside"] = "not-bridged"
+    plant_level = {r["record-id"]: r["note"] for r in read(REFERENCE / "plant-level-capture-rate.csv")}
+    # single rows a modeller ruled out, with the reason (records/reference/excluded-row.csv)
+    ruled_out = {r["record-id"]: r for r in read(REFERENCE / "excluded-row.csv")}
+    unknown = set(ruled_out) - set(by_id)
+    if unknown:
+        raise SystemExit(f"excluded-row.csv names unknown record-ids: {sorted(unknown)}")
     for r in facts:
-        if (r["parameter"] in PER_CAPACITY | PER_OUTPUT and r.get("cost-basis") == "incremental"
+        a = records.by_key.get(r.get("archetype", ""))
+        x = ruled_out.get(r["record-id"])
+        if x and r.get("excluded") != "no number":
+            r["excluded"] = f"ruled out: {x['reason']} ({x['decided']})"
+            continue
+        if r["record-id"] in plant_level and r.get("excluded") != "no number":
+            # capture-rate on a capture plant is its own rate on the gas it treats
+            r["excluded"] = ("plant-level capture rate on a capture plant: "
+                             + plant_level[r["record-id"]] + " (modeller 2026-10-02; "
+                             "records/reference/plant-level-capture-rate.csv)")
+            continue
+        if is_ccs_host(a) and r["parameter"] in CCS_HOST_COSTS:
+            # the host plant's cost comes from its host archetype (fill rule
+            # est-ccs-host-*); a source's with-capture or added cost is capture cost
+            if r.get("excluded") != "no number":
+                r["set-aside"], r["excluded"] = "ccs-add-on", CCS_HOST_NOTE
+            continue
+        if is_capture(a):
+            # a capture plant's incremental cost IS its own cost: no host needed
+            if r.get("set-aside") == "needs-host-cost":
+                r["set-aside"] = ""
+                if r.get("excluded") in (NEEDS_HOST, INCREMENTAL_NOTE):
+                    r["excluded"] = ""
+        elif (r["parameter"] in PER_CAPACITY | PER_OUTPUT and r.get("cost-basis") == "incremental"
                 and r.get("excluded") != "no number"):
             r["set-aside"], r["excluded"] = "needs-host-cost", INCREMENTAL_NOTE
             continue

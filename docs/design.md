@@ -60,10 +60,21 @@ vendor designs and product names are never archetypes.
 **Capture.**
 - A host that can carry CO2 capture gets its own archetype with a capture modifier:
   `ccs-concentrated` or `ccs-diffuse`.
-- That archetype holds host-side facts only: regeneration steam, the capture rate
-  the host can reach.
+- That archetype holds host-side facts only: regeneration steam, and
+  `share-to-capture`, the share of its CO2 sent to the capture plant. In CIMS it differs from its host only by a service request
+  to the capture archetype, so its costs are the host plant's, assumed the same
+  with and without capture unless a source shows a significant difference
+  (modeller 2026-10-02; fill rules `est-ccs-host-*`, graded estimated). A cost a
+  source gives on it is capture cost and is set aside (`set-aside = ccs-add-on`,
+  worklist `output/ccs-addon-cost.csv`) to move to the capture archetype.
 - The capture plant itself is a `capture-unit` archetype serving the matching
-  `service.ccs.*` node.
+  `service.ccs.*` node. Its `capture-rate` is the share of the CO2 entering it that
+  it captures.
+- The plant-level capture rate is `share-to-capture` x `capture-rate` and is not
+  recorded (modeller 2026-10-02). A plant-level rate a source gives on a host is
+  recorded as its `share-to-capture`; one mapped to a capture plant is excluded
+  (`records/reference/plant-level-capture-rate.csv`). A capture rate with no
+  species named is of CO2.
 - A route that concentrates its own stream keeps its archetype: oxy-fuel kilns,
   top-gas recycling, bath smelting.
 
@@ -216,6 +227,17 @@ are abated, or when a policy instrument treats them separately.
 - A row missing its required basis is marked `review`, with the note
   `BASIS NOT RECORDED`. It is not pooled until the basis is read back out of the
   source.
+- 2026-10-02 read-back: capacity bases were set from what the extraction notes
+  record of the source (a capacity in tonnes of the archetype's product is
+  `product-output`; "thermal output", "steam output", "MWe", "electric input" and
+  the like as stated), and for the EPA 2007 and 2017 CHP catalogs from the
+  catalogs themselves (systems are rated by electric capacity; the 2007 annual
+  outputs equal capacity x 8760 h x the stated capacity factor). The tag added to
+  the note ends "basis read back 2026-10-02". A capacity the source does not
+  qualify (an engine rating, an "energy" MW) stays in review. Cost bases the
+  extractor recorded as `COST BASIS NOT STATED` cannot be read back: the source
+  does not say. A capex with no stated cost basis is taken as installed (modeller
+  2026-10-02); the note says `COST BASIS ASSUMED: installed`.
 
 **Product unit.**
 - Each archetype declares one `product-unit`: `t` for a process archetype, `GJ` for
@@ -226,6 +248,16 @@ are abated, or when a policy instrument treats them separately.
   reports for the step (UKERC: t of product, GJ or m3), and as the product unit only
   when the source names none. A service unit that is not a physical product (UKERC's
   per £k of output) is never pooled.
+- Incremental costs and hosts (modeller 2026-10-02): host-plant costs are needed
+  where a competition holds both the host and the host plus an add-on, so an
+  efficiency variant's incremental cost is added to its host's (the fill rule
+  `est-host-increment-*`, hosts in `records/fill/host-archetype.csv`: the archetype
+  name less its last modifier, else the only conventional archetype with the same
+  equipment and product unit). The host's cost is assumed the same with and
+  without the add-on. CCS is counted only in the CCS competition: a capture plant's
+  (co2-capture family) incremental cost is its own cost and pools as it stands; a
+  host plant with capture holds only the host's cost (see Capture). Archetypes with
+  no host are open items in `docs/sanity-check-list.csv`.
 - A cost the source states as the cost of adding an improvement to an existing
   plant (UKERC measures, UK TIMES "improvement technologies" and add-ons via
   Bataille) is incremental: `cost-basis` is `incremental`. UK TIMES rows are marked
@@ -295,6 +327,14 @@ are abated, or when a policy instrument treats them separately.
   LHV per tonne exactly. A cost per kW of an INPUT (`capacity-basis` thermal- or
   electric-input) on a per-tonne archetype is never put per tonne with the
   product's heating value.
+  Steam given as a mass is put in GJ with `cf-steam-enthalpy` (saturated steam at
+  10 bar(a), 2.777 GJ/t, the most common industrial condition; its note records the
+  convention and range). Pulp is counted in air-dry tonnes (90% dry), the common
+  unit in pulp and paper data; a figure per oven-dry tonne is converted per example
+  (`ODt=ODt-pulp` in `example-conversion.csv`).
+  Ratios on file beyond the pure fuels (2026-10-02): black liquor from Larson 2006's
+  own LHV and HHV; coke-oven and blast-furnace gas derived from the IEAGHG 2013
+  Table C-11 compositions (the water each forms x 44.0 kJ/mol).
   Amended 2026-10-02: an LHV energy use per tonne that names its carrier needs no
   `heating-value-stream.csv` row; the carrier's own ratio applies.
   `heating-value-stream.csv` may hold one row per archetype (a second row used to
@@ -373,7 +413,8 @@ the 2025 rate.
 Species stay explicit in `target` (`co2`, `co2e`, `pfc`) and are not converted to
 CO2e. The exception is `emissions-reduction-potential`: it is one percentage,
 whether the source counted CO2 alone or CO2-equivalent, so its species are pooled
-into one column.
+into one column. A cost per t CO2 (abatement or capture cost) stands for a cost per
+t CO2-eq (ruling 2026-10-02).
 
 **Discount rates:** record the source study's own rate and replicate it when
 inverting a levelized cost. Apply the model's hurdle rate only afterwards.

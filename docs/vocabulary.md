@@ -36,12 +36,12 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
-| `adsorber_molecular-sieve-ethanol` | Molecular-sieve dehydration with heat integration | efficient variant | steam; electricity | 9 | biofuels.product.ethanol | not pooled |
+| `adsorber_molecular-sieve-ethanol` | Molecular-sieve dehydration with heat integration | efficient variant | steam; electricity | 9 | biofuels.product.ethanol | quantified |
 | `anaerobic-digester` | Anaerobic digester (component) | component | biomass; municipal-waste | 9 | no connection | quantified |
 | `anaerobic-digester_biomethane-upgrading` | Anaerobic digestion with upgrading | alternative | biomass | 9 | biofuels.product.renewable-natural-gas | quantified |
 | `distillation-column_methanol-recovery` | Methanol recovery with heat integration | efficient variant | steam; electricity | 9 | biofuels.product.biodiesel | estimated |
 | `dryer_distillers-grain` | Distillers-grain drying with heat recovery or heat pumps | efficient variant | natural-gas; electricity | 7-9 | biofuels.product.ethanol | estimated |
-| `fermenter_ccs-concentrated` | Fermentation CO2 capture and compression | alternative |  | 9 | biofuels.product.ethanol | estimated |
+| `fermenter_ccs-concentrated` | Ethanol fermenter with capture of the fermentation CO2 | alternative |  | 9 | biofuels.product.ethanol | estimated |
 | `fermenter_grain-dry-mill` | Grain dry-mill fermentation and distillation | conventional |  | 9 | biofuels.product.ethanol | quantified |
 | `fermenter_lignocellulosic-enzymatic` | Lignocellulosic enzymatic fermentation | alternative | biomass; electricity | 9 | biofuels.product.ethanol | quantified |
 | `fermenter_syngas` | Syngas fermentation | prospective | biomass | 8 | biofuels.product.ethanol | estimated |
@@ -261,7 +261,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `rolling-mill_hot` | Hot rolling mill | conventional | electricity | 9 | iron-and-steel.product.continuous-cast.hot-rolling | quantified |
 | `rolling-mill_hot-charging` | Hot charging and direct rolling | efficient variant | natural-gas; electricity | 9 | iron-and-steel.service.reheating | quantified |
 | `rolling-mill_hot_efficiency-moderate` | Hot rolling mill efficiency measures, moderate | efficient variant |  | 9 | iron-and-steel.product.continuous-cast.hot-rolling | quantified |
-| `rolling-mill_thin-slab` | Thin-slab casting with direct rolling | efficient variant | natural-gas; electricity | 9 | iron-and-steel.product.continuous-cast.casting | estimated |
+| `rolling-mill_thin-slab` | Thin-slab casting with direct rolling | efficient variant | natural-gas; electricity | 9 | iron-and-steel.product.continuous-cast.casting | quantified |
 | `shaft-furnace_direct-reduction` | Shaft-furnace direct reduction | conventional | natural-gas; hydrogen; coal; ammonia | 9 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `shaft-furnace_direct-reduction_ccs-concentrated` | Gas-based direct reduction with capture on the CO2 removal unit | alternative | by-product-gas; natural-gas | 9 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `shaft-furnace_electrolytic-hydrogen` | Electrolytic-hydrogen direct reduction with EAF (whole plant) | prospective | electricity; hydrogen | 7 | iron-and-steel.product.molten-steel | quantified |
@@ -322,7 +322,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `process-improvement_coal-mine-methane-drainage` | Coal-mine methane drainage and use | alternative |  | 9 | coal-mining.product.raw-product.extraction | named |
 | `pump_mine-dewatering` | Mine dewatering pumping | conventional | electricity | 9 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal | estimated |
 | `separator_gravity-magnetic` | Gravity and magnetic separation | conventional | electricity | 9 | mining.service.separation | estimated |
-| `separator_mine-water-treatment` | Mine water treatment plant | conventional |  | 9 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal | estimated |
+| `separator_mine-water-treatment` | Mine water treatment plant | conventional |  | 9 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal | quantified |
 | `separator_ore-sorting` | Sensor-based ore sorting | alternative | electricity | 9 | coal-mining.product.size-reduced-product.crushing; mining.service.crushing | estimated |
 | `separator_tailings-reclaim` | Tailings thickening and water reclaim | conventional | electricity | 9 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal | estimated |
 | `separator_thickening-filtration` | Thickening and filtration | conventional |  | 9 | mining.service.separation | estimated |
@@ -343,7 +343,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
 | `calciner_gas-suspension` | Gas-suspension calciner | efficient variant | natural-gas | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina | quantified |
-| `converter_continuous` | Continuous converting | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | not pooled |
+| `converter_continuous` | Continuous converting | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `converter_peirce-smith` | Peirce-Smith converting | conventional | oil; solar | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | gap |
 | `digester_bayer` | Bayer digestion on fossil steam | conventional | natural-gas; electricity; hydrogen; biomass | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina | quantified |
 | `digester_bayer_ccs-diffuse` | Bayer alumina refining with CO2 capture | prospective | natural-gas; steam | 4 | metal-smelting.product.aluminum.primary-aluminum.alumina | named |
@@ -371,7 +371,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `process-improvement_biocarbon-reductant` | Biocarbon reductant | alternative |  | 8 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | gap |
 | `process-improvement_pre-reduction` | Pre-reduction of feed | efficient variant |  | 6-7 | metal-smelting.product.titanium-slag.pyrometallurgy.roasting | quantified |
 | `refinery_nickel-matte` | Nickel matte refinery | conventional | natural-gas; electricity; steam | 9 | metal-smelting.product.nickel.pyrometallurgy.refining | quantified |
-| `rolling-mill_continuous-casting` | Continuous casting and rolling | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.aluminum.recycle; metal-smelting.product.copper.melt-cast; metal-smelting.product.lead.melt-cast; metal-smelting.product.magnesium.melt-cast; metal-smelting.product.nickel.melt-cast; metal-smelting.product.zinc.melt-cast | estimated |
+| `rolling-mill_continuous-casting` | Continuous casting and rolling | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.aluminum.recycle; metal-smelting.product.copper.melt-cast; metal-smelting.product.lead.melt-cast; metal-smelting.product.magnesium.melt-cast; metal-smelting.product.nickel.melt-cast; metal-smelting.product.zinc.melt-cast | quantified |
 | `rolling-mill_ring` | Ring rolling with variable wall thickness | prospective | electricity; natural-gas | 4 | metal-smelting.product.aluminum.recycle; metal-smelting.product.copper.melt-cast; metal-smelting.product.nickel.melt-cast | estimated |
 | `smelting-vessel_efficiency-moderate` | Smelting efficiency measures, moderate | efficient variant | natural-gas; electricity | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.lead.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | estimated |
 | `smelting-vessel_efficiency-strong` | Smelting efficiency measures, strong | efficient variant | natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.lead.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | estimated |
@@ -436,7 +436,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `flare_high-efficiency` | High-efficiency flare | alternative |  | 9 | natural-gas.product.supply.flaring | gap |
 | `fracturing-fleet_electric` | Electric fracturing fleet | alternative | electricity; natural-gas | 9 | natural-gas.product.supply.drilling; petroleum-crude.product.exploration | gap |
 | `gas-treatment-unit_amine-sweetening` | Amine sweetening | conventional | electricity | 9 | natural-gas.product.supply.formation-co2; natural-gas.product.supply.processing | gap |
-| `gas-treatment-unit_ccs-concentrated` | Acid gas removal with CO2 compression and injection | alternative | natural-gas | 9 | natural-gas.product.supply.formation-co2 | quantified |
+| `gas-treatment-unit_ccs-concentrated` | Gas processing amine unit with capture of the separated CO2 | alternative | natural-gas | 9 | natural-gas.product.supply.formation-co2 | quantified |
 | `gas-treatment-unit_glycol-dehydration` | Glycol dehydration | conventional | natural-gas | 9 | natural-gas.product.supply.processing | gap |
 | `gasifier_coal-methanation` | Coal gasification with methanation (SNG) | alternative | coal | 9 | no connection | quantified |
 | `gasifier_coal-to-liquids` | Coal-to-liquids (gasification and Fischer-Tropsch) | alternative | coal | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
@@ -458,7 +458,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_gas-to-liquids` | Gas-to-liquids (reforming and Fischer-Tropsch) | alternative | natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
 | `reactor_hydrotreating-fixed-bed` | Fixed-bed hydrotreating | conventional | hydrogen; natural-gas | 9 | petroleum-crude.product.bitumen.upgrading | gap |
 | `reactor_integrated-upgrader` | Integrated bitumen upgrader (whole plant) | conventional | natural-gas; refinery-gas; petroleum-coke | 9 | petroleum-crude.product.bitumen.upgrading | quantified |
-| `reactor_integrated-upgrader_ccs-concentrated` | Integrated bitumen upgrader with capture (whole plant) | alternative | natural-gas; refinery-gas; petroleum-coke | 9 | petroleum-crude.product.bitumen.upgrading | quantified |
+| `reactor_integrated-upgrader_ccs-concentrated` | Integrated bitumen upgrader with capture | alternative | natural-gas; refinery-gas; petroleum-coke | 9 | petroleum-crude.product.bitumen.upgrading | quantified |
 | `reactor_partial-upgrading` | Partial upgrading | prospective | natural-gas; electricity | 6-7 | petroleum-crude.product.bitumen.upgrading | gap |
 | `reciprocating-engine_diesel-field` | Diesel field engine | conventional | diesel | 9 | petroleum-crude.service.field-engines | estimated |
 | `reciprocating-engine_dual-fuel` | Dual-fuel or natural-gas engines | efficient variant | natural-gas; diesel | 9 | natural-gas.product.supply.drilling; natural-gas.product.supply.well-tests; petroleum-crude.product.exploration | gap |
@@ -540,7 +540,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_catalytic-reforming` | Catalytic reforming | conventional | electricity | 9 | petroleum-refining.product.reforming | quantified |
 | `reactor_delayed-coking` | Delayed coking | conventional | steam | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking; petroleum-crude.product.bitumen.upgrading | quantified |
 | `reactor_fluid-catalytic-cracking` | Fluid catalytic cracking | conventional | steam; electricity | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | quantified |
-| `reactor_fluid-catalytic-cracking-oxy-fuel` | Oxy-fuel FCC regeneration | prospective |  | 5 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | estimated |
+| `reactor_fluid-catalytic-cracking-oxy-fuel` | Oxy-fuel FCC regeneration | prospective |  | 5 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | quantified |
 | `reactor_fluid-catalytic-cracking_ccs-diffuse` | FCC regenerator with post-combustion capture | prospective |  | 3-4 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | quantified |
 | `reactor_hydroprocessing` | Hydroprocessing (hydrocracking and hydrotreating) | conventional | hydrogen; natural-gas; electricity | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking; petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization | quantified |
 | `reactor_visbreaking` | Visbreaker | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking | quantified |
@@ -555,13 +555,13 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
-| `anaerobic-digester_effluent` | Anaerobic treatment with biogas recovery | alternative |  | 9 | pulp-and-paper.service.effluent-treatment | estimated |
+| `anaerobic-digester_effluent` | Anaerobic treatment with biogas recovery | alternative |  | 9 | pulp-and-paper.service.effluent-treatment | quantified |
 | `boiler_recovery` | Recovery boiler | conventional | black-liquor | 9 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `boiler_recovery-high-solids` | High-solids firing and high-pressure recovery boiler | efficient variant | black-liquor | 9 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `boiler_recovery_ccs-diffuse` | Recovery boiler with post-combustion capture | prospective |  | 5 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
-| `digester_batch-kraft` | Batch kraft digester with displacement heating | efficient variant | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | not pooled |
+| `digester_batch-kraft` | Batch kraft digester with displacement heating | efficient variant | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `digester_continuous-kraft` | Continuous kraft digester | conventional | steam | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
-| `digester_deep-eutectic-solvent` | Deep eutectic solvent pulping | prospective | steam; electricity | 4 | pulp-and-paper.product.pulp.pulping-chemical | not pooled |
+| `digester_deep-eutectic-solvent` | Deep eutectic solvent pulping | prospective | steam; electricity | 4 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `digester_semi-chemical` | Semi-chemical and sulphite pulping | conventional | steam | 9 | pulp-and-paper.product.pulp.pulping-chemical; pulp-and-paper.product.pulp.pulping-semi-chemical | quantified |
 | `digester_sulphite` | Sulphite chemical pulping | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `dryer_electric-air` | Electric air heating | alternative | electricity | 9 | pulp-and-paper.product.paper.coated.drying; light-industrial.service.heat; pulp-and-paper.product.paper.tissue.drying | estimated |
@@ -587,7 +587,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `press_dewatering-advanced` | Advanced mechanical dewatering | prospective | electricity; steam | 5 | pulp-and-paper.product.paper.coated.forming; pulp-and-paper.product.paper.linerboard.forming; pulp-and-paper.product.paper.newsprint.forming; pulp-and-paper.product.paper.tissue.forming; pulp-and-paper.product.paper.uncoated.forming | quantified |
 | `press_shoe-extended` | Shoe (extended-nip) press | efficient variant | electricity | 9 | pulp-and-paper.product.paper.coated.forming; pulp-and-paper.product.paper.linerboard.forming; pulp-and-paper.product.paper.newsprint.forming; pulp-and-paper.product.paper.tissue.forming; pulp-and-paper.product.paper.uncoated.forming | quantified |
 | `process-improvement_drum-debarker` | Drum debarker and disc chipper | conventional | electricity | 9 | pulp-and-paper.product.pulp.wood-preparation | quantified |
-| `process-improvement_log-thawing` | Log and chip thawing with recovered heat | efficient variant | steam | 9 | pulp-and-paper.product.pulp.wood-preparation | not pooled |
+| `process-improvement_log-thawing` | Log and chip thawing with recovered heat | efficient variant | steam | 9 | pulp-and-paper.product.pulp.wood-preparation | estimated |
 | `pulper_chemi-thermomechanical` | Chemi-thermomechanical pulping | alternative | electricity | 9 | pulp-and-paper.product.pulp.pulping-mechanical | quantified |
 | `pulper_groundwood` | Stone or pressure groundwood | conventional | electricity | 9 | pulp-and-paper.product.pulp.pulping-mechanical | quantified |
 | `pulper_recycled-fibre` | Recycled-fibre repulping and deinking | conventional | electricity; steam | 9 | pulp-and-paper.product.pulp.pulping-recycled | quantified |

@@ -10,8 +10,10 @@ target year's rate.
 The factor is not symmetric and must not be chained or reversed: convert once,
 from the currency the estimate was published in. The two reference tables are
 copied verbatim from the CIMS repository (data/processed_data/deflator_exchange/);
-refresh them there, not by hand. Coverage is 2000-2025 for CAD, USD, GBP, EUR,
-JPY, INR, CNY and DKK; anything else is reported and left unconverted. DKK has no
+refresh them there, not by hand. Deflators cover 1976-2025 (EUR 1995-2025) and
+exchange rates 1999-2025 (all years the raw files carry, 2026-10-02) for CAD, USD,
+GBP, EUR, JPY, INR, CNY and DKK. An earlier source year needs only its deflator,
+since the exchange is at the target year; anything else is reported and left unconverted. DKK has no
 Bank of Canada series: its CAD rate is the Bank of Canada EUR rate divided by the
 ECB's annual-average DKK per EUR (added 2026-10-02).
 

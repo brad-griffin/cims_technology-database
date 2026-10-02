@@ -42,12 +42,18 @@ ATOM = {
     # an air-dried tonne (90% dry) is the pulp industry's product tonne; the pulp
     # archetypes' "t pulp" is that tonne (modeller 2026-10-01)
     "ADt": ("mass", 1.0), "ADMT": ("mass", 1.0),
+    # an oven-dry tonne of PULP is 1/0.9 air-dry tonnes (air-dry = 90% dry); named
+    # per example as a unit alias (ODt=ODt-pulp), since an ODt of black liquor
+    # solids or wood is not (2026-10-02)
+    "ODt-pulp": ("mass", 1 / 0.9),
     "kcal": ("energy", 4.1868e-6), "Mcal": ("energy", 4.1868e-3), "Gcal": ("energy", 4.1868),
     "m3": ("volume", 1.0), "Nm3": ("volume", 1.0), "l": ("volume", 1e-3), "L": ("volume", 1e-3),
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
     "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
     "bbl-beer": ("volume", 0.117347765),
     "1000-Nm3": ("volume", 1000.0),
+    "Mgal": ("volume", 3785.411784), "Wh": ("energy", 3.6e-6),
+    "million-Nm3-CH4": ("volume", 1e6), "thousand-Nm3-biomethane": ("volume", 1e3),
     "mol-H2": ("amount-h2", 1.0),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),

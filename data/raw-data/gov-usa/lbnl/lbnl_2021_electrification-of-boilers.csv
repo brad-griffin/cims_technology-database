@@ -4,20 +4,20 @@ steam,boiler_electricity,trl,,8,,page 1,commercially mature
 steam,boiler_electricity,state-of-development,,commercial,,,
 steam,boiler_electricity,year-available,year,1950,,,assumption
 steam,boiler_electricity,lifetime,years,20,,page 21,
-steam,boiler_electricity,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",,use same value as EPA biomass CHP catalog
+steam,boiler_electricity,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",,use same value as EPA biomass CHP catalog CAPACITY BASIS: thermal-output (the EPA 2007 boiler size it copies is steam output; basis read back 2026-10-02).
 steam,boiler_electricity,capacity-factor,fraction,0.95,,,use same value as EPA biomass CHP catalog
-steam,boiler_electricity,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,boiler_electricity,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,"CAPACITY BASIS: thermal-output (annual steam, as the EPA 2007 boiler case; basis read back 2026-10-02)."
 steam,boiler_electricity,capex,2018_USD,5948466.0,"round(250*capacity**-0.4*2*1000*capacity,0)",page 43,"fitted equation to figure: $/kW=250*capacity^-0.4; assume cost is for equipment, apply 100% markup for installation"
-steam,boiler_electricity,opex-fixed,2018_USD,29742.0,"round(capex/2*0.01,0)",page 43,"1% of capital cost, before markup from equipment cost to installed cost"
+steam,boiler_electricity,opex-fixed,2018_USD,29742.0,"round(capex/2*0.01,0)",page 43,"1% of capital cost, before markup from equipment cost to installed cost CAPACITY BASIS: thermal-output (fixed O&M on the EPA 2007 boiler size (steam output); basis read back 2026-10-02)."
 steam,boiler_electricity,efficiency,fraction,0.99,,page 2,95-99% efficient
 steam,boiler_fossil,description,,industrial combustion steam boiler,,,
 steam,boiler_fossil,trl,,9,,,assumption
 steam,boiler_fossil,state-of-development,,existing,,,
 steam,boiler_fossil,year-available,year,1950,,,assumption
 steam,boiler_fossil,lifetime,years,35,,,use same value as EPA biomass CHP catalog
-steam,boiler_fossil,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",,use same value as EPA biomass CHP catalog
+steam,boiler_fossil,capacity,MW,62.0,"round(212*GJ_per_MMBtu/GJ_per_MWh,0)",,use same value as EPA biomass CHP catalog CAPACITY BASIS: thermal-output (the EPA 2007 boiler size it copies is steam output; basis read back 2026-10-02).
 steam,boiler_fossil,capacity-factor,fraction,0.95,,,use same value as EPA biomass CHP catalog
-steam,boiler_fossil,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,
+steam,boiler_fossil,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*hours_per_year*GJ_per_MWh,0)",,"CAPACITY BASIS: thermal-output (annual steam, as the EPA 2007 boiler case; basis read back 2026-10-02)."
 steam,boiler_fossil,capex,2018_USD,9914111.0,"round(250*capacity**-0.4*2*1000*capacity/0.6,0)",page 43,capital investment costs of an electric boiler are nearly 40% less than that of an equivalent natural gas boiler
-steam,boiler_fossil,opex-fixed,2018_USD,49571.0,"round(capex/2*0.01,0)",page 43,"1% of capital cost, before markup from equipment cost to installed cost"
+steam,boiler_fossil,opex-fixed,2018_USD,49571.0,"round(capex/2*0.01,0)",page 43,"1% of capital cost, before markup from equipment cost to installed cost CAPACITY BASIS: thermal-output (fixed O&M on the EPA 2007 boiler size (steam output); basis read back 2026-10-02)."
 steam,boiler_fossil,efficiency,fraction,0.8,,page 2,70-80% efficient

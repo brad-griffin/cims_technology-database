@@ -62,9 +62,15 @@ def _in_scope(rule, a, have):
         return False
     if a["equipment"] in sc.get("exclude-equipment", "").split("|"):
         return False
+    if sc.get("exclude-ccs") == "yes" and ("_ccs-" in a["archetype"]
+                                         or a.get("family") == "co2-capture"):
+        return False
     if sc.get("exclude-chp") == "yes" and (
             "chp" in a["archetype"] or a["archetype"].startswith("combined-cycle")
             or any(k[0] == "efficiency-chp" for k in have)):
+        return False
+    if sc.get("only-ccs-host") == "yes" and not ("_ccs-" in a["archetype"]
+                                                 and a.get("family") != "co2-capture"):
         return False
     for p in split_list(sc.get("require-absent", "").replace(",", ";")):
         if any(k[0] == p for k in have):
@@ -181,6 +187,27 @@ def m_host_increment(rule, a, have, ctx):
                         + ", ".join(sorted(by_ex))],
              "grades": [host.get("grade", "sourced")],
              "sources": "; ".join(dict.fromkeys(srcs)), "external": []}]
+
+
+def m_host_copy(rule, a, have, ctx):
+    """The host plant's cost, unchanged: a host-with-capture archetype differs from
+    its host only by a service request to the capture archetype, which carries the
+    capture cost (modeller 2026-10-02)."""
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    hm = ctx["hosts"].get(a["archetype"])
+    if not hm or hm.get("status") != "active" or not hm.get("host"):
+        return []
+    host = ctx["have"].get(hm["host"], {}).get((p, ""))
+    if not host or fnum(host.get("central")) is None:
+        return []
+    hc, hl, hh = _vals(host)
+    return [{"parameter": p, "target": "", "central": hc,
+             "low": hc if hl is None else hl, "high": hc if hh is None else hh,
+             "inputs": [_input(host, f"{hm['host']} {p}")],
+             "grades": [host.get("grade", "sourced")],
+             "sources": host.get("sources", ""), "external": []}]
 
 
 def _siblings(a, p, ctx):
@@ -355,7 +382,7 @@ def backtest(records, rules_, have, ctx):
 
 
 METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
-           "host-increment": m_host_increment,
+           "host-increment": m_host_increment, "host-copy": m_host_copy,
            **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
 
 

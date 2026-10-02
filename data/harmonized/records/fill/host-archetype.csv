@@ -1,39 +1,93 @@
 archetype,host,status,note
-basic-oxygen-furnace_efficiency-moderate,basic-oxygen-furnace,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-basic-oxygen-furnace_efficiency-strong,basic-oxygen-furnace,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-blast-furnace_efficiency-moderate,blast-furnace,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-cleaning-system_efficiency-moderate,cleaning-system,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-coke-oven_efficiency-moderate,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-combustion-turbine_simple-cycle_efficiency-moderate,combustion-turbine_simple-cycle,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
+anaerobic-digester_effluent,anaerobic-digester,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02)
+autothermal-reformer_ccs-concentrated,autothermal-reformer,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+basic-oxygen-furnace_efficiency-moderate,basic-oxygen-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+basic-oxygen-furnace_efficiency-strong,basic-oxygen-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+binder_blended-cement,,unmapped,no host archetype by name; name the plant this is added to
+binder_calcined-clay,,unmapped,no host archetype by name; name the plant this is added to
+blast-furnace_ccs-diffuse,blast-furnace,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+blast-furnace_efficiency-moderate,blast-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+blast-furnace_efficiency-strong,blast-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02)
+blast-furnace_top-gas-recycling,blast-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02)
+boiler_ccs-diffuse,boiler_fuel-fired,active,the fuel-fired boiler (modeller 2026-10-02)
+boiler_recovery-high-solids,boiler_recovery,active,the only conventional archetype with the same equipment (boiler) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+boiler_recovery_ccs-diffuse,boiler_recovery,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+caster_continuous,,unmapped,no host archetype by name; name the plant this is added to
+cleaning-system_efficiency-moderate,cleaning-system,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+coke-oven_efficiency-moderate,coke-oven_by-product,active,the only conventional archetype with the same equipment (coke-oven) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+coke-oven_efficiency-strong,coke-oven_by-product,active,the only conventional archetype with the same equipment (coke-oven) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+combustion-turbine_simple-cycle_efficiency-moderate,combustion-turbine_simple-cycle,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+compressor_air-system-management,,unmapped,no host archetype by name; name the plant this is added to
+digester_bayer_ccs-diffuse,digester_bayer,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+digester_continuous-kraft,,unmapped,no host archetype by name; name the plant this is added to
+direct-heater_ccs-diffuse,direct-heater_fired-process,active,"the only conventional archetype with the same equipment and product unit: the host plant the capture archetype serves (modeller rule 2026-10-02); natural gas, as the capture archetype"
 direct-heater_electrified-crude,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
 distillation-column_heat-integrated,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-dryer_steam-heated_efficiency-moderate,dryer_steam-heated,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
+dryer_steam-heated_efficiency-moderate,dryer_steam-heated,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 electric-arc-furnace,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-electric-arc-furnace_high-efficiency,electric-arc-furnace,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
+electric-arc-furnace_high-efficiency,electric-arc-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 electrolysis-cell_chlor-alkali-membrane,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
 electrolysis-cell_inert-anode,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-furnace_reheating_efficiency-moderate,furnace_reheating,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-furnace_reheating_efficiency-strong,furnace_reheating,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
+electrolysis-cell_oxygen-depolarized,,unmapped,no host archetype by name; name the plant this is added to
+electrolysis-cell_prebaked-anode,,unmapped,no host archetype by name; name the plant this is added to
+electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+electrolysis-cell_soderberg,,unmapped,no host archetype by name; name the plant this is added to
+fan_optimization,,unmapped,no host archetype by name; name the plant this is added to
+fermenter_ccs-concentrated,fermenter_grain-dry-mill,active,the only conventional archetype with the same equipment and product unit: the host plant the capture archetype serves (modeller rule 2026-10-02)
+furnace_glass-regenerative,,unmapped,no host archetype by name; name the plant this is added to
+furnace_glass-regenerative_ccs-diffuse,furnace_glass-regenerative,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+furnace_reheating_efficiency-moderate,furnace_reheating,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+furnace_reheating_efficiency-strong,furnace_reheating,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+gas-treatment-unit_ccs-concentrated,gas-treatment-unit_amine-sweetening,active,"the amine unit whose separated CO2 is captured, per the archetype description; same product unit (m3 gas processed) (modeller rule 2026-10-02)"
+gasifier_black-liquor,,unmapped,no host archetype by name; name the plant this is added to
+gasifier_ccs-concentrated,gasifier_coal-petroleum-coke,active,the conventional coal gasifier: three of the four source examples are coal or residue gasifiers with capture (modeller 2026-10-02)
+gasifier_coal-methanation,,unmapped,no host archetype by name; name the plant this is added to
+gasifier_coal-petroleum-coke,,unmapped,no host archetype by name; name the plant this is added to
+gasifier_coal-to-liquids,,unmapped,no host archetype by name; name the plant this is added to
+grinding-mill_vertical-roller,,unmapped,no host archetype by name; name the plant this is added to
 heat-pump_industrial,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+heat-recovery-unit_dryer-exhaust,,unmapped,no host archetype by name; name the plant this is added to
 heat-recovery-unit_oven-exhaust,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-kiln_dry-precalciner_ccs-diffuse,kiln_dry-precalciner,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-kiln_dry-precalciner_efficiency-moderate,kiln_dry-precalciner,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-kiln_dry-precalciner_efficiency-strong,kiln_dry-precalciner,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-oven_efficiency-moderate,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-paper-machine_fourdrinier-gap_efficiency-moderate,paper-machine_fourdrinier-gap,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-paper-machine_fourdrinier-gap_efficiency-strong,paper-machine_fourdrinier-gap,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
+kiln_dry-precalciner,,unmapped,no host archetype by name; name the plant this is added to
+kiln_dry-precalciner_ccs-diffuse,kiln_dry-precalciner,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+kiln_dry-precalciner_efficiency-moderate,kiln_dry-precalciner,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+kiln_dry-precalciner_efficiency-strong,kiln_dry-precalciner,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+kiln_lime-gasifier-fired,,unmapped,no host archetype by name; name the plant this is added to
+kiln_lime_ccs-diffuse,kiln_lime-rotary-preheater,active,the rotary lime kiln with preheater (modeller 2026-10-02)
+kiln_oxy-fuel,,unmapped,no host archetype by name; name the plant this is added to
+oven_efficiency-moderate,oven_tunnel-deck,active,the only conventional archetype with the same equipment (oven) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+paper-machine_fourdrinier-gap_efficiency-moderate,paper-machine_fourdrinier-gap,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+paper-machine_fourdrinier-gap_efficiency-strong,paper-machine_fourdrinier-gap,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+paper-machine_waterless,,unmapped,no host archetype by name; name the plant this is added to
 preheater_ladle,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
 press_dewatering-advanced,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-press_shoe-extended,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+press_shoe-extended,,unmapped,no single host: the equipment match points at a different duty (mine dewatering pump / panel hot press); name the plant this is added to
+process-improvement_log-thawing,process-improvement_drum-debarker,active,the only conventional archetype with the same equipment (process-improvement) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
 pulper_refiner-low-energy,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+pump_optimization,,unmapped,no single host: the equipment match points at a different duty (mine dewatering pump / panel hot press); name the plant this is added to
+reactor_catalytic-n2o,,unmapped,no host archetype by name; name the plant this is added to
 reactor_catalytic-reforming,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+reactor_fluid-catalytic-cracking_ccs-diffuse,reactor_fluid-catalytic-cracking,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+reactor_gas-to-liquids,,unmapped,no host archetype by name; name the plant this is added to
 reactor_hydroprocessing,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
 reactor_nitric-acid,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-rolling-mill_hot-charging,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-rolling-mill_hot_efficiency-moderate,rolling-mill_hot,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-sinter-plant_efficiency-moderate,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-sinter-plant_efficiency-strong,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-steam-cracker_ccs-diffuse,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+reactor_oxygen-delignification,,unmapped,no host archetype by name; name the plant this is added to
+reactor_steel-offgas-chemicals,,unmapped,no host archetype by name; name the plant this is added to
+reactor_thermal-n2o-destruction,,unmapped,no host archetype by name; name the plant this is added to
+rolling-mill_hot-charging,rolling-mill_hot,active,hot charging is added to a hot rolling mill (modeller rule 2026-10-02)
+rolling-mill_hot_efficiency-moderate,rolling-mill_hot,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
+shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+shaft-furnace_electrolytic-hydrogen,,unmapped,no host archetype by name; name the plant this is added to
+sinter-plant_efficiency-moderate,sinter-plant_strand,active,the only conventional archetype with the same equipment (sinter-plant) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+sinter-plant_efficiency-strong,sinter-plant_strand,active,the only conventional archetype with the same equipment (sinter-plant) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+smelting-vessel_two-stage,,unmapped,no host archetype by name; name the plant this is added to
+smelting-vessel_two-stage_ccs-concentrated,smelting-vessel_two-stage,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+steam-cracker_ccs-diffuse,steam-cracker_fired-tubular,active,the only conventional archetype with the same equipment and product unit: the host plant the capture archetype serves (modeller rule 2026-10-02)
 steam-cracker_fired-tubular,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,active,"the archetype name less its last modifier (proposed by the build, 2026-09-30; confirm)"
-steam-reformer_efficiency-moderate,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+steam-reformer_efficiency-moderate,steam-reformer_ammonia,active,the only conventional archetype with the same equipment (steam-reformer) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
+steam-reformer_methane_ccs-concentrated,steam-reformer_methane,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
+steam-turbine_waste-heat,,unmapped,no host archetype by name; name the plant this is added to
+thermal-storage_heat-charged,,unmapped,no host archetype by name; name the plant this is added to

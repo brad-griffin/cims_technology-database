@@ -152,6 +152,13 @@ def main(argv) -> int:
            "via-source-id", "source-locator", "note"],
           sorted((r for r in L.facts if r.get("set-aside") == "needs-host-cost"),
                  key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
+    # costs sources give on host-with-capture archetypes: capture cost, to move to
+    # a co2-capture archetype (docs/sanity-check-list.csv)
+    write(OUTPUT / "ccs-addon-cost.csv",
+          ["archetype", "example-id", "record-id", "parameter", "value", "unit", "cost-basis",
+           "source-id", "via-source-id", "source-locator", "note"],
+          sorted((r for r in L.facts if r.get("set-aside") == "ccs-add-on"),
+                 key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     # the worklist for establishing efficiency factors later
     sec = {}
     for r in L.facts:

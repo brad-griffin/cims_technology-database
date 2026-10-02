@@ -56,6 +56,8 @@ CARRIER_RATIO = {
                                           "renewable-natural-gas", "landfill-gas", "sng")},
     "hydrogen": "cf-hhv-lhv-hydrogen", "methanol": "cf-hhv-lhv-methanol",
     "ammonia": "cf-hhv-lhv-ammonia", "ethanol": "cf-hhv-lhv-ethanol",
+    "black-liquor": "cf-hhv-lhv-black-liquor", "coke-oven-gas": "cf-hhv-lhv-coke-oven-gas",
+    "blast-furnace-gas": "cf-hhv-lhv-blast-furnace-gas",
     **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "naphtha",
                                                "petroleum-coke", "biomass", "biomass-solid",
                                                "bioliquid", "liquid-biomass", "fuel-oil",
