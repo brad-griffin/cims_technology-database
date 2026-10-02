@@ -56,11 +56,23 @@ def apply(facts, records, examples, units) -> dict:
     from .normalise import case_of
     own = defaultdict(lambda: defaultdict(list))
     own_how = defaultdict(list)          # the efficiency rows' own conversions
+    own_derived = defaultdict(lambda: defaultdict(list))
+    own_derived_how = defaultdict(list)
     for r in facts:
         if r["parameter"] in EFF and r.get("value-norm") and not r.get("excluded"):
             if r.get("value-type") != "derived":
                 own[r["example-id"]][r["parameter"]].append(fnum(r["value-norm"]))
                 own_how[r["example-id"]].append(r)
+            else:
+                # a derived efficiency (the same source's numbers, e.g. a fraction
+                # printed as such) is used only where the example reports none
+                own_derived[r["example-id"]][r["parameter"]].append(fnum(r["value-norm"]))
+                own_derived_how[r["example-id"]].append(r)
+    for eid, d in own_derived.items():
+        for p, v in d.items():
+            if p not in own[eid]:
+                own[eid][p] = v
+                own_how[eid] += [x for x in own_derived_how[eid] if x["parameter"] == p]
     pooled = defaultdict(dict)
     for s in summarise.summarise([r for r in facts if r["parameter"] in EFF], records,
                                  ("parameter",), examples):
@@ -79,7 +91,13 @@ def apply(facts, records, examples, units) -> dict:
         kind = r.pop("_bridge")
         a = r.get("archetype", "")
         chp = _is_chp(a, pooled.get(a, {}))
-        e = _heat_eff({k: median(v) for k, v in own.get(r["example-id"], {}).items()}, chp)
+        mine = {k: median(v) for k, v in own.get(r["example-id"], {}).items()}
+        # an example is CHP only if its archetype is named so or it reports a total
+        # CHP efficiency itself; a heat-only boiler pooled on a boiler-or-CHP
+        # archetype bridges by its own efficiency (fixed 2026-10-02: it took the
+        # archetype's total less electric, two medians of different plants)
+        own_chp = ("chp" in a or a.startswith("combined-cycle") or "efficiency-chp" in mine)
+        e = _heat_eff(mine, own_chp)
         extra = []
         if e:
             eff, how, tag = e[0], e[1], "eff:same-example"

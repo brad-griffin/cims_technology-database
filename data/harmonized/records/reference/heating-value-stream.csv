@@ -10,7 +10,7 @@ electrolyzer_solid-oxide,,cf-hhv-lhv-hydrogen,electricity (and steam) in; hydrog
 gasifier_biomass-methanation,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methane,wood in; SNG out (net efficiencies also count exported electricity at 1:1)
 gasifier_biomass-methanol,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methanol,wood in; methanol out
 shaft-furnace_electrolytic-hydrogen,,,energy use is electricity; the LHV in the source note describes the electrolyser
-reactor_haber-bosch-loop,,,energy use is electricity; LHV in the source notes describes the hydrogen feed
+reactor_haber-bosch-loop,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ammonia,hydrogen (and nitrogen) in; ammonia out. Electricity uses take ratio 1 by their target (heating.CARRIER_RATIO); the DEA catalogue prices and rates the loop per MW of ammonia on LHV, which needs the ammonia ratio (restored 2026-10-02: blank, those figures were 21% high)
 boiler_fuel-fired,cf-hhv-lhv-methane,,gas-fired in the sources that state LHV (DEA gas/oil boiler; natural gas is the main fuel)
 boiler_solid-fuel,cf-hhv-lhv-solid-liquid,,biomass or coal fuel
 direct-heater_fired-process,cf-hhv-lhv-methane,,natural gas burners
@@ -26,3 +26,5 @@ capture-unit_dac-liquid-solvent,cf-hhv-lhv-methane,,natural gas fires the calcin
 gasifier_fischer-tropsch,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,solid biomass in; FT liquids out
 fermenter_grain-dry-mill,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ethanol,grain in; ethanol out
 fermenter_lignocellulosic-enzymatic,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ethanol,lignocellulosic biomass in; ethanol out
+reciprocating-engine_diesel-generator,cf-hhv-lhv-solid-liquid,,diesel engine (its only carrier); electricity out (added 2026-10-02)
+furnace_reheating_efficiency-moderate,cf-hhv-lhv-methane,,natural gas (its only carrier) (added 2026-10-02)

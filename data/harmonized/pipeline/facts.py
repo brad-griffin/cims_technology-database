@@ -16,7 +16,11 @@ from .common import VOCAB, currency_year, read
 
 UNIT_SPELLING = {"C": "degC", "c": "degC", "degrees C": "degC",
                  "kgeCO2/unit": "kg/unit", "kgCO2/unit": "kg/unit",
-                 "tCO2/unit": "t/unit", "yrs": "years", "yr": "years"}
+                 "tCO2/unit": "t/unit", "yrs": "years", "yr": "years",
+                 # added 2026-10-02: spellings only, no change of quantity
+                 "tCO2/t": "t/t", "short-t/yr": "short-ton/yr", "g/GJ_i": "g/GJ"}
+# trailing species spellings in a money unit (EUR/t-co2e is EUR/t-CO2-eq)
+SPECIES_SPELLING = (("/t-co2e", "/t-CO2-eq"), ("/t-co2eq", "/t-CO2-eq"))
 FRACTION = {"fraction": "%", "fraction/yr": "%/yr"}
 BASIS_NOTE = ("  BASIS NOT RECORDED: parameter.csv requires a {col} for {param} "
               "and this extraction does not give one. Marked for review rather "
@@ -56,6 +60,9 @@ def clean(facts, flows, cons) -> dict:
     for r in facts:
         if r.get("unit") in UNIT_SPELLING:
             r["unit"] = UNIT_SPELLING[r["unit"]]
+        for a, b in SPECIES_SPELLING:
+            if (r.get("unit") or "").endswith(a):
+                r["unit"] = r["unit"][: -len(a)] + b
     for r in facts:
         if r.get("unit") in FRACTION:
             for k in ("value", "value-min", "value-max"):

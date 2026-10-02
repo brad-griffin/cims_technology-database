@@ -122,7 +122,15 @@ def conversion_references(fail, records, loader) -> None:
                 fail["example-conversion names an unknown factor"].append(f"{r['example-id']}: {x}")
         if r["example-id"] not in loader.examples:
             fail["example-conversion names an unknown example"].append(r["example-id"])
-    for r in read(REFERENCE / "heating-value-stream.csv"):
+    hvs = read(REFERENCE / "heating-value-stream.csv")
+    for k, n in Counter(r["archetype"] for r in hvs).items():
+        if n > 1:
+            # a second row silently replaces the first when the table is loaded
+            fail["duplicate archetype in heating-value-stream.csv"].append(k)
+    for k, n in Counter(r["factor-id"] for r in read(REFERENCE / "conversion-factor.csv")).items():
+        if n > 1:
+            fail["duplicate factor-id in conversion-factor.csv"].append(k)
+    for r in hvs:
         if r["archetype"] not in records.by_key:
             fail["heating-value-stream names an unknown archetype"].append(r["archetype"])
         for x in (r.get("fuel-in", ""), r.get("product-out", "")):

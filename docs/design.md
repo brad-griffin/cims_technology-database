@@ -295,7 +295,17 @@ are abated, or when a policy instrument treats them separately.
   LHV per tonne exactly. A cost per kW of an INPUT (`capacity-basis` thermal- or
   electric-input) on a per-tonne archetype is never put per tonne with the
   product's heating value.
-- **The efficiency bridge** (amended 2026-09-26; `pipeline/bridge.py`). A number
+  Amended 2026-10-02: an LHV energy use per tonne that names its carrier needs no
+  `heating-value-stream.csv` row; the carrier's own ratio applies.
+  `heating-value-stream.csv` may hold one row per archetype (a second row used to
+  replace the first silently; the build now fails on it).
+- **The efficiency bridge** (amended 2026-09-26 and 2026-10-02; `pipeline/bridge.py`).
+  An example uses its own efficiency, a derived one where it reports none. It
+  counts as CHP only if its archetype is named so or it reports a total CHP
+  efficiency: a heat-only boiler on a boiler-or-CHP archetype is bridged by its
+  own efficiency, not by the archetype's total less electric (which, as two
+  medians of different plants, had come out at 0.3% and inflated emission factors
+  several hundredfold). A number
   stated per unit of energy input -- an emission factor per GJ of fuel, a cost per
   kW of input capacity (`capacity-basis` thermal-input or electric-input), a
   capacity rated on its input -- is put per GJ of output with the efficiency: the

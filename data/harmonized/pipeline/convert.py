@@ -47,6 +47,7 @@ ATOM = {
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
     "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
     "bbl-beer": ("volume", 0.117347765),
+    "1000-Nm3": ("volume", 1000.0),
     "mol-H2": ("amount-h2", 1.0),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),
@@ -55,7 +56,9 @@ ATOM = {
 # an archetype whose product is that species.
 SPECIES = re.compile(r"^(t|kg|kt|Mt)-(CO2(?:-eq)?|CO2e|CH4)$")
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion))?")
-POWER = {"kW": 0.0036, "MW": 3.6, "GW": 3600.0}   # GJ per hour
+POWER = {"kW": 0.0036, "MW": 3.6, "GW": 3600.0,      # GJ per hour
+         "hp": 0.0026845,                            # 745.7 W (mechanical horsepower)
+         "ton-refrigeration": 0.012660}              # 12,000 Btu/h = 3.51685 kW
 MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9}
 
 # How much a converted number rests on, weakest last. `unit` is a definition
@@ -196,8 +199,13 @@ def intensive(unit, tgt, factors, species_ok, alias=None):
     return nr / (q[0] * pr), used
 
 
-def extensive(unit, tgt, factors, alias=None):
-    """A rate (a capacity): `Nm3/h` -> MW, `Ml/yr` -> kt/yr, `kb/d` -> m3/yr."""
+def extensive(unit, tgt, factors, alias=None, annual=False):
+    """A rate (a capacity): `Nm3/h` -> MW, `Ml/yr` -> kt/yr, `kb/d` -> m3/yr.
+    `annual`: an annual output given as a bare quantity (`GWh`) is per year."""
+    if tgt == "MW" and unit in POWER:
+        return POWER[unit] / 3.6, []
+    if annual and "/" not in unit:
+        unit = unit + "/yr"
     if tgt == "MW":
         tgt, extra = "GJ/h", 1 / 3.6
     else:

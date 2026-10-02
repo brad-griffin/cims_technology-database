@@ -245,7 +245,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `electrolysis-cell_molten-oxide` | Molten oxide electrolysis | prospective | electricity | 5 | iron-and-steel.service.hot-metal | quantified |
 | `furnace_ladle-metallurgy` | Ladle metallurgy furnace | conventional | electricity | 9 | iron-and-steel.service.ladle-refining | quantified |
 | `furnace_reheating` | Reheating furnace, fuel-fired | conventional | oil; natural-gas | 9 | iron-and-steel.service.reheating | quantified |
-| `furnace_reheating_efficiency-moderate` | Reheating furnace efficiency measures, moderate | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | estimated |
+| `furnace_reheating_efficiency-moderate` | Reheating furnace efficiency measures, moderate | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | quantified |
 | `furnace_reheating_efficiency-strong` | Reheating furnace efficiency measures, strong | efficient variant | natural-gas | 9 | iron-and-steel.service.reheating | quantified |
 | `furnace_rotary-hearth-direct-reduction` | Rotary hearth furnace direct reduction | alternative | coal; natural-gas | 8-9 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `induction-heater_reheating` | Induction reheating | alternative | electricity | 9 | iron-and-steel.service.reheating | quantified |
@@ -426,7 +426,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `compressor_gas-engine-drive` | Reciprocating gas-engine compressor | conventional | natural-gas | 9 | natural-gas.service.compressor-drive.engine | estimated |
 | `compressor_instrument-air` | Instrument air or electric actuation | efficient variant | electricity | 9 | natural-gas.product.supply.venting.controls | quantified |
 | `compressor_vapour-recovery` | Vapour recovery unit | efficient variant | electricity | 9 | natural-gas.product.supply.venting.other-point-venting | estimated |
-| `direct-heater_line-heater` | Fired line heater and treater | conventional | natural-gas | 9 | natural-gas.product.supply.extraction.coalbed-methane; natural-gas.product.supply.extraction.conventional; natural-gas.product.supply.extraction.shale; natural-gas.product.supply.extraction.tight; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | not pooled |
+| `direct-heater_line-heater` | Fired line heater and treater | conventional | natural-gas | 9 | natural-gas.product.supply.extraction.coalbed-methane; natural-gas.product.supply.extraction.conventional; natural-gas.product.supply.extraction.shale; natural-gas.product.supply.extraction.tight; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | quantified |
 | `drilling-rig_battery-hybrid` | Battery hybrid rig power | efficient variant | diesel; electricity | 8 | natural-gas.product.supply.drilling | gap |
 | `drilling-rig_diesel` | Diesel drilling rig | conventional | diesel | 9 | natural-gas.product.supply.drilling | gap |
 | `drilling-rig_grid-powered` | Grid-powered or electric rig | alternative | electricity | 9 | natural-gas.product.supply.drilling | gap |

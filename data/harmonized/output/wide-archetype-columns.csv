@@ -130,6 +130,10 @@ specific-energy-consumption_heat,technical,GJ/product-unit,"Total final energy i
 specific-energy-consumption_heat_low,technical,GJ/product-unit,
 specific-energy-consumption_heat_high,technical,GJ/product-unit,
 specific-energy-consumption_heat_n,technical,,
+specific-energy-consumption_heavy-fuel-oil,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: heavy-fuel-oil. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_heavy-fuel-oil_low,technical,GJ/product-unit,
+specific-energy-consumption_heavy-fuel-oil_high,technical,GJ/product-unit,
+specific-energy-consumption_heavy-fuel-oil_n,technical,,
 specific-energy-consumption_hydrogen,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_hydrogen_low,technical,GJ/product-unit,
 specific-energy-consumption_hydrogen_high,technical,GJ/product-unit,
@@ -176,6 +180,10 @@ load-range-min,technical,%,"Lowest sustained output as a fraction of rated capac
 load-range-min_low,technical,%,
 load-range-min_high,technical,%,
 load-range-min_n,technical,,
+degradation-rate,technical,%,"Annual fractional loss of efficiency or capacity over the lifetime. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+degradation-rate_low,technical,%,
+degradation-rate_high,technical,%,
+degradation-rate_n,technical,,
 capex,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capex_low,cost,2025_CAD/(product-unit per yr),
 capex_high,cost,2025_CAD/(product-unit per yr),

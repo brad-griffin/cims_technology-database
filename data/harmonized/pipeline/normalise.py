@@ -329,6 +329,8 @@ def normalise(facts, examples, records, units) -> None:
                 # per tonne of the host plant's product, approved for the bridge:
                 # converted per tonne here, per GJ of output in bridge.py
                 tgt, bridge_kind = target_unit(p, "t", tgt), "host-tonne"
+        if p in ("capital-recovery", "degradation-rate") and unit == "%/yr":
+            unit = "%"          # a rate per year by definition (added 2026-10-02)
         if not unit and tgt == "dimensionless":
             unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
@@ -448,7 +450,8 @@ def normalise(facts, examples, records, units) -> None:
                 if not cf:
                     used.append("assume:continuous-operation")
             if route is None:
-                ext = (convert.extensive(unit, tgt, flist, alias) if p in EXTENSIVE
+                ext = (convert.extensive(unit, tgt, flist, alias, annual=p == "annual-output")
+                       if p in EXTENSIVE
                        else convert.intensive(unit, tgt, flist, species_ok, alias))
                 if not ext:
                     r["excluded"] = f"no conversion from {unit or '(none)'} to {tgt}"

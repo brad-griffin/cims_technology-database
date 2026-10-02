@@ -385,7 +385,13 @@ def check(records, fail) -> None:
             fail["fill-rule names an unknown parameter"].append(f"{rid}: {r.get('parameter')}")
         if not (r.get("rationale") or "").strip():
             fail["fill-rule with no rationale"].append(rid)
-    for h in read(FILL / "host-archetype.csv"):
+    hosts = read(FILL / "host-archetype.csv")
+    seen_h = set()
+    for h in hosts:
+        if h.get("archetype") in seen_h:
+            fail["duplicate archetype in host-archetype.csv"].append(h["archetype"])
+        seen_h.add(h.get("archetype"))
+    for h in hosts:
         if h.get("archetype") not in records.by_key:
             fail["host-archetype names an unknown archetype"].append(h.get("archetype", ""))
         if h.get("host") and h["host"] not in records.by_key:

@@ -58,7 +58,8 @@ CARRIER_RATIO = {
     "ammonia": "cf-hhv-lhv-ammonia", "ethanol": "cf-hhv-lhv-ethanol",
     **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "naphtha",
                                                "petroleum-coke", "biomass", "biomass-solid",
-                                               "bioliquid", "liquid-biomass", "fuel-oil")},
+                                               "bioliquid", "liquid-biomass", "fuel-oil",
+                                               "heavy-fuel-oil")},
 }
 INPUT_BASES = {"thermal-input", "electric-input"}
 
@@ -113,6 +114,14 @@ class Streams:
         the archetype's streams are not recorded."""
         s = self.rows.get(archetype)
         if not s:
+            # an energy use per tonne that names its carrier needs only that
+            # carrier's ratio (added 2026-10-02)
+            den = unit.split("/", 1)[1] if "/" in unit else ""
+            t = (target or "").strip()
+            if how == "energy-use" and t in CARRIER_RATIO and pu != "GJ" and den not in ENERGY:
+                f = CARRIER_RATIO[t]
+                r = self._r(f)
+                return (r, [f] if f else []) if r is not None else None
             return None
         fin, fout = s.get("fuel-in", "").strip(), s.get("product-out", "").strip()
         if how == "energy-use" and (target or "").strip() in CARRIER_RATIO:
