@@ -1,0 +1,46 @@
+process,technology,item,value,unit,reference,note
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,"annualised specific capital cost (DRI plant, E-furnace), 2050",40,2020_EUR/t crude steel,p.167,"Annualised, not capex per capacity."
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,"operating cost green hydrogen, 2050",105-191,2020_EUR/t crude steel,p.167,
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,hydrogen cost assumption,2.78-5.04,2020_EUR/kg,p.167,"Electrolyser 250 EUR/kW at 3,000 FLH and 50 EUR/MWh (lower) to 500 EUR/kW at 6,000 FLH and 40 EUR/MWh (upper); transport 0.35-2 EUR/kg."
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,electricity in the steel works incl. substitution of lost metallurgical gases,59-71,2020_EUR/t crude steel,p.167,
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,"other costs (work, 17% scrap, alloys, lime, biomethane)",328,2020_EUR/t crude steel,p.167,
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,electricity requirement with partial use of methane,2.5,MWh/t crude steel,p.167,
+Iron electrolysis + EAF fact sheet (Part E Sect. 2.3),electrolysis-cell_iron-electrowinning_eaf-route,"annualised specific capital cost, 2050",154-269,2020_EUR/t crude steel,p.169,
+Iron electrolysis + EAF fact sheet (Part E Sect. 2.3),,Boston Metal planned demonstration plant (molten oxide electrolysis),25000,t metal/yr,p.168,
+HIsarna with CCS fact sheet (Part E Sect. 2.4),smelting-vessel_bath-reduction_ccs-concentrated,annualised specific capital cost,53,2020_EUR/t crude steel,p.171,
+HIsarna with CCS fact sheet (Part E Sect. 2.4),smelting-vessel_bath-reduction_ccs-concentrated,"carbon capture, transport and storage cost",41-69,2020_EUR/t CO2,p.171,= 38-64 EUR/t crude steel.
+HIsarna with CCS fact sheet (Part E Sect. 2.4),smelting-vessel_bath-reduction_ccs-concentrated,ULCOS pilot plant capacity,60000,t crude steel/yr,p.170,
+HIsarna with CCS fact sheet (Part E Sect. 2.4),smelting-vessel_bath-reduction_ccs-concentrated,Jamshedpur demonstration plant planned capacity,400000,t pig iron/yr,p.170,
+CCU of smelting gases fact sheet (Part E Sect. 2.5),reactor_steel-offgas-chemicals,annualised capital cost CCU retrofit,13,2020_EUR/t crude steel,p.173,
+CCU of smelting gases fact sheet (Part E Sect. 2.5),reactor_steel-offgas-chemicals,cost of H2 for methanol synthesis,310-526,2020_EUR/t crude steel,p.173,H2 3.34-5.67 EUR/kg.
+CCU of smelting gases fact sheet (Part E Sect. 2.5),reactor_steel-offgas-chemicals,proceeds from methanol sale,-175,2020_EUR/t crude steel,p.173,
+Steel sector overview (Part E Sect. 2.1),blast-furnace_integrated-route,direct CO2 split per t crude steel: blast furnace / BOF / coking plant,1.4 / 0.2 / 0.1,t CO2/t crude steel,"p.164, Figure E.1",Sintering/pelleting 0.1 t assumed covered by BF gas.
+Steel sector overview (Part E Sect. 2.1),,EU27 crude steel production 2017,161,Mt,p.163,
+Steel sector overview (Part E Sect. 2.1),,EU27 steel direct CO2 2017,188,Mt CO2,p.163,
+Steel sector overview (Part E Sect. 2.1),,blast furnace capacity needing reinvestment by 2030,50,Mt hot metal/yr,p.163,48% of capacity.
+Chemical sector overview (Part E Sect. 3.1),steam-reformer_ammonia,indirect CO2 from electricity for ammonia synthesis,0.7,t CO2/t NH3,p.176,
+Chemical sector overview (Part E Sect. 3.1),,EU27 ammonia production,13.4,Mt/yr,p.176,
+Chemical sector overview (Part E Sect. 3.1),,EU27 HVC production 2017,40.2,Mt,p.175,
+Chemical sector overview (Part E Sect. 3.1),,EU27 chemical industry direct CO2 2017,129,Mt CO2,p.175,
+Chemical sector overview (Part E Sect. 3.1),,EU27 chemical industry low/medium temperature heat demand (<500 degC) 2017,340,TWh th,p.176,150-160 TWh th from mostly gas CHP; 22 GWel CHP capacity; ~55 Mt CO2.
+Chemical sector overview (Part E Sect. 3.1),,plastics value chain CO2: refinery / cracker / polymerisation / incineration,0.2 / 0.8 / 0.4 / 3.1,t CO2/t plastic,"p.178, Figure E.3",Plus 0.3 crude production and 0.3 electricity; 5.1 t total.
+Chemicals fact sheets (Part E Sect. 3.3-3.7),boiler_ccs-diffuse,"operating cost of capture, transport and storage",1.2-2.5,2020_EUR-ct/kWh th,p.183,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),electrolyzer_low-temperature,"cost of green H2 2050, import (6,000 FLH, 25-40 EUR/MWh, transport 1.35-2.00 EUR/kg)",2.9-5.0,2020_EUR/kg,p.185,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),electrolyzer_low-temperature,Puertollano PEM electrolyser / Refhyne PEM electrolyser,20 / 10,MW,p.184,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),reactor_methanol-to-olefins_dac-electrolysis-chain,annualised capital: DAC / methanol synthesis / MTO plant,248 / 135 / 19,2020_EUR/t HVC,p.187,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),reactor_methanol-to-olefins_dac-electrolysis-chain,fixed operating costs,138,2020_EUR/t HVC,p.187,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),,naphtha steam cracking + waste incineration reference CO2,4.5,t CO2/t HVC,p.187,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),reactor_plastics-pyrolysis_steam-cracker-chain,annualised capital pyrolysis / steam cracker,14 / 74,2020_EUR/t HVC,p.189,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),reactor_plastics-pyrolysis_steam-cracker-chain,fixed operating costs,40,2020_EUR/t HVC,p.189,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),reactor_plastics-pyrolysis_integrated-chain,specific costs in comparison box (inconsistent with table),890-1050,EUR/t HVC (2019),p.189,
+Chemicals fact sheets (Part E Sect. 3.3-3.7),steam-cracker_electric,annualised capital cost / fixed operating costs,60 / 29,2020_EUR/t HVC,p.191,
+Cement fact sheets (Part E Sect. 4),kiln_dry-precalciner,EU average direct CO2 per t cement,0.65,t CO2/t cement,p.195,Fact sheets use German average 0.61.
+Cement fact sheets (Part E Sect. 4),kiln_dry-precalciner,annualised capital cost reference cement works,15-17,2020_EUR/t cement,p.199,
+Cement fact sheets (Part E Sect. 4),kiln_oxy-fuel,annualised capital cost oxyfuel retrofit / operating cost incl. capture,7-10 / 41-46,2020_EUR/t cement,p.199,
+Cement fact sheets (Part E Sect. 4),,CO2 transport cost (inland and seagoing vessels),23-28,2020_EUR/t CO2,p.199,
+Cement fact sheets (Part E Sect. 4),calciner_indirect,CAPEX LEILAC calciner in addition to regular investment,0-40,2020_EUR million,p.201,Plant capacity not stated.
+Cement fact sheets (Part E Sect. 4),calciner_indirect,CAPEX CO2 purifying and compression plant,9.5,2020_EUR million,p.201,Plant capacity not stated.
+Cement fact sheets (Part E Sect. 4),calciner_indirect,annualised capital cost,0.8-3.8,2020_EUR/t cement,p.201,
+Cement fact sheets (Part E Sect. 4),,alternative binders max CO2 intensity reduction,53,%,p.197,vs conventional cement (clinker 74%).
+Cement fact sheets (Part E Sect. 4),,EU27 cement production 2017,159,Mt,p.195,
+Cement fact sheets (Part E Sect. 4),,fact-sheet electricity price assumption 2030 / 2050,60-70 / 50-60,EUR/MWh,p.161,

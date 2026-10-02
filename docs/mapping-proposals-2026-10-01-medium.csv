@@ -1,0 +1,176 @@
+kind,source-id,technology,proposal,confidence,note
+NEW,draxler_2021_001,smelting-vessel_hydrogen-plasma,NEW: smelting-vessel_hydrogen-plasma,medium,One-step ore to liquid steel by H2 plasma; 4.2 MWh/t vs 3.3-3.5 for H2-DRI-EAF (>15%)
+NEW,ieaghg_2013_003,coke-oven_by-product_ccs-diffuse,NEW: coke-oven_by-product_ccs-diffuse,medium,Capture on the coke oven underfiring stack; a capture host (different emissions kind) with no ccs archetype for coke ovens.
+NEW,kearns_2021_001,capture-unit_membrane_polymeric,NEW: capture-unit_membrane,medium,"No post-combustion membrane archetype; electricity-driven (compression/vacuum) rather than steam-regenerated, so a different carrier mix from amine. Per t CO2."
+NEW,kearns_2021_001,capture-unit_membrane_solvent-hybrid,NEW: capture-unit_membrane,low,Hybrid concept; TRL only. Per t CO2.
+NEW,kearns_2021_001,capture-unit_membrane_ionic-liquid,NEW: capture-unit_membrane,low,Research stage; TRL only. Per t CO2.
+NEW,kearns_2021_001,ship_co2,NEW: ship_co2,medium,No ship transport archetype; liquefaction and ship fuel give a different energy and cost profile from pipelines.
+NEW,kiss_2017_001,vapour-recompressor_thermal,NEW: vapour-recompressor_steam-ejector,low,Steam-driven (no electricity); energy per GJ heat and emissions differ in kind from heat-pump_industrial. Cost includes the 5 MW boiler.
+NEW,kiss_2017_001,heat-pump_absorption,NEW: heat-pump_absorption,medium,Fuel-fired absorption heat pump: the carrier changes the equipment (design 2); COP 1.46 on heat input vs 3.8-5 for electric; combustion emissions.
+NEW,kiss_2017_001,heat-pump_absorption_single-effect,NEW: heat-pump_absorption,medium,Heat-driven absorption heat pump; see the Table 5.5 AB example.
+NEW,kiss_2017_001,heat-pump_absorption_double-effect,NEW: heat-pump_absorption,medium,Heat-driven absorption heat pump; see the Table 5.5 AB example.
+NEW,material-economics_2019_001,kiln_electric,NEW: kiln_electric,low,"No combustion emissions; different equipment (plasma/microwave/resistance) for 1,450 degC clinkering; only calciner_indirect exists."
+NEW,mynko_2023_001,steam-cracker_fired-tubular_low-emission,NEW: steam-cracker_fired-tubular_efficiency-strong,medium,"Furnace fuel -20% plus electric compressor drives; net plant final energy about 17% below BASE (no aux boiler, no steam export): beyond the ~15% moderate bucket. Fallback: steam-cracker_fired-tubular_efficiency-moderate."
+NEW,mynko_2023_001,steam-cracker_fired-tubular_low-emission-air-preheater,NEW: steam-cracker_fired-tubular_efficiency-strong,medium,Fired duty -30% with air preheater and all-electric compressors; same proposal as L-E.
+NEW,mynko_2023_001,steam-cracker_hydrogen-fired_smr-ccs,NEW: steam-cracker_fired-tubular_ccs-concentrated,medium,Pre-combustion capture: own off-gas reformed to H2 fuel and concentrated CO2 captured; abatement differs in kind from ccs-diffuse (post-combustion on flue gas). Numbers include the reformer unit.
+NEW,mynko_2023_001,steam-cracker_hydrogen-fired_ghr-ccs,NEW: steam-cracker_fired-tubular_ccs-concentrated,medium,"As H2-SMR, with GHR+ATR (ASU oxygen) capturing all reformer CO2."
+NEW,nrcan_2008_001,digester_continuous-kraft-md,NEW: digester_continuous-kraft-md,low,"M&D (inclined continuous) digesters: thermal 6.04 vs 2.94 GJ/ODt for continuous (>15%), legacy Canadian stock. Report does not describe the M&D type further."
+NEW,nrcan_2008_001,boiler_recovery-direct-contact,NEW: boiler_recovery-direct-contact,medium,"Legacy direct-contact recovery boilers in Canadian stock: fuel per GJ steam 2.02 vs 1.56 for low-odour (efficiency about 50% vs 64%, >15% difference) and net steam 10.6 vs 14.6 GJ/ODt."
+NEW,perez-ramirez_2003_001,reactor_nitric-acid-extended-chamber_homogeneous-n2o-decomposition,NEW: reactor_nitric-acid-extended-chamber,medium,"Homogeneous (non-catalytic) N2O decomposition designed into a new burner; abated differently from reactor_catalytic-n2o (no catalyst, no utilities) and new-build only. Alternative: reactor_catalytic-n2o low."
+NEW,perez-ramirez_2003_001,reactor_nitric-acid-extended-chamber_homogeneous-n2o-decomposition,NEW: reactor_nitric-acid-extended-chamber,medium,"Homogeneous (non-catalytic) N2O decomposition designed into a new burner; abated differently from reactor_catalytic-n2o (no catalyst, no utilities) and new-build only. Alternative: reactor_catalytic-n2o low."
+NEW,perez-ramirez_2003_001,reactor_nitric-acid-extended-chamber_homogeneous-n2o-decomposition,NEW: reactor_nitric-acid-extended-chamber,medium,"Homogeneous (non-catalytic) N2O decomposition designed into a new burner; abated differently from reactor_catalytic-n2o (no catalyst, no utilities) and new-build only. Alternative: reactor_catalytic-n2o low."
+NEW,toktarova_2020_001,steel-mill_tgrbf-bof-ccs-biomass,NEW: blast-furnace_top-gas-recycling_ccs-biomass,low,TGRBF+CCS+biomass route per t steel; different emissions kind from TGR alone (capture plus biogenic carbon). Proposed only if a TGR+CCS archetype is wanted; otherwise (none).
+low,ager_2023_001,heat-pump_mvr-piston_spilling,(none),low,"Open MVR to 280 degC, beyond the archetype range (about 200 degC). Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_stirling-helium_enerin,(none),low,"Sink 250 degC, beyond archetype range. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-transformer_chemical_qpinch,(none),low,"Chemical heat transformer, not a compression heat pump. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_mvr-turbo_piller,heat-pump_industrial,low,"MVR fan; max 212 degC slightly beyond archetype range. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_mvr-screw_srm,heat-pump_industrial,low,"TRL 5 prototype. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_screw-pentane_mayekawa-fc,heat-pump_industrial,low,"TRL 5. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_reciprocating-co2_fenagy,heat-pump_industrial,low,"TRL 5-6. Maximum ratings, not typical operating values."
+low,ager_2023_001,heat-pump_scroll-cascade_emerson,heat-pump_industrial,low,"TRL 6. Maximum ratings, not typical operating values."
+low,agora_2021_001,electrolysis-cell_iron-electrowinning_eaf-route,electrolysis-cell_iron-electrowinning,low,Route numbers per t crude steel include the EAF; archetype is the cell per t iron.
+low,agora_2021_001,capture-unit_co2-purification,compressor_co2-dehydration,low,"Capex per t steel capacity, not per t CO2; needs CO2 per t steel to convert."
+low,agora_2021_001,boiler_fuel-fired,boiler_fuel-fired,low,Reference mixes fossil CHP and gas boilers.
+low,arens_2017_001,blast-furnace_bf-bof-route,(none),low,"Whole route (iron and steelmaking with rolling, coke bought in) per t final product; no route-level archetype. Closest blast-furnace but scope differs."
+low,arens_2017_001,electric-arc-furnace_scrap-route,electric-arc-furnace,low,Route boundary includes casting and rolling; EAF archetype is the furnace only.
+low,arens_2017_001,shaft-furnace_dri-eaf-route,(none),low,DRI plant plus EAF route; shaft-furnace_direct-reduction covers DRI only.
+low,arens_2017_001,smelting-vessel_hisarna-route,smelting-vessel_bath-reduction,low,"Route-level (with BOF and rolling) and an assumption (80% of BF/BOF energy), not plant data."
+low,bhaskar_2020_001,shaft-furnace_direct-reduction_hydrogen-electric-preheat,(none),low,"Partial unit of the whole-plant archetype, per t liquid steel not per t DRI; electric pellet and H2 preheat only"
+low,cancio-diaz_2017_001,kiln_dry-precalciner_cement-plant,kiln_dry-precalciner,low,Whole 1 Mt/yr cement plant (incl. grinding) per t cement; scope wider than the clinker kiln archetype.
+low,ciambellotti_2024_001,heat-pump_steam-generating_r245ca,heat-pump_industrial,low,"Two-stage steam-generating HTHP at 175 degC sink, close to the archetype upper limit (about 200 degC); simulated. Refrigerant variant of the representative case."
+low,ciambellotti_2024_001,heat-pump_steam-generating_r1336mzz-z,heat-pump_industrial,low,"Two-stage steam-generating HTHP at 175 degC sink, close to the archetype upper limit (about 200 degC); simulated. Refrigerant variant of the representative case."
+low,ciambellotti_2024_001,heat-pump_steam-generating_n-pentane,heat-pump_industrial,low,"Two-stage steam-generating HTHP at 175 degC sink, close to the archetype upper limit (about 200 degC); simulated. Refrigerant variant of the representative case."
+low,ciambellotti_2024_001,dryer_yankee-gas-hood,(none),low,Whole tissue drying section total (hood plus steam boiler); the hood and Yankee steam are also loaded separately and mapped there.
+low,ciambellotti_2024_001,dryer_gas-fired-hood,dryer_gas-fired-hood,low,Direct-fired Yankee hood; value is per t paper while the archetype product unit is GJ.
+low,draxler_2021_001,shaft-furnace_direct-reduction_hydrogen,shaft-furnace_direct-reduction,low,"Shaft furnace only, but per t crude steel (not t DRI) and H2-fed; capacity denominator inferred"
+low,golder_2021_001,rolling-mill_hot-incl-reheating,rolling-mill_hot,low,Process area includes reheating furnaces (78% fuel); archetype is the mill only; fuel row could inform furnace_reheating.
+low,golder_2021_001,rolling-mill_bar-incl-reheating,rolling-mill_hot,low,"Bar mill incl. reheating (85% fuel), per t bar."
+low,hamaguchi_2012_001,pulp-mill_kraft-bleached_scots-pine,digester_continuous-kraft,low,Whole-mill wood and black-liquor balance per ADt; digester type not stated and no energy numbers; useful as black-liquor yield per tonne pulp.
+low,hamaguchi_2012_001,pulp-mill_kraft-bleached_silver-birch,digester_continuous-kraft,low,Whole-mill wood and black-liquor balance per ADt; digester type not stated and no energy numbers; useful as black-liquor yield per tonne pulp.
+low,hamaguchi_2012_001,pulp-mill_kraft-bleached_eucalyptus-grandis,digester_continuous-kraft,low,Whole-mill wood and black-liquor balance per ADt; digester type not stated and no energy numbers; useful as black-liquor yield per tonne pulp.
+low,hamaguchi_2012_001,pulp-mill_kraft-bleached_eucalyptus-globulus,digester_continuous-kraft,low,Whole-mill wood and black-liquor balance per ADt; digester type not stated and no energy numbers; useful as black-liquor yield per tonne pulp.
+low,hamaguchi_2012_001,reactor_torrefaction,reactor_torrefaction,low,Archetype includes pelletising and is per t product; the number is a solid energy yield only.
+low,hamaguchi_2012_001,reactor_fast-pyrolysis_hardwood,(none),low,"Pyrolysis oil only, no upgrading; reactor_pyrolysis-oil includes hydroprocessing to drop-in fuel."
+low,hamaguchi_2012_001,reactor_fast-pyrolysis_softwood,(none),low,"Pyrolysis oil only, no upgrading; reactor_pyrolysis-oil includes hydroprocessing to drop-in fuel."
+low,hamaguchi_2012_001,reactor_fast-pyrolysis_hardwood-bark,(none),low,"Pyrolysis oil only, no upgrading; reactor_pyrolysis-oil includes hydroprocessing to drop-in fuel."
+low,hamaguchi_2012_001,reactor_fast-pyrolysis_softwood-bark,(none),low,"Pyrolysis oil only, no upgrading; reactor_pyrolysis-oil includes hydroprocessing to drop-in fuel."
+low,hamaguchi_2012_001,reactor_hydrothermal-liquefaction,reactor_hydrothermal-liquefaction,low,"HTL step only (no upgrading); archetype includes upgrading to fuel; mass yields only, no energy."
+low,ieaghg_2013_003,steel-mill_bf-bof_ccs-diffuse-eop-l1,blast-furnace_ccs-diffuse,low,"Whole mill per t HRC incl. capture on hot stoves and steam plant; archetype is per t hot metal, host-side only. Host-side unit rows given separately."
+low,ieaghg_2013_003,steel-mill_bf-bof_ccs-diffuse-eop-l2,blast-furnace_ccs-diffuse,low,"Whole mill per t HRC incl. capture on stoves, steam plant, coke ovens and lime kilns; scope wider than the archetype."
+low,ieaghg_2013_003,steel-mill_bf-bof_top-gas-recycling-obf,blast-furnace_top-gas-recycling,low,Whole mill per t HRC with OBF; archetype is per t hot metal. OBF unit rows given separately.
+low,ieaghg_2013_003,steel-mill_bf-bof_top-gas-recycling-obf-chp-a,blast-furnace_top-gas-recycling,low,"Whole mill per t HRC, step-off case of the OBF mill (steam/power supply varied)."
+low,ieaghg_2013_003,steel-mill_bf-bof_top-gas-recycling-obf-chp-b,blast-furnace_top-gas-recycling,low,"Whole mill per t HRC, step-off case of the OBF mill (steam/power supply varied)."
+low,ieaghg_2013_003,adsorber_pressure-swing_obf-top-gas,adsorber_pressure-swing,low,PSA on blast-furnace top gas; archetype scope is hydrogen-plant syngas; product not storable.
+low,ieaghg_2013_003,adsorber_vacuum-pressure-swing_obf-top-gas,adsorber_pressure-swing,low,VPSA on top gas; archetype scope is syngas; product not storable.
+low,ieaghg_2016_001,boiler_solid-fuel,boiler_solid-fuel,low,"Bark/sludge CFB boiler, but per adt pulp rather than per GJ steam and the printed fuel input looks overstated (wet mass x dry LHV). Capex per MWth is the usable number"
+low,ieaghg_2016_001,steam-turbine_back-pressure,steam-turbine_back-pressure,low,Extraction-condensing turbine island only (no boilers); the archetype is boiler + back-pressure turbine. Could also inform steam-turbine_condensing
+low,ieaghg_2016_001,compressor_co2-dehydration_steam-drive,compressor_co2-dehydration,low,Same compression duty but driven by a back-pressure steam turbine on 13 bar steam (about 1.07 t steam/t CO2) whose 2 bar exhaust feeds the reboiler; carrier differs from the electric archetype
+low,ieaghg_2016_001,compressor_co2-dehydration_steam-drive,compressor_co2-dehydration,low,Same compression duty but driven by a back-pressure steam turbine on 13 bar steam (about 1.07 t steam/t CO2) whose 2 bar exhaust feeds the reboiler; carrier differs from the electric archetype
+low,ieaghg_2016_001,compressor_co2-dehydration_steam-drive,compressor_co2-dehydration,low,Same compression duty but driven by a back-pressure steam turbine on 13 bar steam (about 1.07 t steam/t CO2) whose 2 bar exhaust feeds the reboiler; carrier differs from the electric archetype
+low,ieaghg_2016_001,compressor_co2-dehydration_steam-drive,compressor_co2-dehydration,low,Same compression duty but driven by a back-pressure steam turbine on 13 bar steam (about 1.07 t steam/t CO2) whose 2 bar exhaust feeds the reboiler; carrier differs from the electric archetype
+low,kearns_2021_001,capture-unit_advanced-solvent_amino-acid-precipitating,capture-unit_advanced-solvent,low,Early-stage solvent; TRL only. Per t CO2.
+low,kearns_2021_001,capture-unit_advanced-solvent_encapsulated,capture-unit_advanced-solvent,low,Research stage; TRL only. Per t CO2.
+low,kearns_2021_001,capture-unit_advanced-solvent_ionic-liquid,capture-unit_advanced-solvent,low,Research stage; TRL only. Per t CO2.
+low,kearns_2021_001,adsorber_sorption-enhanced-water-gas-shift,adsorber_pressure-swing,low,"Pre-combustion sorbent on shift gas; integrates shift and adsorption, scope differs. Per t CO2."
+low,kearns_2021_001,capture-unit_solid-sorbent_electrochemical,capture-unit_solid-sorbent,low,Research stage; TRL only. Per t CO2.
+low,kearns_2021_001,capture-unit_membrane_cryogenic-hybrid,capture-unit_cryogenic-flue-gas,low,Hybrid; cryogenic step only part of it. Per t CO2.
+low,kearns_2021_001,capture-unit_amine_coal-studies-2010,capture-unit_amine,low,Coal-power flue gas; cost includes compression where noted.
+low,kearns_2021_001,capture-unit_amine_coal-studies-2025,capture-unit_amine,low,Coal-power flue gas; cost includes compression where noted.
+low,kearns_2021_001,well_co2-storage_basalt,well_co2-storage,low,Different trapping mechanism and monitoring; TRL only.
+low,kim_2022_001,coke-oven_single-chamber,(none),low,Coke-oven design variant; no archetype; no numbers. State-of-development only.
+low,kim_2022_001,coke-oven_dry-quenching,coke-oven_efficiency-strong,low,Measure; state-of-development only. State-of-development only.
+low,kim_2022_001,electric-arc-furnace_dc,electric-arc-furnace_high-efficiency,low,DC furnace is not exactly the UHP/scrap-preheat archetype. State-of-development only.
+low,kim_2022_001,blast-furnace_hydrogen-blend,(none),low,No hydrogen-injection BF archetype. State-of-development only.
+low,kim_2022_001,blast-furnace_plasma,(none),low,No archetype. State-of-development only.
+low,kim_2022_001,furnace_paired-straight-hearth,furnace_rotary-hearth-direct-reduction,low,Coal-based composite-pellet DR like the RHF but a different furnace. State-of-development only.
+low,kim_2022_001,reactor_flash-ironmaking,reactor_fluidized-bed-direct-reduction,low,Flash (suspension) reduction of concentrate is not a fluidised bed. State-of-development only.
+low,kiss_2017_001,heat-pump_co2-transcritical_cafeteria,heat-pump_industrial,low,Electric CO2 heat pump; capacity and temperature only. Small unit near commercial-building scale.
+low,kiss_2017_001,heat-pump_co2-transcritical_noodle-production,heat-pump_industrial,low,Electric CO2 heat pump; capacity and temperature only. Small unit near commercial-building scale.
+low,kiss_2017_001,heat-pump_co2-transcritical_chicken-products,heat-pump_industrial,low,Electric CO2 heat pump; capacity and temperature only. Small unit near commercial-building scale.
+low,kiss_2017_001,distillation-column_extractive-dividing-wall,(none),low,"Dividing-wall variant of the same step, same heat use as classic; no ethanol heat-integrated archetype."
+low,kiss_2017_001,distillation-column_conventional,distillation-column_fired-heater,low,Single boiler-heated column of an unnamed mixture; the archetype is petrochemical reboilers and fired heaters.
+low,kiss_2017_001,distillation-column_conventional,distillation-column_fired-heater,low,Single fuel-fired benzene-toluene column; the archetype covers BTX reboilers but at plant scope.
+low,kuparinen_2019_001,boiler_solid-fuel,boiler_solid-fuel,low,Per bone-dry t of fuel with no heating value or steam enthalpy printed; cannot be put on a GJ basis from this source
+low,material-economics_2019_001,blast-furnace_ccs-diffuse,blast-furnace_ccs-diffuse,low,"Whole-route emissions per t steel, not BF host-side values."
+low,material-economics_2019_001,reactor_steel-offgas-chemicals,reactor_steel-offgas-chemicals,low,Whole BF route with CCU; lifecycle-dependent.
+low,material-economics_2019_001,electric-arc-furnace_low-co2,electric-arc-furnace,low,2050 decarbonised EAF; emissions-only.
+low,material-economics_2019_001,steam-cracker_fired-tubular,steam-cracker_fired-tubular,low,Per t plastics incl. polymerisation/downstream 400.
+low,material-economics_2019_001,steam-cracker_ccs-diffuse,steam-cracker_ccs-diffuse,low,Includes end-of-life incineration CCS and downstream.
+low,material-economics_2019_001,steam-cracker_electric,steam-cracker_electric,low,Includes end-of-life CCS and downstream.
+low,moya_2013_001,rolling-mill_primary,rolling-mill_hot,low,Primary mill including reheating; rolling-mill_hot covers stands only (reheating is furnace_reheating).
+low,moya_2013_001,rolling-mill_hot-strip,rolling-mill_hot,low,Mill energy includes the reheating furnace; rolling-mill_hot excludes reheating.
+low,moya_2013_001,rolling-mill_plate,rolling-mill_hot,low,Includes reheating; scope wider than rolling-mill_hot.
+low,moya_2013_001,rolling-mill_section,rolling-mill_hot,low,Includes reheating; scope wider than rolling-mill_hot.
+low,moya_2013_001,annealing-furnace,annealing-furnace_batch-bell,low,EU average over batch and continuous annealing; no single archetype fits.
+low,moya_2013_001,blast-furnace_trt,blast-furnace_efficiency-moderate,low,Single measure; the moderate bucket bundles several measures.
+low,moya_2013_001,electric-arc-furnace_oxy-fuel-burners,electric-arc-furnace,low,Oxy-fuel burners are part of the conventional EAF archetype; a fuel-for-electricity swap.
+low,nrcan_2008_001,paper-machine_newsprint,dryer_steam-heated,low,Whole machine; thermal is mostly drying but electricity covers forming and pressing too.
+low,nrcan_2008_001,paper-machine_newsprint,dryer_steam-heated,low,Whole machine; thermal is mostly drying but electricity covers forming and pressing too. Modern (best-practice) value.
+low,nrcan_2008_001,paper-machine_uncoated-groundwood,dryer_steam-heated,low,Whole machine.
+low,nrcan_2008_001,paper-machine_printing-writing,dryer_steam-heated,low,Whole machine.
+low,nrcan_2008_001,paper-machine_printing-writing,dryer_steam-heated,low,Whole machine. Modern (best-practice) value.
+low,nrcan_2008_001,paper-machine_kraft-papers,dryer_steam-heated,low,Whole machine.
+low,nrcan_2008_001,paper-machine_board,dryer_steam-heated,low,Whole machine; also burns fuel.
+low,nrcan_2008_001,paper-machine_board,dryer_steam-heated,low,Whole machine; also burns fuel. Modern (best-practice) value.
+low,nrcan_2008_001,separator_activated-sludge,fan_activated-sludge,low,Whole effluent area per ADt mill production; archetype is aeration per GJ.
+low,nrcan_2008_001,separator_activated-sludge,fan_activated-sludge,low,Whole effluent area per ADt mill production; archetype is aeration per GJ. Modern (best-practice) value.
+low,nrcan_2008_001,boiler_solid-fuel_power-boiler,boiler_solid-fuel,low,"Fuel mix of the surveyed power boilers not stated (hog fuel, sludge and fossil fuels); grate, fluidized-bed and package boilers pooled."
+low,nrcan_2008_001,boiler_solid-fuel_power-boiler,boiler_solid-fuel,low,"Fuel mix of the surveyed power boilers not stated (hog fuel, sludge and fossil fuels); grate, fluidized-bed and package boilers pooled. Modern value."
+low,owttrim_2022_001,process-improvement_feedstock-preparation,process-improvement_drum-debarker,low,Feedstock preparation average.
+low,owttrim_2022_001,digester_chemical-pulp-average,digester_continuous-kraft,low,"Average of all chemical pulping (continuous and batch kraft, sulphite) in final-energy terms; archetype carriers are steam."
+low,owttrim_2022_001,reactor_bleaching-average,reactor_ecf-bleaching,low,"Average bleaching, final-energy basis."
+low,owttrim_2022_001,dryer_market-pulp-average,dryer_market-pulp,low,"Final-energy (boiler fuel) basis, not steam."
+low,owttrim_2022_001,process-improvement_feedstock-preparation,process-improvement_drum-debarker,low,Feedstock preparation average.
+low,owttrim_2022_001,pulper_mechanical-refining-average,pulper_thermomechanical,low,"Average of mechanical pulping (TMP, CTMP, groundwood) for market pulp."
+low,owttrim_2022_001,dryer_market-pulp-average,dryer_market-pulp,low,Final-energy basis.
+low,owttrim_2022_001,evaporator_additional-evaporation-effect,evaporator_multiple-effect,low,Efficiency add-on (extra effect) to an existing evaporator train. Incremental cost only; host cost not in source (set-aside needs-host-cost).
+low,owttrim_2022_001,evaporator_falling-film-evaporation,evaporator_multiple-effect,low,Falling-film evaporator retrofit. Incremental cost only; host cost not in source (set-aside needs-host-cost).
+low,owttrim_2022_001,pulper_add-improve-tmp-heat-recovery,pulper_thermomechanical,low,Adding/improving TMP heat recovery; incremental. Incremental cost only; host cost not in source (set-aside needs-host-cost).
+low,owttrim_2022_001,dryer_infrared-drying,dryer_electric-air,low,"Electric infrared drying (electricity rises 4.50 GJ/t, steam falls 9.00 GJ/t); archetype is electric air heating. Incremental cost only; host cost not in source (set-aside needs-host-cost)."
+low,owttrim_2022_001,press_press-section-upgrades,press_dewatering-advanced,low,Generic press section upgrades (incl. shoe press) on an existing machine. Incremental cost only; host cost not in source (set-aside needs-host-cost).
+low,owttrim_2022_001,fan_effluent-aerator-upgrade,fan_fine-bubble,low,"Effluent aerator upgrade; per t production, archetype per GJ. Incremental cost only; host cost not in source (set-aside needs-host-cost)."
+low,owttrim_2022_001,solar-collector_solar-thermal-supplemental-steam,solar-collector,low,"Solar thermal supplemental steam; per t production, not per GJ. Incremental cost only; host cost not in source (set-aside needs-host-cost)."
+low,owttrim_2022_001,boiler_biomass-supplementary-boiler,boiler_solid-fuel,low,"Biomass supplementary boiler to offset fossil fuel; per t production, not per GJ. Incremental cost only; host cost not in source (set-aside needs-host-cost)."
+low,pardo_2013_001,rolling-mill_primary,rolling-mill_hot,low,Primary mill including reheating; rolling-mill_hot covers stands only (reheating is furnace_reheating).
+low,pardo_2013_001,rolling-mill_hot-strip,rolling-mill_hot,low,Mill energy includes the reheating furnace; rolling-mill_hot excludes reheating.
+low,pardo_2013_001,rolling-mill_plate,rolling-mill_hot,low,Includes reheating; scope wider than rolling-mill_hot.
+low,pardo_2013_001,rolling-mill_section,rolling-mill_hot,low,Includes reheating; scope wider than rolling-mill_hot.
+low,pardo_2013_001,annealing-furnace,annealing-furnace_batch-bell,low,EU average over batch and continuous annealing; no single archetype fits.
+low,pardo_2013_001,blast-furnace_trt,blast-furnace_efficiency-moderate,low,Single measure; the moderate bucket bundles several measures.
+low,pardo_2013_001,electric-arc-furnace_oxy-fuel-burners,electric-arc-furnace,low,Oxy-fuel burners are part of the conventional EAF archetype; a fuel-for-electricity swap.
+low,perez-ramirez_2003_001,reactor_nitric-acid_process-integrated-n2o-destruction,reactor_nitric-acid,low,Plant emission factor with process-integrated destruction (design not stated); upper bound only
+low,rouwenhorst_2019_001,gasifier_heavy-oil-ammonia,gasifier_coal-ammonia,low,No heavy-oil POX archetype; nearest is coal gasification (within 10%)
+low,rouwenhorst_2019_001,reactor_haber-bosch-loop_absorbent-enhanced,reactor_haber-bosch-loop,low,Low-pressure loop without electrolyser; reactor_haber-bosch-low-pressure needs the whole plant (see Table 10 example)
+low,rouwenhorst_2019_001,air-separation-unit_cryogenic-nitrogen,air-separation-unit,low,Per kg N2; archetype is an oxygen-service ASU in GJ
+low,rouwenhorst_2019_001,air-separation-unit_membrane-nitrogen,air-separation-unit_membrane,low,Per kg N2; archetype serves oxygen in GJ
+low,rouwenhorst_2019_001,fuel-cell_alkaline-ammonia,fuel-cell_chp,low,Power-only efficiency with pure O2; AFC is not the SOFC/MCFC CHP archetype
+low,rouwenhorst_2019_001,fuel-cell_pem-ammonia,fuel-cell_chp,low,Hydrogen PEM cell; archetype is SOFC/MCFC CHP
+low,saygin_2011_001,reactor_adipic-acid,reactor_adipic-acid,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6). Value is an author estimate (+/-20% rule)."
+low,saygin_2011_001,gasifier_coal-methanol,gasifier_coal-methanol,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polymerization-extrusion_hdpe,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polymerization-extrusion_ldpe,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polymerization-extrusion_lldpe,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polycondensation_pet,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polycondensation_pet,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. Value is an author estimate (+/-20% rule)."
+low,saygin_2011_001,reactor_polymerization-extrusion_pp,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polymerization-extrusion_ps,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,reactor_polymerization-extrusion_pvc,reactor_polymerization-extrusion,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,saygin_2011_001,gasifier_coal-ammonia,gasifier_coal-ammonia,low,"Per t product; Table 1 excludes electricity and feedstock, so only the fuel/steam carriers are covered. BPT = best practice in new plants (footnote 6)."
+low,schneider_2015_001,kiln_belite-clinker,(none),low,Belite clinker; no numbers and no archetype; lower burning temperature but no energy figure to pass the 15% test.
+low,solis_2020_001,reactor_plastics-pyrolysis_plasma,reactor_plastics-pyrolysis,low,"Product is syngas, not pyrolysis oil, and the heat is electric plasma; laboratory scale only, no energy or cost numbers."
+low,solis_2020_001,reactor_plastics-pyrolysis_microwave,reactor_plastics-pyrolysis,low,Electric microwave heating changes the equipment; laboratory scale; no energy or cost numbers.
+low,solis_2020_001,reactor_plastics-hydrocracking,reactor_plastics-pyrolysis,low,"Consumes hydrogen, which the pyrolysis archetype does not; pilot scale; no energy or cost numbers."
+low,solis_2020_001,gasifier_plastic-waste_plasma,gasifier_biomass-waste,low,Electric plasma heating changes the equipment and energy use; plastics application at TRL 8; no energy per tonne printed.
+low,talaei_2020_001,sinter-plant_strand,sinter-plant_strand,low,"Per t crude steel, not per t sinter; convert with a sinter-per-steel ratio before use."
+low,talaei_2020_001,coke-oven_by-product,coke-oven_by-product,low,"Per t crude steel, not per t coke."
+low,talaei_2020_001,blast-furnace,blast-furnace,low,"Per t crude steel, not per t hot metal; includes NG injection 1.39 GJ."
+low,talaei_2020_001,rolling-mill_slab,rolling-mill_hot,low,Primary slab mill with 2.14 GJ NG (reheating); scope differs from the hot mill archetype.
+low,talaei_2020_001,rolling-mill_hot-incl-reheating,rolling-mill_hot,low,Includes reheating furnace; per t crude steel; NG part could inform furnace_reheating.
+low,talaei_2020_001,rolling-mill_hot-incl-reheating,rolling-mill_hot,low,Includes reheating furnace; per t crude steel; NG part could inform furnace_reheating.
+low,toktarova_2020_001,steel-mill_tgrbf-bof,blast-furnace_top-gas-recycling,low,Route per t steel incl. BOF and upstream; archetype is the BF per t hot metal. Scope mismatch.
+low,toktarova_2020_001,steel-mill_electrowinning,electrolysis-cell_iron-electrowinning,low,"Per t steel (route), archetype is per t iron; electrowinning variant (low or high temperature) not stated."
+low,toktarova_2020_001,capture-unit_post-combustion,blast-furnace_ccs-diffuse,low,Capex unit ambiguous (per t steel vs per t CO2); capture technology unspecified.
+low,toktarova_2020_001,blast-furnace_top-gas-recycling_ccs,blast-furnace_ccs-diffuse,low,Reduction % only.
+low,toktarova_2020_001,blast-furnace_top-gas-recycling_charcoal-ccs,(none),low,Reduction % only.
+low,vakkilainen_2006_001,gasifier_black-liquor-abb,gasifier_black-liquor,low,"Fuel-gas conversion effectiveness only, no power or steam output; pilot data c. 1995"
+low,vakkilainen_2006_001,gasifier_black-liquor-tampella,gasifier_black-liquor,low,"Fuel-gas conversion effectiveness only, no power or steam output; pilot data c. 1995"

@@ -1,0 +1,10 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,input,iron-ore,1.73,t,t,,,,,"SI p.11, Table S10",Ore demand 0% scrap 1.73 dmt t/t steel,"Dry metric tonnes of DR-grade ore per t steel, 0% scrap (own calculations)"
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,input,lime,50,kg,t,,,,,"SI p.11, Table S10",Lime demand 0% scrap 50.00 kg/t LS,reprinted from Kirschen et al. 2011
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,input,electrodes,2,kg,t,,,,,"SI p.11, Table S10",Electrodes 2.00 kg/t LS,reprinted from Vogl et al. 2018
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,output,liquid-steel,1,t,t,,,,,"SI p.11, Table S10",per t steel,
+DR shaft furnace on hydrogen (SI Table S10-S11),shaft-furnace_direct-reduction_hydrogen,input,hydrogen,48.13,kg,t,,,,,"SI p.11, Table S10",Direct reduction of iron (H2 feedstock) 48.13 kg H2/t DRI,per t DRI
+"EAF, 25% scrap (SI Table S10)",electric-arc-furnace,input,iron-ore,1.24,t,t,,,,,"SI p.11, Table S10",Ore demand 25% scrap 1.24 dmt t/t steel,25% scrap case; per t steel
+"EAF, 25% scrap (SI Table S10)",electric-arc-furnace,input,scrap-steel,0.3,t,t,,,,,"SI p.11, Table S10",Scrap demand 25% scrap 0.30 t/t steel,
+"EAF, 50% scrap (SI Table S10)",electric-arc-furnace,input,iron-ore,0.79,t,t,,,,,"SI p.11, Table S10",Ore demand 50% scrap 0.79 dmt t/t steel,50% scrap case; per t steel
+"EAF, 50% scrap (SI Table S10)",electric-arc-furnace,input,scrap-steel,0.57,t,t,,,,,"SI p.11, Table S10",Scrap demand 50% scrap 0.57 t/t steel,

@@ -1,0 +1,24 @@
+process,technology,item,value,unit,reference,note
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,H2 minimum consumption for DR (main text),50,kg/t DRI,"p.10, Methods",reprinted from ref. 55
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,mean LCOS range across scrap cases,625-766,2020_USD/t,"p.5, Fig. 3 caption",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,LCOE and LCOH2 average 2030 to 2050,43 to 30 USD/MWh; 3.2 to 2.1 USD/kg,,"p.4, Results",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,"cost shares 2050: ore 28, solar+wind 19, electrolysers 9, plant 14, storage 6, labour 9, other materials 7, O&M 9",,%,"p.4-5, Results",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,CO2 intensity islanded system incl. embodied RE,0.1-0.3,t/t,"p.6, Results",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,grid-powered CO2 intensity Canada/Sweden 2030,0.2,t/t,"p.6, Results",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,"H2 per t steel and electrolyser oversizing by country, 2050",0.06-0.09 t/t; 1.32-3.67,,"SI p.3, Table S2",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,electrolyser water demand,12,L/kg H2,"p.7, Results",incl. 33% losses
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,labour cost ironmaking incl. H2 / steelmaking,19 / 53,2020_USD/t,"SI p.12, Table S11",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,"consumable prices: scrap 265, lime 121, alloys 2397, graphite electrodes 5395",,2020_USD/t,"SI p.12, Table S11",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,alloys consumption,11,kg/t LS,"SI p.11, Table S10",reprinted from Vogl et al. 2018
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",shaft-furnace_electrolytic-hydrogen,EAF metal yield 0/25/50% scrap,85/87/89,%,"SI p.11, Table S10",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,CGH2 compression to 200 bar,2.87,MWh/t H2,"SI p.11, Table S10",
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,"HBI/CDRI heating (printed unit MWh/t, likely kWh/t)",152.78,MWh/t as printed,"SI p.11, Table S10",Implausible unit; not loaded
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,casting capex,0.945,$/t LS per hour as printed,"SI p.12, Table S11",Unit ambiguous; not loaded
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,CGH2 plant 200 bar capex / storage vessel,2.064 $/t H2 per hour; 0.70 $/t stored,as printed,"SI p.12, Table S11",Units ambiguous; not loaded
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,fuel cell capex 2030/2040/2050,0.457/0.267/0.218,M$/MW,"SI p.10, Table S9",reprinted from Whiston et al.
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,solar PV / wind capex 2030/2040/2050,0.594/0.461/0.327; 1.088/0.962/0.835,M$/MW,"SI p.10, Table S9",reprinted from IRENA
+"Islanded solar/wind H2-DRI-EAF plant, 1 Mt/yr, 0% scrap, 44 regions (Results; SI Tables S10-S11)",,Li-ion battery capex 2030/2040/2050,0.207/0.182/0.156,M$/MWh,"SI p.10, Table S9",reprinted from Cole and Frazier 2020
+Ore mining and preparation (SI Table S8),,pelletising energy,208.28,kWh/t pellet,"SI p.10, Table S8",carrier not stated; reprinted from Lv et al. 2019
+Ore mining and preparation (SI Table S8),,"drilling+blasting 1.28, loading+hauling 25.58, crushing+screening 6.42, comminution 27.36 kWh/t crushed ore; concentration 0.85 kWh/t per dFe%",,kWh/t,"SI p.10, Table S8",reprinted from Norgate and Haque 2010; Palacios et al. 2019
+BF-BOF comparison,,BF-BOF site cost 2021 range,621-782,USD/t,"p.3, Results",reprinted from Transition Zero 2022
+BF-BOF comparison,,BF-BOF CO2 intensity by country,1.45-2.80,t/t,"SI p.14, Table S14",reprinted from Hasanbeigi and Springer

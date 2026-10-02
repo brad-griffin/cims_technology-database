@@ -1,0 +1,28 @@
+process,technology,item,value,unit,reference,note
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, hydrogen production (total)",8.36,kWh/kg NH3,"p.11, Table 10","Shares: hydrogen 81-96%, nitrogen 2.4-2.9%, loop 0.9-16%"
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, water purification",0.0047,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, electrolysis",8.36,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, nitrogen production",0.250,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, synthesis loop (total)",0.1-1.7,kWh/kg NH3,"p.11, Table 10","Shares: hydrogen 81-96%, nitrogen 2.4-2.9%, loop 0.9-16%"
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, recycle compression",0.05,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, cooling",0.062,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,"electricity, desorption",0-1.6,kWh/kg NH3,"p.11, Table 10",
+"Proposed islanded power-to-ammonia plant (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,total vs theoretical minimum (5.64 kWh/kg),154-183,%,"p.11, Table 10",
+Power-to-ammonia-to-power (Sect. 3.1),,P2A2P round-trip electrical efficiency,33,%,p.10,"SOFC-H 55% LHV, SOFC heat used for desorption; 26-28% with conventional electrolysis HB, 18-24% with turbines or H2 fuel cells (p.12)"
+Haaksbergen islanded system (Table 9),,overall system efficiency,61,%,"p.11, Table 9","battery function 80%, chemical storage 33%"
+Haaksbergen islanded system (Sect. 3.3),,estimated cost of electricity of islanded system,0.30-0.35,2019_EUR/kWh,p.12,"PRICE YEAR NOT STATED; wind, solar, battery and P2A2P storage"
+Ammonia chemistry (Sect. 1.1),,minimum theoretical energy for NH3 from water and air,20.3,GJ/t,p.2,= 5.64 kWh/kg; reprinted from ref 21
+Ammonia chemistry (Sect. 1.1),,total energy of SMR ammonia,28.0-32.6,GJ/t,p.2,"= 7.78-9.06 kWh/kg; reprinted from refs 21,26"
+Large-scale ammonia (Table 1),steam-reformer_ammonia,"SMR with HB, 2050 projection",7.2-7.5,kWh/kg,"p.3, Table 1","reprinted from refs 54,55"
+Large-scale ammonia (Table 1),,nitrogenase (in nature),7.8,kWh/kg,"p.3, Table 1",reprinted from ref 25
+"Ammonia cracking (Sect. 1.1, 2.7)",reactor_ammonia-cracking,energy to decompose 1 kg NH3 to 0.66 Nm3 N2 + 1.97 Nm3 H2,2.7,MJ/kg NH3,p.2,"= 0.75 kWh/kg, excluding preheating and evaporation (reaction energy); reprinted from ref 27"
+"Ammonia cracking (Sect. 1.1, 2.7)",reactor_ammonia-cracking,ammonia lost for heating in cracking,>=14,%,p.8,"""At least 14% of ammonia is lost in the cracking process for heating purposes""; reprinted from ref 27"
+Water purification (Sect. 2.3.1),reverse osmosis,levelized cost,1,2019_EUR/t NH3,p.5,"""as low as"", incl. maintenance and capital charges; reprinted from refs 57,79"
+Water purification (Sect. 2.3.1),reverse osmosis,energy,4.7,kWh/t NH3,p.5,"3 kWh/t water, 97% water utilization; reprinted from ref 57"
+Water purification (Sect. 2.3.1),demi-water unit for a 1k NFUEL unit,purchased equipment cost,50,2019_EUR-thousand,p.5,reprinted from ref 80
+Nitrogen production (Sect. 2.4),adsorber_pressure-swing-nitrogen,energy for N2 production in design,0.32 kWh/kg N2; 0.25 kWh/kg NH3,kWh/kg,p.7,feed-air compression about 0.18 kWh/kg NH3
+Ammonia synthesis catalyst (Sect. 2.5),,extra energy if electric field used,2-5,kWh/kg NH3,p.7,
+Dynamic operation (Sect. 3.2),,SEC increase at 10% load by inert variation,10-15,%,p.11,reprinted from ref 161
+Hydrogen vs ammonia cost (Table 11),,production cost hydrogen / ammonia,2.70 / 3.40,2019_EUR/kg H2,"p.11, Table 11",storage 182 days: 13.48 / 0.49 EUR/kg H2; reproduced from Vrijenhoef (ref 163); price year not stated
+Battery (Sect. 2.3),electrolyzer_battolyser,battery-function round-trip efficiency,80,%,"p.5, 10",
+Ammonia storage (Table 7),,non-refrigerated / semi-refrigerated / low-temperature storage pressure,16-18 / 3-5 / 1.1-1.2,bar,"p.9, Table 7",capacities <270 or <1500 / 450-2700 / 4500-45000 t NH3

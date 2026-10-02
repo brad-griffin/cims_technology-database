@@ -1,0 +1,19 @@
+process,technology,item,value,unit,reference,note
+Model TMP mill (Table IV),pulper_thermomechanical,refiner electricity (sub-row of TMP mill total),2160,kWh/ADt,"p.15, Table IV","Other rows: chip handling 40, pumps/screens/agitators/blowers 240, heat recovery 10 kWh/ADt. reprinted from Jackson and Wild (1999)"
+Model TMP mill (Table IV),pulper_thermomechanical,"specific refining energy, black spruce TMP for newsprint",2400,kWh/BDMT,p.15,reprinted from Jackson and Wild (1999)
+Model TMP mill (Table IV),pulper_thermomechanical,"average external power demand, Swedish TMP mills",2420,kWh/ADt,p.15,reprinted from Nygaard (1997)
+Model TMP mill (Table IV),pulper_thermomechanical,possible steam production at same refining energy; Swedish 1994 average excess steam,5.2; 4.4,GJ/ADt,p.15-16,reprinted from Nygaard (1997)
+Model recycled fibre (DIP) mill (Sect. Recycled Fibre Mill),pulper_recycled-fibre,Swedish recycled fibre mills 1994: external power; fuel heat demand,330; 0.3,kWh/ADt; GJ/ADt,p.16,reprinted from Nygaard (1997)
+Model newsprint paper machine (Table V),paper-machine_newsprint-total,Swedish newsprint mills 1994 average electricity; SC machine electricity; SC machine total steam,440; 344; 2.71,kWh/ADt; kWh/ADt; GJ/ADt,p.16-17,reprinted from Nygaard (1997) and Talja et al. (1997)
+Model newsprint paper machine (Table V),dryer_steam-heated,minimum drying energy from 50 to 90% consistency,2.26,GJ/ADt,p.16,reprinted from Nilsson et al. (1995)
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-tmp,Jaakko Poyry modern TMP newsprint mill: heat; electricity,-1.33; 2190,GJ/ADt; kWh/ADt,p.17,reprinted from Lahepelto (1997)
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-dip,Jaakko Poyry modern DIP newsprint mill: heat; electricity,5.27; 870,GJ/ADt; kWh/ADt,p.17,reprinted from Lahepelto (1997)
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,average kraft mill purchased fossil fuel (natural gas 4.24 + fuel oil and other 1.75),5.99,GJ/ADt,p.13,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,average kraft mill purchased electricity,272,kWh/ADt,p.14,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,newsprint mills process steam consumption range (modern mill 0.64),2.52-12.69,GJ/t,p.19,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,newsprint mills process electricity range; average,1220-3660; 2850,kWh/ADt,p.21-22,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,average newsprint mill purchased fossil fuel (natural gas 1.80 + oil and other 1.73); plus purchased steam 0.90,3.56,GJ/t,p.21,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,newsprint mills steam from hog fuel and sludge,3.97,GJ/ADt,p.19,1999. reprinted from CPPA Energy Monitoring Report 1999
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,energy prices assumed: natural gas; fuel oil; electricity,3.40; 4.03; 0.04,CAD/GJ; CAD/GJ; CAD/kWh,p.13-14,PRICE YEAR NOT STATED; publication year 2002
+"Existing Canadian mills, CPPA Energy Monitoring Report 1999",,possible electricity saving from pumping and agitation in newsprint mills,5,%,p.21-22,about 5.70 CAD/ADt
+Model kraft market pulp mill (Tables I-III),steam-turbine_back-pressure,back-pressure turbine generation; condensing turbine generation; condensing-extracting power-to-heat ratio,520; 135; 100,kWh/ADt; kWh/ADt; kWh/GJ,p.9-10,Model kraft mill turbines; no per-turbine heat rate printed.

@@ -1,0 +1,27 @@
+process,technology,sector,end-use,process-step,service-unit
+Model kraft market pulp mill (Tables I-III),conveyor_chip,pulp-and-paper,material-preparation,wood-preparation,t
+Model kraft market pulp mill (Tables I-III),digester_continuous-kraft,pulp-and-paper,material-conversion,pulping-chemical,t
+Model kraft market pulp mill (Tables I-III),washer_brownstock-pressure-filter,pulp-and-paper,drying-and-separation,pulping-chemical,t
+Model kraft market pulp mill (Tables I-III),reactor_oxygen-delignification-stage,pulp-and-paper,material-conversion,bleaching,t
+Model kraft market pulp mill (Tables I-III),reactor_ecf-bleaching-d0eodnd,pulp-and-paper,material-conversion,bleaching,t
+Model kraft market pulp mill (Tables I-III),dryer_market-pulp,pulp-and-paper,drying-and-separation,pulp-drying,t
+Model kraft market pulp mill (Tables I-III),evaporator_multiple-effect,pulp-and-paper,drying-and-separation,chemical-recovery,t
+Model kraft market pulp mill (Tables I-III),power-plant_kraft-recovery-boiler-turbines,pulp-and-paper,steam-and-hot-water,energy-recovery,t
+Model kraft market pulp mill (Tables I-III),kiln_lime-product-cooler,pulp-and-paper,process-heat-high-temp,chemical-recovery,t
+Model kraft market pulp mill (Tables I-III),heat-recovery-unit_hot-water-system,pulp-and-paper,steam-and-hot-water,hot-water,t
+Model kraft market pulp mill (Tables I-III),separator_effluent-activated-sludge,pulp-and-paper,other-services,effluent-treatment,t
+Model kraft market pulp mill (Tables I-III),general-services_kraft-mill,pulp-and-paper,other-services,general,t
+Model kraft market pulp mill (Tables I-III),reactor_oxygen-delignification_ecf,pulp-and-paper,material-conversion,bleaching,t
+Model kraft market pulp mill (Tables I-III),boiler_recovery-high-solids,pulp-and-paper,steam-and-hot-water,chemical-recovery,t
+Model kraft market pulp mill (Tables I-III),boiler_solid-fuel_hog-fuel,pulp-and-paper,steam-and-hot-water,steam-supply,GJ
+Model kraft market pulp mill (Tables I-III),pulp-mill_kraft-market-model,pulp-and-paper,material-conversion,pulping-chemical,t
+Model TMP mill (Table IV),pulper_thermomechanical,pulp-and-paper,material-conversion,pulping-mechanical,t
+Model recycled fibre (DIP) mill (Sect. Recycled Fibre Mill),pulper_recycled-fibre,pulp-and-paper,material-conversion,pulping-recycled,t
+Model newsprint paper machine (Table V),paper-machine_stock-preparation,pulp-and-paper,material-preparation,paper-machine,t
+Model newsprint paper machine (Table V),paper-machine_forming-pressing,pulp-and-paper,drying-and-separation,paper-machine,t
+Model newsprint paper machine (Table V),dryer_steam-heated,pulp-and-paper,drying-and-separation,paper-machine,t
+Model newsprint paper machine (Table V),paper-machine_newsprint-total,pulp-and-paper,drying-and-separation,paper-machine,t
+Model newsprint paper machine (Table V),separator_effluent-activated-sludge,pulp-and-paper,other-services,effluent-treatment,t
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-tmp,pulp-and-paper,material-conversion,paper-machine,t
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-dip,pulp-and-paper,material-conversion,paper-machine,t
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-tmp-dip,pulp-and-paper,material-conversion,paper-machine,t

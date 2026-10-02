@@ -1,0 +1,19 @@
+process,technology,item,value,unit,reference,note
+"Black liquor properties by recovery boiler generation (Sect. 2.2, Table 2-1)",,1982 two drum: liquor dry solids as fired / HHV / dry solids per t pulp,64 / 15.0 / 1700,% / MJ/kg ds / kg ds/t pulp,"p.2-4, Table 2-1",reprinted from Vakkilainen 2000
+"Black liquor properties by recovery boiler generation (Sect. 2.2, Table 2-1)",,1992 modern: liquor dry solids as fired / HHV / dry solids per t pulp,72 / 13.9 / 1680,% / MJ/kg ds / kg ds/t pulp,"p.2-4, Table 2-1",reprinted from Vakkilainen 2000
+"Black liquor properties by recovery boiler generation (Sect. 2.2, Table 2-1)",,2002 current: liquor dry solids as fired / HHV / dry solids per t pulp,80 / 13.0 / 1780,% / MJ/kg ds / kg ds/t pulp,"p.2-4, Table 2-1",reprinted from Vakkilainen 2000
+"Black liquor properties by recovery boiler generation (Sect. 2.2, Table 2-1)",,"Net heat to furnace, 1982 / 1992 / 2002",13600 / 12250 / 11200,kJ/kg ds (printed kW/kg dry solids),"p.2-4, Table 2-1",unit misprinted as kW/kg in the table
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery-high-solids,Main steam flow increase for dry solids 65% to 80%,7,%,"p.2-4, Sect. 2.2; p.3-10",more than 2% per 5% rise in dry solids; flue gas falls 7%
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery-high-solids,"Steam generating efficiency, 65% to 80% dry solids",about 65 to close to 70,%,"p.3-10, Sect. 3.5","basis differs from Table 3-7 (87.3-88.1%); presumably a fuel-HHV basis, not stated"
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery-high-solids,Electricity generation increase from 10.4 MPa/520 degC main steam,7,%,"p.2-7, Sect. 2.2",about 7%; equals about 7 MW extra at 4000 tds/d design load
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery-high-solids,Additional electricity at 4000 tds/d with 10.4 MPa/520 degC,7,MW,"p.2-7, Sect. 2.2","incremental, vs about 8-9 MPa/480 degC"
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery,Specific steam generation base value,3.5,kg steam/kg BL dry solids,"p.2-10, Sect. 2.3",often used rough estimate
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery,Most typical main steam pressure chosen in recent years,80-90,bar,"p.2-9, Sect. 2.3",Sweden limited to about 60-65 bar; Japan above 100 bar
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",boiler_recovery-high-solids,Design dry solids for greenfield mills,"80 (Asia, South America) / 85 (Scandinavia, Europe)",%,"p.2-10, Sect. 2.3",
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",,Largest recovery boilers started 2004,4450 and 5000+,t ds/d,"p.2-1, Sect. 2",
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",,Recovery boiler delivery time achieved,18,months,"p.2-11, Sect. 2.4",some projects
+"Recovery boiler design trends (Sect. 1.5, 2.2-2.3)",,"Lower furnace temperature rise, dry solids 65% to 80%",100,degC,"p.6-21, Sect. 6.10",radiative heat flux to walls +20%
+"Radiation and convection heat losses (Sect. 3.3, Table 3-4)",,"Measured heat loss, Kaukopaa SK6 3000 tds/d",1590,kW,"p.3-8, Table 3-4",reprinted from Ahtiala 1997
+"Effectiveness of converting black liquor HHV into net product gas (Sect. 1.8, Table 1-2)",boiler_recovery,"Conventional recovery boiler, HHV equivalent in net output as % of original HHV (14.7 / 13.3 MJ/kg bl)",61.1 / 58.6,%,"p.1-10, Table 1-2",comparison row for the gasifiers; reprinted from Grace and Timmer 1995
+Alternative recovery (Sect. 1.9),,DARS (direct alkali recovery) thermal efficiency relative to recovery boiler,about 10% lower,%,"p.1-11, Sect. 1.9",reprinted from Maddern 1988
+SNCR NOx control (Sect. 12.5),,Approximate SNCR operating cost,2000-2500,EUR/t NO2,"p.12-5, Sect. 12.5","PRICE YEAR NOT STATED; non-GHG, recorded for completeness only"

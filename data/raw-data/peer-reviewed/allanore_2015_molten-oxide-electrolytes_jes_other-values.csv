@@ -1,0 +1,7 @@
+process,technology,item,value,unit,reference,note
+"Molten oxide electrolysis of iron, energy estimate (p.E15, Fig. 4)",electrolysis-cell_molten-oxide,"thermodynamic minimum energy (enthalpy balance), hematite to liquid Fe and O2 at 1600 degC",2600,kWh/t Fe,p.E15,
+"Molten oxide electrolysis of iron, energy estimate (p.E15, Fig. 4)",electrolysis-cell_molten-oxide,assumed faradaic selectivity; thermal efficiency in the 3700 kWh/t estimate,90; 60,%,p.E15,Assumptions by analogy with aluminium electrolysis and electric furnaces
+"Molten oxide electrolysis of iron, energy estimate (p.E15, Fig. 4)",(none),integrated steel plant emissions used for comparison,1.85,t CO2/t Fe,"p.E15, Fig. 4 caption",
+"Sadacem industrial ferromanganese MOE cell, Ghent (p.E20)",(none),"industrial MOE cell for manganese: 50,000 A; about 6000 kWh/t Mn; current efficiency 50%; carbon anode",6000,kWh/t Mn,p.E20,"Non-ferrous (ferromanganese), carbon anode; out of scope. reprinted from Winand 1977"
+Winand laboratory MnO electrolysis (p.E20),(none),current density; cathodic faradaic efficiency,3.5 A/cm2; 70%,,p.E20,
+Lunar regolith MOE experiments (p.E21),(none),"faradaic efficiency, Ir anodes 5-10 A",70-90,%,p.E21,decreasing with electrolysis time

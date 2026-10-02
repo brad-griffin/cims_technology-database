@@ -1,0 +1,38 @@
+process,technology,item,value,unit,reference,note
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,primary energy change vs natural-gas boiler: EU / Sweden / France,-17 / about -35 / +3,%,"p.16, Sect. 3.2",2019 primary energy factors (Table 8)
+Layout comparison results (Sect. 3.2-3.3),boiler_electric,primary energy change vs natural-gas boiler: EU / Sweden / France,+58 / +16 / +96,%,"p.16, Sect. 3.2",
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,GHG change vs natural-gas boiler: EU / Germany,-40 / -19,%,"p.16, Sect. 3.2",2019 grid factors; other countries in Fig. 8 (chart only)
+Layout comparison results (Sect. 3.2-3.3),boiler_electric,GHG change vs natural-gas boiler: EU,+13 (conclusions: +12),%,"p.16, Sect. 3.2; p.20",
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,"steam production expense change vs gas boiler, 2019 EU prices, no carbon price",+55,%,"p.17, Sect. 3.3",
+Layout comparison results (Sect. 3.2-3.3),boiler_electric,"steam production expense change vs gas boiler, 2019 EU prices, no carbon price",+196,%,"p.17, Sect. 3.3",
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,steam production expense change vs gas boiler with EUR 100/t CO2,-13 (conclusions: -12),%,"p.18, Sect. 3.3; p.20",
+Layout comparison results (Sect. 3.2-3.3),boiler_electric,steam production expense change vs gas boiler with EUR 100/t CO2,+66,%,"p.18, Sect. 3.3",
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,maximum specific CAPEX for a payback under 5 years: EU,"280 (absolute about 620,000 EUR)",2019_EUR/kW,"p.19, Table 12","break-even threshold, not a cost estimate; 2019 Eurostat energy prices with EUR 100/t CO2; Germany and Italy not viable"
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,maximum specific CAPEX for a payback under 5 years: France,670,2019_EUR/kW,"p.19, Table 12","break-even threshold, not a cost estimate; 2019 Eurostat energy prices with EUR 100/t CO2; Germany and Italy not viable"
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,maximum specific CAPEX for a payback under 5 years: Spain,420,2019_EUR/kW,"p.19, Table 12","break-even threshold, not a cost estimate; 2019 Eurostat energy prices with EUR 100/t CO2; Germany and Italy not viable"
+Layout comparison results (Sect. 3.2-3.3),heat-pump_steam-generating,maximum specific CAPEX for a payback under 5 years: Sweden,1600,2019_EUR/kW,"p.19, Table 12","break-even threshold, not a cost estimate; 2019 Eurostat energy prices with EUR 100/t CO2; Germany and Italy not viable"
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,compressor efficiencies: screw (bottom) adiabatic / electro-mechanical,80 / 90,%,"p.11, Table 5",reprinted from John M. Campbell & Co.
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,compressor efficiencies: centrifugal (top) adiabatic / electro-mechanical,85 / 95,%,"p.11, Table 5",
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,external MVR for blow-through steam electric power,40,kWe,"p.8-9, Table 3",included in the COP
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,evaporation temperature (all refrigerants),45-48,degC,"p.15, Sect. 3.1.2",
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,refrigerant condensation temperature,about 146,degC,p.16,top stage evaporates steam at about 2.4 bar
+"Heat pump design results (Sect. 2.2, 3.1)",heat-pump_steam-generating,water recovered from exhaust: R245ca / R1336mzz(Z) / n-pentane,1.7 / 1.7 / 1.8,t/h,"p.14, Table 11",
+"Heat pump design results (Sect. 2.2, 3.1)",,water dispersed to air per t paper: no recovery / with heat recovery / with HTHP,1.1 / 0.8 / below 0.5,t/t,"p.14-15, Sect. 3.1.1",
+"Heat pump design results (Sect. 2.2, 3.1)",,heat source at HTHP evaporator inlet: dry air / humidity / total flow / temperature,"3.0 kg/s / 0.37 kg/kg / 15,000 kg/h / 75 degC",-,"p.9, Table 4",
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, EU 2019",1.96 / 0.255,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, EU 2019",26 / 86,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, France 2019",2.43 / 0.06,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, France 2019",26 / 68,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, Germany 2019",1.75 / 0.347,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, Germany 2019",26 / 100,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, Italy 2019",1.69 / 0.234,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, Italy 2019",26 / 113,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, Spain 2019",1.97 / 0.214,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, Spain 2019",28 / 83,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,"electricity primary energy factor / GHG factor, Sweden 2019",1.44 / 0.01,kWhP/kWhel / kg CO2/kWh,"p.13, Table 8",
+Factors and prices (Tables 8-10),,"non-domestic natural gas / electricity price, Sweden 2019",39 / 53,EUR/MWh,"p.14, Table 10",Eurostat
+Factors and prices (Tables 8-10),,natural gas primary energy factor / GHG factor,1.1 / 0.2,- / kg CO2/kWh,"p.13, Table 9",EIB (2023)
+Factors and prices (Tables 8-10),,carbon price assumed,100,EUR/t CO2,"p.13, Sect. 2.2.5",
+Sector context,,tissue drying hot-air temperature requirement,350-500,degC,p.20,
+Sector context,,share of paper-industry heat below 400 degC,97,%,"p.2, Sect. 1.2",reprinted from Madeddu et al. (2020)
+Sector context,,paper-industry heat consumption coverable by upgraded waste heat,10.78,%,"p.2, Sect. 1.2",reprinted from Kosmadakis (2019)

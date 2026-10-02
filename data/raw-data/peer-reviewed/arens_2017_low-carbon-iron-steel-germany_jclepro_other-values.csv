@@ -1,0 +1,32 @@
+process,technology,item,value,unit,reference,note
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",blast-furnace_bf-bof-route,oxygen use (energy required to produce it),0.71,GJ/t,"p.88, Table 3",Primary energy of purchased oxygen (Table 2: 7.33 GJ/1000 m3); not final energy.
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",blast-furnace_bf-bof-route,CO2 emissions incl. electricity and oxygen (indirect),1815.8,kg CO2/t,"p.88, Table 3","Direct plus indirect (grid 0.570 kg CO2/kWh, oxygen 115 kg CO2/GJ), 2011."
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",electric-arc-furnace_scrap-route,oxygen use (energy required to produce it),0.27,GJ/t,"p.88, Table 3",Primary energy of purchased oxygen (Table 2: 7.33 GJ/1000 m3); not final energy.
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",electric-arc-furnace_scrap-route,CO2 emissions incl. electricity and oxygen (indirect),530.6,kg CO2/t,"p.88, Table 3","Direct plus indirect (grid 0.570 kg CO2/kWh, oxygen 115 kg CO2/GJ), 2011."
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",shaft-furnace_dri-eaf-route,oxygen use (energy required to produce it),0.3,GJ/t,"p.88, Table 3",Primary energy of purchased oxygen (Table 2: 7.33 GJ/1000 m3); not final energy.
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",shaft-furnace_dri-eaf-route,CO2 emissions incl. electricity and oxygen (indirect),1487.0,kg CO2/t,"p.88, Table 3","Direct plus indirect (grid 0.570 kg CO2/kWh, oxygen 115 kg CO2/GJ), 2011."
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",smelting-vessel_hisarna-route,oxygen use (energy required to produce it),0.57,GJ/t,"p.88, Table 3",Primary energy of purchased oxygen (Table 2: 7.33 GJ/1000 m3); not final energy.
+"Steelmaking routes, Germany 2011 (Sect. 3.2.1, Table 3)",smelting-vessel_hisarna-route,CO2 emissions incl. electricity and oxygen (indirect),1349.0,kg CO2/t,"p.88, Table 3","Direct plus indirect (grid 0.570 kg CO2/kWh, oxygen 115 kg CO2/GJ), 2011."
+Energy carrier factors (Table 2),,"lower heating value or energy required, hard coal",29.31,GJ/t,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, hard coal",95,kg CO2/GJ,"p.88, Table 2",
+Energy carrier factors (Table 2),,"lower heating value or energy required, coke",28.43,GJ/t,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, coke",107,kg CO2/GJ,"p.88, Table 2",
+Energy carrier factors (Table 2),,"lower heating value or energy required, oil",40.61,GJ/t,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, oil",77,kg CO2/GJ,"p.88, Table 2",
+Energy carrier factors (Table 2),,"lower heating value or energy required, natural gas",35.17,GJ/1000 m3,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, natural gas",56,kg CO2/GJ,"p.88, Table 2",
+Energy carrier factors (Table 2),,"lower heating value or energy required, oxygen",7.33,GJ/1000 m3,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, oxygen",115,kg CO2/GJ,"p.88, Table 2",
+Energy carrier factors (Table 2),,"lower heating value or energy required, electricity (offsite, 2011)",10.34,GJ/1000 kWh,"p.88, Table 2",Oxygen and electricity: energy required to derive the carrier.
+Energy carrier factors (Table 2),,"CO2 emission factor, electricity (offsite, 2011)",0.57,kg CO2/kWh,"p.88, Table 2",
+German grid (Table 7),,grid CO2 emission factor 2011,0.57,kg CO2/kWh,"p.91, Table 7","2020-2040 estimated (Oko-Institut and Fraunhofer ISI 2015, AMS scenario)."
+German grid (Table 7),,grid CO2 emission factor 2020,0.493,kg CO2/kWh,"p.91, Table 7","2020-2040 estimated (Oko-Institut and Fraunhofer ISI 2015, AMS scenario)."
+German grid (Table 7),,grid CO2 emission factor 2030,0.417,kg CO2/kWh,"p.91, Table 7","2020-2040 estimated (Oko-Institut and Fraunhofer ISI 2015, AMS scenario)."
+German grid (Table 7),,grid CO2 emission factor 2040,0.319,kg CO2/kWh,"p.91, Table 7","2020-2040 estimated (Oko-Institut and Fraunhofer ISI 2015, AMS scenario)."
+Structural parameters,,"scrap use, BF/BOF steelmaking",0.2,t scrap/t steel,"p.90, Table 6",
+Structural parameters,,"scrap use, scrap/EAF steelmaking",1.0,t scrap/t steel,"p.90, Table 6",
+Structural parameters,,ratio BF/BOF steel to hot metal,1.07,-,"p.88, Sect. 3.2.3",Average 2009-2011.
+Structural parameters,,share of BF/BOF electricity purchased from the grid,23,%,"p.90, Sect. 4.1-4.2",
+DRI/EAF,shaft-furnace_dri-eaf-route,EAF electricity increase when fed with DRI,40-120,kWh/t liquid steel,"p.88, Sect. 3.2.1",Printed range 40-120 kWh/t depending on DRI share and metallisation. reprinted from Worrell et al. 2008
+German sector,,specific CO2 emissions 2012 (VDEh data),1.35,t CO2/t crude steel,"p.96, Table 10",2011 1.362; 2013 1.328.
+Fuel injection in EAF,,grid emission factor at which fuel injection stops reducing CO2,342,kg CO2/kWh-el,"p.95, Sect. 5.3",Turning point expected about 2036.

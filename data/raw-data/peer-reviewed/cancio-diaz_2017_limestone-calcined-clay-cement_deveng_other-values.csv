@@ -1,0 +1,17 @@
+process,technology,item,value,unit,reference,note
+"Clay calcination technologies (Sect. 2.2, Table 1)",calciner_clay-wet-kiln-trial,CO2 emissions of clay calcination (Table 1),393,kg CO2/t calcined clay,"p.84, Table 1",basis unclear (ratio to energy ~0.093 kg/MJ suggests LCA incl. upstream); not loaded as scope 1
+"Clay calcination technologies (Sect. 2.2, Table 1)",calciner_clay-retrofitted-kiln,CO2 emissions of clay calcination (Table 1),249,kg CO2/t calcined clay,"p.84, Table 1",as above; text: emissions 21% higher than flash
+"Clay calcination technologies (Sect. 2.2, Table 1)",calciner_clay-flash,CO2 emissions of clay calcination (Table 1),196,kg CO2/t calcined clay,"p.84, Table 1",as above
+"Clay calcination technologies (Sect. 2.2, Table 1)",calciner_clay-flash,"""power consumption"" of flash calcination",2211,MJ/t metakaolin,"p.84, Sect. 2.2",ref [31]; unclear whether thermal or electric; conflicts with Table 1 2734 MJ/t
+"Clay calcination technologies (Sect. 2.2, Table 1)",calciner_clay-retrofitted-kiln,residence time in firing chamber,about 60,min,"p.84, Sect. 2.2",
+"Investment cost data (Sect. 1, Sect. 4.2.2)",calciner_clay-retrofitted-kiln,unit CAPEX per t LC3 cement,12,2017_USD/t LC3,p.84 and p.86,"""$US 12/ton of cement""; flash calciner 24 (printed ""24 MUSD/ton"" on p.86 - misprint); denominator unclear (annual t of LC3?)"
+"Cement types, Cuba: production cost and CO2 (Tables 2 and 4)",binder_portland-cement,"cradle-to-gate GWP, wet / dry process",1017 / 890,kg CO2-eq/t cement,"p.87, Table 4",LCA; reprinted from Sanchez Berriel et al. (2016)
+"Cement types, Cuba: production cost and CO2 (Tables 2 and 4)",binder_blended-cement_zeolite,"cradle-to-gate GWP, wet / dry process",879 / 765,kg CO2-eq/t cement,"p.87, Table 4",
+"Cement types, Cuba: production cost and CO2 (Tables 2 and 4)",binder_calcined-clay_retrofitted-calciner,cradle-to-gate GWP,562,kg CO2-eq/t cement,"p.87, Table 4",
+"Cement types, Cuba: production cost and CO2 (Tables 2 and 4)",binder_calcined-clay_flash-calciner,cradle-to-gate GWP,550,kg CO2-eq/t cement,"p.87, Table 4",
+"Cement types, Cuba: production cost and CO2 (Tables 2 and 4)",,cement selling price OPC / PPC and LC3,116.05 / 108.33,2017_USD/t,"p.86, Table 2",LC3 price set equal to PPC
+"Scenario results (Abstract, Sect. 5)",,sector GHG reduction with LC3 vs BAU by 2030,20-23 (flash: 11-23),%,"p.82, p.88","scenario-level, not technology"
+Scenario results (Abstract),,LC3 production cost reduction vs conventional cements,15-25,%,p.82,
+"Scenario results (Sect. 4.2.4, Table 5)",,"WACC Latin American cement companies, mean (range)",9.4 (6.8-12.6),%,"p.87, Table 5",12% suggested for Cuba
+Market (Sect. 2.1),,Cuban installed clinker capacity / utilisation,2.8 Mt/yr / 43%,,p.83,"six plants, 4.4 Mt/yr nominal cement capacity; 75% of clinker by dry process"
+Market (Sect. 2.1),,SCM limits: clinker substitution limit / world average substitution / SCM availability,35 (slag 65) / 25 / 10,%,p.83,"reprinted from refs [25,26]"

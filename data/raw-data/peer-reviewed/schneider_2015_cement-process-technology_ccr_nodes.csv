@@ -1,0 +1,13 @@
+process,technology,sector,end-use,process-step,service-unit
+"Thermal process technology (Abstract, Sect. 1-2)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker,t
+Waste heat recovery (Sect. 2.2),steam-turbine_waste-heat,cement,electricity-generation,waste heat recovery,GJ
+CO2 reduction and capture (Sect. 3.3),kiln_dry-precalciner_ccs-diffuse,cement,co2-capture,clinker,t
+CO2 reduction and capture (Sect. 3.3),kiln_oxy-fuel,cement,process-heat-high-temp,clinker,t
+Efficient grinding (Sect. 4),grinding-mill_vertical-roller,cement,motor-drive,cement grinding,t
+Efficient grinding (Sect. 4),grinding-mill_roller-press,cement,motor-drive,cement grinding,t
+Efficient grinding (Sect. 4),grinding-mill_ball,cement,motor-drive,cement grinding,t
+New cements - low-carbon cements (Sect. 5),binder_blended-cement_ternary,cement,material-conversion,cement grinding,t
+New cements - low-carbon cements (Sect. 5),kiln_belite-clinker,cement,process-heat-high-temp,clinker,t
+New cements - low-carbon cements (Sect. 5),binder_sulphoaluminate,cement,process-heat-high-temp,clinker,t
+New cements - low-carbon cements (Sect. 5),binder_belite-sulphoaluminate-ternesite,cement,process-heat-high-temp,clinker,t
+New cements - low-carbon cements (Sect. 5),binder_hydrothermal-silicate,cement,material-conversion,cement,t

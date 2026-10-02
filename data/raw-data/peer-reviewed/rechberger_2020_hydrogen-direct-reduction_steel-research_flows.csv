@@ -1,0 +1,6 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,input,natural-gas,48,m3,t,,,,,"p.7 of 10, Sect. 4.2",48 m3STP t-1 DRI of NG,duplicated in main file
+"DR-NG reference model, MIDREX-type (Sect. 4.1)",shaft-furnace_direct-reduction,input,iron-ore,1.391,t,t,,,,,"p.4 of 10, Table 1",Iron input material 1.391 kg t-1 DRI,"Printed as kg/t (1.391), text says 1.4 t iron-oxide input per t DRI (p.6): read as t/t. Pellets and lump ore mix. Same for DR-H2."
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,input,iron-ore,1.391,t,t,,,,,"p.4 of 10, Table 1",Iron input material 1.391 kg t-1 DRI,Unit printed kg/t; text 1.4 t per t DRI; read as t/t.
+"DR-NG reference model, MIDREX-type (Sect. 4.1)",shaft-furnace_direct-reduction,output,direct-reduced-iron,1,t,t,,,,,"p.4 of 10, Table 1",,"Hot DRI at 730 degC, 95% reduction degree, 1.7% C"
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,output,direct-reduced-iron,1,t,t,,,,,"p.4 of 10, Table 1",,"Hot DRI at 730 degC, 95% reduction degree, 1.7% C"

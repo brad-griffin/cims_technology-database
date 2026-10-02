@@ -1,0 +1,24 @@
+process,technology,item,value,unit,reference,note
+"Nitric acid production, global",,N2O emission from nitric acid production,400,kt N2O/yr,p.117 abstract; p.148,
+N2O global warming potential used,,GWP of N2O,310,t CO2-eq/t N2O,"p.148, Sect. 7",reprinted from IPCC
+Incentives (Sect. 3),,French N2O emission tax,37,2003_EUR/t N2O,p.120,Also printed as 0.5 EUR per t carbon. PRICE YEAR NOT STATED
+Incentives (Sect. 3),,Range of N2O abatement cost at nitric acid plants,0.2-3,2003_EUR/t CO2-eq,p.120-121,Summary of Section 6.1
+Cost impact (Sect. 6.3.4),,Maximum affordable de-N2O cost for autonomous application,0.13,2003_EUR/t CO2-eq,"p.148, Sect. 6.3.4",Equivalent to about 0.36 EUR per t nitric acid produced (printed)
+Cost estimation base case (Sect. 6.1),,Nitric acid production cost used for valuation,70,2003_EUR/t HNO3 (100%),"p.143, Sect. 6.1",
+Ammonia oxidation (Sect. 4.1),reactor_nitric-acid,NO yield over Pt-Rh gauzes,95-97,%,p.123,"N2O selectivity 1.5-2.5%, N2 4-4.5%"
+Ammonia oxidation (Sect. 4.1),reactor_nitric-acid,Profit from +1% NO yield in a medium plant,500,k EUR/yr,p.123,approximately
+Ammonia oxidation (Sect. 5.1),reactor_nitric-acid,Pt-Rh gauze replacement interval,3-12,months,p.127,
+Primary measures (Sect. 5.1.3),oxide combustion catalyst,NH3 conversion to NO over Co3O4 in high-pressure plants,88-92,%,p.128,vs 95-97% Pt-Rh; lab conversion of NH3 to N2O as low as 0.5% over Co3O4
+Primary measures (Sect. 5.1.3),dual-bed Pt + Fe-Mn oxide (GIAP),"NO yield, high-pressure / atmospheric plants",94-95.6 / ~98,%,p.129,17 converters; Pt loading reduced 20-25%; campaign 1.5 yr
+Secondary measures (Sect. 5.2.1),reactor_nitric-acid-extended-chamber_homogeneous-n2o-decomposition,Increase in plant capital cost,5-6,% of plant capital cost,p.130,No increase in operating cost; no absolute plant cost printed so no capex row
+Secondary measures (Sect. 5.2.2),reactor_catalytic-n2o_secondary-burner,"Annual loss from 0.5% NO loss, 1000 t/d plant",250,k EUR/yr,p.131,NO-loss detection limit 0.3-0.5%
+Secondary measures (Sect. 5.2.2),reactor_catalytic-n2o_secondary-burner,Estimated catalyst lifetime (Norsk Hydro NH-1),>5,years,p.133,"Catalyst life, not equipment life"
+Tertiary measures (Sect. 5.3.3),reactor_catalytic-n2o_tertiary-scr,Reductant share of total abatement-unit cost,20-60,%,p.139,
+Tertiary measures (Sect. 6.3.2),reactor_catalytic-n2o_tertiary-decomposition,Minimum tail-gas temperature,673-723,K,"p.148, Sect. 6.3.2","about one-third of plants, >60% of capacity"
+"Tertiary measures (Sect. 5.3.5, Table 10)",reactor_catalytic-n2o_tertiary-decomposition,"Monolith reactor volume at 4 / 10 bar (80% conversion, 1500 t/d)",2.2 / 1,m3,"p.141, Table 10",Fixed bed: 5 / 3 m3; pressure drop monolith 60 / 10 mbar
+Dutch nitric acid plants 1996/97 (Table 8),plant A (Dual-pressure),capacity; N2O emission,584; 4.4,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"
+Dutch nitric acid plants 1996/97 (Table 8),plant B (Mono-pressure),capacity; N2O emission,500; 4.5-6,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"
+Dutch nitric acid plants 1996/97 (Table 8),plant C (Mono-pressure),capacity; N2O emission,210; 1.5-2,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"
+Dutch nitric acid plants 1996/97 (Table 8),plant D (Dual-pressure),capacity; N2O emission,730; 5.4,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"
+Dutch nitric acid plants 1996/97 (Table 8),plant E (Mono-pressure),capacity; N2O emission,255; 1.7,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"
+Dutch nitric acid plants 1996/97 (Table 8),plant F (Dual-pressure),capacity; N2O emission,245; 2,kt HNO3/yr; kt N2O/yr,"p.136, Table 8","Ratio would give kg N2O per t capacity, not per t produced; not derived into main file"

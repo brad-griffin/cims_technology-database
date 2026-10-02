@@ -1,0 +1,19 @@
+process,technology,sector,end-use,process-step,service-unit
+"Hydrogen-based direct reduction, H2-DR (Sect. 2.1.1, Tables 1-2)",shaft-furnace_electrolytic-hydrogen,iron-and-steel,material-conversion,ironmaking,t
+"Hydrogen-based direct reduction, H2-DR (Sect. 2.1.1, Tables 1-2)",shaft-furnace_direct-reduction_hydrogen,iron-and-steel,material-conversion,ironmaking,t
+"Hydrogen-based direct reduction, H2-DR (Sect. 2.1.1, Tables 1-2)",shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Hydrogen plasma smelting reduction, HPSR (Sect. 2.1.2, Table 3)",smelting-vessel_hydrogen-plasma,iron-and-steel,material-conversion,ironmaking,t
+"Alkaline iron electrolysis route (Sect. 2.1.3, Tables 1, 4)",electrolysis-cell_iron-electrowinning,iron-and-steel,material-conversion,ironmaking,t
+"Alkaline iron electrolysis energy breakdown, electrolysis step (Sect. 2.1.3)",electrolysis-cell_iron-electrowinning,iron-and-steel,material-conversion,ironmaking,t
+"Molten oxide electrolysis (Sect. 2.1.4, Tables 1, 5)",electrolysis-cell_molten-oxide,iron-and-steel,material-conversion,ironmaking,t
+"Carbon oxide conversion, CCU (Sect. 2.2.1, Table 6)",reactor_steel-offgas-chemicals,iron-and-steel,material-conversion,co2-utilisation,t
+"Iron bath reactor smelting reduction, HIsarna 1.15 Mt/yr plant (Sect. 2.3.1, Tables 1, 7)",smelting-vessel_bath-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Iron bath reactor smelting reduction, HIsarna 1.15 Mt/yr plant (Sect. 2.3.1, Tables 1, 7)",smelting-vessel_bath-reduction_ccs-concentrated,iron-and-steel,co2-capture,ironmaking,t
+"Iron bath reactor smelting reduction, HIsarna 1.5 Mt/yr IJmuiden design (Sect. 2.3.1)",smelting-vessel_bath-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Top gas recycling blast furnace, TGR-BF (Sect. 2.3.2, Tables 1, 8)",blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,ironmaking,t
+"Top gas recycling blast furnace, TGR-BF (Sect. 2.3.2, Tables 1, 8)",blast-furnace_top-gas-recycling_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+"CO2 capture, post-combustion chemical absorption (Sect. 2.4.1, Table 11)",capture-unit_amine,iron-and-steel,co2-capture,ccs,t
+"CO2 capture, adsorption (Sect. 2.4.1)",capture-unit_solid-sorbent,iron-and-steel,co2-capture,ccs,t
+"Water electrolysis (Sect. 2.4.2, Table 12)",electrolyzer_low-temperature_alkaline,iron-and-steel,electrochemical,hydrogen production,m3
+"Water electrolysis (Sect. 2.4.2, Table 12)",electrolyzer_low-temperature_pem,iron-and-steel,electrochemical,hydrogen production,m3
+"Water electrolysis (Sect. 2.4.2, Table 12)",electrolyzer_solid-oxide,iron-and-steel,electrochemical,hydrogen production,m3

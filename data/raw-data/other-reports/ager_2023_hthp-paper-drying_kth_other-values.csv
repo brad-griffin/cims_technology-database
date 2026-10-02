@@ -1,0 +1,49 @@
+process,technology,item,value,unit,reference,note
+Pulp and paper sector context,,process temperature range: drying,90-240,degC,"p.20, Table 1",reprinted from Arpagaus et al. (2018)
+Pulp and paper sector context,,process temperature range: boiling,110-180,degC,"p.20, Table 1",reprinted from Arpagaus et al. (2018)
+Pulp and paper sector context,,process temperature range: bleaching,40-150,degC,"p.20, Table 1",reprinted from Arpagaus et al. (2018)
+Pulp and paper sector context,,process temperature range: de-inking,50-70,degC,"p.20, Table 1",reprinted from Arpagaus et al. (2018)
+Pulp and paper sector context,,industry share of dryer type: multi-cylinder,85-90,%,"p.35, Table 3",reprinted from Polat and Mujumdar (2006); Stenstrom (2019)
+Pulp and paper sector context,,industry share of dryer type: impingement,2-3,%,"p.35, Table 3",reprinted from Polat and Mujumdar (2006); Stenstrom (2019)
+Pulp and paper sector context,,industry share of dryer type: Yankee,4-5,%,"p.35, Table 3",reprinted from Polat and Mujumdar (2006); Stenstrom (2019)
+Pulp and paper sector context,,industry share of dryer type: infrared,3-4,%,"p.35, Table 3",reprinted from Polat and Mujumdar (2006); Stenstrom (2019)
+Pulp and paper sector context,,industry share of dryer type: through-air,1-2,%,"p.35, Table 3",reprinted from Polat and Mujumdar (2006); Stenstrom (2019)
+Pulp and paper sector context,,distribution of dryer type by application: cylinder,tissue 5; paper 95; board 95; coating 35,%,"p.36, Table 4",reprinted from Polat and Mujumdar (2006)
+Pulp and paper sector context,,distribution of dryer type by application: impingement,paper 4; coating 50,%,"p.36, Table 4",reprinted from Polat and Mujumdar (2006)
+Pulp and paper sector context,,distribution of dryer type by application: Yankee,tissue 84; board 3,%,"p.36, Table 4",reprinted from Polat and Mujumdar (2006)
+Pulp and paper sector context,,distribution of dryer type by application: infrared,paper 1; board 1; coating 15,%,"p.36, Table 4",reprinted from Polat and Mujumdar (2006)
+Pulp and paper sector context,,distribution of dryer type by application: through-air,tissue 11,%,"p.36, Table 4",reprinted from Polat and Mujumdar (2006)
+Pulp and paper sector context,,average power to supply steam to a paper-mill drying process,30,MW,"p.39, Sect. 4.6",varies widely; reprinted from EHPA and CEPI (2023)
+Pulp and paper sector context,,steam use in drying cylinders,4-70,t/h,"p.39, Sect. 4.6",reprinted from EHPA and CEPI (2023)
+Pulp and paper sector context,,steam pressure in drying cylinders,0-8,bar,"p.39, Sect. 4.6",70% of European paper-industry steam use is below 5 bar; reprinted from EHPA and CEPI (2023)
+Pulp and paper sector context,,dew point of paper-machine hood exhaust,60,degC,"p.39, Sect. 4.6",reprinted from EHPA and CEPI (2023)
+Pulp and paper sector context,heat-pump_industrial,HTHP energy and CO2 saving vs natural-gas burner at 160 degC process heat (up to),80,%,"p.38, Sect. 4.5",also claims 20% lower production cost; reprinted from Dryficiency (2022)
+Pulp and paper sector context,heat-pump_industrial,potential energy saving of HTHP in paper drying (over),50,%,"p.38, Sect. 4.5","reprinted from Azau et al. (2023), EHPA/CEPI"
+Pulp and paper sector context,,"TMP refiner input energy recoverable as steam (best case), plus 10-20% as hot water",80,%,"p.34, Sect. 4.3",reprinted from Suhr et al. (2014)
+Pulp and paper sector context,,"GHG intensity, Holmen mills vs European average printing/writing paper mill",20-34 vs 637,kg CO2e/t paper,"p.31, Sect. 4",Fisher Solve database via Holmen
+Pulp and paper sector context,,Swedish pulp and paper energy use 2021,72,TWh,"p.30, Sect. 4","biofuels 72%, electricity 24%, oil 1.8%, gas 1.2%"
+Hallstavik mill,,total mill energy use,1.7,TWh/yr,"p.41, Sect. 5.1.1.1",about 70% (1 TWh/yr) to TMP refiners; about 50% of TMP input recovered as steam
+Hallstavik mill,,electric boiler consumption,80,GWh/yr,"p.42, Sect. 5.1.1.1",combustion boilers shut down in 2014
+Hallstavik mill,,steam recovered in the process,90,%,p.42,
+Hallstavik mill,,paper production per machine (assumed),30,t/h,"p.56, Sect. 5.3.1",moisture 50% into dryer and 7.5% out (assumed)
+Hallstavik mill,,electric-boiler heat replaceable by HTHP,40000 (20000 per PM),MWh/yr,"p.56, Sect. 5.3.1",
+Hallstavik mill,,share of hood-exhaust energy usable as HTHP source,10 (mill gives 10-15),%,"p.55, Sect. 5.3.1",
+Hallstavik mill,heat-pump_industrial,HTHP steam output vs dryer steam demand PM11 / PM12,7.2 of 39.9 (18%) / 7.1 of 54.2 (13%),t/h,"p.66, Table 9",
+Hallstavik mill,heat-pump_industrial,share of replaceable electric-boiler heat covered PM11 / PM12,76.0 / 81.0,%,"p.66, Table 8",
+Hallstavik mill,heat-pump_industrial,"average hourly heat from source / electricity input / heat output, PM11",2.8 / 1.1 / 3.9,MWh/h,"p.65, Table 7",PM12: 3.3 / 1.1 / 4.4
+Hallstavik mill,heat-pump_industrial,emission savings PM11 / PM12,258 / 288,t CO2e/yr,p.67,indirect (grid electricity at 23.7 kg CO2e/MWh)
+Hallstavik mill,heat-pump_industrial,combined energy saving as share of mill energy use,1.4,%,p.67,"8,474 MWh electricity in, 31,519 MWh heat out, average COP 3.7"
+Braaviken mill,,boiler shares of steam production: biomass / electric / oil (assumed),85 / 10 / 5,%,"p.57, Sect. 5.3.2","oil boiler 25-80 t/h, electric boiler 5-45 t/h (p.51)"
+Braaviken mill,,steam possible to replace by HTHP,10-16,kg/s,"p.52, Sect. 5.2.3",2.5 bar steam demand minus TMP steam
+Braaviken mill,,TMP condensate flow / temperature,6-8 / 60-80,kg/s / degC,p.53-54,
+Braaviken mill,heat-pump_industrial,emission savings,5.76,t CO2e/yr,p.73,
+Braaviken mill,,mill energy consumption,1.8,TWh/yr,"p.85, Sect. 7.1.2",
+Factors and correlations,,emission factor: Swedish electricity,23.7,kg CO2e/MWh,p.56-57,4.03 Mt CO2e / 170 TWh
+Factors and correlations,,emission factor: biomass,21,kg CO2e/MWh,p.57,Naturvardsverket (2023)
+Factors and correlations,,emission factor: oil,850,kg CO2e/MWh,p.57,Ygeman (2020)
+Factors and correlations,heat-pump_industrial,COP vs temperature lift correlation,COP = 52.94*Tlift^-0.716 (R2 0.88),-,"p.58, Eq. 5",reprinted from Arpagaus et al. (2023)
+Factors and correlations,heat-pump_industrial,specific investment cost vs heating capacity correlation,Cinv = 3157*Q^-0.322 (Q in kW),EUR/kW,"p.60, Eq. 14",reprinted from Arpagaus et al. (2023); price year not stated
+Factors and correlations,heat-pump_industrial,planning and integration factor,150-400 (300 used),% of unit cost,"p.60, Sect. 5.5",reprinted from Arpagaus et al. (2023)
+Factors and correlations,,biomass price 2023,250-350,SEK/MWh,"p.48, Sect. 5.2.1",Energimyndigheten (2024)
+Factors and correlations,heat-pump_industrial,Kobelco SGH steam-generating heat pump COP with 70 degC waste heat (steam up to 165 degC),2.5,-,"p.27, Sect. 3.6",model not specified (SGH120 or SGH165); reprinted from Nilsson et al. (2017)
+Factors and correlations,,Holmen payback requirement,3,years,"p.41, Sect. 5.1",strategic investments may be longer

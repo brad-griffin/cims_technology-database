@@ -1,0 +1,33 @@
+process,technology,sector,end-use,process-step,service-unit
+"Base Case 1A: reference Nordic market kraft pulp mill, 800,000 adt/y BSKP (overview Tables 2-5, 10-15)",pulp-mill_kraft-market,pulp-and-paper,material-conversion,,t
+"Base Case 1B: integrated kraft pulp (800,000 adt/y) and folding boxboard (400,000 adt/y) mill (overview Tables 2-5, 10-16)",pulp-mill_kraft-board-integrated,pulp-and-paper,material-conversion,,t
+"Base Case 1A reference kraft pulp mill, wood handling (Unit 1000), per adt pulp (Tables 3, 32-34; cost annex Table 2)",process-improvement_drum-debarker,pulp-and-paper,material-preparation,wood-preparation,t
+"Base Case 1A reference kraft pulp mill, cooking plant (Unit 2000), per adt pulp (Tables 3, 32-34; cost annex Table 2)",digester_continuous-kraft,pulp-and-paper,material-conversion,pulping-chemical,t
+"Base Case 1A reference kraft pulp mill, brown stock screening and washing (Unit 2100), per adt pulp (Tables 3, 32-34; cost annex Table 2)",separator_brown-stock-washing,pulp-and-paper,material-conversion,pulping-chemical,t
+"Base Case 1A reference kraft pulp mill, two-stage O2 delignification + D0-EOP-D1-P ECF bleaching (Units 2200 + 3100), per adt pulp (Table 3)",reactor_oxygen-delignification,pulp-and-paper,material-conversion,bleaching,t
+"Base Case 1A reference kraft pulp mill, pulp drying (Unit 3200), per adt pulp (Tables 3, 32-34; cost annex Table 2)",dryer_market-pulp,pulp-and-paper,drying-and-separation,drying,t
+"Base Case 1A reference kraft pulp mill, black liquor evaporation (Unit 4100), per adt pulp (Tables 3, 32-34; cost annex Table 2)",evaporator_multiple-effect,pulp-and-paper,material-conversion,chemical-recovery,t
+"Base Case 1A reference kraft pulp mill, Kraft recovery boiler (Unit 4200), per adt pulp (Tables 3, 32-34; cost annex Table 2)",boiler_recovery,pulp-and-paper,material-conversion,chemical-recovery,t
+"Base Case 1A reference kraft pulp mill, lime kiln (Unit 5100), per adt pulp (Tables 3, 32-34; cost annex Table 2)",kiln_lime-rotary,pulp-and-paper,material-conversion,chemical-recovery,t
+"Base Case 1A reference kraft pulp mill, lime kiln (Unit 5100), per t reburned lime (Tables 3, 5, 19)",kiln_lime-rotary,pulp-and-paper,material-conversion,chemical-recovery,t
+"Base Case 1A reference kraft pulp mill, multi-fuel (bark) boiler (Unit 6100), per adt pulp (Tables 3, 32-34; cost annex Table 2)",boiler_solid-fuel,pulp-and-paper,steam-and-hot-water,heat-supply,t
+"Base Case 1A reference kraft pulp mill, steam turbine island (Unit 6200), per adt pulp (Tables 3, 32-34; cost annex Table 2)",steam-turbine_back-pressure,pulp-and-paper,power-generation,,t
+"Base Case 1B integrated mill, 3-ply folding boxboard machine (Unit 9000), per adt board (Tables 4, 31; cost annex Table 2)",paper-machine_folding-boxboard,pulp-and-paper,material-conversion,papermaking,t
+"CCS retrofit case 2A-1 at the 800,000 adt/y market kraft pulp mill: capture on recovery boiler flue gas, per adt pulp",boiler_recovery_ccs-diffuse,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-2 at the 800,000 adt/y market kraft pulp mill: capture on multi-fuel (bark) boiler flue gas, per adt pulp",boiler_ccs-diffuse,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-3 at the 800,000 adt/y market kraft pulp mill: capture on lime kiln flue gas, per adt pulp",kiln_lime_ccs-diffuse,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2B-1CO2MP at the integrated pulp and board mill: capture on recovery boiler flue gas, steam-turbine-driven CO2 compressor and auxiliary biomass boiler, per adt pulp",boiler_recovery_ccs-diffuse,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-4 at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + multi-fuel boiler), per t CO2 captured",capture-unit_amine,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-4 at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + multi-fuel boiler), per t CO2 captured",compressor_co2-dehydration,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-5 at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + lime kiln), per t CO2 captured",capture-unit_amine,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-5 at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + lime kiln), per t CO2 captured",compressor_co2-dehydration,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-6MP at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + multi-fuel boiler + lime kiln (MP steam to reboiler)), per t CO2 captured",capture-unit_amine,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2A-6MP at the 800,000 adt/y market kraft pulp mill: combined flue gases (recovery boiler + multi-fuel boiler + lime kiln (MP steam to reboiler)), per t CO2 captured",compressor_co2-dehydration,pulp-and-paper,co2-capture,,t
+"CCS retrofit case 2B-1CO2MP at the integrated pulp and board mill (recovery boiler): steam-turbine-driven CO2 compression, per t CO2",compressor_co2-dehydration_steam-drive,pulp-and-paper,co2-capture,,t
+"Auxiliary bubbling fluidized bed boiler for CCS case 2B-1CO2MP at the integrated pulp and board mill, forest residue fired, per t steam (Table 9 p.172; cost annex Table 6)",boiler_solid-fuel,pulp-and-paper,steam-and-hot-water,heat-supply,t
+"CCS retrofit case 2B-4CO2MP at the integrated pulp and board mill (recovery boiler + multi-fuel boiler): steam-turbine-driven CO2 compression, per t CO2",compressor_co2-dehydration_steam-drive,pulp-and-paper,co2-capture,,t
+"Auxiliary bubbling fluidized bed boiler for CCS case 2B-4CO2MP at the integrated pulp and board mill, forest residue fired, per t steam (Table 9 p.172; cost annex Table 6)",boiler_solid-fuel,pulp-and-paper,steam-and-hot-water,heat-supply,t
+"CCS retrofit case 2B-5CO2MP at the integrated pulp and board mill (recovery boiler + lime kiln): steam-turbine-driven CO2 compression, per t CO2",compressor_co2-dehydration_steam-drive,pulp-and-paper,co2-capture,,t
+"Auxiliary bubbling fluidized bed boiler for CCS case 2B-5CO2MP at the integrated pulp and board mill, forest residue fired, per t steam (Table 9 p.172; cost annex Table 6)",boiler_solid-fuel,pulp-and-paper,steam-and-hot-water,heat-supply,t
+"CCS retrofit case 2B-6CO2MP at the integrated pulp and board mill (recovery boiler + multi-fuel boiler + lime kiln): steam-turbine-driven CO2 compression, per t CO2",compressor_co2-dehydration_steam-drive,pulp-and-paper,co2-capture,,t
+"Auxiliary bubbling fluidized bed boiler for CCS case 2B-6CO2MP at the integrated pulp and board mill, forest residue fired, per t steam (Table 9 p.172; cost annex Table 6)",boiler_solid-fuel,pulp-and-paper,steam-and-hot-water,heat-supply,t

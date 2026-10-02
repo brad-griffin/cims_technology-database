@@ -1,0 +1,39 @@
+process,technology,sector,end-use,process-step,service-unit
+"Steel production routes, EU27 2017 (Part E Sect. 2.1, Table E.1)",blast-furnace_integrated-route,iron-and-steel,material-conversion,ironmaking and steelmaking,t
+"Steel production routes, EU27 2017 (Part E Sect. 2.1, Table E.1)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Steel production routes, EU27 2017 (Part E Sect. 2.1, Table E.1)",shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+Conventional reference in steel fact sheets (Part E Sect. 2.2-2.5),blast-furnace_integrated-route,iron-and-steel,material-conversion,ironmaking and steelmaking,t
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_electrolytic-hydrogen,iron-and-steel,material-conversion,ironmaking and steelmaking,t
+Direct reduction with hydrogen + EAF fact sheet (Part E Sect. 2.2),shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+Iron electrolysis + EAF fact sheet (Part E Sect. 2.3),electrolysis-cell_iron-electrowinning,iron-and-steel,electrochemical,ironmaking,t
+Iron electrolysis + EAF fact sheet (Part E Sect. 2.3),electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+Iron electrolysis + EAF fact sheet (Part E Sect. 2.3),electrolysis-cell_iron-electrowinning_eaf-route,iron-and-steel,electrochemical,ironmaking and steelmaking,t
+HIsarna with CCS fact sheet (Part E Sect. 2.4),smelting-vessel_bath-reduction_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+HIsarna with CCS fact sheet (Part E Sect. 2.4),capture-unit_co2-purification,co2-capture,co2-capture,ironmaking,t
+CCU of smelting gases fact sheet (Part E Sect. 2.5),reactor_steel-offgas-chemicals,iron-and-steel,co2-capture,ironmaking,t
+"Reference ammonia synthesis (Part E Sect. 3.1, Figure E.2)",steam-reformer_ammonia,chemicals,material-conversion,ammonia synthesis,t
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,heat-supply,steam-and-hot-water,steam generation,GJ
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,heat-supply,steam-and-hot-water,steam generation,GJ
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_fuel-fired,heat-supply,steam-and-hot-water,steam generation,GJ
+CHP plants with CCS fact sheet (Part E Sect. 3.3),boiler_ccs-diffuse,heat-supply,steam-and-hot-water,steam generation,GJ
+CHP plants with CCS fact sheet (Part E Sect. 3.3),combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,steam generation,GJ
+Green hydrogen from electrolysis fact sheet (Part E Sect. 3.4),electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen production,GJ
+Green hydrogen from electrolysis fact sheet (Part E Sect. 3.4),electrolyzer_solid-oxide,hydrogen,electrochemical,hydrogen production,GJ
+Green hydrogen from electrolysis fact sheet (Part E Sect. 3.4),steam-reformer_methane,hydrogen,material-conversion,hydrogen production,GJ
+MTO/MTA fact sheet (Part E Sect. 3.5),reactor_methanol-to-olefins,chemicals,material-conversion,olefin production,t
+MTO/MTA fact sheet (Part E Sect. 3.5),reactor_methanol-to-aromatics,chemicals,material-conversion,aromatics production,t
+MTO/MTA fact sheet (Part E Sect. 3.5),reactor_methanol-to-olefins_dac-electrolysis-chain,chemicals,material-conversion,olefin production,t
+MTO/MTA fact sheet (Part E Sect. 3.5),reactor_methanol-to-aromatics_dac-electrolysis-chain,chemicals,material-conversion,aromatics production,t
+Chemical recycling fact sheet (Part E Sect. 3.6),reactor_plastics-pyrolysis,chemicals,material-conversion,feedstock preparation,t
+Chemical recycling fact sheet (Part E Sect. 3.6),gasifier_waste-methanol,chemicals,material-conversion,methanol production,t
+Chemical recycling fact sheet (Part E Sect. 3.6),reactor_plastics-pyrolysis_integrated-chain,chemicals,material-conversion,olefin production,t
+Chemical recycling fact sheet (Part E Sect. 3.6),reactor_plastics-pyrolysis_steam-cracker-chain,chemicals,material-conversion,olefin production,t
+Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,chemicals,process-heat-high-temp,steam cracking,t
+Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_fired-tubular,chemicals,process-heat-high-temp,steam cracking,t
+"Cement reference process (Part E Sect. 4.1, Figure E.5)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker production,t
+Oxyfuel CCS fact sheet (Part E Sect. 4.2),kiln_oxy-fuel,cement,process-heat-high-temp,clinker production,t
+Oxyfuel CCS fact sheet (Part E Sect. 4.2),well_co2-storage,co2-capture,co2-transport-and-storage,co2 storage,t
+Electrified LEILAC fact sheet (Part E Sect. 4.3),calciner_indirect,cement,process-heat-high-temp,calcination,t
+Alternative binding agents fact sheet (Part E Sect. 4.4),binder_hydrothermal-silicate,cement,material-conversion,binder production,t
+Alternative binding agents fact sheet (Part E Sect. 4.4),binder_carbonated,cement,material-conversion,binder production,t
+Alternative binding agents fact sheet (Part E Sect. 4.4),binder_sulphoaluminate,cement,material-conversion,binder production,t

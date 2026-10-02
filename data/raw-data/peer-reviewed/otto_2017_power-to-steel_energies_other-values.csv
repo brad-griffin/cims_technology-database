@@ -1,0 +1,44 @@
+process,technology,item,value,unit,reference,note
+"Conventional blast furnace, German average (Sect. 4.1, Fig. 3)",blast-furnace,total energy demand,15.95,GJ/t pig iron,"p.6, Fig. 3",sum of all inputs
+"Conventional blast furnace, German average (Sect. 4.1, Fig. 3)",blast-furnace,net energy demand (total minus exported BF gas),11.24,GJ/t pig iron,"p.6, Fig. 3",TRAP: text on p.6 prints 11.4; 15.95-4.719=11.23
+"Conventional blast furnace, German average (Sect. 4.1, Fig. 3)",blast-furnace,indirect CO2 from electricity and N2/O2 provision,51.5,kg CO2/t pig iron,p.6,German mix 2012
+"Conventional blast furnace, German average (Sect. 4.1, Fig. 3)",blast-furnace,CO2 concentration in BF gas,21,%,p.7,
+"Blast furnace with BF gas recirculation and carbon capture, ULCOS (Sect. 5.2, Fig. 5)",blast-furnace_top-gas-recycling_ccs,total energy demand,16.31,GJ/t pig iron,"p.9, Fig. 5",
+"Blast furnace with BF gas recirculation and carbon capture, ULCOS (Sect. 5.2, Fig. 5)",blast-furnace_top-gas-recycling_ccs,net energy demand,14.62,GJ/t pig iron,"p.9, Fig. 5",
+"Blast furnace with BF gas recirculation and carbon capture, ULCOS (Sect. 5.2, Fig. 5)",blast-furnace_top-gas-recycling_ccs,CO2 directly at process incl. power,382,kg CO2/t pig iron,"p.9, Fig. 5",
+"Blast furnace with BF gas recirculation, ULCOS (Sect. 5.1, Fig. 4)",blast-furnace_top-gas-recycling,total and net energy demand,11.6,GJ/t pig iron,"p.8, Fig. 4",no BF gas export
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,electrical power for hydrogen production,9.97,GJ per 1.03 t HBI,"p.11, Table 4","58.17 kg H2, electrolyser eta 70%"
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,Circored overall energy demand,16.05,GJ per 1.03 t HBI,"p.11, Table 4",
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,total energy demand incl. EAF,19.96,GJ/t liquid steel,"p.11, Table 4",
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,CO2 with German electricity mix and natural gas heat,2407,kg CO2/t liquid steel,"p.11, Table 4",
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,CO2 with renewable electricity and synthetic methane heat,94,kg CO2/t liquid steel,"p.11, Table 4",
+"Circored with SMR hydrogen and EAF (Sect. 5.4, Fig. 6)",steel-mill_circored-smr-eaf,total energy demand,18.3,GJ/t liquid steel,"p.10, Fig. 6",Circored 14.39 GJ per 1.03 t HBI + EAF 3.91 GJ
+"Integrated steelworks reference case, Germany (Sect. 6.1, Fig. 7)",steel-mill_coke-sinter-bf,total energy demand of balance area,19.18,GJ/t pig iron,"p.12, Sect. 6.1",4.4 GJ exported as power and heat
+"Integrated steelworks reference case, Germany (Sect. 6.1, Fig. 7)",steel-mill_coke-sinter-bf,"CO2 relating to exported energy, not attributed",299,kg CO2/t pig iron,"p.12, Sect. 6.1",
+"Integrated steelworks reference case, Germany (Sect. 6.1, Fig. 7)",steel-mill_coke-sinter-bf,coke oven CO2 for 10 GJ coke,165,kg CO2/t pig iron,"p.12, Sect. 6.1",
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, natural gas",56,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, blast furnace gas",257.8,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, coke",105.0,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, hard coal",94.2,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, coke oven gas",40.0,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, BOF gas",257.8,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, German electricity mix 2012",160,kg/GJ,"p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, oxygen (cryogenic ASU 0.745 MJel/kg O2)",119.2,"kg CO2/t (printed per t H2, evidently per t O2)","p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, nitrogen (cryogenic ASU 0.576 MJel/kg)",92.18,"kg CO2/t (printed per t H2 and per kg O2, evidently per t N2)","p.4, Table 1","reprinted from refs 4,24,26-28"
+"CO2 emission factors (Sect. 2, Table 1)",,"CO2 emission factor, hydrogen via electrolysis on German mix",119,"kg/GJ (27,418 kg/t H2)","p.4, Table 1","reprinted from refs 4,24,26-28"
+"German and global steel industry 2012 (Sect. 3, Table 2)",,German crude steel output,42.7,Mt/yr,"p.5, Table 2","67.67% BF-BOF, 32.32% EAF"
+"German and global steel industry 2012 (Sect. 3, Table 2)",,German average primary energy demand,17.88,GJ/t crude steel,"p.5, Table 2",
+"German and global steel industry 2012 (Sect. 3, Table 2)",,German average CO2,1.356,t CO2/t crude steel,"p.5, Table 2",
+"German and global steel industry 2012 (Sect. 3, Table 2)",,global average primary energy demand,20.0,GJ/t crude steel,"p.5, Table 2",
+"German and global steel industry 2012 (Sect. 3, Table 2)",,global average CO2,1.8,t CO2/t crude steel,"p.5, Table 2",
+"German and global steel industry 2012 (Sect. 3, Table 2)",,"additional EAF potential, Germany",6.1,Mt/yr,"p.5, Table 2","p.10, from Climate protection scenario 2050"
+Higher share of EAF (Sect. 5.3),,energy saving per t steel moved from BF to EAF,12.61,GJ/t,"p.10, Sect. 5.3",
+Higher share of EAF (Sect. 5.3),,CO2 saving per t steel moved from BF to EAF,507,kg CO2/t,"p.10, Sect. 5.3",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 2012 conventional steelworks: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",0 TWh|-8%|-30%|+3 TWh|-9%|-34%,TWh / %,"p.17, Table 5",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 1 BF gas recirculation: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",+3 TWh|-10%|-46%|+54 TWh|-36%|-61%,TWh / %,"p.17, Table 5",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 2 BF-GR with CO2 separation: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",+6 TWh|+5%|-68%|+72 TWh|-27%|-82%,TWh / %,"p.17, Table 5",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 3 6.1 Mt/a more EAF: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",+3 TWh|-20%|-41%|+12 TWh|-28%|-47%,TWh / %,"p.17, Table 5",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 4 Circored with SMR H2: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",+16 TWh|+5%|-46%|+274 TWh|-95%|-95%,TWh / %,"p.17, Table 5",
+"Scenario results, German steel industry (Sect. 7, Table 5)",,"case 5 Circored with electrolysis H2: electricity vs 2008 | fuel vs 2008 | CO2 vs 1990, conventional | with renewables",+90 TWh|-35%|-1%|+237 TWh|-95%|-95%,TWh / %,"p.17, Table 5",
+"Hydrogen and synthetic methane supply assumptions (Sect. 2, Table 1)",,ASU electricity for oxygen,0.745,MJ el/kg O2,"p.4, Table 1","reprinted from refs 27,28"
+"Hydrogen and synthetic methane supply assumptions (Sect. 2, Table 1)",,ASU electricity for nitrogen,0.576,MJ el/kg N2 (printed /kgO2),"p.4, Table 1","reprinted from refs 27,28"

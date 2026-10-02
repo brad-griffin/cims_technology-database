@@ -1,0 +1,8 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Model kraft market pulp mill (Tables I-III),boiler_recovery-high-solids,input,black-liquor,21.0,GJ,ADt,,,,,p.9,21.0 GJ/ADt pulp,heating-value basis not stated
+Model kraft market pulp mill (Tables I-III),boiler_recovery-high-solids,output,steam,15.8,GJ,ADt,,,,,"p.7, Table II",15.8 GJ/ADt,Steam generated in the recovery boiler.
+Model kraft market pulp mill (Tables I-III),pulp-mill_kraft-market-model,output,electricity,655,kWh,ADt,,,,,"p.7, Table II; p.9-10",655 kWh/ADt,Gross generation: 520 back-pressure + 135 condensing turbine; net export 17 kWh/ADt (Table III).
+Model kraft market pulp mill (Tables I-III),pulp-mill_kraft-market-model,output,steam,15.8,GJ,ADt,,,,,"p.7, Table II",15.8 GJ/ADt,Recovery boiler steam generation.
+Model TMP mill (Table IV),pulper_thermomechanical,input,electricity,2450,kWh,ADt,,,,,"p.15, Table IV",2450 kWh/ADt,reprinted from Jackson and Wild (1999)
+Model TMP mill (Table IV),pulper_thermomechanical,output,steam,5.5,GJ,ADt,,,,,"p.15, Table IV",-5.5 GJ/ADt (negative consumption),Clean steam recovered by reboiler from mainline and rejects refiners. reprinted from Jackson and Wild (1999)
+Model integrated newsprint mills (Tables VI-VII),paper-mill_newsprint-tmp,output,steam,1.1,GJ,ADt,,,,-5.5+4.4,"p.18, Table VI",-1.1 GJ/ADt,Net steam surplus of the TMP newsprint mill.

@@ -1,0 +1,14 @@
+process,technology,sector,end-use,process-step,service-unit
+"Electricity-powered thermal batteries - general characterisation (Sect. I, Executive Summary)",thermal-storage_electric,heat-supply,process-heat-high-temp,,MWh
+Commercially available thermal storage units (Table 1),thermal-storage_electric_carbon-block,heat-supply,process-heat-high-temp,,MWh
+Commercially available thermal storage units (Table 1),thermal-storage_electric_aluminium-rock,heat-supply,process-heat-high-temp,,MWh
+Commercially available thermal storage units (Table 1),thermal-storage_electric_crushed-rock,heat-supply,process-heat-high-temp,,MWh
+Commercially available thermal storage units (Table 1),thermal-storage_electric_firebrick,heat-supply,process-heat-high-temp,,MWh
+Commercially available thermal storage units (Table 1),thermal-storage_electric_brick,heat-supply,process-heat-high-temp,,MWh
+"Scenario 2: Off-grid renewables + thermal battery (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_off-grid-wind,heat-supply,steam-and-hot-water,,MWh
+"Scenario 3: Net-to-grid renewables + thermal battery (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_net-to-grid-wind,heat-supply,steam-and-hot-water,,MWh
+"Scenario 4: Two-way grid-connected renewables + thermal battery (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_two-way-wind,heat-supply,steam-and-hot-water,,MWh
+"Scenario 5: Grid-charged thermal battery (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_grid-charged,heat-supply,steam-and-hot-water,,MWh
+"Scenario 6: Grid-delivered renewables, legacy rate structure (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_grid-legacy-rate,heat-supply,steam-and-hot-water,,MWh
+"Scenario 7: Grid-delivered renewables, modern rate structure (Appendix Tables 3-4 (SPP node, 2030 outlook))",thermal-storage_electric_grid-modern-rate,heat-supply,steam-and-hot-water,,MWh
+"Scenario 1: Gas heat (Appendix Tables 3-4, SPP node, 2030 outlook)",boiler_natural-gas,heat-supply,steam-and-hot-water,,MWh

@@ -1,0 +1,32 @@
+process,technology,item,value,unit,reference,note
+Global kraft recovery (Sect. 2),,Global sulfate pulp production 2016,137,Mt,"p.1215, Sect. 2",reprinted from FAO 2017
+Global kraft recovery (Sect. 2),,Black liquor dry solids combusted globally,206,Mt,"p.1215, Sect. 2",reprinted from Tran and Vakkilainen 2007
+Global kraft recovery (Sect. 2),,Global energy generation in recovery boilers,1.8,EJ,"p.1215, Sect. 2",approximately
+Kraft pulp mill CO2 sources (Sect. 2.2-2.6),boiler_recovery,"Fossil CO2 from start-up, shutdown and upset fuel in the recovery boiler",10-20,kg/ADt,"p.1216, Sect. 2.3",oil and natural gas
+Kraft pulp mill CO2 sources (Sect. 2.2-2.6),boiler_solid-fuel,"Fossil CO2 from start-up/shutdown and auxiliary steam in the biomass boiler, pulp mill",>=20,kg/ADt,"p.1216, Sect. 2.2","at least 20, can be significantly larger"
+Kraft pulp mill CO2 sources (Sect. 2.2-2.6),,Biogas from biosludge,10-15,kWh/ADt,"p.1217, Sect. 2.5",reprinted from Metsa Group 2016
+Kraft pulp mill CO2 sources (Sect. 2.2-2.6),,Causticizing efficiency,80-85,%,"p.1217, Sect. 2.4",
+Mill A reference mill (Table 1),,Pulp production,4000,ADt/d,"p.1220, Table 1",
+Mill A reference mill (Table 1),,Power generation (mill),234,MW,"p.1220, Table 1",
+Mill A reference mill (Table 1),,Mill power consumption,212,MW,"p.1220, Table 1",
+Mill A reference mill (Table 1),,Mill steam use,1109,t/h,"p.1220, Table 1",
+Mill A reference mill (Table 1),,Recovery boiler share of total mill CO2,68,%,"p.1219, Sect. 3",
+Mill B reference mill (Table 1),,Pulp production,4286,ADt/d,"p.1220, Table 1",
+Mill B reference mill (Table 1),,Power generation (mill),165,MW,"p.1220, Table 1","Table 2 prints 195 MW base for Mill B, inconsistent with Table 1, Fig. 4 and the text"
+Mill B reference mill (Table 1),,Mill power consumption,90,MW,"p.1220, Table 1",
+Mill B reference mill (Table 1),,Mill steam use,660,t/h,"p.1220, Table 1",Table 2 prints 860
+Mill B reference mill (Table 1),,Recovery boiler share of total mill CO2,87,%,"p.1219, Sect. 3",
+Mill A reference mill (Table 1),,Paper production,4224,t/d,"p.1220, Table 1",integrated coated and uncoated paper
+Net CO2 with capture and utilization (Sect. 3),,Average specific net emissions assumed for a kraft pulp mill with CO2 capture and utilization,-1,t CO2/ADt,"p.1220, Sect. 3; Fig. 5",assumption for the global estimate
+CO2 cost (Sect. 3.1),capture-unit_amine,"Cost of biogenic CO2 for utilization, Finnish energy system scenarios",40-44,EUR/t CO2,"p.1221, Sect. 3.1","PRICE YEAR NOT STATED; includes capture, transport and intermediate storage logistics; reprinted from Karjunen et al. 2017"
+CO2 cost (Sect. 3.1),capture-unit_calcium-looping,"Minimum cost of CO2 avoided, CaL integrated with a cement-plant kiln",27,EUR/t CO2,"p.1222, Sect. 3.1","PRICE YEAR NOT STATED; cement plant, not pulp mill; reprinted from Romano et al. 2013"
+CO2 utilization (Sect. 4),,"Tall oil yield, Nordic pine / spruce / birch",45 / 25 / <20,kg/ADt,"p.1223, Sect. 4.1",reprinted from Gullichsen and Lindeberg 2000
+CO2 utilization (Sect. 4),,Sulphuric acid use in tall oil acidulation,200-300,kg/t crude tall oil,"p.1223, Sect. 4.1",about 50% replaceable by CO2
+CO2 utilization (Sect. 4),,CO2 use in tall oil manufacture,4-6,kg/ADt,"p.1223, Sect. 4.1",
+CO2 utilization (Sect. 4),,PCC production / CO2 use,33 / 20,kg/ADt,"p.1223, Sect. 4.2",possible production level
+CO2 utilization (Sect. 4),separator_lignin-extraction,"CO2 use for 20% lignin separation, pine",35,kg/ADt,"p.1224, Sect. 4.3",
+CO2 utilization (Sect. 4),,"Required capture rate for tall oil+PCC+lignin, Mill A (RB / BB / LK flue gas)",2.7 / 7.9 / 21.6,%,"p.1224, Table 3",
+"Global potential (Sect. 5, Table 4)",,"Technical CO2 capture potential, bleached sulfate pulp (RB / BB / LK)",76264 / 14731 / 10297,kt CO2/a,"p.1227, Table 4",2016 production basis
+"Global potential (Sect. 5, Table 4)",,"Technical CO2 capture potential, unbleached sulfate pulp (RB / BB / LK)",26909 / 5198 / 3633,kt CO2/a,"p.1227, Table 4",
+"Global potential (Sect. 5, Table 4)",,Total capture potential,137,Mt CO2/a,"p.1227, Table 4",text p.1226 says about 135 Mt/a
+"Global potential (Sect. 5, Table 4)",,"On-site utilization potential, bleached / unbleached",12 / 4,Mt CO2/a,"p.1226, Sect. 5",

@@ -1,0 +1,10 @@
+process,technology,item,value,unit,reference,note
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",shaft-furnace_electrolytic-hydrogen,specific electricity range over lambda 1 to 5,3.4-5.91,MWh/t,"p.11, Sect. 4.2, Fig. 9",Sensitivity to hydrogen flow; per t liquid steel
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",shaft-furnace_electrolytic-hydrogen,CO2 per t liquid steel at EU-28 grid factor 295 g/kWh (indirect electricity only),1101,kg/t,"p.13, Sect. 4.3",EAF carbon emissions not counted
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",shaft-furnace_electrolytic-hydrogen,CO2 per t liquid steel at Swedish grid factor,415,kg/t,"p.13, Sect. 4.3",indirect electricity only
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",shaft-furnace_electrolytic-hydrogen,grid factor above which HDRI-EAF emits more than BF-BOF,456,g CO2/kWh,"p.13, Sect. 4.3",
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",,BF-BOF specific energy consumption (comparison),3.48,MWh/t,"p.1 and 11, Abstract, Sect. 4.2",
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",,"BF-BOF CO2 intensity, EU",1688,kg/t,"p.13, Sect. 4.3",reprinted from JRC-IDEES
+"HDRI-EAF mass and energy flow model, base case lambda 1.5 (Sect. 3-4, Table 1)",shaft-furnace_direct-reduction_hydrogen-electric-preheat,endothermic reduction energy,334,kWh/t,"p.11, Sect. 4.2","per t liquid steel; part of the energy balance, not a separate carrier"
+EU-28 transition (Sect. 4.5),,EU-28 steel energy demand BF-BOF vs HDRI-EAF,493 to 517,TWh/yr,"p.14, Sect. 4.5","2015 base, incl. pellet making, sintering and finishing"
+EU-28 transition (Sect. 4.5),,EU-28 steel CO2 BF-BOF vs HDRI-EAF,193 to 134,Mt/yr,"p.14, Sect. 4.5",

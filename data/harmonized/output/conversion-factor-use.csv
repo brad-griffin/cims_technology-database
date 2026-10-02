@@ -1,6 +1,6 @@
 factor-id,class,quantity,from-unit,to-unit,factor,factor-low,factor-high,basis,source-id,rows-pooled,examples,archetypes
-cf-h2-hhv-mass,property,"hydrogen, higher heating value",t,GJ,141.79,,,"HHV, 25 degC, water condensed",nist_2026_001,49,31,electrolyzer_low-temperature; electrolyzer_solid-oxide; gasifier_biomass-waste; gasifier_ccs-concentrated; gasifier_coal-petroleum-coke; reactor_methane-pyrolysis; steam-reformer_methane
-cf-h2-hhv-volume,property,"hydrogen, higher heating value per normal cubic metre",Nm3,GJ,0.012747,,,"HHV; gas at 0 degC, 1.013 bar",nist_2026_001; air-liquide_2026_001,1,1,electrolyzer_low-temperature
+cf-h2-hhv-mass,property,"hydrogen, higher heating value",t,GJ,141.79,,,"HHV, 25 degC, water condensed",nist_2026_001,54,35,electrolyzer_low-temperature; electrolyzer_solid-oxide; gasifier_biomass-waste; gasifier_ccs-concentrated; gasifier_coal-petroleum-coke; reactor_methane-pyrolysis; steam-reformer_methane
+cf-h2-hhv-volume,property,"hydrogen, higher heating value per normal cubic metre",Nm3,GJ,0.012747,,,"HHV; gas at 0 degC, 1.013 bar",nist_2026_001; air-liquide_2026_001,2,2,electrolyzer_low-temperature
 cf-h2-hhv-molar,property,"hydrogen, higher heating value per mole",mol-H2,GJ,2.8583e-4,,,"HHV, 25 degC",nist_2026_001,1,1,reactor_methane-pyrolysis
 cf-methane-hhv-mass,property,"methane, higher heating value",t,GJ,55.53,,,"HHV, 25 degC",nist_2026_001,5,5,separator_biogas-upgrading
 cf-methane-hhv-volume,property,"methane, higher heating value per normal cubic metre",Nm3,GJ,0.03981,0.03971,0.03981,"HHV; gas at 0 degC, 1 atm",nist_2026_001; air-liquide_2026_001,0,0,
@@ -19,10 +19,10 @@ cf-cement-per-rawmeal,ratio,cement per tonne of kiln raw meal,t,t,0.7310,0.6536,
 cf-bls-per-pulp,ratio,black liquor dry solids per tonne of kraft pulp,t,t,1.5,1.0,1.75,t dry solids per air-dried t of pulp,tappi_2008_001,2,2,evaporator_multiple-effect
 cf-milk-density,property,fluid milk density,m3,t,1.031,,,whole milk,usda_1992_001,11,5,cleaning-system_efficiency-moderate; heat-exchanger_steam-heated; heat-pump_hot-water; pasteurizer_regenerative
 cf-beer-barrel,unit,US beer barrel,bbl-beer,m3,0.117347765,,,"31 US gallons, exact",nist_2026_002,0,0,
-cf-hhv-lhv-hydrogen,property,"hydrogen, HHV per LHV",GJ-LHV,GJ-HHV,1.1820,,,ratio of heating values,nist_2026_001,11,8,electrolyzer_low-temperature; reactor_co2-to-methanol; reactor_haber-bosch-loop; reactor_hydrotreating-lipids
-cf-hhv-lhv-methane,property,"methane, natural gas, biogas and SNG: HHV per LHV",GJ-LHV,GJ-HHV,1.1096,,,ratio of heating values,nist_2026_001; ipcc_2006_001,71,45,anaerobic-digester; boiler_fuel-fired; combustion-turbine_heat-recovery-steam-generator; combustion-turbine_simple-cycle; direct-heater_fired-process; fermenter_grain-dry-mill; fuel-cell_chp; gasifier_biomass-methanation; reactor_hydrotreating-lipids; reciprocating-engine_chp; separator_biogas-upgrading; steam-reformer_ammonia; transesterification-unit_alkali-catalyzed
+cf-hhv-lhv-hydrogen,property,"hydrogen, HHV per LHV",GJ-LHV,GJ-HHV,1.1820,,,ratio of heating values,nist_2026_001,12,9,electrolyzer_low-temperature; reactor_co2-to-methanol; reactor_haber-bosch-loop; reactor_hydrotreating-lipids
+cf-hhv-lhv-methane,property,"methane, natural gas, biogas and SNG: HHV per LHV",GJ-LHV,GJ-HHV,1.1096,,,ratio of heating values,nist_2026_001; ipcc_2006_001,74,48,anaerobic-digester; boiler_fuel-fired; combustion-turbine_heat-recovery-steam-generator; combustion-turbine_simple-cycle; direct-heater_fired-process; fermenter_grain-dry-mill; fuel-cell_chp; gasifier_biomass-methanation; reactor_hydrotreating-lipids; reciprocating-engine_chp; separator_biogas-upgrading; steam-reformer_ammonia; transesterification-unit_alkali-catalyzed
 cf-hhv-lhv-methanol,property,"methanol, HHV per LHV",GJ-LHV,GJ-HHV,1.1379,,,ratio of heating values,nist_2026_001,12,3,gasifier_biomass-methanol; reactor_co2-to-methanol; transesterification-unit_alkali-catalyzed
-cf-hhv-lhv-solid-liquid,property,"coal, oil and solid biomass: HHV per LHV",GJ-LHV,GJ-HHV,1.0526,,,ratio of heating values,ipcc_2006_001,129,47,boiler_solid-fuel; direct-heater_solid-fuel; fermenter_grain-dry-mill; fermenter_lignocellulosic-enzymatic; gasifier_biomass-methanation; gasifier_biomass-methanol; gasifier_fischer-tropsch; reactor_hydrothermal-liquefaction; reactor_hydrotreating-lipids; steam-turbine_back-pressure; transesterification-unit_alkali-catalyzed
+cf-hhv-lhv-solid-liquid,property,"coal, oil and solid biomass: HHV per LHV",GJ-LHV,GJ-HHV,1.0526,,,ratio of heating values,ipcc_2006_001,131,48,boiler_solid-fuel; direct-heater_solid-fuel; fermenter_grain-dry-mill; fermenter_lignocellulosic-enzymatic; gasifier_biomass-methanation; gasifier_biomass-methanol; gasifier_fischer-tropsch; reactor_hydrothermal-liquefaction; reactor_hydrotreating-lipids; steam-turbine_back-pressure; transesterification-unit_alkali-catalyzed
 cf-methanol-hhv-mass,property,"methanol, higher heating value",t,GJ,22.66,,,"HHV, 25 degC, water condensed",nist_2026_001,9,2,gasifier_biomass-methanol; reactor_co2-to-methanol
 cf-ammonia-hhv-mass,property,"ammonia, higher heating value",t,GJ,22.48,,,"HHV, 25 degC, water condensed; NH3 gas to N2",nist_2026_001,6,1,reactor_haber-bosch-loop
 cf-ethanol-hhv-mass,property,"ethanol, higher heating value",t,GJ,29.67,,,"HHV, 25 degC, water condensed",nist_2026_001,11,2,fermenter_grain-dry-mill; fermenter_lignocellulosic-enzymatic
@@ -35,15 +35,18 @@ cf-ef-co2-natural-gas,property,"natural gas, CO2 emitted per GJ burned",GJ,t-CO2
 assume:continuous-operation,assumption,continuous operation,,,,,,,,6,6,electrolyzer_low-temperature; fuel-cell_chp; lighting_fluorescent-hid
 eff:boiler_fuel-fired,internal,pooled efficiency of boiler_fuel-fired,,,,,,,,13,12,boiler_fuel-fired
 eff:boiler_fuel-fired_efficiency-moderate,internal,pooled efficiency of boiler_fuel-fired_efficiency-moderate,,,,,,,,1,1,boiler_fuel-fired_efficiency-moderate
+eff:boiler_recovery,internal,pooled efficiency of boiler_recovery,,,,,,,,2,1,boiler_recovery
+eff:boiler_solid-fuel,internal,pooled efficiency of boiler_solid-fuel,,,,,,,,9,7,boiler_solid-fuel
 eff:combustion-turbine_heat-recovery-steam-generator,internal,pooled efficiency of combustion-turbine_heat-recovery-steam-generator,,,,,,,,10,9,combustion-turbine_heat-recovery-steam-generator
 eff:combustion-turbine_simple-cycle,internal,pooled efficiency of combustion-turbine_simple-cycle,,,,,,,,4,2,combustion-turbine_simple-cycle
 eff:compressor_electric-drive-centrifugal,internal,pooled efficiency of compressor_electric-drive-centrifugal,,,,,,,,2,2,compressor_electric-drive-centrifugal
 eff:direct-heater_air-water,internal,pooled efficiency of direct-heater_air-water,,,,,,,,1,1,direct-heater_air-water
-eff:electrolyzer_low-temperature,internal,pooled efficiency of electrolyzer_low-temperature,,,,,,,,3,1,electrolyzer_low-temperature
+eff:electrolyzer_low-temperature,internal,pooled efficiency of electrolyzer_low-temperature,,,,,,,,4,2,electrolyzer_low-temperature
+eff:electrolyzer_solid-oxide,internal,pooled efficiency of electrolyzer_solid-oxide,,,,,,,,1,1,electrolyzer_solid-oxide
 eff:fuel-cell_chp,internal,pooled efficiency of fuel-cell_chp,,,,,,,,3,2,fuel-cell_chp
 eff:gasifier_coal-petroleum-coke,internal,pooled efficiency of gasifier_coal-petroleum-coke,,,,,,,,1,1,gasifier_coal-petroleum-coke
 eff:reciprocating-engine_chp,internal,pooled efficiency of reciprocating-engine_chp,,,,,,,,5,3,reciprocating-engine_chp
-eff:same-example,same-source,the example's own efficiency,,,,,,,,44,20,boiler_fuel-fired; electrolyzer_low-temperature; electrolyzer_solid-oxide; gasifier_biomass-chp; gasifier_biomass-methanation; reciprocating-engine_chp; steam-turbine_condensing; thermal-storage_electric
+eff:same-example,same-source,the example's own efficiency,,,,,,,,47,22,boiler_ccs-diffuse; boiler_fuel-fired; electrolyzer_low-temperature; electrolyzer_solid-oxide; gasifier_biomass-chp; gasifier_biomass-methanation; reciprocating-engine_chp; steam-turbine_condensing; thermal-storage_electric
 eff:steam-turbine_back-pressure,internal,pooled efficiency of steam-turbine_back-pressure,,,,,,,,10,8,steam-turbine_back-pressure
 eff:steam-turbine_condensing,internal,pooled efficiency of steam-turbine_condensing,,,,,,,,2,2,steam-turbine_condensing
 eff:thermal-storage_electric,internal,pooled efficiency of thermal-storage_electric,,,,,,,,1,1,thermal-storage_electric

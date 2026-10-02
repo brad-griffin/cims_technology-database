@@ -1,0 +1,14 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Low-emissions steel processes (Sect. 2.2 text and endnote 38),shaft-furnace_electrolytic-hydrogen,input,hydrogen,0.061,t/unit,t,,,,61/1000,"p.197, endnote 38",hydrogen consumption of 61 kg hydrogen per tonne steel which includes 20% losses on top of the 51 kg,Per t steel. reprinted from Vogl et al. (2018).
+Low-emissions steel processes (Sect. 2.2 text and endnote 38),shaft-furnace_electrolytic-hydrogen,input,electricity,2.8,MWh/unit,t,,,,,"p.197, endnote 38",Electricity use for hydrogen production is around 2.8 MWh/t steel,Electricity for hydrogen production only (electrolysis at 45 MWh/t H2).
+Chemical recycling routes (Exhibit 3.11),gasifier_plastic-waste-mto-chain,input,waste-plastic,1.1,t/unit,t,,,,,"p.125, Exhibit 3.11",, Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),gasifier_plastic-waste-mto-chain,input,electricity,1.4,MWh/unit,t,,,,,"p.125, Exhibit 3.11",,Excludes ~8 MWh for hydrogen. Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),gasifier_plastic-waste-mto-chain,input,hydrogen,0.2,t/unit,t,,,,,"p.125, Exhibit 3.11",,Hydrogen added to make sweet syngas. Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),gasifier_plastic-waste-mto-chain,output,co2,0.2,t/unit,t,,,,,"p.125, Exhibit 3.11",, Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),reactor_plastics-pyrolysis_electric-cracker-chain,input,waste-plastic,1.1,t/unit,t,,,,,"p.125, Exhibit 3.11",,Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),reactor_plastics-pyrolysis_electric-cracker-chain,input,electricity,6.9,MWh/unit,t,,,,,"p.125, Exhibit 3.11",,Per t HVC output.
+Chemical recycling routes (Exhibit 3.11),reactor_plastics-pyrolysis_electric-cracker-chain,output,co2,0.3,t/unit,t,,,,,"p.125, Exhibit 3.11",,Per t HVC output.
+Bio-based plastics routes (Exhibit 3.12),gasifier_biomass-mto-chain,input,biomass-solid,3.5,t/unit,t,,,,,"p.127, Exhibit 3.12",3.5 TONNES (66 GJ),Dry biomass per t HVC.
+Bio-based plastics routes (Exhibit 3.12),anaerobic-digester_methanol-mto-chain,input,biomass-solid,1.9,t/unit,t,,,,,"p.127, Exhibit 3.12",1.9 TONNES (35 GJ),Dry biomass per t HVC.
+Bio-based plastics routes (Exhibit 3.12),anaerobic-digester_methanol-mto-chain,input,hydrogen,0.3,t/unit,t,,,,,"p.127, Exhibit 3.12",,Per t HVC.
+Power-to-X route (p.129 and endnote 41),reactor_methanol-to-olefins,input,methanol,2.28,t/unit,t,,,,,"p.202, endnote 41",One tonne of olefins produced via methanol-to-olefins requires 2.28 of methanol,"Per t olefins; unit of 2.28 not printed, taken as t."

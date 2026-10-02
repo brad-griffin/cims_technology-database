@@ -1,0 +1,27 @@
+process,technology,sector,end-use,process-step,service-unit
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",steam-reformer_naphtha-ammonia,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",gasifier_heavy-oil-ammonia,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",gasifier_coal-ammonia,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",reactor_haber-bosch-electrolytic_alkaline-pem,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",reactor_haber-bosch-electrolytic_battolyser,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",reactor_haber-bosch-electrolytic_soec,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",electrolysis-cell_ammonia-low-temperature,chemicals,material-conversion,ammonia,kg
+"Large-scale ammonia production routes (Sect. 2.1, Table 1)",electrolysis-cell_ammonia-high-temperature,chemicals,material-conversion,ammonia,kg
+"Small-scale ammonia synthesis loops (Sect. 2.2, Table 2)",reactor_haber-bosch-loop_high-pressure,chemicals,material-conversion,ammonia synthesis loop,kg
+"Small-scale ammonia synthesis loops (Sect. 2.2, Table 2)",reactor_haber-bosch-loop_medium-pressure,chemicals,material-conversion,ammonia synthesis loop,kg
+"Small-scale ammonia synthesis loops (Sect. 2.2, Table 2)",reactor_haber-bosch-loop_absorbent-enhanced,chemicals,material-conversion,ammonia synthesis loop,kg
+"Conventional electrolysis-based Haber-Bosch, large scale down to NFUEL units (Sect. 2.2, Fig. 3 text)",reactor_haber-bosch-electrolytic_conventional,chemicals,material-conversion,ammonia,kg
+"Electrolysis systems for small-scale ammonia (Sect. 2.3, Table 3)",electrolyzer_alkaline,chemicals,electrochemical,hydrogen production,Nm3
+"Electrolysis systems for small-scale ammonia (Sect. 2.3, Table 3)",electrolyzer_alkaline_pressurized,chemicals,electrochemical,hydrogen production,Nm3
+"Electrolysis systems for small-scale ammonia (Sect. 2.3, Table 3)",electrolyzer_battolyser,chemicals,electrochemical,hydrogen production,Nm3
+"Electrolysis systems for small-scale ammonia (Sect. 2.3, Table 3)",electrolyzer_pem,chemicals,electrochemical,hydrogen production,Nm3
+"Electrolysis systems for small-scale ammonia (Sect. 2.3, Table 3)",electrolyzer_solid-oxide,chemicals,electrochemical,hydrogen production,Nm3
+"Nitrogen purification alternatives (Sect. 2.4, Table 4)",air-separation-unit_cryogenic-nitrogen,chemicals,drying-and-separation,nitrogen production,kg
+"Nitrogen purification alternatives (Sect. 2.4, Table 4)",adsorber_pressure-swing-nitrogen,chemicals,drying-and-separation,nitrogen production,kg
+"Nitrogen purification alternatives (Sect. 2.4, Table 4)",air-separation-unit_membrane-nitrogen,chemicals,drying-and-separation,nitrogen production,kg
+"Ammonia-to-power alternatives, 1-10 MW (Sect. 2.7, Table 8)",fuel-cell_alkaline-ammonia,power-generation,power-generation,ammonia-to-power,GJ
+"Ammonia-to-power alternatives, 1-10 MW (Sect. 2.7, Table 8)",fuel-cell_pem-ammonia,power-generation,power-generation,ammonia-to-power,GJ
+"Ammonia-to-power alternatives, 1-10 MW (Sect. 2.7, Table 8)",fuel-cell_solid-oxide-ammonia,power-generation,power-generation,ammonia-to-power,GJ
+"Ammonia-to-power alternatives, 1-10 MW (Sect. 2.7, Table 8)",combustion-turbine_ammonia,power-generation,power-generation,ammonia-to-power,GJ
+"Proposed islanded power-to-ammonia plant, battolyser + PSA + Ru catalyst + CaCl2/SiO2 absorbent at 8 bar, 275 degC (Sect. 3.1, Table 10)",reactor_haber-bosch-low-pressure_islanded,chemicals,material-conversion,ammonia,kg

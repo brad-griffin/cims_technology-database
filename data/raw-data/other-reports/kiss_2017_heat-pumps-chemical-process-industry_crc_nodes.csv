@@ -1,0 +1,28 @@
+process,technology,sector,end-use,process-step,service-unit
+"Heat-pump type comparison, 10 MW heat pump between column condenser and reboiler (Sect. 5.3.6-5.8, Tables 5.5-5.6)",vapour-recompressor_mechanical,heat-supply,process-heat-low-temp,distillation reboiler heat,GJ
+"Heat-pump type comparison, 10 MW heat pump between column condenser and reboiler (Sect. 5.3.6-5.8, Tables 5.5-5.6)",vapour-recompressor_thermal,heat-supply,process-heat-low-temp,distillation reboiler heat,GJ
+"Heat-pump type comparison, 10 MW heat pump between column condenser and reboiler (Sect. 5.3.6-5.8, Tables 5.5-5.6)",heat-pump_vapour-compression,heat-supply,process-heat-low-temp,distillation reboiler heat,GJ
+"Heat-pump type comparison, 10 MW heat pump between column condenser and reboiler (Sect. 5.3.6-5.8, Tables 5.5-5.6)",heat-pump_compression-resorption,heat-supply,process-heat-low-temp,distillation reboiler heat,GJ
+"Heat-pump type comparison, 10 MW heat pump between column condenser and reboiler (Sect. 5.3.6-5.8, Tables 5.5-5.6)",heat-pump_absorption,heat-supply,process-heat-low-temp,distillation reboiler heat,GJ
+"Vapour recompression heat pumps, water as working fluid (Sect. 6.3.3, Fig. 6.25)",vapour-recompressor_mechanical,heat-supply,process-heat-low-temp,vapour recompression,GJ
+"Absorption heat pumps, multi-effect operation (Sect. 7.2.4)",heat-pump_absorption_single-effect,heat-supply,process-heat-low-temp,absorption heat pump,GJ
+"Absorption heat pumps, multi-effect operation (Sect. 7.2.4)",heat-pump_absorption_double-effect,heat-supply,process-heat-low-temp,absorption heat pump,GJ
+"Hybrid Energy compression-resorption heat pump installations 2011-2015 (Sect. 6.4.4, Table 6.4)",heat-pump_compression-resorption_dairy-a,food-and-beverage,process-heat-low-temp,dairy,GJ
+"Hybrid Energy compression-resorption heat pump installations 2011-2015 (Sect. 6.4.4, Table 6.4)",heat-pump_compression-resorption_dairy-b,food-and-beverage,process-heat-low-temp,dairy,GJ
+"Hybrid Energy compression-resorption heat pump installations 2011-2015 (Sect. 6.4.4, Table 6.4)",heat-pump_compression-resorption_slaughterhouse-a,food-and-beverage,process-heat-low-temp,slaughterhouse,GJ
+"Hybrid Energy compression-resorption heat pump installations 2011-2015 (Sect. 6.4.4, Table 6.4)",heat-pump_compression-resorption_slaughterhouse-b,food-and-beverage,process-heat-low-temp,slaughterhouse,GJ
+"Hybrid Energy compression-resorption heat pump installations 2011-2015 (Sect. 6.4.4, Table 6.4)",heat-pump_compression-resorption_sludge-heating,heat-supply,process-heat-low-temp,sludge heating biogas,GJ
+"CO2 transcritical heat pump plants (Sect. 6.5.4, Table 6.5)",heat-pump_co2-transcritical_slaughterhouse,food-and-beverage,process-heat-low-temp,slaughterhouse (add-on to refrigeration plant),GJ
+"CO2 transcritical heat pump plants (Sect. 6.5.4, Table 6.5)",heat-pump_co2-transcritical_cafeteria,food-and-beverage,process-heat-low-temp,cafeteria,GJ
+"CO2 transcritical heat pump plants (Sect. 6.5.4, Table 6.5)",heat-pump_co2-transcritical_noodle-production,food-and-beverage,process-heat-low-temp,noodle production,GJ
+"CO2 transcritical heat pump plants (Sect. 6.5.4, Table 6.5)",heat-pump_co2-transcritical_air-drying,food-and-beverage,process-heat-low-temp,air drying process,GJ
+"CO2 transcritical heat pump plants (Sect. 6.5.4, Table 6.5)",heat-pump_co2-transcritical_chicken-products,food-and-beverage,process-heat-low-temp,chicken product manufacturing,GJ
+"Bioethanol dehydration by extractive distillation, 100 ktpy plant, Luo et al. 2015 (Sect. 10.2, Table 10.1)",distillation-column_extractive-ethanol,biofuels,drying-and-separation,ethanol dehydration,t
+"Bioethanol dehydration by extractive distillation, 100 ktpy plant, Luo et al. 2015 (Sect. 10.2, Table 10.1)",distillation-column_extractive-dividing-wall,biofuels,drying-and-separation,ethanol dehydration,t
+"Bioethanol dehydration by extractive distillation, 100 ktpy plant, Luo et al. 2015 (Sect. 10.2, Table 10.1)",vapour-recompressor_extractive-dividing-wall,biofuels,drying-and-separation,ethanol dehydration,t
+"Refinery waste heat to district heating, Ravi 2012 (Sect. 10.3, Table 10.7)",heat-pump_vapour-compression_high-temperature,petroleum-refining,steam-and-hot-water,waste heat recovery,GJ
+"Compression-resorption heat pump on a distillation column, Kuang 2008 (Sect. 10.4, Table 10.4)",distillation-column_compression-resorption,chemicals,drying-and-separation,distillation,t
+"Compression-resorption heat pump on a distillation column, Kuang 2008 (Sect. 10.4, Table 10.4)",distillation-column_conventional,chemicals,drying-and-separation,distillation,t
+"Absorption heat pump on a benzene-toluene column, Vasilescu 2008 (Sect. 10.5, Table 10.5)",distillation-column_absorption-heat-pump,chemicals,drying-and-separation,benzene-toluene distillation,t
+"Absorption heat pump on a benzene-toluene column, Vasilescu 2008 (Sect. 10.5, Table 10.5)",distillation-column_conventional,chemicals,drying-and-separation,benzene-toluene distillation,t
+Ejector heat pump on a propylene-propane splitter (Sect. 10.6),distillation-column_ejector-heat-pump,chemicals,drying-and-separation,propylene-propane splitting,GJ

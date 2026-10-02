@@ -1,0 +1,11 @@
+process,technology,item,value,unit,reference,note
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,carbon input (C added to DRI),41.49,kg per 1055 kg hot metal,"p.4569, Table 3",No commodity term for added carbon; not loaded as a flow
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,SEC sensitivity to carbon in hot metal,+10 per 1.0 wt% C,kWh/tHM,p.4568,at 1500 degC; reprinted from Shahabuddin et al. [2]
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,SEC sensitivity to gangue in DRI,+13 to +20 per 1.0 wt% gangue,kWh/tHM,p.4570,depends on metallization ratio
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,SEC sensitivity to metallization ratio,-12 per 1.0 wt% MR (average),kWh/tHM,p.4570,
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,SEC sensitivity to scrap in blend,-2.5 per 1.0 wt% scrap,kWh/tHM,p.4570,at 1500 degC
+"Shahabuddin et al. HSC mass and energy balance model, base case at 1600 degC (Table 3)",melting-furnace_electric-smelting,model operating conditions,DRI 1077-1190 kg/t Fe; 1300-1600 degC; MR 90-100 wt%; basicity 1.1; C 1-3.5 wt%; 1 bar,,p.4568,
+Tenova iBlue DRI melting design parameters (Table 2),melting-furnace_electric-smelting,annual feeds: reverts; fluxes; reductant,"0-60,000; 40,000-120,000; 20,000-130,000",t/annum,"p.4568, Table 2","Gas volume 8000-16,600 Nm3/h; off-gas dust printed 15,000-26,0000 t/annum (typo in source); carbon factor 1.1-1.3"
+Metso Outotec DRI smelting furnace (Introduction),melting-furnace_electric-smelting,design power,112,MW,p.4566,"For 1.2 Mtpa hot metal; no operating hours given, so no SEC derived"
+SMS group OSBF layout (Description),melting-furnace_electric-smelting,DRI plant coupled with three circular or two rectangular OSBFs,2.5,Mt/yr DRI,p.4567,reprinted from SMS group [11]
+Submerged arc furnace ferronickel model (Table 4),(none),Joule heat in slag / matte / concentrate,11.175 / 0.008 / 0.225,MW,"p.4571, Table 4",Non-ferrous SAF model; out of scope

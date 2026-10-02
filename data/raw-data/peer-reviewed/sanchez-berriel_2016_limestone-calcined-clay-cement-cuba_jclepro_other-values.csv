@@ -1,0 +1,13 @@
+process,technology,item,value,unit,reference,note
+"Clinker and clay calcination energy, Cuba (Sect. 3.2)",,CO2 from carbon-based fuels in clinkerization,0.39,t CO2/t cement,"p.365, Sect. 3.2",reprinted from Habert et al. (2010)
+CAPEX and production capacity by technology (Table 3),,clinker kiln vs clay calciner investment (no capacity),50 vs 10,2016_USD-million,"p.363, Sect. 2.2",reprinted from Alsop (2014); PRICE YEAR NOT STATED; publication year 2016 used
+CAPEX and production capacity by technology (Table 3),calciner_clay-flash_small,Argeco CAPEX as printed in text,6.08,2016_EUR-million,"p.363, Sect. 2.2",text conversion ~6.68 MUSD at 1.3 USD/EUR is arithmetically inconsistent
+Results (Sect. 3.2-3.3),binder_calcined-clay,GWP savings vs OPC / vs PPC (text),around 35 / around 25,%,"p.366, Sect. 3.3.1","text also: ""whatever the technological level, LC3 always produces around 30% savings"" (p.365)"
+Results (Sect. 3.3.2),binder_calcined-clay,production cost savings vs OPC/PPC,10-30,%,"p.366, Sect. 3.3.2",depends on technology and fuel
+Results (Sect. 3.3.2),,gas price assumed (BBAT case),15,2016_USD/GJ,"p.366, Sect. 3.3.2","waste assumed free; mix 70% waste oil, 30% gas; PRICE YEAR NOT STATED"
+"Results (Sect. 3.1, Fig. 2)",binder_portland-cement,read from chart: GWP OPC BAT,approx. 0.72,t CO2e/t cement,"p.365, Fig. 2",incl. infrastructure; bars without printed values
+"Results (Sect. 3.1, Fig. 2)",binder_calcined-clay,read from chart: GWP LC3 BAT,approx. 0.47,t CO2e/t cement,"p.365, Fig. 2",
+"Results (Sect. 3.1, Fig. 2)",binder_portland-cement,read from chart: monetary cost OPC BAT (CAPEX+OPEX),approx. 225 (CAPEX approx. 165),2016_USD/t cement,"p.365, Fig. 2",CAPEX share dominates; PRICE YEAR NOT STATED
+"Results (Sect. 3.1, Fig. 2)",binder_calcined-clay,read from chart: monetary cost LC3 BAT (CAPEX+OPEX),approx. 153 (CAPEX approx. 108),2016_USD/t cement,"p.365, Fig. 2",
+"Results (Sect. 3.3.1, Fig. 5)",binder_portland-cement,"read from chart: GWP OPC, Cuba",approx. 890,kg CO2e/t cement,"p.366, Fig. 5","LC3 approx. 550 (train) to 710 (truck, 350 km)"
+"Market (Sect. 1, 3.4)",,Cuban cement production / 2019 target / per-capita consumption 2013,<2 / 3.5 / 122,Mt/yr / Mt/yr / kg per capita,"p.362, 366-367",regional average 301 kg/cap

@@ -1,0 +1,12 @@
+process,technology,sector,end-use,process-step,service-unit
+"Conventional blast furnace, German average (Sect. 4.1, Fig. 3)",blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+"Blast furnace with BF gas recirculation, ULCOS (Sect. 5.1, Fig. 4)",blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,ironmaking,t
+"Blast furnace with BF gas recirculation and carbon capture, ULCOS (Sect. 5.2, Fig. 5)",blast-furnace_top-gas-recycling_ccs,iron-and-steel,material-conversion,ironmaking,t
+"Electric arc furnace, German average (Sect. 4.2, Table 3)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Circored hydrogen direct reduction (Sect. 5.4, Fig. 6, Table 4)",reactor_fluidized-bed-direct-reduction_circored,iron-and-steel,material-conversion,ironmaking,t
+"Circored with SMR hydrogen and EAF (Sect. 5.4, Fig. 6)",steel-mill_circored-smr-eaf,iron-and-steel,material-conversion,ironmaking-and-steelmaking,t
+"Circored with electrolytic hydrogen and EAF (Sect. 5.4.1, Table 4)",reactor_fluidized-bed-direct-reduction_electrolytic-hydrogen-eaf,iron-and-steel,material-conversion,ironmaking-and-steelmaking,t
+"Integrated steelworks reference case, Germany (Sect. 6.1, Fig. 7)",steel-mill_coke-sinter-bf,iron-and-steel,material-conversion,ironmaking,t
+"Hydrogen and synthetic methane supply assumptions (Sect. 2, Table 1)",electrolyzer_low-temperature,iron-and-steel,hydrogen-production,electrolysis,GJ
+"Hydrogen and synthetic methane supply assumptions (Sect. 2, Table 1)",steam-reformer_natural-gas,iron-and-steel,hydrogen-production,reforming,GJ
+"Hydrogen and synthetic methane supply assumptions (Sect. 2, Table 1)",reactor_methanation,iron-and-steel,heat-supply,synthetic-fuel-production,GJ

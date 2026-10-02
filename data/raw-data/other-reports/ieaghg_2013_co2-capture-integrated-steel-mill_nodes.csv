@@ -1,0 +1,37 @@
+process,technology,sector,end-use,process-step,service-unit
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof,iron-and-steel,material-conversion,integrated-steelworks,t
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof_ccs-diffuse-eop-l1,iron-and-steel,material-conversion,integrated-steelworks,t
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof_ccs-diffuse-eop-l2,iron-and-steel,material-conversion,integrated-steelworks,t
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof_top-gas-recycling-obf,iron-and-steel,material-conversion,integrated-steelworks,t
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof_top-gas-recycling-obf-chp-a,iron-and-steel,material-conversion,integrated-steelworks,t
+"Whole integrated steel mill, 4 Mt/y HRC, Western Europe (Overview Tables 1-9)",steel-mill_bf-bof_top-gas-recycling-obf-chp-b,iron-and-steel,material-conversion,integrated-steelworks,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),coke-oven_by-product,iron-and-steel,material-conversion,cokemaking,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),sinter-plant_strand,iron-and-steel,material-preparation,sintering,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+Oxygen blast furnace with top gas recycle and MDEA/Pz capture (Vol. III Sect. C),blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,ironmaking,t
+"Post-combustion MEA capture, EOP-L1 (Vol. II Sect. C)",blast-furnace_ccs-diffuse,iron-and-steel,co2-capture,ironmaking,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),basic-oxygen-furnace,iron-and-steel,material-conversion,steelmaking,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),furnace_ladle-metallurgy,iron-and-steel,material-conversion,steelmaking,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),caster_continuous,iron-and-steel,material-conversion,casting,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),rolling-mill_hot,iron-and-steel,forming-and-finishing,hot-rolling,t
+Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D),kiln_lime-parallel-flow,iron-and-steel,material-conversion,lime-production,t
+Air separation units (Vol. I Sect. D-11; Vol. III Sect. C-3),air-separation-unit_high-purity,iron-and-steel,other-services,oxygen-production,m3
+Air separation units (Vol. I Sect. D-11; Vol. III Sect. C-3),air-separation-unit_low-purity,iron-and-steel,other-services,oxygen-production,m3
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),steam-turbine_condensing_works-gas,iron-and-steel,power-generation,by-product gas utilization,GJ
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),steam-turbine_condensing_works-gas-reheat,iron-and-steel,power-generation,by-product gas utilization,GJ
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),combined-cycle_works-gas,iron-and-steel,power-generation,by-product gas utilization,GJ
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),combined-cycle_works-gas-aux-boiler,iron-and-steel,power-generation,by-product gas utilization,GJ
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),combined-cycle,iron-and-steel,power-generation,power-generation,GJ
+Captive power and steam plants (Vol. I Sect. F; Vol. II-III Sect. C; Vol. III Sect. E),boiler_fuel-fired_works-gas,iron-and-steel,steam-and-hot-water,Boilers,GJ
+"Post-combustion MEA capture, EOP-L1 (Vol. II Sect. C)",boiler_ccs-diffuse_works-gas,iron-and-steel,steam-and-hot-water,Boilers,GJ
+"Post-combustion MEA capture, EOP-L2 (Vol. II Sect. C)",kiln_lime_ccs-diffuse,iron-and-steel,co2-capture,lime-production,t
+"Post-combustion MEA capture, EOP-L2 (Vol. II Sect. C)",coke-oven_by-product_ccs-diffuse,iron-and-steel,co2-capture,cokemaking,t
+"Post-combustion MEA capture, EOP-L1 (Vol. II Sect. C)",capture-unit_amine_mea-eop-l1,iron-and-steel,co2-capture,co2-capture,t
+"Post-combustion MEA capture, EOP-L2 (Vol. II Sect. C)",capture-unit_amine_mea-eop-l2,iron-and-steel,co2-capture,co2-capture,t
+Oxygen blast furnace with top gas recycle and MDEA/Pz capture (Vol. III Sect. C),capture-unit_chemical-solvent_mdea-pz-obf,iron-and-steel,co2-capture,co2-capture,t
+ULCOS CO2 capture options for OBF top gas (Vol. III Table C-1),adsorber_pressure-swing_obf-top-gas,iron-and-steel,co2-capture,co2-capture,t
+ULCOS CO2 capture options for OBF top gas (Vol. III Table C-1),adsorber_vacuum-pressure-swing_obf-top-gas,iron-and-steel,co2-capture,co2-capture,t
+ULCOS CO2 capture options for OBF top gas (Vol. III Table C-1),capture-unit_cryogenic-condensation_vpsa-flash,iron-and-steel,co2-capture,co2-capture,t
+ULCOS CO2 capture options for OBF top gas (Vol. III Table C-1),capture-unit_chemical-solvent_obf-top-gas-ulcos,iron-and-steel,co2-capture,co2-capture,t
+ULCOS CO2 capture options for OBF top gas (Vol. III Table C-1),capture-unit_cryogenic-condensation_psa-distillation,iron-and-steel,co2-capture,co2-capture,t

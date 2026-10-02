@@ -1,0 +1,10 @@
+process,technology,item,value,unit,reference,note
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,"electricity for electrolytic hydrogen per t DRI (75% HHV electrolysis), incl. hydrogen for gas heating",3400-3600,kWh/t,"p.7 of 10, Sect. 4.2.1","Upstream electrolyser electricity, not DR-plant final energy; HHV of H2 3.54 kWh/m3 STP."
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,electricity for electrolytic hydrogen per t DRI if gas heating is supplied by waste heat,2300-2500,kWh/t,"p.8 of 10, Sect. 4.2.1",Minimum for the reduction itself.
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,electrolyser efficiency assumed (HHV),75,%,"p.7 of 10, Sect. 4.2.1","Assumption, not a measured value."
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",shaft-furnace_direct-reduction_hydrogen,break-even grid CO2 intensity for H2-DR below NG-DR,120,g CO2/kWh,"p.1 and 9 of 10, Abstract, Sect. 4.3, Fig. 10",
+Literature values cited for hydrogen DR (Sect. 2),shaft-furnace_direct-reduction_hydrogen-arcelormittal-hamburg,electricity for hydrogen generation per t HBI,3,MWh/t,"p.3 of 10, Sect. 2",reprinted from Hoelling et al. 2017
+Literature values cited for hydrogen DR (Sect. 2),,hydrogen demand H2-DR-EAF per t steel (Vogl et al.),51,kg/t,"p.3 of 10, Sect. 2",equivalent to about 520 m3 STP per t HBI; reprinted from Vogl et al. 2018
+Introduction,,BF/BOF route average CO2 per t crude steel incl. agglomeration to hot rolling,1.9,t/t,"p.1 of 10, Sect. 1",reprinted from Wortler et al. 2013
+Introduction,,scrap-based EAF route CO2 per t crude steel,455,kg/t,"p.1 of 10, Sect. 1",reprinted from Wortler et al. 2013
+"DR-H2 model, about 95% hydrogen (Sect. 4.2)",,electrolyser capacity for a 2 Mt/yr hydrogen DR plant,GW range,,"p.9 of 10, Sect. 5",qualitative
