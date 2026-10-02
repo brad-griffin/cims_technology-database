@@ -6,7 +6,7 @@ est-sibling-lifetime,boiler_solid-fuel,lifetime,25,20,10,40,yes,0.8,"tier 2: boi
 est-sibling-lifetime,combustion-turbine_heat-recovery-steam-generator,lifetime,25,27.5,20.625,34.375,yes,1.1,"tier 2: combustion-turbine_simple-cycle_efficiency-moderate, combustion-turbine_simple-cycle"
 est-sibling-lifetime,direct-heater_electric-process,lifetime,20,15,10,20,yes,0.75,"tier 2: direct-heater_solid-fuel, direct-heater_fired-process"
 est-sibling-lifetime,direct-heater_fired-process,lifetime,15,17.5,10,21.875,yes,1.16667,"tier 2: direct-heater_solid-fuel, direct-heater_electric-process"
-est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,17.5,10,21.875,yes,1.16667,"tier 2: direct-heater_electric-process, direct-heater_fired-process"
+est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,17.5,10,21.875,yes,1.16667,"tier 2: direct-heater_fired-process, direct-heater_electric-process"
 est-sibling-lifetime,gasifier_biomass-chp,lifetime,25,20,10,30,yes,0.8,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids, gasifier_biomass-waste"
 est-sibling-lifetime,heat-pump_industrial,lifetime,20,20,15,40,yes,1,tier 2: heat-pump_space-heating
 est-sibling-lifetime,reciprocating-engine_chp,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: reciprocating-engine_diesel-generator
@@ -43,15 +43,14 @@ est-sibling-lifetime,shaft-furnace_direct-reduction_ccs-concentrated,lifetime,25
 est-sibling-lifetime,sinter-plant_efficiency-moderate,lifetime,25,25,18.75,31.25,yes,1,tier 1: sinter-plant_efficiency-strong
 est-sibling-lifetime,sinter-plant_efficiency-strong,lifetime,25,25,18.75,31.25,yes,1,tier 1: sinter-plant_efficiency-moderate
 est-sibling-lifetime,sinter-plant_strand,lifetime,20,25,18.75,31.25,yes,1.25,"tier 2: sinter-plant_efficiency-strong, sinter-plant_efficiency-moderate"
-est-sibling-lifetime,smelting-vessel_bath-reduction,lifetime,25,25,18.75,31.25,yes,1,tier 1: smelting-vessel_bath-reduction_ccs-concentrated
-est-sibling-lifetime,smelting-vessel_bath-reduction_ccs-concentrated,lifetime,25,25,18.75,31.25,yes,1,tier 1: smelting-vessel_bath-reduction
+est-sibling-lifetime,smelting-vessel_two-stage,lifetime,25,25,18.75,31.25,yes,1,tier 1: smelting-vessel_two-stage_ccs-concentrated
+est-sibling-lifetime,smelting-vessel_two-stage_ccs-concentrated,lifetime,25,25,18.75,31.25,yes,1,tier 1: smelting-vessel_two-stage
 est-sibling-lifetime,binder_alkali-activated,lifetime,32.5,30.625,22.9688,38.2812,yes,0.942308,"tier 2: binder_hydrothermal-silicate, binder_sulphoaluminate"
-est-sibling-lifetime,kiln_dry-precalciner,lifetime,32.5,28.75,10,35.9375,yes,0.884615,"tier 1: kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong"
-est-sibling-lifetime,kiln_dry-precalciner_ccs-diffuse,lifetime,28.75,32.5,10,60,yes,1.13043,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong"
-est-sibling-lifetime,kiln_dry-precalciner_efficiency-moderate,lifetime,25,32.5,10,60,yes,1.3,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-strong"
+est-sibling-lifetime,kiln_dry-precalciner,lifetime,28.75,28.75,10,35.9375,yes,1,"tier 1: kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong"
+est-sibling-lifetime,kiln_dry-precalciner_ccs-diffuse,lifetime,28.75,28.75,10,60,yes,1,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong"
+est-sibling-lifetime,kiln_dry-precalciner_efficiency-moderate,lifetime,25,28.75,10,60,yes,1.15,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-strong"
 est-sibling-lifetime,kiln_dry-precalciner_efficiency-strong,lifetime,32.5,28.75,20,60,yes,0.884615,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate"
-est-sibling-lifetime,kiln_fluidized-bed,lifetime,25,30.625,10,60,yes,1.225,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric, kiln_lime-gasifier-fired"
-est-sibling-lifetime,kiln_oxy-fuel,lifetime,32.5,26.875,10,60,yes,0.826923,"tier 2: kiln_dry-precalciner, kiln_fluidized-bed, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric, kiln_lime-gasifier-fired"
+est-sibling-lifetime,kiln_oxy-fuel,lifetime,32.5,28.75,10,60,yes,0.884615,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric, kiln_lime-gasifier-fired"
 est-sibling-lifetime,furnace_glass-hybrid-electric,lifetime,10,17,8,25,yes,1.7,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_glass-regenerative, furnace_glass-oxy-fuel, furnace_hydrogen-fired"
 est-sibling-lifetime,furnace_glass-oxy-fuel,lifetime,14,17,8,25,yes,1.21429,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_glass-regenerative, furnace_glass-hybrid-electric, furnace_hydrogen-fired"
 est-sibling-lifetime,furnace_glass-regenerative,lifetime,17,14,8,25,yes,0.823529,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_glass-oxy-fuel, furnace_glass-hybrid-electric, furnace_hydrogen-fired"
@@ -93,9 +92,9 @@ est-sibling-lifetime,dryer_steam-heated,lifetime,20,15,10,20,yes,0.75,"tier 1: d
 est-sibling-lifetime,dryer_steam-heated_efficiency-strong,lifetime,10,20,10,25,yes,2,"tier 1: dryer_steam-heated, dryer_steam-heated_efficiency-moderate"
 est-sibling-lifetime,dryer_steam-heated_efficiency-moderate,lifetime,20,15,10,20,yes,0.75,"tier 1: dryer_steam-heated, dryer_steam-heated_efficiency-strong"
 est-sibling-lifetime,gasifier_black-liquor,lifetime,25,20,15,25,yes,0.8,"tier 2: gasifier_biomass-methanol, gasifier_fischer-tropsch, gasifier_biomass-ammonia"
-est-sibling-lifetime,kiln_lime-electric,lifetime,25,30.625,10,60,yes,1.225,"tier 2: kiln_dry-precalciner, kiln_fluidized-bed, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-gasifier-fired"
-est-sibling-lifetime,kiln_lime-gasifier-fired,lifetime,20,30.625,10,60,yes,1.53125,"tier 2: kiln_dry-precalciner, kiln_fluidized-bed, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric"
-est-sibling-lifetime,kiln_lime-rotary,lifetime,40,26.875,10,60,yes,0.671875,"tier 2: kiln_dry-precalciner, kiln_fluidized-bed, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-electric, kiln_lime-gasifier-fired"
+est-sibling-lifetime,kiln_lime-electric,lifetime,25,28.75,10,60,yes,1.15,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-gasifier-fired"
+est-sibling-lifetime,kiln_lime-gasifier-fired,lifetime,20,28.75,10,60,yes,1.4375,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric"
+est-sibling-lifetime,kiln_lime-rotary,lifetime,40,28.75,10,60,yes,0.71875,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-electric, kiln_lime-gasifier-fired"
 est-sibling-lifetime,paper-machine_fourdrinier-gap_efficiency-moderate,lifetime,20,20,15,25,yes,1,tier 1: paper-machine_fourdrinier-gap_efficiency-strong
 est-sibling-lifetime,paper-machine_fourdrinier-gap_efficiency-strong,lifetime,20,20,5,25,yes,1,tier 1: paper-machine_fourdrinier-gap_efficiency-moderate
 est-sibling-lifetime,gasifier_coal-methanation,lifetime,20,20,10,35,yes,1,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke, gasifier_biomass-methanation, gasifier_coal-to-liquids, gasifier_biomass-waste"
@@ -103,8 +102,8 @@ est-sibling-lifetime,gasifier_coal-to-liquids,lifetime,30,20,10,35,yes,0.666667,
 est-sibling-lifetime,reactor_gas-to-liquids,lifetime,30,25,18.75,31.25,yes,0.833333,tier 2: reactor_methane-pyrolysis
 est-sibling-lifetime,heat-recovery-unit_dryer-exhaust,lifetime,20,20,15,25,yes,1,tier 2: heat-recovery-unit_oven-exhaust
 est-sibling-lifetime,heat-recovery-unit_oven-exhaust,lifetime,20,20,5,25,yes,1,tier 2: heat-recovery-unit_dryer-exhaust
-est-sibling-lifetime,oven_indirect-fired,lifetime,30,20,5,25,no,0.666667,tier 2: oven_efficiency-moderate
-est-sibling-lifetime,oven_efficiency-moderate,lifetime,20,30,22.5,37.5,no,1.5,tier 2: oven_indirect-fired
+est-sibling-lifetime,oven_tunnel-deck,lifetime,30,20,5,25,no,0.666667,tier 2: oven_efficiency-moderate
+est-sibling-lifetime,oven_efficiency-moderate,lifetime,20,30,22.5,37.5,no,1.5,tier 2: oven_tunnel-deck
 est-sibling-lifetime,electrolysis-cell_prebaked-anode,lifetime,6.5,15,5,25,yes,2.30769,"tier 2: electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_chlor-alkali-membrane"
 est-sibling-lifetime,gasifier_biomass-ammonia,lifetime,25,20,15,25,yes,0.8,"tier 2: gasifier_black-liquor, gasifier_biomass-methanol, gasifier_fischer-tropsch"
 est-sibling-lifetime,reactor_haber-bosch-loop,lifetime,30,20,10,30,yes,0.666667,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation-isomerization, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction"
@@ -112,14 +111,14 @@ est-sibling-lifetime,shaft-furnace_electrolytic-hydrogen,lifetime,22.5,22.5,16.8
 est-sibling-lifetime,binder_sulphoaluminate,lifetime,28.75,32.5,24.375,40.625,yes,1.13043,"tier 2: binder_alkali-activated, binder_hydrothermal-silicate"
 est-sibling-lifetime,binder_hydrothermal-silicate,lifetime,32.5,30.625,22.9688,38.2812,yes,0.942308,"tier 2: binder_alkali-activated, binder_sulphoaluminate"
 est-sibling-lifetime,thermal-storage_heat-charged,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: thermal-storage_electric
-est-sibling-lifetime,smelting-vessel_low-shaft,lifetime,20,25,18.75,31.25,yes,1.25,"tier 2: smelting-vessel_bath-reduction, smelting-vessel_bath-reduction_ccs-concentrated"
+est-sibling-lifetime,smelting-vessel_low-shaft,lifetime,20,25,18.75,31.25,yes,1.25,"tier 2: smelting-vessel_two-stage, smelting-vessel_two-stage_ccs-concentrated"
 est-sibling-construction-time,boiler_electric,construction-time,0.5,1.85417,0.02,25,yes,3.70833,"tier 2: boiler_solid-fuel, boiler_fuel-fired"
 est-sibling-construction-time,boiler_fuel-fired,construction-time,1.70833,1.25,0.5,4,yes,0.731709,"tier 2: boiler_solid-fuel, boiler_electric"
 est-sibling-construction-time,boiler_solid-fuel,construction-time,2,1.10417,0.02,25,yes,0.552083,"tier 2: boiler_electric, boiler_fuel-fired"
 est-sibling-construction-time,combustion-turbine_heat-recovery-steam-generator,construction-time,2,0.2,0.15,2.5,yes,0.1,tier 2: combustion-turbine_simple-cycle
 est-sibling-construction-time,direct-heater_electric-process,construction-time,0.04,0.01,0.001,0.04,yes,0.25,"tier 2: direct-heater_solid-fuel, direct-heater_fired-process"
 est-sibling-construction-time,direct-heater_fired-process,construction-time,0.01,0.025,0.001,0.04,yes,2.5,"tier 2: direct-heater_solid-fuel, direct-heater_electric-process"
-est-sibling-construction-time,direct-heater_solid-fuel,construction-time,0.01,0.025,0.01,0.04,yes,2.5,"tier 2: direct-heater_electric-process, direct-heater_fired-process"
+est-sibling-construction-time,direct-heater_solid-fuel,construction-time,0.01,0.025,0.01,0.04,yes,2.5,"tier 2: direct-heater_fired-process, direct-heater_electric-process"
 est-sibling-construction-time,gasifier_biomass-chp,construction-time,0.3,4,2.5,5,no,13.3333,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-to-liquids"
 est-sibling-construction-time,reciprocating-engine_chp,construction-time,1,1,0.75,1.25,yes,1,tier 2: reciprocating-engine_diesel-generator
 est-sibling-construction-time,steam-turbine_back-pressure,construction-time,2.41667,5,1,6.25,yes,2.06896,tier 2: steam-turbine_condensing
