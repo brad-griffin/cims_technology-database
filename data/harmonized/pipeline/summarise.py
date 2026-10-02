@@ -46,7 +46,8 @@ def external_ids(row) -> list[str]:
     for x in (row.get("conversion-factors") or "").split(";"):
         x = x.strip()
         if (_CLS.get(x) in convert.EXTERNAL or x.startswith("assume:")
-                or (x.startswith("eff:") and not x.startswith("eff:same-example"))):
+                or (x.startswith("eff:") and not x.startswith("eff:same-example"))
+                or (x.startswith("hpr:") and x != "hpr:same-example")):
             out.append(x.split("=")[0])
     return out
 

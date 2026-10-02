@@ -32,10 +32,12 @@ def write_outputs(facts, factors) -> None:
     for fid, f in factors.rows.items():
         rows.append(dict(f, **_use(uses.get(fid, []))))
     for tag in sorted(t for t in uses if t not in factors.rows):
-        cls = ("same-source" if tag == "eff:same-example" else "internal" if tag.startswith("eff:")
+        cls = ("same-source" if tag in ("eff:same-example", "hpr:same-example") else "internal" if tag.startswith(("eff:", "hpr:"))
                else "assumption" if tag.startswith("assume:") else "")
         rows.append({"factor-id": tag, "class": cls,
                      "quantity": ("the example's own efficiency" if tag == "eff:same-example" else
+                                  "the example's own heat-to-power ratio" if tag == "hpr:same-example" else
+                                  f"pooled heat-to-power ratio of {tag[4:]}" if tag.startswith("hpr:") else
                                   f"pooled efficiency of {tag[4:]}" if tag.startswith("eff:") else
                                   tag[7:].replace("-", " ")),
                      **_use(uses[tag])})

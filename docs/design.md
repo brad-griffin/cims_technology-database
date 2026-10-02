@@ -306,6 +306,13 @@ are abated, or when a policy instrument treats them separately.
   only for the examples marked `yes` in `records/reference/efficiency-bridge.csv`:
   the per-tonne number must be the equipment's own, not the whole host process's.
   A specific energy use is never bridged; it would only restate the efficiency.
+- **CHP costs per kW of electricity** (amended 2026-10-01). On a heat-supply
+  archetype whose product is the heat, a cost or capacity rated per kW (or MW)
+  of electric output is put per kW of heat with the heat-to-power ratio: the
+  example's own (its printed ratio, else its heat over its electric efficiency,
+  else its total less its electric efficiency over its electric efficiency;
+  class `same-source`), otherwise the median of the archetype's examples' own
+  ratios (class `internal`, factor `hpr:<archetype>`). Applies to every source.
 - An absolute cost is put per unit of capacity with the same source's capacity for
   the same case (a leading `[case]` in the note, or UKERC's row code); a capacity
   rated on input is then bridged.

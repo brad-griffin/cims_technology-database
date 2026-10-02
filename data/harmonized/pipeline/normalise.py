@@ -165,6 +165,16 @@ def normalise(facts, examples, records, units) -> None:
             scale[r["example-id"]].setdefault("mw-out", (mw, r["record-id"]))
         if r["parameter"] == "capacity":
             scale[r["example-id"]].setdefault("caps", []).append(r)
+        # the same source's heat-to-power ratio, or the efficiencies it follows from
+        tg = (r.get("target") or "").strip().lower()
+        if r["parameter"] == "heat-to-power-ratio":
+            scale[r["example-id"]].setdefault("hpr", (v, r["record-id"]))
+        elif r["parameter"] == "efficiency" and tg == "electricity":
+            scale[r["example-id"]].setdefault("eff-e", (v, r["record-id"]))
+        elif r["parameter"] == "efficiency" and tg in ("heat", "steam", "hot-water", "district-heat"):
+            scale[r["example-id"]].setdefault("eff-h", (v, r["record-id"]))
+        elif r["parameter"] == "efficiency-chp":
+            scale[r["example-id"]].setdefault("eff-chp", (v, r["record-id"]))
     by_id = {r["record-id"]: r for r in facts}
     # an example, or one case of it (`case`: a leading [case] in the note, or
     # UKERC's row code), whose costs are the cost of adding something to a plant
@@ -178,6 +188,49 @@ def normalise(facts, examples, records, units) -> None:
                 and r["parameter"] in PER_CAPACITY | PER_OUTPUT):
             r["cost-basis"] = "incremental"
     bridged = {r["example-id"]: r for r in read(REFERENCE / "efficiency-bridge.csv")}
+
+    def heat_per_power(sc):
+        """kW of heat per kW of electricity for a CHP example, from the same
+        source: its heat-to-power ratio, else its heat and electric efficiencies,
+        else its total less its electric efficiency. (ratio, record-ids) or None."""
+        if sc.get("hpr") and sc["hpr"][0] > 0:
+            return sc["hpr"][0], [sc["hpr"][1]]
+        e = sc.get("eff-e")
+        if not e or e[0] <= 0:
+            return None
+        if sc.get("eff-h") and sc["eff-h"][0] > 0:
+            return sc["eff-h"][0] / e[0], [sc["eff-h"][1], e[1]]
+        if sc.get("eff-chp") and sc["eff-chp"][0] > e[0]:
+            return (sc["eff-chp"][0] - e[0]) / e[0], [sc["eff-chp"][1], e[1]]
+        return None
+
+    # each heat-supply archetype's pooled heat-to-power ratio: the median of its
+    # examples' own, used where an example prices per kW electric without one
+    # (class internal, like the pooled efficiency in the bridge)
+    _hp = defaultdict(list)
+    for eid, sc in scale.items():
+        h = heat_per_power(sc)
+        arch = (examples.get(eid) or {}).get("archetype", "")
+        if h and arch:
+            _hp[arch].append(h[0])
+    pooled_hp = {k: sorted(v)[len(v) // 2] if len(v) % 2 else
+                 (sorted(v)[len(v) // 2 - 1] + sorted(v)[len(v) // 2]) / 2
+                 for k, v in _hp.items()}
+
+    def hp_for(sc, a):
+        """(ratio, tag) from the example's own figures, else the archetype's pooled one."""
+        h = heat_per_power(sc)
+        if h:
+            return h[0], "hpr:same-example"
+        k = (a or {}).get("archetype", "")
+        if k in pooled_hp:
+            return pooled_hp[k], f"hpr:{k}"
+        return None
+
+    def heat_product(a, pu):
+        """An archetype whose product is heat (a CHP unit's heat), not electricity."""
+        return (pu == "GJ" and (a or {}).get("family") == "heat-supply"
+                and "electric" not in (a or {}).get("product", "").lower())
 
     def own_capacity(r, sc, pu, flist, alias):
         """The same source's capacity for this case as (pu per year, record-id,
@@ -302,6 +355,20 @@ def normalise(facts, examples, records, units) -> None:
                         else f"per {d} at nameplate (no capacity factor)")
                 if cf:
                     cls.append("same-source")
+                if r.get("capacity-basis") == "electric-output" and heat_product(a, pu):
+                    # a CHP cost per kW of ELECTRICITY on an archetype whose product
+                    # is the heat: per kW of heat with the same source's heat-to-power
+                    # ratio (modeller 2026-10-01)
+                    hp = hp_for(sc, a)
+                    if not hp:
+                        r["excluded"] = (f"cost per {d} of electric output on a heat-product "
+                                         "archetype; no heat-to-power ratio from the source or "
+                                         "the archetype's examples")
+                        continue
+                    factor /= hp[0]
+                    note += f"; per {d} electric -> per {d} heat at heat-to-power ratio {hp[0]:.3g}"
+                    cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
+                    used.append(hp[1])
                 if pu != "GJ" and r.get("capacity-basis") in heating.INPUT_BASES:
                     # per kW of an INPUT (hydrogen fed to an ammonia loop): the
                     # product's heating value does not apply. Only the same
@@ -332,6 +399,16 @@ def normalise(facts, examples, records, units) -> None:
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("mw-out"):
                 mw, rid = sc["mw-out"]
                 cf = sc.get("cf")
+                if (by_id.get(rid, {}).get("capacity-basis") == "electric-output"
+                        and heat_product(a, pu)):
+                    hp = hp_for(sc, a)
+                    if not hp:
+                        r["excluded"] = ("plant cost over an electric capacity on a heat-product "
+                                         "archetype; no heat-to-power ratio")
+                        continue
+                    mw *= hp[0]
+                    cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
+                    used.append(hp[1])
                 factor = f / (mw * GJ_PER_KW_YR * 1000 * (cf or 1.0))
                 note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
                         f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
@@ -378,6 +455,18 @@ def normalise(facts, examples, records, units) -> None:
                     continue
                 route, used = (ext[0], 0.0), used + ext[1]
             factor, offset = route
+        if (p == "capacity" and r.get("capacity-basis") == "electric-output"
+                and heat_product(a, pu) and factor is not None):
+            # a CHP unit rated in MW electric, on an archetype whose product is heat
+            hp = hp_for(scale.get(r["example-id"], {}), a)
+            if not hp:
+                r["excluded"] = ("electric rating on a heat-product archetype; no "
+                                 "heat-to-power ratio")
+                continue
+            factor *= hp[0]
+            note = (note + "; " if note else "") + f"MW electric x heat-to-power ratio {hp[0]:.3g}"
+            cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
+            used.append(hp[1])
         if p in EXTENSIVE and pu == "GJ" and r.get("capacity-basis") in heating.INPUT_BASES:
             bridge_kind = "capacity-in"
         if (p in PER_CAPACITY and pu == "GJ" and not bridge_kind

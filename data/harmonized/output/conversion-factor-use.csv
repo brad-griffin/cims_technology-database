@@ -47,3 +47,8 @@ eff:same-example,same-source,the example's own efficiency,,,,,,,,44,20,boiler_fu
 eff:steam-turbine_back-pressure,internal,pooled efficiency of steam-turbine_back-pressure,,,,,,,,10,8,steam-turbine_back-pressure
 eff:steam-turbine_condensing,internal,pooled efficiency of steam-turbine_condensing,,,,,,,,2,2,steam-turbine_condensing
 eff:thermal-storage_electric,internal,pooled efficiency of thermal-storage_electric,,,,,,,,1,1,thermal-storage_electric
+hpr:anaerobic-digester_chp,internal,pooled heat-to-power ratio of anaerobic-digester_chp,,,,,,,,4,2,anaerobic-digester_chp
+hpr:combustion-turbine_heat-recovery-steam-generator,internal,pooled heat-to-power ratio of combustion-turbine_heat-recovery-steam-generator,,,,,,,,14,11,combustion-turbine_heat-recovery-steam-generator
+hpr:gasifier_biomass-chp,internal,pooled heat-to-power ratio of gasifier_biomass-chp,,,,,,,,3,1,gasifier_biomass-chp
+hpr:reciprocating-engine_chp,internal,pooled heat-to-power ratio of reciprocating-engine_chp,,,,,,,,2,2,reciprocating-engine_chp
+hpr:same-example,same-source,the example's own heat-to-power ratio,,,,,,,,86,36,anaerobic-digester_chp; combustion-turbine_heat-recovery-steam-generator; fuel-cell_chp; reciprocating-engine_chp; steam-turbine_back-pressure
