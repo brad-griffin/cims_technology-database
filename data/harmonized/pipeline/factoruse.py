@@ -21,7 +21,7 @@ REF_COLS = ["source_id", "institution", "title", "year", "url", "date_accessed",
 
 
 def write_outputs(facts, factors) -> None:
-    from .currency import DEFLATOR_DEFAULT, DEFLATOR_SOURCE, TARGET_CUR, exchange_source
+    from .currency import DEFLATOR_DEFAULT, DEFLATOR_SOURCE, EXCHANGE_EXTRA, TARGET_CUR, exchange_source
     from .common import currency_year
     uses = defaultdict(list)
     for r in facts:
@@ -56,6 +56,7 @@ def write_outputs(facts, factors) -> None:
         backs_rows = [DEFLATOR_SOURCE.get(cur, DEFLATOR_DEFAULT)]
         if cur != TARGET_CUR:
             backs_rows.append(exchange_source(2025))
+            backs_rows += EXCHANGE_EXTRA.get(cur, [])
         for s in backs_rows:
             uses["currency:" + s].append(r)
     ref = []

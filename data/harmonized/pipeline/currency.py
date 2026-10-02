@@ -11,7 +11,9 @@ The factor is not symmetric and must not be chained or reversed: convert once,
 from the currency the estimate was published in. The two reference tables are
 copied verbatim from the CIMS repository (data/processed_data/deflator_exchange/);
 refresh them there, not by hand. Coverage is 2000-2025 for CAD, USD, GBP, EUR,
-JPY, INR and CNY; anything else is reported and left unconverted.
+JPY, INR, CNY and DKK; anything else is reported and left unconverted. DKK has no
+Bank of Canada series: its CAD rate is the Bank of Canada EUR rate divided by the
+ECB's annual-average DKK per EUR (added 2026-10-02).
 
 The series behind the two tables are registered in the reference manifest
 (data/raw-data/source-details_reference.csv), with the conversion factors' sources:
@@ -29,6 +31,8 @@ TARGET_YEAR, TARGET_CUR = 2025, "CAD"
 TARGET = f"{TARGET_YEAR}_{TARGET_CUR}"
 DEFLATOR_SOURCE = {"EUR": "ecb_2026_001"}           # every other currency: the World Bank
 DEFLATOR_DEFAULT = "world-bank_2026_001"
+# currencies whose CAD rate is derived through the euro from the ECB reference rates
+EXCHANGE_EXTRA = {"DKK": ["ecb_2026_002"]}
 
 
 def exchange_source(year: int) -> str:
@@ -63,7 +67,8 @@ def factors(fact_rows) -> tuple[dict[str, float], list[str]]:
                                f"{deflator[(cur, year)]:.6g} = {inflate:.6g}, then x {fx:.6g} "
                                f"{pair} ({TARGET_YEAR})",
                      "source-id": "; ".join([DEFLATOR_SOURCE.get(cur, DEFLATOR_DEFAULT)]
-                                            + ([exchange_source(TARGET_YEAR)] if cur != TARGET_CUR else []))})
+                                            + ([exchange_source(TARGET_YEAR)] if cur != TARGET_CUR else [])
+                                            + EXCHANGE_EXTRA.get(cur, []))})
     write(OUTPUT / "currency-conversion.csv",
           ["from-currency", "to-currency", "factor", "method", "source-id"], rows)
     return out, skipped
