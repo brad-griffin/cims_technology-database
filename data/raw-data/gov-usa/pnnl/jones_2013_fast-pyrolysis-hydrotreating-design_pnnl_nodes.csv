@@ -1,0 +1,7 @@
+process,technology,sector,end-use,process-step,service-unit
+"Whole plant, 2,205 dry ton/day woody biomass, base case (Exec. Summary Fig. ES-1; Sect. 4, Tables 1, 15, 16)",reactor_pyrolysis-oil,biofuels,material-conversion,whole-plant pyrolysis-oil upgrading to gasoline and diesel,gal
+"A100 fast pyrolysis and quench (Sect. 3.2, Tables 5, 6, 16)",reactor_fast-pyrolysis_fluidized-bed,biofuels,material-conversion,fast pyrolysis,t
+"A200 hydrotreating, stabilizer and two stages (Sect. 3.3, Tables 8, 9)",reactor_hydrotreating-bio-oil,biofuels,material-conversion,bio-oil hydrotreating,gal
+"A300 and A500 hydrocracking and product separation (Sect. 3.4, Tables 10, 11)",reactor_hydrocracking-product-separation,biofuels,material-conversion,hydrocracking and fractionation,gal
+"A600 hydrogen generation by steam reforming (Sect. 3.5, Tables 12, 16)",steam-reformer_methane-offgas-psa,biofuels,material-conversion,hydrogen generation,GJ
+"A700 balance of plant (Sect. 3.6, Table 16)",cooling-tower_balance-of-plant,biofuels,other-services,balance of plant,gal

@@ -1,0 +1,11 @@
+process,technology,sector,end-use,process-step,service-unit
+"Reference cement plant, 1 Mt clinker/yr greenfield in Sweden (Sect. 8.1-8.2, Tables 9-10, 15)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,t
+"Scenario Amine: post-combustion amine capture with electric boiler (Sect. 8.3, Tables 11-12, 15-16)",kiln_dry-precalciner_amine-scrubbing,cement,process-heat-high-temp,clinker-production,t
+"Scenario Amine: post-combustion amine capture with electric boiler (Sect. 8.3, Tables 11-12, 15-16)",capture-unit_amine,cement,co2-capture,co2-capture,t
+"Scenario Plasma: plasma-heated preheater/precalciner kiln (Sect. 6.1, 8.4, Tables 13-16)",kiln_dry-precalciner_plasma,cement,process-heat-high-temp,clinker-production,t
+"Electrical flow heater with hydrogen for calcination (Sect. 5.1.2, 6.1.3)",calciner_electric-flow-heater,cement,process-heat-high-temp,calcination,t
+"Electrical direct separation reactor with plasma-heated kiln (Sect. 5.2.2, 6.2)",calciner_direct-separation_electric,cement,process-heat-high-temp,clinker-production,t
+Electric resistance heating elements for calcination (Sect. 5.1.4),resistance-heater_calcination,cement,process-heat-high-temp,calcination,t
+"Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+"Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+Electrically heated fluidised-bed calcination (Sect. 5.2.4),calciner_fluidized-bed_electric,non-metallic-minerals,process-heat-high-temp,calcination,t

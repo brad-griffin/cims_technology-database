@@ -109,6 +109,17 @@ the unit archetypes inside them. A model uses one framing or the other, never bo
   and the component rows (example, case, and a multiplier where the denominators
   differ). The build writes the sum as a derived row (`tp-<source-id>-aNNN`) whose
   `derived-from` names every component row.
+- Capture plants by difference (2026-10-02). The same file, with `kind` =
+  `difference`, gives a capture plant's cost as the same source's plant WITH capture
+  less the same plant WITHOUT it; with `kind` = `rebase`, it puts a retrofit cost the
+  source gives per unit of host product per t CO2 captured. The multiplier is the
+  source's own captured CO2 (nameplate t/yr for capex and fixed O&M, actual t for
+  variable O&M); rows are `tp-<source-id>-dNNN` on the capture archetype. Pairs are
+  listed case against case by hand, never by archetype; the result covers capture,
+  compression and any host changes the source counts. Variable O&M is differenced
+  only where the source excludes fuel from it. Where the source prints only the
+  emissions with and without capture, avoided CO2 stands for captured CO2 (column
+  `assumption` = `avoided-co2-for-captured`, conversion class `assumption`).
 - Components are added only within one source, and a different denominator is
   reconciled only with that source's own factor. Components from different sources,
   different currency-years or an unreconciled unit stop the build.

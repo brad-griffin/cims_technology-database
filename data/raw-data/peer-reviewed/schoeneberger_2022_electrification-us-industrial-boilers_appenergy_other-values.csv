@@ -1,0 +1,10 @@
+process,technology,item,value,unit,reference,note
+"Conventional boiler efficiency, other fuels (Table 2)",,"conventional boiler efficiency, other fuels (still gas, waste gas, black liquor, biomass, byproducts)",70,%,"p.4, Table 2",Not loaded as a technology: mixed fuel class.
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_fuel-fired,"estimated number of conventional industrial boilers, US",38537,units,"p.4, Sect. 3.1","Reported inventory 18,954 units plus estimated non-reported; CHP boilers excluded."
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_fuel-fired,average installed capacity of natural gas boilers,30,MMBtu/hr,"p.5, Sect. 3.1",
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_fuel-fired,boiler fuel share: natural gas / coal / other fuels incl. biomass and byproducts,34 / 11 / 54,% of boiler fuel,p.1,Industrial boiler fuel use shares.
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_electric,"electrification potential, all boiler fuels replaced",729650,"thousand MWh (2,490 TBtu)","p.7, Sect. 3.2",Electricity needed by electric boilers to meet 2014 steam demand.
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_electric,"electrification potential, byproduct fuels excluded",447580,"thousand MWh (1,527 TBtu)","p.7, Sect. 3.2",
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_electric,"net GHG change from boiler electrification, current grid (all fuels; byproducts excluded)",+105; +73,MMmtCO2e/yr,"p.1, abstract; p.9",Under future high-renewables grid: -19; -7 MMmtCO2e.
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_electric,"fuel energy needed for electricity vs fuel avoided, current grid",4275 vs 3337,TBtu,"p.8, Sect. 3.3",
+Boiler stock and electrification potential (Sect. 3.1-3.3),boiler_electric,steam temperature or pressure required by industry,not given,,whole paper,The paper does not report steam temperatures/pressures by industry or electric-boiler or heat-pump capex/COP; heat pumps are out of scope (p.2: need waste heat; drop-in stand-alone boilers only).

@@ -1,0 +1,34 @@
+process,technology,sector,end-use,process-step,service-unit
+Compression (closed-cycle) heat pump (Sect. 3.3.2),heat-pump_industrial_compression,heat-supply,steam-and-hot-water,heat pump (compression),GJ
+Absorption heat pump (Sect. 3.3.2),heat-pump_industrial_absorption,heat-supply,steam-and-hot-water,heat pump (absorption),GJ
+"Mechanical vapour recompression (MVR), general (Sect. 3.3.2)",heat-pump_industrial_mechanical-vapour-recompression,heat-supply,steam-and-hot-water,mechanical vapour recompression,GJ
+"MVR at StoraEnso Nymolla sulphite mill, Sweden (Sect. 3.3.2 Examples)",heat-pump_industrial_mechanical-vapour-recompression,heat-supply,steam-and-hot-water,mechanical vapour recompression,GJ
+Lithium bromide absorption chillers in trigeneration (Sect. 3.4.2),chiller_absorption_single-stage,heat-supply,process-cooling,absorption chiller,GJ
+Lithium bromide absorption chillers in trigeneration (Sect. 3.4.2),chiller_absorption_two-stage,heat-supply,process-cooling,absorption chiller,GJ
+"CHP default power-to-heat ratios (Sect. 3.4.1, Table 3.20)",combustion-turbine_heat-recovery-steam-generator_combined-cycle,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP default power-to-heat ratios (Sect. 3.4.1, Table 3.20)",steam-turbine_back-pressure,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP default power-to-heat ratios (Sect. 3.4.1, Table 3.20)",steam-turbine_condensing_extraction,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP default power-to-heat ratios (Sect. 3.4.1, Table 3.20)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP default power-to-heat ratios (Sect. 3.4.1, Table 3.20)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP plant types, operating data (Sect. 3.4.1)",steam-turbine_back-pressure,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP plant types, operating data (Sect. 3.4.1)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,cogeneration,GJ
+"CHP plant types, operating data (Sect. 3.4.1)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration,GJ
+"Bindewald Kupfermuhle mill CHP, Germany (Annex 7.10.3)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration,GJ
+"Barajas Airport trigeneration plant, Madrid, Spain (Annex 7.10.4, Table 7.15)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,cogeneration with absorption cooling,GJ
+"Natural-gas steam boiler, flue-gas loss worked example, outdoor intake air (Sect. 3.1.1.1)",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Natural-gas steam boiler, flue-gas loss worked example, intake air from boiler-house ceiling (Sect. 3.1.1.1)",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Gas-fired 5 t/h, 20 barg steam boiler without economiser, worked example (Annex 7.10.1 Example 2)",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Gas-fired 5 t/h, 20 barg steam boiler with feed-water economiser, worked example (Annex 7.10.1 Example 2)",boiler_fuel-fired_economiser,heat-supply,steam-and-hot-water,boiler,GJ
+"Variable speed drives, no-saving case (Sect. 3.6.3)",motor_variable-speed,machine-drive,machine-drive,variable speed drive,GJ
+"Compressed air system, well managed, 7 bar nominal flow (Sect. 3.7 Economics)",compressor_air-system-management,machine-drive,machine-drive,compressed air,m3
+"Van Leer (UK) compressed air supply before leakage reduction, 1994 (Sect. 3.7.6)",compressor_air-system-management,machine-drive,machine-drive,compressed air,m3
+Fan efficiency in ventilation systems (Sect. 3.9.2.1),fan_high-efficiency,machine-drive,machine-drive,fans and ventilation,GJ
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",evaporator_multiple-effect_1-stage,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",evaporator_multiple-effect_2-stage,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",evaporator_multiple-effect_1-stage-thermocompression,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",evaporator_multiple-effect_3-stage,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",evaporator_multiple-effect_6-stage-thermocompression,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",vapour-recompressor_evaporation_1-stage,heat-supply,process-heat-low-temp,evaporation,t
+"Evaporator types and specific consumptions (Sect. 3.11.3.6, Table 3.29)",vapour-recompressor_evaporation_2-stage,heat-supply,process-heat-low-temp,evaporation,t
+Superheated-steam drying (Sect. 3.11.3.4),dryer_superheated-steam,heat-supply,process-heat-medium-temp,drying,t
+Superheated-steam drying (Sect. 3.11.3.4),dryer_superheated-steam_heat-recovery,heat-supply,process-heat-medium-temp,drying,t

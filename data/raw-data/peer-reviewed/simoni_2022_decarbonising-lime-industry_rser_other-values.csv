@@ -1,0 +1,19 @@
+process,technology,item,value,unit,reference,note
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-parallel-flow,"Number of PFRK units in the EU, 2013",158,units,"p.2, Sect. 2.1",Reprinted from ref 18.
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-calcination,Lime industry CO2 per t CaO (all kilns),1.0-1.8,t/t,"p.2, Sect. 1","Process chemistry 68%, fuel combustion 30%, electricity 2%; about 95% of the energy input goes to calcination; lime industry about 1% of global CO2."
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-parallel-flow,Optimal feed grain size,10-200,mm,"p.2, Table 2",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-long-rotary,Optimal feed grain size,2-60,mm,"p.2, Table 2",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-rotary-preheater,Optimal feed grain size,10-60,mm,"p.2, Table 2",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime_annular-shaft,Optimal feed grain size,40-150,mm,"p.2, Table 2",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime_mixed-feed-shaft,Optimal feed grain size,20-200,mm,"p.2, Table 2",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-long-rotary,"Thermal efficiency, text value",18-25,%,"p.3, Sect. 2.1",TRAP: the text says 18% < eta < 25% for the LRK while Table 2 prints 35-53%; Table 2 is loaded in the main file.
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-long-rotary,Kiln dimensions,"50-225 m long, 2-6 m diameter",,"p.3, Sect. 2.1",Inclination 1-4 degrees.
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-rotary-preheater,Rotary kiln length with preheater,40-90,m,"p.3, Sect. 2.1",
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_dry-precalciner,Share of fuel burned in the precalciner,~70,%,"p.4, Sect. 2.2",Cement preheater-precalciner; 40-95% of the raw feed can be decarbonised before the rotary kiln.
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime-calcination,Fuel share of lime production cost,~60,%,"p.11, Sect. 4.2",Fuel combustion is about one third of CO2 and 60% of production cost (ref 18).
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime-calcination,Calorific power of waste fuel: Municipal solid waste,10.5,MJ/kg,"p.11, Table 4",Heating-value basis not stated; organic fume 1-23 MJ/kg (gaseous).
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime-calcination,Calorific power of waste fuel: Sewage sludge,3.5,MJ/kg,"p.11, Table 4",Heating-value basis not stated; organic fume 1-23 MJ/kg (gaseous).
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime-calcination,Calorific power of waste fuel: Medical waste,13.9,MJ/kg,"p.11, Table 4",Heating-value basis not stated; organic fume 1-23 MJ/kg (gaseous).
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime-calcination,Calorific power of waste fuel: Industrial hazardous waste,13.9,MJ/kg,"p.11, Table 4",Heating-value basis not stated; organic fume 1-23 MJ/kg (gaseous).
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_molten-carbonate-fuel-cell,"MCFC capture, Table 3",31-76% capture; 0.4-1.2 GJ/tCO2; inlet 34 mol%,,"p.5, Table 3; p.9-10, Sect. 4.1.6","No CAC printed; single cell 23.9% captured at 1.21 GJ/tCO2; three cells in series 69.9% avoided at 0.9 GJ/tCO2 PRIMARY energy (Spinelli et al., cement). Not loaded: primary energy."
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",fuel-cell_solid-oxide,SOFC lime plus DAC poly-generation capital cost,~850,EUR/kW-chemical-input,"p.10, Sect. 4.1.6","Hanak and Manovic concept; price year not stated; concept study, no archetype."

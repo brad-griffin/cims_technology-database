@@ -1,0 +1,45 @@
+process,technology,sector,end-use,process-step,service-unit
+"Electric boilers fact sheet, 2023 column (Table 2, Sect. 3.1.1)",boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+"Electric boilers fact sheet, expected 2035 (Table 2, Sect. 3.1.1)",boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+"Heat pumps fact sheet, 2023 column (Table 3, Sect. 3.1.2)",heat-pump_industrial,heat-supply,process-heat-low-temp,heat pump,GJ
+"Heat pumps fact sheet, expected 2035 (Table 3, Sect. 3.1.2)",heat-pump_industrial,heat-supply,process-heat-low-temp,heat pump,GJ
+"Resistance heating fact sheet, 2023 column (Table 4, Sect. 3.1.3)",resistance-heater_industrial,heat-supply,process-heat-high-temp,furnace,GJ
+"Resistance heating fact sheet, expected 2035 (Table 4, Sect. 3.1.3)",resistance-heater_industrial,heat-supply,process-heat-high-temp,furnace,GJ
+"Induction heating fact sheet, 2023 column (Table 5, Sect. 3.1.4)",induction-heater_process,heat-supply,process-heat-high-temp,induction furnace,GJ
+"Induction heating fact sheet, expected 2035 (Table 5, Sect. 3.1.4)",induction-heater_process,heat-supply,process-heat-high-temp,induction furnace,GJ
+"Plasma torches fact sheet, 2023 column (Table 6, Sect. 3.1.5)",plasma-torch,heat-supply,process-heat-high-temp,plasma torch,GJ
+"Plasma torches fact sheet, expected 2035 (Table 6, Sect. 3.1.5)",plasma-torch,heat-supply,process-heat-high-temp,plasma torch,GJ
+"Electric arc furnaces fact sheet, 2023 column (Table 7, Sect. 3.1.6)",electric-arc-furnace,heat-supply,material-conversion,metal melting,t
+"Electric arc furnaces fact sheet, expected 2035 (Table 7, Sect. 3.1.6)",electric-arc-furnace,heat-supply,material-conversion,metal melting,t
+"Shock-wave heating fact sheet, 2023 column (Table 8, Sect. 3.1.7)",rotary-compression-heater_shock-wave,heat-supply,process-heat-high-temp,shock-wave heater,GJ
+"Shock-wave heating fact sheet, expected 2035 (Table 8, Sect. 3.1.7)",rotary-compression-heater_shock-wave,heat-supply,process-heat-high-temp,shock-wave heater,GJ
+"Combined thermal storage fact sheet, 2023 column (Table 9, Sect. 3.1.8)",thermal-storage_electric,heat-supply,process-heat-high-temp,thermal storage,GJ
+"Combined thermal storage fact sheet, expected 2035 (Table 9, Sect. 3.1.8)",thermal-storage_electric,heat-supply,process-heat-high-temp,thermal storage,GJ
+"Fuel-fired reference technologies (Table 14, Sect. 3.3)",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Fuel-fired reference technologies (Table 14, Sect. 3.3)",direct-heater_fired-process,heat-supply,process-heat-high-temp,furnace,GJ
+"Dielectric heating fact sheet (Table 10, Sect. 3.2)",microwave-heater_dielectric,other-industry,process-heat-low-temp,dielectric heater,GJ
+"Infrared heating fact sheet (Table 11, Sect. 3.2)",resistance-heater_infrared,other-industry,process-heat-low-temp,infrared heater,GJ
+Primary steel BF/BOF route (Sect. 4.1.1),blast-furnace_bof-route,iron-and-steel,material-conversion,steelmaking,t
+Hydrogen DRI route (Sect. 4.1.1),shaft-furnace_electrolytic-hydrogen,iron-and-steel,material-conversion,direct reduction,t
+"Secondary steel EAF, baseline (Sect. 4.1.1)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Secondary steel EAF, electrified gas burner (Sect. 4.1.1)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Steel rolling, flat products Germany (Sect. 4.1.1)",furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"Steel rolling, flat products Germany (Sect. 4.1.1)",annealing-furnace_continuous,iron-and-steel,process-heat-high-temp,heat treatment,t
+"Steel rolling, electrified (Sect. 4.1.1)",induction-heater_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"Steel rolling, electrified (Sect. 4.1.1)",annealing-furnace_continuous,iron-and-steel,process-heat-high-temp,heat treatment,t
+"Steam cracking, ethylene (Sect. 4.1.2)",steam-cracker_fired-tubular,chemicals,material-conversion,steam cracking,t
+"Steam cracking, electrified (Sect. 4.1.2)",steam-cracker_electric,chemicals,material-conversion,steam cracking,t
+Adipic acid (Sect. 4.1.2),reactor_adipic-acid,chemicals,material-conversion,adipic acid production,t
+Polycarbonates (Sect. 4.1.2),reactor_polycarbonate,chemicals,material-conversion,polycarbonate production,t
+Soda ash (Sect. 4.1.2),reactor_soda-ash,chemicals,material-conversion,soda production,t
+Carbon black (Sect. 4.1.2),reactor_carbon-black-furnace,chemicals,material-conversion,carbon black production,t
+"Ammonia synthesis gas, steam reforming (Sect. 4.1.2)",steam-reformer_ammonia,chemicals,material-conversion,synthesis gas production,t
+Container glass melting (Sect. 4.1.4),furnace_glass-container,non-metallic-minerals,process-heat-high-temp,glass melting,t
+Flat glass melting (Sect. 4.1.4),furnace_glass-flat,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Flat glass melting, 60-70 % electrified (Sect. 4.1.4)",furnace_glass-hybrid-electric,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Soft-burnt lime, parallel-flow regenerative kiln (Sect. 4.1.4)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Lime, long rotary kiln with or without preheater (Sect. 4.1.4)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+"Hard-burnt lime, shaft kilns (Sect. 4.1.4)",kiln_lime-shaft_hard-burnt,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Cement clinker (Sect. 4.1.4),kiln_dry-precalciner,non-metallic-minerals,process-heat-high-temp,clinker production,t
+Kraft pulp (Sect. 4.1.6),digester_continuous-kraft,pulp-and-paper,process-heat-low-temp,pulping,t
+Paper production (Sect. 4.1.6),paper-machine_fourdrinier-gap,pulp-and-paper,process-heat-low-temp,paper drying,t

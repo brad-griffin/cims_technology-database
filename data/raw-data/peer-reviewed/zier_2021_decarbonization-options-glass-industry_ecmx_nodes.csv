@@ -1,0 +1,17 @@
+process,technology,sector,end-use,process-step,service-unit
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_glass-regenerative_end-port,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_glass-regenerative_side-port,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_glass-recuperative,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_glass-oxy-fuel,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",melting-furnace_electric-melter,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_glass-hybrid-electric,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",furnace_hydrogen-fired_glass,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",microwave-heater_glass,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2)",plasma-torch_glass,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Model assumptions for electric melting and hydrogen firing (Sect. 6, Table B2)",melting-furnace_electric-melter,non-metallic-minerals,process-heat-high-temp,glass-melting,t
+"Waste heat recovery to the furnace (Sect. 4.1, Tables 7-8, 11)",preheater_glass-cullet,non-metallic-minerals,process-heat-high-temp,cullet-preheating,t
+"Waste heat recovery to the furnace (Sect. 4.1, Tables 7-8, 11)",preheater_glass-batch-cullet,non-metallic-minerals,process-heat-high-temp,cullet-preheating,t
+"Waste heat recovery to the furnace (Sect. 4.1, Tables 7-8, 11)",heat-recovery-unit_glass-thermochemical,non-metallic-minerals,process-heat-high-temp,heat-recovery,t
+"Heat-to-power from furnace waste heat (Sect. 4.1.4, Table 9)",steam-turbine_waste-heat_orc,non-metallic-minerals,power-generation,waste-heat-recovery,MWh
+"Heat-to-power from furnace waste heat (Sect. 4.1.4, Table 9)",steam-turbine_waste-heat,non-metallic-minerals,power-generation,waste-heat-recovery,MWh
+"Heat-to-power from furnace waste heat (Sect. 4.1.4, Table 9)",heat-recovery-unit_glass-thermoelectric,non-metallic-minerals,power-generation,waste-heat-recovery,MWh

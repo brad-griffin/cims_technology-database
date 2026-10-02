@@ -1,0 +1,8 @@
+process,technology,sector,end-use,process-step,service-unit
+"Corn dry-grind ethanol plant, 119 million kg/yr base case (Sect. 2-3, Tables 2-4)",fermenter_grain-dry-mill,biofuels,material-conversion,ethanol fermentation,t
+Grain handling and milling section (Table 3),mill_grain-handling-dry-grind,biofuels,material-conversion,grain milling,t
+Liquefaction and saccharification section (Table 3),reactor_liquefaction-saccharification-dry-grind,biofuels,material-conversion,starch conversion,t
+Fermentation section (Tables 2-3),fermenter_batch-dry-grind,biofuels,material-conversion,ethanol fermentation,t
+"Ethanol processing section: beer column, rectifier, stripper, molecular sieves (Tables 2-3)",distillation-column_beer-rectifier-stripper-sieve,biofuels,drying-and-separation,distillation and dehydration,t
+"Coproduct processing section: stillage centrifuge, evaporator, DDGS dryer, thermal oxidizer (Tables 2-3)",coproduct-section_dry-grind-stillage-dryer,biofuels,drying-and-separation,stillage processing and drying,t
+"DDGS dryer (Sect. 2.4, Table 2 unit 603U)",dryer_distillers-grain,biofuels,drying-and-separation,DDGS drying,t

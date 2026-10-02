@@ -1,0 +1,56 @@
+process,technology,sector,end-use,process-step,service-unit
+Iron and steel: Sinter (Table 1),sinter-plant_strand,iron-and-steel,material-conversion,agglomeration,t
+Iron and steel: Blast furnace (Table 1),blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+Iron and steel: Electric arc furnace (Table 1),electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+Iron and steel: Rolled steel (Table 1),rolling-mill_steel,iron-and-steel,process-heat-high-temp,rolling and finishing,t
+Iron and steel: Coke oven (Table 1),coke-oven_by-product,iron-and-steel,material-conversion,coke making,t
+Iron and steel: Smelting reduction (Table 1),smelting-vessel_smelting-reduction,iron-and-steel,material-conversion,ironmaking,t
+Iron and steel: Direct reduction (Table 1),shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Non-ferrous metals: Aluminium, primary (Table 1)",electrolysis-cell_aluminium-primary,non-ferrous-metals,electrochemical,primary smelting,t
+"Non-ferrous metals: Aluminium, secondary (Table 1)",melting-furnace_aluminium-secondary,non-ferrous-metals,process-heat-high-temp,remelting,t
+Non-ferrous metals: Aluminium extruding (Table 1),press_aluminium-extrusion,non-ferrous-metals,process-heat-high-temp,extrusion,t
+Non-ferrous metals: Aluminium foundries (Table 1),melting-furnace_aluminium-foundry,non-ferrous-metals,process-heat-high-temp,casting,t
+Non-ferrous metals: Aluminium rolling (Table 1),rolling-mill_aluminium,non-ferrous-metals,process-heat-high-temp,rolling,t
+"Non-ferrous metals: Copper, primary (Table 1)",smelting-vessel_copper-primary,non-ferrous-metals,process-heat-high-temp,primary smelting,t
+"Non-ferrous metals: Copper, secondary (Table 1)",melting-furnace_copper-secondary,non-ferrous-metals,process-heat-high-temp,remelting,t
+Non-ferrous metals: Copper further treatment (Table 1),furnace_copper-further-treatment,non-ferrous-metals,process-heat-high-temp,semi-finished products,t
+"Non-ferrous metals: Zinc, primary (Table 1)",electrolysis-cell_zinc-primary,non-ferrous-metals,electrochemical,primary smelting,t
+"Non-ferrous metals: Zinc, secondary (Table 1)",melting-furnace_zinc-secondary,non-ferrous-metals,process-heat-high-temp,remelting,t
+Pulp and paper: Paper (Table 1),paper-machine_fourdrinier-gap,pulp-and-paper,process-heat-low-temp,paper making,t
+Pulp and paper: Chemical pulp (Table 1),digester_chemical-pulp,pulp-and-paper,process-heat-low-temp,pulping,t
+Pulp and paper: Mechanical pulp (Table 1),pulper_mechanical,pulp-and-paper,process-heat-low-temp,pulping,t
+Pulp and paper: Recovered fibres (Table 1),pulper_recycled-fibre,pulp-and-paper,process-heat-low-temp,pulping,t
+Non-metallic minerals: Container glass (Table 1),furnace_glass-container,non-metallic-minerals,process-heat-high-temp,glass melting,t
+Non-metallic minerals: Flat glass (Table 1),furnace_glass-flat,non-metallic-minerals,process-heat-high-temp,glass melting,t
+Non-metallic minerals: Fibre glass (Table 1),furnace_glass-fibre,non-metallic-minerals,process-heat-high-temp,glass melting,t
+Non-metallic minerals: Other glass (Table 1),furnace_glass-other,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Non-metallic minerals: Houseware, sanitary ware (Table 1)",kiln_ceramic-houseware,non-metallic-minerals,process-heat-high-temp,firing,t
+"Non-metallic minerals: Technical, other ceramics (Table 1)",kiln_ceramic-technical,non-metallic-minerals,process-heat-high-temp,firing,t
+"Non-metallic minerals: Tiles, plates, refractories (Table 1)",kiln_tiles-refractories,non-metallic-minerals,process-heat-high-temp,firing,t
+Non-metallic minerals: Clinker calcination-dry (Table 1),kiln_dry-precalciner,non-metallic-minerals,process-heat-high-temp,clinker production,t
+Non-metallic minerals: Clinker calcination-semidry (Table 1),kiln_legacy_semi-dry,non-metallic-minerals,process-heat-high-temp,clinker production,t
+Non-metallic minerals: Clinker calcination-wet (Table 1),kiln_legacy_wet,non-metallic-minerals,process-heat-high-temp,clinker production,t
+Non-metallic minerals: Gypsum (Table 1),kiln_gypsum,non-metallic-minerals,process-heat-low-temp,calcining,t
+Non-metallic minerals: Bricks (Table 1),kiln_brick,non-metallic-minerals,process-heat-high-temp,firing,t
+Non-metallic minerals: Lime burning (Table 1),kiln_lime,non-metallic-minerals,process-heat-high-temp,lime calcining,t
+Basic chemicals: Adipic acid (Table 1),reactor_adipic-acid,chemicals,material-conversion,adipic acid production,t
+Basic chemicals: Ammonia (synthesis gas) (Table 1),steam-reformer_ammonia,chemicals,material-conversion,synthesis gas production,t
+Basic chemicals: Calcium carbide (Table 1),furnace_calcium-carbide,chemicals,material-conversion,carbide production,t
+Basic chemicals: Carbon black (Table 1),reactor_carbon-black-furnace,chemicals,material-conversion,carbon black production,t
+"Basic chemicals: Chlorine, diaphragm (Table 1)",electrolysis-cell_chlor-alkali-diaphragm,chemicals,electrochemical,chlorine production,t
+"Basic chemicals: Chlorine, membrane (Table 1)",electrolysis-cell_chlor-alkali-membrane,chemicals,electrochemical,chlorine production,t
+"Basic chemicals: Chlorine, mercury (Table 1)",electrolysis-cell_chlor-alkali-mercury,chemicals,electrochemical,chlorine production,t
+Basic chemicals: Ethylene (Table 1),steam-cracker_fired-tubular,chemicals,material-conversion,steam cracking,t
+Basic chemicals: Methanol (synthesis gas) (Table 1),reactor_syngas-methanol,chemicals,material-conversion,methanol synthesis,t
+Basic chemicals: Poly arbonate (Table 1),reactor_polycarbonate,chemicals,material-conversion,polycarbonate production,t
+Basic chemicals: Polyethylene (Table 1),reactor_polymerization-extrusion_polyethylene,chemicals,material-conversion,polymerization,t
+Basic chemicals: Polypropylene (Table 1),reactor_polymerization-extrusion_polypropylene,chemicals,material-conversion,polymerization,t
+Basic chemicals: Polysulfones (Table 1),reactor_polysulfone,chemicals,material-conversion,polymerization,t
+Basic chemicals: Soda ash (Table 1),reactor_soda-ash,chemicals,material-conversion,soda production,t
+Basic chemicals: TDI (Table 1),reactor_toluene-diisocyanate,chemicals,material-conversion,TDI production,t
+Basic chemicals: Titanium dioxide (Table 1),reactor_titanium-dioxide,chemicals,material-conversion,pigment production,t
+"Food, beverages and tobacco: Sugar (Table 1)",refinery_sugar-beet,food-and-beverage,process-heat-low-temp,sugar production,t
+"Food, beverages and tobacco: Dairy (Table 1)",process-improvement_dairy,food-and-beverage,process-heat-low-temp,dairy processing,t
+"Food, beverages and tobacco: Brewing (Table 1)",process-improvement_brewing,food-and-beverage,process-heat-low-temp,brewing,t
+"Food, beverages and tobacco: Meat processing (Table 1)",process-improvement_meat-processing,food-and-beverage,process-heat-low-temp,meat processing,t
+"Food, beverages and tobacco: Bread and bakery (Table 1)",oven_bakery,food-and-beverage,process-heat-low-temp,baking,t

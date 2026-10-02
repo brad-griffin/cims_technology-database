@@ -1,0 +1,16 @@
+process,technology,sector,end-use,process-step,service-unit
+"Case 1: SMR without CO2 capture, 483,014 kg H2/day (Sect. 3.4-3.7)",steam-reformer_methane,hydrogen,material-conversion,reforming,kg
+"Case 2: SMR with CO2 capture, 483,007 kg H2/day (Sect. 3.8-3.11)",steam-reformer_methane_ccs-concentrated,hydrogen,material-conversion,reforming,kg
+"Case 3: ATR with CO2 capture, 659,999 kg H2/day (Sect. 3.12-3.15)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,reforming,kg
+"Case 4: Shell coal gasification without CO2 capture, 659,947 kg H2/day (Sect. 4.4-4.8)",gasifier_coal-petroleum-coke,hydrogen,material-conversion,gasification,kg
+"Case 5: Shell coal gasification with CO2 capture, 660,004 kg H2/day (Sect. 4.9-4.13)",gasifier_ccs-concentrated,hydrogen,material-conversion,gasification,kg
+"Case 6: Shell coal/biomass co-gasification with CO2 capture, 132,746 kg H2/day (Sect. 4.14-4.18)",gasifier_ccs-concentrated,hydrogen,material-conversion,gasification,kg
+"Case 2 capture and compression accounts (Exhibit 3-31, pp.96-97)",capture-unit_amine,co2-capture,co2-capture,capture,kg
+"Case 2 capture and compression accounts (Exhibit 3-31, pp.96-97)",capture-unit_chemical-solvent,co2-capture,co2-capture,capture,kg
+"Case 2 capture and compression accounts (Exhibit 3-31, pp.96-97)",compressor_co2-dehydration,co2-capture,co2-capture,CO2 conditioning (compression and drying),kg
+"Case 3 capture and compression accounts (Exhibit 3-46, pp.118-119)",capture-unit_chemical-solvent,co2-capture,co2-capture,capture,kg
+"Case 3 capture and compression accounts (Exhibit 3-46, pp.118-119)",compressor_co2-dehydration,co2-capture,co2-capture,CO2 conditioning (compression and drying),kg
+"Case 5 capture and compression accounts (Exhibit 4-48, p.222)",capture-unit_physical-solvent,co2-capture,co2-capture,capture,kg
+"Case 5 capture and compression accounts (Exhibit 4-48, p.222)",compressor_co2-dehydration,co2-capture,co2-capture,CO2 conditioning (compression and drying),kg
+"Case 6 capture and compression accounts (Exhibit 4-64, p.252)",capture-unit_physical-solvent,co2-capture,co2-capture,capture,kg
+"Case 6 capture and compression accounts (Exhibit 4-64, p.252)",compressor_co2-dehydration,co2-capture,co2-capture,CO2 conditioning (compression and drying),kg

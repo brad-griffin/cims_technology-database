@@ -1,0 +1,19 @@
+process,technology,sector,end-use,process-step,service-unit
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-parallel-flow,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime_annular-shaft,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+"Lime kiln types, EU-27 (Sect. 2.1, Table 2)",kiln_lime_mixed-feed-shaft,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+Quicklime slaking (Sect. 3),reactor_lime-hydrator,non-metallic-minerals,material-conversion,lime-hydration,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",kiln_lime-oxy-fuel,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_amine,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_solid-sorbent,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_membrane,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_adsorption-rotary,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_calcium-looping-integrated,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_calcium-looping-tail-end,non-metallic-minerals,co2-capture,co2-capture,t
+"CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3)",capture-unit_amine_aker-acc,non-metallic-minerals,co2-capture,co2-capture,t
+"Direct Separation reactor, LEILAC (Sect. 4.1.4)",calciner_indirect,cement,process-heat-high-temp,calcination,t
+Alternative fuels and heat sources for lime kilns (Sect. 4.2),kiln_lime_solar,non-metallic-minerals,process-heat-high-temp,lime-calcination,t
+Calcination-free routes to slaked lime (Sect. 4.3),reactor_lime-hydroxide-naoh,non-metallic-minerals,material-conversion,lime-hydration,t
+Calcination-free routes to slaked lime (Sect. 4.3),reactor_lime-hydroxide-electrochemical,non-metallic-minerals,material-conversion,lime-hydration,t

@@ -1,0 +1,53 @@
+process,technology,sector,end-use,process-step,service-unit
+"Technology assumption table (App. 7.2, pp.65-66): Large Biomass Steam Boiler",boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Small Biomass Steam Boiler",boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Direct Biomass Combustion",kiln_cement-biomass-firing,cement,process-heat-high-temp,clinker-production,t
+"Technology assumption table (App. 7.2, pp.65-66): Biomass Combustion + O2 enrichment",kiln_cement-biomass-oxygen-enrichment,cement,process-heat-high-temp,clinker-production,t
+"Technology assumption table (App. 7.2, pp.65-66): Direct Biomass Reductant",blast-furnace_biomass-reductant,iron-and-steel,material-conversion,ironmaking,t
+"Technology assumption table (App. 7.2, pp.65-66): Electric Steam Boiler (small)",boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Electrode Steam Boiler (large)",boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Electric Process Heater",direct-heater_electric-process,heat-supply,process-heat-medium-temp,process-heater,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Electric Ceramic Tunnel Kilns",kiln_ceramic-electric,non-metallic-minerals,process-heat-high-temp,firing,t
+"Technology assumption table (App. 7.2, pp.65-66): Electric Infra-Red Heaters",microwave-heater_infrared,heat-supply,process-heat-low-temp,direct-heating,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Electric Plasma Gas Heaters",plasma-torch,heat-supply,process-heat-high-temp,direct-heating,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Microwave Heaters",microwave-heater_microwave,heat-supply,process-heat-low-temp,drying,GJ
+"Technology assumption table (App. 7.2, pp.65-66): OL Heat Pump (MVR)",heat-pump_industrial,heat-supply,process-heat-low-temp,low-pressure-steam,GJ
+"Technology assumption table (App. 7.2, pp.65-66): CL Heat Pump",heat-pump_industrial,heat-supply,process-heat-low-temp,low-temperature-heat,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Electric glass furnace",melting-furnace_electric-melter,non-metallic-minerals,material-conversion,glass-melting,t
+"Technology assumption table (App. 7.2, pp.65-66): H2 for Direct Reduction",shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Technology assumption table (App. 7.2, pp.65-66): 100% H2 Fuel Boilers",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): 100% H2 Fuel Heaters",furnace_hydrogen-fired,heat-supply,process-heat-high-temp,direct-heating,GJ
+"Technology assumption table (App. 7.2, pp.65-66): H2 fired kiln",kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,t
+"Technology assumption table (App. 7.2, pp.65-66): Natural gas fired furnace",direct-heater_fired-process,heat-supply,process-heat-high-temp,direct-heating,GJ
+"Technology assumption table (App. 7.2, pp.65-66): Natural gas boiler",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+"Technology assumption table (App. 7.2, pp.65-66): 40 alternative, 60 coal/petcoke fired kiln",kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,t
+"Technology assumption table (App. 7.2, pp.65-66): Natural gas fired kiln",kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,t
+Technology data sheet (App. 7.3): Large biomass boiler,boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): Counterfactual natural gas steam boiler (large biomass boiler sheet),boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): Small biomass boiler,boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): Direct biomass combustion (cement kiln),kiln_cement-biomass-firing,cement,process-heat-high-temp,clinker-production,t
+Technology data sheet (App. 7.3): Counterfactual cement rotary kiln (direct biomass sheet),kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,t
+Technology data sheet (App. 7.3): Direct biomass combustion with O2 enrichment (cement kiln),kiln_cement-biomass-oxygen-enrichment,cement,process-heat-high-temp,clinker-production,t
+Technology data sheet (App. 7.3): Biomass gasification to renewable gas and green coke,gasifier_biomass-renewable-gas,heat-supply,fuel-conversion,gasification,GJ
+"Technology data sheet (App. 7.3): Biomass as ironmaking reductant (bio-coal, green coke, subcoal)",blast-furnace_biomass-reductant,iron-and-steel,material-conversion,ironmaking,t
+Technology data sheet (App. 7.3): Counterfactual coke plant (biomass reductant sheet),coke-oven_by-product,iron-and-steel,material-conversion,cokemaking,t
+Technology data sheet (App. 7.3): Electric steam boiler (small),boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): Electrode steam boiler (large),boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): Electric heaters (process heaters),direct-heater_electric-process,heat-supply,process-heat-medium-temp,process-heater,GJ
+Technology data sheet (App. 7.3): Counterfactual natural gas fired furnace (electric heater sheet),direct-heater_fired-process,heat-supply,process-heat-high-temp,direct-heating,GJ
+Technology data sheet (App. 7.3): Large-scale electric ceramic tunnel kiln,kiln_ceramic-electric,non-metallic-minerals,process-heat-high-temp,firing,t
+Technology data sheet (App. 7.3): Counterfactual natural gas fired ceramic tunnel kiln (electric kiln sheet),kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,t
+Technology data sheet (App. 7.3): Electric infra-red heater,microwave-heater_infrared,heat-supply,process-heat-low-temp,direct-heating,GJ
+Technology data sheet (App. 7.3): Plasma gas technology,plasma-torch,heat-supply,process-heat-high-temp,direct-heating,GJ
+Technology data sheet (App. 7.3): Microwave heater,microwave-heater_microwave,heat-supply,process-heat-low-temp,drying,GJ
+Technology data sheet (App. 7.3): Microwave assisted gas fired (MAGF) kiln,kiln_ceramic-microwave-assisted-gas,non-metallic-minerals,process-heat-high-temp,firing,t
+Technology data sheet (App. 7.3): Open-loop high-temperature heat pump (MVR),heat-pump_industrial,heat-supply,process-heat-low-temp,low-pressure-steam,GJ
+Technology data sheet (App. 7.3): Closed-loop high-temperature heat pump,heat-pump_industrial,heat-supply,process-heat-low-temp,low-temperature-heat,GJ
+Technology data sheet (App. 7.3): All-electric glass furnace,melting-furnace_electric-melter,non-metallic-minerals,material-conversion,glass-melting,t
+Technology data sheet (App. 7.3): Counterfactual natural gas fired glass furnace (all-electric furnace sheet),furnace_glass-regenerative,non-metallic-minerals,material-conversion,glass-melting,t
+Technology data sheet (App. 7.3): 100% hydrogen boiler (steam),boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+Technology data sheet (App. 7.3): 100% hydrogen heater (furnace),furnace_hydrogen-fired,heat-supply,process-heat-high-temp,direct-heating,GJ
+Technology data sheet (App. 7.3): Hydrogen as ironmaking reductant,blast-furnace_hydrogen-reductant,iron-and-steel,material-conversion,ironmaking,t
+Technology data sheet (App. 7.3): Counterfactual coal use in blast furnace (hydrogen reductant sheet),blast-furnace,iron-and-steel,material-conversion,ironmaking,t
+Technology data sheet (App. 7.3): HYBRIT (hydrogen direct reduction of pig iron),shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+Technology data sheet (App. 7.3): Counterfactual BF/BOF route from pig iron (HYBRIT sheet),blast-furnace,iron-and-steel,material-conversion,ironmaking,t

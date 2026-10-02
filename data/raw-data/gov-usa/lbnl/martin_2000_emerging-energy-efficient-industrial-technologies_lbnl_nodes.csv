@@ -1,0 +1,84 @@
+process,technology,sector,end-use,process-step,service-unit
+Food-1: Electron Beam Pasteurization (data table),pasteurizer_electron-beam,food-and-beverage,process-heat-low-temp,pasteurization,t
+"Food-1: Electron Beam Pasteurization (data table, reference technology)",pasteurizer_thermal-milk,food-and-beverage,process-heat-low-temp,pasteurization,t
+Food-2: Heat Recovery Applications in the Food Industry (data table),heat-recovery-unit_dryer-exhaust,food-and-beverage,process-heat-low-temp,heat recovery,GJ
+Food-3: Membranes (data table),separator_membrane-food,food-and-beverage,drying-and-separation,membrane separation,GJ
+Food-4: Cooling and Storage Systems (data table),chiller_high-efficiency,food-and-beverage,refrigeration-and-cooling,cooling and storage,GJ
+Textile-1: Ultrasonic Dying (data table),process-improvement_ultrasonic-dyeing,other-industry,process-heat-low-temp,dyeing,sq.yd
+Paper-1: Black liquor gasification (data table),gasifier_black-liquor_combined-cycle,pulp-and-paper,steam-and-hot-water,chemical recovery,t
+"Paper-1: Black liquor gasification (data table, reference technology)",boiler_recovery,pulp-and-paper,steam-and-hot-water,chemical recovery,t
+Paper-2: Condebelt drying (data table),dryer_condensing-belt,pulp-and-paper,process-heat-low-temp,paper drying,t
+"Paper-2: Condebelt drying (data table, reference technology)",dryer_steam-heated,pulp-and-paper,process-heat-low-temp,paper drying,t
+Paper-3: Direct electrolytic causticizing (data table),reactor_electrolytic-causticizing,pulp-and-paper,process-heat-high-temp,causticizing,t
+"Paper-3: Direct electrolytic causticizing (data table, reference technology)",kiln_lime-rotary,pulp-and-paper,process-heat-high-temp,causticizing,t
+Paper-4: Dry sheet forming (data table),paper-machine_dry-sheet-forming,pulp-and-paper,process-heat-low-temp,paper forming and drying,t
+"Paper-4: Dry sheet forming (data table, reference technology)",dryer_steam-heated,pulp-and-paper,process-heat-low-temp,paper forming and drying,t
+Paper-5: Heat Recovery Paper (Enclosing hood) (data table),heat-recovery-unit_drying-hood,pulp-and-paper,process-heat-low-temp,paper drying,t
+"Paper-5: Heat Recovery Paper (Enclosing hood) (data table, reference technology)",dryer_steam-heated,pulp-and-paper,process-heat-low-temp,paper drying,t
+Paper-6: High Consistency forming (data table),paper-machine_high-consistency-forming,pulp-and-paper,process-heat-low-temp,paper forming,t
+"Paper-6: High Consistency forming (data table, reference technology)",paper-machine_fourdrinier-gap,pulp-and-paper,process-heat-low-temp,paper forming,t
+Paper-7: Impulse drying (data table),press_impulse-drying,pulp-and-paper,process-heat-low-temp,paper drying,t
+"Paper-7: Impulse drying (data table, reference technology)",dryer_steam-heated,pulp-and-paper,process-heat-low-temp,paper drying,t
+Chem-1: Clean Fractionation (data table),separator_clean-fractionation,chemicals,material-conversion,fractionation,t
+"Chem-1: Clean Fractionation (data table, reference technology)",reactor_glycol-hydration,chemicals,material-conversion,fractionation,t
+Chem-2: Gas Membrane Technologies (data table),separator_gas-membrane,chemicals,drying-and-separation,azeotrope separation,t
+"Chem-2: Gas Membrane Technologies (data table, reference technology)",distillation-column_azeotropic-extraction,chemicals,drying-and-separation,azeotrope separation,t
+Chem-3: Heat Exchangers for the Chemical Industry (data table),heat-exchanger_harsh-environment,chemicals,process-heat-low-temp,heat recovery,GJ
+Chem-4: Levulinic Acid from Biomass (biofine) (data table),reactor_levulinic-acid,chemicals,material-conversion,levulinic acid production,t
+"Chem-4: Levulinic Acid from Biomass (biofine) (data table, reference technology)",reactor_acid-dehydration,chemicals,material-conversion,levulinic acid production,t
+Chem-5: Liquid Membrane Technologies (data table),separator_liquid-membrane,chemicals,drying-and-separation,azeotrope separation,t
+"Chem-5: Liquid Membrane Technologies (data table, reference technology)",distillation-column_azeotropic-extraction,chemicals,drying-and-separation,azeotrope separation,t
+Chem-6: New Catalysts (data table),reactor_catalytic-pyrolysis,chemicals,material-conversion,hydrocarbon pyrolysis,t
+"Chem-6: New Catalysts (data table, reference technology)",steam-cracker_fired-tubular,chemicals,material-conversion,hydrocarbon pyrolysis,t
+Chemicals-7: Autothermal Reforming (data table),autothermal-reformer_ammonia,chemicals,material-conversion,synthesis gas production,t
+"Chemicals-7: Autothermal Reforming (data table, reference technology)",steam-reformer_ammonia,chemicals,material-conversion,synthesis gas production,t
+Chem-8: Plastics recovery (data table),reactor_plastics-recovery,chemicals,material-conversion,plastics recovery,t
+"Chem-8: Plastics recovery (data table, reference technology)",reactor_plastics-manufacture,chemicals,material-conversion,plastics recovery,t
+Refin-1: Biodesulfurization of Gasoline (data table),reactor_biodesulfurization,petroleum-refining,material-conversion,desulfurization,bbl
+"Refin-1: Biodesulfurization of Gasoline (data table, reference technology)",reactor_hydroprocessing,petroleum-refining,material-conversion,desulfurization,bbl
+Refin-2: Fouling Minimization (data table),process-improvement_fouling-minimization,petroleum-refining,process-heat-high-temp,preheat train,bbl
+Ceramics-1: Roller Kiln (data table),kiln_roller,non-metallic-minerals,process-heat-high-temp,ceramic firing,t
+"Ceramics-1: Roller Kiln (data table, reference technology)",kiln_tunnel,non-metallic-minerals,process-heat-high-temp,ceramic firing,t
+Glass-1: 100% Recycled Cullet Feed and Cullet Preheating (data table),furnace_glass-container_cullet-preheat,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Glass-1: 100% Recycled Cullet Feed and Cullet Preheating (data table, reference technology)",furnace_glass-container,non-metallic-minerals,process-heat-high-temp,glass melting,t
+Steel-1: BOF gas and sensible heat recovery (data table),basic-oxygen-furnace_gas-recovery,iron-and-steel,material-conversion,steelmaking,t
+"Steel-1: BOF gas and sensible heat recovery (data table, reference technology)",basic-oxygen-furnace,iron-and-steel,material-conversion,steelmaking,t
+Steel-2: Near net shape casting/strip casting (data table),caster_strip,iron-and-steel,process-heat-high-temp,casting and rolling,t
+"Steel-2: Near net shape casting/strip casting (data table, reference technology)",caster_continuous_hot-rolling,iron-and-steel,process-heat-high-temp,casting and rolling,t
+Steel-3: New EAF furnace processes (data table),electric-arc-furnace_advanced,iron-and-steel,material-conversion,steelmaking,t
+"Steel-3: New EAF furnace processes (data table, reference technology)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+Steel-4: Oxy-Fuel Burners in Reheating Furnaces (data table),furnace_reheating_oxy-fuel,iron-and-steel,process-heat-high-temp,reheating,t
+"Steel-4: Oxy-Fuel Burners in Reheating Furnaces (data table, reference technology)",furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+Steel-5: Smelting reduction processes (data table),smelting-vessel_two-stage,iron-and-steel,material-conversion,ironmaking,t
+"Steel-5: Smelting reduction processes (data table, reference technology)",blast-furnace_bf-route,iron-and-steel,material-conversion,ironmaking,t
+Alum-1: Advanced forming/near net shape technology (data table),caster_thin-strip-aluminium,non-ferrous-metals,process-heat-high-temp,casting and rolling,t
+"Alum-1: Advanced forming/near net shape technology (data table, reference technology)",rolling-mill_vdc-ingot-casting,non-ferrous-metals,process-heat-high-temp,casting and rolling,t
+Alum-2: Efficient cell retrofit designs (data table),electrolysis-cell_prebaked-anode_retrofit,non-ferrous-metals,electrochemical,primary smelting,t
+"Alum-2: Efficient cell retrofit designs (data table, reference technology)",electrolysis-cell_hall-heroult,non-ferrous-metals,electrochemical,primary smelting,t
+Alum-3: Improved recycling technologies (data table),furnace_secondary-aluminium-recycling,non-ferrous-metals,process-heat-high-temp,remelting,t
+"Alum-3: Improved recycling technologies (data table, reference technology)",furnace_secondary-aluminium,non-ferrous-metals,process-heat-high-temp,remelting,t
+Alum-4: inert anodes/wetted cathodes (data table),electrolysis-cell_inert-anode,non-ferrous-metals,electrochemical,primary smelting,t
+"Alum-4: inert anodes/wetted cathodes (data table, reference technology)",electrolysis-cell_hall-heroult,non-ferrous-metals,electrochemical,primary smelting,t
+Electron-1: Continuous Melt Silicon Crystal growth (data table),furnace_silicon-crystal-growth,other-industry,process-heat-high-temp,crystal growth,t
+"Electron-1: Continuous Melt Silicon Crystal growth (data table, reference technology)",furnace_czochralski,other-industry,process-heat-high-temp,crystal growth,t
+Motorsys-1: Advanced ASD Designs (data table),motor_soft-switching-inverter,all-industry,machine-drive,motor drive,GJ
+Motorsys-2: Advanced compressor controls (data table),compressor_advanced-controls,all-industry,machine-drive,compressed air,GJ
+Motorsys-3: Compressed air system management (data table),compressor_air-system-management,all-industry,machine-drive,compressed air,GJ
+Motorsys-4: Motor diagnostics (data table),motor_diagnostics,all-industry,machine-drive,motor diagnostics,GJ
+Motorsys-5: Motor system optimization (data table),fan_motor-system-optimization,all-industry,machine-drive,fan system,GJ
+Motorsys-6: Pump efficiency improvement (data table),pump_optimization,all-industry,machine-drive,pump system,GJ
+Motorsys-7: Switched reluctance motor (data table),motor_switched-reluctance,all-industry,machine-drive,motor drive,GJ
+Motorsys-8: Advanced lubricants (data table),compressor_premium-lubricant,all-industry,machine-drive,compressed air,GJ
+Utility-1: Advanced CHP Turbines (data table),combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,combined heat and power,GJ
+Utility-2: Advanced Reciprocating Engines (data table),reciprocating-engine_chp,heat-supply,steam-and-hot-water,combined heat and power,GJ
+Utilities-3: Fuel cells (data table),fuel-cell_chp,heat-supply,steam-and-hot-water,combined heat and power,GJ
+Utilities-4: Microturbines (data table),microturbine_chp,heat-supply,steam-and-hot-water,combined heat and power,GJ
+Lighting-1: Advanced lighting technologies (data table),lighting_fluorescent-hid,all-industry,lighting,lighting,GJ
+Lighting-2: Advanced lighting design (data table),lighting_advanced-design,all-industry,lighting,lighting,GJ
+Hvac-1: Hi-tech facilities HVAC (data table),ventilation-unit_hi-tech-hvac,all-industry,space-conditioning,hvac,GJ
+Other-1: Anaerobic wastewater treatment (data table),anaerobic-digester_effluent,all-industry,other-services,wastewater treatment,GJ
+Other-2: High-Efficiency Low-NOx Burners (data table),burner_high-efficiency-low-nox,all-industry,process-heat-high-temp,burners,GJ
+Other-3: Membranes for Wastewater Treatment and Recovery (data table),separator_membrane-wastewater,all-industry,other-services,wastewater treatment,GJ
+Other-4: Process Integration (pinch analysis) (data table),process-improvement_pinch-analysis,all-industry,process-heat-low-temp,process integration,GJ
+Other-5: Process Controls and Sensors (data table),management-system_process-control,all-industry,process-heat-low-temp,process control,GJ
+Mining-1: Variable Wall Mining Machine (data table),mine_underground-coal_variable-wall,mining,material-conversion,coal cutting,t

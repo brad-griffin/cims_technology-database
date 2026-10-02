@@ -359,6 +359,10 @@ def normalise(facts, examples, records, units) -> None:
         bf = convert.basis_factor(exf) if per_product else None
         species_ok = a.get("product", "").lower().startswith("t co2") or "CO2" in tgt
         used = []
+        if r.get("assume"):
+            # a derived row resting on a stated assumption (assembly.py `assumption`
+            # column, e.g. avoided CO2 taken for captured CO2): graded `assumption`
+            used.append("assume:" + r["assume"])
         if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")):
             # an emission factor per GJ of FUEL; the archetype's basis is per GJ
             # of OUTPUT, and the two differ by the efficiency (D13): the

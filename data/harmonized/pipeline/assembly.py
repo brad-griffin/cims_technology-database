@@ -24,6 +24,27 @@ archetype. Where that example already reports the total (`check-case` names its
 row), the assembled row is a consistency check: it is marked a duplicate of the
 reported row and not pooled, and the difference is reported. Otherwise a new
 example `<source-id>:<archetype>@assembly-<assembly-id>` is created.
+
+A component may carry a fourth field of row filters, `key=value & key=value`
+(for example `unit=2018_USD-million/yr & target=retrofit`), where an example
+holds several rows of the parameter.
+
+The `kind` column (added 2026-10-02) widens the same machinery:
+
+  * assembly    (default) the sum of a source's component costs, as above;
+  * difference  a capture plant's cost by difference: the same source's plant
+                WITH capture (multiplier +k) less the same plant WITHOUT it
+                (multiplier -k), where k puts the difference per t CO2 captured
+                with the source's own captured CO2 (modeller, 2026-10-02);
+  * rebase      one cost the source gives per unit of the host's product, put per
+                t CO2 captured with the source's own captured CO2 per unit.
+
+An `assumption` column names an assumption the row rests on (for example
+`avoided-co2-for-captured`, where the source prints only the emissions with and
+without capture); normalise.py then grades the row's conversion class
+`assumption`. Both kinds are written as tp-<source-id>-dNNN rows on a capture archetype. The difference
+holds the capture plant plus compression, utilities and any host changes the
+source counts; pairs are listed by hand, case against case, never by archetype.
 """
 from __future__ import annotations
 
@@ -34,10 +55,20 @@ from .common import REFERENCE, currency_year, fnum, read, split_list
 FILE = REFERENCE / "whole-plant-assembly.csv"
 
 
-def _pick(facts, eid, param, case):
+def _filters(spec):
+    out = {}
+    for part in (spec or "").split("&"):
+        if "=" in part:
+            k, v = part.split("=", 1)
+            out[k.strip()] = v.strip()
+    return out
+
+
+def _pick(facts, eid, param, case, filt=None):
     rows = [r for r in facts if r["example-id"] == eid and r["parameter"] == param
             and r.get("value-type") != "derived"
-            and (not case or (r.get("note") or "").startswith(f"[{case}]"))]
+            and (not case or (r.get("note") or "").startswith(f"[{case}]"))
+            and all((r.get(k) or "") == v for k, v in (filt or {}).items())]
     return rows
 
 
@@ -51,8 +82,8 @@ def derive(loader) -> dict:
                                         a["parameter"], a["unit"])
         parts = []
         for spec in split_list(a["components"]):
-            eid, case, mult = ([x.strip() for x in spec.split("|")] + ["", ""])[:3]
-            rows = _pick(loader.facts, eid, param, case)
+            eid, case, mult, filt = ([x.strip() for x in spec.split("|")] + ["", "", ""])[:4]
+            rows = _pick(loader.facts, eid, param, case, _filters(filt))
             if len(rows) != 1:
                 errors.append(f"{aid}: component {eid} [{case}] {param} matches {len(rows)} rows")
                 continue
@@ -94,22 +125,36 @@ def derive(loader) -> dict:
         elif ex.get("archetype") != arch:
             errors.append(f"{aid}: whole-example {eid} is mapped to {ex.get('archetype')!r}, not {arch}")
             continue
-        seq[sid] += 1
+        kind = (a.get("kind") or "assembly").strip()
+        if kind not in ("assembly", "difference", "rebase"):
+            errors.append(f"{aid}: unknown kind {kind!r}")
+            continue
+        tag = "a" if kind == "assembly" else "d"
+        seq[(sid, tag)] += 1
         first = parts[0][0]
         formula = " + ".join(f"{r['record-id']}" + ("" if m == 1.0 else f" x {m:g}") for r, m in parts)
         row = dict(first, **{
-            "record-id": f"tp-{sid}-a{seq[sid]:03d}", "example-id": eid, "archetype": arch,
+            "record-id": f"tp-{sid}-{tag}{seq[(sid, tag)]:03d}", "example-id": eid, "archetype": arch,
             "source-technology": ex["source-technology"], "unit": unit, "currency": currency_year(unit),
             "value": value, "value-min": lo, "value-max": hi,
             "uncertainty-type": "reported-range" if (lo or hi) else "",
-            "value-type": "derived", "formula": formula, "derived-kind": "assembly",
+            "value-type": "derived", "formula": formula, "derived-kind": kind,
             "derived-from": "; ".join(r["record-id"] for r, _ in parts),
             "cost-basis": a.get("cost-basis") or first.get("cost-basis", ""),
             "source-locator": "; ".join(r.get("source-locator", "") for r, _ in parts),
             "whole-plant": "", "set-aside": "",
-            "note": (f"ASSEMBLED ({aid}): the sum of this source's own component costs, "
-                     f"{formula}. " + (f"Factor: {a['factor-locator']}. " if a.get("factor-locator") else "")
+            "note": ({"assembly": f"ASSEMBLED ({aid}): the sum of this source's own component costs, ",
+                      "difference": f"CAPTURE COST BY DIFFERENCE ({aid}): the same source's plant with "
+                                    "capture less the same plant without it, per t CO2 captured, ",
+                      "rebase": f"CAPTURE COST REBASED ({aid}): the source's cost per unit of the "
+                                "host's product, put per t CO2 captured, "}[kind]
+                     + f"{formula}. " + (f"Factor: {a['factor-locator']}. " if a.get("factor-locator") else "")
                      + (a.get("note") or ""))})
+        row["assume"] = (a.get("assumption") or "").strip()
+        if row["assume"]:
+            row["note"] = f"ASSUMPTION ({row['assume']}). " + row["note"]
+        if kind != "assembly":
+            row["target"] = ""      # a with-capture row's case label is not the capture plant's
         if a.get("check-case"):
             rep = _pick(loader.facts, eid, param, a["check-case"])
             if len(rep) != 1:

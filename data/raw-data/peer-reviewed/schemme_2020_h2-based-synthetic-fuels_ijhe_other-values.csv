@@ -1,0 +1,45 @@
+process,technology,item,value,unit,reference,note
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Efficiency of PEM electrolysis (LHV) assumed upstream,70,%,"p.6, Table 1",H2 supply is outside the synthesis plant boundary
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Energy for CO2 sequestration,1.2,MJel/kg CO2,"p.6, Table 1",
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),"Cost of H2, base case",4.6,EUR/kg H2,"p.6, Table 1",range 3-6 EUR/kg in sensitivity (Table 2)
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),"Cost of CO2, base case",70,EUR/t CO2,"p.6, Table 1",range 20-170 EUR/t
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Cost of saturated steam,32,EUR/t,"p.6, Table 1","high-, medium-, low-pressure steam 0.0187, 0.0158, 0.0146 EUR/MJ"
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Cost of operating electricity,0.0976,EUR/kWh,"p.6, Table 1",
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Interest rate,8,%,"p.6, Table 1",
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Plant lifespan,20,a,"p.6, Table 1",
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Operating hours,8000,h/a,"p.6, Table 1",
+"Assumptions and boundary conditions (Table 1, p.6)",(all routes),Currency conversion,1.21,USD/EUR,"p.6, Table 1",the paper reports EUR only; no price year stated
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),"Share of H2 cost in manufacturing cost, methanol",82.8,%,p.16,highest H2 share
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),"Share of H2 cost in manufacturing cost, OME3-5 route C",58.1,%,p.16,lowest H2 share
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),Methanol cost range from sensitivity limits,1.15-2.71,EUR/lDE,p.16,
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),OME3-5 route C cost range from sensitivity limits,2.28-5.91,EUR/lDE,p.16,
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),"Process steam cost, OME3-5 route A",0.489,EUR/lDE,p.19,
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),"Process steam cost, OME3-5 route B",0.439,EUR/lDE,p.19,
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),"Process steam cost, OME3-5 route C",0.637,EUR/lDE,p.19,
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),FT route surplus steam at CO2-capture-neutral heat use,6.57,MJ steam/kg CO2,p.13,4.66 MP + 1.91 LP; eta_PTL would rise from 50.6% to 52.8% if used for CO2 capture
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),OME1 H2 demand with and without waste-water reuse in formalin I,0.270 vs 0.275,kg H2/kg OME1,p.14,eta_PTL 0.448 vs 0.443
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),OME1 heat integration effect on LP steam demand,15.6 to 5.0,MJ/lDE,p.14,without internal heat recovery plant efficiency 0.543 and eta_PTL 0.401
+Results: sensitivities and cost shares (Sect. 5),(synthesis routes),Methanol plant specific investment (text),235.4,EUR/kW,p.17,as Table 3; OME3-5 route C 1625.5 EUR/kW
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-methanol,LHV of fuel,19.92,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-alcohol_ethanol,LHV of fuel,26.76,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-alcohol_1-butanol,LHV of fuel,33.1,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-alcohol_2-butanol,LHV of fuel,33.0,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-alcohol_iso-octanol,LHV of fuel,37.56,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-ether_dme,LHV of fuel,28.83,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-ether_ome1,LHV of fuel,19.92,MJ/kg,"p.20, Table 3",as printed; OME1 value 19.92 is identical to methanol and may be a typesetting error
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-ether_ome3-5-route-a,LHV of fuel,19.22,MJ/kg,"p.20, Table 3",as printed
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-hydrocarbon_methanol-to-gasoline,LHV of fuel,43.5,MJ/kg,"p.20, Table 3","as printed; gasoline printed as ""43,5"""
+"Product lower heating values (Table 3, p.20)",reactor_co2-to-hydrocarbon_fischer-tropsch,LHV of fuel,43.9 (diesel) / 44.2 (kerosene),MJ/kg,"p.20, Table 3",as printed
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-methanol,"Excess steam, by pressure level",1.21 (175 degC) + 0.07 (125 degC),MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-alcohol_ethanol,"Excess steam, by pressure level",0.99 + 0.39,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-alcohol_1-butanol,"Excess steam, by pressure level",1.23 + 0.71,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-alcohol_2-butanol,"Excess steam, by pressure level",1.62 + 0.78,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-alcohol_iso-octanol,"Excess steam, by pressure level",0.45 + 1.23,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-ether_dme,"Excess steam, by pressure level",0.04 + 0.37,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-ether_ome1,"Excess steam, by pressure level",0,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-ether_ome3-5-route-a,"Excess steam, by pressure level",1.30 + 0.34,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-ether_ome3-5-route-b,"Excess steam, by pressure level",0,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-ether_ome3-5-route-c,"Excess steam, by pressure level",0,MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-hydrocarbon_methanol-to-gasoline,"Excess steam, by pressure level",0.85 (250 degC) + 1.346 (175 degC) + 0.11 (125 degC),MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Surplus saturated steam after heat integration (Table A1, p.29)",reactor_co2-to-hydrocarbon_fischer-tropsch,"Excess steam, by pressure level",4.66 (175 degC) + 1.91 (125 degC),MJ steam/kg CO2,"p.29, Table A1",surplus exported; Table 3 prints it for the selected routes. Energy demand per lDE (Figure 2) is chart-only
+"Maximum chemical conversion efficiency (Table A2, p.29)",(synthesis routes),"ETA_LHV,max by route","methanol .880; ethanol .851; 1-butanol .834; 2-butanol .831; iso-octanol .843; DME .916; OME1 .827; OME3-5 A .736, B .725, C .715; FT (.840)",fraction,"p.29, Table A2",thermodynamic maximum

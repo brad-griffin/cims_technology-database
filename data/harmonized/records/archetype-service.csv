@@ -808,3 +808,20 @@ reactor_visbreaking,<sector>.petroleum-refining.product.petroleum-fractions.crac
 refinery_nickel-matte,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,pyrometallurgy,added 2026-10-01
 refinery_sugar-beet,<sector>.light-industrial.product.food-tobacco-and-beverage,thermal-processing,added 2026-10-01
 separator_membrane-bioreactor,<sector>.pulp-and-paper.service.effluent-treatment,effluent-treatment,added 2026-10-01
+steam-reformer_methane_ccs-diffuse,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-diffuse,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-diffuse,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
+geothermal-well_flash-power,<sector>.mining.service.on-site-power,on-site-power-generation,cross-sector/on-site-power-generation: every leaf of the end use
+calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,non-ferrous-metals/alumina-refining: every leaf of the end use
+calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,non-ferrous-metals/alumina-refining: every leaf of the end use
+capture-unit_calcium-looping,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,cross-sector/co2-capture-diffuse: every leaf of the end use
+kiln_electric-plasma,<sector>.industrial-minerals.product.cement.clinker,clinker-production,cement/clinker-production: the device's route
+furnace_glass-oxy-fuel-thermochemical,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+heat-pump_heat-transformer,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+heat-pump_heat-transformer,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
+kiln_ceramic-microwave-assisted-gas,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,non-metallic-minerals/ceramic-firing: every leaf of the end use
+dryer_superheated-steam,<sector>.light-industrial.service.heat,drying-curing-and-forming,other-industry/drying-curing-and-forming: every leaf of the end use
+transesterification-unit_acid-catalyzed,<sector>.biofuels.product.biodiesel,biodiesel-production,biofuels/biodiesel-production: every leaf of the end use
+transesterification-unit_supercritical-methanol,<sector>.biofuels.product.biodiesel,biodiesel-production,biofuels/biodiesel-production: every leaf of the end use
+reactor_co2-to-ethanol,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: added 2026-10-02
+reactor_co2-to-fischer-tropsch,<sector>.biofuels.product.renewable-diesel-and-saf,renewable-diesel-and-saf,biofuels/renewable-diesel-and-saf: every leaf of the end use

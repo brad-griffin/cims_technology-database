@@ -1,0 +1,36 @@
+process,technology,item,value,unit,reference,note
+"Steam in industry (Sect. 3.2.1, Table 3.5)",,"EU-15 industrial energy used to generate steam, 1994",5988,PJ,"p.134, Sect. 3.2.1",About 34 % of the total energy used in industrial applications for product output
+"Steam in industry (Sect. 3.2.1, Table 3.5)",,"Energy to generate steam, pulp and paper",2318,PJ,"p.134, Table 3.5",83 % of the total energy used by the industry
+"Steam in industry (Sect. 3.2.1, Table 3.5)",,"Energy to generate steam, chemicals",1957,PJ,"p.134, Table 3.5",57 % of the total energy used by the industry
+"Steam in industry (Sect. 3.2.1, Table 3.5)",,"Energy to generate steam, petroleum refining",1449,PJ,"p.134, Table 3.5",42 % of the total energy used by the industry
+Boilers (Sect. 3.2.5),boiler_fuel-fired,Standard industrial steam generator exhaust-gas temperature,180,degC,"p.144, Sect. 3.2.5",Exhaust gas typically exceeds the saturated steam temperature by about 70 degC
+Boilers (Sect. 3.2.5),boiler_fuel-fired,"Acid dew point (lower limit of flue-gas temperature) by fuel: heavy fuel oil 160, light fuel oil 130, natural gas 100, solid waste 110",100-160,degC,"p.144, Sect. 3.2.5",Natural gas about 100 degC
+Boilers (Sect. 3.2.9),boiler_fuel-fired,Standby boiler kept at temperature uses about this share of its capacity,8,% of boiler capacity,"p.151, Sect. 3.2.9",Continuous energy supply throughout the year
+Furnace combustion (Sect. 3.1.2),,Conventional furnace: share of heat input lost in flue gas at about 1300 degC,70,%,"p.126, Sect. 3.1.2",Process temperatures 400-1600 degC
+Combustion air preheater (Sect. 3.1.1.1),,Siegert coefficient c for natural gas (gross heating value),0.390+0.0086*CO2,dimensionless,"p.125, Table 3.3",Flue-gas loss WL = c*(Tgas-Tair)/%CO2; reprinted from Maes 2005
+Evaporation (Sect. 3.11.3.6),,Energy to evaporate one tonne of water without heat recovery,700-800,kWh/t,"p.261, Sect. 3.11.3.6","Reduced by MVR, heat pumps or multiple effects (Table 3.29 in main file)"
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_compression,Waste-to-energy plant heat-to-power ratio of a compression heat pump,5,dimensionless,"p.169, Sect. 3.3.2",Output heat over compressor power; section cites Berger 2005
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_absorption,"Ratio of output heat to absorber power, normally about",1.6,dimensionless,"p.170, Sect. 3.3.2","As printed, definition unclear; section cites Berger 2005"
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_absorption,Temperature lift of current water/lithium bromide systems,65,K,"p.170, Sect. 3.3.2",Output temperature 100 degC
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_mechanical-vapour-recompression,Compressor energy as share of heat delivered,5-10,%,"p.170, Sect. 3.3.2",Typical; consistent with COP 10-30
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_mechanical-vapour-recompression,Heat source temperature of current MVR systems,70-80,degC,"p.172, Sect. 3.3.2 Applicability","Delivery heat 110-150 degC, up to 200 degC"
+Heat pumps (Sect. 3.3.2),heat-pump_industrial_mechanical-vapour-recompression,"Minimum COP for MVR to beat a boiler fed by condensing-plant electricity, about",3,dimensionless,"p.171, Sect. 3.3.2 (Equation 3.8)",All MVR installations have COP well above this
+"MVR at StoraEnso Nymolla sulphite mill, Sweden (Sect. 3.3.2 Examples)",heat-pump_industrial_mechanical-vapour-recompression,Compressor shaft power,2,MW,"p.173, Sect. 3.3.2 Examples",Driven by a backpressure turbine
+"MVR at StoraEnso Nymolla sulphite mill, Sweden (Sect. 3.3.2 Examples)",heat-pump_industrial_mechanical-vapour-recompression,Fuel oil consumption avoided in boilers,7000-7500,t/yr,"p.173, Sect. 3.3.2 Examples",
+"MVR at StoraEnso Nymolla sulphite mill, Sweden (Sect. 3.3.2 Examples)",heat-pump_industrial_mechanical-vapour-recompression,"Annual savings at installation, about",1.0,EUR million/yr (price year not stated),"p.173, Sect. 3.3.2 Economics",Swedish Energy Agency grant nearly EUR 1.0 million
+CHP (Sect. 3.4.1),,"Fuel efficiency of CHP plants (combined cycle with heat), versus 35-45 % for conventional condensing steam plants and below 58 % for combined cycle power-only",80-90,%,"p.181, Sect. 3.4.1",Generic CHP efficiency; section cites Nuutila 2005
+CHP (Sect. 3.4.1),steam-turbine_back-pressure,"Coal-fired CHP example, fuel efficiency 78 % versus 55 % for separate heat boiler and condensing power plant (30 % less fuel)",78,%,"p.181-182, Figure 3.17","Printed labels in figure: useful heat 76, electricity 43, losses 33 (CHP) versus 98 (separate); reprinted from Nuutila 2005"
+CHP (Sect. 3.4.1),reciprocating-engine_chp,Share of fuel energy in engine exhaust gas / in cooling water streams,30 / 20,%,"p.181, Sect. 3.4.1","Exhaust gas can drive a steam, hot-water or hot-oil boiler"
+CHP (Sect. 3.4.1),reciprocating-engine_chp,Bindewald plant: fuel saving versus separate production,12000,MWh fuel/yr (2500 t CO2/yr),"p.380, Annex 7.10.3","Static payback 5 yr, dynamic 7 yr"
+Trigeneration (Sect. 3.4.2),,Air-conditioning: share of peak cooling capacity from absorption chillers that meets most annual cooling need (rest by compressor chillers),70,%,"p.186, Sect. 3.4.2",
+"Barajas Airport trigeneration plant, Madrid, Spain (Annex 7.10.4, Table 7.15)",reciprocating-engine_chp,Absorption chiller capacity / total chiller capacity,18.0 / 37.4,MW cooling,"p.381, Table 7.15",Heat recovery circuit water 120/80 degC
+Motors (Sect. 3.6),motor_induction-standard,Average load factor of EU industrial motors in field tests,60,% of rated load,"p.202, Sect. 3.6.2",Induction motor efficiency peaks near 75 % load
+Motors (Sect. 3.6),,"Share of EU-15 motor energy by driven machine: pumps 20, fans 18, air compressors 17, cooling compressors 11, conveyors 4, other 30",20 / 18 / 17 / 11 / 4 / 30,%,"p.197, Sect. 3.6",
+Motors (Sect. 3.6),,Motor systems share of industrial electricity,65-68,%,"p.196, p.200",68 % of 707 TWh (1997) on p.196; about 65 % of industrial energy on p.200
+Motors (Sect. 3.6),motor_premium-efficiency,"Lifetime cost split of a motor: energy 96 %, maintenance 2.5 %, investment 1.5 %",96,% energy,"p.205, Figure 3.30",Printed labels in figure
+Compressed air (Sect. 3.7),,"Compressed air share of industrial electricity (EU-15, over 80 TWh/yr)",10,%,"p.206, Sect. 3.7",Share of facility energy 5-25 % in IPPC installations
+Compressed air (Sect. 3.7),compressor_air-system-management,Price of compressed air in Europe,0.006-0.097,EUR/Nm3,"p.212, Sect. 3.7 Economics","75 % energy, 13 % investment, 12 % maintenance (6000 h/yr, five years)"
+Compressed air (Sect. 3.7),compressor_air-system-management,Idle power of a compressor as share of full-load power,20-25,%,"p.217, Sect. 3.7.4",
+Compressed air (Sect. 3.7),compressor_air-system-management,Mechanical efficiency of compressed-air tools (tool shaft power over electricity input),10-15,%,"p.208, Sect. 3.7",
+Compressed air (Sect. 3.7.9),compressor_air-system-management,"Compressed-air leakage in a poorly maintained system, up to",25,% of compressor capacity,"p.221, Sect. 3.7.6","Well maintained large system under 10 %, small system under 5 %"
+Pumps (Sect. 3.8),pump_optimization,Share of pumping systems that are oversized (many by more than 20 %),75,%,"p.231, Sect. 3.8.2",
