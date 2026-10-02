@@ -1,0 +1,30 @@
+process,technology,sector,end-use,process-step,service-unit
+Wet seal degassing recovery system (PRO 2014): one centrifugal compressor,compressor_wet-seal-degassing-recovery,oil-and-gas,venting,compressor-seals,t
+Wet seal degassing recovery system (PRO 2014): station with four centrifugal compressors,compressor_wet-seal-degassing-recovery,oil-and-gas,venting,compressor-seals,t
+Replace compressor cylinder unloaders (PRO 106),compressor_cylinder-unloader-replacement,oil-and-gas,fugitive-emissions,compressor-cylinder-unloaders,t
+Inject blowdown gas into low pressure mains or fuel gas system (PRO 401),compressor_blowdown-recovery_low-pressure-system,oil-and-gas,venting,blowdowns,t
+Redesign blowdown systems and alter ESD practices (PRO 908): install YALE closures for ESD testing,emergency-shutdown-valve_yale-closure,oil-and-gas,venting,blowdowns,t
+Redesign blowdown systems and alter ESD practices (PRO 908): relocate isolation and fire gate valves,compressor-station_isolation-valve-relocation,oil-and-gas,venting,blowdowns,t
+Replace gas starters with air or nitrogen (PRO 101): compressed air,engine-starter_compressed-air-or-nitrogen,oil-and-gas,venting,engine-starting,t
+Replace gas starters with air or nitrogen (PRO 101): nitrogen,engine-starter_compressed-air-or-nitrogen,oil-and-gas,venting,engine-starting,t
+Reduce gas venting with fewer compressor engine startups (PRO 102): reduced frequency of starts,compressor-engine_start-reduction-practice,oil-and-gas,venting,engine-starting,t
+Reduce gas venting with fewer compressor engine startups (PRO 102): improved ignition and automated controls,compressor-engine_electronic-ignition-automated-control,oil-and-gas,compressor-drive-engine,engine-ignition-and-control,GJ
+Install electric compressors (PRO 103),compressor_electric-drive,oil-and-gas,compressor-drive-engine,compressor-drive,GJ
+Install automated air/fuel ratio controls (PRO 104),compressor-engine_air-fuel-ratio-control,oil-and-gas,compressor-drive-engine,engine-air-fuel-control,GJ
+Install electric motor starters (PRO 105),engine-starter_electric-motor,oil-and-gas,venting,engine-starting,t
+Pipe glycol dehydrator to vapor recovery unit (PRO 203),gas-treatment-unit_glycol-dehydration_flash-tank-to-vru,oil-and-gas,gas-processing,glycol-dehydration,m3
+Connect casing to vapor recovery unit (PRO 701),compressor_vapour-recovery_casinghead-gas,oil-and-gas,venting,casinghead-gas-venting,t
+Install compressors to capture casinghead gas (PRO 702),compressor_electric-rotary_casinghead-gas,oil-and-gas,venting,casinghead-gas-venting,t
+"Install electronic flare ignition devices (PRO 903): A, no on-site power",flare_electronic-ignition,oil-and-gas,flaring,flare-pilots,t
+"Install electronic flare ignition devices (PRO 903): B, on-site power available",flare_electronic-ignition,oil-and-gas,flaring,flare-pilots,t
+Install flares (PRO 904),flare_production-site,oil-and-gas,flaring,flaring,t
+Convert natural gas-driven chemical pumps (PRO 202): glycol circulation pump to instrument air,compressor_instrument-air_glycol-pump,oil-and-gas,gas-processing,glycol-dehydration,m3
+Convert natural gas-driven chemical pumps (PRO 202): chemical injection pump to solar electric pump,pump_chemical-injection_solar-electric,oil-and-gas,oil-and-gas-production,pneumatic-pumps,GJ
+Convert pneumatics to mechanical controls (PRO 301): full separator replacement,separator_mechanical-dump-valve,oil-and-gas,venting,pneumatic-controls,m3
+Convert pneumatics to mechanical controls (PRO 301): replacement with salvage value,separator_mechanical-dump-valve,oil-and-gas,venting,pneumatic-controls,m3
+Portable desiccant dehydrators (PRO 207),gas-treatment-unit_desiccant-dehydration_portable,oil-and-gas,gas-processing,gas-dehydration,m3
+Zero emissions dehydrators (PRO 206),gas-treatment-unit_glycol-dehydration_zero-emission,oil-and-gas,gas-processing,glycol-dehydration,m3
+Replace glycol dehydration units with methanol injection (PRO 205),pump_methanol-injection_solar,oil-and-gas,gas-processing,hydrate-control,m3
+Reroute glycol skimmer gas (PRO 201),gas-treatment-unit_glycol-dehydration_skimmer-gas-reroute,oil-and-gas,gas-processing,glycol-dehydration,m3
+Conduct DI&M at remote sites (PRO 901),management-system_leak-detection_remote-site,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Increase walking survey from a 5- to 3-year basis (PRO 902),management-system_leak-detection_walking-survey_service-connection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t

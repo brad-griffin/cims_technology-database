@@ -55,7 +55,12 @@ ATOM = {
     "Mgal": ("volume", 3785.411784), "Wh": ("energy", 3.6e-6),
     "million-Nm3-CH4": ("volume", 1e6), "thousand-Nm3-biomethane": ("volume", 1e3),
     "mol-H2": ("amount-h2", 1.0),
+    # US gas-industry volumes: a standard cubic foot (60 degF, 14.73 psia), taken as
+    # 0.0283168 m3 like Nm3 is taken as m3; Mcf = thousand, MMcf = million (2026-10-02)
+    "scf": ("volume", 0.0283168), "cf": ("volume", 0.0283168), "Mcf": ("volume", 28.3168),
+    "MMcf": ("volume", 28316.8), "Bcf": ("volume", 28316800.0),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
+    "min": ("time", 1 / 525600),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),
 }
 # mass of a named species: `t-CO2` is a tonne of CO2. It meets a plain `t` only on

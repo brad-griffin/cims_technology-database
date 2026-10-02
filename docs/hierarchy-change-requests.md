@@ -5,6 +5,9 @@ The one standing list of what the database asks of the CIMS hierarchy
 request here when a record needs a node the hierarchy does not have. Remove it once
 the hierarchy snapshot has it and the build passes.
 
+Defects in the CIMS model inputs themselves (wrong units, broken request chains) are listed in
+[cims-to-fix.md](cims-to-fix.md).
+
 The harmonization proposal of 2026-09-16 to 09-22 is applied to the snapshot
 (`archive/decisions/2026-09-16_cims-hierarchy-harmonization.md`, revision 6). That
 includes every node requested so far:

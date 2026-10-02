@@ -191,6 +191,8 @@ BRIEF_SHAPE = [
     ("peer-reviewed/ciambellotti_2024_hthp-tissue-paper_energies", "ciambellotti_2024_001", "EU"),
     ("peer-reviewed/devlin_2023_green-hydrogen-steel-opportunities_ncomms", "devlin_2023_001", "global"),
     ("other-reports/draxler_2021_green-steel-technology-assessment_gsfe", "draxler_2021_001", "EU"),
+    ("gov-usa/epa/natural-gas-star/epa_2006_lessons-learned_natural-gas-star", "epa_2006_001", "US"),
+    ("gov-usa/epa/natural-gas-star/epa_2011_pro-fact-sheets_natural-gas-star", "epa_2011_001", "US"),
     ("gov-usa/epa/epa_2013_chp-boiler-replacement-fact-sheet", "epa_2013_001", "US"),
     ("other-reports/fpinnovations_2026_kraft-pulp-decarbonization-canada", "fpinnovations_2026_001", "Canada"),
     ("gov-can/nrcan/francis_2002_energy-benchmarking-pulp-paper_nrcan", "francis_2002_001", "Canada"),
