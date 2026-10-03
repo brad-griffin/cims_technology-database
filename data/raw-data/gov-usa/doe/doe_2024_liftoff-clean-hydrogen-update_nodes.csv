@@ -1,0 +1,33 @@
+process,technology,sector,end-use,process-step,service-unit
+"SMR (or ATR) without CCS, 480 t/d reference plant (Fig. 7 fn a, p.11)",steam-reformer_methane,hydrogen,material-conversion,steam-methane-reforming,kg
+"SMR (or ATR) without CCS, production cost 2025 (Fig. 7, p.11)",steam-reformer_methane,hydrogen,material-conversion,steam-methane-reforming,kg
+"SMR (or ATR) without CCS, production cost 2030 (Fig. 7, p.11)",steam-reformer_methane,hydrogen,material-conversion,steam-methane-reforming,kg
+"SMR with >90% CCS, 480 t/d reference plant (Fig. 7 fn b, p.11)",steam-reformer_methane_ccs-diffuse,hydrogen,material-conversion,steam-methane-reforming,kg
+"SMR or ATR with >90% CCS, production cost 2025 (Fig. 7, p.11)",steam-reformer_methane_ccs-diffuse,hydrogen,material-conversion,steam-methane-reforming,kg
+"SMR or ATR with >90% CCS, production cost 2030 (Fig. 7, p.11)",steam-reformer_methane_ccs-diffuse,hydrogen,material-conversion,steam-methane-reforming,kg
+"ATR with CCS, 660 t/d new-build reference plant (Fig. 7 fn b, Fig. 11 fn a, App. 6)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,autothermal-reforming,kg
+"ATR+CCS production cost, near-term, four US regions (Fig. 11 headline, p.16)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,autothermal-reforming,kg
+"ATR+CCS production cost, long-term, four US regions (Fig. 11 headline, p.16)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,autothermal-reforming,kg
+"ATR or SMR with CCS, LCOH including 45Q, 2030 (Fig. 13, p.18)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,autothermal-reforming,kg
+"Coal gasification with CCS, Australia export scenario (App. 6, p.32)",gasifier_ccs-concentrated,hydrogen,material-conversion,gasification,kg
+"Methane pyrolysis, first-of-a-kind cost (Fig. 7, p.11)",reactor_methane-pyrolysis,hydrogen,material-conversion,methane-pyrolysis,kg
+"PEM electrolysis, 500 MW project, 2025 installation (Table A1, p.30; Fig. 10 fn a, p.15)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"PEM electrolysis, 500 MW project, 2030 installation (Table A1, p.30; Fig. 10 fn a, p.15)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"PEM electrolysis, 500 MW project, 2040 installation (Table A1, p.30; Fig. 10 fn a, p.15)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"PEM electrolysis, 500 MW project, 2050 installation (Table A1, p.30; Fig. 10 fn a, p.15)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis from RES or nuclear (<20% grid power), production cost 2025 (Fig. 7, p.11)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis from RES or nuclear (<20% grid power), production cost 2030 (Fig. 7, p.11)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis from grid electricity, production cost 2025 (Fig. 7, p.11)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis from grid electricity, production cost 2030 (Fig. 7, p.11)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis from grid electricity, carbon intensity (Fig. 7 fn e, p.11)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolysis with 45V, LCOH 2030 (Fig. 13, p.18)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+"Electrolyzer capex estimates by source, US (Fig. 9, p.13)",electrolyzer_low-temperature,hydrogen,electrochemical,hydrogen-production,kg
+Salt-cavern hydrogen storage assumptions (p.12 fn e; p.29 App. 4; p.32 App. 6),hydrogen-storage_salt-cavern,hydrogen,other-services,storage,kg
+"Midstream hydrogen storage and delivery cost, 2030 (Fig. 13, p.18)",hydrogen-storage_salt-cavern,hydrogen,other-services,storage,kg
+"Midstream hydrogen storage and delivery cost, 2030 (Fig. 13, p.18)",hydrogen-storage_pressurized-tank,hydrogen,other-services,storage,kg
+"Midstream hydrogen storage and delivery cost, 2030 (Fig. 13, p.18)",compressor_hydrogen-pipeline,hydrogen,other-services,compression,kg
+"Midstream hydrogen storage and delivery cost, 2030 (Fig. 13, p.18)",compressor_hydrogen-high-pressure,hydrogen,other-services,compression,kg
+"H2 pipeline, 600 t/d, 300 km, 12 in (Fig. 13, p.18)",pipeline_hydrogen-transmission,hydrogen,other-services,pipeline-transport,kg
+"H2 pipeline, about 5000 t/d, 1000 km, 42 in (Fig. 13, p.18)",pipeline_hydrogen-transmission,hydrogen,other-services,pipeline-transport,kg
+"Hydrogen liquefaction and liquid trucking, 2030 (Fig. 13, p.18)",liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+"Gaseous hydrogen trucking, 2030 (Fig. 13, p.18)",truck_hydrogen-gaseous,hydrogen,other-services,road-transport,kg

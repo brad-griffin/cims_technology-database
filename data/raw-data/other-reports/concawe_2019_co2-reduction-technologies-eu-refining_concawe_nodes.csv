@@ -1,0 +1,26 @@
+process,technology,sector,end-use,process-step,service-unit
+"Electrolyser efficiency and cost for hydrogen supply to refineries (Table 4.4.5.2-1), 2030",electrolyzer_low-temperature,petroleum-refining,material-conversion,hydrogen production,GJ
+"Electrolyser efficiency and cost for hydrogen supply to refineries (Table 4.4.5.2-1), 2050",electrolyzer_low-temperature,petroleum-refining,material-conversion,hydrogen production,GJ
+"Steam methane reformer, SINTEF (2017) basis (Sect. 4.4.5.1, p.46)",steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,GJ
+"Steam methane reformer, capital intensity assumed in cost comparison (Fig. 4.4.5.2-1 note, p.48)",steam-reformer_methane,petroleum-refining,material-conversion,hydrogen production,GJ
+"SMR with retrofitted CO2 capture, SINTEF (2017) range (p.46-47, Sect. 4.4.5.1)",steam-reformer_methane_ccs-retrofit,petroleum-refining,material-conversion,hydrogen production,GJ
+"CO2 capture parameters, hydrogen-related emissions (SMR and process CO2) (Table 4.5.2-1)",capture-unit_chemical-solvent,petroleum-refining,material-conversion,CO2 capture,t
+"CO2 capture parameters, generic refinery emissions (heaters, FCC, boilers) (Table 4.5.2-1)",capture-unit_amine,petroleum-refining,material-conversion,CO2 capture,t
+"CO2 capture cost ranges from earlier studies (Sect. 4.5.1, p.51)",capture-unit_amine,petroleum-refining,material-conversion,CO2 capture,t
+"CO2 capture cost, SINTEF (2017) retrofit to refineries (Sect. 4.5.1, p.51)",capture-unit_amine,petroleum-refining,material-conversion,CO2 capture,t
+"Electric steam boiler for refineries, Concawe assumption (Sect. 4.4.4.3 and App. A3.2)",boiler_electric,petroleum-refining,process-heat-medium-temp,steam raising,GJ
+"Electric boilers above 10 MWe, Danish Energy Agency (2016) (App. A3.2)",boiler_electric,petroleum-refining,process-heat-medium-temp,steam raising,GJ
+"Fired steam boilers, equipment cost and total project (App. A3.2)",boiler_fuel-fired,petroleum-refining,process-heat-medium-temp,steam raising,GJ
+"Refinery electrical infrastructure for imported electricity (App. A3.1, Sect. 4.4.4)",electrical-supply_refinery-infrastructure,petroleum-refining,machine-drive,electricity supply,GJ
+"Electric process heater, Concawe assumption (Sect. 4.4.4.5 and App. A3.4)",direct-heater_electric-process,petroleum-refining,process-heat-high-temp,process heating,GJ
+New fired process heater for comparison (App. A3.4),direct-heater_fired-process,petroleum-refining,process-heat-high-temp,process heating,GJ
+Large industrial heat pump for refinery low-grade heat (App. A3.5),heat-pump_industrial,petroleum-refining,process-heat-medium-temp,heat upgrading,GJ
+"Refinery gas-fired CHP, new build and rebuild (Fig. 4.4.4.4-2 note p.44; App. A3.3)",combustion-turbine_heat-recovery-steam-generator,petroleum-refining,process-heat-medium-temp,steam and power,GJ
+"Refinery gas-fired CHP, end-of-life rebuild (App. A3.3)",combustion-turbine_heat-recovery-steam-generator,petroleum-refining,process-heat-medium-temp,steam and power,GJ
+"Low-grade heat to power, ORC (Sect. 4.4.3, p.35-36)",steam-turbine_waste-heat,petroleum-refining,machine-drive,heat to power,GJ
+"Oxy-fuelled FCC retrofit (App. A1.2.2, p.79)",reactor_fluid-catalytic-cracking-oxy-fuel,petroleum-refining,material-conversion,catalytic cracking,t
+"CO2 abatement cost, CCS on SMR / hydrogen-related emissions, 2050 Median case (Table 6.5-1)",steam-reformer_methane_ccs-concentrated,petroleum-refining,process-heat-medium-temp,abatement option,GJ
+"CO2 abatement cost, CCS on general refinery emissions, 2050 Median case (Table 6.5-1)",capture-unit_amine,petroleum-refining,process-heat-medium-temp,abatement option,t
+"CO2 abatement cost, electrification of steam, intermittent operation, 2050 Median case (Table 6.5-1)",boiler_electric,petroleum-refining,process-heat-medium-temp,abatement option,GJ
+"CO2 abatement cost, electrolytic hydrogen, intermittent operation, 2050 Median case (Table 6.5-1)",electrolyzer_low-temperature,petroleum-refining,process-heat-medium-temp,abatement option,GJ
+"CO2 abatement cost, CHP substitution by imported electricity, 2050 Median case (Table 6.5-1)",combustion-turbine_heat-recovery-steam-generator,petroleum-refining,process-heat-medium-temp,abatement option,GJ

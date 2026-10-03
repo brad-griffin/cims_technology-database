@@ -1,0 +1,23 @@
+process,technology,item,value,unit,reference,note
+"Canadian primary aluminium smelter technologies, CF4 factor 1990",electrolysis-cell_soderberg_hss,CF4 emission factor 1990,0.65,kg CF4/t Al,"p.12, Sect. 4 (CF4 emission factors, Business as Usual assumptions)",Industry producers; 1990 column of the CF4 factor table.
+"Canadian primary aluminium smelter technologies, CF4 factor 1990",electrolysis-cell_soderberg_vss,CF4 emission factor 1990,0.51,kg CF4/t Al,"p.12, Sect. 4 (CF4 emission factors, Business as Usual assumptions)",Industry producers; 1990 column of the CF4 factor table.
+"Canadian primary aluminium smelter technologies, CF4 factor 1990",electrolysis-cell_prebaked-anode_swpb,CF4 emission factor 1990,1.28,kg CF4/t Al,"p.12, Sect. 4 (CF4 emission factors, Business as Usual assumptions)",Industry producers; 1990 column of the CF4 factor table.
+"Canadian primary aluminium smelter technologies, CF4 factor 1990",electrolysis-cell_prebaked-anode_cwpb-180ka,CF4 emission factor 1990,0.41,kg CF4/t Al,"p.12, Sect. 4 (CF4 emission factors, Business as Usual assumptions)",Industry producers; 1990 column of the CF4 factor table.
+Canadian primary aluminium capacity by technology (Table 1),,"capacity HSS, 1990 / 1996 / 2000 / 2010 / 2020",0.34 / 0.29 / 0.22 / 0.22 / 0,Mt/yr,"p.8, Table 1",Predicted production (megatonnes).
+Canadian primary aluminium capacity by technology (Table 1),,"capacity VSS, 1990 / 1996 / 2000 / 2010 / 2020",0.43 / 0.42 / 0.44 / 0.44 / 0.45,Mt/yr,"p.8, Table 1",Predicted production (megatonnes).
+Canadian primary aluminium capacity by technology (Table 1),,"capacity SWPB, 1990 / 1996 / 2000 / 2010 / 2020",0.15 / 0.15 / 0.15 / 0.15 / 0.15,Mt/yr,"p.8, Table 1",Predicted production (megatonnes).
+Canadian primary aluminium capacity by technology (Table 1),,"capacity CWPB (180 and 300 kA), 1990 / 1996 / 2000 / 2010 / 2020",0.65 / 1.41 / 1.71 / 2.30 / 3.30,Mt/yr,"p.8, Table 1",Predicted production (megatonnes).
+Canadian primary aluminium capacity by technology (Table 1),,"capacity Total, 1990 / 1996 / 2000 / 2010 / 2020",1.57 / 2.27 / 2.52 / 3.11 / 3.90,Mt/yr,"p.8, Table 1",Predicted production (megatonnes).
+"Replacement of HSS capacity by modern CWPB smelter (Sect. 5, Action 3)",electrolysis-cell_prebaked-anode,GHG reduction over BAU if HSS replacement advanced from 2015 to 2000,11.2,Mt CO2e,"p.16, Sect. 5 (Advancing the date for conversion from HSS to CWPB)","Scenario total (0.8 Mt/yr by 2010 per the summary on p.4), not a per-tonne factor."
+Aluminium sector context,,Canadian aluminium GHG intensity 1990,6.4,t CO2e/t Al,"p.3, Sect. 1",Industry-wide.
+Aluminium sector context,,"Canadian aluminium GHG intensity 2000 (BAU, industry projection)",4.2,t CO2e/t Al,"p.3, Sect. 1",Industry-wide.
+Aluminium sector context,,"Canadian aluminium GHG intensity with measures, conclusion",3.0,t CO2e/t Al,"p.20, Sect. 10",Reduced from 6.4 with CEERP-type measures.
+Aluminium sector context,,Stoichiometric CO2 from anode consumption,1.22,t CO2/t Al,"p.9, Sect. 4",Practice is higher because anodes react with air.
+Aluminium sector context,,Anode consumption improvement assumed in BAU,0.02,kg C/kg Al,"p.12, Sect. 4",Reduction through process improvement.
+Aluminium sector context,,Fossil fuel CO2 1996 (smelters and one refinery),1.1,Mt CO2,"p.10, Sect. 4",Natural gas ~7% and heavy fuel oil ~5% of total energy.
+Aluminium sector context,,"Total energy 1996, primary aluminium",152,PJ,"p.12, Sect. 4, footnote 4",CIEEDAC.
+Aluminium sector context,,Natural gas energy intensity reduction assumed,0.3,% per year,"p.12, Sect. 4",BAU forecast assumption.
+Aluminium sector context,,Recycled aluminium energy requirement vs primary,5,% of primary,"p.6, Sect. 3",Also 95% energy and GHG saving stated on p.18.
+Aluminium sector context,,"Operating cost, Canadian smelters vs world average",1000 vs 1200,USD/t Al,"p.7, Sect. 3",Electricity is 30-35% of operating cost; year not stated.
+Aluminium sector context,,PFC emissions 1996,5.4,Mt CO2e,"p.10, Sect. 4",CF4 GWP 6500 and C2F6 9200; industry reduced PFC emissions 18% from 1990 to 1996.
+Aluminium sector context,,NRCan Energy Outlook CF4 emission factor range,0.3-1.2,kg/t Al,"p.13, Table 3","Printed ""CF6"" in the paper; evidently CF4. C2F6 0.02-0.1 kg/t. Industry judged these outdated."

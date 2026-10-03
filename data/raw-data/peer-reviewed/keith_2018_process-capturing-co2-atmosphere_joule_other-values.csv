@@ -1,0 +1,12 @@
+process,technology,item,value,unit,reference,note
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,Air contactor fan energy,61,kWh/t-CO2,"p.1577, Table 1",
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,Air contactor fluid pumping energy,21,kWh/t-CO2,"p.1577, Table 1",
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,Pellet reactor fluid pumping energy,27,kWh/t-CO2,"p.1577, Table 1",
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,Compressor power usage,132,kWh/t-CO2,"p.1578, Table 1",CO2 processed incl. power-cycle CO2
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,ASU power usage,238,kWh/t-O2,"p.1577, Table 1",
+Scenario A-D (Table 1),capture-unit_dac-liquid-solvent,Power produced from slaking heat,77,kWh/t-CO2,"p.1577, Table 1",slaker also consumes 32 kWh/t-CO2
+Scenario A (Table 2),capture-unit_dac-liquid-solvent,Water use,4.7,t water/t CO2,p.1581,"at 20 C, 64% RH"
+Scenario A (Table 2),capture-unit_dac-liquid-solvent,Capital at 100 kt-CO2/yr smallest practical size,80,% higher capital per unit capacity than the 1 Mt-CO2/yr baseline,"p.1582, Scaling",
+Scenario A/B (Discussion),capture-unit_dac-liquid-solvent,Net CO2 permanently sequestered per t captured,0.9,t/t,"p.1592, LCA",NG factor 63.8 kg-CO2e/GJ
+Scenario A/B (Discussion),capture-unit_dac-liquid-solvent,"Levelized cost at APS assumptions (CRF 12%, gas 6 USD/GJ)",107-249,2016_USD/t-CO2,p.1590,variants A and B
+Prior estimates (Discussion),capture-unit_dac-liquid-solvent,"APS 2011 realistic DAC cost, captured",550,USD/t-CO2,p.1590,reprinted from APS 2011; avoided cost 780 USD/t-CO2

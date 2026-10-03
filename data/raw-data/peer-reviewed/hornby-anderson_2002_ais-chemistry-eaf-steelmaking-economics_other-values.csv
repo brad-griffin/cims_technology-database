@@ -1,0 +1,8 @@
+process,technology,item,value,unit,reference,note
+Table II AIU chemistry and cost,electric-arc-furnace,"DRI, HBI cost",123,2002_USD/t charged,"PDF p.8, Table II","Assumed price of cold DRI/HBI delivered to a US Mid West mill; pig iron 140, BF hot metal 165, FASTIRON hot metal 150; PRICE YEAR NOT STATED."
+Table V cost,electric-arc-furnace,"Base cost 80% BF hot metal / 20% scrap, 80% hot metal charge",169.3,2002_USD/t liquid steel,"PDF p.10, Table V","Melt power for the 80% hot metal mix is printed as negative (-13.44 kWh/tls, Table I) because the program credits oxidation energy; not loaded in main file."
+"Table I melt power, 80% hot-metal mixes",electric-arc-furnace,Melt power 80% BF HM / 80% FASTOx hot metal,-13.44 / -50.83,kWh/tls,"PDF p.7, Table I",Negative values are program artefacts of hot metal charging with excess chemical energy; not usable as electricity use.
+Text p.8-9 Value in use of hot metal,electric-arc-furnace,Electricity saving of hot metal (Roth et al.),3.5,kWh/t per % scrap replaced,PDF p.9,1 t hot metal + 25 kg lime = 0.92 t clean scrap + 50 kg coal + 330 kWh (Eq. 1); reprinted from Roth et al.
+Text p.12 Metallization,electric-arc-furnace,Electricity increase per 1% lower DRI metallization,10-40,kWh/tls,PDF p.12,Past papers cited by the authors; printed as range.
+Section Melting analysis,electric-arc-furnace,KWIKSteel nugget melting electricity,<100,kWh/t,PDF p.4,Hot steel nugget from combined shaft and rotary-hearth route needs less than 100 kWh/t to reach liquid steel (authors' text; not a calculated table value).
+Section Melting analysis,electric-arc-furnace,Electrode consumption,0.00373,kg/kWh,PDF p.5,Assumption of the melting program.

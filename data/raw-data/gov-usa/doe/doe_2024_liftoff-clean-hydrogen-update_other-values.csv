@@ -1,0 +1,10 @@
+process,technology,item,value,unit,reference,note
+Context and assumptions,(sector),SMR or ATR without CCS share of 2023 US hydrogen production,95,%,"p.11, Fig. 7",~95%
+Context and assumptions,(sector),Low-carbon reformation announced capacity,7.9,MMTpa,p.6,"ATR new-builds with CCS 72%, SMR retrofits 9% of capacity"
+Context and assumptions,(sector),CO2 transport and storage cost assumed for ATR+CCS,22,USD/t CO2,"p.16, Fig. 11 fn a","Based on NETL report; price year not stated; Australia coal case $23/t (2025) and $20/t (2030), p.32"
+Context and assumptions,(sector),"Natural gas price assumed, Texas",5.0 (2025); 4.3 (2030); 4.9 (2040); 4.6 (2050),USD/MMBtu,"p.16, Fig. 11 fn d","Other regions in fn b, c, e; industrial electricity $72/$62/$61/$61 per MWh"
+Context and assumptions,(sector),Electrolytic hydrogen near-term LCOH exceeds,4,USD/kg,"p.15, Fig. 10 headline","Printed ""exceed $4/kg across all regions"" (excl. 45V)"
+Context and assumptions,(sector),Electricity per kg hydrogen assumed for electrolyzer deployment,55,kWh/kg H2,"p.30, App. 5",Deployment estimate 10-11 GW for 1.9 MMTpa by 2030; electricity so heating-value basis not applicable
+Context and assumptions,(sector),Battery capex and opex assumed in electrolysis cases,1436 USD/kWh; opex 2.5% of capex,USD/kWh,"p.32, App. 6",Export-analysis configuration
+Context and assumptions,(sector),Offtaker willingness to pay (selected),Ammonia 0.8-1.1; refining 0.8-1.2; steel up to 1.2; methanol 0.7-1.0,USD/kg,"p.18, Fig. 13",Over carbon-intensive alternatives; market figure
+Context and assumptions,electrolyzer_low-temperature,"West Texas 500 MW PEM LCOH increase, March 2023 to January 2024 estimate",2-3,USD/kg,"p.12, text before Fig. 8",Illustrative 2025 West Texas case; partly 45V hourly-matching RES overbuild

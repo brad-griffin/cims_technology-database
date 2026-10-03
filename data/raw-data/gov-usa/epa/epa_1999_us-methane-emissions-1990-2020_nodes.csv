@@ -1,0 +1,41 @@
+process,technology,sector,end-use,process-step,service-unit
+"Replace high-bleed with low-bleed pneumatic devices (BMP) (Exhibit III-5, p.III-9)",pneumatic-device_low-bleed,oil-and-gas,venting,pneumatic-controllers,m3
+"Directed inspection and maintenance at compressor stations (BMP) (Exhibit III-5, p.III-9)",management-system_leak-detection_compressor-station,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Static-seal compressor rod packing (BMP) (Exhibit III-5, p.III-9)",compressor_rod-static-seal,oil-and-gas,venting,compressor-seals,t
+"Reduce glycol recirculation rates on dehydrators (BMP) (Exhibit III-5, p.III-9)",gas-treatment-unit_glycol-dehydration_optimized-circulation,oil-and-gas,venting,glycol-dehydration,m3
+"Install flash tank separators on glycol dehydrators (BMP) (Exhibit III-5, p.III-9)",gas-treatment-unit_glycol-dehydration_flash-tank-separator,oil-and-gas,venting,glycol-dehydration,m3
+"Fuel gas retrofit on compressors to capture vented gas at shutdown (BMP) (Exhibit III-5, p.III-9)",compressor_blowdown-recovery_fuel-gas-tie-in,oil-and-gas,venting,compressor-blowdown,t
+"Change wet seals to dry seals on centrifugal compressors (BMP) (Exhibit III-5, p.III-10)",compressor_dry-gas-seal,oil-and-gas,venting,compressor-seals,t
+"Early replacement of rings and rods on reciprocating compressors (BMP) (Exhibit III-5, p.III-10)",compressor_rod-packing-replacement,oil-and-gas,venting,compressor-seals,t
+"Directed inspection and maintenance at gate stations and surface facilities (BMP) (Exhibit III-5, p.III-10)",management-system_leak-detection_gate-station,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Directed inspection and maintenance at production sites, non-associated gas wells (PRO) (Exhibit III-6, p.III-11)",management-system_leak-detection_production-well,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Directed inspection and maintenance at production sites, off-shore platforms (PRO) (Exhibit III-6, p.III-11)",management-system_leak-detection_offshore-platform,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Directed inspection and maintenance at production sites, pipeline leaks (PRO) (Exhibit III-6, p.III-11)",management-system_leak-detection_gathering-pipeline,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Enhanced directed inspection and maintenance at production sites (PRO) (Exhibit III-6, p.III-11)",management-system_leak-detection_production-well_enhanced,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Electric starter replacing gas starters on compressors (PRO) (Exhibit III-6, p.III-11)",engine-starter_electric-motor,oil-and-gas,venting,compressor-starts,t
+"Plunger lift well systems (PRO) (Exhibit III-6, p.III-11)",pump_plunger-lift,oil-and-gas,venting,well-unloading,t
+"Surge vessel to capture blowdowns (PRO) (Exhibit III-6, p.III-11)",process-improvement_surge-vessel-blowdown-capture,oil-and-gas,venting,blowdown-capture,t
+"Portable evacuation compressors for pipeline pump-down (PRO) (Exhibit III-6, p.III-11)",compressor_pipeline-pump-down_portable,oil-and-gas,venting,pipeline-blowdown,t
+"Instrument air systems replacing gas-driven pneumatics (PRO) (Exhibit III-6, p.III-11)",compressor_instrument-air,oil-and-gas,venting,pneumatic-controllers,m3
+"Directed inspection and maintenance at processing sites (PRO) (Exhibit III-6, p.III-11)",management-system_leak-detection_gas-processing-plant,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Catalytic converters on engine exhaust (PRO) (Exhibit III-6, p.III-12)",process-improvement_catalytic-converter-engine-exhaust,oil-and-gas,venting,engine-exhaust,t
+"Directed inspection and maintenance at LNG stations (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_lng-station,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Directed inspection and maintenance of transmission pipelines (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_transmission-pipeline,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Enhanced directed inspection and maintenance at compressor stations (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_compressor-station_enhanced,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Directed inspection and maintenance at storage wells (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_storage-well,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Enhanced directed inspection and maintenance at storage wells (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_storage-well_enhanced,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Enhanced directed inspection and maintenance at distribution gate stations and surface facilities (PRO) (Exhibit III-6, p.III-12)",management-system_leak-detection_gate-station_enhanced,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Electronic metering at interconnect and city gate M&R stations (PRO) (Exhibit III-6, p.III-12)",meter_electronic,oil-and-gas,fugitive-emissions,metering,t
+"Replace cast iron and unprotected steel distribution mains (PRO) (Exhibit III-6, p.III-13)",pipeline_distribution-main-replacement,oil-and-gas,fugitive-emissions,pipeline-leaks,t
+"Replace unprotected steel service lines (PRO) (Exhibit III-6, p.III-13)",pipeline_distribution-service-replacement,oil-and-gas,fugitive-emissions,pipeline-leaks,t
+"Coal mine methane Option 1 (degasification and pipeline injection), vertical wells (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_pipeline-injection,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane Option 1 (degasification and pipeline injection), gob wells (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_pipeline-injection,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane Option 1 (degasification and pipeline injection), in-mine boreholes (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_pipeline-injection,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane Option 1 (degasification and pipeline injection), all well types per ton of coal mined (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_pipeline-injection,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane Option 2 (enhanced degasification), incremental wells (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_enhanced-degasification,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane Option 2, gas enrichment unit (Exhibit IV-4)",gas-treatment-unit_gas-enrichment_gob-gas,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane gas handling, compression (Exhibit IV-4)",compressor_coal-mine-gas,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane gas handling, gathering lines (Exhibit IV-4)",pipeline_coal-mine-gas-gathering,mining,fugitive-emissions,coal-mine-methane,t
+"Coal mine methane gas handling, dehydrator (Exhibit IV-4)",gas-treatment-unit_dehydrator_coal-mine-gas,mining,fugitive-emissions,coal-mine-methane,m3
+"Coal mine methane gas handling, well water disposal (Exhibit IV-4)",process-improvement_coal-mine-methane-drainage_water-disposal,mining,fugitive-emissions,coal-mine-methane,t
+Coal mine methane Option 3 (catalytic oxidation of ventilation air) (Exhibit IV-4),gas-treatment-unit_thermal-oxidiser_ventilation-air-methane,mining,fugitive-emissions,coal-mine-methane,m3

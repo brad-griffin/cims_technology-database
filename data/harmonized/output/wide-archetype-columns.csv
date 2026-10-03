@@ -22,6 +22,10 @@ lifetime,technical,years,"Expected technical service life of the installed equip
 lifetime_low,technical,years,
 lifetime_high,technical,years,
 lifetime_n,technical,,
+lifetime_component,technical,years,"Expected technical service life of the installed equipment. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+lifetime_component_low,technical,years,
+lifetime_component_high,technical,years,
+lifetime_component_n,technical,,
 lifetime_stack,technical,years,"Expected technical service life of the installed equipment. Species: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 lifetime_stack_low,technical,years,
 lifetime_stack_high,technical,years,
@@ -30,6 +34,8 @@ capacity,technical,product-unit/yr,"Rated capacity of one unit, on the basis nam
 capacity_low,technical,product-unit/yr,
 capacity_high,technical,product-unit/yr,
 capacity_n,technical,,
+capacity_alumina,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: alumina. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capacity_alumina_n,technical,,
 capacity_biogas,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capacity_biogas_n,technical,,
 capacity_ch4,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -37,13 +43,21 @@ capacity_ch4_low,technical,product-unit/yr,
 capacity_ch4_high,technical,product-unit/yr,
 capacity_ch4_n,technical,,
 capacity_electricity,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capacity_electricity_low,technical,product-unit/yr,
+capacity_electricity_high,technical,product-unit/yr,
 capacity_electricity_n,technical,,
 capacity_ethylene,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: ethylene. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capacity_ethylene_n,technical,,
+capacity_feed,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capacity_feed_n,technical,,
 capacity_heat,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capacity_heat_low,technical,product-unit/yr,
 capacity_heat_high,technical,product-unit/yr,
 capacity_heat_n,technical,,
+capacity_hydrogen,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capacity_hydrogen_low,technical,product-unit/yr,
+capacity_hydrogen_high,technical,product-unit/yr,
+capacity_hydrogen_n,technical,,
 capacity-factor,technical,%,"Annual output as a fraction of output at rated capacity running continuously. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capacity-factor_low,technical,%,
 capacity-factor_high,technical,%,
@@ -72,16 +86,14 @@ efficiency_biogas,technical,%,"Useful output per unit of energy input, on the ba
 efficiency_biogas_low,technical,%,
 efficiency_biogas_high,technical,%,
 efficiency_biogas_n,technical,,
-efficiency_carbon,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: carbon. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_carbon_low,technical,%,
-efficiency_carbon_high,technical,%,
-efficiency_carbon_n,technical,,
+efficiency_component,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_component_low,technical,%,
+efficiency_component_high,technical,%,
+efficiency_component_n,technical,,
 efficiency_electricity,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_electricity_low,technical,%,
 efficiency_electricity_high,technical,%,
 efficiency_electricity_n,technical,,
-efficiency_fuel,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_fuel_n,technical,,
 efficiency_heat,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_heat_low,technical,%,
 efficiency_heat_high,technical,%,
@@ -90,28 +102,14 @@ efficiency_hydrogen,technical,%,"Useful output per unit of energy input, on the 
 efficiency_hydrogen_low,technical,%,
 efficiency_hydrogen_high,technical,%,
 efficiency_hydrogen_n,technical,,
-efficiency_hydrogen-net-of-power,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: hydrogen-net-of-power. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_hydrogen-net-of-power_low,technical,%,
-efficiency_hydrogen-net-of-power_high,technical,%,
-efficiency_hydrogen-net-of-power_n,technical,,
-efficiency_hydrogen-to-fuel,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: hydrogen-to-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_hydrogen-to-fuel_n,technical,,
-efficiency_mass,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: mass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_mass_low,technical,%,
-efficiency_mass_high,technical,%,
-efficiency_mass_n,technical,,
-efficiency_natural-gas,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_natural-gas_low,technical,%,
-efficiency_natural-gas_high,technical,%,
-efficiency_natural-gas_n,technical,,
 efficiency_net,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: net. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_net_low,technical,%,
 efficiency_net_high,technical,%,
 efficiency_net_n,technical,,
-efficiency_plant,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_plant_n,technical,,
-efficiency_power-to-fuel,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: power-to-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-efficiency_power-to-fuel_n,technical,,
+efficiency_part-load,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: part-load. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_part-load_low,technical,%,
+efficiency_part-load_high,technical,%,
+efficiency_part-load_n,technical,,
 efficiency_steam,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_steam_low,technical,%,
 efficiency_steam_high,technical,%,
@@ -162,6 +160,12 @@ specific-energy-consumption_coke-oven-gas,technical,GJ/product-unit,"Total final
 specific-energy-consumption_coke-oven-gas_low,technical,GJ/product-unit,
 specific-energy-consumption_coke-oven-gas_high,technical,GJ/product-unit,
 specific-energy-consumption_coke-oven-gas_n,technical,,
+specific-energy-consumption_component,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_component_n,technical,,
+specific-energy-consumption_diesel,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: diesel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_diesel_low,technical,GJ/product-unit,
+specific-energy-consumption_diesel_high,technical,GJ/product-unit,
+specific-energy-consumption_diesel_n,technical,,
 specific-energy-consumption_electricity,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_electricity_low,technical,GJ/product-unit,
 specific-energy-consumption_electricity_high,technical,GJ/product-unit,
@@ -196,12 +200,20 @@ specific-energy-consumption_oil_high,technical,GJ/product-unit,
 specific-energy-consumption_oil_n,technical,,
 specific-energy-consumption_other-fossil-fuel,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: other-fossil-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_other-fossil-fuel_n,technical,,
+specific-energy-consumption_petroleum-coke,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: petroleum-coke. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_petroleum-coke_low,technical,GJ/product-unit,
+specific-energy-consumption_petroleum-coke_high,technical,GJ/product-unit,
+specific-energy-consumption_petroleum-coke_n,technical,,
 specific-energy-consumption_process-off-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: process-off-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_process-off-gas_n,technical,,
 specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_steam_low,technical,GJ/product-unit,
 specific-energy-consumption_steam_high,technical,GJ/product-unit,
 specific-energy-consumption_steam_n,technical,,
+specific-energy-consumption_total,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: total. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_total_low,technical,GJ/product-unit,
+specific-energy-consumption_total_high,technical,GJ/product-unit,
+specific-energy-consumption_total_n,technical,,
 temperature-output,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-output_low,technical,degC,
 temperature-output_high,technical,degC,
@@ -209,8 +221,16 @@ temperature-output_n,technical,,
 temperature-output_air,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species: air. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-output_air_n,technical,,
 temperature-output_crude,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species: crude. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+temperature-output_crude_low,technical,degC,
+temperature-output_crude_high,technical,degC,
 temperature-output_crude_n,technical,,
+temperature-output_exhaust,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species: exhaust. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+temperature-output_exhaust_low,technical,degC,
+temperature-output_exhaust_high,technical,degC,
+temperature-output_exhaust_n,technical,,
 temperature-output_heat,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+temperature-output_heat_low,technical,degC,
+temperature-output_heat_high,technical,degC,
 temperature-output_heat_n,technical,,
 temperature-output_steam,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 temperature-output_steam_low,technical,degC,
@@ -256,6 +276,12 @@ capex_high,cost,2025_CAD/(product-unit per yr),
 capex_n,cost,,
 capex_brownfield,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species: brownfield. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capex_brownfield_n,cost,,
+capex_component,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capex_component_low,cost,2025_CAD/(product-unit per yr),
+capex_component_high,cost,2025_CAD/(product-unit per yr),
+capex_component_n,cost,,
+capex_first-of-a-kind,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species: first-of-a-kind. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+capex_first-of-a-kind_n,cost,,
 capex_greenfield,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species: greenfield. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capex_greenfield_n,cost,,
 opex-fixed,cost,2025_CAD/(product-unit per yr),"Annual operating and maintenance cost that does not vary with output. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -284,6 +310,10 @@ cost-levelized_co2-captured,cost,2025_CAD/product-unit,"Cost per unit of product
 cost-levelized_co2-captured_low,cost,2025_CAD/product-unit,
 cost-levelized_co2-captured_high,cost,2025_CAD/product-unit,
 cost-levelized_co2-captured_n,cost,,
+cost-levelized_component,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_component_low,cost,2025_CAD/product-unit,
+cost-levelized_component_high,cost,2025_CAD/product-unit,
+cost-levelized_component_n,cost,,
 cost-levelized_delivered,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: delivered. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 cost-levelized_delivered_low,cost,2025_CAD/product-unit,
 cost-levelized_delivered_high,cost,2025_CAD/product-unit,
@@ -292,10 +322,18 @@ cost-levelized_delivered-net-of-45V,cost,2025_CAD/product-unit,"Cost per unit of
 cost-levelized_delivered-net-of-45V_low,cost,2025_CAD/product-unit,
 cost-levelized_delivered-net-of-45V_high,cost,2025_CAD/product-unit,
 cost-levelized_delivered-net-of-45V_n,cost,,
+cost-levelized_electricity,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_electricity_low,cost,2025_CAD/product-unit,
+cost-levelized_electricity_high,cost,2025_CAD/product-unit,
+cost-levelized_electricity_n,cost,,
 cost-levelized_heat,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 cost-levelized_heat_low,cost,2025_CAD/product-unit,
 cost-levelized_heat_high,cost,2025_CAD/product-unit,
 cost-levelized_heat_n,cost,,
+cost-levelized_hydrogen,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-levelized_hydrogen_low,cost,2025_CAD/product-unit,
+cost-levelized_hydrogen_high,cost,2025_CAD/product-unit,
+cost-levelized_hydrogen_n,cost,,
 capital-recovery,cost,%,"Annualization factor applied to capex. Record the source study's own factor, not the model's. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 capital-recovery_low,cost,%,
 capital-recovery_high,cost,%,
@@ -312,6 +350,12 @@ cost-learning-rate,cost,%,"Fractional capex reduction per doubling of cumulative
 cost-learning-rate_low,cost,%,
 cost-learning-rate_high,cost,%,
 cost-learning-rate_n,cost,,
+cost-learning-rate_component,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-learning-rate_component_low,cost,%,
+cost-learning-rate_component_high,cost,%,
+cost-learning-rate_component_n,cost,,
+cost-learning-rate_stack,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+cost-learning-rate_stack_n,cost,,
 emissions-combustion_ch4,emissions,t/product-unit,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-combustion_ch4_low,emissions,t/product-unit,
 emissions-combustion_ch4_high,emissions,t/product-unit,
@@ -334,6 +378,14 @@ emissions-combustion_pfc,emissions,t/product-unit,"Emissions from burning fuel a
 emissions-combustion_pfc_low,emissions,t/product-unit,
 emissions-combustion_pfc_high,emissions,t/product-unit,
 emissions-combustion_pfc_n,emissions,,
+emissions-process_c2f6,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: c2f6. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-process_c2f6_low,emissions,t/product-unit,
+emissions-process_c2f6_high,emissions,t/product-unit,
+emissions-process_c2f6_n,emissions,,
+emissions-process_cf4,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: cf4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-process_cf4_low,emissions,t/product-unit,
+emissions-process_cf4_high,emissions,t/product-unit,
+emissions-process_cf4_n,emissions,,
 emissions-process_ch4,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-process_ch4_low,emissions,t/product-unit,
 emissions-process_ch4_high,emissions,t/product-unit,
@@ -354,6 +406,10 @@ emissions-process_pfc,emissions,t/product-unit,"Emissions from the chemical reac
 emissions-process_pfc_low,emissions,t/product-unit,
 emissions-process_pfc_high,emissions,t/product-unit,
 emissions-process_pfc_n,emissions,,
+emissions-process_sf6,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species: sf6. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+emissions-process_sf6_low,emissions,t/product-unit,
+emissions-process_sf6_high,emissions,t/product-unit,
+emissions-process_sf6_n,emissions,,
 emissions-total_ch4,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 emissions-total_ch4_low,emissions,t/product-unit,
 emissions-total_ch4_high,emissions,t/product-unit,
@@ -392,6 +448,10 @@ abatement-cost,economic,2025_CAD/t-CO2-eq,"Cost of avoiding one tonne of CO2-eq 
 abatement-cost_low,economic,2025_CAD/t-CO2-eq,
 abatement-cost_high,economic,2025_CAD/t-CO2-eq,
 abatement-cost_n,economic,,
+abatement-cost_ch4,economic,2025_CAD/t-CO2-eq,"Cost of avoiding one tonne of CO2-eq by using this technology instead of the incumbent, as the source reports it. NOT a capital or operating cost and never interchangeable with one: it already nets the technology's costs against the incumbent's and divides by the emissions avoided, so the incumbent it was measured against belongs in the note. Added 2026-08-29 for IPCC AR6 Chapter 11 Table 11.3, which reports costs only in this form. Species: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+abatement-cost_ch4_low,economic,2025_CAD/t-CO2-eq,
+abatement-cost_ch4_high,economic,2025_CAD/t-CO2-eq,
+abatement-cost_ch4_n,economic,,
 abatement-cost_co2,economic,2025_CAD/t-CO2-eq,"Cost of avoiding one tonne of CO2-eq by using this technology instead of the incumbent, as the source reports it. NOT a capital or operating cost and never interchangeable with one: it already nets the technology's costs against the incumbent's and divides by the emissions avoided, so the incumbent it was measured against belongs in the note. Added 2026-08-29 for IPCC AR6 Chapter 11 Table 11.3, which reports costs only in this form. Species: co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 abatement-cost_co2_low,economic,2025_CAD/t-CO2-eq,
 abatement-cost_co2_high,economic,2025_CAD/t-CO2-eq,

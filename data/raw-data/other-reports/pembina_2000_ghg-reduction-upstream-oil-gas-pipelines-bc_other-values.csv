@@ -1,0 +1,37 @@
+process,technology,item,value,unit,reference,note
+"Battery storage-tank losses, gas boot system (Sect. 4.2.9)",process-improvement_gas-boot-system,"storage loss without gas boot, treater direct to stock tank",3.2,m3/m3 production,"p.14, Sect. 4.2.9",
+"Battery storage-tank losses, gas boot system (Sect. 4.2.9)",process-improvement_gas-boot-system,"storage loss without gas boot, inlet separator direct to stock tank",5.0,m3/m3 production,"p.14, Sect. 4.2.9",
+"Microturbine on flared solution gas, Capstone units tested by Fletcher Challenge Energy (Sect. 4.3.2)",microturbine_flare-gas-power,CO2E saved by the 1998 pilot,145,t CO2E,"p.15, Sect. 4.3.2",Fletcher Challenge Energy / Capstone test since 1995.
+"Microturbine on flared gas, Mercury Electric Parallon 75 beta unit at a Husky battery (Sect. 4.3.2)",microturbine_flare-gas-power,flare gas used by the unit,700,m3/day,"p.15, Sect. 4.3.2","Of 3,500 m3/day flared at the Husky site."
+"Gas turbine on flared battery gas, Husky Oil assessment (Sect. 4.3.2)",combustion-turbine_flare-gas-power,potential CO2E reduction,25000,t CO2E/yr,"p.15, Sect. 4.3.2","Roughly 25,000 t CO2E per year from a 9 Mm3 annual flare-gas supply."
+"Gas turbine on flared battery gas, Husky Oil assessment (Sect. 4.3.2)",combustion-turbine_flare-gas-power,flare gas supply,9,Mm3/yr,"p.15, Sect. 4.3.2",
+Case-study reductions reported in the text (Sect. 4-6),,Northstar Energy: sell previously flared solution gas from treaters,3.6,kt CO2E/y,p.11,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Paramount Resources: tie single-well oil batteries (Kaybob West) into a gathering system,15.6,kt CO2E/y,p.11,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Northstar Energy: solution gas re-injection at Carmangay (10.5 Mm3/y of gas),27,kt CO2E/y,p.11,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Petro-Canada: replace a flare with a sour gas incinerator at one gas plant,4.8,kt CO2E/y,p.11,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Husky: modified turnaround schedule at Ram River gas plant,1,kt CO2E/y,p.11,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,SaskEnergy-TransGas: caps on 1022 bypass valves at town border stations,12.5,kt CO2E/y,p.10,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,SaskEnergy-TransGas: replace fuel gas with air in pneumatic controls,1.63,kt CO2E,p.12,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"AEC: coil tubing tie-in of wells before test to avoid flaring, 1998",56.4,kt CO2E,p.12,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"Westcoast Energy: acid gas re-injection at Jedney I and II, 1997",40.5,kt CO2E,p.13,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"TransCanada: LDAR program, 1998 full implementation",124,kt CO2E,p.13 and p.19,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"TransCanada: LDAR pilot, 1997",21,kt CO2E,p.19,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Mobil Oil Canada: two vapour condensers upstream of VRUs at Battrum Battery 21 (since 1997),22,kt CO2E/y,p.13,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Husky: reduce incinerator stack-top temperature at Ram River plant,22.3,kt CO2E/y,p.16,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Alberta Natural Gas Co: each of three replaced gas turbine/compressor units,15,kt CO2/y per unit,p.16,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Union Pacific Resources: match motor size to pumpjack load,3.9,kt CO2E/y,p.16,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Northstar Energy: lower glycol pump circulation rates,0.2,kt CO2/y,p.16,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,PanCanadian: variable speed drives at six satellites,0.2,kt CO2E/y,p.16,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"Westcoast Energy: portable pull-down compressor at three sites, 1995",30,kt CO2E,p.20,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Foothills Pipe Lines: turbo-expanders (since 1990),108,kt CO2E/y,p.20,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,Enbridge Pipelines: larger diameter pipe and VFDs since 1995,130,kt CO2E/y,p.21,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,"Suncor: condensing steam turbo-generator at oil sands plant, 2002 full capacity",440,kt CO2E/y,p.18,"Company-reported result, not a technology parameter."
+Case-study reductions reported in the text (Sect. 4-6),,TransCanada Power: four enhanced combined-cycle plants in Ontario,148.6,MW,p.18,"Company-reported result, not a technology parameter."
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Combustion CO2E,4810931,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Process venting CO2E,2838158,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Fugitive equipment leaks CO2E,950379,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Dehydrator off-gas CO2E,28853,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Accidents and equipment failures CO2E,43496,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Storage losses CO2E,12201,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+"B.C. upstream oil and gas emissions, reference year 1995 (Sect. 4.1, Table 5)",,Total CO2E,8684761,t CO2E/yr,"p.7, Table 5 (CAPP 1999)",Sector statistic.
+Canadian upstream oil and gas (Sect. 4.1.4),,measured solution gas flare combustion efficiency,64-85,%,"p.9, Sect. 4.1.4",1996 Alberta Research Council study; flares were traditionally assumed to burn methane at over 98%.

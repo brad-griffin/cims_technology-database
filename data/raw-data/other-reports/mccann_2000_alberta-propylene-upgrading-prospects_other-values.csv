@@ -1,0 +1,8 @@
+process,technology,item,value,unit,reference,note
+"Polypropylene plant overview (Sect. 6.2, Table 6.2-1)",reactor_polymerization-extrusion_polypropylene-world-scale,Electricity demand of 225 kty plant,8,MW,"p.55, Table 6.2-1","Plant load, not annual consumption"
+"Polypropylene plant overview (Sect. 6.2, Table 6.2-1)",reactor_polymerization-extrusion_polypropylene-world-scale,Steam demand of 225 kty plant,103,kg/hr,"p.55, Table 6.2-1",As printed (value looks small for a 225 kty plant; possibly t/hr)
+"Acrylonitrile plant overview (Sect. 6.3, Table 6.3-1)",reactor_acrylonitrile_ammoxidation,Electricity demand of 250 kty plant,6,MW,"p.59, Table 6.3-1",Plant load
+"Acrylic acid plant overview (Sect. 6.4, Table 6.4-1-2)",reactor_acrylic-acid_propylene-oxidation,Electricity demand of 225 kty plant,3,MW,"p.64, Table 6.4-1-2",Plant load
+Byproduct propylene recovery base case (Sect. 3.2.4),,"Base-case capital cost of byproduct propylene scheme (raw propylene storage 40-50 M$, central processing 60-80 M$)",160-230,2000_USD-million,p.19,"Authors estimate, not an equipment cost"
+Propane dehydrogenation (Sect. 4.6),,"Capital credit if facility size reduced, or extra capacity from UOP design margin",7,%,p.22,Not applied by authors
+Polypropylene (Sect. 6.2.3),,Capital cost of recent PP plants versus plants built five or more years earlier,10-15% lower,%,p.57,Unipol-type technology trend

@@ -1,0 +1,26 @@
+process,technology,sector,end-use,process-step,service-unit
+Venting and destruction (Table 1): vapour recovery unit,compressor_vapour-recovery,oil-and-gas,venting,tank-vapour-recovery,t
+Venting and destruction (Table 1): pipeline tie-in,pipeline_tie-in-gas-conservation,oil-and-gas,venting,tank-vapour-recovery,t
+Venting and destruction (Table 1): flare ignition system,flare_electronic-ignition,oil-and-gas,flaring,flare-pilots,t
+Venting and destruction (Table 1): combustor,flare_enclosed-combustor,oil-and-gas,flaring,flaring,t
+Venting and destruction (Table 1): catalytic oxidizer,oxidizer_catalytic-vent-gas,oil-and-gas,flaring,flaring,t
+Blowdowns (Table 2): redesign blowdown systems and alter ESD practices,process-improvement_blowdown-redesign,oil-and-gas,venting,blowdowns,t
+Blowdowns (Table 2): capture and route gas to portable combustor,flare_portable-combustor-blowdown,oil-and-gas,venting,blowdowns,t
+Blowdowns (Table 2): blowdown gas capture and conservation,compressor_blowdown-recovery,oil-and-gas,venting,blowdowns,t
+Well liquids unloading (Table 3): plunger lift,pump_plunger-lift,oil-and-gas,venting,well-liquids-unloading,t
+Well liquids unloading (Table 3): destruction device,flare_enclosed-combustor,oil-and-gas,venting,well-liquids-unloading,t
+Pneumatic devices (Table 4): electric pumps (solar and on-site power),pump_electric-chemical-injection,oil-and-gas,venting,pneumatic-controls,m3
+Pneumatic devices (Table 4): non-emitting instruments,pneumatic-device_non-emitting-instrument,oil-and-gas,venting,pneumatic-controls,m3
+Compressor seals (Table 5): wet seal degassing system,compressor_wet-seal-degassing-recovery,oil-and-gas,venting,compressor-seals,t
+Compressor seals (Table 5): dry seals,compressor_dry-gas-seal,oil-and-gas,venting,compressor-seals,t
+Compressor seals (Table 5): vent capture and combustion,compressor_vent-capture-combustion,oil-and-gas,venting,compressor-seals,t
+"Glycol dehydrators (Table 6): combined solutions, existing facilities",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,glycol-dehydration,m3
+"Glycol dehydrators (Table 6): combined solutions, new facilities",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,glycol-dehydration,m3
+Surface casing vent flow (Table 8): recovery and combustion,compressor_casing-gas-recovery-combustion,oil-and-gas,venting,casinghead-gas-venting,t
+Surface casing vent flow (Table 8): recovery and compression,compressor_casing-gas-recovery-compression,oil-and-gas,venting,casinghead-gas-venting,t
+Fugitive emission detection and repair program (Table 7): inactive unplugged wells,management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Fugitive emission detection and repair program (Table 7): wells,management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Fugitive emission detection and repair program (Table 7): gas processing facilities,management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Fugitive emission detection and repair program (Table 7): compressor stations (small),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Fugitive emission detection and repair program (Table 7): batteries,management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Fugitive emission detection and repair program (Table 7): compressor stations (large),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t

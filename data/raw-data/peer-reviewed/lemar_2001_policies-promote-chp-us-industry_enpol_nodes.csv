@@ -1,0 +1,27 @@
+process,technology,sector,end-use,process-step,service-unit
+"Natural-gas CHP, 45-75 kW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 45-75 kW (Table 2)",microturbine_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 75-150 kW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 75-150 kW (Table 2)",microturbine_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 150-350 kW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 150-350 kW (Table 2)",microturbine_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 150-350 kW (Table 2)",fuel-cell_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 350-750 kW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 350-750 kW (Table 2)",microturbine_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 350-750 kW (Table 2)",fuel-cell_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 0.75-5 MW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 0.75-5 MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 5-10 MW (Table 2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 5-10 MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 10-20 MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 20-50 MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 20-50 MW (Table 2)",combined-cycle_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 50-100 MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 50-100 MW (Table 2)",combined-cycle_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 100+ MW (Table 2)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,,GJ
+"Natural-gas CHP, 100+ MW (Table 2)",combined-cycle_natural-gas-chp,heat-supply,steam-and-hot-water,,GJ
+Biomass cogeneration for pulp and paper mills (Table 4): Kraft base case: Tomlinson boiler + bark boiler,boiler_recovery-tomlinson-with-bark-boiler,pulp-and-paper,power-generation,,GJ
+Biomass cogeneration for pulp and paper mills (Table 4): Kraft: indirect BLGCC + bark boiler,gasifier_black-liquor-combined-cycle_bark-boiler,pulp-and-paper,power-generation,,GJ
+Biomass cogeneration for pulp and paper mills (Table 4): Kraft: indirect BLGCC + biomass gasifier/combined cycle (BGCC),gasifier_black-liquor-and-biomass-combined-cycle,pulp-and-paper,power-generation,,GJ
+Biomass cogeneration for pulp and paper mills (Table 4): Other paper mills: base case bark boiler,boiler_solid-fuel_bark-cogeneration,pulp-and-paper,power-generation,,GJ
+Biomass cogeneration for pulp and paper mills (Table 4): Other paper mills: biomass gasifier/combined cycle (BGCC),gasifier_biomass-combined-cycle,pulp-and-paper,power-generation,,GJ

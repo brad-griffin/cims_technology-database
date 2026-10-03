@@ -1,0 +1,6 @@
+process,technology,sector,end-use,process-step,service-unit
+"Core ethanol-to-jet (ATJ), ethanol feed 200 ton/day, add-on to an ethanol plant (Sect. 2.1, Tables 2-6, 11)",reactor_alcohol-to-jet,biofuels,material-conversion,alcohol upgrading,ton
+"Core isobutanol-to-jet (ATJ), isobutanol feed 200 ton/day, add-on to an alcohol plant (Sect. 2.1, Tables 2-6, 12)",reactor_alcohol-to-jet,biofuels,material-conversion,alcohol upgrading,ton
+"Sugar to jet via ethanol fermentation plus core ATJ, 435 ton/day sugar (Sect. 2.2, Tables 7-8)",biorefinery_sugar-ethanol-to-jet,biofuels,material-conversion,sugar to jet biorefinery,gal
+"Sugar to jet via isobutanol fermentation (low cost) plus core ATJ, 435 ton/day sugar (Sect. 2.2, Tables 7-8)",biorefinery_sugar-isobutanol-to-jet,biofuels,material-conversion,sugar to jet biorefinery,gal
+"Sugar to jet via isobutanol fermentation (high cost: 2x fermentation capex and variable opex) plus core ATJ, 435 ton/day sugar (Sect. 2.2, Tables 7-8)",biorefinery_sugar-isobutanol-to-jet,biofuels,material-conversion,sugar to jet biorefinery,gal

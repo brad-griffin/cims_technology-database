@@ -1,0 +1,25 @@
+process,technology,sector,end-use,process-step,service-unit
+"SAGD base case, 30,000 bbl/d (Table 2.6 p.27; Sect. Study Approach pp.51-54; Tables A.1-A.2 pp.93-94)",well_sagd,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Pure solvent extraction, Nsolv process (Table 2.6 p.27; Sect. Pure Solvent Processes pp.28-29)",well_solvent-only,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Steam-solvent processes SAP and SA-SAGD, generic (Table 2.6 p.27; Sect. Steam-Solvent Processes pp.29-31)",well_solvent-assisted,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"SAP, Solvent Aided Process, Senlac pilot (Sect. SAP Process pp.29-30)",well_solvent-assisted_sap,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Narrows Lake SAP project, proposed (Sect. SAP Process p.30)",well_solvent-assisted_sap,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"SA-SAGD, Solvent-Assisted SAGD, Imperial Cold Lake (Sect. SA-SAGD Process pp.30-31)",well_solvent-assisted_sa-sagd,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Electromagnetic heating with solvent, ESEIEH (Table 2.6 p.27; Sect. ESEIEH Process pp.31-32)",well_electromagnetic-heating_eseieh,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Electromagnetic heating, RF XL process (Sect. RF XL Process pp.32-33)",well_electromagnetic-heating_rf-xl,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"SEGD, in situ thermal extraction by down-hole oxy-combustion (Table 2.6 p.27; Sect. SEGD Process p.34)",well_in-situ-oxy-combustion_segd,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"Steam-surfactant process, Cenovus/Suncor (Table 2.6 p.27; Sect. Steam-Surfactant Process pp.33-34)",well_sagd_steam-surfactant,oil-and-gas,material-extraction,bitumen-extraction,bbl
+"OTSG at 78% steam quality, one generator (Sect. Steam Generation, Table 2.4 p.20)",boiler_once-through-steam-generator_conventional,heat-supply,steam-and-hot-water,steam generation,t
+"OTSG as SAGD base-case steam generator (Sect. Study Approach, Steam Generation Technologies p.55)",boiler_once-through-steam-generator_conventional,heat-supply,steam-and-hot-water,steam generation,t
+"SQ90 OTSG at 90% steam quality, one generator (Sect. Steam Generation, Table 2.4 p.20)",boiler_once-through-steam-generator_sq90,heat-supply,steam-and-hot-water,steam generation,t
+"Direct contact steam generation, NRCan HiPrOx (Sect. Steam Generation pp.20-21; Sect. GHG Emissions pp.60-62)",boiler_direct-contact,oil-and-gas,material-extraction,bitumen-extraction,GJ
+Solid oxide fuel cell cogeneration for SAGD steam and power (Sect. Steam Generation pp.21-23),fuel-cell_chp,heat-supply,steam-and-hot-water,cogeneration,GJ
+"Gas-turbine once-through steam generator, ConocoPhillips/Total (Sect. Steam Generation p.24)",combustion-turbine_once-through-steam-generator,heat-supply,steam-and-hot-water,cogeneration,GJ
+"Full upgrading benchmark: delayed coking upgrader, 30,000 bbl/d bitumen (Table 2.7 p.36; Tables A.3-A.4 p.95)",reactor_integrated-upgrader,oil-and-gas,material-conversion,upgrading,bbl
+"Enhanced JetShear (EJS) partial upgrading, 30,000 bbl/d (Table 2.7 p.36; Sect. EJS Process pp.36-37)",reactor_partial-upgrading_ejs,oil-and-gas,material-conversion,upgrading,bbl
+Cold Catalytic Cracking (CCC) partial upgrading (Table 2.7 p.36; Sect. CCC Process pp.37-38),reactor_partial-upgrading_ccc,oil-and-gas,material-conversion,upgrading,bbl
+CCC bitumen-to-diesel configuration (Sect. CCC Process p.38),reactor_deep-conversion_ccc-diesel,oil-and-gas,material-conversion,upgrading,bbl
+Desulphurization and Upgrading (DSU) (Table 2.7 p.36; Sect. DSU Process pp.38-39),reactor_partial-upgrading_dsu,oil-and-gas,material-conversion,upgrading,bbl
+Increased Yields and Qualities (IYQ) upgrading (Table 2.7 p.36; Sect. IYQ Process pp.39-40),reactor_partial-upgrading_iyq,oil-and-gas,material-conversion,upgrading,bbl
+Heavy to Light (HTL) partial upgrading (Table 2.7 p.36; Sect. HTL Process p.40),reactor_partial-upgrading_htl,oil-and-gas,material-conversion,upgrading,bbl
+High Quality (Hi-Q) partial upgrading (Table 2.7 p.36; Sect. Hi-Q Process pp.40-41),reactor_partial-upgrading_hi-q,oil-and-gas,material-conversion,upgrading,bbl

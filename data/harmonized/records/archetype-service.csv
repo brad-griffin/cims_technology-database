@@ -825,3 +825,32 @@ transesterification-unit_acid-catalyzed,<sector>.biofuels.product.biodiesel,biod
 transesterification-unit_supercritical-methanol,<sector>.biofuels.product.biodiesel,biodiesel-production,biofuels/biodiesel-production: every leaf of the end use
 reactor_co2-to-ethanol,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: added 2026-10-02
 reactor_co2-to-fischer-tropsch,<sector>.biofuels.product.renewable-diesel-and-saf,renewable-diesel-and-saf,biofuels/renewable-diesel-and-saf: every leaf of the end use
+electrolysis-cell_chlor-alkali-mercury,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,corrected 2026-09-23: membrane cells make chlorine and caustic soda
+kiln_lime-shaft,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
+mine_open-pit-oil-sands,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,added 2026-10-02
+well_electromagnetic-heating,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,oil-and-gas/in-situ-bitumen: every leaf of the end use
+well_in-situ-oxy-combustion,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,oil-and-gas/in-situ-bitumen: every leaf of the end use
+compressor_wet-seal-degassing-recovery,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,oil-and-gas/fugitive-emissions: every leaf of the end use
+pneumatic-device_low-bleed,<sector>.natural-gas.product.supply.venting.controls,venting,oil-and-gas/venting: the leaf its name or label names
+gas-treatment-unit_vam-oxidiser,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,methane control on coal extraction; a coal-mine methane node is requested
+process-improvement_pfc-anode-effect-control,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,non-ferrous-metals/aluminum-smelting: every leaf of the end use
+electrolysis-cell_magnesium-chloride,<sector>.metal-smelting.product.magnesium.electrolysis,hydrometallurgy,added 2026-10-02 (the annotation that holds the magnesium electrolysis leaf)
+reactor_silicothermic-pidgeon,<sector>.metal-smelting.product.magnesium.thermal-reduction,pyrometallurgy,added 2026-10-02
+reactor_propane-dehydrogenation,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,added 2026-10-02
+fan_mine-ventilation,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,added 2026-10-02
+fan_mine-ventilation,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,added 2026-10-02: metal mines have no ventilation node
+storage-cavern_hydrogen,<sector>.hydrogen.service.distribution,hydrogen-distribution,hydrogen/hydrogen-distribution: every leaf of the end use
+fermenter_hydrogen-co2,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
+furnace_glass-hydrogen-fired,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+electrolyzer_limestone-decarbonation,<sector>.industrial-minerals.product.cement.clinker,clinker-production,cement/clinker-production: the device's route
+electrolyzer_limestone-decarbonation,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,non-metallic-minerals/lime-calcination: the leaves its sources placed it on
+capture-unit_solid-sorbent,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,cross-sector/co2-capture-diffuse: every leaf of the end use
+liquefaction-train_base-load,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,oil-and-gas/lng-liquefaction: every leaf of the end use
+liquefaction-train_floating,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,oil-and-gas/lng-liquefaction: every leaf of the end use
+smelting-vessel_bath-tuyere,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_bath-tuyere,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_bath-tuyere,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_bottom-blowing,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_bottom-blowing,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_bottom-blowing,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+grinding-mill_hpgr,<sector>.mining.service.milling,comminution,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)

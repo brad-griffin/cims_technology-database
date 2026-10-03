@@ -1,0 +1,24 @@
+process,technology,sector,end-use,process-step,service-unit
+"Once-through steam generator, default SAGD/heavy-oil steam generation (Sect. 6.15.2.2, Tables 6.54-6.55, p.176-187)",boiler_fuel-fired_once-through-steam-generator,oil-and-gas,steam-and-hot-water,steam generation,GJ
+"Gas turbine plus HRSG cogeneration, hypothetical turbine A (Sect. 6.15.2.3, Table 6.53, p.182)",combustion-turbine_heat-recovery-steam-generator,oil-and-gas,steam-and-hot-water,combined-heat-and-power,GJ
+"Gas turbine plus HRSG cogeneration, hypothetical turbine B (Sect. 6.15.2.3, Table 6.53, p.182)",combustion-turbine_heat-recovery-steam-generator,oil-and-gas,steam-and-hot-water,combined-heat-and-power,GJ
+"Gas turbine plus HRSG cogeneration, hypothetical turbine C (Sect. 6.15.2.3, Table 6.53, p.182)",combustion-turbine_heat-recovery-steam-generator,oil-and-gas,steam-and-hot-water,combined-heat-and-power,GJ
+"Gas turbine plus HRSG cogeneration, hypothetical turbine D (Sect. 6.15.2.3, Table 6.53, p.182)",combustion-turbine_heat-recovery-steam-generator,oil-and-gas,steam-and-hot-water,combined-heat-and-power,GJ
+"HRSG defaults in thermal EOR steam generation (Table 6.55, p.187)",combustion-turbine_heat-recovery-steam-generator,oil-and-gas,steam-and-hot-water,combined-heat-and-power,GJ
+"Solar thermal steam generation for thermal EOR (Sect. 6.15.2.4, p.183)",solar-concentrator_steam-generation,oil-and-gas,steam-and-hot-water,solar steam,GJ
+"Upgrader configuration: Delayed coking (Suncor-like), OSTUM-derived (Table 6.32, p.144-145)",reactor_integrated-upgrader,oil-and-gas,material-conversion,upgrading,m3
+"Upgrader configuration: Hydroconversion (Scotford-like), OSTUM-derived (Table 6.32, p.144-145)",reactor_integrated-upgrader,oil-and-gas,material-conversion,upgrading,m3
+"Upgrader configuration: Hydroconversion plus fluid coking (Syncrude-like), OSTUM-derived (Table 6.32, p.144-145)",reactor_integrated-upgrader,oil-and-gas,material-conversion,upgrading,m3
+"Flaring, model default methane destruction (Sect. 6.16.3, Table 6.57, p.191-192)",flare,oil-and-gas,flaring,flaring,t
+"LNG liquefaction intensity factors (Sect. 6.33.2, Table 6.104, p.282-283)",liquefaction-train_base-load,oil-and-gas,gas-processing,liquefaction,t
+"Driver (prime mover) database, natural gas engine generator sets (Sect. 7.1, Tables 7.1-7.2, p.320-322)",reciprocating-engine_generator-set_natural-gas,oil-and-gas,power-generation,prime movers,GJ
+"Driver (prime mover) database, natural gas engine generator sets (Sect. 7.1, Tables 7.1-7.2, p.320-322)",reciprocating-engine_diesel-field,oil-and-gas,power-generation,prime movers,GJ
+"Driver (prime mover) database, natural gas engine generator sets (Sect. 7.1, Tables 7.1-7.2, p.320-322)",combustion-turbine_simple-cycle_natural-gas-drive,oil-and-gas,power-generation,prime movers,GJ
+"Driver (prime mover) database, natural gas engine generator sets (Sect. 7.1, Tables 7.1-7.2, p.320-322)",motor_field-electric,oil-and-gas,compression,electric drives,GJ
+"Compressor and pump efficiency defaults (Sect. 6.18-6.37; Tables 6.26, 6.40-6.100, p.133-290)",compressor_adiabatic-default,oil-and-gas,compression,gas compression,GJ
+"Crude oil dewatering heater-treater (Sect. 6.7, Table 6.28, p.134-136)",direct-heater_line-heater,oil-and-gas,process-heat-low-temp,crude heating,m3
+"Crude oil stabilization reboiler heater (Sect. 6.8, Table 6.30, p.137-139)",direct-heater_line-heater,oil-and-gas,process-heat-medium-temp,stabilization,m3
+"Electric heater-treater and stabilizer heater (Tables 6.28, 6.30, p.136, p.139)",heat-pump_oil-treating,oil-and-gas,process-heat-low-temp,crude heating,m3
+"Glycol dehydrator defaults (Sect. 6.19, Table 6.67, p.210)",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,dehydration,m3
+"Acid gas removal amine defaults (Sect. 6.20, Table 6.72, p.229)",gas-treatment-unit_amine-sweetening,oil-and-gas,gas-processing,acid gas removal,m3
+"Pre-membrane electric chiller (Sect. 6.22, Eq. 6.106, p.241-243)",chiller_vapour-compression_gas-cooling,oil-and-gas,refrigeration-and-cooling,gas chilling,t

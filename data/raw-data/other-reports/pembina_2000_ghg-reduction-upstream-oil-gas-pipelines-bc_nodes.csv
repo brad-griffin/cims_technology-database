@@ -1,0 +1,19 @@
+process,technology,sector,end-use,process-step,service-unit
+"Equipment leak control, valves (gas/vapour and light liquid): Quarterly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, valves (gas/vapour and light liquid): Monthly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_monthly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pumps (light liquid): Quarterly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pumps (light liquid): Monthly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_monthly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pumps (light liquid): Sealless pumps or closed vent system on seal area (Sect. 4.2.1, Table 7)",pump_sealless,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, compressors (gas/vapour): Quarterly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, compressors (gas/vapour): Vent seals and distance pieces to a control device (Sect. 4.2.1, Table 7)",compressor_seal-vent-to-control-device,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pressure relief valves (gas/vapour): Quarterly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pressure relief valves (gas/vapour): Monthly LDAR (Sect. 4.2.1, Table 7)",management-system_leak-detection_monthly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pressure relief valves (gas/vapour): Vent to a control device (Sect. 4.2.1, Table 7)",valve_pressure-relief-vent-to-control-device,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, pressure relief valves (gas/vapour): Rupture disk (Sect. 4.2.1, Table 7)",valve_rupture-disk,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, sampling connections: Closed-purge or closed-vent systems (Sect. 4.2.1, Table 7)",process-improvement_closed-purge-sampling,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Equipment leak control, open-ended lines: Caps, plugs, blinds or second valve (Sect. 4.2.1, Table 7)",process-improvement_open-ended-line-caps,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+"Battery storage-tank losses, gas boot system (Sect. 4.2.9)",process-improvement_gas-boot-system,oil-and-gas,venting,tank-vapours,m3
+"Pipeline pigging, specialised pig valves (Sect. 6.1.2)",valve_pig-single-seat,oil-and-gas,venting,pipeline-purging,t
+"Microturbine on flared solution gas, Capstone units tested by Fletcher Challenge Energy (Sect. 4.3.2)",microturbine_flare-gas-power,oil-and-gas,flaring,flare-gas-use,GJ
+"Microturbine on flared gas, Mercury Electric Parallon 75 beta unit at a Husky battery (Sect. 4.3.2)",microturbine_flare-gas-power,oil-and-gas,flaring,flare-gas-use,GJ
+"Gas turbine on flared battery gas, Husky Oil assessment (Sect. 4.3.2)",combustion-turbine_flare-gas-power,oil-and-gas,flaring,flare-gas-use,GJ

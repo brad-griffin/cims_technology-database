@@ -1,0 +1,14 @@
+process,technology,sector,end-use,process-step,service-unit
+"Pneumatic controllers, production well site (Table 4-21; Sect. 2.2.2(d))",pneumatic-device_electronic-controller-solar,oil-and-gas,venting,pneumatic-controls,m3
+"Pneumatic controllers, gathering and boosting station (Table 4-21; Sect. 2.2.2(d))",compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,m3
+"Pneumatic controllers, transmission compressor station (Table 4-21; Sect. 2.2.2(d))",compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,m3
+"Pneumatic controllers, storage compressor station (Table 4-21; Sect. 2.2.2(d))",compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,m3
+"Storage vessels, production tank battery (Table 4-21; Sect. 2.2.2(b))",flare_enclosed-combustor,oil-and-gas,flaring,flaring,t
+"Associated gas, production well site (Table 4-21; Sect. 2.2.2(f))",well_associated-gas-route-to-sales,oil-and-gas,flaring,flaring,t
+Associated gas flare (Sect. 2.2.2(f)),flare,oil-and-gas,flaring,flaring,t
+"Liquids unloading, events at wells without plunger lifts (Table 4-21; Sect. 2.2.2(e))",process-improvement_liquids-unloading-best-practice,oil-and-gas,venting,well-liquids-unloading,t
+"Liquids unloading, manual unloading events at wells with plunger lifts (Table 4-21; Sect. 2.2.2(e))",process-improvement_liquids-unloading-best-practice,oil-and-gas,venting,well-liquids-unloading,t
+"Reciprocating compressors, all segments (Table 4-21; Sect. 2.2.2(a))",compressor_rod-packing-replacement_monitored,oil-and-gas,venting,compressor-seals,t
+"Wet-seal centrifugal compressors, gathering and boosting (Table 4-21; Sect. 2.2.2(a))",compressor_wet-seal-degassing-recovery,oil-and-gas,venting,compressor-seals,t
+"Well site fugitives, OGI/AVO monitoring programmes, production site (Table 4-21; Sect. 2.2.2(c))",management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Natural gas processing plant leaks (Table 4-21; Sect. 2.2.2(a)),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t

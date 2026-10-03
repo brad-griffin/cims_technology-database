@@ -1,0 +1,15 @@
+process,technology,sector,end-use,process-step,service-unit
+"HDSAM v5.5 hydrogen liquefier defaults (sheets 'H2 Liquefier', 'Design Data', 'Cost Data')",liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+Conventional hydrogen liquefier at 10 t/d design capacity (derived from sheets 'Design Data' B89 and 'Cost Data' B233),liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+Conventional hydrogen liquefier at 50 t/d design capacity (derived from sheets 'Design Data' B89 and 'Cost Data' B233),liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+Conventional hydrogen liquefier at 200 t/d design capacity (derived from sheets 'Design Data' B89 and 'Cost Data' B233),liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+HDSAM v5.5 hydrogen compressor defaults (sheet 'H2 Compressor'),compressor_hydrogen-pipeline,hydrogen,other-services,compression,kg
+Pipeline compressor at 1 MW motor rating (derived from sheet 'Cost Data' C122),compressor_hydrogen-pipeline,hydrogen,other-services,compression,kg
+Pipeline compressor at 10 MW motor rating (derived from sheet 'Cost Data' C122),compressor_hydrogen-pipeline,hydrogen,other-services,compression,kg
+HDSAM v5.5 hydrogen pipeline defaults (sheet 'H2 Pipeline'),pipeline_hydrogen-transmission,hydrogen,other-services,pipeline-transport,kg
+"Transmission pipeline, 12 in, 100 km (derived from sheet 'Cost Data' G24-G27)",pipeline_hydrogen-transmission,hydrogen,other-services,pipeline-transport,kg
+HDSAM v5.5 gaseous hydrogen geologic storage defaults (sheet 'Gaseous H2 Geologic Storage'),hydrogen-storage_salt-cavern,hydrogen,other-services,storage,kg
+"Liquid hydrogen tank trailer (sheets 'Truck - LH2 Delivery', 'Cost Data' B416, 'Design Data' B35)",liquefaction-train_hydrogen,hydrogen,other-services,liquefaction,kg
+"250 bar gaseous hydrogen tube trailer (sheets 'Cost Data' B413-B415, 'Design Data' B32-B34)",truck_hydrogen-gaseous,hydrogen,other-services,road-transport,kg
+"350 bar gaseous hydrogen tube trailer (sheets 'Cost Data' B413-B415, 'Design Data' B32-B34)",truck_hydrogen-gaseous,hydrogen,other-services,road-transport,kg
+"540 bar gaseous hydrogen tube trailer (sheets 'Cost Data' B413-B415, 'Design Data' B32-B34)",truck_hydrogen-gaseous,hydrogen,other-services,road-transport,kg

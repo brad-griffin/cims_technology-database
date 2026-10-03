@@ -1,0 +1,8 @@
+process,technology,item,value,unit,reference,note
+"All-electric melting option, cold-top electric furnace (Table 1, App. F-G)",melting-furnace_electric-melter,"Maximum cullet share, all-electric option",55,wt %,"p.10, Sect. 2.3; p.3, Table 1",Technical limit applied to all-electric melting in the scenarios
+"Hybrid electric plus hydrogen option, warm-top melter (Table 1, App. G)",furnace_glass-hybrid-electric,Maximum cullet share at 80% electric SEC share,90,wt %,"p.10, Sect. 2.3",
+"Hybrid electric plus hydrogen option, warm-top melter (Table 1, App. G)",furnace_glass-hybrid-electric,"Electric boosting share, fossil furnaces (container glass)",7.5,%,"p.16, Table G2",Assumed boosting share in modelled fossil-fired container furnaces. Source [41]
+German glass industry (App. E),,"Glass production, Germany 2019",7.4,Mt,"p.17, App. E",About 20% of packed glass in Europe
+German glass industry (App. E),,"Furnace capacity, typical flat float (side-port, air-regenerative)",700,t glass/d,"p.17, App. E",Container end-port furnaces typically about 250 t/d (ref. 26)
+Raw-material process CO2 (Table G4),,"Process CO2, container glass, cullet 60-90 wt% (min-max over colours)",19.3-77.2,kg CO2/t glass,"p.17, Table G4",Raw-material emissions 193 kg/t raw material; flat glass 104-187.2 kg/t at cullet 10-50 wt% (208 kg/t RM)
+"Post-forming and finishing, flat glass (Table G1)",,"Not loaded: Table G1 step SEC (batch preparation, forming, post-forming and finishing)",,GJ/t glass,"p.16, Table G1",Printed row/column order is garbled in the PDF text layer; values (0.13-2.43 GJ/t) not assigned to carrier and step with confidence

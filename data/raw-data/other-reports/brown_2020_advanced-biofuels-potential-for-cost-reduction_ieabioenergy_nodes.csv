@@ -1,0 +1,15 @@
+process,technology,sector,end-use,process-step,service-unit
+"HVO, hydrotreated vegetable oil (refinery co-processing to stand-alone), Low/Medium/High cases (Sect. 3.1, Table 3)",reactor_hydrotreating-lipids,biofuels,material-conversion,biofuel production,MWh
+"Biomethane from anaerobic digestion with upgrading, Low/High cases (Sect. 3.2, Table 4)",anaerobic-digester_biomethane-upgrading,biofuels,material-conversion,biofuel production,MWh
+"Ethanol from lignocellulosic sugar via fermentation, SGAB Low/Medium/High cases (Sect. 3.3, Table 6)",fermenter_lignocellulosic-enzymatic,biofuels,material-conversion,biofuel production,MWh
+"Corn fibre to cellulosic ethanol (D3MAX) at a 50 MGY (190,000 m3/yr) corn ethanol plant, 3.5 MGY (13,000 m3/yr) cellulosic ethanol (Sect. 3.3, Table 7)",fermenter_corn-fibre,biofuels,material-conversion,cellulosic ethanol,MWh
+"Corn fibre to cellulosic ethanol (D3MAX) at a 100 MGY (380,000 m3/yr) corn ethanol plant, 7.0 MGY (26,000 m3/yr) cellulosic ethanol (Sect. 3.3, Table 7)",fermenter_corn-fibre,biofuels,material-conversion,cellulosic ethanol,MWh
+"Biomass gasification to methanol or methane, SGAB Cost Report, Low/High, 200 MW (Sect. 3.4, Table 9)",gasifier_biomass-methanol,biofuels,material-conversion,biofuel production,MWh
+"Biomass gasification to methanol or methane, this work, Low/High, 200 MW (Sect. 3.4, Table 9)",gasifier_biomass-methanol,biofuels,material-conversion,biofuel production,MWh
+"Waste (RDF) gasification to methanol or methane, this work, Low/High, 200 MW (Sect. 3.4, Table 9)",gasifier_biomass-methanol,biofuels,material-conversion,biofuel production,MWh
+"Biomass gasification to Fischer-Tropsch liquids and gasoline, SGAB Cost Report, Low/High, 200 MW (Sect. 3.4, Table 10)",gasifier_fischer-tropsch,biofuels,material-conversion,biofuel production,MWh
+"Biomass gasification to Fischer-Tropsch liquids and gasoline, this work, Low/High, 200 MW (Sect. 3.4, Table 10)",gasifier_fischer-tropsch,biofuels,material-conversion,biofuel production,MWh
+"Waste (RDF) gasification to Fischer-Tropsch liquids and gasoline, this work, Low/High, 200 MW (Sect. 3.4, Table 10)",gasifier_fischer-tropsch,biofuels,material-conversion,biofuel production,MWh
+"Enerkem Edmonton, municipal solid waste (RDF) to ethanol (methanol), 30 MW (Sect. 3.4, SGAB)",gasifier_biomass-methanol,biofuels,material-conversion,waste to ethanol,MWh
+"Pyrolysis oil with refinery co-processing (FCC or hydrotreatment), Low/High (Sect. 3.5, Table 11)",reactor_pyrolysis-oil,biofuels,material-conversion,biofuel production,MWh
+"Pyrolysis oil, stand-alone upgrading, Low/High (Sect. 3.5, Table 11)",reactor_pyrolysis-oil,biofuels,material-conversion,biofuel production,MWh

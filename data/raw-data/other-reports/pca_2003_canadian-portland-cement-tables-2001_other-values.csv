@@ -1,0 +1,9 @@
+process,technology,item,value,unit,reference,note
+"Canadian cement plants 2001, all plants",kiln_all,Total energy per equivalent tonne,4.454,GJ/t,PDF p.5,"Dry process 4.411; plants of 500,000 t or more capacity 4.442 (dry 4.397); built or modernised 1972 and after 4.402; wet process withheld (disclosure); preheater only withheld. LHV."
+"Canadian cement plants 2001, all plants",kiln_all,"Fuel and electricity split derived from distribution (coal and coke 62.2%, natural gas 15.3%, petroleum 5.0%, electricity 12.3%, wastes 5.4%)",3.906 fuel; 0.548 electricity,GJ/t,"PDF p.3, Distribution of Energy Consumption",Derived: 4.454*(1-0.123) and 4.454*0.123; 0.548 GJ/t / 3.598 MJ/kWh = 152 kWh/t. Shares based on kJ consumed. Same value as the 2000 survey (152.8 kWh/t) - see pca_2002_001.
+"Canadian cement plants 2001, all plants",kiln_all,Total energy time series 1995-2001,4.729; 4.751; 4.637; 4.607; 4.507; 4.482; 4.454,GJ/t,PDF p.2,1974 value 6.220 GJ/t.
+"Canadian cement plants 2001, dry no preheater",kiln_long-dry,Total energy time series 1995-2001,4.802; 4.698; 4.743; 4.717; 4.726; 5.033; 4.971,GJ/t,PDF p.2,"Small sample, year-to-year jumps reflect plant mix."
+"Canadian cement plants 2001, dry precalciner",kiln_dry-precalciner,Total energy time series 1995-2001,4.189; 4.322; 4.327; 4.267; 4.159; 4.236; 4.116,GJ/t,PDF p.2,
+"Canadian cement plants 2001, dry preheater/precalciner",kiln_dry-preheater-precalciner,Total energy time series 1995-2001,4.464; 4.551; 4.458; 4.415; 4.411; 4.298; 4.223,GJ/t,PDF p.2,1974 value 5.988.
+"Canadian cement plants 2001, wet process",kiln_wet,"Total energy, 1974 and 1995-1996",6.501 (1974); 6.236 (1995); 6.141 (1996),GJ/t,PDF p.2,Wet process data withheld for disclosure from 1997 onwards.
+Canadian cement plants 2001,kiln_all,Waste fuel use,47,% of plants,"PDF p.3, Waste Fuel Summary","7 of 15 plants used waste fuel in 2001 (tire-derived 3, waste oil 4, solvents 1, other solid waste 3)."
