@@ -28,3 +28,21 @@ Replace glycol dehydration units with methanol injection (PRO 205),pump_methanol
 Reroute glycol skimmer gas (PRO 201),gas-treatment-unit_glycol-dehydration_skimmer-gas-reroute,oil-and-gas,gas-processing,glycol-dehydration,m3
 Conduct DI&M at remote sites (PRO 901),management-system_leak-detection_remote-site,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
 Increase walking survey from a 5- to 3-year basis (PRO 902),management-system_leak-detection_walking-survey_service-connection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Insert gas main flexible liners (PRO 402),pipeline_plastic-insert-liner,oil-and-gas,fugitive-emissions,distribution-mains,t
+Use inert gases and pigs to perform pipeline purges (PRO 403),pipeline_inert-gas-pig-purge,oil-and-gas,venting,pipeline-maintenance,t
+Inspect flowlines annually (PRO 404),management-system_flowline-inspection,oil-and-gas,fugitive-emissions,flowlines,t
+Install pressurized storage of condensate (PRO 501),process-improvement_pressurized-condensate-storage,oil-and-gas,venting,storage-tanks,t
+Recover gas during condensate loading (PRO 502),compressor_vapour-recovery_condensate-loading,oil-and-gas,venting,storage-tanks,t
+Convert water tank blanket from natural gas to produced CO2 gas (PRO 503),process-improvement_co2-tank-blanket,oil-and-gas,venting,storage-tanks,t
+Eliminate unnecessary equipment: consolidate storage tanks (PRO 504),process-improvement_tank-consolidation,oil-and-gas,venting,storage-tanks,t
+Recover gas from pipeline pigging operations (PRO 505),compressor_vapour-recovery_pigging-flash-gas,oil-and-gas,venting,storage-tanks,t
+Perform valve leak repair during pipeline replacement (PRO 601),management-system_valve-repair-during-pipeline-work,oil-and-gas,fugitive-emissions,pipeline-valves,t
+Test and repair pressure safety valves (PRO 602): small leak,management-system_psv-testing,oil-and-gas,fugitive-emissions,relief-valves,t
+Test and repair pressure safety valves (PRO 602): large leak,management-system_psv-testing,oil-and-gas,fugitive-emissions,relief-valves,t
+Install excess flow valves (PRO 603),process-improvement_excess-flow-valve,oil-and-gas,fugitive-emissions,service-lines,t
+Install BASO valves (PRO 604),process-improvement_baso-valve,oil-and-gas,venting,heater-pilots,t
+Replace burst plates with secondary relief valves (PRO 605),process-improvement_secondary-relief-valve,oil-and-gas,venting,relief-valves,t
+"Nitrogen rejection unit optimization (PRO 905): monitoring, maintenance and process optimization",process-improvement_nru-optimization,oil-and-gas,venting,nitrogen-rejection,t
+Nitrogen rejection unit optimization (PRO 905): optimization plus Phase I tray upgrades,process-improvement_nru-optimization,oil-and-gas,venting,nitrogen-rejection,t
+Reduce frequency of replacing modules in turbine meters (PRO 906),process-improvement_turbine-meter-interval,oil-and-gas,venting,meter-runs,t
+Replace bi-directional orifice metering with ultrasonic meters (PRO 907),pipeline_ultrasonic-meter,oil-and-gas,venting,meter-runs,t

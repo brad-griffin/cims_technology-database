@@ -35,7 +35,7 @@ FILL = RECORDS / "fill"
 GRADES = ["sourced", "identity", "estimated", "guess"]
 STATUSES = ("active", "off")
 FOSSIL = {"natural-gas", "coal", "oil", "diesel", "coke", "petroleum-coke", "lpg", "naphtha",
-          "fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
+          "fuel-oil", "heavy-fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
 
 
 def worst(grades):

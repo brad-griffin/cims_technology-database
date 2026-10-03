@@ -480,8 +480,13 @@ Rules in force (2026-09-30):
   reliably the total input per GJ of output, so its inverse gave a 7% motor
   efficiency and 154% for the methane reformer.
 - `id-combustion-co2-from-fuel`: carrier-specific fossil energy use times the
-  carrier's CO2 factor (IPCC 2006 defaults put on HHV, `cf-ef-co2-<carrier>` in
-  `conversion-factor.csv`). Not where process emissions are recorded, where an
+  carrier's CO2 factor on HHV (`cf-ef-co2-<carrier>` in `conversion-factor.csv`).
+  Emission factors come from ECCC's National Inventory Report (Annex 6) where it
+  gives one, and from IPCC 2006 defaults only where it does not (2026-10-03). NIR
+  factors are per physical unit; they are put per GJ HHV with the ECCC CFR HHVs
+  (natural gas, diesel, fuel oils) or the StatCan RESD energy contents (coal, coke,
+  coke oven gas, petroleum coke, still gas, LPG). Blast furnace gas uses the IPCC
+  default because the NIR gives none. Not where process emissions are recorded, where an
   unnamed `fuel` is part of the energy use, or on reformers, gasifiers and
   reactors, whose fuel may be a feedstock.
 - `id-total-from-parts`: total emissions = combustion + process, same species.

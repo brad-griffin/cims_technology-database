@@ -230,3 +230,21 @@ SOURCE DEFECTS:
   - Company C: $353,430 does not equal 117,800 × $3 = $353,400. The savings have no per-year unit.
   - Exhibit 7: site 2's survey cost of $125 is unexplained by the stated 3 h × $50 = $150.
   - Text typos: stray "9" on p.6; "gate state stations".
+
+## Added 2026-10-03: three Lessons Learned moved from background-no-data-extracted
+
+Set aside on 2026-10-02 because no archetype matched; loaded after Brad asked for the Natural Gas STAR archetypes (2026-10-03). Box tables checked on the rendered page 1. Savings are whole natural gas, converted to methane at the EPA default (94 percent T&D, 79 percent production; EXTERNAL FACTOR).
+
+### LL 2006 Composite wrap for non-leaking pipeline defects (11 pp)
+Extracted: one repair of a 6-inch defect on a 24-inch line at 350 psig, 10 miles between valves. Box capex 5,648; 3,960 Mcf whole gas per repair.
+SOURCE DEFECTS:
+- Exhibit 2 totals the same repair at 6,559, not 5,648 (other-values).
+- Exhibit 3 computes 3,690 Mcf from its own formula, then values 3,960.
+
+### LL 2006 Using hot taps for in-service pipeline connections (12 pp)
+Extracted: a company program of 320 taps a year (Exhibits 4-7). Capex is 47,409 for two machines. Annual costs are 62,222 (O&M 7,959 plus contract services 54,263). Savings are 24,400 Mcf/yr whole gas. Lifetime is 15-20 yr (machines last 5-40 yr). Inert gas saved, 13,680/yr, and the Exhibit 5 cost ranges are in other-values.
+
+### LL 2011 Reduced emission completions for hydraulically fractured gas wells (12 pp)
+Extracted: the purchased-equipment annual program of 25 completions. Capex 500,000; set-up plus labour 121,250/yr; 270,000 Mcf/yr whole gas. The contracted per-completion case (32,400 per completion, 10,800 Mcf per completion) is in _measures only, because it has no annual basis. No price year is printed; 2011 assumed (the boilerplate Nelson-Farrar box names February 2006).
+SOURCE DEFECTS:
+- The box paybacks (6/4/3 months) differ from Exhibit 10 (7/5/4 months).

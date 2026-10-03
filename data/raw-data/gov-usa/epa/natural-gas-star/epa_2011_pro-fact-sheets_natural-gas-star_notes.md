@@ -187,3 +187,24 @@ SOURCE DEFECTS:
   - The 1,500 Mcf/yr cannot be reproduced from the stated basis: 2,500 repairs × 0.5 scf/h × 8,760 h = 10,950 Mcf/yr.
   - The cost basis (a 2,900-mile partner system) differs from the savings basis (250,000 service connections).
   - DI&M is not ticked in the category box; "Other" is ticked instead.
+
+## Added 2026-10-03: 16 fact sheets moved from background-no-data-extracted
+
+They were set aside on 2026-10-02 because no archetype matched; Brad asked for the Natural Gas STAR archetypes to be added (2026-10-03). Each economic table was checked on the rendered page 1. Applicable sectors are the filled boxes on page 1. No price year is printed; 2011 assumed, except PRO 501 capex (reported in 1998).
+
+- **PRO 402 flexible liners** (distribution): capex 10,000 per mile of main plus mile of service line; 225 Mcf/yr. The incremental operating cost of -10,000 (avoided excavation) is in other-values, not loaded as opex.
+- **PRO 403 inert gas and pig purges** (processing, transmission, distribution): capex 0, operating cost 500/yr, 90 Mcf/yr per two miles of 10-inch line.
+- **PRO 404 annual flowline inspection** (production): capex 250, operating cost 1,080/yr, 58 Mcf/yr. SOURCE DEFECT: the value of savings uses the 94 percent T&D methane share for production flowlines.
+- **PRO 501 pressurized condensate storage**: capex 37,500 (1998), operating cost 2,500, 7,000 Mcf/yr per tank.
+- **PRO 502 condensate loading recovery**: 1,000; 200; 100 Mcf/yr. SOURCE DEFECT: page 2 header reads "PRO Fact Sheet No. 503 Continued".
+- **PRO 503 CO2 tank blanket** (production): 3,000; 0; 2,000 Mcf/yr.
+- **PRO 504 eliminate unnecessary equipment**: the headline case is tank consolidation, 10,000; 0; 4,200 Mcf/yr. The partner range of 5-130,000 Mcf/yr is in other-values.
+- **PRO 505 pigging flash gas recovery**: 24,000; 1,000 ("in excess of"); 21,400 Mcf/yr.
+- **PRO 601 valve repair during pipeline work** (transmission, distribution): 3,000 for 10 valves; 200; 2,500 Mcf/yr.
+- **PRO 602 PSV test and repair**: two cases (124 and 2,500 Mcf/yr per leaking valve), capex 250; operating cost printed "Data not available".
+- **PRO 603 excess flow valves** (distribution): 6,300 for 350 valves; 0; 160 Mcf/yr. SOURCE INCONSISTENT: the p.2 text says 16 Mcf per year.
+- **PRO 604 BASO valves** (production): 100; 0; 203 Mcf/yr.
+- **PRO 605 secondary relief valves**: 2,000; 100; 500 Mcf per rupture (one a year).
+- **PRO 905 NRU optimization** (processing): two cases, 75,000 / 246 MMcf/yr ("included" operating cost) and 300,000 / 364 MMcf/yr. Reduction percentages are 46 and "more than 70". SOURCE INCONSISTENT: 539 to 175 MMscf/yr is 67.5 percent.
+- **PRO 906 turbine meter interval** (transmission, distribution): capex 0; 27 Mcf/yr; the -4,000/yr labour saving is in other-values.
+- **PRO 907 ultrasonic meters** (transmission, distribution): capex 50,000; 20 Mcf/yr; the -25,000/yr labour saving is in other-values. SOURCE AMBIGUOUS: one meter's cost against a five-meter savings basis.

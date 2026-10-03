@@ -966,10 +966,16 @@ liquefaction-train_small-scale,oil-and-gas,<sector>.natural-gas.product.supply.l
 management-system_leak-detection,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
 mine_open-pit-oil-sands,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,added 2026-10-02
 motor_field-electric,oil-and-gas,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
+pipeline_blowdown-avoidance,oil-and-gas,<sector>.natural-gas.product.supply.venting.blowdowns,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
+pipeline_plastic-liner,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 pneumatic-device_gas-driven,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,oil-and-gas/venting: the leaf its name or label names
 pneumatic-device_low-bleed,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,oil-and-gas/venting: the leaf its name or label names
+process-improvement_automatic-shutoff,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
+process-improvement_automatic-shutoff,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 process-improvement_drag-reducing-agent,oil-and-gas,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 process-improvement_low-emission-components,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
+process-improvement_nru-optimization,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
+process-improvement_tank-venting-reduction,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 pump_artificial-lift,oil-and-gas,<sector>.natural-gas.product.supply.extraction.coalbed-methane,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 pump_artificial-lift,oil-and-gas,<sector>.petroleum-crude.product.heavy,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 pump_artificial-lift,oil-and-gas,<sector>.petroleum-crude.product.light-medium.offshore,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -996,6 +1002,7 @@ separator_dry-stack-tailings,oil-and-gas,<sector>.petroleum-crude.product.bitume
 separator_non-aqueous,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_paraffinic-froth-treatment,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_produced-water-recycling,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
+separator_reduced-emission-completion,oil-and-gas,<sector>.natural-gas.product.supply.well-tests,drilling-and-well-services,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 separator_warm-lime-softening,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 separator_warm-water-extraction,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)

@@ -1168,6 +1168,8 @@ branch,technology,data-filepath
 <sector>.natural-gas.product.supply.fugitive,compressor_dry-gas-seal,data/service-technology-map/natural-gas/product/supply/fugitive
 <sector>.natural-gas.product.supply.fugitive,compressor_wet-seal-degassing-recovery,data/service-technology-map/natural-gas/product/supply/fugitive
 <sector>.natural-gas.product.supply.fugitive,management-system_leak-detection,data/service-technology-map/natural-gas/product/supply/fugitive
+<sector>.natural-gas.product.supply.fugitive,pipeline_plastic-liner,data/service-technology-map/natural-gas/product/supply/fugitive
+<sector>.natural-gas.product.supply.fugitive,process-improvement_automatic-shutoff,data/service-technology-map/natural-gas/product/supply/fugitive
 <sector>.natural-gas.product.supply.fugitive,process-improvement_low-emission-components,data/service-technology-map/natural-gas/product/supply/fugitive
 <sector>.natural-gas.product.supply.gas-compression,,data/service-technology-map/natural-gas/product/supply/gas-compression
 <sector>.natural-gas.product.supply.lng-liquefaction,chiller_electric-motor,data/service-technology-map/natural-gas/product/supply/lng-liquefaction
@@ -1191,6 +1193,7 @@ branch,technology,data-filepath
 <sector>.natural-gas.product.supply.processing,turboexpander_ngl-recovery,data/service-technology-map/natural-gas/product/supply/processing
 <sector>.natural-gas.product.supply.venting,,data/service-technology-map/natural-gas/product/supply/venting
 <sector>.natural-gas.product.supply.venting.blowdowns,compressor_blowdown-recovery,data/service-technology-map/natural-gas/product/supply/venting/blowdowns
+<sector>.natural-gas.product.supply.venting.blowdowns,pipeline_blowdown-avoidance,data/service-technology-map/natural-gas/product/supply/venting/blowdowns
 <sector>.natural-gas.product.supply.venting.controls,compressor_instrument-air,data/service-technology-map/natural-gas/product/supply/venting/controls
 <sector>.natural-gas.product.supply.venting.controls,pneumatic-device_gas-driven,data/service-technology-map/natural-gas/product/supply/venting/controls
 <sector>.natural-gas.product.supply.venting.controls,pneumatic-device_low-bleed,data/service-technology-map/natural-gas/product/supply/venting/controls
@@ -1199,7 +1202,11 @@ branch,technology,data-filepath
 <sector>.natural-gas.product.supply.venting.other-diffuse-venting,,data/service-technology-map/natural-gas/product/supply/venting/other-diffuse-venting
 <sector>.natural-gas.product.supply.venting.other-point-venting,compressor_vapour-recovery,data/service-technology-map/natural-gas/product/supply/venting/other-point-venting
 <sector>.natural-gas.product.supply.venting.other-point-venting,flare_enclosed-combustor,data/service-technology-map/natural-gas/product/supply/venting/other-point-venting
+<sector>.natural-gas.product.supply.venting.other-point-venting,process-improvement_automatic-shutoff,data/service-technology-map/natural-gas/product/supply/venting/other-point-venting
+<sector>.natural-gas.product.supply.venting.other-point-venting,process-improvement_nru-optimization,data/service-technology-map/natural-gas/product/supply/venting/other-point-venting
+<sector>.natural-gas.product.supply.venting.other-point-venting,process-improvement_tank-venting-reduction,data/service-technology-map/natural-gas/product/supply/venting/other-point-venting
 <sector>.natural-gas.product.supply.well-tests,reciprocating-engine_dual-fuel,data/service-technology-map/natural-gas/product/supply/well-tests
+<sector>.natural-gas.product.supply.well-tests,separator_reduced-emission-completion,data/service-technology-map/natural-gas/product/supply/well-tests
 <sector>.natural-gas.product.transmission,turboexpander_pressure-let-down,data/service-technology-map/natural-gas/product/transmission
 <sector>.natural-gas.service,,data/service-technology-map/general-services
 <sector>.natural-gas.service.ccs,,data/service-technology-map/general-services/ccs
