@@ -1,0 +1,14 @@
+process,technology,item,value,unit,reference,note
+Sect. 1.0,,global hydrogen production,120,Mt/yr,p.5,"About 75 Mt pure H2, remainder in syngas"
+Sect. 1.0,,share of fossil H2 production with CCS,1,%,p.5,About 1%
+Sect. 1.0,electrolyzer_low-temperature,grid emissions intensity above which electrolysis exceeds SMR without CCS,165,kgCO2/MWh,p.5,
+Sect. 1.0,electrolyzer_low-temperature,grid-firmed electrolysis emissions intensity,14,kgCO2/kgH2,p.5,"63% grid power at 400 kg/MWh, 37% dedicated renewable"
+Sect. 7.0,steam-reformer_methane_ccs-concentrated,electricity requirement incl. upstream gas production,1.91,kWh/kgH2,p.18; p.19 Figure 8 caption,"Lifecycle, includes power used in producing the gas; reprinted from Mehmeti et al. 2018"
+Sect. 7.0,gasifier_ccs-concentrated,electricity requirement incl. upstream coal production,3.48,kWh/kgH2,p.18; p.19 Figure 8 caption,Lifecycle; reprinted from Mehmeti et al. 2018
+Sect. 4.0,steam-reformer_methane_ccs-concentrated,LCOH change per USD10/t change in CO2 T&S cost,8,USc/kgH2,p.14,
+Sect. 4.0,gasifier_ccs-concentrated,LCOH change per USD10/t change in CO2 T&S cost,22,USc/kgH2,p.14,
+Sect. 5.0,electrolyzer_low-temperature,LCOH with 80% lower electrolyser capex,just over 3.00,USD/kg,p.15,reprinted from Taibi et al. 2020
+Sect. 5.0,electrolyzer_low-temperature,LCOH with 80% lower capex and electricity USD20/MWh at 36% CF,1.7,USD/kg,p.15,reprinted from Taibi et al. 2020
+Sect. 8.0,,combustion emission factor natural gas / coal,51.53 / 90.23,kgCO2e/GJ,p.21,
+Figure 2,,pathway emissions intensities (bars),read from chart,kgCO2/kgH2,p.7,Bar values not printed; not extracted
+Figure 7,electrolyzer_low-temperature,LCOH vs electricity price at capex USD250 and USD750/kW,read from chart,USD/kg,p.16,Hydrogen Council 2020 curves; not extracted

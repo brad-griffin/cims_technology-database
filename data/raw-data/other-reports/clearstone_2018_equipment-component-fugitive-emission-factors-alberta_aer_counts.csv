@@ -1,0 +1,581 @@
+table,group,item,sub,sample,count,average,ci_lower,ci_upper,unit,page
+1,351,Gas Single,,20,4226,,,,population,13
+1,361,Gas Multiwell Group,,28,2548,,,,population,13
+1,362,Gas Multiwell effluent,,12,355,,,,population,13
+1,311,Crude Oil (Medium) Single,,23,4263,,,,population,13
+1,321,Crude Oil (Medium) Multiwell Group,,10,368,,,,population,13
+1,322,Crude Oil Multiwell Proration,,33,1720,,,,population,13
+1,331,Crude bitumen single-well,,5,861,,,,population,13
+1,341,Crude bitumen multiwell group,,12,1263,,,,population,13
+1,342,Crude bitumen multiwell proration,,13,342,,,,population,13
+1,363,Gas Multiwell proration SE AB,,11,412,,,,population,13
+1,364,Gas Multiwell proration outside SE AB,,20,691,,,,population,13
+1,601,Compressor Station,,16,760,,,,population,13
+1,611,Custom Treating Facility,,4,41,,,,population,13
+1,621,Gas Gathering System,,34,2573,,,,population,13
+2,CBMCLS Flow,Coalbed Methane Flowing Well – Coals Only,,14,6630,,,,population,14
+2,CBMOT Flow,Coalbed Methane Flowing Well – Coals & Other,,21,14361,,,,population,14
+2,CBMOT Pump,Coalbed Methane Well (equipped with a plunger,,1,46,,,,population,14
+2,CR-BIT Pump,Crude Bitumen Pumping Well,,85,6630,,,,population,14
+2,CR-BIT Susp,Crude Bitumen Well – Suspended,,2,3,,,,population,14
+2,CR-OIL Flow,Crude Oil Flowing Well,,21,2807,,,,population,14
+2,CR-OIL PUMP,Crude Oil Pumping Well,,103,27856,,,,population,14
+2,GAS FLOW,Natural Gas Flowing Well,,127,74838,,,,population,14
+2,GAS PUMP,Natural Gas Well (equipped with a plunger lift),,62,14827,,,,population,14
+2,GAS STORG,Natural Gas Storage Well,,2,139,,,,population,14
+2,SHG Flow,Shale Gas Flowing Well,,1,284,,,,population,14
+2,Total,,,440,148435,,,,population,14
+3,321,Catalytic Heater,,10,13,1.296,77,85,equipment per facility,16
+3,321,Flare KnockOut Drum,,10,2,0.200,100,149,equipment per facility,16
+3,321,Gas Boot,,10,1,0.100,100,201,equipment per facility,16
+3,321,Gas Pipeline Header,,10,1,0.101,100,197,equipment per facility,16
+3,321,Incinerator,,10,1,0.099,100,204,equipment per facility,16
+3,321,Line Heater,,10,4,0.397,100,102,equipment per facility,16
+3,321,Liquid Pipeline Header,,10,1,0.101,100,197,equipment per facility,16
+3,321,Pig Trap (Gas Service),,10,2,0.199,100,151,equipment per facility,16
+3,321,Pop Tank,,10,1,0.101,100,198,equipment per facility,16
+3,321,Production Tank (fixed roof),,10,13,1.302,54,77,equipment per facility,16
+3,321,Screw Compressor,,10,1,0.101,100,198,equipment per facility,16
+3,321,Separator,,10,7,0.703,72,85,equipment per facility,16
+3,322,Catalytic Heater,,33,136,4.125,35,44,equipment per facility,16
+3,322,Flare KnockOut Drum,,33,10,0.303,50,50,equipment per facility,16
+3,322,Gas Boot,,33,2,0.060,100,151,equipment per facility,16
+3,322,Gas Pipeline Header,,33,7,0.212,57,71,equipment per facility,16
+3,322,Gas Sample and Analysis System,,33,2,0.061,100,199,equipment per facility,16
+3,322,Gas Sweetening: Amine,,33,1,0.031,100,197,equipment per facility,16
+3,322,Line Heater,,33,6,0.181,67,100,equipment per facility,16
+3,322,Liquid Pipeline Header,,33,31,0.942,32,38,equipment per facility,16
+3,322,Liquid Pump,,33,10,0.304,80,109,equipment per facility,16
+3,322,Pig Trap (Gas Service),,33,9,0.273,67,77,equipment per facility,16
+3,322,Pig Trap (Liquid Service),,33,14,0.424,57,72,equipment per facility,16
+3,322,Pop Tank,,33,7,0.211,71,87,equipment per facility,16
+3,322,Power Generator (natural gas,,33,1,0.031,100,197,equipment per facility,16
+3,322,Production Tank (fixed roof),,33,85,2.580,28,32,equipment per facility,16
+3,322,Propane Fuel Tank,,33,2,0.061,100,149,equipment per facility,16
+3,322,Reciprocating Compressor,,33,7,0.212,100,143,equipment per facility,16
+3,322,Reciprocating Compressor -,,33,3,0.091,100,100,equipment per facility,16
+3,322,Screw Compressor,,33,5,0.151,100,181,equipment per facility,16
+3,322,Screw Compressor - Electric,,33,3,0.091,100,167,equipment per facility,16
+3,322,Scrubber,,33,1,0.030,100,201,equipment per facility,16
+3,322,Separator,,33,81,2.452,30,30,equipment per facility,16
+3,322,Tank Heater,,33,1,0.030,100,202,equipment per facility,16
+3,322,Treater,,33,20,0.607,35,35,equipment per facility,16
+3,341,Catalytic Heater,,12,6,0.498,50,51,equipment per facility,16
+3,341,Gas Pipeline Header,,12,4,0.334,75,75,equipment per facility,16
+3,341,Production Tank (fixed roof),,12,13,1.076,92,132,equipment per facility,16
+3,341,Propane Fuel Tank,,12,1,0.084,100,198,equipment per facility,17
+3,341,Screw Compressor,,12,7,0.583,43,43,equipment per facility,17
+3,341,Tank Heater,,12,9,0.748,78,90,equipment per facility,17
+3,342,Catalytic Heater,,13,1,0.078,100,197,equipment per facility,17
+3,342,Heavy Liquid Pipeline Header,,13,2,0.154,100,150,equipment per facility,17
+3,342,Production Tank (fixed roof),,13,20,1.540,25,35,equipment per facility,17
+3,342,Propane Fuel Tank,,13,36,2.776,50,55,equipment per facility,17
+3,342,Screw Compressor,,13,14,1.076,21,22,equipment per facility,17
+3,342,Tank Heater,,13,20,1.540,35,45,equipment per facility,17
+3,361,Catalytic Heater,,29,14,0.481,57,65,equipment per facility,17
+3,361,Flare KnockOut Drum,,29,1,0.035,100,199,equipment per facility,17
+3,361,Gas Pipeline Header,,29,5,0.172,80,80,equipment per facility,17
+3,361,Pig Trap (Gas Service),,29,7,0.241,71,86,equipment per facility,17
+3,361,Pop Tank,,29,1,0.034,100,204,equipment per facility,17
+3,361,Production Tank (fixed roof),,29,8,0.276,63,75,equipment per facility,17
+3,361,Reciprocating Compressor,,29,2,0.069,100,152,equipment per facility,17
+3,361,Separator,,29,6,0.207,67,67,equipment per facility,17
+3,362,Catalytic Heater,,12,25,2.081,60,68,equipment per facility,17
+3,362,Flare KnockOut Drum,,12,2,0.167,100,199,equipment per facility,17
+3,362,Gas Pipeline Header,,12,4,0.332,75,76,equipment per facility,17
+3,362,Pig Trap (Gas Service),,12,7,0.587,86,99,equipment per facility,17
+3,362,Production Tank (fixed roof),,12,5,0.415,100,141,equipment per facility,17
+3,362,Reciprocating Compressor,,12,1,0.083,100,201,equipment per facility,17
+3,362,Separator,,12,10,0.835,50,60,equipment per facility,17
+3,362,Tank Heater,,12,2,0.165,100,203,equipment per facility,17
+3,363,Catalytic Heater,,11,5,0.453,100,141,equipment per facility,17
+3,363,Gas Meter Building,,11,1,0.092,100,195,equipment per facility,17
+3,363,Gas Pipeline Header,,11,3,0.271,100,101,equipment per facility,17
+3,363,Separator,,11,3,0.274,100,99,equipment per facility,17
+3,364,Catalytic Heater,,20,65,3.256,77,123,equipment per facility,17
+3,364,Flare KnockOut Drum,,20,3,0.150,100,167,equipment per facility,17
+3,364,Gas Pipeline Header,,20,14,0.700,50,50,equipment per facility,17
+3,364,Gas Sweetening: Amine,,20,2,0.100,100,201,equipment per facility,17
+3,364,Pig Trap (Gas Service),,20,10,0.498,70,81,equipment per facility,17
+3,364,Power Generator (natural gas,,20,2,0.099,100,151,equipment per facility,17
+3,364,Production Tank (fixed roof),,20,6,0.299,83,101,equipment per facility,17
+3,364,Reciprocating Compressor,,20,5,0.246,100,205,equipment per facility,17
+3,364,Screw Compressor,,20,5,0.249,80,81,equipment per facility,17
+3,364,Separator,,20,13,0.650,62,92,equipment per facility,17
+3,364,Storage Bullet,,20,2,0.100,100,201,equipment per facility,18
+3,601,Catalytic Heater,,16,43,2.689,44,51,equipment per facility,18
+3,601,Flare KnockOut Drum,,16,1,0.063,100,200,equipment per facility,18
+3,601,Gas Pipeline Header,,16,5,0.314,60,79,equipment per facility,18
+3,601,Gas Sample and Analysis System,,16,1,0.062,100,203,equipment per facility,18
+3,601,Pig Trap (Gas Service),,16,5,0.312,100,140,equipment per facility,18
+3,601,Pop Tank,,16,1,0.062,100,204,equipment per facility,18
+3,601,Production Tank (fixed roof),,16,3,0.188,100,100,equipment per facility,18
+3,601,Reciprocating Compressor,,16,13,0.817,54,68,equipment per facility,18
+3,601,Reciprocating Compressor -,,16,1,0.062,100,202,equipment per facility,18
+3,601,Screw Compressor,,16,7,0.438,57,57,equipment per facility,18
+3,601,Separator,,16,12,0.748,58,76,equipment per facility,18
+3,611,Catalytic Heater,,4,1,0.249,100,201,equipment per facility,18
+3,611,Flare KnockOut Drum,,4,1,0.254,100,195,equipment per facility,18
+3,611,Gas Meter Building,,4,1,0.253,100,197,equipment per facility,18
+3,611,LACT Unit,,4,4,0.990,100,203,equipment per facility,18
+3,611,Liquid Pump,,4,3,0.751,100,100,equipment per facility,18
+3,611,Pig Trap (Gas Service),,4,1,0.251,100,199,equipment per facility,18
+3,611,Pop Tank,,4,2,0.500,100,100,equipment per facility,18
+3,611,Production Tank (fixed roof),,4,14,3.503,43,64,equipment per facility,18
+3,611,Screw Compressor - Electric,,4,3,0.752,100,199,equipment per facility,18
+3,611,Scrubber,,4,2,0.501,100,99,equipment per facility,18
+3,611,Separator,,4,2,0.498,100,101,equipment per facility,18
+3,611,Treater,,4,4,1.000,,,equipment per facility,18
+3,621,Catalytic Heater,,34,69,2.026,48,55,equipment per facility,18
+3,621,Flare KnockOut Drum,,34,7,0.205,57,72,equipment per facility,18
+3,621,Gas Meter Building,,34,5,0.148,80,99,equipment per facility,18
+3,621,Gas Pipeline Header,,34,28,0.824,25,25,equipment per facility,18
+3,621,Liquid Pump,,34,1,0.030,100,194,equipment per facility,18
+3,621,Pig Trap (Gas Service),,34,12,0.353,67,92,equipment per facility,18
+3,621,Pig Trap (Liquid Service),,34,3,0.088,100,166,equipment per facility,18
+3,621,Process Boiler,,34,1,0.030,100,194,equipment per facility,18
+3,621,Production Tank (fixed roof),,34,11,0.325,64,72,equipment per facility,18
+3,621,Reciprocating Compressor,,34,24,0.709,46,54,equipment per facility,18
+3,621,Reciprocating Compressor -,,34,6,0.176,83,100,equipment per facility,18
+3,621,Screw Compressor,,34,2,0.059,100,147,equipment per facility,18
+3,621,Screw Compressor - Electric,,34,2,0.059,100,150,equipment per facility,18
+3,621,Separator,,34,30,0.884,30,33,equipment per facility,19
+4,CBMCLS FLOW,Catalytic Heater,,14,7,0.502,57,57,equipment per well,20
+4,CBMCLS FLOW,Pig Trap (Gas Service),,14,5,0.355,80,101,equipment per well,20
+4,CBMCLS FLOW,Wellhead (CBM Flow),,14,13,0.929,15,8,equipment per well,20
+4,CBMOT FLOW,Catalytic Heater,,21,6,0.286,67,67,equipment per well,20
+4,CBMOT FLOW,Pig Trap (Gas Service),,21,1,0.048,100,197,equipment per well,20
+4,CBMOT FLOW,Wellhead (CBM Flow),,21,21,1.000,,,equipment per well,20
+4,CBMOT PUMP,Pig Trap (Gas Service),,1,1,1.000,,,equipment per well,20
+4,CBMOT PUMP,Wellhead (Gas Pump),,1,1,1.000,,,equipment per well,20
+4,CR-BIT ABZONE,Well Pump,,1,1,1.000,,,equipment per well,20
+4,CR-BIT ABZONE,Wellhead (Bitumen Pump),,1,1,1.000,,,equipment per well,20
+4,CR-BIT PUMP,Catalytic Heater,,85,1,0.012,100,200,equipment per well,20
+4,CR-BIT PUMP,Gas Pipeline Header,,85,1,0.012,100,197,equipment per well,20
+4,CR-BIT PUMP,Production Tank (fixed roof),,85,30,0.352,30,34,equipment per well,20
+4,CR-BIT PUMP,Propane Fuel Tank,,85,15,0.177,60,73,equipment per well,20
+4,CR-BIT PUMP,Screw Compressor,,85,2,0.023,100,151,equipment per well,20
+4,CR-BIT PUMP,Tank Heater,,85,28,0.330,32,36,equipment per well,20
+4,CR-BIT PUMP,Well Pump,,85,69,0.812,10,10,equipment per well,20
+4,CR-BIT PUMP,Wellhead (Bitumen Pump),,85,84,0.988,2,1,equipment per well,20
+4,CR-BIT SUSP,Well Pump,,2,2,1.000,,,equipment per well,20
+4,CR-BIT SUSP,Wellhead (Bitumen Pump),,2,2,1.000,,,equipment per well,20
+4,CR-OIL FLOW,Catalytic Heater,,21,6,0.286,83,100,equipment per well,20
+4,CR-OIL FLOW,Production Tank (fixed roof),,21,1,0.047,100,202,equipment per well,20
+4,CR-OIL FLOW,Separator,,21,4,0.191,75,99,equipment per well,20
+4,CR-OIL FLOW,Well Pump,,21,2,0.096,100,149,equipment per well,20
+4,CR-OIL FLOW,Wellhead (Oil Flow),,21,21,1.000,,,equipment per well,20
+4,CR-OIL PUMP,Catalytic Heater,,103,47,0.456,34,38,equipment per well,20
+4,CR-OIL PUMP,Gas Pipeline Header,,103,2,0.019,100,150,equipment per well,21
+4,CR-OIL PUMP,Gas Sample and Analysis System,,103,1,0.010,100,202,equipment per well,21
+4,CR-OIL PUMP,Liquid Pipeline Header,,103,1,0.010,100,199,equipment per well,21
+4,CR-OIL PUMP,Pig Trap (Gas Service),,103,2,0.019,100,151,equipment per well,21
+4,CR-OIL PUMP,Pig Trap (Liquid Service),,103,14,0.136,43,50,equipment per well,21
+4,CR-OIL PUMP,Pop Tank,,103,7,0.068,57,71,equipment per well,21
+4,CR-OIL PUMP,Production Tank (fixed roof),,103,20,0.194,40,45,equipment per well,21
+4,CR-OIL PUMP,Propane Fuel Tank,,103,1,0.010,100,198,equipment per well,21
+4,CR-OIL PUMP,Screw Compressor,,103,3,0.029,100,134,equipment per well,21
+4,CR-OIL PUMP,Scrubber,,103,1,0.010,100,201,equipment per well,21
+4,CR-OIL PUMP,Separator,,103,28,0.272,32,36,equipment per well,21
+4,CR-OIL PUMP,Well Pump,,103,24,0.232,33,38,equipment per well,21
+4,CR-OIL PUMP,Wellhead (Oil Pump),,103,103,1.000,,,equipment per well,21
+4,GAS FLOW,Catalytic Heater,,127,112,0.882,20,20,equipment per well,21
+4,GAS FLOW,Flare KnockOut Drum,,127,1,0.008,100,195,equipment per well,21
+4,GAS FLOW,Gas Meter Building,,127,7,0.055,71,85,equipment per well,21
+4,GAS FLOW,Gas Pipeline Header,,127,5,0.039,80,100,equipment per well,21
+4,GAS FLOW,Line Heater,,127,1,0.008,100,200,equipment per well,21
+4,GAS FLOW,Pig Trap (Gas Service),,127,9,0.071,55,67,equipment per well,21
+4,GAS FLOW,Pop Tank,,127,1,0.008,100,198,equipment per well,21
+4,GAS FLOW,Production Tank (fixed roof),,127,27,0.213,33,37,equipment per well,21
+4,GAS FLOW,Reciprocating Compressor,,127,2,0.016,100,147,equipment per well,21
+4,GAS FLOW,Separator,,127,57,0.449,19,19,equipment per well,21
+4,GAS FLOW,Wellhead (Gas Flow),,127,127,1.000,,,equipment per well,21
+4,GAS PUMP,Catalytic Heater,,62,93,1.502,17,18,equipment per well,21
+4,GAS PUMP,Flare KnockOut Drum,,62,1,0.016,100,205,equipment per well,21
+4,GAS PUMP,Gas Pipeline Header,,62,3,0.049,100,132,equipment per well,22
+4,GAS PUMP,Pig Trap (Gas Service),,62,3,0.049,100,164,equipment per well,22
+4,GAS PUMP,Production Tank (fixed roof),,62,20,0.322,35,35,equipment per well,22
+4,GAS PUMP,Propane Fuel Tank,,62,1,0.016,100,196,equipment per well,22
+4,GAS PUMP,Separator,,62,33,0.532,24,24,equipment per well,22
+4,GAS PUMP,Wellhead (Gas Pump),,62,61,0.984,3,2,equipment per well,22
+4,GAS STORG,Separator,,2,1,0.499,100,100,equipment per well,22
+4,GAS STORG,Wellhead (Gas Storage),,2,2,1.000,,,equipment per well,22
+4,SHG FLOW,Catalytic Heater,,1,1,1.000,,,equipment per well,22
+4,SHG FLOW,Separator,,1,1,1.000,,,equipment per well,22
+4,SHG FLOW,Wellhead (Gas Flow),,1,1,1.000,,,equipment per well,22
+5,Catalytic Heater,Regulator,Process Gas,651,721,1.159,7,8,components per equipment unit,25
+5,Catalytic Heater,Valve,Process Gas,651,745,1.197,9,11,components per equipment unit,25
+5,Catalytic Heater,Connector,Process Gas,651,756,1.212,29,32,components per equipment unit,25
+5,Dehydrator - Glycol,Control Valve,Process Gas,20,25,1.310,58,71,components per equipment unit,25
+5,Dehydrator - Glycol,Valve,Process Gas,20,576,30.118,37,47,components per equipment unit,25
+5,Dehydrator - Glycol,Valve,Light Liquid,20,29,1.528,88,136,components per equipment unit,25
+5,Dehydrator - Glycol,Meter,Process Gas,20,22,1.153,41,47,components per equipment unit,25
+5,Dehydrator - Glycol,Control Valve,Light Liquid,20,6,0.312,98,141,components per equipment unit,25
+5,Dehydrator - Glycol,Open-Ended Line,Process Gas,20,8,0.416,97,151,components per equipment unit,25
+5,Dehydrator - Glycol,Regulator,Process Gas,20,104,5.457,42,48,components per equipment unit,25
+5,Dehydrator - Glycol,Connector,Process Gas,20,4130,215.836,35,39,components per equipment unit,25
+5,Dehydrator - Glycol,Connector,Light Liquid,20,227,11.980,88,137,components per equipment unit,25
+5,Dehydrator - Glycol,PRV/PSV,Process Gas,20,50,2.621,40,49,components per equipment unit,25
+5,Flare KnockOut Drum,Valve,Process Gas,29,244,8.844,56,90,components per equipment unit,25
+5,Flare KnockOut Drum,Meter,Process Gas,29,1,0.036,100,308,components per equipment unit,25
+5,Flare KnockOut Drum,Control Valve,Process Gas,29,5,0.181,96,141,components per equipment unit,25
+5,Flare KnockOut Drum,Regulator,Process Gas,29,30,1.083,57,71,components per equipment unit,25
+5,Flare KnockOut Drum,Control Valve,Light Liquid,29,1,0.036,100,308,components per equipment unit,25
+5,Flare KnockOut Drum,Connector,Process Gas,29,1516,54.764,45,58,components per equipment unit,25
+5,Flare KnockOut Drum,Connector,Light Liquid,29,530,19.086,48,59,components per equipment unit,25
+5,Flare KnockOut Drum,Valve,Light Liquid,29,84,3.036,51,64,components per equipment unit,25
+5,Flare KnockOut Drum,PRV/PSV,Process Gas,29,5,0.180,100,169,components per equipment unit,25
+5,Flare KnockOut Drum,Open-Ended Line,Light Liquid,29,19,0.684,100,291,components per equipment unit,25
+5,Gas Boot,Valve,Process Gas,3,3,1.042,100,163,components per equipment unit,25
+5,Gas Boot,Valve,Light Liquid,3,20,6.944,77,103,components per equipment unit,25
+5,Gas Boot,Connector,Light Liquid,3,77,26.739,76,87,components per equipment unit,25
+5,Gas Boot,PRV/PSV,Process Gas,3,1,0.348,100,263,components per equipment unit,26
+5,Gas Boot,Connector,Process Gas,3,15,5.178,76,92,components per equipment unit,26
+5,Gas Meter Building,Valve,Process Gas,14,255,19.100,50,64,components per equipment unit,26
+5,Gas Meter Building,Valve,Light Liquid,14,12,0.891,100,299,components per equipment unit,26
+5,Gas Meter Building,Meter,Process Gas,14,18,1.352,54,81,components per equipment unit,26
+5,Gas Meter Building,Meter,Light Liquid,14,4,0.296,100,316,components per equipment unit,26
+5,Gas Meter Building,Control Valve,Process Gas,14,7,0.529,93,124,components per equipment unit,26
+5,Gas Meter Building,Regulator,Process Gas,14,22,1.643,79,107,components per equipment unit,26
+5,Gas Meter Building,Connector,Process Gas,14,1277,95.873,54,69,components per equipment unit,26
+5,Gas Meter Building,Connector,Light Liquid,14,76,5.618,100,309,components per equipment unit,26
+5,Gas Meter Building,Open-Ended Line,Process Gas,14,2,0.149,100,305,components per equipment unit,26
+5,Gas Meter Building,PRV/PSV,Process Gas,14,15,1.118,72,100,components per equipment unit,26
+5,Gas Pipeline Header,Valve,Process Gas,82,2346,29.916,31,38,components per equipment unit,26
+5,Gas Pipeline Header,Valve,Light Liquid,82,123,1.604,98,183,components per equipment unit,26
+5,Gas Pipeline Header,Meter,Process Gas,82,40,0.511,65,96,components per equipment unit,26
+5,Gas Pipeline Header,Control Valve,Process Gas,82,34,0.436,71,133,components per equipment unit,26
+5,Gas Pipeline Header,Connector,Process Gas,82,8289,105.826,33,40,components per equipment unit,26
+5,Gas Pipeline Header,Connector,Light Liquid,82,487,6.272,100,234,components per equipment unit,26
+5,Gas Pipeline Header,Open-Ended Line,Process Gas,82,5,0.063,100,169,components per equipment unit,26
+5,Gas Pipeline Header,PRV/PSV,Process Gas,82,26,0.334,61,83,components per equipment unit,26
+5,Gas Pipeline Header,Regulator,Process Gas,82,60,0.761,70,115,components per equipment unit,26
+5,Gas Sweetening: Amine,Valve,Process Gas,3,106,37.046,90,194,components per equipment unit,26
+5,Gas Sweetening: Amine,Valve,Light Liquid,3,3,1.046,75,86,components per equipment unit,26
+5,Gas Sweetening: Amine,Regulator,Process Gas,3,3,1.042,75,84,components per equipment unit,26
+5,Gas Sweetening: Amine,Connector,Process Gas,3,253,87.596,76,100,components per equipment unit,26
+5,Gas Sweetening: Amine,Connector,Light Liquid,3,9,3.126,85,127,components per equipment unit,26
+5,Gas Sweetening: Amine,PRV/PSV,Process Gas,3,2,0.691,100,264,components per equipment unit,27
+5,Heavy Liquid Pipeline Header,Valve,Heavy Liquid,2,24,12.388,95,186,components per equipment unit,27
+5,Heavy Liquid Pipeline Header,Connector,Heavy Liquid,2,56,29.379,91,129,components per equipment unit,27
+5,Incinerator,Valve,Process Gas,1,8,8.404,100,153,components per equipment unit,27
+5,Incinerator,Regulator,Process Gas,1,3,3.137,100,151,components per equipment unit,27
+5,Incinerator,Control Valve,Process Gas,1,2,2.098,100,150,components per equipment unit,27
+5,Incinerator,Connector,Process Gas,1,53,56.333,100,147,components per equipment unit,27
+5,LACT Unit,Valve,Process Gas,4,2,0.528,100,158,components per equipment unit,27
+5,LACT Unit,Valve,Light Liquid,4,102,26.675,68,82,components per equipment unit,27
+5,LACT Unit,Meter,Light Liquid,4,14,3.701,84,125,components per equipment unit,27
+5,LACT Unit,Control Valve,Process Gas,4,3,0.787,100,184,components per equipment unit,27
+5,LACT Unit,Control Valve,Light Liquid,4,10,2.602,78,115,components per equipment unit,27
+5,LACT Unit,Connector,Process Gas,4,92,23.527,100,161,components per equipment unit,27
+5,LACT Unit,Connector,Light Liquid,4,469,123.323,72,94,components per equipment unit,27
+5,LACT Unit,PRV/PSV,Process Gas,4,2,0.525,100,271,components per equipment unit,27
+5,LACT Unit,PRV/PSV,Light Liquid,4,2,0.520,100,276,components per equipment unit,27
+5,Line Heater,Valve,Process Gas,11,127,12.129,60,101,components per equipment unit,27
+5,Line Heater,Control Valve,Process Gas,11,3,0.286,100,207,components per equipment unit,27
+5,Line Heater,Valve,Light Liquid,11,28,2.663,81,121,components per equipment unit,27
+5,Line Heater,Meter,Process Gas,11,2,0.193,100,188,components per equipment unit,27
+5,Line Heater,Regulator,Process Gas,11,41,3.885,55,70,components per equipment unit,27
+5,Line Heater,Connector,Process Gas,11,1082,103.033,51,69,components per equipment unit,27
+5,Line Heater,Connector,Light Liquid,11,124,11.812,80,106,components per equipment unit,27
+5,Line Heater,PRV/PSV,Process Gas,11,7,0.659,84,131,components per equipment unit,27
+5,Liquid Pipeline Header,Meter,Light Liquid,33,1,0.031,100,311,components per equipment unit,27
+5,Liquid Pipeline Header,Valve,Light Liquid,33,1066,33.770,33,41,components per equipment unit,27
+5,Liquid Pipeline Header,Control Valve,Light Liquid,33,14,0.438,100,168,components per equipment unit,28
+5,Liquid Pipeline Header,Connector,Light Liquid,33,3734,118.561,32,36,components per equipment unit,28
+5,Liquid Pump,Valve,Process Gas,14,9,0.673,100,302,components per equipment unit,28
+5,Liquid Pump,Valve,Light Liquid,14,203,15.162,51,70,components per equipment unit,28
+5,Liquid Pump,Meter,Light Liquid,14,6,0.454,81,116,components per equipment unit,28
+5,Liquid Pump,Pump Seal,Light Liquid,14,14,1.045,37,39,components per equipment unit,28
+5,Liquid Pump,Connector,Light Liquid,14,819,61.322,44,57,components per equipment unit,28
+5,Liquid Pump,Connector,Process Gas,14,60,4.606,100,297,components per equipment unit,28
+5,Liquid Pump,PRV/PSV,Light Liquid,14,8,0.595,70,87,components per equipment unit,28
+5,Pig Trap (Gas Service),Valve,Process Gas,74,574,8.106,25,33,components per equipment unit,28
+5,Pig Trap (Gas Service),Connector,Process Gas,74,1565,22.153,27,35,components per equipment unit,28
+5,Pig Trap (Gas Service),PRV/PSV,Process Gas,74,2,0.029,100,207,components per equipment unit,28
+5,Pig Trap (Liquid Service),Valve,Light Liquid,31,153,5.137,34,40,components per equipment unit,28
+5,Pig Trap (Liquid Service),Connector,Light Liquid,31,508,17.157,31,34,components per equipment unit,28
+5,Pop Tank,Valve,Light Liquid,20,25,1.311,50,64,components per equipment unit,28
+5,Pop Tank,Connector,Process Gas,20,45,2.356,92,176,components per equipment unit,28
+5,Pop Tank,Connector,Light Liquid,20,110,5.765,53,66,components per equipment unit,28
+5,Pop Tank,Open-Ended Line,Light Liquid,20,19,0.998,36,41,components per equipment unit,28
+5,Power Generator (natural gas fired),Valve,Process Gas,3,32,11.179,94,137,components per equipment unit,28
+5,Power Generator (natural gas fired),Control Valve,Process Gas,3,2,0.688,100,272,components per equipment unit,28
+5,Power Generator (natural gas fired),Regulator,Process Gas,3,9,3.157,86,153,components per equipment unit,28
+5,Power Generator (natural gas fired),Connector,Process Gas,3,301,103.754,98,143,components per equipment unit,28
+5,Process Boiler,Valve,Process Gas,1,15,15.725,100,150,components per equipment unit,28
+5,Process Boiler,Regulator,Process Gas,1,4,4.224,100,148,components per equipment unit,28
+5,Process Boiler,Connector,Process Gas,1,64,66.510,100,150,components per equipment unit,28
+5,Process Boiler,PRV/PSV,Process Gas,1,1,1.039,100,155,components per equipment unit,28
+5,Production Tank (fixed roof - heavy,Open-Ended Line,Heavy Liquid,63,1,0.017,100,319,components per equipment unit,29
+5,Production Tank (fixed roof - heavy,PRV/PSV,Process Gas,63,1,0.017,100,317,components per equipment unit,29
+5,Production Tank (fixed roof - heavy,Connector,Heavy Liquid,63,2280,37.905,22,24,components per equipment unit,29
+5,Production Tank (fixed roof - heavy,Valve,Heavy Liquid,63,857,14.218,19,20,components per equipment unit,29
+5,Production Tank (fixed roof -,Valve,Process Gas,213,88,0.431,37,46,components per equipment unit,29
+5,Production Tank (fixed roof -,Thief Hatch,Light Liquid,213,82,0.399,83,229,components per equipment unit,29
+5,Production Tank (fixed roof -,Thief Hatch,Process Gas,213,50,0.246,31,34,components per equipment unit,29
+5,Production Tank (fixed roof -,Valve,Light Liquid,213,1087,5.340,17,21,components per equipment unit,29
+5,Production Tank (fixed roof -,Regulator,Process Gas,213,49,0.241,30,33,components per equipment unit,29
+5,Production Tank (fixed roof -,Connector,Process Gas,213,785,3.850,36,46,components per equipment unit,29
+5,Production Tank (fixed roof -,Connector,Light Liquid,213,4444,21.815,14,15,components per equipment unit,29
+5,Production Tank (fixed roof -,Open-Ended Line,Process Gas,213,3,0.015,100,166,components per equipment unit,29
+5,Production Tank (fixed roof -,PRV/PSV,Light Liquid,213,1,0.005,100,297,components per equipment unit,29
+5,Production Tank (fixed roof -,PRV/PSV,Process Gas,213,49,0.241,30,33,components per equipment unit,29
+5,Production Tank (fixed roof -,Open-Ended Line,Light Liquid,213,3,0.015,100,239,components per equipment unit,30
+5,Propane Fuel Tank,Valve,Process Gas,56,115,2.148,23,27,components per equipment unit,30
+5,Propane Fuel Tank,Regulator,Process Gas,56,56,1.045,19,19,components per equipment unit,30
+5,Propane Fuel Tank,Connector,Process Gas,56,721,13.467,22,23,components per equipment unit,30
+5,Reciprocating Compressor,Valve,Process Gas,54,1860,35.982,25,31,components per equipment unit,30
+5,Reciprocating Compressor,Valve,Light Liquid,54,327,6.334,38,44,components per equipment unit,30
+5,Reciprocating Compressor,Meter,Process Gas,54,15,0.290,56,66,components per equipment unit,30
+5,Reciprocating Compressor,Control Valve,Light Liquid,54,36,0.699,55,64,components per equipment unit,30
+5,Reciprocating Compressor,Control Valve,Process Gas,54,110,2.131,33,37,components per equipment unit,30
+5,Reciprocating Compressor,Regulator,Process Gas,54,293,5.662,31,36,components per equipment unit,30
+5,Reciprocating Compressor,Compressor Rod-,Process Gas,54,157,3.045,23,25,components per equipment unit,30
+5,Reciprocating Compressor,Connector,Light Liquid,54,2786,53.869,43,54,components per equipment unit,30
+5,Reciprocating Compressor,Open-Ended Line,Process Gas,54,28,0.545,67,90,components per equipment unit,30
+5,Reciprocating Compressor,PRV/PSV,Process Gas,54,190,3.676,24,26,components per equipment unit,30
+5,Reciprocating Compressor,Connector,Process Gas,54,31600,612.150,22,23,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Valve,Process Gas,10,175,18.293,53,65,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Regulator,Process Gas,10,1,0.103,100,306,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Valve,Light Liquid,10,89,9.387,60,79,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Meter,Process Gas,10,4,0.417,90,117,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Control Valve,Process Gas,10,3,0.312,100,202,components per equipment unit,30
+5,Reciprocating Compressor - Electric,Control Valve,Light Liquid,10,15,1.568,79,102,components per equipment unit,31
+5,Reciprocating Compressor - Electric,Connector,Process Gas,10,3933,412.058,45,51,components per equipment unit,31
+5,Reciprocating Compressor - Electric,Compressor Rod-,Process Gas,10,30,3.120,56,65,components per equipment unit,31
+5,Reciprocating Compressor - Electric,Connector,Light Liquid,10,560,58.561,60,92,components per equipment unit,31
+5,Reciprocating Compressor - Electric,PRV/PSV,Process Gas,10,23,2.400,46,54,components per equipment unit,31
+5,Screw Compressor,Valve,Process Gas,46,1124,25.556,31,38,components per equipment unit,31
+5,Screw Compressor,Valve,Light Liquid,46,200,4.559,55,74,components per equipment unit,31
+5,Screw Compressor,Meter,Process Gas,46,43,0.976,37,41,components per equipment unit,31
+5,Screw Compressor,Control Valve,Process Gas,46,50,1.135,44,54,components per equipment unit,31
+5,Screw Compressor,Control Valve,Light Liquid,46,7,0.159,87,126,components per equipment unit,31
+5,Screw Compressor,Regulator,Process Gas,46,182,4.135,26,30,components per equipment unit,31
+5,Screw Compressor,Connector,Process Gas,46,14934,339.208,29,37,components per equipment unit,31
+5,Screw Compressor,Connector,Light Liquid,46,1559,35.562,53,71,components per equipment unit,31
+5,Screw Compressor,Open-Ended Line,Process Gas,46,25,0.567,63,85,components per equipment unit,31
+5,Screw Compressor,PRV/PSV,Process Gas,46,150,3.407,25,27,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Valve,Process Gas,8,130,17.000,55,69,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Control Valve,Process Gas,8,9,1.182,88,118,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Valve,Light Liquid,8,27,3.534,77,102,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Meter,Process Gas,8,3,0.396,100,200,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Regulator,Process Gas,8,1,0.132,100,288,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Connector,Process Gas,8,1582,208.041,58,77,components per equipment unit,31
+5,Screw Compressor - Electric Driver,Connector,Light Liquid,8,279,36.610,69,88,components per equipment unit,32
+5,Screw Compressor - Electric Driver,Open-Ended Line,Process Gas,8,2,0.260,100,188,components per equipment unit,32
+5,Screw Compressor - Electric Driver,PRV/PSV,Process Gas,8,12,1.569,68,84,components per equipment unit,32
+5,Scrubber,Valve,Process Gas,4,46,12.000,98,183,components per equipment unit,32
+5,Scrubber,Connector,Process Gas,4,290,76.711,96,186,components per equipment unit,32
+5,Scrubber,PRV/PSV,Process Gas,4,2,0.522,100,164,components per equipment unit,32
+5,Separator,Valve,Process Gas,288,5548,20.126,15,16,components per equipment unit,32
+5,Separator,Control Valve,Process Gas,288,244,0.885,19,21,components per equipment unit,32
+5,Separator,Valve,Light Liquid,288,3407,12.373,13,14,components per equipment unit,32
+5,Separator,Meter,Process Gas,288,299,1.085,13,15,components per equipment unit,32
+5,Separator,Control Valve,Light Liquid,288,200,0.726,19,22,components per equipment unit,32
+5,Separator,Meter,Light Liquid,288,115,0.417,22,23,components per equipment unit,32
+5,Separator,Connector,Light Liquid,288,18762,68.110,14,16,components per equipment unit,32
+5,Separator,Regulator,Process Gas,288,689,2.501,17,18,components per equipment unit,32
+5,Separator,Connector,Process Gas,288,29929,108.724,11,12,components per equipment unit,32
+5,Separator,Open-Ended Line,Process Gas,288,33,0.120,51,60,components per equipment unit,32
+5,Separator,PRV/PSV,Process Gas,288,460,1.670,11,13,components per equipment unit,32
+5,Storage Bullet,Valve,Light Liquid,2,40,20.924,91,107,components per equipment unit,32
+5,Storage Bullet,Control Valve,Light Liquid,2,4,2.088,92,106,components per equipment unit,32
+5,Storage Bullet,Connector,Light Liquid,2,160,83.719,92,106,components per equipment unit,32
+5,Tank Heater,Valve,Process Gas,60,450,7.847,22,27,components per equipment unit,32
+5,Tank Heater,Meter,Process Gas,60,1,0.017,100,307,components per equipment unit,32
+5,Tank Heater,Regulator,Process Gas,60,226,3.939,21,22,components per equipment unit,32
+5,Tank Heater,Connector,Process Gas,60,3109,54.248,20,22,components per equipment unit,32
+5,Treater,Valve,Process Gas,24,465,20.286,38,47,components per equipment unit,32
+5,Treater,Valve,Light Liquid,24,394,17.206,42,51,components per equipment unit,32
+5,Treater,Meter,Process Gas,24,21,0.916,49,57,components per equipment unit,33
+5,Treater,Control Valve,Process Gas,24,18,0.783,47,55,components per equipment unit,33
+5,Treater,Control Valve,Light Liquid,24,23,1.007,52,63,components per equipment unit,33
+5,Treater,Meter,Light Liquid,24,11,0.477,65,85,components per equipment unit,33
+5,Treater,Regulator,Process Gas,24,112,4.887,40,47,components per equipment unit,33
+5,Treater,Connector,Process Gas,24,4548,197.835,34,38,components per equipment unit,33
+5,Treater,Connector,Light Liquid,24,2181,95.200,39,47,components per equipment unit,33
+5,Treater,Open-Ended Line,Process Gas,24,5,0.216,100,304,components per equipment unit,33
+5,Treater,Open-Ended Line,Light Liquid,24,14,0.612,100,212,components per equipment unit,33
+5,Treater,PRV/PSV,Process Gas,24,36,1.571,42,54,components per equipment unit,33
+5,Well Pump,Valve,Process Gas,98,591,6.305,18,20,components per equipment unit,33
+5,Well Pump,Regulator,Process Gas,98,191,2.036,17,18,components per equipment unit,33
+5,Well Pump,PRV/PSV,Process Gas,98,28,0.300,40,45,components per equipment unit,33
+5,Well Pump,Connector,Process Gas,98,4781,51.104,18,19,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Valve,Heavy Liquid,87,747,8.983,17,18,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Valve,Process Gas,87,630,7.573,18,20,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Connector,Heavy Liquid,87,3025,36.393,18,19,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Regulator,Process Gas,87,39,0.469,34,38,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Open-Ended Line,Process Gas,87,12,0.144,59,71,components per equipment unit,33
+5,Wellhead (Bitumen Pump),Connector,Process Gas,87,2307,27.725,20,21,components per equipment unit,33
+5,Wellhead (Bitumen Pump),PRV/PSV,Process Gas,87,24,0.289,43,46,components per equipment unit,33
+5,Wellhead (CBM Flow),Valve,Process Gas,34,331,10.167,32,48,components per equipment unit,33
+5,Wellhead (CBM Flow),Meter,Process Gas,34,8,0.245,69,87,components per equipment unit,33
+5,Wellhead (CBM Flow),Regulator,Process Gas,34,2,0.063,100,196,components per equipment unit,33
+5,Wellhead (CBM Flow),Connector,Process Gas,34,1024,31.475,28,32,components per equipment unit,33
+5,Wellhead (CBM Flow),Open-Ended Line,Process Gas,34,10,0.307,62,75,components per equipment unit,33
+5,Wellhead (CBM Flow),PRV/PSV,Process Gas,34,2,0.062,100,198,components per equipment unit,34
+5,Wellhead (Gas Flow),Valve,Process Gas,128,1543,12.613,17,18,components per equipment unit,34
+5,Wellhead (Gas Flow),Meter,Process Gas,128,8,0.065,72,92,components per equipment unit,34
+5,Wellhead (Gas Flow),Regulator,Process Gas,128,50,0.417,95,263,components per equipment unit,34
+5,Wellhead (Gas Flow),Open-Ended Line,Process Gas,128,1,0.008,100,312,components per equipment unit,34
+5,Wellhead (Gas Flow),PRV/PSV,Process Gas,128,6,0.049,82,107,components per equipment unit,34
+5,Wellhead (Gas Flow),Connector,Process Gas,128,5383,43.948,16,18,components per equipment unit,34
+5,Wellhead (Gas Pump),Valve,Process Gas,62,855,14.435,23,27,components per equipment unit,34
+5,Wellhead (Gas Pump),Meter,Process Gas,62,20,0.336,45,50,components per equipment unit,34
+5,Wellhead (Gas Pump),Regulator,Process Gas,62,33,0.557,54,71,components per equipment unit,34
+5,Wellhead (Gas Pump),Connector,Process Gas,62,4300,72.591,24,28,components per equipment unit,34
+5,Wellhead (Gas Pump),Open-Ended Line,Process Gas,62,2,0.034,100,208,components per equipment unit,34
+5,Wellhead (Gas Pump),PRV/PSV,Process Gas,62,27,0.456,51,60,components per equipment unit,34
+5,Wellhead (Gas Storage),Valve,Process Gas,2,18,9.340,93,135,components per equipment unit,34
+5,Wellhead (Gas Storage),Connector,Process Gas,2,59,30.684,92,103,components per equipment unit,34
+5,Wellhead (Oil Flow),Valve,Process Gas,21,250,12.417,58,74,components per equipment unit,34
+5,Wellhead (Oil Flow),Meter,Process Gas,21,1,0.050,100,314,components per equipment unit,34
+5,Wellhead (Oil Flow),Valve,Light Liquid,21,139,6.915,49,57,components per equipment unit,34
+5,Wellhead (Oil Flow),Connector,Process Gas,21,714,35.342,55,70,components per equipment unit,34
+5,Wellhead (Oil Flow),Connector,Light Liquid,21,623,31.109,51,58,components per equipment unit,34
+5,Wellhead (Oil Pump),Valve,Process Gas,103,385,3.918,35,39,components per equipment unit,34
+5,Wellhead (Oil Pump),Valve,Light Liquid,103,990,10.038,19,21,components per equipment unit,34
+5,Wellhead (Oil Pump),Meter,Process Gas,103,2,0.020,100,212,components per equipment unit,34
+5,Wellhead (Oil Pump),Regulator,Process Gas,103,11,0.112,71,93,components per equipment unit,34
+5,Wellhead (Oil Pump),Open-Ended Line,Process Gas,103,1,0.010,100,306,components per equipment unit,34
+5,Wellhead (Oil Pump),Connector,Process Gas,103,1793,18.177,34,39,components per equipment unit,34
+5,Wellhead (Oil Pump),Connector,Light Liquid,103,4847,49.139,19,20,components per equipment unit,35
+5,Wellhead (Oil Pump),Pump Seal,Light Liquid,103,103,1.047,14,14,components per equipment unit,35
+5,Wellhead (Oil Pump),PRV/PSV,Process Gas,103,4,0.041,100,180,components per equipment unit,35
+6,Storage tank tied into flare or,,,213,46,0.21,28,31,control factor (fraction of equipment controlled),37
+6,Storage tank tied into scrubber,,,213,3,0.00,,,control factor (fraction of equipment controlled),37
+6,Compressor rod-packing vent,,,54,7,0.12,65,72,control factor (fraction of equipment controlled),37
+6,Pop tank tied into flare or,,,20,2,0.10,100,123,control factor (fraction of equipment controlled),37
+7,321,Intermittent,Natural Gas,10,11,1.156,100,173,pneumatic devices per facility,40
+7,321,Level Controller,Natural Gas,10,10,1.045,91,129,pneumatic devices per facility,40
+7,321,Pressure Controller,Natural Gas,10,5,0.522,100,235,pneumatic devices per facility,40
+7,321,Pump,Natural Gas,10,6,0.622,100,162,pneumatic devices per facility,40
+7,321,Transducer,Natural Gas,10,1,0.104,100,293,pneumatic devices per facility,40
+7,322,Intermittent,Instrument Air,33,19,0.601,73,95,pneumatic devices per facility,40
+7,322,Intermittent,Natural Gas,33,26,0.825,69,87,pneumatic devices per facility,40
+7,322,Level Controller,Instrument Air,33,99,3.159,59,74,pneumatic devices per facility,40
+7,322,Level Controller,Natural Gas,33,50,1.581,59,74,pneumatic devices per facility,40
+7,322,Positioner,Instrument Air,33,10,0.317,91,133,pneumatic devices per facility,40
+7,322,Positioner,Natural Gas,33,7,0.221,100,208,pneumatic devices per facility,40
+7,322,Pressure Controller,Instrument Air,33,59,1.870,70,95,pneumatic devices per facility,40
+7,322,Pressure Controller,Natural Gas,33,20,0.638,67,88,pneumatic devices per facility,40
+7,322,Pump,Instrument Air,33,15,0.475,93,173,pneumatic devices per facility,40
+7,322,Pump,Electric,33,1,0.032,100,313,pneumatic devices per facility,40
+7,322,Pump,Natural Gas,33,13,0.411,75,101,pneumatic devices per facility,40
+7,322,Transducer,Instrument Air,33,13,0.412,99,159,pneumatic devices per facility,40
+7,322,Transducer,Natural Gas,33,13,0.411,100,242,pneumatic devices per facility,40
+7,361,Intermittent,Natural Gas,29,19,0.684,83,140,pneumatic devices per facility,40
+7,361,Level Controller,Instrument Air,29,2,0.072,100,308,pneumatic devices per facility,40
+7,361,Level Controller,Natural Gas,29,15,0.537,84,121,pneumatic devices per facility,40
+7,361,Pressure Controller,Natural Gas,29,3,0.107,100,219,pneumatic devices per facility,40
+7,361,Pump,Natural Gas,29,12,0.433,79,102,pneumatic devices per facility,40
+7,362,Intermittent,Natural Gas,12,6,0.524,100,208,pneumatic devices per facility,40
+7,362,Level Controller,Instrument Air,12,4,0.351,100,160,pneumatic devices per facility,40
+7,362,Level Controller,Natural Gas,12,4,0.350,100,190,pneumatic devices per facility,41
+7,362,Positioner,Instrument Air,12,3,0.261,100,208,pneumatic devices per facility,41
+7,362,Positioner,Natural Gas,12,1,0.087,100,313,pneumatic devices per facility,41
+7,362,Pressure Controller,Natural Gas,12,6,0.529,100,249,pneumatic devices per facility,41
+7,362,Pump,Instrument Air,12,6,0.525,100,299,pneumatic devices per facility,41
+7,362,Pump,Natural Gas,12,4,0.351,100,220,pneumatic devices per facility,41
+7,362,Transducer,Instrument Air,12,3,0.262,100,150,pneumatic devices per facility,41
+7,363,Intermittent,Natural Gas,11,1,0.096,100,306,pneumatic devices per facility,41
+7,363,Level Controller,Natural Gas,11,5,0.479,100,183,pneumatic devices per facility,41
+7,363,Pressure Controller,Natural Gas,11,1,0.095,100,290,pneumatic devices per facility,41
+7,364,Intermittent,Instrument Air,20,11,0.576,100,245,pneumatic devices per facility,41
+7,364,Intermittent,Natural Gas,20,21,1.092,74,104,pneumatic devices per facility,41
+7,364,Level Controller,Instrument Air,20,3,0.158,100,213,pneumatic devices per facility,41
+7,364,Level Controller,Natural Gas,20,11,0.570,83,129,pneumatic devices per facility,41
+7,364,Positioner,Instrument Air,20,3,0.158,100,212,pneumatic devices per facility,41
+7,364,Positioner,Natural Gas,20,8,0.420,100,178,pneumatic devices per facility,41
+7,364,Pressure Controller,Instrument Air,20,3,0.159,100,299,pneumatic devices per facility,41
+7,364,Pressure Controller,Natural Gas,20,2,0.107,100,198,pneumatic devices per facility,41
+7,364,Pump,Instrument Air,20,12,0.621,100,215,pneumatic devices per facility,41
+7,364,Pump,Natural Gas,20,5,0.264,100,249,pneumatic devices per facility,41
+7,364,Transducer,Instrument Air,20,2,0.106,100,205,pneumatic devices per facility,41
+7,364,Transducer,Natural Gas,20,3,0.157,100,209,pneumatic devices per facility,41
+7,601,Intermittent,Instrument Air,16,9,0.583,97,204,pneumatic devices per facility,41
+7,601,Intermittent,Natural Gas,16,17,1.116,71,97,pneumatic devices per facility,41
+7,601,Level Controller,Instrument Air,16,14,0.914,100,193,pneumatic devices per facility,41
+7,601,Level Controller,Natural Gas,16,45,2.914,74,113,pneumatic devices per facility,42
+7,601,Positioner,Instrument Air,16,10,0.650,100,282,pneumatic devices per facility,42
+7,601,Positioner,Natural Gas,16,14,0.911,87,123,pneumatic devices per facility,42
+7,601,Pressure Controller,Instrument Air,16,6,0.398,100,205,pneumatic devices per facility,42
+7,601,Pressure Controller,Natural Gas,16,17,1.112,62,81,pneumatic devices per facility,42
+7,601,Pump,Instrument Air,16,6,0.389,100,208,pneumatic devices per facility,42
+7,601,Pump,Electric,16,1,0.065,100,305,pneumatic devices per facility,42
+7,601,Pump,Natural Gas,16,4,0.260,100,170,pneumatic devices per facility,42
+7,601,Transducer,Instrument Air,16,11,0.723,100,302,pneumatic devices per facility,42
+7,601,Transducer,Natural Gas,16,21,1.376,85,132,pneumatic devices per facility,42
+7,611,Intermittent,Instrument Air,4,4,1.045,100,197,pneumatic devices per facility,42
+7,611,Level Controller,Instrument Air,4,4,1.053,100,194,pneumatic devices per facility,42
+7,611,Pressure Controller,Instrument Air,4,3,0.781,100,176,pneumatic devices per facility,42
+7,611,Pump,Instrument Air,4,1,0.265,100,274,pneumatic devices per facility,42
+7,611,Transducer,Instrument Air,4,2,0.521,100,283,pneumatic devices per facility,42
+7,621,Intermittent,Instrument Air,34,20,0.610,75,113,pneumatic devices per facility,42
+7,621,Intermittent,Natural Gas,34,12,0.371,77,112,pneumatic devices per facility,42
+7,621,Level Controller,Instrument Air,34,80,2.457,61,75,pneumatic devices per facility,42
+7,621,Level Controller,Natural Gas,34,35,1.066,77,110,pneumatic devices per facility,42
+7,621,Positioner,Instrument Air,34,26,0.804,81,109,pneumatic devices per facility,42
+7,621,Positioner,Natural Gas,34,5,0.153,100,252,pneumatic devices per facility,42
+7,621,Pressure Controller,Instrument Air,34,31,0.958,68,92,pneumatic devices per facility,42
+7,621,Pressure Controller,Natural Gas,34,14,0.429,75,99,pneumatic devices per facility,42
+7,621,Pump,Instrument Air,34,1,0.030,100,321,pneumatic devices per facility,42
+7,621,Pump,Natural Gas,34,12,0.376,91,147,pneumatic devices per facility,42
+7,621,Transducer,Instrument Air,34,47,1.443,85,150,pneumatic devices per facility,43
+7,621,Transducer,Natural Gas,34,13,0.396,100,198,pneumatic devices per facility,43
+8,CBMOT FLOW,Intermittent,Natural Gas,21,5,0.250,100,304,pneumatic devices per well,43
+8,CBMOT FLOW,Level Controller,Natural Gas,21,2,0.099,100,200,pneumatic devices per well,43
+8,CBMOT FLOW,Positioner,Natural Gas,21,3,0.151,100,297,pneumatic devices per well,43
+8,CBMOT FLOW,Pump,Natural Gas,21,2,0.099,100,204,pneumatic devices per well,43
+8,CBMOT PUMP,Intermittent,Natural Gas,1,1,1.044,100,151,pneumatic devices per well,43
+8,CBMOT PUMP,Pump,Natural Gas,1,1,1.053,100,150,pneumatic devices per well,43
+8,CR-BIT PUMP,Intermittent,Natural Gas,85,3,0.037,100,313,pneumatic devices per well,43
+8,CR-OIL FLOW,Intermittent,Natural Gas,21,3,0.148,100,156,pneumatic devices per well,43
+8,CR-OIL FLOW,Level Controller,Instrument Air,21,3,0.14626,100,308,pneumatic devices per well,43
+8,CR-OIL FLOW,Level Controller,Natural Gas,21,3,0.150,100,214,pneumatic devices per well,43
+8,CR-OIL FLOW,Positioner,Instrument Air,21,7,0.34848,73,87,pneumatic devices per well,43
+8,CR-OIL FLOW,Pressure Controller,Instrument Air,21,1,0.04943,100,315,pneumatic devices per well,43
+8,CR-OIL FLOW,Pressure Controller,Natural Gas,21,2,0.098,100,201,pneumatic devices per well,43
+8,CR-OIL FLOW,Pump,Electric,21,1,0.04996,100,300,pneumatic devices per well,43
+8,CR-OIL FLOW,Pump,Instrument Air,21,3,0.15046,100,301,pneumatic devices per well,43
+8,CR-OIL FLOW,Pump,Natural Gas,21,4,0.200,100,168,pneumatic devices per well,43
+8,CR-OIL PUMP,Intermittent,Instrument Air,103,5,0.05097,100,200,pneumatic devices per well,43
+8,CR-OIL PUMP,Intermittent,Natural Gas,103,27,0.274,55,67,pneumatic devices per well,44
+8,CR-OIL PUMP,Intermittent,Propane,103,5,0.05078,100,245,pneumatic devices per well,44
+8,CR-OIL PUMP,Level Controller,Instrument Air,103,3,0.0305,100,228,pneumatic devices per well,44
+8,CR-OIL PUMP,Level Controller,Natural Gas,103,24,0.243,61,77,pneumatic devices per well,44
+8,CR-OIL PUMP,Level Controller,Propane,103,2,0.02051,100,312,pneumatic devices per well,44
+8,CR-OIL PUMP,Pressure Controller,Instrument Air,103,3,0.03054,100,223,pneumatic devices per well,44
+8,CR-OIL PUMP,Pressure Controller,Natural Gas,103,12,0.122,67,96,pneumatic devices per well,44
+8,CR-OIL PUMP,Pump,Electric,103,2,0.02045,100,205,pneumatic devices per well,44
+8,CR-OIL PUMP,Pump,Instrument Air,103,2,0.0202,100,211,pneumatic devices per well,44
+8,CR-OIL PUMP,Pump,Natural Gas,103,25,0.253,57,73,pneumatic devices per well,44
+8,CR-OIL PUMP,Transducer,Natural Gas,103,1,0.010,100,320,pneumatic devices per well,44
+8,GAS FLOW,Intermittent,Instrument Air,127,26,0.21387,74,161,pneumatic devices per well,44
+8,GAS FLOW,Intermittent,Natural Gas,127,57,0.468,43,52,pneumatic devices per well,44
+8,GAS FLOW,Level Controller,Instrument Air,127,60,0.49545,47,57,pneumatic devices per well,44
+8,GAS FLOW,Level Controller,Natural Gas,127,48,0.395,40,47,pneumatic devices per well,44
+8,GAS FLOW,Positioner,Instrument Air,127,37,0.30528,46,54,pneumatic devices per well,44
+8,GAS FLOW,Positioner,Natural Gas,127,10,0.082,67,83,pneumatic devices per well,44
+8,GAS FLOW,Pressure Controller,Instrument Air,127,13,0.10714,59,70,pneumatic devices per well,44
+8,GAS FLOW,Pressure Controller,Natural Gas,127,13,0.108,65,85,pneumatic devices per well,44
+8,GAS FLOW,Pump,Instrument Air,127,51,0.41914,47,52,pneumatic devices per well,44
+8,GAS FLOW,Pump,Natural Gas,127,44,0.362,41,47,pneumatic devices per well,44
+8,GAS FLOW,Transducer,Instrument Air,127,51,0.42166,46,55,pneumatic devices per well,44
+8,GAS FLOW,Transducer,Natural Gas,127,13,0.107,69,88,pneumatic devices per well,44
+8,GAS PUMP,Intermittent,Natural Gas,62,31,0.522,44,54,pneumatic devices per well,44
+8,GAS PUMP,Level Controller,Natural Gas,62,32,0.540,48,54,pneumatic devices per well,44
+8,GAS PUMP,Pressure Controller,Natural Gas,62,3,0.050,100,165,pneumatic devices per well,45
+8,GAS PUMP,Pump,Instrument Air,62,1,0.01685,100,312,pneumatic devices per well,45
+8,GAS PUMP,Pump,Natural Gas,62,38,0.639,42,49,pneumatic devices per well,45
+8,GAS PUMP,Transducer,Instrument Air,62,3,0.05111,100,307,pneumatic devices per well,45
+8,GAS PUMP,Transducer,Natural Gas,62,12,0.201,63,79,pneumatic devices per well,45
+8,GAS STORG,Level Controller,Instrument Air,2,1,0.52634,100,236,pneumatic devices per well,45
+8,GAS STORG,Positioner,Instrument Air,2,1,0.53481,100,230,pneumatic devices per well,45
+8,GAS STORG,Pump,Electric,2,1,0.51649,100,236,pneumatic devices per well,45
+8,GAS STORG,Transducer,Instrument Air,2,1,0.52853,100,236,pneumatic devices per well,45
+8,SHG FLOW,Intermittent,Instrument Air,1,1,1.04159,100,149,pneumatic devices per well,45
+8,SHG FLOW,Level Controller,Instrument Air,1,3,3.15243,100,153,pneumatic devices per well,45
+8,SHG FLOW,Positioner,Instrument Air,1,3,3.10207,100,152,pneumatic devices per well,45
+8,SHG FLOW,Pump,Instrument Air,1,1,1.0439,100,153,pneumatic devices per well,45

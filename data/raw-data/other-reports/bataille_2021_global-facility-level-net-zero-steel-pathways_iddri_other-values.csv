@@ -1,0 +1,15 @@
+process,technology,item,value,unit,reference,note
+Imports / non-spatially allocated production (Table 4),,emission intensity / energy intensity,0.120 / 2.02,t CO2e/t ; GJ/t,"p.27, Table 4","composite of low-carbon routes (assumed cost mix 50% EAF, 40% DRI-EAF-H2, 5% BF-BOF-CCS, 5% DRI-EAF-CCS, p.15); not a technology"
+Model inputs (p.26),,maximum possible capacity factor,0.9,fraction,p.26,model assumption for all facilities
+Model inputs (p.26),,maximum scrap fraction in production,80,%,p.26,
+Model inputs (p.26),,maximum single site capacity,25000,kt,p.26,
+Cost assumptions (p.15),,electricity cost for H2 production 2020 -> 2050,60 -> 15,2020_USD/MWh,p.15,"dedicated on-site or wheeled generation, linear fall; electrolyser CAPEX falls 2%/yr (47% by 2050)"
+Cost assumptions (p.15),,carbon price 2019 -> 2050,20 -> 200,2020_USD/t CO2e,p.15,linear rise
+Cost assumptions (p.9),,grid electricity cost,0.06 -> 0.04,USD/kWh,p.9,falling electricity costs for H2-DRI
+"Production costs (Fig. 8, 12, 13)",,"production cost, CAPEX and OPEX by route 2030/2050",read from chart: not extracted,2020_USD/t crude steel,"p.15, Fig. 8","bar chart only, no printed values. Costs are mature-technology 2030 costs, fixed over time."
+Global boundary comparison (Table 1),,study-boundary energy intensity / emission intensity 2019,18.41 / 1.61,GJ/t crude steel ; t CO2e/t crude steel,"p.11, Table 1","global average, all routes"
+Global boundary comparison (Table 1),,IEA direct energy intensity / emission intensity 2019,16.11 / 1.40,GJ/t crude steel ; t CO2e/t crude steel,"p.11, Table 1",reprinted from IEA (2020a)
+Global baseline (p.23),,2019 global emissions / energy in study boundary,3.0 / 31600,Gt CO2e ; PJ,p.23,
+Global baseline (Table 3),,2019 production BF-BOF / EAF / DRI-EAF-GAS / DRI-EAF-COAL / OHF (GEM sites),1261872 / 276645 / 50996 / 27004 / 11449,"kt (printed ""MT"")","p.23, Table 3",units printed as MT but values are evidently kt
+Deep decarbonization options (Sect. 2.3),blast-furnace_hydrogen,hydrogen co-firing share for heat,20-30,%,p.7,theoretical; footnote 9 (p.14): up to 40% postulated by Thyssen Krupp; 25% considered p.14
+Scenario results (Exec. summary),,"2050 production shares, central scenario: scrap EAF / DRI-EAF-H2 / CCS / NSP",46 / 29 / 17 / 8,%,p.2,

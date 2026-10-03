@@ -86,6 +86,12 @@ efficiency_biogas,technical,%,"Useful output per unit of energy input, on the ba
 efficiency_biogas_low,technical,%,
 efficiency_biogas_high,technical,%,
 efficiency_biogas_n,technical,,
+efficiency_biomass-solid,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_biomass-solid_low,technical,%,
+efficiency_biomass-solid_high,technical,%,
+efficiency_biomass-solid_n,technical,,
+efficiency_black-liquor,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_black-liquor_n,technical,,
 efficiency_component,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_component_low,technical,%,
 efficiency_component_high,technical,%,
@@ -133,8 +139,12 @@ specific-energy-consumption_bioliquid_low,technical,GJ/product-unit,
 specific-energy-consumption_bioliquid_high,technical,GJ/product-unit,
 specific-energy-consumption_bioliquid_n,technical,,
 specific-energy-consumption_biomass,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_biomass_low,technical,GJ/product-unit,
+specific-energy-consumption_biomass_high,technical,GJ/product-unit,
 specific-energy-consumption_biomass_n,technical,,
 specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
+specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
 specific-energy-consumption_biomass-solid_n,technical,,
 specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
@@ -193,6 +203,8 @@ specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,
 specific-energy-consumption_natural-gas_n,technical,,
 specific-energy-consumption_not-stated,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: not-stated. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_not-stated_low,technical,GJ/product-unit,
+specific-energy-consumption_not-stated_high,technical,GJ/product-unit,
 specific-energy-consumption_not-stated_n,technical,,
 specific-energy-consumption_oil,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: oil. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_oil_low,technical,GJ/product-unit,

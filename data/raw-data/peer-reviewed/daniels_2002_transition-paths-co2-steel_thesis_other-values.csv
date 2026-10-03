@@ -1,0 +1,83 @@
+process,technology,item,value,unit,reference,note
+"Coke oven, Eurofer typical values (Sect. 2.4.1, Table 2.1)",coke-oven_by-product,labour input,0.55,man-hours/t product,"p.24, Table 2.1","Labour per tonne product, as printed."
+"Sinter plant, typical values (Sect. 2.4.1, Table 2.4)",sinter-plant_strand,labour input,0.14,man-hours/t product,"p.26, Table 2.4","Labour per tonne product, as printed."
+"Pellet plant, typical values (Sect. 2.4.1, Table 2.5)",pellet-plant_induration,labour input,0.14,man-hours/t product,"p.26, Table 2.5","Labour per tonne product, as printed."
+"Cryogenic oxygen plant, high purity (Sect. 2.4.1, Table 2.7)",air-separation-unit,labour input,0.2,man-hours/t product,"p.27, Table 2.7","Labour per tonne product, as printed."
+"Cryogenic oxygen plant, high purity (Sect. 2.4.1, Table 2.7)",air-separation-unit,assumed total cost excluding depreciation,34,2002_EUR/t oxygen,"p.27, Table 2.7","As printed in the table remarks. PRICE YEAR NOT STATED; publication year 2002 used (Box 2.1: most sources do not state the year of cost data, so no conversion was made; Euro figures probably originate from 1990s ECU/Euro)."
+"Low-purity oxygen plant (Sect. 2.4.1, Table 2.8)",air-separation-unit_low-purity,labour input,0.1,man-hours/t product,"p.28, Table 2.8","Labour per tonne product, as printed."
+"Low-purity oxygen plant (Sect. 2.4.1, Table 2.8)",air-separation-unit_low-purity,assumed total cost excluding depreciation,22,2002_EUR/t oxygen,"p.28, Table 2.8","As printed in the table remarks. PRICE YEAR NOT STATED; publication year 2002 used (Box 2.1: most sources do not state the year of cost data, so no conversion was made; Euro figures probably originate from 1990s ECU/Euro)."
+"Blast furnace, typical values (Sect. 2.4.2, Table 2.11)",blast-furnace,labour input,0.25,man-hours/t product,"p.29, Table 2.11","Labour per tonne product, as printed."
+"COREX smelting reduction, typical values (Sect. 2.4.2, Table 2.13)",smelting-vessel_two-stage,labour input,0.7,man-hours/t product,"p.31, Table 2.13","Labour per tonne product, as printed."
+"Cyclone Converter Furnace (CCF), typical values (Sect. 2.4.2, Table 2.15)",smelting-vessel_cyclone-converter,labour input,0.25,man-hours/t product,"p.32, Table 2.15","Labour per tonne product, as printed."
+"Cyclone Converter Furnace (CCF), typical values (Sect. 2.4.2, Table 2.15)",smelting-vessel_cyclone-converter,limestone input as printed,4.44,t/t pig iron,"p.32, Table 2.15","Printed limestone 4.44 tonne per t pig iron; implausible and identical to the desulphuriser 4.44 kg of Table 2.13, probably a misprint. Not loaded as a flow."
+"MIDREX direct reduction, typical values (Sect. 2.4.2, Table 2.16)",shaft-furnace_direct-reduction,labour input,0.25,man-hours/t product,"p.34, Table 2.16","Labour per tonne product, as printed."
+"Circored fine-ore direct reduction (Sect. 2.4.2, Table 2.17)",reactor_fluidized-bed-direct-reduction_natural-gas,labour input,0.25,man-hours/t product,"p.35, Table 2.17","Labour per tonne product, as printed."
+"Circofer coal-based fine-ore direct reduction (Sect. 2.4.2, Table 2.18)",reactor_fluidized-bed-direct-reduction_coal,labour input,0.25,man-hours/t product,"p.35, Table 2.18","Labour per tonne product, as printed."
+"Oxygen steel process (BOF), Eurofer typical values (Sect. 2.4.3, Table 2.19)",basic-oxygen-furnace,labour input,0.3,man-hours/t product,"p.36, Table 2.19","Labour per tonne product, as printed."
+"Electric arc furnace, primary (DRI) charge (Sect. 2.4.3, Table 2.20)",electric-arc-furnace_dri-charge,labour input,0.35,man-hours/t product,"p.37, Table 2.20","Labour per tonne product, as printed."
+"Electric arc furnace, scrap charge (Sect. 2.4.3, Table 2.21)",electric-arc-furnace_scrap-charge,labour input,0.25,man-hours/t product,"p.38, Table 2.21","Labour per tonne product, as printed."
+"CO2 removal on blast furnace gas (Sect. 2.4.5, Table 2.23)",capture-unit_physical-solvent,fuel value loss of host gas per t CO2 removed,0.37,MJ/t CO2 (LHV),"p.41, Table 2.23",Printed column MJ loss (lower heating value); unit as printed (probably GJ given magnitude).
+"CO2 removal on COREX export gas (Sect. 2.4.5, Table 2.23)",capture-unit_physical-solvent,fuel value loss of host gas per t CO2 removed,0.14,MJ/t CO2 (LHV),"p.41, Table 2.23",Printed column MJ loss (lower heating value); unit as printed (probably GJ given magnitude).
+"CO2 removal on CCF export gas (Sect. 2.4.5, Table 2.23)",capture-unit_physical-solvent,fuel value loss of host gas per t CO2 removed,0.16,MJ/t CO2 (LHV),"p.41, Table 2.23",Printed column MJ loss (lower heating value); unit as printed (probably GJ given magnitude).
+,,CO2 emission factor coking/injectant coal,0.094,t CO2/GJ (28 GJ/t),"p.75, Table 4.6","Invariant emission factor used in the analysis; high-ash coal 26 GJ/t, same factor."
+,,CO2 emission factor gas,0.056,t CO2/GJ,"p.75, Table 4.6",Gas (natural gas basis).
+,,CO2 emission factor by-products,0.08,t CO2/GJ,"p.75, Table 4.6",
+Blast furnace (Sect. 2.4.2),blast-furnace,coke rate with full oxygen blast (simulation),174,kg/t pig iron,p.30,Experiments and computer simulations. reprinted from Scott [48].
+Blast furnace (Sect. 2.4.2),blast-furnace,coke rate with plasma superheated blast,105,kg/t pig iron,p.30,reprinted from Scott [48].
+Sinter plant (Sect. 2.4.1),sinter-plant_strand,coke saved in BF per t limestone charged to sinter plant,201,kg/t limestone,p.26,
+Oxygen production survey (Table 2.6),air-separation-unit,"cryogenic ~99.5% incl. compression and storage, electricity",1.62-1.80,GJe/t O2,"p.27, Table 2.6",reprinted from Lankford et al. (1985) [39].
+Oxygen production survey (Table 2.6),air-separation-unit,"cryogenic 90-95%, air separation only, electricity",1.07-1.10,GJe/t O2,"p.27, Table 2.6",reprinted from Lankford et al. (1985) [39].
+Oxygen production survey (Table 2.6),air-separation-unit_low-purity,VSA 90-95% electricity,1.08-1.51,GJe/t O2,"p.27, Table 2.6",reprinted from ref [8].
+Oxygen production survey (Table 2.6),air-separation-unit_low-purity,PSA 90-95% electricity,2.02-3.53,GJe/t O2,"p.27, Table 2.6",reprinted from ref [8].
+Oxygen production survey (Table 2.6),air-separation-unit_low-purity,1 Mt/y plant 95-99% investment,48.5-64.7,Euro/t capacity,"p.27, Table 2.6",For synthesis gas; reprinted from [62]. PRICE YEAR NOT STATED.
+"Production routes (Tables 2.31, 4.10)",,route bf: production cost,314,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route bf: attributed CO2 emissions,2.12,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route bf: route investment excl. casting/rolling (with removal in brackets for r),315,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route corex: production cost,302,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route corex: attributed CO2 emissions,2.44,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route corex: CO2 reduction cost vs bf,36,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route corex: route investment excl. casting/rolling (with removal in brackets for r),323,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route ccf: production cost,286,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route ccf: attributed CO2 emissions,1.6,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route ccf: CO2 reduction cost vs bf,-54,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route ccf: route investment excl. casting/rolling (with removal in brackets for r),176,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route midrex: production cost,363,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route midrex: attributed CO2 emissions,1.14,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route midrex: CO2 reduction cost vs bf,50,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route midrex: route investment excl. casting/rolling (with removal in brackets for r),380,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route circored: production cost,335,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route circored: attributed CO2 emissions,1.19,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route circored: CO2 reduction cost vs bf,23,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route circored: route investment excl. casting/rolling (with removal in brackets for r),252,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route circofer: production cost,322,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route circofer: attributed CO2 emissions,1.72,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route circofer: CO2 reduction cost vs bf,20,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route circofer: route investment excl. casting/rolling (with removal in brackets for r),247,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route eaf sec: production cost,354,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route eaf sec: attributed CO2 emissions,0.38,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route eaf sec: CO2 reduction cost vs bf,23,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route eaf sec: route investment excl. casting/rolling (with removal in brackets for r),86,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route bf r: production cost,340,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route bf r: attributed CO2 emissions,0.9,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route bf r: CO2 reduction cost vs bf,21,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route bf r: route investment excl. casting/rolling (with removal in brackets for r),368,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route corex r: production cost,350,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route corex r: attributed CO2 emissions,0.18,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route corex r: CO2 reduction cost vs bf,18,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route corex r: route investment excl. casting/rolling (with removal in brackets for r),402,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route ccf r: production cost,319,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route ccf r: attributed CO2 emissions,0.11,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route ccf r: CO2 reduction cost vs bf,2,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route ccf r: route investment excl. casting/rolling (with removal in brackets for r),225,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route midrex r: production cost,375,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route midrex r: attributed CO2 emissions,0.58,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route midrex r: CO2 reduction cost vs bf,40,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route midrex r: route investment excl. casting/rolling (with removal in brackets for r),399,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route circored r: production cost,349,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route circored r: attributed CO2 emissions,0.58,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route circored r: CO2 reduction cost vs bf,23,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route circored r: route investment excl. casting/rolling (with removal in brackets for r),273,Euro/t capacity,"p.47, Table 2.31",
+"Production routes (Tables 2.31, 4.10)",,route circofer r: production cost,337,Euro/t final product,"p.78, Table 4.10","Author model result, current low prices, no tax. PRICE YEAR NOT STATED."
+"Production routes (Tables 2.31, 4.10)",,route circofer r: attributed CO2 emissions,0.63,t CO2/t final product,"p.78, Table 4.10",Author model result; excludes limestone CO2; r = with CO2 removal and storage.
+"Production routes (Tables 2.31, 4.10)",,route circofer r: CO2 reduction cost vs bf,15,Euro/t CO2,"p.78, Table 4.10",Author model result.
+"Production routes (Tables 2.31, 4.10)",,route circofer r: route investment excl. casting/rolling (with removal in brackets for r),255,Euro/t capacity,"p.47, Table 2.31",

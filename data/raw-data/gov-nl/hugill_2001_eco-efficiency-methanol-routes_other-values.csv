@@ -1,0 +1,7 @@
+process,technology,item,value,unit,reference,note
+"Conventional methanol process model (Sect. 4.1, App. H-I)",reactor_syngas-methanol_steam-reforming-co2-addition,specific exergy loss in process,10.8,GJ/t methanol,"p.21, Table 4.1",Total exergy input (incl. feedstock) 33.1 GJ/t; exergetic efficiency 0.675; Methanor plant Delfzijl 14.3 GJ/t loss (reprinted from ref. [12])
+"Conventional methanol process model (Sect. 4.1, App. H-I)",reactor_syngas-methanol_steam-reforming-co2-addition,natural gas feed exergy,425478,kW,"p.21, Table 4.1","Per 61809 kg/h methanol; exergy, not heating value"
+"Conventional methanol process model (Sect. 4.1, App. H-I)",reactor_syngas-methanol_steam-reforming-co2-addition,plant scale assumed for construction LCA,550,kt methanol/yr,"p.22, Sect. 4.1.2",Corresponds to 434 MW (HHV) methanol output
+"Photo-electrochemical methanol reactor (Sect. 2.2, 4.2)",reactor_photo-electrochemical-methanol,total specific exergy input,424,GJ/t methanol,"p.27, Sect. 4.2.1",Exergy loss 401 GJ/t
+Life-cycle comparison (Table 4.7),reactor_syngas-methanol_steam-reforming-co2-addition,total life-cycle impact per 100 kt methanol,67206,Eco-indicator 95 Pt,"p.28, Table 4.7",Production phase 66800 Pt
+Life-cycle comparison (Table 4.7),reactor_photo-electrochemical-methanol,total life-cycle impact per 100 kt methanol,64226,Eco-indicator 95 Pt,"p.28, Table 4.7",Construction phase 101000 Pt

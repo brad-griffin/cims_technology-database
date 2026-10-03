@@ -1,0 +1,48 @@
+process,technology,sector,end-use,process-step,service-unit
+Measure costs (Appendix C): Compressor Blow Down,compressor_blowdown-recovery,oil-and-gas,venting,blowdowns,t
+Measure costs (Appendix C): Gas Start to Air start,compressor_air-start-conversion,oil-and-gas,venting,compressor-starter-venting,t
+Measure costs (Appendix C): Rod Packing System Upgrade or Capture gas from wet seal,compressor_reciprocating-rod-packing-low-bleed,oil-and-gas,venting,compressor-seals,t
+Measure costs (Appendix C): Flash Tank Separators,separator_glycol-flash-tank,oil-and-gas,venting,glycol-dehydration,t
+Measure costs (Appendix C): Kimray to Electrical Pumps,pump_electric-glycol-circulation,oil-and-gas,venting,glycol-dehydration,t
+Measure costs (Appendix C): Optimize flowrates,process-improvement_glycol-circulation-optimization,oil-and-gas,venting,glycol-dehydration,t
+Measure costs (Appendix C): Pneumatics pumps to air,compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Measure costs (Appendix C): Pneumatics instrument to air,compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Measure costs (Appendix C): Reduce Emission Completion,process-improvement_reduced-emission-completion,oil-and-gas,venting,well-completions,t
+Measure costs (Appendix C): Plunger lift,pump_plunger-lift,oil-and-gas,venting,well-liquids-unloading,t
+Measure costs (Appendix C): Casing Gas Recovery (Tie In) (Bitumen wells),compressor_casing-gas-recovery-compression,oil-and-gas,venting,casinghead-gas-venting,t
+Measure costs (Appendix C): Tie-In (Oil wells),compressor_casing-gas-recovery-compression,oil-and-gas,venting,casinghead-gas-venting,t
+Measure costs (Appendix C): Casing Gas Recovery (Tube Truck) (Bitumen wells),compressor_casing-gas-recovery-tube-truck,oil-and-gas,venting,casinghead-gas-venting,t
+Measure costs (Appendix C): Tube Truck Tie-In (Oil wells),compressor_casing-gas-recovery-tube-truck,oil-and-gas,venting,casinghead-gas-venting,t
+Flash Tank Separators - Gas Gathering (Appendix A rank 1),separator_glycol-flash-tank,oil-and-gas,venting,glycol-dehydration,t
+Flash Tank Separators - Gas Battery (Appendix A rank 2),separator_glycol-flash-tank,oil-and-gas,venting,glycol-dehydration,t
+Capture Compressor Blow Down - Gas Battery (Appendix A rank 3),compressor_blowdown-recovery,oil-and-gas,venting,blowdowns,t
+Capture Compressor Blow Down - Gas Plant (Appendix A rank 4),compressor_blowdown-recovery,oil-and-gas,venting,blowdowns,t
+Kimray To Electrical Pumps - Gas Battery (first of two rows so labelled) (Appendix A rank 5),pump_electric-glycol-circulation,oil-and-gas,venting,glycol-dehydration,t
+Optimize Dehydrators Flowrates - Gas Gathering (Appendix A rank 6),process-improvement_glycol-circulation-optimization,oil-and-gas,venting,glycol-dehydration,t
+Capture Compressor Blow Down - Gas Gathering (Appendix A rank 7),compressor_blowdown-recovery,oil-and-gas,venting,blowdowns,t
+Kimray To Electrical Pumps - Gas Battery (second of two rows so labelled) (Appendix A rank 8),pump_electric-glycol-circulation,oil-and-gas,venting,glycol-dehydration,t
+Optimize Dehydrators Flowrates - Gas Battery (Appendix A rank 9),process-improvement_glycol-circulation-optimization,oil-and-gas,venting,glycol-dehydration,t
+Monthly LDAR - Gas Processing (Appendix A rank 10),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Reduced Emissions Completions - Gas Wells (Appendix A rank 11),process-improvement_reduced-emission-completion,oil-and-gas,venting,well-completions,t
+Pneumatics Pumps To Air - Gas Battery (Appendix A rank 12),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Low Bleed Rod Packing Upgrade - Gas Gathering (Appendix A rank 13),compressor_reciprocating-rod-packing-low-bleed,oil-and-gas,venting,compressor-seals,t
+Low Bleed Rod Packing Upgrade - Gas Plant (Appendix A rank 14),compressor_reciprocating-rod-packing-low-bleed,oil-and-gas,venting,compressor-seals,t
+Monthly LDAR - Oil Wells (Appendix A rank 15),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Monthly LDAR - Gas Gathering (Appendix A rank 16),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Low Bleed Rod Packing Upgrade - Gas Battery (Appendix A rank 17),compressor_reciprocating-rod-packing-low-bleed,oil-and-gas,venting,compressor-seals,t
+Monthly LDAR - Gas Wells (Appendix A rank 18),management-system_leak-detection,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t
+Instrument Air Pumps - Oil Battery (Appendix A rank 19),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Pneumatics Instrument To Air - Gas Battery (Appendix A rank 20),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Gas Start To Air Start - Gas Plant (Appendix A rank 21),compressor_air-start-conversion,oil-and-gas,venting,compressor-starter-venting,t
+Pneumatics Instrument To Air - Gas Plant (Appendix A rank 22),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Pneumatics Pumps To Air - Gas Plant (Appendix A rank 23),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Gas Pipeline Tie-In - Bitumen Battery (Appendix A rank 24),compressor_casing-gas-recovery-compression,oil-and-gas,venting,casinghead-gas-venting,t
+Instrument Air Devices - Oil Battery (Appendix A rank 25),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Gas Start To Air Start - Gas Gathering (Appendix A rank 26),compressor_air-start-conversion,oil-and-gas,venting,compressor-starter-venting,t
+Tube Truck Tie-In - Bitumen Battery (Appendix A rank 27),compressor_casing-gas-recovery-tube-truck,oil-and-gas,venting,casinghead-gas-venting,t
+Plunger Lift - Gas Wells (Appendix A rank 28),pump_plunger-lift,oil-and-gas,venting,well-liquids-unloading,t
+Pneumatics Pumps To Air - Gas Gathering (Appendix A rank 29),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t
+Gas Pipeline Tie-In - Oil Battery (Appendix A rank 30),compressor_casing-gas-recovery-compression,oil-and-gas,venting,casinghead-gas-venting,t
+Convert Gas Starter To Air Start - Gas Battery (Appendix A rank 31),compressor_air-start-conversion,oil-and-gas,venting,compressor-starter-venting,t
+Tube Truck Tie-In - Oil Battery (Appendix A rank 32),compressor_casing-gas-recovery-tube-truck,oil-and-gas,venting,casinghead-gas-venting,t
+Pneumatics Instrument To Air - Gas Gathering (Appendix A rank 33),compressor_instrument-air,oil-and-gas,venting,pneumatic-controls,t

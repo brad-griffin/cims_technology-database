@@ -1,0 +1,61 @@
+process,technology,sector,end-use,process-step,service-unit
+"Ethane steamcracking (Sect. 2.1.1, Tables 4, 8), 2000",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Ethane steamcracking (Sect. 2.1.1, Tables 4, 8), 2020",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"LPG steamcracking (Sect. 2.1.1, Tables 5, 9), 2000",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"LPG steamcracking (Sect. 2.1.1, Tables 5, 9), 2020",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Naphtha steamcracking (Sect. 2.1.1, Tables 6, 10), 2000",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Naphtha steamcracking (Sect. 2.1.1, Tables 6, 10), 2020",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Gas oil steamcracking (Sect. 2.1.1, Tables 7, 11), 2000",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Gas oil steamcracking (Sect. 2.1.1, Tables 7, 11), 2020",steam-cracker_fired-tubular,chemicals,petrochemicals,steam-cracking,t
+"Olefins recovery from FCC offgasses (Sect. 2.1.2, Table 14), 2000",separator_fcc-offgas-olefins,chemicals,petrochemicals,steam-cracking,t
+"Oxidative coupling of natural gas (Sect. 2.1.3, Table 17), 2000",reactor_oxidative-coupling-methane,chemicals,petrochemicals,steam-cracking,t
+"Methanol to olefins (IFP process) (Sect. 2.1.4, Table 19), 2000",reactor_methanol-to-olefins,chemicals,petrochemicals,steam-cracking,t
+"Flash pyrolysis of biomass (Sect. 2.1.5, Table 21), 2000",reactor_biomass-flash-pyrolysis,chemicals,petrochemicals,steam-cracking,t
+"LDPE polymerisation, liquid phase (Sect. 2.2.1, Table 25), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"LLDPE polymerisation, gas phase (Sect. 2.2.1, Table 26), 2000",reactor_polymerization-extrusion_gas-phase,chemicals,petrochemicals,all-polymerization,t
+"LLDPE polymerisation, suspension / solution (Sect. 2.2.1, Table 26), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"HDPE polymerisation, gas phase (Sect. 2.2.1, Table 27), 2000",reactor_polymerization-extrusion_gas-phase,chemicals,petrochemicals,all-polymerization,t
+"HDPE polymerisation, suspension / solution (Sect. 2.2.1, Table 27), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"PP polymerisation, liquid phase (Sect. 2.2.2, Table 29), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"PP polymerisation, gas phase (Sect. 2.2.2, Table 29), 2000",reactor_polymerization-extrusion_gas-phase,chemicals,petrochemicals,all-polymerization,t
+"PP polymerisation, suspension (Sect. 2.2.2, Table 29), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"Benzene extractive distillation (Sect. 2.2.3, Table 31), 2000",distillation-column_aromatics-pygas,chemicals,petrochemicals,btx-reforming,t
+"Benzene extractive distillation (Sect. 2.2.3, Table 31), 2020",distillation-column_aromatics-pygas,chemicals,petrochemicals,btx-reforming,t
+"Styrene production (ethylbenzene alkylation and dehydrogenation) (Sect. 2.2.3, Table 32), 2000",reactor_ethylbenzene-dehydrogenation,chemicals,petrochemicals,btx-reforming,t
+"PS polymerisation (Sect. 2.2.3, Table 33), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"VCM production (balanced chlorination / oxychlorination) (Sect. 2.2.4, Table 35), 2000",reactor_edc-vcm-balanced,chemicals,petrochemicals,intermediate-production,t
+"PVC polymerisation, suspension (Sect. 2.2.4, Table 36), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"PVC polymerisation, suspension (Sect. 2.2.4, Table 36), 2020",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"PET production via DMT route (from BTX) (Sect. 2.2.5, Table 38), 2000",reactor_pet-dmt-chain,chemicals,petrochemicals,all-polymerization,t
+"PET production via DMT route (from BTX) (Sect. 2.2.5, Table 38), 2020",reactor_pet-dmt-chain,chemicals,petrochemicals,all-polymerization,t
+"Other thermoplastics (ABS emulsion route, with acrylonitrile and butadiene) (Sect. 2.2.6, Table 40), 2000",reactor_abs-emulsion-chain,chemicals,petrochemicals,all-polymerization,t
+"Other thermoplastics (ABS emulsion route, with acrylonitrile and butadiene) (Sect. 2.2.6, Table 40), 2020",reactor_abs-emulsion-chain,chemicals,petrochemicals,all-polymerization,t
+"Thermosets (PUR, with polyols and TDI/MDI) (Sect. 2.2.7, Table 43), 2000",reactor_pur-chain,chemicals,petrochemicals,all-polymerization,t
+"Thermosets (PUR, with polyols and TDI/MDI) (Sect. 2.2.7, Table 43), 2020",reactor_pur-chain,chemicals,petrochemicals,all-polymerization,t
+"Synthetic rubber (SBR, with butadiene extraction) (Sect. 2.2.8, Table 45), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,all-polymerization,t
+"Mechanical recycling of unmixed plastic waste (Sect. 2.4.3, Table 55), 2000",separator_plastics-mechanical-recycling,chemicals,petrochemicals,waste-recycling,t
+"Mechanical recycling of unmixed plastic waste (Sect. 2.4.3, Table 55), 2020",separator_plastics-mechanical-recycling,chemicals,petrochemicals,waste-recycling,t
+"Crude distillation (allocated to vacuum residue) (Sect. 2.5, Table 56), 2000",distillation-column_atmospheric-vacuum,petroleum-refining,petroleum-fractions,distillation,t
+"Deasphalting of vacuum residue (Sect. 2.5, Table 56), 2000",separator_solvent-deasphalting,petroleum-refining,petroleum-fractions,distillation,t
+"Asphalt blowing (Sect. 2.5, Table 56), 2000",reactor_asphalt-blowing,petroleum-refining,petroleum-fractions,distillation,t
+"Synthetic lubricants (poly-alpha-olefins) (Sect. 2.5, Table 56), 2000",reactor_polymerization-extrusion,chemicals,petrochemicals,steam-cracking,t
+"Ethylene cracker energy use, literature values (Sect. 2.1.1, p.13)",steam-cracker_fired-tubular_ethane-germany-1989,chemicals,petrochemicals,steam-cracking,t
+"Ethylene cracker energy use, literature values (Sect. 2.1.1, p.13)",steam-cracker_fired-tubular_naphtha-germany-1989,chemicals,petrochemicals,steam-cracking,t
+"Ethylene cracker energy use, literature values (Sect. 2.1.1, p.13)",steam-cracker_fired-tubular_gas-oil-germany-1989,chemicals,petrochemicals,steam-cracking,t
+"Ethylene cracker energy use, literature values (Sect. 2.1.1, p.13)",steam-cracker_fired-tubular_ethane-new-1997,chemicals,petrochemicals,steam-cracking,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-film-extrusion,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-extrusion-coating,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-sheet-extrusion,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-thermoforming,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-blow-moulding,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-injection-moulding,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-foaming,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-tube-extrusion,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-profile-extrusion,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-cable-extrusion,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing 'standard values', Netherlands (Sect. 2.3, Table 47)",press_plastics-other-processes,chemicals,petrochemicals,plastics-processing,t
+"Plastics processing, mean costs (Sect. 2.3, Table 48)",press_plastics-processing-average,chemicals,petrochemicals,plastics-processing,t
+"Mixed plastic waste processing, processes available in 2000 (Sect. 2.4.2, Table 53)",reactor_plastics-pyrolysis,chemicals,petrochemicals,waste-recycling,t
+"Mixed plastic waste processing, processes available in 2000 (Sect. 2.4.2, Table 53)",gasifier_plastic-waste-hydrogen,chemicals,petrochemicals,waste-recycling,t
+"Mixed plastic waste processing, processes available in 2000 (Sect. 2.4.2, Table 53)",reactor_plastic-waste-hydrogenation,chemicals,petrochemicals,waste-recycling,t
+"Selective dissolution of mixed plastic waste (Sect. 2.4.2, Table 54), 2010",separator_plastics-selective-dissolution,chemicals,petrochemicals,waste-recycling,t

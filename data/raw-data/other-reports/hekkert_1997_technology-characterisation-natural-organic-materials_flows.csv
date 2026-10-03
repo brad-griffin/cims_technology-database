@@ -1,0 +1,26 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+Thermomechanical pulping (Table 4.5),pulper_thermomechanical,output,steam,2.53,GJ,t,,,,,"p.38, Table 4.5",,"Printed as steam -2.53 GJ/t (recovered refiner steam), 2000."
+"Thermomechanical pulping (Table 4.5, 2020-2050)",pulper_thermomechanical,output,steam,3.5,GJ,t,,,,,"p.38, Table 4.5",,"Printed as steam -3.5 GJ/t, 2020 and 2050."
+TMP with biopulping (Table 4.7),pulper_thermomechanical-biopulping,output,steam,2.1,GJ,t,,,,,"p.43, Table 4.7",,"Printed as steam -2.1 GJ/t, 2020 and 2050."
+Mechanical pulp from nonwood (Table 4.8),pulper_mechanical-nonwood,output,steam,3.0,GJ,t,,,,,"p.45, Table 4.8",,Printed -3.0 (2020) and -2.0 (2050) GJ/t; electricity 4.6 (2020) and 3.1 (2050).
+Nonwood pulp with enzymes (Table 4.9),pulper_mechanical-nonwood-biopulping,output,steam,1.5,GJ,t,,,,,"p.46, Table 4.9",,Printed as steam -1.5 GJ/t.
+Kraft pulping (Table 4.2),pulp-mill_kraft,output,black-liquor,23,GJ,t,,,,,"p.35, Table 4.2",,Black liquor energy content produced per t product.
+Kraft pulping (Table 4.2),pulp-mill_kraft,output,biomass-solid,4,GJ,t,,,,,"p.35, Table 4.2",,Bark (GJ) produced per t product.
+"Printing and writing paper, integrated mill (Table 5.3, p.59)",paper-mill_printing-writing-integrated,output,black-liquor,11.5,GJ,t,,,,,p.59,,Black liquor energy content produced per t product.
+"Printing and writing paper, integrated mill (Table 5.3, p.59)",paper-mill_printing-writing-integrated,output,biomass-solid,2,GJ,t,,,,,p.59,,Bark (GJ) produced per t product.
+"Packaging paper, integrated mill (Table 5.6)",paper-mill_packaging-integrated,output,black-liquor,23,GJ,t,,,,,"p.62, Table 5.6",,Black liquor energy content produced per t product.
+"Packaging paper, integrated mill (Table 5.6)",paper-mill_packaging-integrated,output,biomass-solid,4,GJ,t,,,,,"p.62, Table 5.6",,Bark (GJ) produced per t product.
+"Sanitary paper, integrated mill (Table 5.8)",paper-mill_tissue-integrated,output,black-liquor,23,GJ,t,,,,,"p.64, Table 5.8",,Black liquor energy content produced per t product.
+"Sanitary paper, integrated mill (Table 5.8)",paper-mill_tissue-integrated,output,biomass-solid,4,GJ,t,,,,,"p.64, Table 5.8",,Bark (GJ) produced per t product.
+"Other paper and board, integrated mill (Table 5.10)",paper-mill_other-integrated,output,black-liquor,17,GJ,t,,,,,"p.66, Table 5.10",,Black liquor energy content produced per t product.
+"Other paper and board, integrated mill (Table 5.10)",paper-mill_other-integrated,output,biomass-solid,3,GJ,t,,,,,"p.66, Table 5.10",,Bark (GJ) produced per t product.
+"Black liquor recovery, Tomlinson boiler (Table 4.3)",boiler_recovery,input,black-liquor,23,GJ,t,,,,,"p.36, Table 4.3",,Per t pulp.
+"Black liquor recovery, Tomlinson boiler (Table 4.3)",boiler_recovery,input,biomass-solid,4,GJ,t,,,,,"p.36, Table 4.3",,"Bark, per t pulp."
+"Black liquor recovery, Tomlinson boiler (Table 4.3)",boiler_recovery,output,steam,14.4,GJ,t,,,,,"p.36, Table 4.3",,Per t pulp.
+"Black liquor recovery, Tomlinson boiler (Table 4.3)",boiler_recovery,output,electricity,2.16,GJ,t,,,,,"p.36, Table 4.3",,Per t pulp (GJe).
+"Black liquor recovery, gasifier + BIG/GT (Table 4.4)",gasifier_black-liquor,input,black-liquor,23,GJ,t,,,,,"p.36, Table 4.4",,Per t pulp.
+"Black liquor recovery, gasifier + BIG/GT (Table 4.4)",gasifier_black-liquor,input,biomass-solid,4,GJ,t,,,,,"p.36, Table 4.4",,"Bark, per t pulp."
+"Black liquor recovery, gasifier + BIG/GT (Table 4.4)",gasifier_black-liquor,output,steam,11,GJ,t,,,,,"p.36, Table 4.4",,Per t pulp.
+"Black liquor recovery, gasifier + BIG/GT (Table 4.4)",gasifier_black-liquor,output,electricity,6.5,GJ,t,,,,,"p.36, Table 4.4",,Per t pulp (GJe).
+"Waste paper upgrading to high-quality pulp with deinking (Table 4.10, first)",pulper_recycled-fibre,input,recovered-paper,1.4,t,t,,,,,p.51,,For graphical-paper pulp (yield 69%); 1.2 t/t for newsprint pulp (yield 85%).
+"Waste paper upgrading to low-quality pulp (Table 4.10, second)",pulper_recycled-fibre-brown,input,recovered-paper,1.1,t,t,,,,,p.52,,Yield 89%.

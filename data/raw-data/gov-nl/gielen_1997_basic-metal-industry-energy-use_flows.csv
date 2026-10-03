@@ -1,0 +1,35 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Model parameters for steel processes (App. B, Table B.1)",coke-oven_by-product,input,coal,43,GJ/unit,t,,,,,"p.179, Table B.1",coking coal [GJ/t] 43,"Coking coal per t coke. heating-value basis not stated. Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",coke-oven_by-product,output,coke-oven-gas,5.1,GJ/unit,t,,,yes,,"p.179, Table B.1",coke oven gas [GJ/t] 5.1,"Net coke oven gas export. heating-value basis not stated. Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",coke-oven_by-product,output,benzole-and-tars,4.9,GJ/unit,t,,,yes,,"p.179, Table B.1","breeze, tar and oils [GJ/t] 4.9","Breeze, tar and oils together. heating-value basis not stated. Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",sinter-plant_strand,input,iron-ore,1.1,t/unit,t,,,,,"p.179, Table B.1",iron ore 1.1," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",sinter-plant_strand,input,limestone,0.1,t/unit,t,,,,,"p.179, Table B.1",limestone 0.1," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",pellet-plant_induration,input,iron-ore,1.2,t/unit,t,,,,,"p.179, Table B.1",iron ore 1.2," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",pellet-plant_induration,input,limestone,0.4,t/unit,t,,,,,"p.179, Table B.1",limestone 0.4," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,input,pellets,0.75,t/unit,t,,,,,"p.179, Table B.1",pellets [t/t] 0.75," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,input,sinter,0.7,t/unit,t,,,,,"p.179, Table B.1",sinter [t/t] 0.7," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,input,oxygen,0.1,t/unit,t,,,,,"p.179, Table B.1",oxygen [t/t] 0.1," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,output,blast-furnace-gas,1.9,GJ/unit,t,,,yes,,"p.179, Table B.1",blast furnace gas [GJ/t] 1.9,"Net export. heating-value basis not stated. Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,output,slag,0.25,t/unit,t,,,yes,,"p.179, Table B.1",blast furnace slag [t/t] 0.25," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",blast-furnace,output,electricity,0.1,GJ/unit,t,,,yes,,"p.179, Table B.1",electricity [GJ/t] 0.1 (output),"Top-gas pressure recovery power. Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",basic-oxygen-furnace,input,scrap-steel,0.12,t/unit,t,,,,,"p.179, Table B.1",scrap-steel [t/t] 0.12," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",basic-oxygen-furnace,input,hot-metal,0.95,t/unit,t,,,,,"p.179, Table B.1",hot-metal [t/t] 0.95," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",basic-oxygen-furnace,input,limestone,0.08,t/unit,t,,,,,"p.179, Table B.1",limestone [t/t] 0.08," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",basic-oxygen-furnace,input,oxygen,0.07,t/unit,t,,,,,"p.179, Table B.1",oxygen [t/t] 0.07," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",electric-arc-furnace,input,scrap-steel,1.03,t/unit,t,,,,,"p.179, Table B.1",scrap-steel [t/t] 1.03," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",electric-arc-furnace,input,limestone,0.01,t/unit,t,,,,,"p.179, Table B.1",limestone [t/t] 0.01," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",electric-arc-furnace,input,oxygen,0.1,t/unit,t,,,,,"p.179, Table B.1",oxygen [t/t] 0.1," Model data from refs [76,87]."
+"Model parameters for steel processes (App. B, Table B.1)",electric-arc-furnace,input,electrodes,0.01,t/unit,t,,,,,"p.179, Table B.1",electrodes [t/t] 0.01," Model data from refs [76,87]."
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,input,iron-ore,1.5,t/unit,t,,,,1500/1000,"p.117, Table 10.3",Ore 1500 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,input,oxygen,0.73,t/unit,t,,,,730/1000,"p.117, Table 10.3",Oxygen 730 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,input,lime,0.11,t/unit,t,,,,110/1000,"p.117, Table 10.3",Lime 110 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,output,process-off-gas,4.0,GJ/unit,t,,,yes,,"p.117, Table 10.3",Gas 4.0 GJ/t iron,"Export gas (CCF gas LHV 4 MJ/m3, Corex 7-8 MJ/m3, Table 10.9). heating-value basis not stated."
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,output,steam,4.3,GJ/unit,t,,,yes,,"p.117, Table 10.3",Steam 4.3 GJ/t iron,heating-value basis not stated.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_cyclone-converter,output,slag,0.27,t/unit,t,,,yes,270/1000,"p.117, Table 10.3",Slag 270 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,input,iron-ore,1.5,t/unit,t,,,,1500/1000,"p.118, Table 10.5",Ore 1500 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,input,oxygen,0.714,t/unit,t,,,,714/1000,"p.118, Table 10.5",Oxygen 714 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,input,lime,0.11,t/unit,t,,,,110/1000,"p.118, Table 10.5",Lime 110 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,output,process-off-gas,10.9,GJ/unit,t,,,yes,,"p.118, Table 10.5",Gas 10.9 GJ/t iron,"Export gas (CCF gas LHV 4 MJ/m3, Corex 7-8 MJ/m3, Table 10.9). heating-value basis not stated."
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,output,steam,6.4,GJ/unit,t,,,yes,,"p.118, Table 10.5",Steam 6.4 GJ/t iron,heating-value basis not stated.
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,output,slag,0.3,t/unit,t,,,yes,300/1000,"p.118, Table 10.5",Slag 300 kg,kg to t.
+New steelmaking technologies: energy balances (Sect. 10.2b),shaft-furnace_direct-reduction,input,iron-ore,1.5,t/unit,t,,,,1500/1000,"p.119, Table 10.6",Ore 1500 kg,kg to t.

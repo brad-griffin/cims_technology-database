@@ -1,0 +1,11 @@
+process,technology,item,value,unit,reference,note
+Operating parameters by cell technology (Sect. 5.3),,"average electrolysis electricity, WE mix of three processes",3000,kWh/EChemU,p.10,"1 EChemU = 1 t chlorine, 1.1 t caustic soda and hydrogen; SRIC"
+Operating parameters by cell technology (Sect. 5.3),,"electricity price to chlor-alkali, Western Europe",4.3,1997_USc/kWh,p.10,SRIC; US Gulf 2.8 USc/kWh; plant range 2.3-5.5
+Operating parameters by cell technology (Sect. 5.3),electrolysis-cell_chlor-alkali-mercury,power cost share of total direct costs,40-45,%,p.20 table,
+Operating parameters by cell technology (Sect. 5.3),electrolysis-cell_chlor-alkali-membrane,power cost share of total direct costs,32-39,%,p.20 table,
+Conversion of mercury cells to membrane (Sect. 6.2),electrolysis-cell_chlor-alkali-membrane_mercury-conversion,change in direct costs after conversion,-15 to -20,1997_USD/t chlorine,p.28,13 to 17 ECU; electricity saving about 37 US$/t offset by raw materials and steam increase
+Conversion of mercury cells to membrane (Sect. 6.2),electrolysis-cell_chlor-alkali-membrane_mercury-conversion,"change in total costs after conversion (incl. 10-yr depreciation, 92% utilisation)",50 to 60,1997_USD/t chlorine,p.28,45-50 ECU; SRIC model gives about 70 US$/t
+Conversion of mercury cells to membrane (Sect. 6.2),electrolysis-cell_chlor-alkali-membrane_mercury-conversion,depreciation charge over 10 years at 100% utilisation,64 to 70,1997_USD/t chlorine,p.27,
+Indirect CO2 from electrolysis power (Sect. 7.5.2),electrolysis-cell_chlor-alkali-mercury,indirect CO2 at 3.36 MWh/t: coal/oil/gas/EU 1995 average,3.7; 2.6; 1.8; 1.6,t CO2/t chlorine,p.53 table,Electricity-related (scope 2) CO2 at 1.11/0.77/0.55/0.47 kg/kWh; reprinted from AFEAS/DOE TEWI report
+Indirect CO2 from electrolysis power (Sect. 7.5.2),electrolysis-cell_chlor-alkali-membrane,indirect CO2 at 2.5 MWh/t: coal/oil/gas/EU 1995 average,2.8; 1.9; 1.4; 1.2,t CO2/t chlorine,p.53 table,Electricity-related (scope 2) CO2; reprinted from AFEAS/DOE TEWI report
+EU industry (Sect. 1-3),,mercury cell share of EU chlorine capacity,64,%,p.ii,EU capacity 10.6 Mt (1995); USA mercury share 13%

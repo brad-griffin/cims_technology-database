@@ -1,0 +1,34 @@
+process,technology,sector,end-use,process-step,service-unit
+Sawing of hardwood (Table 3.1),sawmill_hardwood,wood-products,drying-and-separation,lumber drying and sawing,t
+Sawing of softwood (Table 3.2),sawmill_softwood,wood-products,drying-and-separation,lumber drying and sawing,t
+Particleboard production (Table 3.3),board-plant_particleboard,wood-products,drying-and-separation,panel production,t
+Plywood production (Table 3.4),board-plant_plywood,wood-products,drying-and-separation,panel production,t
+OSB production (Table 3.5),board-plant_osb,wood-products,drying-and-separation,panel production,t
+Glulam production (Table 3.6),board-plant_glulam,wood-products,drying-and-separation,engineered wood production,t
+"Glulam production (Table 3.6, 2020-2050)",board-plant_glulam,wood-products,drying-and-separation,engineered wood production,t
+Kraft pulping (Table 4.2),pulp-mill_kraft,pulp-and-paper,material-conversion,pulping-chemical,t
+"Black liquor recovery, Tomlinson boiler (Table 4.3)",boiler_recovery,pulp-and-paper,steam-and-hot-water,chemical-recovery,t
+"Black liquor recovery, gasifier + BIG/GT (Table 4.4)",gasifier_black-liquor,pulp-and-paper,steam-and-hot-water,chemical-recovery,t
+Thermomechanical pulping (Table 4.5),pulper_thermomechanical,pulp-and-paper,material-conversion,pulping-mechanical,t
+"Thermomechanical pulping (Table 4.5, 2020-2050)",pulper_thermomechanical,pulp-and-paper,material-conversion,pulping-mechanical,t
+TMP with biopulping (Table 4.7),pulper_thermomechanical-biopulping,pulp-and-paper,material-conversion,pulping-mechanical,t
+Mechanical pulp from nonwood (Table 4.8),pulper_mechanical-nonwood,pulp-and-paper,material-conversion,pulping-mechanical,t
+Nonwood pulp with enzymes (Table 4.9),pulper_mechanical-nonwood-biopulping,pulp-and-paper,material-conversion,pulping-mechanical,t
+"Waste paper upgrading to high-quality pulp with deinking (Table 4.10, first)",pulper_recycled-fibre,pulp-and-paper,material-conversion,pulping-recycled,t
+"Waste paper upgrading to high-quality pulp with deinking (Table 4.10, first, 2020-2050)",pulper_recycled-fibre,pulp-and-paper,material-conversion,pulping-recycled,t
+"Waste paper upgrading to low-quality pulp (Table 4.10, second)",pulper_recycled-fibre-brown,pulp-and-paper,material-conversion,pulping-recycled,t
+"Waste paper upgrading to low-quality pulp (Table 4.10, second, 2020-2050)",pulper_recycled-fibre-brown,pulp-and-paper,material-conversion,pulping-recycled,t
+"Newsprint, integrated mill (Table 5.2)",paper-mill_newsprint-integrated,pulp-and-paper,material-conversion,paper making,t
+"Newsprint, integrated mill (Table 5.2, 2020-2050)",paper-mill_newsprint-integrated,pulp-and-paper,material-conversion,paper making,t
+"Newsprint, non-integrated mill (Table 5.3, p.57)",paper-mill_newsprint,pulp-and-paper,material-conversion,paper making,t
+"Printing and writing paper, integrated mill (Table 5.3, p.59)",paper-mill_printing-writing-integrated,pulp-and-paper,material-conversion,paper making,t
+"Printing and writing paper, non-integrated mill (Table 5.4)",paper-mill_printing-writing,pulp-and-paper,material-conversion,paper making,t
+"Packaging paper, non-integrated mill (Table 5.5)",paper-mill_packaging,pulp-and-paper,material-conversion,paper making,t
+"Packaging paper, integrated mill (Table 5.6)",paper-mill_packaging-integrated,pulp-and-paper,material-conversion,paper making,t
+"Sanitary paper, non-integrated mill (Table 5.7)",paper-mill_tissue,pulp-and-paper,material-conversion,paper making,t
+"Sanitary paper, integrated mill (Table 5.8)",paper-mill_tissue-integrated,pulp-and-paper,material-conversion,paper making,t
+"Other paper and board, non-integrated mill (Table 5.9)",paper-mill_other,pulp-and-paper,material-conversion,paper making,t
+"Other paper and board, integrated mill (Table 5.10)",paper-mill_other-integrated,pulp-and-paper,material-conversion,paper making,t
+Lumber drying methods (Table 3.8),kiln_lumber-fresh-air,wood-products,drying-and-separation,lumber drying,m3
+Lumber drying methods (Table 3.8),kiln_lumber-heat-pump,wood-products,drying-and-separation,lumber drying,m3
+PLATO wood modification (Sect. 3.2),reactor_wood-modification,wood-products,process-heat-low-temp,wood modification,t

@@ -1,0 +1,34 @@
+process,technology,item,value,unit,reference,note
+"Investment costs for primary aluminium production (Sect. 5.2, Table 5.2)",,bauxite mining investment,750-950,NLG/t capacity,"p.61, Table 5.2",6% of the total 11000-17500 NLG/t. PRICE YEAR NOT STATED; publication year 1997 used (NLG = Dutch guilders; nearby cost tables refer to 1992-1995).
+"Aluminium (Ch. 4, 5, 10)",,anode production cost incl. raw materials (petcoke 300 NLG/t),600-700,NLG/t anode,"p.62, Sect. 5.4.2",PRICE YEAR NOT STATED
+"Aluminium (Ch. 4, 5, 10)",,anode consumption incl. residual anode,0.5,t anode/t Al,"p.62, Sect. 5.4.2",Range around 0.5
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,smelter electricity incl. transformation losses,50,GJ/t Al,"p.62, Sect. 5.4.1",
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,theoretical minimum electrolysis energy at 980 degC,23,GJ/t Al,p.51,
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,Pechiney smelter current electricity,49,GJ/t Al,p.52,
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,Aldel smelter current electricity,54,GJ/t Al,p.52,Renovation planned
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,new TiB2 drained cathode electricity saving vs conventional cell,up to 20,%,"p.110, Sect. 10.1",Not commercial; reprinted from ref. [115]. Only number for electrolysis-cell_advanced-anodes type options.
+"Aluminium (Ch. 4, 5, 10)",electrolysis-cell_prebaked-anode,Hall-Heroult autonomous efficiency improvement,0.2-0.5,%/yr,p.109,
+"Scrap smelting furnaces energy balance (Sect. 6.2, Table 6.2)",electric-arc-furnace_scrap-preheat,"advanced EAF with off-gas scrap preheating, power",1.4,GJe/t,p.76,reprinted from ref. [80]; EAF twice the size uses about 0.36 GJ/t less final energy
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",blast-furnace,labour,0.4,hr/t,"p.129, Table 11.8",
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",basic-oxygen-furnace,labour,0.4,hr/t,"p.129, Table 11.8",
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",smelting-vessel_two-stage,labour,0.5,hr/t,"p.129, Table 11.8",
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",smelting-vessel_cyclone-converter,labour,0.5,hr/t,"p.129, Table 11.8",
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",shaft-furnace_direct-reduction,labour,0.4,hr/t,"p.129, Table 11.8",
+"Capital and labour costs of steel production technologies (Sect. 11.2, Table 11.8)",electric-arc-furnace,labour,0.6,hr/t,"p.129, Table 11.8",
+"New thin slab casting plant, Hoogovens (Sect. 10.2)",rolling-mill_thin-slab,hot rolling energy saving vs conventional slab route,50% (1-1.2 GJ/t),GJ/t,"p.115, Sect. 10.2a",Rolling cost reduction up to 70% (125 guilders). reprinted from ref. [124]
+"Scrap smelting furnaces energy balance (Sect. 6.2, Table 6.2)",,other inputs (scrap oxidation / scrap preheat / electrodes and slag formation),0.79 / 0.12 / 0.13 (Contiarc 0.07),GJ/t,"p.77, Table 6.2",Energy-balance inputs besides electricity and gas; outputs hot metal 1.37 GJ/t.
+New steelmaking technologies: energy balances (Sect. 10.2b),blast-furnace,CO2 emissions incl. raw material preparation,1700,kg/t hot metal,"p.118, Table 10.4",Excludes CO in off-gases. reprinted from ref. [129]
+New steelmaking technologies: energy balances (Sect. 10.2b),smelting-vessel_two-stage,"minimum Corex coal rate (50% post-combustion, 30-33% pre-reduction)",850,kg/t iron,p.118,"Coal with 14% ash, 57% fixed carbon. reprinted from ref. [130]"
+"Steel (Ch. 6, 10, 11)",,"Cast steel slabs SEC (fuel 14.6, electricity 0.4)",15.6,GJ/t,"p.75, Table 6.1","Hoogovens cumulative per product; refs [10,76] adjusted"
+"Steel (Ch. 6, 10, 11)",,"Hot rolled strip/coil SEC (fuel 16.4, electricity 0.8)",18.4,GJ/t,"p.75, Table 6.1",
+"Steel (Ch. 6, 10, 11)",,"Cold rolled sheet/coil SEC (fuel 17.5, electricity 1.3)",20.7,GJ/t,"p.75, Table 6.1",
+"Steel (Ch. 6, 10, 11)",,"Tinplate SEC (fuel 18.2, electricity 1.8)",22.7,GJ/t,"p.75, Table 6.1",
+"Steel (Ch. 6, 10, 11)",,Zinc coated plate SEC (estimated),23.5,GJ/t,"p.75, Table 6.1",
+"Steel (Ch. 6, 10, 11)",,Paint coated plate SEC (estimated),24.0,GJ/t,"p.75, Table 6.1",
+"Steel (Ch. 6, 10, 11)",,Coke oven: 1 t coking coal (32.6 GJ) yields coke / gas / tar+BTX,22.1 / 8.2 (350 m3) / 1.9,GJ per t coal,p.72-73,Surplus gas 1.6 GJ/t coal; electricity 0.15 GJe/t coal; thermal efficiency ~80%
+"Steel (Ch. 6, 10, 11)",,Nedstaal total per t cast product: fossil / electricity,3.3 / 2.2,GJ/t,p.76,
+"Steel (Ch. 6, 10, 11)",,"Residual gas LHV: coke oven 20, BF 3.5-4, BOF 9, Corex 7-8, CCF 4, natural gas 32",see item,MJ/m3,"p.122, Table 10.9",LHV
+"Steel (Ch. 6, 10, 11)",,Net liquid iron production cost NL: BF / Corex / CCF,226 / 240 / 165,NLG/t,"p.129, Sect. 11.2",PRICE YEAR NOT STATED
+"Steel (Ch. 6, 10, 11)",,DRI import price Venezuela vs W. Europe production cost,210 / 275,NLG/t,p.120,reprinted from ref. [137]
+"Steel (Ch. 6, 10, 11)",,Charcoal delivered cost; CO2 abatement cost substituting injection coal,5.8 NLG/GJ; 30 NLG/t CO2,,p.114,
+"Steel (Ch. 6, 10, 11)",,"Ore reduction theoretical energy, haematite",6.7,GJ/t Fe,p.72,

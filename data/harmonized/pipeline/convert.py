@@ -55,6 +55,9 @@ ATOM = {
     "Mgal": ("volume", 3785.411784), "Wh": ("energy", 3.6e-6),
     "million-Nm3-CH4": ("volume", 1e6), "thousand-Nm3-biomethane": ("volume", 1e3),
     "mol-H2": ("amount-h2", 1.0),
+    # an hour of one operating device (pneumatic controller or pump); linked to the
+    # gas a facility handles only through a named ratio factor (2026-10-03)
+    "device-h": ("device-time", 1.0),
     # US gas-industry volumes: a standard cubic foot (60 degF, 14.73 psia), taken as
     # 0.0283168 m3 like Nm3 is taken as m3; Mcf = thousand, MMcf = million (2026-10-02)
     "scf": ("volume", 0.0283168), "cf": ("volume", 0.0283168), "Mcf": ("volume", 28.3168),

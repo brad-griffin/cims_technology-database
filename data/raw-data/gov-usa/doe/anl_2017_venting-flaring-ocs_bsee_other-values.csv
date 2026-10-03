@@ -1,0 +1,16 @@
+process,technology,item,value,unit,reference,note
+CBA emission factors per volume of gas flared (Table 6),(vent),vent emission factor CH4,19.985,short-ton/MMcf vented,"p.47, Table 6",Per MMcf of sales gas vented; not loaded (no technology).
+CBA emission factors per volume of gas flared (Table 6),(vent),vent emission factor CO2,0.4642,short-ton/MMcf vented,"p.47, Table 6",Per MMcf vented.
+Venting and flaring on the OCS,,gas heating value used to convert $/MMBtu to $/Mcf,1.032,MMBtu/Mcf,p.43,EIA factor; basis not stated.
+Venting and flaring on the OCS,,CH4 global warming potential used,25,,p.43,IPCC AR4.
+Venting and flaring on the OCS,,base-case social cost of carbon (domestic),11.97,2016_USD/t CO2e,"p.55, Table 8",Also printed as 11.27 $/t (p.43) and 10.22 $/short ton; global 49 $/t (Scenario 5).
+Venting and flaring on the OCS,,"flaring as % of gas production, single well / fixed leg / floating",0.03 / 0.11 / 1.18,%,"p.20, Table 2",AVF-DB 2011-2015.
+Venting and flaring on the OCS,,"venting as % of gas production, single well / fixed leg / floating",0.44 / 0.34 / 0.08,%,"p.20, Table 2",AVF-DB 2011-2015.
+Methane emission reduction technology briefings (Appendix II),flare,pilot gas consumption,70,scf/h per pilot burner,App. II p.30,Average.
+Methane emission reduction technology briefings (Appendix II),flare,heat content below which auxiliary fuel is needed,300,Btu/scf,App. II p.30,
+Methane emission reduction technology briefings (Appendix II),flare,methane content of wellhead gas,70-90,%,App. II p.31,
+Methane emission reduction technology briefings (Appendix II),flare,venting threshold triggering economic evaluation,50,Mcf/d,App. II p.31,53 of 852 leases averaged > 50 Mcf/d vented in 2014-2015.
+Methane emission reduction technology briefings (Appendix II),compressor_redundant,compressor size range offshore,40-15000,hp per unit,App. II p.45,
+Methane emission reduction technology briefings (Appendix II),pump_electric-submersible,ESP capacity range,150-150000,bbl/d,App. II p.38,Service life often 1-2 years.
+Methane emission reduction technology briefings (Appendix II),pump_jet,jet pump capacity range,50-15000,bbl/d,App. II p.41,Operational life typically 4 years.
+Venting and flaring on the OCS,,"OCS-wide CO2e avoided by cost-beneficial technologies, base case",4.77,% of OCS-wide total,"p.63, Table 9","11.36% high gas price, 13.42% at SC-CO2 49 $/t."

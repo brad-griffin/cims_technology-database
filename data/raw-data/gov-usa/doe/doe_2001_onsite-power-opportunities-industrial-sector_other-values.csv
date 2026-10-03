@@ -1,0 +1,12 @@
+process,technology,item,value,unit,reference,note
+"CHP benefit assumptions (Table 3-2, 3-3)",,average utility heat rate,10300,Btu/kWh,p.3-7,
+"CHP benefit assumptions (Table 3-2, 3-3)",,average CHP hours of operation,6000,h/yr,p.3-7,existing boiler efficiency 80%; T&D losses 5%
+"CHP benefit assumptions (Table 3-2, 3-3)",,"capital recovery factor (15 yr, 10%)",13.15,%,p.3-7,natural gas 3.00 $/MMBtu
+CHP cost to generate power (Table 3-3),reciprocating-engine_chp,"cost to generate power, 0.1-1 MW",0.067,USD/kWh,p.3-7,fuel+O&M+capital
+CHP cost to generate power (Table 3-3),combustion-turbine_heat-recovery-steam-generator,"cost to generate power, 1-4 / 4-20 / >20 MW",0.068 / 0.062 / 0.047,USD/kWh,p.3-7,
+Industrial CHP potential (Table 2-1),,existing industrial CHP (IOF),42153,MW,p.2-3,"total incl. non-IOF about 44 GW (Table 3-2: 44,243 MW)"
+Industrial CHP potential (Table 2-1),,remaining CHP potential (IOF),61115,MW,p.2-3,"all industry 88,320 MW (Table 3-2)"
+Industrial CHP potential (Table 2-1),,paper and allied products existing / remaining CHP,8553 / 26198,MW,p.2-3,
+Industrial CHP potential (Table 2-1),,chemicals existing / remaining CHP,17692 / 9440,MW,p.2-3,
+Energy savings (Table 3-2),,"net energy saved, existing / remaining CHP",1.534 / 2.730,quads/yr,p.3-7,
+NOx factors (Sect. 3),,utility average NOx 1998,4.49,lb/MWh,p.3-8,new standard about 0.15 lb/MWh

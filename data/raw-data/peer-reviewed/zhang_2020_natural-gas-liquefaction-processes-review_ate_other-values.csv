@@ -1,0 +1,16 @@
+process,technology,item,value,unit,reference,note
+Sect. 4.2.2,,Amortized capital cost,0.22-3.05,2018_USD/GJ LNG,p.11,6-43% of total production cost.
+Sect. 4.2.2,,Energy cost,0.14-1.43,2018_USD/GJ LNG,p.11,2-24% of total production cost.
+Sect. 4.2.2,,Feed natural-gas cost,1.51-4.01,2018_USD/GJ,p.11,Set at 2.97 $/GJ; 42-87% of total production cost.
+Sect. 4.1,,Availability assumed,93.2,%,p.6,340 days per year.
+Sect. 4.2.2,,Discount rate / plant life assumed,12 / 20,% / yr,p.11,Assumption from ref 151.
+Sect. 4.2.1,,Liquefaction system share of liquefaction train capex,28,%,p.10,Liquefaction train = about 66% of complete plant; greenfield 2-3x duplicated train.
+Table 15 footnote,,Primary-energy-to-electricity conversion factor,0.40144,,p.11,Used for DMR.
+Abstract,,"Primary energy input, large-scale vs small-scale",0.031-0.102 vs 0.049-0.362,GJ/GJ LNG,p.1,HHV.
+CPOC (Table 15),liquefaction-train_cascade-optimized,"Specific work, technical reports / academic",1166.4-1382.4 / 738.0-1226.5,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+MFC (Table 15),liquefaction-train_mixed-fluid-cascade,"Specific work, technical reports / academic",907.2-1019.5 / 612.3-1238.4,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+C3MR (Table 15),liquefaction-train_propane-precooled-mixed-refrigerant,"Specific work, technical reports / academic",1054.1-1080.0 / 903.9-1543.3,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+DMR (Table 15),liquefaction-train_dual-mixed-refrigerant,"Specific work, technical reports / academic",993.6-1080.0 / 854.1-1490.4,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+SMR (Table 15),liquefaction-train_single-mixed-refrigerant,"Specific work, technical reports / academic",1080.0-1451.5 / 792.7-5874.2,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+SE (Table 15),liquefaction-train_single-expander,"Specific work, technical reports / academic",1425.6-3499.2 / 1486.7-5414.1,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.
+OE (Table 15),liquefaction-train_other-expander,"Specific work, technical reports / academic",1123.2-2350.1 / 1128.3-5112.0,kJ/kg LNG,"p.11, Table 15",Compressor shaft work; source of the primary energy input.

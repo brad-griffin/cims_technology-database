@@ -1,0 +1,17 @@
+process,technology,item,value,unit,reference,note
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",steam-turbine_back-pressure_boiler,electricity/steam ratio,45-75,kW/GJ,"p.17, Table 3.2",unit as printed
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",steam-turbine_back-pressure_boiler,fuel chargeable to power,4.2-5.4,MJ/kWh,"p.17, Table 3.2",HHV
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",combustion-turbine_heat-recovery-steam-generator,electricity/steam ratio,200,kW/GJ,"p.17, Table 3.2",
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",combustion-turbine_heat-recovery-steam-generator,fuel chargeable to power,5.8,MJ/kWh,"p.17, Table 3.2",HHV
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",microturbine_chp,fuel chargeable to power,5.8,MJ/kWh,"p.17, Table 3.2",HHV
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",reciprocating-engine_chp,electricity/steam ratio,400,kW/GJ,"p.17, Table 3.2",
+"Cogeneration cycle configurations (Sect. 3.4, Table 3.2)",reciprocating-engine_chp,fuel chargeable to power,6.8,MJ/kWh,"p.17, Table 3.2",HHV
+Fuel chargeable to power (Sect. 3.5),,practical FCP range of topping cycles,4.2-7.4,MJ/kWh,p.18,vs 9.3 (best steam plant) to 15.8 (simple cycle GT) for power-only plants
+Economics assumptions (Sect. 3.6.1),,"generic 20 MWe plant: capital, interest, period, CRF, O&M",1000 $/kWe; 8%; 15 yr; 0.1168; 0.55 c/kWhe,,p.28,reprinted from IEA (Ref. 15)
+Combustion turbine ambient derating (Sect. 3.6),combustion-turbine_simple-cycle,output loss at 30 C vs ISO 15 C,10,%,p.23,efficiency about 1% lower
+Boiler reference (Sect. 6.2.1),boiler_fuel-fired,natural gas boiler efficiency assumed,85,%,p.62,biomass boiler 70%; 1997 gas price 1.65 $/GJ
+CO2 factors (Sect. 6.3),,indirect (grid) CO2 credit factor,150.5,t/TJ electricity,p.64,
+CO2 factors (Sect. 6.3),,natural gas CO2 factor,1880,g/m3,p.65,reprinted from Canada GHG 1990-1995
+Industry statistics (Sect. 9),,pulp and paper CO2 emissions 1995 / 2010 BAU,11871 / 12006,kt/yr,p.72,
+Industry statistics (Sect. 9),,mills (SIC 271) / with cogeneration,181 / 44,facilities,p.72,43 biomass/steam turbine
+"Scenarios (Sect. 8, Table 8.2)",,CO2 reduction low / high scenario,2315 / 6220,kt/yr,p.71,gas turbine cogeneration rolled out by region
