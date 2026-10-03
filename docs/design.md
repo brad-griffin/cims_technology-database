@@ -512,6 +512,35 @@ Parked methods (written and back-tested, status `off`; set a rule `active` to us
   share of capex among archetypes with both sourced (same equipment, else
   family, else all; pools of five or more); range is the pool's smallest to
   largest share. Weak: typical error a factor of 1.7, so these are placeholders.
+Methods to try (not written; ideas for when data runs short). From the
+Hotmaps D2.3 open data set (Pezzutto et al. 2018; review in the project note
+`hotmaps-review-2026-10-02`). None is coded; one would need a rule, a back-test
+and a ruling before use. Hotmaps cost data itself is not loaded (2026-10-02).
+- **Cost-capacity power law.** Where a source prices one size only, scale
+  specific capex to other sizes with an exponent: specific cost proportional to
+  size^b. Hotmaps implies b for 1-50 MW_th of about -0.12 (gas boiler), -0.13
+  (gas turbine), -0.15 (steam-turbine CHP), -0.09 (engine CHP), -0.07 (electric
+  heat pump), -0.16 (solar district heat), about 0 (combined cycle). Better to
+  fit b from sources in this database that price several sizes.
+- **Regional cost transfer with indices.** Reference-region cost x labour-cost
+  index x equipment price-level index (Hotmaps: Danish Energy Agency costs x
+  Eurostat construction labour cost and PPP price levels, held constant over
+  time). Conflicts with section 5 (no regional adjustment); would need that
+  rule changed first.
+- **Cost decline for immature technologies only.** Future capex falls for heat
+  pumps, fuel cells, biomass boilers and solar heat; mature equipment held flat.
+- **Pool process energy use across countries.** Hotmaps assumes no country
+  difference in specific energy consumption, because plants are run by
+  multinationals with global technology suppliers. Supports pooling non-Canadian
+  process data.
+- **Benchmark x activity.** Energy use = production x specific energy
+  consumption; split by heating share and temperature-band share; excess heat =
+  energy use x excess-heat share per band.
+- **Production from emissions.** Where production is missing, production =
+  reported emissions / emissions per tonne (Hotmaps: EU ETS; here: GHGRP), else
+  a national average.
+- **Top-down check.** Compare benchmark totals with national energy balances
+  (here: CEUD, RESD); treat averaged products (e.g. paper) as +/-50%.
 - **Back-test.** Every borrowing rule is also run on the cells that have a sourced
   value, as if they had none (`output/fill-backtest.csv`; the build prints the
   hit rates). The widen fraction is set so about 90% of sourced values fall in
