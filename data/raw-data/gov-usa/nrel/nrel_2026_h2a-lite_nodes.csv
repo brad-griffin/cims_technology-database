@@ -1,0 +1,12 @@
+process,technology,sector,end-use,process-step,service-unit
+"H2A-Lite pathway: Central Grid Electrolysis (ALK), 1,035 MW baseline (ALK Electrolyzer Data sheet, 2022$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central Grid Electrolysis (PEM), 400 MW baseline (PEM Electrolyzer Data sheet, 2022$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"Acevedo et al. 2023 ALK case reprinted in H2A-Lite: Current Central, 50 t/d (SAIncALK sheet, 2020$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"Acevedo et al. 2023 ALK case reprinted in H2A-Lite: Current Central, 500 t/d (SAIncALK sheet, 2020$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"Acevedo et al. 2023 ALK case reprinted in H2A-Lite: Future Central, 50 t/d (SAIncALK sheet, 2020$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"Acevedo et al. 2023 ALK case reprinted in H2A-Lite: Future Central, 500 t/d (SAIncALK sheet, 2020$)",electrolyzer_low-temperature,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central Grid Electrolysis (Solid Oxide), 1 GW DC stack input (SOEC Electrolysis Info sheet)",electrolyzer_solid-oxide,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central SMR (no CCS), NETL 2022 Case 1 basis (SMR Case 1 sheet)",steam-reformer_methane,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central SMR w/CCS, NETL 2022 Case 2 basis (SMR+CCS Case 2 sheet)",steam-reformer_methane_ccs-concentrated,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central ATR w/CCS, NETL 2022 Case 3 basis (ATR+CCS Case 3 sheet)",autothermal-reformer_ccs-concentrated,hydrogen,material-conversion,hydrogen-production,kg
+"H2A-Lite pathway: Central Methane Pyrolysis (plasma), 187,200 kg/d, PRELIMINARY (Pyrolysis Inputs sheet)",reactor_methane-pyrolysis,hydrogen,material-conversion,hydrogen-production,kg

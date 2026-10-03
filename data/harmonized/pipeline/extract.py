@@ -427,6 +427,12 @@ BRIEF_SHAPE = [
     ("other-reports/purvin-gertz_2004_sulphur-removal-canadian-gasoline-distillate", "purvin-gertz_2004_001", "Canada"),
     ("gov-can/nccp_1999_cement-concrete-options-paper", "nccp_1999_007", "Canada"),
     ("gov-usa/nrel/h2a/nrel_2018_h2a-production-models-v3", "nrel_2018_003", "US"),
+    ("other-reports/concawe_2019_refinery-2050-conceptual-assessment_concawe", "concawe_2019_002", "EU"),
+    ("other-reports/ieaghg_2008_co2-capture-cement-industry", "ieaghg_2008_001", "UK (Europe); Asia sensitivity"),
+    ("other-reports/mckane-hasanbeigi_2010_motor-systems-efficiency-supply-curves_unido", "mckane-hasanbeigi_2010_001", "US, Canada, EU (MEDIUM base case); Thailand, Vietnam, Brazil in _measures"),
+    ("gov-can/nrcan/nrcan_2005_open-pit-mines-energy-benchmark", "nrcan_2005_002", "Canada"),
+    ("gov-usa/nrel/nrel_2026_h2a-lite", "nrel_2026_001", "US"),
+    ("other-reports/ren_2009_petrochemicals-energy-use-economics-innovation_thesis", "ren_2009_001", "global"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

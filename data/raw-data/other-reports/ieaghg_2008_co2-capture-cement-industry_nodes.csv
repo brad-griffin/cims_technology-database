@@ -1,0 +1,21 @@
+process,technology,sector,end-use,process-step,service-unit
+"Base case cement plant without capture, 1 Mt/y cement, NE Scotland UK (Sect. 4.2-4.3, 5.3; Tables S-1, 5-1 to 5-4, 5-9; App. F)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,t
+"Post-combustion MEA capture on a new-build cement plant, 1 Mt/y cement, UK (Sect. 4.4, 5.4; Tables 4-2, 4-3, 5-5 to 5-10)",kiln_dry-precalciner_ccs-diffuse,cement,process-heat-high-temp,clinker-production,t
+"Post-combustion MEA capture on a new-build cement plant, 1 Mt/y cement, UK (Sect. 4.4, 5.4; Tables 4-2, 4-3, 5-5 to 5-10)",capture-unit_amine,cement,other-services,co2-capture,t
+"Post-combustion MEA capture on a new-build cement plant, 1 Mt/y cement, UK (Sect. 4.4, 5.4; Tables 4-2, 4-3, 5-5 to 5-10)",kiln_dry-precalciner_post-combustion-whole-plant,cement,process-heat-high-temp,clinker-production,t
+"MEA modelling with 95% capture of the cement flue gas, University of Regina (Sect. 4.4.6(i), Table 4-4)",capture-unit_amine,cement,other-services,co2-capture,t
+"Alternative solvent (KS-1) sensitivity, post-combustion capture, 1 Mt/y cement (Sect. 5.4.5(x), Table 5-20, App. F)",capture-unit_advanced-solvent,cement,other-services,co2-capture,t
+"Alternative solvent (KS-1) sensitivity, post-combustion capture, 1 Mt/y cement (Sect. 5.4.5(x), Table 5-20, App. F)",kiln_dry-precalciner_post-combustion-ks1-whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Low-sulphur raw meal and external steam supply sensitivity, post-combustion capture, 1 Mt/y cement (Sect. 5.4.5(ix), Table 5-19, App. F)",kiln_dry-precalciner_post-combustion-external-steam-whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26)",kiln_oxy-fuel,cement,process-heat-high-temp,clinker-production,t
+"Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26)",capture-unit_cryogenic-condensation,cement,other-services,co2-capture,t
+"Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26)",air-separation-unit,cement,other-services,oxygen-supply,t
+"Oxygen production for oxy-combustion, literature value (Sect. 3.3.3, 4.5.2)",air-separation-unit,cement,other-services,oxygen-supply,t
+"Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26)",kiln_oxy-fuel_whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Oxy-combustion cement plant co-located with an oxy-combustion power plant sensitivity, 1 Mt/y cement (Sect. 5.5.5(ix), Table 5-35, App. F)",kiln_oxy-fuel_co-located-whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Asian developing-country scenario, 3 Mt/y cement (Sect. 5.6, Table 5-36, App. F)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,t
+"Asian developing-country scenario, 3 Mt/y cement (Sect. 5.6, Table 5-36, App. F)",kiln_dry-precalciner_post-combustion-whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Asian developing-country scenario, 3 Mt/y cement (Sect. 5.6, Table 5-36, App. F)",kiln_oxy-fuel_whole-plant,cement,process-heat-high-temp,clinker-production,t
+"Cement kiln process routes, typical fuel use (Sect. 2.4.1)",kiln_wet,cement,process-heat-high-temp,clinker-production,t
+"Cement kiln process routes, typical fuel use (Sect. 2.4.1)",kiln_semi-wet-semi-dry,cement,process-heat-high-temp,clinker-production,t
+"Cement kiln process routes, typical fuel use (Sect. 2.4.1)",kiln_dry-preheater,cement,process-heat-high-temp,clinker-production,t
