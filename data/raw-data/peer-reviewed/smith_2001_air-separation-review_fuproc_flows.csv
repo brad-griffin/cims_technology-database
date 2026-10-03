@@ -1,0 +1,5 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Oxygen supply for a 5000-bpd GTL plant, 890 sTPD at 500 psig (Sect. 6.1)",air-separation-unit_pumped-liquid-oxygen,input,steam,0.0236,t,t oxygen,,,,1750*0.45359237*24/1000/(890*0.907185),p.127,1750 lb/h steam at 120 psig for 890 sTPD oxygen,low-pressure steam
+"Oxygen supply for a 5000-bpd GTL plant, 890 sTPD at 500 psig (Sect. 6.1)",air-separation-unit_pumped-liquid-oxygen,output,oxygen,1,t,t oxygen,,,,,p.127,890 sTPD at 500 psig,
+"Oxygen supply for a 5000-bpd GTL plant, 890 sTPD at 500 psig (Sect. 6.1)",air-separation-unit_chemical-pressure-swing,input,steam,0.0493,t,t oxygen,,,,3654*0.45359237*24/1000/(890*0.907185),p.127,3654 lb/h steam at 120 psig for 890 sTPD oxygen,reprinted from Dunbobbin and Brown 1987
+"Oxygen supply for a 5000-bpd GTL plant, 890 sTPD at 500 psig (Sect. 6.1)",air-separation-unit_chemical-pressure-swing,output,oxygen,1,t,t oxygen,,,,,p.127,890 sTPD at 500 psig,

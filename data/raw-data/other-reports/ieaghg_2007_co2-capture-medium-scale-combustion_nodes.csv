@@ -1,0 +1,27 @@
+process,technology,sector,end-use,process-step,service-unit
+"Reference coal CFB boiler 50 MWth without capture (Sect. 6, Tables 6-3, 6-4)",boiler_solid-fuel,heat-supply,steam-and-hot-water,steam generation,GJ
+"Case 1: coal CFB boiler 50 MWth with OCM oxy-fuel, natural-gas air preheat (Sect. 6, Tables 6-3, 6-4)",boiler_solid-fuel_oxyfuel,heat-supply,steam-and-hot-water,steam generation,GJ
+"Case 1: coal CFB boiler 50 MWth with OCM oxy-fuel, natural-gas air preheat (Sect. 6, Tables 6-3, 6-4)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t
+"Case 2: coal CFB boiler 50 MWth with OCM oxy-fuel, coal only (Sect. 6, Tables 6-3, 6-4)",boiler_solid-fuel_oxyfuel,heat-supply,steam-and-hot-water,steam generation,GJ
+"Case 2: coal CFB boiler 50 MWth with OCM oxy-fuel, coal only (Sect. 6, Tables 6-3, 6-4)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t
+"Case 3: coal CFB boiler 50 MWth with post-combustion MEA scrubbing (Sect. 6, Tables 6-3, 6-4)",boiler_solid-fuel_ccs-diffuse,heat-supply,steam-and-hot-water,steam generation,GJ
+"Case 3: coal CFB boiler 50 MWth with post-combustion MEA scrubbing (Sect. 6, Tables 6-3, 6-4)",capture-unit_amine,co2-capture,co2-capture,co2-capture,t
+"Case 3: coal CFB boiler 50 MWth with post-combustion MEA scrubbing (Sect. 6, Tables 6-3, 6-4)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t
+"Gas engine CHP 1.5 MWe without capture (Sect. 5.3.1, Table 5-2)",reciprocating-engine_chp,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Gas engine CHP 1.5 MWe with membrane-assisted MEA capture (Sect. 5.3.1, Table 5-3)",reciprocating-engine_chp_ccs-diffuse,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Gas engine CHP 1.5 MWe with membrane-assisted MEA capture (Sect. 5.3.1, Table 5-3)",capture-unit_amine_membrane-contactor,co2-capture,co2-capture,co2-capture,t
+"Diesel engine CHP 1.5 MWe without capture (Sect. 5.3.1, Table 5-2)",reciprocating-engine_chp_diesel,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Diesel engine CHP 1.5 MWe with membrane-assisted MEA capture (Sect. 5.3.1, Table 5-3)",reciprocating-engine_chp_diesel_ccs-diffuse,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Diesel engine CHP 1.5 MWe with membrane-assisted MEA capture (Sect. 5.3.1, Table 5-3)",capture-unit_amine_membrane-contactor,co2-capture,co2-capture,co2-capture,t
+"Gas turbine CHP 5 MWe (Siemens SGT-100) without capture (Sect. 5.3.2, Table 5-4)",combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Gas turbine CHP 5 MWe with pre-combustion capture (ATR, shift, PSA) (Sect. 5.3.2, Table 5-5)",combustion-turbine_heat-recovery-steam-generator_pre-combustion,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"Coal-fired steam boiler 50 MWth without capture (Sect. 5.3.3, Table 5-6)",boiler_solid-fuel,heat-supply,steam-and-hot-water,steam generation,GJ
+"Coal-fired steam boiler 50 MWth with OCM oxy-fuel capture (Sect. 5.3.3, Table 5-7)",boiler_solid-fuel_oxyfuel,heat-supply,steam-and-hot-water,steam generation,GJ
+"Coal-fired steam boiler 50 MWth with OCM oxy-fuel capture (Sect. 5.3.3, Table 5-7)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t
+"Natural gas hot-water boiler 5 MWth without capture (Sect. 5.3.4, Table 5-8)",boiler_fuel-fired,heat-supply,steam-and-hot-water,hot-water-supply,GJ
+"Natural gas hot-water boiler 5 MWth with integrated OCM oxy-fuel capture (Sect. 5.3.4, Table 5-9)",boiler_fuel-fired_oxyfuel,heat-supply,steam-and-hot-water,hot-water-supply,GJ
+"Natural gas hot-water boiler 5 MWth with integrated OCM oxy-fuel capture (Sect. 5.3.4, Table 5-9)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t
+"SOFC CHP 500 kWe without capture (Sect. 5.3.5, Table 5-10)",fuel-cell_chp_sofc,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"SOFC CHP 500 kWe with OCM afterburner and capture (Sect. 5.3.5, Table 5-11)",fuel-cell_chp_sofc-oxyfuel,heat-supply,steam-and-hot-water,combined heat and power,GJ
+"MEA absorber, generic characterisation (Appendix F.1)",capture-unit_amine,co2-capture,co2-capture,co2-capture,t
+"CO2 compression to 11 MPa, generic (Sect. 5.3.1, footnote 4)",compressor_co2-dehydration,co2-capture,co2-capture,co2-capture,t

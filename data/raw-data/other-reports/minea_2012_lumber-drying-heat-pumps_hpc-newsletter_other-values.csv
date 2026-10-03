@@ -1,0 +1,25 @@
+process,technology,item,value,unit,reference,note
+Hardwood drying cycles (Table 1),kiln_lumber-heat-pump,"test 1E (yellow birch) cycle energy: compressor 747, blower 151, dryer fan 229, back-up 1828 (electric)",2955,kWh/cycle,"p.5, Table 1","Total per drying cycle; no lumber volume per cycle printed, so not loaded per unit."
+Hardwood drying cycles (Table 1),kiln_lumber-heat-pump,"test 2E (hard maple) cycle energy: compressor 872, blower 258, dryer fan 451, back-up 2441 (electric)",4022,kWh/cycle,"p.5, Table 1","Total per drying cycle; no lumber volume per cycle printed, so not loaded per unit."
+Hardwood drying cycles (Table 1),kiln_lumber-heat-pump,"test 3H (hard maple) cycle energy: compressor 650, blower 129, dryer fan 360, back-up 2902 (natural gas)",4041,kWh/cycle,"p.5, Table 1","Total per drying cycle; no lumber volume per cycle printed, so not loaded per unit."
+Hardwood drying cycles (Table 1),kiln_lumber-heat-pump,"test 5H (yellow birch) cycle energy: compressor 894, blower 201, dryer fan 398, back-up 3033 (natural gas)",4526,kWh/cycle,"p.5, Table 1","Total per drying cycle; no lumber volume per cycle printed, so not loaded per unit."
+Hardwood drying cycles (Table 1),kiln_lumber-steam_natural-gas,"test 4CONV (hard maple) cycle energy: compressor , blower , dryer fan 638, back-up 7147 (natural gas)",7785,kWh/cycle,"p.5, Table 1","Total per drying cycle; no lumber volume per cycle printed, so not loaded per unit."
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test X COP,4.23,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test X SMER,2.38,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test Y COP,4.6,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test Y SMER,2.13,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test Z COP,3.46,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-1 test Z SMER,1.46,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test X COP,3.7,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test X SMER,2.52,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test Y COP,4.07,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test Y SMER,2.36,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test Z COP,3.0,-,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (Table 2),kiln_lumber-heat-pump,HP-2 test Z SMER,1.54,kg water/kWh,"p.9, Table 2",compressor and blower energy only
+Softwood drying tests (p.8),kiln_lumber-heat-pump,water extraction rate test X / Y / Z,313 / 263.2 / 178.8,kg water/h,p.8,excludes venting losses (about 90 kg/h)
+Softwood drying tests (p.8),kiln_lumber-heat-pump,energy share of cycle: heat pumps (compressors plus blowers) / dryer central fan,72 / 28,%,p.8,
+Softwood drying facility (p.8),kiln_lumber-heat-pump,energy cost of drying,6.86,2004_USD/m3,p.8,"about 39,600 m3 dried softwood lumber"
+"Hardwood drying energy shares (p.4, Fig. 3)",kiln_lumber-heat-pump,all-electric test 1E: heat pump / electric back-up / dryer fan,30 / 62 / 8,%,p.4,
+"Hardwood drying energy shares (p.4, Fig. 3)",kiln_lumber-heat-pump_natural-gas-backup,hybrid test 5H: heat pump / steam back-up / dryer fan,25 / 66 / 9,%,p.4,
+Canadian softwood drying (p.9),,net CO2 reduction at 5% market penetration of heat-pump softwood drying,36600,t CO2/yr,p.9,based on >70 million m3/yr Canadian softwood production and 0.3 kg CO2/kWh national average; reprinted from Minea 2008
+Wood industry (p.1),,drying share of total energy used in the wood industry,up to 70,%,p.1,reprinted from Mujumdar and Huang 2007

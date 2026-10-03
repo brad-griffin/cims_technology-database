@@ -1,0 +1,14 @@
+process,technology,item,value,unit,reference,note
+"Cement kiln types (Sect. 3.1, Table 1)",kiln_optimal-virtual,Optimal entropy related virtual kiln (theoretical enthalpy requirement),1800,MJ/t clinker,"p.822, Table 1; Table 2 extreme value",Theoretical minimum; authors: unlikely below 2500 MJ/t clinker even with oxygen firing.
+"Cement kiln types (Sect. 3.1, Table 1)",kiln_fleet-average_france-2005,French fleet-average kiln energy 2005 (derived),3330,MJ/t clinker,"p.824, Table 4",Derived 1800/(1-0.4594).
+Clinker production CO2 (Sect. 2),,Grinding CO2 (mostly electricity),0.1,t CO2/t cement,"p.821, Sect. 2",Neglected in the paper (French nuclear electricity).
+Other values,,Fuel net CO2 emission factor: petcoke,101,g CO2/MJ,"p.823, Table 3","reprinted from IPCC 2006 / CEMBUREAU 2003. Other factors: coal 96, natural gas 54.2, used tyres 85, waste oil 74, plastic 75, RDF 8.7, animal meal 0, waste wood 0."
+Other values,,French cement fuel emission factor 2005 (derived),63.5,g CO2/MJ,"p.824, Table 4","Derived 54/(1-0.1492); potential accessible 65, extreme 54 (Table 2)."
+Other values,,"Raw-material CO2, potential accessible (10% limestone replacement)",0.478,t CO2/t clinker,"p.822, Table 2",
+Other values,,"Raw-material CO2, extreme (25% limestone replacement)",0.398,t CO2/t clinker,"p.822, Table 2",
+Other values,,French cement production cost shares: energy / raw materials / production and maintenance / debt,31,%,"p.824, Sect. 4",31 / 28 / 30 / 11 %. reprinted from ref [28] (Lafarge).
+Other values,,New cement plant cost in years of plant income,3,years,"p.822, Sect. 3.1","""costs the equivalent of the income of 3 years of activity""; pay-back 30-50 years. reprinted from ref [12]."
+Other values,,Alternative fuel share in kilns: world / France / northern Europe local max,30,%,"p.824, Sect. 4","world ~10, France ~30, northern Europe up to 70."
+Other values,,"Scenario CO2 per t cement, France: S0 0.601, S1 0.485, S2 0.347, S3 0.322, S4 0.251",0.485,t CO2/t cement,"p.825, Table 6",Scenario 1 shown; S1 = 30% clinker substitution + 10% raw material; S2 = 50% clinker + 10% raw; S3 = S2 + 45% alt. fuel + dry kilns; S4 = all extreme values.
+Other values,,French cement CO2 intensity history 1985/1990/1995/2000/2005,0.619,t CO2/t cement,"p.824, Table 5","1985 0.619, 1990 0.619, 1995 0.628, 2000 0.606, 2005 0.601; production 22.2/25.4/19.9/19.7/21.3 Mt."
+Other values,,Cement content of French ready-mix concrete 1988 -> 2006,280,kg/m3,"p.823, Sect. 3.4",290 -> 280 kg/m3; Paris mix 240 kg CEM I + 80 kg fly ash per m3.

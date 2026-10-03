@@ -1,0 +1,13 @@
+process,technology,item,value,unit,reference,note
+Gas-to-liquids reference plants (Table 6),,Average TCI normalized to 1 GW input,1770,2013_USD/kW input,"p.28, Table 6","9 plants; strongly affected by cost escalation (Pearl, Escravos, Lake Charles). GTL efficiency 60% (A.1). No archetype."
+IGCC reference plants (Table 6),,Average TCI normalized to 1 GW input,1490,2013_USD/kW input,"p.28, Table 6","7 plants; IGCC efficiency 42% (A.1). Power plant, not loaded."
+"bioSNG plant, 1 GW thermal input, MILENA indirect gasification, 1st-2nd of a kind (Sect. 4, Table 13)",gasifier_biomass-methanation,Equipment cost difference of biomass-to-SNG vs reference (GTL/CTL/CTM/CSNG/IGCC),+20 / +5 / +15 / +30 / +10,%,"p.38, Table 12",
+"bioSNG plant, 1 GW thermal input, after 10 GW cumulative capacity (about 2030) (Sect. 5, Table 14)",gasifier_biomass-methanation,Learning rate assumed,10,%,p.40,1 to 10 GW cumulative gives about 30% reduction.
+"bioSNG plant, 1 GW thermal input, after 10 GW cumulative capacity (about 2030) (Sect. 5, Table 14)",gasifier_biomass-methanation,"Biomass share of bioSNG cost, case 1 / case 3",54 / 21,%,p.42,Printed in text.
+SNG life-cycle CO2 (Table 17),gasifier_biomass-methanation,BioSNG CO2 emission,0.000625,t CO2/m3 SNG,"p.46, Table 17",1.8e-5 t/MJ; with 70% LHV conversion. reprinted from ref [7]
+SNG life-cycle CO2 (Table 17),gasifier_coal-methanation,Coal SNG CO2 emission (process plus combustion),0.016,t CO2/m3 SNG,"p.46, Table 17",2.7e-4 t/MJ. reprinted from ref [151]
+SNG life-cycle CO2 (Table 17),,Natural gas CO2 emission,0.0020,t CO2/m3 NG,"p.46, Table 17",5.7e-5 t/MJ.
+Coal SNG cost price (Sect. 5.3),gasifier_coal-methanation,"Cost price of SNG from coal (TCI 980 USD2013/kW, steam coal 109.3 USD2010/t in 2030)",14.8,2013_USD/GJ,p.45,Same method as bioSNG.
+bioSNG CO2 (Sect. 6),gasifier_biomass-methanation,High-purity CO2 by-product,about equal to bioSNG volume,Nm3/Nm3,p.48,"CO2 separation is integral to the process, so BECCS adds little energy penalty."
+Fuel heating values (App. A.3),,LHV SNG / Groningen natural gas,35 / 32,MJ/Nm3,p.50,
+Biomass prices (Table 15),,Biomass feedstock price ranges by region,0.5-10.8,USD/GJ,"p.42, Table 15",Price year not stated. reprinted from ref [203]
