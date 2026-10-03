@@ -1,0 +1,123 @@
+process,technology,sector,end-use,process-step,service-unit
+FS New Build: Boiler - Steam - Electric Boiler,boiler_electric,heat-supply,steam-and-hot-water,boiler,GJ
+FS New Build: Boiler - Steam - Heat Pump,heat-pump_industrial,heat-supply,steam-and-hot-water,boiler,GJ
+FS New Build: CHP - Electric Boiler + Grid Import,boiler_electric_chp-replacement,heat-supply,steam-and-hot-water,chp,GJ
+FS New Build: Dryer - Chemicals - Electric Dryer - Chemicals,dryer_electric,chemicals,process-heat-low-temp,drying,GJ
+FS New Build: Dryer - F&D - Electric Dryer - F&D,dryer_electric,food-and-beverage,process-heat-low-temp,drying,GJ
+FS New Build: Dryer - F&D - Microwave Heater - F&D,microwave-heater_microwave,food-and-beverage,process-heat-low-temp,drying,GJ
+FS New Build: Dryer - Paper - Electric Dryer,dryer_electric,pulp-and-paper,process-heat-low-temp,drying,GJ
+FS New Build: Dryer - Rotary - Electric Dryer,dryer_electric,non-metallic-minerals,process-heat-low-temp,drying,GJ
+FS New Build: Dryer - Vehicles - Electric Dryer,dryer_electric,other-industry,process-heat-low-temp,drying,GJ
+FS New Build: Furnace - Glass - Electric Glass Furnace,melting-furnace_electric-melter,non-metallic-minerals,material-conversion,glass-melting,GJ
+FS New Build: Furnace - Refinery - Electric Process Heater,direct-heater_electric-process,petroleum-refining,process-heat-high-temp,process-heater,GJ
+FS New Build: Furnace - Refinery - Electric Furnace,direct-heater_electric-process,petroleum-refining,process-heat-high-temp,process-heater,GJ
+FS New Build: Furnace - Vehicles - Electric Furnace,furnace_electric-resistance,other-industry,process-heat-high-temp,direct-heating,GJ
+FS New Build: Iron - Blast Furnace - Plasma Gas Technology,plasma-torch,iron-and-steel,material-conversion,ironmaking,GJ
+FS New Build: Kiln - Cement - Plasma Gas Technology,kiln_electric-plasma,cement,process-heat-high-temp,clinker-production,GJ
+FS New Build: Kiln - Other - Electric Kiln,kiln_ceramic-electric,non-metallic-minerals,process-heat-high-temp,firing,GJ
+FS New Build: Metal Melting - Direct Electric Heating,melting-furnace_electric-resistance,non-ferrous-metals,process-heat-high-temp,melting,GJ
+FS New Build: Oven - F&D - Electric Oven,oven_electric,food-and-beverage,process-heat-medium-temp,baking,GJ
+FS New Build: Oven - F&D - Electric Infra-Red Heater,microwave-heater_infrared,food-and-beverage,process-heat-medium-temp,baking,GJ
+FS New Build: Oven - Vehicles - Electric Infra-Red Heater,microwave-heater_infrared,other-industry,process-heat-medium-temp,curing,GJ
+FS New Build: Oven - Vehicles - Heat Pump,heat-pump_industrial,other-industry,process-heat-medium-temp,curing,GJ
+FS New Build: Metal Rolling - Electric Furnace,furnace_electric-resistance,iron-and-steel,process-heat-high-temp,reheating,GJ
+FS New Build: Glass Other - Electric Furnace,melting-furnace_electric-melter,non-metallic-minerals,process-heat-high-temp,direct-heating,GJ
+FS Retrofit: Boiler - Steam - Biomass Boiler,boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ
+FS Retrofit: Boiler - Steam - Hydrogen Boiler,boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+FS Retrofit: CHP - Biomass CHP,steam-turbine_back-pressure,heat-supply,steam-and-hot-water,chp,GJ
+FS Retrofit: CHP - Hydrogen Gas Turbine,combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,chp,GJ
+FS Retrofit: Dryer - Chemicals - Biomass Dryer - Chemicals,dryer_solid-fuel,chemicals,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Chemicals - Hydrogen Dryer - Direct,dryer_direct-fired,chemicals,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - F&D - Biomass Dryer - F&D,dryer_solid-fuel,food-and-beverage,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - F&D - Hydrogen Dryer - Direct,dryer_direct-fired,food-and-beverage,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Paper - Biomass Dryer - Paper,dryer_solid-fuel,pulp-and-paper,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Paper - Hydrogen Dryer - Direct,dryer_direct-fired,pulp-and-paper,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Rotary - Biomass Dryer - Rotary,dryer_solid-fuel,non-metallic-minerals,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Rotary - Hydrogen Dryer - Direct,dryer_direct-fired,non-metallic-minerals,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Vehicles - Biomass Dryer - Vehicles,dryer_solid-fuel,other-industry,process-heat-low-temp,drying,GJ
+FS Retrofit: Dryer - Vehicles - Hydrogen Dryer - Direct,dryer_direct-fired,other-industry,process-heat-low-temp,drying,GJ
+FS Retrofit: Furnace - Glass - Biomass Furnace - Glass,furnace_glass-biomass-fired,non-metallic-minerals,material-conversion,glass-melting,GJ
+FS Retrofit: Furnace - Glass - Hydrogen Furnace - Glass,furnace_glass-hydrogen-fired,non-metallic-minerals,material-conversion,glass-melting,GJ
+FS Retrofit: Furnace - Refinery - Hydrogen Furnace,direct-heater_fired-process,petroleum-refining,process-heat-high-temp,process-heater,GJ
+FS Retrofit: Furnace - Refinery - Biomass Furnace - Refinery,direct-heater_solid-fuel,petroleum-refining,process-heat-high-temp,process-heater,GJ
+FS Retrofit: Furnace - Vehicles - Biomass Furnace - Vehicles,direct-heater_solid-fuel,other-industry,process-heat-high-temp,direct-heating,GJ
+FS Retrofit: Furnace - Vehicles - Hydrogen Furnace,direct-heater_fired-process,other-industry,process-heat-high-temp,direct-heating,GJ
+FS Retrofit: Generators - Hydrogen Generator,combustion-turbine_combined-cycle-hydrogen,oil-and-gas,electricity,on-site-generation,GJ
+FS Retrofit: Iron - Basic Oxygen Furnace - Biomass Furnace - Iron - Basic Oxygen Furnace,basic-oxygen-furnace_biomass-oxygen-enriched,iron-and-steel,material-conversion,steelmaking,GJ
+FS Retrofit: Iron - Basic Oxygen Furnace - HYBRIT,shaft-furnace_direct-reduction,iron-and-steel,material-conversion,steelmaking,GJ
+FS Retrofit: Iron - Blast Furnace - Biomass Furnace - Iron - Blast Furnace,blast-furnace_biomass-oxygen-enriched,iron-and-steel,material-conversion,ironmaking,GJ
+FS Retrofit: Iron - Blast Furnace - Direct Reduction - Biomass,blast-furnace_biomass-reductant,iron-and-steel,material-conversion,ironmaking,GJ
+FS Retrofit: Iron - Blast Furnace - Direct Reduction,shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,GJ
+FS Retrofit: Iron - Blast Furnace - HYBRIT,shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,GJ
+FS Retrofit: Iron - Sinter Plant - Biomass Furnace - Iron Sinter Plant,sinter-plant_strand,iron-and-steel,material-conversion,sintering,GJ
+FS Retrofit: Iron - Sinter Plant - HYBRIT,shaft-furnace_direct-reduction,iron-and-steel,material-conversion,sintering,GJ
+FS Retrofit: Kiln - Cement - Biomass Kiln - Cement,kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,GJ
+FS Retrofit: Kiln - Cement - Hydrogen Kiln,kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,GJ
+FS Retrofit: Kiln - Lime - Biomass Kiln - Lime,kiln_lime-shaft,non-metallic-minerals,process-heat-high-temp,calcining,GJ
+FS Retrofit: Kiln - Lime - Hydrogen Kiln,kiln_lime-shaft,non-metallic-minerals,process-heat-high-temp,calcining,GJ
+FS Retrofit: Kiln - Other - Biomass Kiln - Other,kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,GJ
+FS Retrofit: Kiln - Other - Hydrogen Kiln,kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,GJ
+FS Retrofit: Metal Melting - Hydrogen Furnace,melting-furnace_reverberatory-rotary,non-ferrous-metals,process-heat-high-temp,melting,GJ
+FS Retrofit: Metal Melting - Biomass Furnace - Metal Melting,melting-furnace_biomass-fired,non-ferrous-metals,process-heat-high-temp,melting,GJ
+FS Retrofit: Oven - F&D - Hydrogen Oven,oven_tunnel-deck,food-and-beverage,process-heat-medium-temp,baking,GJ
+FS Retrofit: Oven - Vehicles - Hydrogen Oven,oven_tunnel-deck,other-industry,process-heat-medium-temp,curing,GJ
+FS Retrofit: Metal Rolling - Hydrogen Furnace,furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,GJ
+FS Retrofit: Glass Other - Hydrogen Furnace,furnace_glass-hydrogen-fired,non-metallic-minerals,process-heat-high-temp,direct-heating,GJ
+Carbon capture technology cost and performance (CINDY-based): CCS - First generation Amines,capture-unit_amine,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): CCS - Advanced amines or blends,capture-unit_advanced-solvent,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): Chilled ammonia,capture-unit_chilled-ammonia,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): Potassium carbonate,capture-unit_chemical-solvent,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): Rectisol,capture-unit_physical-solvent,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): Selexol,capture-unit_physical-solvent,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): CCS - Calcium looping,capture-unit_calcium-looping,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture technology cost and performance (CINDY-based): Cryogenics,capture-unit_cryogenic-flue-gas,co2-capture,co2-capture,post-combustion-capture,t
+Carbon capture compressor cost performance (CompressorCostPerformance),compressor_co2-dehydration,co2-capture,co2-capture,co2-compression,t
+FFPFE and Other abatement (FFPFECost): HIsarna + CCS - Advanced amines or blends [Both],smelting-vessel_two-stage_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): HIsarna + CCS - Advanced amines or blends 100 [Both],smelting-vessel_two-stage_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): HIsarna + CCS - Calcium looping [Both],smelting-vessel_two-stage_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): HIsarna + CCS - Calcium looping 100 [Both],smelting-vessel_two-stage_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): EAF [Both],electric-arc-furnace,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): DRI+EAF [Both],shaft-furnace_direct-reduction_hydrogen-eaf,iron-and-steel,material-conversion,ironmaking,t
+FFPFE and Other abatement (FFPFECost): BECCS 1 - Advanced amines or blends [Both] - Biomass Process,capture-unit_advanced-solvent,co2-capture,co2-capture,post-combustion-capture,t
+FFPFE and Other abatement (FFPFECost): BECCS 1 - Calcium Looping [Both] - Biomass Process,capture-unit_calcium-looping,co2-capture,co2-capture,post-combustion-capture,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - Boiler - Steam,boiler_ccs-diffuse,heat-supply,steam-and-hot-water,boiler,GJ
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - CHP,boiler_ccs-diffuse,heat-supply,steam-and-hot-water,boiler,GJ
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - Dryer - Chemicals,dryer_solid-fuel_ccs-diffuse,chemicals,process-heat-low-temp,drying,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - Furnace - Glass,furnace_glass-regenerative_ccs-diffuse,non-metallic-minerals,material-conversion,glass-melting,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - Kiln - Cement,kiln_dry-precalciner_ccs-diffuse,cement,process-heat-high-temp,clinker-production,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Advanced amines or blends [Both] - Kiln - Lime,kiln_lime_ccs-diffuse,non-metallic-minerals,process-heat-high-temp,calcining,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - Boiler - Steam,boiler_ccs-diffuse,heat-supply,steam-and-hot-water,boiler,GJ
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - CHP,boiler_ccs-diffuse,heat-supply,steam-and-hot-water,boiler,GJ
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - Dryer - Chemicals,dryer_solid-fuel_ccs-diffuse,chemicals,process-heat-low-temp,drying,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - Furnace - Glass,furnace_glass-regenerative_ccs-diffuse,non-metallic-minerals,material-conversion,glass-melting,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - Kiln - Cement,kiln_dry-precalciner_ccs-diffuse,cement,process-heat-high-temp,clinker-production,t
+FFPFE and Other abatement (FFPFECost): BECCS 2 - Calcium Looping [Both] - Kiln - Lime,kiln_lime_ccs-diffuse,non-metallic-minerals,process-heat-high-temp,calcining,t
+FFPFE and Other abatement (FFPFECost): Electric compressor - grid electricity [Offshore] - Compressor,compressor_electric-drive-centrifugal,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Electric compressor - grid electricity [Onshore] - Compressor,compressor_electric-drive-centrifugal,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Electric compressor - wind power & battery storage [Both] - Compressor,compressor_electric-drive-wind-battery,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): H2 Compressor (blue) [Onshore] - Compressor,compressor_hydrogen-fired,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): CCS (low CO2) [Offshore],capture-unit_low-co2-exhaust,co2-capture,co2-capture,post-combustion-capture,t
+FFPFE and Other abatement (FFPFECost): CCS (low CO2) [Onshore],capture-unit_low-co2-exhaust,co2-capture,co2-capture,post-combustion-capture,t
+FFPFE and Other abatement (FFPFECost): Gas recovery for sales [Both] - Flaring - FFP,compressor_flare-gas-recovery,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Electricity grid connection  [Onshore] - Generators,grid-connection_offshore-electrification,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Electricity grid connection  [Offshore] - Generators,grid-connection_offshore-electrification,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Wind power and battery storage [Both] - Generators,wind-turbine,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Continuous monitoring [Both],process-improvement_continuous-methane-monitoring,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): LDAR (Leak Detection And Repair) [Both],process-improvement_leak-detection-repair,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Strong LDAR [Both],process-improvement_leak-detection-repair-strong,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): CCS - offshore gas/oil processing (high CO2) [Both] - Process CO2 - FFP,gas-treatment-unit_ccs-concentrated,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): Reduce vent and flare where needed [Both] - Venting,process-improvement_vent-flare-reduction,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): SSF oven CCS - Calcium looping [Onshore] - SSF Production,coke-oven_ssf_ccs-diffuse,iron-and-steel,material-conversion,cokemaking,t
+FFPFE and Other abatement (FFPFECost): SSF oven CCS - Amines [Onshore] - SSF Production,coke-oven_ssf_ccs-diffuse,iron-and-steel,material-conversion,cokemaking,t
+FFPFE and Other abatement (FFPFECost): CCS - shale gas processing (high CO2) [Onshore] - Process CO2 - FFP Shale,gas-treatment-unit_ccs-concentrated,oil-and-gas,process-heat-low-temp,gas-processing,t
+"FFPFE and Other abatement (FFPFECost): Electric heating (onshore, replacing gas) [Both] - Regasification (Vapourisers)",direct-heater_electric-vaporiser,oil-and-gas,process-heat-low-temp,gas-processing,t
+FFPFE and Other abatement (FFPFECost): H2 Boiler (blue) [Both] - Regasification (Vapourisers),boiler_fuel-fired,oil-and-gas,process-heat-low-temp,gas-processing,t
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas boiler - Boiler - Steam; Boiler - Steam (Non BECCS allowed),boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired furnace - Combustion CO2 - Reforming; Dryer - Chemicals; Dryer - F&D; Dryer - Paper; Dryer - Rotary; Dryer - Vehicles; Electric Arc Furnace; Furnace - Refinery; Furnace - Vehicles; Metal Melting; Oven - F&D; Oven - Vehicles,direct-heater_fired-process,heat-supply,process-heat-high-temp,direct-heating,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired furnace - Furnace - Glass,furnace_glass-regenerative,non-metallic-minerals,material-conversion,glass-melting,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired furnace - Glass Other; Metal Rolling,direct-heater_fired-process,heat-supply,process-heat-high-temp,direct-heating,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired kiln - Kiln - Cement,kiln_dry-precalciner,cement,process-heat-high-temp,clinker-production,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired kiln - Kiln - Lime; Kiln - Other,kiln_tunnel-roller,non-metallic-minerals,process-heat-high-temp,firing,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Industrial CHP - CHP,combustion-turbine_heat-recovery-steam-generator,heat-supply,steam-and-hot-water,chp,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): CCGT - Generators,combustion-turbine_combined-cycle,oil-and-gas,electricity,on-site-generation,GJ
+Counterfactual technologies (ProcessCounterfactualsNew): Gas compressor - Compressor,compressor_gas-engine-drive,oil-and-gas,machine-drive,compression,GJ

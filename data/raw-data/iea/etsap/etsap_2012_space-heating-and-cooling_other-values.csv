@@ -1,0 +1,41 @@
+process,technology,item,value,unit,reference,note
+CCS-enabled CHP (p.6 text; Table 1 notes),combined-cycle_natural-gas_chp-ccs,capex adder for CCS on gas CHP,570,2010_EUR/kW,p.6; p.9 Table 1 notes,Per kWe; 500 MWe gas-based CHP district heating scheme. COST BASIS: incremental. reprinted from AEA 2012 (ref [17])
+CCS-enabled CHP (p.6 text; Table 1 notes),combined-cycle_natural-gas_chp-ccs,energy penalty of CCS on gas CHP,10,%,p.6,about 10%; 500 MWe gas CHP district heating scheme. reprinted from AEA 2012
+CCS-enabled CHP (p.6 text; Table 1 notes),combined-cycle_natural-gas_chp-ccs,non-fuel operating cost adder for CCS,6,2010_EUR/MWh,p.6,extra EUR6/MWh to non-fuel operating costs; MWh basis not stated; price year assumed from Table 1 notes. reprinted from AEA 2012
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,capacity,12,kW,"p.9, Table 1","domestic scale, out of scope for the main file"
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,capex (installed),1500,2010_EUR/kW,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,fixed O&M,15,2010_EUR/kW-y,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,lifetime,15,years,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,heating COP,2.50,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_existing_domestic,cooling EER,2.50,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,capacity,12,kW,"p.9, Table 1","domestic scale, out of scope for the main file"
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,capex (installed),1625,2010_EUR/kW,"p.9, Table 1",wet systems include low-temperature radiators (footnote 3)
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,fixed O&M,15,2010_EUR/kW-y,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,lifetime,15,years,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,heating COP,3.3-3.6,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_ground-to-water_domestic,cooling EER,2.3-2.6,COP,"p.9, Table 1","printed with comma decimals (2,3-2,6)"
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,capacity,12,kW,"p.9, Table 1","domestic scale, out of scope for the main file"
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,capex (installed),1275,2010_EUR/kW,"p.9, Table 1",wet systems include low-temperature radiators (footnote 3)
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,fixed O&M,15,2010_EUR/kW-y,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,lifetime,15,years,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,heating COP,3.2-3.5,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-water_domestic,cooling EER,2.3-2.5,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,capacity,12,kW,"p.9, Table 1","domestic scale, out of scope for the main file"
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,capex (installed),600,2010_EUR/kW,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,fixed O&M,15,2010_EUR/kW-y,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,lifetime,15,years,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,heating COP,3.2-3.5,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_air-to-air_domestic,cooling EER,2.3-2.5,COP,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,capacity,12,kW,"p.9, Table 1","domestic scale, out of scope for the main file"
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,capex (installed),700,2010_EUR/kW,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,fixed O&M,15,2010_EUR/kW-y,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,lifetime,15,years,"p.9, Table 1",
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,heating COP,1.25-1.35,COP,"p.9, Table 1",gas-fired: efficiency on HHV of gas (PER)
+"Heat pumps, domestic scale (Table 1)",heat-pump_gas-absorption_domestic,cooling EER,0.63,COP,"p.9, Table 1",
+Gas engine heat pump (p.5 text),heat-pump_gas-engine,primary energy ratio,1.5,PER (HHV),p.5,1 kWh gas gives 1.5 kWh heat; mainly commercial applications. reprinted from AEA 2012
+Gas adsorption heat pump (p.5 text),heat-pump_gas-adsorption,"primary energy ratio, at least",1.2,PER (HHV),p.5,"under development, driven by condensing boiler exhaust. reprinted from AEA 2012"
+Chillers (p.5 text),chiller_vapour-compression,"EER at full load, up to",7.9,EER,p.5,higher at part load. reprinted from IPCC 2007
+"Heat pumps, North America (p.5 text)",heat-pump_air-source_domestic,installed cost range,385-530,EUR/kW,p.5,"domestic ASHP, North America; GSHP 405-690 EUR/kW. Price year not stated. reprinted from IEA 2011 roadmap"
+Solar thermal (p.6 text),solar-thermal_space-heating,"installed cost, new build",1100-2140,USD/kW,p.6,"retrofit 1,300-2,200 US$/kW. PRICE YEAR NOT STATED. reprinted from IEA 2011 buildings roadmap"
+Solar thermal (p.6 text),solar-thermal_space-heating,annual heat yield,300-900,kWh/m2-yr,p.6,reprinted from IEA 2011
+Projections (p.5 text),heat-pump,cost reduction by 2030,20-30,%,p.5,efficiency improvement 30-50% by 2030. reprinted from IEA 2011

@@ -560,6 +560,13 @@ Every fact row carries:
 
 A `derived` row carries its `formula` and the `record-id` it was derived from.
 
+**A compilation's row never stands beside the original it cites.** When the
+original is held, its own figure is used and the compilation's row is dropped,
+unless the compilation states a reason for its different number (2026-10-03).
+For UKERC the row-by-row outcome is `records/reference/ukerc-original-reconciliation.csv`;
+for a compilation extracted afresh (N-ZIP over IFS) the extractor leaves the
+reprinted rows out of the main file and lists them in `_other-values`.
+
 **Record ids** are `tp-`, `tf-` or `tc-` followed by the source-id and a four-digit
 number, numbered within the source (`tp-ukerc_2013_001-0042`), so an edit to one
 source never renumbers another.

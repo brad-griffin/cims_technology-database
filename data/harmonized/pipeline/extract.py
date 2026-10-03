@@ -433,6 +433,12 @@ BRIEF_SHAPE = [
     ("gov-can/nrcan/nrcan_2005_open-pit-mines-energy-benchmark", "nrcan_2005_002", "Canada"),
     ("gov-usa/nrel/nrel_2026_h2a-lite", "nrel_2026_001", "US"),
     ("other-reports/ren_2009_petrochemicals-energy-use-economics-innovation_thesis", "ren_2009_001", "global"),
+    ("other-reports/element-energy_2021_n-zip-model-assumptions-log_ccc", "element-energy_2021_001", "UK"),
+    ("iea/etsap/etsap_2012_space-heating-and-cooling", "etsap_2012_002", "Europe"),
+    ("iea/etsap/etsap_2012_lighting", "etsap_2012_003", "OECD"),
+    ("gov-usa/epa/epa_2010_wastewater-energy-conservation", "epa_2010_003", "US"),
+    ("gov-usa/ornl/ornl_2004_guide-to-chp-boiler", "ornl_2004_001", "US"),
+    ("gov-usa/nrel/nrel_2016_thermal-energy-use-in-us-industry", "nrel_2016_001", "US"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")
@@ -553,9 +559,13 @@ class Loader:
         nm = self.nodes(stem, sid)
         if not nm:
             return
-        for row in read(RAW / f"{stem}.csv"):
+        recon = UkercRecon()
+        for n, row in enumerate(read(RAW / f"{stem}.csv"), 1):
             key = (row.get("process", ""), row["technology"])
             if key not in nm:
+                continue
+            orig = recon.credit("main", n, row)
+            if orig is None:
                 continue
             ex = self.example(sid, row["technology"], row.get("process", ""))
             param, val = row["parameter"], (row.get("value") or "").strip()
@@ -567,7 +577,6 @@ class Loader:
                 continue
             unit = (row.get("unit") or "").strip()
             note = (row.get("note") or "").strip()
-            orig = [x for x in (row.get("source-original") or "").split(";") if x]
             cost = param.startswith(("capex", "opex"))
             # UKERC is a compilation: the value belongs to whoever it cites
             # (design rule: two-level attribution). The original is the source,
@@ -596,6 +605,9 @@ class Loader:
         for i, row in enumerate(read(RAW / f"{stem}_flows.csv"), 1):
             if row["technology"] not in techs:
                 continue
+            orig = recon.credit("flows", i, row)
+            if orig is None:
+                continue
             ex = self.example_for(sid, row["technology"], nm)
             self.flows.append({
                 "record-id": f"tf-{i:04d}", "example-id": ex["example-id"],
@@ -605,12 +617,15 @@ class Loader:
                 "value-min": row["value-min"], "value-max": row["value-max"],
                 "co-product": row["co-product"], "value-type": "reported",
                 "formula": row["formula"], "region": "UK",
-                "source-id": (row.get("source-original") or "").split(";")[0] or sid,
-                "via-source-id": sid if row.get("source-original") else "",
+                "source-id": orig[0] if orig else sid,
+                "via-source-id": sid if orig else "",
                 "source-file": "ukerc_2013_usable-energy-database.xlsx",
                 "source-locator": row["reference"], "status": "draft", "note": row["note"]})
         for i, row in enumerate(read(RAW / f"{stem}_constraints.csv"), 1):
             if row["technology"] not in techs:
+                continue
+            orig = recon.credit("constraints", i, row)
+            if orig is None:
                 continue
             ex = self.example_for(sid, row["technology"], nm)
             self.cons.append({
@@ -619,10 +634,12 @@ class Loader:
                 "constraint": row["constraint"], "region": row["region"],
                 "year": row["year"], "value": row["value"], "unit": row["unit"],
                 "constraint-basis": row["constraint-basis"], "value-type": "reported",
-                "source-id": (row.get("source-original") or "").split(";")[0] or sid,
-                "via-source-id": sid if row.get("source-original") else "",
+                "source-id": orig[0] if orig else sid,
+                "via-source-id": sid if orig else "",
                 "source-file": "ukerc_2013_usable-energy-database.xlsx",
                 "source-locator": row["reference"], "status": "draft", "note": row["note"]})
+
+        self.missing.extend(recon.unreconciled())
 
     def example_for(self, sid, tech, nm, process=""):
         """The example a flow or constraint row belongs to. Those files carry
@@ -802,3 +819,51 @@ def load() -> Loader:
     for stem, sid, region in BRIEF_SHAPE:
         L.etsap_brief(stem, sid, region)
     return L
+
+
+class UkercRecon:
+    """UKERC rows whose original we hold (records/reference/ukerc-original-
+    reconciliation.csv; user ruling 2026-10-03). When the original is held, its
+    own figure is used and the UKERC row is dropped, unless UKERC states a
+    reason for its different number (action `keep`). `recredit:<id>` moves a
+    row UKERC credited to the wrong document. A row crediting a held original
+    that the file does not list is reported, so a newly held original gets
+    reconciled before its UKERC rows are pooled beside it."""
+
+    def __init__(self):
+        self.rows = {(r["ukerc-file"], int(r["row"])): r
+                     for r in read(REFERENCE / "ukerc-original-reconciliation.csv")}
+        self.alias = {r["ukerc-source-id"]: r["held-source-id"] for r in self.rows.values()}
+        self.held = {r["source_id"] for r in read(RAW / "source-details_files.csv")
+                     if r.get("file_on_disk") and r.get("csv_data_extract")}
+        self.held.discard(UKERC[1])
+        self.loose = defaultdict(int)
+        self.seen = set()
+
+    def credit(self, part, n, row):
+        """The originals the row is credited to, or None if it is dropped."""
+        orig = [x for x in (row.get("source-original") or "").split(";") if x]
+        r = self.rows.get((part, n))
+        if r is None:
+            if orig and orig[0] in self.held:
+                self.loose[orig[0]] += 1
+            return orig
+        if r["technology"] != row["technology"] or (orig[:1] or [""])[0] != r["ukerc-source-id"]:
+            raise SystemExit(f"ukerc-original-reconciliation.csv: {part} row {n} is "
+                             f"{row['technology']} / {orig[:1]}, the file says {r['technology']} / "
+                             f"{r['ukerc-source-id']}; the UKERC extraction changed, redo the rows")
+        self.seen.add((part, n))
+        act = r["action"]
+        if act == "drop":
+            return None
+        if act.startswith("recredit:"):
+            return [act.split(":", 1)[1]] + orig[1:]
+        return [r["held-source-id"]] + orig[1:]
+
+    def unreconciled(self):
+        out = [f"UKERC {k} row {n} listed in ukerc-original-reconciliation.csv was not met"
+               for (k, n) in sorted(set(self.rows) - self.seen)]
+        out += [f"UKERC: {c} rows credit {s}, which is held, and are not reconciled "
+                "(records/reference/ukerc-original-reconciliation.csv)"
+                for s, c in sorted(self.loose.items())]
+        return out

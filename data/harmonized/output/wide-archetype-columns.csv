@@ -96,6 +96,10 @@ efficiency_component,technical,%,"Useful output per unit of energy input, on the
 efficiency_component_low,technical,%,
 efficiency_component_high,technical,%,
 efficiency_component_n,technical,,
+efficiency_cooling,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_cooling_low,technical,%,
+efficiency_cooling_high,technical,%,
+efficiency_cooling_n,technical,,
 efficiency_electricity,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_electricity_low,technical,%,
 efficiency_electricity_high,technical,%,
