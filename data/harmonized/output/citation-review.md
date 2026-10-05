@@ -39,7 +39,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | source | rows | correction |
 |---|---:|---|
 | MIDDEN database v0.4a | 2510 | confirmed against the held document 2026-09-29 |
-| UKERC 2013 | 2152 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
+| UKERC 2013 | 1344 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson 2014 | 658 | confirmed against the held document 2026-10-02 |
 | Gielen 1997 | 608 | confirmed against the held document 2026-10-02 |
 | Joosten 1998 | 498 | confirmed against the held document 2026-10-03 |
@@ -191,7 +191,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Simbolotti, G. | 34 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Mueller 2013 | 34 | confirmed against the held document 2026-10-02 |
 | Natural Resources Canada 2005 (open-pit) | 34 | confirmed against the held document 2026-10-03 |
-| Collodi 2010 | 33 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
 | Simbolotti, G. | 33 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | National Energy Technology Laboratory | 33 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
 | Rissman and Gimon 2023 | 33 | confirmed against the held document 2026-09-29 |
@@ -202,6 +201,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Beddows & Company / Hatch Management 2000 | 32 | confirmed against the held document 2026-10-02 |
 | Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Tao 2017 | 32 | confirmed against the held document 2026-10-02 |
+| Collodi 2010 | 31 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
 | U.S. Environmental Protection Agency 2023 | 31 | confirmed against the held document 2026-10-02 |
 | Natural Resources Canada 2005 | 31 | confirmed against the held document 2026-10-02 |
 | U.S. Environmental Protection Agency 2001 | 30 | confirmed against the held document 2026-10-02 |

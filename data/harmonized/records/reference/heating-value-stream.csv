@@ -3,7 +3,7 @@ reciprocating-engine_chp,cf-hhv-lhv-methane,,gas engine on natural gas; electric
 anaerobic-digester_chp,cf-hhv-lhv-methane,,gas engine on biogas (a methane fuel); electricity and heat out
 fuel-cell_chp,cf-hhv-lhv-methane,,gas-fuelled cells (the ETSAP brief's basis); electricity and heat out
 combustion-turbine_simple-cycle,cf-hhv-lhv-methane,,gas turbine on natural gas
-combustion-turbine_heat-recovery-steam-generator,cf-hhv-lhv-methane,,gas turbine on natural gas
+combustion-turbine_chp,cf-hhv-lhv-methane,,gas turbine on natural gas
 steam-turbine_back-pressure,cf-hhv-lhv-solid-liquid,,boiler fuel is solid (biomass or coal) in the sources that state LHV
 electrolyzer_low-temperature,,cf-hhv-lhv-hydrogen,electricity in; hydrogen out
 electrolyzer_solid-oxide,,cf-hhv-lhv-hydrogen,electricity (and steam) in; hydrogen out
@@ -13,7 +13,7 @@ shaft-furnace_electrolytic-hydrogen,,,energy use is electricity; the LHV in the 
 reactor_haber-bosch-loop,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ammonia,hydrogen (and nitrogen) in; ammonia out. Electricity uses take ratio 1 by their target (heating.CARRIER_RATIO); the DEA catalogue prices and rates the loop per MW of ammonia on LHV, which needs the ammonia ratio (restored 2026-10-02: blank, those figures were 21% high)
 boiler_fuel-fired,cf-hhv-lhv-methane,,gas-fired in the sources that state LHV (DEA gas/oil boiler; natural gas is the main fuel)
 boiler_solid-fuel,cf-hhv-lhv-solid-liquid,,biomass or coal fuel
-direct-heater_fired-process,cf-hhv-lhv-methane,,natural gas burners
+direct-heater_fuel-fired,cf-hhv-lhv-methane,,natural gas burners
 direct-heater_solid-fuel,cf-hhv-lhv-solid-liquid,,solid fuels
 steam-reformer_ammonia,cf-hhv-lhv-methane,,energy use is natural gas feed plus fuel
 anaerobic-digester,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methane,wet biomass or manure in; biogas (a methane fuel) out
@@ -23,12 +23,11 @@ transesterification-unit_alkali-catalyzed,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-sol
 reactor_hydrotreating-lipids,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,lipids in; HVO out
 reactor_hydrothermal-liquefaction,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,wet biomass in; biocrude out
 capture-unit_dac-liquid-solvent,cf-hhv-lhv-methane,,natural gas fires the calciner
-gasifier_fischer-tropsch,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,solid biomass in; FT liquids out
+gasifier_biomass-fischer-tropsch,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,solid biomass in; FT liquids out
 fermenter_grain-dry-mill,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ethanol,grain in; ethanol out
 fermenter_lignocellulosic-enzymatic,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ethanol,lignocellulosic biomass in; ethanol out
-reciprocating-engine_diesel-generator,cf-hhv-lhv-solid-liquid,,diesel engine (its only carrier); electricity out (added 2026-10-02)
 furnace_reheating_efficiency-moderate,cf-hhv-lhv-methane,,natural gas (its only carrier) (added 2026-10-02)
 boiler_recovery,cf-hhv-lhv-black-liquor,,black liquor in; steam (and power) out (added 2026-10-02)
 gasifier_black-liquor,cf-hhv-lhv-black-liquor,,black liquor in (added 2026-10-02)
 autothermal-reformer,cf-hhv-lhv-methane,,natural gas (its only carrier) as feed and fuel (added 2026-10-02)
-reactor_syngas-methanol,cf-hhv-lhv-methane,cf-hhv-lhv-methanol,natural gas in; methanol out (added 2026-10-02)
+steam-reformer_methanol,cf-hhv-lhv-methane,cf-hhv-lhv-methanol,natural gas in; methanol out (added 2026-10-02)

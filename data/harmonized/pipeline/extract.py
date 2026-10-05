@@ -825,7 +825,9 @@ class UkercRecon:
     """UKERC rows whose original we hold (records/reference/ukerc-original-
     reconciliation.csv; user ruling 2026-10-03). When the original is held, its
     own figure is used and the UKERC row is dropped, unless UKERC states a
-    reason for its different number (action `keep`). `recredit:<id>` moves a
+    reason for its different number (action `keep`). A row whose figure is not
+    in the original at all is UKERC's own and is credited to UKERC (`ukerc-own`).
+    `recredit:<id>` moves a
     row UKERC credited to the wrong document. A row crediting a held original
     that the file does not list is reported, so a newly held original gets
     reconciled before its UKERC rows are pooled beside it."""
@@ -856,6 +858,10 @@ class UkercRecon:
         act = r["action"]
         if act == "drop":
             return None
+        if act == "ukerc-own":
+            # not in the original at all: UKERC's own figure (its UK baseline,
+            # stock constraints, TRLs), credited to UKERC (modeller 2026-10-03)
+            return []
         if act.startswith("recredit:"):
             return [act.split(":", 1)[1]] + orig[1:]
         return [r["held-source-id"]] + orig[1:]

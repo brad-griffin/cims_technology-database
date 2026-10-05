@@ -563,6 +563,8 @@ A `derived` row carries its `formula` and the `record-id` it was derived from.
 **A compilation's row never stands beside the original it cites.** When the
 original is held, its own figure is used and the compilation's row is dropped,
 unless the compilation states a reason for its different number (2026-10-03).
+A figure the original does not contain at all is the compilation's own and is
+credited to the compilation.
 For UKERC the row-by-row outcome is `records/reference/ukerc-original-reconciliation.csv`;
 for a compilation extracted afresh (N-ZIP over IFS) the extractor leaves the
 reprinted rows out of the main file and lists them in `_other-values`.
