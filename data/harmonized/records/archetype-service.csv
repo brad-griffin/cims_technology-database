@@ -232,10 +232,10 @@ dryer_rotary-direct-fired,<sector>.industrial-minerals.product.ceramics.dryer,dr
 dryer_rotary-direct-fired,<sector>.coal-mining.product.coal-preparation.drying,product-drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_rotary-direct-fired,<sector>.mining.service.drying,product-drying,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_rotary-direct-fired,<sector>.industrial-minerals.product.gypsum,drying-and-low-temp-calcining,mapping review 2026-09-30: description covers gypsum calcining; gypsum would otherwise be empty
-furnace_glass-hybrid-electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
-furnace_glass-oxy-fuel,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
-furnace_glass-regenerative,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
-furnace_glass-tempering,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
+furnace_hybrid-electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_oxy-fuel,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_regenerative,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_tempering,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 furnace_lehr,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 furnace_lehr-electric,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 kiln_ceramic-electric,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,non-metallic-minerals/ceramic-firing: every leaf of the end use
@@ -569,7 +569,7 @@ oven_fuel-fired_efficiency-moderate,<sector>.light-industrial.service.heat,bakin
 radio-frequency-heater_food,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
 oven_electric,<sector>.light-industrial.service.heat,baking-frying-and-roasting,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
 oven_fuel-fired,<sector>.light-industrial.service.heat,baking-frying-and-roasting,food-and-beverage/baking-frying-and-roasting: every leaf of the end use
-pasteurizer_regenerative,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
+heat-exchanger_steam-heated_efficiency-strong,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
 press_high-pressure-processing,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
 calciner_gas-suspension,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,non-ferrous-metals/alumina-refining: every leaf of the end use
 converter_continuous,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -660,7 +660,6 @@ press_hot-platen,<sector>.light-industrial.service.heat,wood-drying-and-pressing
 ultraviolet-curer_infrared,<sector>.light-industrial.service.heat,drying-curing-and-forming,other-industry/drying-curing-and-forming: every leaf of the end use
 pellet-plant_wood,<sector>.light-industrial.service.heat,wood-drying-and-pressing,other-industry/wood-drying-and-pressing: pellet mills are wood-products manufacturing
 reactor_torrefaction,<sector>.light-industrial.service.heat,wood-drying-and-pressing,as pellet-plant_wood
-heat-exchanger_steam-heated_efficiency-strong,<sector>.light-industrial.service.heat,thermal-processing,as heat-exchanger_steam-heated
 reactor_polymerization-extrusion_efficiency-strong,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,as reactor_polymerization-extrusion
 cleaning-system,<sector>.light-industrial.service.heat,thermal-processing,as cleaning-system_efficiency-strong
 reactor_ethylene-oxidation,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,ethylene oxide/glycol is an intermediate
@@ -706,7 +705,7 @@ dryer_through-air,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-dryi
 electrolysis-cell_chlor-alkali-diaphragm,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,added 2026-10-01
 electrolysis-cell_electrorefining,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,pyrometallurgy,added 2026-10-01
 electrolysis-cell_zinc-electrowinning,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,added 2026-10-01
-furnace_glass-regenerative_ccs-diffuse,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,copied from furnace_glass-regenerative 2026-10-01
+furnace_regenerative_ccs-diffuse,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,copied from furnace_regenerative 2026-10-01
 furnace_rotary-hearth-direct-reduction,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,added 2026-10-01
 gasifier_coal-methanol,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,added 2026-10-01
 kiln_calcium-looping,<sector>.industrial-minerals.product.cement.clinker,clinker-production,copied from kiln_oxy-fuel 2026-10-01
@@ -755,7 +754,7 @@ geothermal-well_flash-power,<sector>.mining.service.on-site-power,on-site-power-
 calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,non-ferrous-metals/alumina-refining: every leaf of the end use
 capture-unit_calcium-looping,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,cross-sector/co2-capture-diffuse: every leaf of the end use
 kiln_electric-plasma,<sector>.industrial-minerals.product.cement.clinker,clinker-production,cement/clinker-production: the device's route
-furnace_glass-oxy-fuel-thermochemical,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_oxy-fuel-thermochemical,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
 heat-pump_heat-transformer,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 heat-pump_heat-transformer,<sector>.light-industrial.service.heat,thermal-processing,food-and-beverage/thermal-processing: every leaf of the end use
 kiln_ceramic-microwave-assisted,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,non-metallic-minerals/ceramic-firing: every leaf of the end use

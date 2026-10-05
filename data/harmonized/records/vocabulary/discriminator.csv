@@ -283,7 +283,7 @@ optimization,Fan system optimization; Pump system optimization,no
 ore-sorting,Sensor-based ore sorting,no
 oven-exhaust,Oven exhaust heat recovery,no
 overland,Conveying in place of truck haulage,no
-oxy-fuel,Oxy-fuel kiln,no
+oxy-fuel,"Fired with oxygen instead of air (kilns, furnaces)",no
 oxygen-delignification,Oxygen delignification with ECF bleaching,no
 oxygen-depolarized,Oxygen-depolarized cathode cell,no
 packaged,Packaged air conditioner or rooftop unit,no
@@ -309,7 +309,7 @@ recovery,Recovery boiler; Recovery boiler with post-combustion capture,no
 recovery-high-solids,High-solids firing and high-pressure recovery boiler,no
 recycled-fibre,Recycled-fibre repulping and deinking,no
 refiner-low-energy,Low-energy refining,no
-regenerative,Regenerative heat recovery on pasteurizers,no
+regenerative,"Recovers heat regeneratively: regenerator-fired furnace, or product-to-product regeneration",no
 regenerative-burners,Regenerative or recuperative burners,no
 regenerative-oxy-fuel,Regenerative or oxy-fuel burner furnace; Regenerative or oxy-fuel melting,no
 reheating,"Reheating furnace, fuel-fired; Reheating furnace efficiency measures, moderate; Reheating furnace efficiency measures, strong; Induction reheating",no
@@ -489,3 +489,6 @@ spark-ignition,Spark-ignited engine on propane or natural gas,yes
 alkylation,Acid-catalysed alkylation of light olefins with isobutane,yes
 isomerization,Isomerization of light naphtha or butane,yes
 drum,Rotating drum machine,yes
+hybrid-electric,Furnace melting with a large share of electric boosting alongside fuel firing,yes
+oxy-fuel-thermochemical,Oxy-fuel furnace with thermochemical heat recovery (flue gas reforms the fuel),yes
+tempering,Furnace that heats and quenches a product to temper it,yes
