@@ -124,6 +124,10 @@ efficiency_steam,technical,%,"Useful output per unit of energy input, on the bas
 efficiency_steam_low,technical,%,
 efficiency_steam_high,technical,%,
 efficiency_steam_n,technical,,
+efficiency_vapour-recompression,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: vapour-recompression. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_vapour-recompression_low,technical,%,
+efficiency_vapour-recompression_high,technical,%,
+efficiency_vapour-recompression_n,technical,,
 efficiency-chp,technical,%,"Combined heat and electricity output per unit of fuel input. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency-chp_low,technical,%,
 efficiency-chp_high,technical,%,
@@ -139,20 +143,14 @@ specific-energy-consumption_n,technical,,
 specific-energy-consumption_basic-oxygen-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: basic-oxygen-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_basic-oxygen-furnace-gas_n,technical,,
 specific-energy-consumption_bioliquid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: bioliquid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-specific-energy-consumption_bioliquid_low,technical,GJ/product-unit,
-specific-energy-consumption_bioliquid_high,technical,GJ/product-unit,
 specific-energy-consumption_bioliquid_n,technical,,
 specific-energy-consumption_biomass,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-specific-energy-consumption_biomass_low,technical,GJ/product-unit,
-specific-energy-consumption_biomass_high,technical,GJ/product-unit,
 specific-energy-consumption_biomass_n,technical,,
 specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
 specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
 specific-energy-consumption_biomass-solid_n,technical,,
 specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
-specific-energy-consumption_black-liquor_high,technical,GJ/product-unit,
 specific-energy-consumption_black-liquor_n,technical,,
 specific-energy-consumption_blast-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: blast-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_blast-furnace-gas_low,technical,GJ/product-unit,
@@ -177,8 +175,6 @@ specific-energy-consumption_coke-oven-gas_n,technical,,
 specific-energy-consumption_component,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_component_n,technical,,
 specific-energy-consumption_diesel,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: diesel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-specific-energy-consumption_diesel_low,technical,GJ/product-unit,
-specific-energy-consumption_diesel_high,technical,GJ/product-unit,
 specific-energy-consumption_diesel_n,technical,,
 specific-energy-consumption_electricity,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_electricity_low,technical,GJ/product-unit,
@@ -221,6 +217,8 @@ specific-energy-consumption_petroleum-coke_low,technical,GJ/product-unit,
 specific-energy-consumption_petroleum-coke_high,technical,GJ/product-unit,
 specific-energy-consumption_petroleum-coke_n,technical,,
 specific-energy-consumption_process-off-gas,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: process-off-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+specific-energy-consumption_process-off-gas_low,technical,GJ/product-unit,
+specific-energy-consumption_process-off-gas_high,technical,GJ/product-unit,
 specific-energy-consumption_process-off-gas_n,technical,,
 specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output. The UKERC SEC, on a final-energy basis. Species: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 specific-energy-consumption_steam_low,technical,GJ/product-unit,
@@ -452,10 +450,6 @@ capture-rate_co2,emissions,%,"Fraction of the CO2 entering the capture plant tha
 capture-rate_co2_low,emissions,%,
 capture-rate_co2_high,emissions,%,
 capture-rate_co2_n,emissions,,
-share-to-capture,emissions,%,"Fraction of the host plant's CO2 sent to the capture plant. Recorded on host plants with capture. Times the capture plant's capture-rate it gives the plant-level capture rate; where a source gives only the plant-level rate, that rate is recorded here. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-share-to-capture_low,emissions,%,
-share-to-capture_high,emissions,%,
-share-to-capture_n,emissions,,
 share-to-capture_co2,emissions,%,"Fraction of the host plant's CO2 sent to the capture plant. Recorded on host plants with capture. Times the capture plant's capture-rate it gives the plant-level capture rate; where a source gives only the plant-level rate, that rate is recorded here. Species: co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 share-to-capture_co2_low,emissions,%,
 share-to-capture_co2_high,emissions,%,

@@ -69,11 +69,15 @@ ATOM = {
 # mass of a named species: `t-CO2` is a tonne of CO2. It meets a plain `t` only on
 # an archetype whose product is that species.
 SPECIES = re.compile(r"^(t|kg|kt|Mt)-(CO2(?:-eq)?|CO2e|CH4)$")
-MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion))?")
+# a money unit may carry a scale: thousand, million, billion, or cent / mill
+# (one hundredth and one thousandth of the currency unit; added 2026-10-05, before
+# which "2003_USD-cent" was read as whole dollars)
+MONEY = re.compile(r"^(\d{4})_([A-Z]{3})(?:-(thousand|million|billion|cent|cents|mill|mills))?")
 POWER = {"kW": 0.0036, "MW": 3.6, "GW": 3600.0,      # GJ per hour
          "hp": 0.0026845,                            # 745.7 W (mechanical horsepower)
          "ton-refrigeration": 0.012660}              # 12,000 Btu/h = 3.51685 kW
-MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9}
+MULT = {None: 1.0, "thousand": 1e3, "million": 1e6, "billion": 1e9,
+        "cent": 1e-2, "cents": 1e-2, "mill": 1e-3, "mills": 1e-3}
 
 # How much a converted number rests on, weakest last. `unit` is a definition
 # (Btu, lb, barrel) or the currency method; `same-source` a factor the same source

@@ -1,2 +1,57 @@
 record-id,reason,decided
 tp-worrell_2015_001-0076,"partial scope: the gasification unit alone (heavy-residue feed, rated on fuel input), not a whole hydrogen plant; the archetype's other capex rows are total-plant",modeller 2026-10-02
+tp-van-geene_2024_001-1191,"MIDDEN card tc0488 (re-read 2026-10-05, unit slip corrected in midden-extract.py): the derived SEC sums only the card's TJ inputs (electricity 0.19 + natural gas 3.5 GJ/t); the refuse-derived fuel feed (2.39 t per t methanol) is given in kt, so 3.7 GJ/t is auxiliary energy, not the gasifier's total use",modeller 2026-10-05
+tp-van-geene_2024_001-0379,"MIDDEN card tc0134: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0387,"MIDDEN card tc0136: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0395,"MIDDEN card tc0138: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0399,"MIDDEN card tc0139: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0403,"MIDDEN card tc0140: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0423,"MIDDEN card tc0145: lifetime 1 year as printed on the card with no comment (re-read 2026-10-05); not a unit slip, and no evaporator lasts one year (sanity-check pass R010)",modeller 2026-10-05
+tp-van-geene_2024_001-0881,"MIDDEN card tc0360 (re-read 2026-10-05): O&M printed 0.003 MEUR per kt H2/yr against 4.2 MEUR capex, 0.07%/yr, with no comment; no single unit slip gives a plausible 2-5% (x1000 gives 71%), so it is not corrected and not pooled",modeller 2026-10-05
+tp-dea_2026_006-0538,"DEA 2026 construction time of 25 years on a boiler: the catalogue lifetime entered as construction time (confirmed exclusion, sanity-check pass R007)",modeller 2026-10-05
+tp-kiss_2017_001-0071,"Kiss 2017 worked example: compressor power over the column FEED (120 t/h), not per t product (confirmed exclusion S15)",modeller 2026-10-05
+tp-kiss_2017_001-0072,"Kiss 2017 worked example: boiler fuel over the column FEED, not per t product (same basis as the excluded S15 rows)",modeller 2026-10-05
+tp-kiss_2017_001-0076,"Kiss 2017 worked example: burner fuel over the column FEED, not per t product (same basis as the excluded S15 rows)",modeller 2026-10-05
+tp-kiss_2017_001-0077,"Kiss 2017 worked example: a 1 kW solution pump over 10 t/h feed, not a column SEC (confirmed exclusion S15)",modeller 2026-10-05
+tp-rouwenhorst_2019_001-0010,"Rouwenhorst 2019: 4.0 kWh/kg for small-scale synthesis is out of scope beside the H2-fed loop figures (Armijo-Philibert 0.9, DEA 0.33 MWh/t) (confirmed exclusion S13)",modeller 2026-10-05
+tp-rouwenhorst_2019_001-0011,"Rouwenhorst 2019: 3.62 kWh/kg, as above (confirmed exclusion S13)",modeller 2026-10-05
+tp-gielen_1997_003-0003,"Gielen 1997: 23 GJ/t fuel on the smelter is anode production and the anode carbon content, not the cell (sanity-check pass batch 4)",modeller 2026-10-05
+tp-ieaghg_2016_001-0102,"IEAGHG 2016: 9% is CO2 avoided against the whole reference mill (biogenic included), not against the lime kiln the archetype is (sanity-check pass batch 4)",modeller 2026-10-05
+tp-rtc_2022_001-0005,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-rtc_2022_001-0008,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-rtc_2022_001-0011,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-rtc_2022_001-0014,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-rtc_2022_001-0017,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-rtc_2022_001-0020,"RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70)",modeller 2026-10-05
+tp-worrell_2022_001-0011,"Worrell 2022: 0.9 units of electricity per unit of FUEL-BASED heat replaced, not an electric boiler SEC per GJ of heat (sanity-check R027)",modeller 2026-10-05
+tp-aea_2010_001-0002,"AEA 2010 (UKERC CH-MC1): 0.25 GJ per unit of the UKERC baseline output, not the fuel cell's fuel per GJ (sanity-check R058)",modeller 2026-10-05
+tp-ct_2011_001-0002,"CT 2011 (UKERC PP-CHP1): 0.29 GJ per unit of the UKERC baseline output, not the gasifier CHP's fuel per GJ (sanity-check R064)",modeller 2026-10-05
+tp-dea_2026_006-0591,DEA 2026 solar O&M 0.065 EUR/kW-yr is 0.01% of capex per year; the catalogue unit could not be confirmed (sanity-check R079),modeller 2026-10-05
+tp-moya_2013_001-0038,"steelworks power plant fired with blast-furnace gas: the CO2 of that fuel, not of a condensing turbine (sanity-check R103)",modeller 2026-10-05
+tp-moya_2013_001-0049,"steelworks power plant fired with blast-furnace gas, BAT case (sanity-check R103)",modeller 2026-10-05
+tp-pardo_2013_001-0036,steelworks power plant fired with blast-furnace gas (sanity-check R103),modeller 2026-10-05
+tp-pardo_2013_001-0047,"steelworks power plant fired with blast-furnace gas, BAT case (sanity-check R103)",modeller 2026-10-05
+tp-van-geene_2024_001-0127,"MIDDEN TGR-BF card: the derived SEC sums only the TJ inputs; coke and coal are in kt, so 5.7 GJ/t is auxiliary energy, not the furnace total (sanity-check R231)",modeller 2026-10-05
+tp-van-geene_2024_001-0099,"MIDDEN coke-oven card: the derived SEC counts the coking coal fed (about 36 GJ/t), so 40.8 GJ/t is feedstock plus process energy (sanity-check R246)",modeller 2026-10-05
+tp-bataille_2017_001-0010,"Bataille 2017 (UK TIMES) ""new grinding and mixing technology"": a whole grinding section, 9x the other ball-mill example (sanity-check R317)",modeller 2026-10-05
+tp-gielen_1997_001-0277,"Gielen 1997 variable O&M 250 ECU/t incl. labour: a whole product cost, about twice the price of container glass (sanity-check R351)",modeller 2026-10-05
+tp-gielen_1997_001-0295,Gielen 1997 variable O&M 250 ECU/t incl. labour on the electric melter: a whole product cost (sanity-check R366),modeller 2026-10-05
+tp-moore_2017_001-0005,Moore 2017 ATR capex 150 USD/kW: 10-20x below any whole hydrogen plant; the scope is not stated (sanity-check R492),modeller 2026-10-05
+tp-worrell_2015_001-0044,"Worrell 2015: site electricity divided by the sulphur throughput, a whole-refinery figure (sanity-check R509)",modeller 2026-10-05
+tp-van-geene_2024_001-0948,MIDDEN tc0383 base lube oil production: a whole lube plant mapped to hydroprocessing (sanity-check R521),modeller 2026-10-05
+tp-van-geene_2024_001-0949,MIDDEN tc0383 base lube oil production: emissions of a whole lube plant (sanity-check R522),modeller 2026-10-05
+tp-doe_2015_004-0098,"DOE 2015 hydrogen bandwidth: onsite process energy excluding the feedstock gas, not the SMR total (sanity-check R527)",modeller 2026-10-05
+tp-doe_2015_004-0099,"DOE 2015 hydrogen bandwidth, state of the art: onsite process energy excluding feedstock (sanity-check R527)",modeller 2026-10-05
+tp-etsap_2015_001-0001,"ETSAP I07 Table 4 total energy use of a whole pulp (or pulp and paper) mill, not the digester (sanity-check R579)",modeller 2026-10-05
+tp-etsap_2015_001-0003,ETSAP I07 whole-mill total energy use (sanity-check R579),modeller 2026-10-05
+tp-etsap_2015_001-0005,ETSAP I07 whole-mill total energy use (sanity-check R579),modeller 2026-10-05
+tp-etsap_2015_001-0007,ETSAP I07 whole-mill total energy use (sanity-check R579),modeller 2026-10-05
+tp-etsap_2013_007-0002,"ETSAP 2013 BLG investment 4,400 USD/t-yr: scope and product basis not stated, 15x the other example (sanity-check R597)",modeller 2026-10-05
+tp-larson_2006_001-0031,"Larson 2006 DME-A case: net electricity is near zero (0.2%), so the case is not an electric efficiency of the gasifier (sanity-check R598)",modeller 2026-10-05
+tp-bcs_2007_001-0062,"BCS 2007 Btu per ton of MATERIAL HANDLED (ore and waste), not per t concentrate (sanity-check R651)",modeller 2026-10-05
+tp-bcs_2007_001-0122,"BCS 2007 Btu per ton of material handled, not per t concentrate (sanity-check R651)",modeller 2026-10-05
+tp-bcs_2007_001-0191,"BCS 2007 Btu per ton of material handled, not per t concentrate (sanity-check R651)",modeller 2026-10-05
+tp-hekkert_1997_001-0003,"Hekkert 1997 lumber kiln 1,108 ECU/t-yr: 10-20x a kiln, probably the sawmill (sanity-check R662)",modeller 2026-10-05
+tp-hekkert_1997_001-0009,Hekkert 1997 lumber kiln 833 ECU/t-yr: as above (sanity-check R662),modeller 2026-10-05
+tp-nrcan_2007_001-0026,"NRCan 2007 blast furnace 473 kg CO2/t: a net intensity indicator with credits for exported BF gas and carbon in hot metal plus indirect electricity/oxygen; not the furnace direct-emissions scope (sanity-check round 3, blast-furnace share-to-capture)",modeller 2026-10-05
+tp-element-energy_2021_001-0352,"Element Energy 2021 flare-gas recovery natural gas -21.7 GJ/t CO2: gas recovered for sale versus the counterfactual, an output not a consumption; a negative SEC gave a negative combustion CO2 fill (sanity-check round 3)",modeller 2026-10-05

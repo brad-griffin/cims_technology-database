@@ -10,7 +10,7 @@ Target units, where pu is the archetype's product-unit:
 
   capex, opex-fixed                 2025_CAD per (pu/yr of capacity)
   opex-variable, opex-total         2025_CAD per pu
-  abatement-cost                    2025_CAD per t CO2-eq
+  abatement-cost                    2025_CAD per t CO2-eq (per t CH4 where the target is ch4)
   specific-energy-consumption       GJ per pu
   emissions-* (species in target)   t per pu
   capacity                          MW when pu is GJ, kt/yr when pu is t
@@ -82,6 +82,16 @@ PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
 CASE = re.compile(r"^\s*(?:\[([^\]]+)\]|UKERC ([A-Z]+-[A-Z0-9]+):)")
+HEAT_PUMP_SPLIT = {"heat-pump_industrial"}
+MVR = re.compile(r"\bMVR\b|\bTVR\b|vapou?r[- ]?recompress|recompress(ion|or)|open[- ]cycle|"
+                 r"thermo-?compress|steam compression", re.I)
+MVR_NOTE = ("  SPECIES: vapour-recompression (open-cycle heat pump); its COP is pooled apart from "
+            "the closed-cycle heat pumps (ruling 2026-10-05).")
+REFURB = re.compile(r"refurbish|rebuild interval|membrane (life|replacement)|re-?lining interval", re.I)
+# a lifetime in operating hours is a stack, lamp or membrane life, never the plant's
+# (sanity-check pass 2026-10-04, defect 4): it takes its own species
+HOURS_NOTE = ("  SPECIES: {sp} (a life in operating hours, not the plant's service life; "
+              "rule 2026-10-05).")
 
 
 def is_capture(a) -> bool:
@@ -222,6 +232,36 @@ def normalise(facts, examples, records, units) -> None:
             r["parameter"] = "share-to-capture"
             if SHARE_NOTE.strip() not in (r.get("note") or ""):
                 r["note"] = (r.get("note") or "") + SHARE_NOTE
+        if r["parameter"] == "share-to-capture" and not (r.get("target") or "").strip():
+            r["target"] = "co2"     # a share sent to capture is of CO2 (one row per host)
+    # UKERC's 'Specific emissions' column is the step's total direct emissions
+    # (fuel plus process), not combustion alone (ruling 2026-10-05; the sibling
+    # column 'Direct fuel related emissions' is the combustion value)
+    for r in facts:
+        if (r["parameter"] == "emissions-combustion"
+                and "UKERC column 'Specific emissions'" in (r.get("note") or "")):
+            r["parameter"] = "emissions-total"
+            r["note"] = (r.get("note") or "") + ("  PARAMETER: UKERC's 'Specific emissions' is the "
+                                                 "total, loaded as emissions-total (2026-10-05).")
+    # heat pumps: a vapour-recompression (open-cycle, MVR/TVR) example's COP is its
+    # own species, so the closed-cycle COP 2.5-4.5 is not pooled with COP 10-30
+    # (ruling 2026-10-05, sanity-check pass S09/S84)
+    for r in facts:
+        if (r.get("archetype") in HEAT_PUMP_SPLIT and r["parameter"] == "efficiency"
+                and not (r.get("target") or "").strip()):
+            txt = " ".join([r.get("example-id") or "", r.get("source-technology") or "",
+                            r.get("note") or ""])
+            if MVR.search(txt):
+                r["target"] = "vapour-recompression"
+                r["note"] = (r.get("note") or "") + MVR_NOTE
+    # a lifetime the source gives as a refurbishment, rebuild or membrane interval is
+    # a component's life, not the plant's (sanity-check pass R412, 2026-10-05)
+    for r in facts:
+        if (r["parameter"] == "lifetime" and not (r.get("target") or "").strip()
+                and REFURB.search(r.get("note") or "")):
+            r["target"] = "component"
+            r["note"] = (r.get("note") or "") + ("  SPECIES: component (a refurbishment or "
+                                                 "replacement interval, not the plant's life; 2026-10-05).")
     by_id = {r["record-id"]: r for r in facts}
     # an example, or one case of it (`case`: a leading [case] in the note, or
     # UKERC's row code), whose costs are the cost of adding something to a plant
@@ -334,6 +374,10 @@ def normalise(facts, examples, records, units) -> None:
         p = r["parameter"]
         pdef = records.parameters.get(p, {})
         tgt = target_unit(p, pu, pdef.get("unit-default", "") or r.get("unit", ""))
+        if p == "abatement-cost" and (r.get("target") or "").strip().lower() == "ch4":
+            # a cost per unit of methane abated stays per t CH4: no GWP is applied
+            # (ruling 2026-10-05; before, it was labelled per t CO2-eq unconverted)
+            tgt = f"{TARGET}/t-CH4"
         unit = (r.get("unit") or "").strip()
         exrow, flist = units.factors.for_row(a["archetype"], r["example-id"])
         exf = [f for f in flist if exrow and f["factor-id"] in split_list(exrow.get("factor-id", ""))]
@@ -526,6 +570,12 @@ def normalise(facts, examples, records, units) -> None:
                 cls.append("same-source" if cf else "assumption")
                 if not cf:
                     used.append("assume:continuous-operation")
+                if not (r.get("target") or "").strip():
+                    low = (r.get("note") or "").lower()
+                    sp = ("stack" if "stack" in low or a.get("family") in ("hydrogen", "power-generation")
+                          else "component")
+                    r["target-norm"] = sp
+                    r["note"] = (r.get("note") or "") + HOURS_NOTE.format(sp=sp)
             if route is None:
                 ext = (convert.extensive(unit, tgt, flist, alias, annual=p == "annual-output")
                        if p in EXTENSIVE
@@ -570,19 +620,28 @@ def normalise(facts, examples, records, units) -> None:
         how = heating.kind(p, unit, pu, r.get("capacity-basis") or "", per_product)
         if how:
             hv = heating.reported(r.get("note") or "")
-            r["heating-value"] = hv or "not stated"
-            if hv == "LHV":
+            # a source that reports on LHV unless it says otherwise (ruling 2026-10-05)
+            default = "" if hv else units.streams.default_basis(r.get("source-id"),
+                                                                 r.get("via-source-id"))
+            r["heating-value"] = hv or ("LHV (source default)" if default == "LHV" else "not stated")
+            if hv == "LHV" or default == "LHV":
                 h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit)
-                if h is None:
+                if h is None and hv == "LHV":
                     r["excluded"] = ("reported on a lower-heating-value basis; "
                                      "records/reference/heating-value-stream.csv names no fuel or "
                                      "product for this archetype to put it on HHV with")
                     continue
-                factor, offset = factor * h[0], offset * h[0]
-                if slip:
-                    slip /= h[0]
-                used += h[1]
-                note = (note + "; " if note else "") + "LHV -> HHV"
+                if h is None:
+                    # the source's default basis, but no stream known: pooled as
+                    # reported, and said so
+                    r["heating-value"] = "LHV? (source default, no stream)"
+                else:
+                    factor, offset = factor * h[0], offset * h[0]
+                    if slip:
+                        slip /= h[0]
+                    used += h[1]
+                    note = (note + "; " if note else "") + (
+                        "LHV -> HHV" if hv else "LHV (source default) -> HHV")
         if bf:
             # the source reports per another product (per t aluminium on an alumina
             # archetype): per-product numbers divide by it, capacities multiply

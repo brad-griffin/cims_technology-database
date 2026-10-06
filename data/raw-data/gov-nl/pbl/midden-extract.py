@@ -77,6 +77,46 @@ SUSPECT = {
 }
 
 
+# cards whose printed numbers carry a unit slip in the source, corrected here (re-read
+# 2026-10-05 against the card and its material balance; user ruling 2026-10-05):
+#   inputs     every input amount (energy and material) and the emissions are per
+#              TONNE of output entered as per kt: the material inputs are 1/1000 of
+#              any possible yield (1.05 kt PET per kt flakes printed 0.00105)
+#   capex/opex the cost scale printed in EUR (or kEUR) where the column is MEUR
+CARD_SCALE = {
+    "TC0484": {"inputs": 1000, "emissions": 1000,
+               "why": "PET tray waste printed 0.00105 kt per kt flakes at a stated 95% material "
+                      "efficiency (1.05 kt per kt); every input and the CO2 are 1000x low"},
+    "TC0487": {"inputs": 1000, "emissions": 1000,
+               "why": "PE+PP waste printed 0.00116 kt per kt naphtha (pyrolysis needs about 1.16); "
+                      "inputs and CO2 are 1000x low"},
+    "TC0488": {"inputs": 1000, "emissions": 1000,
+               "why": "RDF printed 0.00239 kt per kt methanol (Iaquaniello 2017: 2.39 t RDF per t); the "
+                      "natural-gas comment converts 2.87 t gas to '4.22 m3' (4,220 m3), so the gas is "
+                      "3.5 GJ per t methanol; inputs and CO2 are 1000x low"},
+    "TC0100": {"capex": 1e6,
+               "why": "capex printed 4e-06 MEUR per MWth (3e-06 to 7e-06): 4,000 EUR/kW (3,000-7,000) "
+                      "is the digester-CHP range and matches the card's O&M of 26 EUR/kW-yr; the "
+                      "entry is in EUR per kW in a MEUR per MW column"},
+    "TC0530": {"capex": 1000, "opex": 1000,
+               "why": "capex 0.000305 and O&M 1.1e-05 MEUR per MWth: 305 EUR/kW and 11 EUR/kW-yr "
+                      "(3.6%/yr) are an upgrader's range; the entries are in kEUR per MW"},
+}
+# cards whose printed O&M limits do not belong to the printed O&M (re-read 2026-10-05):
+# a factor the limits are divided by, or None to drop them
+OPEX_LIMIT_FIX = {
+    "TC0437": (1000, "limits printed 20.3-33.7 MEUR around 0.027 MEUR: the limits are in kEUR"),
+    "TC0436": (None, "limits 20.3-33.7 kEUR are TC0437's; this card's O&M is 2% of its own capex "
+                     "(0.00965 MEUR), so the limits are dropped"),
+    "TC0434": (None, "limits 0.00417-0.0146 MEUR do not bracket the printed 0.464 MEUR (5.5% of capex); "
+                     "the limits are dropped"),
+}
+# heat pumps and vapour recompression: the steam or vapour recompressed is the heat
+# source, not an energy input, so the COP is output over electricity (re-read
+# TC0315 2026-10-05: 31.5 TJ out / 14.3 TJ electricity, not / (27 steam + 14.3))
+HEAT_PUMP = re.compile(r"heat pump|mvr|recompression", re.I)
+
+
 def load_vocab():
     p = HERE.parents[2] / "harmonized" / "records" / "vocabulary" / "commodity.csv"
     return {r["commodity"]: r["commodity-class"] for r in csv.DictReader(open(p, encoding="utf-8"))}
@@ -236,12 +276,17 @@ def main():
             other.append([tid, name, "defect", "", "", ref, SUSPECT[tid.upper()] + "; no SEC, efficiency or per-GJ values derived"])
 
         # capex (new)
+        fix = CARD_SCALE.get(tid.upper(), {})
         cx, cu = num(r["investment_per_unit_of_capacity_new_amount"]), txt(r["investment_per_unit_of_capacity_new_unit"])
         cy = re.match(r"MEUR\s*(\d{4})", cu, re.I)
         if cx and cy:
             yr = cy.group(1)
             lo, hi = num(r["investment_per_unit_of_capacity_new_lower_limit"]), num(r["investment_per_unit_of_capacity_new_upper_limit"])
             com = txt(r["investment_per_unit_of_capacity_new_comment"])
+            if fix.get("capex"):
+                k_ = fix["capex"]
+                cx, lo, hi = cx * k_, (lo * k_ if lo else lo), (hi * k_ if hi else hi)
+                com = f"SOURCE UNIT CORRECTED x{k_:g} (2026-10-05): {fix['why']}. " + com
             b, bnote = basis(com, tid)
             if is_kt or is_mw:
                 unit = f"{yr}_EUR/t-per-yr" if is_kt else f"{yr}_EUR/kW"
@@ -263,6 +308,14 @@ def main():
             yr = oy.group(1)
             lo, hi = num(r[f"{k}_amount_lower_limit"]), num(r[f"{k}_amount_upper_limit"])
             com = txt(r[f"{k}_amount_comment"])
+            if tid.upper() in OPEX_LIMIT_FIX:
+                f_, why_ = OPEX_LIMIT_FIX[tid.upper()]
+                lo, hi = ((lo / f_ if lo else lo), (hi / f_ if hi else hi)) if f_ else (None, None)
+                com = f"O&M LIMITS CORRECTED (2026-10-05): {why_}. " + com
+            if fix.get("opex"):
+                k_ = fix["opex"]
+                ox, lo, hi = ox * k_, (lo * k_ if lo else lo), (hi * k_ if hi else hi)
+                com = f"SOURCE UNIT CORRECTED x{k_:g} (2026-10-05): {fix['why']}. " + com
             if is_kt or is_mw:
                 unit = f"{yr}_EUR/t-per-yr" if is_kt else f"{yr}_EUR/kW-yr"
                 capb = "product-output" if is_kt else ("electric-output" if capl == "mwe" else "thermal-output")
@@ -300,6 +353,10 @@ def main():
                 un = txt(r.get(f"{d}_{y}_unit", ""))
                 lo, hi = num(r.get(f"{d}_{y}_lower_limit")), num(r.get(f"{d}_{y}_upper_limit"))
                 com = txt(r.get(f"{d}_{y}_comment", ""))
+                if d == "input" and fix.get("inputs"):
+                    k_ = fix["inputs"]
+                    am, lo, hi = am * k_, (lo * k_ if lo else lo), (hi * k_ if hi else hi)
+                    com = f"SOURCE UNIT CORRECTED x{k_:g} (2026-10-05): {fix['why']}. " + com
                 io.append([tid, name, cap, d, nm, g(am), un, g(lo) if lo else "", g(hi) if hi else "",
                            txt(r.get(f"{d}_{y}_source", "")), com])
                 if d == "output" and nm.lower() == outn.lower():
@@ -314,7 +371,7 @@ def main():
                 if d == "input" and un in TJ_PER:
                     e_in += am * TJ_PER[un]
                     e_parts.append(f"{nm} {g(am)} {un}")
-                    if not AMBIENT.search(nm):
+                    if not (AMBIENT.search(nm) or (HEAT_PUMP.search(name) and re.search(r"steam|vapou?r", nm, re.I))):
                         e_eff += am * TJ_PER[un]
                         e_eff_parts.append(f"{nm} {g(am)} {un}")
                 if not ok:
@@ -374,6 +431,9 @@ def main():
                 continue
             eu = txt(r[f"{col}_unit"])
             com = txt(r[f"{col}_comment"])
+            if fix.get("emissions"):
+                ev = ev * fix["emissions"]
+                com = f"SOURCE UNIT CORRECTED x{fix['emissions']:g} (2026-10-05): {fix['why']}. " + com
             if is_kt and eu.lower() == "kt":
                 add(proc, tech, "emissions-total", "t/t", g(ev), target=sp, ref=ref,
                     note=f"direct fossil {sp.upper()} per tonne of capacity output (kt/kt). {com}"[:800])

@@ -2,8 +2,13 @@
 heating value (HHV, gross calorific value) basis (design.md s5, 2026-09-26).
 
 Most sources do not say which basis they use. A number whose basis the source
-does not state is read as HHV and marked `not stated` in `heating-value`; one the
-source states as HHV is used as it is. One the source states as LOWER heating
+does not state is read as HHV and marked `not stated` in `heating-value`, unless
+its source is one records/reference/source-heating-basis.csv lists as reporting
+on LHV by default (DEA catalogues, ETSAP briefs, EU BREFs, MIDDEN; ruling
+2026-10-05): then it is converted like a stated LHV and marked `LHV (source
+default)`, or, where no stream is known for the archetype, pooled as it is and
+marked `LHV? (source default, no stream)`. One the source states as HHV is used
+as it is. One the source states as LOWER heating
 value (LHV) is converted, using the ratio of the two heating values of the fuel
 going in and of the product coming out, as records/reference/
 heating-value-stream.csv names them for the archetype (the ratios are factors in
@@ -104,6 +109,21 @@ class Streams:
     def __init__(self, factors):
         self.rows = {r["archetype"]: r for r in read(REFERENCE / "heating-value-stream.csv")}
         self.factors = factors
+        self.defaults = [(r["source-pattern"].strip(), (r.get("default-basis") or "").strip().upper())
+                         for r in read(REFERENCE / "source-heating-basis.csv")
+                         if r.get("source-pattern", "").strip()]
+
+    def default_basis(self, *source_ids) -> str:
+        """The basis a source reports on when a row does not say: 'LHV', 'HHV' or ''.
+        A pattern ending in `_` is a prefix (etsap_), otherwise a whole source id."""
+        for sid in source_ids:
+            sid = (sid or "").strip()
+            if not sid:
+                continue
+            for pat, basis in self.defaults:
+                if (sid.startswith(pat) if pat.endswith("_") else sid == pat):
+                    return basis
+        return ""
 
     def _r(self, fid):
         if not fid:

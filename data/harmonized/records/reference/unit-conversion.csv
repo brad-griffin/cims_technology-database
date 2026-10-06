@@ -4,7 +4,7 @@ fraction/yr,%/yr,100,0,
 MJ/unit,GJ/unit,0.001,0,
 MMBtu,GJ,1.0551,0,HHV-neutral energy conversion
 MMBtu/hr,MW,0.29307,0,1 MMBtu/hr = 0.29307 MW
-Btu/kWh,GJ/GJ,0.29307,0,heat rate to energy ratio; kept for reference
+Btu/kWh,GJ/GJ,0.00029307,0,"heat rate to energy ratio: 1 Btu/kWh = 1.055056e-6 GJ / 0.0036 GJ (was 0.29307, 1000x too large, until 2026-10-05)"
 kW,MW,0.001,0,
 kWh,GJ,0.0036,0,
 degF,degC,0.5555556,-17.777778,"(F - 32) x 5/9, written as F x 5/9 - 17.7778"

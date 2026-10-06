@@ -46,6 +46,15 @@ def _cell(v):
         return v
 
 
+def _put(ws, r, j, v):
+    """Write a cell; a string beginning with `=` stays text (openpyxl would
+    otherwise store it as a formula, which Excel rejects on opening)."""
+    cell = ws.cell(r, j, v)
+    if isinstance(v, str) and v.startswith("="):
+        cell.data_type = "s"
+    return cell
+
+
 def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None,
                flags: dict | None = None, grades: dict | None = None) -> str:
     """`flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
@@ -111,7 +120,7 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
                 last_s = s
             for j, col in enumerate(cols, start=first):
                 val = _cell(row.get(col, ""))
-                cell = ws.cell(r, j, val)
+                cell = _put(ws, r, j, val)
                 cell.font = f_body
                 g = (grades or {}).get(name, {}).get((row.get("archetype"), col))
                 if g in GRADE_FILL:
@@ -130,8 +139,9 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
         ws.append(cols)
         for c in ws[1]:
             c.fill, c.font = TEAL, f_head
-        for row in rows:
-            ws.append([_cell(row.get(c, "")) for c in cols])
+        for i, row in enumerate(rows, start=2):
+            for j, c in enumerate(cols, start=1):
+                _put(ws, i, j, _cell(row.get(c, "")))
         ws.freeze_panes = "B2"
         for j, c in enumerate(cols, start=1):
             ws.column_dimensions[get_column_letter(j)].width = max(10, min(40, len(c) + 4))

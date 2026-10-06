@@ -33,9 +33,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (assembly, checks, currency, examples, extract, factoruse, facts,  # noqa: E402
-                      fill, hierarchy, normalise, records, reports, sources, summarise, views,
-                      wholeplant, workbook)
+from pipeline import (assembly, captureenergy, captureshare, carriers, checks, ukercsaving, currency, examples, extract,  # noqa: E402
+                      factoruse, facts, fill, hierarchy, normalise, records, reports, sources,
+                      summarise, views, wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
@@ -125,6 +125,11 @@ def main(argv) -> int:
     units = normalise.Units(factors)
     normalise.normalise(L.facts, L.examples, rec, units)
     normalise.normalise_flows(L.flows, rec, units, L.examples)
+    ce = captureenergy.apply(L.facts, L.examples, rec)
+    print(f"  capture energy on host plants: {ce.get('set aside', 0)} rows set aside, "
+          f"{ce.get('derived per t CO2', 0)} restated per t CO2 on capture archetypes")
+    us = ukercsaving.derive(L.facts, rec, summarise.summarise)
+    print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
     pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
     cc = Counter(r.get("conversion-class") or "as reported" for r in pooled)
     print("  pooled parameter rows by conversion class: "
@@ -133,6 +138,10 @@ def main(argv) -> int:
     psum = summarise.summarise(L.facts, rec, ("parameter", "target-norm"), L.examples)
     for r in psum:
         r["target"] = r.pop("target-norm")
+    cs = carriers.apply(psum, L.facts, rec)
+    print("  energy carriers: " + ", ".join(f"{k} {v}" for k, v in cs.items()))
+    sh = captureshare.apply(psum, rec, L.facts)
+    print("  share-to-capture: " + (", ".join(f"{k} {v}" for k, v in sh.items()) or "none derived"))
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
     print("fill")
     fst = fill.apply(psum, rec, normalise.target_unit, L.facts)
@@ -158,6 +167,13 @@ def main(argv) -> int:
           ["archetype", "example-id", "record-id", "parameter", "value", "unit", "cost-basis",
            "source-id", "via-source-id", "source-locator", "note"],
           sorted((r for r in L.facts if r.get("set-aside") == "ccs-add-on"),
+                 key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
+    # energy sources give on host plants with capture: the capture plant's, set
+    # aside and (where ccs-host-energy.csv maps it) restated per t CO2 captured
+    write(OUTPUT / "ccs-addon-energy.csv",
+          ["archetype", "example-id", "record-id", "parameter", "target", "value", "unit",
+           "value-norm", "unit-norm", "source-id", "via-source-id", "source-locator", "note"],
+          sorted((r for r in L.facts if r.get("set-aside") == captureenergy.SET_ASIDE),
                  key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     # the worklist for establishing efficiency factors later
     sec = {}

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>sanity-check-review-2026-10-04</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="sanity-check-review-2026-10-04_files/libs/clipboard/clipboard.min.js"></script>
+<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/popper.min.js"></script>
+<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/anchor.min.js"></script>
+<link href="sanity-check-review-2026-10-04_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="sanity-check-review-2026-10-04_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="sanity-check-pass-2026-10-04" class="level1">
+<h1>Sanity-check pass (2026-10-04)</h1>
+<p>Review of every pooled value in <code>data/harmonized/output/archetype-parameter.csv</code> (3,752 rows; 3,150 sourced, 540 estimated, 62 identity) across the 535 archetypes, against the build of 2026-10-04 06:12 (working tree on top of 2690970, including the other sessions’ uncommitted intakes). Three passes were run:</p>
+<ol type="1">
+<li>a statistical screen of the sourced rows — high/low ratio, where the central sits in its range, and per-parameter plausibility gates (efficiency, capacity factor, lifetime, construction time, zero or negative costs);</li>
+<li>a family-by-family comparison of every archetype’s values with the literature (IEA, ETSAP, DEA, NREL ATB, BREFs, LBNL/DOE bandwidth studies, engineering relations), run as seven parallel reviews over the per-family summaries;</li>
+<li>a disposition of the set-aside items S01–S70 in <code>docs/sanity-check-list.csv</code>.</li>
+</ol>
+<p>Findings are in <code>docs/sanity-check-review-2026-10-04.csv</code> (673 rows: 92 high, 258 medium, 323 low). The first 21 rows (R001–R021, <code>verified = yes</code>) were traced to the example rows and the pipeline; the rest (<code>verified = no</code>) come from the family reviews and were spot-checked, not individually traced. Nothing in the repository was changed by this pass except <code>docs/sanity-check-list.csv</code> (statuses and new rows S71–S88) and the two files named here.</p>
+<p>The short version: a handful of pipeline and loader defects, each small, produce most of the values that look absurd; the remaining problems are scope (whole-plant or whole-route numbers pooled into unit-process archetypes, savings pooled as absolutes, stack lives pooled as plant lives) rather than wrong digits. The centrals of the big, well-sourced archetypes (boilers, kilns, EAF, chlor-alkali, SMR, amine capture, electrolysis, lime, aluminium) are in range; the ranges around them are what carry the errors.</p>
+<section id="pipeline-and-record-defects-confirmed-fix-in-code-or-records-then-rebuild" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline-and-record-defects-confirmed-fix-in-code-or-records-then-rebuild">1. Pipeline and record defects (confirmed; fix in code or records, then rebuild)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Defect</th>
+<th>Where</th>
+<th>Effect</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><code>Btu/kWh -&gt; GJ/GJ</code> factor is 0.29307, 1000x too large</td>
+<td><code>records/reference/unit-conversion.csv</code> row 7 (“kept for reference”, but used)</td>
+<td>8 lemar_2001_001 heat rates pool at 2,100–4,360 GJ/GJ on the HRSG, recip-engine, fuel-cell and combined-cycle archetypes; HRSG natural-gas SEC central 3,040</td>
+<td>2.9307e-4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><code>MONEY</code> regex in <code>pipeline/convert.py</code> matches <code>2003_USD-cent</code> and <code>1995_USD-mill</code> as whole dollars</td>
+<td><code>convert.MONEY</code>, <code>MULT</code></td>
+<td>WADE 2003 c/kWh costs x100 (opex-total to 3,251 CAD/GJ, LCOE to 5,527); EIA 1996 mills/kWh x1000 (combined-cycle opex-variable high 374 CAD/GJ)</td>
+<td>add <code>cent</code> 1e-2 and <code>mill</code> 1e-3 to the regex alternatives and <code>MULT</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ICF 2015 <code>CAD/Mcf</code> methane costs converted per t CH4 but labelled <code>2025_CAD/t-CO2-eq</code></td>
+<td>normalise, <code>abatement-cost</code> with target <code>ch4</code> (32 rows, 5 methane archetypes)</td>
+<td>[ch4] abatement costs ~25x the [co2e] ones on the same archetype (-387 vs -6.4 CAD/t for blowdown recovery)</td>
+<td>apply the GWP used elsewhere in the build when the target is CH4 and the unit is per t CO2-eq, or keep the target and label the unit <code>2025_CAD/t-CH4</code></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Lifetimes in hours pooled into plant lifetime</td>
+<td>normalise, 32 rows (electrolyzer_low-temperature 20, SOEC, fuel-cell_chp, lighting, haul trucks, HRSG)</td>
+<td>fuel-cell_chp central 8.75 yr (low 0.23); electrolyzer low 0.57; SOEC low 2.3; the sibling-copy fill rule then inherits them (S10, S11)</td>
+<td>rule: a lifetime in <code>h</code>/<code>hours</code> always gets species <code>stack</code> (or <code>component</code> when the note says lamp, membrane, campaign, refurbishment, rebuild); same for the ‘refurbishment interval’ and ‘campaign’ rows in years</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>UKERC bucket SEC stored as an absolute (UKERC baseline x (1 - saving))</td>
+<td>UKERC loader, 50 bucket examples on 30 archetypes</td>
+<td>savings &gt;= 100% give negative or ~zero SEC (BOF gas recovery -0.61, heat pump -0.77, nitric acid -1.6, clinker substitution 0.00035 = S01); buckets off a different baseline land above the base archetype (S02, S03, S04, S05)</td>
+<td>store the bucket as a fraction saved and derive the modifier archetype’s SEC from the base archetype’s central at build time (identity grade); never pool the absolute</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>UKERC column ‘Specific emissions’ mapped to <code>emissions-combustion [co2e]</code></td>
+<td>UKERC loader, 65 rows</td>
+<td>the co2e “combustion” value is the total in every case (kiln_dry-precalciner 0.839 vs combustion co2 0.272; EAF 1.78 t/t)</td>
+<td>map it to <code>emissions-total [co2e]</code>; exclude IS-IS1 ‘Increasing EAF steelmaking route’ (a whole BF-BOF route value on the EAF)</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Product unit / product fields inconsistent</td>
+<td><code>records/archetype.csv</code>: autothermal-reformer <code>t</code> / <code>GJ</code>; steam-reformer_efficiency-moderate, motor_induction-standard, refinery_sugar-beet blank; chiller_vapour-compression carriers <code>oil</code>; flotation-cell_froth carriers <code>coal</code></td>
+<td>the ATR pools per-t-NH3, per-t-H2 and per-GJ examples (S08); the motor archetype has no unit</td>
+<td>set the two reformers to GJ H2 (siblings of steam-reformer_methane) and move the ammonia-plant examples to the ammonia archetypes; fill the blanks; fix the carriers</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Isolated loader slips</td>
+<td>dea_2026_006 boiler construction-time 25 yr (a lifetime); MIDDEN cards tc0484/tc0487/tc0488 (chemical recycling) and tc0431/tc0433 (olefins) ~x1000 low in derived SEC and emissions (capacity in t, not kt); MIDDEN digester-CHP capex 0.004 EUR/kW and biogas upgrader 0.305 EUR/kW (M EUR / k EUR); MIDDEN evaporator lifetime 1 yr; kiss_2017 solution-pump 0.1 kWh/t as a column SEC</td>
+<td>each one sets or distorts a central</td>
+<td>exclude or re-derive the named rows; add two loader checks: a derived SEC total may not be below the largest carrier SEC on the same card; a plant lifetime may not be below 5 years unless tagged component</td>
+</tr>
+</tbody>
+</table>
+<p>Rows 1, 2 and 6 are one-line fixes; rows 3–5 need a small rule each. Together they account for most of the 308 rows whose high/low ratio exceeds 10 (excluding <code>capacity</code>, where plant-size spread is expected).</p>
+</section>
+<section id="scope-defects-systematic-need-a-rule-or-a-per-example-ruling" class="level2">
+<h2 class="anchored" data-anchor-id="scope-defects-systematic-need-a-rule-or-a-per-example-ruling">2. Scope defects (systematic; need a rule or a per-example ruling)</h2>
+<p>These are not wrong digits; they are values that belong to a different thing than the archetype they sit on. Each was confirmed on at least one example in the pass; the counts are from the family reviews.</p>
+<ul>
+<li><strong>Whole-plant or whole-route values on unit-process archetypes.</strong> Steel: UKERC, Link 2008, Otto 2017 and IISI 1998 per-t-crude-steel route values on the blast-furnace, TGR-BF, DRI and CCS variants (TGR-BF total 20.5 GJ/t; DRI-CCS 15.8). Pulp: IEAGHG 2016, Francis 2002, Ekbom 2003 per-ADt values on the per-t-black-liquor-solids boilers and gasifier (black liquor 21–35 GJ/t BLS, above the ~14 GJ/t HHV of the solids) and on the lime kiln (1.2 GJ/t CaO, below the 3.18 GJ/t calcination enthalpy); whole-mill capex on the digester (3,869 CAD/t-yr), press section, wet end, debarker and lumber kiln. Non-ferrous: cusano 2017 smelter capex on electrorefining, converting and flash smelting; Gielen 1997 per-t-Al chain energy on the Bayer digester (20.4 GJ/t) and the prebaked cell (23 GJ/t fuel). Refining: MIDDEN whole-refinery electrification on direct-heater_electrified-crude (3.12 GJ/t); whole-refinery and per-t-H2 outliers in hydroprocessing (30.7 GJ/t; 1.61 t/t). Food: Rehfeldt 2018 per-t-sugar on the per-t-beet refinery. Chemicals: Agora 2021 per-t-steel values on reactor_steel-offgas-chemicals (per t CO2); Boulamanti 2017 plant-level values on the distillation columns. The fix is per example (a <code>ratio</code> conversion factor where the source gives the ratio, exclusion otherwise); the per-ADt -&gt; per-t-BLS case could be a named factor since three sources need it.</li>
+<li><strong>Capture energy and cost on the host-with-capture archetypes.</strong> The <code>_ccs-diffuse</code> and <code>_ccs-concentrated</code> host archetypes (cement, lime, BF, DRI, recovery boiler, SMR) carry the reboiler steam and compression electricity (cement 3.35 GJ/t steam; BF 1.14; recovery boiler 5.9) that the descriptions assign to the capture-service archetypes. Costs are already set aside (S68); energy should follow the same rule, or the description should be changed to whole-route.</li>
+<li><strong>MIDDEN residual emissions on CCS variants near zero</strong> (TGR-BF 0.049, DRI-CCS 0.028, electrowinning 0.012 t/t) and, being top-ranked, they set the central; share-to-capture (90%) contradicts the captured tonnes (35–50%). Treat MIDDEN <code>emissions-total</code> on CCS archetypes as unusable until its scope is read off the cards.</li>
+<li><strong>Carrier sub-shares pooled as independent populations.</strong> <code>[natural-gas]</code>, <code>[fuel]</code>, <code>[by-product-gas]</code>, <code>[coke-oven-gas]</code> and the untagged total are each the median of a different example set, so the carriers sum to 1.5–3x the total in the coke oven, BF, cement kilns and glass furnaces, and the total sometimes falls below one carrier (steam-reformer_methane total 0.651 &lt; natural-gas 1.23). This is the design (one median per target) rather than an error, but a model that sums carriers over-counts fuel. Either publish a consistency flag per archetype (sum of carriers vs total) or derive the total from the carriers of the top-ranked example only.</li>
+<li><strong>Efficiency-modifier archetypes above their base.</strong> Because the <code>_efficiency-moderate/strong</code> buckets pool absolute post-measure levels from sources with other baselines (defect 5), the ladders invert in coke oven, BF, paper dryer, bakery oven, spray dryer, ceramic kiln, cracker and reformer. They also carry whole-plant capex (kiln_dry-precalciner_efficiency-moderate 857 CAD/t-yr = 1.7x a new kiln line; cracker efficiency-moderate 1,207; ammonia efficiency-strong 839 = baseline). Deriving the modifiers from the base archetype (saving fraction; incremental cost) fixes both.</li>
+<li><strong>LHV/HHV not applied on some European sources.</strong> Boiler efficiencies to 110%, CHP totals to 106%, CCGT to 60% are LHV figures on an HHV database; the <code>cf-hhv-lhv-*</code> factors exist but are not applied where the source does not state a basis. A per-source default basis (DEA, ETSAP, BREF, MIDDEN = LHV unless stated) would remove a +5–10 point bias on efficiency and the matching bias on SEC.</li>
+<li><strong>Heat pumps pool closed-cycle and open-cycle (MVR).</strong> heat-pump_industrial efficiency 76–3,000% (n=129), central 350; distillation-column_heat-pumped 110–1,145%. The central is a closed-cycle COP, the range is not. A species (closed / vapour-recompression) would let the model see both.</li>
+<li><strong>Stack, membrane, campaign and measure-horizon lives in plant lifetime</strong> (defect 4 plus MIDDEN 1-, 5- and 10-year horizons; glass campaign lives 2–7 yr; aluminium pot lives 4–6 yr; LDAR 1.5 yr). The sibling-copy fill rule then spreads them.</li>
+<li><strong>Variable-output capex on two bases.</strong> Wind 29 vs 178 CAD/GJ-yr is the same turbine per rated vs per delivered output; PV+battery, solar collector and CSP are affected; thermal-storage_electric capex per GJ of storage vs per GJ delivered. The <code>capacity-factor</code> scaling in normalise applies only where the source gives one.</li>
+<li><strong>Emission factors on an input basis in output fields.</strong> EIA 2024 fuel factors per GJ fuel (0.050 t/GJ) sit on combined-cycle and simple-cycle beside per-GJ-electricity values; CHP factors per GJ electricity without heat credit; steam-turbine_condensing 0.55 t/GJ is a steelworks plant burning blast-furnace gas (Pardo &amp; Moya 2013), not a general factor. Deriving combustion CO2 from SEC x carrier factor (the identity rule already exists) and using the sourced value only as a check would be more consistent.</li>
+</ul>
+</section>
+<section id="disposition-of-s01s70" class="level2">
+<h2 class="anchored" data-anchor-id="disposition-of-s01s70">3. Disposition of S01–S70</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>finding</th>
+<th>status set</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S01</td>
+<td>UKERC C-CS1 bucket with a 100% saving (defect 5); exclude; the DOE 2017 2.9 GJ/t stands</td>
+<td>reviewed: exclude</td>
+</tr>
+<tr class="even">
+<td>S02–S05</td>
+<td>buckets pooled as absolutes off UKERC baselines (defect 5); S05’s 0.548 GJ/GJ is DECC CH-MC2 ‘standard turbine generator’</td>
+<td>reviewed: resolve by defect 5</td>
+</tr>
+<tr class="odd">
+<td>S06</td>
+<td>record error; carriers should read electricity</td>
+<td>reviewed: fix record</td>
+</tr>
+<tr class="even">
+<td>S07</td>
+<td>the archetype pools DOE 2015 whole-product SOA intensities (12.3, 2.3, 6.6 GJ/t) and Boulamanti per-t-benzene steam with one UKERC bucket; none is a column SEC</td>
+<td>reviewed: re-scope examples</td>
+</tr>
+<tr class="odd">
+<td>S08</td>
+<td>confirmed; product-unit <code>t</code>, product <code>GJ</code>; set to GJ H2 and move the ammonia examples (defect 7)</td>
+<td>reviewed: fix record and re-base</td>
+</tr>
+<tr class="even">
+<td>S09</td>
+<td>MIDDEN 76% is a fraction or part-load value: exclude; the COP 12–15 rows are MVR: species split</td>
+<td>reviewed: exclude one, split species</td>
+</tr>
+<tr class="odd">
+<td>S10, S11</td>
+<td>the sourced 25 years are right; the sibling estimates (5, 6.5) are contaminated by stack and measure-horizon lives (defect 4); nothing to change on the sourced rows</td>
+<td>reviewed: resolve by defect 4</td>
+</tr>
+<tr class="even">
+<td>S12</td>
+<td>coke-oven 6.54 still ~50% above the 3.7–4.5 GJ/t process energy (a second example likely counts feedstock or primary electricity); sinter 1.54, BOF 0.18 t/t and BF coal 4.7 GJ/t are in range</td>
+<td>reviewed: coke oven open, others accepted</td>
+</tr>
+<tr class="odd">
+<td>S13</td>
+<td>Rouwenhorst 13–14 GJ/t electricity is out of scope for a loop fed with H2 (Armijo-Philibert 3.2, DEA 1.2); oxygen-delignification steam 0.63 GJ/t is in range</td>
+<td>reviewed: exclude rouwenhorst, accept O2 delig</td>
+</tr>
+<tr class="even">
+<td>S14</td>
+<td>DEA 0.011 is 0.2% of capex (unit slip suspected); MIDDEN 1.52 is 2% of an already-high capex; the Element Energy pair (0.31–0.36) is in range; the median of four is acceptable</td>
+<td>reviewed: accept median, re-check DEA</td>
+</tr>
+<tr class="odd">
+<td>S15</td>
+<td>kiss_2017 rows are per t feed (0.54 MW over 120 t/h) and a 1 kW solution pump; only 0.14 kWh/kg product is a product-basis SEC</td>
+<td>reviewed: exclude two rows</td>
+</tr>
+<tr class="even">
+<td>S16</td>
+<td>regenerative furnace [natural-gas] 7.27 vs [fuel] 5.03 is the sub-share pooling issue (section 2), not a merge error</td>
+<td>reviewed: resolve by carrier rule</td>
+</tr>
+<tr class="odd">
+<td>S17</td>
+<td>urea totals 2.7 vs 2.8 GJ/t agree; the 5.5 GJ/t claim was on steam alone</td>
+<td>reviewed: accepted</td>
+</tr>
+<tr class="even">
+<td>S18</td>
+<td>the per-t-food heat-pump rows are already excluded in the build</td>
+<td>closed</td>
+</tr>
+<tr class="odd">
+<td>S19</td>
+<td>no per-m3 Claus rows are pooled; one electricity example at 47.6 GJ/t S (x300) needs checking</td>
+<td>reviewed: one outlier open</td>
+</tr>
+<tr class="even">
+<td>S20–S67</td>
+<td>host-naming decisions, unchanged; see the note under section 4</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>S68</td>
+<td>unchanged; note that capture energy on hosts should follow the same ruling (section 2)</td>
+<td>open</td>
+</tr>
+<tr class="even">
+<td>S69</td>
+<td>unchanged; a <code>collection-efficiency</code> parameter (target ch4) would resolve it</td>
+<td>open</td>
+</tr>
+<tr class="odd">
+<td>S70</td>
+<td>confirmed: LCOH x COP = 41 USD/MWh in every cell, electricity cost only; exclude the six rtc_2022_001 cost-levelized rows</td>
+<td>reviewed: exclude</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="family-highlights-from-the-comparison-pass" class="level2">
+<h2 class="anchored" data-anchor-id="family-highlights-from-the-comparison-pass">4. Family highlights from the comparison pass</h2>
+<p>Values that anchor the database and check out: boiler and CHP capex and efficiencies at the centrals; kiln_dry-precalciner fuel 3.43 GJ/t, process 0.525 and total 0.83 t/t clinker; lime kilns (PFR 3.75, preheater 5.4, long rotary 6.6 GJ/t; process CO2 0.785 and 0.913 t/t exact); prebaked 48 and Soderberg 61 GJ/t Al; chlor-alkali electricity by cell type; SMR ammonia 32.6 GJ/t and 1.93 t CO2/t; e-ammonia 35.5 GJ/t; CO2-to-methanol hydrogen 27.2 GJ/t; amine capture 3.5–4.5 GJ/t and 350–470 CAD per t/yr; N2O factors for adipic and nitric acid; refinery unit SEC centrals; methane-measure capex at the Natural Gas STAR partner level.</p>
+<p>Per family, the issues that matter most for a model (full rows in the CSV):</p>
+<ul>
+<li><strong>Heat supply, power, drives.</strong> The Btu/kWh and cent/mill defects; UK measure sources filed as SEC and emission factors; motors carry whole-system efficiencies (pump 40%, fan 40%, compressed air 6.4%) so motor SEC reads 2.5 GJ/GJ; wind and solar capex on two bases; thermal-storage_electric capex 3.5 CAD/GJ-yr looks 10–25x low; DEA 2026 construction times of 0.001–0.04 yr and solar O&amp;M 0.0039 CAD/GJ-yr look like unit slips.</li>
+<li><strong>Capture, hydrogen, biofuels.</strong> Johansson 2012 per-t-product emissions on capture-unit_amine (captured 1.28 t/t, combustion 1.5, co2e -0.76); the capture chain’s abatement and levelized costs on compressor_co2-dehydration; biofuel product unit “t L or t” unresolved with per-litre values leaked into per-tonne fields (molecular-sieve electricity 2.4e-5 GJ/t); methane-pyrolysis opex-fixed central 0.042 CAD/GJ-yr (x100 low); electrolyzer capex central (~1,000 USD/kW) is a 2030 vintage pooled with current pilots.</li>
+<li><strong>Iron and steel.</strong> Coke-oven SEC family (feedstock energy, three gas labels for one underfiring duty); route values on unit archetypes; Agora steel-offgas per t steel; MIDDEN CCS residuals; Energetics 2000 whole-shop allocations setting BOF gas, ingot electricity and ladle-furnace centrals; induction reheating 1.8 GJ/t at 85% efficiency delivers twice the enthalpy of steel at 1,200 degC.</li>
+<li><strong>Cement, minerals, non-ferrous.</strong> co2e = total (defect 6); carrier sub-shares; measure archetypes with whole-plant costs; ball mill capex 444 (to 893) vs VRM 45; Gielen 1997 per-t-Al; glass furnace opex-variable 699 CAD/t (a product cost); kiln_lime_ccs-diffuse reduction potential 9% vs 90% capture; furnace_homogenizing 5.8 GJ/t (0.5 is right); campaign and pot lives in plant lifetime.</li>
+<li><strong>Chemicals.</strong> MIDDEN x1000 cards; per-t bases (t NH3 vs t H2; t Cl2 vs t product; t ethylene vs t HVC); feedstock vs process energy pooled under the untagged SEC (syngas-methanol 11.4 vs 36.5); electrified routes with and without electrolysis in one electricity target; co2e companions not derived from the N2O factors; export-steam sign conventions mixed.</li>
+<li><strong>Refining, oil and gas.</strong> The two hydrogen archetypes on the wrong unit; [ch4] abatement costs (defect 3); compressor_instrument-air priced per m3 CH4 avoided against a throughput capacity (a 203 M CAD system); pump_plunger-lift capacity 0.37 t CH4/yr per well (30–50x low, inflating capex to 45,709 CAD/t-yr against its own 66 CAD/t CO2e abatement cost); turboexpander fuel 879–1,465 GJ/GJ (x1000); 24 of 73 archetypes have no sourced values.</li>
+<li><strong>Pulp, food, mining, other.</strong> Per-ADt values on BLS archetypes; whole-mill capex on unit processes; inverted efficiency ladders; flotation 0.13 kWh/t concentrate (100–1,000x low) and ventilation 1.5 kWh/t ore; sugar beet per t sugar; evaporator and dryer product units “t water evaporated or t product” ambiguous; lumber “t or m3”.</li>
+</ul>
+<p>On S20–S67 (host plants for incremental costs), the pass did not rule; for the record, the obvious pairings are: caster_continuous, electric-arc-furnace, electrolysis-cell_* (chlor-alkali, prebaked, soderberg, inert-anode, oxygen-depolarized), kiln_dry-precalciner, furnace_glass-regenerative, reactor_nitric-acid, reactor_catalytic-reforming, reactor_hydroprocessing, steam-cracker_fired-tubular, smelting-vessel_two-stage, digester_continuous-kraft and reactor_oxygen-delignification are themselves whole plants whose set-aside rows are retrofit measures priced on that same plant (host = the archetype itself); binder_blended-cement and binder_calcined-clay take kiln_dry-precalciner; heat-recovery-unit_* , fan_optimization, pump_optimization, compressor_air-system-management, press_<em>, pulper_refiner-low-energy, paper-machine_waterless, preheater_ladle and thermal-storage_heat-charged are add-ons whose incremental cost is the right cost (confirm none); gasifier_</em> cost-levelized rows are per GJ of product and need no host.</p>
+</section>
+<section id="suggested-order" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-order">5. Suggested order</h2>
+<ol type="1">
+<li>Fix defects 1, 2, 6 and 7 (one line each) and rebuild; re-run the ratio screen to confirm the CHP, WADE, EIA 1996 and co2e rows move.</li>
+<li>Add the three rules (defects 3, 4, 5) and the two loader checks (defect 8).</li>
+<li>Apply the per-example exclusions in the CSV marked high and <code>verified = yes</code>, then the agent-flagged highs after a look at each example (about 90 rows; most are a single <code>excluded</code> note in <code>records/source-example.csv</code> or <code>example-conversion.csv</code>).</li>
+<li>Decide the three scope rules that need a ruling: capture energy on host archetypes (follow S68), carrier sub-shares vs total (publish a consistency flag or derive the total), and the LHV default per source.</li>
+<li>Re-run this screen; the remaining mediums and lows are a per-family clean-up that can ride along with the fill-methods work.</li>
+</ol>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

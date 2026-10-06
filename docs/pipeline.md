@@ -26,7 +26,11 @@ gate a commit.
 | 5c | assembly | `pipeline/assembly.py` | Sums one source's component costs into a whole-plant cost as listed in `records/reference/whole-plant-assembly.csv`, as a derived row (`tp-<source>-aNNN`). Stops the build on components from another source, another currency-year or an unreconciled unit. |
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py`, `pipeline/heating.py`, `pipeline/bridge.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. LHV numbers go to HHV (`heating-value-stream.csv`); numbers per unit of input go per GJ of output by the efficiency bridge (`efficiency-bridge.csv`). Each row records its `conversion-class` and `conversion-factors`. |
+| 7b | capture energy | `pipeline/captureenergy.py` | Sets aside the capture plant's energy that sources state on host-with-capture archetypes (`output/ccs-addon-energy.csv`) and, where `records/reference/ccs-host-energy.csv` names the capture archetype, restates it per t CO2 captured on a derived example `<host example>|capture`. |
+| 7c | UKERC savings | `pipeline/ukercsaving.py` | Sets aside UKERC efficiency-bucket SECs and derives each variant's SEC from its base archetype's pooled total and the bucket's median saving. |
 | 8 | summarise | `pipeline/summarise.py` | One value set per archetype and parameter: central, low, high, n. |
+| 8a | carriers | `pipeline/carriers.py` | One consistent energy split per archetype: the carriers of specific-energy-consumption are the split example's shares of the pooled total; archetypes with carriers but no total get one. |
+| 8a' | share to capture | `pipeline/captureshare.py` | On hosts with capture, derives the share of the host's CO2 sent to capture from CO2 captured, the capture plant's rate and the host's CO2 (same example, else the base archetype's total). |
 | 8b | fill | `pipeline/fill.py` | Grades every summary `sourced`, then writes graded values (identity, estimated, guess) into empty cells by the rules in `records/fill/fill-rule.csv`, the hosts in `records/fill/host-archetype.csv` and the judgements in `records/fill/fill-judgement.csv`. Never overwrites a sourced value. |
 | 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `cims_hierarchy.csv`, `cims_hierarchy_technology.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |
@@ -43,7 +47,7 @@ gate a commit.
 | `records/hierarchy-annotation.csv` | annotation group of hierarchy paths | `annotation` |
 | `records/cims_hierarchy.csv` | hierarchy node (the CIMS snapshot) | `branch` |
 | `records/vocabulary/*.csv` | term: equipment, discriminator, modifier, carrier, the other lists, parameter, commodity | the term |
-| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype, the efficiency-bridge review | |
+| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype and the sources' default basis (`source-heating-basis.csv`), the efficiency-bridge review, rows ruled out (`excluded-row.csv`), capture energy on hosts (`ccs-host-energy.csv`) | |
 | `records/fill/fill-rule.csv` | fill rule: grade, method, scope, formula, rationale, status | `rule-id` |
 | `records/fill/host-archetype.csv` | archetype with incremental costs, or a host plant with capture, and the host plant whose cost it takes | `archetype` |
 | `records/fill/fill-judgement.csv` | a guessed value: central within low-high, rationale, author | `archetype`, `parameter`, `target` |
@@ -63,6 +67,7 @@ gate a commit.
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
 | `ccs-addon-cost.csv` | Costs sources give on host plants with capture: capture cost, set aside to move to a co2-capture archetype. |
+| `ccs-addon-energy.csv` | Energy sources give on host plants with capture: the capture plant's, set aside; the mapped rows are restated per t CO2 on the capture archetypes. |
 | `set-aside-efficiency.csv` | UKERC numbers per tonne of a host plant's product: `needs-efficiency` (not yet reviewed for the bridge) or `not-bridged` (reviewed; the reason is in `excluded`), with each example's fuel use per tonne. |
 | `fill-backtest.csv` | Each sibling rule run on cells that have a sourced value: the estimate, its range, and whether the sourced value falls inside. |
 | `conversion-factor-use.csv` | Each conversion factor, pooled efficiency and assumption, with its class and the pooled rows, examples and archetypes that rest on it. |

@@ -109,9 +109,16 @@ def m_fuel_emission_factor(rule, a, have, ctx):
     if (p, t) in have:
         return []
     secs = {k[1]: v for k, v in have.items() if k[0] == "specific-energy-consumption" and k[1]}
+    if "fuel" in secs:
+        # `fuel` is known by fuel only where named fuels are its split (pipeline/carriers.py,
+        # 2026-10-05); then the carbon comes from that split alone
+        split = {c: r for c, r in secs.items() if "of fuel, split from" in (r.get("central-from") or "")}
+        if not split:
+            return []                       # an unnamed fuel: the carbon cannot be known
+        secs = split
     fos = {c: r for c, r in secs.items() if c in FOSSIL}
-    if not fos or "fuel" in secs:          # an unnamed fuel: the carbon cannot be known
-        return []
+    if not fos or any((fnum(r.get("central")) or 0) < 0 for r in fos.values()):
+        return []   # a negative carrier is fuel saved or recovered, not burned
     c = lo = hi = 0.0
     ins, grades, srcs, ext = [], [], [], []
     for carrier, r in sorted(fos.items()):

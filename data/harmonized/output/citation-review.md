@@ -39,13 +39,13 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | source | rows | correction |
 |---|---:|---|
 | MIDDEN database v0.4a | 2510 | confirmed against the held document 2026-09-29 |
-| UKERC 2013 | 1344 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
+| UKERC 2013 | 1342 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson 2014 | 658 | confirmed against the held document 2026-10-02 |
-| Gielen 1997 | 608 | confirmed against the held document 2026-10-02 |
+| Gielen 1997 | 610 | confirmed against the held document 2026-10-02 |
 | Joosten 1998 | 498 | confirmed against the held document 2026-10-03 |
 | Element Energy 2021 (N-ZIP) | 466 | confirmed against the held document 2026-10-03 |
 | DEA 2026 renewable fuels | 452 | confirmed against the held document 2026-09-29 |
-| CT 2011 | 434 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
+| CT 2011 | 438 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
 | NREL ATB 2025 | 420 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017-TR8 | 330 | confirmed against the held document 2026-10-02 |
 | National Renewable Energy Laboratory 2018 | 298 | confirmed against the held document 2026-10-03 |
@@ -57,8 +57,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Martin 2000 | 235 | confirmed against the held document 2026-10-02 |
 | Lazard 2021 | 234 | confirmed against the held document 2026-10-02 |
 | Daniels 2002 | 230 | confirmed against the held document 2026-10-03 |
+| CT 2010a | 227 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
 | Ramsden 2009 | 224 | confirmed against the held document 2026-10-03 |
-| CT 2010a | 220 | the CTG034 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 218 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
 | Jacobs Greenhouse Gas 2006 | 200 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017-02 | 199 | confirmed against the held document 2026-10-02 |
@@ -73,16 +73,16 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ren 2009 | 157 | confirmed against the held document 2026-10-03 |
 | Link 2008 | 152 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | NREL 2026 (H2A-Lite) | 141 | confirmed against the held document 2026-10-03 |
+| US 2012 | 138 | confirmed against the held document 2026-09-29 |
 | DEA 2024 CCTS | 137 | confirmed against the held document 2026-09-29 |
 | Sezgen 1995 | 137 | confirmed against the held document 2026-10-02 |
+| ECRA 2009 | 136 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
 | Hekkert 1997 | 136 | confirmed against the held document 2026-10-03 |
-| ECRA 2009 | 135 | the landing page now serves the 2017 update, which states it revises papers originally developed in 2009. Absorbed the duplicate short form 'ECRA 2009a' on 2026-08-29 |
 | IEAGHG 2018 | 135 | confirmed against the held document 2026-09-29 |
+| IISI 1998 | 135 | WorldCat OCLC 43244655 |
 | Argonne Venting and Flaring Research Team 2017 | 133 | confirmed against the held document 2026-10-03 |
 | Gielen 1997 | 133 | confirmed against the held document 2026-10-03 |
 | ICF International 2015 | 133 | confirmed against the held document 2026-10-02 |
-| IISI 1998 | 131 | WorldCat OCLC 43244655 |
-| US 2012 | 129 | confirmed against the held document 2026-09-29 |
 | Dunsky Energy + Climate Advisors 2023 | 126 | confirmed against the held document 2026-10-03 |
 | IEAGHG 2008 | 124 | confirmed against the held document 2026-10-03 |
 | Saw 2023 | 124 | confirmed against the held document 2026-10-02 |
@@ -178,10 +178,10 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Worrell 2000 | 39 | confirmed against the held document 2026-10-02 |
 | Millington 2017 | 38 | confirmed against the held document 2026-10-02 |
 | IPCC 2022 | 38 | full coordinating-lead-author and lead-author list confirmed on the IPCC chapter page |
+| MPA 2011 | 38 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
 | Plaza 2020 | 38 | confirmed against the held document 2026-10-02 |
 | WSP/DNV GL 2015 pulp and paper | 38 | confirmed against the held document 2026-10-02 |
 | Hasanbeigi 2013 | 37 | confirmed against the held document 2026-09-29 |
-| MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
 | Worrell 2010 | 37 | confirmed against the held document 2026-09-29 |
 | Deloitte 2022 | 36 | confirmed against the held document 2026-10-02 |
 | Keith 2018 | 36 | confirmed against the held document 2026-10-02 |
@@ -191,7 +191,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Simbolotti, G. | 34 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Mueller 2013 | 34 | confirmed against the held document 2026-10-02 |
 | Natural Resources Canada 2005 (open-pit) | 34 | confirmed against the held document 2026-10-03 |
-| Collodi 2010 | 33 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
 | Simbolotti, G. | 33 | the PDF filename indicates E14, October 2010; the Simbolotti attribution is unverified |
 | National Energy Technology Laboratory | 33 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
 | Rissman and Gimon 2023 | 33 | confirmed against the held document 2026-09-29 |
@@ -200,13 +199,14 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Hedman 2008 | 32 | confirmed against the held document 2026-10-02 |
 | International Energy Agency | 32 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
 | Beddows & Company / Hatch Management 2000 | 32 | confirmed against the held document 2026-10-02 |
-| Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Tao 2017 | 32 | confirmed against the held document 2026-10-02 |
+| Collodi 2010 | 31 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
 | U.S. Environmental Protection Agency 2023 | 31 | confirmed against the held document 2026-10-02 |
 | Natural Resources Canada 2005 | 31 | confirmed against the held document 2026-10-02 |
 | U.S. Environmental Protection Agency 2001 | 30 | confirmed against the held document 2026-10-02 |
 | ETSAP R04 | 30 | confirmed against the held document 2026-10-03 |
 | Kong 2016 | 30 | confirmed against the held document 2026-09-29 |
+| Premkumar and Rangaiah 2009 | 30 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Ren 2006 | 30 | confirmed against the held document 2026-09-29 |
 | Abou-Jaoude 2024 | 29 | confirmed against the held document 2026-10-02 |
 | Birat et al 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
@@ -413,7 +413,7 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 | source | rows | why |
 |---|---:|---|
 | Bataille 2017 | 342 | no public record of this database release found; held locally, so the copy in hand is the authority |
-| CT 2010b | 92 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
+| CT 2010b | 93 | CTG033 not found; sibling codes CTG034 and CTG059 are confirmed, so the number is plausible but unverified |
 | IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
 | Martin 2000 (pulp and paper) | 34 | identified 2026-10-03 from the UKERC Paper sheet citation; document not held |
