@@ -1,0 +1,30 @@
+process,technology,item,value,unit,reference,note
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 1 from raw H2 / shifted syngas (PSA inlet) (Sect. 4, Table 3)",steam-reformer_methane_ccs-concentrated,investment per unit hydrogen capacity,300.0,2010_EUR/(Nm3/h H2),"p.42, Table 3","45 MM EUR / 150,000 Nm3/h; incremental capture cost. PRICE YEAR NOT STATED; publication year 2010 used (paper refers to carbon prices in the last quarter of 2009)."
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 1 from raw H2 / shifted syngas (PSA inlet) (Sect. 4, Table 3)",steam-reformer_methane_ccs-concentrated,incremental steam per t H2,7.94,t/t H2,"p.42, Table 3",+107 t/h / 13.482 t/h H2 (density not printed).
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 1 from raw H2 / shifted syngas (PSA inlet) (Sect. 4, Table 3)",steam-reformer_methane_ccs-concentrated,incremental power per t H2,630.5,kWh/t H2,"p.42, Table 3",+8.5 MW / 13.482 t/h H2.
+"Case study: amine CO2 capture 3 on reformer flue gas of a 150,000 Nm3/h SMR, incl. compression to 150 barg (Sect. 4, Table 3)",capture-unit_amine,natural gas consumption change,unchanged,,"p.42, Table 3",
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 3 from reformer flue gas (Sect. 4, Table 3)",steam-reformer_methane_ccs-diffuse,investment per unit hydrogen capacity,1113.3,2010_EUR/(Nm3/h H2),"p.42, Table 3","167 MM EUR / 150,000 Nm3/h; incremental capture cost. PRICE YEAR NOT STATED; publication year 2010 used (paper refers to carbon prices in the last quarter of 2009)."
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 3 from reformer flue gas (Sect. 4, Table 3)",steam-reformer_methane_ccs-diffuse,incremental steam per t H2,10.53,t/t H2,"p.42, Table 3",+142 t/h / 13.482 t/h H2 (density not printed).
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 3 from reformer flue gas (Sect. 4, Table 3)",steam-reformer_methane_ccs-diffuse,incremental power per t H2,1186.8,kWh/t H2,"p.42, Table 3",+16 MW / 13.482 t/h H2.
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 1 from raw H2 / shifted syngas (PSA inlet) (Sect. 4, Table 3)",steam-reformer_methane_ccs-concentrated,incremental natural gas per t H2,-9.006,GJ/t H2,"p.42, Table 3",-29 Gcal/h x 4.1868 / 13.482 t/h H2; heating-value basis not stated.
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,Raw H2 (PSA inlet) CO2 concentration,15.0,% mol,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,Raw H2 CO2 flow,1000,kmol/h,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,Raw H2 CO2 partial pressure,3.4,bara,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,PSA tail gas CO2 concentration,45.1,% mol,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,PSA tail gas CO2 flow,1000,kmol/h,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,PSA tail gas CO2 partial pressure,0.6,bara,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,SR flue gas CO2 concentration,19.0,% mol,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,SR flue gas CO2 flow,1850,kmol/h,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,SR flue gas CO2 partial pressure,0.2,bara,"p.39, Table 1","100,000 Nm3/h H2 plant"
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,"overall CO2 removal, capture from PSA tail gas (90% of stream)",55,%,"p.38-39, Sect. 2, Table 2",
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,"overall CO2 removal, capture 1 (raw H2) combined with flue gas",96,%,"p.38-39, Sect. 2, Table 2",
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,"overall CO2 removal, capture 2 (tail gas) combined with flue gas",94,%,"p.38-39, Sect. 2, Table 2",
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,share of total CO2 in shifted gas,60,%,"p.38-39, Sect. 2, Table 2",
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,share of total CO2 from make-up fuel combustion,40,%,"p.38-39, Sect. 2, Table 2",
+Case study economics (Sect. 4),,natural gas price low,14,EUR/Gcal,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,natural gas price high,28,EUR/Gcal,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,steam price low,7,EUR/t,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,steam price high,14,EUR/t,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,electricity price,60,EUR/MWh,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,carbon price Q4 2009 low,10,EUR/t CO2,"p.41-42, Sect. 4",
+Case study economics (Sect. 4),,carbon price Q4 2009 high,20,EUR/t CO2,"p.41-42, Sect. 4",

@@ -7,7 +7,7 @@ est-sibling-lifetime,combustion-turbine_chp,lifetime,22.5,25,18.75,40,yes,1.1111
 est-sibling-lifetime,direct-heater_electric,lifetime,20,18.75,10,30,yes,0.9375,"tier 2: direct-heater_solid-fuel, direct-heater_fuel-fired"
 est-sibling-lifetime,direct-heater_fuel-fired,lifetime,22.5,17.5,10,21.875,no,0.777778,"tier 2: direct-heater_solid-fuel, direct-heater_electric"
 est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,21.25,10,30,yes,1.41667,"tier 2: direct-heater_fuel-fired, direct-heater_electric"
-est-sibling-lifetime,gasifier_biomass-chp,lifetime,25,30,10,40,yes,1.2,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
+est-sibling-lifetime,gasifier_biomass-chp,lifetime,15,30,10,40,yes,2,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
 est-sibling-lifetime,heat-pump_industrial,lifetime,20,20,15,40,yes,1,tier 2: heat-pump_space
 est-sibling-lifetime,reactor_small-nuclear,lifetime,40,20,15,30,no,0.5,"tier 2: reactor_methane-pyrolysis, reactor_gas-to-liquids"
 est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,22.5,16.875,40,yes,0.9,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
@@ -18,9 +18,10 @@ est-sibling-lifetime,combined-cycle_efficiency-moderate,lifetime,30,20,15,40,yes
 est-sibling-lifetime,steam-turbine_condensing,lifetime,25,22.5,15,50,yes,0.9,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
 est-sibling-lifetime,steam-turbine_waste-heat,lifetime,20,25,15,50,yes,1.25,"tier 2: steam-turbine_back-pressure, steam-turbine_condensing"
 est-sibling-lifetime,geothermal-well_binary-power,lifetime,40,27.5,20,50,yes,0.6875,"tier 2: geothermal-well_direct-use, geothermal-well_flash-power"
-est-sibling-lifetime,motor_induction-standard_efficiency-moderate,lifetime,12.5,20,10,25,yes,1.6,"tier 2: motor_premium-efficiency, motor_variable-speed"
-est-sibling-lifetime,motor_premium-efficiency,lifetime,25,13.75,1.5,20,no,0.55,"tier 2: motor_variable-speed, motor_induction-standard_efficiency-moderate"
-est-sibling-lifetime,motor_variable-speed,lifetime,15,18.75,1.5,25,yes,1.25,"tier 2: motor_premium-efficiency, motor_induction-standard_efficiency-moderate"
+est-sibling-lifetime,motor_induction-standard,lifetime,25,10,1.5,20,no,0.4,tier 1: motor_induction-standard_efficiency-moderate
+est-sibling-lifetime,motor_induction-standard_efficiency-moderate,lifetime,10,25,5.3792,31.25,yes,2.5,tier 1: motor_induction-standard
+est-sibling-lifetime,motor_premium-efficiency,lifetime,25,15,1.5,25,yes,0.6,"tier 2: motor_variable-speed, motor_induction-standard_efficiency-moderate, motor_induction-standard"
+est-sibling-lifetime,motor_variable-speed,lifetime,15,25,1.5,31.25,yes,1.66667,"tier 2: motor_premium-efficiency, motor_induction-standard_efficiency-moderate, motor_induction-standard"
 est-sibling-lifetime,heat-pump_space,lifetime,20,20,12,40,yes,1,tier 2: heat-pump_industrial
 est-sibling-lifetime,capture-unit_advanced-solvent,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_calcium-looping, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
 est-sibling-lifetime,capture-unit_amine,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_calcium-looping, capture-unit_advanced-solvent, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
@@ -84,15 +85,15 @@ est-sibling-lifetime,reactor_methanol-to-olefins,lifetime,25,20,10,30,yes,0.8,"t
 est-sibling-lifetime,reactor_nitric-acid,lifetime,30,20,10,30,yes,0.666667,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
 est-sibling-lifetime,reactor_plastics-pyrolysis,lifetime,17.5,20,10,30,yes,1.14286,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
 est-sibling-lifetime,reactor_polymerization-extrusion,lifetime,20,20,10,30,yes,1,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
-est-sibling-lifetime,steam-reformer_methanol,lifetime,15,25,18.75,31.25,no,1.66667,"tier 2: steam-reformer_ammonia_efficiency-moderate, steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated, steam-reformer_ammonia_efficiency-strong"
+est-sibling-lifetime,steam-reformer_methanol,lifetime,15,25,18.75,31.25,no,1.66667,"tier 2: steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated, steam-reformer_ammonia_efficiency-strong"
 est-sibling-lifetime,reactor_thermal-n2o-destruction,lifetime,20,20,10,30,yes,1,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
-est-sibling-lifetime,steam-cracker_catalytic-naphtha,lifetime,15,16.5,5,50,yes,1.1,"tier 2: steam-cracker_fired-tubular, steam-cracker_ccs-diffuse, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_electric"
-est-sibling-lifetime,steam-cracker_ccs-diffuse,lifetime,15,16.5,5,50,yes,1.1,"tier 2: steam-cracker_fired-tubular, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_electric, steam-cracker_catalytic-naphtha"
-est-sibling-lifetime,steam-cracker_electric,lifetime,18,15,5,50,yes,0.833333,"tier 2: steam-cracker_fired-tubular, steam-cracker_ccs-diffuse, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_catalytic-naphtha"
+est-sibling-lifetime,steam-cracker_catalytic-naphtha,lifetime,15,21.5,5,50,yes,1.43333,"tier 2: steam-cracker_fired-tubular, steam-cracker_ccs-diffuse, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_electric"
+est-sibling-lifetime,steam-cracker_ccs-diffuse,lifetime,25,16.5,5,50,yes,0.66,"tier 2: steam-cracker_fired-tubular, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_electric, steam-cracker_catalytic-naphtha"
+est-sibling-lifetime,steam-cracker_electric,lifetime,18,20,5,50,yes,1.11111,"tier 2: steam-cracker_fired-tubular, steam-cracker_ccs-diffuse, steam-cracker_fired-tubular_efficiency-moderate, steam-cracker_catalytic-naphtha"
 est-sibling-lifetime,steam-cracker_fired-tubular,lifetime,25,5,3.75,15,no,0.2,tier 1: steam-cracker_fired-tubular_efficiency-moderate
 est-sibling-lifetime,steam-cracker_fired-tubular_efficiency-moderate,lifetime,5,25,15,50,no,5,tier 1: steam-cracker_fired-tubular
-est-sibling-lifetime,steam-reformer_ammonia,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia_efficiency-moderate, steam-reformer_ammonia_ccs-concentrated, steam-reformer_ammonia_efficiency-strong"
-est-sibling-lifetime,steam-reformer_ammonia_ccs-concentrated,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia_efficiency-moderate, steam-reformer_ammonia, steam-reformer_ammonia_efficiency-strong"
+est-sibling-lifetime,steam-reformer_ammonia,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia_ccs-concentrated, steam-reformer_ammonia_efficiency-strong"
+est-sibling-lifetime,steam-reformer_ammonia_ccs-concentrated,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia, steam-reformer_ammonia_efficiency-strong"
 est-sibling-lifetime,fermenter_grain-dry-mill,lifetime,25,25,15,31.25,yes,1,tier 2: fermenter_lignocellulosic-enzymatic
 est-sibling-lifetime,fermenter_lignocellulosic-enzymatic,lifetime,25,25,15,31.25,yes,1,tier 2: fermenter_grain-dry-mill
 est-sibling-lifetime,gasifier_biomass-methanation,lifetime,15,30,10,40,yes,2,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
@@ -103,7 +104,7 @@ est-sibling-lifetime,reactor_hydrotreating-lipids,lifetime,25,20,10,30,yes,0.8,"
 est-sibling-lifetime,reactor_pyrolysis-oil,lifetime,30,20,10,30,yes,0.666667,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_alcohol-to-jet"
 est-sibling-lifetime,anaerobic-digester,lifetime,12,18.75,12,25,yes,1.5625,"tier 2: anaerobic-digester_chp, anaerobic-digester_effluent"
 est-sibling-lifetime,electrolyzer_solid-oxide,lifetime,40,25,10,40,yes,0.625,tier 2: electrolyzer_low-temperature
-est-sibling-lifetime,gasifier_biomass-waste,lifetime,40,27.5,15,40,yes,0.6875,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch"
+est-sibling-lifetime,gasifier_biomass-waste,lifetime,40,25,15,40,yes,0.625,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch"
 est-sibling-lifetime,gasifier_coal-petroleum-coke_ccs-concentrated,lifetime,35,30,20,40,yes,0.857143,tier 1: gasifier_coal-petroleum-coke
 est-sibling-lifetime,reactor_methane-pyrolysis,lifetime,25,27.5,15,60,yes,1.1,"tier 2: reactor_gas-to-liquids, reactor_small-nuclear"
 est-sibling-lifetime,distillation-column_atmospheric-vacuum,lifetime,20,20,15,25,yes,1,"tier 2: distillation-column_heat-integrated, distillation-column"
@@ -113,33 +114,33 @@ est-sibling-lifetime,reactor_alkylation,lifetime,20,20,10,30,yes,1,"tier 2: reac
 est-sibling-lifetime,reactor_catalytic-reforming,lifetime,20,20,10,30,yes,1,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
 est-sibling-lifetime,reactor_fluid-catalytic-cracking,lifetime,20,20,10,30,yes,1,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
 est-sibling-lifetime,reactor_hydroprocessing,lifetime,20,20,10,30,yes,1,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_alkylation, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
-est-sibling-lifetime,steam-reformer_methane_efficiency-moderate,lifetime,25,27.5,20,40,yes,1.1,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
-est-sibling-lifetime,steam-reformer_methane,lifetime,27.5,25,18.75,40,yes,0.909091,"tier 1: steam-reformer_methane_efficiency-moderate, steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
-est-sibling-lifetime,steam-reformer_methane_ccs-concentrated,lifetime,35,25,18.75,40,yes,0.714286,"tier 1: steam-reformer_methane_efficiency-moderate, steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
+est-sibling-lifetime,steam-reformer_methane,lifetime,27.5,30,22.5,40,yes,1.09091,"tier 1: steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
+est-sibling-lifetime,steam-reformer_methane_ccs-concentrated,lifetime,35,26.25,19.6875,40,yes,0.75,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
 est-sibling-lifetime,anaerobic-digester_effluent,lifetime,20,14.75,11.0625,25,yes,0.7375,"tier 2: anaerobic-digester_chp, anaerobic-digester"
-est-sibling-lifetime,dryer_steam-heated,lifetime,20,15,10,20,yes,0.75,"tier 1: dryer_steam-heated_efficiency-moderate, dryer_steam-heated_efficiency-strong"
-est-sibling-lifetime,dryer_steam-heated_efficiency-strong,lifetime,10,20,10,25,yes,2,"tier 1: dryer_steam-heated, dryer_steam-heated_efficiency-moderate"
-est-sibling-lifetime,dryer_steam-heated_efficiency-moderate,lifetime,20,15,10,20,yes,0.75,"tier 1: dryer_steam-heated, dryer_steam-heated_efficiency-strong"
+est-sibling-lifetime,dryer_steam-heated,lifetime,20,20,10,25,yes,1,tier 1: dryer_steam-heated_efficiency-moderate
+est-sibling-lifetime,dryer_steam-heated_efficiency-moderate,lifetime,20,20,15,25,yes,1,tier 1: dryer_steam-heated
 est-sibling-lifetime,gasifier_black-liquor,lifetime,25,15,11.25,25,yes,0.6,"tier 2: gasifier_biomass-methanol, gasifier_biomass-fischer-tropsch, gasifier_biomass-ammonia, gasifier_biomass-ethylene, gasifier_coal-methanol, gasifier_coal-methanol_ccs-concentrated, gasifier_biomass-fischer-tropsch_ccs-concentrated"
 est-sibling-lifetime,kiln_lime-electric,lifetime,25,25,10,60,yes,1,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_tunnel-roller, kiln_tunnel-roller_efficiency-strong, kiln_ceramic-electric, kiln_ceramic-microwave-assisted, kiln_lumber-steam"
 est-sibling-lifetime,kiln_lime-rotary,lifetime,20,25,10,60,yes,1.25,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-electric, kiln_tunnel-roller, kiln_tunnel-roller_efficiency-strong, kiln_ceramic-electric, kiln_ceramic-microwave-assisted, kiln_lumber-steam"
 est-sibling-lifetime,paper-machine_efficiency-moderate,lifetime,20,20,15,25,yes,1,tier 1: paper-machine_efficiency-strong
-est-sibling-lifetime,paper-machine_efficiency-strong,lifetime,20,20,5,25,yes,1,tier 1: paper-machine_efficiency-moderate
+est-sibling-lifetime,paper-machine_efficiency-strong,lifetime,20,20,15,25,yes,1,tier 1: paper-machine_efficiency-moderate
 est-sibling-lifetime,process-improvement_coal-mine-methane-drainage,lifetime,15,20,3,30,yes,1.33333,"tier 2: process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
-est-sibling-lifetime,compressor_blowdown-recovery,lifetime,10,17.5,5,25,yes,1.75,"tier 2: compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery"
-est-sibling-lifetime,compressor_low-emission-seal,lifetime,10,17.5,1,25,yes,1.75,"tier 2: compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_blowdown-recovery, compressor_vapour-recovery"
+est-sibling-lifetime,compressor_blowdown-recovery,lifetime,10,17.5,3.3,25,yes,1.75,"tier 2: compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery"
+est-sibling-lifetime,compressor_low-emission-seal,lifetime,4.7,17.5,1,25,yes,3.7234,"tier 2: compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_blowdown-recovery, compressor_vapour-recovery"
 est-sibling-lifetime,compressor_flare-gas-recovery,lifetime,20,12.5,1,25,yes,0.625,"tier 2: compressor_co2-dehydration, compressor_low-emission-seal, compressor_blowdown-recovery, compressor_vapour-recovery"
 est-sibling-lifetime,compressor_vapour-recovery,lifetime,15,15,1,25,yes,1,"tier 2: compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_blowdown-recovery"
 est-sibling-lifetime,evaporator_crystallizer,lifetime,25,10,7.5,12.5,no,0.4,tier 2: evaporator_food
+est-sibling-lifetime,flare,lifetime,10,10,7.5,15,yes,1,tier 2: flare_enclosed-combustor
+est-sibling-lifetime,flare_enclosed-combustor,lifetime,10,10,7.5,12.5,yes,1,tier 2: flare
 est-sibling-lifetime,process-improvement_low-emission-components,lifetime,10,22.5,10,30,yes,2.25,"tier 2: process-improvement_coal-mine-methane-drainage, process-improvement_pfc-anode-effect-control"
 est-sibling-lifetime,well_solvent-only,lifetime,30,30,22.5,37.5,yes,1,tier 2: well_sagd
 est-sibling-lifetime,well_sagd,lifetime,30,30,22.5,37.5,yes,1,tier 2: well_solvent-only
 est-sibling-lifetime,gasifier_coal-methanation,lifetime,20,30,10,40,yes,1.5,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
-est-sibling-lifetime,gasifier_coal-fischer-tropsch,lifetime,30,27.5,10,40,yes,0.916667,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_biomass-waste"
+est-sibling-lifetime,gasifier_coal-fischer-tropsch,lifetime,30,25,10,40,yes,0.833333,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_biomass-waste"
 est-sibling-lifetime,reactor_gas-to-liquids,lifetime,15,32.5,24.375,60,no,2.16667,"tier 2: reactor_methane-pyrolysis, reactor_small-nuclear"
 est-sibling-lifetime,heat-exchanger_steam-heated,lifetime,20,20,15,25,yes,1,tier 1: heat-exchanger_steam-heated_efficiency-strong
-est-sibling-lifetime,oven_fuel-fired,lifetime,30,20,5,25,no,0.666667,tier 1: oven_fuel-fired_efficiency-moderate
-est-sibling-lifetime,oven_fuel-fired_efficiency-moderate,lifetime,20,30,22.5,37.5,no,1.5,tier 1: oven_fuel-fired
+est-sibling-lifetime,oven_fuel-fired,lifetime,30,15,5,20,no,0.5,tier 1: oven_fuel-fired_efficiency-moderate
+est-sibling-lifetime,oven_fuel-fired_efficiency-moderate,lifetime,15,30,22.5,37.5,no,2,tier 1: oven_fuel-fired
 est-sibling-lifetime,calciner_gas-suspension,lifetime,25,25,18.75,31.25,yes,1,tier 2: calciner_electric
 est-sibling-lifetime,electrolysis-cell_inert-anode,lifetime,10,17.5,5,60,yes,1.75,"tier 2: electrolysis-cell_iron-electrowinning, electrolysis-cell_prebaked-anode, electrolysis-cell_molten-oxide, electrolysis-cell_chlor-alkali-membrane"
 est-sibling-lifetime,electrolysis-cell_prebaked-anode,lifetime,20,15,10,60,yes,0.75,"tier 2: electrolysis-cell_iron-electrowinning, electrolysis-cell_inert-anode, electrolysis-cell_molten-oxide, electrolysis-cell_chlor-alkali-membrane"
@@ -151,18 +152,17 @@ est-sibling-lifetime,reactor_haber-bosch-loop,lifetime,30,20,10,30,yes,0.666667,
 est-sibling-lifetime,shaft-furnace_electrolytic-hydrogen,lifetime,25,20,15,30,yes,0.8,"tier 2: shaft-furnace_direct-reduction, shaft-furnace_direct-reduction_ccs-concentrated"
 est-sibling-lifetime,binder_sulphoaluminate,lifetime,28.75,32.5,24.375,40.625,yes,1.13043,"tier 2: binder_alkali-activated, binder_hydrothermal-silicate, binder_blended-cement"
 est-sibling-lifetime,binder_hydrothermal-silicate,lifetime,32.5,28.75,21.5625,35.9375,yes,0.884615,"tier 2: binder_alkali-activated, binder_sulphoaluminate, binder_blended-cement"
-est-sibling-lifetime,steam-reformer_ammonia_efficiency-strong,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia_efficiency-moderate, steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated"
-est-sibling-lifetime,steam-reformer_ammonia_efficiency-moderate,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated, steam-reformer_ammonia_efficiency-strong"
+est-sibling-lifetime,steam-reformer_ammonia_efficiency-strong,lifetime,25,25,18.75,31.25,yes,1,"tier 1: steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated"
 est-sibling-lifetime,geothermal-well_direct-use,lifetime,25,35,26.25,50,no,1.4,"tier 2: geothermal-well_binary-power, geothermal-well_flash-power"
 est-sibling-lifetime,gasifier_biomass-ethylene,lifetime,25,15,11.25,30,yes,0.6,"tier 2: gasifier_black-liquor, gasifier_biomass-methanol, gasifier_biomass-fischer-tropsch, gasifier_biomass-ammonia, gasifier_coal-methanol, gasifier_coal-methanol_ccs-concentrated, gasifier_biomass-fischer-tropsch_ccs-concentrated"
-est-sibling-lifetime,paper-machine_waterless,lifetime,20,20,5,25,yes,1,"tier 2: paper-machine_efficiency-strong, paper-machine_efficiency-moderate"
+est-sibling-lifetime,paper-machine_waterless,lifetime,20,20,15,25,yes,1,"tier 2: paper-machine_efficiency-strong, paper-machine_efficiency-moderate"
 est-sibling-lifetime,thermal-storage_heat-charged,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: thermal-storage_electric
 est-sibling-lifetime,evaporator_food,lifetime,10,25,18.75,31.25,no,2.5,tier 2: evaporator_crystallizer
 est-sibling-lifetime,smelting-vessel_low-shaft,lifetime,20,22.5,16.875,40,yes,1.125,"tier 2: smelting-vessel_smelting-reduction, smelting-vessel_smelting-reduction_ccs-concentrated"
 est-sibling-lifetime,combined-cycle,lifetime,20,30,22.5,37.5,no,1.5,tier 1: combined-cycle_efficiency-moderate
 est-sibling-lifetime,gasifier_coal-methanol,lifetime,15,15,11.25,18.75,yes,1,tier 1: gasifier_coal-methanol_ccs-concentrated
 est-sibling-lifetime,kiln_tunnel-roller_efficiency-strong,lifetime,20,25,18.75,35,yes,1.25,tier 1: kiln_tunnel-roller
-est-sibling-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,27.5,20,40,yes,1.1,"tier 1: steam-reformer_methane_efficiency-moderate, steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
+est-sibling-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,31.25,20,40,yes,1.25,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
 est-sibling-lifetime,geothermal-well_flash-power,lifetime,30,32.5,20,50,yes,1.08333,"tier 2: geothermal-well_direct-use, geothermal-well_binary-power"
 est-sibling-lifetime,calciner_electric,lifetime,25,25,18.75,31.25,yes,1,tier 2: calciner_gas-suspension
 est-sibling-lifetime,capture-unit_calcium-looping,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_advanced-solvent, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
@@ -253,8 +253,8 @@ est-sibling-capacity-factor,reactor_methane-pyrolysis,capacity-factor,85,89,66.7
 est-sibling-capacity-factor,autothermal-reformer,capacity-factor,90,90,67.5,100,yes,1,tier 1: autothermal-reformer_ccs-concentrated
 est-sibling-capacity-factor,electrolyzer_low-temperature,capacity-factor,66,87.525,65.6438,100,yes,1.32614,tier 2: electrolyzer_solid-oxide
 est-sibling-capacity-factor,gasifier_coal-petroleum-coke,capacity-factor,80,90,67.5,100,yes,1.125,tier 1: gasifier_coal-petroleum-coke_ccs-concentrated
-est-sibling-capacity-factor,steam-reformer_methane,capacity-factor,90,92.5,69.375,100,yes,1.02778,"tier 1: steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
-est-sibling-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-factor,90,92.5,69.375,100,yes,1.02778,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
+est-sibling-capacity-factor,steam-reformer_methane,capacity-factor,90,93.75,70.3125,100,yes,1.04167,"tier 1: steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
+est-sibling-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-factor,92.5,92.5,69.375,100,yes,1,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
 est-sibling-capacity-factor,gasifier_black-liquor,capacity-factor,95.09,91.3,57.1,100,yes,0.960143,"tier 2: gasifier_biomass-methanol, gasifier_biomass-fischer-tropsch"
 est-sibling-capacity-factor,haul-truck_diesel,capacity-factor,75,75,56.25,93.75,yes,1,tier 2: haul-truck_hydrogen-fuel-cell
 est-sibling-capacity-factor,haul-truck_hydrogen-fuel-cell,capacity-factor,75,75,56.25,93.75,yes,1,tier 2: haul-truck_diesel
@@ -264,7 +264,7 @@ est-sibling-capacity-factor,gasifier_coal-methanation,capacity-factor,90,90,67.5
 est-sibling-capacity-factor,gasifier_coal-fischer-tropsch,capacity-factor,85,90,67.5,100,yes,1.05882,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-waste"
 est-sibling-capacity-factor,reactor_gas-to-liquids,capacity-factor,85,89,66.75,100,yes,1.04706,"tier 2: reactor_methane-pyrolysis, reactor_small-nuclear"
 est-sibling-capacity-factor,geothermal-well_direct-use,capacity-factor,55,91.25,68.4375,100,no,1.65909,"tier 2: geothermal-well_binary-power, geothermal-well_flash-power"
-est-sibling-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,90,67.5,100,yes,0.947368,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
+est-sibling-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,91.25,68.4375,100,yes,0.960526,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
 est-sibling-capacity-factor,geothermal-well_flash-power,capacity-factor,95,71.25,53.4375,95,yes,0.75,"tier 2: geothermal-well_direct-use, geothermal-well_binary-power"
 est-sibling-capacity-factor,transesterification-unit_acid-catalyzed,capacity-factor,90.4,90.4,67.8,100,yes,1,"tier 2: transesterification-unit_alkali-catalyzed, transesterification-unit_heterogeneous-catalyst, transesterification-unit_supercritical-methanol"
 est-sibling-capacity-factor,transesterification-unit_supercritical-methanol,capacity-factor,90.4,90.4,67.8,100,yes,1,"tier 2: transesterification-unit_alkali-catalyzed, transesterification-unit_acid-catalyzed, transesterification-unit_heterogeneous-catalyst"

@@ -1,0 +1,7 @@
+process,technology,sector,end-use,process-step,service-unit
+"Cement plant 1.5 Mt/y, reference without CCS (Tables 1, 3, 4)",kiln_dry-precalciner,cement,clinker-production,kiln,t
+"Cement plant 1.5 Mt/y retrofitted with post-combustion amine CCS, 90% capture (Tables 1, 3, 4)",kiln_dry-precalciner_ccs-diffuse,cement,clinker-production,kiln,t
+"Post-combustion amine capture on the 1.5 Mt/y cement plant (Sect. 2.1, Table 3)",capture-unit_amine,cement,co2-capture,capture,t
+"Kraft market pulp mill 0.8 Madt/y, reference without CCS (Tables 1, 3)",pulp-mill_kraft-market,pulp-and-paper,chemical-pulping,kraft-mill,t
+"Kraft market pulp mill 0.8 Madt/y with CCS on recovery boiler and lime kiln (Tables 1, 3, 4)",boiler_recovery_ccs-diffuse,pulp-and-paper,chemical-recovery,recovery-boiler,t
+"Post-combustion amine capture on the Kraft pulp mill recovery boiler and lime kiln (Sect. 2.1, Table 3)",capture-unit_amine,pulp-and-paper,co2-capture,capture,t

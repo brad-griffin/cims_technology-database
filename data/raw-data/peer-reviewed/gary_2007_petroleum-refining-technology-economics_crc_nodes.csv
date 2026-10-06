@@ -1,0 +1,47 @@
+process,technology,sector,end-use,process-step,service-unit
+"Desalter unit cost data (Ch. 4, Table 4.3)",separator_electrostatic-desalter,petroleum-refining,material-conversion,crude desalting,bbl
+"Atmospheric crude distillation unit cost data (Ch. 4, Table 4.4)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+"Vacuum distillation unit cost data (Ch. 4, Table 4.5)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"Delayed coking unit cost data (Ch. 5, Table 5.10)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+"Fluid catalytic cracking unit cost data (Ch. 6, Table 6.5)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+"Catalytic hydrocracking unit cost data (Ch. 7, Table 7.4)",reactor_hydrocracking_h2-1000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"Catalytic hydrocracking unit cost data (Ch. 7, Table 7.4)",reactor_hydrocracking_h2-2000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"Catalytic hydrocracking unit cost data (Ch. 7, Table 7.4)",reactor_hydrocracking_h2-3000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"Catalytic desulfurization and hydrogenation unit cost data (Ch. 9, Table 9.1)",reactor_hydrotreating_heavy-distillate,petroleum-refining,material-conversion,hydrotreating,bbl
+"Catalytic desulfurization and hydrogenation unit cost data (Ch. 9, Table 9.1)",reactor_hydrotreating_light-distillate,petroleum-refining,material-conversion,hydrotreating,bbl
+"Catalytic desulfurization and hydrogenation unit cost data (Ch. 9, Table 9.1)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"Catalytic reforming unit cost data (Ch. 10, Table 10.2)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"Paraffin isomerization (platinum catalyst) unit cost data (Ch. 10, Table 10.3)",reactor_isomerization,petroleum-refining,material-conversion,isomerization,bbl
+"Alkylation unit cost data (Ch. 11, Table 11.6)",reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"Alkylation unit cost data (Ch. 11, Table 11.6)",reactor_alkylation_sulphuric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"Polymerization unit cost data (Ch. 11, Table 11.11)",reactor_polymerization,petroleum-refining,material-conversion,polymerization,bbl
+"Polymerization unit cost data, 2000 BPD (Ch. 11, Table 11.11)",reactor_polymerization,petroleum-refining,material-conversion,polymerization,bbl
+"Hydrogen production unit cost data (Ch. 13, Table 13.1)",steam-reformer_methane,petroleum-refining,hydrogen,hydrogen production,kg
+"Refinery gas processing unit cost data (Ch. 13, Table 13.2)",separator_refinery-gas-plant,petroleum-refining,material-conversion,gas processing,m3
+"Amine gas treating unit cost data (Ch. 13, Table 13.3)",gas-treatment-unit_amine-refinery,petroleum-refining,material-conversion,acid gas treating,m3
+"Claus sulfur recovery unit cost data (Ch. 13, Table 13.4)",gas-treatment-unit_claus,petroleum-refining,material-conversion,sulphur recovery,t
+"Refinery steam system, preliminary estimate (Sect. 18.8)",boiler_fuel-fired,petroleum-refining,steam,steam generation,lb
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",separator_electrostatic-desalter,petroleum-refining,material-conversion,crude desalting,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_hydrotreating_middle-distillate,petroleum-refining,material-conversion,hydrotreating,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_hydrotreating_fcc-feed,petroleum-refining,material-conversion,hydrotreating,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_isomerization,petroleum-refining,material-conversion,isomerization,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",reactor_polymerization,petroleum-refining,material-conversion,polymerization,bbl
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",steam-reformer_methane,petroleum-refining,hydrogen,hydrogen production,MMscf
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",separator_refinery-gas-plant,petroleum-refining,material-conversion,gas processing,MMscf
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",gas-treatment-unit_amine-refinery,petroleum-refining,material-conversion,acid gas treating,gal
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",gas-treatment-unit_claus,petroleum-refining,material-conversion,sulphur recovery,long-ton
+"100,000 BPCD case-study refinery unit investments, 2005 USGC (Sect. 19.5, Table 19.1)",refinery_deep-conversion,petroleum-refining,material-conversion,refinery,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",separator_electrostatic-desalter,petroleum-refining,material-conversion,crude desalting,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"30,000 BPSD example refinery investments, 2005 USGC (Sect. 18.11, Table 18.1)",refinery_hydroskimming,petroleum-refining,material-conversion,refinery,bbl

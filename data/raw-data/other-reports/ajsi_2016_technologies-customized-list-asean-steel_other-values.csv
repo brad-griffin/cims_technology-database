@@ -1,0 +1,9 @@
+process,technology,item,value,unit,reference,note
+"A-1 High temperature continuous scrap preheating EAF applied to the model plant (Table, p.9; sheet p.13)",electric-arc-furnace_scrap-preheating,electrode consumption (AC),0.8-1.0,kg/t product,"p.9, p.13",co-benefit
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - EAF",electric-arc-furnace,nominal EAF capacity,80,t/heat,p.8,
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - EAF",electric-arc-furnace,tap-to-tap time,52,min,p.8,
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - EAF",electric-arc-furnace,tapping temperature,1620,degC,p.8,
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - reheating furnace",furnace_reheating,combustion air preheat (low-grade recuperator),300,degC,p.8,around 300 degC
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - reheating furnace",furnace_reheating,"furnace wall heat loss, firebrick lining (surface 130 degC)",7.96,GJ/h,"p.40, D-4 sheet",1350 m2 surface; 4.08 GJ/h with fibre block (90 degC)
+Model plant energy prices implied,,"implied electricity value (profit/saving, A-1)",0.113,US$/kWh,p.9,16.95/150; consistent across A rows
+Model plant energy prices implied,,"implied fuel value (profit/saving, D-1)",20.2,US$/GJ,p.10,1.01/0.050

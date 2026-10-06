@@ -1,0 +1,38 @@
+process,technology,sector,end-use,process-step,service-unit
+"Refineries (Sect. 3.1.1, Table 2)",capture-unit_refinery-sources,petroleum-refining,co2-capture,refinery CO2 capture,t
+"Refineries (Sect. 3.1.1, Table 2) UK",capture-unit_refinery-sources,petroleum-refining,co2-capture,refinery CO2 capture,t
+"Refineries (Sect. 3.1.1, Table 2)",steam-reformer_methane,petroleum-refining,hydrogen-production,hydrogen plant,GJ
+"Chemicals (Sect. 3.1.2, Table 3)",compressor_co2-dehydration,chemicals,co2-capture,CO2 compression and drying,t
+"Chemicals (Sect. 3.1.2, Table 3)",fermenter_biocatalysis,chemicals,material-conversion,biocatalytic processing,t
+"Iron and steel (Sect. 3.1.3, Table 4)",blast-furnace_top-gas-recycling,iron-and-steel,material-conversion,ironmaking,t
+"Iron and steel (Sect. 3.1.3, Table 4)",smelting-vessel_smelting-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Iron and steel (Sect. 3.1.3, Table 4)",smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+"Iron and steel (Sect. 3.1.3, Table 4)",furnace_rotary-hearth-direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Iron and steel (Sect. 3.1.3, Table 4)",furnace_rotary-hearth-direct-reduction_ccs-concentrated,iron-and-steel,material-conversion,ironmaking,t
+"Iron and steel (Sect. 3.1.3, Table 4)",shaft-furnace_direct-reduction,iron-and-steel,material-conversion,ironmaking,t
+"Aluminium (Sect. 3.1.4, Table 5)",electrolysis-cell_inert-anode,non-ferrous-metals,electrochemical,aluminium smelting,t
+"Paper and pulp (Sect. 3.1.5, Table 6)",gasifier_biomass-syngas,pulp-and-paper,steam-and-hot-water,boiler fuel supply,GJ
+"Food and drink (Sect. 3.1.6, Table 7)",radio-frequency-heater_food,food-and-beverage,drying-and-separation,stoving / drying,t
+"Food and drink (Sect. 3.1.6, Table 7)",reciprocating-engine_chp,food-and-beverage,steam-and-hot-water,CHP,GJ
+"Cement (Sect. 3.1.7, Table 8)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker burning,t
+"Cement (Sect. 3.1.7, Table 8)",binder_blended-cement,cement,material-conversion,cement blending,t
+"Cement (Sect. 3.1.7, Table 8)",kiln_fluidized-bed,cement,process-heat-high-temp,clinker burning,t
+"Cement (Sect. 3.1.7, Table 8)",binder_magnesia,cement,material-conversion,clinker / binder production,t
+"Cement (Sect. 3.1.7, Table 8)",binder_sulphoaluminate,cement,material-conversion,clinker / binder production,t
+"Cement (Sect. 3.1.7, Table 8)",kiln_dry-precalciner_ccs-diffuse,cement,co2-capture,clinker burning with capture,t
+"Ceramics (Sect. 3.1.8, Table 9)",gasifier_biomass-syngas,non-metallic-minerals,process-heat-high-temp,kiln fuel supply,GJ
+"Ceramics (Sect. 3.1.8, Table 9)",kiln_ceramic-electric,non-metallic-minerals,process-heat-high-temp,firing,t
+"Glass (Sect. 3.1.9, Table 10)",furnace_regenerative,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Glass (Sect. 3.1.9, Table 10)",furnace_oxy-fuel,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Glass (Sect. 3.1.9, Table 10)",furnace_electric,non-metallic-minerals,process-heat-high-temp,glass melting,t
+"Glass (Sect. 3.1.9, Table 10)",melting-furnace_submerged-combustion,non-metallic-minerals,process-heat-high-temp,glass melting,t
+CHP technologies (Appendix 11): reciprocating gas engine ~100 kWe,reciprocating-engine_chp,heat-supply,steam-and-hot-water,CHP,GJ
+CHP technologies (Appendix 11): reciprocating gas engine ~4 MWe,reciprocating-engine_chp,heat-supply,steam-and-hot-water,CHP,GJ
+CHP technologies (Appendix 11): gas turbine below 1 MWe,combustion-turbine_chp,heat-supply,steam-and-hot-water,CHP,GJ
+CHP technologies (Appendix 11): gas turbine over 100 MWe,combustion-turbine_chp,heat-supply,steam-and-hot-water,CHP,GJ
+"CHP technologies (Appendix 11): industrial CCGT, fully condensing",combined-cycle,heat-supply,power-generation,CHP,GJ
+CHP cost: bioenergy combustion CHP (Sect. 3.2.2.3),steam-turbine_back-pressure_biomass,heat-supply,steam-and-hot-water,CHP,GJ
+CHP cost: bioenergy combustion CHP (Sect. 3.2.2.3) 0.1-1 MW,steam-turbine_back-pressure_biomass,heat-supply,steam-and-hot-water,CHP,GJ
+CHP cost: bioenergy combustion CHP (Sect. 3.2.2.3) 1-50 MW,steam-turbine_back-pressure_biomass,heat-supply,steam-and-hot-water,CHP,GJ
+Biomass potential: dedicated biomass CHP (Sect. 3.2.3.1),steam-turbine_back-pressure_biomass,heat-supply,steam-and-hot-water,CHP,GJ
+Biomass investment costs (Sect. 3.2.3.2),boiler_solid-fuel,heat-supply,steam-and-hot-water,boiler,GJ

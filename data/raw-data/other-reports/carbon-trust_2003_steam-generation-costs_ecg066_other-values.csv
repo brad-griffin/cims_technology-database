@@ -1,0 +1,11 @@
+process,technology,item,value,unit,reference,note
+"Boilerhouse energy surveys, 300 boilers at over 100 UK sites, all fuels (Table 1)",boiler_steam_mixed-fuel,"steam generation cost at fuel 1.0 p/kWh, best / average / poorest",1.22 / 1.35 / 1.96,p/kWh steam,"p.05, Table 1","Fuel cost only, standardised to fuel at 1.0 p/kWh (i.e. reciprocal of efficiency); price year 2003 at latest."
+"Boilerhouse energy surveys, 300 boilers at over 100 UK sites, all fuels (Table 1)",boiler_steam_mixed-fuel,"steam generation cost at fuel 1.0 p/kWh, best / average / poorest",8.30 / 9.14 / 13.33,GBP/t steam,"p.05, Table 1","As above, per tonne of steam."
+"Boilerhouse energy surveys, 300 boilers at over 100 UK sites, all fuels (Table 1)",,"energy cost of steam at point of use (generation plus distribution), typical",1.6 (10.90),p/kWh (GBP/t),p.03,Includes distribution losses; minimum achievable 1.25 p/kWh (GBP 8.50/t).
+"Modern steam boiler, operated correctly (Sect. Thermal efficiency of steam generation)",boiler_fuel-fired,steam generation cost at 80% efficiency and fuel 1.0 p/kWh (29.3 p/therm),1.25 (8.50),p/kWh steam (GBP/t),p.04,
+"Boilerhouse energy surveys, 300 boilers at over 100 UK sites, all fuels (Table 1)",boiler_steam_mixed-fuel,"average efficiency by fuel, read from chart (Figure 2): coal / heavy-medium fuel oil and distillate / gas",approx. 70 / approx. 74 / approx. 75-76,% gross,"p.04, Figure 2","read from chart: vertical average lines, no printed labels except gas (76.0% in text)."
+Boilerhouse losses (p.10),,"blowdown energy loss, boilers with softened make-up water",1-5,% of boiler energy input,p.10,
+Fuel properties (Table 6),,gross calorific value natural gas,38.75,MJ/m3,"p.08, Table 6","1,040 Btu/ft3; 10.76 kWh/m3."
+Fuel properties (Table 6),,gross calorific value heavy fuel oil (S.G. 0.98),42.80,MJ/kg,"p.08, Table 6","18,400 Btu/lb; 11.65 kWh/litre."
+Fuel properties (Table 6),,gross calorific value gas oil (S.G. 0.84),45.36,MJ/kg,"p.08, Table 6","9,500 Btu/lb as printed (inconsistent with 45.36 MJ/kg, which is about 19,500 Btu/lb); 10.58 kWh/litre."
+Fuel properties (Table 6),,gross calorific value coal (as fired),27.91,MJ/kg,"p.08, Table 6","12,000 Btu/lb; 7,753 kWh/tonne."

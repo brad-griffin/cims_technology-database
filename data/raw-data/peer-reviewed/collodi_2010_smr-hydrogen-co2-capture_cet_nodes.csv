@@ -1,0 +1,6 @@
+process,technology,sector,end-use,process-step,service-unit
+"Typical natural-gas SMR hydrogen plant, 100,000 Nm3/h, no capture (Sect. 2, Table 1)",steam-reformer_methane,chemicals,hydrogen-production,steam reforming,t
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 1 from raw H2 / shifted syngas (PSA inlet) (Sect. 4, Table 3)",steam-reformer_methane_ccs-concentrated,chemicals,hydrogen-production,steam reforming,t
+"Case study: amine CO2 capture 1 on raw H2 / shifted syngas (PSA inlet) of a 150,000 Nm3/h SMR, incl. compression to 150 barg (Sect. 4, Table 3)",capture-unit_chemical-solvent,chemicals,hydrogen-production,co2 capture,t
+"Case study: 150,000 Nm3/h natural-gas SMR hydrogen plant with CO2 capture 3 from reformer flue gas (Sect. 4, Table 3)",steam-reformer_methane_ccs-diffuse,chemicals,hydrogen-production,steam reforming,t
+"Case study: amine CO2 capture 3 on reformer flue gas of a 150,000 Nm3/h SMR, incl. compression to 150 barg (Sect. 4, Table 3)",capture-unit_amine,chemicals,hydrogen-production,co2 capture,t

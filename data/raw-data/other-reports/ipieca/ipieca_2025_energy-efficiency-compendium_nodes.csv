@@ -1,0 +1,43 @@
+process,technology,sector,end-use,process-step,service-unit
+"Open-cycle gas turbines sheet (Key metrics, p.3)",combustion-turbine_simple-cycle,oil-and-gas,on-site-power,power-generation,GJ
+"Open-cycle gas turbines sheet (21 MW aeroderivative example, p.1)",combustion-turbine_simple-cycle_aeroderivative-21mw,oil-and-gas,on-site-power,power-generation,MWh
+"Alternative thermodynamic cycles sheet (Opportunities/business case, p.3)",combustion-turbine_simple-cycle,oil-and-gas,on-site-power,power-generation,GJ
+"Alternative thermodynamic cycles sheet (Key metrics, p.3)",steam-turbine_waste-heat_orc,oil-and-gas,on-site-power,waste-heat-to-power,GJ
+"Combined-cycle gas turbines sheet (Key metrics, onshore, p.3)",combined-cycle_onshore,oil-and-gas,on-site-power,power-generation,GJ
+"Combined-cycle gas turbines sheet (Key metrics, offshore, p.3)",combined-cycle_offshore,oil-and-gas,on-site-power,power-generation,GJ
+"Combined heat and power sheet (Key metrics, p.3)",combustion-turbine_chp,oil-and-gas,steam,cogeneration,GJ
+"Combined heat and power sheet (Offshore WHRU example, p.2)",combustion-turbine_chp_offshore-30mw,oil-and-gas,steam,cogeneration,GJ
+"Combined heat and power sheet (Case study 1: natural gas platform, Southeast Asia, p.5)",heat-recovery-unit_gas-turbine-exhaust_offshore-retrofit,oil-and-gas,heat,waste-heat-recovery,GJ
+"Combined heat and power sheet (Case study 1: natural gas platform, Southeast Asia, p.5)",combustion-turbine_simple-cycle_offshore-10mw,oil-and-gas,on-site-power,power-generation,GJ
+"Combined heat and power sheet (Case study 1: natural gas platform, Southeast Asia, p.5)",direct-heater_fuel-fired_offshore-gas,oil-and-gas,direct-heat,process-heating,GJ
+"Combined heat and power sheet (Case study 3: gas treatment and compression plant, Latin America, p.7)",combustion-turbine_drive_centrifugal-compressor-25mw,oil-and-gas,machine-drive,compression,GJ
+"Combined heat and power sheet (Case study 3: gas treatment and compression plant, Latin America, p.7)",direct-heater_fuel-fired_gas-plant,oil-and-gas,direct-heat,process-heating,GJ
+"Combined heat and power sheet (Case study 4: petrochemical plant (polymer), Europe, p.8)",combustion-turbine_chp_polymer-plant-15mw,chemicals,steam,cogeneration,GJ
+"Combined heat and power sheet (Case study 4: petrochemical plant (polymer), Europe, p.8)",combustion-turbine_chp_polymer-plant-15mw_supplementary-fired,chemicals,steam,cogeneration,GJ
+"Compressors sheet (Key metrics, p.5)",compressor_process-gas,oil-and-gas,machine-drive,compression,GJ
+"Gas turboexpanders sheet (Key metrics, p.3)",turboexpander_generator,oil-and-gas,transmission,pressure-let-down,GJ
+"Gas turboexpanders sheet (Case study: city gate station, Middle East, p.5-6)",turboexpander_pressure-let-down_city-gate,oil-and-gas,distribution,pressure-let-down,GJ
+"Liquid power recovery turbines sheet (Key metrics, p.3)",turboexpander_hydraulic-power-recovery,oil-and-gas,machine-drive,energy-recovery,GJ
+"Liquid power recovery turbines sheet (Case study: H2S removal unit, oil refinery, p.5)",turboexpander_hydraulic-power-recovery_amine-unit,petroleum-refining,machine-drive,energy-recovery,GJ
+"Pumps sheet (Key metrics, p.6)",motor_variable-speed_pump-vfd,all-industry,machine-drive,pumping,GJ
+"Fuel-fired furnaces and boilers sheet (Key metrics, p.2)",boiler_fuel-fired_gas-economizer,oil-and-gas,steam,steam-generation,GJ
+"Fuel-fired furnaces and boilers sheet (Key metrics, p.2)",direct-heater_fuel-fired_air-preheat,petroleum-refining,direct-heat,process-heating,GJ
+"Fuel-fired furnaces and boilers sheet (Case study 1: convection section revamp, 45 MW refinery heater, p.3-4)",direct-heater_fuel-fired_natural-draft-cabin-1960s,petroleum-refining,direct-heat,process-heating,GJ
+"Fuel-fired furnaces and boilers sheet (Case study 1: convection section revamp, 45 MW refinery heater, p.3-4)",direct-heater_fuel-fired_convection-revamp,petroleum-refining,direct-heat,process-heating,GJ
+"Fuel-fired furnaces and boilers sheet (Case study 2: air preheater on four refinery furnaces, Table 1, p.6)",direct-heater_fuel-fired_forced-draft-base,petroleum-refining,direct-heat,process-heating,GJ
+"Fuel-fired furnaces and boilers sheet (Case study 2: air preheater on four refinery furnaces, Table 1, p.6)",direct-heater_fuel-fired_air-preheater-140c,petroleum-refining,direct-heat,process-heating,GJ
+"Fuel-fired furnaces and boilers sheet (Case study 2: air preheater on four refinery furnaces, Table 1, p.6)",direct-heater_fuel-fired_air-preheater-95c,petroleum-refining,direct-heat,process-heating,GJ
+"Heat pumps sheet (Additional comments, p.3)",heat-pump_space,heat-supply,space-heating,space-heating,GJ
+"Battery energy storage system (BESS) sheet (Alternative technologies table, p.7)",battery_lithium-ion,oil-and-gas,on-site-power,electricity-storage,GJ
+"Battery energy storage system (BESS) sheet (Alternative technologies table, p.7)",battery_flow,oil-and-gas,on-site-power,electricity-storage,GJ
+"Battery energy storage system (BESS) sheet (Key metrics, p.6)",battery_lithium-ion,oil-and-gas,on-site-power,electricity-storage,GJ
+"Battery energy storage system (BESS) sheet (Case study 2: North Sea jack-up drilling rig, p.9)",drilling-rig_battery-hybrid_jack-up-retrofit,oil-and-gas,drilling,drilling,m
+"Drilling rigs sheet (Gas-driven rigs, p.5)",drilling-rig_natural-gas-engine,oil-and-gas,drilling,drilling,m
+"Drilling rigs sheet (Grid-connected rigs, p.5)",drilling-rig_electric,oil-and-gas,drilling,drilling,m
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_sucker-rod,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_progressive-cavity-rod-driven,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_progressive-cavity-rod-driven-metal,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_progressive-cavity-electric-submersible,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_electric-submersible,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_hydraulic,oil-and-gas,machine-drive,artificial-lift,m3
+"Artificial lift sheet (Table 1: typical well characteristics, overall system energy efficiency, p.2)",pump_artificial-lift_gas-lift-continuous,oil-and-gas,machine-drive,artificial-lift,m3

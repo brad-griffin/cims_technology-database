@@ -1,0 +1,33 @@
+process,technology,item,value,unit,reference,note
+Current energy use (Sect. 5.1.1.1),,"average fuel consumption for quicklime, EU 2010",4.25,GJ/t quicklime,p.27,"All kiln types (fleet average); scope fuel preparation, calcination and flue gas treatment; incomplete data. reprinted from EuLA (2012)"
+Current energy use (Sect. 5.1.1.1),,theoretical minimum (heat of dissociation of calcite at 25 degC),3.18,GJ/t CaO,p.27,reprinted from Oates (1998)
+Current energy use (Sect. 5.1.1.1),,heat of reaction for quicklime with 94.5% free CaO and 0.9% MgO,3.03,GJ/t quicklime,p.27,71% of the 4.25 GJ/t average; theoretical saving potential 29%.
+Current energy use (Sect. 5.1.1.1),,energy to evaporate 1% limestone moisture,0.04-0.05,GJ/t lime,p.27,Chalk can hold 10-15% moisture.
+Current energy use (Sect. 5.1.1.2),,"electricity consumption, lime manufacturing (order of magnitude)",about 60 (estimates 70 and 50),kWh/t lime product,p.30,"About 5% of total energy; 70 from carbon-leakage GVA ratio, 50 from EESAC 2011 LCI for quicklime."
+Current energy use (Sect. 5.1.1.2),,electricity by step: kiln / hydrating / grinding,5-50 / 5-30 / 4-40,kWh/t,p.30,reprinted from JRC (2013) (CLM BREF)
+"Current energy use (Sect. 5.1.1.1, Fig. 11)",,fuel mix of EU lime production 2010: natural gas / fossil solid / oil / waste / biomass,34 / 51 / 5 / 8 / 2,% of fuel energy,"p.29, Figure 11",Printed pie labels; weighted over three lime products; incomplete data. reprinted from EuLA (2012)
+"Kiln types (Sect. 3, Table 2)",,number of kilns EU-28 2013: LRK / PRK / PFRK / ASK / MFSK / other / total,14 / 20 / 183 / 67 / 86 / 99 / 469,kilns,"p.14, Table 2",reprinted from Schlegel (2013)
+Kiln types (Sect. 3),,capacity range of 90% of lime kilns,10-500,t/d,p.14,reprinted from JRC (2013) (CLM BREF)
+Kiln types (Sect. 3),,energy use of rotary kilns relative to PFR kilns,60-120 higher,%,p.14,reprinted from EuLA (2012)
+Kiln switch (Sect. 5.2.1.1),,share of EU lime produced in vertical kilns,80 (80-90 per CBPC 2012),%,p.34,
+CO2 emissions (Sect. 5.1.2),,"stoichiometric process emissions, lime / dolime",0.785 / 0.913,t CO2/t product,p.30,"Complete conversion, no impurities. reprinted from Ecofys (2009)"
+"CO2 emissions (Sect. 5.1.2, Table 7)",,"average CO2 intensity, quicklime: process / combustion / electricity / total",0.751 / 0.322 / 0.019 / 1.092,t CO2/t lime product,"p.31, Table 7","Electricity column printed once (0.019, merged cell) for all products; totals confirm it applies to each row; electricity at 60 kWh/t and 310 g/kWh. Fleet averages 2010. reprinted from EuLA (2012)"
+"CO2 emissions (Sect. 5.1.2, Table 7)",,"average CO2 intensity, dolime: process / combustion / electricity / total",0.807 / 0.475 / 0.019 / 1.301,t CO2/t lime product,"p.31, Table 7",reprinted from EuLA (2012)
+"CO2 emissions (Sect. 5.1.2, Table 7)",,"average CO2 intensity, sintered dolime: process / combustion / electricity / total",0.913 / 0.635 / 0.019 / 1.567,t CO2/t lime product,"p.31, Table 7",reprinted from EuLA (2012)
+CO2 emissions (Sect. 5.1.2),,share of CO2 from downstream processing and hydration / mining and stone preparation,1.5 / 0.7,% of total CO2,p.30,reprinted from EuLA (2013a)
+CO2 emissions (Sect. 5.1.2),,EU lime industry direct CO2 (EUTL),around 26,Mt CO2/yr,p.31,Non-captive lime; 22 Mt quicklime produced in 2011 (p.17).
+"Fuel switch (Sect. 5.2.2.1, fn 62)",,"emission factors used: gas / liquid / fossil solid / waste (liquid waste 73.3, solid waste 91.7)",56.1 / 74.9 / 100.0 / 82.5,t CO2/TJ,"p.38, fn 62",heating-value basis not stated. reprinted from EuLA (2010)
+"CO2 emissions (Sect. 5.1.2, fn 48)",,EU average electricity emission factor used,310,g CO2/kWh,"p.31, fn 48",reprinted from EU (2011b)
+Fuel switch (Sect. 5.2.2.1),kiln_lime-shaft_parallel-flow-regenerative,gas calorific value for PFRK design / coke oven gas / lean-gas research target,48 / 16-35 / below 7.5,MJ/Nm3,p.39,
+"Fuel switch (Sect. 5.2.2.1, Text Box 13)",kiln_lime-shaft_parallel-flow-regenerative,waste wood share achieved in a Belgian PFRK,more than 30,% of fuel,p.39,14 PFRKs and 2 captive rotary kilns known to use finely ground wood.
+Hydration (Sect. 3 and 5.2.1.1),,heat released by slaking quicklime,1.14 MJ/kg CaO (BREF); about 1.2 GJ/t CaO at about 100 degC (EuLA 2013a),,p.15 and p.36,Hydrated lime about 18% of 2012 sales.
+Production costs (Sect. 4.2),,"EU lime production cost by kiln type (2006 data, 3 mm lime)",55 to more than 70,EUR/t lime,p.18,"Energy 40%, raw materials 17%, capital 7% (about EUR4/t for existing capacity), other 37%. reprinted from NERA (2008)"
+Production costs (Sect. 4.2),,carbon cost pass-through: EUR30/t CO2 adds / EUR1/t CO2 adds,32 / 1.1,EUR/t quicklime,p.18 and Executive Summary,Without free allocation. reprinted from NERA (2008)
+Production costs (Sect. 4.3),,"non-EU lime production cost, existing capacity excl. capital (capital adds 3-5)",32-47,EUR/t lime,p.19,Former Soviet Union and North Africa; energy EUR5-20/t. reprinted from NERA (2008)
+"Abatement costs (Sect. 5.2.5, Table 9)",kiln_lime_ccs-diffuse,CCS capture investment as printed in Table 9,76,EUR/t CO2 avoided,"p.46, Table 9","Printed in the investment column as ""EUR76/ton CO2 avoided""; basis (annualised?) unclear, so not loaded as capex. PRICE YEAR NOT STATED."
+Abatement costs (Annex),kiln_lime_ccs-diffuse,"additional CO2 transport and storage cost, large-scale CCS",15,EUR/t CO2,Annex p.60,"reprinted from ZEP (2011a, 2011b)"
+Abatement costs (Annex),,price assumptions: solid fossil fuel / biomass at burner; electricity; steam,5 / 7 EUR/GJ; 90 EUR/MWh; about 11 EUR/GJ,,"Annex p.60, fn 87","Other fuel prices from Table 3 (EU end-user: gas 9, solid 3, liquid 9 EUR/GJ)."
+Fuel savings (Sect. 5.2.1.1),,"projected fuel intensity decrease for quicklime, 2030 / 2050",7 / 13,%,p.33,For all lime products 16% in 2050 (fn 54); effect on total emission intensity about 4.9% (p.50).
+Pathway (Sect. 5.3),,share of direct emissions from process / fossil fuel,about two thirds / 31,%,p.47,Lower carbon fuels can reduce at most 31% (p.50).
+"CCU (Sect. 5.2.3, Text Box 18)",,cost of biofuel from lime/glass CO2 via algae (Agical+),about 650,EUR/GJ,p.44,About 100 times traditional fuels.
+Greening of electricity (Sect. 5.2.2.2),,"projected decrease of EU power carbon intensity, 2030 / 2050",42 / 71,%,p.41,"EU Energy Roadmap, Current Policy Initiatives scenario."

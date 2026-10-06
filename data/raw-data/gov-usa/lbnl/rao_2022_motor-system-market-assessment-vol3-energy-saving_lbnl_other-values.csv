@@ -1,0 +1,9 @@
+process,technology,item,value,unit,reference,note
+Analysis inputs (Vol.3 Methods),,US national marginal / average industrial electricity price 2020,0.084 / 0.086,2020_USD/kWh,p.23,EEI 2020 typical bills; census-division values in Table 1
+Analysis inputs (Vol.3 Methods),,Marginal CO2 factor for electricity savings (incl. line losses),0.000709,t CO2/kWh,p.23,reprinted from U.S. EPA 2019
+Analysis inputs (Vol.3 Methods),motor_variable-speed,Affinity-law exponent used for VFD savings: pumps and fans / air and refrigeration compressors,2.1 / 1,-,p.32,theoretical 3 rarely achieved
+Analysis inputs (Vol.3 Methods),,Industrial motor energy at constant load >=75% / constant <75% / variable without VFD / variable with VFD or not VFD-able,117472 / 25942 / 53345 / 174616,GWh/yr,"pp.40, 42",for the size ranges of Table 10
+Distribution system loss by condition grade (Table 15),,pump distribution loss: best practice / good / fair / poor,<=8 / 8-16 / 16-24 / 8-24 (used 8/12/16/24),% of energy,"p.47, Table 15",
+Distribution system loss by condition grade (Table 15),,compressed air distribution loss: best practice / good / fair / poor,0-5 / 10-20 / 30-40 / 60+ (used 5/15/35/60),% of energy,"p.47, Table 15",
+Distribution system loss by condition grade (Table 15),,fan ducts distribution loss: best practice / good / fair / poor,<5 / 15 / 25 / >40 (used 5/15/25/40),% of energy,"p.47, Table 15",
+Rewinds (Table 17),,Industrial motors by number of rewinds: 0 / 1 / 2 / 3+,82.5 / 11.6 / 5.4 / 0.5,%,"p.51, Table 17",

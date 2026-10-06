@@ -1,0 +1,13 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+Deployment in industry (Pillar A),heat-pump_industrial,description,,,"Industrial heat pumps (including mechanical vapour recompression) supplying drying, pasteurisation or steam, mainly in light industry, paper and chemicals.",,,,p.12; p.43 (definition),
+Deployment in industry (Pillar A),heat-pump_industrial,state-of-development,,,"commercial, early deployment (Japan industrial heat pump capacity almost 650 MW in 2024, up from 290 MW a decade earlier)",,,,p.12,
+Deployment in industry (Pillar A),heat-pump_industrial,temperature-max,heat,degC,120,,,,p.12,'Industrial heat pumps able to reach 120 degC were first demonstrated around 2022' (as printed).
+Deployment in industry (Pillar A): machines above 160 degC,heat-pump_industrial,description,,,High-temperature industrial heat pumps delivering over 160 degC.,,,,p.12,
+Deployment in industry (Pillar A): machines above 160 degC,heat-pump_industrial,temperature-min,heat,degC,160,,,,p.12,Machines reaching over 160 degC.
+Deployment in industry (Pillar A): machines above 160 degC,heat-pump_industrial,year-available,,year,2027,,,,p.12,Commercial roll-out of machines reaching over 160 degC expected by 2027.
+Opportunities for heat pumps in district heating (Pillar A),heat-pump_absorption,description,,,"Absorption heat pump in Qianxi, China, using waste heat from a nearby steel mill to supply district heating.",,,,p.11,
+Opportunities for heat pumps in district heating (Pillar A),heat-pump_absorption,capacity,,MW,200,,,,p.11,200 MW absorption heat pump (thermal; single installation).
+"Levelised cost of heating and cooling, buildings (Pillar B, Affordability)",heat-pump_space_air-to-air,description,,,Reversible air-to-air heat pump for buildings (used for heating and cooling).,,,,p.18,
+"Levelised cost of heating and cooling, buildings (Pillar B, Affordability)",heat-pump_space_air-to-air,lifetime,,years,15,,,,p.18,Lifetime assumed in the levelised cost of heating and cooling (with a 3% discount rate): 15 years.
+"Levelised cost of heating and cooling, buildings (Pillar B, Affordability)",heat-pump_space_air-to-water,description,,,Air-to-water (hydronic) heat pump for buildings.,,,,p.18,
+"Levelised cost of heating and cooling, buildings (Pillar B, Affordability)",heat-pump_space_air-to-water,lifetime,,years,18,,,,p.18,Lifetime assumed in the levelised cost of heating and cooling (with a 3% discount rate): 18 years.

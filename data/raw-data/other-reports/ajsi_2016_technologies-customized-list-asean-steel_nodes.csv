@@ -1,0 +1,7 @@
+process,technology,sector,end-use,process-step,service-unit
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - EAF",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Model plant (Pre-Conditions for Calculations of Effects, p.8): 100% scrap EAF mini-mill, 500,000 t/yr billet, 80 t EAF, conventional facilities - reheating furnace",furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"A-1 High temperature continuous scrap preheating EAF applied to the model plant (Table, p.9; sheet p.13)",electric-arc-furnace_scrap-preheating,iron-and-steel,material-conversion,steelmaking,t
+"A-2 Medium temperature batch scrap preheating EAF applied to the model plant (Table, p.9; sheet p.14)",electric-arc-furnace_scrap-preheating,iron-and-steel,material-conversion,steelmaking,t
+"D-6 Induction type billet heater for direct rolling, model plant (Table, p.10; sheet p.42)",induction-heater_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+Annex 2 Technologies for Blast Furnace: by-product gas cogeneration / gas turbine combined cycle (p.57),combined-cycle_steel-offgas,iron-and-steel,power-generation,by-product gas power,MWh

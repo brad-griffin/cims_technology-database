@@ -1,0 +1,19 @@
+process,technology,sector,end-use,process-step,service-unit
+"UK paper sector 2008 (Table 1, p.11)",paper-mill_uk-average,pulp-and-paper,multiple,whole mill,t
+"Energy consumption by process area, Canadian benchmark (Table 5, p.14)",pulper_recycled-fibre,pulp-and-paper,material-preparation,recycled pulping,ADt
+"Energy consumption by process area, Canadian benchmark (Table 5, p.14)",paper-machine_newsprint,pulp-and-paper,drying-and-separation,paper machine,ADt
+"Energy consumption by process area, Canadian benchmark (Table 5, p.14)",paper-machine_printing-writing,pulp-and-paper,drying-and-separation,paper machine,ADt
+"Energy consumption by process area, Canadian benchmark (Table 5, p.14)",paper-machine_kraft-paper,pulp-and-paper,drying-and-separation,paper machine,ADt
+"Energy consumption by process area, Canadian benchmark (Table 5, p.14)",paper-machine_board,pulp-and-paper,drying-and-separation,paper machine,ADt
+"Stock preparation, Voith data (p.15)",pulper_recycled-fibre,pulp-and-paper,material-preparation,recycled pulping,ADt
+"Generic energy model of a 500 ADt/d paper mill (Fig. 5, p.17)",paper-mill_generic-model,pulp-and-paper,multiple,whole mill,ADt
+"Generic energy model of a 500 ADt/d paper mill (Fig. 5, p.17)",pulper_recycled-fibre_stock-preparation,pulp-and-paper,material-preparation,stock preparation,ADt
+"Generic energy model of a 500 ADt/d paper mill (Fig. 5, p.17)",paper-machine,pulp-and-paper,forming-and-finishing,"wire, vacuum and press",ADt
+"Generic energy model of a 500 ADt/d paper mill (Fig. 5, p.17)",dryer_steam-heated,pulp-and-paper,drying-and-separation,paper drying,ADt
+"Dryer heat and mass balance, 500 ADt/d machine (Appendix A, pp.71-72)",dryer_steam-heated,pulp-and-paper,drying-and-separation,paper drying,ADt
+"Site B gas-turbine CHP plant, monitored (Sect. 4.2, pp.37-42)",combustion-turbine_chp,pulp-and-paper,steam-and-hot-water,CHP,MWh
+"Site B gas-turbine CHP plant, monitored (Sect. 4.2, pp.37-42)",steam-turbine_back-pressure,pulp-and-paper,power-generation,CHP,MWh
+"Innovation business cases (Sect. 6, pp.60-69)",gasifier_process-waste-syngas,pulp-and-paper,steam-and-hot-water,energy supply,GJ
+"Innovation business cases (Sect. 6, pp.60-69)",control-system_online-moisture,pulp-and-paper,drying-and-separation,paper machine control,t
+"Innovation business cases (Sect. 6, pp.60-69)",dryer_steam-heated_hood-humidity-control,pulp-and-paper,drying-and-separation,paper drying,t
+"Innovation business cases (Sect. 6, pp.60-69)",press_hot-press,pulp-and-paper,forming-and-finishing,pressing,t

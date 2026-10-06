@@ -175,7 +175,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `oven_fuel-fired` | Fuel-fired oven (direct or indirect firing) | conventional | natural-gas | 9 | light-industrial.service.heat | quantified |
 | `oven_fuel-fired_efficiency-moderate` | Fuel-fired oven efficiency measures, moderate | efficient variant | natural-gas; electricity | 9 | light-industrial.service.heat | quantified |
 | `press_high-pressure-processing` | High-pressure processing | alternative | electricity | 9 | light-industrial.service.heat | estimated |
-| `radio-frequency-heater_food` | Electromagnetic food heating (RF, microwave, ohmic, infrared) | alternative | electricity | 9 | light-industrial.service.heat | named |
+| `radio-frequency-heater_food` | Electromagnetic food heating (RF, microwave, ohmic, infrared) | alternative | electricity | 9 | light-industrial.service.heat | not pooled |
 | `refinery_sugar-beet` | Beet sugar factory, whole plant | conventional | natural-gas; coal; steam; electricity | 9 | light-industrial.product.food-tobacco-and-beverage | quantified |
 
 ### Heat supply
@@ -301,7 +301,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `motor_premium-efficiency` | Premium-efficiency motor | efficient variant | electricity | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air; *.service.machine-drive.materials-handling; *.service.machine-drive.materials-processing; light-industrial.service.machine-drive | quantified |
 | `motor_variable-speed` | Variable-speed drive | efficient variant | electricity | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air; *.service.machine-drive.materials-handling; *.service.machine-drive.materials-processing; light-industrial.service.machine-drive; chemicals.service.hvac.space-cooling; coal-mining.service.hvac.space-cooling; industrial-minerals.service.hvac.space-cooling; iron-and-steel.service.hvac.space-cooling; light-industrial.service.hvac.space-cooling; metal-smelting.service.hvac.space-cooling; mining.service.hvac.space-cooling; petroleum-refining.service.hvac.space-cooling; pulp-and-paper.service.hvac.space-cooling; petroleum-crude.product.transmission | quantified |
 | `reciprocating-engine_drive` | Gas-engine drive (compressors and pumps) | conventional | natural-gas; diesel | 9 | natural-gas.service.compressor-drive.engine; petroleum-crude.product.transmission; *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | quantified |
-| `steam-turbine_drive` | Steam turbine drive | conventional | steam | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | estimated |
+| `steam-turbine_drive` | Steam turbine drive | conventional | steam | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | quantified |
 
 ### Mining (including coal mining)
 
@@ -322,7 +322,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `haul-truck_trolley-assist` | Trolley-assist haulage | alternative | electricity; diesel | 9 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground | quantified |
 | `hoist` | Shaft hoist | conventional | electricity | 9 | coal-mining.service.mine-haulage; mining.service.mine-haulage.underground | quantified |
 | `leaching-vessel_heap-atmospheric` | Heap or atmospheric leaching with SX-EW | conventional | steam | 9 | mining.service.leaching; metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | quantified |
-| `leaching-vessel_high-pressure-acid` | High-pressure acid leaching | alternative | steam | 9 | mining.service.leaching; metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | named |
+| `leaching-vessel_high-pressure-acid` | High-pressure acid leaching | alternative | steam | 9 | mining.service.leaching; metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | quantified |
 | `leaching-vessel_in-situ` | In-situ leaching | alternative |  | 9 | mining.service.leaching | gap |
 | `mine_open-pit-coal` | Open-pit coal mine (whole mine) | conventional | diesel; electricity | 9 | coal-mining.product.raw-product.extraction; coal-mining.product.simplified-extraction | quantified |
 | `mine_underground-coal` | Underground coal mine (whole mine) | conventional | electricity; diesel | 9 | coal-mining.product.raw-product.extraction; coal-mining.product.simplified-extraction | quantified |
@@ -342,7 +342,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 |---|---|---|---|---:|---|---|
 | `mobile-equipment_battery-electric` | Battery-electric equipment | alternative | electricity | 8-9 | construction.product.transport; natural-gas.product.supply.off-road-transport | quantified |
 | `mobile-equipment_diesel` | Diesel non-road equipment | conventional | diesel | 9 | construction.product.transport; natural-gas.product.supply.off-road-transport | quantified |
-| `mobile-equipment_diesel-electric` | Diesel-electric hybrid equipment | efficient variant | diesel; electricity | 9 | construction.product.transport; natural-gas.product.supply.off-road-transport | gap |
+| `mobile-equipment_diesel-electric` | Diesel-electric hybrid equipment | efficient variant | diesel; electricity | 9 | construction.product.transport; natural-gas.product.supply.off-road-transport | quantified |
 | `mobile-equipment_hydrogen-combustion` | Hydrogen combustion-engine mobile equipment | prospective | hydrogen | 6-7 | construction.product.transport; natural-gas.product.supply.off-road-transport | quantified |
 | `mobile-equipment_hydrogen-fuel-cell` | Hydrogen fuel-cell equipment | prospective | hydrogen | 6-9 | construction.product.transport; natural-gas.product.supply.off-road-transport | quantified |
 | `mobile-equipment_spark-ignition` | Propane or natural-gas (spark-ignition) equipment | conventional | natural-gas | 9 | construction.product.transport; natural-gas.product.supply.off-road-transport | gap |
@@ -355,11 +355,11 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `calciner_gas-suspension` | Gas-suspension calciner | efficient variant | natural-gas; hydrogen | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina | quantified |
 | `calciner_gas-suspension_ccs-diffuse` | Gas-suspension calciner with post-combustion capture | prospective | natural-gas; steam | 4 | metal-smelting.product.aluminum.primary-aluminum.alumina | estimated |
 | `converter_continuous` | Continuous converting | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
-| `converter_peirce-smith` | Peirce-Smith converting | conventional | oil; solar | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | gap |
+| `converter_peirce-smith` | Peirce-Smith converting | conventional | oil; solar | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `digester_bayer` | Bayer digester | conventional | natural-gas; electricity; hydrogen; biomass | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina | quantified |
 | `electric-arc-furnace_open-arc-dc` | Open-arc DC furnace | alternative |  | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | quantified |
 | `electric-arc-furnace_submerged-arc` | Submerged-arc furnace | conventional | electricity; oil; coke | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | estimated |
-| `electrolysis-cell_advanced-anodes` | Electrowinning with advanced anodes and energy control | efficient variant | electricity | 8 | metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | estimated |
+| `electrolysis-cell_advanced-anodes` | Electrowinning with advanced anodes and energy control | efficient variant | electricity | 8 | metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | quantified |
 | `electrolysis-cell_electrolytic-smelting` | Hydro- or electrolytic non-ferrous smelting | prospective | electricity | 5 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.lead.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `electrolysis-cell_electrorefining` | Copper electrorefining tankhouse | conventional | electricity; steam | 9 | metal-smelting.product.copper.pyrometallurgy.refining | quantified |
 | `electrolysis-cell_inert-anode` | Inert anode cell | prospective | electricity | 7 | metal-smelting.product.aluminum.primary-aluminum.electrolysis | quantified |
@@ -425,7 +425,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
-| `adsorber_molecular-sieve` | Molecular-sieve dehydration | alternative | natural-gas; electricity | 9 | natural-gas.product.supply.processing | not pooled |
+| `adsorber_molecular-sieve` | Molecular-sieve dehydration | alternative | natural-gas; electricity | 9 | natural-gas.product.supply.processing | quantified |
 | `compressor_blowdown-recovery` | Blowdown gas recompression | alternative | electricity | 9 | natural-gas.product.supply.venting.blowdowns | quantified |
 | `compressor_boil-off-recovery` | Boil-off gas recovery | efficient variant | electricity | 9 | natural-gas.product.supply.lng-liquefaction | estimated |
 | `compressor_electric` | Electric-drive compressor | alternative | electricity | 9 | natural-gas.service.compressor-drive.turbine; natural-gas.service.compressor-drive.engine | quantified |
@@ -433,9 +433,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `compressor_low-emission-seal` | Low-emission compressor seals and rod packing | alternative |  | 9 | natural-gas.product.supply.fugitive | quantified |
 | `compressor_vapour-recovery` | Vapour recovery unit | efficient variant | electricity | 9 | natural-gas.product.supply.venting.other-point-venting | quantified |
 | `direct-heater_line-heater` | Fired line heater and treater | conventional | natural-gas | 9 | natural-gas.product.supply.extraction.coalbed-methane; natural-gas.product.supply.extraction.conventional; natural-gas.product.supply.extraction.shale; natural-gas.product.supply.extraction.tight; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | quantified |
-| `drilling-rig_battery-hybrid` | Battery hybrid rig power | efficient variant | diesel; electricity | 8 | natural-gas.product.supply.drilling | gap |
+| `drilling-rig_battery-hybrid` | Battery hybrid rig power | efficient variant | diesel; electricity | 8 | natural-gas.product.supply.drilling | quantified |
 | `drilling-rig_diesel` | Diesel drilling rig | conventional | diesel | 9 | natural-gas.product.supply.drilling | gap |
-| `drilling-rig_electric` | Electric drilling rig | alternative | electricity | 9 | natural-gas.product.supply.drilling | gap |
+| `drilling-rig_electric` | Electric drilling rig | alternative | electricity | 9 | natural-gas.product.supply.drilling | quantified |
 | `evaporator_crystallizer` | Evaporator-crystallizer | alternative |  | 9 | petroleum-crude.service.produced-water; mining.service.crystallization | quantified |
 | `flare` | Flare with continuous pilot | conventional |  | 9 | natural-gas.product.supply.flaring | quantified |
 | `flare_enclosed-combustor` | Enclosed combustor | alternative |  | 9 | natural-gas.product.supply.venting.liquid-unloading; natural-gas.product.supply.venting.other-point-venting | quantified |
@@ -462,7 +462,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `process-improvement_drag-reducing-agent` | Drag-reducing agents | efficient variant |  | 9 | petroleum-crude.product.transmission | gap |
 | `process-improvement_low-emission-components` | Low-emission valves and connectors | alternative |  | 9 | natural-gas.product.supply.fugitive | quantified |
 | `process-improvement_nru-optimization` | Nitrogen rejection unit optimization | efficient variant |  | 9 | natural-gas.product.supply.venting.other-point-venting | quantified |
-| `pump_artificial-lift` | Electric artificial lift | conventional | electricity | 9 | natural-gas.product.supply.extraction.coalbed-methane; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | gap |
+| `pump_artificial-lift` | Electric artificial lift | conventional | electricity | 9 | natural-gas.product.supply.extraction.coalbed-methane; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | quantified |
 | `pump_electric-station` | Electric pump station | conventional | electricity | 9 | petroleum-crude.product.transmission | not pooled |
 | `pump_plunger-lift` | Plunger lift and smart liquids unloading | efficient variant | natural-gas; electricity | 9 | natural-gas.product.supply.venting.liquid-unloading | quantified |
 | `reactor_ebullated-bed-hydrocracking` | Ebullated-bed hydrocracking | conventional | hydrogen; natural-gas; electricity | 9 | petroleum-crude.product.bitumen.upgrading | not pooled |
@@ -482,7 +482,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `separator_reduced-emission-completion` | Reduced emission completions | alternative |  | 9 | natural-gas.product.supply.well-tests | quantified |
 | `separator_warm-lime-softening` | De-oiling and warm lime softening | conventional |  | 9 | petroleum-crude.service.produced-water | estimated |
 | `separator_warm-water-extraction` | Hydrotransport and warm-water extraction | conventional | electricity | 9 | petroleum-crude.product.bitumen.mining | quantified |
-| `turboexpander_ngl-recovery` | Turboexpander NGL recovery | conventional | electricity; natural-gas | 9 | natural-gas.product.supply.processing | gap |
+| `turboexpander_ngl-recovery` | Turboexpander NGL recovery | conventional | electricity; natural-gas | 9 | natural-gas.product.supply.processing | quantified |
 | `turboexpander_pressure-let-down` | Turboexpander at pressure let-down | efficient variant | electricity | 8 | natural-gas.product.distribution; natural-gas.product.transmission | quantified |
 | `well_cyclic-steam` | Cyclic steam stimulation (CSS) | conventional | natural-gas | 9 | petroleum-crude.product.bitumen.in-situ | quantified |
 | `well_disposal-injection` | Disposal well injection | conventional |  | 9 | petroleum-crude.service.produced-water | gap |
@@ -553,12 +553,12 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_hydroprocessing` | Hydroprocessing (hydrocracking and hydrotreating) | conventional | hydrogen; natural-gas; electricity | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking; petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization; petroleum-crude.product.bitumen.upgrading | quantified |
 | `reactor_isomerization` | Isomerization unit | conventional | steam | 9 | petroleum-refining.product.isomerization | quantified |
 | `refinery_conversion` | Conversion (cracking) refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation; petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | not pooled |
-| `refinery_deep-conversion` | Deep-conversion (coking) refinery (whole plant) | conventional | refinery-gas; natural-gas; petroleum-coke | 9 | petroleum-refining.product.petroleum-fractions.distillation; petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking | not pooled |
-| `refinery_hydroskimming` | Hydroskimming refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | not pooled |
+| `refinery_deep-conversion` | Deep-conversion (coking) refinery (whole plant) | conventional | refinery-gas; natural-gas; petroleum-coke | 9 | petroleum-refining.product.petroleum-fractions.distillation; petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking | quantified |
+| `refinery_hydroskimming` | Hydroskimming refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
 | `steam-reformer_methane` | Steam methane reformer | conventional | steam; natural-gas | 9 | petroleum-refining.service.hydrogen; petroleum-crude.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
 | `steam-reformer_methane_ccs-concentrated` | Steam methane reformer with capture on the shift gas | alternative | natural-gas | 9 | petroleum-refining.service.hydrogen; petroleum-crude.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
 | `steam-reformer_methane_ccs-diffuse` | Steam methane reformer with capture on the flue gas | prospective | natural-gas | 7-8 | petroleum-refining.service.hydrogen; petroleum-crude.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
-| `steam-reformer_methane_efficiency-moderate` | Steam methane reformer efficiency measures, moderate | efficient variant | natural-gas | 9 | petroleum-refining.service.hydrogen | quantified |
+| `steam-reformer_methane_efficiency-moderate` | Steam methane reformer efficiency measures, moderate | efficient variant | natural-gas | 9 | petroleum-refining.service.hydrogen | estimated |
 
 ### Pulp and paper
 

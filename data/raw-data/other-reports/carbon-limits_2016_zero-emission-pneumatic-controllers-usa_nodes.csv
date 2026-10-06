@@ -1,0 +1,18 @@
+process,technology,sector,end-use,process-step,service-unit
+"Gas-driven controller emission factors and baseline costs, central assumptions (Sect. 4.1, Tables 6 and 17)",pneumatic-device_gas-driven_continuous-bleed,oil-and-gas,venting,pneumatic-controls,device
+"Gas-driven controller emission factors and baseline costs, central assumptions (Sect. 4.1, Tables 6 and 17)",pneumatic-device_low-bleed,oil-and-gas,venting,pneumatic-controls,device
+"Gas-driven controller emission factors and baseline costs, central assumptions (Sect. 4.1, Tables 6 and 17)",pneumatic-device_gas-driven_intermittent-vent,oil-and-gas,venting,pneumatic-controls,device
+"Gas-driven controller emission factors and baseline costs, central assumptions (Sect. 4.1, Tables 6 and 17)",pneumatic-device_gas-driven_chemical-injection-pump,oil-and-gas,venting,pneumatic-controls,device
+"Gas-driven controller emission factors and baseline costs, central assumptions (Sect. 4.1, Tables 6 and 17)",pneumatic-device_gas-driven_esd,oil-and-gas,venting,pneumatic-controls,device
+"Electronic controllers (solar or grid powered), equipment cost assumptions (Sect. 3.2, Table 3; Appendix Table 17)",pneumatic-device_non-emitting_electric-controller,oil-and-gas,venting,pneumatic-controls,device
+"Electronic controllers (solar or grid powered), equipment cost assumptions (Sect. 3.2, Table 3; Appendix Table 17)",pneumatic-device_non-emitting_electric-pump,oil-and-gas,venting,pneumatic-pumps,device
+"Electronic controllers (solar), example retrofit site: 1 continuous, 2 intermittent, 1 ESD, no grid, dry gas (Sect. 4.2, Tables 8-10)",pneumatic-device_non-emitting_electric-solar,oil-and-gas,venting,pneumatic-controls,t
+"Electronic controllers (solar), example retrofit site: 1 continuous, 2 intermittent, 1 ESD, no grid, dry gas (Sect. 4.2, Tables 8-10)",pneumatic-device_non-emitting_electric-grid,oil-and-gas,venting,pneumatic-controls,t
+"Electronic controllers (solar), example new site: same configuration, no grid, dry gas (Sect. 4.2, p.24; Table 19)",pneumatic-device_non-emitting_electric-solar,oil-and-gas,venting,pneumatic-controls,t
+"Electronic controllers (solar), example new site: same configuration, no grid, dry gas (Sect. 4.2, p.24; Table 19)",pneumatic-device_non-emitting_electric-grid,oil-and-gas,venting,pneumatic-controls,t
+"Instrument air (grid power), example retrofit site: 5 continuous, 11 intermittent, 4 ESD, dry gas (Sect. 4.3, Tables 12-14)",pneumatic-device_non-emitting_instrument-air-grid,oil-and-gas,venting,pneumatic-controls,t
+"Instrument air (grid power), example new site: 5 continuous, 11 intermittent, 4 ESD, dry gas (Sect. 4.3, p.30; Table 21)",pneumatic-device_non-emitting_instrument-air-grid,oil-and-gas,venting,pneumatic-controls,t
+"Instrument air (grid power), all modelled site configurations with 21-40 controllers (Sect. 4.3, p.32)",pneumatic-device_non-emitting_instrument-air-grid,oil-and-gas,venting,pneumatic-controls,site
+"Instrument air (grid power), cost and engineering assumptions (Sect. 3.3; Appendix Table 17)",pneumatic-device_non-emitting_instrument-air-grid,oil-and-gas,venting,pneumatic-controls,site
+Other zero-emission options (Sect. 3.4),pneumatic-device_non-emitting_self-contained,oil-and-gas,venting,pneumatic-controls,device
+Other zero-emission options (Sect. 3.4),pneumatic-device_non-emitting_instrument-air-solar,oil-and-gas,venting,pneumatic-controls,device

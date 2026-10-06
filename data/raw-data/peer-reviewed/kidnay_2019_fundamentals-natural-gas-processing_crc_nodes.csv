@@ -1,0 +1,27 @@
+process,technology,sector,end-use,process-step,service-unit
+"Amine treating representative operating parameters (Sect. 10.2.1, Table 10.3)",gas-treatment-unit_amine-sweetening_mea,oil-and-gas,gas-processing,sweetening,L
+"Amine treating representative operating parameters (Sect. 10.2.1, Table 10.3)",gas-treatment-unit_amine-sweetening_dga,oil-and-gas,gas-processing,sweetening,L
+"Amine treating representative operating parameters (Sect. 10.2.1, Table 10.3)",gas-treatment-unit_amine-sweetening_dea,oil-and-gas,gas-processing,sweetening,L
+"Amine treating representative operating parameters (Sect. 10.2.1, Table 10.3)",gas-treatment-unit_amine-sweetening_mdea,oil-and-gas,gas-processing,sweetening,L
+"TEG dehydrator typical operating conditions (Sect. 11.2, Table 11.3)",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,dehydration,m3
+"Hannibal gas plant, Sfax, Tunisia - TEG unit (Sect. 20.4.5)",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,dehydration,m3
+"Molecular sieve dehydration typical conditions (Sect. 11.3.2, Table 11.5)",adsorber_molecular-sieve,oil-and-gas,gas-processing,dehydration,m3
+"Capital cost estimate, 100 MMscfd plant with 5% CO2 (Sect. 19.3-19.7, Example 19.1)",gas-treatment-unit_amine-sweetening,oil-and-gas,gas-processing,sweetening,m3
+"Capital cost estimate, 100 MMscfd plant with 5% CO2 (Sect. 19.3-19.7, Example 19.1)",gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-processing,dehydration,m3
+"Capital cost estimate, 100 MMscfd plant with 5% CO2 (Sect. 19.3-19.7, Example 19.1)",turboexpander_ngl-recovery,oil-and-gas,gas-processing,ngl-recovery,m3
+"Capital cost estimate, 100 MMscfd plant with 5% CO2 (Sect. 19.3-19.7, Example 19.1)",gas-treatment-unit_liquid-redox,oil-and-gas,gas-processing,sulphur-recovery,t
+"Capital cost estimate, 100 MMscfd plant with 5% CO2 (Sect. 19.3-19.7, Example 19.1)",compressor_gas-plant,oil-and-gas,compressor-drive-turbine,compression,kW
+Compression installed cost rule (Sect. 19.1),compressor_gas-plant,oil-and-gas,compressor-drive-turbine,compression,kW
+U.S. interstate pipeline compressor stations added in 2017 (Sect. 17.2.1.2),compressor_pipeline-station,oil-and-gas,gas-pipelines,compression,kW
+Gas turbine compressor drivers (Sect. 9.4.2.2),combustion-turbine_drive,oil-and-gas,compressor-drive-turbine,compression,GJ
+"San Juan gas plant, New Mexico, 500 MMscfd sweet gas, 98% ethane recovery (Sect. 20.2, Exercise 20.2)",turboexpander_ngl-recovery,oil-and-gas,gas-processing,ngl-recovery,m3
+"Modular cryogenic gas plants, U.S. Gulf Coast (Sect. 19.8)",turboexpander_ngl-recovery,oil-and-gas,gas-processing,ngl-recovery,m3
+LNG plant energy consumption (Sect. 18.1),liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+LNG plant energy consumption (Sect. 18.1),liquefaction-train_small-scale,oil-and-gas,lng-liquefaction,liquefaction,t
+"LNG liquefaction capital cost, North America, early 2019 (Sect. 18.7.1)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"Generic liquefaction plant 2003, two-train 8 Mtpa greenfield (Sect. 18.7.1)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"Generic liquefaction plant 2003, expansion train (Sect. 18.7.1)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"LNG cost breakdown, Qatar (Sect. 18.7, Table 18.6)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"LNG cost breakdown, Australia (Sect. 18.7, Table 18.6)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"LNG cost breakdown, Indonesia (Sect. 18.7, Table 18.6)",liquefaction-train_base-load,oil-and-gas,lng-liquefaction,liquefaction,t
+"LNG regasification terminals (Sect. 18.1, 18.7.3)",heat-exchanger_lng-regasification,oil-and-gas,lng-regasification,regasification,m3

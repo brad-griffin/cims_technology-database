@@ -1,0 +1,12 @@
+process,technology,item,value,unit,reference,note
+"Copper electrowinning, general (Sect. 17.3)",electrolysis-cell_copper-electrowinning,theoretical energy for plating copper,754,kWh/t Cu,"p.351, Sect. 17.3",Thermodynamic minimum at (1.23-0.34) V; practical ~2000 kWh/t.
+Smelter direct operating cost by cost component (Table 22.8),smelting-vessel_flash,electricity share of smelting cost (incl. oxygen and acid making),30,%,"p.434, Table 22.8",Flash smelting/flash converting smelter.
+Smelter direct operating cost by cost component (Table 22.8),smelting-vessel_flash,hydrocarbon fuel share of smelting cost,20,%,"p.434, Table 22.8",
+Electrorefinery cost by component (Table 22.11),electrolysis-cell_electrorefining,electricity share of electrorefining cost,40,%,"p.436, Table 22.11",Natural gas share 15%.
+Concentrator operating cost by component (Table 22.5),concentrator_copper,electric energy share of concentrating cost,20,%,"p.432, Table 22.5",Grinding media 15%.
+Copper production cost summary (Sect. 22.10),(whole route),"total direct plus indirect cost, mine-concentrator-smelter-refinery",3-6,2011_USD/kg Cu,"p.438, Sect. 22.10",Direct ~2 $/kg + finance ~4 $/kg for a new operation; leach-SX-EW incl. mining 1-2 $/kg.
+Copper production cost summary (Table 22.2),(whole route),"total direct operating cost, open-pit mine to electrorefined cathode",2.0,2011_USD/kg Cu,"p.430, Table 22.2","Mining 0.5, concentration 1.0, smelting 0.3, refining 0.1, overhead 0.1."
+Metallurgical sulphuric acid plant blowers (Sect. 12.4.2),reactor_sulphuric-acid-metallurgical,main acid plant blower rating (each of two),3000-4000,kW,"p.213, Sect. 12.4.2",Typical; per-tonne basis not printed.
+"Vanyukov smelting furnaces, Norilsk and Sredneuralsky (Table 7.6, 2003)",smelting-vessel_bath-tuyere,natural gas share of total heat requirement,1-3,%,"p.123, Table 7.6","Norilsk 2-3%, Sredneuralsky 1-2%; absolute heat not printed."
+"Copper concentrator crushing and grinding, El Soldado, Chile (Table 3.1a, 2010)",grinding-mill_sag-ball,second-stage rod+ball mill energy (SAG energy not printed),~8,kWh/t ore,"p.38, Table 3.1a",Partial circuit only; not loaded.
+Flash smelting peripheral equipment (Sect. 6.2.4),air-separation-unit,smelter oxygen plant size,200-1100,t O2/d,"p.98, Sect. 6.2.4","Cryogenic, 92-99.95% O2; VPSA/PSA supplements <200 t/d at 90-93% O2."
