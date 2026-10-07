@@ -61,6 +61,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ramsden 2009 | 224 | confirmed against the held document 2026-10-03 |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 218 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
+| Johansson et al 2012 | 207 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | Jacobs Greenhouse Gas 2006 | 200 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017-02 | 199 | confirmed against the held document 2026-10-02 |
 | BCS 2007 | 197 | confirmed against the held document 2026-10-02 |
@@ -69,7 +70,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | IEA Greenhouse Gas R&D Programme (IEA GHG) 2007 | 186 | confirmed against the held document 2026-10-02 |
 | NETL 2022 (Lewis) | 166 | confirmed against the held document 2026-10-02 |
 | Zuhlsdorf 2023 | 164 | confirmed against the held document 2026-10-02 |
-| Johansson et al 2012 | 163 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | Lemar 2001 | 163 | confirmed against the held document 2026-10-02 |
 | Hughes 2023 | 162 | confirmed against the held document 2026-09-29 |
 | Mission Possible Partnership 2023 | 162 | confirmed against the held document 2026-10-02 |
