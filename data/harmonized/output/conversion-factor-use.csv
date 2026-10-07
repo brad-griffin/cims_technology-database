@@ -71,13 +71,14 @@ base:paper-machine,,per machine,,,,,,,,5,5,paper-machine_efficiency-moderate; pa
 base:rolling-mill_hot,,lling mill_hot,,,,,,,,2,2,rolling-mill_hot-charging; rolling-mill_hot_efficiency-moderate
 base:sinter-plant,,nter plant,,,,,,,,2,2,sinter-plant_efficiency-moderate; sinter-plant_efficiency-strong
 eff:autothermal-reformer_ccs-concentrated,internal,pooled efficiency of autothermal-reformer_ccs-concentrated,,,,,,,,1,1,autothermal-reformer_ccs-concentrated
-eff:boiler_ccs-diffuse,internal,pooled efficiency of boiler_ccs-diffuse,,,,,,,,3,2,boiler_ccs-diffuse
+eff:boiler_ccs-diffuse,internal,pooled efficiency of boiler_ccs-diffuse,,,,,,,,2,1,boiler_ccs-diffuse
 eff:boiler_electric,internal,pooled efficiency of boiler_electric,,,,,,,,5,3,boiler_electric
 eff:boiler_fuel-fired,internal,pooled efficiency of boiler_fuel-fired,,,,,,,,7,4,boiler_fuel-fired
 eff:boiler_oxy-fuel,internal,pooled efficiency of boiler_oxy-fuel,,,,,,,,4,2,boiler_oxy-fuel
 eff:boiler_recovery-high-solids,internal,pooled efficiency of boiler_recovery-high-solids,,,,,,,,1,1,boiler_recovery-high-solids
 eff:boiler_solid-fuel,internal,pooled efficiency of boiler_solid-fuel,,,,,,,,4,2,boiler_solid-fuel
 eff:combustion-turbine_chp,internal,pooled efficiency of combustion-turbine_chp,,,,,,,,14,11,combustion-turbine_chp
+eff:combustion-turbine_chp_ccs-diffuse,internal,pooled efficiency of combustion-turbine_chp_ccs-diffuse,,,,,,,,1,1,combustion-turbine_chp_ccs-diffuse
 eff:compressor_electric,internal,pooled efficiency of compressor_electric,,,,,,,,7,3,compressor_electric
 eff:direct-heater_electric,internal,pooled efficiency of direct-heater_electric,,,,,,,,7,3,direct-heater_electric
 eff:direct-heater_fuel-fired,internal,pooled efficiency of direct-heater_fuel-fired,,,,,,,,6,3,direct-heater_fuel-fired
@@ -101,5 +102,5 @@ hpr:fuel-cell_chp,internal,pooled heat-to-power ratio of fuel-cell_chp,,,,,,,,6,
 hpr:gasifier_biomass-chp,internal,pooled heat-to-power ratio of gasifier_biomass-chp,,,,,,,,3,1,gasifier_biomass-chp
 hpr:reactor_small-nuclear,internal,pooled heat-to-power ratio of reactor_small-nuclear,,,,,,,,8,5,reactor_small-nuclear
 hpr:reciprocating-engine_chp,internal,pooled heat-to-power ratio of reciprocating-engine_chp,,,,,,,,13,11,reciprocating-engine_chp
-hpr:same-example,same-source,the example's own heat-to-power ratio,,,,,,,,124,57,anaerobic-digester_chp; boiler_ccs-diffuse; combustion-turbine_chp; fuel-cell_chp; reciprocating-engine_chp; steam-turbine_back-pressure
+hpr:same-example,same-source,the example's own heat-to-power ratio,,,,,,,,124,57,anaerobic-digester_chp; combustion-turbine_chp; combustion-turbine_chp_ccs-diffuse; fuel-cell_chp; reciprocating-engine_chp; steam-turbine_back-pressure
 hpr:steam-turbine_back-pressure,internal,pooled heat-to-power ratio of steam-turbine_back-pressure,,,,,,,,9,7,steam-turbine_back-pressure

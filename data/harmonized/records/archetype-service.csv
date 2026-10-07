@@ -5,6 +5,7 @@ boiler_fuel-fired,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-t
 boiler_fuel-fired_efficiency-moderate,<sector>.*.service.steam,heat-low-temp,as its host boiler_fuel-fired
 boiler_solid-fuel,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+combustion-turbine_chp_ccs-diffuse,<sector>.*.service.steam,heat-low-temp,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_fuel-fired,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_ccs-diffuse,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,cross-sector/heat-low-temp: direct-heat leaves

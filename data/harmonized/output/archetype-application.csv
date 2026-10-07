@@ -271,6 +271,15 @@ combustion-turbine_chp,heat-supply,<sector>.mining.service.steam,heat-low-temp,<
 combustion-turbine_chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
+combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_electric,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves

@@ -1,10 +1,10 @@
 rule-id,archetype,parameter,sourced,estimate,low,high,inside,ratio,inputs
-est-sibling-lifetime,boiler_ccs-diffuse,lifetime,25,22.5,10,40,yes,0.9,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
-est-sibling-lifetime,boiler_electric,lifetime,20,25,15,40,yes,1.25,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_ccs-diffuse"
+est-sibling-lifetime,boiler_electric,lifetime,20,25,15,40,yes,1.25,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
 est-sibling-lifetime,boiler_fuel-fired,lifetime,25,20,15,25,yes,0.8,tier 1: boiler_fuel-fired_efficiency-moderate
 est-sibling-lifetime,boiler_fuel-fired_efficiency-moderate,lifetime,20,25,18.75,40,yes,1.25,tier 1: boiler_fuel-fired
-est-sibling-lifetime,boiler_solid-fuel,lifetime,25,22.5,10,40,yes,0.9,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_ccs-diffuse"
-est-sibling-lifetime,combustion-turbine_chp,lifetime,25,25,18.75,40,yes,1,tier 2: combustion-turbine_simple-cycle
+est-sibling-lifetime,boiler_solid-fuel,lifetime,25,20,10,40,yes,0.8,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
+est-sibling-lifetime,combustion-turbine_chp,lifetime,25,25,18.75,31.25,yes,1,tier 1: combustion-turbine_chp_ccs-diffuse
+est-sibling-lifetime,combustion-turbine_chp_ccs-diffuse,lifetime,25,25,10,50,yes,1,tier 1: combustion-turbine_chp
 est-sibling-lifetime,direct-heater_electric,lifetime,20,18.75,10,30,yes,0.9375,"tier 2: direct-heater_solid-fuel, direct-heater_fuel-fired"
 est-sibling-lifetime,direct-heater_fuel-fired,lifetime,22.5,17.5,10,21.875,no,0.777778,"tier 2: direct-heater_solid-fuel, direct-heater_electric"
 est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,21.25,10,30,yes,1.41667,"tier 2: direct-heater_fuel-fired, direct-heater_electric"
@@ -14,7 +14,7 @@ est-sibling-lifetime,reactor_small-nuclear,lifetime,40,20,15,30,no,0.5,"tier 2: 
 est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,22.5,16.875,40,yes,0.9,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
 est-sibling-lifetime,thermal-storage_electric,lifetime,25,20,10,50,yes,0.8,tier 2: thermal-storage_heat-charged
 est-sibling-lifetime,anaerobic-digester_chp,lifetime,17.5,16,12,20,yes,0.914286,"tier 2: anaerobic-digester, anaerobic-digester_effluent"
-est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,25,25,10,50,yes,1,tier 2: combustion-turbine_chp
+est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,25,25,10,50,yes,1,"tier 2: combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse"
 est-sibling-lifetime,combined-cycle_efficiency-moderate,lifetime,30,31.25,20,40,yes,1.04167,"tier 1: combined-cycle, combined-cycle_ccs-diffuse"
 est-sibling-lifetime,steam-turbine_condensing,lifetime,25,22.5,15,50,yes,0.9,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
 est-sibling-lifetime,steam-turbine_waste-heat,lifetime,20,25,15,50,yes,1.25,"tier 2: steam-turbine_back-pressure, steam-turbine_condensing"
@@ -223,10 +223,11 @@ est-sibling-construction-time,thermal-storage_heat-charged,construction-time,1,1
 est-sibling-construction-time,combined-cycle,construction-time,2,2.5,1.875,4,yes,1.25,tier 1: combined-cycle_ccs-diffuse
 est-sibling-construction-time,combined-cycle_ccs-diffuse,construction-time,2.5,2,1.5,4,yes,0.8,tier 1: combined-cycle
 est-sibling-construction-time,steam-reformer_methane_ccs-diffuse,construction-time,3,3,2.25,3.75,yes,1,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
-est-sibling-capacity-factor,boiler_ccs-diffuse,capacity-factor,51,71.3475,22.8,95,yes,1.39897,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_oxy-fuel"
-est-sibling-capacity-factor,boiler_electric,capacity-factor,57.075,68.31,22.8,95,yes,1.19685,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_ccs-diffuse, boiler_oxy-fuel"
-est-sibling-capacity-factor,boiler_fuel-fired,capacity-factor,32,71.3475,22.8,95,yes,2.22961,"tier 2: boiler_solid-fuel, boiler_electric, boiler_ccs-diffuse, boiler_oxy-fuel"
-est-sibling-capacity-factor,boiler_solid-fuel,capacity-factor,91.32,54.0375,22.8,95,yes,0.591738,"tier 2: boiler_electric, boiler_fuel-fired, boiler_ccs-diffuse, boiler_oxy-fuel"
+est-sibling-capacity-factor,boiler_electric,capacity-factor,57.075,85.62,22.8,100,yes,1.50013,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_oxy-fuel"
+est-sibling-capacity-factor,boiler_fuel-fired,capacity-factor,32,85.62,22.8,100,yes,2.67563,"tier 2: boiler_solid-fuel, boiler_electric, boiler_oxy-fuel"
+est-sibling-capacity-factor,boiler_solid-fuel,capacity-factor,91.32,57.075,22.8,95,yes,0.625,"tier 2: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel"
+est-sibling-capacity-factor,combustion-turbine_chp,capacity-factor,89,51,38.25,63.75,no,0.573034,tier 1: combustion-turbine_chp_ccs-diffuse
+est-sibling-capacity-factor,combustion-turbine_chp_ccs-diffuse,capacity-factor,51,89,66.75,100,no,1.7451,tier 1: combustion-turbine_chp
 est-sibling-capacity-factor,gasifier_biomass-chp,capacity-factor,90,90,67.5,100,yes,1,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
 est-sibling-capacity-factor,reactor_small-nuclear,capacity-factor,93,85,63.75,100,yes,0.913978,"tier 2: reactor_methane-pyrolysis, reactor_gas-to-liquids"
 est-sibling-capacity-factor,steam-turbine_back-pressure,capacity-factor,76.25,69.6,17.6,95,yes,0.912787,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
@@ -289,4 +290,4 @@ est-sibling-capacity-factor,reactor_co2-to-ome3-5,capacity-factor,91.3,91.3,57.0
 est-sibling-capacity-factor,reactor_co2-to-gasoline,capacity-factor,91.3,91.3,57.08,100,yes,1,"tier 2: reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_delayed-coking, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_pyrolysis-oil, reactor_co2-to-ome3-5, reactor_co2-to-ethanol, reactor_co2-to-higher-alcohols, reactor_co2-to-dme, reactor_co2-to-ome1, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
 est-sibling-capacity-factor,reactor_co2-to-fischer-tropsch,capacity-factor,91.3,91.3,57.08,100,yes,1,"tier 2: reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_delayed-coking, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_pyrolysis-oil, reactor_co2-to-ome3-5, reactor_co2-to-ethanol, reactor_co2-to-higher-alcohols, reactor_co2-to-dme, reactor_co2-to-ome1, reactor_co2-to-gasoline, reactor_alcohol-to-jet"
 est-sibling-capacity-factor,well_electromagnetic-heating,capacity-factor,95,92.5,69.375,100,yes,0.973684,"tier 2: well_sagd, well_solvent-only"
-est-sibling-capacity-factor,boiler_oxy-fuel,capacity-factor,85.62,54.0375,22.8,95,yes,0.631132,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_ccs-diffuse"
+est-sibling-capacity-factor,boiler_oxy-fuel,capacity-factor,85.62,57.075,22.8,95,yes,0.666608,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired"
