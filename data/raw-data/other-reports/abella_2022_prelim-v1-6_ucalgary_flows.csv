@@ -1,0 +1,5 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_residue,input,hydrogen,2.15,kg,bbl feed,,,,,"PRELIM_v1.6.xlsm, Constants!H140",Hydrogen make up 2.15 kg/bbl feed,"Residue hydrotreater hydrogen make-up, default input."
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrocracking_residue,input,hydrogen,1860.84,scf,bbl feed,,,,,"PRELIM_v1.6.xlsm, Constants!H226",H2 Consumption 1860.84 scf/bbl,Cached value; residue hydrocracker hydrogen consumption.
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",steam-reformer_methane_psa,input,natural-gas,0.3126,scf,scf H2,,,,,"PRELIM_v1.6.xlsm, Constants!H312",Feedstock 0.3126 scf NG/scf H2,SMR natural gas feedstock.
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",steam-reformer_methane_amine,input,natural-gas,0.318,scf,scf H2,,,,,"PRELIM_v1.6.xlsm, Constants!J312",Feedstock 0.318 scf NG/scf H2,SMR natural gas feedstock.

@@ -1,0 +1,28 @@
+process,technology,item,value,unit,reference,note
+Background: conventional cracking furnaces (paras [0005]-[0024]),steam-cracker_fired-tubular,share of furnace heat recovered as HP steam in top-mounted vertical TLEs,29,%,"p.2, para [0013]","""allow for recovery of about 29% of heat upon generating high pressure steam""."
+Background: conventional cracking furnaces (paras [0005]-[0024]),steam-cracker_fired-tubular,"TLE outlet temperature (naphtha, typical minimum)",360,degC,"p.1, para [0012]","Cracked gas quenched to 550-650 degC, leaves TLE at 300-450 degC; ethane/propane may be cooled to about 200 degC."
+"Rotary (rotodynamic) reactor embodiments, description (paras [0090], [0183])",steam-cracker_rotodynamic,residence time in reaction zone (range),0.01-1.0,s,"p.5, para [0090]","""in scale of fractions of seconds, such as about 0.01-1.0 seconds""; adjustable to maximise yields."
+"Rotary (rotodynamic) reactor embodiments, description (paras [0090], [0183])",steam-cracker_rotodynamic,reactor inlet temperature (range; typical 450-500),400-570,degC,"p.12, para [0183]",
+"Rotary (rotodynamic) reactor embodiments, description (paras [0090], [0183])",steam-cracker_rotodynamic,HP steam raised in TLE,6-12.5,MPa,"p.7, para [0110]","HPS 6-12.5 MPa, 280-327 degC."
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_fired-tubular,ethylene yield on naphtha feed (derived),35.09,wt%,"p.13, Table 1",Derived: 119.1/339.4.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_fired-tubular,cooling water duty (plant),419,MW,"p.13, Table 1",Printed.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_fired-preheat,net energy consumption reduction vs conventional plant,21,%,"p.13, para [0203]",Printed.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_fired-preheat,ethylene yield on naphtha feed (derived),42.22,wt%,"p.13, Table 1",Derived: 119.1/282.1.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_fired-preheat,cooling water duty (plant),312,MW,"p.13, Table 1",Printed.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_electric-preheat,net energy consumption reduction vs conventional plant,22,%,"p.13, para [0203]",Printed.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_electric-preheat,ethylene yield on naphtha feed (derived),42.22,wt%,"p.13, Table 1",Derived: 119.1/282.1.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_electric-preheat,cooling water duty (plant),312,MW,"p.13, Table 1",Printed.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_fired-preheat,net energy consumption reduction vs conventional plant,16.5,%,"p.14, para [0209]",Printed.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_fired-preheat,ethylene yield on naphtha feed (derived),35.09,wt%,"p.14, Table 2",Derived: 119.1/339.4.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_fired-preheat,cooling water duty (plant),370,MW,"p.14, Table 2",Printed.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_electric-preheat,net energy consumption reduction vs conventional plant,18.5,%,"p.14, para [0209]",Printed.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_electric-preheat,ethylene yield on naphtha feed (derived),35.09,wt%,"p.14, Table 2",Derived: 119.1/339.4.
+"Example 2: rotary reactor operated at matched (conventional) yields (p.14, Table 2)",steam-cracker_rotodynamic_electric-preheat,cooling water duty (plant),370,MW,"p.14, Table 2",Printed.
+"Example 3: electrified rotary cracker unit with MP steam import (p.14, Table 3)",steam-cracker_rotodynamic_electric-steam-import,ethylene yield on naphtha feed (derived),42.22,wt%,"p.14, Table 3",Derived: 119.1/282.1.
+"Example 3: electrified rotary cracker unit with MP steam import (p.14, Table 3)",steam-cracker_rotodynamic_electric-steam-import,cooling water duty (plant),262,MW,"p.14, Table 3",Printed.
+"Example 4: rotary cracker unit with hydrogen-oxygen burner (p.15, Table 4)",steam-cracker_rotodynamic_hydrogen-oxy-preheat,ethylene yield on naphtha feed (derived),42.22,wt%,"p.15, Table 4",Derived: 119.1/282.1.
+"Example 4: rotary cracker unit with hydrogen-oxygen burner (p.15, Table 4)",steam-cracker_rotodynamic_hydrogen-oxy-preheat,cooling water duty (plant),262,MW,"p.15, Table 4",Printed.
+"Example 4: rotary cracker unit with hydrogen-oxygen burner (p.15, Table 4)",steam-cracker_rotodynamic_hydrogen-oxy-steam-import,ethylene yield on naphtha feed (derived),42.22,wt%,"p.15, Table 4",Derived: 119.1/282.1.
+"Example 4: rotary cracker unit with hydrogen-oxygen burner (p.15, Table 4)",steam-cracker_rotodynamic_hydrogen-oxy-steam-import,cooling water duty (plant),262,MW,"p.15, Table 4",Printed.
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_fired-preheat,furnace heat duty reduction vs conventional convection section,30,%,"p.13, para [0207]","Specific net energy consumption (fuel and electricity, GJ/t ethylene) about 20.5% lower (not shown)."
+"Example 1: 1000 kt/a naphtha cracker plant simulation (p.13, Table 1)",steam-cracker_rotodynamic_electric-preheat,boiler feed water reduction vs conventional,50,%,"p.13, para [0206]",Cooling duty about 25% lower.

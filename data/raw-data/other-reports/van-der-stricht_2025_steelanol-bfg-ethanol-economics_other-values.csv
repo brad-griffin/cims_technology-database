@@ -1,0 +1,18 @@
+process,technology,item,value,unit,reference,note
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 1 (slide 14)",fermenter_syngas,Blast furnace gas flow (input),90-125,kNm3/h,slide 14,"range as printed; operating hours not printed, so no ethanol yield per Nm3 or per t off-gas can be derived"
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 1 (slide 14)",fermenter_syngas,"Project IRR (base-case capex, ethanol sold at 1000 USD/t)",14,%,slide 14,company illustrative economics
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 2 (slide 14)",fermenter_syngas,Blast furnace gas flow (input),200-250,kNm3/h,slide 14,"range as printed; operating hours not printed, so no ethanol yield per Nm3 or per t off-gas can be derived"
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 2 (slide 14)",fermenter_syngas,"Project IRR (base-case capex, ethanol sold at 1000 USD/t)",21,%,slide 14,company illustrative economics
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 3 (slide 14)",fermenter_syngas,Blast furnace gas flow (input),300-350,kNm3/h,slide 14,"range as printed; operating hours not printed, so no ethanol yield per Nm3 or per t off-gas can be derived"
+"LanzaTech blast furnace off-gas (BFG) to ethanol, illustrative Case 3 (slide 14)",fermenter_syngas,"Project IRR (base-case capex, ethanol sold at 1000 USD/t)",23,%,slide 14,company illustrative economics
+"LanzaTech commercial plant, Ferroalloy emissions, China, start-up 2021 (slide 8)",fermenter_syngas,Ethanol production capacity,46000,t/yr,slide 8,non-steel off-gas plant
+"LanzaTech commercial plant, Ferroalloy emissions, China, start-up 2022 (slide 8)",fermenter_syngas,Ethanol production capacity,60000,t/yr,slide 8,non-steel off-gas plant
+"LanzaTech commercial plant, Ferroalloy emissions, China, start-up 2023 (slide 8)",fermenter_syngas,Ethanol production capacity,60000,t/yr,slide 8,non-steel off-gas plant
+"LanzaTech commercial plant, Refinery emissions, India, start-up 2023 (slide 8)",fermenter_syngas,Ethanol production capacity,33500,t/yr,slide 8,non-steel off-gas plant
+LanzaTech commercial fleet (slide 8),fermenter_syngas,Cumulative annual nameplate capacity of 6 commercial-scale facilities,300000,t/yr ethanol,slide 8; slide 3,
+LanzaTech commercial fleet (slide 3),fermenter_syngas,Annual CO2 abatement capacity,500000,t CO2/yr,slide 3,"company figure, 2025"
+Gas fermentation stoichiometry (slide 4),fermenter_syngas,"Energy efficiency of ethanol formation, gas CO (6 CO + 3 H2O -> C2H5OH + 4 CO2; H2:CO 0:1)",72.8,%,slide 4,theoretical stoichiometric energy efficiency; reprinted from Kopke and Simpson 2020
+Gas fermentation stoichiometry (slide 4),fermenter_syngas,"Energy efficiency of ethanol formation, gas CO + H2 (3 H2 + 3 CO -> C2H5OH + CO2; H2:CO 1:1)",78.5,%,slide 4,theoretical stoichiometric energy efficiency; reprinted from Kopke and Simpson 2020
+Gas fermentation stoichiometry (slide 4),fermenter_syngas,"Energy efficiency of ethanol formation, gas CO + H2 (2:1) (4 H2 + 2 CO -> C2H5OH + H2O; H2:CO 2:1)",80.6,%,slide 4,theoretical stoichiometric energy efficiency; reprinted from Kopke and Simpson 2020
+Gas fermentation stoichiometry (slide 4),fermenter_syngas,"Energy efficiency of ethanol formation, gas CO + H2 + CO2 (5 H2 + CO + CO2 -> C2H5OH + 2 H2O; H2:CO 5:1)",82.1,%,slide 4,theoretical stoichiometric energy efficiency; reprinted from Kopke and Simpson 2020
+Gas fermentation stoichiometry (slide 4),fermenter_syngas,"Energy efficiency of ethanol formation, gas H2 + CO2 (6 H2 + 2 CO2 -> C2H5OH + 3 H2O; H2:CO 1:0)",85.2,%,slide 4,theoretical stoichiometric energy efficiency; reprinted from Kopke and Simpson 2020

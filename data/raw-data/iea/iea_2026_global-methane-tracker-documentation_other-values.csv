@@ -1,0 +1,24 @@
+process,technology,item,value,unit,reference,note
+"Coal mine methane abatement, typical US mine (Tables 10-11)",flare_coal-mine-drainage-gas,Applicability factor,75,%,"p.27, Table 10","Drainage systems, mines with emissions <1 kt"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",flare_coal-mine-drainage-gas,Abatement potential (applicability x effectiveness),71,%,"p.27, Table 10","Drainage systems, mines with emissions <1 kt"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_coal-mine-methane-drainage_power-generation,Applicability factor,75,%,"p.27, Table 10","Drainage systems, other mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_coal-mine-methane-drainage_power-generation,Abatement potential (applicability x effectiveness),71,%,"p.27, Table 10","Drainage systems, other mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",gas-treatment-unit_vam-oxidiser,Applicability factor,70,%,"p.27, Table 10","Ventilation systems, intensity <10 kg CH4/t or emissions <10 kt"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",gas-treatment-unit_vam-oxidiser,Abatement potential (applicability x effectiveness),67,%,"p.27, Table 10","Ventilation systems, intensity <10 kg CH4/t or emissions <10 kt"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",gas-treatment-unit_vam-oxidiser_heat-recovery,Applicability factor,70,%,"p.27, Table 10","Ventilation systems, other mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",gas-treatment-unit_vam-oxidiser_heat-recovery,Abatement potential (applicability x effectiveness),67,%,"p.27, Table 10","Ventilation systems, other mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_cmm-combustion-efficiency,Applicability factor,75,%,"p.27, Table 10","Other losses (incomplete combustion), all mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_cmm-combustion-efficiency,Abatement potential (applicability x effectiveness),56,%,"p.27, Table 10","Other losses (incomplete combustion), all mines"
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_cmm-capture-and-route,"Applicability / effectiveness / abatement potential (Other losses, all mines)",50 / 75 / 38,%,"p.27, Table 10",
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_cmm-capture-and-route,"Applicability / effectiveness / abatement potential (Post-mining, all mines)",25 / 60 / 15,%,"p.27, Table 10",
+"Coal mine methane abatement, typical US mine (Tables 10-11)",process-improvement_cmm-capture-and-route,"Applicability / effectiveness / abatement potential (Outcrops and workings, all mines)",10 / 60 / 6,%,"p.27, Table 10",
+"Global Methane Tracker 2026 Documentation, methods",,Coal mine emissions split by source (Table 9),"Underground mine: ventilation 60%, drainage 25%, incomplete combustion 2%, fugitive other losses 5%, post-mining 3%, outcrops/workings 5%",%,"p.25, Table 9","Surface mine: drainage 15%, incomplete combustion 1%, other losses 1%, post-mining 8%, outcrops/workings 75%."
+"Global Methane Tracker 2026 Documentation, methods",,Capture and route cost scaling,1.6,ratio,p.28,Annual costs for a mine producing 8 Mt coal are 1.6 times those for mines below 5 Mt.
+"Global Methane Tracker 2026 Documentation, methods",,"VAM oxidation capital cost multiplier, Russia and Kazakhstan",2,ratio,p.28,Dust removal system required.
+"Global Methane Tracker 2026 Documentation, methods",,CCGT capital cost used for CMM power generation (WEO 2025),1000,USD/kW,p.28,Roughly USD 1 000/kW; reprinted from IEA World Energy Outlook 2025.
+"Global Methane Tracker 2026 Documentation, methods",,US industrial electricity price 2025,23,USD/GJ,p.29,Revenue for drained CMM utilisation set at 60% = USD 14/GJ (USD 0.05/kWh).
+"Global Methane Tracker 2026 Documentation, methods",,US industrial coal price 2025,3,USD/GJ,p.29,Revenue for VAM on-site recovery set at 67% = USD 2/GJ.
+"Global Methane Tracker 2026 Documentation, methods",,Methane energy density / density used for CMM,55 MJ/kg; 0.6797 kg/m3,,p.29,
+"Global Methane Tracker 2026 Documentation, methods",,Methane conversion used for oil and gas abatement costs,"1 t CH4 = about 50 MBtu (36 MJ/m3, 0.68 kg/m3); methane content of well-head gas 83%",,p.24,Cost in USD per MBtu = NPV at 8% / volume saved.
+"Global Methane Tracker 2026 Documentation, methods",,"Well-head gas price rule, US and Canada",Henry Hub minus 35%,,p.24,2025 average prices.
+"Global Methane Tracker 2026 Documentation, methods",,LDAR reduction by frequency,"annual 40, biannual 60, quarterly 75, continuous 90 (remaining 10% unavoidable)",%,p.23,Same values as the IEA model LDARGuide (iea_2026_005); not repeated in the main file to avoid double counting.

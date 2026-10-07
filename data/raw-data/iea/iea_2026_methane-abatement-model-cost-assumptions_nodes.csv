@@ -1,0 +1,67 @@
+process,technology,sector,end-use,process-step,service-unit
+"IEA methane abatement model, redtechGuide (reason: Vented) - Blowdown Capture (per Compressor)",compressor_blowdown-recovery_per-compressor,oil-and-gas,venting,blowdowns,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Blowdown Capture (per Plant)",compressor_blowdown-recovery_per-plant,oil-and-gas,venting,blowdowns,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Temporary mobile and inline compression",compressor_blowdown-recovery_mobile-inline,oil-and-gas,venting,pipeline-blowdowns,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Improve flaring-Completion",flare_completion-combustion,oil-and-gas,venting,well-completions,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Improve flaring-Portable",flare_portable,oil-and-gas,venting,non-routine-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Improve flaring-Portable Completions Workovers WO HF",flare_portable_workover,oil-and-gas,venting,well-workovers,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Improve flaring-Portable WO Plunger Lifts",flare_portable_plunger-workover,oil-and-gas,venting,well-workovers,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Servo Motors - challenging settings",pneumatic-device_non-emitting_servo-challenging,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install New Methane Reducing Catalyst in Engine",reciprocating-engine_methane-oxidation-catalyst,oil-and-gas,venting,gas-engines,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install Non Mechanical Vapor Recovery Unit",compressor_vapour-recovery_non-mechanical,oil-and-gas,venting,tank-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install Plunger Lift Systems in Gas Wells",pump_plunger-lift,oil-and-gas,venting,liquid-unloading,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install Vapor Recovery Units",compressor_vapour-recovery,oil-and-gas,venting,tank-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install Vapor Recovery Units - challenging settings",compressor_vapour-recovery_challenging,oil-and-gas,venting,tank-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Install automated air-fuel ratio controls",reciprocating-engine_air-fuel-ratio-control,oil-and-gas,venting,gas-engines,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Electric Motor - challenging settings",pneumatic-device_non-emitting_electric-challenging,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Pipeline Pump-Down Before Maintenance",compressor_blowdown-recovery_pipeline-pump-down,oil-and-gas,venting,pipeline-blowdowns,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Redesign Blowdown Systems and Alter ESD Practices",process-improvement_blowdown-esd-redesign,oil-and-gas,venting,blowdowns,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Reduced Emission Completion",separator_reduced-emission-completion,oil-and-gas,venting,well-completions,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace Kimray Pumps with Electric Pumps",pneumatic-device_non-emitting_electric-glycol-pump,oil-and-gas,venting,pneumatic-pumps,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace Pneumatic Chemical Injection Pumps with Electric Pumps",pneumatic-device_non-emitting_electric-chemical-pump,oil-and-gas,venting,pneumatic-pumps,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace Pneumatic Chemical Injection Pumps with Solar Electric Pumps",pneumatic-device_non-emitting_solar-chemical-pump,oil-and-gas,venting,pneumatic-pumps,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Desiccant Dehydrator",gas-treatment-unit_desiccant-dehydration,oil-and-gas,venting,dehydrator-vents,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Instrument Air Systems",pneumatic-device_non-emitting_instrument-air,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Instrument Air Systems - challenging settings",pneumatic-device_non-emitting_instrument-air-challenging,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Electric Heater",direct-heater_electric-replacement,oil-and-gas,venting,heaters,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Electric Motor",pneumatic-device_non-emitting_electric,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Servo Motors",pneumatic-device_non-emitting_servo,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replace with Solenoid Controls",pneumatic-device_non-emitting_solenoid,oil-and-gas,venting,pneumatic-controls,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Replacement of Reciprocating Compressor Rod Packing Systems",compressor_low-emission-seal_rod-packing,oil-and-gas,fugitive-emissions,compressor-seals,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Route to existing flare - Large Dehydrators",flare_routed-vent_large-dehydrator,oil-and-gas,venting,dehydrator-vents,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Route to existing flare - Large Tanks",flare_routed-vent_large-tank,oil-and-gas,venting,tank-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Route to flare - Small Dehydrators",flare_routed-vent_small-dehydrator,oil-and-gas,venting,dehydrator-vents,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Route to existing flare - Small Tanks",flare_routed-vent_small-tank,oil-and-gas,venting,tank-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Route Vent Vapors to tank",process-improvement_vent-vapour-routing,oil-and-gas,venting,other-point-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Wet Seal Degassing Recovery System for Centrifugal Compressors",compressor_low-emission-seal_wet-seal-degassing,oil-and-gas,venting,compressor-seals,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Wet Seal Retrofit to Dry Seal Compressor",compressor_low-emission-seal_dry-seal-retrofit,oil-and-gas,venting,compressor-seals,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Advanced AGR",gas-treatment-unit_acid-gas-advanced,oil-and-gas,venting,acid-gas-removal-vents,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Microturbine",microturbine_associated-gas,oil-and-gas,venting,associated-gas-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Mini-LNG",liquefaction-train_small-scale_associated-gas,oil-and-gas,venting,associated-gas-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Mini-GTL",reactor_gas-to-liquids_mini,oil-and-gas,venting,associated-gas-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Vented) - Mini-CNG",compressor_mini-cng_associated-gas,oil-and-gas,venting,associated-gas-venting,t CH4
+"IEA methane abatement model, redtechGuide (reason: Incomplete-flare) - Install electronic flare ignition devices",flare_high-efficiency_electronic-ignition,oil-and-gas,flaring,flaring,t CH4
+"IEA methane abatement model, redtechGuide (reason: Incomplete-flare) - Install automated air-fuel ratio controls",flare_high-efficiency_air-fuel-ratio-control,oil-and-gas,flaring,flaring,t CH4
+"IEA methane abatement model, redtechGuide (reason: Incomplete-flare) - Install flare monitoring device",flare_high-efficiency_monitoring,oil-and-gas,flaring,flaring,t CH4
+"IEA methane abatement model, redtechGuide (reason: Incomplete-flare) - Install Vapor Recovery Units - challenging settings",compressor_flare-gas-recovery_challenging,oil-and-gas,flaring,flaring,t CH4
+"IEA methane abatement model, redtechGuide (reason: Incomplete-flare) - Install Vapor Recovery Units",compressor_flare-gas-recovery,oil-and-gas,flaring,flaring,t CH4
+"IEA methane abatement model, LDARGuide (Conventional) - Monitor and plug abandoned wells",well_abandoned-monitoring-plugging,oil-and-gas,abandoned-facilities,abandoned-wells,t CH4
+"IEA methane abatement model, LDARGuide (Unconventional) - Monitor and plug abandoned wells",well_abandoned-monitoring-plugging,oil-and-gas,abandoned-facilities,abandoned-wells,t CH4
+"IEA methane abatement model, LDARGuide (Conventional) - Annual LDAR",management-system_leak-detection_annual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Unconventional) - Annual LDAR",management-system_leak-detection_annual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Offshore) - Annual LDAR",management-system_leak-detection_annual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Downstream) - Annual LDAR",management-system_leak-detection_annual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Conventional) - Biannual LDAR",management-system_leak-detection_biannual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Unconventional) - Biannual LDAR",management-system_leak-detection_biannual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Downstream) - Biannual LDAR",management-system_leak-detection_biannual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Offshore) - Biannual LDAR",management-system_leak-detection_biannual,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Conventional) - Quarterly LDAR",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Unconventional) - Quarterly LDAR",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Downstream) - Quarterly LDAR",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Offshore) - Quarterly LDAR",management-system_leak-detection_quarterly,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Conventional) - Continuous LDAR",management-system_leak-detection_continuous,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Unconventional) - Continuous LDAR",management-system_leak-detection_continuous,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Downstream) - Continuous LDAR",management-system_leak-detection_continuous,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Offshore) - Continuous LDAR",management-system_leak-detection_continuous,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Satellite - upstream) - Daily LDAR",management-system_leak-detection_satellite-daily,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4
+"IEA methane abatement model, LDARGuide (Satellite - downstream) - Daily LDAR",management-system_leak-detection_satellite-daily,oil-and-gas,fugitive-emissions,leak-detection-and-repair,t CH4

@@ -1,0 +1,44 @@
+process,technology,sector,end-use,process-step,service-unit
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",separator_electrostatic-desalter,petroleum-refining,material-conversion,crude desalting,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_kerosene,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_diesel,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_fcc-feed,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_fcc-gasoline,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrotreating_residue,petroleum-refining,material-conversion,hydrotreating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_merox-sweetening,petroleum-refining,material-conversion,treating,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+"PRELIM v1.6 workbook, default hydrocracker energy by H2 make-up (Constants sheet, Ref: Gary et al.)",reactor_hydrocracking_h2-1000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"PRELIM v1.6 workbook, default hydrocracker energy by H2 make-up (Constants sheet, Ref: Gary et al.)",reactor_hydrocracking_h2-2000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"PRELIM v1.6 workbook, default hydrocracker energy by H2 make-up (Constants sheet, Ref: Gary et al.)",reactor_hydrocracking_h2-3000scf,petroleum-refining,material-conversion,hydrocracking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_fluid-catalytic-cracking_residue,petroleum-refining,material-conversion,catalytic cracking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_alkylation,petroleum-refining,material-conversion,alkylation,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_hydrocracking_residue,petroleum-refining,material-conversion,hydrocracking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_isomerization,petroleum-refining,material-conversion,isomerization,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_visbreaking,petroleum-refining,material-conversion,visbreaking,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_polymerization,petroleum-refining,material-conversion,polymerization,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",reactor_mtbe,petroleum-refining,material-conversion,ether production,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",separator_btx-extraction,petroleum-refining,material-conversion,aromatics extraction,bbl
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",steam-reformer_methane_psa,petroleum-refining,hydrogen,hydrogen production,scf
+"PRELIM v1.6 workbook default, global-average region (Constants sheet)",steam-reformer_methane_amine,petroleum-refining,hydrogen,hydrogen production,scf
+"PRELIM v1.6 workbook, utilities and sulphur recovery (CokingRefineryCalcs sheet)",gas-treatment-unit_amine-refinery,petroleum-refining,material-conversion,acid gas treating,m3
+"PRELIM v1.6 workbook, utilities and sulphur recovery (CokingRefineryCalcs sheet)",gas-treatment-unit_claus,petroleum-refining,material-conversion,sulphur recovery,t
+"PRELIM v1.6 workbook, utilities and sulphur recovery (CokingRefineryCalcs sheet)",gas-treatment-unit_claus-tail-gas,petroleum-refining,material-conversion,sulphur recovery,t
+"PRELIM v1.6 workbook, utilities and sulphur recovery (CokingRefineryCalcs sheet)",boiler_fuel-fired,petroleum-refining,steam,steam generation,kg
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_hydrotreating_h2-under-150scf,petroleum-refining,material-conversion,hydrotreating,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_hydrotreating_h2-150-400scf,petroleum-refining,material-conversion,hydrotreating,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_hydrotreating_h2-over-400scf,petroleum-refining,material-conversion,hydrotreating,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_isomerization,petroleum-refining,material-conversion,isomerization,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_alkylation_sulphuric-acid,petroleum-refining,material-conversion,alkylation,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),steam-reformer_methane,petroleum-refining,hydrogen,hydrogen production,kg
+PRELIM documented default process energy requirements (Documentation Table 4 = Abella and Bergerson 2012 SI Table S3),steam-reformer_methane_modern-purification,petroleum-refining,hydrogen,hydrogen production,kg

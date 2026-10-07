@@ -1,3 +1,64 @@
 process,technology,sector,end-use,process-step,service-unit
 2.1(1) Boilers: latent heat recovery small boiler (p.6),boiler_fuel-fired_condensing,heat-supply,steam-and-hot-water,boiler,GJ
 "2.1(1) Boilers: conventional boilers, reference efficiency (p.6)",boiler_fuel-fired,heat-supply,steam-and-hot-water,boiler,GJ
+2.1(4) Industrial furnace: submerged combustion burner (p.24),burner_submerged-combustion,heat-supply,steam-and-hot-water,direct-contact-water-heater,GJ
+"2.1(11) Cogeneration: gas engines, Makuhari district cooling/heating centre (p.57, Table 1)",reciprocating-engine_chp,heat-supply,chp,engine,GJ
+"2.1(11) Cogeneration: gas engine for consumer buildings, installation cost (p.57)",reciprocating-engine_chp,heat-supply,chp,engine,GJ
+2.1(12) Vacuum system: vacuum-type waste heat recovery hot water heater (pp.60-61),heat-recovery-unit_waste-heat,heat-supply,waste-heat-recovery,heat-recovery-unit,GJ
+2.2(1) Iron and steel: segregated charging of sintering materials (pp.64-65),feeder_sinter-segregated-charging,iron-and-steel,iron-making,sintering,t
+2.2(1) Iron and steel: sintering machine cooler waste heat recovery (pp.66-67),heat-recovery-unit_sinter-cooler,iron-and-steel,iron-making,sintering,t
+"2.2(1) Iron and steel: coke dry quenching, CDQ (pp.69-70)",quencher_coke-dry,iron-and-steel,iron-making,coke-making,t
+2.2(1) Iron and steel: coal moisture control (p.71),dryer_coal-moisture-control,iron-and-steel,iron-making,coke-making,t
+2.2(1) Iron and steel: hot stove waste heat recovery (pp.73-74),heat-recovery-unit_hot-blast-stove,iron-and-steel,iron-making,blast-furnace,t
+"2.2(1) Iron and steel: blast furnace top-pressure recovery turbine, TRT (pp.75-76)",turboexpander_blast-furnace-top-gas,iron-and-steel,iron-making,blast-furnace,t
+"2.2(1) Iron and steel: pulverized coal injection, PCI (pp.77-78)",injector_pulverized-coal,iron-and-steel,iron-making,blast-furnace,t
+2.2(1) Iron and steel: converter (BOF) gas recovery (pp.79-80),recovery-unit_basic-oxygen-furnace-gas,iron-and-steel,steelmaking,basic-oxygen-furnace,t
+"2.2(1) Iron and steel: EAF scrap preheating, SPH (pp.82-83)",preheater_electric-arc-furnace-scrap,iron-and-steel,steelmaking,electric-arc-furnace,t
+2.2(1) Iron and steel: DC arc furnace vs 3-phase AC (pp.84-85),electric-arc-furnace,iron-and-steel,steelmaking,electric-arc-furnace,t
+2.2(1) Iron and steel: DC arc furnace vs 3-phase AC (pp.84-85),electric-arc-furnace_dc,iron-and-steel,steelmaking,electric-arc-furnace,t
+"2.2(1) Iron and steel: continuous casting machine, slab CCM (pp.86-87)",caster_continuous,iron-and-steel,steelmaking,casting,t
+"2.2(1) Iron and steel: continuous casting machine, bloom CCM (pp.86-87)",caster_continuous,iron-and-steel,steelmaking,casting,t
+"2.2(1) Iron and steel: continuous casting machine, billet CCM (pp.86-87)",caster_continuous,iron-and-steel,steelmaking,casting,t
+2.2(1) Iron and steel: hot charging and direct rolling (pp.88-89),furnace_reheating,iron-and-steel,rolling,reheating-furnace,t
+2.2(1) Iron and steel: hot charging and direct rolling (pp.88-89),rolling-mill_hot-charging,iron-and-steel,rolling,reheating-furnace,t
+"2.2(1) Iron and steel: regenerative burner-type heating furnace, 110 t/h billets (pp.90-91)",furnace_reheating,iron-and-steel,rolling,reheating-furnace,t
+"2.2(1) Iron and steel: regenerative burner-type heating furnace, 110 t/h billets (pp.90-91)",furnace_reheating_regenerative,iron-and-steel,rolling,reheating-furnace,t
+"2.2(1) Iron and steel: by-product gas fired combined cycle, Kimitsu (p.96)",combined-cycle_steel-off-gas,iron-and-steel,utilities,power-generation,GJ
+"2.2(2) Cement: waste heat recovery power generation, 3,000 t/d plant (pp.100-101)",steam-turbine_waste-heat,cement,clinker,waste-heat-power,GJ
+"2.2(2) Cement: raw grinding, ball mill vs vertical roller mill (pp.104-105)",grinding-mill_ball_raw-meal,cement,raw-materials,raw-grinding,t
+"2.2(2) Cement: raw grinding, ball mill vs vertical roller mill (pp.104-105)",grinding-mill_vertical-roller_raw-meal,cement,raw-materials,raw-grinding,t
+"2.2(2) Cement: finish grinding, conventional mill vs roller press pregrinder (pp.108-109)",grinding-mill_ball,cement,cement-grinding,finish-grinding,t
+"2.2(2) Cement: finish grinding, conventional mill vs roller press pregrinder (pp.108-109)",grinding-mill_roller-press-pregrinder,cement,cement-grinding,finish-grinding,t
+2.2(2) Cement: wet and long dry kilns vs suspension preheater (pp.106-107),kiln_wet,cement,clinker,kiln,t
+2.2(2) Cement: wet and long dry kilns vs suspension preheater (pp.106-107),kiln_long-dry,cement,clinker,kiln,t
+2.2(2) Cement: wet and long dry kilns vs suspension preheater (pp.106-107),kiln_suspension-preheater,cement,clinker,kiln,t
+2.2(2) Cement: NSP direct-fired calciner (pp.110-111),kiln_dry-precalciner,cement,clinker,kiln,t
+2.2(2) Cement: NSP fluid-bed calciner (pp.112-113),kiln_dry-precalciner_fluid-bed-calciner,cement,clinker,kiln,t
+"2.2(2) Cement: fluidized-bed cement kiln vs rotary kiln, 1,000 t-clinker/d (p.114, table)",kiln_rotary-reference,cement,clinker,kiln,t
+"2.2(2) Cement: fluidized-bed cement kiln vs rotary kiln, 1,000 t-clinker/d (p.114, table)",kiln_fluidized-bed,cement,clinker,kiln,t
+2.2(2) Cement: high-efficiency clinker cooler (pp.117-118),cooler_clinker-high-efficiency,cement,clinker,kiln,t
+"2.2(3) Chemicals: chlor-alkali cell technologies (p.132, Fig. 4 text)",electrolysis-cell_chlor-alkali-mercury,chemicals,chlor-alkali,electrolysis,t
+"2.2(3) Chemicals: chlor-alkali cell technologies (p.132, Fig. 4 text)",electrolysis-cell_chlor-alkali-diaphragm,chemicals,chlor-alkali,electrolysis,t
+"2.2(3) Chemicals: chlor-alkali cell technologies (p.132, Fig. 4 text)",electrolysis-cell_chlor-alkali-membrane,chemicals,chlor-alkali,electrolysis,t
+"2.2(3) Chemicals: ammonia plant, heat-exchange primary reformer (pp.123-124)",reformer_ammonia-heat-exchange,chemicals,ammonia,reforming-synthesis,t
+"2.2(3) Chemicals: ammonia plant, isothermal CO conversion reactor (pp.125-126)",reactor_isothermal-co-shift,chemicals,ammonia,reforming-synthesis,t
+"2.2(3) Chemicals: ammonia plant, CO oxidation reactor (pp.127-128)",reactor_co-oxidation,chemicals,ammonia,reforming-synthesis,t
+"2.2(3) Chemicals: ammonia plant, indirect-cooling high-conversion synthesis reactor (pp.129-130)",reactor_ammonia-synthesis-indirect-cooling,chemicals,ammonia,reforming-synthesis,t
+"2.2(3) Chemicals: ethylene plant, turbo-expander on demethanator top gas (pp.135-136)",turboexpander_demethanizer-top-gas,chemicals,petrochemicals,steam-cracking,t
+"2.2(3) Chemicals: ethylene plant, packing in quench tower (pp.137-138)",column-internals_quench-tower-packing,chemicals,petrochemicals,steam-cracking,t
+"2.2(4) Refining: gas turbine exhaust as fired-heater combustion air, 100,000 B/d (pp.147-148)",combustion-turbine_chp_fired-heater,petroleum-refining,crude-distillation,fired-heater,GJ
+"2.2(5) Non-ferrous: oil-fired pot furnace vs gas immersion melting/holding furnace, 65 kg/h (pp.149-150, Table 1)",melting-furnace_crucible-oil-fired,non-ferrous-metals,aluminium-casting,melting,t
+"2.2(5) Non-ferrous: oil-fired pot furnace vs gas immersion melting/holding furnace, 65 kg/h (pp.149-150, Table 1)",melting-furnace_immersion-gas-fired,non-ferrous-metals,aluminium-casting,melting,t
+"2.2(5) Non-ferrous: recuperative vs regenerative aluminium melting furnace, 14 t/h (p.158, Table 1)",melting-furnace_reverberatory-recuperative,non-ferrous-metals,aluminium-casting,melting,t
+"2.2(5) Non-ferrous: recuperative vs regenerative aluminium melting furnace, 14 t/h (p.158, Table 1)",melting-furnace_regenerative,non-ferrous-metals,aluminium-casting,melting,t
+"2.2(6) Pulp and paper: batch vs continuous digester, broadleaf, 500 t/d (pp.159-160)",digester_batch-kraft,pulp-and-paper,chemical-pulping,digester,t
+"2.2(6) Pulp and paper: batch vs continuous digester, broadleaf, 500 t/d (pp.159-160)",digester_continuous-kraft,pulp-and-paper,chemical-pulping,digester,t
+"2.2(6) Pulp and paper: batch vs continuous digester, conifers, 500 t/d (pp.159-160)",digester_batch-kraft,pulp-and-paper,chemical-pulping,digester,t
+"2.2(6) Pulp and paper: batch vs continuous digester, conifers, 500 t/d (pp.159-160)",digester_continuous-kraft,pulp-and-paper,chemical-pulping,digester,t
+"2.2(6) Pulp and paper: conventional vs high-temperature odour-free recovery boiler, 150 t/h (pp.165-166)",boiler_recovery,pulp-and-paper,chemical-recovery,recovery-boiler,t
+"2.2(6) Pulp and paper: conventional vs high-temperature odour-free recovery boiler, 150 t/h (pp.165-166)",boiler_recovery-high-solids,pulp-and-paper,chemical-recovery,recovery-boiler,t
+2.2(7) Food (cross-cutting dryer): high-temperature high-humidity dryer (p.172),dryer_direct-fired,heat-supply,drying,dryer,GJ
+2.2(7) Food (cross-cutting dryer): high-temperature high-humidity dryer (p.172),dryer_direct-fired_high-humidity,heat-supply,drying,dryer,GJ
+2.2(7) Food (cross-cutting CHP): gas turbine cogeneration in a milk plant (pp.185-186),combustion-turbine_chp,heat-supply,chp,gas-turbine,GJ
+"3.2.6(1) Heat pumps: once-through boiler vs hot-water absorption heat pump, unit costs (p.301)",boiler_fuel-fired_once-through,heat-supply,steam-and-hot-water,boiler,GJ
+"3.2.6(1) Heat pumps: once-through boiler vs hot-water absorption heat pump, unit costs (p.301)",heat-pump_absorption-hot-water,heat-supply,steam-and-hot-water,heat-pump,GJ

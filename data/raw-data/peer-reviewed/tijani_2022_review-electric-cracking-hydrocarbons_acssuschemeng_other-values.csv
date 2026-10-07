@@ -1,0 +1,30 @@
+process,technology,item,value,unit,reference,note
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",steam-cracker_fired-tubular_naphtha,heat of reaction (stoichiometric) per t ethylene,6.7,GJ/t,p.16074,About 30% of the best-case SEC of 18-21 GJ/t.
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",steam-cracker_fired-tubular_naphtha,share of furnace energy input used for cracking reaction,30,%,p.16070,reprinted from Zimmermann and Roland 2000 (Ullmann)
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",steam-cracker_fired-tubular_naphtha,share of flue-gas energy avoidable by electric furnace,50,%,p.16085,"""about 50% of the energy is in the flue gases that can be avoided in an electric furnace""."
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",steam-cracker_fired-tubular_naphtha,naphtha cost share of ethylene production cost,80,%,"p.16085, Economic Feasibility",reprinted from Gladisch (ref 99)
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",steam-cracker_fired-tubular_naphtha,typical cracked product composition: ethylene / propylene / benzene / toluene / hydrogen / methane,30 / 14 / 5 / 3 / 1 / 16,wt%,p.16074,reprinted from Essential Chemical Industry online (ref 2)
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",,global ethylene production 2019,183,Mt,p.16070,Annual increase about 4-5%. reprinted from GPCA 2019
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",,global CO2 from steam crackers,366,Mt/yr,p.16070,
+"Steam cracking of naphtha, conventional furnace (pp.16070-16074, 16085, text)",,steam cracking share of chemical-industry energy use in the Netherlands,30,%,p.16070,reprinted from Ren 2006
+"Licensor energy use, naphtha cracking per t ethylene (p.16074, Table 1)",,Kellogg Brown & Root ethylene yield,38,wt%,"p.16074, Table 1",No energy data found. reprinted from Worrell 2008
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_electric_resistance,heat flux provided by electric resistance modules at 900 degC furnace temperature,70,kW/m2,p.16083,Required coil heat flux >30 kW/m2. reprinted from Kanthal 2022
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_electric_resistance,largest resistance heating furnaces built (any industry),8,MW,p.16085,reprinted from Stormont 2010 (glass)
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_electric_resistance,energy saving of electric naphtha cracking vs fired (upper bound),50,%,"p.16086, Conclusions","""significant energy savings of up to 50% as the feedstock is heated directly, and no flue gas losses are involved""."
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_electric_induction,largest induction furnaces built (any industry),42,MW,p.16085,reprinted from castingssa.com (ref 107)
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_rotodynamic,residence time (bench reactor),20-50,ms,p.16084,reprinted from Johannesdahl and Purola 2021
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_rotodynamic,ethylene yield (simulated full-scale RDR cracker),38.3,wt%,p.16084,"vs 30.8% conventional, about 25% more ethylene. reprinted from Johannesdahl and Purola 2021"
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",steam-cracker_rotodynamic,plant footprint relative to conventional cracker of same capacity,20,%,"p.16085, Figure 28",reprinted from Johannesdahl and Purola 2021
+"Electric cracking options for naphtha steam cracking (pp.16083-16086, Industrial Applications and Case Study)",,largest compressors built (indicates RDR upscaling potential),100,MW,p.16085,reprinted from Siemens brochure (ref 109)
+Industrial arc/plasma crackers for acetylene (pp.16084),reactor_arc-plasma-acetylene-huels,arc power per reactor,8.5-10,MW,p.16084,
+Industrial arc/plasma crackers for acetylene (pp.16084),reactor_arc-plasma-acetylene-huels,acetylene yield,50,%,p.16084,reprinted from Beiers et al. (ref 62)
+Industrial arc/plasma crackers for acetylene (pp.16084),reactor_arc-plasma-acetylene-dupont,arc power per reactor,9,MW,p.16084,
+Industrial arc/plasma crackers for acetylene (pp.16084),reactor_arc-plasma-acetylene-dupont,acetylene yield,70,%,p.16084,reprinted from Beiers et al. (ref 62)
+Industrial arc/plasma crackers for acetylene (pp.16084),reactor_arc-plasma-acetylene-huels,combined acetylene + ethylene yield on naphtha with recycling,80,%,p.16084,reprinted from Gehrmann et al. 1971 (ref 10)
+"Electric heating technologies, general characteristics (pp.16075-16077)",induction-heater_process,power density,50 MW/m2,,pp.16075-16076,
+"Electric heating technologies, general characteristics (pp.16075-16077)",microwave-heater_process,power density,500 kW/m2,,pp.16075-16076,
+"Electric heating technologies, general characteristics (pp.16075-16077)",infrared-heater_process,power density,300 kW/m2,,pp.16075-16076,
+"Electric heating technologies, general characteristics (pp.16075-16077)",,typical industrial electric arc furnace operating temperature,1200-1800,degC,p.16077,
+"Electric heating technologies, general characteristics (pp.16075-16077)",,largest electric arc furnaces,175,MW,p.16085,reprinted from Jones (ref 106)
+"Electric heating technologies, general characteristics (pp.16075-16077)",,microwave plasma reactor (Oberreuther) thermal efficiency,90,%,p.16081,"6 kW, 2.45 GHz, up to 1000 degC."
+"Electric heating technologies, general characteristics (pp.16075-16077)",,lab shock-wave ethane pyrolysis ethylene yield,>70,%,p.16077,Laboratory setup.

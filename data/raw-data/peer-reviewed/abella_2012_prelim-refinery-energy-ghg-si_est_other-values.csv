@@ -1,0 +1,6 @@
+process,technology,item,value,unit,reference,note
+"PRELIM base case, 12 crudes",refinery (all configurations),offsite (purchased) energy requirement,0.03-0.15 MJ/MJ crude (140-900 MJ/bbl crude),MJ/MJ; MJ/bbl,p.S48-S49,"Total minus on-site supply (refinery fuel gas, reformer hydrogen, FCC regenerator); total 340-1400 MJ/bbl is in the main paper."
+PRELIM full-conversion scenario,refinery (all configurations),shares of refinery energy use,hydrogen supply 26-50%; process heating 33-63%; FCC catalyst regeneration 0-11%; steam 2-7%; electricity 2-3%,%,p.S49,Energy (not GHG) shares; gasoline 44-62% of liquids volume in this scenario.
+PRELIM scenario analysis,refinery (all configurations),effect of confidential process energy data (about 30% efficiency improvement),"GHG -18% (Bitumen 1) to -39% (Conv,Sw,L2); -1.2 to -3.2 g CO2eq/MJ crude",%; g/MJ,p.S50,
+PRELIM scenario analysis,refinery (all configurations),renewable electricity emission factor used,8.30,g CO2eq/MJ electricity,p.S50,versus 329 g CO2eq/MJ coal in the base case; electricity then contributes under 1% of refinery GHG.
+PRELIM evaluation against PRISM,refinery (all configurations),"PRELIM vs PRISM proximity, overall refinery CO2 (22 runs)",r2 0.93; CV(RMSD) 10%,as printed,"p.S34, Table S8","Also gas requirement r2 0.87 (CV 24%), electricity r2 0.87 (CV 21%), FCC coke burned r2 0.99 (CV 27%)."

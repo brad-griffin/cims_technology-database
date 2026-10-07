@@ -487,6 +487,19 @@ BRIEF_SHAPE = [
     ("other-reports/ricardo-aea_2013_decarbonisation-heat-industry-review_decc", "ricardo-aea_2013_001", "UK and EU"),
     ("other-reports/irena_2014_renewable-energy-manufacturing-remap2030", "irena_2014_001", "global"),
     ("iea/iea_2026_heat-pump-monitor", "iea_2026_003", "global"),
+    ("iea/iea_2026_global-methane-tracker-documentation", "iea_2026_004", "global (US base costs)"),
+    ("iea/iea_2026_methane-abatement-model-cost-assumptions", "iea_2026_005", "US (base values before country adjustment)"),
+    ("other-reports/purola_2021_heat-integration-hydrocarbon-processing-facility_uspto", "purola_2021_001", "Finland (generic plant simulation)"),
+    ("peer-reviewed/tijani_2022_review-electric-cracking-hydrocarbons_acssuschemeng", "tijani_2022_001", "global / Netherlands"),
+    ("other-reports/abella_2022_prelim-v1-6_ucalgary", "abella_2022_001", "global average"),
+    ("gov-usa/doe/doe_2006_pumping-system-performance-sourcebook", "doe_2006_002", "US"),
+    ("gov-usa/doe/doe_2003_fan-system-performance-sourcebook", "doe_2003_002", "US"),
+    ("gov-usa/doe/doe_2016_compressed-air-system-performance-sourcebook", "doe_2016_002", "US"),
+    ("peer-reviewed/almeida-benalcazar_2022_gas-fermentation-ethanol-decarbonization-si_compchemeng", "almeida-benalcazar_2022_001", "generic / EU"),
+    ("other-reports/van-der-stricht_2025_steelanol-bfg-ethanol-economics", "van-der-stricht_2025_001", "global / EU"),
+    ("peer-reviewed/denis-ryan_2016_carbon-intensive-materials-decarbonizing-si_climpol", "denis-ryan_2016_001", "global"),
+    ("other-reports/gcca/gcca_2024_gnr-cement-indicators", "gcca_2024_001", "Canada"),
+    ("other-reports/ietd_2013_industrial-efficiency-technology-database_iip", "ietd_2013_001", "global (US, Japan, China, India, EU)"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

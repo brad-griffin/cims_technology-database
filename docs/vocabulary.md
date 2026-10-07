@@ -439,7 +439,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `evaporator_crystallizer` | Evaporator-crystallizer | alternative |  | 9 | petroleum-crude.service.produced-water; mining.service.crystallization | quantified |
 | `flare` | Flare with continuous pilot | conventional |  | 9 | natural-gas.product.supply.flaring | quantified |
 | `flare_enclosed-combustor` | Enclosed combustor | alternative |  | 9 | natural-gas.product.supply.venting.liquid-unloading; natural-gas.product.supply.venting.other-point-venting | quantified |
-| `flare_high-efficiency` | High-efficiency flare | alternative |  | 9 | natural-gas.product.supply.flaring | estimated |
+| `flare_high-efficiency` | High-efficiency flare | alternative |  | 9 | natural-gas.product.supply.flaring | quantified |
 | `fracturing-fleet_electric` | Electric fracturing fleet | alternative | electricity; natural-gas | 9 | natural-gas.product.supply.drilling; petroleum-crude.product.exploration | not pooled |
 | `gas-treatment-unit_amine-sweetening` | Amine sweetening | conventional | electricity | 9 | natural-gas.product.supply.formation-co2; natural-gas.product.supply.processing | quantified |
 | `gas-treatment-unit_amine-sweetening_ccs-concentrated` | Amine sweetening with capture of the separated CO2 | alternative | natural-gas | 9 | natural-gas.product.supply.formation-co2 | quantified |
