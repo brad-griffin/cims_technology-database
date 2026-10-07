@@ -15,7 +15,7 @@ est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,22.5,16.875,40,yes,
 est-sibling-lifetime,thermal-storage_electric,lifetime,25,20,10,50,yes,0.8,tier 2: thermal-storage_heat-charged
 est-sibling-lifetime,anaerobic-digester_chp,lifetime,17.5,16,12,20,yes,0.914286,"tier 2: anaerobic-digester, anaerobic-digester_effluent"
 est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,25,25,10,50,yes,1,tier 2: combustion-turbine_chp
-est-sibling-lifetime,combined-cycle_efficiency-moderate,lifetime,30,22.5,16.875,40,yes,0.75,tier 1: combined-cycle
+est-sibling-lifetime,combined-cycle_efficiency-moderate,lifetime,30,31.25,20,40,yes,1.04167,"tier 1: combined-cycle, combined-cycle_ccs-diffuse"
 est-sibling-lifetime,steam-turbine_condensing,lifetime,25,22.5,15,50,yes,0.9,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
 est-sibling-lifetime,steam-turbine_waste-heat,lifetime,20,25,15,50,yes,1.25,"tier 2: steam-turbine_back-pressure, steam-turbine_condensing"
 est-sibling-lifetime,geothermal-well_binary-power,lifetime,40,27.5,20,50,yes,0.6875,"tier 2: geothermal-well_direct-use, geothermal-well_flash-power"
@@ -162,7 +162,8 @@ est-sibling-lifetime,paper-machine_waterless,lifetime,20,20,15,25,yes,1,"tier 2:
 est-sibling-lifetime,thermal-storage_heat-charged,lifetime,20,25,18.75,31.25,yes,1.25,tier 2: thermal-storage_electric
 est-sibling-lifetime,evaporator_food,lifetime,10,25,18.75,31.25,no,2.5,tier 2: evaporator_crystallizer
 est-sibling-lifetime,smelting-vessel_low-shaft,lifetime,20,22.5,16.875,40,yes,1.125,"tier 2: smelting-vessel_smelting-reduction, smelting-vessel_smelting-reduction_ccs-concentrated"
-est-sibling-lifetime,combined-cycle,lifetime,22.5,30,22.5,37.5,yes,1.33333,tier 1: combined-cycle_efficiency-moderate
+est-sibling-lifetime,combined-cycle,lifetime,22.5,35,25,43.75,no,1.55556,"tier 1: combined-cycle_efficiency-moderate, combined-cycle_ccs-diffuse"
+est-sibling-lifetime,combined-cycle_ccs-diffuse,lifetime,40,26.25,19.6875,40,yes,0.65625,"tier 1: combined-cycle_efficiency-moderate, combined-cycle"
 est-sibling-lifetime,gasifier_coal-methanol,lifetime,15,15,11.25,18.75,yes,1,tier 1: gasifier_coal-methanol_ccs-concentrated
 est-sibling-lifetime,kiln_tunnel-roller_efficiency-strong,lifetime,20,25,18.75,35,yes,1.25,tier 1: kiln_tunnel-roller
 est-sibling-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,31.25,20,40,yes,1.25,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
@@ -219,6 +220,8 @@ est-sibling-construction-time,reactor_gas-to-liquids,construction-time,2,3.79167
 est-sibling-construction-time,reactor_haber-bosch-loop,construction-time,2,2.5,1.875,3.125,yes,1.25,"tier 2: reactor_co2-to-methanol, reactor_hydrotreating-lipids, reactor_chemical-depolymerization, reactor_hydrothermal-liquefaction, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
 est-sibling-construction-time,geothermal-well_direct-use,construction-time,4.5,1.5,1,3,no,0.333333,tier 2: geothermal-well_binary-power
 est-sibling-construction-time,thermal-storage_heat-charged,construction-time,1,1,0.5,2,yes,1,tier 2: thermal-storage_electric
+est-sibling-construction-time,combined-cycle,construction-time,2,2.5,1.875,4,yes,1.25,tier 1: combined-cycle_ccs-diffuse
+est-sibling-construction-time,combined-cycle_ccs-diffuse,construction-time,2.5,2,1.5,4,yes,0.8,tier 1: combined-cycle
 est-sibling-construction-time,steam-reformer_methane_ccs-diffuse,construction-time,3,3,2.25,3.75,yes,1,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
 est-sibling-capacity-factor,boiler_ccs-diffuse,capacity-factor,51,71.3475,22.8,95,yes,1.39897,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_oxy-fuel"
 est-sibling-capacity-factor,boiler_electric,capacity-factor,57.075,68.31,22.8,95,yes,1.19685,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_ccs-diffuse, boiler_oxy-fuel"
@@ -272,6 +275,8 @@ est-sibling-capacity-factor,gasifier_coal-methanation,capacity-factor,90,90,67.5
 est-sibling-capacity-factor,gasifier_coal-fischer-tropsch,capacity-factor,85,90,67.5,100,yes,1.05882,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-waste"
 est-sibling-capacity-factor,reactor_gas-to-liquids,capacity-factor,85,89,66.75,100,yes,1.04706,"tier 2: reactor_methane-pyrolysis, reactor_small-nuclear"
 est-sibling-capacity-factor,geothermal-well_direct-use,capacity-factor,55,91.25,68.4375,100,no,1.65909,"tier 2: geothermal-well_binary-power, geothermal-well_flash-power"
+est-sibling-capacity-factor,combined-cycle,capacity-factor,82,85,63.75,100,yes,1.03659,tier 1: combined-cycle_ccs-diffuse
+est-sibling-capacity-factor,combined-cycle_ccs-diffuse,capacity-factor,85,82,30,100,yes,0.964706,tier 1: combined-cycle
 est-sibling-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,91.25,68.4375,100,yes,0.960526,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
 est-sibling-capacity-factor,geothermal-well_flash-power,capacity-factor,95,71.25,53.4375,95,yes,0.75,"tier 2: geothermal-well_direct-use, geothermal-well_binary-power"
 est-sibling-capacity-factor,transesterification-unit_acid-catalyzed,capacity-factor,90.4,90.4,67.8,100,yes,1,"tier 2: transesterification-unit_alkali-catalyzed, transesterification-unit_heterogeneous-catalyst, transesterification-unit_supercritical-methanol"
