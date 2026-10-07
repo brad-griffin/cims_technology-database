@@ -583,7 +583,7 @@ extraction.
 **Documents to get.** Documents worth obtaining are listed in
 `data/raw-data/to-get.csv`, with priority, the source that cites each one, and
 what it would supply. A document leaves the list when it is downloaded and
-registered.
+registered. Documents that turn out to be unobtainable move to `data/raw-data/unavailable.csv`, with the reason and any substitute held, so they are not searched for again.
 
 **Background documents.** A downloaded document that yields nothing for the
 database goes to `data/raw-data/background-no-data-extracted/` and is recorded

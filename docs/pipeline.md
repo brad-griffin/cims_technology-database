@@ -79,7 +79,7 @@ gate a commit.
 ## How to
 
 **Add a source.** Pick it from `data/raw-data/to-get.csv` where it is listed there,
-and remove it from that list once it is held. If the document turns out to hold
+and remove it from that list once it is held. If it cannot be obtained, move its row to `data/raw-data/unavailable.csv` with the reason and any substitute. If the document turns out to hold
 nothing usable, move it to `data/raw-data/background-no-data-extracted/` and add
 a row to `data/raw-data/background-register.csv` instead of registering it.
 1. Register it in `data/raw-data/source-details_sources.csv` and `_files.csv`.

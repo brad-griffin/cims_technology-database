@@ -20,6 +20,7 @@ The restructure of 2026-09-23 is recorded in the commit history from tag
 
 | Date | Decision | Status | Record |
 | - | - | - | - |
+| 2026-10-07 | Unobtainable documents are listed in `data/raw-data/unavailable.csv` (reason, date, substitute) instead of `to-get.csv`: Kaiser 2019 6th ed., ECRA/CSI 2009, Coolbrook RDR AIChE 2024, UKTM documentation. | current | user 2026-10-07 |
 | 2026-10-07 | UKERC energy rows crediting Johansson et al. 2012 (44 flows and 10 SEC totals) are kept as differs-justified (stated 3750 kJ/kg duty, per-baseline-output basis); its capex (annualised cost read as capital), lifetime and fixed O&M rows stay dropped. | current | user 2026-10-07 |
 | 2026-10-07 | NEMA Premium (IE3) motors stay on `motor_induction-standard` (IE2-IE3; NEMA Premium is the minimum for new motors in Canada and the US); `motor_premium-efficiency` carries IE4-IE5 / advanced motors. Martin et al. 2000 figures reprinted from Jaccard and Willis 1996 are kept. | current | user 2026-10-07 |
 | 2026-10-07 | IEA Global Methane Tracker 2026 and the IEA methane abatement model print no dollar year; costs are labelled 2025_USD (the documentation uses 2025 gas, electricity and coal prices), flagged as inferred. | current | user 2026-10-07 (asked to determine it) |
