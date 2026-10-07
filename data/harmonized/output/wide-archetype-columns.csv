@@ -108,6 +108,10 @@ efficiency_heat,technical,%,"Useful output per unit of energy input, on the basi
 efficiency_heat_low,technical,%,
 efficiency_heat_high,technical,%,
 efficiency_heat_n,technical,,
+efficiency_heat-recovery,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: heat-recovery. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+efficiency_heat-recovery_low,technical,%,
+efficiency_heat-recovery_high,technical,%,
+efficiency_heat-recovery_n,technical,,
 efficiency_hydrogen,technical,%,"Useful output per unit of energy input, on the basis named in note (HHV or LHV). For multi-carrier technologies record one tech-flow row per input instead. Species: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 efficiency_hydrogen_low,technical,%,
 efficiency_hydrogen_high,technical,%,

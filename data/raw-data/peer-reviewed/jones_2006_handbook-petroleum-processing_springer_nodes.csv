@@ -1,0 +1,45 @@
+process,technology,sector,end-use,process-step,service-unit
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",separator_light-ends-fractionation,petroleum-refining,material-conversion,gas processing,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",distillation-column_naphtha-splitter,petroleum-refining,material-conversion,naphtha splitting,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",reactor_hydrotreating_diesel,petroleum-refining,material-conversion,hydrotreating,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",reactor_thermal-cracking,petroleum-refining,material-conversion,thermal cracking,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",separator_product-wash,petroleum-refining,material-conversion,product treating,bbl
+"Utilities per bbl feed, screening factors (Ch. 17.1.2, Table 17.1.5)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",distillation-column_atmospheric,petroleum-refining,material-conversion,crude distillation,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",distillation-column_vacuum,petroleum-refining,material-conversion,vacuum distillation,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_thermal-cracking,petroleum-refining,material-conversion,thermal cracking,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_hydrotreating_light-gas-oil,petroleum-refining,material-conversion,hydrotreating,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_hydrotreating_heavy-gas-oil,petroleum-refining,material-conversion,hydrotreating,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",reactor_isomerization-alkylation,petroleum-refining,material-conversion,alkylation,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",gas-treatment-unit_amine-refinery,petroleum-refining,material-conversion,acid gas treating,bbl
+"Refinery configuration example, unit service factors (Ch. 2.4, Table 2.31)",gas-treatment-unit_sulphur-recovery_claus,petroleum-refining,material-conversion,sulphur recovery,t
+"UOP SR vs CCR Platforming comparison, 20,000 BPD (Ch. 5, Tables 5.6-5.8)",reactor_catalytic-reforming_semi-regenerative,petroleum-refining,material-conversion,catalytic reforming,bbl
+"UOP SR vs CCR Platforming comparison, 20,000 BPD (Ch. 5, Tables 5.6-5.8)",reactor_catalytic-reforming_continuous,petroleum-refining,material-conversion,catalytic reforming,bbl
+FCC regenerator and reactor conditions (Ch. 6),reactor_fluid-catalytic-cracking_partial-combustion,petroleum-refining,material-conversion,catalytic cracking,bbl
+FCC regenerator and reactor conditions (Ch. 6),reactor_fluid-catalytic-cracking_complete-combustion,petroleum-refining,material-conversion,catalytic cracking,bbl
+FCC regenerator and reactor conditions (Ch. 6),reactor_fluid-catalytic-cracking_light-olefins,petroleum-refining,material-conversion,catalytic cracking,bbl
+Distillate hydrocracking operating ranges (Ch. 7),reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+Distillate hydrocracking operating ranges (Ch. 7),reactor_hydrocracking_two-stage,petroleum-refining,material-conversion,hydrocracking,bbl
+Hydrotreating operating ranges (Ch. 8),reactor_hydrotreating,petroleum-refining,material-conversion,hydrotreating,bbl
+Motor fuel alkylation process conditions (Ch. 9.1),reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"Par-Isom integrated with semiregenerative reformer, revamp case study B (Ch. 9.3, Table 9.3.3)",reactor_isomerization_par-isom-integrated,petroleum-refining,material-conversion,isomerization,bbl
+Amine gas treating (Ch. 10),gas-treatment-unit_amine-refinery,petroleum-refining,material-conversion,acid gas treating,gal
+"Thermal cracking processes, typical conditions (Ch. 11)",reactor_thermal-cracking_two-stage,petroleum-refining,material-conversion,thermal cracking,bbl
+"Thermal cracking processes, typical conditions (Ch. 11)",reactor_visbreaking,petroleum-refining,material-conversion,thermal cracking,bbl
+"Thermal cracking processes, typical conditions (Ch. 11)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+"Fixed-bed residue hydrocracker test run, Middle East vacuum residue, 13,000 BPSD (Ch. 11, Table 11.7)",reactor_hydrocracking_residue,petroleum-refining,material-conversion,hydrocracking,bbl
+Fired heater efficiency ranges (Ch. 18.5),direct-heater_fuel-fired_air-preheat,petroleum-refining,process-heat-medium-temp,fired heater,GJ
+Fired heater efficiency ranges (Ch. 18.5),direct-heater_fuel-fired_high-efficiency,petroleum-refining,process-heat-medium-temp,fired heater,GJ
+Fired heater efficiency ranges (Ch. 18.5),direct-heater_fuel-fired,petroleum-refining,process-heat-medium-temp,fired heater,GJ
+Fired heater efficiency ranges (Ch. 18.5),direct-heater_fuel-fired_all-radiant,petroleum-refining,process-heat-medium-temp,fired heater,GJ
+"Standard electric motor, 10 BHP (Ch. 18.2, Table 18.21)",motor_induction-standard,all-industry,machine-drive,pump driver,kW
+"Standard electric motor, 50 BHP (Ch. 18.2, Table 18.21)",motor_induction-standard,all-industry,machine-drive,pump driver,kW
+"Standard electric motor, 100 BHP (Ch. 18.2, Table 18.21)",motor_induction-standard,all-industry,machine-drive,pump driver,kW
+"Standard electric motor, 200 BHP (Ch. 18.2, Table 18.21)",motor_induction-standard,all-industry,machine-drive,pump driver,kW
+"Standard electric motor, 450 BHP (Ch. 18.2, Table 18.21)",motor_induction-standard,all-industry,machine-drive,pump driver,kW

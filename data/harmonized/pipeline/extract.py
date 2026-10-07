@@ -500,6 +500,12 @@ BRIEF_SHAPE = [
     ("peer-reviewed/denis-ryan_2016_carbon-intensive-materials-decarbonizing-si_climpol", "denis-ryan_2016_001", "global"),
     ("other-reports/gcca/gcca_2024_gnr-cement-indicators", "gcca_2024_001", "Canada"),
     ("other-reports/ietd_2013_industrial-efficiency-technology-database_iip", "ietd_2013_001", "global (US, Japan, China, India, EU)"),
+    ("peer-reviewed/meyers_1997_handbook-petroleum-refining-processes_mcgraw-hill", "meyers_1997_001", "US (Gulf Coast licensor estimates)"),
+    ("peer-reviewed/jones_2006_handbook-petroleum-processing_springer", "jones_2006_001", "generic / US"),
+    ("peer-reviewed/challis_2020_dairy-pasteurisation-energy-human-factors_thesis", "challis_2020_001", "UK"),
+    ("peer-reviewed/challis_2017_human-factors-dairy-process-control_jclepro", "challis_2017_001", "UK"),
+    ("other-reports/kulterer_2020_audit-guide-steam-system-optimisation_klimaaktiv", "kulterer_2020_001", "Austria / EU"),
+    ("peer-reviewed/weidmann_2013_swiss-energy-system-transformation-strategies_eth-thesis", "weidmann_2013_001", "Switzerland"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

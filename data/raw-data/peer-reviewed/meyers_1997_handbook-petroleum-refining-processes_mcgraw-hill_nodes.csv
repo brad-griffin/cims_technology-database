@@ -1,0 +1,35 @@
+process,technology,sector,end-use,process-step,service-unit
+"Exxon stirred autorefrigerated H2SO4 alkylation, 7.5 kBPSD (Ch. 1.1, Table 1.1.2)",reactor_alkylation_sulphuric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"UOP HF alkylation, 9000 BPSD C5+ alkylate (Ch. 1.4, Table 1.4.4)",reactor_alkylation_hydrofluoric-acid,petroleum-refining,material-conversion,alkylation,bbl
+"Exxon Flexicracking IIIR FCC, 30 kBPSD vacuum gas oil (Ch. 3.1, Tables 3.1.4-3.1.5)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,fluid catalytic cracking,bbl
+"Exxon Flexicracking IIIR FCC, 30 kBPSD resid (5 Conradson carbon) (Ch. 3.1, Tables 3.1.4-3.1.5)",reactor_fluid-catalytic-cracking_residue,petroleum-refining,material-conversion,fluid catalytic cracking,bbl
+"Kellogg FCC, 50,000 BPSD (Ch. 3.2, Investment costs and utilities)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,fluid catalytic cracking,bbl
+"UOP FCC, 35,000 BPSD without power recovery (Ch. 3.3, Tables 3.3.8-3.3.9)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,fluid catalytic cracking,bbl
+"UOP FCC, 35,000 BPSD with power recovery (Ch. 3.3, Tables 3.3.8-3.3.9)",reactor_fluid-catalytic-cracking_power-recovery,petroleum-refining,material-conversion,fluid catalytic cracking,bbl
+"UOP SR Platforming case study, 20,000 BPSD (Ch. 4.1, Tables 4.1.2-4.1.5)",reactor_catalytic-reforming_semi-regenerative,petroleum-refining,material-conversion,catalytic reforming,bbl
+"UOP CCR Platforming case study, 20,000 BPSD (Ch. 4.1, Tables 4.1.2-4.1.5)",reactor_catalytic-reforming_continuous,petroleum-refining,material-conversion,catalytic reforming,bbl
+"FW steam-methane-reforming hydrogen plant, 50 million SCFD (Ch. 6.2, Capital cost and utility requirements)",steam-reformer_methane,petroleum-refining,hydrogen-production,hydrogen production,thousand scf H2
+"Typical hydrocracker operating conditions (Ch. 7.1, Table 7.1.1)",reactor_hydrocracking_high-pressure,petroleum-refining,material-conversion,hydrocracking,bbl
+"Typical hydrocracker operating conditions (Ch. 7.1, Table 7.1.1)",reactor_hydrocracking_moderate-pressure,petroleum-refining,material-conversion,hydrocracking,bbl
+"UOP Unicracking capital investment (Ch. 7.3, Table 7.3.3)",reactor_hydrocracking_max-distillate,petroleum-refining,material-conversion,hydrocracking,bbl
+"UOP Unicracking capital investment (Ch. 7.3, Table 7.3.3)",reactor_hydrocracking_max-naphtha,petroleum-refining,material-conversion,hydrocracking,bbl
+"UOP Unicracking typical utilities per 1000 BPSD (Ch. 7.3, Table 7.3.4)",reactor_hydrocracking,petroleum-refining,material-conversion,hydrocracking,bbl
+"Chevron two-stage Isocracking, 39,000 BPOD (Ch. 14.1, Table 14.1.28)",reactor_hydrocracking_two-stage,petroleum-refining,material-conversion,hydrocracking,bbl
+"Chevron RDS hydrotreater for RFCC feed, 70,000 BPSD (Ch. 8.1, Tables 8.1.5-8.1.6)",reactor_hydrotreating_residue,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Unionfining investment and typical operating conditions (Ch. 8.3, Table 8.3.2)",reactor_hydrotreating,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Unionfining investment and typical operating conditions (Ch. 8.3, Table 8.3.2)",reactor_hydrotreating_naphtha,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Unionfining investment and typical operating conditions (Ch. 8.3, Table 8.3.2)",reactor_hydrotreating_middle-distillate,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Unionfining investment and typical operating conditions (Ch. 8.3, Table 8.3.2)",reactor_hydrotreating_light-gas-oil,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Unionfining investment and typical operating conditions (Ch. 8.3, Table 8.3.2)",reactor_hydrotreating_heavy-gas-oil,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP RCD Unionfining, 20,000 BPSD (Ch. 8.4, Tables 8.4.3-8.4.4)",reactor_hydrotreating_residue,petroleum-refining,material-conversion,hydrotreating,bbl
+"Exxon Diesel Oil Deep Desulfurization (DODD), 15 kBPSD (Ch. 8.7, Table 8.7.1)",reactor_hydrotreating_middle-distillate,petroleum-refining,material-conversion,hydrotreating,bbl
+"UOP Penex isomerization options, 10,000 BPD (Ch. 9.3, Tables 9.3.7-9.3.9)",reactor_isomerization_once-through,petroleum-refining,material-conversion,isomerization,bbl
+"UOP Penex isomerization options, 10,000 BPD (Ch. 9.3, Tables 9.3.7-9.3.9)",reactor_isomerization_deisohexanizer-recycle,petroleum-refining,material-conversion,isomerization,bbl
+"UOP Penex isomerization options, 10,000 BPD (Ch. 9.3, Tables 9.3.7-9.3.9)",reactor_isomerization_molex-recycle,petroleum-refining,material-conversion,isomerization,bbl
+"UOP once-through zeolitic isomerization, 4000-6000 BPSD (Ch. 9.4, Table 9.4.5)",reactor_isomerization_zeolitic-once-through,petroleum-refining,material-conversion,isomerization,bbl
+"Exxon Flexicoking estimate Case 1, 26.3 kB/SD (Ch. 12.1, Tables 12.1.1-12.1.5)",reactor_fluid-coking_flexicoking,petroleum-refining,material-conversion,coking,bbl
+"Exxon Flexicoking estimate Case 2, 23.2 kB/SD (Ch. 12.1, Tables 12.1.6-12.1.9)",reactor_fluid-coking_flexicoking,petroleum-refining,material-conversion,coking,bbl
+FW delayed coker typical utilities and investment (Ch. 12.2),reactor_delayed-coking,petroleum-refining,material-conversion,coking,bbl
+FW/UOP coil-type visbreaker (Ch. 12.3),reactor_visbreaking_coil,petroleum-refining,material-conversion,visbreaking,bbl
+"FW/UOP coil-type visbreaker, 10000 BPSD estimate (Ch. 12.3)",reactor_visbreaking_coil,petroleum-refining,material-conversion,visbreaking,bbl
+"FW/UOP coil-type visbreaker, 40000 BPSD estimate (Ch. 12.3)",reactor_visbreaking_coil,petroleum-refining,material-conversion,visbreaking,bbl
