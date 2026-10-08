@@ -506,6 +506,7 @@ BRIEF_SHAPE = [
     ("peer-reviewed/challis_2017_human-factors-dairy-process-control_jclepro", "challis_2017_001", "UK"),
     ("other-reports/kulterer_2020_audit-guide-steam-system-optimisation_klimaaktiv", "kulterer_2020_001", "Austria / EU"),
     ("peer-reviewed/weidmann_2013_swiss-energy-system-transformation-strategies_eth-thesis", "weidmann_2013_001", "Switzerland"),
+    ("peer-reviewed/rootzen_2017_cement-co2-abatement-cost-supply-chain_climate-policy", "rootzen_2017_001", "Nordic countries"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")
