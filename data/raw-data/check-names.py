@@ -5,11 +5,23 @@ Run from the repo root:   python data/raw-data/check-names.py
 The convention (docs/design.md, Naming):
     '-' joins words within a component.  '_' separates components.
 
-Source data files are author_year_slug[_source]; the trailing '_meta' of a
-sidecar is a reserved marker, stripped before components are counted.
-Extraction technology names are equipment_carrier_variant with the terms in
-data/raw-data/extraction-vocabulary.csv. Archetype keys are checked by the
-database build (data/harmonized/build.py), not here.
+Source data files are author_year_slug[_source]. A sidecar of a source
+(<source stem>_meta, _nodes, _flows, _other-values, _measures, ...) carries one
+more component naming the sidecar; it is stripped before components are counted
+when a file with the source stem sits beside it (the source document in any
+format, .docx and .mhtml included, or its main extraction .csv).
+
+Extraction technology names are each source's own labels since the 2026-09-23
+archetype restructure: records/source-example.csv maps them to archetypes, and
+the database build (data/harmonized/build.py) checks the archetype keys. Here
+they only have to follow the shape rule (lowercase hyphenated components joined
+by '_'). The controlled equipment/carrier/variant vocabulary in
+data/raw-data/extraction-vocabulary.csv still applies to the CIMS YAML layer
+under general-services.
+
+Folders under data/raw-data whose name starts with '_' (_high, _medium, _low and
+their _work, _duplicates, triage and scratch contents) are intake working space,
+not tracked in git; they are skipped and counted, never silently ignored.
 """
 from __future__ import annotations
 
@@ -115,6 +127,24 @@ def check_technology(name: str, where: str, vocab: dict[str, set[str]]) -> None:
                  f"'{name}': '{p}' is in neither the carrier nor the variant vocabulary")
 
 
+def check_label(name: str, where: str) -> None:
+    """A source's own technology label: shape only (see the module docstring)."""
+    checked["technology"] += 1
+    for part in name.split("_"):
+        if not TOKEN.match(part):
+            fail("technology", where, f"'{name}': component '{part}' is not lowercase hyphenated")
+            return
+
+
+def in_intake(path: Path) -> bool:
+    """Under an intake working folder of data/raw-data ('_high', '_work', ...)."""
+    try:
+        rel = path.relative_to(RAW).parts
+    except ValueError:
+        return False
+    return any(p.startswith("_") and not p.startswith("__") for p in rel)
+
+
 def main() -> int:
     vocab = load_vocabularies()
     std_params = template_parameters()
@@ -126,7 +156,7 @@ def main() -> int:
         # not from content checks: an extraction CSV sitting beside its source
         # PDF in one of them still has to use the controlled vocabularies.
         # The header sniff below is what keeps publisher CSVs out of this loop.
-        if path.name.endswith("_meta.csv"):
+        if path.name.endswith("_meta.csv") or in_intake(path):
             continue
         # Cheap header sniff first: the raw-data tree holds multi-hundred-MB
         # source CSVs that are not extractions and must not be read in full.
@@ -146,7 +176,7 @@ def main() -> int:
             continue
         rel = path.relative_to(ROOT).as_posix()
         for name in sorted({r["technology"] for r in rows if r["technology"]}):
-            check_technology(name, rel, vocab)
+            check_label(name, rel)
         for name in sorted({r["parameter"] for r in rows if r["parameter"]}):
             checked["parameter"] += 1
             if name not in allowed_params:
@@ -200,7 +230,7 @@ def main() -> int:
         for path in sorted(base.rglob("*")):
             if not path.is_dir() or any(d in path.parts for d in ORIGINAL_NAME_DIRS):
                 continue
-            if path.name.startswith("__"):
+            if path.name.startswith("__") or in_intake(path):
                 continue
             checked["folder"] += 1
             for part in path.name.split("_"):
@@ -209,9 +239,12 @@ def main() -> int:
                          f"'{path.name}': component '{part}' is not lowercase hyphenated")
 
     # --- source data filenames -------------------------------------------
-    skipped_original = 0
+    skipped_original = skipped_intake = 0
     for path in sorted(RAW.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in DATA_EXT:
+            continue
+        if in_intake(path):
+            skipped_intake += 1
             continue
         if any(d in path.parts for d in ORIGINAL_NAME_DIRS):
             skipped_original += 1
@@ -223,11 +256,12 @@ def main() -> int:
         rel = path.relative_to(ROOT).as_posix()
         if parts and parts[-1] == "meta":     # reserved sidecar marker
             parts = parts[:-1]
-        elif len(parts) == 5 and path.suffix.lower() == ".csv" and any(
-                (path.parent / ("_".join(parts[:-1]) + ext)).exists() for ext in (".pdf", ".html", ".xlsx")):
-            # An extraction sidecar (<source stem>_nodes.csv, _flows.csv, ...) of a
-            # four-component source file: the last component names the sidecar, as
-            # '_meta' does, and is not counted.
+        elif len(parts) >= 4 and path.suffix.lower() == ".csv" and any(
+                f != path and f.is_file() for f in path.parent.glob("_".join(parts[:-1]) + ".*")):
+            # An extraction sidecar (<source stem>_nodes.csv, _flows.csv, ...): a file
+            # with the source stem sits beside it (the document in any format, or the
+            # main extraction), so the last component names the sidecar, as '_meta'
+            # does, and is not counted.
             parts = parts[:-1]
         if not 3 <= len(parts) <= 4:
             fail("filename", rel,
@@ -251,12 +285,13 @@ def main() -> int:
     print(f"checked {counts}")
     print(f"skipped {skipped_original} files in publisher-original-name directories "
           f"({', '.join(sorted(ORIGINAL_NAME_DIRS))})")
+    print(f"skipped {skipped_intake} files in intake working folders (data/raw-data/_*)")
     if problems:
         print(f"\n{len(problems)} problem(s):\n")
         for p in problems:
             print("  " + p)
         return 1
-    print("\nall names conform to the convention in section 5.")
+    print("\nall names conform to the naming convention (docs/design.md, section 3).")
     return 0
 
 
