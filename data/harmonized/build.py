@@ -33,7 +33,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (assembly, captureenergy, captureshare, carriers, checks, ukercsaving, currency, examples, extract,  # noqa: E402
+from pipeline import (assembly, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
                       factoruse, facts, fill, hierarchy, normalise, records, reports, sources,
                       summarise, views, wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
@@ -41,7 +41,7 @@ from pipeline.common import OUTPUT, write  # noqa: E402
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
              "value-max-norm", "unit-norm", "target-norm", "conversion", "heating-value",
-             "conversion-class", "conversion-factors", "excluded", "set-aside", "duplicate-of", "whole-plant", "uncertainty-type",
+             "conversion-class", "conversion-factors", "excluded", "set-aside", "correction", "duplicate-of", "whole-plant", "uncertainty-type",
              "value-type", "formula", "derived-from", "cost-basis", "capacity-basis", "currency",
              "discount-rate", "region", "year", "source-id", "source-file", "source-locator",
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]
@@ -57,7 +57,7 @@ EX_COLS = ["example-id", "archetype", "mapping", "source-id", "source-technology
            "detail", "sector-reported", "end-use-reported", "step-reported",
            "service-unit-reported", "description", "trl", "trl-as-reported", "trl-scale",
            "state-of-development", "year-available", "extraction-file", "note"]
-SUM_COLS = ["central", "low", "high", "n", "n-external", "central-from", "external-factors",
+SUM_COLS = ["central", "low", "high", "n", "n-external", "n-corrected", "central-from", "external-factors",
             "sources", "examples"]
 FILL_COLS = ["grade", "method", "rule-id", "inputs", "rationale"]
 
@@ -98,6 +98,12 @@ def main(argv) -> int:
         print(f"  assembled whole-plant costs: {asm.get('rows', 0)} rows derived, "
               f"{asm.get('checks', 0)} consistency checks against printed totals"
               + (f" ({asm['check mismatches']} differ)" if asm.get("check mismatches") else ""))
+    cor = correction.apply(L)
+    if cor:
+        print(f"  source corrections: {cor.get('added', 0)} values added, {cor.get('replaced', 0)} "
+              f"replaced, {cor.get('marked', 0)} already-corrected rows marked, "
+              f"{cor.get('rebased', 0)} restated on the archetype's product "
+              "(records/reference/source-correction.csv)")
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     backlog = fail.pop("_backlog")
@@ -129,6 +135,7 @@ def main(argv) -> int:
     print(f"  capture energy on host plants: {ce.get('set aside', 0)} rows set aside, "
           f"{ce.get('derived per t CO2', 0)} restated per t CO2 on capture archetypes")
     us = ukercsaving.derive(L.facts, rec, summarise.summarise)
+    correction.propagate(L.facts)
     print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
     pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
     cc = Counter(r.get("conversion-class") or "as reported" for r in pooled)

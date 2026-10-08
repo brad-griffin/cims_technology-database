@@ -572,6 +572,26 @@ reprinted rows out of the main file and lists them in `_other-values`.
 **Record ids** are `tp-`, `tf-` or `tc-` followed by the source-id and a four-digit
 number, numbered within the source (`tp-ukerc_2013_001-0042`), so an edit to one
 source never renumbers another.
+Rows the build derives carry a letter and three digits instead: `-wNNN` (UKERC
+whole-plant), `-aNNN` (assembled), `-dNNN` (capture cost by difference or rebased),
+`-cNNN` (capture energy restated per t CO2), `-xNNN` (a source correction, below).
+
+**Figures a source prints wrongly** (2026-10-08). Where a source prints a figure
+that cannot be right as it stands -- a slipped decimal point or zero, a wrong unit
+or carrier label, a digit too many, a row shifted against its label -- and the
+source itself (its totals, its other tables, the sibling rows, physical bounds)
+shows what was meant, the corrected figure is taken into the database rather than
+left out. The extraction keeps the figure as printed; the correction is made once,
+in `records/reference/source-correction.csv`, with the figure as printed and the
+evidence, and marked on every row it touches: the `correction` column holds the
+correction-id, the note starts `ASSUMED CORRECTION (sc-NNN)`, and the row's
+conversion-class is `assumption` (factor `assume:source-correction-sc-NNN`).
+The summaries count such examples in `n-corrected` (and in `n-external`), and the
+wide view lists them in `source-corrections`. A replaced row stays in
+example-parameter.csv, excluded as superseded. Rows the extraction had already
+corrected before this rule are marked the same way. Where the evidence does not
+settle what was meant (two readings both plausible), the figure stays out and the
+reason stays in the extraction's notes.
 
 **Registration.** Every source is registered in `data/raw-data/source-details_sources.csv`
 and `source-details_files.csv`; a reference source (a constant, a conversion

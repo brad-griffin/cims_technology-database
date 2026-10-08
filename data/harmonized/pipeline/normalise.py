@@ -762,6 +762,12 @@ def normalise(facts, examples, records, units) -> None:
         raise SystemExit(f"excluded-row.csv names unknown record-ids: {sorted(unknown)}")
     for r in facts:
         a = records.by_key.get(r.get("archetype", ""))
+        if r.get("_superseded"):
+            # the printed value is taken to be wrong; its corrected copy is pooled
+            # instead (pipeline/correction.py, records/reference/source-correction.csv)
+            from .correction import superseded_note
+            r["excluded"] = superseded_note(r)
+            continue
         x = ruled_out.get(r["record-id"])
         if x and r.get("excluded") != "no number":
             r["excluded"] = f"ruled out: {x['reason']} ({x['decided']})"

@@ -24,6 +24,7 @@ gate a commit.
 | 5 | examples | `pipeline/examples.py` | Attaches each example to the archetype `records/source-example.csv` names. Appends new examples with a blank archetype. |
 | 5b | whole-plant | `pipeline/wholeplant.py` | Adds UKERC's host baseline cost to each measure cost where `records/reference/ukerc-host-baseline.csv` allows, as a derived row (`tp-<source>-wNNN`). It sets the other measure costs aside. |
 | 5c | assembly | `pipeline/assembly.py` | Sums one source's component costs into a whole-plant cost as listed in `records/reference/whole-plant-assembly.csv`, as a derived row (`tp-<source>-aNNN`). Stops the build on components from another source, another currency-year or an unreconciled unit. |
+| 5d | corrections | `pipeline/correction.py` | Takes in figures a source prints wrongly on an assumed correction, as listed in `records/reference/source-correction.csv`: `add` writes a value the extraction set aside as a new row (`tp-<source>-xNNN`) on an existing example; `replace` writes a corrected copy of a loaded row and excludes the original as superseded; `mark` tags a row the extraction already corrected. `rebase` restates a loaded row stated per another product of the same source (per t cement on a per-t-clinker kiln) with the source's own ratio, registered in conversion-factor.csv (class same-source); it carries no correction marker. Every such row carries `correction` = sc-NNN, a note starting ASSUMED CORRECTION, and the factor `assume:source-correction-sc-NNN` (conversion-class `assumption`). |
 | 6 | checks | `pipeline/checks.py` | The gate. |
 | 7 | normalise | `pipeline/normalise.py`, `pipeline/currency.py`, `pipeline/convert.py`, `pipeline/heating.py`, `pipeline/bridge.py` | Puts every fact on its archetype's basis, or excludes it with the reason. Unit definitions and the product factors in `records/reference/conversion-factor.csv` (per example: `example-conversion.csv`) bridge units the plain table cannot. LHV numbers go to HHV (`heating-value-stream.csv`); numbers per unit of input go per GJ of output by the efficiency bridge (`efficiency-bridge.csv`). Each row records its `conversion-class` and `conversion-factors`. |
 | 7b | capture energy | `pipeline/captureenergy.py` | Sets aside the capture plant's energy that sources state on host-with-capture archetypes (`output/ccs-addon-energy.csv`) and, where `records/reference/ccs-host-energy.csv` names the capture archetype, restates it per t CO2 captured on a derived example `<host example>|capture`. |
@@ -47,7 +48,7 @@ gate a commit.
 | `records/hierarchy-annotation.csv` | annotation group of hierarchy paths | `annotation` |
 | `records/cims_hierarchy.csv` | hierarchy node (the CIMS snapshot) | `branch` |
 | `records/vocabulary/*.csv` | term: equipment, discriminator, modifier, carrier, the other lists, parameter, commodity | the term |
-| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype and the sources' default basis (`source-heating-basis.csv`), the efficiency-bridge review, rows ruled out (`excluded-row.csv`), capture energy on hosts (`ccs-host-energy.csv`) | |
+| `records/reference/*.csv` | source priority, source citations, TRL scale map, unit conversions, currency references, conversion factors (with class and source-id), the heating-value streams per archetype and the sources' default basis (`source-heating-basis.csv`), the efficiency-bridge review, rows ruled out (`excluded-row.csv`), figures a source prints wrongly and their assumed corrections (`source-correction.csv`), capture energy on hosts (`ccs-host-energy.csv`) | |
 | `records/fill/fill-rule.csv` | fill rule: grade, method, scope, formula, rationale, status | `rule-id` |
 | `records/fill/host-archetype.csv` | archetype with incremental costs, or a host plant with capture, and the host plant whose cost it takes | `archetype` |
 | `records/fill/fill-judgement.csv` | a guessed value: central within low-high, rationale, author | `archetype`, `parameter`, `target` |
@@ -60,10 +61,10 @@ gate a commit.
 | `example.csv` | Every example, with its archetype, its source's context and the readiness it reports. |
 | `example-parameter.csv`, `example-flow.csv`, `example-constraint.csv` | Every fact as reported, and converted to the archetype's basis (`*-norm`), or `excluded` with the reason. |
 | `archetype.csv` | Every archetype with its parsed key, the nodes it applies to, its examples and its status. |
-| `archetype-parameter.csv`, `archetype-flow.csv` | The summaries; `archetype-parameter.csv` also holds the filled rows, with `grade`, `method`, `rule-id`, `inputs` and `rationale`. |
+| `archetype-parameter.csv`, `archetype-flow.csv` | The summaries; `n-corrected` counts the examples that rest on a source correction. `archetype-parameter.csv` also holds the filled rows, with `grade`, `method`, `rule-id`, `inputs` and `rationale`. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
 | `cims_hierarchy.csv`, `cims_hierarchy_technology.csv` | The CIMS hierarchy snapshot the build used, and the same with `technology` as the second column: each node repeated once per archetype serving it, blank where none does. |
-| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes. `wide-archetype-columns.csv` gives each column's group and unit. |
+| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes and lists, per archetype, the parameters resting on an external conversion (`external-conversions`) and on a source correction (`source-corrections`). `wide-archetype-columns.csv` gives each column's group and unit. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
 | `ccs-addon-cost.csv` | Costs sources give on host plants with capture: capture cost, set aside to move to a co2-capture archetype. |
@@ -88,6 +89,8 @@ a row to `data/raw-data/background-register.csv` instead of registering it.
 4. Build. The new examples are appended to `records/source-example.csv` with a blank archetype.
 5. Fill in each new example's `archetype` (or `(none)`), then build again.
 6. Give the source a row in `records/reference/source-priority.csv`.
+
+**Correct a figure a source prints wrongly.** Leave the extraction as printed. Add a row to `records/reference/source-correction.csv`: `add` (with `example-id` and the corrected parameter, value, unit and bases) for a value the extraction set aside, `replace` (with `record-id` and only the fields that change) for a loaded row, `mark` (with `record-id`) for a row the extraction already corrected. `as-printed`, `correction`, `evidence` and `decided` are required. Build.
 
 **Change a mapping.** Edit the `archetype` cell in `records/source-example.csv`.
 

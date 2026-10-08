@@ -41,7 +41,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | MIDDEN database v0.4a | 2510 | confirmed against the held document 2026-09-29 |
 | UKERC 2013 | 1872 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson 2014 | 658 | confirmed against the held document 2026-10-02 |
-| Gielen 1997 | 610 | confirmed against the held document 2026-10-02 |
+| Gielen 1997 | 611 | confirmed against the held document 2026-10-02 |
 | IEA 2026 (methane abatement model) | 528 | confirmed against the held document 2026-10-07 |
 | Joosten 1998 | 498 | confirmed against the held document 2026-10-03 |
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
@@ -61,7 +61,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ramsden 2009 | 224 | confirmed against the held document 2026-10-03 |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
 | U.S. Department of Energy, Advanced Manufacturing Office; prepared by Energetics Incorporated (Brueske, S., Kramer, C., and Fisher, A.) | 218 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
-| Johansson et al 2012 | 207 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
+| Johansson et al 2012 | 208 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | Jacobs Greenhouse Gas 2006 | 200 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017-02 | 199 | confirmed against the held document 2026-10-02 |
 | BCS 2007 | 197 | confirmed against the held document 2026-10-02 |
@@ -167,6 +167,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Onsite Energy Corporation 2001 | 53 | confirmed against the held document 2026-10-03 |
 | Vickers 2020 | 53 | confirmed against the held document 2026-10-03 |
 | Ekbom 2003 | 53 | confirmed against the held document 2026-10-03 |
+| ETSAP I03 | 53 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | Purvin & Gertz 2004 | 53 | confirmed against the held document 2026-10-03 |
 | Minerals 1999 | 52 | confirmed against the held document 2026-10-02 |
 | Kaiser 2017 | 50 | confirmed against the held document 2026-10-02 |
@@ -174,7 +175,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | McCollum and Ogden 2006 | 49 | confirmed against the held document 2026-10-06 |
 | Ricardo-AEA 2013 | 49 | confirmed against the held document 2026-10-06 |
 | EPA 2010 (wastewater) | 48 | confirmed against the held document 2026-10-03 |
-| ETSAP I03 | 48 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | Aune 2020 | 48 | confirmed against the held document 2026-10-02 |
 | Simoni 2022 | 48 | confirmed against the held document 2026-10-02 |
 | Zhang 2003 | 48 | confirmed against the held document 2026-10-02 |
@@ -189,9 +189,9 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ahluwalia 2023 | 44 | confirmed against the held document 2026-10-02 |
 | Energetics 1998 | 44 | confirmed against the held document 2026-10-03 |
 | McCoy and Douglass 2014 | 44 | confirmed against the held document 2026-10-06 |
+| Vattenfall 2018 | 44 | confirmed against the held document 2026-10-02 |
 | Elgowainy 2025 | 43 | confirmed against the held document 2026-10-02 |
 | Blesl, M., & Bruchof, D. | 43 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
-| Vattenfall 2018 | 43 | confirmed against the held document 2026-10-02 |
 | Environment 2025 | 42 | confirmed against the held document 2026-10-02 |
 | IEA 2020 | 42 | confirmed against the held document 2026-09-29 |
 | Labriet, M. | 41 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |

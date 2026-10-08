@@ -56,8 +56,24 @@ cf-beet-per-sugar,ratio,sugar beet processed per tonne of white sugar,t,t,7.19,6
 cf-bls-per-pulp-ieaghg-2016,same-source,"black liquor dry solids per adt, IEAGHG 2016 reference mill",t,t,1.86,,,"t dry solids per air-dried t of pulp: 2,268 kg as-fired liquor per adt x 82% dry solids",ieaghg_2016_001,14,3,boiler_recovery; boiler_recovery_ccs-diffuse; evaporator_multiple-effect
 cf-bls-per-pulp-ekbom-2003,same-source,"black liquor dry solids per ADt, KAM2 mill",t,t,1.71,1.71,1.80,"t dry solids per ADt (KAM2 ECF 1.71, KAM1 TCF 1.8)",ekbom_2003_001,5,2,gasifier_black-liquor
 cf-bls-per-pulp-francis-2002,same-source,"black liquor solids per ADt, model kraft market mill",t,t,1.6,,,kg solids per kg pulp,francis_2002_001,3,2,boiler_recovery-high-solids; evaporator_multiple-effect
+cf-clinker-per-cement-etsap-i03,same-source,"clinker per t cement, IEA reference cement plant (ETSAP I03)",t,t,0.91,,,"t clinker per t cement: 910,000 t clinker for 1 Mt/y cement",etsap_2010_003,5,3,kiln_dry-precalciner; kiln_dry-precalciner_ccs-diffuse; kiln_oxy-fuel
 assume:avoided-co2-for-captured,assumption,avoided co2 for captured,,,,,,,,2,2,capture-unit_amine
 assume:continuous-operation,assumption,continuous operation,,,,,,,,16,15,electrolyzer_low-temperature; electrolyzer_solid-oxide; fuel-cell_chp; haul-truck_diesel; haul-truck_hydrogen-fuel-cell; lighting_fluorescent-hid
+assume:source-correction-sc-001,assumption,source correction sc 001,,,,,,,,1,1,geothermal-well_direct-use
+assume:source-correction-sc-003,assumption,source correction sc 003,,,,,,,,1,1,capture-unit_amine
+assume:source-correction-sc-004,assumption,source correction sc 004,,,,,,,,1,1,melting-furnace_regenerative-oxy-fuel
+assume:source-correction-sc-005,assumption,source correction sc 005,,,,,,,,1,1,shaft-furnace_direct-reduction
+assume:source-correction-sc-009,assumption,source correction sc 009,,,,,,,,1,1,anaerobic-digester_chp
+assume:source-correction-sc-010,assumption,source correction sc 010,,,,,,,,1,1,anaerobic-digester_chp
+assume:source-correction-sc-015,assumption,source correction sc 015,,,,,,,,1,1,capture-unit_amine
+assume:source-correction-sc-016,assumption,source correction sc 016,,,,,,,,1,1,capture-unit_amine
+assume:source-correction-sc-017,assumption,source correction sc 017,,,,,,,,1,1,capture-unit_amine
+assume:source-correction-sc-019,assumption,source correction sc 019,,,,,,,,1,1,blast-furnace
+assume:source-correction-sc-020,assumption,source correction sc 020,,,,,,,,1,1,rolling-mill_thin-slab
+assume:source-correction-sc-021,assumption,source correction sc 021,,,,,,,,1,1,rolling-mill_thin-slab
+assume:source-correction-sc-029,assumption,source correction sc 029,,,,,,,,1,1,combined-cycle
+assume:source-correction-sc-030,assumption,source correction sc 030,,,,,,,,1,1,combined-cycle
+assume:source-correction-sc-033,assumption,source correction sc 033,,,,,,,,1,1,combined-cycle
 base:basic-oxygen-furnace,,sic oxygen furnace,,,,,,,,1,1,basic-oxygen-furnace_efficiency-strong
 base:blast-furnace,,ast furnace,,,,,,,,4,4,blast-furnace_efficiency-moderate
 base:cleaning-system,,eaning system,,,,,,,,3,2,cleaning-system_efficiency-strong

@@ -17,6 +17,11 @@ archetype rather than keeping every source's number side by side. The rule:
              process ratio, a pooled efficiency, an assumption: conversion-class
              `property` or weaker), and `external-factors` which ones. The
              example's own row in example-parameter.csv says exactly how.
+  * n-corrected  how many of those examples rest on a value the modeller
+             corrected because the source prints it wrongly (a slipped
+             decimal, a wrong unit or carrier label): records/reference/
+             source-correction.csv, pipeline/correction.py. They are also
+             counted in n-external (conversion-class `assumption`).
 
 Within one example, an as-reported value is preferred to one derived from it,
 and several rows for the same quantity (sizes, cases) count as one example
@@ -83,7 +88,8 @@ def summarise(rows, records, keys, examples_by_id):
                           key=lambda s: (records.rank(s), s))
             ext = [x for r in rs for x in external_ids(r)]
             per.append({"example": eid, "central": c, "all": allv, "rank": srank,
-                        "sources": sids, "external": ext})
+                        "sources": sids, "external": ext,
+                        "corrected": any(r.get("correction") for r in rs)})
         with_c = [p for p in per if p["central"] is not None]
         if len(with_c) >= 3:
             central = median(p["central"] for p in with_c)
@@ -106,6 +112,7 @@ def summarise(rows, records, keys, examples_by_id):
                     "high": f"{max(vals):.6g}" if len(vals) > 1 else "",
                     "n": len(per), "central-from": how,
                     "n-external": sum(1 for p in per if p["external"]),
+                    "n-corrected": sum(1 for p in per if p["corrected"]),
                     "external-factors": "; ".join(dict.fromkeys(x for p in per for x in p["external"])),
                     "sources": "; ".join(sources),
                     "examples": "; ".join(sorted(by_ex))})

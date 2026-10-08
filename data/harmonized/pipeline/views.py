@@ -124,8 +124,17 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     colkeys = sorted(colkeys, key=lambda x: (param_order.get(x[0], 99), x[1]))
     spread = {b for (_, _, b) in colkeys
               if any(by_arch[a][b]["low"] for a in by_arch if b in by_arch[a])}
-    cols, units, groups, notes = list(IDENT) + ["external-conversions", "filled"], {}, {c: "identity" for c in IDENT}, {}
-    groups["external-conversions"] = groups["filled"] = "identity"
+    cols, units, groups, notes = (list(IDENT) + ["external-conversions", "source-corrections", "filled"],
+                                  {}, {c: "identity" for c in IDENT}, {})
+    groups["external-conversions"] = groups["source-corrections"] = groups["filled"] = "identity"
+    notes["source-corrections"] = (
+        "Parameters whose pooled value includes a figure the source prints wrongly and the "
+        "modeller corrected (a slipped decimal or zero, a wrong unit or carrier label), as "
+        "examples so corrected / examples pooled. Each correction, the figure as printed and "
+        "the evidence: records/reference/source-correction.csv; the rows carry the "
+        "correction-id in example-parameter.csv (correction) and a note starting "
+        "ASSUMED CORRECTION. These values are also counted in external-conversions and "
+        "shaded purple in the workbook.")
     notes["filled"] = (
         "Parameters with no sourced value, filled by the fill step and graded: identity "
         "(calculated from this archetype's own values), estimated (from other archetypes or a "
@@ -157,7 +166,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
         if a["archetype"] not in with_data and not include_empty:
             continue
         row = {c: a.get(c, "") for c in IDENT}
-        ext, filled = [], []
+        ext, filled, cor = [], [], []
         for b, s in by_arch.get(a["archetype"], {}).items():
             g = s.get("grade", "sourced")
             if g != "sourced":
@@ -166,11 +175,14 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             row[b], row[f"{b}_n"] = s["central"], s["n"]
             if b in spread:
                 row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
+            if s.get("n-corrected"):
+                cor.append((b, f"{b} {s['n-corrected']}/{s['n']}"))
             if s.get("n-external"):
                 ext.append((b, f"{b} {s['n-external']}/{s['n']}"))
                 flagged |= {(a["archetype"], c) for c in (b, f"{b}_low", f"{b}_high")}
         order = {c: i for i, c in enumerate(cols)}
         row["external-conversions"] = "; ".join(t for _, t in sorted(ext, key=lambda x: order.get(x[0], 0)))
+        row["source-corrections"] = "; ".join(t for _, t in sorted(cor, key=lambda x: order.get(x[0], 0)))
         row["filled"] = "; ".join(t for _, t in sorted(filled, key=lambda x: order.get(x[0], 0)))
         wide.append(row)
     write(OUTPUT / "wide-archetype.csv", cols, wide)

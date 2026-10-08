@@ -12,7 +12,7 @@ from collections import Counter, defaultdict
 from .common import RAW, REFERENCE, currency_year, read, split_list
 from . import convert, fill
 
-RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|[wad]\d{3})$")
+RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}|[wadx]\d{3})$")
 
 
 def draws_on_targets(cell: str) -> list[str]:
@@ -63,7 +63,7 @@ def run(records, hier, loader, ex_result) -> dict[str, list[str]]:
                 fail[f"duplicate record-id in {name}"].append(k)
         for i in ids_:
             if not RECORD_ID.match(i):
-                fail[f"record-id not <prefix>-<source-id>-NNNN (or -wNNN) in {name}"].append(i)
+                fail[f"record-id not <prefix>-<source-id>-NNNN (or -wNNN, -aNNN, -dNNN, -xNNN) in {name}"].append(i)
         known = set(ids_)
         for r in rows:
             for ref in split_list(r.get("derived-from", "")):
