@@ -33,7 +33,7 @@ gate a commit.
 | 8a | carriers | `pipeline/carriers.py` | One consistent energy split per archetype: the carriers of specific-energy-consumption are the split example's shares of the pooled total; archetypes with carriers but no total get one. |
 | 8a' | share to capture | `pipeline/captureshare.py` | On hosts with capture, derives the share of the host's CO2 sent to capture from CO2 captured, the capture plant's rate and the host's CO2 (same example, else the base archetype's total). |
 | 8b | fill | `pipeline/fill.py` | Grades every summary `sourced`, then writes graded values (identity, estimated, guess) into empty cells by the rules in `records/fill/fill-rule.csv`, the hosts in `records/fill/host-archetype.csv` and the judgements in `records/fill/fill-judgement.csv`. Never overwrites a sourced value. |
-| 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `cims_hierarchy.csv`, `cims_hierarchy_technology.csv`, `wide-archetype.csv` and `wide-flow.csv`. |
+| 9 | views | `pipeline/views.py` | Writes `archetype.csv`, `archetype-application.csv`, `cims_hierarchy.csv`, `cims_hierarchy_technology.csv`, the three wide views (`wide-archetype.csv`, `wide-archetype-carriers-species.csv`, `wide-archetype-sidecar.csv`) and `wide-flow.csv`. Before summarise, `pipeline/rollup.py` pools targets that restate their base parameter. |
 | 10 | reports | `pipeline/sources.py`, `pipeline/reports.py` | Writes `source-list.csv`, `citation-review.md`, `mapping-review.md` and `docs/vocabulary.md`. |
 | 11 | workbook | `pipeline/workbook.py` | Writes `technology-database.xlsx`, last. It is never read back. |
 
@@ -64,7 +64,7 @@ gate a commit.
 | `archetype-parameter.csv`, `archetype-flow.csv` | The summaries; `n-corrected` counts the examples that rest on a source correction. `archetype-parameter.csv` also holds the filled rows, with `grade`, `method`, `rule-id`, `inputs` and `rationale`. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |
 | `cims_hierarchy.csv`, `cims_hierarchy_technology.csv` | The CIMS hierarchy snapshot the build used, and the same with `technology` as the second column: each node repeated once per archetype serving it, blank where none does. |
-| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes and lists, per archetype, the parameters resting on an external conversion (`external-conversions`) and on a source correction (`source-corrections`). `wide-archetype-columns.csv` gives each column's group and unit. |
+| `wide-archetype.csv`, `wide-flow.csv` | The wide views, one row per archetype; `wide-archetype.csv` includes blank archetypes and lists, per archetype, the parameters resting on an external conversion (`external-conversions`) and on a source correction (`source-corrections`). `wide-archetype-carriers-species.csv` and `wide-archetype-sidecar.csv` hold specific energy by carrier, emissions by species and the other targets. `wide-archetype-columns.csv` gives each column's sheet, group, unit and note. |
 | `source-list.csv`, `citation-review.md` | Every source, its citation and where it is used. |
 | `set-aside-host-cost.csv` | UKERC measure costs set aside until a host-plant cost is established. |
 | `ccs-addon-cost.csv` | Costs sources give on host plants with capture: capture cost, set aside to move to a co2-capture archetype. |

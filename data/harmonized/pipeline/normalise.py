@@ -401,7 +401,7 @@ def normalise(facts, examples, records, units) -> None:
                              "a cost per GJ of heat")
             continue
         bf = convert.basis_factor(exf) if per_product else None
-        species_ok = a.get("product", "").lower().startswith("t co2") or "CO2" in tgt
+        species_ok = a.get("product", "").lower().removeprefix("t ").startswith("co2") or "CO2" in tgt
         used = []
         if r.get("assume"):
             # a derived row resting on a stated assumption (assembly.py `assumption`

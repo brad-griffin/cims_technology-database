@@ -1,5 +1,5 @@
 archetype,branch,end-use,note
-boiler_ccs-diffuse,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+boiler_fuel-fired_ccs-diffuse,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 boiler_electric,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 boiler_fuel-fired,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 boiler_fuel-fired_efficiency-moderate,<sector>.*.service.steam,heat-low-temp,as its host boiler_fuel-fired
@@ -7,7 +7,7 @@ boiler_solid-fuel,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-t
 combustion-turbine_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp_ccs-diffuse,<sector>.*.service.steam,heat-low-temp,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_fuel-fired,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_ccs-diffuse,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_fuel-fired_ccs-diffuse,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_solid-fuel_efficiency-strong,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,as direct-heater_fuel-fired_efficiency-moderate
@@ -244,8 +244,8 @@ kiln_tunnel-roller,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-fi
 kiln_lime-oxy-fuel,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
 kiln_lime-shaft,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
 kiln_lime-rotary-preheater,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
-kiln_lime_ccs-diffuse,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
-kiln_lime_ccs-diffuse,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,pulp-and-paper/lime-kiln: every leaf of the end use
+kiln_lime-rotary-preheater_ccs-diffuse,<sector>.industrial-minerals.product.lime,lime-calcination,non-metallic-minerals/lime-calcination: the device's route
+kiln_lime-rotary-preheater_ccs-diffuse,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,pulp-and-paper/lime-kiln: every leaf of the end use
 furnace_electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,non-metallic-minerals/glass-melting: every leaf of the end use
 distillation-column,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 distillation-column,<sector>.chemicals.product.petrochemicals.btx-reforming,other-chemicals,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -276,7 +276,7 @@ reactor_polymerization-extrusion,<sector>.chemicals.product.petrochemicals.all-p
 steam-reformer_methanol,<sector>.chemicals.product.ammonia-methanol.methanol,ammonia-and-methanol,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 reactor_thermal-n2o-destruction,<sector>.chemicals.product.adipic-acid,nitric-and-adipic-acid,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 steam-cracker_catalytic-naphtha,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,chemicals/steam-cracking: every leaf of the end use
-steam-cracker_ccs-diffuse,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,chemicals/steam-cracking: every leaf of the end use
+steam-cracker_fired-tubular_ccs-diffuse,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_electric,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular_efficiency-moderate,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,as its host steam-cracker_fired-tubular
@@ -285,7 +285,7 @@ steam-reformer_ammonia_ccs-concentrated,<sector>.chemicals.product.ammonia-metha
 vapour-recompressor_evaporation,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,chemicals/electrochemical-products: the leaf its name or label names
 fermenter_grain-dry-mill_efficiency-moderate,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
 anaerobic-digester_biomethane-upgrading,<sector>.biofuels.product.renewable-natural-gas,renewable-natural-gas,biofuels/renewable-natural-gas: every leaf of the end use
-fermenter_ccs-concentrated,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
+fermenter_grain-dry-mill_ccs-concentrated,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
 fermenter_grain-dry-mill,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
 fermenter_lignocellulosic-enzymatic,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
 fermenter_syngas,<sector>.biofuels.product.ethanol,ethanol-production,biofuels/ethanol-production: every leaf of the end use
@@ -622,12 +622,12 @@ rolling-mill_continuous-casting,<sector>.metal-smelting.product.lead.melt-cast,m
 rolling-mill_continuous-casting,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 rolling-mill_continuous-casting,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 rolling-mill_continuous-casting,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-smelting-vessel_efficiency-moderate,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
-smelting-vessel_efficiency-moderate,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
-smelting-vessel_efficiency-moderate,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
-smelting-vessel_efficiency-strong,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
-smelting-vessel_efficiency-strong,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
-smelting-vessel_efficiency-strong,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-moderate,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-moderate,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-moderate,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-strong,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-strong,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
+smelting-vessel_flash_efficiency-strong,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_flash,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_flash,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_flash,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,non-ferrous-metals/pyrometallurgy: the leaf its name or label names

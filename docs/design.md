@@ -645,6 +645,17 @@ compilation cites it as an original.
   workbook those cells are shaded (identity blue, estimated orange, guess red;
   purple marks a sourced value converted with an external factor)
   and their `_n` is 0.
+- The wide view is three sheets (and CSVs): `wide-archetype` (one column set per
+  parameter), `wide-carriers-species` (`wide-archetype-carriers-species.csv`:
+  specific energy by carrier, emissions by species, alphabetical) and `wide-sidecar`
+  (`wide-archetype-sidecar.csv`: values by stream or part, and the secondary
+  parameters load-range-min and degradation-rate). Where each (parameter, target)
+  goes, and what is dropped from the wide views, is `placement()` in
+  `pipeline/views.py`; targets that restate the base are pooled with it first
+  (`pipeline/rollup.py`). On CHP archetypes the main `efficiency` is the total CHP
+  efficiency. In the workbook each parameter's `_low`, `_high` and `_n` columns are
+  folded into an outline group beside the central column.
+- Families are banded cross-cutting services first, then sectors alphabetically.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against
   `product-unit`.

@@ -21,6 +21,9 @@ NUM_FORMAT = [(1000, "#,##0"), (100, "#,##0"), (10, "#,##0.0"),
 PLAIN_INT = {"trl", "year-available", "n-examples", "n"}
 # identifiers and counts, not measurements: no thousands separator, no decimals
 GENERAL = {"year", "rows-in-database"}
+# columns whose values are left-justified whatever their type (trl mixes 9 and "5-8")
+LEFT = {"trl"}
+DETAIL = ("_low", "_high", "_n")
 
 
 def _fmt(v, col):
@@ -56,8 +59,11 @@ def _put(ws, r, j, v):
 
 
 def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None,
-               flags: dict | None = None, grades: dict | None = None) -> str:
-    """`flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
+               flags: dict | None = None, grades: dict | None = None,
+               grouped: set | None = None) -> str:
+    """`grouped`: sheets whose _low, _high and _n columns are put in an Excel
+    outline group beside their central column, folded when the book opens.
+    `flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
     their value rests on a conversion factor from outside the source.
     `grades`: {sheet: {(archetype, column): grade}} -- cells the fill step wrote,
     shaded by grade (identity blue, estimated orange, guess red)."""
@@ -131,9 +137,23 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
                     cell.alignment = Alignment(indent=1)
                 elif isinstance(val, (int, float)) and not isinstance(val, bool):
                     cell.number_format = _fmt(val, col)
-                    cell.alignment = Alignment(horizontal="right")
+                    cell.alignment = Alignment(horizontal="left" if col in LEFT else "right")
+                elif col in LEFT:
+                    cell.alignment = Alignment(horizontal="left")
             r += 1
         ws.freeze_panes = ws.cell(6, first + 1).coordinate
+        if name in (grouped or ()):
+            # fold each parameter's _low/_high/_n run under its central column
+            ws.sheet_properties.outlinePr.summaryRight = False
+            run = []
+            for j, c in enumerate(cols + [""], start=first):
+                if c.endswith(DETAIL):
+                    run.append(j)
+                    continue
+                if run:
+                    ws.column_dimensions.group(get_column_letter(run[0]), get_column_letter(run[-1]),
+                                               outline_level=1, hidden=True)
+                    run = []
     for name, (cols, rows) in flat.items():
         ws = wb.create_sheet(name)
         ws.append(cols)
