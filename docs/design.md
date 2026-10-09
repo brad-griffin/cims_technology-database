@@ -158,8 +158,14 @@ parallel, neither a variant of the other, all carry a discriminator
 
 **Never in a key:**
 - a carrier, unless it changes the equipment;
-- a size class, vintage, region or product name;
-- a temperature tier.
+- a size class, vintage or region;
+- a product name, unless the product is the only real difference between
+  parallel options on the same equipment (`autothermal-reformer_hydrogen`,
+  `autothermal-reformer_ammonia`) (loosened 2026-10-09);
+- a temperature-tier name (`low-temp`, `medium-temp`, `high-temp`). A
+  temperature class the technology literature uses for the equipment itself is
+  allowed when it is the real difference (`heat-pump_very-high-temperature`,
+  above 150 degC) (loosened 2026-10-09).
 
 **`label`** is the human-readable name beside the key ("Heat-pump dryer").
 
