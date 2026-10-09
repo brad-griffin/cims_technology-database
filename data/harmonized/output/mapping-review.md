@@ -4652,7 +4652,7 @@ An archetype placed on an end use made of several hierarchy nodes, where neither
 
 ## Vocabulary
 
-- 476 of 498 discriminators are not yet reviewed (`reviewed` column of `records/vocabulary/discriminator.csv`); their definition is seeded from the archetype labels that use them.
+- 474 of 498 discriminators are not yet reviewed (`reviewed` column of `records/vocabulary/discriminator.csv`); their definition is seeded from the archetype labels that use them.
 - 12 equipment terms no archetype uses: arc-heater, clinker-cooler, crusher, microturbine, microwave-heater, pasteurizer, photochemical-heater, plasma-torch, precalciner, refining-furnace, roaster, rotary-compression-heater.
 
 ## Examples by archetype
@@ -9463,7 +9463,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `digester_bayer` | Deloitte 2022 `digester_bayer_low-temp` | Bayer digestion steam conditions, low-temperature refineries (Sect. 4.2.1, p.24) | 2 | 1 |
 | `digester_bayer` | US DOE 2017 (aluminum bandwidth) `reactor_bat` | Raw material beneficiation | 1 |  |
 | `digester_bayer` | US DOE 2017 (aluminum bandwidth) `reactor_efficiency-base` | Raw material beneficiation | 1 |  |
-| `electric-arc-furnace_open-arc-dc` | Cusano et al. 2017 (NFM BREF) `electric-arc-furnace_open-arc-dc` | Ferro-chrome production (Sect. 8.2.1, Table 8.5) | 1 |  |
+| `electric-arc-furnace_smelting-open-arc-dc` | Cusano et al. 2017 (NFM BREF) `electric-arc-furnace_open-arc-dc` | Ferro-chrome production (Sect. 8.2.1, Table 8.5) | 1 |  |
 | `electrolysis-cell_advanced-anodes` | Schlesinger et al. 2011 `electrolysis-cell_advanced-anodes` | Alternative (IrO2-coated Ti) electrowinning anodes (Sect. 17.9) | 1 |  |
 | `electrolysis-cell_electrolytic-smelting` | Bashmakov et al. 2022 `smelting-vessel_electricity` | Aluminium and other non-ferrous metals | 2 |  |
 | `electrolysis-cell_electrorefining` | Cusano et al. 2017 (NFM BREF) `electrolysis-cell_copper_electrorefining-starter-sheet` | Electrolytic copper refineries, investment (Table 13.11) 1976 | 1 |  |

@@ -393,8 +393,8 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `converter_continuous` | Continuous converting | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `converter_peirce-smith` | Peirce-Smith converting | conventional | oil; solar | 9 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `digester_bayer` | Bayer digester | conventional | natural-gas; electricity; hydrogen; biomass | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina | quantified |
-| `electric-arc-furnace_open-arc-dc` | Open-arc DC furnace | alternative |  | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | quantified |
-| `electric-arc-furnace_submerged-arc` | Submerged-arc furnace | conventional | electricity; oil; coke | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | estimated |
+| `electric-arc-furnace_smelting-open-arc-dc` | Open-arc DC furnace | alternative |  | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | quantified |
+| `electric-arc-furnace_smelting-submerged-arc` | Submerged-arc furnace | conventional | electricity; oil; coke | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | estimated |
 | `electrolysis-cell_advanced-anodes` | Electrowinning with advanced anodes and energy control | efficient variant | electricity | 8 | metal-smelting.product.copper.hydrometallurgy; metal-smelting.product.nickel.hydrometallurgy; metal-smelting.product.zinc.hydrometallurgy | quantified |
 | `electrolysis-cell_electrolytic-smelting` | Hydro- or electrolytic non-ferrous smelting | prospective | electricity | 5 | metal-smelting.product.copper.pyrometallurgy.smelting; metal-smelting.product.lead.pyrometallurgy.smelting; metal-smelting.product.nickel.pyrometallurgy.smelting | quantified |
 | `electrolysis-cell_electrorefining` | Copper electrorefining tankhouse | conventional | electricity; steam | 9 | metal-smelting.product.copper.pyrometallurgy.refining | quantified |
@@ -1114,7 +1114,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `ohmic-infrared` | Ohmic, microwave or infrared heating | no |
 | `oil-treating` | Electric or heat-pump treating | no |
 | `once-through` | Once-through field boiler | no |
-| `open-arc-dc` | Open-arc DC furnace | no |
 | `open-pit-coal` | Open-pit coal mine | no |
 | `open-pit-oil-sands` | Oil sands surface mine and extraction plant | no |
 | `optimization` | Fan system optimization; Pump system optimization | no |
@@ -1180,7 +1179,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `small-nuclear` | A small nuclear reactor supplying heat or steam (small modular, high-temperature gas-cooled or micro reactor) | yes |
 | `small-nuclear-power` | A small nuclear reactor generating electricity | no |
 | `small-scale` | Small-scale or modular liquefaction | no |
+| `smelting-open-arc-dc` | Open-arc DC smelting furnace (non-ferrous, ferroalloy) | yes |
 | `smelting-reduction` | Coal-based reduction of iron ore in a smelting vessel (two-stage or bath) | yes |
+| `smelting-submerged-arc` | Submerged-arc smelting furnace (non-ferrous, ferroalloy) | yes |
 | `soderberg` | Soderberg cell; Soderberg paste plant | no |
 | `sodium-chlorate` | Sodium chlorate cell | no |
 | `solid-fuel` | Solid-fuel boiler | no |
@@ -1201,7 +1202,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `strand` | Sinter strand | no |
 | `strip` | Strip casting | no |
 | `strip-heating` | Induction strip heating | no |
-| `submerged-arc` | Submerged-arc furnace | no |
 | `sugar-beet` | Beet sugar factory | no |
 | `sulphite` | Sulphite cooking (acid, bisulphite or neutral) rather than kraft | no |
 | `sulphoaluminate` | Calcium sulphoaluminate clinker | no |
