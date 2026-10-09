@@ -12,8 +12,10 @@ gives the derived families column.
   * heat supply: the sub-bands are the heat tiers in the archetype's `heat-tier`
     column (the shared steam node carries only the first tier on the service
     record), plus any other end use it serves;
-  * machine drive: kept by equipment, as before, because most drives serve many
-    end uses (pumps, fans, compressed air, ...); the family band says so;
+  * machine drive: kept by equipment in its own band, because most drives serve
+    many end uses (pumps, fans, compressed air, ...); the family band says so.
+    End uses owned by a sector family (gas pipelines, gas processing) are
+    repeated in that family like any other archetype's;
   * sub-bands with the same label (oxygen supply for steel and for smelters,
     on-site hydrogen for refineries and upgraders) are one sub-band;
   * an archetype that serves no end use goes in a closing "(no connection)" sub-band.
@@ -30,9 +32,10 @@ ORDER = [
     "co2-capture-concentrated", "co2-capture-diffuse", "direct-air-capture", "co2-transport-and-storage",
     "extraction-and-haulage", "ventilation-and-air-heating", "comminution", "separation-and-processing",
     "product-drying", "pelletizing",
-    "drilling-and-well-services", "oil-and-gas-production", "in-situ-bitumen", "oil-sands-mining-and-extraction",
+    "drilling-and-well-services", "oil-and-gas-production", "field-engines", "in-situ-bitumen", "oil-sands-mining-and-extraction",
     "bitumen-upgrading", "upgrader-hydrogen", "water-and-tailings-management", "oil-sands-tailings",
-    "produced-water-handling", "gas-processing", "lng-liquefaction", "oil-pipelines", "venting", "flaring",
+    "produced-water-handling", "gas-processing", "compressor-drive-engine", "compressor-drive-turbine",
+    "lng-liquefaction", "oil-pipelines", "venting", "flaring",
     "fugitive-emissions", "synthetic-fuels",
     "crude-distillation", "conversion-and-treating", "refinery-hydrogen",
     "centralized-hydrogen-production", "hydrogen-distribution",
@@ -54,7 +57,8 @@ TIER = {"low-temp": "heat-low-temp", "medium-temp": "heat-medium-temp", "high-te
 BY_EQUIPMENT = {"machine-drive"}
 FAMILY_NOTE = {"machine-drive": "Shown by equipment, not end use: most machine-drive archetypes "
                                 "serve many end uses (pumps, fans, compressed air, materials "
-                                "handling and processing, compressor drive)."}
+                                "handling and processing, compressor drive). Drives that serve a "
+                                "sector's own end use also appear in that sector's band."}
 NO_CONNECTION = "(no connection)"
 
 
@@ -111,7 +115,15 @@ def expand(rows: list[dict], records) -> list[dict]:
         f = r.get("family", "")
         k = r.get("archetype", "")
         if f in BY_EQUIPMENT:
-            placed = [(f, "", r.get("equipment", ""))]
+            # by equipment in its own band; end uses owned by a sector family are
+            # repeated there as for any archetype (modeller 2026-10-09)
+            placed, seen = [(f, "", r.get("equipment", ""))], set()
+            for e in eus.get(k, []):
+                h = _home_of(e, f, asector, records)
+                lab = label.get(e, e)
+                if h != f and (h, lab) not in seen:
+                    seen.add((h, lab))
+                    placed.append((h, e, lab))
         else:
             ids = list(eus.get(k, []))
             if f == "heat-supply":
