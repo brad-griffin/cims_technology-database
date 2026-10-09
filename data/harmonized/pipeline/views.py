@@ -21,10 +21,12 @@ from collections import defaultdict
 from .common import OUTPUT, read, split_list, write
 from .hierarchy import Hierarchy
 from .normalise import target_unit
+from .placement import placement
 
 IDENT = ["archetype", "label", "family", "end-uses", "equipment", "discriminator", "modifiers",
          "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
-         "n-examples", "status", "sources"]
+         "secondary-products", "product-density", "product-density-unit", "product-energy-content",
+         "product-energy-content-unit", "n-examples", "status", "sources"]
 
 
 def unit_label(param: str, target: str) -> str:
@@ -35,55 +37,39 @@ def unit_label(param: str, target: str) -> str:
     return u
 
 
-NO_CONNECTION = "no connection"
 
-CHP = re.compile(r"\bCHP\b")
-# targets kept in the main wide view; other targets go to the carriers-species
-# sheet (specific energy, emissions) or the sidecar (modeller 2026-10-08)
-MAIN_TARGETS = {("efficiency", "electricity"), ("efficiency", "heat"),
-                ("emissions-combustion", "co2e"), ("emissions-process", "co2e"),
-                ("emissions-total", "co2e")}
-MAIN_ANY_TARGET = {"capture-rate", "share-to-capture"}
-# dropped from every wide view (still in archetype-parameter.csv)
-REMOVED = {("temperature-output", t) for t in ("exhaust", "flue-gas", "heat", "steam")} | {
-    ("capex", "brownfield"), ("capex", "first-of-a-kind")}
-REMOVED_ANY_TARGET = {"pressure-output", "abatement-cost"}
-EMISSIONS = {"emissions-combustion", "emissions-process", "emissions-total", "emissions-captured"}
-# parameters shown only in the sidecar, with or without a target
-SIDECAR_PARAMS = {"load-range-min", "degradation-rate"}
-
-
-def placement(p: str, t: str) -> str | None:
-    """Which wide sheet a (parameter, target) column belongs on, or None."""
-    if (p, t) in REMOVED or (t and p in REMOVED_ANY_TARGET):
-        return None
-    if p in SIDECAR_PARAMS:
-        return "wide-sidecar"
-    if not t or (p, t) in MAIN_TARGETS or p in MAIN_ANY_TARGET:
-        return "wide-archetype"
-    if p == "specific-energy-consumption" or p in EMISSIONS:
-        return "wide-carriers-species"
-    return "wide-sidecar"
-
-
-def _merge_range(main, others):
-    """temperature-output widened by temperature-min and -max: central stays the
-    output's own; low and high span every value; n counts the examples behind any."""
-    parts = [s for s in [main] + others if s]
-    if not parts:
-        return None
-    vals = [float(x) for s in parts for x in (s.get("central"), s.get("low"), s.get("high"))
-            if x not in (None, "")]
-    exs = {e.strip() for s in parts for e in (s.get("examples") or "").split(";") if e.strip()}
-    out = dict(main or {"central": "", "grade": "sourced"})
-    lo, hi = (min(vals), max(vals)) if vals else ("", "")
-    spread = vals and lo != hi
-    out.update({"low": f"{lo:.6g}" if spread else "", "high": f"{hi:.6g}" if spread else "",
-                "n": len(exs) or max(int(s.get("n") or 0) for s in parts),
-                "n-external": min(len(exs) or 99, sum(int(s.get("n-external") or 0) for s in parts)),
-                "n-corrected": min(len(exs) or 99, sum(int(s.get("n-corrected") or 0) for s in parts))})
+def product_properties():
+    """{product: {product-density, -unit, product-energy-content, -unit}} from
+    records/reference/product-property.csv, the values taken from the factors it
+    names in conversion-factor.csv (density in t/m3; energy content, HHV, in GJ/t,
+    or GJ/m3 for a product given per volume only) (modeller 2026-10-09)."""
+    from . import convert
+    from .common import REFERENCE
+    rows = convert.Factors().rows
+    out = {}
+    for r in read(REFERENCE / "product-property.csv"):
+        d = {}
+        f = rows.get(r.get("density-factor", ""))
+        if f and f.get("_f"):
+            fu, tu = convert.atom(f["from-unit"]), convert.atom(f["to-unit"])
+            k = f["_f"] * tu[1] / fu[1]
+            if fu[0] == "volume" and tu[0] == "mass":
+                d["product-density"] = f"{k:.4g}"
+            elif fu[0] == "mass" and tu[0] == "volume":
+                d["product-density"] = f"{1 / k:.4g}"
+            if "product-density" in d:
+                d["product-density-unit"] = "t/m3"
+        f = rows.get(r.get("energy-content-factor", ""))
+        if f and f.get("_f"):
+            fu, tu = convert.atom(f["from-unit"]), convert.atom(f["to-unit"])
+            if tu and fu and tu[0] == "energy" and fu[0] in ("mass", "volume"):
+                d["product-energy-content"] = f"{f['_f'] * tu[1] / fu[1]:.4g}"
+                d["product-energy-content-unit"] = "GJ/t" if fu[0] == "mass" else "GJ/m3"
+        out[r["product"]] = d
     return out
 
+
+NO_CONNECTION = "no connection"
 
 WIDE_NOTES = {
     "source-corrections": (
@@ -135,15 +121,17 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     with_fill = {s["archetype"] for s in summaries if s.get("grade", "sourced") != "sourced"}
     with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
     arows = []
+    props = product_properties()
     for a in records.archetypes:
         k = a["archetype"]
         exs = ex_by_arch.get(k, [])
         src = sorted({e["source-id"] for e in exs}, key=lambda s: (records.rank(s), s))
-        arows.append(dict(a, **{
+        arows.append(dict(a, **props.get(a.get("product", ""), {}), **{
             "applies-to": applies_to(k, service),
             "end-uses": "; ".join(dict.fromkeys(s["end-use"] for s in service.get(k, []))),
             "n-examples": len(exs),
-            "sources": "; ".join(records.short(s) for s in src),
+            # alphabetical by short name (modeller 2026-10-09; was by source rank)
+            "sources": "; ".join(sorted((records.short(s) for s in src), key=str.lower)),
             "status": ("quantified" if k in with_data else
                        "estimated" if k in with_fill else
                        "not pooled" if k in with_facts else
@@ -191,50 +179,41 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     write(OUTPUT / "cims_hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
 
     # ---- the wide views ---------------------------------------------------------
-    # Three sheets (wide-view review, modeller 2026-10-08):
-    #   wide-archetype          one column set per parameter, the main view
-    #   wide-carriers-species   specific energy by carrier and emissions by species,
-    #                           alphabetical; CO2-eq emissions stay in the main view
-    #   wide-sidecar            every other target (efficiency by stream, capacity of
-    #                           a second product, component lifetimes, ...)
-    # Some columns are dropped from every wide view (REMOVED; still in
-    # archetype-parameter.csv), temperature-min/max widen temperature-output's
-    # range, and on CHP archetypes the efficiency column is the total CHP efficiency.
+    # Three views (modeller 2026-10-08/09), placed by pipeline/placement.py:
+    #   wide-archetype                   one column set per parameter, the main view
+    #   wide-carriers-species            specific energy by carrier and emissions by
+    #                                    species, alphabetical (CO2-eq stays main)
+    #   wide-secondary-parameter         every other target (CSV only, not in the
+    #                                    workbook): values by stream or part
+    # The CHP efficiency, the temperature range and the single-stream efficiency
+    # are already rolled into the summaries (pipeline/rollin.py).
     by_arch = defaultdict(dict)
-    pt = {}
+    pt, sunit = {}, defaultdict(set)
     for s in summaries:
         base = s["parameter"] + (f"_{s['target']}" if s.get("target") else "")
         by_arch[s["archetype"]][base] = s
         pt[base] = (s["parameter"], s.get("target", ""))
-    chp = {a["archetype"] for a in arows if CHP.search(a.get("label", ""))}
+        sunit[base].add(s.get("unit", ""))
     fill_note = {}
-    sheets = {"wide-archetype": defaultdict(dict), "wide-carriers-species": defaultdict(dict),
-              "wide-sidecar": defaultdict(dict)}
+    SHEET = {"main": "wide-archetype", "carriers": "wide-carriers-species",
+             "secondary": "wide-secondary-parameter"}
+    sheets = {v: defaultdict(dict) for v in SHEET.values()}
     for k, cells in by_arch.items():
         for b, s in cells.items():
-            p, t = pt[b]
-            if p in ("temperature-min", "temperature-max") and not t:
-                continue                                   # merged below
-            if p == "efficiency-chp" and not t:
-                if k in chp:
-                    sheets["wide-archetype"][k]["efficiency"] = s
-                    continue
-                sheets["wide-sidecar"][k]["efficiency-chp"] = s
-                continue
-            if p == "efficiency" and not t and k in chp:
-                sheets["wide-sidecar"][k]["efficiency_unspecified"] = s
-                continue
-            where = placement(p, t)
+            where = SHEET.get(placement(*pt[b]))
             if where:
                 sheets[where][k][b] = s
-        temp = _merge_range(cells.get("temperature-output"),
-                            [cells.get("temperature-min"), cells.get("temperature-max")])
-        if temp:
-            sheets["wide-archetype"][k]["temperature-output"] = temp
-    colmeta = {"efficiency_unspecified": ("efficiency", ""), "efficiency-chp": ("efficiency-chp", "")}
+    colmeta = {}
 
     def unit_of(b):
         p, t = pt.get(b) or colmeta.get(b, (b, ""))
+        if t and placement(p, t) == "secondary":
+            u = "; ".join(sorted(x for x in sunit.get(b, ()) if x))
+            if p in ("capacity", "annual-output") and u:
+                return f"{u} {t}" + (" per yr" if p == "annual-output" else "")
+            return u or unit_label(p, t)
+        if p == "annual-output":
+            return "product-unit per yr"
         return unit_label(p, t)
 
     def note_of(b):
@@ -247,6 +226,10 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "efficiency_unspecified": "CHP archetypes only: an efficiency the source gives without "
                                       "saying electric, heat or total. The main view's efficiency "
                                       "on these rows is the total CHP efficiency.",
+            "efficiency_heat": "Heat out over energy in. On a single-output heat archetype it repeats "
+                               "the efficiency column.",
+            "efficiency_electricity": "Electricity out over energy in. On a single-output power "
+                                      "archetype it repeats the efficiency column.",
             "efficiency-chp": "Non-CHP archetypes: a total heat-plus-power efficiency some sources give "
                               "(a boiler or turbine run in CHP mode).",
             "temperature-output": "Low and high also span the minimum and maximum operating "
@@ -312,11 +295,11 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     out = {}
     for name, ident, order in (("wide-archetype", ident_main, by_param),
                                ("wide-carriers-species", ident_side, lambda b: b),
-                               ("wide-sidecar", ident_side, by_param)):
+                               ("wide-secondary-parameter", ident_side, by_param)):
         out[name] = emit(name, sheets[name], ident, order)
     for name, csvname in (("wide-archetype", "wide-archetype.csv"),
                           ("wide-carriers-species", "wide-archetype-carriers-species.csv"),
-                          ("wide-sidecar", "wide-archetype-sidecar.csv")):
+                          ("wide-secondary-parameter", "wide-archetype-secondary-parameter.csv")):
         cols, rows = out[name][0], out[name][1]
         write(OUTPUT / csvname, cols, rows)
     write(OUTPUT / "wide-archetype-columns.csv", ["sheet", "column", "group", "unit", "note"],

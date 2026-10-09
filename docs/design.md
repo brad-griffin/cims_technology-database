@@ -645,16 +645,29 @@ compilation cites it as an original.
   workbook those cells are shaded (identity blue, estimated orange, guess red;
   purple marks a sourced value converted with an external factor)
   and their `_n` is 0.
-- The wide view is three sheets (and CSVs): `wide-archetype` (one column set per
-  parameter), `wide-carriers-species` (`wide-archetype-carriers-species.csv`:
-  specific energy by carrier, emissions by species, alphabetical) and `wide-sidecar`
-  (`wide-archetype-sidecar.csv`: values by stream or part, and the secondary
-  parameters load-range-min and degradation-rate). Where each (parameter, target)
-  goes, and what is dropped from the wide views, is `placement()` in
-  `pipeline/views.py`; targets that restate the base are pooled with it first
-  (`pipeline/rollup.py`). On CHP archetypes the main `efficiency` is the total CHP
-  efficiency. In the workbook each parameter's `_low`, `_high` and `_n` columns are
-  folded into an outline group beside the central column.
+- The wide view is three views: `wide-archetype` (one column set per parameter),
+  `wide-carriers-species` (`wide-archetype-carriers-species.csv`: specific energy by
+  carrier, emissions by species, alphabetical), both in the workbook, and the
+  secondary parameters (`wide-archetype-secondary-parameter.csv`, CSV only: values by
+  stream or part, load-range-min, degradation-rate and a non-CHP efficiency-chp).
+  Where each (parameter, target) goes, and what is dropped from the wide views, is
+  `pipeline/placement.py`. Secondary parameters are in `archetype-secondary-parameter.csv`,
+  not `archetype-parameter.csv`. Targets that restate the base are pooled with it first
+  (`pipeline/rollup.py`); the CHP efficiency (total CHP efficiency on CHP archetypes),
+  the temperature range (temperature-min/max) and the single-stream efficiency
+  (repeated in efficiency_heat or efficiency_electricity) are roll-ins on the
+  summaries (`pipeline/rollin.py`), so both CSVs carry them. In the workbook each
+  parameter's `_low`, `_high` and `_n` columns are folded into an outline group beside
+  the central column, with their own header shading.
+- `product-density` and `product-energy-content` give the conversions for products
+  stated in more than one unit (`records/reference/product-property.csv`).
+  `secondary-products` names what a multi-product archetype also makes; an archetype is
+  classified by its primary product (CIMS negative service requests for the others).
+- Units are the final product of the end use, except for services that treat a stream,
+  where the stream handled is the service.
+- A source that does not state its heating-value basis takes its publisher region's
+  convention (`records/reference/source-region.csv`) unless a ruling in
+  `source-heating-basis.csv` names it.
 - Families are banded cross-cutting services first, then sectors alphabetically.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against

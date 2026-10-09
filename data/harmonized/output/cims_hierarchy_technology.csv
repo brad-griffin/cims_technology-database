@@ -26,7 +26,7 @@ branch,technology,data-filepath
 <root>.common-energy.natural-gas,,data/service-technology-map/common-energy/natural-gas
 <root>.common-energy.natural-gas-feedstock,,data/service-technology-map/common-energy/natural-gas-feedstock
 <root>.common-energy.other-non-energy-products,,data/service-technology-map/common-energy/other-non-energy-products
-<root>.common-energy.petrochemical-feedstock,,data/service-technology-map/common-energy/petrochemical-feedstock
+<root>.common-energy.petrochemical-feedstock,reactor_plastics-pyrolysis,data/service-technology-map/common-energy/petrochemical-feedstock
 <root>.common-energy.petroleum-coke,,data/service-technology-map/common-energy/petroleum-coke
 <root>.common-energy.propane,,data/service-technology-map/common-energy/propane
 <root>.common-energy.refinery-fuel-gas,,data/service-technology-map/common-energy/refinery-fuel-gas
@@ -70,7 +70,6 @@ branch,technology,data-filepath
 <sector>.biofuels.product.biodiesel,transesterification-unit_alkali-catalyzed,data/service-technology-map/biofuels/product/biodiesel
 <sector>.biofuels.product.biodiesel,transesterification-unit_heterogeneous-catalyst,data/service-technology-map/biofuels/product/biodiesel
 <sector>.biofuels.product.biodiesel,transesterification-unit_supercritical-methanol,data/service-technology-map/biofuels/product/biodiesel
-<sector>.biofuels.product.ethanol,distillation-column_heat-pumped,data/service-technology-map/biofuels/product/ethanol
 <sector>.biofuels.product.ethanol,fermenter_grain-dry-mill,data/service-technology-map/biofuels/product/ethanol
 <sector>.biofuels.product.ethanol,fermenter_grain-dry-mill_ccs-concentrated,data/service-technology-map/biofuels/product/ethanol
 <sector>.biofuels.product.ethanol,fermenter_grain-dry-mill_efficiency-moderate,data/service-technology-map/biofuels/product/ethanol
@@ -174,7 +173,6 @@ branch,technology,data-filepath
 <sector>.chemicals.product.petrochemicals.steam-cracking,gasifier_biomass-ethylene,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
 <sector>.chemicals.product.petrochemicals.steam-cracking,reactor_ethanol-to-ethylene,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
 <sector>.chemicals.product.petrochemicals.steam-cracking,reactor_methanol-to-olefins,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
-<sector>.chemicals.product.petrochemicals.steam-cracking,reactor_plastics-pyrolysis,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
 <sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracker_catalytic-naphtha,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
 <sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracker_electric,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
 <sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracker_fired-tubular,data/service-technology-map/chemicals/product/petrochemicals/steam-cracking
@@ -199,9 +197,6 @@ branch,technology,data-filepath
 <sector>.chemicals.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.chemicals.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.chemicals.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.chemicals.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.chemicals.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.chemicals.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.chemicals.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.chemicals.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.chemicals.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -268,10 +263,7 @@ branch,technology,data-filepath
 <sector>.coal-mining.product.coal-preparation.drying,dryer_heat-pump,data/service-technology-map/coal-mining/product/coal-preparation/drying
 <sector>.coal-mining.product.coal-preparation.drying,dryer_rotary-direct-fired,data/service-technology-map/coal-mining/product/coal-preparation/drying
 <sector>.coal-mining.product.coal-preparation.drying,press_dewatering,data/service-technology-map/coal-mining/product/coal-preparation/drying
-<sector>.coal-mining.product.coal-preparation.tailings-disposal,pump_mine-dewatering,data/service-technology-map/coal-mining/product/coal-preparation/tailings-disposal
 <sector>.coal-mining.product.coal-preparation.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/coal-mining/product/coal-preparation/tailings-disposal
-<sector>.coal-mining.product.coal-preparation.tailings-disposal,separator_mine-water-treatment,data/service-technology-map/coal-mining/product/coal-preparation/tailings-disposal
-<sector>.coal-mining.product.coal-preparation.tailings-disposal,separator_tailings-reclaim,data/service-technology-map/coal-mining/product/coal-preparation/tailings-disposal
 <sector>.coal-mining.product.coal-preparation.washing,flotation-cell_froth,data/service-technology-map/coal-mining/product/coal-preparation/washing
 <sector>.coal-mining.product.raw-product,,data/service-technology-map/coal-mining/product/raw-product
 <sector>.coal-mining.product.raw-product.extraction,gas-treatment-unit_vam-oxidiser,data/service-technology-map/coal-mining/product/raw-product/extraction
@@ -279,11 +271,6 @@ branch,technology,data-filepath
 <sector>.coal-mining.product.raw-product.extraction,mine_underground-coal,data/service-technology-map/coal-mining/product/raw-product/extraction
 <sector>.coal-mining.product.raw-product.extraction,process-improvement_coal-mine-methane-drainage,data/service-technology-map/coal-mining/product/raw-product/extraction
 <sector>.coal-mining.product.raw-product.mine-ventilation,fan_mine-ventilation,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
-<sector>.coal-mining.product.raw-product.mine-ventilation,heat-pump_space,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
-<sector>.coal-mining.product.raw-product.mine-ventilation,resistance-heater_space-heating,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
-<sector>.coal-mining.product.raw-product.mine-ventilation,space-heater_fuel-fired,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
-<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-unit_demand-controlled,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
-<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-unit_heat-recovery,data/service-technology-map/coal-mining/product/raw-product/mine-ventilation
 <sector>.coal-mining.product.simplified-extraction,mine_open-pit-coal,data/service-technology-map/coal-mining/product/simplified-extraction
 <sector>.coal-mining.product.simplified-extraction,mine_underground-coal,data/service-technology-map/coal-mining/product/simplified-extraction
 <sector>.coal-mining.product.simplified-production,,data/service-technology-map/coal-mining/product/simplified-production
@@ -297,9 +284,6 @@ branch,technology,data-filepath
 <sector>.coal-mining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.coal-mining.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.coal-mining.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.coal-mining.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.coal-mining.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.coal-mining.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.coal-mining.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.coal-mining.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.coal-mining.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -336,7 +320,9 @@ branch,technology,data-filepath
 <sector>.coal-mining.service.machine-drive.pumps,motor_induction-standard_efficiency-moderate,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.coal-mining.service.machine-drive.pumps,motor_premium-efficiency,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.coal-mining.service.machine-drive.pumps,motor_variable-speed,data/service-technology-map/general-services/machine-drive/pumps
+<sector>.coal-mining.service.machine-drive.pumps,pump_mine-dewatering,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.coal-mining.service.machine-drive.pumps,reciprocating-engine_drive,data/service-technology-map/general-services/machine-drive/pumps
+<sector>.coal-mining.service.machine-drive.pumps,separator_tailings-reclaim,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.coal-mining.service.machine-drive.pumps,steam-turbine_drive,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.coal-mining.service.mine-haulage,haul-truck_battery-electric,data/service-technology-map/coal-mining/service/mine-haulage
 <sector>.coal-mining.service.mine-haulage,haul-truck_diesel,data/service-technology-map/coal-mining/service/mine-haulage
@@ -469,7 +455,6 @@ branch,technology,data-filepath
 <sector>.industrial-minerals.product.ceramics.kiln,kiln_ceramic-electric,data/service-technology-map/industrial-minerals/product/ceramics/kiln
 <sector>.industrial-minerals.product.ceramics.kiln,kiln_ceramic-microwave-assisted,data/service-technology-map/industrial-minerals/product/ceramics/kiln
 <sector>.industrial-minerals.product.ceramics.kiln,kiln_intermittent,data/service-technology-map/industrial-minerals/product/ceramics/kiln
-<sector>.industrial-minerals.product.ceramics.kiln,kiln_rotary-expanded-clay,data/service-technology-map/industrial-minerals/product/ceramics/kiln
 <sector>.industrial-minerals.product.ceramics.kiln,kiln_tunnel-roller,data/service-technology-map/industrial-minerals/product/ceramics/kiln
 <sector>.industrial-minerals.product.ceramics.kiln,kiln_tunnel-roller_efficiency-strong,data/service-technology-map/industrial-minerals/product/ceramics/kiln
 <sector>.industrial-minerals.product.glass,,data/service-technology-map/industrial-minerals/product/glass
@@ -501,9 +486,6 @@ branch,technology,data-filepath
 <sector>.industrial-minerals.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.industrial-minerals.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.industrial-minerals.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.industrial-minerals.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.industrial-minerals.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.industrial-minerals.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.industrial-minerals.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.industrial-minerals.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.industrial-minerals.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -615,9 +597,6 @@ branch,technology,data-filepath
 <sector>.iron-and-steel.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.iron-and-steel.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.iron-and-steel.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.iron-and-steel.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.iron-and-steel.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.iron-and-steel.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.iron-and-steel.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.iron-and-steel.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.iron-and-steel.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -784,7 +763,6 @@ branch,technology,data-filepath
 <sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,calciner_gas-suspension,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/alumina
 <sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,calciner_gas-suspension_ccs-diffuse,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/alumina
 <sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,digester_bayer,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/alumina
-<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,solar-collector,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/alumina
 <sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,electrolysis-cell_inert-anode,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/electrolysis
 <sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,electrolysis-cell_multipolar-chloride,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/electrolysis
 <sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,electrolysis-cell_prebaked-anode,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/electrolysis
@@ -792,15 +770,14 @@ branch,technology,data-filepath
 <sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,electrolysis-cell_soderberg,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/electrolysis
 <sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,process-improvement_pfc-anode-effect-control,data/service-technology-map/metal-smelting/product/aluminum/primary-aluminum/electrolysis
 <sector>.metal-smelting.product.aluminum.recycle,furnace_homogenizing,data/service-technology-map/metal-smelting/product/aluminum/recycle
-<sector>.metal-smelting.product.aluminum.recycle,furnace_twin-chamber,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_crucible-gas-fired,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_induction,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_isothermal,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_regenerative-oxy-fuel,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_reverberatory-rotary,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,melting-furnace_reverberatory-rotary_efficiency-strong,data/service-technology-map/metal-smelting/product/aluminum/recycle
+<sector>.metal-smelting.product.aluminum.recycle,melting-furnace_twin-chamber,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.aluminum.recycle,rolling-mill_continuous-casting,data/service-technology-map/metal-smelting/product/aluminum/recycle
-<sector>.metal-smelting.product.aluminum.recycle,rolling-mill_ring,data/service-technology-map/metal-smelting/product/aluminum/recycle
 <sector>.metal-smelting.product.copper,,data/service-technology-map/metal-smelting/product/copper
 <sector>.metal-smelting.product.copper.hydrometallurgy,electrolysis-cell_advanced-anodes,data/service-technology-map/metal-smelting/product/copper/hydrometallurgy
 <sector>.metal-smelting.product.copper.hydrometallurgy,leaching-vessel_heap-atmospheric,data/service-technology-map/metal-smelting/product/copper/hydrometallurgy
@@ -813,9 +790,7 @@ branch,technology,data-filepath
 <sector>.metal-smelting.product.copper.melt-cast,melting-furnace_reverberatory-rotary,data/service-technology-map/metal-smelting/product/copper/melt-cast
 <sector>.metal-smelting.product.copper.melt-cast,melting-furnace_reverberatory-rotary_efficiency-strong,data/service-technology-map/metal-smelting/product/copper/melt-cast
 <sector>.metal-smelting.product.copper.melt-cast,rolling-mill_continuous-casting,data/service-technology-map/metal-smelting/product/copper/melt-cast
-<sector>.metal-smelting.product.copper.melt-cast,rolling-mill_ring,data/service-technology-map/metal-smelting/product/copper/melt-cast
 <sector>.metal-smelting.product.copper.pyrometallurgy,,data/service-technology-map/metal-smelting/product/copper/pyrometallurgy
-<sector>.metal-smelting.product.copper.pyrometallurgy.refining,direct-heater_fuel-fired,data/service-technology-map/metal-smelting/product/copper/pyrometallurgy/refining
 <sector>.metal-smelting.product.copper.pyrometallurgy.refining,electrolysis-cell_electrorefining,data/service-technology-map/metal-smelting/product/copper/pyrometallurgy/refining
 <sector>.metal-smelting.product.copper.pyrometallurgy.smelting,converter_continuous,data/service-technology-map/metal-smelting/product/copper/pyrometallurgy/smelting
 <sector>.metal-smelting.product.copper.pyrometallurgy.smelting,converter_peirce-smith,data/service-technology-map/metal-smelting/product/copper/pyrometallurgy/smelting
@@ -854,7 +829,6 @@ branch,technology,data-filepath
 <sector>.metal-smelting.product.magnesium.melt-cast,melting-furnace_reverberatory-rotary,data/service-technology-map/metal-smelting/product/magnesium/melt-cast
 <sector>.metal-smelting.product.magnesium.melt-cast,melting-furnace_reverberatory-rotary_efficiency-strong,data/service-technology-map/metal-smelting/product/magnesium/melt-cast
 <sector>.metal-smelting.product.magnesium.melt-cast,rolling-mill_continuous-casting,data/service-technology-map/metal-smelting/product/magnesium/melt-cast
-<sector>.metal-smelting.product.magnesium.thermal-reduction,direct-heater_fuel-fired,data/service-technology-map/metal-smelting/product/magnesium/thermal-reduction
 <sector>.metal-smelting.product.magnesium.thermal-reduction,reactor_silicothermic,data/service-technology-map/metal-smelting/product/magnesium/thermal-reduction
 <sector>.metal-smelting.product.nickel,,data/service-technology-map/metal-smelting/product/nickel
 <sector>.metal-smelting.product.nickel.hydrometallurgy,electrolysis-cell_advanced-anodes,data/service-technology-map/metal-smelting/product/nickel/hydrometallurgy
@@ -867,9 +841,7 @@ branch,technology,data-filepath
 <sector>.metal-smelting.product.nickel.melt-cast,melting-furnace_reverberatory-rotary,data/service-technology-map/metal-smelting/product/nickel/melt-cast
 <sector>.metal-smelting.product.nickel.melt-cast,melting-furnace_reverberatory-rotary_efficiency-strong,data/service-technology-map/metal-smelting/product/nickel/melt-cast
 <sector>.metal-smelting.product.nickel.melt-cast,rolling-mill_continuous-casting,data/service-technology-map/metal-smelting/product/nickel/melt-cast
-<sector>.metal-smelting.product.nickel.melt-cast,rolling-mill_ring,data/service-technology-map/metal-smelting/product/nickel/melt-cast
 <sector>.metal-smelting.product.nickel.pyrometallurgy,,data/service-technology-map/metal-smelting/product/nickel/pyrometallurgy
-<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,direct-heater_fuel-fired,data/service-technology-map/metal-smelting/product/nickel/pyrometallurgy/refining
 <sector>.metal-smelting.product.nickel.pyrometallurgy.refining,refinery_nickel-matte,data/service-technology-map/metal-smelting/product/nickel/pyrometallurgy/refining
 <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,converter_continuous,data/service-technology-map/metal-smelting/product/nickel/pyrometallurgy/smelting
 <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,converter_peirce-smith,data/service-technology-map/metal-smelting/product/nickel/pyrometallurgy/smelting
@@ -923,9 +895,6 @@ branch,technology,data-filepath
 <sector>.metal-smelting.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.metal-smelting.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.metal-smelting.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.metal-smelting.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.metal-smelting.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.metal-smelting.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.metal-smelting.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.metal-smelting.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.metal-smelting.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -1019,9 +988,6 @@ branch,technology,data-filepath
 <sector>.mining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.mining.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.mining.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.mining.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.mining.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.mining.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.mining.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.mining.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.mining.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -1043,7 +1009,6 @@ branch,technology,data-filepath
 <sector>.mining.service.machine-drive.compressed-air,steam-turbine_drive,data/service-technology-map/general-services/machine-drive/compressed-air
 <sector>.mining.service.machine-drive.fans-and-blowers,combustion-turbine_drive,data/service-technology-map/general-services/machine-drive/fans-and-blowers
 <sector>.mining.service.machine-drive.fans-and-blowers,combustion-turbine_drive_efficiency-moderate,data/service-technology-map/general-services/machine-drive/fans-and-blowers
-<sector>.mining.service.machine-drive.fans-and-blowers,fan_mine-ventilation,data/service-technology-map/general-services/machine-drive/fans-and-blowers
 <sector>.mining.service.machine-drive.fans-and-blowers,motor_induction-standard,data/service-technology-map/general-services/machine-drive/fans-and-blowers
 <sector>.mining.service.machine-drive.fans-and-blowers,motor_induction-standard_efficiency-moderate,data/service-technology-map/general-services/machine-drive/fans-and-blowers
 <sector>.mining.service.machine-drive.fans-and-blowers,motor_premium-efficiency,data/service-technology-map/general-services/machine-drive/fans-and-blowers
@@ -1062,7 +1027,9 @@ branch,technology,data-filepath
 <sector>.mining.service.machine-drive.pumps,motor_induction-standard_efficiency-moderate,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.mining.service.machine-drive.pumps,motor_premium-efficiency,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.mining.service.machine-drive.pumps,motor_variable-speed,data/service-technology-map/general-services/machine-drive/pumps
+<sector>.mining.service.machine-drive.pumps,pump_mine-dewatering,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.mining.service.machine-drive.pumps,reciprocating-engine_drive,data/service-technology-map/general-services/machine-drive/pumps
+<sector>.mining.service.machine-drive.pumps,separator_tailings-reclaim,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.mining.service.machine-drive.pumps,steam-turbine_drive,data/service-technology-map/general-services/machine-drive/pumps
 <sector>.mining.service.milling,grinding-mill_hpgr,data/service-technology-map/mining/service/milling
 <sector>.mining.service.milling,grinding-mill_sag-ball,data/service-technology-map/mining/service/milling
@@ -1087,7 +1054,7 @@ branch,technology,data-filepath
 <sector>.mining.service.on-site-power,geothermal-well_binary-power,data/service-technology-map/mining/service/on-site-power
 <sector>.mining.service.on-site-power,geothermal-well_flash-power,data/service-technology-map/mining/service/on-site-power
 <sector>.mining.service.on-site-power,photovoltaic-array_battery-storage,data/service-technology-map/mining/service/on-site-power
-<sector>.mining.service.on-site-power,reactor_small-nuclear,data/service-technology-map/mining/service/on-site-power
+<sector>.mining.service.on-site-power,reactor_small-nuclear-power,data/service-technology-map/mining/service/on-site-power
 <sector>.mining.service.on-site-power,steam-turbine_condensing,data/service-technology-map/mining/service/on-site-power
 <sector>.mining.service.on-site-power,steam-turbine_waste-heat,data/service-technology-map/mining/service/on-site-power
 <sector>.mining.service.on-site-power,wind-turbine,data/service-technology-map/mining/service/on-site-power
@@ -1118,10 +1085,7 @@ branch,technology,data-filepath
 <sector>.mining.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
-<sector>.mining.service.tailings-disposal,pump_mine-dewatering,data/service-technology-map/mining/service/tailings-disposal
 <sector>.mining.service.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/mining/service/tailings-disposal
-<sector>.mining.service.tailings-disposal,separator_mine-water-treatment,data/service-technology-map/mining/service/tailings-disposal
-<sector>.mining.service.tailings-disposal,separator_tailings-reclaim,data/service-technology-map/mining/service/tailings-disposal
 <sector>.natural-gas,,data/service-technology-map/natural-gas
 <sector>.natural-gas.product,,data/service-technology-map/natural-gas/product
 <sector>.natural-gas.product.distribution,turboexpander_pressure-let-down,data/service-technology-map/natural-gas/product/distribution
@@ -1205,7 +1169,6 @@ branch,technology,data-filepath
 <sector>.natural-gas.service.compressor-drive.turbine,combustion-turbine_drive,data/service-technology-map/natural-gas/service/compressor-drive/turbine
 <sector>.natural-gas.service.compressor-drive.turbine,combustion-turbine_drive_efficiency-moderate,data/service-technology-map/natural-gas/service/compressor-drive/turbine
 <sector>.natural-gas.service.compressor-drive.turbine,compressor_electric,data/service-technology-map/natural-gas/service/compressor-drive/turbine
-<sector>.natural-gas.service.compressor-drive.turbine,steam-turbine_waste-heat,data/service-technology-map/natural-gas/service/compressor-drive/turbine
 <sector>.natural-gas.service.fuel-blend,,data/service-technology-map/general-services/fuel-blend
 <sector>.natural-gas.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.natural-gas.service.fuel-blend.gasoline,,data/service-technology-map/general-services/fuel-blend/gasoline
@@ -1234,7 +1197,6 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.product.bitumen.in-situ,well_solvent-assisted,data/service-technology-map/petroleum-crude/product/bitumen/in-situ
 <sector>.petroleum-crude.product.bitumen.in-situ,well_solvent-only,data/service-technology-map/petroleum-crude/product/bitumen/in-situ
 <sector>.petroleum-crude.product.bitumen.mining,mine_open-pit-oil-sands,data/service-technology-map/petroleum-crude/product/bitumen/mining
-<sector>.petroleum-crude.product.bitumen.mining,separator_dry-stack-tailings,data/service-technology-map/petroleum-crude/product/bitumen/mining
 <sector>.petroleum-crude.product.bitumen.mining,separator_non-aqueous,data/service-technology-map/petroleum-crude/product/bitumen/mining
 <sector>.petroleum-crude.product.bitumen.mining,separator_paraffinic-froth-treatment,data/service-technology-map/petroleum-crude/product/bitumen/mining
 <sector>.petroleum-crude.product.bitumen.mining,separator_warm-water-extraction,data/service-technology-map/petroleum-crude/product/bitumen/mining
@@ -1257,10 +1219,8 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.product.light-medium.onshore,direct-heater_line-heater,data/service-technology-map/petroleum-crude/product/light-medium/onshore
 <sector>.petroleum-crude.product.light-medium.onshore,heat-pump_oil-treating,data/service-technology-map/petroleum-crude/product/light-medium/onshore
 <sector>.petroleum-crude.product.light-medium.onshore,pump_artificial-lift,data/service-technology-map/petroleum-crude/product/light-medium/onshore
-<sector>.petroleum-crude.product.transmission,motor_variable-speed,data/service-technology-map/petroleum-crude/product/transmission
 <sector>.petroleum-crude.product.transmission,process-improvement_drag-reducing-agent,data/service-technology-map/petroleum-crude/product/transmission
 <sector>.petroleum-crude.product.transmission,pump_electric-station,data/service-technology-map/petroleum-crude/product/transmission
-<sector>.petroleum-crude.product.transmission,reciprocating-engine_drive,data/service-technology-map/petroleum-crude/product/transmission
 <sector>.petroleum-crude.service,,data/service-technology-map/petroleum-crude/service
 <sector>.petroleum-crude.service.ccs,,data/service-technology-map/general-services/ccs
 <sector>.petroleum-crude.service.ccs.concentrated,adsorber_pressure-swing,data/service-technology-map/general-services/ccs/concentrated
@@ -1288,7 +1248,7 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_battery-electric,data/service-technology-map/petroleum-crude/service/mine-haulage
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_diesel,data/service-technology-map/petroleum-crude/service/mine-haulage
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_dual-fuel,data/service-technology-map/petroleum-crude/service/mine-haulage
-<sector>.petroleum-crude.service.produced-water,evaporator_crystallizer,data/service-technology-map/petroleum-crude/service/produced-water
+<sector>.petroleum-crude.service.produced-water,evaporator_crystallizer-produced-water,data/service-technology-map/petroleum-crude/service/produced-water
 <sector>.petroleum-crude.service.produced-water,separator_produced-water-recycling,data/service-technology-map/petroleum-crude/service/produced-water
 <sector>.petroleum-crude.service.produced-water,separator_warm-lime-softening,data/service-technology-map/petroleum-crude/service/produced-water
 <sector>.petroleum-crude.service.produced-water,well_disposal-injection,data/service-technology-map/petroleum-crude/service/produced-water
@@ -1312,6 +1272,7 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
+<sector>.petroleum-crude.service.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/petroleum-crude/service/tailings-disposal
 <sector>.petroleum-refining,,data/service-technology-map/petroleum-refining
 <sector>.petroleum-refining.product,,data/service-technology-map/petroleum-refining/product
 <sector>.petroleum-refining.product.alkylates,reactor_alkylation,data/service-technology-map/petroleum-refining/product/alkylates
@@ -1320,17 +1281,12 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.product.petroleum-fractions.asphalt,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/asphalt
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,reactor_delayed-coking,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/coking
-<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,refinery_deep-conversion,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/coking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking-oxy-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking_ccs-diffuse,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
-<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,refinery_conversion,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
-<sector>.petroleum-refining.product.petroleum-fractions.distillation,direct-heater_electric,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,distillation-column_atmospheric-vacuum,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,distillation-column_atmospheric-vacuum_efficiency-strong,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
-<sector>.petroleum-refining.product.petroleum-fractions.distillation,gasifier_coal-fischer-tropsch,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
-<sector>.petroleum-refining.product.petroleum-fractions.distillation,reactor_gas-to-liquids,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,refinery_conversion,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,refinery_deep-conversion,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,refinery_hydroskimming,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
@@ -1340,6 +1296,8 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,gas-treatment-unit_sulphur-recovery,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating/sulphur-recovery
 <sector>.petroleum-refining.product.petroleum-fractions.lubes,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/lubes
 <sector>.petroleum-refining.product.reforming,reactor_catalytic-reforming,data/service-technology-map/petroleum-refining/product/reforming
+<sector>.petroleum-refining.product.synthetic-fuels,gasifier_coal-fischer-tropsch,data/service-technology-map/petroleum-refining/product/synthetic-fuels
+<sector>.petroleum-refining.product.synthetic-fuels,reactor_gas-to-liquids,data/service-technology-map/petroleum-refining/product/synthetic-fuels
 <sector>.petroleum-refining.service,,data/service-technology-map/petroleum-refining/service
 <sector>.petroleum-refining.service.ccs,,data/service-technology-map/general-services/ccs
 <sector>.petroleum-refining.service.ccs.concentrated,adsorber_pressure-swing,data/service-technology-map/general-services/ccs/concentrated
@@ -1367,9 +1325,6 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.petroleum-refining.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.petroleum-refining.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.petroleum-refining.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.petroleum-refining.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.petroleum-refining.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.petroleum-refining.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.petroleum-refining.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.petroleum-refining.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating
@@ -1539,9 +1494,6 @@ branch,technology,data-filepath
 <sector>.pulp-and-paper.service.hvac,,data/service-technology-map/general-services/industrial/hvac
 <sector>.pulp-and-paper.service.hvac.space-cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.pulp-and-paper.service.hvac.space-cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.pulp-and-paper.service.hvac.space-cooling,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.pulp-and-paper.service.hvac.space-cooling,motor_induction-standard,data/service-technology-map/general-services/industrial/hvac/space-cooling
-<sector>.pulp-and-paper.service.hvac.space-cooling,motor_variable-speed,data/service-technology-map/general-services/industrial/hvac/space-cooling
 <sector>.pulp-and-paper.service.hvac.space-heating,heat-pump_space,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.pulp-and-paper.service.hvac.space-heating,resistance-heater_space-heating,data/service-technology-map/general-services/industrial/hvac/space-heating
 <sector>.pulp-and-paper.service.hvac.space-heating,space-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/space-heating

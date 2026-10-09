@@ -10,6 +10,11 @@ wide-archetype,applies-to,identity,,
 wide-archetype,trl,identity,,
 wide-archetype,product-unit,identity,,
 wide-archetype,product,identity,,
+wide-archetype,secondary-products,identity,,
+wide-archetype,product-density,identity,,
+wide-archetype,product-density-unit,identity,,
+wide-archetype,product-energy-content,identity,,
+wide-archetype,product-energy-content-unit,identity,,
 wide-archetype,n-examples,identity,,
 wide-archetype,status,identity,,
 wide-archetype,sources,identity,,
@@ -28,19 +33,19 @@ wide-archetype,capacity-factor,technical,%,"Annual output as a fraction of outpu
 wide-archetype,capacity-factor_low,technical,%,
 wide-archetype,capacity-factor_high,technical,%,
 wide-archetype,capacity-factor_n,technical,,
-wide-archetype,annual-output,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-archetype,annual-output_low,technical,product-unit,
-wide-archetype,annual-output_high,technical,product-unit,
+wide-archetype,annual-output,technical,product-unit per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,annual-output_low,technical,product-unit per yr,
+wide-archetype,annual-output_high,technical,product-unit per yr,
 wide-archetype,annual-output_n,technical,,
 wide-archetype,efficiency,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. On CHP archetypes (label says CHP) this column is the total CHP efficiency, electricity plus useful heat over fuel in (efficiency-chp); the electric and heat efficiencies are beside it. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,efficiency_low,technical,%,
 wide-archetype,efficiency_high,technical,%,
 wide-archetype,efficiency_n,technical,,
-wide-archetype,efficiency_electricity,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,efficiency_electricity,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: electricity. Electricity out over energy in. On a single-output power archetype it repeats the efficiency column. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,efficiency_electricity_low,technical,%,
 wide-archetype,efficiency_electricity_high,technical,%,
 wide-archetype,efficiency_electricity_n,technical,,
-wide-archetype,efficiency_heat,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,efficiency_heat,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: heat. Heat out over energy in. On a single-output heat archetype it repeats the efficiency column. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,efficiency_heat_low,technical,%,
 wide-archetype,efficiency_heat_high,technical,%,
 wide-archetype,efficiency_heat_n,technical,,
@@ -202,8 +207,6 @@ wide-carriers-species,specific-energy-consumption_basic-oxygen-furnace-gas_n,tec
 wide-carriers-species,specific-energy-consumption_bioliquid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: bioliquid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_bioliquid_n,technical,,
 wide-carriers-species,specific-energy-consumption_biomass,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-carriers-species,specific-energy-consumption_biomass_low,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_biomass_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass_n,technical,,
 wide-carriers-species,specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
@@ -285,157 +288,157 @@ wide-carriers-species,specific-energy-consumption_steam,technical,GJ/product-uni
 wide-carriers-species,specific-energy-consumption_steam_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_n,technical,,
-wide-sidecar,archetype,identity,,
-wide-sidecar,label,identity,,
-wide-sidecar,product-unit,identity,,
-wide-sidecar,product,identity,,
-wide-sidecar,lifetime_component,technical,years,"Expected technical service life of the installed equipment. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,lifetime_component_low,technical,years,
-wide-sidecar,lifetime_component_high,technical,years,
-wide-sidecar,lifetime_component_n,technical,,
-wide-sidecar,lifetime_stack,technical,years,"Expected technical service life of the installed equipment. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,lifetime_stack_low,technical,years,
-wide-sidecar,lifetime_stack_high,technical,years,
-wide-sidecar,lifetime_stack_n,technical,,
-wide-sidecar,capacity_ch4,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,capacity_ch4_low,technical,product-unit/yr,
-wide-sidecar,capacity_ch4_high,technical,product-unit/yr,
-wide-sidecar,capacity_ch4_n,technical,,
-wide-sidecar,capacity_electricity,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,capacity_electricity_low,technical,product-unit/yr,
-wide-sidecar,capacity_electricity_high,technical,product-unit/yr,
-wide-sidecar,capacity_electricity_n,technical,,
-wide-sidecar,capacity_ethylene,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ethylene. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,capacity_ethylene_n,technical,,
-wide-sidecar,capacity_feed,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,capacity_feed_n,technical,,
-wide-sidecar,annual-output_electricity,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,annual-output_electricity_n,technical,,
-wide-sidecar,annual-output_methane,technical,product-unit,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,annual-output_methane_n,technical,,
-wide-sidecar,efficiency_unspecified,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. CHP archetypes only: an efficiency the source gives without saying electric, heat or total. The main view's efficiency on these rows is the total CHP efficiency. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_unspecified_low,technical,%,
-wide-sidecar,efficiency_unspecified_high,technical,%,
-wide-sidecar,efficiency_unspecified_n,technical,,
-wide-sidecar,efficiency_biogas,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_biogas_low,technical,%,
-wide-sidecar,efficiency_biogas_high,technical,%,
-wide-sidecar,efficiency_biogas_n,technical,,
-wide-sidecar,efficiency_biomass-solid,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_biomass-solid_low,technical,%,
-wide-sidecar,efficiency_biomass-solid_high,technical,%,
-wide-sidecar,efficiency_biomass-solid_n,technical,,
-wide-sidecar,efficiency_black-liquor,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_black-liquor_n,technical,,
-wide-sidecar,efficiency_component,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_component_low,technical,%,
-wide-sidecar,efficiency_component_high,technical,%,
-wide-sidecar,efficiency_component_n,technical,,
-wide-sidecar,efficiency_cooling,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_cooling_low,technical,%,
-wide-sidecar,efficiency_cooling_high,technical,%,
-wide-sidecar,efficiency_cooling_n,technical,,
-wide-sidecar,efficiency_heat-recovery,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: heat-recovery. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_heat-recovery_low,technical,%,
-wide-sidecar,efficiency_heat-recovery_high,technical,%,
-wide-sidecar,efficiency_heat-recovery_n,technical,,
-wide-sidecar,efficiency_hydrogen,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_hydrogen_low,technical,%,
-wide-sidecar,efficiency_hydrogen_high,technical,%,
-wide-sidecar,efficiency_hydrogen_n,technical,,
-wide-sidecar,efficiency_isentropic,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: isentropic. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_isentropic_low,technical,%,
-wide-sidecar,efficiency_isentropic_high,technical,%,
-wide-sidecar,efficiency_isentropic_n,technical,,
-wide-sidecar,efficiency_net,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: net. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_net_low,technical,%,
-wide-sidecar,efficiency_net_high,technical,%,
-wide-sidecar,efficiency_net_n,technical,,
-wide-sidecar,efficiency_overall,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: overall. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_overall_low,technical,%,
-wide-sidecar,efficiency_overall_high,technical,%,
-wide-sidecar,efficiency_overall_n,technical,,
-wide-sidecar,efficiency_part-load,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: part-load. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_part-load_low,technical,%,
-wide-sidecar,efficiency_part-load_high,technical,%,
-wide-sidecar,efficiency_part-load_n,technical,,
-wide-sidecar,efficiency_steam,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_steam_low,technical,%,
-wide-sidecar,efficiency_steam_high,technical,%,
-wide-sidecar,efficiency_steam_n,technical,,
-wide-sidecar,efficiency_vapour-recompression,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: vapour-recompression. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency_vapour-recompression_low,technical,%,
-wide-sidecar,efficiency_vapour-recompression_high,technical,%,
-wide-sidecar,efficiency_vapour-recompression_n,technical,,
-wide-sidecar,efficiency-chp,technical,%,"Combined heat and electricity output per unit of fuel input. Non-CHP archetypes: a total heat-plus-power efficiency some sources give (a boiler or turbine run in CHP mode). Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,efficiency-chp_low,technical,%,
-wide-sidecar,efficiency-chp_high,technical,%,
-wide-sidecar,efficiency-chp_n,technical,,
-wide-sidecar,temperature-output_air,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: air. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-output_air_n,technical,,
-wide-sidecar,temperature-output_coolant,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: coolant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-output_coolant_n,technical,,
-wide-sidecar,temperature-output_crude,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: crude. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-output_crude_low,technical,degC,
-wide-sidecar,temperature-output_crude_high,technical,degC,
-wide-sidecar,temperature-output_crude_n,technical,,
-wide-sidecar,temperature-output_furnace,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-output_furnace_n,technical,,
-wide-sidecar,temperature-output_stack,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-output_stack_n,technical,,
-wide-sidecar,temperature-min_converter-1,technical,,"Low end where the source gives a range. Species or stream: converter-1. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-min_converter-1_n,technical,,
-wide-sidecar,temperature-min_converter-2,technical,,"Low end where the source gives a range. Species or stream: converter-2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-min_converter-2_n,technical,,
-wide-sidecar,temperature-min_converter-3,technical,,"Low end where the source gives a range. Species or stream: converter-3. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-min_converter-3_n,technical,,
-wide-sidecar,temperature-min_furnace,technical,,"Low end where the source gives a range. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-min_furnace_n,technical,,
-wide-sidecar,temperature-min_heat,technical,,"Low end where the source gives a range. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-min_heat_n,technical,,
-wide-sidecar,temperature-max_converter-1,technical,,"High end where the source gives a range. Species or stream: converter-1. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_converter-1_n,technical,,
-wide-sidecar,temperature-max_converter-2,technical,,"High end where the source gives a range. Species or stream: converter-2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_converter-2_n,technical,,
-wide-sidecar,temperature-max_converter-3,technical,,"High end where the source gives a range. Species or stream: converter-3. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_converter-3_n,technical,,
-wide-sidecar,temperature-max_furnace,technical,,"High end where the source gives a range. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_furnace_n,technical,,
-wide-sidecar,temperature-max_heat,technical,,"High end where the source gives a range. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_heat_low,technical,,
-wide-sidecar,temperature-max_heat_high,technical,,
-wide-sidecar,temperature-max_heat_n,technical,,
-wide-sidecar,temperature-max_steam,technical,,"High end where the source gives a range. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,temperature-max_steam_n,technical,,
-wide-sidecar,load-range-min,technical,%,"Lowest sustained output as a fraction of rated capacity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,load-range-min_low,technical,%,
-wide-sidecar,load-range-min_high,technical,%,
-wide-sidecar,load-range-min_n,technical,,
-wide-sidecar,degradation-rate,technical,%,"Annual fractional loss of efficiency or capacity over the lifetime. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,degradation-rate_low,technical,%,
-wide-sidecar,degradation-rate_high,technical,%,
-wide-sidecar,degradation-rate_n,technical,,
-wide-sidecar,capex_component,cost,2025_CAD/(product-unit per yr),"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,capex_component_low,cost,2025_CAD/(product-unit per yr),
-wide-sidecar,capex_component_high,cost,2025_CAD/(product-unit per yr),
-wide-sidecar,capex_component_n,cost,,
-wide-sidecar,opex-variable_labour,cost,2025_CAD/product-unit,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: labour. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,opex-variable_labour_n,cost,,
-wide-sidecar,cost-levelized_component,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,cost-levelized_component_low,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_component_high,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_component_n,cost,,
-wide-sidecar,cost-levelized_delivered,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: delivered. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,cost-levelized_delivered_low,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_delivered_high,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_delivered_n,cost,,
-wide-sidecar,cost-levelized_delivered-net-of-45V,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: delivered-net-of-45V. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,cost-levelized_delivered-net-of-45V_low,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_delivered-net-of-45V_high,cost,2025_CAD/product-unit,
-wide-sidecar,cost-levelized_delivered-net-of-45V_n,cost,,
-wide-sidecar,cost-learning-rate_component,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,cost-learning-rate_component_low,cost,%,
-wide-sidecar,cost-learning-rate_component_high,cost,%,
-wide-sidecar,cost-learning-rate_component_n,cost,,
-wide-sidecar,cost-learning-rate_stack,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-sidecar,cost-learning-rate_stack_n,cost,,
+wide-secondary-parameter,archetype,identity,,
+wide-secondary-parameter,label,identity,,
+wide-secondary-parameter,product-unit,identity,,
+wide-secondary-parameter,product,identity,,
+wide-secondary-parameter,lifetime_component,technical,years,"Expected technical service life of the installed equipment. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,lifetime_component_low,technical,years,
+wide-secondary-parameter,lifetime_component_high,technical,years,
+wide-secondary-parameter,lifetime_component_n,technical,,
+wide-secondary-parameter,lifetime_stack,technical,years,"Expected technical service life of the installed equipment. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,lifetime_stack_low,technical,years,
+wide-secondary-parameter,lifetime_stack_high,technical,years,
+wide-secondary-parameter,lifetime_stack_n,technical,,
+wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
+wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
+wide-secondary-parameter,capacity_ch4_n,technical,,
+wide-secondary-parameter,capacity_electricity,technical,MW electricity,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_electricity_low,technical,MW electricity,
+wide-secondary-parameter,capacity_electricity_high,technical,MW electricity,
+wide-secondary-parameter,capacity_electricity_n,technical,,
+wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ethylene. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_ethylene_n,technical,,
+wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_feed_n,technical,,
+wide-secondary-parameter,annual-output_electricity,technical,GJ electricity per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,annual-output_electricity_n,technical,,
+wide-secondary-parameter,annual-output_methane,technical,GJ methane per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,annual-output_methane_n,technical,,
+wide-secondary-parameter,efficiency_biogas,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_biogas_low,technical,%,
+wide-secondary-parameter,efficiency_biogas_high,technical,%,
+wide-secondary-parameter,efficiency_biogas_n,technical,,
+wide-secondary-parameter,efficiency_biomass-solid,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_biomass-solid_low,technical,%,
+wide-secondary-parameter,efficiency_biomass-solid_high,technical,%,
+wide-secondary-parameter,efficiency_biomass-solid_n,technical,,
+wide-secondary-parameter,efficiency_black-liquor,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_black-liquor_n,technical,,
+wide-secondary-parameter,efficiency_component,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_component_low,technical,%,
+wide-secondary-parameter,efficiency_component_high,technical,%,
+wide-secondary-parameter,efficiency_component_n,technical,,
+wide-secondary-parameter,efficiency_cooling,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_cooling_low,technical,%,
+wide-secondary-parameter,efficiency_cooling_high,technical,%,
+wide-secondary-parameter,efficiency_cooling_n,technical,,
+wide-secondary-parameter,efficiency_heat-recovery,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: heat-recovery. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_heat-recovery_low,technical,%,
+wide-secondary-parameter,efficiency_heat-recovery_high,technical,%,
+wide-secondary-parameter,efficiency_heat-recovery_n,technical,,
+wide-secondary-parameter,efficiency_hydrogen,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_hydrogen_low,technical,%,
+wide-secondary-parameter,efficiency_hydrogen_high,technical,%,
+wide-secondary-parameter,efficiency_hydrogen_n,technical,,
+wide-secondary-parameter,efficiency_isentropic,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: isentropic. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_isentropic_low,technical,%,
+wide-secondary-parameter,efficiency_isentropic_high,technical,%,
+wide-secondary-parameter,efficiency_isentropic_n,technical,,
+wide-secondary-parameter,efficiency_net,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: net. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_net_low,technical,%,
+wide-secondary-parameter,efficiency_net_high,technical,%,
+wide-secondary-parameter,efficiency_net_n,technical,,
+wide-secondary-parameter,efficiency_overall,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: overall. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_overall_low,technical,%,
+wide-secondary-parameter,efficiency_overall_high,technical,%,
+wide-secondary-parameter,efficiency_overall_n,technical,,
+wide-secondary-parameter,efficiency_part-load,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: part-load. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_part-load_low,technical,%,
+wide-secondary-parameter,efficiency_part-load_high,technical,%,
+wide-secondary-parameter,efficiency_part-load_n,technical,,
+wide-secondary-parameter,efficiency_steam,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_steam_low,technical,%,
+wide-secondary-parameter,efficiency_steam_high,technical,%,
+wide-secondary-parameter,efficiency_steam_n,technical,,
+wide-secondary-parameter,efficiency_unspecified,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: unspecified. CHP archetypes only: an efficiency the source gives without saying electric, heat or total. The main view's efficiency on these rows is the total CHP efficiency. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_unspecified_low,technical,%,
+wide-secondary-parameter,efficiency_unspecified_high,technical,%,
+wide-secondary-parameter,efficiency_unspecified_n,technical,,
+wide-secondary-parameter,efficiency_vapour-recompression,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: vapour-recompression. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency_vapour-recompression_low,technical,%,
+wide-secondary-parameter,efficiency_vapour-recompression_high,technical,%,
+wide-secondary-parameter,efficiency_vapour-recompression_n,technical,,
+wide-secondary-parameter,efficiency-chp,technical,%,"Combined heat and electricity output per unit of fuel input. Non-CHP archetypes: a total heat-plus-power efficiency some sources give (a boiler or turbine run in CHP mode). Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,efficiency-chp_low,technical,%,
+wide-secondary-parameter,efficiency-chp_high,technical,%,
+wide-secondary-parameter,efficiency-chp_n,technical,,
+wide-secondary-parameter,temperature-output_air,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: air. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-output_air_n,technical,,
+wide-secondary-parameter,temperature-output_coolant,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: coolant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-output_coolant_n,technical,,
+wide-secondary-parameter,temperature-output_crude,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: crude. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-output_crude_low,technical,degC,
+wide-secondary-parameter,temperature-output_crude_high,technical,degC,
+wide-secondary-parameter,temperature-output_crude_n,technical,,
+wide-secondary-parameter,temperature-output_furnace,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-output_furnace_n,technical,,
+wide-secondary-parameter,temperature-output_stack,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-output_stack_n,technical,,
+wide-secondary-parameter,temperature-min_converter-1,technical,degC,"Low end where the source gives a range. Species or stream: converter-1. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-min_converter-1_n,technical,,
+wide-secondary-parameter,temperature-min_converter-2,technical,degC,"Low end where the source gives a range. Species or stream: converter-2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-min_converter-2_n,technical,,
+wide-secondary-parameter,temperature-min_converter-3,technical,degC,"Low end where the source gives a range. Species or stream: converter-3. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-min_converter-3_n,technical,,
+wide-secondary-parameter,temperature-min_furnace,technical,degC,"Low end where the source gives a range. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-min_furnace_n,technical,,
+wide-secondary-parameter,temperature-min_heat,technical,degC,"Low end where the source gives a range. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-min_heat_n,technical,,
+wide-secondary-parameter,temperature-max_converter-1,technical,degC,"High end where the source gives a range. Species or stream: converter-1. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_converter-1_n,technical,,
+wide-secondary-parameter,temperature-max_converter-2,technical,degC,"High end where the source gives a range. Species or stream: converter-2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_converter-2_n,technical,,
+wide-secondary-parameter,temperature-max_converter-3,technical,degC,"High end where the source gives a range. Species or stream: converter-3. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_converter-3_n,technical,,
+wide-secondary-parameter,temperature-max_furnace,technical,degC,"High end where the source gives a range. Species or stream: furnace. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_furnace_n,technical,,
+wide-secondary-parameter,temperature-max_heat,technical,degC,"High end where the source gives a range. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_heat_low,technical,degC,
+wide-secondary-parameter,temperature-max_heat_high,technical,degC,
+wide-secondary-parameter,temperature-max_heat_n,technical,,
+wide-secondary-parameter,temperature-max_steam,technical,degC,"High end where the source gives a range. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,temperature-max_steam_n,technical,,
+wide-secondary-parameter,load-range-min,technical,%,"Lowest sustained output as a fraction of rated capacity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,load-range-min_low,technical,%,
+wide-secondary-parameter,load-range-min_high,technical,%,
+wide-secondary-parameter,load-range-min_n,technical,,
+wide-secondary-parameter,degradation-rate,technical,%,"Annual fractional loss of efficiency or capacity over the lifetime. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,degradation-rate_low,technical,%,
+wide-secondary-parameter,degradation-rate_high,technical,%,
+wide-secondary-parameter,degradation-rate_n,technical,,
+wide-secondary-parameter,capex_component,cost,2025_CAD/GJ-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capex_component_low,cost,2025_CAD/GJ-per-yr,
+wide-secondary-parameter,capex_component_high,cost,2025_CAD/GJ-per-yr,
+wide-secondary-parameter,capex_component_n,cost,,
+wide-secondary-parameter,opex-variable_labour,cost,2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: labour. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-variable_labour_n,cost,,
+wide-secondary-parameter,cost-levelized_component,cost,2025_CAD/GJ,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,cost-levelized_component_low,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_component_high,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_component_n,cost,,
+wide-secondary-parameter,cost-levelized_delivered,cost,2025_CAD/GJ,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: delivered. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,cost-levelized_delivered_low,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_delivered_high,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_delivered_n,cost,,
+wide-secondary-parameter,cost-levelized_delivered-net-of-45V,cost,2025_CAD/GJ,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: delivered-net-of-45V. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,cost-levelized_delivered-net-of-45V_low,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_delivered-net-of-45V_high,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_delivered-net-of-45V_n,cost,,
+wide-secondary-parameter,cost-learning-rate_component,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,cost-learning-rate_component_low,cost,%,
+wide-secondary-parameter,cost-learning-rate_component_high,cost,%,
+wide-secondary-parameter,cost-learning-rate_component_n,cost,,
+wide-secondary-parameter,cost-learning-rate_stack,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,cost-learning-rate_stack_n,cost,,

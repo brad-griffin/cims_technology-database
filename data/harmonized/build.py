@@ -34,7 +34,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pipeline import (assembly, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
-                      factoruse, facts, fill, hierarchy, normalise, records, reports, rollup, sources,
+                      factoruse, facts, fill, hierarchy, normalise, placement, records, reports, rollin, rollup, sources,
                       summarise, views, wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
 
@@ -157,6 +157,8 @@ def main(argv) -> int:
     fst = fill.apply(psum, rec, normalise.target_unit, L.facts)
     bt = fst.pop("_backtest")
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
+    ri = rollin.apply(psum, rec)
+    print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
     for rid in dict.fromkeys(b["rule-id"] for b in bt):
         rs = [b for b in bt if b["rule-id"] == rid]
         near = sum(1 for b in rs if b["ratio"] and 0.75 <= float(b["ratio"]) <= 1.25)
@@ -203,8 +205,14 @@ def main(argv) -> int:
     order = {a["archetype"]: i for i, a in enumerate(rec.archetypes)}
     psum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
     fsum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["direction"], r["commodity"]))
+    # secondary parameters (values by stream or part) have their own file
+    # (modeller 2026-10-09); views still see every summary
+    sec = [r for r in psum if placement.placement(r["parameter"], r["target"]) == "secondary"]
+    main = [r for r in psum if placement.placement(r["parameter"], r["target"]) != "secondary"]
     write(OUTPUT / "archetype-parameter.csv",
-          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, psum)
+          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, main)
+    write(OUTPUT / "archetype-secondary-parameter.csv",
+          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, sec)
     write(OUTPUT / "archetype-flow.csv",
           ["archetype", "direction", "commodity", "unit"] + SUM_COLS, fsum)
     nf = Counter(r["example-id"] for r in L.facts + L.flows + L.cons
@@ -256,14 +264,10 @@ def main(argv) -> int:
                             banner + " Specific energy consumption by carrier and emissions by "
                             "species, per product-unit, alphabetical. The all-carrier total and "
                             "CO2-eq emissions are in wide-archetype."),
-         "wide-sidecar": W["wide-sidecar"][:4] + ("family", "equipment",
-                            banner + " Secondary parameters: values by stream or part (a second "
-                            "product's capacity, component and stack lifetimes, efficiency by "
-                            "stream, operating ranges). The main values are in wide-archetype."),
          "wide-flow": (fcols, frows, fgroups, funits, "family", "equipment", banner),
          "archetype": (acols, arows, {}, {}, "family", "equipment", banner),
          "source-list": (sources.COLS, src_band, {}, {}, "_band", "", banner)},
-        {"archetype-parameter": (["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, psum),
+        {"archetype-parameter": (["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, main),
          "archetype-flow": (["archetype", "direction", "commodity", "unit"] + SUM_COLS, fsum),
          "example": (EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"])),
          "example-parameter": (FACT_COLS, L.facts),
@@ -272,14 +276,14 @@ def main(argv) -> int:
          "archetype-application": (["archetype", "family", "node", "annotation", "via", "note"],
                                    v["application"])},
         {**fam, "": "(not tied to one family)"},
-        {k: o[4] for k, o in W.items()},
-        {k: o[5] for k, o in W.items()},
-        {k: o[6] for k, o in W.items()},
-        grouped=set(W)))
+        {k: o[4] for k, o in W.items() if k != "wide-secondary-parameter"},
+        {k: o[5] for k, o in W.items() if k != "wide-secondary-parameter"},
+        {k: o[6] for k, o in W.items() if k != "wide-secondary-parameter"},
+        grouped={k for k in W if k != "wide-secondary-parameter"}))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
           f"{q['estimated']} estimated only, {q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns "
-          f"(carriers-species {len(W['wide-carriers-species'][0])}, sidecar {len(W['wide-sidecar'][0])} columns)")
+          f"(carriers-species {len(W['wide-carriers-species'][0])}, secondary {len(W['wide-secondary-parameter'][0])} columns)")
     return 0
 
 

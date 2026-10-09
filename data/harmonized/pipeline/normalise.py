@@ -621,9 +621,11 @@ def normalise(facts, examples, records, units) -> None:
         if how:
             hv = heating.reported(r.get("note") or "")
             # a source that reports on LHV unless it says otherwise (ruling 2026-10-05)
-            default = "" if hv else units.streams.default_basis(r.get("source-id"),
-                                                                 r.get("via-source-id"))
-            r["heating-value"] = hv or ("LHV (source default)" if default == "LHV" else "not stated")
+            default, dkind = ("", "") if hv else units.streams.default(r.get("source-id"),
+                                                                        r.get("via-source-id"))
+            dlabel = "regional default" if dkind == "regional" else "source default"
+            r["heating-value"] = hv or (f"LHV ({dlabel})" if default == "LHV" else
+                                        f"HHV ({dlabel})" if default == "HHV" else "not stated")
             if hv == "LHV" or default == "LHV":
                 h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit)
                 if h is None and hv == "LHV":
@@ -634,14 +636,14 @@ def normalise(facts, examples, records, units) -> None:
                 if h is None:
                     # the source's default basis, but no stream known: pooled as
                     # reported, and said so
-                    r["heating-value"] = "LHV? (source default, no stream)"
+                    r["heating-value"] = f"LHV? ({dlabel}, no stream)"
                 else:
                     factor, offset = factor * h[0], offset * h[0]
                     if slip:
                         slip /= h[0]
                     used += h[1]
                     note = (note + "; " if note else "") + (
-                        "LHV -> HHV" if hv else "LHV (source default) -> HHV")
+                        "LHV -> HHV" if hv else f"LHV ({dlabel}) -> HHV")
         if bf:
             # the source reports per another product (per t aluminium on an alumina
             # archetype): per-product numbers divide by it, capacities multiply

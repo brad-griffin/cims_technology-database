@@ -76,14 +76,10 @@ combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.petroleum-refining.servi
 combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_electric,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_electric,heat-supply,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 direct-heater_fuel-fired,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.copper.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.magnesium.thermal-reduction,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
@@ -158,7 +154,6 @@ reactor_small-nuclear,heat-supply,<sector>.mining.service.steam,heat-low-temp,<s
 reactor_small-nuclear,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-reactor_small-nuclear,heat-supply,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 reciprocating-engine_chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reciprocating-engine_chp,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reciprocating-engine_chp,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -177,7 +172,6 @@ solar-collector,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>
 solar-collector,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-solar-collector,heat-supply,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 solar-concentrator,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -215,9 +209,9 @@ combustion-turbine_simple-cycle,power-generation,<sector>.mining.service.on-site
 geothermal-well_binary-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 geothermal-well_flash-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 photovoltaic-array_battery-storage,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
+reactor_small-nuclear-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,split from reactor_small-nuclear 2026-10-09: power archetype for the power node
 steam-turbine_condensing,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 steam-turbine_waste-heat,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
-steam-turbine_waste-heat,power-generation,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
 wind-turbine,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -312,15 +306,7 @@ motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.mat
 motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.chemicals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.coal-mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.iron-and-steel.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.light-industrial.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.metal-smelting.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
@@ -429,18 +415,8 @@ motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.materia
 motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.chemicals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.coal-mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.iron-and-steel.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.light-industrial.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.metal-smelting.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 reciprocating-engine_drive,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
-reciprocating-engine_drive,machine-drive,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
@@ -501,15 +477,7 @@ cooling-tower_free-evaporative,space-conditioning,<sector>.mining.service.hvac.s
 cooling-tower_free-evaporative,space-conditioning,<sector>.petroleum-refining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 cooling-tower_free-evaporative,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 cooling-tower_free-evaporative,space-conditioning,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.chemicals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.coal-mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.industrial-minerals.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.iron-and-steel.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.light-industrial.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.metal-smelting.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.mining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.petroleum-refining.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.chemicals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.coal-mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.industrial-minerals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
@@ -519,7 +487,6 @@ heat-pump_space,space-conditioning,<sector>.metal-smelting.service.hvac.space-he
 heat-pump_space,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 heat-pump_space,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-heat-pump_space,space-conditioning,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,added 2026-10-05 (archetype combination review)
 resistance-heater_space-heating,space-conditioning,<sector>.chemicals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 resistance-heater_space-heating,space-conditioning,<sector>.coal-mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 resistance-heater_space-heating,space-conditioning,<sector>.industrial-minerals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
@@ -529,7 +496,6 @@ resistance-heater_space-heating,space-conditioning,<sector>.metal-smelting.servi
 resistance-heater_space-heating,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 resistance-heater_space-heating,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 resistance-heater_space-heating,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-resistance-heater_space-heating,space-conditioning,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,added 2026-10-05 (archetype combination review)
 space-heater_fuel-fired,space-conditioning,<sector>.chemicals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 space-heater_fuel-fired,space-conditioning,<sector>.coal-mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 space-heater_fuel-fired,space-conditioning,<sector>.industrial-minerals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
@@ -539,7 +505,6 @@ space-heater_fuel-fired,space-conditioning,<sector>.metal-smelting.service.hvac.
 space-heater_fuel-fired,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 space-heater_fuel-fired,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 space-heater_fuel-fired,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-space-heater_fuel-fired,space-conditioning,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,mining/ventilation-and-air-heating: every leaf of the end use
 ventilation-unit_demand-controlled,space-conditioning,<sector>.chemicals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_demand-controlled,space-conditioning,<sector>.coal-mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_demand-controlled,space-conditioning,<sector>.industrial-minerals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
@@ -549,7 +514,6 @@ ventilation-unit_demand-controlled,space-conditioning,<sector>.metal-smelting.se
 ventilation-unit_demand-controlled,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_demand-controlled,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_demand-controlled,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-ventilation-unit_demand-controlled,space-conditioning,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,mining/ventilation-and-air-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.chemicals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.coal-mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.industrial-minerals.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
@@ -559,7 +523,6 @@ ventilation-unit_heat-recovery,space-conditioning,<sector>.metal-smelting.servic
 ventilation-unit_heat-recovery,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-ventilation-unit_heat-recovery,space-conditioning,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,mining/ventilation-and-air-heating: every leaf of the end use
 lighting_fluorescent-hid,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-hid,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-hid,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
@@ -731,7 +694,6 @@ distillation-column_heat-pumped,chemicals,<sector>.chemicals.product.hydrogen-pe
 distillation-column_heat-pumped,chemicals,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
 distillation-column_heat-pumped,chemicals,<sector>.chemicals.product.petrochemicals.btx-reforming,other-chemicals,,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
 distillation-column_heat-pumped,chemicals,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,,chemicals/other-chemicals: every leaf of chemicals/other-chemicals; no evidence to narrow it
-distillation-column_heat-pumped,chemicals,<sector>.biofuels.product.ethanol,ethanol-production,,biofuels/ethanol-production: every leaf of the end use
 electrolysis-cell_chlor-alkali-diaphragm,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,added 2026-10-01
 electrolysis-cell_chlor-alkali-membrane,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,corrected 2026-09-23: membrane cells make chlorine and caustic soda
 electrolysis-cell_chlor-alkali-mercury,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,corrected 2026-09-23: membrane cells make chlorine and caustic soda
@@ -756,7 +718,7 @@ reactor_ethylene-oxidation_ccs-concentrated,chemicals,<sector>.chemicals.product
 reactor_haber-bosch-electrolytic,chemicals,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 reactor_methanol-to-olefins,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,chemicals/steam-cracking: every leaf of the end use
 reactor_nitric-acid,chemicals,<sector>.chemicals.product.nitric-acid,nitric-and-adipic-acid,,chemicals/nitric-and-adipic-acid: the leaf its name or label names
-reactor_plastics-pyrolysis,chemicals,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,,mapping review 2026-09-30: pyrolysis oil substitutes cracker naphtha
+reactor_plastics-pyrolysis,chemicals,<root>.common-energy.petrochemical-feedstock,petrochemical-feedstock,,"moved from steam cracking 2026-10-09: pyrolysis oil is a cracker feedstock, not HVC"
 reactor_polymerization-extrusion,chemicals,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,,chemicals/other-chemicals: the leaf its name or label names
 reactor_polymerization-extrusion_efficiency-strong,chemicals,<sector>.chemicals.product.petrochemicals.all-polymerization,other-chemicals,,as reactor_polymerization-extrusion
 reactor_propane-dehydrogenation,chemicals,<sector>.chemicals.product.petrochemicals.intermediate-production,other-chemicals,,added 2026-10-02
@@ -871,7 +833,6 @@ adsorber_direct-lithium,mining,<sector>.mining.service.separation,separation-and
 adsorber_direct-lithium,mining,<sector>.mining.service.crystallization,separation-and-processing,,corrected 2026-09-23: lithium from brine: separation and crystallization
 conveyor_in-pit-crushing,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 fan_mine-ventilation,mining,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,added 2026-10-02
-fan_mine-ventilation,mining,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,,added 2026-10-02: metal mines have no ventilation node
 flotation-cell_froth,mining,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,,mining/separation-and-processing: the leaves its sources placed it on
 flotation-cell_froth,mining,<sector>.mining.service.separation,separation-and-processing,,added 2026-09-23: froth flotation of metal ores
 flotation-cell_froth,mining,<sector>.mining.service.crystallization,separation-and-processing,,added 2026-10-05 (archetype combination review)
@@ -915,15 +876,13 @@ pellet-plant_induration_efficiency-moderate,mining,<sector>.mining.service.pelle
 press_dewatering,mining,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 press_dewatering,mining,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,methane control on coal extraction; a coal-mine methane node is requested
-pump_mine-dewatering,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
-pump_mine-dewatering,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
+pump_mine-dewatering,mining,<sector>.coal-mining.service.machine-drive.pumps,pumps,,"moved from tailings-disposal 2026-10-09: a pump provides shaft work, not tailings disposed"
+pump_mine-dewatering,mining,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 separator_gravity-magnetic,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
-separator_mine-water-treatment,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
-separator_mine-water-treatment,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
 separator_ore-sorting,mining,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_ore-sorting,mining,<sector>.mining.service.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-separator_tailings-reclaim,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
-separator_tailings-reclaim,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,mining/water-and-tailings-management: every leaf of mining/water-and-tailings-management; no evidence to narrow it
+separator_tailings-reclaim,mining,<sector>.coal-mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09: tailings-water reclaim pumping
+separator_tailings-reclaim,mining,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 separator_thickening-filtration,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
 calciner_electric,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
@@ -954,7 +913,6 @@ furnace_anode-baking-electric,non-ferrous-metals,<sector>.metal-smelting.service
 furnace_homogenizing,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 furnace_homogenizing,non-ferrous-metals,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 furnace_homogenizing,non-ferrous-metals,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-furnace_twin-chamber,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 heat-recovery-unit_off-gas,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -969,6 +927,7 @@ melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_twin-chamber,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 paste-plant_soderberg,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
 process-improvement_bio-pitch,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
 process-improvement_biocarbon-reductant,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -982,9 +941,6 @@ rolling-mill_continuous-casting,non-ferrous-metals,<sector>.metal-smelting.produ
 rolling-mill_continuous-casting,non-ferrous-metals,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 rolling-mill_continuous-casting,non-ferrous-metals,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 rolling-mill_continuous-casting,non-ferrous-metals,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-rolling-mill_ring,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,as rolling-mill_continuous-casting
-rolling-mill_ring,non-ferrous-metals,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,as rolling-mill_continuous-casting
-rolling-mill_ring,non-ferrous-metals,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,as rolling-mill_continuous-casting
 smelting-vessel_bath-tuyere,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_bath-tuyere,non-ferrous-metals,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_bath-tuyere,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
@@ -1032,7 +988,6 @@ kiln_lime-rotary-preheater,non-metallic-minerals,<sector>.industrial-minerals.pr
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,<sector>.industrial-minerals.product.lime,lime-calcination,,non-metallic-minerals/lime-calcination: the device's route
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,pulp-and-paper/lime-kiln: every leaf of the end use
 kiln_lime-shaft,non-metallic-minerals,<sector>.industrial-minerals.product.lime,lime-calcination,,non-metallic-minerals/lime-calcination: the device's route
-kiln_rotary-expanded-clay,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,added 2026-10-01
 kiln_tunnel-roller,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,non-metallic-minerals/ceramic-firing: every leaf of the end use
 kiln_tunnel-roller_efficiency-strong,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,copied from kiln_tunnel-roller 2026-10-01
 melting-furnace_hot-blast-cupola,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,added 2026-10-01
@@ -1054,8 +1009,8 @@ direct-heater_line-heater,oil-and-gas,<sector>.petroleum-crude.product.light-med
 drilling-rig_battery-hybrid,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_diesel,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_electric,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
-evaporator_crystallizer,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 evaporator_crystallizer,oil-and-gas,<sector>.mining.service.crystallization,separation-and-processing,,added 2026-10-05 (archetype combination review)
+evaporator_crystallizer-produced-water,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,split from evaporator_crystallizer 2026-10-09: per m3 of produced water
 flare,oil-and-gas,<sector>.natural-gas.product.supply.flaring,flaring,,oil-and-gas/flaring: every leaf of the end use
 flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -1066,7 +1021,7 @@ gas-treatment-unit_amine-sweetening,oil-and-gas,<sector>.natural-gas.product.sup
 gas-treatment-unit_amine-sweetening,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,oil-and-gas/gas-processing: the leaf its name or label names
 gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-gasifier_coal-fischer-tropsch,oil-and-gas,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,provisional: no synthetic-fuels node yet
+gasifier_coal-fischer-tropsch,oil-and-gas,<sector>.petroleum-refining.product.synthetic-fuels,synthetic-fuels,,"new node 2026-10-09 (modeller), from crude distillation"
 heat-pump_oil-treating,oil-and-gas,<sector>.petroleum-crude.product.heavy,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 heat-pump_oil-treating,oil-and-gas,<sector>.petroleum-crude.product.light-medium.offshore,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 heat-pump_oil-treating,oil-and-gas,<sector>.petroleum-crude.product.light-medium.onshore,oil-and-gas-production,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -1094,7 +1049,7 @@ pump_electric-station,oil-and-gas,<sector>.petroleum-crude.product.transmission,
 pump_plunger-lift,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,oil-and-gas/venting: the leaf its name or label names
 reactor_ebullated-bed-hydrocracking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_fluid-coking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
-reactor_gas-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,provisional: no synthetic-fuels node yet
+reactor_gas-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.synthetic-fuels,synthetic-fuels,,"new node 2026-10-09 (modeller), from crude distillation"
 reactor_integrated-upgrader,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,as reactor_integrated-upgrader
 reactor_partial-upgrading,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
@@ -1106,7 +1061,7 @@ reciprocating-engine_dual-fuel,oil-and-gas,<sector>.petroleum-crude.product.expl
 reciprocating-engine_gasoline-propane,oil-and-gas,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
 separator_dry-stack-tailings,oil-and-gas,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_dry-stack-tailings,oil-and-gas,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-separator_dry-stack-tailings,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+separator_dry-stack-tailings,oil-and-gas,<sector>.petroleum-crude.service.tailings-disposal,oil-sands-tailings,,"new node 2026-10-09 (modeller), from bitumen mining"
 separator_non-aqueous,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_paraffinic-froth-treatment,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_produced-water-recycling,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
@@ -1201,9 +1156,7 @@ reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.p
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_isomerization,petroleum-refining,<sector>.petroleum-refining.product.isomerization,conversion-and-treating,,added 2026-10-05 (archetype combination review)
 refinery_conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
-refinery_conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,whole refinery: its conversion units
 refinery_deep-conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
-refinery_deep-conversion,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,,whole refinery: its coking units
 refinery_hydroskimming,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,whole refinery: product unit t crude processed
 steam-reformer_methane,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 steam-reformer_methane,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use

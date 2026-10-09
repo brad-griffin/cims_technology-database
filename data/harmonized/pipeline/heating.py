@@ -112,18 +112,33 @@ class Streams:
         self.defaults = [(r["source-pattern"].strip(), (r.get("default-basis") or "").strip().upper())
                          for r in read(REFERENCE / "source-heating-basis.csv")
                          if r.get("source-pattern", "").strip()]
+        # the publisher's regional convention, for a source no ruling names
+        # (modeller 2026-10-09): HHV for the US, Canada, the UK, Australia and
+        # Japan; LHV for continental Europe, international bodies and elsewhere
+        self.regional = {r["source-id"]: (r.get("default-basis") or "").strip().upper()
+                         for r in read(REFERENCE / "source-region.csv")}
 
     def default_basis(self, *source_ids) -> str:
         """The basis a source reports on when a row does not say: 'LHV', 'HHV' or ''.
-        A pattern ending in `_` is a prefix (etsap_), otherwise a whole source id."""
+        A ruling in source-heating-basis.csv first (a pattern ending in `_` is a
+        prefix, otherwise a whole source id), then the publisher's regional
+        convention in source-region.csv."""
+        return self.default(*source_ids)[0]
+
+    def default(self, *source_ids):
+        """(basis, 'source' | 'regional' | '')."""
         for sid in source_ids:
             sid = (sid or "").strip()
             if not sid:
                 continue
             for pat, basis in self.defaults:
                 if (sid.startswith(pat) if pat.endswith("_") else sid == pat):
-                    return basis
-        return ""
+                    return basis, "source"
+        for sid in source_ids:
+            b = self.regional.get((sid or "").strip(), "")
+            if b:
+                return b, "regional"
+        return "", ""
 
     def _r(self, fid):
         if not fid:

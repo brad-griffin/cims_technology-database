@@ -10,7 +10,7 @@ electrolyzer_solid-oxide,,cf-hhv-lhv-hydrogen,electricity (and steam) in; hydrog
 gasifier_biomass-methanation,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methane,wood in; SNG out (net efficiencies also count exported electricity at 1:1)
 gasifier_biomass-methanol,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methanol,wood in; methanol out
 shaft-furnace_electrolytic-hydrogen,,,energy use is electricity; the LHV in the source note describes the electrolyser
-reactor_haber-bosch-loop,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ammonia,hydrogen (and nitrogen) in; ammonia out. Electricity uses take ratio 1 by their target (heating.CARRIER_RATIO); the DEA catalogue prices and rates the loop per MW of ammonia on LHV, which needs the ammonia ratio (restored 2026-10-02: blank, those figures were 21% high)
+reactor_haber-bosch-loop,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ammonia,hydrogen (and nitrogen) in; ammonia out. Electricity uses take ratio 1 by their target (heating.CARRIER_RATIO); the DEA catalogue prices and rates the loop per MW of ammonia on LHV
 boiler_fuel-fired,cf-hhv-lhv-methane,,gas-fired in the sources that state LHV (DEA gas/oil boiler; natural gas is the main fuel)
 boiler_solid-fuel,cf-hhv-lhv-solid-liquid,,biomass or coal fuel
 direct-heater_fuel-fired,cf-hhv-lhv-methane,,natural gas burners
@@ -61,7 +61,7 @@ evaporator_food,,,no fuel carrier (steam / electricity); product t product (appr
 furnace_electric,,,no fuel carrier (electricity); product t glass (approved 2026-10-05)
 furnace_hybrid-electric,cf-hhv-lhv-methane,,single fuel natural-gas; product t glass (approved 2026-10-05)
 furnace_reheating_efficiency-strong,cf-hhv-lhv-methane,,single fuel natural-gas; product t reheated (approved 2026-10-05)
-furnace_twin-chamber,cf-hhv-lhv-methane,,single fuel natural-gas; product t metal (approved 2026-10-05)
+melting-furnace_twin-chamber,cf-hhv-lhv-methane,,single fuel natural-gas; product t metal (approved 2026-10-05)
 gas-treatment-unit_sulphur-recovery,cf-hhv-lhv-methane,,single fuel natural-gas; product t throughput (approved 2026-10-05)
 gasifier_biomass-chp,cf-hhv-lhv-solid-liquid,,single fuel biomass; product GJ (approved 2026-10-05)
 gasifier_biomass-waste,cf-hhv-lhv-solid-liquid,,single fuel biomass; product GJ (approved 2026-10-05)
@@ -161,3 +161,59 @@ kiln_rotary-expanded-clay,cf-hhv-lhv-methane,,several fuels; dominant fuel natur
 refinery_sugar-beet,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product t beet (decided 2026-10-05)
 shaft-furnace_direct-reduction,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product t iron (decided 2026-10-05)
 shaft-furnace_direct-reduction_ccs-concentrated,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product t iron (decided 2026-10-05)
+basic-oxygen-furnace_efficiency-strong,,,derived 2026-10-09 from carriers (none) and product (liquid steel) for the regional LHV default; review
+binder_alkali-activated,,,derived 2026-10-09 from carriers (none) and product (cement) for the regional LHV default; review
+blast-furnace_ccs-diffuse,cf-hhv-lhv-solid-liquid,,derived 2026-10-09 from carriers (by-product-gas; hydrogen; coke; coal) and product (iron) for the regional LHV default; review
+blast-furnace_efficiency-strong,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (coke; coal; natural-gas) and product (iron) for the regional LHV default; review
+boiler_fuel-fired_ccs-diffuse,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (biomass; natural-gas; coal; nuclear; by-product-gas; oil; biogas) and product (heat) for the regional LHV default; review
+boiler_oxy-fuel,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (coal; natural-gas; biomass) and product (heat) for the regional LHV default; review
+calciner_electric,,,derived 2026-10-09 from carriers (electricity) and product (alumina) for the regional LHV default; review
+capture-unit_advanced-solvent,,,derived 2026-10-09 from carriers (steam; electricity) and product (CO2) for the regional LHV default; review
+caster_strip,,,derived 2026-10-09 from carriers (electricity) and product (cast product) for the regional LHV default; review
+coating-line_electrolytic,,,derived 2026-10-09 from carriers (electricity) and product (finished product) for the regional LHV default; review
+coating-line_hot-dip,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas) and product (finished product) for the regional LHV default; review
+coke-oven_by-product_efficiency-strong,,,derived 2026-10-09 from carriers (none) and product (coke) for the regional LHV default; review
+combined-cycle_ccs-diffuse,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas) and product (electricity) for the regional LHV default; review
+combustion-turbine_chp_ccs-diffuse,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; biogas; by-product-gas) and product (heat) for the regional LHV default; review
+compressor_electric,,,derived 2026-10-09 from carriers (electricity) and product (shaft work) for the regional LHV default; review
+converter_continuous,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (electricity; natural-gas) and product (metal) for the regional LHV default; review
+distillation-column_heat-integrated,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (steam; natural-gas) and product (intermediate chemical) for the regional LHV default; review
+dryer_direct-fired,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; biogas; hydrogen; liquid-biomass; lpg; oil; coal) and product (dried product) for the regional LHV default; review
+dryer_direct-fired_efficiency-moderate,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas) and product (dried product) for the regional LHV default; review
+dryer_steam-heated,,,derived 2026-10-09 from carriers (steam) and product (dried product) for the regional LHV default; review
+electric-arc-furnace_scrap-preheating,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (electricity; natural-gas) and product (liquid steel) for the regional LHV default; review
+electrolysis-cell_chlor-alkali-diaphragm,,,derived 2026-10-09 from carriers (electricity; steam) and product (Cl2) for the regional LHV default; review
+fermenter_syngas,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ethanol,derived 2026-10-09 from carriers (biomass) and product (ethanol) for the regional LHV default; review
+flare,,,derived 2026-10-09 from carriers (none) and product (CO2) for the regional LHV default; review
+gasifier_biomass-ethylene,cf-hhv-lhv-solid-liquid,,derived 2026-10-09 from carriers (biomass) and product (high-value chemicals) for the regional LHV default; review
+gasifier_coal-ammonia,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-ammonia,derived 2026-10-09 from carriers (coal) and product (ammonia) for the regional LHV default; review
+gasifier_coal-methanol,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-methanol,derived 2026-10-09 from carriers (coal) and product (methanol) for the regional LHV default; review
+gasifier_coal-petroleum-coke_ccs-concentrated,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-hydrogen,derived 2026-10-09 from carriers (biomass; coal) and product (hydrogen) for the regional LHV default; review
+geothermal-well_flash-power,,,derived 2026-10-09 from carriers (geothermal) and product (electricity) for the regional LHV default; review
+haul-truck_diesel,cf-hhv-lhv-solid-liquid,,derived 2026-10-09 from carriers (diesel; electricity) and product (ore) for the regional LHV default; review
+heat-pump_heat-transformer,,,derived 2026-10-09 from carriers (waste-heat) and product (heat) for the regional LHV default; review
+incinerator_waste-to-energy,cf-hhv-lhv-solid-liquid,,derived 2026-10-09 from carriers (municipal-waste) and product (waste) for the regional LHV default; review
+kiln_dry-precalciner_ccs-diffuse,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (waste-heat; coal; petroleum-coke; natural-gas) and product (clinker) for the regional LHV default; review
+kiln_lumber-steam,,,derived 2026-10-09 from carriers (none) and product (lumber or panel product) for the regional LHV default; review
+liquefaction-train_small-scale,cf-hhv-lhv-methane,cf-hhv-lhv-methane,derived 2026-10-09 from carriers (natural-gas; electricity) and product (LNG) for the regional LHV default; review
+pickling-line_acid,,,derived 2026-10-09 from carriers (steam; electricity) and product (rolled product) for the regional LHV default; review
+pump_artificial-lift,,,derived 2026-10-09 from carriers (electricity) and product (oil or gas) for the regional LHV default; review
+reactor_adipic-acid,,,derived 2026-10-09 from carriers (steam; electricity) and product (product) for the regional LHV default; review
+reactor_co2-to-ethanol,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ethanol,derived 2026-10-09 from carriers (hydrogen; electricity) and product (ethanol) for the regional LHV default; review
+reactor_co2-to-fischer-tropsch,cf-hhv-lhv-hydrogen,cf-hhv-lhv-solid-liquid,derived 2026-10-09 from carriers (hydrogen; electricity) and product (renewable diesel and SAF) for the regional LHV default; review
+reactor_co2-to-ome3-5,cf-hhv-lhv-hydrogen,,derived 2026-10-09 from carriers (hydrogen; electricity; steam) and product (product) for the regional LHV default; review
+reactor_ethanol-to-ethylene,,,derived 2026-10-09 from carriers (none) and product (high-value chemicals) for the regional LHV default; review
+reactor_methanol-to-olefins,cf-hhv-lhv-methanol,,derived 2026-10-09 from carriers (methanol) and product (high-value chemicals) for the regional LHV default; review
+reactor_propane-dehydrogenation,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; electricity) and product (intermediate chemical) for the regional LHV default; review
+reactor_pyrolysis-oil,,,derived 2026-10-09 from carriers (none) and product (product) for the regional LHV default; review
+rolling-mill_hot,,,derived 2026-10-09 from carriers (electricity) and product (rolled product) for the regional LHV default; review
+rolling-mill_thin-slab,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; electricity) and product (cast product) for the regional LHV default; review
+sinter-plant_efficiency-strong,,,derived 2026-10-09 from carriers (none) and product (sinter or pellets) for the regional LHV default; review
+smelting-vessel_bath-tuyere,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; coal) and product (metal) for the regional LHV default; review
+smelting-vessel_bottom-blowing,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; coal) and product (metal) for the regional LHV default; review
+smelting-vessel_flash,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas) and product (metal) for the regional LHV default; review
+smelting-vessel_smelting-reduction,cf-hhv-lhv-solid-liquid,,derived 2026-10-09 from carriers (coal) and product (iron) for the regional LHV default; review
+smelting-vessel_top-submerged-lance,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (biomass; natural-gas; coal; oil) and product (metal) for the regional LHV default; review
+steam-cracker_fired-tubular_efficiency-moderate,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (oil; coal; methanol; biomass; steam; hydrogen; natural-gas; naphtha) and product (high-value chemicals) for the regional LHV default; review
+steam-reformer_methane_ccs-concentrated,cf-hhv-lhv-methane,cf-hhv-lhv-hydrogen,derived 2026-10-09 from carriers (natural-gas) and product (hydrogen) for the regional LHV default; review
+turboexpander_pressure-let-down,,,derived 2026-10-09 from carriers (electricity) and product (electricity) for the regional LHV default; review

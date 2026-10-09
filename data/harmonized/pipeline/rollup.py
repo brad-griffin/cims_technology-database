@@ -19,6 +19,12 @@ examples instead of sitting in a column of its own:
     electricity input, a levelized cost net of a subsidy or including delivery)
     keeps its own column.
 
+  * efficiency `heat` or `electricity` on an archetype with a single useful
+    output (not CHP, not boiler_recovery, gasifier_black-liquor or the
+    waste-to-energy incinerator): the stream efficiency is the overall
+    efficiency (modeller 2026-10-09). pipeline/rollin.py repeats the pooled value
+    in the stream's column afterwards.
+
 A row is relabelled only when its normalised unit is the unit the base already
 has on that archetype (or the base has none), so two units never share a cell.
 The target as reported stays in `target`; the note says what was done.
@@ -26,6 +32,8 @@ The target as reported stays in `target`; the note says what was done.
 from __future__ import annotations
 
 from collections import defaultdict
+
+from .rollin import dual
 
 ALWAYS = {("capex", "greenfield"), ("specific-energy-consumption", "total")}
 PRODUCT_PARAMS = {"capacity", "annual-output", "cost-levelized"}
@@ -40,7 +48,7 @@ PRODUCT_TARGETS = {
 ARCHETYPE_TARGETS = {
     "reactor_ethanol-to-ethylene": {"ethylene"},   # ethanol dehydration yields ethylene only
 }
-NOTE = "target '{t}' rolled into the base parameter: it names the archetype's own {what} (2026-10-08)"
+NOTE = "target '{t}' rolled into the base parameter: {what} (wide-view decisions 2026-10-08/09)"
 
 
 def _product_targets(a: dict) -> set[str]:
@@ -65,7 +73,9 @@ def apply(facts: list[dict], records) -> dict:
             what = "quantity (" + ("greenfield capex is capex" if p == "capex" else
                                    "an all-carrier total is the total") + ")"
         elif p in PRODUCT_PARAMS and t in _product_targets(arch.get(r["archetype"], {})):
-            what = "product"
+            what = "it names the archetype's own product"
+        elif p == "efficiency" and t in ("heat", "electricity") and not dual(arch.get(r["archetype"], {})):
+            what = "single output stream (its stream efficiency is the overall efficiency)"
         else:
             continue
         have = base_units.get((r["archetype"], p))
