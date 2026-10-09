@@ -106,15 +106,15 @@ gasifier_biomass-chp,heat-supply,<sector>.mining.service.steam,heat-low-temp,<se
 gasifier_biomass-chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 gasifier_biomass-chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 gasifier_biomass-chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-geothermal-well_direct-use,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+geothermal-well_direct-use,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_heat-transformer,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_heat-transformer,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_heat-transformer,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -135,6 +135,15 @@ heat-pump_industrial,heat-supply,<sector>.petroleum-crude.service.steam,heat-low
 heat-pump_industrial,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_industrial,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 heat-pump_industrial,heat-supply,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
+heat-pump_very-high-temperature,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+heat-pump_very-high-temperature,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 heat-recovery-unit_waste-heat,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,added 2026-10-05 (archetype combination review)
 heat-recovery-unit_waste-heat,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,added 2026-10-05 (archetype combination review)
 heat-recovery-unit_waste-heat,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,added 2026-10-05 (archetype combination review)
@@ -173,6 +182,15 @@ solar-collector,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp
 solar-collector,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-concentrator,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.light-industrial.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.metal-smelting.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.mining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_line-focus,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves

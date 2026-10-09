@@ -20,10 +20,12 @@ direct-heater_solid-fuel,<sector>.petroleum-refining.service.direct-heat,heat-me
 fuel-cell_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 gasifier_biomass-chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 heat-pump_industrial,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+heat-pump_very-high-temperature,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
 reactor_small-nuclear,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: steam leaves
 reactor_small-nuclear,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 reciprocating-engine_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 solar-collector,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
+solar-concentrator_line-focus,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
 solar-concentrator,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: steam leaves
 steam-turbine_back-pressure,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 thermal-storage_electric,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
@@ -627,7 +629,7 @@ reactor_ecf-bleaching,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pu
 reactor_integrated-upgrader_ccs-concentrated,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,as reactor_integrated-upgrader
 pipeline_co2,<root>.transmission.co2-pipeline-and-storage.*,co2-transport-and-storage,every route leaf
 well_co2-storage,<root>.transmission.co2-pipeline-and-storage.*,co2-transport-and-storage,every route leaf
-geothermal-well_direct-use,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
+geothermal-well_direct-use,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 reactor_steel-offgas-chemicals,<sector>.iron-and-steel.service.ccs.concentrated,co2-capture-concentrated,utilisation alternative to capture
 calciner_gas-suspension_ccs-diffuse,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,as digester_bayer
 gasifier_biomass-ethylene,<sector>.chemicals.product.petrochemicals.steam-cracking,steam-cracking,as steam-cracker_fired-tubular

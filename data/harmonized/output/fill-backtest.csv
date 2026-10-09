@@ -9,8 +9,11 @@ est-sibling-lifetime,direct-heater_electric,lifetime,20,18.75,10,30,yes,0.9375,"
 est-sibling-lifetime,direct-heater_fuel-fired,lifetime,22.5,17.5,10,21.875,no,0.777778,"tier 2: direct-heater_solid-fuel, direct-heater_electric"
 est-sibling-lifetime,direct-heater_solid-fuel,lifetime,15,21.25,10,30,yes,1.41667,"tier 2: direct-heater_fuel-fired, direct-heater_electric"
 est-sibling-lifetime,gasifier_biomass-chp,lifetime,15,22.5,10,40,yes,1.5,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_black-liquor, gasifier_biomass-methanol, gasifier_coal-fischer-tropsch, gasifier_biomass-fischer-tropsch, gasifier_biomass-ammonia, gasifier_biomass-waste, gasifier_biomass-ethylene, gasifier_coal-methanol, gasifier_coal-methanol_ccs-concentrated, gasifier_biomass-fischer-tropsch_ccs-concentrated"
-est-sibling-lifetime,heat-pump_industrial,lifetime,20,20,15,40,yes,1,tier 2: heat-pump_space
+est-sibling-lifetime,heat-pump_industrial,lifetime,20,20,12,40,yes,1,"tier 2: heat-pump_very-high-temperature, heat-pump_space"
+est-sibling-lifetime,heat-pump_very-high-temperature,lifetime,20,20,12,40,yes,1,"tier 2: heat-pump_industrial, heat-pump_space"
 est-sibling-lifetime,reactor_small-nuclear,lifetime,40,20,10,60,yes,0.5,"tier 2: reactor_methanol-to-olefins, reactor_ethanol-to-ethylene, reactor_nitric-acid, reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_methane-pyrolysis, reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_alkylation, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_haber-bosch-loop, reactor_catalytic-n2o, reactor_chemical-depolymerization, reactor_plastics-pyrolysis, reactor_hydrothermal-liquefaction, reactor_thermal-n2o-destruction, reactor_small-nuclear-power, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
+est-sibling-lifetime,solar-concentrator_line-focus,lifetime,30,30,15,37.5,yes,1,tier 2: solar-concentrator
+est-sibling-lifetime,solar-concentrator,lifetime,30,30,22.5,37.5,yes,1,tier 2: solar-concentrator_line-focus
 est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,22.5,16.875,40,yes,0.9,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
 est-sibling-lifetime,thermal-storage_electric,lifetime,25,20,10,50,yes,0.8,tier 2: thermal-storage_heat-charged
 est-sibling-lifetime,anaerobic-digester_chp,lifetime,17.5,16,12,20,yes,0.914286,"tier 2: anaerobic-digester, anaerobic-digester_effluent"
@@ -23,7 +26,7 @@ est-sibling-lifetime,motor_induction-standard,lifetime,25,10,1.5,20,no,0.4,tier 
 est-sibling-lifetime,motor_induction-standard_efficiency-moderate,lifetime,10,25,5.3792,31.25,yes,2.5,tier 1: motor_induction-standard
 est-sibling-lifetime,motor_premium-efficiency,lifetime,25,15,1.5,25,yes,0.6,"tier 2: motor_variable-speed, motor_induction-standard_efficiency-moderate, motor_induction-standard"
 est-sibling-lifetime,motor_variable-speed,lifetime,15,25,1.5,31.25,yes,1.66667,"tier 2: motor_premium-efficiency, motor_induction-standard_efficiency-moderate, motor_induction-standard"
-est-sibling-lifetime,heat-pump_space,lifetime,20,20,12,40,yes,1,tier 2: heat-pump_industrial
+est-sibling-lifetime,heat-pump_space,lifetime,20,20,12,40,yes,1,"tier 2: heat-pump_industrial, heat-pump_very-high-temperature"
 est-sibling-lifetime,capture-unit_advanced-solvent,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_calcium-looping, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
 est-sibling-lifetime,capture-unit_amine,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_calcium-looping, capture-unit_advanced-solvent, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
 est-sibling-lifetime,capture-unit_chemical-solvent,lifetime,25,25,18.75,31.25,yes,1,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_dac-solid-sorbent, capture-unit_calcium-looping, capture-unit_advanced-solvent, capture-unit_membrane-cryogenic, capture-unit_physical-solvent"
@@ -197,6 +200,8 @@ est-sibling-construction-time,direct-heater_fuel-fired,construction-time,0.01,0.
 est-sibling-construction-time,direct-heater_solid-fuel,construction-time,0.01,0.025,0.01,0.04,yes,2.5,"tier 2: direct-heater_fuel-fired, direct-heater_electric"
 est-sibling-construction-time,gasifier_biomass-chp,construction-time,0.3,2.5,1.875,4,no,8.33333,"tier 2: gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_black-liquor, gasifier_biomass-methanol, gasifier_coal-fischer-tropsch, gasifier_biomass-fischer-tropsch"
 est-sibling-construction-time,reactor_small-nuclear,construction-time,5,2.5,1.875,5.91667,yes,0.5,"tier 2: reactor_co2-to-methanol, reactor_methane-pyrolysis, reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_haber-bosch-loop, reactor_chemical-depolymerization, reactor_hydrothermal-liquefaction, reactor_small-nuclear-power, reactor_pyrolysis-oil, reactor_alcohol-to-jet"
+est-sibling-construction-time,solar-concentrator_line-focus,construction-time,1,1,0.75,3,yes,1,tier 2: solar-concentrator
+est-sibling-construction-time,solar-concentrator,construction-time,1,1,0.75,3,yes,1,tier 2: solar-concentrator_line-focus
 est-sibling-construction-time,steam-turbine_back-pressure,construction-time,2.41667,4.75,1,5.9375,yes,1.96551,tier 2: steam-turbine_condensing
 est-sibling-construction-time,thermal-storage_electric,construction-time,1,1,0.75,2,yes,1,tier 2: thermal-storage_heat-charged
 est-sibling-construction-time,anaerobic-digester_chp,construction-time,2,2,1.5,2.5,yes,1,tier 2: anaerobic-digester
@@ -244,6 +249,8 @@ est-sibling-capacity-factor,boiler_solid-fuel,capacity-factor,91.32,71.3475,22.8
 est-sibling-capacity-factor,combustion-turbine_chp,capacity-factor,89,51,38.25,63.75,no,0.573034,tier 1: combustion-turbine_chp_ccs-diffuse
 est-sibling-capacity-factor,combustion-turbine_chp_ccs-diffuse,capacity-factor,51,89,66.75,100,no,1.7451,tier 1: combustion-turbine_chp
 est-sibling-capacity-factor,gasifier_biomass-chp,capacity-factor,90,90,57.1,100,yes,1,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_black-liquor, gasifier_biomass-methanol, gasifier_coal-fischer-tropsch, gasifier_biomass-fischer-tropsch, gasifier_biomass-waste"
+est-sibling-capacity-factor,heat-pump_industrial,capacity-factor,47.8,91.3,68.475,100,no,1.91004,tier 2: heat-pump_very-high-temperature
+est-sibling-capacity-factor,heat-pump_very-high-temperature,capacity-factor,91.3,47.8,35.85,68.5,no,0.523549,tier 2: heat-pump_industrial
 est-sibling-capacity-factor,steam-turbine_back-pressure,capacity-factor,76.25,69.6,17.6,95,yes,0.912787,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
 est-sibling-capacity-factor,anaerobic-digester_chp,capacity-factor,70,91.3,68.475,100,yes,1.30429,tier 2: anaerobic-digester_biomethane-upgrading
 est-sibling-capacity-factor,steam-turbine_condensing,capacity-factor,70,72.725,17.6,95,yes,1.03893,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
