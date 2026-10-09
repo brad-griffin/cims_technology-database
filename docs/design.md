@@ -497,8 +497,9 @@ Rules in force (2026-09-30):
   `unmapped`.
 - `est-sibling-lifetime`, `est-sibling-construction-time`,
   `est-sibling-capacity-factor` (2026-10-01): the median sourced value of the
-  nearest siblings (same equipment and discriminator, else same equipment; same
-  product unit). The range spans the siblings' values and at least +/-25% of the
+  nearest siblings (same equipment and discriminator, else same equipment; the
+  product unit need not match, since these three do not depend on it: modeller
+  2026-10-09). The range spans the siblings' values and at least +/-25% of the
   central. These parameters depend little on carrier or variant; capex and O&M
   are not copied between siblings without a ratio from a source that prices both.
 Parked methods (written and back-tested, status `off`; set a rule `active` to use it):

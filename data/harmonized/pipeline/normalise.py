@@ -612,6 +612,21 @@ def normalise(facts, examples, records, units) -> None:
             note = (note + "; " if note else "") + f"MW electric x heat-to-power ratio {hp[0]:.3g}"
             cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
             used.append(hp[1])
+        if (p in ("opex-variable", "opex-total") and r.get("capacity-basis") == "electric-output"
+                and re.search(r"/(k|M)Wh\b", unit) and heat_product(a, pu) and factor is not None):
+            # a cost per MWh of ELECTRICITY on an archetype whose product is heat
+            # (CHP, waste-to-energy): per GJ of heat with the heat-to-power ratio,
+            # as the per-kW costs (fixed 2026-10-09; before, per MWh electric was
+            # read as per MWh of heat)
+            hp = hp_for(scale.get(r["example-id"], {}), a)
+            if not hp:
+                r["excluded"] = ("cost per unit of electricity on a heat-product archetype; no "
+                                 "heat-to-power ratio from the source or the archetype's examples")
+                continue
+            factor /= hp[0]
+            note = (note + "; " if note else "") + f"per MWh electric / heat-to-power ratio {hp[0]:.3g}"
+            cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
+            used.append(hp[1])
         if p in EXTENSIVE and pu == "GJ" and r.get("capacity-basis") in heating.INPUT_BASES:
             bridge_kind = "capacity-in"
         if (p in PER_CAPACITY and pu == "GJ" and not bridge_kind

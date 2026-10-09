@@ -217,10 +217,15 @@ def m_host_copy(rule, a, have, ctx):
              "sources": host.get("sources", ""), "external": []}]
 
 
+# parameters whose value does not depend on the product unit: siblings need not
+# share it (modeller 2026-10-09)
+UNIT_FREE = {"lifetime", "construction-time", "capacity-factor"}
+
+
 def _siblings(a, p, ctx):
     """(tier, [(archetype, row)]) -- the nearest archetypes with a SOURCED value of
-    p: tier 1 same equipment and discriminator, tier 2 same equipment; always the
-    same product unit."""
+    p: tier 1 same equipment and discriminator, tier 2 same equipment; the same
+    product unit, except for the unit-free parameters (UNIT_FREE)."""
     A = ctx["arch"]
     for tier, same in ((1, ("equipment", "discriminator")), (2, ("equipment",))):
         rows = []
@@ -228,7 +233,8 @@ def _siblings(a, p, ctx):
             if k == a["archetype"] or k not in A:
                 continue
             b = A[k]
-            if b["product-unit"] != a["product-unit"] or any(b[f] != a[f] for f in same):
+            if ((b["product-unit"] != a["product-unit"] and p not in UNIT_FREE)
+                    or any(b[f] != a[f] for f in same)):
                 continue
             r = h.get((p, ""))
             if _sourced(r):

@@ -212,6 +212,8 @@ photovoltaic-array_battery-storage,power-generation,<sector>.mining.service.on-s
 reactor_small-nuclear-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,split from reactor_small-nuclear 2026-10-09: power archetype for the power node
 steam-turbine_condensing,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 steam-turbine_waste-heat,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
+turboexpander_pressure-let-down,power-generation,<sector>.natural-gas.product.distribution,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
+turboexpander_pressure-let-down,power-generation,<sector>.natural-gas.product.transmission,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
 wind-turbine,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -265,6 +267,8 @@ combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.servi
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
+compressor_electric,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
+compressor_electric,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -416,6 +420,9 @@ motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-d
 motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.light-industrial.service.hvac.space-cooling,space-cooling,,cross-sector/space-cooling: every leaf of the end use
+pump_mine-dewatering,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,,"moved from tailings-disposal 2026-10-09: a pump provides shaft work, not tailings disposed"
+pump_mine-dewatering,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
+reciprocating-engine_diesel-field,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
 reciprocating-engine_drive,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
 reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
@@ -442,6 +449,10 @@ reciprocating-engine_drive,machine-drive,<sector>.metal-smelting.service.machine
 reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive_efficiency-moderate,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
+reciprocating-engine_gasoline-propane,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
+separator_tailings-reclaim,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09: tailings-water reclaim pumping
+separator_tailings-reclaim,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -876,13 +887,9 @@ pellet-plant_induration_efficiency-moderate,mining,<sector>.mining.service.pelle
 press_dewatering,mining,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 press_dewatering,mining,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,methane control on coal extraction; a coal-mine methane node is requested
-pump_mine-dewatering,mining,<sector>.coal-mining.service.machine-drive.pumps,pumps,,"moved from tailings-disposal 2026-10-09: a pump provides shaft work, not tailings disposed"
-pump_mine-dewatering,mining,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 separator_gravity-magnetic,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
 separator_ore-sorting,mining,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_ore-sorting,mining,<sector>.mining.service.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-separator_tailings-reclaim,mining,<sector>.coal-mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09: tailings-water reclaim pumping
-separator_tailings-reclaim,mining,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 separator_thickening-filtration,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
 calciner_electric,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
@@ -994,8 +1001,6 @@ melting-furnace_hot-blast-cupola,non-metallic-minerals,<sector>.industrial-miner
 adsorber_molecular-sieve,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 compressor_blowdown-recovery,oil-and-gas,<sector>.natural-gas.product.supply.venting.blowdowns,venting,,oil-and-gas/venting: the leaf its name or label names
 compressor_boil-off-recovery,oil-and-gas,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,,oil-and-gas/lng-liquefaction: every leaf of the end use
-compressor_electric,oil-and-gas,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
-compressor_electric,oil-and-gas,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
 compressor_flare-gas-recovery,oil-and-gas,<sector>.natural-gas.product.supply.flaring,flaring,,oil-and-gas/flaring: every leaf of the end use
 compressor_low-emission-seal,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
 compressor_vapour-recovery,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -1053,12 +1058,9 @@ reactor_gas-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.synthetic
 reactor_integrated-upgrader,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
 reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,as reactor_integrated-upgrader
 reactor_partial-upgrading,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading,bitumen-upgrading,,oil-and-gas/bitumen-upgrading: every leaf of the end use
-reciprocating-engine_diesel-field,oil-and-gas,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
-reciprocating-engine_drive_efficiency-moderate,oil-and-gas,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
 reciprocating-engine_dual-fuel,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
 reciprocating-engine_dual-fuel,oil-and-gas,<sector>.natural-gas.product.supply.well-tests,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
 reciprocating-engine_dual-fuel,oil-and-gas,<sector>.petroleum-crude.product.exploration,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
-reciprocating-engine_gasoline-propane,oil-and-gas,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
 separator_dry-stack-tailings,oil-and-gas,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_dry-stack-tailings,oil-and-gas,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 separator_dry-stack-tailings,oil-and-gas,<sector>.petroleum-crude.service.tailings-disposal,oil-sands-tailings,,"new node 2026-10-09 (modeller), from bitumen mining"
@@ -1069,8 +1071,6 @@ separator_reduced-emission-completion,oil-and-gas,<sector>.natural-gas.product.s
 separator_warm-lime-softening,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 separator_warm-water-extraction,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining,oil-sands-mining-and-extraction,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.processing,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-turboexpander_pressure-let-down,oil-and-gas,<sector>.natural-gas.product.distribution,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
-turboexpander_pressure-let-down,oil-and-gas,<sector>.natural-gas.product.transmission,gas-pipelines,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
 well_cyclic-steam,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_disposal-injection,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 well_electromagnetic-heating,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
