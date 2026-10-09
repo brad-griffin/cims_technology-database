@@ -62,8 +62,8 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_small-nuclear` | Small nuclear reactor (SMR, high-temperature or micro) | prospective | nuclear | 7-8 | petroleum-refining.service.direct-heat; *.service.steam | quantified |
 | `reciprocating-engine_chp` | Reciprocating engine CHP | conventional | natural-gas; biogas; landfill-gas | 9 | *.service.steam | quantified |
 | `solar-collector` | Solar thermal (non-concentrating) | alternative | solar | 7-9 | *.service.steam | quantified |
-| `solar-concentrator` | Solar tower or dish concentrator | prospective | solar | 6 | petroleum-refining.service.direct-heat | quantified |
 | `solar-concentrator_line-focus` | Line-focus solar concentrator (parabolic trough, linear Fresnel) | alternative | solar | 7-9 | *.service.steam | quantified |
+| `solar-concentrator_point-focus` | Point-focus solar concentrator (tower, dish) | prospective | solar | 6 | petroleum-refining.service.direct-heat | quantified |
 | `steam-turbine_back-pressure` | Back-pressure or extraction steam-turbine CHP | conventional | biomass; coal; municipal-waste; steam; natural-gas; oil; black-liquor; by-product-gas | 9 | *.service.steam | quantified |
 | `thermal-storage_electric` | Electric thermal energy storage | prospective | electricity | 8 | *.service.steam; petroleum-refining.service.direct-heat | quantified |
 | `thermal-storage_heat-charged` | Heat-charged thermal storage | alternative | waste-heat; steam | 8-9 | *.service.steam | quantified |
@@ -284,8 +284,8 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
-| `autothermal-reformer` | Autothermal reformer (hydrogen) | prospective | natural-gas | 5 | petroleum-refining.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
-| `autothermal-reformer_ccs-concentrated` | Autothermal reforming to hydrogen with full capture | prospective | ammonia; natural-gas | 6 | petroleum-refining.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
+| `autothermal-reformer_hydrogen` | Autothermal reformer (hydrogen) | prospective | natural-gas | 5 | petroleum-refining.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Autothermal reforming to hydrogen with full capture | prospective | ammonia; natural-gas | 6 | petroleum-refining.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |
 | `electrolyzer_solid-oxide` | Solid-oxide electrolysis | prospective | electricity; steam | 8 | hydrogen.product.centralized-hydrogen | quantified |
 | `gasifier_biomass-waste` | Biomass or waste gasification to hydrogen | prospective | biomass | 6 | hydrogen.product.centralized-hydrogen | quantified |
 | `gasifier_coal-petroleum-coke_ccs-concentrated` | Coal or petroleum-coke gasification to hydrogen with capture | prospective | biomass; coal | 5 | hydrogen.product.centralized-hydrogen | quantified |
@@ -1010,7 +1010,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `hot-water` | Heat pump for hot water and clean-in-place | no |
 | `hpgr` | HPGR-based grinding circuit | no |
 | `hybrid-electric` | Furnace melting with a large share of electric boosting alongside fuel firing | yes |
-| `hydrogen` | Hydrogen liquefaction and road transport | no |
+| `hydrogen` | Hydrogen liquefaction and road transport; Autothermal reforming to hydrogen | no |
 | `hydrogen-ancillary` | Hydrogen-fired ancillary heat | no |
 | `hydrogen-bell` | Hydrogen bell annealing | no |
 | `hydrogen-blending` | Blending into the natural gas network | no |
@@ -1135,6 +1135,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `plastic-liner` | Plastic insert liner in an existing main | no |
 | `plastics-pyrolysis` | Plastics pyrolysis recycling | no |
 | `plunger-lift` | Plunger lift and smart liquids unloading | no |
+| `point-focus` | Point-focus solar concentrator (tower, dish) | yes |
 | `polymerization-extrusion` | Polymerization reactor and extrusion | no |
 | `potash-crystallization` | Potash crystallization and flotation | no |
 | `power-modulation` | Smelter power modulation | no |

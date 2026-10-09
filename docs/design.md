@@ -149,6 +149,13 @@ follow it.
 Examples: `boiler_fuel-fired`, `kiln_dry-precalciner_efficiency-moderate`,
 `blast-furnace_top-gas-recycling`, `steam-reformer_methane_ccs-concentrated`.
 
+**Base and variants vs parallel options (modeller 2026-10-09):** a bare
+`equipment` key is a base, and the keys that add a discriminator to it are its
+variants (`blast-furnace` and `blast-furnace_top-gas-recycling`). Options that are
+parallel, neither a variant of the other, all carry a discriminator
+(`solar-concentrator_point-focus` and `solar-concentrator_line-focus`;
+`autothermal-reformer_hydrogen` and `autothermal-reformer_ammonia`).
+
 **Never in a key:**
 - a carrier, unless it changes the equipment;
 - a size class, vintage, region or product name;

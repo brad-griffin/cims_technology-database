@@ -2091,8 +2091,8 @@ Mappings seeded from the retired pipeline where the source's own name points som
 | `anaerobic-digester_chp` | Labriet 2013 (ETSAP P11) `reciprocating-engine_biogas_chp` (Digestor for 500 kWe CHP plant (Murphy et al., 2011)) | equipment `reciprocating-engine` |
 | `anaerobic-digester_chp` | Van Geene et al. 2024 (MIDDEN) `tc0100_uasb-digester-and-chp` (Utility [West et al., 2020]) | equipment `tc0100` |
 | `anaerobic-digester_chp` | Van Geene et al. 2024 (MIDDEN) `tc0319_digester-chp` (Utilities [Muller et al., 2021]) | equipment `tc0319` |
-| `autothermal-reformer` | Van Geene et al. 2024 (MIDDEN) `tc0357_hydrogen-production-by-autothermal-reforming-atr` (Hydrogen and syngas production [Cioli et al., 2021]) | equipment `tc0357` |
 | `autothermal-reformer_ammonia_ccs-concentrated` | Bataille 2017 `autothermal-reformer_ammonia` (Ammonia: production process, steam reforming) | capture in one name only |
+| `autothermal-reformer_hydrogen` | Van Geene et al. 2024 (MIDDEN) `tc0357_hydrogen-production-by-autothermal-reforming-atr` (Hydrogen and syngas production [Cioli et al., 2021]) | equipment `tc0357` |
 | `basic-oxygen-furnace` | Van Geene et al. 2024 (MIDDEN) `tc0024_basic-oxygen-furnace` (Crude steel production [Keys, Van Hout and Daniëls, 2019]) | equipment `tc0024` |
 | `basic-oxygen-furnace_efficiency-strong` | NEDO 2008 `recovery-unit_basic-oxygen-furnace-gas` (2.2(1) Iron and steel: converter (BOF) gas recovery (pp.79-80)) | equipment `recovery-unit` |
 | `binder_alkali-activated` | Cochez and Nijs 2010 (ETSAP I03) `reactor_geopolymer` (Alternative binder) | equipment `reactor` |
@@ -2953,11 +2953,6 @@ Mappings seeded from the retired pipeline where the source's own name points som
 | `smelting-vessel_smelting-reduction_ccs-concentrated` | IEA 2024 `smelting-vessel` (With carbon capture and usage) | capture in one name only |
 | `smelting-vessel_smelting-reduction_ccs-concentrated` | Van Geene et al. 2024 (MIDDEN) `tc0036_hisarna-reactor-with-carbon-capture` (Crude steel production [Keys, Van Hout and Daniëls, 2019]) | equipment `tc0036` |
 | `solar-collector` | Bataille 2017 `direct-heater_solar` (non-ferrous-metals) | equipment `direct-heater` |
-| `solar-concentrator` | Deloitte 2022 `solar-collector` (Concentrated solar thermal in alumina refining (Sect. 4.7.4, p.29)) | equipment `solar-collector` |
-| `solar-concentrator` | IEA 2024 `direct-heater_solar` (Shift in energy sources and electrification) | equipment `direct-heater` |
-| `solar-concentrator` | MPP 2023 `solar-collector` (Alumina refining, digestion steam production, CST (Technical Appendix Exhibit TA3.1)) | equipment `solar-collector` |
-| `solar-concentrator` | MPP 2023 `solar-collector` (Digestion technology comparison: 2030 direct emissions and 2035 levelised cost (Full report Exhibit 1.10, p.35)) | equipment `solar-collector` |
-| `solar-concentrator` | MPP 2023 `solar-collector` (Near-zero-emissions technologies, emissions reduction potentials (Full report Sect. 1.2.4, pp.33-36)) | equipment `solar-collector` |
 | `solar-concentrator_line-focus` | Kempener and Saygin 2014 `solar-collector` (Solar thermal process heat (Sect. 6)) | equipment `solar-collector` |
 | `solar-concentrator_line-focus` | McMillan et al. 2021 `solar-collector_linear-fresnel-dsg` (Solar technology packages, SAM (Sect. 3.2, Table 6, Table C-1, App. D)) | equipment `solar-collector` |
 | `solar-concentrator_line-focus` | McMillan et al. 2021 `solar-collector_parabolic-trough-oil-tes-6h` (Solar technology packages, SAM (Sect. 3.2, Table 6, Table C-1, App. D)) | equipment `solar-collector` |
@@ -2967,6 +2962,11 @@ Mappings seeded from the retired pipeline where the source's own name points som
 | `solar-concentrator_line-focus` | Saw et al. 2023 `solar-collector` (Program 1: CST steam for Bayer digestion, levelised cost of heat, lowest supplier cost estimates (Executive Summary p.III; Sect. 6.5.2)) | equipment `solar-collector` |
 | `solar-concentrator_line-focus` | Saw et al. 2023 `solar-collector_solar_linear-fresnel` (Program 1: CST steam for Bayer digestion, Linear Fresnel, 392 MWth, Pinjarra (Sect. 6.5.2, Table 45)) | equipment `solar-collector` |
 | `solar-concentrator_line-focus` | Saw et al. 2023 `solar-collector_solar_parabolic-trough` (Program 1: CST steam for Bayer digestion, Parabolic trough, 392 MWth, Pinjarra (Sect. 6.5.2, Table 45)) | equipment `solar-collector` |
+| `solar-concentrator_point-focus` | Deloitte 2022 `solar-collector` (Concentrated solar thermal in alumina refining (Sect. 4.7.4, p.29)) | equipment `solar-collector` |
+| `solar-concentrator_point-focus` | IEA 2024 `direct-heater_solar` (Shift in energy sources and electrification) | equipment `direct-heater` |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` (Alumina refining, digestion steam production, CST (Technical Appendix Exhibit TA3.1)) | equipment `solar-collector` |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` (Digestion technology comparison: 2030 direct emissions and 2035 levelised cost (Full report Exhibit 1.10, p.35)) | equipment `solar-collector` |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` (Near-zero-emissions technologies, emissions reduction potentials (Full report Sect. 1.2.4, pp.33-36)) | equipment `solar-collector` |
 | `space-heater_fuel-fired` | DEA 2026 (heating installations) `boiler_natural-gas_condensing` (202 Natural gas boiler - apartment complex - existing building (sheet '202 Gas boiler, ex apart')) | equipment `boiler` |
 | `space-heater_fuel-fired` | DEA 2026 (heating installations) `boiler_natural-gas_condensing` (202 Natural gas boiler - apartment complex - new building (sheet '202 Gas boiler, new apart')) | equipment `boiler` |
 | `space-heater_fuel-fired` | DEA 2026 (heating installations) `boiler_oil` (201 Oil boiler (mineral oil fired, < 10 % FAME) - apartment complex - existing building (sheet '201 Oil boiler, ex apart')) | equipment `boiler` |
@@ -4652,7 +4652,7 @@ An archetype placed on an end use made of several hierarchy nodes, where neither
 
 ## Vocabulary
 
-- 476 of 497 discriminators are not yet reviewed (`reviewed` column of `records/vocabulary/discriminator.csv`); their definition is seeded from the archetype labels that use them.
+- 476 of 498 discriminators are not yet reviewed (`reviewed` column of `records/vocabulary/discriminator.csv`); their definition is seeded from the archetype labels that use them.
 - 12 equipment terms no archetype uses: arc-heater, clinker-cooler, crusher, microturbine, microwave-heater, pasteurizer, photochemical-heater, plasma-torch, precalciner, refining-furnace, roaster, rotary-compression-heater.
 
 ## Examples by archetype
@@ -5756,26 +5756,6 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `solar-collector` | McMillan et al. 2021 `solar-collector_flat-plate-water-storage` | Solar technology packages, SAM (Sect. 3.2, Table 6, Table C-1, App. D) | 3 |  |
 | `solar-collector` | Stuckrath and Worrell 2022 `solar-collector_compound-parabolic` | Solar steam, Four Fathers Distillery Jacksonville (Ch.9 case study, p.74) | 1 |  |
 | `solar-collector` | RTC 2023 `solar-collector_evacuated-tube` | Renewable thermal technologies and temperature (p.11) | 1 |  |
-| `solar-concentrator` | IEA 2024 `direct-heater_solar` | Shift in energy sources and electrification | 0 |  |
-| `solar-concentrator` | MPP 2023 `solar-collector` | Alumina refining, digestion steam production, CST (Technical Appendix Exhibit TA3.1) | 8 | 4 |
-| `solar-concentrator` | MPP 2023 `solar-collector` | Digestion technology comparison: 2030 direct emissions and 2035 levelised cost (Full report Exhibit 1.10, p.35) | 2 | 2 |
-| `solar-concentrator` | MPP 2023 `solar-collector` | Near-zero-emissions technologies, emissions reduction potentials (Full report Sect. 1.2.4, pp.33-36) | 0 |  |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1a (windowless SEVR receiver with air only), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 1 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1a (windowless SEVR receiver with air only), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Learmonth, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Learmonth, solar multiple 5 (Table 44, p.141) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 2 (windowed SEVR receiver with air only), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 2 (windowed SEVR receiver with air only), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
-| `solar-concentrator` | Saw et al. 2023 `solar-concentrator_solar_tower` | Program 1: CST steam for Bayer digestion, Solar tower, 392 MWth, Pinjarra (Sect. 6.5.2, Table 45) | 4 |  |
-| `solar-concentrator` | Deloitte 2022 `solar-collector` | Concentrated solar thermal in alumina refining (Sect. 4.7.4, p.29) | 3 |  |
-| `solar-concentrator` | McMillan et al. 2016 `solar-concentrator_high-temperature` | Summary of heat generators and potential industrial users (Sect. 4.1.4, Table 13) | 2 |  |
-| `solar-concentrator` | RTC 2023 `solar-concentrator_heliostat-tower` | Renewable thermal technologies and temperature (p.11) | 2 |  |
-| `solar-concentrator` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_dish` | CSP key data (Table 6) | 2 |  |
-| `solar-concentrator` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_dish` | CSP technologies (Table 1) | 1 |  |
-| `solar-concentrator` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_tower` | CSP key data (Table 6) | 5 |  |
-| `solar-concentrator` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_tower` | CSP technologies (Table 1) | 3 |  |
 | `solar-concentrator_line-focus` | Philibert 2017a `solar-concentrator_solar` | Solar heat | 1 |  |
 | `solar-concentrator_line-focus` | Kempener and Saygin 2014 `solar-collector` | Solar thermal process heat (Sect. 6) | 1 |  |
 | `solar-concentrator_line-focus` | Saw et al. 2023 `solar-collector` | Program 1: CST steam for Bayer digestion, levelised cost of heat, average supplier cost estimates (Executive Summary p.III; Sect. 6.5.2) | 1 |  |
@@ -5791,6 +5771,26 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `solar-concentrator_line-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_linear-fresnel` | CSP technologies (Table 1) | 1 |  |
 | `solar-concentrator_line-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_parabolic-trough` | CSP key data (Table 6) | 7 |  |
 | `solar-concentrator_line-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_parabolic-trough` | CSP technologies (Table 1) | 3 |  |
+| `solar-concentrator_point-focus` | IEA 2024 `direct-heater_solar` | Shift in energy sources and electrification | 0 |  |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` | Alumina refining, digestion steam production, CST (Technical Appendix Exhibit TA3.1) | 8 | 4 |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` | Digestion technology comparison: 2030 direct emissions and 2035 levelised cost (Full report Exhibit 1.10, p.35) | 2 | 2 |
+| `solar-concentrator_point-focus` | MPP 2023 `solar-collector` | Near-zero-emissions technologies, emissions reduction potentials (Full report Sect. 1.2.4, pp.33-36) | 0 |  |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1a (windowless SEVR receiver with air only), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 1 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1a (windowless SEVR receiver with air only), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Learmonth, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Learmonth, solar multiple 5 (Table 44, p.141) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 1b (windowless SEVR receiver with air and particles), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 2 (windowed SEVR receiver with air only), Pinjarra, solar multiple 2.5 (Table 43, p.139) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Hybrid calciner CST hot air, Configuration 2 (windowed SEVR receiver with air only), Pinjarra, solar multiple 5 (Table 44, p.141) | 10 | 3 |
+| `solar-concentrator_point-focus` | Saw et al. 2023 `solar-concentrator_solar_tower` | Program 1: CST steam for Bayer digestion, Solar tower, 392 MWth, Pinjarra (Sect. 6.5.2, Table 45) | 4 |  |
+| `solar-concentrator_point-focus` | Deloitte 2022 `solar-collector` | Concentrated solar thermal in alumina refining (Sect. 4.7.4, p.29) | 3 |  |
+| `solar-concentrator_point-focus` | McMillan et al. 2016 `solar-concentrator_high-temperature` | Summary of heat generators and potential industrial users (Sect. 4.1.4, Table 13) | 2 |  |
+| `solar-concentrator_point-focus` | RTC 2023 `solar-concentrator_heliostat-tower` | Renewable thermal technologies and temperature (p.11) | 2 |  |
+| `solar-concentrator_point-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_dish` | CSP key data (Table 6) | 2 |  |
+| `solar-concentrator_point-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_dish` | CSP technologies (Table 1) | 1 |  |
+| `solar-concentrator_point-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_tower` | CSP key data (Table 6) | 5 |  |
+| `solar-concentrator_point-focus` | Simbolotti 2013 (ETSAP E10) `solar-concentrator_tower` | CSP technologies (Table 1) | 3 |  |
 | `steam-turbine_back-pressure` | Bataille 2017 `steam-turbine_biomass_chp` | CHP plants | 6 |  |
 | `steam-turbine_back-pressure` | Bataille 2017 `steam-turbine_coal_chp` | CHP plants | 5 |  |
 | `steam-turbine_back-pressure` | Bataille 2017 `steam-turbine_municipal-waste_chp` | CHP plants | 1 | 1 |
@@ -8329,22 +8329,22 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 
 | archetype | example | process | rows | not pooled |
 |---|---|---|---:|---:|
-| `autothermal-reformer` | IEA 2019 `autothermal-reformer_natural-gas` | Hydrogen production | 0 |  |
-| `autothermal-reformer` | IEA 2024 `autothermal-reformer` | Thermal processes | 0 |  |
-| `autothermal-reformer` | Moore 2017 `autothermal-reformer_natural-gas` | Hydrogen production | 4 | 1 |
-| `autothermal-reformer` | Van Geene et al. 2024 (MIDDEN) `tc0357_hydrogen-production-by-autothermal-reforming-atr` | Hydrogen and syngas production [Cioli et al., 2021] | 6 | 4 |
-| `autothermal-reformer` | Boulamanti and Moya 2017 `autothermal-reformer` | Hydrogen production routes (Sect. 5.4.2, Tables 40-41) | 7 | 3 |
-| `autothermal-reformer_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR+CCS production cost, long-term, four US regions (Fig. 11 headline, p.16) | 1 | 1 |
-| `autothermal-reformer_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR+CCS production cost, near-term, four US regions (Fig. 11 headline, p.16) | 1 | 1 |
-| `autothermal-reformer_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR or SMR with CCS, LCOH including 45Q, 2030 (Fig. 13, p.18) | 1 | 1 |
-| `autothermal-reformer_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR with CCS, 660 t/d new-build reference plant (Fig. 7 fn b, Fig. 11 fn a, App. 6) | 8 | 2 |
-| `autothermal-reformer_ccs-concentrated` | Zapantis 2021 `autothermal-reformer_ccs-concentrated` | Emissions intensity of hydrogen production pathways (Sect. 1.0, Figure 2) | 1 |  |
-| `autothermal-reformer_ccs-concentrated` | Lewis et al. 2022 `autothermal-reformer_ccs-concentrated` | Case 3: ATR with CO2 capture, 659,999 kg H2/day (Sect. 3.12-3.15) | 26 | 21 |
-| `autothermal-reformer_ccs-concentrated` | NREL 2026 `autothermal-reformer_ccs-concentrated` | H2A-Lite pathway: Central ATR w/CCS, NETL 2022 Case 3 basis (ATR+CCS Case 3 sheet) | 13 | 7 |
-| `autothermal-reformer_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Existing and proposed blue hydrogen projects, Air Products Alberta (Table 1) | 1 | 1 |
-| `autothermal-reformer_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Existing and proposed blue hydrogen projects, H2H Saltend (Table 1) | 1 | 1 |
-| `autothermal-reformer_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Life cycle GHG intensity scenarios, Blue H2, ATR, average performance (Appendix 1, Table 2) | 2 |  |
-| `autothermal-reformer_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Life cycle GHG intensity scenarios, Blue H2, ATR, high performance (Appendix 1, Table 2) | 2 | 2 |
+| `autothermal-reformer_hydrogen` | IEA 2019 `autothermal-reformer_natural-gas` | Hydrogen production | 0 |  |
+| `autothermal-reformer_hydrogen` | IEA 2024 `autothermal-reformer` | Thermal processes | 0 |  |
+| `autothermal-reformer_hydrogen` | Moore 2017 `autothermal-reformer_natural-gas` | Hydrogen production | 4 | 1 |
+| `autothermal-reformer_hydrogen` | Van Geene et al. 2024 (MIDDEN) `tc0357_hydrogen-production-by-autothermal-reforming-atr` | Hydrogen and syngas production [Cioli et al., 2021] | 6 | 4 |
+| `autothermal-reformer_hydrogen` | Boulamanti and Moya 2017 `autothermal-reformer` | Hydrogen production routes (Sect. 5.4.2, Tables 40-41) | 7 | 3 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR+CCS production cost, long-term, four US regions (Fig. 11 headline, p.16) | 1 | 1 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR+CCS production cost, near-term, four US regions (Fig. 11 headline, p.16) | 1 | 1 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR or SMR with CCS, LCOH including 45Q, 2030 (Fig. 13, p.18) | 1 | 1 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | US DOE 2024 (Liftoff hydrogen) `autothermal-reformer_ccs-concentrated` | ATR with CCS, 660 t/d new-build reference plant (Fig. 7 fn b, Fig. 11 fn a, App. 6) | 8 | 2 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Zapantis 2021 `autothermal-reformer_ccs-concentrated` | Emissions intensity of hydrogen production pathways (Sect. 1.0, Figure 2) | 1 |  |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Lewis et al. 2022 `autothermal-reformer_ccs-concentrated` | Case 3: ATR with CO2 capture, 659,999 kg H2/day (Sect. 3.12-3.15) | 26 | 21 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | NREL 2026 `autothermal-reformer_ccs-concentrated` | H2A-Lite pathway: Central ATR w/CCS, NETL 2022 Case 3 basis (ATR+CCS Case 3 sheet) | 13 | 7 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Existing and proposed blue hydrogen projects, Air Products Alberta (Table 1) | 1 | 1 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Existing and proposed blue hydrogen projects, H2H Saltend (Table 1) | 1 | 1 |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Life cycle GHG intensity scenarios, Blue H2, ATR, average performance (Appendix 1, Table 2) | 2 |  |
+| `autothermal-reformer_hydrogen_ccs-concentrated` | Gorski et al. 2021 `autothermal-reformer_ccs-concentrated` | Life cycle GHG intensity scenarios, Blue H2, ATR, high performance (Appendix 1, Table 2) | 2 | 2 |
 | `electrolyzer_solid-oxide` | IEA 2019 `electrolyzer_electricity_solid-oxide` | Hydrogen production | 6 |  |
 | `electrolyzer_solid-oxide` | Boulamanti and Moya 2017 `electrolyzer_solid-oxide` | Hydrogen from electrolysis (Sect. 5.4.3) | 3 |  |
 | `electrolyzer_solid-oxide` | DEA 2026 (renewable fuels) `electrolyzer_soec-100mw` | 80 SOEC 100 MW: Hydrogen production via solid oxide electrolysis (SOEC) for 100 MW plant | 8 | 5 |

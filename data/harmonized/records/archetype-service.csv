@@ -26,7 +26,7 @@ reactor_small-nuclear,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-l
 reciprocating-engine_chp,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 solar-collector,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 solar-concentrator_line-focus,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
-solar-concentrator,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: steam leaves
+solar-concentrator_point-focus,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: steam leaves
 steam-turbine_back-pressure,<sector>.*.service.steam,heat-low-temp,cross-sector/heat-low-temp: steam leaves
 thermal-storage_electric,<sector>.*.service.steam,heat-medium-temp,cross-sector/heat-medium-temp: steam leaves
 thermal-storage_electric,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,cross-sector/heat-high-temp: steam leaves
@@ -280,8 +280,8 @@ gasifier_coal-petroleum-coke_ccs-concentrated,<sector>.hydrogen.product.centrali
 liquefaction-train_hydrogen,<sector>.hydrogen.service.distribution,hydrogen-distribution,hydrogen/hydrogen-distribution: every leaf of the end use
 process-improvement_hydrogen-blending,<sector>.hydrogen.service.distribution,hydrogen-distribution,hydrogen/hydrogen-distribution: every leaf of the end use
 reactor_methane-pyrolysis,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
-autothermal-reformer,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
-autothermal-reformer,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
+autothermal-reformer_hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
+autothermal-reformer_hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,hydrogen/centralized-hydrogen-production: every leaf of the end use
 distillation-column_atmospheric-vacuum,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,petroleum-refining/crude-distillation: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,oil-and-gas/upgrader-hydrogen: every leaf of the end use
@@ -746,8 +746,8 @@ gasifier_biomass-fischer-tropsch_ccs-concentrated,<sector>.biofuels.product.rene
 reciprocating-engine_drive,<sector>.*.service.machine-drive.pumps,pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,<sector>.*.service.machine-drive.fans-and-blowers,fans-and-blowers,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,<sector>.*.service.machine-drive.compressed-air,compressed-air,added 2026-10-05 (archetype combination review)
-autothermal-reformer_ccs-concentrated,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,added 2026-10-05 (archetype combination review)
-autothermal-reformer_ccs-concentrated,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,added 2026-10-05 (archetype combination review)
+autothermal-reformer_hydrogen_ccs-concentrated,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,added 2026-10-05 (archetype combination review)
+autothermal-reformer_hydrogen_ccs-concentrated,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,added 2026-10-05 (archetype combination review)
 autothermal-reformer_ammonia,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,added 2026-10-05 (archetype combination review)
 autothermal-reformer_ammonia_ccs-concentrated,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,added 2026-10-05 (archetype combination review)
 steam-reformer_ammonia_efficiency-moderate,<sector>.chemicals.product.ammonia-methanol.ammonia,ammonia-and-methanol,added 2026-10-05 (archetype combination review)

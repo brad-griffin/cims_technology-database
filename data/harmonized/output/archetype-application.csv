@@ -181,7 +181,6 @@ solar-collector,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>
 solar-collector,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-solar-concentrator,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 solar-concentrator_line-focus,heat-supply,<sector>.biofuels.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 solar-concentrator_line-focus,heat-supply,<sector>.chemicals.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 solar-concentrator_line-focus,heat-supply,<sector>.iron-and-steel.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
@@ -191,6 +190,7 @@ solar-concentrator_line-focus,heat-supply,<sector>.mining.service.steam,heat-med
 solar-concentrator_line-focus,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 solar-concentrator_line-focus,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 solar-concentrator_line-focus,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
+solar-concentrator_point-focus,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 steam-turbine_back-pressure,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -787,10 +787,10 @@ oven_fuel-fired_efficiency-moderate,food-and-beverage,<sector>.light-industrial.
 press_high-pressure-processing,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 radio-frequency-heater_food,food-and-beverage,<sector>.light-industrial.service.heat,thermal-processing,,food-and-beverage/thermal-processing: every leaf of the end use
 refinery_sugar-beet,food-and-beverage,<sector>.light-industrial.product.food-tobacco-and-beverage,thermal-processing,,added 2026-10-01
-autothermal-reformer,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
-autothermal-reformer,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
-autothermal-reformer_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
-autothermal-reformer_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,added 2026-10-05 (archetype combination review)
+autothermal-reformer_hydrogen,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
+autothermal-reformer_hydrogen,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,added 2026-10-05 (archetype combination review)
 electrolyzer_solid-oxide,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gasifier_biomass-waste,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
