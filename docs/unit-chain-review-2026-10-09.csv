@@ -1,0 +1,1190 @@
+node,"cims-branch (2026 model inputs, fuzzy match)",cims-provide-unit,archetype,product-unit,product,unit-matches-cims
+<sector>.biofuels.product.biodiesel,Biodiesel,GJ,transesterification-unit_acid-catalyzed,t,biodiesel,NO
+<sector>.biofuels.product.biodiesel,Biodiesel,GJ,transesterification-unit_alkali-catalyzed,t,biodiesel,NO
+<sector>.biofuels.product.biodiesel,Biodiesel,GJ,transesterification-unit_heterogeneous-catalyst,t,biodiesel,NO
+<sector>.biofuels.product.biodiesel,Biodiesel,GJ,transesterification-unit_supercritical-methanol,t,biodiesel,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,fermenter_grain-dry-mill,t,ethanol,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,fermenter_grain-dry-mill_ccs-concentrated,t,ethanol,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,fermenter_grain-dry-mill_efficiency-moderate,t,ethanol,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,fermenter_lignocellulosic-enzymatic,t,ethanol,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,fermenter_syngas,t,ethanol,NO
+<sector>.biofuels.product.ethanol,Ethanol,GJ,reactor_co2-to-ethanol,t,ethanol,NO
+<sector>.biofuels.product.renewable-diesel-and-saf,,,gasifier_biomass-fischer-tropsch,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,gasifier_biomass-fischer-tropsch_ccs-concentrated,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,reactor_alcohol-to-jet,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,reactor_co2-to-fischer-tropsch,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,reactor_hydrothermal-liquefaction,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,reactor_hydrotreating-lipids,t,product,
+<sector>.biofuels.product.renewable-diesel-and-saf,,,reactor_pyrolysis-oil,t,product,
+<sector>.biofuels.product.renewable-natural-gas,,,anaerobic-digester_biomethane-upgrading,GJ,renewable natural gas,
+<sector>.biofuels.product.renewable-natural-gas,,,gasifier_biomass-methanation,GJ,renewable natural gas,
+<sector>.biofuels.product.renewable-natural-gas,,,process-improvement_landfill-gas-recovery,GJ,renewable natural gas,
+<sector>.biofuels.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.biofuels.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.biofuels.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.biofuels.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.biofuels.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.biofuels.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.biofuels.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.biofuels.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.biofuels.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,anaerobic-digester_chp,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.biofuels.service.steam,Biodiesel.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.chemicals.product.adipic-acid,Chemical Products.Chemical Product.Adipic Acid,tonne,reactor_adipic-acid,t,product,yes
+<sector>.chemicals.product.adipic-acid,Chemical Products.Chemical Product.Adipic Acid,tonne,reactor_catalytic-n2o,t,product,yes
+<sector>.chemicals.product.adipic-acid,Chemical Products.Chemical Product.Adipic Acid,tonne,reactor_thermal-n2o-destruction,t,product,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,autothermal-reformer_ammonia,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,autothermal-reformer_ammonia_ccs-concentrated,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,gasifier_biomass-ammonia,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,gasifier_coal-ammonia,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,reactor_haber-bosch-electrolytic,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,steam-reformer_ammonia,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,steam-reformer_ammonia_ccs-concentrated,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,steam-reformer_ammonia_efficiency-moderate,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.ammonia,Chemical Products.Chemical Product.Ammonia Methanol,tonne,steam-reformer_ammonia_efficiency-strong,t,ammonia,yes
+<sector>.chemicals.product.ammonia-methanol.methanol,Chemical Products.Chemical Product.Ammonia Methanol,tonne,gasifier_biomass-methanol,t,methanol,yes
+<sector>.chemicals.product.ammonia-methanol.methanol,Chemical Products.Chemical Product.Ammonia Methanol,tonne,gasifier_coal-methanol,t,methanol,yes
+<sector>.chemicals.product.ammonia-methanol.methanol,Chemical Products.Chemical Product.Ammonia Methanol,tonne,gasifier_coal-methanol_ccs-concentrated,t,methanol,yes
+<sector>.chemicals.product.ammonia-methanol.methanol,Chemical Products.Chemical Product.Ammonia Methanol,tonne,reactor_co2-to-methanol,t,methanol,yes
+<sector>.chemicals.product.ammonia-methanol.methanol,Chemical Products.Chemical Product.Ammonia Methanol,tonne,steam-reformer_methanol,t,methanol,yes
+<sector>.chemicals.product.chlor-alkali.caustic-evaporation,,,vapour-recompressor_evaporation,t,black liquor solids,
+<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,,,electrolysis-cell_chlor-alkali-diaphragm,t,Cl2,
+<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,,,electrolysis-cell_chlor-alkali-membrane,t,Cl2,
+<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,,,electrolysis-cell_chlor-alkali-mercury,t,Cl2,
+<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,,,electrolysis-cell_oxygen-depolarized,t,Cl2,
+<sector>.chemicals.product.fertilizer,,,reactor_ammonium-nitrate,t,product,
+<sector>.chemicals.product.hydrogen-peroxide,Chemical Products.Chemical Product.Hydrogen Peroxide,tonne,distillation-column_heat-integrated,t,product,yes
+<sector>.chemicals.product.hydrogen-peroxide,Chemical Products.Chemical Product.Hydrogen Peroxide,tonne,distillation-column_heat-pumped,t,product,yes
+<sector>.chemicals.product.hydrogen-peroxide,Chemical Products.Chemical Product.Hydrogen Peroxide,tonne,reactor_anthraquinone-autoxidation,t,product,yes
+<sector>.chemicals.product.nitric-acid,,,reactor_catalytic-n2o,t,product,
+<sector>.chemicals.product.nitric-acid,,,reactor_nitric-acid,t,product,
+<sector>.chemicals.product.petrochemicals.all-polymerization,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.All Polymerization,tonne,distillation-column,t,product,yes
+<sector>.chemicals.product.petrochemicals.all-polymerization,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.All Polymerization,tonne,distillation-column_heat-integrated,t,product,yes
+<sector>.chemicals.product.petrochemicals.all-polymerization,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.All Polymerization,tonne,distillation-column_heat-pumped,t,product,yes
+<sector>.chemicals.product.petrochemicals.all-polymerization,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.All Polymerization,tonne,reactor_polymerization-extrusion,t,product,yes
+<sector>.chemicals.product.petrochemicals.all-polymerization,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.All Polymerization,tonne,reactor_polymerization-extrusion_efficiency-strong,t,product,yes
+<sector>.chemicals.product.petrochemicals.btx-reforming,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.BTX Reforming,tonne,distillation-column,t,product,yes
+<sector>.chemicals.product.petrochemicals.btx-reforming,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.BTX Reforming,tonne,distillation-column_heat-integrated,t,product,yes
+<sector>.chemicals.product.petrochemicals.btx-reforming,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.BTX Reforming,tonne,distillation-column_heat-pumped,t,product,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,distillation-column,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,distillation-column_heat-integrated,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,distillation-column_heat-pumped,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,reactor_chemical-depolymerization,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,reactor_ethylene-oxidation,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,reactor_ethylene-oxidation_ccs-concentrated,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.intermediate-production,Chemical Products.Chemical Product.Other Petrochemicals.Petrochemicals.Intermediate Production,tonne,reactor_propane-dehydrogenation,t,intermediate chemical,yes
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,gasifier_biomass-ethylene,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,reactor_ethanol-to-ethylene,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,reactor_methanol-to-olefins,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,steam-cracker_catalytic-naphtha,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,steam-cracker_electric,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,steam-cracker_fired-tubular,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,steam-cracker_fired-tubular_ccs-diffuse,t,high-value chemicals,NO
+<sector>.chemicals.product.petrochemicals.steam-cracking,Chemical Products.Steam,GJ,steam-cracker_fired-tubular_efficiency-moderate,t,high-value chemicals,NO
+<sector>.chemicals.product.sodium-chlorate,,,electrolysis-cell_sodium-chlorate,t,product,
+<sector>.chemicals.product.urea,,,reactor_urea-synthesis,t,product,
+<sector>.chemicals.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.chemicals.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.chemicals.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.chemicals.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.chemicals.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.chemicals.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.chemicals.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.chemicals.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.chemicals.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.chemicals.service.hvac.space-cooling,Chemical Products.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.chemicals.service.hvac.space-cooling,Chemical Products.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.chemicals.service.hvac.space-heating,Chemical Products.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.chemicals.service.hvac.space-heating,Chemical Products.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.chemicals.service.hvac.space-heating,Chemical Products.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.chemicals.service.hvac.space-heating,Chemical Products.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.chemicals.service.hvac.space-heating,Chemical Products.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.chemicals.service.lighting,Chemical Products.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.chemicals.service.lighting,Chemical Products.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.chemicals.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.materials-processing,Chemical Products.Chemical Product.Adipic Acid.Process,tonne,motor_induction-standard,GJ,shaft work,NO
+<sector>.chemicals.service.machine-drive.materials-processing,Chemical Products.Chemical Product.Adipic Acid.Process,tonne,motor_premium-efficiency,GJ,shaft work,NO
+<sector>.chemicals.service.machine-drive.materials-processing,Chemical Products.Chemical Product.Adipic Acid.Process,tonne,motor_variable-speed,GJ,shaft work,NO
+<sector>.chemicals.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.chemicals.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.chemicals.service.steam,Chemical Products.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.coal-mining.product.coal-preparation.drying,,,dryer_direct-fired_efficiency-moderate,t,dried product,
+<sector>.coal-mining.product.coal-preparation.drying,,,dryer_electric,t,dried product,
+<sector>.coal-mining.product.coal-preparation.drying,,,dryer_heat-pump,t,dried product,
+<sector>.coal-mining.product.coal-preparation.drying,,,dryer_rotary-direct-fired,t,dried product,
+<sector>.coal-mining.product.coal-preparation.drying,,,press_dewatering,t,dried product,
+<sector>.coal-mining.product.coal-preparation.tailings-disposal,Coal Mining.Coal.Metallurgical Finishing.Tailings Disposal,kt,separator_dry-stack-tailings,t,tailings,yes
+<sector>.coal-mining.product.coal-preparation.washing,Coal Mining.Coal.Metallurgical Finishing.Washing,kt,flotation-cell_froth,t,concentrate,yes
+<sector>.coal-mining.product.raw-product.extraction,Coal Mining.Coal.Raw Product.Extraction,kt,gas-treatment-unit_vam-oxidiser,t,coal,yes
+<sector>.coal-mining.product.raw-product.extraction,Coal Mining.Coal.Raw Product.Extraction,kt,mine_open-pit-coal,t,coal,yes
+<sector>.coal-mining.product.raw-product.extraction,Coal Mining.Coal.Raw Product.Extraction,kt,mine_underground-coal,t,coal,yes
+<sector>.coal-mining.product.raw-product.extraction,Coal Mining.Coal.Raw Product.Extraction,kt,process-improvement_coal-mine-methane-drainage,t,coal,yes
+<sector>.coal-mining.product.raw-product.mine-ventilation,Coal Mining.Coal.Raw Product.Mine Ventilation,kt,fan_mine-ventilation,t,ore,yes
+<sector>.coal-mining.product.simplified-extraction,Coal Mining.Coal.Raw Product.Extraction,kt,mine_open-pit-coal,t,coal,yes
+<sector>.coal-mining.product.simplified-extraction,Coal Mining.Coal.Raw Product.Extraction,kt,mine_underground-coal,t,coal,yes
+<sector>.coal-mining.product.size-reduced-product.crushing,Coal Mining.Coal.Size Reduced Product.Primary Crushing,kt,separator_ore-sorting,t,ore,yes
+<sector>.coal-mining.service.hvac.space-cooling,Coal Mining.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.coal-mining.service.hvac.space-cooling,Coal Mining.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.coal-mining.service.hvac.space-heating,Coal Mining.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.coal-mining.service.hvac.space-heating,Coal Mining.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.coal-mining.service.hvac.space-heating,Coal Mining.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.coal-mining.service.hvac.space-heating,Coal Mining.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.coal-mining.service.hvac.space-heating,Coal Mining.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.coal-mining.service.lighting,Coal Mining.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.coal-mining.service.lighting,Coal Mining.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.coal-mining.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.coal-mining.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.coal-mining.service.mine-haulage,,,haul-truck_battery-electric,t,ore,
+<sector>.coal-mining.service.mine-haulage,,,haul-truck_diesel,t,ore,
+<sector>.coal-mining.service.mine-haulage,,,haul-truck_dual-fuel,t,ore,
+<sector>.coal-mining.service.mine-haulage,,,haul-truck_hydrogen-fuel-cell,t,ore,
+<sector>.coal-mining.service.mine-haulage,,,haul-truck_trolley-assist,t,ore,
+<sector>.coal-mining.service.mine-haulage,,,hoist,t,ore,
+<sector>.construction.product.transport,,,mobile-equipment_battery-electric,GJ,mobile work,
+<sector>.construction.product.transport,,,mobile-equipment_diesel,GJ,mobile work,
+<sector>.construction.product.transport,,,mobile-equipment_diesel-electric,GJ,mobile work,
+<sector>.construction.product.transport,,,mobile-equipment_hydrogen-combustion,GJ,mobile work,
+<sector>.construction.product.transport,,,mobile-equipment_hydrogen-fuel-cell,GJ,mobile work,
+<sector>.construction.product.transport,,,mobile-equipment_spark-ignition,GJ,mobile work,
+<sector>.direct-air-capture.product.co2-removal,,,capture-unit_dac-liquid-solvent,t,CO2,
+<sector>.direct-air-capture.product.co2-removal,,,capture-unit_dac-solid-sorbent,t,CO2,
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,autothermal-reformer,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,autothermal-reformer_ccs-concentrated,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,electrolyzer_low-temperature,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,electrolyzer_solid-oxide,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,gasifier_biomass-waste,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,gasifier_coal-petroleum-coke_ccs-concentrated,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,reactor_methane-pyrolysis,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,steam-reformer_methane,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,steam-reformer_methane_ccs-concentrated,GJ,hydrogen,yes
+<sector>.hydrogen.product.centralized-hydrogen,Hydrogen,GJ,steam-reformer_methane_ccs-diffuse,GJ,hydrogen,yes
+<sector>.hydrogen.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.hydrogen.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.hydrogen.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.hydrogen.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.hydrogen.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.hydrogen.service.distribution,,,liquefaction-train_hydrogen,GJ,hydrogen delivered,
+<sector>.hydrogen.service.distribution,,,pipeline_hydrogen,GJ,hydrogen delivered,
+<sector>.hydrogen.service.distribution,,,process-improvement_hydrogen-blending,GJ,hydrogen delivered,
+<sector>.hydrogen.service.distribution,,,storage-cavern_hydrogen,GJ,hydrogen delivered,
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,calciner_indirect,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_calcium-looping,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_calcium-silicate-feed,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_dry-precalciner,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_dry-precalciner_ccs-diffuse,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_dry-precalciner_efficiency-moderate,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_dry-precalciner_efficiency-strong,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_electric-plasma,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_legacy,t,clinker,yes
+<sector>.industrial-minerals.product.cement.clinker,Industrial Minerals.Products.Cement.Portland cement.Clinker,tonne,kiln_oxy-fuel,t,clinker,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_alkali-activated,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_blended-cement,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_calcined-clay,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_carbonated,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_electrochemical,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_hydrothermal-silicate,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,binder_sulphoaluminate,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,grinding-mill_ball,t,cement,yes
+<sector>.industrial-minerals.product.cement.grinding,Industrial Minerals.Products.Cement.Portland cement.Finish Grinding,tonne,grinding-mill_vertical-roller,t,cement,yes
+<sector>.industrial-minerals.product.ceramics.dryer,,,dryer_ceramic-hot-air,t,dried product,
+<sector>.industrial-minerals.product.ceramics.dryer,,,dryer_electric,t,dried product,
+<sector>.industrial-minerals.product.ceramics.dryer,,,dryer_heat-pump,t,dried product,
+<sector>.industrial-minerals.product.ceramics.dryer,,,dryer_rotary-direct-fired,t,dried product,
+<sector>.industrial-minerals.product.ceramics.kiln,Industrial Minerals.Products.Lime.Kilns,tonne,kiln_ceramic-electric,t,product,yes
+<sector>.industrial-minerals.product.ceramics.kiln,Industrial Minerals.Products.Lime.Kilns,tonne,kiln_ceramic-microwave-assisted,t,product,yes
+<sector>.industrial-minerals.product.ceramics.kiln,Industrial Minerals.Products.Lime.Kilns,tonne,kiln_intermittent,t,product,yes
+<sector>.industrial-minerals.product.ceramics.kiln,Industrial Minerals.Products.Lime.Kilns,tonne,kiln_tunnel-roller,t,product,yes
+<sector>.industrial-minerals.product.ceramics.kiln,Industrial Minerals.Products.Lime.Kilns,tonne,kiln_tunnel-roller_efficiency-strong,t,product,yes
+<sector>.industrial-minerals.product.glass.form-and-finish,,,furnace_lehr,t,glass,
+<sector>.industrial-minerals.product.glass.form-and-finish,,,furnace_lehr-electric,t,glass,
+<sector>.industrial-minerals.product.glass.form-and-finish,,,furnace_tempering,t,glass,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_electric,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_hybrid-electric,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_oxy-fuel,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_oxy-fuel-thermochemical,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_regenerative,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,furnace_regenerative_ccs-diffuse,t,melt,
+<sector>.industrial-minerals.product.glass.furnaces,,,melting-furnace_hot-blast-cupola,t,melt,
+<sector>.industrial-minerals.product.gypsum,,,dryer_rotary-direct-fired,t,product,
+<sector>.industrial-minerals.product.lime,Industrial Minerals.Products.Lime,tonne,kiln_lime-long-rotary,t,lime,yes
+<sector>.industrial-minerals.product.lime,Industrial Minerals.Products.Lime,tonne,kiln_lime-oxy-fuel,t,lime,yes
+<sector>.industrial-minerals.product.lime,Industrial Minerals.Products.Lime,tonne,kiln_lime-rotary-preheater,t,lime,yes
+<sector>.industrial-minerals.product.lime,Industrial Minerals.Products.Lime,tonne,kiln_lime-rotary-preheater_ccs-diffuse,t,lime,yes
+<sector>.industrial-minerals.product.lime,Industrial Minerals.Products.Lime,tonne,kiln_lime-shaft,t,lime,yes
+<sector>.industrial-minerals.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.industrial-minerals.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.industrial-minerals.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.industrial-minerals.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.industrial-minerals.service.hvac.space-cooling,Industrial Minerals.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.industrial-minerals.service.hvac.space-cooling,Industrial Minerals.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.industrial-minerals.service.hvac.space-heating,Industrial Minerals.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.industrial-minerals.service.hvac.space-heating,Industrial Minerals.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.industrial-minerals.service.hvac.space-heating,Industrial Minerals.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.industrial-minerals.service.hvac.space-heating,Industrial Minerals.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.industrial-minerals.service.hvac.space-heating,Industrial Minerals.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.industrial-minerals.service.kiln-heat,Industrial Minerals.Heat,GJ,calciner_indirect,t,clinker,NO
+<sector>.industrial-minerals.service.lighting,Industrial Minerals.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.industrial-minerals.service.lighting,Industrial Minerals.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.industrial-minerals.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,annealing-furnace_batch-bell,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,annealing-furnace_continuous,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,annealing-furnace_hydrogen-bell,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,coating-line_electrolytic,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,coating-line_hot-dip,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,,,induction-heater_strip-heating,t,finished product,
+<sector>.iron-and-steel.product.continuous-cast.casting,Iron and Steel.Steel Product.Blooms.Bloom Casting,tonne,caster_continuous,t,cast product,yes
+<sector>.iron-and-steel.product.continuous-cast.casting,Iron and Steel.Steel Product.Blooms.Bloom Casting,tonne,caster_ingot,t,cast product,yes
+<sector>.iron-and-steel.product.continuous-cast.casting,Iron and Steel.Steel Product.Blooms.Bloom Casting,tonne,caster_strip,t,cast product,yes
+<sector>.iron-and-steel.product.continuous-cast.casting,Iron and Steel.Steel Product.Blooms.Bloom Casting,tonne,rolling-mill_thin-slab,t,cast product,yes
+<sector>.iron-and-steel.product.continuous-cast.cold-rolling,,,pickling-line_acid,t,rolled product,
+<sector>.iron-and-steel.product.continuous-cast.cold-rolling,,,rolling-mill_cold,t,rolled product,
+<sector>.iron-and-steel.product.continuous-cast.cold-rolling,,,rolling-mill_cold_efficiency-moderate,t,rolled product,
+<sector>.iron-and-steel.product.continuous-cast.hot-rolling,,,pickling-line_acid,t,rolled product,
+<sector>.iron-and-steel.product.continuous-cast.hot-rolling,,,rolling-mill_hot,t,rolled product,
+<sector>.iron-and-steel.product.continuous-cast.hot-rolling,,,rolling-mill_hot_efficiency-moderate,t,rolled product,
+<sector>.iron-and-steel.product.foundry,,,electric-arc-furnace,t,metal,
+<sector>.iron-and-steel.product.foundry,,,melting-furnace_crucible-gas-fired,t,metal,
+<sector>.iron-and-steel.product.foundry,,,melting-furnace_cupola,t,metal,
+<sector>.iron-and-steel.product.foundry,,,melting-furnace_induction,t,metal,
+<sector>.iron-and-steel.product.foundry,,,melting-furnace_isothermal,t,metal,
+<sector>.iron-and-steel.product.foundry,,,melting-furnace_rotary-oxy-fuel,t,metal,
+<sector>.iron-and-steel.product.molten-steel,Iron and Steel.Molten Steel,tonne,basic-oxygen-furnace,t,liquid steel,yes
+<sector>.iron-and-steel.product.molten-steel,Iron and Steel.Molten Steel,tonne,basic-oxygen-furnace_efficiency-strong,t,liquid steel,yes
+<sector>.iron-and-steel.product.molten-steel,Iron and Steel.Molten Steel,tonne,electric-arc-furnace,t,liquid steel,yes
+<sector>.iron-and-steel.product.molten-steel,Iron and Steel.Molten Steel,tonne,electric-arc-furnace_scrap-preheating,t,liquid steel,yes
+<sector>.iron-and-steel.product.molten-steel,Iron and Steel.Molten Steel,tonne,shaft-furnace_electrolytic-hydrogen,t,liquid steel,yes
+<sector>.iron-and-steel.service.agglomeration,Iron and Steel.Agglomeration,tonne,pellet-plant_induration,t,sinter or pellets,yes
+<sector>.iron-and-steel.service.agglomeration,Iron and Steel.Agglomeration,tonne,pellet-plant_plasma-electric,t,sinter or pellets,yes
+<sector>.iron-and-steel.service.agglomeration,Iron and Steel.Agglomeration,tonne,sinter-plant,t,sinter or pellets,yes
+<sector>.iron-and-steel.service.agglomeration,Iron and Steel.Agglomeration,tonne,sinter-plant_efficiency-moderate,t,sinter or pellets,yes
+<sector>.iron-and-steel.service.agglomeration,Iron and Steel.Agglomeration,tonne,sinter-plant_efficiency-strong,t,sinter or pellets,yes
+<sector>.iron-and-steel.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.iron-and-steel.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.iron-and-steel.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.iron-and-steel.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.iron-and-steel.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.iron-and-steel.service.ccs.concentrated,,,reactor_steel-offgas-chemicals,t,CO2,
+<sector>.iron-and-steel.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.iron-and-steel.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.iron-and-steel.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.iron-and-steel.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.iron-and-steel.service.coke,,,coke-oven_by-product,t,coke,
+<sector>.iron-and-steel.service.coke,,,coke-oven_by-product_efficiency-moderate,t,coke,
+<sector>.iron-and-steel.service.coke,,,coke-oven_by-product_efficiency-strong,t,coke,
+<sector>.iron-and-steel.service.coke,,,coke-oven_heat-recovery,t,coke,
+<sector>.iron-and-steel.service.direct-reduced-iron,,,electrolysis-cell_iron-electrowinning,t,reduced iron,
+<sector>.iron-and-steel.service.direct-reduced-iron,,,furnace_rotary-hearth-direct-reduction,t,reduced iron,
+<sector>.iron-and-steel.service.direct-reduced-iron,,,shaft-furnace_direct-reduction,t,reduced iron,
+<sector>.iron-and-steel.service.direct-reduced-iron,,,shaft-furnace_direct-reduction_ccs-concentrated,t,reduced iron,
+<sector>.iron-and-steel.service.hot-metal,,,blast-furnace,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,blast-furnace_ccs-diffuse,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,blast-furnace_efficiency-moderate,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,blast-furnace_efficiency-strong,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,blast-furnace_top-gas-recycling,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,electrolysis-cell_molten-oxide,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,melting-furnace_electric-smelting,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,smelting-vessel_low-shaft,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,smelting-vessel_smelting-reduction,t,iron,
+<sector>.iron-and-steel.service.hot-metal,,,smelting-vessel_smelting-reduction_ccs-concentrated,t,iron,
+<sector>.iron-and-steel.service.hvac.space-cooling,Iron and Steel.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.iron-and-steel.service.hvac.space-cooling,Iron and Steel.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.iron-and-steel.service.hvac.space-heating,Iron and Steel.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.iron-and-steel.service.hvac.space-heating,Iron and Steel.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.iron-and-steel.service.hvac.space-heating,Iron and Steel.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.iron-and-steel.service.hvac.space-heating,Iron and Steel.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.iron-and-steel.service.hvac.space-heating,Iron and Steel.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.iron-and-steel.service.ladle-preheating,Iron and Steel.Reheating,tonne,preheater_ladle,t,liquid steel,yes
+<sector>.iron-and-steel.service.ladle-refining,Iron and Steel.Molten Steel.Ladle Refining,tonne,furnace_ladle-metallurgy,t,liquid steel,yes
+<sector>.iron-and-steel.service.lighting,Iron and Steel.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.iron-and-steel.service.lighting,Iron and Steel.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.iron-and-steel.service.oxygen,Iron and Steel.Oxygen,tonne,air-separation-unit,t,oxygen,yes
+<sector>.iron-and-steel.service.reheating,Iron and Steel.Reheating,tonne,furnace_reheating,t,reheated,yes
+<sector>.iron-and-steel.service.reheating,Iron and Steel.Reheating,tonne,furnace_reheating_efficiency-moderate,t,reheated,yes
+<sector>.iron-and-steel.service.reheating,Iron and Steel.Reheating,tonne,furnace_reheating_efficiency-strong,t,reheated,yes
+<sector>.iron-and-steel.service.reheating,Iron and Steel.Reheating,tonne,induction-heater_reheating,t,reheated,yes
+<sector>.iron-and-steel.service.reheating,Iron and Steel.Reheating,tonne,rolling-mill_hot-charging,t,reheated,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.iron-and-steel.service.steam,Iron and Steel.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.light-industrial.product.food-tobacco-and-beverage,Light Industrial.Manufacturing.Food Tobacco and Beverage,M$ GDP,distillery_beverage-spirits,t,product,NO
+<sector>.light-industrial.product.food-tobacco-and-beverage,Light Industrial.Manufacturing.Food Tobacco and Beverage,M$ GDP,refinery_sugar-beet,t,product,NO
+<sector>.light-industrial.product.wood-products,Light Industrial.Manufacturing.Wood Products,M$ GDP,pulper_fibreboard-refiner,t,dry fibre,NO
+<sector>.light-industrial.service.heat,Light Industrial.Water Heating,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.light-industrial.service.heat,Light Industrial.Water Heating,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.light-industrial.service.hvac.space-cooling,,,chiller_vapour-compression,GJ,space cooling,
+<sector>.light-industrial.service.hvac.space-cooling,,,cooling-tower_free-evaporative,GJ,space cooling,
+<sector>.light-industrial.service.hvac.space-heating,Light Industrial.Heat,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.light-industrial.service.hvac.space-heating,Light Industrial.Heat,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.light-industrial.service.hvac.space-heating,Light Industrial.Heat,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.light-industrial.service.hvac.space-heating,Light Industrial.Heat,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.light-industrial.service.hvac.space-heating,Light Industrial.Heat,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.light-industrial.service.lighting,Light Industrial.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.light-industrial.service.lighting,Light Industrial.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.light-industrial.service.machine-drive,,,motor_induction-standard,GJ,shaft work,
+<sector>.light-industrial.service.machine-drive,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.light-industrial.service.machine-drive,,,motor_variable-speed,GJ,shaft work,
+<sector>.light-industrial.service.refrigeration,,,chiller_absorption,GJ,cooling,
+<sector>.light-industrial.service.refrigeration,,,chiller_high-efficiency,GJ,cooling,
+<sector>.light-industrial.service.refrigeration,,,chiller_vapour-compression,GJ,cooling,
+<sector>.light-industrial.service.refrigeration,,,cooling-tower_free-evaporative,GJ,cooling,
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,anaerobic-digester_chp,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.light-industrial.service.steam,Light Industrial.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Alumina,tonne,calciner_electric,t,alumina,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Alumina,tonne,calciner_gas-suspension,t,alumina,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Alumina,tonne,calciner_gas-suspension_ccs-diffuse,t,alumina,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Alumina,tonne,digester_bayer,t,alumina,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_inert-anode,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_multipolar-chloride,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_prebaked-anode,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_prebaked-anode_ccs-diffuse,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_soderberg,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,process-improvement_pfc-anode-effect-control,t,aluminum,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,furnace_homogenizing,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,furnace_twin-chamber,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.aluminum.recycle,Metal Smelting.Primary Metals.Aluminum.Recycle,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.copper.hydrometallurgy,Metal Smelting.Primary Metals.Copper.Metallurgy,tonne,electrolysis-cell_advanced-anodes,t,metal,yes
+<sector>.metal-smelting.product.copper.hydrometallurgy,Metal Smelting.Primary Metals.Copper.Metallurgy,tonne,leaching-vessel_heap-atmospheric,t,metal,yes
+<sector>.metal-smelting.product.copper.hydrometallurgy,Metal Smelting.Primary Metals.Copper.Metallurgy,tonne,leaching-vessel_high-pressure-acid,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,furnace_homogenizing,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.copper.melt-cast,Metal Smelting.Primary Metals.Copper.Melt Cast,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.refining,,,electrolysis-cell_electrorefining,t,metal,
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,converter_continuous,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,converter_peirce-smith,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,electrolysis-cell_electrolytic-smelting,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bath-tuyere,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bottom-blowing,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-moderate,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_top-submerged-lance,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.lead.melt-cast,Metal Smelting.Primary Metals.Lead.Melt Cast,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.refining,,,direct-heater_fuel-fired,GJ,heat,
+<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process.Conventional Smelting.Roast,tonne,direct-heater_fuel-fired,GJ,heat,NO
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,electrolysis-cell_electrolytic-smelting,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bath-tuyere,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bottom-blowing,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-moderate,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Lead.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_top-submerged-lance,t,metal,yes
+<sector>.metal-smelting.product.magnesium.electrolysis,Metal Smelting.Primary Metals.Aluminum.Primary Aluminum.Electrolysis,tonne,electrolysis-cell_magnesium-chloride,t,magnesium,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,furnace_homogenizing,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.magnesium.melt-cast,Metal Smelting.Primary Metals.Magnesium.Melt Cast,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.magnesium.thermal-reduction,,,reactor_silicothermic,t,metal,
+<sector>.metal-smelting.product.nickel.hydrometallurgy,Metal Smelting.Primary Metals.Nickel.Metallurgy,tonne,electrolysis-cell_advanced-anodes,t,metal,yes
+<sector>.metal-smelting.product.nickel.hydrometallurgy,Metal Smelting.Primary Metals.Nickel.Metallurgy,tonne,leaching-vessel_heap-atmospheric,t,metal,yes
+<sector>.metal-smelting.product.nickel.hydrometallurgy,Metal Smelting.Primary Metals.Nickel.Metallurgy,tonne,leaching-vessel_high-pressure-acid,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.nickel.melt-cast,Metal Smelting.Primary Metals.Nickel.Melt Cast,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,,,refinery_nickel-matte,t,metal,
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,converter_continuous,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,converter_peirce-smith,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,electrolysis-cell_electrolytic-smelting,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bath-tuyere,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_bottom-blowing,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-moderate,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_flash_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Nickel.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,smelting-vessel_top-submerged-lance,t,metal,yes
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,Metal Smelting.Primary Metals.Magnesium.Metallurgy.Pyro Metallurgy.Smelting Process.Conventional Smelting.Roast,tonne,process-improvement_pre-reduction,t,product,yes
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,electric-arc-furnace_open-arc-dc,t,product,yes
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,electric-arc-furnace_submerged-arc,t,product,yes
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,heat-recovery-unit_off-gas,t,product,yes
+<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,Metal Smelting.Primary Metals.Copper.Metallurgy.Pyro Metallurgy.Smelting Process,tonne,process-improvement_biocarbon-reductant,t,product,yes
+<sector>.metal-smelting.product.zinc.hydrometallurgy,Metal Smelting.Primary Metals.Zinc.Metallurgy,tonne,electrolysis-cell_advanced-anodes,t,metal,yes
+<sector>.metal-smelting.product.zinc.hydrometallurgy,Metal Smelting.Primary Metals.Zinc.Metallurgy,tonne,electrolysis-cell_zinc-electrowinning,t,metal,yes
+<sector>.metal-smelting.product.zinc.hydrometallurgy,Metal Smelting.Primary Metals.Zinc.Metallurgy,tonne,leaching-vessel_heap-atmospheric,t,metal,yes
+<sector>.metal-smelting.product.zinc.hydrometallurgy,Metal Smelting.Primary Metals.Zinc.Metallurgy,tonne,leaching-vessel_high-pressure-acid,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_crucible-gas-fired,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_induction,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_isothermal,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_regenerative-oxy-fuel,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_reverberatory-rotary,t,metal,yes
+<sector>.metal-smelting.product.zinc.melt-cast,Metal Smelting.Primary Metals.Zinc.Melt Cast,tonne,melting-furnace_reverberatory-rotary_efficiency-strong,t,metal,yes
+<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,Metal Smelting.Primary Metals.Zinc.Metallurgy.Pyro Metallurgy.Smelting Process.Conventional Smelting.Roast,tonne,direct-heater_fuel-fired,GJ,heat,NO
+<sector>.metal-smelting.service.anode-production,,,furnace_anode-baking,t,anode,
+<sector>.metal-smelting.service.anode-production,,,furnace_anode-baking-electric,t,anode,
+<sector>.metal-smelting.service.anode-production,,,paste-plant_soderberg,t,anode,
+<sector>.metal-smelting.service.anode-production,,,process-improvement_bio-pitch,t,anode,
+<sector>.metal-smelting.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.metal-smelting.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.metal-smelting.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.metal-smelting.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.metal-smelting.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.metal-smelting.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.metal-smelting.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.metal-smelting.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.metal-smelting.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.metal-smelting.service.hvac.space-cooling,Metal Smelting.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.metal-smelting.service.hvac.space-cooling,Metal Smelting.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.metal-smelting.service.hvac.space-heating,Metal Smelting.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.metal-smelting.service.hvac.space-heating,Metal Smelting.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.metal-smelting.service.hvac.space-heating,Metal Smelting.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.metal-smelting.service.hvac.space-heating,Metal Smelting.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.metal-smelting.service.hvac.space-heating,Metal Smelting.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.metal-smelting.service.lighting,Metal Smelting.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.metal-smelting.service.lighting,Metal Smelting.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.metal-smelting.service.oxygen,Metal Smelting.Oxygen,tonne,air-separation-unit,t,oxygen,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.metal-smelting.service.steam,Metal Smelting.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.mining.service.crushing,Mining.Final Product.Metal Open Pit.Size Reduced Non Iron Product.Primary Crushing,tonne,separator_ore-sorting,t,ore,yes
+<sector>.mining.service.crystallization,,,adsorber_direct-lithium,t,concentrate,
+<sector>.mining.service.crystallization,,,evaporator_crystallizer,t,concentrate,
+<sector>.mining.service.crystallization,,,flotation-cell_froth,t,concentrate,
+<sector>.mining.service.drying,,,dryer_direct-fired_efficiency-moderate,t,dried product,
+<sector>.mining.service.drying,,,dryer_electric,t,dried product,
+<sector>.mining.service.drying,,,dryer_heat-pump,t,dried product,
+<sector>.mining.service.drying,,,dryer_rotary-direct-fired,t,dried product,
+<sector>.mining.service.drying,,,press_dewatering,t,dried product,
+<sector>.mining.service.hvac.space-cooling,Mining.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.mining.service.hvac.space-cooling,Mining.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.mining.service.hvac.space-heating,Mining.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.mining.service.hvac.space-heating,Mining.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.mining.service.hvac.space-heating,Mining.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.mining.service.hvac.space-heating,Mining.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.mining.service.hvac.space-heating,Mining.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.mining.service.leaching,,,leaching-vessel_heap-atmospheric,t,concentrate,
+<sector>.mining.service.leaching,,,leaching-vessel_high-pressure-acid,t,concentrate,
+<sector>.mining.service.leaching,,,leaching-vessel_in-situ,t,concentrate,
+<sector>.mining.service.lighting,Mining.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.mining.service.lighting,Mining.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.mining.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.mining.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.mining.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.mining.service.milling,Mining.Final Product.Metal Open Pit.Size Reduced Non Iron Product.Primary Milling,tonne,grinding-mill_hpgr,t,ore,yes
+<sector>.mining.service.milling,Mining.Final Product.Metal Open Pit.Size Reduced Non Iron Product.Primary Milling,tonne,grinding-mill_sag-ball,t,ore,yes
+<sector>.mining.service.milling,Mining.Final Product.Metal Open Pit.Size Reduced Non Iron Product.Primary Milling,tonne,grinding-mill_stirred,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,conveyor_in-pit-crushing,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,haul-truck_battery-electric,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,haul-truck_diesel,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,haul-truck_dual-fuel,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,haul-truck_hydrogen-fuel-cell,t,ore,yes
+<sector>.mining.service.mine-haulage.open-pit,Mining.Final Product.Metal Open Pit,tonne,haul-truck_trolley-assist,t,ore,yes
+<sector>.mining.service.mine-haulage.underground,Mining.Final Product.Metal Underground,tonne,haul-truck_battery-electric,t,ore,yes
+<sector>.mining.service.mine-haulage.underground,Mining.Final Product.Metal Underground,tonne,haul-truck_diesel,t,ore,yes
+<sector>.mining.service.mine-haulage.underground,Mining.Final Product.Metal Underground,tonne,haul-truck_hydrogen-fuel-cell,t,ore,yes
+<sector>.mining.service.mine-haulage.underground,Mining.Final Product.Metal Underground,tonne,haul-truck_trolley-assist,t,ore,yes
+<sector>.mining.service.mine-haulage.underground,Mining.Final Product.Metal Underground,tonne,hoist,t,ore,yes
+<sector>.mining.service.on-site-power,,,combined-cycle,GJ,electricity,
+<sector>.mining.service.on-site-power,,,combined-cycle_ccs-diffuse,GJ,electricity,
+<sector>.mining.service.on-site-power,,,combined-cycle_efficiency-moderate,GJ,electricity,
+<sector>.mining.service.on-site-power,,,combustion-turbine_oxy-fuel,GJ,electricity,
+<sector>.mining.service.on-site-power,,,combustion-turbine_simple-cycle,GJ,electricity,
+<sector>.mining.service.on-site-power,,,geothermal-well_binary-power,GJ,electricity,
+<sector>.mining.service.on-site-power,,,geothermal-well_flash-power,GJ,electricity,
+<sector>.mining.service.on-site-power,,,photovoltaic-array_battery-storage,GJ,electricity,
+<sector>.mining.service.on-site-power,,,reactor_small-nuclear,GJ,electricity,
+<sector>.mining.service.on-site-power,,,steam-turbine_condensing,GJ,electricity,
+<sector>.mining.service.on-site-power,,,steam-turbine_waste-heat,GJ,electricity,
+<sector>.mining.service.on-site-power,,,wind-turbine,GJ,electricity,
+<sector>.mining.service.pelletizing,,,pellet-plant_induration,t,pellets,
+<sector>.mining.service.pelletizing,,,pellet-plant_induration_efficiency-moderate,t,pellets,
+<sector>.mining.service.pelletizing,,,pellet-plant_plasma-electric,t,pellets,
+<sector>.mining.service.separation,Mining.Final Product.Metal Open Pit.Mineral Separation,tonne,adsorber_direct-lithium,t,concentrate,yes
+<sector>.mining.service.separation,Mining.Final Product.Metal Open Pit.Mineral Separation,tonne,flotation-cell_froth,t,concentrate,yes
+<sector>.mining.service.separation,Mining.Final Product.Metal Open Pit.Mineral Separation,tonne,separator_gravity-magnetic,t,concentrate,yes
+<sector>.mining.service.separation,Mining.Final Product.Metal Open Pit.Mineral Separation,tonne,separator_thickening-filtration,t,concentrate,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.mining.service.steam,Mining.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.mining.service.tailings-disposal,,,separator_dry-stack-tailings,t,tailings,
+<sector>.natural-gas.product.distribution,Natural Gas.Production.Distribution,1000 m3,turboexpander_pressure-let-down,GJ,electricity,NO
+<sector>.natural-gas.product.supply.direct-heat,Natural Gas.Production.Supply.Direct Heat,GJ,direct-heater_electric,GJ,heat,yes
+<sector>.natural-gas.product.supply.direct-heat,Natural Gas.Production.Supply.Direct Heat,GJ,direct-heater_fuel-fired,GJ,heat,yes
+<sector>.natural-gas.product.supply.direct-heat,Natural Gas.Production.Supply.Direct Heat,GJ,direct-heater_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.natural-gas.product.supply.direct-heat,Natural Gas.Production.Supply.Direct Heat,GJ,direct-heater_solid-fuel,GJ,heat,yes
+<sector>.natural-gas.product.supply.direct-heat,Natural Gas.Production.Supply.Direct Heat,GJ,direct-heater_solid-fuel_efficiency-strong,GJ,heat,yes
+<sector>.natural-gas.product.supply.drilling,Natural Gas.Production.Supply.Extraction.Drilling,Wells,drilling-rig_battery-hybrid,m,drilling (m or wells),NO
+<sector>.natural-gas.product.supply.drilling,Natural Gas.Production.Supply.Extraction.Drilling,Wells,drilling-rig_diesel,m,drilling (m or wells),NO
+<sector>.natural-gas.product.supply.drilling,Natural Gas.Production.Supply.Extraction.Drilling,Wells,drilling-rig_electric,m,drilling (m or wells),NO
+<sector>.natural-gas.product.supply.drilling,Natural Gas.Production.Supply.Extraction.Drilling,Wells,fracturing-fleet_electric,m,drilling (m or wells),NO
+<sector>.natural-gas.product.supply.drilling,Natural Gas.Production.Supply.Extraction.Drilling,Wells,reciprocating-engine_dual-fuel,m,drilling (m or wells),NO
+<sector>.natural-gas.product.supply.extraction.coalbed-methane,Natural Gas.Production.Supply.Extraction.Coalbed Methane,1000 m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.natural-gas.product.supply.extraction.coalbed-methane,Natural Gas.Production.Supply.Extraction.Coalbed Methane,1000 m3,pump_artificial-lift,m3,oil or gas,yes
+<sector>.natural-gas.product.supply.extraction.conventional,Natural Gas.Production.Supply.Extraction.Conventional,1000 m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.natural-gas.product.supply.extraction.shale,Natural Gas.Production.Supply.Extraction.Shale,1000 m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.natural-gas.product.supply.extraction.tight,Natural Gas.Production.Supply.Extraction.Tight,1000 m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.natural-gas.product.supply.flaring,Natural Gas.Production.Supply.Flaring,tCO2,compressor_flare-gas-recovery,t,CO2,yes
+<sector>.natural-gas.product.supply.flaring,Natural Gas.Production.Supply.Flaring,tCO2,flare,t,CO2,yes
+<sector>.natural-gas.product.supply.flaring,Natural Gas.Production.Supply.Flaring,tCO2,flare_high-efficiency,t,CO2,yes
+<sector>.natural-gas.product.supply.formation-co2,Natural Gas.Production.Supply.Formation CO2,tCO2,gas-treatment-unit_acid-gas-advanced,m3,gas processed,NO
+<sector>.natural-gas.product.supply.formation-co2,Natural Gas.Production.Supply.Formation CO2,tCO2,gas-treatment-unit_amine-sweetening,m3,gas processed,NO
+<sector>.natural-gas.product.supply.formation-co2,Natural Gas.Production.Supply.Formation CO2,tCO2,gas-treatment-unit_amine-sweetening_ccs-concentrated,m3,gas processed,NO
+<sector>.natural-gas.product.supply.fugitive,Natural Gas.Production.Supply.Fugitive,tCH4,compressor_low-emission-seal,t,CH4,yes
+<sector>.natural-gas.product.supply.fugitive,Natural Gas.Production.Supply.Fugitive,tCH4,management-system_leak-detection,t,CH4,yes
+<sector>.natural-gas.product.supply.fugitive,Natural Gas.Production.Supply.Fugitive,tCH4,pipeline_plastic-liner,t,CH4,yes
+<sector>.natural-gas.product.supply.fugitive,Natural Gas.Production.Supply.Fugitive,tCH4,process-improvement_automatic-shutoff,t,CH4,yes
+<sector>.natural-gas.product.supply.fugitive,Natural Gas.Production.Supply.Fugitive,tCH4,process-improvement_low-emission-components,t,CH4,yes
+<sector>.natural-gas.product.supply.lng-liquefaction,,,compressor_boil-off-recovery,t,LNG,
+<sector>.natural-gas.product.supply.lng-liquefaction,,,heat-recovery-unit_turbine-exhaust,t,LNG,
+<sector>.natural-gas.product.supply.lng-liquefaction,,,liquefaction-train_base-load,t,LNG,
+<sector>.natural-gas.product.supply.lng-liquefaction,,,liquefaction-train_electric,t,LNG,
+<sector>.natural-gas.product.supply.lng-liquefaction,,,liquefaction-train_floating,t,LNG,
+<sector>.natural-gas.product.supply.lng-liquefaction,,,liquefaction-train_small-scale,t,LNG,
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_battery-electric,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_diesel,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_diesel-electric,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_hydrogen-combustion,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_hydrogen-fuel-cell,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.off-road-transport,Natural Gas.Production.Supply.Extraction.Off road transport,unit,mobile-equipment_spark-ignition,GJ,mobile work,NO
+<sector>.natural-gas.product.supply.processing,Natural Gas.Production.Supply.Processing,1000 m3,adsorber_molecular-sieve,m3,gas processed,yes
+<sector>.natural-gas.product.supply.processing,Natural Gas.Production.Supply.Processing,1000 m3,gas-treatment-unit_acid-gas-advanced,m3,gas processed,yes
+<sector>.natural-gas.product.supply.processing,Natural Gas.Production.Supply.Processing,1000 m3,gas-treatment-unit_amine-sweetening,m3,gas processed,yes
+<sector>.natural-gas.product.supply.processing,Natural Gas.Production.Supply.Processing,1000 m3,gas-treatment-unit_glycol-dehydration,m3,gas processed,yes
+<sector>.natural-gas.product.supply.processing,Natural Gas.Production.Supply.Processing,1000 m3,turboexpander_ngl-recovery,m3,gas processed,yes
+<sector>.natural-gas.product.supply.venting.blowdowns,Natural Gas.Production.Supply.Testing and Maintenance.Blowdowns,unit,compressor_blowdown-recovery,t,CH4,NO
+<sector>.natural-gas.product.supply.venting.controls,Natural Gas.Production.Supply.Controls,1000 m3,pneumatic-device_gas-driven,m3,gas handled,yes
+<sector>.natural-gas.product.supply.venting.controls,Natural Gas.Production.Supply.Controls,1000 m3,pneumatic-device_low-bleed,m3,gas handled,yes
+<sector>.natural-gas.product.supply.venting.controls,Natural Gas.Production.Supply.Controls,1000 m3,pneumatic-device_non-emitting,m3,gas handled,yes
+<sector>.natural-gas.product.supply.venting.liquid-unloading,Natural Gas.Production.Supply.Testing and Maintenance.Liquid Unloading,unit,flare_enclosed-combustor,t,CH4,NO
+<sector>.natural-gas.product.supply.venting.liquid-unloading,Natural Gas.Production.Supply.Testing and Maintenance.Liquid Unloading,unit,pump_plunger-lift,t,CH4,NO
+<sector>.natural-gas.product.supply.venting.other-point-venting,Natural Gas.Production.Supply.Venting,tCH4,compressor_vapour-recovery,t,CH4,yes
+<sector>.natural-gas.product.supply.venting.other-point-venting,Natural Gas.Production.Supply.Venting,tCH4,flare_enclosed-combustor,t,CH4,yes
+<sector>.natural-gas.product.supply.venting.other-point-venting,Natural Gas.Production.Supply.Venting,tCH4,process-improvement_automatic-shutoff,t,CH4,yes
+<sector>.natural-gas.product.supply.venting.other-point-venting,Natural Gas.Production.Supply.Venting,tCH4,process-improvement_nru-optimization,t,CH4,yes
+<sector>.natural-gas.product.supply.well-tests,Natural Gas.Production.Supply.Testing and Maintenance.Well Tests,unit,reciprocating-engine_dual-fuel,m,drilling (m or wells),NO
+<sector>.natural-gas.product.transmission,Natural Gas.Production.Transmission,1000 m3,turboexpander_pressure-let-down,GJ,electricity,NO
+<sector>.natural-gas.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.natural-gas.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.natural-gas.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.natural-gas.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.natural-gas.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.natural-gas.service.ccs.diffuse,Natural Gas.Production.Supply.Venting.Diffuse Venting,tCH4,capture-unit_advanced-solvent,t,CO2,yes
+<sector>.natural-gas.service.ccs.diffuse,Natural Gas.Production.Supply.Venting.Diffuse Venting,tCH4,capture-unit_amine,t,CO2,yes
+<sector>.natural-gas.service.ccs.diffuse,Natural Gas.Production.Supply.Venting.Diffuse Venting,tCH4,capture-unit_calcium-looping,t,CO2,yes
+<sector>.natural-gas.service.ccs.diffuse,Natural Gas.Production.Supply.Venting.Diffuse Venting,tCH4,capture-unit_membrane-cryogenic,t,CO2,yes
+<sector>.natural-gas.service.compressor-drive.engine,,,compressor_electric,GJ,shaft work,
+<sector>.natural-gas.service.compressor-drive.engine,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.natural-gas.service.compressor-drive.engine,,,reciprocating-engine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.natural-gas.service.compressor-drive.turbine,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.natural-gas.service.compressor-drive.turbine,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.natural-gas.service.compressor-drive.turbine,,,compressor_electric,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.natural-gas.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_cyclic-steam,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_electromagnetic-heating,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_in-situ-oxy-combustion,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_sagd,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_solvent-assisted,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.in-situ,Petroleum Crude.Production.Bitumen.In-Situ,m3,well_solvent-only,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.mining,Petroleum Crude.Production.Bitumen.Mining,m3,mine_open-pit-oil-sands,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.mining,Petroleum Crude.Production.Bitumen.Mining,m3,separator_non-aqueous,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.mining,Petroleum Crude.Production.Bitumen.Mining,m3,separator_paraffinic-froth-treatment,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.mining,Petroleum Crude.Production.Bitumen.Mining,m3,separator_warm-water-extraction,m3,bitumen,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_delayed-coking,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_ebullated-bed-hydrocracking,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_fluid-coking,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_hydroprocessing,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_integrated-upgrader,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_integrated-upgrader_ccs-concentrated,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.bitumen.upgrading,Petroleum Crude.Production.Bitumen.Upgrading,m3,reactor_partial-upgrading,m3,synthetic crude,yes
+<sector>.petroleum-crude.product.exploration,Petroleum Crude.Production.Exploration,Wells,fracturing-fleet_electric,m,drilling (m or wells),NO
+<sector>.petroleum-crude.product.exploration,Petroleum Crude.Production.Exploration,Wells,reciprocating-engine_dual-fuel,m,drilling (m or wells),NO
+<sector>.petroleum-crude.product.heavy,Petroleum Crude.Production.Heavy,m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.petroleum-crude.product.heavy,Petroleum Crude.Production.Heavy,m3,heat-pump_oil-treating,m3,oil or gas,yes
+<sector>.petroleum-crude.product.heavy,Petroleum Crude.Production.Heavy,m3,pump_artificial-lift,m3,oil or gas,yes
+<sector>.petroleum-crude.product.light-medium.offshore,,,direct-heater_line-heater,m3,oil or gas,
+<sector>.petroleum-crude.product.light-medium.offshore,,,heat-pump_oil-treating,m3,oil or gas,
+<sector>.petroleum-crude.product.light-medium.offshore,,,pump_artificial-lift,m3,oil or gas,
+<sector>.petroleum-crude.product.light-medium.onshore,Petroleum Crude.Production.Light Medium.Onshore,m3,direct-heater_line-heater,m3,oil or gas,yes
+<sector>.petroleum-crude.product.light-medium.onshore,Petroleum Crude.Production.Light Medium.Onshore,m3,heat-pump_oil-treating,m3,oil or gas,yes
+<sector>.petroleum-crude.product.light-medium.onshore,Petroleum Crude.Production.Light Medium.Onshore,m3,pump_artificial-lift,m3,oil or gas,yes
+<sector>.petroleum-crude.product.transmission,,,process-improvement_drag-reducing-agent,m3,crude transport (m3-km),
+<sector>.petroleum-crude.product.transmission,,,pump_electric-station,m3,crude transport (m3-km),
+<sector>.petroleum-crude.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.petroleum-crude.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.petroleum-crude.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.petroleum-crude.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.petroleum-crude.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.petroleum-crude.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.petroleum-crude.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.petroleum-crude.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.petroleum-crude.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.petroleum-crude.service.field-engines,,,motor_induction-standard,GJ,shaft work,
+<sector>.petroleum-crude.service.field-engines,,,reciprocating-engine_diesel-field,GJ,shaft work,
+<sector>.petroleum-crude.service.field-engines,,,reciprocating-engine_gasoline-propane,GJ,shaft work,
+<sector>.petroleum-crude.service.hydrogen,Petroleum Crude.Hydrogen,GJ,electrolyzer_low-temperature,GJ,hydrogen,yes
+<sector>.petroleum-crude.service.hydrogen,Petroleum Crude.Hydrogen,GJ,gasifier_coal-petroleum-coke,GJ,hydrogen,yes
+<sector>.petroleum-crude.service.hydrogen,Petroleum Crude.Hydrogen,GJ,steam-reformer_methane,GJ,hydrogen,yes
+<sector>.petroleum-crude.service.hydrogen,Petroleum Crude.Hydrogen,GJ,steam-reformer_methane_ccs-concentrated,GJ,hydrogen,yes
+<sector>.petroleum-crude.service.hydrogen,Petroleum Crude.Hydrogen,GJ,steam-reformer_methane_ccs-diffuse,GJ,hydrogen,yes
+<sector>.petroleum-crude.service.mine-haulage,,,haul-truck_battery-electric,t,ore,
+<sector>.petroleum-crude.service.mine-haulage,,,haul-truck_diesel,t,ore,
+<sector>.petroleum-crude.service.mine-haulage,,,haul-truck_dual-fuel,t,ore,
+<sector>.petroleum-crude.service.produced-water,,,evaporator_crystallizer,m3,produced water handled,
+<sector>.petroleum-crude.service.produced-water,,,separator_produced-water-recycling,m3,produced water handled,
+<sector>.petroleum-crude.service.produced-water,,,separator_warm-lime-softening,m3,produced water handled,
+<sector>.petroleum-crude.service.produced-water,,,well_disposal-injection,m3,produced water handled,
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.petroleum-crude.service.steam,Petroleum Crude.Still Gas Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.petroleum-refining.product.alkylates,Petroleum Refining.Refined Petroleum Products.Alkylates,m3 of RPP,reactor_alkylation,t,throughput,NO
+<sector>.petroleum-refining.product.isomerization,Petroleum Refining.Refined Petroleum Products.Alkylates.Isoparaffins.Isomerization,m3 of RPP,reactor_isomerization,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Coking,m3 of RPP,reactor_delayed-coking,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking,m3 of RPP,reactor_fluid-catalytic-cracking,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking,m3 of RPP,reactor_fluid-catalytic-cracking-oxy-fuel,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking,m3 of RPP,reactor_fluid-catalytic-cracking_ccs-diffuse,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking,m3 of RPP,reactor_hydroprocessing,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Distillation,m3 of RPP,distillation-column_atmospheric-vacuum,t,crude,NO
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Distillation,m3 of RPP,distillation-column_atmospheric-vacuum_efficiency-strong,t,crude,NO
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Distillation,m3 of RPP,refinery_conversion,t,crude,NO
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Distillation,m3 of RPP,refinery_deep-conversion,t,crude,NO
+<sector>.petroleum-refining.product.petroleum-fractions.distillation,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Distillation,m3 of RPP,refinery_hydroskimming,t,crude,NO
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Hydrotreating.Desulphurization,m3 of RPP,reactor_hydroprocessing,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Hydrotreating.Sulphur Recovery,m3 of RPP,gas-treatment-unit_acid-gas-advanced,t,throughput,NO
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Hydrotreating.Sulphur Recovery,m3 of RPP,gas-treatment-unit_sulphur-recovery,t,throughput,NO
+<sector>.petroleum-refining.product.reforming,Petroleum Refining.Refined Petroleum Products.Reforming,m3 of RPP,reactor_catalytic-reforming,t,throughput,NO
+<sector>.petroleum-refining.service.ccs.concentrated,,,adsorber_pressure-swing,t,CO2,
+<sector>.petroleum-refining.service.ccs.concentrated,,,capture-unit_chemical-solvent,t,CO2,
+<sector>.petroleum-refining.service.ccs.concentrated,,,capture-unit_cryogenic-condensation,t,CO2,
+<sector>.petroleum-refining.service.ccs.concentrated,,,capture-unit_physical-solvent,t,CO2,
+<sector>.petroleum-refining.service.ccs.concentrated,,,compressor_co2-dehydration,t,CO2,
+<sector>.petroleum-refining.service.ccs.diffuse,,,capture-unit_advanced-solvent,t,CO2,
+<sector>.petroleum-refining.service.ccs.diffuse,,,capture-unit_amine,t,CO2,
+<sector>.petroleum-refining.service.ccs.diffuse,,,capture-unit_calcium-looping,t,CO2,
+<sector>.petroleum-refining.service.ccs.diffuse,,,capture-unit_membrane-cryogenic,t,CO2,
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_electric,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_fuel-fired,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_solid-fuel,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,direct-heater_solid-fuel_efficiency-strong,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,solar-concentrator,GJ,heat,yes
+<sector>.petroleum-refining.service.direct-heat,Petroleum Refining.Direct Heat,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.petroleum-refining.service.hvac.space-cooling,Petroleum Refining.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.petroleum-refining.service.hvac.space-cooling,Petroleum Refining.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.petroleum-refining.service.hvac.space-heating,Petroleum Refining.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.petroleum-refining.service.hvac.space-heating,Petroleum Refining.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.petroleum-refining.service.hvac.space-heating,Petroleum Refining.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.petroleum-refining.service.hvac.space-heating,Petroleum Refining.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.petroleum-refining.service.hvac.space-heating,Petroleum Refining.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,autothermal-reformer,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,autothermal-reformer_ccs-concentrated,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,electrolyzer_low-temperature,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,gasifier_coal-petroleum-coke,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,steam-reformer_methane,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,steam-reformer_methane_ccs-concentrated,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,steam-reformer_methane_ccs-diffuse,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.hydrogen,Petroleum Refining.Hydrogen,GJ,steam-reformer_methane_efficiency-moderate,GJ,hydrogen,yes
+<sector>.petroleum-refining.service.lighting,Petroleum Refining.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.petroleum-refining.service.lighting,Petroleum Refining.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,combustion-turbine_drive,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,motor_induction-standard,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,motor_induction-standard_efficiency-moderate,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,motor_premium-efficiency,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,motor_variable-speed,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,reciprocating-engine_drive,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,Petroleum Refining.Refined Petroleum Products.Petroleum Fractions.Cracked Gas Oil.Hydrocracking.Low,m3 of RPP,steam-turbine_drive,GJ,shaft work,NO
+<sector>.petroleum-refining.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.petroleum-refining.service.steam,Petroleum Refining.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_direct-fired,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_electric,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_heat-pump,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated_efficiency-moderate,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated_efficiency-strong,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine,t,paper,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_efficiency-moderate,t,paper,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_efficiency-strong,t,paper,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_waterless,t,paper,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,press_dewatering-advanced,t,paper,yes
+<sector>.pulp-and-paper.product.paper.coated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,press_shoe-extended,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.drying,Pulp and Paper.Paper.Linerboard.Linerboard Drying,tonne,dryer_heat-pump,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.linerboard.drying,Pulp and Paper.Paper.Linerboard.Linerboard Drying,tonne,dryer_steam-heated,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.linerboard.drying,Pulp and Paper.Paper.Linerboard.Linerboard Drying,tonne,dryer_steam-heated_efficiency-moderate,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.linerboard.drying,Pulp and Paper.Paper.Linerboard.Linerboard Drying,tonne,dryer_steam-heated_efficiency-strong,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_efficiency-moderate,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_efficiency-strong,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_waterless,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,press_dewatering-advanced,t,paper,yes
+<sector>.pulp-and-paper.product.paper.linerboard.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,press_shoe-extended,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.drying,Pulp and Paper.Paper.Newsprint.Newsprint Drying,tonne,dryer_heat-pump,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.newsprint.drying,Pulp and Paper.Paper.Newsprint.Newsprint Drying,tonne,dryer_steam-heated,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.newsprint.drying,Pulp and Paper.Paper.Newsprint.Newsprint Drying,tonne,dryer_steam-heated_efficiency-moderate,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.newsprint.drying,Pulp and Paper.Paper.Newsprint.Newsprint Drying,tonne,dryer_steam-heated_efficiency-strong,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_efficiency-moderate,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_efficiency-strong,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,paper-machine_waterless,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,press_dewatering-advanced,t,paper,yes
+<sector>.pulp-and-paper.product.paper.newsprint.forming,Pulp and Paper.Paper.Linerboard.Linerboard Forming Pressing Finishing,tonne,press_shoe-extended,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_direct-fired,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_electric,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_heat-pump,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_steam-heated,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_steam-heated_efficiency-moderate,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_steam-heated_efficiency-strong,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.drying,Pulp and Paper.Paper.Tissue.Tissue Drying,tonne,dryer_through-air,t,dried product,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,paper-machine,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,paper-machine_efficiency-moderate,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,paper-machine_efficiency-strong,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,paper-machine_waterless,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,press_dewatering-advanced,t,paper,yes
+<sector>.pulp-and-paper.product.paper.tissue.forming,Pulp and Paper.Paper.Tissue.Tissue Forming Pressing Finishing,tonne,press_shoe-extended,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_heat-pump,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.uncoated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.uncoated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated_efficiency-moderate,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.uncoated.drying,Pulp and Paper.Paper.Uncoated.Uncoated Drying,tonne,dryer_steam-heated_efficiency-strong,t,water evaporated or product,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_efficiency-moderate,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_efficiency-strong,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,paper-machine_waterless,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,press_dewatering-advanced,t,paper,yes
+<sector>.pulp-and-paper.product.paper.uncoated.forming,Pulp and Paper.Paper.Uncoated.Uncoated Forming Pressing Finishing,tonne,press_shoe-extended,t,paper,yes
+<sector>.pulp-and-paper.product.pulp.bleaching,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Bleaching,tonne,reactor_ecf-bleaching,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.bleaching,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Bleaching,tonne,reactor_oxygen-delignification,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.drying,Pulp and Paper.Paper.Prepared Pulp.Pulp Drying,tonne,dryer_heat-pump,t,dried product,yes
+<sector>.pulp-and-paper.product.pulp.drying,Pulp and Paper.Paper.Prepared Pulp.Pulp Drying,tonne,dryer_market-pulp,t,dried product,yes
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Chemical,tonne,digester_batch-kraft,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Chemical,tonne,digester_continuous-kraft,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Chemical,tonne,digester_deep-eutectic-solvent,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Chemical,tonne,digester_semi-chemical,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Chemical,tonne,digester_sulphite,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-mechanical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Mechanical,tonne,pulper_chemi-thermomechanical,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-mechanical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Mechanical,tonne,pulper_groundwood,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-mechanical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Mechanical,tonne,pulper_refiner-low-energy,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-mechanical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Mechanical,tonne,pulper_thermomechanical,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-recycled,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Recycled,tonne,pulper_recycled-fibre,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.pulping-semi-chemical,Pulp and Paper.Paper.Prepared Pulp.Bleached Pulp.Washed Pulp.Raw Pulp.Pulping Semi Chemical,tonne,digester_semi-chemical,t,air-dry pulp,yes
+<sector>.pulp-and-paper.product.pulp.wood-preparation,,,debarker_drum,t,wood,
+<sector>.pulp-and-paper.product.pulp.wood-preparation,,,process-improvement_log-thawing,t,wood,
+<sector>.pulp-and-paper.service.chemical-recovery.evaporator,Pulp and Paper.Black Liquor Service.Evaporator,tonne,evaporator_multiple-effect,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.evaporator,Pulp and Paper.Black Liquor Service.Evaporator,tonne,vapour-recompressor_evaporation,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Lime Kiln,tonne,kiln_lime-electric,t,lime,yes
+<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Lime Kiln,tonne,kiln_lime-rotary,t,lime,yes
+<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Lime Kiln,tonne,kiln_lime-rotary-preheater_ccs-diffuse,t,lime,yes
+<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Lime Kiln,tonne,kiln_lime-rotary_efficiency-strong,t,lime,yes
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Recovery Furnace,tonne,boiler_recovery,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Recovery Furnace,tonne,boiler_recovery-high-solids,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Recovery Furnace,tonne,boiler_recovery_ccs-diffuse,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Recovery Furnace,tonne,gasifier_black-liquor,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,Pulp and Paper.Black Liquor Service.Concentrated Black Liquor.Recovery Furnace,tonne,separator_lignin-extraction,t,black liquor solids,yes
+<sector>.pulp-and-paper.service.effluent-treatment,,,anaerobic-digester_effluent,m3,effluent treated,
+<sector>.pulp-and-paper.service.effluent-treatment,,,fan_activated-sludge,m3,effluent treated,
+<sector>.pulp-and-paper.service.effluent-treatment,,,fan_fine-bubble,m3,effluent treated,
+<sector>.pulp-and-paper.service.effluent-treatment,,,separator_clarifier,m3,effluent treated,
+<sector>.pulp-and-paper.service.effluent-treatment,,,separator_membrane-bioreactor,m3,effluent treated,
+<sector>.pulp-and-paper.service.hvac.space-cooling,Pulp and Paper.HVAC.Space Cooling,GJ,chiller_vapour-compression,GJ,space cooling,yes
+<sector>.pulp-and-paper.service.hvac.space-cooling,Pulp and Paper.HVAC.Space Cooling,GJ,cooling-tower_free-evaporative,GJ,space cooling,yes
+<sector>.pulp-and-paper.service.hvac.space-heating,Pulp and Paper.HVAC.Space Heating,GJ,heat-pump_space,GJ,space heating,yes
+<sector>.pulp-and-paper.service.hvac.space-heating,Pulp and Paper.HVAC.Space Heating,GJ,resistance-heater_space-heating,GJ,space heating,yes
+<sector>.pulp-and-paper.service.hvac.space-heating,Pulp and Paper.HVAC.Space Heating,GJ,space-heater_fuel-fired,GJ,space heating,yes
+<sector>.pulp-and-paper.service.hvac.space-heating,Pulp and Paper.HVAC.Space Heating,GJ,ventilation-unit_demand-controlled,GJ,space heating,yes
+<sector>.pulp-and-paper.service.hvac.space-heating,Pulp and Paper.HVAC.Space Heating,GJ,ventilation-unit_heat-recovery,GJ,space heating,yes
+<sector>.pulp-and-paper.service.lighting,Pulp and Paper.Lighting,GJ,lighting_fluorescent-hid,GJ,lighting,yes
+<sector>.pulp-and-paper.service.lighting,Pulp and Paper.Lighting,GJ,lighting_led-controls,GJ,lighting,yes
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,motor_induction-standard,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,motor_variable-speed,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.compressed-air,,,steam-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,motor_induction-standard,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,motor_variable-speed,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,,,steam-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-handling,,,motor_induction-standard,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-handling,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-handling,,,motor_variable-speed,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-processing,,,motor_induction-standard,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-processing,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.materials-processing,,,motor_variable-speed,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,combustion-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,combustion-turbine_drive_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,motor_induction-standard,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,motor_induction-standard_efficiency-moderate,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,motor_premium-efficiency,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,motor_variable-speed,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,reciprocating-engine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.machine-drive.pumps,,,steam-turbine_drive,GJ,shaft work,
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,anaerobic-digester_chp,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_electric,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_fuel-fired,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_fuel-fired_ccs-diffuse,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_fuel-fired_efficiency-moderate,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_oxy-fuel,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,boiler_solid-fuel,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,combustion-turbine_chp,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,combustion-turbine_chp_ccs-diffuse,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,fuel-cell_chp,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,gasifier_biomass-chp,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,geothermal-well_direct-use,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,heat-pump_heat-transformer,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,heat-pump_industrial,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,heat-recovery-unit_waste-heat,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,reactor_small-nuclear,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,reciprocating-engine_chp,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,solar-collector,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,steam-turbine_back-pressure,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,thermal-storage_electric,GJ,heat,yes
+<sector>.pulp-and-paper.service.steam,Pulp and Paper.Steam,GJ,thermal-storage_heat-charged,GJ,heat,yes
