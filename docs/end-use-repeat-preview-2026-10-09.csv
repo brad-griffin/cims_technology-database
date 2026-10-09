@@ -1,0 +1,140 @@
+family,archetype,n-end-uses,end-use,end-use-label
+cement,calciner_indirect,2,clinker-production,Clinker production
+cement,calciner_indirect,2,lime-calcination,Lime and dolime calcination
+food-and-beverage,chiller_vapour-compression,2,refrigeration,Refrigeration and cold storage
+food-and-beverage,chiller_vapour-compression,2,space-cooling,Space cooling
+heat-supply,direct-heater_fuel-fired,3,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,direct-heater_fuel-fired,3,heat-medium-temp,"Heat, medium temperature (150-400 degC)"
+heat-supply,direct-heater_fuel-fired,3,pyrometallurgy,"Fuel-fired roasting, smelting and refining"
+heat-supply,direct-heater_fuel-fired_efficiency-moderate,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,direct-heater_fuel-fired_efficiency-moderate,2,heat-medium-temp,"Heat, medium temperature (150-400 degC)"
+heat-supply,direct-heater_solid-fuel,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,direct-heater_solid-fuel,2,heat-medium-temp,"Heat, medium temperature (150-400 degC)"
+heat-supply,direct-heater_solid-fuel_efficiency-strong,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,direct-heater_solid-fuel_efficiency-strong,2,heat-medium-temp,"Heat, medium temperature (150-400 degC)"
+heat-supply,heat-pump_heat-transformer,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,heat-pump_heat-transformer,2,thermal-processing,"Cooking, pasteurizing and sterilizing"
+heat-supply,heat-pump_industrial,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,heat-pump_industrial,2,thermal-processing,"Cooking, pasteurizing and sterilizing"
+heat-supply,reactor_small-nuclear,2,heat-high-temp,"Heat, high temperature (> 400 degC)"
+heat-supply,reactor_small-nuclear,2,heat-low-temp,"Heat, low temperature (< 150 degC)"
+heat-supply,thermal-storage_electric,2,heat-high-temp,"Heat, high temperature (> 400 degC)"
+heat-supply,thermal-storage_electric,2,heat-medium-temp,"Heat, medium temperature (150-400 degC)"
+hydrogen,autothermal-reformer,2,centralized-hydrogen-production,Centralized hydrogen production
+hydrogen,autothermal-reformer,2,refinery-hydrogen,On-site hydrogen production
+hydrogen,autothermal-reformer_ccs-concentrated,2,centralized-hydrogen-production,Centralized hydrogen production
+hydrogen,autothermal-reformer_ccs-concentrated,2,refinery-hydrogen,On-site hydrogen production
+iron-and-steel,air-separation-unit,2,smelter-oxygen-supply,Oxygen supply
+iron-and-steel,air-separation-unit,2,steel-oxygen-supply,Oxygen supply
+iron-and-steel,electric-arc-furnace,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+iron-and-steel,electric-arc-furnace,2,steelmaking,Steelmaking
+iron-and-steel,induction-heater_reheating,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+iron-and-steel,induction-heater_reheating,2,reheating,Reheating
+iron-and-steel,pellet-plant_induration,2,agglomeration,Sintering and pelletizing
+iron-and-steel,pellet-plant_induration,2,pelletizing,Iron ore pelletizing
+iron-and-steel,pellet-plant_plasma-electric,2,agglomeration,Sintering and pelletizing
+iron-and-steel,pellet-plant_plasma-electric,2,pelletizing,Iron ore pelletizing
+machine-drive,combustion-turbine_drive,4,compressed-air,Compressed air
+machine-drive,combustion-turbine_drive,4,compressor-drive-turbine,"Compressor drive, gas turbine"
+machine-drive,combustion-turbine_drive,4,fans-and-blowers,Fans and blowers
+machine-drive,combustion-turbine_drive,4,pumps,Pumps
+machine-drive,combustion-turbine_drive_efficiency-moderate,4,compressed-air,Compressed air
+machine-drive,combustion-turbine_drive_efficiency-moderate,4,compressor-drive-turbine,"Compressor drive, gas turbine"
+machine-drive,combustion-turbine_drive_efficiency-moderate,4,fans-and-blowers,Fans and blowers
+machine-drive,combustion-turbine_drive_efficiency-moderate,4,pumps,Pumps
+machine-drive,compressor_electric,2,compressor-drive-engine,"Compressor drive, reciprocating"
+machine-drive,compressor_electric,2,compressor-drive-turbine,"Compressor drive, gas turbine"
+machine-drive,motor_induction-standard,7,compressed-air,Compressed air
+machine-drive,motor_induction-standard,7,fans-and-blowers,Fans and blowers
+machine-drive,motor_induction-standard,7,field-engines,Field engines
+machine-drive,motor_induction-standard,7,materials-handling,Materials handling
+machine-drive,motor_induction-standard,7,materials-processing,Materials processing
+machine-drive,motor_induction-standard,7,pumps,Pumps
+machine-drive,motor_induction-standard,7,space-cooling,Space cooling
+machine-drive,motor_induction-standard_efficiency-moderate,3,compressed-air,Compressed air
+machine-drive,motor_induction-standard_efficiency-moderate,3,fans-and-blowers,Fans and blowers
+machine-drive,motor_induction-standard_efficiency-moderate,3,pumps,Pumps
+machine-drive,motor_premium-efficiency,5,compressed-air,Compressed air
+machine-drive,motor_premium-efficiency,5,fans-and-blowers,Fans and blowers
+machine-drive,motor_premium-efficiency,5,materials-handling,Materials handling
+machine-drive,motor_premium-efficiency,5,materials-processing,Materials processing
+machine-drive,motor_premium-efficiency,5,pumps,Pumps
+machine-drive,motor_variable-speed,6,compressed-air,Compressed air
+machine-drive,motor_variable-speed,6,fans-and-blowers,Fans and blowers
+machine-drive,motor_variable-speed,6,materials-handling,Materials handling
+machine-drive,motor_variable-speed,6,materials-processing,Materials processing
+machine-drive,motor_variable-speed,6,pumps,Pumps
+machine-drive,motor_variable-speed,6,space-cooling,Space cooling
+machine-drive,reciprocating-engine_drive,4,compressed-air,Compressed air
+machine-drive,reciprocating-engine_drive,4,compressor-drive-engine,"Compressor drive, reciprocating"
+machine-drive,reciprocating-engine_drive,4,fans-and-blowers,Fans and blowers
+machine-drive,reciprocating-engine_drive,4,pumps,Pumps
+machine-drive,steam-turbine_drive,3,compressed-air,Compressed air
+machine-drive,steam-turbine_drive,3,fans-and-blowers,Fans and blowers
+machine-drive,steam-turbine_drive,3,pumps,Pumps
+mining,haul-truck_battery-electric,2,extraction-and-haulage,Extraction and haulage
+mining,haul-truck_battery-electric,2,oil-sands-mining-and-extraction,Oil sands mining and extraction
+mining,haul-truck_diesel,2,extraction-and-haulage,Extraction and haulage
+mining,haul-truck_diesel,2,oil-sands-mining-and-extraction,Oil sands mining and extraction
+mining,haul-truck_dual-fuel,2,extraction-and-haulage,Extraction and haulage
+mining,haul-truck_dual-fuel,2,oil-sands-mining-and-extraction,Oil sands mining and extraction
+mining,leaching-vessel_heap-atmospheric,2,hydrometallurgy,Leaching and electrowinning
+mining,leaching-vessel_heap-atmospheric,2,separation-and-processing,Mineral separation and processing
+mining,leaching-vessel_high-pressure-acid,2,hydrometallurgy,Leaching and electrowinning
+mining,leaching-vessel_high-pressure-acid,2,separation-and-processing,Mineral separation and processing
+non-ferrous-metals,melting-furnace_regenerative-oxy-fuel,2,melting-casting-and-fabrication,"Melting, casting, rolling and extrusion"
+non-ferrous-metals,melting-furnace_regenerative-oxy-fuel,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+non-metallic-minerals,dryer_electric,4,drying,Food drying
+non-metallic-minerals,dryer_electric,4,drying-and-low-temp-calcining,Drying and low-temperature calcining
+non-metallic-minerals,dryer_electric,4,paper-drying,Paper and pulp drying
+non-metallic-minerals,dryer_electric,4,product-drying,Concentrate and product drying
+non-metallic-minerals,dryer_rotary-direct-fired,2,drying-and-low-temp-calcining,Drying and low-temperature calcining
+non-metallic-minerals,dryer_rotary-direct-fired,2,product-drying,Concentrate and product drying
+non-metallic-minerals,kiln_lime-rotary-preheater_ccs-diffuse,2,lime-calcination,Lime and dolime calcination
+non-metallic-minerals,kiln_lime-rotary-preheater_ccs-diffuse,2,lime-kiln,Lime kiln
+oil-and-gas,process-improvement_automatic-shutoff,2,fugitive-emissions,Fugitive emissions
+oil-and-gas,process-improvement_automatic-shutoff,2,venting,Venting
+oil-and-gas,separator_dry-stack-tailings,2,oil-sands-tailings,Oil sands tailings
+oil-and-gas,separator_dry-stack-tailings,2,water-and-tailings-management,Water and tailings management
+other-industry,dryer_direct-fired,2,drying,Food drying
+other-industry,dryer_direct-fired,2,paper-drying,Paper and pulp drying
+other-industry,dryer_direct-fired_efficiency-moderate,2,drying,Food drying
+other-industry,dryer_direct-fired_efficiency-moderate,2,product-drying,Concentrate and product drying
+other-industry,melting-furnace_crucible-gas-fired,2,melting-casting-and-fabrication,"Melting, casting, rolling and extrusion"
+other-industry,melting-furnace_crucible-gas-fired,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+other-industry,melting-furnace_induction,2,melting-casting-and-fabrication,"Melting, casting, rolling and extrusion"
+other-industry,melting-furnace_induction,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+other-industry,melting-furnace_isothermal,2,melting-casting-and-fabrication,"Melting, casting, rolling and extrusion"
+other-industry,melting-furnace_isothermal,2,metal-melting-and-heat-treatment,Metal melting and heat treatment
+petroleum-refining,electrolyzer_low-temperature,3,centralized-hydrogen-production,Centralized hydrogen production
+petroleum-refining,electrolyzer_low-temperature,3,refinery-hydrogen,On-site hydrogen production
+petroleum-refining,electrolyzer_low-temperature,3,upgrader-hydrogen,On-site hydrogen production
+petroleum-refining,gas-treatment-unit_acid-gas-advanced,2,conversion-and-treating,"Conversion, upgrading and treating"
+petroleum-refining,gas-treatment-unit_acid-gas-advanced,2,gas-processing,Natural gas processing
+petroleum-refining,gas-treatment-unit_sulphur-recovery,2,conversion-and-treating,"Conversion, upgrading and treating"
+petroleum-refining,gas-treatment-unit_sulphur-recovery,2,gas-processing,Natural gas processing
+petroleum-refining,gasifier_coal-petroleum-coke,2,refinery-hydrogen,On-site hydrogen production
+petroleum-refining,gasifier_coal-petroleum-coke,2,upgrader-hydrogen,On-site hydrogen production
+petroleum-refining,reactor_delayed-coking,2,bitumen-upgrading,Bitumen upgrading
+petroleum-refining,reactor_delayed-coking,2,conversion-and-treating,"Conversion, upgrading and treating"
+petroleum-refining,reactor_hydroprocessing,2,bitumen-upgrading,Bitumen upgrading
+petroleum-refining,reactor_hydroprocessing,2,conversion-and-treating,"Conversion, upgrading and treating"
+petroleum-refining,steam-reformer_methane,3,centralized-hydrogen-production,Centralized hydrogen production
+petroleum-refining,steam-reformer_methane,3,refinery-hydrogen,On-site hydrogen production
+petroleum-refining,steam-reformer_methane,3,upgrader-hydrogen,On-site hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-concentrated,3,centralized-hydrogen-production,Centralized hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-concentrated,3,refinery-hydrogen,On-site hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-concentrated,3,upgrader-hydrogen,On-site hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-diffuse,3,centralized-hydrogen-production,Centralized hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-diffuse,3,refinery-hydrogen,On-site hydrogen production
+petroleum-refining,steam-reformer_methane_ccs-diffuse,3,upgrader-hydrogen,On-site hydrogen production
+pulp-and-paper,dryer_heat-pump,4,drying,Food drying
+pulp-and-paper,dryer_heat-pump,4,drying-and-low-temp-calcining,Drying and low-temperature calcining
+pulp-and-paper,dryer_heat-pump,4,paper-drying,Paper and pulp drying
+pulp-and-paper,dryer_heat-pump,4,product-drying,Concentrate and product drying
+pulp-and-paper,vapour-recompressor_evaporation,2,chemical-recovery,Black liquor evaporation and recovery
+pulp-and-paper,vapour-recompressor_evaporation,2,electrochemical-products,Chlor-alkali and sodium chlorate
+space-conditioning,cooling-tower_free-evaporative,2,refrigeration,Refrigeration and cold storage
+space-conditioning,cooling-tower_free-evaporative,2,space-cooling,Space cooling
+space-conditioning,heat-pump_space,2,space-cooling,Space cooling
+space-conditioning,heat-pump_space,2,space-heating,Space heating

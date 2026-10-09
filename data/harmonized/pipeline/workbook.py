@@ -60,7 +60,7 @@ def _put(ws, r, j, v):
 
 def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None,
                flags: dict | None = None, grades: dict | None = None,
-               grouped: set | None = None) -> str:
+               grouped: set | None = None, band_notes: dict | None = None) -> str:
     """`grouped`: sheets whose _low, _high and _n columns are put in an Excel
     outline group beside their central column, folded when the book opens.
     `flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
@@ -81,6 +81,8 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     f_unit, f_band = Font(sz=10, color="D6E6E6"), Font(sz=16, bold=True, color="1F3B57")
     f_sub, f_body = Font(sz=11, bold=True, color="0E5A4E"), Font(sz=11)
     f_warn = Font(sz=11, bold=True, color="7A5C00")
+    f_note = Font(sz=10, italic=True, color="1F3B57")
+    f_repeat = Font(sz=11, italic=True, color="7F7F7F")
     rule = Border(bottom=Side(style="thin", color="006666"))
     EXT_FILL = PatternFill("solid", fgColor="E4DFEC")      # sourced, external factor
     GRADE_FILL = {"identity": PatternFill("solid", fgColor="DDEBF7"),
@@ -121,6 +123,8 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
                 ws.cell(r, first, families.get(b, b) or "(none)").font = f_band
                 for j in range(first, len(cols) + first):
                     ws.cell(r, j).fill, ws.cell(r, j).border = BAND, rule
+                if (band_notes or {}).get(b) and band == "family":
+                    ws.cell(r, first + 1, band_notes[b]).font = f_note
                 ws.row_dimensions[r].height = 22
                 r += 1
                 last_b, last_s = b, None
@@ -131,7 +135,7 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
             for j, col in enumerate(cols, start=first):
                 val = _cell(row.get(col, ""))
                 cell = _put(ws, r, j, val)
-                cell.font = f_body
+                cell.font = f_repeat if row.get("_repeat") else f_body
                 g = (grades or {}).get(name, {}).get((row.get("archetype"), col))
                 if g in GRADE_FILL:
                     cell.fill = GRADE_FILL[g]

@@ -670,6 +670,9 @@ compilation cites it as an original.
   convention (`records/reference/source-region.csv`) unless a ruling in
   `source-heating-basis.csv` names it.
 - Families are banded cross-cutting services first, then sectors alphabetically.
+  Within each family the workbook bands by end use in process-chain order
+  (`pipeline/bands.py`); an archetype serving several end uses repeats under each
+  (grey italics, workbook only). Machine drive stays banded by equipment.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against
   `product-unit`.
