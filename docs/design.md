@@ -672,7 +672,8 @@ compilation cites it as an original.
 - Families are banded cross-cutting services first, then sectors alphabetically.
   Within each family the workbook bands by end use in process-chain order
   (`pipeline/bands.py`); an archetype serving several end uses repeats under each
-  (grey italics, workbook only). Machine drive stays banded by equipment.
+  (workbook only, styled like any row), in the family whose sector owns that end use;
+  the `families` column lists them, home family first. Machine drive stays banded by equipment.
 - **Never sort, average or chart a cost or intensity column across families.** It
   holds CAD per tonne on a kiln row and CAD per GJ on a boiler row. Read it against
   `product-unit`.

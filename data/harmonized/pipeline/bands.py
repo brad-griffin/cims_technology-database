@@ -1,10 +1,13 @@
 """Workbook banding of the wide views: family, then end use (modeller 2026-10-09).
 
-Each family band is split into end-use sub-bands: the family's own end uses
-first, in process-chain order (ORDER), then end uses of other sectors that some
-of its archetypes also serve, then "(no connection)".
+Each family band is split into end-use sub-bands in process-chain order (ORDER).
 An archetype that serves several end uses is repeated under each, in the
-workbook only (the CSVs stay one row per archetype); repeats are marked.
+workbook only (the CSVs stay one row per archetype), and each repeat sits in the
+family whose sector owns that end use (haul trucks under mining and under oil and
+gas: oil sands mining), so a sub-band gathers every archetype competing for it.
+Cross-sector end uses (heat tiers, CO2 capture) stay in the archetype's own
+family. Repeats are not styled differently (modeller 2026-10-09). `families()`
+gives the derived families column.
 
   * heat supply: the sub-bands are the heat tiers in the archetype's `heat-tier`
     column (the shared steam node carries only the first tier on the service
@@ -55,46 +58,77 @@ FAMILY_NOTE = {"machine-drive": "Shown by equipment, not end use: most machine-d
 NO_CONNECTION = "(no connection)"
 
 
-def expand(rows: list[dict], records) -> list[dict]:
-    """Rows for a banded sheet: one per (archetype, end-use sub-band), ordered
-    by family (the rows' own order), sub-band, then equipment and archetype.
-    Adds `_sub` (sub-band label) and `_repeat` (True after an archetype's first row)."""
+def _context(records):
     ann = read(RECORDS / "hierarchy-annotation.csv")
     label = {r["annotation"]: r.get("label") or r["annotation"] for r in ann}
     asector = {r["annotation"]: r.get("sector", "") for r in ann}
+    eus = defaultdict(list)
+    for s in records.service:
+        if s.get("end-use") and s["end-use"] not in eus[s["archetype"]]:
+            eus[s["archetype"]].append(s["end-use"])
+    return label, asector, eus
+
+
+def _home_of(e, f, asector, records):
+    """The family an end use's sub-band sits in: the family named by the end use's
+    sector, else (cross-sector end uses, or a sector with no family) the archetype's own."""
+    s = asector.get(e, "")
+    return s if s in records.families and s != "cross-sector" else f
+
+
+def families(records) -> dict[str, str]:
+    """archetype -> its families, home family first, then the families of the sectors
+    that own the other end uses it serves (modeller 2026-10-09). Derived from
+    records/archetype-service.csv, so it never needs tagging by hand; `family` stays
+    the single home family that the pipeline's rules use."""
+    label, asector, eus = _context(records)
+    out = {}
+    for a in records.archetypes:
+        f = a["family"]
+        fs = [f] + [_home_of(e, f, asector, records) for e in eus.get(a["archetype"], [])]
+        out[a["archetype"]] = "; ".join(dict.fromkeys(fs))
+    return out
+
+
+def expand(rows: list[dict], records) -> list[dict]:
+    """One workbook row per (archetype, end-use sub-band), placed in the family whose
+    sector owns the end use (modeller 2026-10-09), sorted by family (the rows' own
+    order, then any family reached only through another family's archetypes),
+    sub-band, then equipment and archetype. Adds `_family` (the band the row sits in)
+    and `_sub` (sub-band label). All rows are shown alike (no repeat styling)."""
+    label, asector, eus = _context(records)
     service_fams = {f for f, r in records.families.items() if r.get("kind") == "service"}
 
     def own(f, e):
         a = asector.get(e, "")
         return a == f or (f in service_fams and a == "cross-sector")
     rank = {e: i for i, e in enumerate(ORDER)}
-    eus = defaultdict(list)
-    for s in records.service:
-        if s.get("end-use") and s["end-use"] not in eus[s["archetype"]]:
-            eus[s["archetype"]].append(s["end-use"])
     fam_pos = {}
+    for r in rows:
+        fam_pos.setdefault(r.get("family", ""), len(fam_pos))
     out = []
-    for i, r in enumerate(rows):
+    for r in rows:
         f = r.get("family", "")
-        fam_pos.setdefault(f, len(fam_pos))
         k = r.get("archetype", "")
         if f in BY_EQUIPMENT:
-            subs = [("", r.get("equipment", ""))]
+            placed = [(f, "", r.get("equipment", ""))]
         else:
             ids = list(eus.get(k, []))
             if f == "heat-supply":
                 tiers = [TIER[t.strip()] for t in (r.get("heat-tier") or "").split(";") if t.strip() in TIER]
                 ids = tiers + [e for e in ids if e not in TIER.values()] if tiers else ids
-            seen, subs = set(), []
-            for e in sorted(ids, key=lambda e: (not own(f, e), rank.get(e, 999))):
+            seen, placed = set(), []
+            for e in ids:
+                h = _home_of(e, f, asector, records)
                 lab = label.get(e, e)
-                if lab not in seen:
-                    seen.add(lab)
-                    subs.append((e, lab))
-            subs = subs or [("~", NO_CONNECTION)]
-        for j, (e, lab) in enumerate(subs):
-            out.append(dict(r, _sub=lab, _repeat=j > 0,
-                            _key=(fam_pos[f], (0 if own(f, e) else 1000 if e != "~" else 5000)
+                if (h, lab) not in seen:
+                    seen.add((h, lab))
+                    placed.append((h, e, lab))
+            placed = placed or [(f, "~", NO_CONNECTION)]
+        for h, e, lab in placed:
+            fam_pos.setdefault(h, len(fam_pos))
+            out.append(dict(r, _family=h, _sub=lab,
+                            _key=(fam_pos[h], (0 if (e == "" or own(h, e)) else 1000 if e != "~" else 5000)
                                   + rank.get(e, 998), lab,
                                   r.get("equipment", ""), k)))
     # within a family, a sub-band label sits at the rank of its first end use
@@ -103,10 +137,6 @@ def expand(rows: list[dict], records) -> list[dict]:
         kk = (o["_key"][0], o["_sub"])
         first[kk] = min(first.get(kk, o["_key"][1]), o["_key"][1])
     out.sort(key=lambda o: (o["_key"][0], first[(o["_key"][0], o["_sub"])], o["_sub"]) + o["_key"][3:])
-    # the repeat mark goes on every row after an archetype's first in sheet order
-    shown = set()
     for o in out:
-        o["_repeat"] = o["archetype"] in shown
-        shown.add(o["archetype"])
         o.pop("_key", None)
     return out

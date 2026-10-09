@@ -252,7 +252,7 @@ def main(argv) -> int:
               "the next build; edit data/harmonized/records/ instead.")
     print("  " + workbook.write_book(
         {"wide-archetype": W["wide-archetype"][:1] + (bands.expand(W["wide-archetype"][1], rec),)
-                           + W["wide-archetype"][2:4] + ("family", "_sub",
+                           + W["wide-archetype"][2:4] + ("_family", "_sub",
                             banner + " One row per archetype; costs and intensities are per "
                             "product-unit, so never compare them across families. Energy is on "
                             "a higher heating value. Shading: purple = sourced, but converted with a "
@@ -261,10 +261,11 @@ def main(argv) -> int:
                             "estimated; red = guess (see filled). Unshaded = sourced as reported. "
                             "_low, _high and _n columns are grouped: use the + above a column to "
                             "show them. Bands: family, then end use in process order; an archetype "
-                            "serving several end uses is repeated under each (repeats in grey italics)."),
+                            "serving several end uses is repeated under each, in the family that "
+                            "owns that end use (see the families column)."),
          "wide-carriers-species": W["wide-carriers-species"][:1]
                            + (bands.expand(W["wide-carriers-species"][1], rec),)
-                           + W["wide-carriers-species"][2:4] + ("family", "_sub",
+                           + W["wide-carriers-species"][2:4] + ("_family", "_sub",
                             banner + " Specific energy consumption by carrier and emissions by "
                             "species, per product-unit, alphabetical. The all-carrier total and "
                             "CO2-eq emissions are in wide-archetype."),

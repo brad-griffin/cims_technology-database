@@ -22,8 +22,9 @@ from .common import OUTPUT, read, split_list, write
 from .hierarchy import Hierarchy
 from .normalise import target_unit
 from .placement import placement
+from .bands import families
 
-IDENT = ["archetype", "label", "family", "end-uses", "equipment", "discriminator", "modifiers",
+IDENT = ["archetype", "label", "family", "families", "end-uses", "equipment", "discriminator", "modifiers",
          "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
          "secondary-products", "product-density", "product-density-unit", "product-energy-content",
          "product-energy-content-unit", "n-examples", "status", "sources"]
@@ -122,11 +123,13 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
     arows = []
     props = product_properties()
+    fams = families(records)   # home family first, then the end uses' families (2026-10-09)
     for a in records.archetypes:
         k = a["archetype"]
         exs = ex_by_arch.get(k, [])
         src = sorted({e["source-id"] for e in exs}, key=lambda s: (records.rank(s), s))
         arows.append(dict(a, **props.get(a.get("product", ""), {}), **{
+            "families": fams.get(k, a["family"]),
             "applies-to": applies_to(k, service),
             "end-uses": "; ".join(dict.fromkeys(s["end-use"] for s in service.get(k, []))),
             "n-examples": len(exs),
