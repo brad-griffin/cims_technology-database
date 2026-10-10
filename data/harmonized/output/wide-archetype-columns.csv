@@ -21,7 +21,7 @@ wide-archetype,status,identity,,
 wide-archetype,sources,identity,,
 wide-archetype,external-conversions,identity,,"Parameters whose pooled value rests on a conversion factor from outside the source (a heating value, a density, a process ratio, a pooled efficiency or an assumption), as examples so converted / examples pooled. Those values are shaded purple in the workbook. Which factors: archetype-parameter.csv (external-factors); how each example was converted: example-parameter.csv (conversion, conversion-class, conversion-factors)."
 wide-archetype,source-corrections,identity,,"Parameters whose pooled value includes a figure the source prints wrongly and the modeller corrected (a slipped decimal or zero, a wrong unit or carrier label), as examples so corrected / examples pooled. Each correction, the figure as printed and the evidence: records/reference/source-correction.csv; the rows carry the correction-id in example-parameter.csv (correction) and a note starting ASSUMED CORRECTION. These values are also counted in external-conversions and shaded purple in the workbook."
-wide-archetype,filled,identity,,"Parameters with no sourced value, filled by the fill step and graded: identity (calculated from this archetype's own values), estimated (from other archetypes or a class rule) or guess (a judgement). Shaded in the workbook; their _n is 0. Rule, inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, rationale); rules in records/fill/."
+wide-archetype,filled,identity,,"Parameters with no sourced value, filled by the fill step and graded: identity (calculated from this archetype's own values), estimated (from other archetypes or a class rule fitted on this database), proxy (a class constant from a named outside catalogue, records/fill/fill-assumption.csv) or guess (a judgement, records/fill/fill-judgement.csv); not-applicable marks a parameter that does not characterise the archetype. Shaded in the workbook; their _n is 0. Rule, inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, rationale); rules in records/fill/."
 wide-archetype,lifetime,technical,years,"Expected technical service life of the installed equipment. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,lifetime_low,technical,years,
 wide-archetype,lifetime_high,technical,years,
@@ -91,6 +91,14 @@ wide-archetype,cost-levelized,cost,2025_CAD/product-unit,"Cost per unit of produ
 wide-archetype,cost-levelized_low,cost,2025_CAD/product-unit,
 wide-archetype,cost-levelized_high,cost,2025_CAD/product-unit,
 wide-archetype,cost-levelized_n,cost,,
+wide-archetype,cost-levelized_calculated,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: calculated. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,cost-levelized_calculated_low,cost,2025_CAD/product-unit,
+wide-archetype,cost-levelized_calculated_high,cost,2025_CAD/product-unit,
+wide-archetype,cost-levelized_calculated_n,cost,,
+wide-archetype,cost-levelized_calculated-incl-energy,cost,2025_CAD/product-unit,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: calculated-incl-energy. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,cost-levelized_calculated-incl-energy_low,cost,2025_CAD/product-unit,
+wide-archetype,cost-levelized_calculated-incl-energy_high,cost,2025_CAD/product-unit,
+wide-archetype,cost-levelized_calculated-incl-energy_n,cost,,
 wide-archetype,capital-recovery,cost,%,"Annualization factor applied to capex. Record the source study's own factor, not the model's. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,capital-recovery_low,cost,%,
 wide-archetype,capital-recovery_high,cost,%,
@@ -203,17 +211,37 @@ wide-carriers-species,emissions-total_co2_high,emissions,t/product-unit,
 wide-carriers-species,emissions-total_co2_n,emissions,,
 wide-carriers-species,emissions-total_n2o,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: n2o. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,emissions-total_n2o_n,emissions,,
+wide-carriers-species,emissions-total_pfc,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: pfc. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,emissions-total_pfc_low,emissions,t/product-unit,
+wide-carriers-species,emissions-total_pfc_high,emissions,t/product-unit,
+wide-carriers-species,emissions-total_pfc_n,emissions,,
+wide-carriers-species,specific-energy-consumption_ammonia,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: ammonia. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_ammonia_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_ammonia_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_ammonia_n,technical,,
 wide-carriers-species,specific-energy-consumption_basic-oxygen-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: basic-oxygen-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_basic-oxygen-furnace-gas_n,technical,,
+wide-carriers-species,specific-energy-consumption_benzole-and-tars,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: benzole-and-tars. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_benzole-and-tars_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_benzole-and-tars_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_benzole-and-tars_n,technical,,
+wide-carriers-species,specific-energy-consumption_biogas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_biogas_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_biogas_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_biogas_n,technical,,
 wide-carriers-species,specific-energy-consumption_bioliquid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: bioliquid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_bioliquid_n,technical,,
 wide-carriers-species,specific-energy-consumption_biomass,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_biomass_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_biomass_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass_n,technical,,
 wide-carriers-species,specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass-solid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass-solid_n,technical,,
 wide-carriers-species,specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_black-liquor_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_black-liquor_n,technical,,
 wide-carriers-species,specific-energy-consumption_blast-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: blast-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_blast-furnace-gas_low,technical,GJ/product-unit,
@@ -249,6 +277,14 @@ wide-carriers-species,specific-energy-consumption_fuel,technical,GJ/product-unit
 wide-carriers-species,specific-energy-consumption_fuel_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_fuel_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_fuel_n,technical,,
+wide-carriers-species,specific-energy-consumption_gasoline,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: gasoline. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_gasoline_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_gasoline_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_gasoline_n,technical,,
+wide-carriers-species,specific-energy-consumption_geothermal,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: geothermal. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_geothermal_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_geothermal_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_geothermal_n,technical,,
 wide-carriers-species,specific-energy-consumption_heat,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_heat_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_heat_high,technical,GJ/product-unit,
@@ -261,8 +297,26 @@ wide-carriers-species,specific-energy-consumption_hydrogen,technical,GJ/product-
 wide-carriers-species,specific-energy-consumption_hydrogen_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_hydrogen_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_hydrogen_n,technical,,
+wide-carriers-species,specific-energy-consumption_liquid-biomass,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: liquid-biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_liquid-biomass_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_liquid-biomass_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_liquid-biomass_n,technical,,
+wide-carriers-species,specific-energy-consumption_lpg,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: lpg. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_lpg_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_lpg_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_lpg_n,technical,,
 wide-carriers-species,specific-energy-consumption_methanol,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: methanol. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_methanol_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_methanol_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_methanol_n,technical,,
+wide-carriers-species,specific-energy-consumption_municipal-waste,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: municipal-waste. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_municipal-waste_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_municipal-waste_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_municipal-waste_n,technical,,
+wide-carriers-species,specific-energy-consumption_naphtha,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: naphtha. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_naphtha_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_naphtha_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_naphtha_n,technical,,
 wide-carriers-species,specific-energy-consumption_natural-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,
@@ -271,6 +325,10 @@ wide-carriers-species,specific-energy-consumption_not-stated,technical,GJ/produc
 wide-carriers-species,specific-energy-consumption_not-stated_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_not-stated_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_not-stated_n,technical,,
+wide-carriers-species,specific-energy-consumption_nuclear,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: nuclear. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_nuclear_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_nuclear_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_nuclear_n,technical,,
 wide-carriers-species,specific-energy-consumption_oil,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: oil. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_oil_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_oil_high,technical,GJ/product-unit,
@@ -285,10 +343,22 @@ wide-carriers-species,specific-energy-consumption_process-off-gas,technical,GJ/p
 wide-carriers-species,specific-energy-consumption_process-off-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_n,technical,,
+wide-carriers-species,specific-energy-consumption_refinery-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: refinery-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_refinery-gas_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_refinery-gas_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_refinery-gas_n,technical,,
+wide-carriers-species,specific-energy-consumption_solar,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: solar. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_solar_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_solar_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_solar_n,technical,,
 wide-carriers-species,specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_steam_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_n,technical,,
+wide-carriers-species,specific-energy-consumption_waste-heat,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: waste-heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_waste-heat_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_waste-heat_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_waste-heat_n,technical,,
 wide-secondary-parameter,archetype,identity,,
 wide-secondary-parameter,label,identity,,
 wide-secondary-parameter,product-unit,identity,,
@@ -301,6 +371,10 @@ wide-secondary-parameter,lifetime_stack,technical,years,"Expected technical serv
 wide-secondary-parameter,lifetime_stack_low,technical,years,
 wide-secondary-parameter,lifetime_stack_high,technical,years,
 wide-secondary-parameter,lifetime_stack_n,technical,,
+wide-secondary-parameter,capacity_as-sourced,technical,MW; kt/yr; m3/yr as-sourced,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_as-sourced_low,technical,MW; kt/yr; m3/yr as-sourced,
+wide-secondary-parameter,capacity_as-sourced_high,technical,MW; kt/yr; m3/yr as-sourced,
+wide-secondary-parameter,capacity_as-sourced_n,technical,,
 wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
@@ -313,6 +387,10 @@ wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated capac
 wide-secondary-parameter,capacity_ethylene_n,technical,,
 wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_feed_n,technical,,
+wide-secondary-parameter,capacity-factor_as-sourced,technical,%,"Annual output as a fraction of output at rated capacity running continuously. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity-factor_as-sourced_low,technical,%,
+wide-secondary-parameter,capacity-factor_as-sourced_high,technical,%,
+wide-secondary-parameter,capacity-factor_as-sourced_n,technical,,
 wide-secondary-parameter,annual-output_electricity,technical,GJ electricity per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,annual-output_electricity_n,technical,,
 wide-secondary-parameter,annual-output_methane,technical,GJ methane per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -375,6 +453,24 @@ wide-secondary-parameter,efficiency-chp,technical,%,"Combined heat and electrici
 wide-secondary-parameter,efficiency-chp_low,technical,%,
 wide-secondary-parameter,efficiency-chp_high,technical,%,
 wide-secondary-parameter,efficiency-chp_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_as-sourced,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced_low,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced_high,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-coal,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-coal. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-coal_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_ccs-add-on,technical,GJ/GJ; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_ccs-add-on_n,technical,,
+wide-secondary-parameter,specific-energy-consumption_host-plant,technical,GJ/GJ; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_host-plant_low,technical,GJ/GJ; GJ/m3; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_host-plant_high,technical,GJ/GJ; GJ/m3; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_host-plant_n,technical,,
 wide-secondary-parameter,temperature-output_air,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: air. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,temperature-output_air_n,technical,,
 wide-secondary-parameter,temperature-output_coolant,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: coolant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -419,10 +515,34 @@ wide-secondary-parameter,degradation-rate,technical,%,"Annual fractional loss of
 wide-secondary-parameter,degradation-rate_low,technical,%,
 wide-secondary-parameter,degradation-rate_high,technical,%,
 wide-secondary-parameter,degradation-rate_n,technical,,
+wide-secondary-parameter,capex_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capex_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_ccs-add-on_n,cost,,
 wide-secondary-parameter,capex_component,cost,2025_CAD/GJ-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capex_component_low,cost,2025_CAD/GJ-per-yr,
 wide-secondary-parameter,capex_component_high,cost,2025_CAD/GJ-per-yr,
 wide-secondary-parameter,capex_component_n,cost,,
+wide-secondary-parameter,capex_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capex_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_host-plant_n,cost,,
+wide-secondary-parameter,opex-fixed_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-fixed_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_ccs-add-on_n,cost,,
+wide-secondary-parameter,opex-fixed_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-fixed_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_host-plant_n,cost,,
+wide-secondary-parameter,opex-variable_ccs-add-on,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-variable_ccs-add-on_low,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_ccs-add-on_high,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_ccs-add-on_n,cost,,
+wide-secondary-parameter,opex-variable_host-plant,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-variable_host-plant_low,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_host-plant_high,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_host-plant_n,cost,,
 wide-secondary-parameter,opex-variable_labour,cost,2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: labour. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,opex-variable_labour_n,cost,,
 wide-secondary-parameter,cost-levelized_component,cost,2025_CAD/GJ,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen or product, a production cost, or a cost per tonne of CO2 captured, transported or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
@@ -443,3 +563,19 @@ wide-secondary-parameter,cost-learning-rate_component_high,cost,%,
 wide-secondary-parameter,cost-learning-rate_component_n,cost,,
 wide-secondary-parameter,cost-learning-rate_stack,cost,%,"Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: stack. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,cost-learning-rate_stack_n,cost,,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2,emissions,t/GJ; t/t,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-combustion_as-sourced-co2_low,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2_high,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2_n,emissions,,
+wide-secondary-parameter,emissions-process_as-sourced-co2,emissions,t/t,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-process_as-sourced-co2_n,emissions,,
+wide-secondary-parameter,emissions-process_as-sourced-co2e,emissions,t/t,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-process_as-sourced-co2e_n,emissions,,
+wide-secondary-parameter,emissions-total_as-sourced-co2,emissions,t/GJ; t/t,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-total_as-sourced-co2_low,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2_high,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2_n,emissions,,
+wide-secondary-parameter,emissions-total_as-sourced-co2e,emissions,t/t,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-total_as-sourced-co2e_low,emissions,t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2e_high,emissions,t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2e_n,emissions,,

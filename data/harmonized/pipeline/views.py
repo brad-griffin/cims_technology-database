@@ -84,7 +84,10 @@ WIDE_NOTES = {
     "filled": (
         "Parameters with no sourced value, filled by the fill step and graded: identity "
         "(calculated from this archetype's own values), estimated (from other archetypes or a "
-        "class rule) or guess (a judgement). Shaded in the workbook; their _n is 0. Rule, "
+        "class rule fitted on this database), proxy (a class constant from a named outside "
+        "catalogue, records/fill/fill-assumption.csv) or guess (a judgement, "
+        "records/fill/fill-judgement.csv); not-applicable marks a parameter that does "
+        "not characterise the archetype. Shaded in the workbook; their _n is 0. Rule, "
         "inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, "
         "rationale); rules in records/fill/."),
     "external-conversions": (
@@ -102,8 +105,10 @@ def applies_to(key, service):
     return "; ".join(Hierarchy.short(s["branch"]) for s in service.get(key, [])) or NO_CONNECTION
 
 
-def build(records, hier, examples, summaries, flow_summaries, include_empty=True):
-    """Also returns `flagged`: the (archetype, column) cells of the wide view whose
+def build(records, hier, examples, summaries, flow_summaries, include_empty=True,
+          outdir=OUTPUT, wide_only=False):
+    """`outdir`: the folder written to; `wide_only`: write the wide views only (the
+    unfilled set, output/unfilled/, 2026-10-09). Also returns `flagged`: the (archetype, column) cells of the wide view whose
     pooled value rests on at least one factor from outside its source; and
     `graded`: {(archetype, column): grade} for the cells the fill step wrote."""
     service = defaultdict(list)
@@ -117,9 +122,11 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     param_order = {p: i for i, p in enumerate(records.parameters)}
 
     # ---- archetype.csv: every archetype, with what the database holds ------
-    with_data = ({s["archetype"] for s in summaries if s.get("grade", "sourced") == "sourced"}
+    with_data = ({s["archetype"] for s in summaries
+                  if s.get("grade", "sourced") == "sourced" or s.get("method") == "range-midpoint"}
                  | {s["archetype"] for s in flow_summaries})
-    with_fill = {s["archetype"] for s in summaries if s.get("grade", "sourced") != "sourced"}
+    with_fill = {s["archetype"] for s in summaries
+                 if s.get("grade", "sourced") not in ("sourced", "not-applicable")}
     with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
     arows = []
     props = product_properties()
@@ -145,8 +152,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     fam_rank = {f: ((0, i, "") if r.get("kind") == "service" else (1, 0, (r.get("label") or f).lower()))
                 for i, (f, r) in enumerate(records.families.items())}
     arows.sort(key=lambda r: (fam_rank.get(r["family"], (2, 0, r["family"])), r["equipment"], r["archetype"]))
-    write(OUTPUT / "archetype.csv",
-          IDENT + ["trl-basis", "description", "examples-named", "note"], arows)
+    if not wide_only:
+        write(outdir / "archetype.csv",
+              IDENT + ["trl-basis", "description", "examples-named", "note"], arows)
 
     # ---- archetype-application.csv: the long view, every node served ---------
     app = []
@@ -157,8 +165,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                             "node": n, "annotation": s.get("end-use", ""),
                             "via": s["branch"] if "*" in s["branch"] else "",
                             "note": s.get("note", "")})
-    write(OUTPUT / "archetype-application.csv",
-          ["archetype", "family", "node", "annotation", "via", "note"], app)
+    if not wide_only:
+        write(outdir / "archetype-application.csv",
+              ["archetype", "family", "node", "annotation", "via", "note"], app)
 
     # ---- cims_hierarchy.csv and cims_hierarchy_technology.csv -----------------
     # cims_hierarchy.csv is the snapshot as the build used it. The technology
@@ -169,9 +178,10 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     for r in app:
         if r["archetype"] not in by_node[r["node"]]:
             by_node[r["node"]].append(r["archetype"])
-    hrows = read(hier.path)
+    hrows = read(hier.path) if not wide_only else []
     hcols = [c for c in (list(hrows[0]) if hrows else ["branch"]) if c != "technology"]
-    write(OUTPUT / "cims_hierarchy.csv", hcols, hrows)
+    if not wide_only:
+        write(outdir / "cims_hierarchy.csv", hcols, hrows)
     tech = []
     for h in hrows:
         b = (h.get("branch") or "").strip()
@@ -179,7 +189,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             continue
         for t in sorted(by_node.get(b, [])) or [""]:
             tech.append(dict(h, technology=t))
-    write(OUTPUT / "cims_hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
+    if not wide_only:
+        write(outdir / "cims_hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
 
     # ---- the wide views ---------------------------------------------------------
     # Three views (modeller 2026-10-08/09), placed by pipeline/placement.py:
@@ -273,7 +284,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 if g != "sourced":
                     filled.append((b, f"{b} {g}"))
                     graded.update({(a["archetype"], c): g for c in (b, f"{b}_low", f"{b}_high")})
-                row[b], row[f"{b}_n"] = s["central"], s["n"]
+                row[b], row[f"{b}_n"] = ("not applicable" if g == "not-applicable" else s["central"]), s["n"]
                 if b in spread:
                     row[f"{b}_low"], row[f"{b}_high"] = s["low"], s["high"]
                 if s.get("n-corrected"):
@@ -304,8 +315,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                           ("wide-carriers-species", "wide-archetype-carriers-species.csv"),
                           ("wide-secondary-parameter", "wide-archetype-secondary-parameter.csv")):
         cols, rows = out[name][0], out[name][1]
-        write(OUTPUT / csvname, cols, rows)
-    write(OUTPUT / "wide-archetype-columns.csv", ["sheet", "column", "group", "unit", "note"],
+        write(outdir / csvname, cols, rows)
+    write(outdir / "wide-archetype-columns.csv", ["sheet", "column", "group", "unit", "note"],
           [{"sheet": name, "column": c, "group": o[2].get(c, ""), "unit": o[3].get(c, ""),
             "note": o[4].get(c, "")} for name, o in out.items() for c in o[0]],
           quiet=True)
@@ -327,7 +338,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             row = {c: a.get(c, "") for c in fident}
             row.update(fby[a["archetype"]])
             frows.append(row)
-    write(OUTPUT / "wide-flow.csv", flow_cols, frows)
+    if not wide_only:
+        write(outdir / "wide-flow.csv", flow_cols, frows)
     funits = {c: ("" if c in fident or c.endswith("_n") else "per product-unit") for c in flow_cols}
     fgroups = {c: ("identity" if c in fident else "inputs" if c.startswith("in_") else "outputs")
                for c in flow_cols}

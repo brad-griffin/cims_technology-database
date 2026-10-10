@@ -346,8 +346,7 @@ def normalise(facts, examples, records, units) -> None:
             route, ids = (ext[0], 0.0), ext[1]
         v = fnum(x["value"]) * route[0]
         per_yr = v * GJ_PER_KW_YR * 1000 if tcap == "MW" else v * 1000 if tcap.startswith("k") else v
-        if tcap == "MW" and sc.get("cf"):
-            per_yr *= sc["cf"]
+        # nameplate: the capacity factor is not applied (modeller 2026-10-10)
         return per_yr, x["record-id"], ids, basis
 
     for r in facts:
@@ -461,12 +460,13 @@ def normalise(facts, examples, records, units) -> None:
             elif p in PER_OUTPUT and d == f"{pu}-per-yr":
                 factor, note = f, f"annual cost per {pu}/yr is a cost per {pu}"
             elif p in PER_CAPACITY and d in PER_POWER:
+                # per unit of NAMEPLATE annual capacity, whatever capacity factor the
+                # source runs at (modeller 2026-10-10: the levelized cost divides by
+                # the capacity factor once; before, a stated factor was applied here)
                 cf = sc.get("cf")
-                factor = f * PER_POWER[d] / (GJ_PER_KW_YR * (cf or 1.0))
-                note = (f"per {d} at a {cf:.0%} capacity factor" if cf
-                        else f"per {d} at nameplate (no capacity factor)")
-                if cf:
-                    cls.append("same-source")
+                factor = f * PER_POWER[d] / GJ_PER_KW_YR
+                note = (f"per {d} at nameplate (the source's {cf:.0%} capacity factor is not applied)"
+                        if cf else f"per {d} at nameplate")
                 if r.get("capacity-basis") == "electric-output" and heat_product(a, pu):
                     # a CHP cost per kW of ELECTRICITY on an archetype whose product
                     # is the heat: per kW of heat with the same source's heat-to-power
@@ -505,8 +505,14 @@ def normalise(facts, examples, records, units) -> None:
             elif p in PER_OUTPUT and d == "kWh" and pu == "GJ":
                 factor, note = f / 0.0036, "per kWh -> per GJ"
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("annual-output"):
-                factor = f / sc["annual-output"]
-                note = "absolute sum over the annual output the same source states"
+                # the annual output is what the plant makes; over its capacity factor it
+                # is the nameplate annual capacity (modeller 2026-10-10)
+                cf = sc.get("cf")
+                factor = f * (cf or 1.0) / sc["annual-output"]
+                note = ("absolute sum over the same source's annual output, put at nameplate "
+                        f"with its {cf:.0%} capacity factor" if cf else
+                        "absolute sum over the annual output the same source states (no capacity "
+                        "factor given: read as nameplate)")
                 cls.append("same-source")
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("mw-out"):
                 mw, rid = sc["mw-out"]
@@ -521,9 +527,9 @@ def normalise(facts, examples, records, units) -> None:
                     mw *= hp[0]
                     cls.append("same-source" if hp[1] == "hpr:same-example" else "internal")
                     used.append(hp[1])
-                factor = f / (mw * GJ_PER_KW_YR * 1000 * (cf or 1.0))
+                factor = f / (mw * GJ_PER_KW_YR * 1000)
                 note = (f"absolute sum over the source's own output capacity, {mw:.4g} MW "
-                        f"({rid}), " + (f"at a {cf:.0%} capacity factor" if cf else "at nameplate"))
+                        f"({rid}), at nameplate")
                 cls.append("same-source")
             elif (p in PER_CAPACITY and d == "yr" and p != "capex"
                   and (oc := own_capacity(r, sc, pu, flist, alias))):

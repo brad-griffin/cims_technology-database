@@ -16,8 +16,9 @@ Stages (docs/pipeline.md):
   6. checks      the gate: any failure stops the build here
   7. normalise   every fact on its archetype's basis (currency, units, product)
   8. summarise   one value set per archetype and parameter (layer 3)
-     fill        graded values for empty cells: identity, estimated, guess
-                 (records/fill/)
+     fill        graded values for empty cells: identity, estimated, proxy, guess,
+                 and not-applicable markers (records/fill/); the summaries before
+                 the fill are also written, to output/unfilled/
   9. views       archetype, application and the wide views
  10. reports     source list, citation review, mapping review, docs/vocabulary.md
  11. workbook    the Excel workbook, last, from the outputs
@@ -153,12 +154,29 @@ def main(argv) -> int:
     sh = captureshare.apply(psum, rec, L.facts)
     print("  share-to-capture: " + (", ".join(f"{k} {v}" for k, v in sh.items()) or "none derived"))
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
+    # the summaries as the sources alone give them, kept apart so every check can
+    # be run with and without the fills (modeller 2026-10-09): output/unfilled/
+    unfilled = [dict(r) for r in psum]
     print("fill")
-    fst = fill.apply(psum, rec, normalise.target_unit, L.facts)
+    fst = fill.apply(psum, rec, normalise.target_unit, L.facts, units)
     bt = fst.pop("_backtest")
+    write(OUTPUT / "ccs-variant.csv", ["archetype", "host", "parameter", "unit", "host-value", "add-on",
+                                       "tier", "tier1", "tier2", "co2-captured", "all-in", "grade"],
+          fst.pop("_ccs"))
+    unp = fst.pop("_unpriced")
+    if unp:
+        print("  carriers with no reference price (records/reference/energy-price.csv): " + ", ".join(unp))
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
     ri = rollin.apply(psum, rec)
     print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
+    for r in unfilled:
+        r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "", "rationale": ""})
+    rollin.apply(unfilled, rec)
+    cov = fill.coverage(psum, rec)
+    write(OUTPUT / "coverage.csv", ["archetype", "family", "product-unit"] + [c for c, _ in fill.CIMS_CELLS] + ["trl"], cov)
+    cc = Counter(g for r in cov for c, _ in fill.CIMS_CELLS for g in [r[c]])
+    print("  coverage of the CIMS cells (" + ", ".join(c for c, _ in fill.CIMS_CELLS) + "): "
+          + ", ".join(f"{k} {cc[k]}" for k in fill.GRADES + [fill.MARKER, "missing"] if cc[k]))
     for rid in dict.fromkeys(b["rule-id"] for b in bt):
         rs = [b for b in bt if b["rule-id"] == rid]
         near = sum(1 for b in rs if b["ratio"] and 0.75 <= float(b["ratio"]) <= 1.25)
@@ -211,6 +229,13 @@ def main(argv) -> int:
     main = [r for r in psum if placement.placement(r["parameter"], r["target"]) != "secondary"]
     write(OUTPUT / "archetype-parameter.csv",
           ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, main)
+    unfilled.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
+    write(OUTPUT / "unfilled" / "archetype-parameter.csv",
+          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS,
+          [r for r in unfilled if placement.placement(r["parameter"], r["target"]) != "secondary"])
+    write(OUTPUT / "unfilled" / "archetype-secondary-parameter.csv",
+          ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS,
+          [r for r in unfilled if placement.placement(r["parameter"], r["target"]) == "secondary"])
     write(OUTPUT / "archetype-secondary-parameter.csv",
           ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, sec)
     write(OUTPUT / "archetype-flow.csv",
@@ -221,6 +246,8 @@ def main(argv) -> int:
         e["n-facts"] = nf.get(e["example-id"], 0)
     print("views")
     v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--quantified-only" not in argv)
+    views.build(rec, hier, L.examples, unfilled, fsum, include_empty="--quantified-only" not in argv,
+                outdir=OUTPUT / "unfilled", wide_only=True)
     print("reports")
     srcs = sources.source_list(rec, L.examples, (L.facts, L.flows, L.cons))
     sources.citation_review(srcs)
@@ -258,7 +285,11 @@ def main(argv) -> int:
                             "a higher heating value. Shading: purple = sourced, but converted with a "
                             "factor from outside the source (see external-conversions); blue = "
                             "identity (calculated from the archetype's own values); orange = "
-                            "estimated; red = guess (see filled). Unshaded = sourced as reported. "
+                            "estimated (from other archetypes or a class rule fitted on this database); "
+                            "yellow = proxy (a class constant from an outside catalogue); red = guess "
+                            "(a judgement); grey 'not applicable' = the parameter does not characterise the archetype "
+                            "(see filled). Unshaded = sourced as reported. The same tables without any "
+                            "fill are in output/unfilled/. "
                             "_low, _high and _n columns are grouped: use the + above a column to "
                             "show them. Bands: family, then end use in process order; an archetype "
                             "serving several end uses is repeated under each, in the family that "

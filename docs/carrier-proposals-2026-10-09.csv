@@ -1,0 +1,47 @@
+archetype,proposed-carriers,rationale
+photovoltaic-array_battery-storage,solar,PV with storage takes its energy from the sun; no purchased carrier.
+steam-turbine_waste-heat,waste-heat,An ORC or Rankine unit converts recovered exhaust or process heat (9 GJ in per GJ out on the row) to power; no fuel.
+wind-turbine,none,"The resource is wind, which is not in the carrier vocabulary; no purchased carrier. Add a wind term or treat like solar if the model needs a resource carrier."
+cooling-tower_free-evaporative,electricity,Fans and pumps only; the row already gives electricity=0.21 as the whole total.
+annealing-furnace_hydrogen-bell,natural-gas; electricity,"A bell annealer is gas-fired with electric fans and controls; the hydrogen is a protective atmosphere consumed in small volumes, not an energy carrier (add hydrogen only if the model costs the atmosphere gas)."
+rolling-mill_hot_efficiency-moderate,natural-gas; electricity; steam,"Same carriers as the base rolling-mill_hot (gas-fired reheat, electric stands, a little steam)."
+steam-cracker_catalytic-naphtha,natural-gas; electricity; steam,A catalytic cracker still fires its furnaces on by-product fuel gas (stood in by natural gas) and uses steam drives and electricity.
+fermenter_grain-dry-mill_ccs-concentrated,natural-gas; electricity,"A dry-mill ethanol plant takes gas for cooking, distillation and DDGS drying and electricity for milling and pumps; the capture plant's energy is on the capture service."
+process-improvement_landfill-gas-recovery,electricity,"Collection blowers and upgrading compressors are electric (0.06 GJ/GJ on the row); the landfill gas is the feedstock, not an energy input."
+reactor_alcohol-to-jet,electricity; hydrogen; natural-gas; steam,The row's sec-carriers already name these four; the fuel=0.076 entry is a sub-total of natural gas and steam.
+reactor_hydrothermal-liquefaction,biomass; electricity; natural-gas; hydrogen,The row names biomass (feed and process fuel) and electricity; the upgrading step needs hydrogen and the heaters natural gas.
+reactor_pyrolysis-oil,biomass; electricity; natural-gas; hydrogen,"Fast pyrolysis burns char and gas from the biomass for process heat, with electricity for grinding and drives; hydroprocessing the oil takes hydrogen and gas-fired heat."
+pipeline_hydrogen,electricity,"Pipeline compressors, electric-driven; the row already gives electricity=0.02 as the whole total."
+process-improvement_hydrogen-blending,electricity,Injection compression only; the row already gives electricity=0.02 as the whole total.
+reactor_fluid-catalytic-cracking-oxy-fuel,electricity; petroleum-coke; natural-gas,"Electricity for the air separation unit and blowers (0.28 on the row); the fuel figure (0.81) is mainly catalyst coke burned in the regenerator, an internal stream best stood in by petroleum-coke, with natural gas for the feed preheater."
+reactor_fluid-catalytic-cracking_ccs-diffuse,electricity; petroleum-coke; natural-gas; steam,"As for the oxy-fuel FCC: the row names electricity, fuel (catalyst coke, stood in by petroleum-coke) and steam; natural gas for the preheater."
+anaerobic-digester_effluent,electricity; biogas,Pumping and mixing are electric; reactor heating burns part of the recovered biogas (0.006 GJ/m3 on the row).
+boiler_recovery_ccs-diffuse,black-liquor; electricity,"Same as the base recovery boiler (black liquor fired, electric fans and feed pumps); the capture plant's energy is on the capture service."
+pulper_thermomechanical,electricity; steam,"The row already names electricity (refiners, 7.17) and steam (0.88, chip pre-steaming net of recovery)."
+separator_clarifier,electricity; natural-gas,"Clarifiers and presses are electric; sludge dryers, where fitted, are gas-fired."
+leaching-vessel_in-situ,electricity; diesel,"Injection and recovery pumping is electric, with diesel for field vehicles and remote generation; the 200 GJ/t total looks like a per-tonne-of-metal figure, re-read."
+pellet-plant_induration_efficiency-moderate,natural-gas; oil; coke; coal; electricity,"The row's sec-carriers name natural gas, oil, coke, coal, electricity and by-product gas; Canadian induration machines fire oil or gas with coke breeze in the pellet mix."
+separator_mine-water-treatment,electricity,"Pumps, mixers and lime dosing are electric (0.012 GJ/m3 on the row)."
+separator_thickening-filtration,electricity,"Thickeners, filter presses and vacuum pumps are electric."
+process-improvement_coal-mine-methane-drainage,electricity,"Drainage boreholes and vacuum pumps are electric (0.005 GJ/t on the row); the drained methane is a recovered product, not an input."
+compressor_low-emission-seal,none,"A seal retrofit has no energy use of its own; the 0.05 GJ/t on the row is at most the dry-seal gas leakage, which is the emission being abated, not a carrier."
+flare,natural-gas,"A flare's only energy input is pilot and purge gas (0.6 GJ/t CO2 on the row); the flared gas itself is the waste stream being disposed of, not an input."
+flare_enclosed-combustor,natural-gas; electricity,"Pilot and supplemental fuel gas, with an electric air blower on assisted units."
+flare_high-efficiency,natural-gas; electricity,"Pilot and purge gas, with electric blowers on air-assisted tips."
+heat-recovery-unit_turbine-exhaust,waste-heat; electricity,"The input is turbine exhaust heat, with a little electricity for pumps and fans (0.005 GJ/t on the row)."
+process-improvement_drag-reducing-agent,electricity,"The polymer injection itself uses no energy; the 5e-6 GJ/m3-km on the row is the residual pumping energy, electric on crude pipelines."
+process-improvement_low-emission-components,none,Valve and connector hardware with no energy use.
+reciprocating-engine_gasoline-propane,lpg; oil,"The row names gasoline (3.5 GJ/GJ), which is not in the vocabulary; propane is lpg and gasoline is best stood in by oil until a gasoline term exists."
+separator_warm-lime-softening,electricity; natural-gas,"Skim tanks, flotation and clarifiers are electric; warming the lime softener takes heat, gas-fired or from process heat recovery."
+well_disposal-injection,electricity; diesel,"Injection pumps are electric where grid power is available, diesel at remote pads."
+electric-arc-furnace_smelting-open-arc-dc,electricity; coal,"The row gives electricity=16.2 as the whole total; anthracite or coal is the reductant in the charge, add it only if reductant carbon is counted as energy."
+heat-recovery-unit_off-gas,by-product-gas; electricity,"The input is the CO-rich furnace off-gas (a by-product gas), with electricity for fans and gas cleaning; the 16.3 GJ/t total on the row looks like the furnace's own electricity, re-read."
+process-improvement_bio-pitch,natural-gas; electricity; biomass,"Anode baking is gas-fired with electric drives; the bio-pitch and bio-coke are biomass-derived materials in the anode, add biomass only if binder and filler are counted as energy."
+process-improvement_biocarbon-reductant,electricity; biomass,"The furnace is electric (the 19.2 GJ/t on the row); charcoal or biocoke is the reductant, add biomass if reductant carbon is counted as energy."
+kiln_lumber-steam,biomass; electricity; natural-gas,"The row names electricity (0.77, fans) and fuel (5.3): hog-fuel boilers raise the steam or thermal oil, with gas as back-up at some mills."
+gas-treatment-unit_vam-oxidiser,electricity; natural-gas,A regenerative oxidiser on ventilation air is self-sustaining on the methane it destroys; the energy use is the fan (electric) plus gas for start-up and lean periods.
+pipeline_plastic-liner,none,A liner has no energy use; it changes the leak rate only.
+process-improvement_automatic-shutoff,none,Shut-off and relief valves have no energy use.
+process-improvement_nru-optimization,electricity,"Monitoring, cleaning and tray upgrades on a cryogenic NRU use no energy of their own; any change is in the unit's refrigeration compressor load, which is electric; likely nil incremental."
+separator_reduced-emission-completion,diesel,"Portable separators, sand traps and dehydrators during flowback run on diesel generators or engines (0.3 GJ/t CH4 on the row)."
+evaporator_crystallizer-produced-water,electricity; natural-gas; steam,Mechanical vapour recompression evaporators are electric; thermal units and crystallisers take steam or gas-fired heat.

@@ -111,9 +111,26 @@ def conversion_references(fail, records, loader) -> None:
         for a in split_list(f.get("applies-to", "")):
             if a not in records.by_key:
                 fail["conversion factor applies to an unknown archetype"].append(f"{fid}: {a}")
+    # a reference source may also back a fill assumption (records/fill/fill-assumption.csv)
+    for a in fill.assumptions():
+        for sid in split_list(a.get("source-id", "")):
+            backed.add(sid)
+            if sid not in rid and sid not in main:
+                fail["fill-assumption source-id not registered"].append(f"{a.get('assumption-id')}: {sid}")
+    for e in read(REFERENCE / "energy-price.csv"):
+        if e.get("kind") not in ("sourced", "derived", "internal", "pending"):
+            fail["energy-price kind must be sourced, derived, internal or pending"].append(e.get("carrier", ""))
+        if e.get("kind") == "derived" and e.get("derived-from") not in records.by_key:
+            fail["energy-price derived from an unknown archetype"].append(e.get("carrier", ""))
+        if e.get("kind") == "sourced" and not (e.get("price") and e.get("source-id")):
+            fail["energy-price sourced with no price or source-id"].append(e.get("carrier", ""))
+        for sid in split_list(e.get("source-id", "")):
+            backed.add(sid)
+            if sid not in rid and sid not in main:
+                fail["energy-price source-id not registered"].append(f"{e.get('carrier')}: {sid}")
     for r in ref:
         if r["source_id"] not in backed and "currency" not in (r.get("used_for") or ""):
-            fail["reference source backs no conversion factor"].append(r["source_id"])
+            fail["reference source backs no conversion factor or fill assumption"].append(r["source_id"])
         if (r.get("file_on_disk") or "").strip() and not (RAW.parent.parent / r["file_on_disk"]).exists():
             fail["reference file recorded but missing"].append(r["file_on_disk"])
     for r in read(REFERENCE / "example-conversion.csv"):

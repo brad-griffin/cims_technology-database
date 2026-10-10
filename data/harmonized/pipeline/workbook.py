@@ -66,7 +66,8 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     `flags`: {sheet: {(archetype, column)}} -- cells shaded purple because
     their value rests on a conversion factor from outside the source.
     `grades`: {sheet: {(archetype, column): grade}} -- cells the fill step wrote,
-    shaded by grade (identity blue, estimated orange, guess red)."""
+    shaded by grade (identity blue, estimated orange, proxy yellow, guess red,
+    not-applicable grey)."""
     warnings.filterwarnings("ignore")
     import openpyxl
     from openpyxl.comments import Comment
@@ -86,7 +87,9 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     EXT_FILL = PatternFill("solid", fgColor="E4DFEC")      # sourced, external factor
     GRADE_FILL = {"identity": PatternFill("solid", fgColor="DDEBF7"),
                   "estimated": PatternFill("solid", fgColor="FCE4D6"),
-                  "guess": PatternFill("solid", fgColor="F8CBAD")}
+                  "proxy": PatternFill("solid", fgColor="FFF2CC"),
+                  "guess": PatternFill("solid", fgColor="F8CBAD"),
+                  "not-applicable": PatternFill("solid", fgColor="E7E6E6")}
 
     wb = openpyxl.Workbook()
     wb.remove(wb.active)

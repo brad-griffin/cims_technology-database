@@ -60,13 +60,23 @@ vendor designs and product names are never archetypes.
 **Capture.**
 - A host that can carry CO2 capture gets its own archetype with a capture modifier:
   `ccs-concentrated` or `ccs-diffuse`.
-- That archetype holds host-side facts only: regeneration steam, and
-  `share-to-capture`, the share of its CO2 sent to the capture plant. In CIMS it differs from its host only by a service request
-  to the capture archetype, so its costs are the host plant's, assumed the same
-  with and without capture unless a source shows a significant difference
-  (modeller 2026-10-02; fill rules `est-ccs-host-*`, graded estimated). A cost a
-  source gives on it is capture cost and is set aside (`set-aside = ccs-add-on`,
-  worklist `output/ccs-addon-cost.csv`) to move to the capture archetype.
+- That archetype is the host plant with capture (ruling 2026-10-10, superseding
+  2026-10-02): it has the host's size (annual output, capacity, capacity factor),
+  and its costs, energy use and emissions are the host plant's plus the capture
+  add-on's. The add-on comes from same-source evidence first (a source's
+  incremental capture cost on the variant, else its plant with capture less its
+  plant without: `output/ccs-addon-cost.csv`), else from the median of the
+  capture archetypes on the matching CCS node per t CO2 x the CO2 captured per
+  unit of the host's product (the variant's `emissions-captured`, else the host's
+  CO2 x `share-to-capture` x a 90% capture rate). The parts are kept as targets
+  `host-plant` and `ccs-add-on`; `output/ccs-variant.csv` shows both tiers. Its
+  emissions are the host's before capture, with `emissions-captured` beside them
+  (net = total less captured). Values the variant's own sources give are kept as
+  target `as-sourced` (fill rules `var-host-*`, `ccs-host-*`, design s6a).
+- In CIMS it differs from its host by a service request to the capture node, so
+  the CIMS export writes the `host-plant` part as `fcc` and `fom` plus that
+  service request; the capture node's technologies carry the capture cost there
+  (ruling 2026-10-10).
 - The capture plant itself is a `capture-unit` archetype serving the matching
   `service.ccs.*` node. Its `capture-rate` is the share of the CO2 entering it that
   it captures.
@@ -411,7 +421,7 @@ are abated, or when a policy instrument treats them separately.
 
 | Parameter | Unit |
 | - | - |
-| `capex`, `opex-fixed` | 2025_CAD per (pu/yr of capacity). A per-kW rating is taken at the stated capacity factor, else at nameplate. |
+| `capex`, `opex-fixed` | 2025_CAD per (pu/yr of nameplate capacity). A per-kW rating is put per year at 8,760 hours; a cost over a source's annual output is put at nameplate with its capacity factor (amended 2026-10-10: before, a stated capacity factor was applied, mixing nameplate and output bases). |
 | `opex-variable`, `opex-total` | 2025_CAD per pu |
 | `abatement-cost` | 2025_CAD per t CO2-eq |
 | `specific-energy-consumption` | GJ per pu |
@@ -458,23 +468,37 @@ rows for the same quantity (sizes, cases) count as one example, taking their med
 
 ## 6a. Filling empty cells
 
-The aim is a value in most or all parameters. Where the examples give none, the
-fill step (`pipeline/fill.py`, after the summaries) may write one, graded by how
-it was reached. Adopted 2026-09-30.
+The aim is a value in most or all parameters, and from 2026-10-09 a value (or a
+deliberate marker) in every cell CIMS reads: capex, fixed and variable O&M, energy
+use or efficiency, lifetime, annual output, TRL. Where the examples give none, the
+fill step (`pipeline/fill.py`, after the summaries) writes one, graded by how it
+was reached. Adopted 2026-09-30; widened 2026-10-09 (the fill-methods proposal,
+`docs/fill-methods-proposal-2026-10-03.md`).
 
-| Grade | What it means |
-| - | - |
-| `sourced` | Pooled from examples, as in section 6. |
-| `identity` | Calculated from the archetype's own values by a definition or a physical relation: 100 / efficiency, fuel use times its emission factor, combustion plus process emissions. |
-| `estimated` | Borrowed or scaled from another archetype, or set by a class rule: a host plant's cost plus an increment, a sibling's lifetime. |
-| `guess` | A judgement with a range and a rationale, in `records/fill/fill-judgement.csv`. |
+| Grade | What it means | Workbook |
+| - | - | - |
+| `sourced` | Pooled from examples, as in section 6. | unshaded (purple with an external factor) |
+| `identity` | Calculated from the archetype's own values by a definition or a physical relation: 100 / efficiency, fuel use times its emission factor, combustion plus process emissions, capacity times capacity factor. | blue |
+| `estimated` | Borrowed or scaled from another archetype, or set by a class rule fitted on this database's own values: a host plant's cost plus an increment, a sibling's lifetime, the equipment class's median, a cost ratio. | orange |
+| `proxy` | A class constant from a named outside catalogue or handbook, not extracted as a source: `records/fill/fill-assumption.csv`, each row with its source, registered in `source-details_reference.csv`. | yellow |
+| `guess` | A judgement with a range, rationale, basis and author, in `records/fill/fill-judgement.csv`. | red |
+
+and one marker that is not a value, `not-applicable`: the parameter does not
+characterise the archetype (the energy use of a leak-detection programme, the
+variable O&M of a boiler). It is written with its reason, counts as covered, is
+shaded grey and reads "not applicable" in the wide view, and the CIMS exporter
+writes nothing for it.
 
 Rules:
 - A fill is written only where there is no sourced value, and is recomputed on
   every build, so a new source displaces it with no edit. Examples and extractions
   are never changed.
-- A fill takes the worst grade among its rule and its inputs. Estimated rules take
-  sourced inputs only; an identity may use a filled input and inherits its grade.
+- A fill takes the worst grade among its rule and its inputs. An estimate that
+  scales a value of the same archetype (fixed O&M from its capex) may take a
+  filled value and inherits its grade; a sibling or class pool holds sourced
+  values only, so the back-test is clean.
+- Rules run in file order, then the judgements, then the rules once more, so a
+  rule that needs a cell a judgement wrote finds it.
 - Every rule is a row of `records/fill/fill-rule.csv`: grade, method, scope,
   formula, rationale, and `status` (active or off). A rule found to give wrong
   values is turned off with the reason, not deleted.
@@ -482,86 +506,127 @@ Rules:
   per tonne only under the same-GJ condition, and no regional adjustment.
 - A filled row has `n` = 0, `central-from` saying how it was reached, and `inputs`
   naming the cells and factors it used with their grades.
-- A guess needs `central` within a stated `low`-`high`, a rationale and an author.
-  A guess on a cell that has since gained a sourced or calculated value is not
-  used.
+- Every equipment term has a row in `records/fill/equipment-class.csv`: its
+  lifetime class (process plant, heat equipment, power equipment, rotating
+  equipment, electrochemical, controls and programmes, mobile equipment, wells and
+  pipelines) and its variable-O&M class (`material`, `minor`, `none`).
+- **The build writes the summaries as they stood before this step** to
+  `output/unfilled/` (`archetype-parameter.csv`, the secondary parameters and
+  the three wide views), so every check, review and sanity pass can be run on
+  the sourced values alone and on the filled set. `output/coverage.csv` gives,
+  per archetype, the grade or marker of each CIMS cell.
 
-Rules in force (2026-09-30):
+Judgements (`fill-judgement.csv`), ground rules adopted 2026-10-09:
+- one row per archetype, parameter and target; central within low–high, in the
+  parameter's target unit; a cost's range at least a factor of two, an energy
+  use's at least ±30%, a plant size's at least a factor of three;
+- `basis` is one of `analogue-archetype`, `held-source-figure`,
+  `engineering-relation`, `experience`, so the weakest guesses are findable;
+- the rationale names the analogue or relation and the step to the number;
+- `author` is `claude-draft` until the modeller accepts; `status` is `draft`,
+  `accepted`, `changed` or `rejected` (a rejected row stays, with the reason, so
+  it is not redrafted); draft, accepted and changed rows are used;
+- a guess on a cell that has since gained a sourced or calculated value is not
+  used; a guess replaces a pooled row that has no central and no usable range.
+
+Rules in force (2026-10-09), in the order they run:
+- `est-range-midpoint`: a sourced row with a range and no central (the source
+  printed a range only) takes the midpoint; the row keeps its sources and n.
 - `id-sec-from-efficiency`: energy use per GJ of output = 100 / efficiency, on
   energy-service archetypes other than CHP.
-- `id-efficiency-from-sec`: OFF. A pooled energy use with no carrier is not
-  reliably the total input per GJ of output, so its inverse gave a 7% motor
-  efficiency and 154% for the methane reformer.
-- `id-combustion-co2-from-fuel`: carrier-specific fossil energy use times the
-  carrier's CO2 factor on HHV (`cf-ef-co2-<carrier>` in `conversion-factor.csv`).
-  Emission factors come from ECCC's National Inventory Report (Annex 6) where it
-  gives one, and from IPCC 2006 defaults only where it does not (2026-10-03). NIR
-  factors are per physical unit; they are put per GJ HHV with the ECCC CFR HHVs
-  (natural gas, diesel, fuel oils) or the StatCan RESD energy contents (coal, coke,
-  coke oven gas, petroleum coke, still gas, LPG). Blast furnace gas uses the IPCC
-  default because the NIR gives none. Not where process emissions are recorded, where an
-  unnamed `fuel` is part of the energy use, or on reformers, gasifiers and
-  reactors, whose fuel may be a feedstock.
+- `id-efficiency-from-sec`: re-enabled with a carrier condition: GJ-product
+  archetypes, not CHP, whose all-carrier total agrees with its carrier split,
+  and only a result between 10% and 800%.
+- `id-single-carrier-split`: an archetype listing one carrier: that carrier is
+  the unnamed `fuel` row where there is one, else the total.
+- `id-combustion-co2-from-fuel`: named fossil carriers times the ECCC NIR CO2
+  factors on HHV (IPCC defaults only where the NIR gives none). Not where CO2
+  process emissions are recorded, where only an unnamed `fuel` is known, or on
+  reformers, gasifiers and reactors, whose fuel may be a feedstock.
+- `id-sec-from-emissions`: the inverse, where a source gives combustion CO2 and
+  the archetype burns one fossil carrier.
+- `id-zero-combustion-no-fossil`: combustion CO2 = 0 where every carrier is
+  non-combustible or biogenic (biogenic CO2 is CIMS's emissions-biomass).
 - `id-total-from-parts`: total emissions = combustion + process, same species.
-- `est-host-increment-capex`, `est-host-increment-opex-fixed`: an incremental
-  cost (`set-aside-host-cost.csv`) plus the pooled cost of the host plant named
-  in `records/fill/host-archetype.csv`. Hosts were proposed by name (the
-  archetype less its last modifier) and need confirming; the rest are
-  `unmapped`.
-- `est-sibling-lifetime`, `est-sibling-construction-time`,
-  `est-sibling-capacity-factor` (2026-10-01): the median sourced value of the
-  nearest siblings (same equipment and discriminator, else same equipment; the
-  product unit need not match, since these three do not depend on it: modeller
-  2026-10-09). The range spans the siblings' values and at least +/-25% of the
-  central. These parameters depend little on carrier or variant; capex and O&M
-  are not copied between siblings without a ratio from a source that prices both.
-Parked methods (written and back-tested, status `off`; set a rule `active` to use it):
-- `est-modifier-ratio-capex` (parked 2026-10-01; would fill 4 cells): a variant (`<base>_<modifier>`) takes
-  its base archetype's sourced capex times the median variant/base ratio from
-  sources that price both a base and its variant with the same modifier (two
-  pairs or more). The O&M version is off: it filled nothing and caught 2 of 5.
-  Costs are not copied between siblings that differ by carrier: no source in
-  the database prices both members of such a pair on a usable basis.
-- `est-cost-ratio-opex-fixed` (parked 2026-10-01; would fill 42 cells): capex times the median fixed-O&M
-  share of capex among archetypes with both sourced (same equipment, else
-  family, else all; pools of five or more); range is the pool's smallest to
-  largest share. Weak: typical error a factor of 1.7, so these are placeholders.
-Methods to try (not written; ideas for when data runs short). From the
-Hotmaps D2.3 open data set (Pezzutto et al. 2018; review in the project note
-`hotmaps-review-2026-10-02`). None is coded; one would need a rule, a back-test
-and a ruling before use. Hotmaps cost data itself is not loaded (2026-10-02).
-- **Cost-capacity power law.** Where a source prices one size only, scale
-  specific capex to other sizes with an exponent: specific cost proportional to
-  size^b. Hotmaps implies b for 1-50 MW_th of about -0.12 (gas boiler), -0.13
-  (gas turbine), -0.15 (steam-turbine CHP), -0.09 (engine CHP), -0.07 (electric
-  heat pump), -0.16 (solar district heat), about 0 (combined cycle). Better to
-  fit b from sources in this database that price several sizes.
-- **Regional cost transfer with indices.** Reference-region cost x labour-cost
-  index x equipment price-level index (Hotmaps: Danish Energy Agency costs x
-  Eurostat construction labour cost and PPP price levels, held constant over
-  time). Conflicts with section 5 (no regional adjustment); would need that
-  rule changed first.
-- **Cost decline for immature technologies only.** Future capex falls for heat
-  pumps, fuel cells, biomass boilers and solar heat; mature equipment held flat.
-- **Pool process energy use across countries.** Hotmaps assumes no country
-  difference in specific energy consumption, because plants are run by
-  multinationals with global technology suppliers. Supports pooling non-Canadian
-  process data.
-- **Benchmark x activity.** Energy use = production x specific energy
-  consumption; split by heating share and temperature-band share; excess heat =
-  energy use x excess-heat share per band.
-- **Production from emissions.** Where production is missing, production =
-  reported emissions / emissions per tonne (Hotmaps: EU ETS; here: GHGRP), else
-  a national average.
-- **Top-down check.** Compare benchmark totals with national energy balances
-  (here: CEUD, RESD); treat averaged products (e.g. paper) as +/-50%.
+- `id-opex-variable-from-total`: opex-total less opex-fixed.
+- `est-host-increment-capex`, `-opex-fixed`; `est-ccs-host-*`: as before
+  (section 2 and 5).
+- `est-modifier-ratio-capex` (active again): a variant from its base times the
+  same-source variant/base ratio; `est-bucket-increment-capex`: where no such
+  pair exists, the host cost times one plus the median increment/host ratio the
+  database's own set-aside measure costs give for that modifier.
+- `est-capex-per-gj-via-sec`: a capex per GJ-yr of heat output on a per-tonne
+  archetype goes per t-yr with the archetype's pooled energy use (class
+  internal), under the same-GJ condition; graded estimated because the factor is
+  pooled, not the example's own (ruling 2026-10-09).
+- `est-sibling-lifetime`, `-construction-time`, `-capacity-factor`: nearest
+  siblings, any product unit (2026-10-09); `est-class-lifetime`: the equipment
+  class's median where no sibling has one; `proxy-class-lifetime`: a catalogue
+  life for the class where the class pool is short.
+- `id-annual-output-from-capacity`: capacity x capacity factor x hours;
+  `est-end-use-annual-output`: the median output of the archetypes on the same
+  end use (same product unit; sourced and identity values; one or more);
+  `est-sibling-annual-output`: tier-1 siblings only. Plant scale is a convention
+  the model installs, not the cost it competes on (costs are per unit of annual
+  capacity), so these ranges are x3 either side.
+- `est-bucket-saving-sec`: a variant's energy use = its base's x (1 − s), with s
+  the variant's sourced emissions-reduction-potential, else the bucket definition
+  (fill-assumption `bucket-saving`, proxy); every carrier scaled alike. The UKERC
+  stage (7c) does the same for UKERC members before summarise.
+- `est-sibling-efficiency`: GJ-product archetypes take the median efficiency of
+  non-CHP siblings (range at least ±15% of the central). Never per-tonne process
+  archetypes.
+- `est-cost-ratio-opex-fixed`: capex times the median fixed-O&M share of capex of
+  archetypes with both sourced (same equipment with 3 or more, else family with
+  5, else all, else any product unit); range the pool's quartiles.
+  `proxy-om-share-opex-fixed`: the catalogue share for the class where no pool
+  reaches the minimum (fill-assumption `om-share`).
+- `est-cost-ratio-opex-variable`: the same for variable O&M, on `material`
+  classes only. `na-opex-variable-minor`, `-none`: the marker on the other
+  classes (variable O&M folded into fixed O&M, or none).
+- `na-energy-methane-control`: the marker on venting, fugitive and flaring
+  archetypes whose service is t CH4 or m3 of gas (controls that draw power are
+  excluded and valued); `na-energy-not-characterising`: on wind, solar,
+  geothermal, storage, pipelines, flares, programmes and pneumatic devices.
+- `proxy-typical-plant-size`, `proxy-motor-class-efficiency`: off (no cited
+  rows yet; nothing to fill).
 - **Back-test.** Every borrowing rule is also run on the cells that have a sourced
   value, as if they had none (`output/fill-backtest.csv`; the build prints the
-  hit rates). The widen fraction is set so about 90% of sourced values fall in
-  the range. At 25% (2026-10-01): lifetime 96/108, construction time 29/32,
-  capacity factor 15/17; 71% of centrals within 25% of the sourced value.
-  The parked ratio rules tested at: modifier-ratio capex 9/10 (3 within 25%);
-  O&M share 71/87 (24 within 25%). The build back-tests active rules only.
+  hit rates). At 2026-10-09: sibling lifetime 168/192 inside, class lifetime
+  211/214, sibling capacity factor 70/78, construction time 47/52, sibling
+  efficiency 34/46, end-use output 14/20, fixed-O&M ratio 99/133 (35 within
+  25%), variable-O&M ratio 32/56 (3 within 25%: a placeholder, as the proposal
+  said), modifier ratio 4/5.
+
+**Variants consistent with their hosts** (ruling 2026-10-10). After the rules and
+judgements, a post phase (`phase=post` in the rule's scope) makes every variant
+with an active host in `host-archetype.csv` take the host's annual output,
+capacity and capacity factor (`var-host-*`), and every host-with-capture variant
+the host plant's capex, fixed and variable O&M, energy use (every carrier) and
+emissions plus the capture add-on (`ccs-host-plus-addon-*`, `ccs-host-emissions`;
+section 2). These override what the variant had; a sourced value moves to
+target `as-sourced`. `est-ccs-host-capex` and `-opex-*` remain only as a fallback
+where no add-on can be derived.
+
+**Calculated levelized cost** (ruling 2026-10-10). A final phase writes
+`cost-levelized` with target `calculated` on every archetype: (capex x capital
+recovery factor + fixed O&M) / capacity factor + variable O&M, at the
+archetype's lifetime and a reference 8% real discount rate (fill-assumption
+`as-discount-rate`; the database's sources that state a rate give a median of
+8.5%). Energy is excluded. Target `calculated-incl-energy` adds each carrier's
+energy use x its reference 2025 price in `records/reference/energy-price.csv`
+(kind `sourced` with a registered reference source: electricity from Hydro-Quebec's 2025 large-power comparison, natural gas and oil from CER Canada's Energy Future 2026 industrial end-use prices for 2025; `derived`: steam and heat at
+the fuel-fired boiler's own calculated-incl-energy cost, hydrogen at the methane
+reformer's; `internal`: by-product gases, black liquor, waste heat, solar and
+geothermal at 0; `pending`: no price yet), written only where every carrier has
+a price. A levelized cost a source prints stays in the column with no target.
+`est-class-capacity-factor` gives every archetype a capacity factor (class
+median, else all). Both are in the main wide view.
+
+Still missing after the fill (2026-10-09): fossil combustion CO2 on 45
+archetypes whose `carriers` cell in `records/archetype.csv` is blank
+(`docs/carrier-proposals-2026-10-09.csv` proposes the carriers) and on the
+reformers, gasifiers and reactors the CO2 identity excludes by design.
 
 ## 7. Traceability
 
@@ -655,10 +720,12 @@ compilation cites it as an original.
   - `estimated`: it has no sourced numbers, only filled ones (section 6a);
   - `not pooled`: its numbers could not be pooled;
   - `gap`: it has no example yet.
-- `filled` lists the parameters the fill step wrote and their grade; in the
-  workbook those cells are shaded (identity blue, estimated orange, guess red;
-  purple marks a sourced value converted with an external factor)
-  and their `_n` is 0.
+- `filled` lists the parameters the fill step wrote and their grade or marker; in
+  the workbook those cells are shaded (identity blue, estimated orange, proxy
+  yellow, guess red, not-applicable grey; purple marks a sourced value converted
+  with an external factor) and their `_n` is 0. `output/unfilled/` holds the same
+  tables without any fill; `output/coverage.csv` the grade of each CIMS cell per
+  archetype.
 - The wide view is three views: `wide-archetype` (one column set per parameter),
   `wide-carriers-species` (`wide-archetype-carriers-species.csv`: specific energy by
   carrier, emissions by species, alphabetical), both in the workbook, and the
@@ -698,10 +765,11 @@ compilation cites it as an original.
 
 | Database | CIMS YAML |
 | - | - |
-| `capex` (with `cost-basis`) | `fcc` |
-| `opex-fixed` | `fom` |
+| `capex` (with `cost-basis`); on a host-with-capture variant its `host-plant` part | `fcc` |
+| `opex-fixed` (+ `opex-variable` x annual output); on a host-with-capture variant the `host-plant` parts | `fom`, `vom` |
+| a host-with-capture variant's CO2 to capture | `service-request` to the CCS node |
 | `lifetime` | `lifetime` |
-| `capacity` × `capacity-factor` × 8760 | `output` |
+| `annual-output` | `output` |
 | `efficiency`, or input flows | `service-request`, one per carrier |
 | `emissions-*` | `emissions`, `emissions-biomass`, `emissions-removal` |
 | `trl` → rule above | `available` |

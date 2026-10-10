@@ -1,10 +1,11 @@
 """The fill step: values for empty archetype cells, graded by how they were reached
-(design.md s6a, 2026-09-30).
+(design.md s6a, 2026-09-30; widened 2026-10-09).
 
 The summaries (layer 3) hold what the examples say. This step runs after them and
 only ever writes a cell that has NO sourced value, so a new source displaces a
 fill on the next build without anyone touching the fill. Examples and extractions
-are never changed.
+are never changed. The build also writes the summaries as they stood BEFORE this
+step (output/unfilled/), so every check can be run with and without the fills.
 
 Every archetype-parameter row carries a grade, best first:
 
@@ -12,13 +13,25 @@ Every archetype-parameter row carries a grade, best first:
   identity   calculated from the archetype's own values by a definition or a
              physical relation (100 / efficiency; fuel x its emission factor)
   estimated  borrowed or scaled from other archetypes, or set by a class rule
+             fitted on this database's own values
+  proxy      a class constant or stand-in value from a named outside catalogue
+             or handbook, not extracted as a source (records/fill/fill-assumption.csv)
   guess      a judgement with a stated range and rationale
              (records/fill/fill-judgement.csv)
+
+and one marker that is not a value:
+
+  not-applicable   the parameter does not characterise this archetype (the
+                   energy use of a leak-detection programme, the variable O&M of
+                   a boiler); written with its reason so the gap reads as closed
+                   deliberately. The CIMS exporter writes nothing for it.
 
 A fill takes the worst grade among its inputs and its rule. Rules are records,
 not code: records/fill/fill-rule.csv names each one, its grade, scope and
 rationale, and switches it on or off. The methods below are what a rule's
-`method` can name.
+`method` can name. Rules run in file order, then the judgements, then the rules
+once more, so a rule that needs a cell another rule or a judgement wrote (fixed
+O&M from a guessed capex) finds it; it inherits that cell's grade.
 
 A filled row has n = 0 (no example stands behind it), `central-from` saying how
 it was reached, `inputs` naming the cells it was computed from with their grades,
@@ -26,16 +39,23 @@ and `sources` the sources behind those inputs.
 """
 from __future__ import annotations
 
+import re
 from statistics import median
 
-from .common import RECORDS, fnum, read, split_list
+from .common import RECORDS, currency_year, fnum, read, split_list
 from . import convert
 
 FILL = RECORDS / "fill"
-GRADES = ["sourced", "identity", "estimated", "guess"]
+GRADES = ["sourced", "identity", "estimated", "proxy", "guess"]
+MARKER = "not-applicable"
 STATUSES = ("active", "off")
+JUDGEMENT_STATUSES = ("draft", "accepted", "changed", "rejected", "active")
+JUDGEMENT_LIVE = ("draft", "accepted", "changed", "active")
+JUDGEMENT_BASES = ("analogue-archetype", "held-source-figure", "engineering-relation", "experience")
 FOSSIL = {"natural-gas", "coal", "oil", "diesel", "coke", "petroleum-coke", "lpg", "naphtha",
           "fuel-oil", "heavy-fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
+CHP = re.compile(r"\bCHP\b")
+SEC = "specific-energy-consumption"
 
 
 def worst(grades):
@@ -56,26 +76,63 @@ def _scope(rule):
     return out
 
 
-def _in_scope(rule, a, have):
+def is_chp(a):
+    return bool(CHP.search(a.get("label", ""))) or a["archetype"].startswith("combined-cycle")
+
+
+def _in_scope(rule, a, have, ctx=None):
     sc = _scope(rule)
-    if "product-unit" in sc and a["product-unit"] != sc["product-unit"]:
+    if "product-unit" in sc and a["product-unit"] not in sc["product-unit"].split("|"):
         return False
     if a["equipment"] in sc.get("exclude-equipment", "").split("|"):
+        return False
+    if "equipment" in sc and a["equipment"] not in sc["equipment"].split("|"):
+        return False
+    if "type" in sc and a.get("type") not in sc["type"].split("|"):
+        return False
+    if "archetype" in sc and a["archetype"] not in sc["archetype"].split("|"):
+        return False
+    if "family" in sc and a.get("family") not in sc["family"].split("|"):
         return False
     if sc.get("exclude-ccs") == "yes" and ("_ccs-" in a["archetype"]
                                          or a.get("family") == "co2-capture"):
         return False
-    if sc.get("exclude-chp") == "yes" and (
-            "chp" in a["archetype"] or a["archetype"].startswith("combined-cycle")
-            or any(k[0] == "efficiency-chp" for k in have)):
+    if sc.get("exclude-chp") == "yes" and (is_chp(a) or any(k[0] == "efficiency-chp" for k in have)):
         return False
     if sc.get("only-ccs-host") == "yes" and not ("_ccs-" in a["archetype"]
                                                  and a.get("family") != "co2-capture"):
         return False
-    for p in split_list(sc.get("require-absent", "").replace(",", ";")):
-        if any(k[0] == p for k in have):
+    if "modifier" in sc:
+        mods = split_list(a.get("modifiers", ""))
+        if not any(m in mods for m in sc["modifier"].split("|")):
+            return False
+    if sc.get("no-modifier") == "yes" and split_list(a.get("modifiers", "")):
+        return False
+    if ctx is not None:
+        if "end-use" in sc and not (set(sc["end-use"].split("|")) & ctx["service"].get(a["archetype"], set())):
+            return False
+        if "exclude-end-use" in sc and (set(sc["exclude-end-use"].split("|")) & ctx["service"].get(a["archetype"], set())):
+            return False
+        if "vom-class" in sc and ctx["classes"].get(a["equipment"], {}).get("vom-class") not in sc["vom-class"].split("|"):
+            return False
+        if "lifetime-class" in sc and ctx["classes"].get(a["equipment"], {}).get("lifetime-class") not in sc["lifetime-class"].split("|"):
+            return False
+    def _has(spec):
+        # `parameter` or `parameter:target`
+        p, _, t = spec.partition(":")
+        return any(k[0] == p and (not t or k[1] == t) and _live(have[k]) for k in have)
+    for spec in split_list(sc.get("require-absent", "").replace(",", ";")):
+        if _has(spec):
+            return False
+    for spec in split_list(sc.get("require-present", "").replace(",", ";")):
+        if not _has(spec):
             return False
     return True
+
+
+def _live(r):
+    """A row that holds a value (not a marker)."""
+    return bool(r) and r.get("grade") != MARKER and fnum(r.get("central")) is not None
 
 
 def _vals(row):
@@ -86,18 +143,33 @@ def _input(row, label):
     return f"{label} ({row.get('grade') or 'sourced'})"
 
 
+def _plausible(rule, v):
+    sc = _scope(rule)
+    if "plausible" not in sc:
+        return True
+    lo, _, hi = sc["plausible"].partition("|")
+    return (fnum(lo) or -1e300) <= v <= (fnum(hi) or 1e300)
+
+
 # ---- methods: (rule, archetype record, {(param, target): row}, ctx) -> [fill dicts]
 
 def m_inverse(rule, a, have, ctx):
+    """p = 100 / source. With `require-consistent-total=yes` the source row (an
+    all-carrier SEC total) must agree with its carrier split (pipeline/carriers.py
+    marks a disagreement in central-from)."""
     p, t = rule["parameter"], rule["target"]
     src = split_list(rule["inputs"])[0]
     s = have.get((src, ""))
-    if not s or (p, t) in have:
+    if not _live(s) or (p, t) in have:
+        return []
+    if _scope(rule).get("require-consistent-total") == "yes" and "DISAGREES" in (s.get("central-from") or ""):
         return []
     c, lo, hi = _vals(s)
-    if not c:
+    if not c or c <= 0:
         return []
     k = 100.0
+    if not _plausible(rule, k / c):
+        return []
     return [{"parameter": p, "target": t, "central": k / c,
              "low": k / hi if hi else None, "high": k / lo if lo else None,
              "inputs": [_input(s, src)], "grades": [s.get("grade", "sourced")],
@@ -108,11 +180,12 @@ def m_fuel_emission_factor(rule, a, have, ctx):
     p, t = rule["parameter"], rule["target"]
     if (p, t) in have:
         return []
-    secs = {k[1]: v for k, v in have.items() if k[0] == "specific-energy-consumption" and k[1]}
+    secs = {k[1]: v for k, v in have.items() if k[0] == SEC and k[1] and _live(v)}
     if "fuel" in secs:
-        # `fuel` is known by fuel only where named fuels are its split (pipeline/carriers.py,
-        # 2026-10-05); then the carbon comes from that split alone
-        split = {c: r for c, r in secs.items() if "of fuel, split from" in (r.get("central-from") or "")}
+        # `fuel` is known by fuel only where named fuels stand beside it: the carriers
+        # split (pipeline/carriers.py, 2026-10-05), a single-carrier identity, a bucket
+        # estimate or a judgement; then the carbon comes from the named fuels alone
+        split = {c: r for c, r in secs.items() if c != "fuel" and c not in NON_COMBUSTIBLE}
         if not split:
             return []                       # an unnamed fuel: the carbon cannot be known
         secs = split
@@ -132,13 +205,44 @@ def m_fuel_emission_factor(rule, a, have, ctx):
         c += v * ef
         lo += (vl if vl is not None else v) * (efl or ef)
         hi += (vh if vh is not None else v) * (efh or ef)
-        ins.append(_input(r, f"specific-energy-consumption_{carrier}"))
+        ins.append(_input(r, f"{SEC}_{carrier}"))
         grades.append(r.get("grade", "sourced"))
         srcs += split_list(r.get("sources", ""))
         ext.append(f["factor-id"])
     return [{"parameter": p, "target": t, "central": c, "low": lo, "high": hi,
              "inputs": ins + ext, "grades": grades,
              "sources": "; ".join(dict.fromkeys(srcs)), "external": ext}]
+
+
+def m_sec_from_emissions(rule, a, have, ctx):
+    """The inverse of the rule above: the fossil energy use = combustion CO2 / the
+    CO2 factor of the archetype's fossil carrier, where the archetype names ONE
+    fossil carrier. Written as the total and as that carrier."""
+    p = rule["parameter"]
+    if any(k[0] == p and _live(v) for k, v in have.items()):
+        return []
+    e = have.get(("emissions-combustion", "co2")) or have.get(("emissions-combustion", "co2e"))
+    if not _live(e) or have.get(("emissions-process", "co2")):
+        return []
+    fos = [c for c in split_list(a.get("carriers", "")) if c in FOSSIL]
+    if len(fos) != 1:
+        return []
+    f = ctx["factors"].rows.get(f"cf-ef-co2-{fos[0]}")
+    if not f or not fnum(f["factor"]):
+        return []
+    ef = fnum(f["factor"])
+    c, lo, hi = _vals(e)
+    if c is None or c <= 0:
+        return []
+    out = []
+    for t in ("", fos[0], "fuel"):
+        out.append({"parameter": p, "target": t, "central": c / ef,
+                    "low": lo / ef if lo else None, "high": hi / ef if hi else None,
+                    "inputs": [_input(e, "emissions-combustion_co2"), f["factor-id"]],
+                    "grades": [e.get("grade", "sourced")],
+                    "sources": e.get("sources", ""), "external": [f["factor-id"]],
+                    "note": "" if not t else "the archetype's one fossil carrier" if t != "fuel" else "all fuel"})
+    return out
 
 
 def m_sum(rule, a, have, ctx):
@@ -150,7 +254,7 @@ def m_sum(rule, a, have, ctx):
         if rule["target"] not in ("*", t) or (p, t) in have:
             continue
         rows = [have.get((q, t)) for q in parts]
-        if not all(rows) or any(fnum(r.get("central")) is None for r in rows):
+        if not all(_live(r) for r in rows):
             continue
         c = sum(fnum(r["central"]) for r in rows)
         lo = sum(fnum(r.get("low")) if fnum(r.get("low")) is not None else fnum(r["central"]) for r in rows)
@@ -163,6 +267,114 @@ def m_sum(rule, a, have, ctx):
     return out
 
 
+def m_difference(rule, a, have, ctx):
+    """p = first input - second input (opex-variable = opex-total - opex-fixed),
+    only where the result is positive."""
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    x, y = (have.get((q, "")) for q in split_list(rule["inputs"])[:2])
+    if not (_live(x) and _live(y)):
+        return []
+    xc, xl, xh = _vals(x)
+    yc, yl, yh = _vals(y)
+    c = xc - yc
+    if c <= 0:
+        return []
+    lo = (xl if xl is not None else xc) - (yh if yh is not None else yc)
+    hi = (xh if xh is not None else xc) - (yl if yl is not None else yc)
+    return [{"parameter": p, "target": "", "central": c, "low": max(lo, 0.0), "high": max(hi, c),
+             "inputs": [_input(x, split_list(rule["inputs"])[0]), _input(y, split_list(rule["inputs"])[1])],
+             "grades": [x.get("grade", "sourced"), y.get("grade", "sourced")],
+             "sources": "; ".join(dict.fromkeys(split_list(x.get("sources", "")) + split_list(y.get("sources", "")))),
+             "external": []}]
+
+
+# capacity (MW | kt/yr | pu/yr) x capacity factor x hours -> annual output in
+# product units: MW x 8760 h x 3.6 GJ/MWh; kt/yr x 1000
+OUTPUT_K = {"GJ": 8760 * 3.6, "t": 1000.0}
+
+
+def m_capacity_output(rule, a, have, ctx):
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    cap, cf = have.get(("capacity", "")), have.get(("capacity-factor", ""))
+    if not (_live(cap) and _live(cf)):
+        return []
+    k = OUTPUT_K.get(a["product-unit"], 1.0)
+    cc, cl, ch = _vals(cap)
+    fc, fl, fh = _vals(cf)
+    c = cc * fc / 100 * k
+    lo = (cl if cl is not None else cc) * (fl if fl is not None else fc) / 100 * k
+    hi = (ch if ch is not None else cc) * (fh if fh is not None else fc) / 100 * k
+    return [{"parameter": p, "target": "", "central": c, "low": lo, "high": hi,
+             "inputs": [_input(cap, "capacity"), _input(cf, "capacity-factor"),
+                        f"x {k:g} ({cap.get('unit')} to {a['product-unit']}/yr)"],
+             "grades": [cap.get("grade", "sourced"), cf.get("grade", "sourced")],
+             "sources": "; ".join(dict.fromkeys(split_list(cap.get("sources", "")) + split_list(cf.get("sources", "")))),
+             "external": []}]
+
+
+def _base_of(a, ctx):
+    """The archetype less its last modifier, if that archetype exists."""
+    parts = a["archetype"].split("_")
+    if len(parts) < 2 or parts[-1] not in ctx["modifiers"]:
+        return None
+    base = "_".join(parts[:-1])
+    return base if base in ctx["arch"] else None
+
+
+def m_bucket_saving(rule, a, have, ctx):
+    """A variant's energy use = its base archetype's x (1 - s). s is the variant's
+    own sourced emissions-reduction-potential (same-fuel measure: the emission
+    saving is the energy saving), else the bucket's definition from the assumption
+    group the rule names (proxy). Written for the total and every carrier the base
+    has, scaled alike, so the carrier split still sums."""
+    p = rule["parameter"]
+    if any(k[0] == p and _live(v) for k, v in have.items()):
+        return []
+    base = _base_of(a, ctx)
+    if not base:
+        return []
+    bh = ctx["have"].get(base, {})
+    tot = bh.get((p, ""))
+    if not _live(tot):
+        return []
+    erp = have.get(("emissions-reduction-potential", ""))
+    if _live(erp) and 0 < fnum(erp["central"]) < 90:
+        s, sl, sh = _vals(erp)
+        sl = s if sl is None else sl
+        sh = s if sh is None else sh
+        sl, sh = min(sl, sh, 89.0), min(max(sl, sh), 89.0)
+        src = _input(erp, "emissions-reduction-potential")
+        grades = [erp.get("grade", "sourced")]
+        ext = []
+    else:
+        row = _assumption(rule, a, ctx)
+        if not row:
+            return []
+        s, sl, sh = fnum(row["value"]), fnum(row.get("low")), fnum(row.get("high"))
+        sl = s if sl is None else sl
+        sh = s if sh is None else sh
+        src = f"assumption {row['assumption-id']} (proxy)"
+        grades = ["proxy"]
+        ext = [row["assumption-id"]]
+    out = []
+    for (q, t), r in sorted(bh.items()):
+        if q != p or not _live(r):
+            continue
+        c, lo, hi = _vals(r)
+        lo = c if lo is None else lo
+        hi = c if hi is None else hi
+        out.append({"parameter": p, "target": t, "central": c * (1 - s / 100),
+                    "low": min(lo, hi) * (1 - sh / 100), "high": max(lo, hi) * (1 - sl / 100),
+                    "inputs": [_input(r, f"{base} {p}" + (f"_{t}" if t else "")), src],
+                    "grades": grades + [r.get("grade", "sourced")],
+                    "sources": r.get("sources", ""), "external": ext})
+    return out
+
+
 def m_host_increment(rule, a, have, ctx):
     """Host plant's pooled cost + the median increment the set-aside examples give."""
     p = rule["parameter"]
@@ -172,7 +384,7 @@ def m_host_increment(rule, a, have, ctx):
     if not hm or hm.get("status") != "active" or not hm.get("host"):
         return []
     host = ctx["have"].get(hm["host"], {}).get((p, ""))
-    if not host or fnum(host.get("central")) is None:
+    if not _live(host):
         return []
     by_ex = {}
     for r in ctx["increments"].get((a["archetype"], p), []):
@@ -207,7 +419,7 @@ def m_host_copy(rule, a, have, ctx):
     if not hm or hm.get("status") != "active" or not hm.get("host"):
         return []
     host = ctx["have"].get(hm["host"], {}).get((p, ""))
-    if not host or fnum(host.get("central")) is None:
+    if not _live(host):
         return []
     hc, hl, hh = _vals(host)
     return [{"parameter": p, "target": "", "central": hc,
@@ -217,12 +429,238 @@ def m_host_copy(rule, a, have, ctx):
              "sources": host.get("sources", ""), "external": []}]
 
 
+def m_bucket_increment(rule, a, have, ctx):
+    """A variant with a priced host but no increment of its own: host cost x
+    (1 + i), i the median increment/host ratio this database's own set-aside
+    measure costs give for the same modifier (pool of `min-pool` or more); the
+    range from the pool's quartiles."""
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    base = _base_of(a, ctx)
+    if not base:
+        return []
+    host = ctx["have"].get(base, {}).get((p, ""))
+    if not _live(host):
+        return []
+    mod = a["archetype"].split("_")[-1]
+    pool = ctx["inc_ratios"].get((mod, p), {})
+    pool = {k: v for k, v in pool.items() if k != a["archetype"]}
+    need = int(_scope(rule).get("min-pool", "3"))
+    if len(pool) < need:
+        return []
+    vs = sorted(pool.values())
+    i, ilo, ihi = median(vs), _quantile(vs, 0.25), _quantile(vs, 0.75)
+    hc, hl, hh = _vals(host)
+    hl = hc if hl is None else hl
+    hh = hc if hh is None else hh
+    return [{"parameter": p, "target": "", "central": hc * (1 + i), "low": hl * (1 + ilo),
+             "high": hh * (1 + ihi),
+             "inputs": [_input(host, f"{base} {p}"),
+                        f"_{mod} increment/host median {i:.3g} (quartiles {ilo:.3g}-{ihi:.3g}) "
+                        f"of {len(pool)} archetypes: " + ", ".join(sorted(pool))],
+             "grades": [host.get("grade", "sourced")],
+             "sources": host.get("sources", ""), "external": []}]
+
+
+def m_per_gj_via_sec(rule, a, have, ctx):
+    """A capex a source gives per GJ-yr of heat output on a per-tonne archetype
+    (excluded at normalise for want of a same-example GJ/t) goes per t-yr with
+    the archetype's own pooled energy use (class internal), under the same-GJ
+    condition of design s5: same stream, same side, same scope (modeller
+    2026-10-09, graded estimated). One value per example, then the median."""
+    p = rule["parameter"]
+    if (p, "") in have or a["product-unit"] != "t":
+        return []
+    sec = have.get((SEC, ""))
+    if not _live(sec):
+        return []
+    rows = ctx["per_gj"].get((a["archetype"], p), [])
+    if not rows:
+        return []
+    by_ex = {}
+    for r in rows:
+        f = ctx["units"].cur.get(currency_year(r["unit"])) if ctx.get("units") else None
+        if f is None:
+            continue
+        v = fnum(r.get("value"))
+        if v is None:
+            continue
+        by_ex.setdefault(r["example-id"], []).append(v * f)
+    if not by_ex:
+        return []
+    per = sorted(median(v) for v in by_ex.values())
+    c_gj, lo_gj, hi_gj = median(per), per[0], per[-1]
+    sc, sl, sh = _vals(sec)
+    sl = sc if sl is None else sl
+    sh = sc if sh is None else sh
+    return [{"parameter": p, "target": "", "central": c_gj * sc, "low": lo_gj * sl, "high": hi_gj * sh,
+             "inputs": [f"capex per GJ-yr of heat output, median of {len(per)} example(s): "
+                        + ", ".join(sorted(by_ex)), _input(sec, f"{SEC} (GJ/t, class internal)")],
+             "grades": [sec.get("grade", "sourced")],
+             "sources": "; ".join(dict.fromkeys(sorted({r["source-id"] for r in rows})
+                                                + split_list(sec.get("sources", "")))),
+             "external": [f"sec:{a['archetype']}"]}]
+
+
+NON_COMBUSTIBLE = {"electricity", "steam", "heat", "geothermal", "hydrogen", "nuclear", "solar", "waste-heat", "ammonia"}
+# biogenic fuels: their combustion CO2 is not fossil CO2 (CIMS counts it as emissions-biomass)
+BIOGENIC = {"biomass", "biogas", "biomethane", "black-liquor", "landfill-gas", "liquid-biomass", "renewable-natural-gas"}
+
+
+def m_zero_if_no_fossil(rule, a, have, ctx):
+    """Combustion CO2 = 0 where the archetype burns nothing with carbon: every
+    carrier it lists is non-combustible (electricity, steam, hydrogen, ...) and
+    no energy-use row names a combustible one."""
+    p, t = rule["parameter"], rule["target"]
+    if (p, t) in have:
+        return []
+    carriers = set(split_list(a.get("carriers", "")))
+    if not carriers or not carriers <= NON_COMBUSTIBLE | BIOGENIC:
+        return []
+    if any(k[0] == SEC and k[1] and k[1] not in NON_COMBUSTIBLE | BIOGENIC and _live(v) for k, v in have.items()):
+        return []
+    bio = carriers & BIOGENIC
+    return [{"parameter": p, "target": t, "central": 0.0, "low": None, "high": None,
+             "inputs": ["carriers: " + ", ".join(sorted(carriers))], "grades": [],
+             "sources": "", "external": [],
+             "note": "no fossil carrier" + ("; biogenic CO2 from " + ", ".join(sorted(bio)) + " is not fossil CO2 (CIMS emissions-biomass)" if bio else "")}]
+
+
+def m_range_midpoint(rule, a, have, ctx):
+    """A sourced row that gives a range and no central (the source printed a
+    range only) gets the midpoint of that range as its central; the row keeps its
+    sources and n, and its grade becomes the rule's. The rule's parameter `*`
+    means every parameter."""
+    out = []
+    for (p, t), r in list(have.items()):
+        if rule["parameter"] not in ("*", p) or r.get("grade") != "sourced":
+            continue
+        c, lo, hi = _vals(r)
+        if c is not None or lo is None or hi is None:
+            continue
+        out.append({"parameter": p, "target": t, "central": (lo + hi) / 2, "low": lo, "high": hi,
+                    "inputs": [f"sourced range {lo:g}-{hi:g} ({r.get('central-from')})"],
+                    "grades": [], "sources": r.get("sources", ""), "external": [],
+                    "replace": r})
+    return out
+
+
+def m_single_carrier_split(rule, a, have, ctx):
+    """An archetype that lists ONE carrier and has an all-carrier energy use but
+    no carrier row: that carrier carries all of it."""
+    p = rule["parameter"]
+    carriers = split_list(a.get("carriers", ""))
+    if len(carriers) != 1 or (p, carriers[0]) in have:
+        return []
+    named = [k[1] for k in have if k[0] == p and k[1] and k[1] not in ("fuel", "total")]
+    if named:
+        return []
+    # an unnamed `fuel` row with one listed carrier: that carrier is the fuel;
+    # else the archetype's total is all that carrier
+    src, note = have.get((p, "fuel")), "all of fuel, split from the carriers list"
+    if not _live(src):
+        src, note = have.get((p, "")), "the only carrier listed"
+    if not _live(src):
+        return []
+    c, lo, hi = _vals(src)
+    return [{"parameter": p, "target": carriers[0], "central": c, "low": lo, "high": hi,
+             "inputs": [_input(src, p + ("_fuel" if note.startswith("all of fuel") else "")),
+                        f"carriers: {carriers[0]}"], "note": note,
+             "grades": [src.get("grade", "sourced")], "sources": src.get("sources", ""), "external": []}]
+
+
+def m_marker(rule, a, have, ctx):
+    """Not a value: the parameter does not characterise this archetype. Written
+    for the targets the rule names (`*` = the parameter with no target)."""
+    p = rule["parameter"]
+    if any(k[0] == p for k in have):
+        return []
+    return [{"parameter": p, "target": "", "marker": True, "central": None, "low": None, "high": None,
+             "inputs": [], "grades": [], "sources": "", "external": []}]
+
+
+# ---- assumptions (records/fill/fill-assumption.csv) -------------------------
+
+def _applies(row, a, ctx):
+    """Does an assumption row apply to archetype a? applies-to is a ;-list of
+    `all`, `archetype:k`, `equipment:x|y`, `class:<lifetime-class>`,
+    `vom-class:<c>`, `family:f`, `end-use:e|f`, `modifier:m`, `product-unit:u`."""
+    for term in split_list(row.get("applies-to", "")):
+        kind, _, val = term.partition(":")
+        vals = val.split("|")
+        cls = ctx["classes"].get(a["equipment"], {})
+        if (kind == "all"
+                or (kind == "archetype" and a["archetype"] in vals)
+                or (kind == "equipment" and a["equipment"] in vals)
+                or (kind == "class" and cls.get("lifetime-class") in vals)
+                or (kind == "vom-class" and cls.get("vom-class") in vals)
+                or (kind == "family" and a.get("family") in vals)
+                or (kind == "product-unit" and a.get("product-unit") in vals)
+                or (kind == "end-use" and set(vals) & ctx["service"].get(a["archetype"], set()))
+                or (kind == "modifier" and set(vals) & set(split_list(a.get("modifiers", ""))))):
+            return True
+    return False
+
+
+def _assumption(rule, a, ctx):
+    """The first row of the rule's assumption group (its `inputs` cell,
+    `group=<name>`) that applies to the archetype; rows are tried in file order,
+    so a narrower row goes above a wider one."""
+    grp = dict(x.partition("=")[::2] for x in split_list(rule.get("inputs", "")) if "=" in x).get("group")
+    for row in ctx["assumptions"]:
+        if row.get("group") == grp and row.get("status", "active") != "off" and _applies(row, a, ctx):
+            return row
+    return None
+
+
+def m_assumption(rule, a, have, ctx):
+    """A class constant from fill-assumption.csv. The rule's formula says how it
+    is used: `value` writes it as the cell; `share-of:<parameter>` multiplies the
+    archetype's value of that parameter (fixed O&M as a share of capex)."""
+    p = rule["parameter"]
+    if (p, "") in have:
+        return []
+    row = _assumption(rule, a, ctx)
+    if not row:
+        return []
+    v, lo, hi = fnum(row["value"]), fnum(row.get("low")), fnum(row.get("high"))
+    if v is None:
+        return []
+    lo = v if lo is None else lo
+    hi = v if hi is None else hi
+    mode = (rule.get("formula") or "value").strip()
+    ins = [f"assumption {row['assumption-id']}: {row.get('class') or row.get('applies-to')} "
+           f"= {v:g} [{lo:g}-{hi:g}] ({row.get('source-id', '')})"]
+    grades, srcs = [], split_list(row.get("source-id", ""))
+    if mode.startswith("share-of:"):
+        q = mode.split(":", 1)[1]
+        b = have.get((q, ""))
+        if not _live(b):
+            return []
+        bc, bl, bh = _vals(b)
+        bl = bc if bl is None else bl
+        bh = bc if bh is None else bh
+        c, lo, hi = bc * v, bl * lo, bh * hi
+        ins.insert(0, _input(b, q))
+        grades.append(b.get("grade", "sourced"))
+        srcs = split_list(b.get("sources", "")) + srcs
+        unit_note = f"x {q}"
+    else:
+        c, unit_note = v, ""
+    if not _plausible(rule, c):
+        return []
+    return [{"parameter": p, "target": "", "central": c, "low": lo, "high": hi,
+             "inputs": ins + ([unit_note] if unit_note else []), "grades": grades,
+             "sources": "; ".join(dict.fromkeys(srcs)), "external": [row["assumption-id"]]}]
+
+
 # parameters whose value does not depend on the product unit: siblings need not
 # share it (modeller 2026-10-09)
 UNIT_FREE = {"lifetime", "construction-time", "capacity-factor"}
 
 
-def _siblings(a, p, ctx):
+def _siblings(a, p, ctx, exclude_chp=False):
     """(tier, [(archetype, row)]) -- the nearest archetypes with a SOURCED value of
     p: tier 1 same equipment and discriminator, tier 2 same equipment; the same
     product unit, except for the unit-free parameters (UNIT_FREE)."""
@@ -234,7 +672,8 @@ def _siblings(a, p, ctx):
                 continue
             b = A[k]
             if ((b["product-unit"] != a["product-unit"] and p not in UNIT_FREE)
-                    or any(b[f] != a[f] for f in same)):
+                    or any(b[f] != a[f] for f in same)
+                    or (exclude_chp and is_chp(b))):
                 continue
             r = h.get((p, ""))
             if _sourced(r):
@@ -257,43 +696,100 @@ def _quantile(xs, q):
     return xs[lo] + (xs[min(lo + 1, len(xs) - 1)] - xs[lo]) * (i - lo)
 
 
-CAP100 = ("capacity-factor", "availability")
+CAP100 = ("capacity-factor", "availability", "efficiency")
 
 
 # ---- estimators: methods that borrow from OTHER archetypes. Each returns
-# {central, low, high, inputs, sources} for archetype `a` from sourced values of
-# other archetypes only, so the same function back-tests a cell that has a
-# sourced value (that value is never in its own pool).
+# {central, low, high, inputs, sources, grade} for archetype `a`; the pool is
+# sourced values of other archetypes only, so the same function back-tests a
+# cell that has a sourced value (that value is never in its own pool). Where an
+# estimator scales a value of the archetype itself (cost ratios), that value may
+# be a fill, and the estimate inherits its grade.
+
+def _range(rows, c, widen, p):
+    cs = [fnum(r["central"]) for _, r in rows]
+    lows = [fnum(r.get("low")) for _, r in rows if fnum(r.get("low")) is not None] + cs
+    highs = [fnum(r.get("high")) for _, r in rows if fnum(r.get("high")) is not None] + cs
+    if widen >= 1:
+        # a multiplicative widen (x3 for widen=2): plant sizes and the like spread
+        # by factors, and a low of zero would be meaningless
+        lo, hi = min(lows + [c / (1 + widen)]), max(highs + [c * (1 + widen)])
+        lo = max(lo, c / (1 + widen) / 3) if lo <= 0 else lo
+    else:
+        lo, hi = min(lows + [c * (1 - widen)]), max(highs + [c * (1 + widen)])
+    if p in CAP100 and p != "efficiency":
+        hi = min(hi, 100.0)
+    return lo, hi
+
 
 def e_sibling(rule, a, ctx):
     """The median of the nearest siblings' sourced values; the range spans theirs
     and at least +/- `widen` of the central."""
     p = rule["parameter"]
-    tier, rows = _siblings(a, p, ctx)
-    if not rows:
+    sc = _scope(rule)
+    tier, rows = _siblings(a, p, ctx, exclude_chp=sc.get("sibling-exclude-chp") == "yes")
+    if not rows or ("tier" in sc and tier > int(sc["tier"])):
         return None
     widen = fnum(rule.get("widen")) or 0.0
-    cs = [fnum(r["central"]) for _, r in rows]
-    c = median(cs)
-    lows = [fnum(r.get("low")) for _, r in rows if fnum(r.get("low")) is not None] + cs
-    highs = [fnum(r.get("high")) for _, r in rows if fnum(r.get("high")) is not None] + cs
-    lo, hi = min(lows + [c * (1 - widen)]), max(highs + [c * (1 + widen)])
-    if p in CAP100:
-        hi = min(hi, 100.0)
-    return {"central": c, "low": lo, "high": hi,
+    c = median(fnum(r["central"]) for _, r in rows)
+    lo, hi = _range(rows, c, widen, p)
+    return {"central": c, "low": lo, "high": hi, "grade": "sourced",
             "inputs": [f"tier {tier}: " + ", ".join(k for k, _ in rows)],
             "sources": [x for _, r in rows for x in split_list(r.get("sources", ""))]}
+
+
+def e_class_median(rule, a, ctx):
+    """The median sourced value of the archetypes in the same equipment class
+    (records/fill/equipment-class.csv), at least `min-pool` of them; a wider
+    sibling rule for parameters set by the kind of equipment."""
+    p = rule["parameter"]
+    cls = ctx["classes"].get(a["equipment"], {}).get("lifetime-class")
+    if not cls:
+        return None
+    A = ctx["arch"]
+    rows = []
+    for k, h in ctx["have"].items():
+        if k == a["archetype"] or k not in A:
+            continue
+        if ctx["classes"].get(A[k]["equipment"], {}).get("lifetime-class") != cls:
+            continue
+        if p not in UNIT_FREE and A[k]["product-unit"] != a["product-unit"]:
+            continue
+        r = h.get((p, ""))
+        if _sourced(r):
+            rows.append((k, r))
+    need = int(_scope(rule).get("min-pool", "3"))
+    if len(rows) < need and _scope(rule).get("fallback-all") == "yes":
+        rows = [(k, h.get((p, ""))) for k, h in ctx["have"].items()
+                if k != a["archetype"] and k in A and _sourced(h.get((p, "")))]
+        cls = "all (class pool too small)"
+    if len(rows) < need:
+        return None
+    widen = fnum(rule.get("widen")) or 0.0
+    c = median(fnum(r["central"]) for _, r in rows)
+    lo, hi = _range(rows, c, widen, p)
+    return {"central": c, "low": lo, "high": hi, "grade": "sourced",
+            "inputs": [f"class {cls}: median of {len(rows)} archetypes"
+                       + (": " + ", ".join(sorted(k for k, _ in rows)) if len(rows) <= 25 else "")],
+            "sources": [x for _, r in rows for x in split_list(r.get("sources", ""))]}
+
+
+def _pu(unit):
+    """The product unit a cost is per: `2025_CAD/t-per-yr` and `2025_CAD/t` -> t."""
+    return (unit or "").split("/")[-1].replace("-per-yr", "")
 
 
 def e_cost_ratio(rule, a, ctx):
     """p = base parameter x the median p/base ratio of archetypes with BOTH sourced,
     from the nearest pool of at least `min-pool` (same equipment, then family,
-    then all). Range: the pool's `widen` and 1-`widen` quantiles."""
+    then all; `min-pool=3|5` gives each level its own minimum). Pools share the
+    archetype's product unit. Range: the pool's `widen` and 1-`widen` quantiles.
+    The base value may itself be a fill; the result inherits its grade."""
     p, base = rule["parameter"], split_list(rule["inputs"])[0]
     sc = _scope(rule)
-    need = int(sc.get("min-pool", "3"))
+    needs = [int(x) for x in sc.get("min-pool", "3").split("|")]
     b = ctx["have"].get(a["archetype"], {}).get((base, ""))
-    if not _sourced(b):
+    if not _live(b) or fnum(b["central"]) <= 0:
         return None
     bc = fnum(b["central"])
     A = ctx["arch"]
@@ -303,21 +799,35 @@ def e_cost_ratio(rule, a, ctx):
             continue
         x, y = h.get((base, "")), h.get((p, ""))
         if _sourced(x) and _sourced(y) and fnum(x["central"]) > 0 \
-                and x["unit"].split("/")[-1] == y["unit"].split("/")[-1]:
+                and _pu(x["unit"]) == _pu(y["unit"]):
+            if "vom-class" in sc and ctx["classes"].get(A[k]["equipment"], {}).get("vom-class") not in sc["vom-class"].split("|"):
+                continue
             ratios[k] = fnum(y["central"]) / fnum(x["central"])
-    for level in ("equipment", "family", None):
-        pool = {k: v for k, v in ratios.items() if level is None or A[k][level] == a[level]}
-        if len(pool) >= need or level is None:
+    # same product unit at the first three levels; the last level pools every unit
+    # (the ratio is per year of the same product unit on both sides)
+    levels = ["equipment", "family", None, "any-unit"]
+    pool = {}
+    for i, level in enumerate(levels):
+        pool = {k: v for k, v in ratios.items()
+                if (level == "any-unit" or A[k]["product-unit"] == a["product-unit"])
+                and (level in (None, "any-unit") or A[k][level] == a[level])}
+        need = needs[min(i, len(needs) - 1)]
+        if len(pool) >= need:
             break
+        pool = {}
     if not pool:
         return None
     q = fnum(rule.get("widen")) or 0.0
     vs = list(pool.values())
     m = median(vs)
-    return {"central": bc * m, "low": bc * _quantile(vs, q), "high": bc * _quantile(vs, 1 - q),
+    bl, bh = fnum(b.get("low")), fnum(b.get("high"))
+    bl = bc if bl is None else bl
+    bh = bc if bh is None else bh
+    return {"central": bc * m, "low": bl * _quantile(vs, q), "high": bh * _quantile(vs, 1 - q),
+            "grade": b.get("grade", "sourced"),
             "inputs": [_input(b, base),
                        f"{p}/{base} median {m:.4g} of {len(pool)} archetypes "
-                       f"({'same ' + level if level else 'all'})"],
+                       f"({'same ' + level if level not in (None, 'any-unit') else 'all' if level is None else 'all, any product unit'}, quartiles {_quantile(vs, q):.3g}-{_quantile(vs, 1 - q):.3g})"],
             "sources": split_list(b.get("sources", ""))}
 
 
@@ -345,14 +855,48 @@ def e_modifier_ratio(rule, a, ctx):
     bc, bl, bh = _vals(b)
     bl = bc if bl is None else bl
     bh = bc if bh is None else bh
-    return {"central": bc * m, "low": bl * min(rs), "high": bh * max(rs),
+    return {"central": bc * m, "low": bl * min(rs), "high": bh * max(rs), "grade": "sourced",
             "inputs": [_input(b, f"{base} {p}"),
                        f"_{mod}/base median {m:.4g} from {len(rs)} same-source pairs: "
                        + ", ".join(f"{v} ({sid})" for _, sid, v in ratios)],
             "sources": split_list(b.get("sources", ""))}
 
 
-ESTIMATORS = {"sibling": e_sibling, "cost-ratio": e_cost_ratio, "modifier-ratio": e_modifier_ratio}
+def e_end_use_median(rule, a, ctx):
+    """The median value of the archetypes serving the same end use (annotation
+    group) with the same product unit, at least `min-pool` of them. For plant
+    scale: the archetypes competing on one end use serve plants of about the same
+    size. The pool takes sourced values and identity fills (capacity x capacity
+    factor), never estimates."""
+    p = rule["parameter"]
+    uses = ctx["service"].get(a["archetype"], set())
+    if not uses:
+        return None
+    A = ctx["arch"]
+    rows = []
+    for k, h in ctx["have"].items():
+        if k == a["archetype"] or k not in A or A[k]["product-unit"] != a["product-unit"]:
+            continue
+        if not (uses & ctx["service"].get(k, set())):
+            continue
+        r = h.get((p, ""))
+        if _live(r) and r.get("grade") in ("sourced", "identity"):
+            rows.append((k, r))
+    need = int(_scope(rule).get("min-pool", "3"))
+    if len(rows) < need:
+        return None
+    widen = fnum(rule.get("widen")) or 0.0
+    c = median(fnum(r["central"]) for _, r in rows)
+    lo, hi = _range(rows, c, widen, p)
+    return {"central": c, "low": lo, "high": hi,
+            "grade": worst([r.get("grade", "sourced") for _, r in rows]),
+            "inputs": [f"end use {'/'.join(sorted(uses))}: median of {len(rows)} archetypes: "
+                       + ", ".join(sorted(k for k, _ in rows))],
+            "sources": [x for _, r in rows for x in split_list(r.get("sources", ""))]}
+
+
+ESTIMATORS = {"sibling": e_sibling, "cost-ratio": e_cost_ratio, "modifier-ratio": e_modifier_ratio,
+              "class-median": e_class_median, "end-use-median": e_end_use_median}
 
 
 def _estimated(fn):
@@ -364,7 +908,7 @@ def _estimated(fn):
         if not e:
             return []
         return [{"parameter": p, "target": "", "central": e["central"], "low": e["low"],
-                 "high": e["high"], "inputs": e["inputs"], "grades": ["sourced"],
+                 "high": e["high"], "inputs": e["inputs"], "grades": [e.get("grade", "sourced")],
                  "sources": "; ".join(dict.fromkeys(e["sources"])), "external": []}]
     return m
 
@@ -381,7 +925,7 @@ def backtest(records, rules_, have, ctx):
         p = rule["parameter"]
         for a in records.archetypes:
             r = have.get(a["archetype"], {}).get((p, ""))
-            if not _sourced(r) or not _in_scope(rule, a, {}):
+            if not _sourced(r) or not _in_scope(rule, a, {}, ctx):
                 continue
             e = fn(rule, a, ctx)
             if not e:
@@ -394,9 +938,460 @@ def backtest(records, rules_, have, ctx):
     return out
 
 
-METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor, "sum": m_sum,
+METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor,
+           "sec-from-emissions": m_sec_from_emissions, "sum": m_sum, "difference": m_difference,
+           "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
+           "bucket-increment": m_bucket_increment, "per-gj-via-sec": m_per_gj_via_sec,
+           "assumption": m_assumption, "marker": m_marker, "zero-if-no-fossil": m_zero_if_no_fossil,
+           "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
            **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
+
+
+# ---- variants consistent with their hosts (modeller 2026-10-10) ------------
+#
+# A variant (an archetype with an active row in host-archetype.csv) is the host
+# plant plus something: an efficiency measure or a CO2 capture plant. So it has
+# the host's size, and a host-with-capture variant has the host plant's costs,
+# energy use and emissions plus the capture add-on's. These rules run after the
+# others and OVERRIDE what the variant had: a value the variant's own sources
+# gave is kept, moved to target `as-sourced` (a secondary parameter), so it can
+# be compared and nothing is lost. The CIMS export writes the host-plant part
+# (target `host-plant`) plus the service request to the CCS node; the database's
+# main value is the all-in plant.
+
+SIZE = ("annual-output", "capacity", "capacity-factor")
+COMPONENT_TARGETS = ("host-plant", "ccs-add-on")
+CAPTURE_RATE = 90.0      # % of the CO2 sent to capture that a capture plant captures (design s2)
+
+
+def is_component_target(t):
+    t = t or ""
+    return t.startswith("as-sourced") or t in COMPONENT_TARGETS
+
+
+def _variants(ctx):
+    """Active variants, hosts before their variants (a host may itself be a variant)."""
+    hs = {k: h["host"] for k, h in ctx["hosts"].items()
+          if h.get("status") == "active" and h.get("host") and k in ctx["arch"]}
+    out, seen = [], set()
+
+    def visit(k, depth=0):
+        if k in seen or depth > 10:
+            return
+        if hs.get(k) in hs:
+            visit(hs[k], depth + 1)
+        seen.add(k)
+        out.append(k)
+    for k in sorted(hs):
+        visit(k)
+    return [(k, hs[k]) for k in out]
+
+
+def _as_sourced(t):
+    return "as-sourced" + (f"-{t}" if t else "")
+
+
+def _put(psum, h, row, stats, rid):
+    """Write row into the variant's cell, overriding what was there: a sourced
+    row moves to target as-sourced; a filled row is dropped."""
+    key = (row["parameter"], row["target"])
+    old = h.get(key)
+    if old is not None:
+        if old.get("grade") == "sourced":
+            t2 = _as_sourced(old.get("target", ""))
+            old["target"] = t2
+            old["central-from"] = ("as the variant's own sources give it; the main value is "
+                                   "host-based (2026-10-10). " + (old.get("central-from") or ""))
+            h[(old["parameter"], t2)] = old
+            stats["sourced moved to as-sourced"] = stats.get("sourced moved to as-sourced", 0) + 1
+        elif old in psum:
+            psum.remove(old)
+    psum.append(row)
+    h[key] = row
+    stats[rid] = stats.get(rid, 0) + 1
+
+
+def _row(a, p, t, unit, c, lo, hi, grade, rule, inputs, sources, note=""):
+    spread = lo is not None and hi is not None and abs(hi - lo) > 1e-12 * max(1, abs(c))
+    return {"archetype": a, "parameter": p, "target": t, "unit": unit,
+            "central": _g(c), "low": _g(min(lo, hi)) if spread else "",
+            "high": _g(max(lo, hi)) if spread else "", "n": 0, "n-external": "",
+            "central-from": f"{grade}: {rule['formula']}" + (f" ({note})" if note else ""),
+            "external-factors": "", "sources": sources, "examples": "", "grade": grade,
+            "method": rule["method"], "rule-id": rule["rule-id"], "inputs": "; ".join(inputs),
+            "rationale": rule["rationale"]}
+
+
+def _lohi(r):
+    c, lo, hi = _vals(r)
+    return c, (c if lo is None else lo), (c if hi is None else hi)
+
+
+def pm_host_size(rule, psum, records, target_unit, ctx, stats):
+    """Every variant takes its host's value of the rule's parameter."""
+    p = rule["parameter"]
+    for k, host in _variants(ctx):
+        hr = ctx["have"].get(host, {}).get((p, ""))
+        if not _live(hr):
+            continue
+        c, lo, hi = _lohi(hr)
+        g = worst([rule["grade"], hr.get("grade", "sourced")])
+        _put(psum, ctx["have"].setdefault(k, {}),
+             _row(k, p, "", hr["unit"], c, lo, hi, g, rule, [_input(hr, f"{host} {p}")],
+                  hr.get("sources", "")), stats, rule["rule-id"])
+
+
+def _captured(k, host, ctx):
+    """(t CO2 captured per unit of product, low, high, grade, inputs) for a
+    host-with-capture variant: its own emissions-captured where it has one, else
+    the host's CO2 x the variant's share-to-capture x the capture plant's rate."""
+    h, hh = ctx["have"].get(k, {}), ctx["have"].get(host, {})
+    e = h.get(("emissions-captured", "co2"))
+    if _live(e) and fnum(e["central"]) > 0:
+        c, lo, hi = _lohi(e)
+        return c, lo, hi, e.get("grade", "sourced"), [_input(e, f"{k} emissions-captured_co2")]
+    tot = hh.get(("emissions-total", "co2"))
+    parts = [hh.get(("emissions-combustion", "co2")), hh.get(("emissions-process", "co2"))]
+    if _live(tot):
+        co2, ins, gs = _lohi(tot), [_input(tot, f"{host} emissions-total_co2")], [tot.get("grade", "sourced")]
+    elif any(_live(x) for x in parts):
+        xs = [x for x in parts if _live(x)]
+        co2 = tuple(sum(_lohi(x)[i] for x in xs) for i in range(3))
+        ins = [_input(x, f"{host} {x['parameter']}_co2") for x in xs]
+        gs = [x.get("grade", "sourced") for x in xs]
+    else:
+        return None
+    sh = h.get(("share-to-capture", "co2")) or h.get(("share-to-capture", ""))
+    if not _live(sh) or co2[0] <= 0:
+        return None
+    s, sl, shi = _lohi(sh)
+    f = CAPTURE_RATE / 100 / 100
+    return (co2[0] * s * f, co2[1] * sl * f, co2[2] * shi * f,
+            worst(gs + [sh.get("grade", "sourced")]),
+            ins + [_input(sh, f"{k} share-to-capture"), f"capture rate {CAPTURE_RATE:g}%"])
+
+
+def _node_medians(node, p, ctx, target=""):
+    """Centrals of parameter p on the capture archetypes serving the CCS node
+    (`diffuse` or `concentrated`)."""
+    vals = {}
+    for k in ctx["ccs_nodes"].get(node, ()):
+        r = ctx["have"].get(k, {}).get((p, target))
+        if _live(r) and fnum(r["central"]) >= 0:
+            vals[k] = fnum(r["central"])
+    return vals
+
+
+def _tier1(k, host, p, unit, ctx):
+    """Same-source add-on: the source's incremental capture cost on this variant,
+    else the same source's plant with capture less its plant without. Median of
+    the per-source values."""
+    rows = [r for r in ctx["addon_facts"].get((k, p), []) if r.get("unit-norm") == unit]
+    vals, ins = [], []
+    inc = {}
+    for r in rows:
+        if (r.get("cost-basis") or "") == "incremental":
+            inc.setdefault(r["example-id"], []).append(fnum(r["value-norm"]))
+    for eid, vs in inc.items():
+        vals.append(median(vs))
+        ins.append(f"incremental {median(vs):.4g} ({eid})")
+    whole = {}
+    for r in rows:
+        if (r.get("cost-basis") or "") != "incremental":
+            whole.setdefault(r["source-id"], []).append(fnum(r["value-norm"]))
+    for sid, vs in whole.items():
+        hv = [fnum(r["value-norm"]) for r in ctx["pooled_facts"].get((host, p, sid), [])
+              if r.get("unit-norm") == unit]
+        if not hv:
+            continue
+        d = median(vs) - median(hv)
+        if d > 0:
+            vals.append(d)
+            ins.append(f"{sid}: with capture {median(vs):.4g} less without {median(hv):.4g}")
+    if not vals:
+        return None
+    return median(vals), min(vals), max(vals), ins
+
+
+def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
+    """A host-with-capture variant's cost = the host plant's + the capture
+    add-on's. The add-on: same-source evidence first (tier 1), else the median
+    of the capture archetypes on the matching CCS node per t CO2 x the CO2
+    captured per unit of the host's product (tier 2)."""
+    p = rule["parameter"]
+    for k, host in _variants(ctx):
+        a = ctx["arch"][k]
+        if "_ccs-" not in k or a.get("family") == "co2-capture":
+            continue
+        node = "diffuse" if "_ccs-diffuse" in k else "concentrated"
+        h, hh = ctx["have"].setdefault(k, {}), ctx["have"].get(host, {})
+        unit = target_unit(p, a["product-unit"], records.parameters.get(p, {}).get("unit-default", ""))
+        hr = hh.get((p, ""))
+        if _live(hr):
+            hc, hl, hhi = _lohi(hr)
+            hg, hin, hsrc = hr.get("grade", "sourced"), [_input(hr, f"{host} {p}")], hr.get("sources", "")
+        elif hr is not None and hr.get("grade") == MARKER:
+            hc = hl = hhi = 0.0
+            hg, hin, hsrc = "identity", [f"{host} {p} not applicable (0)"], ""
+        else:
+            continue
+        t1 = _tier1(k, host, p, unit, ctx)
+        cap = _captured(k, host, ctx)
+        nm = _node_medians(node, p, ctx)
+        t2 = None
+        if cap and nm:
+            m = median(nm.values())
+            t2 = (m * cap[0], min(nm.values()) * cap[1], max(nm.values()) * cap[2])
+        if t1:
+            ac, al, ah = t1[:3]
+            ag, ains, tier = "estimated", t1[3], "tier 1 (same source)"
+        elif t2:
+            ac, al, ah = t2
+            ag = worst(["estimated", cap[3]])
+            ains = cap[4] + [f"ccs.{node} node median {median(nm.values()):.4g} per t CO2 of "
+                             f"{len(nm)}: " + ", ".join(sorted(nm))]
+            tier = "tier 2 (capture node x CO2 captured)"
+        else:
+            stats["ccs add-on not derivable"] = stats.get("ccs add-on not derivable", 0) + 1
+            continue
+        g = worst([rule["grade"], hg, ag])
+        ctx["ccs_report"].append({"archetype": k, "host": host, "parameter": p, "unit": unit,
+                                  "host-value": _g(hc), "add-on": _g(ac), "tier": tier,
+                                  "tier1": _g(t1[0]) if t1 else "", "tier2": _g(t2[0]) if t2 else "",
+                                  "co2-captured": _g(cap[0]) if cap else "",
+                                  "all-in": _g(hc + ac), "grade": g})
+        _put(psum, h, _row(k, p, "", unit, hc + ac, hl + al, hhi + ah, g, rule,
+                           hin + [f"add-on {ac:.4g} ({tier})"] + ains, hsrc, tier), stats, rule["rule-id"])
+        _put(psum, h, _row(k, p, "host-plant", unit, hc, hl, hhi, worst([rule["grade"], hg]), rule,
+                           hin, hsrc, "the host plant's part: what the CIMS export writes"), stats, rule["rule-id"] + ":host-plant")
+        _put(psum, h, _row(k, p, "ccs-add-on", unit, ac, al, ah, worst([rule["grade"], ag]), rule,
+                           ains, "", tier), stats, rule["rule-id"] + ":ccs-add-on")
+
+
+def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
+    """A host-with-capture variant's energy use = the host's (every carrier) +
+    the capture plant's per t CO2 (the CCS node's median total, split by the
+    node archetypes' mean carrier shares) x the CO2 captured per unit of product."""
+    p = SEC
+    for k, host in _variants(ctx):
+        a = ctx["arch"][k]
+        if "_ccs-" not in k or a.get("family") == "co2-capture":
+            continue
+        node = "diffuse" if "_ccs-diffuse" in k else "concentrated"
+        h, hh = ctx["have"].setdefault(k, {}), ctx["have"].get(host, {})
+        tot = hh.get((p, ""))
+        cap = _captured(k, host, ctx)
+        nm = _node_medians(node, p, ctx)
+        if not (_live(tot) and cap and nm):
+            continue
+        per_t = median(nm.values())
+        shares = {}
+        for c in ctx["ccs_nodes"].get(node, ()):
+            ch = ctx["have"].get(c, {})
+            t0 = ch.get((p, ""))
+            if not _live(t0) or fnum(t0["central"]) <= 0:
+                continue
+            for (q, t), r in ch.items():
+                if q == p and t and t not in ("fuel",) and not is_component_target(t) and _live(r):
+                    shares.setdefault(t, []).append(fnum(r["central"]) / fnum(t0["central"]))
+        sh = {t: sum(v) / len(nm) for t, v in shares.items()}
+        ssum = sum(sh.values()) or 1.0
+        sh = {t: v / ssum for t, v in sh.items()} or {"electricity": 1.0}
+        add = per_t * cap[0]
+        g = worst([rule["grade"], tot.get("grade", "sourced"), cap[3]])
+        ins = cap[4] + [f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}"]
+        # host rows, every carrier, then the add-on on top
+        for (q, t), r in sorted(hh.items()):
+            if q != p or is_component_target(t) or not _live(r):
+                continue
+            c, lo, hi = _lohi(r)
+            extra = add if not t else add * sh.get(t, 0.0)
+            _put(psum, h, _row(k, p, t, r["unit"], c + extra, lo + extra, hi + extra,
+                               worst([g, r.get("grade", "sourced")]), rule,
+                               [_input(r, f"{host} {p}" + (f"_{t}" if t else "")), f"add-on {extra:.4g}"] + ins,
+                               r.get("sources", "")), stats, rule["rule-id"])
+        for t, s in sh.items():
+            if (p, t) not in hh:
+                _put(psum, h, _row(k, p, t, tot["unit"], add * s, add * s, add * s, g, rule,
+                                   [f"capture add-on only ({s:.0%} of {add:.4g})"] + ins, ""), stats, rule["rule-id"])
+        _put(psum, h, _row(k, p, "host-plant", tot["unit"], *_lohi(tot), worst([g, tot.get("grade", "sourced")]),
+                           rule, [_input(tot, f"{host} {p}")], tot.get("sources", "")), stats, rule["rule-id"] + ":host-plant")
+        _put(psum, h, _row(k, p, "ccs-add-on", tot["unit"], add, add, add, g, rule, ins, ""),
+             stats, rule["rule-id"] + ":ccs-add-on")
+
+
+def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
+    """A host-with-capture variant emits what its host emits, before capture
+    (CIMS removes the captured CO2 through the CCS node: emissions_removal);
+    emissions-captured is the CO2 captured per unit of product. Net = total less
+    captured."""
+    for k, host in _variants(ctx):
+        a = ctx["arch"][k]
+        if "_ccs-" not in k or a.get("family") == "co2-capture":
+            continue
+        h, hh = ctx["have"].setdefault(k, {}), ctx["have"].get(host, {})
+        for (q, t), r in sorted(hh.items()):
+            if q in ("emissions-combustion", "emissions-process", "emissions-total") and _live(r) \
+                    and not is_component_target(t):
+                _put(psum, h, _row(k, q, t, r["unit"], *_lohi(r), worst([rule["grade"], r.get("grade", "sourced")]),
+                                   rule, [_input(r, f"{host} {q}_{t}")], r.get("sources", "")), stats, rule["rule-id"])
+        e = h.get(("emissions-captured", "co2"))
+        if not _live(e):
+            cap = _captured(k, host, ctx)
+            if cap:
+                unit = target_unit("emissions-captured", a["product-unit"], "")
+                _put(psum, h, _row(k, "emissions-captured", "co2", unit, cap[0], cap[1], cap[2],
+                                   worst([rule["grade"], cap[3]]), rule, cap[4], ""), stats,
+                     rule["rule-id"] + ":captured")
+
+
+# ---- calculated levelized cost (modeller 2026-10-10) -----------------------
+
+def crf(r, n):
+    return r / (1 - (1 + r) ** -n) if r > 0 else 1 / n
+
+
+def _levelized(k, ctx, rate):
+    """(central, low, high, grade, inputs) of the non-energy levelized cost per
+    unit of product: (capex x CRF + opex-fixed) / CF + opex-variable."""
+    h = ctx["have"].get(k, {})
+    cx, of, ov, lt, cf = (h.get((p, "")) for p in ("capex", "opex-fixed", "opex-variable",
+                                                     "lifetime", "capacity-factor"))
+    if not (_live(cx) and _live(lt) and _live(cf)) or fnum(cf["central"]) <= 0:
+        return None
+    zero = {"central": "0", "grade": "identity"}
+    of = of if _live(of) else (zero if of is not None and of.get("grade") == MARKER else None)
+    ov = ov if _live(ov) else (zero if ov is None or ov.get("grade") == MARKER else None)
+    if of is None:
+        return None
+    (c, cl, ch), (o, ol, oh), (v, vl, vh), (n, nl, nh), (f, fl, fh) = (
+        _lohi(x) for x in (cx, of, ov, lt, cf))
+    f, fl, fh = f / 100, min(fl, 100) / 100, min(fh, 100) / 100
+    mid = (c * crf(rate, n) + o) / f + v
+    lo = (cl * crf(rate, nh) + ol) / max(fh, 1e-6) + vl
+    hi = (ch * crf(rate, max(nl, 1)) + oh) / max(fl, 1e-6) + vh
+    g = worst([x.get("grade", "sourced") for x in (cx, of, ov, lt, cf)])
+    ins = [f"capex {c:.4g} ({cx.get('grade','sourced')})", f"opex-fixed {o:.4g} ({of.get('grade','sourced')})",
+           f"opex-variable {v:.4g} ({ov.get('grade','sourced')})", f"lifetime {n:g} y ({lt.get('grade','sourced')})",
+           f"capacity factor {f:.0%} ({cf.get('grade','sourced')})", f"discount rate {rate:.0%}, CRF {crf(rate, n):.4f}"]
+    return mid, lo, hi, g, ins
+
+
+def _rate(ctx):
+    for r in ctx["assumptions"]:
+        if r.get("group") == "discount-rate" and r.get("status", "active") != "off":
+            return fnum(r["value"]) / 100, r["assumption-id"]
+    return 0.08, "default"
+
+
+def pm_levelized(rule, psum, records, target_unit, ctx, stats):
+    """cost-levelized, target `calculated`: the non-energy levelized cost of every
+    archetype that has capex, fixed O&M, lifetime and a capacity factor."""
+    rate, aid = _rate(ctx)
+    for a in records.archetypes:
+        k = a["archetype"]
+        res = _levelized(k, ctx, rate)
+        if not res:
+            stats["levelized not calculable"] = stats.get("levelized not calculable", 0) + 1
+            continue
+        c, lo, hi, g, ins = res
+        unit = target_unit("cost-levelized", a["product-unit"], "")
+        h = ctx["have"].setdefault(k, {})
+        _put(psum, h, _row(k, "cost-levelized", rule["target"], unit, c, lo, hi,
+                           worst([rule["grade"], g]), rule, ins + [aid], ""), stats, rule["rule-id"])
+
+
+def _prices(ctx):
+    return {r["carrier"]: r for r in ctx["energy_prices"]}
+
+
+def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
+    """cost-levelized, target `calculated-incl-energy`: the non-energy levelized
+    cost plus each carrier's energy use x its reference price
+    (records/reference/energy-price.csv). A carrier priced as `derived` takes the
+    named archetype's own calculated-incl-energy cost per GJ (steam from the
+    fuel-fired boiler, hydrogen from the methane reformer); `internal` carriers
+    (by-product gases, black liquor, waste heat) are not bought and cost 0.
+    Written only where every carrier the archetype uses has a price."""
+    P = _prices(ctx)
+    done = {}
+    for _ in range(3):         # derived prices need their source archetype first
+        for a in records.archetypes:
+            k = a["archetype"]
+            if k in done:
+                continue
+            h = ctx["have"].get(k, {})
+            base = h.get(("cost-levelized", "calculated"))
+            if not _live(base):
+                continue
+            secs = {t: r for (q, t), r in h.items()
+                    if q == SEC and t and not is_component_target(t) and _live(r)}
+            tot = h.get((SEC, ""))
+            use = {t: r for t, r in secs.items() if t not in ("fuel", "total", "not-stated", "component")}
+            if "fuel" in secs and not any(t not in NON_COMBUSTIBLE for t in use):
+                use["fuel (unnamed)"] = secs["fuel"]      # unpriceable: no fuel named
+            if not use:
+                cs = split_list(a.get("carriers", ""))
+                if _live(tot) and len(cs) == 1:
+                    use = {cs[0]: tot}
+                elif tot is not None and tot.get("grade") == MARKER:
+                    use = {}                              # energy use not applicable: 0
+                else:
+                    stats["incl-energy: no energy use"] = stats.get("incl-energy: no energy use", 0) + 1
+                    done[k] = None
+                    continue
+            cost = clo = chi = 0.0
+            ins, unpriced, wait = [], [], False
+            for t, r in sorted(use.items()):
+                pr = P.get(t)
+                v, vl, vh = _lohi(r)
+                if not pr:
+                    unpriced.append(t)
+                    continue
+                kind = pr.get("kind")
+                if kind == "internal":
+                    ins.append(f"{t} {v:.4g} GJ x 0 (internal)")
+                    continue
+                if kind == "derived":
+                    if pr.get("derived-from") not in done:
+                        wait = True
+                        break
+                    src = done[pr["derived-from"]]
+                    if src is None:
+                        unpriced.append(f"{t} (from {pr['derived-from']})")
+                        continue
+                    p0, pl, ph = src
+                else:
+                    p0 = fnum(pr.get("price"))
+                    if p0 is None:
+                        unpriced.append(t)
+                        continue
+                    pl, ph = fnum(pr.get("low")) or p0, fnum(pr.get("high")) or p0
+                cost += v * p0
+                clo += vl * pl if v >= 0 else vh * pl
+                chi += vh * ph if v >= 0 else vl * ph
+                ins.append(f"{t} {v:.4g} GJ x {p0:.4g} ({kind})")
+            if wait:
+                continue
+            if unpriced:
+                stats["incl-energy: carrier unpriced"] = stats.get("incl-energy: carrier unpriced", 0) + 1
+                ctx["unpriced"].update(unpriced)
+                done[k] = None
+                continue
+            c, lo, hi = _lohi(base)
+            done[k] = (c + cost, lo + clo, hi + chi)
+            unit = target_unit("cost-levelized", a["product-unit"], "")
+            _put(psum, ctx["have"].setdefault(k, {}),
+                 _row(k, "cost-levelized", rule["target"], unit, c + cost, lo + clo, hi + chi,
+                      worst([rule["grade"], base.get("grade", "sourced")]
+                            + [r.get("grade", "sourced") for r in use.values()]),
+                      rule, [f"non-energy {c:.4g}"] + ins, ""), stats, rule["rule-id"])
+
+
+POST_METHODS = {"host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
+                "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized,
+                "levelized-energy": pm_levelized_energy}
 
 
 def rules():
@@ -407,9 +1402,18 @@ def judgements():
     return read(FILL / "fill-judgement.csv")
 
 
+def assumptions():
+    return read(FILL / "fill-assumption.csv")
+
+
+def classes():
+    return {r["equipment"]: r for r in read(FILL / "equipment-class.csv")}
+
+
 def check(records, fail) -> None:
     """The fill records against the vocabularies (part of the build's gate)."""
     seen = set()
+    groups = {r.get("group") for r in assumptions()}
     for r in rules():
         rid = r.get("rule-id", "")
         if rid in seen:
@@ -417,14 +1421,19 @@ def check(records, fail) -> None:
         seen.add(rid)
         if r.get("status") not in STATUSES:
             fail["fill-rule status must be active or off"].append(rid)
-        if r.get("grade") not in GRADES[1:]:
-            fail["fill-rule grade must be identity, estimated or guess"].append(rid)
-        if r.get("method") not in METHODS:
+        if r.get("grade") not in GRADES[1:] + [MARKER]:
+            fail["fill-rule grade must be identity, estimated, proxy, guess or not-applicable"].append(rid)
+        if r.get("method") not in METHODS and r.get("method") not in POST_METHODS:
             fail["fill-rule names an unknown method"].append(f"{rid}: {r.get('method')}")
-        if r.get("parameter") not in records.parameters:
+        if r.get("method") == "marker" and r.get("grade") != MARKER:
+            fail["marker rules must have grade not-applicable"].append(rid)
+        if r.get("parameter") not in records.parameters and not (r.get("parameter") == "*" and r.get("method") == "range-midpoint"):
             fail["fill-rule names an unknown parameter"].append(f"{rid}: {r.get('parameter')}")
         if not (r.get("rationale") or "").strip():
             fail["fill-rule with no rationale"].append(rid)
+        grp = dict(x.partition("=")[::2] for x in split_list(r.get("inputs", "")) if "=" in x).get("group")
+        if grp and grp not in groups and r.get("status") == "active":
+            fail["fill-rule names an assumption group with no rows"].append(f"{rid}: {grp}")
     hosts = read(FILL / "host-archetype.csv")
     seen_h = set()
     for h in hosts:
@@ -440,32 +1449,75 @@ def check(records, fail) -> None:
             fail["host-archetype status must be active, unmapped or off"].append(h.get("archetype", ""))
         if h.get("status") == "active" and not h.get("host"):
             fail["host-archetype active with no host"].append(h.get("archetype", ""))
+    cls = classes()
+    for eq in records.equipment:
+        if eq not in cls:
+            fail["equipment with no row in records/fill/equipment-class.csv"].append(eq)
+    for eq, r in cls.items():
+        if eq not in records.equipment:
+            fail["equipment-class names an unknown equipment"].append(eq)
+        if r.get("vom-class") not in ("material", "minor", "none"):
+            fail["equipment-class vom-class must be material, minor or none"].append(eq)
+        if not (r.get("lifetime-class") or "").strip():
+            fail["equipment-class with no lifetime-class"].append(eq)
+    seen_a = set()
+    for r in assumptions():
+        aid = r.get("assumption-id", "")
+        if aid in seen_a:
+            fail["duplicate assumption-id in fill-assumption.csv"].append(aid)
+        seen_a.add(aid)
+        if r.get("parameter") not in records.parameters:
+            fail["fill-assumption names an unknown parameter"].append(f"{aid}: {r.get('parameter')}")
+        if fnum(r.get("value")) is None:
+            fail["fill-assumption with no numeric value"].append(aid)
+        lo, hi, v = fnum(r.get("low")), fnum(r.get("high")), fnum(r.get("value"))
+        if v is not None and lo is not None and hi is not None and not lo <= v <= hi:
+            fail["fill-assumption value outside its low-high"].append(aid)
+        if not (r.get("source-id") or "").strip() or not (r.get("rationale") or "").strip():
+            fail["fill-assumption needs a source-id and a rationale"].append(aid)
+        for term in split_list(r.get("applies-to", "")):
+            kind, _, val = term.partition(":")
+            if kind not in ("all", "archetype", "equipment", "class", "vom-class", "family", "end-use",
+                            "modifier", "product-unit"):
+                fail["fill-assumption applies-to kind unknown"].append(f"{aid}: {term}")
+            if kind == "archetype" and any(x not in records.by_key for x in val.split("|")):
+                fail["fill-assumption applies to an unknown archetype"].append(f"{aid}: {val}")
+            if kind == "equipment" and any(x not in records.equipment for x in val.split("|")):
+                fail["fill-assumption applies to an unknown equipment"].append(f"{aid}: {val}")
+    seen_j = set()
     for j in judgements():
-        k = f"{j.get('archetype')}: {j.get('parameter')}"
+        k = f"{j.get('archetype')}: {j.get('parameter')}" + (f"_{j['target']}" if j.get("target") else "")
+        if k in seen_j:
+            fail["duplicate archetype-parameter-target in fill-judgement.csv"].append(k)
+        seen_j.add(k)
         if j.get("archetype") not in records.by_key:
             fail["fill-judgement names an unknown archetype"].append(k)
         if j.get("parameter") not in records.parameters:
             fail["fill-judgement names an unknown parameter"].append(k)
         if not (j.get("rationale") or "").strip() or not (j.get("author") or "").strip():
             fail["fill-judgement needs a rationale and an author"].append(k)
+        if (j.get("status") or "active") not in JUDGEMENT_STATUSES:
+            fail["fill-judgement status must be draft, accepted, changed or rejected"].append(k)
+        if j.get("basis") and j["basis"] not in JUDGEMENT_BASES:
+            fail["fill-judgement basis must be analogue-archetype, held-source-figure, engineering-relation or experience"].append(k)
         c, lo, hi = fnum(j.get("central")), fnum(j.get("low")), fnum(j.get("high"))
         if c is None or lo is None or hi is None or not lo <= c <= hi:
             fail["fill-judgement needs central within a stated low-high range"].append(k)
 
 
-def apply(psum, records, target_unit, facts=()) -> dict:
-    """Grade the pooled rows, then add the fills. Returns counts by grade and rule."""
-    for r in psum:
-        r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "",
-                  "rationale": ""})
+def _ctx(psum, records, facts, units):
     have = {}
     for r in psum:
         have.setdefault(r["archetype"], {})[(r["parameter"], r.get("target", ""))] = r
-    increments = {}
+    increments, per_gj = {}, {}
     for r in facts:
         if (r.get("set-aside") == "needs-host-cost" and r.get("archetype")
                 and fnum(r.get("value-norm")) is not None):
             increments.setdefault((r["archetype"], r["parameter"]), []).append(r)
+        if (r.get("archetype") and r["parameter"] in ("capex", "opex-fixed")
+                and (r.get("excluded") or "").startswith("cost per GJ-per-yr cannot be put per t-per-yr")
+                and (r.get("unit") or "").endswith("/GJ-per-yr") and fnum(r.get("value")) is not None):
+            per_gj.setdefault((r["archetype"], r["parameter"]), []).append(r)
     # same-source variant/base ratios: (modifier, parameter) -> [(ratio, source, variant)]
     per = {}
     for r in facts:
@@ -481,52 +1533,199 @@ def apply(psum, records, target_unit, facts=()) -> dict:
         bv = per.get((sid, "_".join(parts[:-1]), p, u))
         if bv and median(bv) > 0:
             mod_ratios.setdefault((parts[-1], p), []).append((median(vs) / median(bv), sid, k))
-    ctx = {"factors": convert.Factors(), "have": have, "increments": increments,
-           "arch": records.by_key, "mod_ratios": mod_ratios,
-           "hosts": {h["archetype"]: h for h in read(FILL / "host-archetype.csv")}}
-    stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"], have, ctx)}
+    hosts = {h["archetype"]: h for h in read(FILL / "host-archetype.csv")}
+    # increment/host ratios from the set-aside measure costs, by modifier
+    inc_ratios = {}
+    for (k, p), rs in increments.items():
+        hm = hosts.get(k)
+        if not hm or hm.get("status") != "active":
+            continue
+        host = have.get(hm["host"], {}).get((p, ""))
+        if not _sourced(host) or fnum(host["central"]) <= 0:
+            continue
+        by_ex = {}
+        for r in rs:
+            if r.get("unit-norm") == host.get("unit"):
+                by_ex.setdefault(r["example-id"], []).append(fnum(r["value-norm"]))
+        if by_ex:
+            inc = median(median(v) for v in by_ex.values())
+            inc_ratios.setdefault((k.split("_")[-1], p), {})[k] = inc / fnum(host["central"])
+    service = {}
+    for s in records.service:
+        service.setdefault(s["archetype"], set()).add(s.get("end-use", ""))
+    addon_facts, pooled_facts = {}, {}
+    for r in facts:
+        if fnum(r.get("value-norm")) is None or not r.get("archetype") or r.get("target-norm"):
+            continue
+        if r.get("set-aside") == "ccs-add-on":
+            addon_facts.setdefault((r["archetype"], r["parameter"]), []).append(r)
+        elif not r.get("excluded"):
+            pooled_facts.setdefault((r["archetype"], r["parameter"], r["source-id"]), []).append(r)
+    ccs_nodes = {}
+    for s_ in records.service:
+        b = s_.get("branch", "")
+        for node in ("diffuse", "concentrated"):
+            if b.endswith(f"service.ccs.{node}"):
+                ccs_nodes.setdefault(node, set()).add(s_["archetype"])
+    from .common import REFERENCE
+    return {"addon_facts": addon_facts, "pooled_facts": pooled_facts, "ccs_nodes": ccs_nodes,
+            "ccs_report": [], "unpriced": set(),
+            "energy_prices": read(REFERENCE / "energy-price.csv"),
+            "factors": convert.Factors(), "have": have, "increments": increments, "per_gj": per_gj,
+            "arch": records.by_key, "mod_ratios": mod_ratios, "hosts": hosts, "inc_ratios": inc_ratios,
+            "service": service, "classes": classes(), "assumptions": assumptions(),
+            "modifiers": set(records.modifiers), "units": units}
+
+
+def _phase(rule):
+    return _scope(rule).get("phase", "main")
+
+
+def _run_rules(psum, records, target_unit, ctx, stats, phase="main"):
+    have = ctx["have"]
     for rule in rules():
-        if rule.get("status") != "active":
+        if rule.get("status") != "active" or _phase(rule) != phase:
+            continue
+        if rule["method"] in POST_METHODS:
+            POST_METHODS[rule["method"]](rule, psum, records, target_unit, ctx, stats)
             continue
         fn = METHODS[rule["method"]]
         for a in records.archetypes:
             h = have.setdefault(a["archetype"], {})
-            if not _in_scope(rule, a, h):
+            if not _in_scope(rule, a, h, ctx):
                 continue
             for f in fn(rule, a, h, ctx):
-                grade = worst([rule["grade"]] + f["grades"])
                 p, t = f["parameter"], f["target"]
+                if f.get("replace") is not None:
+                    r0 = f["replace"]
+                    grade = worst([rule["grade"]] + f["grades"])
+                    r0.update({"central": _g(f["central"]), "grade": grade, "method": rule["method"],
+                               "rule-id": rule["rule-id"], "inputs": "; ".join(f["inputs"]),
+                               "rationale": rule["rationale"],
+                               "central-from": f"{grade}: {rule['formula']}; " + (r0.get("central-from") or "")})
+                    stats[rule["rule-id"]] = stats.get(rule["rule-id"], 0) + 1
+                    continue
+                if (p, t) in h:
+                    continue
                 pdef = records.parameters.get(p, {})
-                c, lo, hi = f["central"], f.get("low"), f.get("high")
-                spread = lo is not None and hi is not None and abs(hi - lo) > 1e-12 * max(1, abs(c))
-                row = {"archetype": a["archetype"], "parameter": p, "target": t,
-                       "unit": target_unit(p, a["product-unit"], pdef.get("unit-default", "")),
-                       "central": _g(c), "low": _g(min(lo, hi)) if spread else "",
-                       "high": _g(max(lo, hi)) if spread else "", "n": 0,
-                       "n-external": "", "central-from": f"{grade}: {rule['formula']}",
-                       "external-factors": "; ".join(f["external"]),
-                       "sources": f["sources"], "examples": "",
-                       "grade": grade, "method": rule["method"], "rule-id": rule["rule-id"],
-                       "inputs": "; ".join(f["inputs"]), "rationale": rule["rationale"]}
+                unit = target_unit(p, a["product-unit"], pdef.get("unit-default", ""))
+                if f.get("marker"):
+                    row = {"archetype": a["archetype"], "parameter": p, "target": t, "unit": unit,
+                           "central": "", "low": "", "high": "", "n": 0, "n-external": "",
+                           "central-from": f"{MARKER}: {rule['formula']}", "external-factors": "",
+                           "sources": "", "examples": "", "grade": MARKER, "method": "marker",
+                           "rule-id": rule["rule-id"], "inputs": "", "rationale": rule["rationale"]}
+                else:
+                    grade = worst([rule["grade"]] + f["grades"])
+                    c, lo, hi = f["central"], f.get("low"), f.get("high")
+                    spread = lo is not None and hi is not None and abs(hi - lo) > 1e-12 * max(1, abs(c))
+                    row = {"archetype": a["archetype"], "parameter": p, "target": t, "unit": unit,
+                           "central": _g(c), "low": _g(min(lo, hi)) if spread else "",
+                           "high": _g(max(lo, hi)) if spread else "", "n": 0,
+                           "n-external": "", "central-from": f"{grade}: {rule['formula']}"
+                           + (f" ({f['note']})" if f.get("note") else ""),
+                           "external-factors": "; ".join(f["external"]),
+                           "sources": f["sources"], "examples": "",
+                           "grade": grade, "method": rule["method"], "rule-id": rule["rule-id"],
+                           "inputs": "; ".join(f["inputs"]), "rationale": rule["rationale"]}
                 psum.append(row)
                 h[(p, t)] = row
                 stats[rule["rule-id"]] = stats.get(rule["rule-id"], 0) + 1
+
+
+def _run_judgements(psum, records, ctx, stats):
+    have = ctx["have"]
     for j in judgements():
-        if (j.get("status") or "active") != "active":
+        if (j.get("status") or "active") not in JUDGEMENT_LIVE:
             continue
         h = have.setdefault(j["archetype"], {})
         key = (j["parameter"], j.get("target", ""))
+        dead = None
         if key in h:
-            # a sourced or calculated value now exists: the guess is stale, not used
-            stats["guess displaced"] = stats.get("guess displaced", 0) + 1
-            continue
+            r0 = h[key]
+            if not _live(r0) and (fnum(r0.get("low")) is None or fnum(r0.get("high")) is None):
+                dead = r0        # a pooled row with no central and no usable range: the guess replaces it
+            else:
+                # a sourced or calculated value now exists: the guess is stale, not used
+                stats["guess displaced"] = stats.get("guess displaced", 0) + 1
+                continue
+        a = records.by_key[j["archetype"]]
+        pdef = records.parameters.get(j["parameter"], {})
+        from .normalise import target_unit
+        # the target unit of the parameter on this archetype; the judgement's own
+        # `unit` is what the author meant and is checked, not copied
+        unit = target_unit(j["parameter"], a["product-unit"], pdef.get("unit-default", ""))
         row = {"archetype": j["archetype"], "parameter": j["parameter"], "target": j.get("target", ""),
-               "unit": j["unit"], "central": j["central"], "low": j["low"], "high": j["high"],
+               "unit": unit, "central": j["central"], "low": j["low"], "high": j["high"],
                "n": 0, "n-external": "", "central-from": "guess: " + j["rationale"],
                "external-factors": "", "sources": "", "examples": "", "grade": "guess",
-               "method": "judgement", "rule-id": "", "inputs": f"{j['author']} {j.get('date', '')}".strip(),
+               "method": "judgement", "rule-id": "",
+               "inputs": " ".join(x for x in (j.get("basis", ""), j["author"], j.get("date", ""),
+                                              f"[{j.get('status')}]" if j.get("status") else "") if x),
                "rationale": j["rationale"]}
+        if dead is not None:
+            row["central-from"] = f"guess (replaces a pooled row with no usable value: {dead.get('central-from')}): " + j["rationale"]
+            psum.remove(dead)
         psum.append(row)
         h[key] = row
         stats["guess"] = stats.get("guess", 0) + 1
+
+
+def apply(psum, records, target_unit, facts=(), units=None) -> dict:
+    """Grade the pooled rows, then add the fills: rules, judgements, rules again.
+    Returns counts by grade and rule."""
+    for r in psum:
+        r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "",
+                  "rationale": ""})
+    ctx = _ctx(psum, records, facts, units)
+    stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"],
+                                   ctx["have"], ctx)}
+    _run_rules(psum, records, target_unit, ctx, stats)
+    _run_judgements(psum, records, ctx, stats)
+    _run_rules(psum, records, target_unit, ctx, stats)
+    # variants made consistent with their hosts (modeller 2026-10-10), then the
+    # calculated levelized costs, which read every other cell
+    _run_rules(psum, records, target_unit, ctx, stats, phase="post")
+    _run_rules(psum, records, target_unit, ctx, stats, phase="final")
+    stats["_ccs"] = ctx["ccs_report"]
+    stats["_unpriced"] = sorted(ctx["unpriced"])
     return stats
+
+
+# ---- coverage: the CIMS-relevant cells per archetype and how each was reached ----
+
+CIMS_CELLS = [("capex", ("capex",)), ("opex-fixed", ("opex-fixed",)),
+              ("opex-variable", ("opex-variable", "opex-total")),
+              ("energy", (SEC, "efficiency")), ("lifetime", ("lifetime",)),
+              ("annual-output", ("annual-output",)),
+              ("emissions", ("emissions-combustion", "emissions-process", "emissions-total"))]
+
+
+def coverage(psum, records):
+    """One row per archetype: for each CIMS cell the grade (or marker) of the
+    value the database holds, or `missing`."""
+    by = {}
+    for r in psum:
+        by.setdefault(r["archetype"], {})[(r["parameter"], r.get("target", ""))] = r
+    rows = []
+    for a in records.archetypes:
+        h = by.get(a["archetype"], {})
+        row = {"archetype": a["archetype"], "family": a["family"], "product-unit": a["product-unit"],
+               "trl": "sourced" if (a.get("trl") or "").strip() else "missing"}
+        for name, params in CIMS_CELLS:
+            best = ""
+            for (p, t), r in h.items():
+                if p not in params:
+                    continue
+                if name == "emissions" and t not in ("co2", "co2e"):
+                    continue
+                if name == "energy" and t:
+                    continue
+                g = r.get("grade", "sourced")
+                if g == MARKER:
+                    best = best or MARKER
+                elif _live(r) and (not best or best == MARKER or GRADES.index(g) < GRADES.index(best)):
+                    best = g
+            row[name] = best or "missing"
+        rows.append(row)
+    return rows
