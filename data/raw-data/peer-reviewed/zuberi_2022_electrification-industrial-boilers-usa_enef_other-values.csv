@@ -1,0 +1,26 @@
+process,technology,item,value,unit,reference,note
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",boiler_electric,capital cost as printed (unit doubtful),13-44,$/GJ,p.6,"Printed unit; see main-file capex note. Range of size-dependent capex, 2018 $"
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",boiler_electric,capital cost relative to an equivalent natural gas boiler,-40,%,p.6; p.23,"""nearly 40% less""; reprinted from Jadun et al. 2017"
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,emission factor natural gas,0.05,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,emission factor distillate fuel oil,0.07,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,emission factor residual fuel oil,0.07,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,emission factor coal,0.09,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,emission factor hydrocarbon gas liquids,0.06,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+"Electric boiler assumptions, US manufacturing boiler electrification (Introduction and Methods, pp.2-7)",,"emission factor other fuels, iron and steel (BF/CO gas)",0.23,t-co2/GJ,"p.5, Table 1",adapted from US EPA 2012
+US manufacturing boilers (Results),,"share of US industrial fuel demand used in conventional boilers (excl. CHP), 2018",17,%,p.1,
+US manufacturing boilers (Results),,average US industrial electricity price 2018,19.3,2018_USD/GJ,p.17-18,
+US manufacturing boilers (Results),,average US industrial natural gas price 2018,4.6,2018_USD/GJ,p.18,
+US manufacturing boilers (Results),,technical potential energy savings from boiler electrification 2018,445,PJ/yr,p.16-17,~20% of boiler energy demand
+US manufacturing boilers (Results),,technical potential energy savings 2050,595,PJ/yr,p.19,
+US manufacturing boilers (Results),,technical potential CO2 abatement 2050,200,Mt-co2/yr,p.1; p.19,
+US manufacturing boilers (Results),,cost of conserved energy range 2018,36-83,2018_USD/GJ-saved,p.19,
+US manufacturing boilers (Results),,cost of conserved energy range 2050,31-74,2018_USD/GJ-saved,p.19,
+US manufacturing boilers (Results),,"boiler energy demand <2.9 MW, all manufacturing 2018",82.8,PJ,"p.15, Table 3",excludes electricity
+US manufacturing boilers (Results),,"boiler energy demand 2.9-14.7 MW, all manufacturing 2018",333.3,PJ,"p.15, Table 3",
+US manufacturing boilers (Results),,"boiler energy demand 14.7-29.3 MW, all manufacturing 2018",236.9,PJ,"p.15, Table 3",
+US manufacturing boilers (Results),,"boiler energy demand 29.3-73.3 MW, all manufacturing 2018",474.9,PJ,"p.15, Table 3",
+US manufacturing boilers (Results),,"boiler energy demand >73.3 MW, all manufacturing 2018",1040.0,PJ,"p.15, Table 3",
+US manufacturing boilers (Results),boiler_electric,share of electric boiler lifetime cost that is electricity,90,%,p.23,approximately
+US manufacturing boilers (Results),,share of US boiler stock at least 40 years old in early 2000s,50,%,p.23,approximately half; reprinted from EEA 2005
+US manufacturing boilers (Results),heat-pump_hthp,maximum heat delivery temperature of HTHPs,165,degC,p.17,reprinted from Arpagaus et al. 2018
+US manufacturing boilers (Results),heat-pump_hthp,COP range for 40-95 degC lift,2.4-5.8,,p.17,reprinted from Schlosser et al. 2019

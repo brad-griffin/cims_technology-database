@@ -1,0 +1,14 @@
+process,technology,item,value,unit,reference,note
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",boiler_hydrogen,electrolyzer efficiency (LCOH assumption),75,%,"p.59, Appendix A2 table",
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",boiler_hydrogen,hydrogen production cost in LCOH,2.1-3.2,2022_USD/kg,"p.31, Exhibit 9 note 1",
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",,LCOH of hydrogen boiler vs gas boiler,54-63,% higher,p.30,
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",,LCOH of biomass boiler vs gas boiler,8-13,% higher,p.30,
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",,LCOH saving of electric boiler with TES vs gas boiler,5-10,2022_USD/MWh,p.30,
+"Steam decarbonization LCOH benchmark (Sect. 3, Exhibit 9; Appendix A2)",,Li-ion battery round-trip efficiency,80-85,%,p.30,
+"TES capex benchmark, 2040 (Sect. 3, Exhibit 10)",thermal-storage_electric,"discharging equipment (power) capex decrease to 2040, steam",14000-44000,2022_USD/MW,p.31,"Decrease, not a level; 15-30% for steam, ~6,000 USD/MWth (5%) for hot air. Levels shown only as chart (Exhibit 10) - not read."
+Power LDES benchmark (Exhibit 7),,"power capex 2040, 8-24 h and 24 h+ archetypes",260000; 1480000,2022_USD/MW,p.24,"Power-to-power storage, out of scope; energy capex USD 6,000 and 22,000 per MWh."
+Power LDES (Exhibit 11),,top-quartile round-trip efficiency,57-61,%,p.33,Power-to-power storage.
+"Business case 1: medium-pressure steam, chemicals plant, Europe (Sect. 4)",,CO2 saved,47000,t/yr,p.38,
+Business case 2: district heating peaker plant (Sect. 4),,CO2 saved,33000,t/yr,p.40,
+"Business case 3: high-pressure steam, alumina refinery (Sect. 4)",,CO2 saved,600000,t/yr,p.42,
+Business case 4: off-grid greenhouse co-generation (Sect. 4),,invested capital (11.4 MWh TES + 2.1 MW PV + 2.0 MW gas boiler + 0.25 MW diesel),2.1,2022_USD-million,"p.44; p.60, Exhibit 26","Mixed system; warm water 30-40 degC; 2,200 MWh heat and 1,850 MWh electricity per year."

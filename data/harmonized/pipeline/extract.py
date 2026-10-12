@@ -507,6 +507,17 @@ BRIEF_SHAPE = [
     ("other-reports/kulterer_2020_audit-guide-steam-system-optimisation_klimaaktiv", "kulterer_2020_001", "Austria / EU"),
     ("peer-reviewed/weidmann_2013_swiss-energy-system-transformation-strategies_eth-thesis", "weidmann_2013_001", "Switzerland"),
     ("peer-reviewed/rootzen_2017_cement-co2-abatement-cost-supply-chain_climate-policy", "rootzen_2017_001", "Nordic countries"),
+    ("peer-reviewed/sharp_2014_biomass-boiler-higher-steam-temperatures-costs_tappij", "sharp_2014_001", "US"),
+    ("gov-usa/doe/doe_2024_iac-tipsheet-electric-boiler", "doe_2024_002", "US"),
+    ("gov-usa/doe/doe_2015_qtr-process-heating-technology-assessment", "doe_2015_005", "US"),
+    ("peer-reviewed/zuberi_2022_electrification-industrial-boilers-usa_enef", "zuberi_2022_002", "US"),
+    ("other-reports/ldes-council_2022_net-zero-heat-long-duration-storage", "ldes-council_2022_001", "global"),
+    ("iea/iea-shc_2024_ship-technology-position-paper", "iea-shc_2024_001", "global"),
+    ("peer-reviewed/marzouk_2025_solar-heat-industrial-processes-review_solar", "marzouk_2025_001", "global"),
+    ("iea/iea_2025_low-temperature-heat-electrification-commentary", "iea_2025_002", "EU"),
+    ("other-reports/iea_2024_future-of-geothermal-energy", "iea_2024_002", "global"),
+    ("peer-reviewed/johnson_2016_oil-sands-mining-fugitive-methane_atmosenv", "johnson_2016_001", "Canada (Alberta)"),
+    ("other-reports/clearstone_2019_alberta-uog-methane-inventory-methodology_aer", "clearstone_2019_001", "Canada (Alberta)"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")
