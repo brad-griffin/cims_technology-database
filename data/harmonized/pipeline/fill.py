@@ -155,7 +155,7 @@ def _adding_carriers(rows):
         return keep
     fv = fnum(f.get("central")) or 0
     cov = sum(fnum(r.get("central")) or 0 for t, r in keep.items()
-              if t != "fuel" and t not in NON_COMBUSTIBLE)
+              if t != "fuel" and t not in NOT_FUEL)
     cand = [t for t, r in rows.items()
             if _apart(r) and t != "fuel" and t not in NON_COMBUSTIBLE and t not in keep]
     if fv > 0 and cov < 0.05 * fv and len(cand) == 1:
@@ -534,6 +534,7 @@ def m_per_gj_via_sec(rule, a, have, ctx):
              "external": [f"sec:{a['archetype']}"]}]
 
 
+NOT_FUEL = {"electricity", "steam", "heat", "waste-heat", "geothermal", "solar"}   # never part of `fuel`
 NON_COMBUSTIBLE = {"electricity", "steam", "heat", "geothermal", "hydrogen", "nuclear", "solar", "waste-heat", "ammonia"}
 # biogenic fuels: their combustion CO2 is not fossil CO2 (CIMS counts it as emissions-biomass)
 BIOGENIC = {"biomass", "biogas", "biomethane", "black-liquor", "landfill-gas", "liquid-biomass", "renewable-natural-gas"}
@@ -1362,7 +1363,7 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                                      if q == SEC and t and not is_component_target(t) and _live(r)})
             tot = h.get((SEC, ""))
             use = {t: r for t, r in secs.items() if t not in ("fuel", "total", "not-stated", "component")}
-            if "fuel" in secs and not any(t not in NON_COMBUSTIBLE for t in use):
+            if "fuel" in secs and not any(t not in NOT_FUEL for t in use):
                 use["fuel (unnamed)"] = secs["fuel"]      # unpriceable: no fuel named
             if not use:
                 cs = split_list(a.get("carriers", ""))
