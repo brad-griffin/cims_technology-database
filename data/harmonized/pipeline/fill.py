@@ -92,6 +92,8 @@ def _in_scope(rule, a, have, ctx=None):
         return False
     if "archetype" in sc and a["archetype"] not in sc["archetype"].split("|"):
         return False
+    if a["archetype"] in sc.get("exclude-archetype", "").split("|"):
+        return False
     if "family" in sc and a.get("family") not in sc["family"].split("|"):
         return False
     if sc.get("exclude-ccs") == "yes" and ("_ccs-" in a["archetype"]

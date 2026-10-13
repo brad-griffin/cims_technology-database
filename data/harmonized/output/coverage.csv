@@ -16,7 +16,7 @@ fuel-cell_chp,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sou
 gasifier_biomass-chp,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 heat-pump_industrial,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,identity,sourced
 heat-pump_very-high-temperature,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,identity,identity,sourced
-reactor_small-nuclear,heat-supply,GJ,guess,guess,guess,estimated,sourced,estimated,identity,sourced
+reactor_small-nuclear,heat-supply,GJ,guess,guess,guess,guess,sourced,estimated,identity,sourced
 reciprocating-engine_chp,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 solar-collector,heat-supply,GJ,sourced,estimated,sourced,sourced,sourced,identity,identity,sourced
 solar-concentrator_line-focus,heat-supply,GJ,sourced,estimated,not-applicable,guess,sourced,estimated,identity,sourced
@@ -487,6 +487,6 @@ separator_reduced-emission-completion,oil-and-gas,t,sourced,sourced,estimated,gu
 haul-truck_dual-fuel,mining,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 gasifier_coal-methanol_ccs-concentrated,chemicals,t,guess,guess,guess,guess,sourced,estimated,estimated,sourced
 gasifier_biomass-fischer-tropsch_ccs-concentrated,biofuels,GJ,estimated,estimated,estimated,estimated,sourced,estimated,estimated,sourced
-reactor_small-nuclear-power,power-generation,GJ,sourced,sourced,sourced,estimated,sourced,estimated,identity,sourced
+reactor_small-nuclear-power,power-generation,GJ,sourced,sourced,sourced,guess,sourced,estimated,identity,sourced
 evaporator_crystallizer-produced-water,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,missing,sourced
 melting-furnace_twin-chamber,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,estimated,sourced
