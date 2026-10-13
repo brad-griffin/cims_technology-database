@@ -52,12 +52,12 @@ mobile-equipment_diesel-electric,mobile-equipment,GJ,guess,guess,guess,estimated
 mobile-equipment_spark-ignition,mobile-equipment,GJ,guess,guess,guess,estimated,guess,guess,estimated,sourced
 mobile-equipment_hydrogen-fuel-cell,mobile-equipment,GJ,guess,guess,guess,estimated,guess,guess,identity,sourced
 adsorber_pressure-swing,co2-capture,t,guess,guess,not-applicable,guess,estimated,estimated,identity,sourced
-capture-unit_advanced-solvent,co2-capture,t,sourced,estimated,estimated,sourced,sourced,identity,identity,sourced
+capture-unit_advanced-solvent,co2-capture,t,sourced,estimated,estimated,sourced,sourced,identity,missing,sourced
 capture-unit_amine,co2-capture,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 capture-unit_chemical-solvent,co2-capture,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 capture-unit_cryogenic-condensation,co2-capture,t,sourced,sourced,estimated,sourced,estimated,estimated,identity,sourced
 capture-unit_membrane-cryogenic,co2-capture,t,sourced,estimated,estimated,guess,sourced,estimated,identity,sourced
-capture-unit_dac-liquid-solvent,co2-capture,t,sourced,sourced,sourced,sourced,sourced,identity,identity,sourced
+capture-unit_dac-liquid-solvent,co2-capture,t,sourced,sourced,sourced,sourced,sourced,identity,missing,sourced
 capture-unit_dac-solid-sorbent,co2-capture,t,sourced,sourced,estimated,sourced,sourced,identity,identity,sourced
 capture-unit_physical-solvent,co2-capture,t,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
 compressor_co2-dehydration,co2-capture,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
@@ -365,7 +365,7 @@ dryer_solid-fuel,other-industry,t,guess,guess,not-applicable,guess,estimated,gue
 dryer_direct-fired_efficiency-strong,other-industry,t,estimated,estimated,not-applicable,proxy,estimated,guess,guess,sourced
 dryer_solid-fuel_efficiency-strong,other-industry,t,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
 dryer_direct-fired_efficiency-moderate,other-industry,t,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
-furnace_heat-treatment,other-industry,t,guess,guess,guess,sourced,estimated,estimated,estimated,sourced
+furnace_heat-treatment,other-industry,t,guess,guess,guess,sourced,estimated,estimated,identity,sourced
 kiln_lumber-continuous,other-industry,t,guess,guess,guess,guess,estimated,estimated,guess,sourced
 kiln_lumber-heat-pump,other-industry,t,guess,guess,guess,estimated,estimated,estimated,identity,sourced
 kiln_lumber-steam,other-industry,t,guess,guess,sourced,sourced,sourced,estimated,missing,sourced
@@ -430,7 +430,7 @@ kiln_intermittent,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,gu
 kiln_lime-long-rotary,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,estimated,sourced,sourced
 kiln_rotary-expanded-clay,non-metallic-minerals,m3,guess,guess,guess,guess,estimated,guess,guess,sourced
 kiln_tunnel-roller_efficiency-strong,non-metallic-minerals,t,sourced,sourced,sourced,sourced,sourced,guess,identity,sourced
-melting-furnace_crucible-gas-fired,other-industry,t,guess,guess,guess,sourced,estimated,estimated,estimated,sourced
+melting-furnace_crucible-gas-fired,other-industry,t,guess,guess,guess,sourced,estimated,estimated,identity,sourced
 melting-furnace_hot-blast-cupola,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,guess,estimated,sourced
 melting-furnace_isothermal,other-industry,t,guess,guess,guess,sourced,estimated,estimated,identity,sourced
 melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,t,estimated,estimated,estimated,sourced,estimated,guess,identity,sourced

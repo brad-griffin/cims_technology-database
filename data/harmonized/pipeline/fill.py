@@ -137,6 +137,35 @@ def _live(r):
     return bool(r) and r.get("grade") != MARKER and fnum(r.get("central")) is not None
 
 
+def _apart(r):
+    """A carrier row the carriers step pooled apart: not part of the archetype's split,
+    so it does not add up with the other carriers (pipeline/carriers.py)."""
+    return "pooled apart" in (r.get("central-from") or "")
+
+
+def _adding_carriers(rows):
+    """{carrier: row} -> the carrier rows that add up to the archetype's energy use.
+    Rows pooled apart are dropped (they do not sum with the split). One exception:
+    where the unnamed `fuel` row has no named fuel beside it and exactly one fuel
+    carrier was pooled apart, that carrier names the fuel: the `fuel` quantity is
+    carried under its name (a heat-treatment furnace's fuel is natural gas)."""
+    keep = {t: r for t, r in rows.items() if not _apart(r)}
+    f = keep.get("fuel")
+    if f is None:
+        return keep
+    fv = fnum(f.get("central")) or 0
+    cov = sum(fnum(r.get("central")) or 0 for t, r in keep.items()
+              if t != "fuel" and t not in NON_COMBUSTIBLE)
+    cand = [t for t, r in rows.items()
+            if _apart(r) and t != "fuel" and t not in NON_COMBUSTIBLE and t not in keep]
+    if fv > 0 and cov < 0.05 * fv and len(cand) == 1:
+        r = dict(f)
+        r["central-from"] = (f"the unnamed fuel ({f.get('central-from', '')}), named {cand[0]} "
+                             f"by the archetype's pooled-apart {cand[0]} row")
+        keep[cand[0]] = r
+    return keep
+
+
 def _vals(row):
     return fnum(row.get("central")), fnum(row.get("low")), fnum(row.get("high"))
 
@@ -182,7 +211,7 @@ def m_fuel_emission_factor(rule, a, have, ctx):
     p, t = rule["parameter"], rule["target"]
     if (p, t) in have:
         return []
-    secs = {k[1]: v for k, v in have.items() if k[0] == SEC and k[1] and _live(v)}
+    secs = _adding_carriers({k[1]: v for k, v in have.items() if k[0] == SEC and k[1] and _live(v)})
     if "fuel" in secs:
         # `fuel` is known by fuel only where named fuels stand beside it: the carriers
         # split (pipeline/carriers.py, 2026-10-05), a single-carrier identity, a bucket
@@ -1329,8 +1358,8 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
             base = h.get(("cost-levelized", "calculated"))
             if not _live(base):
                 continue
-            secs = {t: r for (q, t), r in h.items()
-                    if q == SEC and t and not is_component_target(t) and _live(r)}
+            secs = _adding_carriers({t: r for (q, t), r in h.items()
+                                     if q == SEC and t and not is_component_target(t) and _live(r)})
             tot = h.get((SEC, ""))
             use = {t: r for t, r in secs.items() if t not in ("fuel", "total", "not-stated", "component")}
             if "fuel" in secs and not any(t not in NON_COMBUSTIBLE for t in use):
