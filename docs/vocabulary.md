@@ -359,7 +359,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `adsorber_direct-lithium` | Direct lithium extraction | prospective | electricity | 6 | mining.service.separation; mining.service.crystallization | quantified |
 | `conveyor_in-pit-crushing` | In-pit crushing and conveying | efficient variant | electricity | 9 | mining.service.mine-haulage.open-pit | estimated |
 | `fan_mine-ventilation` | Mine ventilation fans | conventional | electricity | 9 | coal-mining.product.raw-product.mine-ventilation | quantified |
-| `flotation-cell_froth` | Froth flotation | conventional | electricity | 9 | coal-mining.product.coal-preparation.washing; mining.service.separation; mining.service.crystallization | quantified |
+| `flotation-cell_froth` | Froth flotation | conventional | electricity; natural-gas | 9 | coal-mining.product.coal-preparation.washing; mining.service.separation; mining.service.crystallization | quantified |
 | `gas-treatment-unit_vam-oxidiser` | Ventilation-air methane oxidiser | alternative |  | 7-9 | coal-mining.product.raw-product.extraction | quantified |
 | `grinding-mill_hpgr` | HPGR-based grinding circuit | efficient variant | electricity | 9 | mining.service.milling | quantified |
 | `grinding-mill_sag-ball` | SAG and ball mill circuit | conventional | electricity | 9 | mining.service.milling | quantified |

@@ -1,0 +1,75 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,capacity,heat,MW,3,,,,"p.45, Fig. 3.10 notes",Process heat demand of the modelled plant. CAPACITY BASIS: heat output (kW thermal).
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,lifetime,,years,20,,,,"p.45, Fig. 3.10 notes",System lifetime used in the LCOH.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,discount-rate,,%,5,,,,"p.45, Fig. 3.10 notes",WACC.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,capacity,heat,MW,3,,,,"p.45, Fig. 3.10 notes",Process heat demand of the modelled plant. CAPACITY BASIS: heat output (kW thermal).
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,lifetime,,years,20,,,,"p.45, Fig. 3.10 notes",System lifetime used in the LCOH.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,discount-rate,,%,5,,,,"p.45, Fig. 3.10 notes",WACC.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,capacity,heat,MW,3,,,,"p.45, Fig. 3.10 notes",Process heat demand of the modelled plant. CAPACITY BASIS: heat output (kW thermal).
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,lifetime,,years,20,,,,"p.45, Fig. 3.10 notes",System lifetime used in the LCOH.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,discount-rate,,%,5,,,,"p.45, Fig. 3.10 notes",WACC.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,description,,,"Grid-connected industrial heat pump for low-temperature process heat (generally below 150 degC), dispatched hourly against Eurostat 2024 grid prices; compared with an existing gas boiler.",,,,"p.45, Fig. 3.10; Box 3.1",
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,capex,,2024_EUR/kW,1500,,,,"p.45, Fig. 3.10 notes","Heat pump investment cost as printed (EUR 1 500/kW; per kW of heat output assumed). Grid connection (about EUR 2 million per site) is separate, in _other-values. COST BASIS: equipment and installation, not split. CAPACITY BASIS: heat output (kW thermal)."
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,efficiency,,%,300,,,,"p.45, Fig. 3.10 notes",COP 3.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",heat-pump_industrial,opex-fixed,,2024_EUR/kW-per-yr,75,,,1500*0.05,"p.45, Fig. 3.10 notes",Annual O&M 5% of initial investment. CAPACITY BASIS: heat output (kW thermal).
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,description,,,"Grid-connected electric boiler raising steam, dispatched hourly against Eurostat 2024 grid prices; compared with an existing gas boiler.",,,,"p.45, Fig. 3.10",
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,capex,,2024_EUR/kW,150,,,,"p.45, Fig. 3.10 notes","Electric boiler EUR 150/kWth. Grid connection separate. COST BASIS: equipment and installation, not split. CAPACITY BASIS: heat output (kW thermal)."
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,opex-fixed,,2024_EUR/kW-per-yr,7.5,,,150*0.05,"p.45, Fig. 3.10 notes",Annual O&M 5% of initial investment. CAPACITY BASIS: heat output (kW thermal).
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_electric,efficiency,,%,98,,,,"p.44, Fig. 3.9 notes; Box 3.1 p.39",Electric boiler (steam from electricity) 98%.
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,description,,,"Existing natural gas boiler, the reference for the EU LCOH comparison.",,,,"p.45, Fig. 3.10",
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,efficiency,,%,85,,,,"p.45, Fig. 3.10 notes","Gas boiler, LHV basis. HEATING VALUE: LHV."
+"EU hourly-dispatch LCOH model, existing gas boiler as reference, 2024 (Fig. 3.10 notes, p.45)",boiler_fuel-fired,opex-variable,,2024_EUR/MWh,2.8,,,,"p.45, Fig. 3.10 notes",O&M per MWh of heat output.
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,description,,,"Electro-thermal energy storage (resistance-heated solid medium) supplying continuous process steam, charged in the cheapest hours; steam-only mode, with an optional back-pressure turbine (CHP mode) in _other-values.",,,,"p.46-47, Fig. 3.12",
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,capacity,heat,MW,3,,,,"p.47, Fig. 3.12 notes",Process heat demand; maximum storage charge rate 9 MW. CAPACITY BASIS: heat output (kW thermal).
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,capacity,electricity,MW,9,,,,"p.47, Fig. 3.12 notes",Maximum storage charge rate.
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,capex,storage-capacity,2024_EUR/kWh,15,,,,"p.47, Fig. 3.12 notes","Storage per kWh of heat stored; the resistance heating equipment is a further EUR 150/kWth and grid connection USD 1 million per MW (in _other-values). COST BASIS: equipment, storage only."
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,opex-variable,,2024_USD/MWh,2,,,,"p.47, Fig. 3.12 notes","O&M of the heating equipment, USD 2/MWh as printed (in a EUR model)."
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,lifetime,,years,20,,,,"p.47, Fig. 3.12 notes",Economic life.
+"EU electro-thermal energy storage (ETES) LCOH model, 2024 (Fig. 3.12 notes, p.47)",thermal-storage_electric,discount-rate,,%,5,,,,"p.47, Fig. 3.12 notes",WACC.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,description,,,"Grid-connected industrial heat pump, selected Chinese provinces.",,,,"p.63, Fig. 4.6",
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,capex,,2023_USD/kW,1500,,,,"p.63, Fig. 4.6 notes","Grid connection USD 1 million per MW separate. COST BASIS: equipment and installation, not split. CAPACITY BASIS: heat output (kW thermal)."
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,opex-variable,,2023_USD/MWh,3,,,,"p.63, Fig. 4.6 notes",O&M per MWh of heat.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,efficiency,,%,300,,,,"p.63, Fig. 4.6 notes",LHV basis for fuels; heat pump COP 3.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,capacity-factor,,%,91.3,,,8000/8760*100,"p.63, Fig. 4.6 notes",Annual availability 8 000 h/yr.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,lifetime,,years,20,,,,"p.63, Fig. 4.6 notes",Economic life.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",heat-pump_industrial,discount-rate,,%,8,,,,"p.63, Fig. 4.6 notes",WACC.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,description,,,"Grid-connected electric boiler, selected Chinese provinces.",,,,"p.63, Fig. 4.6",
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,capex,,2023_USD/kW,150,,,,"p.63, Fig. 4.6 notes","Grid connection USD 1 million per MW separate. COST BASIS: equipment and installation, not split. CAPACITY BASIS: heat output (kW thermal)."
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,opex-variable,,2023_USD/MWh,2,,,,"p.63, Fig. 4.6 notes",O&M per MWh of heat.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,efficiency,,%,98,,,,"p.63, Fig. 4.6 notes",LHV basis for fuels; heat pump COP 3.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,capacity-factor,,%,91.3,,,8000/8760*100,"p.63, Fig. 4.6 notes",Annual availability 8 000 h/yr.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,lifetime,,years,20,,,,"p.63, Fig. 4.6 notes",Economic life.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_electric,discount-rate,,%,8,,,,"p.63, Fig. 4.6 notes",WACC.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,description,,,Natural gas boiler on imported LNG (USD 15/GJ).,,,,"p.63, Fig. 4.6",
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,opex-variable,,2023_USD/MWh,3,,,,"p.63, Fig. 4.6 notes",O&M per MWh of heat.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,efficiency,,%,85,,,,"p.63, Fig. 4.6 notes",LHV basis for fuels; heat pump COP 3.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,capacity-factor,,%,91.3,,,8000/8760*100,"p.63, Fig. 4.6 notes",Annual availability 8 000 h/yr.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,lifetime,,years,20,,,,"p.63, Fig. 4.6 notes",Economic life.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_fuel-fired,discount-rate,,%,8,,,,"p.63, Fig. 4.6 notes",WACC.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,description,,,"Coal boiler (coal USD 100/t), the reference in China.",,,,"p.63, Fig. 4.6",
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,opex-variable,,2023_USD/MWh,8,,,,"p.63, Fig. 4.6 notes",O&M per MWh of heat.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,efficiency,,%,75,,,,"p.63, Fig. 4.6 notes",LHV basis for fuels; heat pump COP 3.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,capacity-factor,,%,91.3,,,8000/8760*100,"p.63, Fig. 4.6 notes",Annual availability 8 000 h/yr.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,lifetime,,years,20,,,,"p.63, Fig. 4.6 notes",Economic life.
+"China LCOH comparison, selected provinces, 2023 (Fig. 4.6 notes, p.63)",boiler_solid-fuel,discount-rate,,%,8,,,,"p.63, Fig. 4.6 notes",WACC.
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,description,,,"ETES charged by captive hybrid solar PV and wind with grid back-up, 20 hours of storage, steam-only or CHP mode.",,,,"p.64, Fig. 4.7",
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,capex,storage-capacity,2023_USD/kWh,16,,,,"p.64, Fig. 4.7 notes","Thermal storage investment. COST BASIS: equipment, storage only."
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,opex-variable,,2023_USD/MWh,2,,,,"p.64, Fig. 4.7 notes",ETES O&M.
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,lifetime,,years,20,,,,"p.64, Fig. 4.7 notes",Economic life.
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,discount-rate,,%,8,,,,"p.64, Fig. 4.7 notes",WACC.
+"China captive solar PV and wind with ETES, 2023 (Fig. 4.7 notes, p.64)",thermal-storage_electric,capacity-factor,,%,91.3,,,8000/8760*100,"p.64, Fig. 4.7 notes",Annual availability 8 000 h/yr.
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",thermal-storage_electric,description,,,"ETES charged by captive solar PV (USD 30/MWh), 20 hours of storage, steam-only or CHP mode, against a coal boiler.",,,,"p.76, Fig. 5.4",
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",thermal-storage_electric,capex,storage-capacity,2024_USD/kWh,16,,,,"p.76, Fig. 5.4 notes","Thermal energy storage investment; heating equipment USD 163/kWth separate (in _other-values). COST BASIS: equipment, storage only."
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",thermal-storage_electric,opex-variable,,2024_USD/MWh,2,,,,"p.76, Fig. 5.4 notes",ETES O&M.
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",thermal-storage_electric,lifetime,,years,20,,,,"p.76, Fig. 5.4 notes",Economic life.
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",thermal-storage_electric,discount-rate,,%,8,,,,"p.76, Fig. 5.4 notes",WACC.
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",boiler_solid-fuel,description,,,Coal back-up and reference boiler in ASEAN.,,,,"p.76, Fig. 5.4",
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",boiler_solid-fuel,efficiency,,%,75,,,,"p.76, Fig. 5.4 notes",LHV basis. HEATING VALUE: LHV.
+"ASEAN captive solar PV with ETES vs coal boiler, 2024 (Fig. 5.4 notes, p.76)",boiler_solid-fuel,opex-variable,,2024_USD/MWh,8,,,,"p.76, Fig. 5.4 notes",Coal boiler O&M per MWh of heat.
+"Technology review (Ch. 2, pp.28-32)",boiler_electric,description,,,Resistance boilers (up to about 5 MWe) and electrode boilers (3-70 MWe) generating steam up to 350 degC and 70 bar.,,,,p.29,
+"Technology review (Ch. 2, pp.28-32)",boiler_electric,efficiency,,%,,95,98,,p.30,Typical e-boiler efficiency.
+"Technology review (Ch. 2, pp.28-32)",boiler_electric,temperature-output,,degC,350,,,,p.29,Maximum steam temperature; up to 70 bar.
+"Technology review (Ch. 2, pp.28-32)",boiler_fuel-fired,efficiency,,%,,70,85,,p.30,"Typical combustion systems, LHV basis. HEATING VALUE: LHV."
+"Technology review (Ch. 2, pp.28-32)",boiler_fuel-fired_efficiency-moderate,efficiency,,%,,92,95,,p.30,"Condensing boilers, LHV basis. HEATING VALUE: LHV."
+"Technology review (Ch. 2, pp.28-32)",thermal-storage_electric,capex,storage-capacity,2025_USD/kWh,,10,15,,p.32,"ETES of sand, concrete, brick or molten salt; USD 10-15/kWhth. Currency year not stated; publication year used. COST BASIS: storage only."
+"Technology review (Ch. 2, pp.28-32)",thermal-storage_electric,efficiency,,%,97,,,,p.31,"Claimed efficiency of the Rondo Heat Battery (100 MWh, brick, above 1 000 degC, California, 2025). Vendor claim."

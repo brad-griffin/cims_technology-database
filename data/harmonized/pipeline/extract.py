@@ -507,6 +507,8 @@ BRIEF_SHAPE = [
     ("other-reports/kulterer_2020_audit-guide-steam-system-optimisation_klimaaktiv", "kulterer_2020_001", "Austria / EU"),
     ("peer-reviewed/weidmann_2013_swiss-energy-system-transformation-strategies_eth-thesis", "weidmann_2013_001", "Switzerland"),
     ("peer-reviewed/rootzen_2017_cement-co2-abatement-cost-supply-chain_climate-policy", "rootzen_2017_001", "Nordic countries"),
+    ("iea/iea_2025_renewables-for-industry-low-temperature-heat-electrification_iea", "iea_2025_003", "EU / China / ASEAN"),
+    ("other-reports/jrc/jrc_2026_idees-2023-industry-eu27", "jrc_2026_001", "EU27"),
     ("peer-reviewed/sharp_2014_biomass-boiler-higher-steam-temperatures-costs_tappij", "sharp_2014_001", "US"),
     ("gov-usa/doe/doe_2024_iac-tipsheet-electric-boiler", "doe_2024_002", "US"),
     ("gov-usa/doe/doe_2015_qtr-process-heating-technology-assessment", "doe_2015_005", "US"),
