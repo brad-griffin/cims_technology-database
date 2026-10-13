@@ -122,6 +122,9 @@ def conversion_references(fail, records, loader) -> None:
             fail["energy-price kind must be sourced, derived, internal or pending"].append(e.get("carrier", ""))
         if e.get("kind") == "derived" and e.get("derived-from") not in records.by_key:
             fail["energy-price derived from an unknown archetype"].append(e.get("carrier", ""))
+        per = (e.get("derived-per") or "").strip()
+        if per and per not in convert.Factors().rows:
+            fail["energy-price derived-per names an unknown conversion factor"].append(f"{e.get('carrier')}: {per}")
         if e.get("kind") == "sourced" and not (e.get("price") and e.get("source-id")):
             fail["energy-price sourced with no price or source-id"].append(e.get("carrier", ""))
         for sid in split_list(e.get("source-id", "")):

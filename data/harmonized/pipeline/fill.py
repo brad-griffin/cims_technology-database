@@ -1311,7 +1311,9 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
     cost plus each carrier's energy use x its reference price
     (records/reference/energy-price.csv). A carrier priced as `derived` takes the
     named archetype's own calculated-incl-energy cost per GJ (steam from the
-    fuel-fired boiler, hydrogen from the methane reformer); `internal` carriers
+    fuel-fired boiler, hydrogen from the methane reformer); where the producing
+    archetype is measured per tonne (ammonia, methanol), `derived-per` names the
+    conversion factor (GJ per t, HHV) that puts its cost per GJ; `internal` carriers
     (by-product gases, black liquor, waste heat) are not bought and cost 0.
     Written only where every carrier the archetype uses has a price."""
     P = _prices(ctx)
@@ -1362,6 +1364,15 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                         unpriced.append(f"{t} (from {pr['derived-from']})")
                         continue
                     p0, pl, ph = src
+                    per = (pr.get("derived-per") or "").strip()
+                    if per:            # a per-tonne product: cost per t / GJ per t
+                        f = ctx["factors"].rows.get(per)
+                        gj = fnum(f["factor"]) if f else None
+                        if not gj:
+                            unpriced.append(f"{t} (no factor {per})")
+                            continue
+                        p0, pl, ph = p0 / gj, pl / gj, ph / gj
+                        kind = f"derived {pr['derived-from']} / {gj:g} GJ/t"
                 else:
                     p0 = fnum(pr.get("price"))
                     if p0 is None:
