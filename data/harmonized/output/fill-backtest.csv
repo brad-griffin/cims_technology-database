@@ -681,9 +681,9 @@ est-sibling-efficiency,mobile-equipment_diesel,efficiency,25.6508,45,38.25,98,no
 est-sibling-efficiency,fermenter_grain-dry-mill,efficiency,48.373,42.0635,12.619,50.4762,yes,0.869566,tier 2: fermenter_lignocellulosic-enzymatic
 est-sibling-efficiency,fermenter_lignocellulosic-enzymatic,efficiency,42.0635,48.373,41.117,55.6289,yes,1.15,tier 2: fermenter_grain-dry-mill
 est-sibling-efficiency,gasifier_biomass-methanation,efficiency,66.9386,58.9492,33.251,75.012,yes,0.880646,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
-est-sibling-efficiency,reactor_alcohol-to-jet,efficiency,60,66,52.1747,90.2,yes,1.1,"tier 2: reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_hydrothermal-liquefaction"
-est-sibling-efficiency,reactor_hydrothermal-liquefaction,efficiency,82,60,51,85,yes,0.731707,"tier 2: reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_alcohol-to-jet"
-est-sibling-efficiency,reactor_hydrotreating-lipids,efficiency,66,60,51,90.2,yes,0.909091,"tier 2: reactor_gas-to-liquids, reactor_hydrothermal-liquefaction, reactor_alcohol-to-jet"
+est-sibling-efficiency,reactor_alcohol-to-jet,efficiency,60,59.4194,33,90.2,yes,0.990322,"tier 2: reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_hydrothermal-liquefaction, reactor_small-nuclear-power"
+est-sibling-efficiency,reactor_hydrothermal-liquefaction,efficiency,82,56.4194,33,85,yes,0.688041,"tier 2: reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_small-nuclear-power, reactor_alcohol-to-jet"
+est-sibling-efficiency,reactor_hydrotreating-lipids,efficiency,66,56.4194,33,90.2,yes,0.854839,"tier 2: reactor_gas-to-liquids, reactor_hydrothermal-liquefaction, reactor_small-nuclear-power, reactor_alcohol-to-jet"
 est-sibling-efficiency,electrolyzer_solid-oxide,efficiency,81.3452,74.8,59.1,96.924,yes,0.919538,tier 2: electrolyzer_low-temperature
 est-sibling-efficiency,gasifier_biomass-waste,efficiency,43.7963,63.2491,48,84.3321,no,1.44417,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch"
 est-sibling-efficiency,gasifier_coal-petroleum-coke_ccs-concentrated,efficiency,63.7826,58.9492,50.1068,75,yes,0.924221,tier 1: gasifier_coal-petroleum-coke
@@ -693,7 +693,7 @@ est-sibling-efficiency,steam-reformer_methane,efficiency,64.7981,76.6446,65.1479
 est-sibling-efficiency,steam-reformer_methane_ccs-concentrated,efficiency,76.6446,64.7981,55.0784,85,yes,0.845436,tier 1: steam-reformer_methane
 est-sibling-efficiency,gasifier_coal-methanation,efficiency,63.2491,58.9492,33.251,84.3321,yes,0.932016,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_biomass-methanation, gasifier_coal-fischer-tropsch, gasifier_biomass-waste"
 est-sibling-efficiency,gasifier_coal-fischer-tropsch,efficiency,49,63.2491,33.251,84.3321,yes,1.2908,"tier 2: gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_biomass-waste"
-est-sibling-efficiency,reactor_gas-to-liquids,efficiency,52.8387,66,56.1,90.2,no,1.24908,"tier 2: reactor_hydrotreating-lipids, reactor_hydrothermal-liquefaction, reactor_alcohol-to-jet"
+est-sibling-efficiency,reactor_gas-to-liquids,efficiency,52.8387,63,33,90.2,yes,1.19231,"tier 2: reactor_hydrotreating-lipids, reactor_hydrothermal-liquefaction, reactor_small-nuclear-power, reactor_alcohol-to-jet"
 est-sibling-efficiency,chiller_high-efficiency,efficiency,640,410,348.5,700,yes,0.640625,tier 2: chiller_vapour-compression
 est-sibling-efficiency,chiller_vapour-compression,efficiency,410,640,544,736,no,1.56098,tier 2: chiller_high-efficiency
 est-sibling-efficiency,combustion-turbine_oxy-fuel,efficiency,53,30.6416,18.8086,40.1045,no,0.578144,"tier 2: combustion-turbine_simple-cycle, combustion-turbine_drive"

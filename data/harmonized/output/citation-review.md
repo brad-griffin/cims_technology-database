@@ -233,6 +233,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Rissman and Gimon 2023 | 33 | confirmed against the held document 2026-09-29 |
 | Schlosser et al. 2020 | 33 | confirmed against the held document 2026-10-02 |
 | Tokac et al. 2025 | 33 | confirmed against the held document 2026-10-02 |
+| Abou-Jaoude et al. 2024 | 32 | confirmed against the held document 2026-10-02 |
 | Hedman 2008 | 32 | confirmed against the held document 2026-10-02 |
 | IEA 2021 | 32 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
 | Beddows and Hatch 2000 | 32 | confirmed against the held document 2026-10-02 |
@@ -247,7 +248,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Premkumar and Rangaiah 2009 | 30 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Ren et al. 2006 | 30 | confirmed against the held document 2026-09-29 |
 | Zhang et al. 2003 (part 1) | 30 | confirmed against the held document 2026-10-06 |
-| Abou-Jaoude et al. 2024 | 29 | confirmed against the held document 2026-10-02 |
 | Birat et al. 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | US DOE 2015 (refining bandwidth) | 29 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_petroleum-refining-bandwidth-study.pdf |
 | US DOE 2016 | 29 | confirmed against the held document 2026-10-07 |

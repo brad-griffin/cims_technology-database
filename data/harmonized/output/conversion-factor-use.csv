@@ -73,6 +73,7 @@ cf-ammonia-density,property,ammonia density (liquid at its boiling point),m3,t,0
 cf-h2-density,property,hydrogen density (gas),m3,t,0.00008988,,,"gas at 0 degC, 1 atm",air-liquide_2026_001,0,0,
 cf-co2-density,property,carbon dioxide density (gas),m3,t,0.001977,,,"gas at 0 degC, 1 atm",air-liquide_2026_001,0,0,
 cf-wte-heat-per-waste,assumption,useful heat delivered per tonne of municipal solid waste incinerated,t,GJ,7.1,5.0,8.3,mixed MSW net calorific value 9 GJ/t (6.3-10.5) x 1.0526 HHV/LHV x 75% heat recovered in a heat-only plant (assumed),neuwahl_2019_001,21,14,incinerator_waste-to-energy
+cf-vegetable-oil-hhv-mass,property,"vegetable oils and fats (lipid feedstock), higher heating value",t,GJ,37.89,36.84,,HHV: LHV 36 (35 minimum) MJ/kg x cf-hhv-lhv-solid-liquid,ocl_2013_001; ipcc_2006_001,0,0,
 assume:avoided-co2-for-captured,assumption,avoided co2 for captured,,,,,,,,2,2,capture-unit_amine
 assume:continuous-operation,assumption,continuous operation,,,,,,,,16,15,electrolyzer_low-temperature; electrolyzer_solid-oxide; fuel-cell_chp; haul-truck_diesel; haul-truck_hydrogen-fuel-cell; lighting_fluorescent-hid
 assume:source-correction-sc-001,assumption,source correction sc 001,,,,,,,,1,1,geothermal-well_direct-use
