@@ -615,7 +615,7 @@ archetype's lifetime and a reference 8% real discount rate (fill-assumption
 `as-discount-rate`; the database's sources that state a rate give a median of
 8.5%). Energy is excluded. Target `calculated-incl-energy` adds each carrier's
 energy use x its reference 2025 price in `records/reference/energy-price.csv`
-(kind `sourced` with a registered reference source: electricity from Hydro-Quebec's 2025 large-power comparison, natural gas and oil from CER Canada's Energy Future 2026 industrial end-use prices for 2025; coal, coke, petroleum coke, LPG and biomass from US EIA series (SEDS, Quarterly Coal Report, Electric Power Annual) deflated and exchanged to 2025 CAD; `derived`: steam and heat at
+(kind `sourced` with a registered reference source: electricity from Hydro-Quebec's 2025 large-power comparison, natural gas and oil from CER Canada's Energy Future 2026 industrial end-use prices for 2025; coal, coke, petroleum coke, propane (LPG), naphtha, gasoline and biomass from US EIA series (SEDS, Quarterly Coal Report) deflated and exchanged to 2025 CAD; `derived`: steam and heat at
 the fuel-fired boiler's own calculated-incl-energy cost, hydrogen at the methane
 reformer's; `internal`: by-product gases, black liquor, waste heat, solar and
 geothermal at 0; `pending`: no price yet), written only where every carrier has

@@ -68,3 +68,8 @@ data/raw-data/other-reports/iai/iai_2026_*-data.csv
 data/raw-data/**/*.json
 data/raw-data/iea/iea_2026_methane-abatement-model-*-data.csv
 data/raw-data/iea/iea_2026_methane-abatement-model-notes.txt
+
+# Large extracts of the EIA bulk files: regenerate with
+# data/raw-data/gov-usa/eia/prices/eia_bulk_extract.py from the (ignored) zips.
+data/raw-data/gov-usa/eia/prices/eia_2026_bulk-seds_prices.csv
+data/raw-data/gov-usa/eia/prices/eia_2026_bulk-elec_prices.csv
