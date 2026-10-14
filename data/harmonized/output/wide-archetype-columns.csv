@@ -389,6 +389,10 @@ wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_n,technical,,
+wide-secondary-parameter,capacity_cooling,technical,MW cooling,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_cooling_low,technical,MW cooling,
+wide-secondary-parameter,capacity_cooling_high,technical,MW cooling,
+wide-secondary-parameter,capacity_cooling_n,technical,,
 wide-secondary-parameter,capacity_electricity,technical,MW electricity,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_electricity_low,technical,MW electricity,
 wide-secondary-parameter,capacity_electricity_high,technical,MW electricity,
@@ -397,6 +401,10 @@ wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated capac
 wide-secondary-parameter,capacity_ethylene_n,technical,,
 wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_feed_n,technical,,
+wide-secondary-parameter,capacity_heat,technical,MW heat,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_heat_low,technical,MW heat,
+wide-secondary-parameter,capacity_heat_high,technical,MW heat,
+wide-secondary-parameter,capacity_heat_n,technical,,
 wide-secondary-parameter,capacity-factor_as-sourced,technical,%,"Annual output as a fraction of output at rated capacity running continuously. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity-factor_as-sourced_low,technical,%,
 wide-secondary-parameter,capacity-factor_as-sourced_high,technical,%,

@@ -220,3 +220,6 @@ steam-cracker_fired-tubular_efficiency-moderate,cf-hhv-lhv-methane,,derived 2026
 steam-reformer_methane_ccs-concentrated,cf-hhv-lhv-methane,cf-hhv-lhv-hydrogen,derived 2026-10-09 from carriers (natural-gas) and product (hydrogen) for the regional LHV default; review
 turboexpander_pressure-let-down,,,derived 2026-10-09 from carriers (electricity) and product (electricity) for the regional LHV default; review
 boiler_recovery-high-solids,cf-hhv-lhv-black-liquor,,"black liquor in; steam (and power) out, as boiler_recovery (PB017, 2026-10-14)"
+shaft-furnace_hydrogen-direct-reduction,cf-hhv-lhv-hydrogen,,"dominant fuel hydrogen; product t iron; copied from shaft-furnace_direct-reduction with the fuel changed to hydrogen (D4, user 2026-10-14)"
+calciner_hydrogen-fired,cf-hhv-lhv-hydrogen,,"hydrogen in; product t alumina; as calciner_gas-suspension with hydrogen as the fuel (user 2026-10-14, D8)"
+separator_reverse-osmosis,,,"no fuel carrier (electricity); product m3 water treated (user 2026-10-14, as separator_mine-water-treatment)"

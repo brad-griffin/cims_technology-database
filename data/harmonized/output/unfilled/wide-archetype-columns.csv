@@ -274,8 +274,6 @@ wide-carriers-species,specific-energy-consumption_heavy-fuel-oil_low,technical,G
 wide-carriers-species,specific-energy-consumption_heavy-fuel-oil_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_heavy-fuel-oil_n,technical,,
 wide-carriers-species,specific-energy-consumption_hydrogen,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: hydrogen. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-carriers-species,specific-energy-consumption_hydrogen_low,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_hydrogen_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_hydrogen_n,technical,,
 wide-carriers-species,specific-energy-consumption_methanol,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: methanol. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_methanol_n,technical,,
@@ -319,6 +317,10 @@ wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_n,technical,,
+wide-secondary-parameter,capacity_cooling,technical,MW cooling,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_cooling_low,technical,MW cooling,
+wide-secondary-parameter,capacity_cooling_high,technical,MW cooling,
+wide-secondary-parameter,capacity_cooling_n,technical,,
 wide-secondary-parameter,capacity_electricity,technical,MW electricity,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_electricity_low,technical,MW electricity,
 wide-secondary-parameter,capacity_electricity_high,technical,MW electricity,
@@ -327,6 +329,10 @@ wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated capac
 wide-secondary-parameter,capacity_ethylene_n,technical,,
 wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_feed_n,technical,,
+wide-secondary-parameter,capacity_heat,technical,MW heat,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_heat_low,technical,MW heat,
+wide-secondary-parameter,capacity_heat_high,technical,MW heat,
+wide-secondary-parameter,capacity_heat_n,technical,,
 wide-secondary-parameter,annual-output_electricity,technical,GJ electricity per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,annual-output_electricity_n,technical,,
 wide-secondary-parameter,annual-output_methane,technical,GJ methane per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."

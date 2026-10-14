@@ -111,7 +111,7 @@ smelting-vessel_smelting-reduction,iron-and-steel,t,sourced,sourced,sourced,sour
 smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,t,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
 binder_alkali-activated,cement,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
 binder_blended-cement,cement,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
-binder_calcined-clay,cement,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
+binder_calcined-clay,cement,t,guess,guess,guess,sourced,estimated,guess,guess,sourced
 binder_carbonated,cement,t,guess,guess,guess,guess,estimated,guess,sourced,sourced
 calciner_indirect,cement,t,guess,guess,guess,guess,estimated,estimated,sourced,sourced
 grinding-mill_ball,cement,t,sourced,estimated,estimated,sourced,estimated,guess,identity,sourced
@@ -124,7 +124,7 @@ kiln_dry-precalciner_efficiency-strong,cement,t,estimated,estimated,estimated,so
 kiln_oxy-fuel,cement,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 dryer_electric,non-metallic-minerals,t,sourced,sourced,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_rotary-direct-fired,non-metallic-minerals,t,guess,guess,not-applicable,sourced,estimated,guess,sourced,sourced
-furnace_hybrid-electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
+furnace_hybrid-electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
 furnace_oxy-fuel,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
 furnace_regenerative,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
 furnace_tempering,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
@@ -187,7 +187,7 @@ gasifier_biomass-waste,hydrogen,GJ,sourced,sourced,sourced,sourced,sourced,estim
 gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,GJ,estimated,estimated,estimated,sourced,sourced,estimated,estimated,sourced
 liquefaction-train_hydrogen,hydrogen,GJ,sourced,estimated,not-applicable,sourced,sourced,estimated,missing,sourced
 process-improvement_hydrogen-blending,hydrogen,GJ,guess,guess,not-applicable,guess,estimated,guess,missing,sourced
-reactor_methane-pyrolysis,hydrogen,GJ,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
+reactor_methane-pyrolysis,hydrogen,GJ,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 autothermal-reformer_hydrogen,hydrogen,GJ,guess,sourced,guess,sourced,estimated,estimated,sourced,sourced
 autothermal-reformer_ammonia,chemicals,t,missing,sourced,missing,sourced,sourced,estimated,sourced,sourced
 distillation-column_atmospheric-vacuum,petroleum-refining,m3,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
@@ -217,7 +217,7 @@ boiler_recovery_ccs-diffuse,pulp-and-paper,t,estimated,estimated,estimated,estim
 digester_batch-kraft,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 digester_continuous-kraft,pulp-and-paper,t,sourced,sourced,estimated,sourced,estimated,estimated,identity,sourced
 digester_semi-chemical,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,guess,sourced
-dryer_heat-pump,pulp-and-paper,t,sourced,sourced,not-applicable,sourced,estimated,guess,identity,sourced
+dryer_heat-pump,pulp-and-paper,t,missing,missing,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_steam-heated,pulp-and-paper,t,sourced,estimated,sourced,sourced,sourced,guess,sourced,sourced
 dryer_steam-heated_efficiency-strong,pulp-and-paper,t,sourced,estimated,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_steam-heated_efficiency-moderate,pulp-and-paper,t,estimated,estimated,not-applicable,sourced,sourced,guess,estimated,sourced
@@ -242,7 +242,7 @@ pulper_thermomechanical,pulp-and-paper,t,sourced,estimated,sourced,sourced,estim
 reactor_oxygen-delignification,pulp-and-paper,t,estimated,estimated,estimated,sourced,estimated,estimated,identity,sourced
 separator_clarifier,pulp-and-paper,m3,guess,guess,guess,guess,estimated,guess,missing,sourced
 separator_lignin-extraction,pulp-and-paper,t,sourced,sourced,estimated,guess,sourced,identity,identity,sourced
-vapour-recompressor_evaporation,pulp-and-paper,t,guess,guess,not-applicable,sourced,sourced,estimated,identity,sourced
+vapour-recompressor_evaporation,pulp-and-paper,t,sourced,estimated,not-applicable,sourced,sourced,estimated,sourced,sourced
 adsorber_direct-lithium,mining,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 conveyor_in-pit-crushing,mining,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 flotation-cell_froth,mining,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
@@ -256,11 +256,11 @@ hoist,mining,t,guess,guess,not-applicable,estimated,estimated,guess,identity,sou
 leaching-vessel_heap-atmospheric,mining,t,sourced,estimated,sourced,sourced,estimated,estimated,sourced,sourced
 leaching-vessel_high-pressure-acid,mining,t,estimated,estimated,estimated,guess,estimated,estimated,identity,sourced
 leaching-vessel_in-situ,mining,t,guess,guess,guess,guess,estimated,guess,missing,sourced
-pellet-plant_induration_efficiency-moderate,mining,t,estimated,estimated,estimated,proxy,estimated,guess,proxy,sourced
+pellet-plant_induration_efficiency-moderate,iron-and-steel,t,estimated,estimated,estimated,proxy,estimated,guess,proxy,sourced
 press_dewatering,mining,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 pump_mine-dewatering,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,identity,sourced
 separator_gravity-magnetic,mining,t,guess,guess,guess,guess,estimated,guess,identity,sourced
-separator_mine-water-treatment,mining,m3,estimated,estimated,estimated,guess,estimated,estimated,missing,sourced
+separator_mine-water-treatment,mining,m3,missing,missing,missing,guess,estimated,missing,missing,sourced
 separator_ore-sorting,mining,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 separator_tailings-reclaim,machine-drive,GJ,guess,guess,guess,estimated,estimated,estimated,identity,sourced
 separator_thickening-filtration,mining,t,guess,guess,guess,estimated,estimated,guess,missing,sourced
@@ -323,9 +323,9 @@ reactor_integrated-upgrader,oil-and-gas,m3,sourced,sourced,estimated,sourced,est
 gasifier_coal-methanation,oil-and-gas,GJ,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 gasifier_coal-fischer-tropsch,oil-and-gas,GJ,sourced,sourced,estimated,sourced,sourced,identity,sourced,sourced
 reactor_gas-to-liquids,oil-and-gas,GJ,guess,sourced,estimated,sourced,sourced,identity,sourced,sourced
-chiller_absorption,food-and-beverage,GJ,guess,guess,not-applicable,sourced,estimated,estimated,guess,sourced
-chiller_high-efficiency,food-and-beverage,GJ,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
-chiller_vapour-compression,food-and-beverage,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
+chiller_absorption,food-and-beverage,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,guess,sourced
+chiller_high-efficiency,food-and-beverage,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
+chiller_vapour-compression,food-and-beverage,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
 cleaning-system_efficiency-strong,food-and-beverage,t,guess,guess,guess,sourced,sourced,guess,identity,sourced
 heat-exchanger_aseptic-uht,food-and-beverage,t,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
 heat-exchanger_steam-heated,food-and-beverage,t,sourced,estimated,not-applicable,sourced,sourced,guess,sourced,sourced
@@ -338,7 +338,7 @@ calciner_gas-suspension,non-ferrous-metals,t,sourced,sourced,sourced,sourced,sou
 converter_continuous,non-ferrous-metals,t,sourced,estimated,sourced,guess,estimated,estimated,guess,sourced
 converter_peirce-smith,non-ferrous-metals,t,guess,guess,guess,guess,estimated,estimated,guess,sourced
 digester_bayer,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,guess,sourced,sourced
-electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,t,guess,guess,guess,sourced,estimated,guess,missing,sourced
+electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 electrolysis-cell_advanced-anodes,non-ferrous-metals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 electrolysis-cell_inert-anode,non-ferrous-metals,t,sourced,estimated,estimated,sourced,sourced,guess,sourced,sourced
@@ -419,7 +419,7 @@ dryer_market-pulp,pulp-and-paper,t,sourced,sourced,not-applicable,sourced,estima
 dryer_through-air,pulp-and-paper,t,guess,guess,not-applicable,sourced,estimated,guess,guess,sourced
 electrolysis-cell_chlor-alkali-diaphragm,chemicals,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
 electrolysis-cell_electrorefining,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,estimated,identity,sourced
-electrolysis-cell_zinc-electrowinning,non-ferrous-metals,t,sourced,estimated,estimated,sourced,estimated,guess,identity,sourced
+electrolysis-cell_zinc-electrowinning,non-ferrous-metals,t,sourced,estimated,estimated,guess,estimated,guess,identity,sourced
 furnace_regenerative_ccs-diffuse,non-metallic-minerals,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 furnace_rotary-hearth-direct-reduction,iron-and-steel,t,guess,guess,guess,sourced,estimated,estimated,guess,sourced
 gas-treatment-unit_thermal-oxidiser,chemicals,m3,sourced,estimated,estimated,guess,estimated,guess,guess,sourced
@@ -490,3 +490,7 @@ gasifier_biomass-fischer-tropsch_ccs-concentrated,biofuels,GJ,estimated,estimate
 reactor_small-nuclear-power,power-generation,GJ,sourced,sourced,sourced,sourced,sourced,identity,identity,sourced
 evaporator_crystallizer-produced-water,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,missing,sourced
 melting-furnace_twin-chamber,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,estimated,sourced
+shaft-furnace_hydrogen-direct-reduction,iron-and-steel,t,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
+flotation-cell_potash,mining,t,missing,missing,missing,missing,estimated,guess,missing,sourced
+calciner_hydrogen-fired,non-ferrous-metals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
+separator_reverse-osmosis,mining,m3,estimated,estimated,estimated,sourced,estimated,estimated,identity,sourced

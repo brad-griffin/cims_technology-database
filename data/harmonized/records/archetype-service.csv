@@ -754,7 +754,6 @@ steam-reformer_ammonia_efficiency-moderate,<sector>.chemicals.product.ammonia-me
 reactor_isomerization,<sector>.petroleum-refining.product.isomerization,conversion-and-treating,added 2026-10-05 (archetype combination review)
 heat-recovery-unit_waste-heat,<sector>.*.service.steam,heat-low-temp,added 2026-10-05 (archetype combination review)
 evaporator_crystallizer,<sector>.mining.service.crystallization,separation-and-processing,added 2026-10-05 (archetype combination review)
-flotation-cell_froth,<sector>.mining.service.crystallization,separation-and-processing,added 2026-10-05 (archetype combination review)
 dryer_heat-pump,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,added 2026-10-05 (archetype combination review)
 dryer_heat-pump,<sector>.coal-mining.product.coal-preparation.drying,product-drying,added 2026-10-05 (archetype combination review)
 dryer_heat-pump,<sector>.mining.service.drying,product-drying,added 2026-10-05 (archetype combination review)
@@ -768,3 +767,6 @@ separator_dry-stack-tailings,<sector>.petroleum-crude.service.tailings-disposal,
 reactor_plastics-pyrolysis,<root>.common-energy.petrochemical-feedstock,petrochemical-feedstock,"moved from steam cracking 2026-10-09: pyrolysis oil is a cracker feedstock, not HVC"
 reactor_small-nuclear-power,<sector>.mining.service.on-site-power,on-site-power-generation,split from reactor_small-nuclear 2026-10-09: power archetype for the power node
 evaporator_crystallizer-produced-water,<sector>.petroleum-crude.service.produced-water,produced-water-handling,split from evaporator_crystallizer 2026-10-09: per m3 of produced water
+shaft-furnace_hydrogen-direct-reduction,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,iron-and-steel/ironmaking: the leaf its name or label names
+flotation-cell_potash,<sector>.mining.service.crystallization,separation-and-processing,"added 2026-10-14 (user, sanity-check NM005, D8): as evaporator_crystallizer, the CIMS potash processing node"
+calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,"as calciner_electric (restored 2026-10-14, D8)"

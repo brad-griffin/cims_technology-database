@@ -46,6 +46,7 @@ includes every node requested so far:
 | `natural-gas.product.transmission` and `.distribution` provide 1000 m3 | `turboexpander_pressure-let-down` produces electricity (its primary product); in CIMS it would be a negative electricity request on a let-down step rather than a provider of gas transport. | 2026-10-09 |
 | Light industrial | Products are in M$ of GDP; the heat-node and food-node unit changes from the 2026-10-09 review are deferred (modeller). | 2026-10-09 |
 | Confirm `industrial-minerals.product.ceramics` warrants its own branch in every province | Check against NRCan's NAICS 3271 industrial energy series. | 2026-09-18 |
+| A calcination sub-node under the alumina node (`metal-smelting.product.aluminum.primary-aluminum.alumina.calcination`), with the digester narrowed to digestion and precipitation | `digester_bayer` holds the whole Bayer refinery per t alumina, calcination included (NM003, 2026-10-13), while `calciner_gas-suspension`, `calciner_gas-suspension_ccs-diffuse`, `calciner_electric` and `calciner_hydrogen-fired` sit on the same node; a calciner cannot make alumina from bauxite, so it needs its own service (user 2026-10-14) | 2026-10-14 |
 
 ## Open: CIMS model inputs (for the comparison stage)
 

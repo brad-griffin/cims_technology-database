@@ -837,6 +837,7 @@ induction-heater_strip-heating,iron-and-steel,<sector>.iron-and-steel.product.co
 melting-furnace_electric-smelting,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 pellet-plant_induration,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 pellet-plant_induration,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
+pellet-plant_induration_efficiency-moderate,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 pellet-plant_plasma-electric,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 pellet-plant_plasma-electric,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 pickling-line_acid,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.cold-rolling,rolling,,iron-and-steel/rolling: every leaf of iron-and-steel/rolling; no evidence to narrow it
@@ -852,6 +853,7 @@ rolling-mill_thin-slab,iron-and-steel,<sector>.iron-and-steel.product.continuous
 shaft-furnace_direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
 shaft-furnace_direct-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the device's route
 shaft-furnace_electrolytic-hydrogen,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,whole route per t steel
+shaft-furnace_hydrogen-direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
 sinter-plant,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 sinter-plant_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 sinter-plant_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
@@ -864,7 +866,7 @@ conveyor_in-pit-crushing,mining,<sector>.mining.service.mine-haulage.open-pit,ex
 fan_mine-ventilation,mining,<sector>.coal-mining.product.raw-product.mine-ventilation,ventilation-and-air-heating,,added 2026-10-02
 flotation-cell_froth,mining,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,,mining/separation-and-processing: the leaves its sources placed it on
 flotation-cell_froth,mining,<sector>.mining.service.separation,separation-and-processing,,added 2026-09-23: froth flotation of metal ores
-flotation-cell_froth,mining,<sector>.mining.service.crystallization,separation-and-processing,,added 2026-10-05 (archetype combination review)
+flotation-cell_potash,mining,<sector>.mining.service.crystallization,separation-and-processing,,"added 2026-10-14 (user, sanity-check NM005, D8): as evaporator_crystallizer, the CIMS potash processing node"
 gas-treatment-unit_vam-oxidiser,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,methane control on coal extraction; a coal-mine methane node is requested
 grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 grinding-mill_sag-ball,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
@@ -901,7 +903,6 @@ mine_open-pit-coal,mining,<sector>.coal-mining.product.raw-product.extraction,ex
 mine_open-pit-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_underground-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_underground-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
-pellet-plant_induration_efficiency-moderate,mining,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 press_dewatering,mining,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 press_dewatering,mining,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,methane control on coal extraction; a coal-mine methane node is requested
@@ -912,6 +913,7 @@ separator_thickening-filtration,mining,<sector>.mining.service.separation,separa
 calciner_electric,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,non-ferrous-metals/alumina-refining: every leaf of the end use
 calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,as digester_bayer
+calciner_hydrogen-fired,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,alumina-refining,,"as calciner_electric (restored 2026-10-14, D8)"
 converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
 converter_peirce-smith,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)

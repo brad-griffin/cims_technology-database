@@ -1419,6 +1419,29 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                                    worst([rule["grade"], cap[3]]), rule, cap[4], ""), stats,
                      rule["rule-id"] + ":captured")
                 e = h.get(("emissions-captured", "co2"))
+        # captured CO2 split between fossil and biogenic in proportion to the host's
+        # gross fossil and biogenic CO2 (ruling 2026-10-14: capture on biogenic CO2
+        # lowers emissions-biomass, which can go negative; fossil emissions-total
+        # loses only the fossil share)
+        bio = hh.get(("emissions-biomass", "co2"))
+        fos = hh.get(("emissions-total", "co2"))
+        fshare = 1.0
+        if _live(bio) and _live(e):
+            b0 = fnum(bio["central"]) or 0.0
+            f0 = (fnum(fos["central"]) or 0.0) if _live(fos) else 0.0
+            fshare = f0 / (f0 + b0) if (f0 + b0) > 0 else 0.0
+            ec, el, eh = _lohi(e)
+            bc, bl, bh = _lohi(bio)
+            kb = 1.0 - fshare
+            _put(psum, h, _row(k, "emissions-biomass", "co2", bio["unit"],
+                               bc - kb * ec, bl - kb * eh, bh - kb * el,
+                               worst([rule["grade"], bio.get("grade", "sourced"), e.get("grade", "sourced")]),
+                               rule, [_input(bio, f"{host} emissions-biomass_co2"),
+                                      _input(e, f"{k} emissions-captured_co2"),
+                                      f"biogenic share of the captured CO2 {kb:.0%}"],
+                               bio.get("sources", ""),
+                               "the host's biogenic CO2 less the biogenic part of the CO2 captured"),
+                 stats, rule["rule-id"] + ":biogenic")
         for (q, t), r in sorted(hh.items()):
             if q in ("emissions-combustion", "emissions-process", "emissions-total") and _live(r) \
                     and not is_component_target(t):
@@ -1429,7 +1452,7 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                     # on a capture variant is what leaves the stack; with
                     # emissions-captured it adds back to the host's gross. Combustion
                     # and process stay gross: they say where the CO2 is made.
-                    ec, el, eh = _lohi(e)
+                    ec, el, eh = (x * fshare for x in _lohi(e))
                     c, lo, hi = max(c - ec, 0.0), max(lo - eh, 0.0), max(hi - el, 0.0)
                     ins.append(_input(e, f"{k} emissions-captured_co2"))
                     g = worst([g, e.get("grade", "sourced")])
