@@ -136,7 +136,7 @@ def _in_scope(rule, a, have, ctx=None):
 
 def _feedstock_row(a, ctx):
     from . import feedstock
-    return feedstock.row_for(a["archetype"], ctx.get("feedstock"))
+    return bool(feedstock.rows_for(a["archetype"], ctx.get("feedstock")))
 
 
 def _live(r):
@@ -694,6 +694,48 @@ def m_feedstock_identity(rule, a, have, ctx):
              "grades": ["identity"], "sources": "", "external": []}]
 
 
+def m_co2e_from_species(rule, a, have, ctx):
+    """CO2-eq = CO2 + the other gases x their AR5 100-year GWP (ruling 2026-10-14),
+    for one emissions parameter, where a non-CO2 gas is known and CO2-eq is not.
+    On abatement cost: the cost per t CO2-eq = the cost per t of the one gas abated
+    / its GWP."""
+    from . import gwp
+    p = rule["parameter"]
+    if (p, "co2e") in have:
+        return []
+    G = gwp.ar5(ctx["factors"])
+    if p == "abatement-cost":
+        gs = [(sp, have.get((p, sp))) for sp in G if _live(have.get((p, sp)) or {})]
+        if len(gs) != 1:
+            return []
+        sp, r = gs[0]
+        c, lo, hi = _vals(r)
+        k = 1 / G[sp]
+        return [{"parameter": p, "target": "co2e", "central": c * k,
+                 "low": lo * k if lo is not None else None, "high": hi * k if hi is not None else None,
+                 "inputs": [_input(r, f"{p}_{sp}"), f"cf-gwp100-ar5-{sp}"], "grades": [r.get("grade", "sourced")],
+                 "sources": r.get("sources", ""), "external": [f"cf-gwp100-ar5-{sp}"]}]
+    parts = [(sp, have.get((p, sp))) for sp in ("co2",) + tuple(G) if _live(have.get((p, sp)) or {})]
+    if not any(sp != "co2" for sp, _ in parts):
+        return []
+    c = lo = hi = 0.0
+    ins, grades, srcs, ext = [], [], [], []
+    for sp, r in parts:
+        k = 1.0 if sp == "co2" else G[sp]
+        v, vl, vh = _vals(r)
+        c += v * k
+        lo += (vl if vl is not None else v) * k
+        hi += (vh if vh is not None else v) * k
+        ins.append(_input(r, f"{p}_{sp}"))
+        grades.append(r.get("grade", "sourced"))
+        srcs += split_list(r.get("sources", ""))
+        if sp != "co2":
+            ext.append(f"cf-gwp100-ar5-{sp}")
+    return [{"parameter": p, "target": "co2e", "central": c, "low": lo, "high": hi,
+             "inputs": ins + ext, "grades": grades, "sources": "; ".join(dict.fromkeys(srcs)),
+             "external": ext}]
+
+
 def m_marker(rule, a, have, ctx):
     """Not a value: the parameter does not characterise this archetype. Written
     for the targets the rule names (`*` = the parameter with no target)."""
@@ -1070,6 +1112,7 @@ METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor,
            "assumption": m_assumption, "marker": m_marker, "zero-if-no-fossil": m_zero_if_no_fossil,
            "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
            "host-split": m_host_split, "feedstock-identity": m_feedstock_identity,
+           "co2e-from-species": m_co2e_from_species,
            **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
 
 

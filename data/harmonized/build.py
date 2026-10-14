@@ -34,7 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (assembly, netsec, feedstock, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
+from pipeline import (assembly, netsec, feedstock, gwp, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
                       bands, factoruse, facts, fill, hierarchy, normalise, placement, records, reports, rollin, rollup, sources,
                       summarise, views, wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
@@ -150,6 +150,8 @@ def main(argv) -> int:
     ns = netsec.apply(L.facts, L.flows, rec)
     print("  gross energy use: " + (", ".join(f"{k} {v}" for k, v in ns.items()) or "nothing net"))
     print(f"  recovered-product output flows: {netsec.recovered_flows(L.flows, rec)}")
+    gw = gwp.species(L.facts, units.factors)
+    print("  CO2-eq on AR5: " + (", ".join(f"{k} {v}" for k, v in gw.items()) or "none"))
     fs = feedstock.apply(L.facts, rec)
     print("  feedstock out of energy use: " + (", ".join(f"{k} {v}" for k, v in fs.items()) or "none"))
     normalise.normalise_flows(L.flows, rec, units, L.examples)

@@ -107,6 +107,11 @@ cf-diesel-hhv-mass,property,"diesel (gas/diesel oil), higher heating value per t
 cf-ore-per-material-nrcan-open-pit,same-source,"ore per tonne of material moved (ore plus waste rock), NRCan 2005 nine-mine open-pit sample",t,t,0.518,,,t ore per t material removed,nrcan_2005_002,1,1,haul-truck_diesel
 cf-ore-per-material-open-pit,ratio,"ore per tonne of material moved (ore plus waste rock), open-pit mines",t,t,0.518,,,t ore per t material moved,nrcan_2005_002,5,5,haul-truck_diesel
 cf-bls-per-pulp-larson-2006,same-source,"black liquor dry solids per bone-dry tonne of pulp, Larson 2006 reference mill",t,t,1.8987,,,"t BLS per bone-dry t of unbleached pulp: 6,000,000 lb BLS/d over 1,580 bone-dry short tons/d (3,160,000 lb)",larson_2006_001,1,1,boiler_recovery
+cf-gwp100-ar5-ch4,property,"CH4, 100-year global warming potential (AR5)",t-CH4,t-CO2-eq,28,,,"GWP-100, AR5, no climate-carbon feedback",ipcc_2013_001,0,0,
+cf-gwp100-ar5-n2o,property,"N2O, 100-year global warming potential (AR5)",t-N2O,t-CO2-eq,265,,,"GWP-100, AR5, no climate-carbon feedback",ipcc_2013_001,0,0,
+cf-gwp100-ar5-sf6,property,"SF6, 100-year global warming potential (AR5)",t-SF6,t-CO2-eq,23500,,,"GWP-100, AR5, no climate-carbon feedback",ipcc_2013_001,0,0,
+cf-gwp100-ar5-cf4,property,"CF4, 100-year global warming potential (AR5)",t-CF4,t-CO2-eq,6630,,,"GWP-100, AR5, no climate-carbon feedback",ipcc_2013_001,0,0,
+cf-gwp100-ar5-c2f6,property,"C2F6, 100-year global warming potential (AR5)",t-C2F6,t-CO2-eq,11100,,,"GWP-100, AR5, no climate-carbon feedback",ipcc_2013_001,0,0,
 assume:avoided-co2-for-captured,assumption,avoided co2 for captured,,,,,,,,2,2,capture-unit_amine
 assume:continuous-operation,assumption,continuous operation,,,,,,,,15,14,electrolyzer_low-temperature; fuel-cell_chp; haul-truck_diesel; haul-truck_hydrogen-fuel-cell; lighting_fluorescent-hid
 assume:source-correction-sc-001,assumption,source correction sc 001,,,,,,,,1,1,geothermal-well_direct-use

@@ -38,7 +38,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 
 | source | rows | correction |
 |---|---:|---|
-| Van Geene et al. 2024 (MIDDEN) | 2519 | confirmed against the held document 2026-09-29 |
+| Van Geene et al. 2024 (MIDDEN) | 2518 | confirmed against the held document 2026-09-29 |
 | UKERC 2013 | 1872 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson and Vellei 2014 | 658 | confirmed against the held document 2026-10-02 |
 | Gielen 1997 (ceramics) | 616 | confirmed against the held document 2026-10-02 |
@@ -46,13 +46,13 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Joosten 1998 | 498 | confirmed against the held document 2026-10-03 |
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
 | Element Energy 2021 | 466 | confirmed against the held document 2026-10-03 |
-| DEA 2026 (renewable fuels) | 458 | confirmed against the held document 2026-09-29 |
+| DEA 2026 (renewable fuels) | 456 | confirmed against the held document 2026-09-29 |
 | NREL 2025 (ATB) | 420 | confirmed against the held document 2026-10-02 |
 | IEA 2013 | 348 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2017 (refinery retrofit) | 330 | confirmed against the held document 2026-10-02 |
 | NREL 2018 | 304 | confirmed against the held document 2026-10-03 |
+| US EPA 2019 | 282 | confirmed against the held document 2026-10-02 |
 | US DOE 2017 (food and beverage bandwidth) | 279 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
-| US EPA 2019 | 277 | confirmed against the held document 2026-10-02 |
 | NCCP Upstream Oil and Gas 1999 | 250 | confirmed against the held document 2026-10-02 |
 | Element Energy 2018 | 241 | confirmed against the held document 2026-10-02 |
 | Martin et al. 2000 (emerging technologies) | 237 | confirmed against the held document 2026-10-02 |
@@ -328,6 +328,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Coursol et al. 2015 | 15 | confirmed against the held document 2026-10-02 |
 | IAI 2026 | 15 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
+| NCCP 1999 (magnesium options) | 15 | confirmed against the held document 2026-10-02 |
 | Worrell and Boyd 2022 | 15 | confirmed against the held document 2026-10-03 |
 | Zuberi 2022 | 15 | confirmed against the held document 2026-10-11 |
 | AEA 2010 | 14 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
@@ -371,7 +372,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Seebregts 2010 (ETSAP E02) | 10 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2010'; authors from the 'Please send comments to' line |
 | Hugill et al. 2001 | 10 | confirmed against the held document 2026-10-03 |
 | Minea 2012 | 10 | confirmed against the held document 2026-10-02 |
-| NCCP 1999 (magnesium options) | 10 | confirmed against the held document 2026-10-02 |
 | WSP and DNV GL 2015 (cement) | 10 | confirmed against the held document 2026-10-02 |
 | WSP and DNV GL 2015 (refining) | 10 | confirmed against the held document 2026-10-02 |
 | US DOE 2012 (motor tip sheet 11) | 9 | confirmed against the held document 2026-10-06 |

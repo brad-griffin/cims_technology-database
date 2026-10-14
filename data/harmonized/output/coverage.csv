@@ -41,7 +41,7 @@ steam-turbine_drive,machine-drive,GJ,guess,guess,not-applicable,estimated,estima
 cooling-tower_free-evaporative,space-conditioning,GJ,guess,guess,not-applicable,guess,estimated,estimated,missing,sourced
 heat-pump_space,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
 resistance-heater_space-heating,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
-space-heater_fuel-fired,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,guess,sourced
+space-heater_fuel-fired,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
 ventilation-unit_demand-controlled,space-conditioning,GJ,guess,guess,not-applicable,estimated,estimated,guess,identity,sourced
 ventilation-unit_heat-recovery,space-conditioning,GJ,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
 lighting_fluorescent-hid,lighting,GJ,guess,guess,not-applicable,guess,sourced,guess,identity,sourced
@@ -152,7 +152,7 @@ reactor_co2-to-methanol,chemicals,t,sourced,sourced,sourced,sourced,sourced,iden
 reactor_ethanol-to-ethylene,chemicals,t,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 reactor_haber-bosch-electrolytic,chemicals,t,sourced,sourced,estimated,sourced,sourced,identity,sourced,sourced
 reactor_methanol-to-olefins,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
-reactor_nitric-acid,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,missing,sourced
+reactor_nitric-acid,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
 reactor_plastics-pyrolysis,chemicals,t,sourced,estimated,sourced,sourced,sourced,estimated,sourced,sourced
 reactor_polymerization-extrusion,chemicals,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 steam-reformer_methanol,chemicals,t,sourced,estimated,estimated,sourced,sourced,identity,sourced,sourced
@@ -264,8 +264,8 @@ separator_mine-water-treatment,mining,m3,estimated,estimated,estimated,guess,est
 separator_ore-sorting,mining,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 separator_tailings-reclaim,machine-drive,GJ,guess,guess,guess,estimated,estimated,estimated,identity,sourced
 separator_thickening-filtration,mining,t,guess,guess,guess,estimated,estimated,guess,missing,sourced
-mine_open-pit-coal,mining,t,sourced,estimated,sourced,guess,estimated,estimated,guess,sourced
-mine_underground-coal,mining,t,guess,guess,guess,guess,estimated,guess,guess,sourced
+mine_open-pit-coal,mining,t,sourced,estimated,sourced,guess,estimated,estimated,identity,sourced
+mine_underground-coal,mining,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 process-improvement_coal-mine-methane-drainage,mining,t,guess,guess,not-applicable,guess,sourced,guess,missing,sourced
 adsorber_molecular-sieve,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
 liquefaction-train_electric,oil-and-gas,t,sourced,estimated,not-applicable,guess,estimated,guess,identity,sourced
@@ -275,7 +275,7 @@ compressor_low-emission-seal,oil-and-gas,t,sourced,sourced,not-applicable,guess,
 reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 compressor_electric,machine-drive,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
 compressor_flare-gas-recovery,oil-and-gas,t,sourced,estimated,not-applicable,guess,sourced,estimated,identity,sourced
-reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
+reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,identity,sourced
 pneumatic-device_non-emitting,oil-and-gas,m3,sourced,sourced,not-applicable,not-applicable,sourced,estimated,identity,sourced
 compressor_vapour-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,estimated,identity,sourced
 direct-heater_line-heater,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
@@ -294,7 +294,7 @@ heat-pump_oil-treating,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated
 heat-recovery-unit_turbine-exhaust,oil-and-gas,t,guess,guess,not-applicable,guess,estimated,guess,missing,sourced
 liquefaction-train_small-scale,oil-and-gas,t,guess,guess,not-applicable,guess,estimated,guess,estimated,sourced
 management-system_leak-detection,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,identity,sourced
-pneumatic-device_gas-driven,oil-and-gas,m3,guess,guess,not-applicable,not-applicable,estimated,guess,guess,sourced
+pneumatic-device_gas-driven,oil-and-gas,m3,guess,guess,not-applicable,not-applicable,estimated,guess,identity,sourced
 process-improvement_drag-reducing-agent,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,missing,sourced
 process-improvement_low-emission-components,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,missing,sourced
 pump_artificial-lift,oil-and-gas,m3,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
@@ -303,7 +303,7 @@ pump_plunger-lift,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,gue
 reactor_ebullated-bed-hydrocracking,oil-and-gas,m3,guess,guess,guess,guess,estimated,estimated,missing,sourced
 reactor_fluid-coking,oil-and-gas,m3,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
 reactor_partial-upgrading,oil-and-gas,m3,sourced,estimated,sourced,sourced,estimated,estimated,sourced,sourced
-reciprocating-engine_diesel-field,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
+reciprocating-engine_diesel-field,machine-drive,GJ,guess,guess,not-applicable,identity,estimated,estimated,identity,sourced
 reciprocating-engine_dual-fuel,oil-and-gas,m,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
 reciprocating-engine_gasoline-propane,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,missing,sourced
 separator_dry-stack-tailings,oil-and-gas,t,guess,guess,guess,guess,estimated,guess,identity,sourced
@@ -384,7 +384,7 @@ reactor_anthraquinone-autoxidation,chemicals,t,guess,guess,guess,sourced,estimat
 reactor_urea-synthesis,chemicals,t,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
 gasifier_biomass-ammonia,chemicals,t,sourced,estimated,estimated,guess,sourced,estimated,identity,sourced
 gasifier_coal-ammonia,chemicals,t,guess,guess,guess,sourced,estimated,estimated,sourced,sourced
-reactor_haber-bosch-loop,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,missing,sourced
+reactor_haber-bosch-loop,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
 shaft-furnace_electrolytic-hydrogen,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 binder_sulphoaluminate,cement,t,sourced,sourced,estimated,sourced,sourced,guess,sourced,sourced
 binder_hydrothermal-silicate,cement,t,sourced,sourced,estimated,sourced,sourced,guess,sourced,sourced
