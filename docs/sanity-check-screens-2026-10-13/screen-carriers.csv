@@ -1,0 +1,115 @@
+archetype,family,unit,total,sum-of-carriers,ratio,carriers,total-grade
+refinery_hydroskimming,petroleum-refining,GJ/m3,0.0411566,2.1993,53.438,electricity=0.0411566; fuel=2.15818,sourced
+gasifier_coal-methanol,chemicals,GJ/t,2.6024,37.9698,14.59,fuel=37.9698,sourced
+refinery_deep-conversion,petroleum-refining,GJ/m3,0.237846,2.8986,12.187,electricity=0.237846; fuel=2.66076,sourced
+binder_calcined-clay,cement,GJ/t,0.1188,0.9988,8.407,electricity=0.1188; fuel=0.88,sourced
+gasifier_coal-methanol_ccs-concentrated,chemicals,GJ/t,6.602,41.9694,6.357,electricity=1.36248; fuel=37.9698; steam=2.63712,guess
+binder_alkali-activated,cement,GJ/t,0.507242,2.55,5.027,electricity=1.0; fuel=1.55,sourced
+dryer_steam-heated,pulp-and-paper,GJ/t,4.01588,18.9052,4.708,electricity=0.311726; fuel=10.0018; heat=3.70415; steam=4.88752,sourced
+capture-unit_chemical-solvent,co2-capture,GJ/t,2.08032,9.4303,4.533,electricity=0.257842; fuel=1.82248; heat=5.0; steam=2.35,sourced
+pickling-line_acid,iron-and-steel,GJ/t,0.222,0.9824,4.425,electricity=0.3024; fuel=0.215; steam=0.465,sourced
+heat-exchanger_steam-heated,food-and-beverage,GJ/t,0.309358,0.9835,3.179,electricity=0.0549; heat=0.619232; steam=0.309358,sourced
+gasifier_biomass-ethylene,chemicals,GJ/t,8.4208,26.5116,3.148,electricity=5.04; fuel=21.4716,sourced
+dryer_market-pulp,pulp-and-paper,GJ/t,2.6776,8.2776,3.091,electricity=0.4176; heat=5.6; steam=2.26,sourced
+capture-unit_amine,co2-capture,GJ/t,4.80457,11.8901,2.475,electricity=0.481702; fuel=4.32287; heat=3.4205; steam=3.665,sourced
+transesterification-unit_alkali-catalyzed,biofuels,GJ/GJ,0.112823,0.2662,2.36,electricity=0.00420832; fuel=0.108614; heat=0.0578907; steam=0.0955056,sourced
+kiln_lime-rotary-preheater,non-metallic-minerals,GJ/t,5.99184,12.5534,2.095,electricity=0.1116; fuel=5.99184; heat=6.45,sourced
+pulper_fibreboard-refiner,other-industry,GJ/t,3.0,6.23,2.077,electricity=0.954; heat=3.276; steam=2.0,guess
+direct-heater_fuel-fired,heat-supply,GJ/GJ,1.09,2.18,2.0,fuel=1.09; hydrogen=1.09,sourced
+sinter-plant_efficiency-strong,iron-and-steel,GJ/t,1.30175,0.0054,0.004,electricity=0.0054,sourced
+geothermal-well_direct-use,heat-supply,GJ/GJ,5.30504,0.03,0.006,electricity=0.03,estimated
+reactor_alkylation,petroleum-refining,GJ/m3,1.63713,3.2344,1.976,electricity=0.0328845; fuel=1.60425; steam=1.59724,sourced
+steam-turbine_back-pressure,heat-supply,GJ/GJ,1.07621,2.1234,1.973,fuel=1.07621; steam=1.04722,sourced
+transesterification-unit_acid-catalyzed,biofuels,GJ/GJ,0.201711,0.3955,1.961,electricity=0.0055618; heat=0.201711; steam=0.188202,sourced
+drilling-rig_battery-hybrid,oil-and-gas,GJ/m,0.49,0.02,0.041,electricity=0.02,guess
+kiln_lime-shaft,non-metallic-minerals,GJ/t,4.05137,7.7514,1.913,electricity=0.108; fuel=3.94337; heat=3.7,sourced
+adsorber_molecular-sieve,oil-and-gas,GJ/m3,0.00022,0.0,0.091,electricity=2e-05,guess
+direct-heater_fuel-fired_ccs-diffuse,heat-supply,GJ/GJ,1.20236,2.2924,1.907,electricity=0.016758; fuel=1.09; hydrogen=1.09; steam=0.0956032,estimated
+space-heater_fuel-fired,space-conditioning,GJ/GJ,1.09861,0.1099,0.1,electricity=0.054928; steam=0.054931,identity
+binder_carbonated,cement,GJ/t,2.9,0.3,0.103,electricity=0.3,guess
+kiln_lime-oxy-fuel,non-metallic-minerals,GJ/t,5.6,0.6,0.107,electricity=0.6,guess
+reactor_isomerization,petroleum-refining,GJ/m3,1.27745,2.4084,1.885,electricity=0.04546; fuel=1.23199; steam=1.13099,sourced
+liquefaction-train_small-scale,oil-and-gas,GJ/t,8.8,1.1,0.125,electricity=1.1,guess
+refinery_nickel-matte,non-ferrous-metals,GJ/t,22.192,41.4,1.866,electricity=12.6; heat=28.8,sourced
+kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,GJ/t,7.62776,14.1894,1.86,electricity=0.355587; fuel=5.99184; heat=6.45; steam=1.39193,estimated
+mine_open-pit-coal,mining,GJ/t,0.41,0.06,0.146,electricity=0.06,guess
+liquefaction-train_base-load,oil-and-gas,GJ/t,3.4,0.5,0.147,electricity=0.5,guess
+capture-unit_advanced-solvent,co2-capture,GJ/t,3.2,5.9,1.844,electricity=0.2; heat=3.0; steam=2.7,sourced
+separator_paraffinic-froth-treatment,oil-and-gas,GJ/m3,0.6,0.1,0.167,electricity=0.1,guess
+pellet-plant_wood,other-industry,GJ/t,3.6,0.6,0.167,electricity=0.6,guess
+furnace_oxy-fuel-thermochemical,non-metallic-minerals,GJ/t,3.8,0.7,0.184,electricity=0.7,guess
+chiller_absorption,food-and-beverage,GJ/GJ,1.6,2.88,1.8,heat=1.6; steam=1.28,sourced
+reactor_silicothermic,non-ferrous-metals,GJ/t,150.0,30.0,0.2,electricity=30.0,guess
+gas-treatment-unit_thermal-oxidiser,chemicals,GJ/m3,8e-05,0.0,0.202,electricity=1.62e-05,guess
+furnace_homogenizing,non-ferrous-metals,GJ/t,1.16508,0.24,0.206,electricity=0.24,estimated
+reactor_torrefaction,other-industry,GJ/t,3.8,0.8,0.211,electricity=0.8,guess
+kiln_dry-precalciner,cement,GJ/t,3.75461,6.6546,1.772,electricity=0.471577; fuel=3.28303; heat=2.9,sourced
+autothermal-reformer_hydrogen,hydrogen,GJ/GJ,0.65356,0.1498,0.229,electricity=0.00874533; heat=0.141054,sourced
+reactor_ethylene-oxidation,chemicals,GJ/t,4.47872,7.9185,1.768,electricity=1.24979; fuel=3.43976; heat=3.22893,sourced
+boiler_fuel-fired,heat-supply,GJ/GJ,1.429,2.519,1.763,fuel=1.429; hydrogen=1.09,sourced
+kiln_calcium-silicate-feed,cement,GJ/t,4.0,1.0,0.25,electricity=1.0,guess
+kiln_ceramic-microwave-assisted,non-metallic-minerals,GJ/t,2.8,0.7,0.25,electricity=0.7,guess
+haul-truck_trolley-assist,mining,GJ/t,0.008,0.0021,0.262,electricity=0.0021,guess
+compressor_co2-dehydration,co2-capture,GJ/t,1.878,0.4932,0.263,electricity=0.4932,sourced
+reactor_ethylene-oxidation_ccs-concentrated,chemicals,GJ/t,4.92049,8.3603,1.699,electricity=1.40028; fuel=3.43976; heat=3.22893; steam=0.291282,estimated
+rolling-mill_ring,non-ferrous-metals,GJ/t,2.6,0.8,0.308,electricity=0.8,guess
+pump_plunger-lift,oil-and-gas,GJ/t,0.03,0.01,0.333,electricity=0.01,guess
+reactor_co2-to-methanol,chemicals,GJ/t,7.2446,11.9634,1.651,electricity=0.371449; fuel=4.71875; hydrogen=4.71875; steam=2.15441,sourced
+fermenter_grain-dry-mill,biofuels,GJ/GJ,0.364226,0.5967,1.638,electricity=0.0287382; fuel=0.335488; steam=0.232493,sourced
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,GJ/GJ,0.335088,0.549,1.638,electricity=0.0264391; fuel=0.308649; steam=0.213894,proxy
+debarker_drum,pulp-and-paper,GJ/t,0.2354,0.3854,1.637,electricity=0.0504; heat=0.15; steam=0.185,sourced
+fracturing-fleet_electric,oil-and-gas,GJ/m,1.6,0.6,0.375,electricity=0.6,guess
+reactor_urea-synthesis,chemicals,GJ/t,2.8,4.5143,1.612,electricity=0.159962; fuel=1.71426; steam=2.64004,sourced
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,GJ/t,10.9075,4.2273,0.388,hydrogen=1.8117; steam=2.4156,sourced
+distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,GJ/m3,0.539917,0.8523,1.579,electricity=0.0354499; fuel=0.414747; heat=0.312429; steam=0.0897204,sourced
+boiler_fuel-fired_ccs-diffuse,heat-supply,GJ/GJ,1.89657,2.9866,1.575,electricity=0.0697346; fuel=1.429; hydrogen=1.09; steam=0.397831,estimated
+digester_semi-chemical,pulp-and-paper,GJ/t,9.30191,14.6019,1.57,electricity=2.09131; fuel=1.3956; heat=5.3; steam=5.815,sourced
+dryer_direct-fired,other-industry,GJ/t,6.69643,2.9011,0.433,electricity=1.13688; fuel=1.76426,sourced
+dryer_direct-fired_efficiency-strong,other-industry,GJ/t,5.02232,2.1759,0.433,electricity=0.85266; fuel=1.32319; hydrogen=0.0,proxy
+reactor_nitric-acid,chemicals,GJ/t,0.621042,0.9682,1.559,electricity=0.00700423; fuel=0.614038; steam=0.347125,sourced
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,GJ/GJ,0.416948,0.6494,1.558,electricity=0.0466981; fuel=0.335488; steam=0.267255,guess
+capture-unit_physical-solvent,co2-capture,GJ/t,0.72,1.12,1.556,electricity=0.33; heat=0.4; steam=0.39,sourced
+shaft-furnace_direct-reduction,iron-and-steel,GJ/t,9.68,15.0536,1.555,electricity=0.246263; fuel=9.43374; hydrogen=5.37357,sourced
+coating-line_electrolytic,iron-and-steel,GJ/t,2.619,1.2005,0.458,electricity=0.77148; fuel=0.429,sourced
+kiln_dry-precalciner_ccs-diffuse,cement,GJ/t,5.43321,8.3332,1.534,electricity=0.72193; fuel=3.28303; heat=2.9; steam=1.42825,estimated
+shaft-furnace_direct-reduction_ccs-concentrated,iron-and-steel,GJ/t,10.1345,15.5081,1.53,electricity=0.40109; fuel=9.43374; hydrogen=5.37357; steam=0.299673,estimated
+distillation-column_atmospheric-vacuum,petroleum-refining,GJ/m3,1.03107,1.5662,1.519,electricity=0.0186644; fuel=0.582654; heat=0.53515; steam=0.429752,sourced
+pulper_recycled-fibre,pulp-and-paper,GJ/t,1.90732,2.8953,1.518,electricity=1.07674; fuel=0.54; heat=0.448; steam=0.830583,sourced
+reactor_integrated-upgrader,oil-and-gas,GJ/m3,4.42929,6.5049,1.469,electricity=0.27172; fuel=4.15757; hydrogen=2.07564,sourced
+basic-oxygen-furnace,iron-and-steel,GJ/t,0.1787,0.2602,1.456,electricity=0.110586; fuel=0.0681143; steam=0.0815,sourced
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,GJ/m3,4.55291,6.6286,1.456,electricity=0.313833; fuel=4.15757; hydrogen=2.07564; steam=0.081511,guess
+furnace_anode-baking,non-ferrous-metals,GJ/t,4.40694,2.4411,0.554,fuel=2.44112,sourced
+reactor_polymerization-extrusion,chemicals,GJ/t,3.11797,4.4182,1.417,electricity=0.704058; fuel=0.61028; heat=0.69; steam=2.41391,sourced
+process-improvement_pre-reduction,non-ferrous-metals,GJ/t,26.892,37.152,1.382,electricity=10.26; fuel=26.892,estimated
+blast-furnace,iron-and-steel,GJ/t,13.63,18.198,1.335,electricity=0.0802056; fuel=13.5498; heat=4.52; steam=0.048,sourced
+blast-furnace_efficiency-strong,iron-and-steel,GJ/t,10.2225,13.6485,1.335,electricity=0.0601542; fuel=10.1623; heat=3.39; steam=0.036,proxy
+reactor_haber-bosch-loop,chemicals,GJ/t,10.1432,6.8418,0.675,electricity=1.19801; fuel=2.8219; hydrogen=2.8219,sourced
+blast-furnace_ccs-diffuse,iron-and-steel,GJ/t,14.4583,19.0263,1.316,electricity=0.203741; fuel=13.5498; heat=4.52; steam=0.752764,estimated
+dryer_superheated-steam,other-industry,GJ/t,0.95,0.65,0.684,electricity=0.15; steam=0.5,guess
+reactor_hydrotreating-lipids,biofuels,GJ/GJ,0.543125,0.7116,1.31,electricity=0.00431831; fuel=0.538807; hydrogen=0.16844,sourced
+steam-reformer_methane_efficiency-moderate,petroleum-refining,GJ/GJ,0.578091,0.7403,1.281,electricity=0.00811337; fuel=0.569978; heat=0.162212; steam=0.0,proxy
+steam-reformer_methane,petroleum-refining,GJ/GJ,0.62836,0.8047,1.281,electricity=0.00881888; fuel=0.619541; heat=0.176317; steam=0.0,sourced
+electrolysis-cell_chlor-alkali-membrane,chemicals,GJ/t,7.90758,10.0943,1.277,electricity=7.49139; fuel=2.1867; steam=0.416188,sourced
+converter_continuous,non-ferrous-metals,GJ/t,1.1,0.8,0.727,electricity=0.8; fuel=0.0,guess
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ/GJ,0.766558,0.5626,0.734,electricity=0.0472386; fuel=0.29981; heat=0.141054; steam=0.074505,estimated
+steam-reformer_methane_ccs-concentrated,petroleum-refining,GJ/GJ,0.71514,0.8915,1.247,electricity=0.0383809; fuel=0.619541; heat=0.176317; steam=0.0572182,estimated
+steam-reformer_methane_ccs-diffuse,petroleum-refining,GJ/GJ,0.754954,0.9313,1.234,electricity=0.0276996; fuel=0.619541; heat=0.176317; steam=0.107713,estimated
+melting-furnace_rotary-oxy-fuel,other-industry,GJ/t,3.49524,2.7962,0.8,fuel=2.79619,estimated
+reactor_ebullated-bed-hydrocracking,oil-and-gas,GJ/m3,4.05,3.25,0.802,electricity=0.25; hydrogen=3.0,guess
+mine_underground-coal,mining,GJ/t,0.16,0.13,0.812,electricity=0.13,guess
+reactor_catalytic-reforming,petroleum-refining,GJ/m3,1.75621,2.0731,1.18,electricity=0.0656086; fuel=1.6906; steam=0.316913,sourced
+electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,GJ/t,18.8,15.5,0.824,electricity=15.5,guess
+calciner_indirect,cement,GJ/t,3.6,3.0405,0.845,electricity=3.04054,guess
+reactor_polymerization-extrusion_efficiency-strong,chemicals,GJ/t,2.4966,2.1221,0.85,electricity=1.1235; steam=0.99864,sourced
+dryer_through-air,pulp-and-paper,GJ/t,30.6,34.92,1.141,electricity=9.0; heat=21.6; steam=4.32,sourced
+turboexpander_pressure-let-down,power-generation,GJ/GJ,1.04167,1.1723,1.125,fuel=1.17228,identity
+reactor_ammonium-nitrate,chemicals,GJ/t,0.793166,0.8834,1.114,electricity=0.281446; fuel=0.51172; steam=0.0902525,sourced
+haul-truck_battery-electric,mining,GJ/t,0.0045,0.004,0.889,electricity=0.004,guess
+reactor_methane-pyrolysis,hydrogen,GJ/GJ,1.19118,1.322,1.11,electricity=0.64559; fuel=0.54559; heat=0.130847,sourced
+steam-reformer_methanol,chemicals,GJ/t,11.3997,12.4876,1.095,electricity=0.325377; fuel=11.0743; steam=1.08792,sourced
+pulper_chemi-thermomechanical,pulp-and-paper,GJ/t,5.76,6.3,1.094,electricity=5.76; heat=0.54,sourced
+reactor_alcohol-to-jet,biofuels,GJ/GJ,0.139677,0.1496,1.071,electricity=0.0270096; fuel=0.0760344; hydrogen=0.00991; steam=0.0366326,sourced
+coke-oven_by-product,iron-and-steel,GJ/t,6.864,7.28,1.061,electricity=0.179921; fuel=6.68408; steam=0.416,sourced
+coke-oven_by-product_efficiency-strong,iron-and-steel,GJ/t,5.148,5.46,1.061,electricity=0.134941; fuel=5.01306; steam=0.312,proxy
+steam-reformer_ammonia_efficiency-moderate,chemicals,GJ/t,12.0286,12.7189,1.057,electricity=0.909815; fuel=11.1188; steam=0.6903,sourced
+electrolysis-cell_soderberg,non-ferrous-metals,GJ/t,61.0,57.6,0.944,electricity=57.6,sourced
