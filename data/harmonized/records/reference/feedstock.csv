@@ -1,0 +1,34 @@
+archetype,feedstock,energy-in-product,inclusive-above,note
+steam-reformer_methane*,natural-gas,1,,hydrogen from methane: the hydrogen's energy comes from the gas feed
+autothermal-reformer_hydrogen*,natural-gas,1,,
+reactor_methane-pyrolysis,natural-gas,1,,the solid carbon is a co-product: its energy counts as energy used
+gasifier_biomass-waste,biomass,1,,
+gasifier_coal-petroleum-coke*,coal,1,,
+gasifier_biomass-fischer-tropsch*,biomass,1,,
+gasifier_biomass-methanation,biomass,1,,
+gasifier_coal-fischer-tropsch,coal,1,,
+gasifier_coal-methanation,coal,1,,
+reactor_gas-to-liquids,natural-gas,1,,
+transesterification-unit_*,bioliquid,1,,the oil's energy ends in the biodiesel
+reactor_hydrotreating-lipids,bioliquid,1,,
+reactor_hydrothermal-liquefaction,biomass,1,,
+anaerobic-digester,biomass,1,,
+anaerobic-digester_biomethane-upgrading,biomass,1,,
+fermenter_lignocellulosic-enzymatic,biomass,1,,
+fermenter_syngas,biomass,1,,
+reactor_co2-to-ethanol,hydrogen,1,,the hydrogen's energy ends in the fuel
+reactor_co2-to-fischer-tropsch,hydrogen,1,,
+liquefaction-train_*,natural-gas,54.86,,LNG: the gas liquefied is the product; HHV of LNG
+steam-reformer_ammonia*,natural-gas,22.48,,ammonia HHV
+autothermal-reformer_ammonia*,natural-gas,22.48,,
+gasifier_biomass-ammonia,biomass,22.48,,
+gasifier_coal-ammonia,coal,22.48,,
+reactor_haber-bosch-loop,hydrogen,22.48,,
+reactor_haber-bosch-electrolytic,hydrogen,22.48,,
+steam-reformer_methanol,natural-gas,22.66,,methanol HHV
+gasifier_coal-methanol*,coal,22.66,,
+gasifier_biomass-methanol,biomass,22.66,,
+reactor_co2-to-methanol,hydrogen,22.66,,
+steam-cracker_*,naphtha,48,70,"JUDGEMENT: high-value chemicals (ethylene, propylene, butadiene, aromatics) about 48 GJ/t HHV, mass-weighted; a total counts the feed only above 70 GJ/t (about 1.7 t naphtha per t HVC), since cracker totals without feed reach 45"
+gasifier_biomass-ethylene,biomass,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
+reactor_methanol-to-olefins,methanol,48,40,JUDGEMENT: HVC about 48 GJ/t HHV

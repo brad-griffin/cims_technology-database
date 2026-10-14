@@ -36,6 +36,6 @@ def placement(p: str, t: str) -> str:
         return "secondary"
     if not t or (p, t) in MAIN_TARGETS or p in MAIN_ANY_TARGET:
         return "main"
-    if p == "specific-energy-consumption" or p in EMISSIONS:
+    if p in ("specific-energy-consumption", "feedstock-consumption") or p in EMISSIONS:
         return "carriers"
     return "secondary"

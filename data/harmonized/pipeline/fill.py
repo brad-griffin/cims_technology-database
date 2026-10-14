@@ -96,6 +96,8 @@ def _in_scope(rule, a, have, ctx=None):
         return False
     if "family" in sc and a.get("family") not in sc["family"].split("|"):
         return False
+    if sc.get("exclude-feedstock") == "yes" and ctx is not None and _feedstock_row(a, ctx):
+        return False
     if sc.get("exclude-ccs") == "yes" and ("_ccs-" in a["archetype"]
                                          or a.get("family") == "co2-capture"):
         return False
@@ -130,6 +132,11 @@ def _in_scope(rule, a, have, ctx=None):
         if not _has(spec):
             return False
     return True
+
+
+def _feedstock_row(a, ctx):
+    from . import feedstock
+    return feedstock.row_for(a["archetype"], ctx.get("feedstock"))
 
 
 def _live(r):
@@ -672,6 +679,21 @@ def m_host_split(rule, a, have, ctx):
     return out
 
 
+def m_feedstock_identity(rule, a, have, ctx):
+    """feedstock-consumption = the energy the product holds, on a conversion
+    archetype (records/reference/feedstock.csv) whose sources leave the feed out
+    (ruling 2026-10-13): the feed is at least what ends in the product."""
+    from . import feedstock
+    t = feedstock.row_for(a["archetype"], ctx["feedstock"])
+    if not t or any(q == feedstock.FEED and _live(r) for (q, _), r in have.items()):
+        return []
+    e = fnum(t["energy-in-product"])
+    carrier = t["feedstock"].split("|")[0]
+    return [{"parameter": feedstock.FEED, "target": carrier, "central": e, "low": None, "high": None,
+             "inputs": [f"energy in the product {e:g} GJ per {a['product-unit']} (records/reference/feedstock.csv)"],
+             "grades": ["identity"], "sources": "", "external": []}]
+
+
 def m_marker(rule, a, have, ctx):
     """Not a value: the parameter does not characterise this archetype. Written
     for the targets the rule names (`*` = the parameter with no target)."""
@@ -1047,7 +1069,7 @@ METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor,
            "bucket-increment": m_bucket_increment, "per-gj-via-sec": m_per_gj_via_sec,
            "assumption": m_assumption, "marker": m_marker, "zero-if-no-fossil": m_zero_if_no_fossil,
            "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
-           "host-split": m_host_split,
+           "host-split": m_host_split, "feedstock-identity": m_feedstock_identity,
            **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
 
 
@@ -1463,6 +1485,9 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                                      if q == SEC and t and not is_component_target(t) and _live(r)})
             tot = h.get((SEC, ""))
             use = {t: r for t, r in secs.items() if t not in ("fuel", "total", "not-stated", "component")}
+            # the feedstock the product is made from is bought too (ruling 2026-10-13)
+            feeds = {t: r for (q, t), r in h.items() if q == "feedstock-consumption" and t
+                     and not is_component_target(t) and _live(r)}
             if "fuel" in secs and not any(t not in NOT_FUEL for t in use):
                 use["fuel (unnamed)"] = secs["fuel"]      # unpriceable: no fuel named
             if not use:
@@ -1477,7 +1502,8 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                     continue
             cost = clo = chi = 0.0
             ins, unpriced, wait = [], [], False
-            for t, r in sorted(use.items()):
+            priced = sorted(use.items()) + sorted((f"{t}", r) for t, r in feeds.items())
+            for t, r in priced:
                 pr = P.get(t)
                 v, vl, vh = _lohi(r)
                 if not pr:
@@ -1720,7 +1746,8 @@ def _ctx(psum, records, facts, units):
             "factors": convert.Factors(), "have": have, "increments": increments, "per_gj": per_gj,
             "arch": records.by_key, "mod_ratios": mod_ratios, "hosts": hosts, "inc_ratios": inc_ratios,
             "service": service, "classes": classes(), "assumptions": assumptions(),
-            "modifiers": set(records.modifiers), "units": units}
+            "modifiers": set(records.modifiers), "units": units,
+            "feedstock": read(REFERENCE / "feedstock.csv")}
 
 
 def _phase(rule):

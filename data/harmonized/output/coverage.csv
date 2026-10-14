@@ -70,7 +70,7 @@ basic-oxygen-furnace_efficiency-strong,iron-and-steel,t,estimated,estimated,esti
 blast-furnace,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 blast-furnace_ccs-diffuse,iron-and-steel,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 blast-furnace_efficiency-moderate,iron-and-steel,t,estimated,estimated,estimated,sourced,sourced,estimated,estimated,sourced
-blast-furnace_efficiency-strong,iron-and-steel,t,estimated,estimated,estimated,sourced,estimated,estimated,sourced,sourced
+blast-furnace_efficiency-strong,iron-and-steel,t,estimated,estimated,estimated,proxy,estimated,estimated,sourced,sourced
 blast-furnace_top-gas-recycling,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 caster_continuous,iron-and-steel,t,sourced,sourced,not-applicable,sourced,sourced,estimated,sourced,sourced
 caster_ingot,iron-and-steel,t,guess,guess,not-applicable,sourced,estimated,guess,sourced,sourced
@@ -79,7 +79,7 @@ coating-line_electrolytic,iron-and-steel,t,sourced,estimated,estimated,sourced,s
 coating-line_hot-dip,iron-and-steel,t,sourced,estimated,estimated,sourced,sourced,guess,sourced,sourced
 coke-oven_by-product,iron-and-steel,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
 coke-oven_by-product_efficiency-moderate,iron-and-steel,t,estimated,estimated,estimated,sourced,sourced,estimated,estimated,sourced
-coke-oven_by-product_efficiency-strong,iron-and-steel,t,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
+coke-oven_by-product_efficiency-strong,iron-and-steel,t,sourced,estimated,estimated,proxy,estimated,estimated,sourced,sourced
 coke-oven_heat-recovery,iron-and-steel,t,sourced,estimated,estimated,guess,estimated,estimated,sourced,sourced
 electric-arc-furnace,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 electric-arc-furnace_scrap-preheating,iron-and-steel,t,estimated,estimated,estimated,sourced,sourced,estimated,sourced,sourced
@@ -136,7 +136,7 @@ kiln_lime-rotary-preheater,non-metallic-minerals,t,sourced,estimated,estimated,s
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 kiln_tunnel-roller,non-metallic-minerals,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
 furnace_electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
-autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ,estimated,estimated,estimated,identity,sourced,estimated,sourced,sourced
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ,estimated,estimated,estimated,estimated,sourced,estimated,sourced,sourced
 autothermal-reformer_ammonia_ccs-concentrated,chemicals,t,estimated,estimated,estimated,guess,estimated,estimated,estimated,sourced
 distillation-column,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 distillation-column_heat-integrated,chemicals,t,guess,guess,not-applicable,sourced,sourced,estimated,guess,sourced

@@ -7,6 +7,7 @@ efficiency,Efficiency,technical,"Useful output per unit of energy input, on a hi
 efficiency-chp,CHP overall efficiency,technical,Combined heat and electricity output per unit of fuel input.,fraction,%,,optional,,,
 heat-to-power-ratio,Heat-to-power ratio,technical,Useful heat output per unit of electricity output for a CHP unit.,dimensionless,dimensionless,,optional,,Fixes the joint-output proportion.,
 specific-energy-consumption,Specific energy consumption,technical,"Total final energy input per unit of product output, all carriers, on a final-energy basis.",energy/mass,GJ/t,,recommended,,Benchmark for calibrating the activity matrix.,
+feedstock-consumption,Feedstock consumption,technical,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13).",energy/mass,GJ/t,,recommended,,The feed the technology requests besides its energy use.,
 temperature-output,Output temperature,technical,Temperature of the delivered heat. Governs tier assignment.,temperature,degC,,required,,,
 temperature-min,"Output temperature, minimum",technical,Low end where the source gives a range.,temperature,degC,,optional,,,
 temperature-max,"Output temperature, maximum",technical,High end where the source gives a range.,temperature,degC,,optional,,,

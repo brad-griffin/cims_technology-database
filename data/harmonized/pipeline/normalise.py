@@ -169,7 +169,7 @@ def target_unit(param: str, pu: str, default: str) -> str:
         return f"{TARGET}/{pu}"
     if param == "abatement-cost":
         return f"{TARGET}/t-CO2-eq"
-    if param == "specific-energy-consumption":
+    if param in ("specific-energy-consumption", "feedstock-consumption"):
         return f"GJ/{pu}"
     if param.startswith("emissions-") and param != "emissions-reduction-potential":
         return f"t/{pu}"
