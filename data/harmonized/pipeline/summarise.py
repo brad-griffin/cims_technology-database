@@ -101,6 +101,18 @@ def summarise(rows, records, keys, examples_by_id):
         else:
             central, how = None, "range only"
         vals = {round(x, 9) for p in per for x in p["all"]}
+        # a single bound and nothing else ("greater than 355 days", "up to 400
+        # degC"): kept as the low or the high it is (sanity-check 2026-10-11, S114),
+        # rather than a row with a count and no number
+        one_lo = one_hi = ""
+        if central is None and len(vals) == 1:
+            rs_all = [r for rs in by_ex.values() for r in rs]
+            if any(fnum(r.get("value-min-norm")) is not None for r in rs_all):
+                one_lo = f"{next(iter(vals)):.6g}"
+                how = "lower bound only"
+            else:
+                one_hi = f"{next(iter(vals)):.6g}"
+                how = "upper bound only"
         sources = []
         for p in sorted(per, key=lambda p: (p["rank"], p["example"])):
             for s in p["sources"]:
@@ -108,8 +120,8 @@ def summarise(rows, records, keys, examples_by_id):
                     sources.append(s)
         row = dict(zip(("archetype",) + tuple(keys) + ("unit",), k))
         row.update({"central": "" if central is None else f"{central:.6g}",
-                    "low": f"{min(vals):.6g}" if len(vals) > 1 else "",
-                    "high": f"{max(vals):.6g}" if len(vals) > 1 else "",
+                    "low": f"{min(vals):.6g}" if len(vals) > 1 else one_lo,
+                    "high": f"{max(vals):.6g}" if len(vals) > 1 else one_hi,
                     "n": len(per), "central-from": how,
                     "n-external": sum(1 for p in per if p["external"]),
                     "n-corrected": sum(1 for p in per if p["corrected"]),

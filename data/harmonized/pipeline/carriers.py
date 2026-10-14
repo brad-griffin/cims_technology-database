@@ -134,7 +134,32 @@ def apply(summaries, facts, records) -> dict:
             continue
         _, sp, csum = min(cands, key=lambda c: c[0])
         short = _short(records, sp["rs"])
-        if tot is None:
+        if tot is None and total is not None:
+            # a total the sources give only as a range (sanity-check 2026-10-11,
+            # S106): the carrier sum becomes its central where it falls inside the
+            # band; otherwise the band stands (the fill takes its midpoint) and the
+            # carriers are tested against that midpoint. Never a second total row.
+            lo_, hi_ = fnum(total.get("low")), fnum(total.get("high"))
+            if lo_ is not None and hi_ is not None and not (lo_ <= csum <= hi_):
+                tot = (lo_ + hi_) / 2
+                total["central-from"] = (total.get("central-from") or "range only") + (
+                    f"; the carrier sum of {short} ({sp['eid']}), {csum:.3g}, falls outside "
+                    "the band, so it does not set the central")
+                stats["range-only totals kept as ranges"] += 1
+            else:
+                total["central"] = f"{csum:.6g}"
+                total["central-from"] = (f"sum of the carriers of {short} ({sp['eid']}); "
+                                         "band from the range-only examples")
+                total["sources"] = "; ".join(dict.fromkeys(
+                    [x for x in (total.get("sources") or "").split("; ") if x]
+                    + _sources(sp["rs"]).split("; ")))
+                if sp["eid"] not in (total.get("examples") or ""):
+                    total["examples"] = "; ".join(sorted(
+                        [x for x in (total.get("examples") or "").split("; ") if x] + [sp["eid"]]))
+                    total["n"] = int(total.get("n") or 0) + 1
+                tot = csum
+                stats["range-only totals given the carrier sum"] += 1
+        elif tot is None:
             total = dict(rows[0], **{"target": "", "central": f"{csum:.6g}", "low": "", "high": "",
                                      "n": 1, "n-external": 0, "external-factors": "",
                                      "central-from": f"sum of the carriers of {short} ({sp['eid']})",

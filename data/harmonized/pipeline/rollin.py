@@ -63,10 +63,22 @@ def apply(psum: list[dict], records) -> dict:
                 psum.append(main)
             if vals and min(vals) != max(vals):
                 main["low"], main["high"] = f"{min(vals):.6g}", f"{max(vals):.6g}"
+            elif vals and not main.get("central"):
+                # one bound only (S114): a minimum is a low, a maximum a high
+                side = "low" if lo_hi[0] else "high"
+                main[side] = f"{vals[0]:.6g}"
             main["n"] = len(exs) or main.get("n")
             main["examples"] = "; ".join(sorted(exs))
             main["central-from"] = ((main.get("central-from") or "") +
                                     "; low/high include temperature-min and -max").lstrip("; ")
+            if not main.get("central") and main.get("low") and main.get("high"):
+                # a temperature given only as a range takes its midpoint, graded
+                # estimated like any range-only value (est-range-midpoint; S114)
+                main["central"] = f"{(float(main['low']) + float(main['high'])) / 2:.6g}"
+                main.update({"grade": "estimated", "method": "range-midpoint",
+                             "rule-id": "est-range-midpoint",
+                             "rationale": "midpoint of the temperature range the sources give "
+                                          "(temperature-output, -min and -max together)"})
             for x in lo_hi:
                 if x:
                     drop.add(id(x))

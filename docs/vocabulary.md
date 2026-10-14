@@ -98,7 +98,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `motor_premium-efficiency` | Premium-efficiency motor | efficient variant | electricity | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air; *.service.machine-drive.materials-handling; *.service.machine-drive.materials-processing; light-industrial.service.machine-drive | quantified |
 | `motor_variable-speed` | Variable-speed drive | efficient variant | electricity | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air; *.service.machine-drive.materials-handling; *.service.machine-drive.materials-processing; light-industrial.service.machine-drive; light-industrial.service.hvac.space-cooling | quantified |
 | `pump_mine-dewatering` | Mine dewatering pumping | conventional | electricity | 9 | coal-mining.service.machine-drive.pumps; mining.service.machine-drive.pumps | estimated |
-| `reciprocating-engine_diesel-field` | Diesel field engine | conventional | diesel | 9 | petroleum-crude.service.field-engines | estimated |
+| `reciprocating-engine_diesel-field` | Diesel field engine | conventional | diesel | 9 | petroleum-crude.service.field-engines | quantified |
 | `reciprocating-engine_drive` | Gas-engine drive (compressors and pumps) | conventional | natural-gas; diesel | 9 | natural-gas.service.compressor-drive.engine; *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | quantified |
 | `reciprocating-engine_drive_efficiency-moderate` | Gas-engine drive efficiency measures, moderate | efficient variant | natural-gas | 9 | natural-gas.service.compressor-drive.engine | estimated |
 | `reciprocating-engine_gasoline-propane` | Gasoline or propane field engine | conventional |  | 9 | petroleum-crude.service.field-engines | estimated |
@@ -486,7 +486,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `heat-recovery-unit_turbine-exhaust` | Turbine waste-heat recovery | efficient variant |  | 9 | natural-gas.product.supply.lng-liquefaction | estimated |
 | `liquefaction-train_base-load` | Base-load LNG liquefaction train | conventional | natural-gas; electricity | 9 | natural-gas.product.supply.lng-liquefaction | quantified |
 | `liquefaction-train_electric` | Electric-motor-driven LNG liquefaction train | alternative | electricity | 9 | natural-gas.product.supply.lng-liquefaction | quantified |
-| `liquefaction-train_floating` | Floating LNG liquefaction | alternative | natural-gas | 8-9 | natural-gas.product.supply.lng-liquefaction | estimated |
+| `liquefaction-train_floating` | Floating LNG liquefaction | alternative | natural-gas | 8-9 | natural-gas.product.supply.lng-liquefaction | quantified |
 | `liquefaction-train_small-scale` | Small-scale or modular liquefaction | alternative | natural-gas; electricity | 9 | natural-gas.product.supply.lng-liquefaction | quantified |
 | `management-system_leak-detection` | Leak detection and repair | conventional | electricity | 9 | natural-gas.product.supply.fugitive | quantified |
 | `mine_open-pit-oil-sands` | Oil sands surface mine and extraction plant | conventional | natural-gas; diesel; electricity | 9 | petroleum-crude.product.bitumen.mining | quantified |
@@ -569,7 +569,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_fluid-catalytic-cracking_ccs-diffuse` | FCC regenerator with post-combustion capture | prospective |  | 3-4 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking | quantified |
 | `reactor_hydroprocessing` | Hydroprocessing (hydrocracking and hydrotreating) | conventional | hydrogen; natural-gas; electricity | 9 | petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking; petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization; petroleum-crude.product.bitumen.upgrading | quantified |
 | `reactor_isomerization` | Isomerization unit | conventional | steam | 9 | petroleum-refining.product.isomerization | quantified |
-| `refinery_conversion` | Conversion (cracking) refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | estimated |
+| `refinery_conversion` | Conversion (cracking) refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
 | `refinery_deep-conversion` | Deep-conversion (coking) refinery (whole plant) | conventional | refinery-gas; natural-gas; petroleum-coke | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
 | `refinery_hydroskimming` | Hydroskimming refinery (whole plant) | conventional | refinery-gas; natural-gas | 9 | petroleum-refining.product.petroleum-fractions.distillation | quantified |
 | `steam-reformer_methane` | Steam methane reformer | conventional | steam; natural-gas | 9 | petroleum-refining.service.hydrogen; petroleum-crude.service.hydrogen; hydrogen.product.centralized-hydrogen | quantified |

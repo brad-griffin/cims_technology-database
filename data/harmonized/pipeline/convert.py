@@ -36,6 +36,9 @@ ATOM = {
     "TJ": ("energy", 1e3), "PJ": ("energy", 1e6), "kWh": ("energy", 0.0036),
     "MWh": ("energy", 3.6), "GWh": ("energy", 3600.0), "Btu": ("energy", 1.055056e-6),
     "kBtu": ("energy", 1.055056e-3), "MMBtu": ("energy", 1.055056), "mmBtu": ("energy", 1.055056),
+    # MBtu as LBNL (Martin et al. 2000) and IEA print it means a MILLION Btu, the
+    # same as MMBtu (sanity-check 2026-10-11, S108); kBtu is the thousand
+    "MBtu": ("energy", 1.055056),
     "t": ("mass", 1.0), "kt": ("mass", 1e3), "Mt": ("mass", 1e6), "kg": ("mass", 1e-3),
     "g": ("mass", 1e-6), "lb": ("mass", 4.5359237e-4), "ton": ("mass", 0.90718474),
     "short-ton": ("mass", 0.90718474),
@@ -49,7 +52,7 @@ ATOM = {
     "kcal": ("energy", 4.1868e-6), "Mcal": ("energy", 4.1868e-3), "Gcal": ("energy", 4.1868),
     "m3": ("volume", 1.0), "Nm3": ("volume", 1.0), "l": ("volume", 1e-3), "L": ("volume", 1e-3),
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
-    "bbl": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
+    "bbl": ("volume", 0.158987), "barrel": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
     "bbl-beer": ("volume", 0.117347765),
     "1000-Nm3": ("volume", 1000.0),
     "Mgal": ("volume", 3785.411784), "Wh": ("energy", 3.6e-6),

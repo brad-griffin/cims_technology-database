@@ -222,6 +222,11 @@ def main(argv) -> int:
     write(OUTPUT / "example-constraint.csv", CONS_COLS, L.cons)
     order = {a["archetype"]: i for i, a in enumerate(rec.archetypes)}
     psum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
+    post = checks.summaries(psum)
+    if post:
+        for k, v in post.items():
+            print(f"  FAIL {k}: {len(v)}: " + "; ".join(v[:8]))
+        return 1
     fsum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["direction"], r["commodity"]))
     # secondary parameters (values by stream or part) have their own file
     # (modeller 2026-10-09); views still see every summary

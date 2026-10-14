@@ -70,6 +70,25 @@ def run(records, hier, loader, ex_result) -> dict[str, list[str]]:
                 if ref not in known:
                     fail[f"derived-from does not resolve in {name}"].append(
                         f"{r['record-id']} -> {ref}")
+    # a fraction left in a per-cent field (sanity-check 2026-10-11, S104): the
+    # value is at most 1 while its own band, or the parameter's nature, says per cent
+    for r in loader.facts:
+        if (r.get("unit") or "") != "%":
+            continue
+        try:
+            v = float(r.get("value") or "nan")
+        except ValueError:
+            continue
+        bounds = []
+        for k in ("value-min", "value-max"):
+            try:
+                bounds.append(float(r.get(k) or "nan"))
+            except ValueError:
+                pass
+        if 0 < v <= 1 and (any(b > 1 for b in bounds if b == b)
+                           or r["parameter"] in ("capacity-factor", "availability")):
+            fail["per-cent value stored as a fraction"].append(
+                f"{r['record-id']}: {r['parameter']} {v} %")
     for r in loader.flows:
         if r["commodity"] not in records.commodities:
             fail["flow commodity not in vocabulary/commodity.csv"].append(
@@ -162,3 +181,27 @@ def conversion_references(fail, records, loader) -> None:
             fail["efficiency-bridge names an unknown example"].append(r["example-id"])
         if r.get("bridge") not in ("yes", "no"):
             fail["efficiency-bridge: bridge must be yes or no"].append(r["example-id"])
+
+
+def summaries(psum) -> dict[str, list[str]]:
+    """Rules the pooled and filled summaries must keep (added 2026-10-13 after the
+    2026-10-11 sanity-check pass): one row per archetype, parameter and target;
+    no capacity factor or availability below 5% (a fraction left in a per-cent
+    field, S104); no row graded sourced that has a count but neither a central nor
+    a band."""
+    fail = defaultdict(list)
+    seen = Counter((r["archetype"], r["parameter"], r.get("target", "")) for r in psum)
+    for k, n in seen.items():
+        if n > 1:
+            fail["more than one summary row for one archetype, parameter and target"].append(
+                " / ".join(k))
+    for r in psum:
+        for col in ("central", "low", "high"):
+            try:
+                v = float(r.get(col) or "nan")
+            except ValueError:
+                continue
+            if r["parameter"] in ("capacity-factor", "availability") and v == v and v < 5:
+                fail["capacity factor or availability below 5%"].append(
+                    f"{r['archetype']}: {col} {v}")
+    return {k: v for k, v in fail.items() if v}

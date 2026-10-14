@@ -67,6 +67,34 @@ SET_ASIDE = ("set aside: needs an efficiency factor. UKERC gives this cost per t
 FUEL_INPUT_NOTE = ("PER GJ OF FUEL INPUT: {parent} per tonne divided by the source's fuel use "
                    "per tonne")
 UNIT_ALIAS = {"tonnes of mixed product": "t"}
+
+# a tonne a source names by its product (`GJ/t-glass`) is the archetype's own
+# tonne when the product is the archetype's (2026-10-13, sanity-check S108). A
+# tonne of ANOTHER product (t-cement on a clinker kiln) is left alone, so it
+# meets the product-basis factors or is excluded, never read 1:1.
+PRODUCT_TONNE = {
+    "glass": ("melt", "glass"), "melt": ("melt",), "clinker": ("clinker",),
+    "cement": ("cement",), "brick": ("ceramic product", "brick"),
+    "tile": ("ceramic product",), "steel": ("crude steel", "steel"),
+    "pulp": ("pulp",), "paper": ("paper",), "lime": ("lime", "quicklime"),
+    "product": None,                 # the archetype's product by definition
+}
+TONNE_Q = re.compile(r"^(?P<num>[^/]+)/(?P<k>k|M)?t-(?P<prod>[a-z]+)$")
+
+
+def product_tonne(unit, a, p):
+    m = TONNE_Q.match(unit)
+    if not m or m.group("prod") not in PRODUCT_TONNE:
+        return unit
+    names = PRODUCT_TONNE[m.group("prod")]
+    prod = (a.get("product") or "").lower().removeprefix("t ")
+    if names is not None and not any(prod == n or prod.startswith(n) for n in names):
+        return unit
+    num = m.group("num")
+    if p.startswith("emissions-") and re.fullmatch(r"(t|kg)-CO2(-eq)?", num):
+        num = num.split("-", 1)[0]
+    return f"{num}/{m.group('k') or ''}t"
+
 # a note saying a cost per MWh is per MWh of HEAT (2026-10-02: the test used to be
 # the literal "per MWh of heat", which excluded MWh-th, kWh th and levelized cost
 # of heat)
@@ -413,6 +441,7 @@ def normalise(facts, examples, records, units) -> None:
             bridge_kind = "per-input"
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
+        unit = product_tonne(unit, a, p)
         # steam reported as a MASS (kg or t of steam per unit of product): put in GJ
         # with the steam enthalpy in conversion-factor.csv (cf-steam-enthalpy,
         # 2026-10-02) before any other conversion
@@ -783,6 +812,22 @@ def normalise(facts, examples, records, units) -> None:
     unknown = set(ruled_out) - set(by_id)
     if unknown:
         raise SystemExit(f"excluded-row.csv names unknown record-ids: {sorted(unknown)}")
+    # a ruling is about a figure, not a record (sanity-check 2026-10-11, S113): the
+    # same source's identical figure on the same archetype, parameter and target
+    # (a twin card, the same table read for another year or case) is ruled out with it
+    def _twin_key(r):
+        return (r.get("source-id", ""), r.get("archetype", ""), r["parameter"],
+                (r.get("target") or "").strip().lower(), (r.get("unit") or "").strip(),
+                (r.get("value") or "").strip(), (r.get("value-min") or "").strip(),
+                (r.get("value-max") or "").strip())
+    twin_of = {}
+    by_twin = defaultdict(list)
+    for r in facts:
+        by_twin[_twin_key(r)].append(r["record-id"])
+    for rid in ruled_out:
+        for t in by_twin.get(_twin_key(by_id[rid]), []):
+            if t != rid and t not in ruled_out:
+                twin_of.setdefault(t, rid)
     for r in facts:
         a = records.by_key.get(r.get("archetype", ""))
         if r.get("_superseded"):
@@ -794,6 +839,12 @@ def normalise(facts, examples, records, units) -> None:
         x = ruled_out.get(r["record-id"])
         if x and r.get("excluded") != "no number":
             r["excluded"] = f"ruled out: {x['reason']} ({x['decided']})"
+            continue
+        if r["record-id"] in twin_of and r.get("excluded") != "no number":
+            t = twin_of[r["record-id"]]
+            x = ruled_out[t]
+            r["excluded"] = (f"ruled out as the twin of {t} (same source, figure and parameter): "
+                             f"{x['reason']} ({x['decided']})")
             continue
         if r["record-id"] in plant_level and r.get("excluded") != "no number":
             # capture-rate on a capture plant is its own rate on the gas it treats

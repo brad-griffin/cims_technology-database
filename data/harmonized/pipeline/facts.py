@@ -18,7 +18,17 @@ UNIT_SPELLING = {"C": "degC", "c": "degC", "degrees C": "degC",
                  "kgeCO2/unit": "kg/unit", "kgCO2/unit": "kg/unit",
                  "tCO2/unit": "t/unit", "yrs": "years", "yr": "years",
                  # added 2026-10-02: spellings only, no change of quantity
-                 "tCO2/t": "t/t", "short-t/yr": "short-ton/yr", "g/GJ_i": "g/GJ"}
+                 "tCO2/t": "t/t", "short-t/yr": "short-ton/yr", "g/GJ_i": "g/GJ",
+                 # added 2026-10-13 (sanity-check S108): spellings of a unit the
+                 # table already defines; each was dropping rows as "no conversion"
+                 "y": "years", "a": "years", "mtpa": "Mt/yr", "MTPA": "Mt/yr",
+                 "Mtpa": "Mt/yr", "tpa": "t/yr", "bpd": "bbl/d", "BPD": "bbl/d",
+                 "bar(g)": "bar", "barg": "bar", "tCO2(eq)/GWh": "t/GWh",
+                 "tCO2/GWh": "t/GWh"}
+# denominators spelled as one word (2026-10-13, S108): a cost per tpa is a cost
+# per t-per-yr of capacity
+DEN_SPELLING = (("/mtpa", "/Mt-per-yr"), ("/MTPA", "/Mt-per-yr"), ("/tpa", "/t-per-yr"),
+                ("/bpd", "/bbl-per-d"), ("/BPD", "/bbl-per-d"))
 # trailing species spellings in a money unit (EUR/t-co2e is EUR/t-CO2-eq)
 SPECIES_SPELLING = (("/t-co2e", "/t-CO2-eq"), ("/t-co2eq", "/t-CO2-eq"), ("/t-co2", "/t-CO2"))
 FRACTION = {"fraction": "%", "fraction/yr": "%/yr"}
@@ -66,6 +76,15 @@ def clean(facts, flows, cons) -> dict:
         for a, b in SPECIES_SPELLING:
             if (r.get("unit") or "").endswith(a):
                 r["unit"] = r["unit"][: -len(a)] + b
+        for a, b in DEN_SPELLING:
+            if (r.get("unit") or "").endswith(a):
+                r["unit"] = r["unit"][: -len(a)] + b
+        if r.get("unit") == "MWe":
+            # electrical megawatts: a capacity on the electric-output basis, which
+            # normalise puts per unit of heat on a CHP archetype (2026-10-13, S108)
+            r["unit"] = "MW"
+            if not (r.get("capacity-basis") or "").strip():
+                r["capacity-basis"] = "electric-output"
     for r in facts:
         if r.get("unit") in FRACTION:
             for k in ("value", "value-min", "value-max"):
