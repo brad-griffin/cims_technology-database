@@ -304,7 +304,10 @@ def main(argv) -> int:
                            + W["wide-carriers-species"][2:4] + ("_family", "_sub",
                             banner + " Specific energy consumption by carrier and emissions by "
                             "species, per product-unit, alphabetical. The all-carrier total and "
-                            "CO2-eq emissions are in wide-archetype."),
+                            "CO2-eq emissions are in wide-archetype. Do not add the columns up: "
+                            "fuel is the sum of the named fuels beside it, and a carrier the "
+                            "carriers step pooled apart (archetype-parameter central-from) is not "
+                            "part of the split (sanity-check 2026-10-11, S115)."),
          "wide-flow": (fcols, frows, fgroups, funits, "family", "equipment", banner),
          "archetype": (acols, arows, {}, {}, "family", "equipment", banner),
          "source-list": (sources.COLS, src_band, {}, {}, "_band", "", banner)},

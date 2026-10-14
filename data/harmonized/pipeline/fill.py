@@ -184,6 +184,16 @@ def _plausible(rule, v):
 
 # ---- methods: (rule, archetype record, {(param, target): row}, ctx) -> [fill dicts]
 
+COP_EQUIPMENT = {"heat-pump", "chiller", "vapour-recompressor", "refrigeration-unit"}
+
+
+def cop_capable(a) -> bool:
+    """Equipment that moves heat rather than converting energy, so an efficiency
+    above 100% is a coefficient of performance (sanity-check 2026-10-11, S105)."""
+    return (a.get("equipment") in COP_EQUIPMENT or "heat-pump" in a["archetype"]
+            or "heat-pumped" in a["archetype"])
+
+
 def m_inverse(rule, a, have, ctx):
     """p = 100 / source. With `require-consistent-total=yes` the source row (an
     all-carrier SEC total) must agree with its carrier split (pipeline/carriers.py
@@ -200,6 +210,10 @@ def m_inverse(rule, a, have, ctx):
         return []
     k = 100.0
     if not _plausible(rule, k / c):
+        return []
+    if p == "efficiency" and k / c > 100 and not cop_capable(a):
+        # less energy in than out on equipment that converts energy: the SEC counts
+        # utilities, a parasitic load or an index, not the conversion input (S105)
         return []
     return [{"parameter": p, "target": t, "central": k / c,
              "low": k / hi if hi else None, "high": k / lo if lo else None,
@@ -602,6 +616,62 @@ def m_single_carrier_split(rule, a, have, ctx):
              "grades": [src.get("grade", "sourced")], "sources": src.get("sources", ""), "external": []}]
 
 
+def m_host_split(rule, a, have, ctx):
+    """A variant's carrier split = its host's split scaled to the variant's own
+    total (sanity-check 2026-10-11, IS009/IS010): an efficiency measure uses less
+    of the same mix, it does not change the mix. Only where the variant gives no
+    carrier of its own and its host gives a split that adds up."""
+    k = a["archetype"]
+    hrow = ctx["hosts"].get(k, {})
+    host = hrow.get("host") if hrow.get("status") == "active" else None
+    if not host or "_ccs-" in k or host not in ctx["arch"]:
+        return []
+    if rule["parameter"] != SEC:
+        # combustion CO2 scales with the energy used, the mix unchanged: the host's
+        # combustion CO2 x (variant total / host total). Not process CO2, which is
+        # per tonne of product whatever the efficiency.
+        p, t = rule["parameter"], rule["target"]
+        hh = ctx["have"].get(host, {})
+        e, vt, ht = hh.get((p, t)), have.get((SEC, "")), hh.get((SEC, ""))
+        if (p, t) in have or not (_live(e) and _live(vt) and _live(ht)) or fnum(ht["central"]) <= 0:
+            return []
+        ratio = fnum(vt["central"]) / fnum(ht["central"])
+        c, lo, hi = _vals(e)
+        return [{"parameter": p, "target": t, "central": c * ratio,
+                 "low": lo * ratio if lo is not None else None,
+                 "high": hi * ratio if hi is not None else None,
+                 "inputs": [_input(e, f"{host} {p}_{t}"), _input(vt, f"{k} {SEC}"), _input(ht, f"{host} {SEC}")],
+                 "grades": [e.get("grade", "sourced"), vt.get("grade", "sourced")],
+                 "sources": e.get("sources", ""), "external": []}]
+    tot = have.get((SEC, ""))
+    if not _live(tot) or fnum(tot["central"]) <= 0:
+        return []
+    if any(q == SEC and t and not is_component_target(t) and _live(r)
+           for (q, t), r in have.items()):
+        return []
+    hh = ctx["have"].get(host, {})
+    htot = hh.get((SEC, ""))
+    if not _live(htot) or fnum(htot["central"]) <= 0:
+        return []
+    split = _adding_carriers({t: r for (q, t), r in hh.items()
+                              if q == SEC and t and not is_component_target(t) and _live(r)})
+    if not split or any((fnum(r["central"]) or 0) < 0 for r in split.values()):
+        return []
+    ratio = fnum(tot["central"]) / fnum(htot["central"])
+    out = []
+    for t, r in sorted(split.items()):
+        c, lo, hi = _vals(r)
+        out.append({"parameter": SEC, "target": t, "central": c * ratio,
+                    "low": lo * ratio if lo is not None else None,
+                    "high": hi * ratio if hi is not None else None,
+                    "inputs": [_input(r, f"{host} {SEC}_{t}"), _input(tot, f"{k} {SEC}"),
+                               _input(htot, f"{host} {SEC}")],
+                    "grades": [r.get("grade", "sourced"), tot.get("grade", "sourced")],
+                    "sources": r.get("sources", ""), "external": [],
+                    "note": f"{host}'s share {c / fnum(htot['central']):.1%} of its total"})
+    return out
+
+
 def m_marker(rule, a, have, ctx):
     """Not a value: the parameter does not characterise this archetype. Written
     for the targets the rule names (`*` = the parameter with no target)."""
@@ -977,6 +1047,7 @@ METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor,
            "bucket-increment": m_bucket_increment, "per-gj-via-sec": m_per_gj_via_sec,
            "assumption": m_assumption, "marker": m_marker, "zero-if-no-fossil": m_zero_if_no_fossil,
            "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
+           "host-split": m_host_split,
            **{k: _estimated(f) for k, f in ESTIMATORS.items()}}
 
 
@@ -1228,8 +1299,19 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
                 if q == p and t and t not in ("fuel",) and not is_component_target(t) and _live(r):
                     shares.setdefault(t, []).append(fnum(r["central"]) / fnum(t0["central"]))
         sh = {t: sum(v) / len(nm) for t, v in shares.items()}
-        ssum = sum(sh.values()) or 1.0
-        sh = {t: v / ssum for t, v in sh.items()} or {"electricity": 1.0}
+        # the capture plant needs two things: electricity (fans, compression) and
+        # thermal duty (the reboiler). The node archetypes name the thermal duty by
+        # whatever raised it (steam, heat, gas, coal); on the host it is steam,
+        # the service a capture plant requests. Only these two carriers are
+        # written, never the node's fuel names or zero rows (sanity-check
+        # 2026-10-11, S107); the host's fuel and named fuels are left as they are,
+        # so the two carrier levels still add up.
+        elec = sh.get("electricity", 0.0)
+        therm = sum(v for t, v in sh.items() if t != "electricity")
+        ssum = (elec + therm) or 1.0
+        tname = "steam"     # a reboiler takes steam, whatever the host's own heat carrier
+        sh = {t: v / ssum for t, v in (("electricity", elec), (tname, therm)) if v > 0} \
+            or {"electricity": 1.0}
         add = per_t * cap[0]
         g = worst([rule["grade"], tot.get("grade", "sourced"), cap[3]])
         ins = cap[4] + [f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}"]
@@ -1254,20 +1336,15 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
 
 
 def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
-    """A host-with-capture variant emits what its host emits, before capture
-    (CIMS removes the captured CO2 through the CCS node: emissions_removal);
-    emissions-captured is the CO2 captured per unit of product. Net = total less
-    captured."""
+    """A host-with-capture variant makes the CO2 its host makes (combustion and
+    process, gross); emissions-captured is the CO2 captured per unit of product;
+    emissions-total is net of capture, so total + captured = the host's gross
+    (ruling 2026-10-13)."""
     for k, host in _variants(ctx):
         a = ctx["arch"][k]
         if "_ccs-" not in k or a.get("family") == "co2-capture":
             continue
         h, hh = ctx["have"].setdefault(k, {}), ctx["have"].get(host, {})
-        for (q, t), r in sorted(hh.items()):
-            if q in ("emissions-combustion", "emissions-process", "emissions-total") and _live(r) \
-                    and not is_component_target(t):
-                _put(psum, h, _row(k, q, t, r["unit"], *_lohi(r), worst([rule["grade"], r.get("grade", "sourced")]),
-                                   rule, [_input(r, f"{host} {q}_{t}")], r.get("sources", "")), stats, rule["rule-id"])
         e = h.get(("emissions-captured", "co2"))
         if not _live(e):
             cap = _captured(k, host, ctx)
@@ -1276,6 +1353,24 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                 _put(psum, h, _row(k, "emissions-captured", "co2", unit, cap[0], cap[1], cap[2],
                                    worst([rule["grade"], cap[3]]), rule, cap[4], ""), stats,
                      rule["rule-id"] + ":captured")
+                e = h.get(("emissions-captured", "co2"))
+        for (q, t), r in sorted(hh.items()):
+            if q in ("emissions-combustion", "emissions-process", "emissions-total") and _live(r) \
+                    and not is_component_target(t):
+                c, lo, hi = _lohi(r)
+                ins, note, g = [_input(r, f"{host} {q}_{t}")], "", worst([rule["grade"], r.get("grade", "sourced")])
+                if q == "emissions-total" and t in ("co2", "co2e") and _live(e):
+                    # net of capture (ruling 2026-10-13, section 4.3): emissions-total
+                    # on a capture variant is what leaves the stack; with
+                    # emissions-captured it adds back to the host's gross. Combustion
+                    # and process stay gross: they say where the CO2 is made.
+                    ec, el, eh = _lohi(e)
+                    c, lo, hi = max(c - ec, 0.0), max(lo - eh, 0.0), max(hi - el, 0.0)
+                    ins.append(_input(e, f"{k} emissions-captured_co2"))
+                    g = worst([g, e.get("grade", "sourced")])
+                    note = "net of capture: the host's gross less the CO2 captured"
+                _put(psum, h, _row(k, q, t, r["unit"], c, lo, hi, g, rule, ins, r.get("sources", ""), note),
+                     stats, rule["rule-id"])
 
 
 # ---- calculated levelized cost (modeller 2026-10-10) -----------------------
@@ -1301,8 +1396,13 @@ def _levelized(k, ctx, rate):
         _lohi(x) for x in (cx, of, ov, lt, cf))
     f, fl, fh = f / 100, min(fl, 100) / 100, min(fh, 100) / 100
     mid = (c * crf(rate, n) + o) / f + v
-    lo = (cl * crf(rate, nh) + ol) / max(fh, 1e-6) + vl
-    hi = (ch * crf(rate, max(nl, 1)) + oh) / max(fl, 1e-6) + vh
+    # the band is the cost band at the central's own lifetime and capacity factor
+    # (sanity-check 2026-10-11, S119): those two are how the plant is run and
+    # written off, not uncertainty in what it costs, and taking their worst
+    # corners together with the cost corners gave highs thousands of times the
+    # central
+    lo = min((cl * crf(rate, n) + ol) / f + vl, mid)
+    hi = max((ch * crf(rate, n) + oh) / f + vh, mid)
     g = worst([x.get("grade", "sourced") for x in (cx, of, ov, lt, cf)])
     ins = [f"capex {c:.4g} ({cx.get('grade','sourced')})", f"opex-fixed {o:.4g} ({of.get('grade','sourced')})",
            f"opex-variable {v:.4g} ({ov.get('grade','sourced')})", f"lifetime {n:g} y ({lt.get('grade','sourced')})",
@@ -1412,8 +1512,10 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                         continue
                     pl, ph = fnum(pr.get("low")) or p0, fnum(pr.get("high")) or p0
                 cost += v * p0
-                clo += vl * pl if v >= 0 else vh * pl
-                chi += vh * ph if v >= 0 else vl * ph
+                # a negative carrier (energy exported) lowers the cost most when it
+                # is largest and its price highest (fixed 2026-10-13, S119)
+                clo += vl * pl if v >= 0 else vl * ph
+                chi += vh * ph if v >= 0 else vh * pl
                 ins.append(f"{t} {v:.4g} GJ x {p0:.4g} ({kind})")
             if wait:
                 continue
@@ -1423,6 +1525,7 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                 done[k] = None
                 continue
             c, lo, hi = _lohi(base)
+            clo, chi = min(clo, cost), max(chi, cost)
             done[k] = (c + cost, lo + clo, hi + chi)
             unit = target_unit("cost-levelized", a["product-unit"], "")
             _put(psum, ctx["have"].setdefault(k, {}),

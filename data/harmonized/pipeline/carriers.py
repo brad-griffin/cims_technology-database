@@ -35,7 +35,8 @@ split has two levels:
     2026-10-05), even where the central comes from the split.
 
 The split example is chosen among the examples that name at least one level-1
-carrier: first one covering at least half the pooled total, then one naming two
+carrier: first one covering at least half the pooled total, then one that states
+its own total and whose carriers add up to it within 25% (added 2026-10-13), then one naming two
 or more level-1 carriers (an energy balance rather than one line), then the one
 whose level-1 sum is closest to the pooled total, then the highest-ranked source
 (source-priority.csv), then the example id. The fuel-split example is chosen
@@ -120,7 +121,7 @@ def apply(summaries, facts, records) -> dict:
         for eid, rs in pooled.get(key, {}).items():
             own, top, named = _example_carriers(rs)
             rank = min(records.rank(r.get("via-source-id") or r.get("source-id", "")) for r in rs)
-            exs.append({"eid": eid, "rs": rs, "top": top, "named": named, "rank": rank})
+            exs.append({"eid": eid, "rs": rs, "top": top, "named": named, "rank": rank, "own": own})
         # ---- level 1 -------------------------------------------------------
         cands = []
         for e in exs:
@@ -129,7 +130,13 @@ def apply(summaries, facts, records) -> dict:
             csum = sum(e["top"].values())
             covers = (csum >= 0.5 * tot) if tot and tot > 0 else True
             closeness = abs(log(csum / tot)) if tot and tot > 0 else 0.0
-            cands.append(((not covers, len(e["top"]) < 2, closeness, e["rank"], e["eid"]), e, csum))
+            # an example that states its own total and whose carriers add up to it
+            # is a whole energy balance, not one line of a table: preferred first
+            # (sanity-check 2026-10-11, S117: a lone "other fuel" line had become
+            # the smelting-reduction vessel's whole fuel)
+            balanced = bool(e["own"] and e["own"] > 0 and 0.8 <= csum / e["own"] <= 1.25)
+            cands.append(((not covers, not balanced, len(e["top"]) < 2, closeness, e["rank"], e["eid"]),
+                          e, csum))
         if not cands:
             continue
         _, sp, csum = min(cands, key=lambda c: c[0])
