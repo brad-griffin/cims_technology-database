@@ -92,8 +92,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Gielen and van Dril 1997 | 133 | confirmed against the held document 2026-10-03 |
 | ICF 2015 | 133 | confirmed against the held document 2026-10-02 |
 | Carbon Limits 2021 | 131 | confirmed against the held document 2026-10-06 |
+| IEAGHG 2008 | 128 | confirmed against the held document 2026-10-03 |
 | Dunsky 2023 | 126 | confirmed against the held document 2026-10-03 |
-| IEAGHG 2008 | 124 | confirmed against the held document 2026-10-03 |
 | Saw et al. 2023 | 124 | confirmed against the held document 2026-10-02 |
 | Abella et al. 2022 | 123 | confirmed against the held document 2026-10-07 |
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
@@ -177,6 +177,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Sanchez et al. 2018 | 50 | confirmed against the held document 2026-10-02 |
 | McCollum and Ogden 2006 | 49 | confirmed against the held document 2026-10-06 |
 | Haydock and Napp 2013 | 49 | confirmed against the held document 2026-10-06 |
+| Vattenfall 2018 | 49 | confirmed against the held document 2026-10-02 |
 | US EPA 2010 (wastewater) | 48 | confirmed against the held document 2026-10-03 |
 | Aune et al. 2020 | 48 | confirmed against the held document 2026-10-02 |
 | Simoni et al. 2022 | 48 | confirmed against the held document 2026-10-02 |
@@ -192,7 +193,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ahluwalia et al. 2023 | 44 | confirmed against the held document 2026-10-02 |
 | Energetics 1998 | 44 | confirmed against the held document 2026-10-03 |
 | McCoy and Douglass 2014 | 44 | confirmed against the held document 2026-10-06 |
-| Vattenfall 2018 | 44 | confirmed against the held document 2026-10-02 |
 | Worrell et al. 2000 | 44 | confirmed against the held document 2026-10-02 |
 | Elgowainy et al. 2025 | 43 | confirmed against the held document 2026-10-02 |
 | Blesl and Bruchof 2010 (ETSAP P05) | 43 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
@@ -265,8 +265,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Broeren 2013 (ETSAP I09) | 27 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line; the header prints I08 although the file and series index give I09 |
 | IEA 2019 | 27 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/iea_2019_future-of-hydrogen.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Kiss et al. 2012 | 27 | confirmed against the held document 2026-09-29 |
+| Martin et al. 1999 | 27 | confirmed against the held document 2026-10-03 |
 | WSP and DNV GL 2015 (iron and steel) | 27 | confirmed against the held document 2026-10-02 |
-| Martin et al. 1999 | 26 | confirmed against the held document 2026-10-03 |
 | Armijo and Philibert 2020 | 25 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/armijo-philibert_2020_green-hydrogen-ammonia-chile-argentina_ijhe.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Bataille et al. 2021 | 25 | confirmed against the held document 2026-10-03 |
 | US DOE 2002 | 25 | confirmed against the held document 2026-10-02 |
@@ -328,6 +328,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Coursol et al. 2015 | 15 | confirmed against the held document 2026-10-02 |
 | IAI 2026 | 15 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
+| Worrell and Boyd 2022 | 15 | confirmed against the held document 2026-10-03 |
 | Zuberi 2022 | 15 | confirmed against the held document 2026-10-11 |
 | AEA 2010 | 14 | the CCC archive holds an AEA 2010 industry abatement report under file reference ED56369; the exact recorded title was not seen verbatim |
 | APP 2010 | 14 | confirmed against the held document 2026-09-29 |
@@ -335,7 +336,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | NCCP 1999 (industrial minerals options) | 14 | confirmed against the held document 2026-10-03 |
 | Rio Tinto 2022 | 14 | confirmed against the held document 2026-10-02 |
 | Van Geene 2025 | 14 | confirmed against the held document 2026-09-29 |
-| Worrell and Boyd 2022 | 14 | confirmed against the held document 2026-10-03 |
 | Blair 2000 | 13 | confirmed against the held document 2026-10-02 |
 | Carbo et al. 2011 | 13 | confirmed against the held document 2026-10-02 |
 | Habert et al. 2020 | 13 | confirmed 2026-09-22 against the held copy, data/raw-data/peer-reviewed/habert_2020_cement-concrete-decarbonization_nat-rev-earth-environ.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |

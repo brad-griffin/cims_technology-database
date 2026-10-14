@@ -105,6 +105,22 @@ def main(argv) -> int:
               f"replaced, {cor.get('marked', 0)} already-corrected rows marked, "
               f"{cor.get('rebased', 0)} restated on the archetype's product "
               "(records/reference/source-correction.csv)")
+    # a record whose parameter the extraction got wrong (biogenic CO2 entered as
+    # combustion or process CO2): records/reference/parameter-remap.csv (2026-10-14)
+    from pipeline.common import REFERENCE, read
+    remap = {r["record-id"]: r for r in read(REFERENCE / "parameter-remap.csv")}
+    unknown = set(remap) - {r["record-id"] for r in L.facts}
+    if unknown:
+        print(f"  parameter-remap.csv names unknown record-ids: {sorted(unknown)}")
+        return 1
+    for r in L.facts:
+        x = remap.get(r["record-id"])
+        if x:
+            r["note"] = (r.get("note") or "") + (f"  PARAMETER RE-MAPPED from {r['parameter']} to "
+                                                 f"{x['parameter']}: {x['reason']} ({x['decided']}).")
+            r["parameter"] = x["parameter"]
+    if remap:
+        print(f"  parameters re-mapped: {len(remap)} rows (records/reference/parameter-remap.csv)")
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     backlog = fail.pop("_backlog")
@@ -133,6 +149,7 @@ def main(argv) -> int:
     normalise.normalise(L.facts, L.examples, rec, units)
     ns = netsec.apply(L.facts, L.flows, rec)
     print("  gross energy use: " + (", ".join(f"{k} {v}" for k, v in ns.items()) or "nothing net"))
+    print(f"  recovered-product output flows: {netsec.recovered_flows(L.flows, rec)}")
     fs = feedstock.apply(L.facts, rec)
     print("  feedstock out of energy use: " + (", ".join(f"{k} {v}" for k, v in fs.items()) or "none"))
     normalise.normalise_flows(L.flows, rec, units, L.examples)

@@ -825,6 +825,12 @@ vapour-recompressor_evaporation,input,steam,GJ/t,0.34,,,1,0,0,top-ranked: Van Ge
 vapour-recompressor_evaporation,output,water,t/t,0.563,,,1,0,0,top-ranked: Van Geene et al. 2024 (MIDDEN),,van-geene_2024_001,van-geene_2024_001:tc0289_vaporisation-with-mvr@caustic-soda-processing-scherpbier-eerens-2021
 leaching-vessel_high-pressure-acid,input,sulphuric-acid,t/t,0.3,,,1,0,0,top-ranked: Crundwell et al. 2011,,crundwell_2011_001,crundwell_2011_001:leaching-vessel_high-pressure-acid@high-temperature-sulfuric-acid-leaching-of-laterite-autoclave-operation-sect-11-4-2
 separator_mine-water-treatment,input,electricity,GJ/m3,0.01224,0.0054,0.018,3,0,0,top-ranked: Isaka 2013 (ETSAP I12),,etsap_2013_008,etsap_2013_008:separator_electricity_electrodialysis@conventional-water-desalination-tables-3-and-5; etsap_2013_008:separator_electricity_reverse-osmosis@conventional-water-desalination-tables-3-and-5; etsap_2013_008:separator_electricity_reverse-osmosis@perth-seawater-desalination-plant-text-p-8
+compressor_blowdown-recovery,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:compressor_blowdown-recovery
+compressor_low-emission-seal,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:compressor_low-emission-seal
+compressor_vapour-recovery,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:compressor_vapour-recovery
+management-system_leak-detection,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:management-system_leak-detection
+process-improvement_low-emission-components,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:process-improvement_low-emission-components
+pump_plunger-lift,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:pump_plunger-lift
 reactor_fluid-coking,output,steam,GJ/m3,0.383187,0.383187,0.860585,2,0,0,top-ranked: Meyers 1997,,meyers_1997_001,meyers_1997_001:reactor_fluid-coking_flexicoking@exxon-flexicoking-estimate-case-1-26-3-kb-sd-ch-12-1-tables-12-1-1-12-1-5; meyers_1997_001:reactor_fluid-coking_flexicoking@exxon-flexicoking-estimate-case-2-23-2-kb-sd-ch-12-1-tables-12-1-6-12-1-9
 separator_warm-water-extraction,input,oil-sand,t/m3,,12.58,,1,0,0,lower bound only,,etsap_2010_010,etsap_2010_010:separator_warm-water-extraction@oil-sand-surface-mining-with-hot-water-extraction-text
 well_sagd,input,natural-gas,GJ/m3,,6.29,7.86,1,0,0,range only,,etsap_2010_010,etsap_2010_010:well_sagd@sagd-thermal-in-situ-recovery-canadian-oil-sands-text
@@ -955,3 +961,7 @@ reactor_co2-to-ome3-5,input,co2,t/t,1.96,1.94,2.2,7,0,0,median of 7,,mantei_2021
 reactor_co2-to-ome3-5,input,nitrogen,t/t,0.2,,,2,0,0,top-ranked: Mantei et al. 2021,,mantei_2021_001,mantei_2021_001:reactor_co2-to-ether_ome3-5-anhydrous-formaldehyde@ome3-5-production-route-p2-100-kt-a-germany-chemical-park-base-year-2018-tables-3-8-p-9-15; mantei_2021_001:reactor_co2-to-ether_ome3-5-methylal-anhydrous-formaldehyde@ome3-5-production-route-p4-100-kt-a-germany-chemical-park-base-year-2018-tables-3-8-p-9-15
 reactor_co2-to-gasoline,input,co2,t/t,2.874,,,1,0,0,top-ranked: Schemme et al. 2020,,schemme_2020_001,schemme_2020_001:reactor_co2-to-hydrocarbon_methanol-to-gasoline@gasoline-methanol-to-gasoline-synthesis-from-h2-and-co2-300-mw-fuel-output-table-3-p-20-tables-a1-a2-p-29
 kiln_lime-shaft,input,limestone,t/t,1.69,1.4,2.2,2,0,0,top-ranked: IEAGHG 2013 (steel CCS),,ieaghg_2013_003; schorcht_2013_001,ieaghg_2013_003:kiln_lime-parallel-flow@reference-integrated-mill-process-units-vol-i-sect-d-e-vol-iii-sect-c-d; schorcht_2013_001:kiln_lime-parallel-flow@lime-kilns-eu-27-sect-2-2-7-and-2-3-tables-2-15-2-23-2-25
+pipeline_plastic-liner,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:pipeline_plastic-liner
+process-improvement_automatic-shutoff,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:process-improvement_automatic-shutoff
+process-improvement_nru-optimization,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:process-improvement_nru-optimization
+separator_reduced-emission-completion,output,natural-gas,GJ/t,55.53,,,1,0,0,top-ranked: ,,,identity:separator_reduced-emission-completion

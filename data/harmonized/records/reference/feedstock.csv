@@ -29,7 +29,7 @@ steam-reformer_methanol,natural-gas,22.66,,methanol HHV
 gasifier_coal-methanol*,coal,22.66,,
 gasifier_biomass-methanol,biomass,22.66,,
 reactor_co2-to-methanol,hydrogen,22.66,,
-steam-cracker_*,naphtha,48,60,"JUDGEMENT: high-value chemicals (ethylene, propylene, butadiene, aromatics) about 48 GJ/t HHV, mass-weighted; a total counts the feed only above 60 GJ/t (about 1.7 t naphtha per t HVC). Once the per-t-ethylene examples are on t HVC (CH001) no feed-free cracker total exceeds about 30 GJ/t, while Worrell 2000 Table 6 prints 67.5 GJ/t HVC including feedstocks (threshold 70 -> 60, modeller 2026-10-13)"
+steam-cracker_*,ethane,50,60,JUDGEMENT: the archetype represents an ethane cracker (ruling 2026-10-14; Canadian crackers are ethane-fed). Its high-value chemicals are mostly ethylene (50.3 GJ/t HHV) with some propylene and hydrogen: about 50 GJ/t HHV. A total counts the feed only above 60 GJ/t (about 1.25 t ethane at 51.9 GJ/t per t HVC); feed-free cracker totals stay below about 30 GJ/t on the HVC basis.
 gasifier_biomass-ethylene,biomass,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
 reactor_methanol-to-olefins,methanol,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
 separator_lignin-extraction,black-liquor,26.7,,"the lignin's energy leaves the liquor in the product: lignin HHV 26.7 GJ/t dry (Tomani 2010 p.57, bomb calorimeter) (PB005, ruling 2026-10-13 item 4)"

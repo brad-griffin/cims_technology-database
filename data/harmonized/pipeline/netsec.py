@@ -91,3 +91,26 @@ def apply(facts, flows, records) -> dict:
                      "gross-input ruling of 2026-10-13.")})
         stats["exports written as output flows"] += 1
     return dict(stats)
+
+
+def recovered_flows(flows, records) -> int:
+    """An output flow for what a measure recovers (records/reference/recovered-output.csv):
+    methane kept in the system and sold, per t CH4 abated. One derived flow row per
+    archetype, example `identity:<archetype>` (ruling 2026-10-14: methane abatement
+    costs are gross; the recovered gas is recorded instead of netted)."""
+    n = 0
+    for t in read(REFERENCE / "recovered-output.csv"):
+        a = records.by_key.get(t["archetype"])
+        if not a:
+            raise SystemExit(f"recovered-output.csv names an unknown archetype: {t['archetype']}")
+        pu = a["product-unit"]
+        n += 1
+        flows.append({
+            "record-id": f"tf-identity-d{n:03d}", "example-id": f"identity:{t['archetype']}",
+            "archetype": t["archetype"], "source-technology": "", "direction": "output",
+            "commodity": t["commodity"], "value": t["value"], "value-min": "", "value-max": "",
+            "unit": t["unit"], "per-unit": pu, "co-product": "", "value-type": "derived",
+            "formula": t.get("factor-id", ""), "region": "", "year": "", "source-id": "",
+            "source-file": "records/reference/recovered-output.csv", "source-locator": "",
+            "via-source-id": "", "status": "draft", "note": t["note"]})
+    return n
