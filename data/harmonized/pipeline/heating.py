@@ -47,7 +47,7 @@ NOT_STATED = re.compile(r"\b(HHV|LHV)\b[^.]{0,25}not stated|not state (LHV|HHV)|
 ALL_CLAIM = re.compile(r"all energy quantities[^.]*?\b(HHV|LHV)\b", re.I)
 LHV = re.compile(r"\bLHV\b|lower heating value|net calorific", re.I)
 HHV = re.compile(r"\bHHV\b|higher heating value|gross calorific", re.I)
-ENERGY = {"GJ", "MJ", "kJ", "TJ", "PJ", "kWh", "MWh", "GWh", "Btu", "kBtu", "MMBtu", "mmBtu"}
+ENERGY = {"GJ", "MJ", "kJ", "TJ", "PJ", "kWh", "MWh", "GWh", "Btu", "kBtu", "MMBtu", "mmBtu", "MBtu"}
 ENERGY_RATE = {"MW", "kW", "W", "GW", "MWth", "kWth", "GJ/h", "MJ/h", "MJ/s", "GJ/yr", "TJ/yr", "PJ/yr"}
 EFFICIENCY = {"efficiency", "efficiency-chp"}
 # a power or energy denominator: a cost per kW or per MWh of the product
@@ -167,7 +167,14 @@ class Streams:
         if rin is None or rout is None:
             return None
         den = unit.split("/", 1)[1] if "/" in unit else ""
-        per_energy = pu == "GJ" or den in ENERGY
+        # per unit of the product's ENERGY only when the source states it per energy
+        # (or gives no denominator on an energy product): a figure per kg or per m3
+        # of hydrogen is put per GJ with an HHV property factor, so the product's
+        # LHV-to-HHV ratio must not be applied again (fixed 2026-10-13, sanity-check
+        # follow-up: electrolyzer kWh/kg read 15% low)
+        from .convert import atom
+        den_dim = (atom(den.split("-per-")[0]) or ("",))[0] if den else ""
+        per_energy = den in ENERGY or (pu == "GJ" and den_dim not in ("mass", "volume", "amount-h2"))
         m = {"efficiency": rout / rin,
              "energy-use": rin / (rout if per_energy else 1.0),
              "per-product": 1 / rout,

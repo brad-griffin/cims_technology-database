@@ -65,6 +65,8 @@ ATOM = {
     # 0.0283168 m3 like Nm3 is taken as m3; Mcf = thousand, MMcf = million (2026-10-02)
     "scf": ("volume", 0.0283168), "cf": ("volume", 0.0283168), "Mcf": ("volume", 28.3168),
     "MMcf": ("volume", 28316.8), "Bcf": ("volume", 28316800.0),
+    # a million standard cubic feet, as gas processors print it (2026-10-13, OG002)
+    "MMscf": ("volume", 28316.8), "MMSCF": ("volume", 28316.8),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
     "min": ("time", 1 / 525600),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),

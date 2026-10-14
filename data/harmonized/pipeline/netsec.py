@@ -58,6 +58,11 @@ def apply(facts, flows, records) -> dict:
                 stats["net rows grossed up"] += 1
             continue
         vn = fnum(r.get("value-norm"))
+        if vn is None:
+            # a range-only row: negative when its upper end is (2026-10-13)
+            hi_ = fnum(r.get("value-max-norm"))
+            lo_ = fnum(r.get("value-min-norm"))
+            vn = hi_ if hi_ is not None else lo_
         if vn is None or vn >= 0:
             continue
         a = records.by_key.get(r.get("archetype", ""))

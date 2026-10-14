@@ -19,7 +19,7 @@ combined-cycle_efficiency-moderate,combined-cycle,active,set 2026-10-05 (archety
 calciner_gas-suspension_ccs-diffuse,calciner_gas-suspension,active,set 2026-10-05 (archetype combination review)
 digester_continuous-kraft,,unmapped,no host archetype by name; name the plant this is added to
 direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,active,"the only conventional archetype with the same equipment and product unit: the host plant the capture archetype serves (modeller rule 2026-10-02); natural gas, as the capture archetype"
-distillation-column_heat-integrated,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
+distillation-column_heat-integrated,distillation-column,active,"host named 2026-10-13 (CH015): the heat-pumped or heat-integrated column is an increment on the conventional distillation train, so it can be costed as host plus increment on one scope"
 dryer_steam-heated_efficiency-moderate,dryer_steam-heated,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 electric-arc-furnace,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
 electric-arc-furnace_scrap-preheating,electric-arc-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
@@ -97,3 +97,4 @@ motor_induction-standard_efficiency-moderate,motor_induction-standard,active,set
 reciprocating-engine_drive_efficiency-moderate,reciprocating-engine_drive,active,set 2026-10-05 (archetype combination review)
 combined-cycle_ccs-diffuse,combined-cycle,active,the host plant the capture archetype serves (modeller rule 2026-10-02); set 2026-10-07
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,active,the host plant the capture archetype serves (modeller rule 2026-10-02); set 2026-10-07
+distillation-column_heat-pumped,distillation-column,active,"host named 2026-10-13 (CH015): the heat-pumped or heat-integrated column is an increment on the conventional distillation train, so it can be costed as host plus increment on one scope"

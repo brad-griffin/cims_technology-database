@@ -47,8 +47,8 @@ def apply(facts, records) -> dict:
             nxt[m.group(1)] = max(nxt[m.group(1)], int(m.group(2)))
     by_ex = defaultdict(list)
     for r in facts:
-        if r["parameter"] == SEC and not r.get("excluded") and fnum(r.get("value-norm")) is not None \
-                and r.get("archetype"):
+        if r["parameter"] == SEC and not r.get("excluded") and r.get("archetype") and any(
+                fnum(r.get(c)) is not None for c in ("value-norm", "value-min-norm", "value-max-norm")):
             by_ex[r["example-id"]].append(r)
     new = []
     for eid, rs in by_ex.items():
@@ -64,7 +64,10 @@ def apply(facts, records) -> dict:
             tg = tg.strip().lower()
             if tg not in ("",) + tuple(feeds):
                 continue
-            v = fnum(r["value-norm"])
+            v = fnum(r.get("value-norm"))
+            if v is None:
+                # a range-only row counts the feed when its range does (2026-10-13)
+                v = fnum(r.get("value-min-norm"))
             if v is None or v < thr:
                 continue
             for col in ("value-norm", "value-min-norm", "value-max-norm"):

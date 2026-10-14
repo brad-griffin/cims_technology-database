@@ -14,11 +14,11 @@ reactor_hydrotreating-lipids,bioliquid,1,,
 reactor_hydrothermal-liquefaction,biomass,1,,
 anaerobic-digester,biomass,1,,
 anaerobic-digester_biomethane-upgrading,biomass,1,,
-fermenter_lignocellulosic-enzymatic,biomass,1,,
+fermenter_lignocellulosic-enzymatic,biomass|biomass-solid|fuel,1,,
 fermenter_syngas,biomass,1,,
 reactor_co2-to-ethanol,hydrogen,1,,the hydrogen's energy ends in the fuel
 reactor_co2-to-fischer-tropsch,hydrogen,1,,
-liquefaction-train_*,natural-gas,54.86,,LNG: the gas liquefied is the product; HHV of LNG
+liquefaction-train_[!h]*,natural-gas,54.86,,LNG: the gas liquefied is the product; HHV of LNG
 steam-reformer_ammonia*,natural-gas,22.48,,ammonia HHV
 autothermal-reformer_ammonia*,natural-gas,22.48,,
 gasifier_biomass-ammonia,biomass,22.48,,
@@ -29,6 +29,7 @@ steam-reformer_methanol,natural-gas,22.66,,methanol HHV
 gasifier_coal-methanol*,coal,22.66,,
 gasifier_biomass-methanol,biomass,22.66,,
 reactor_co2-to-methanol,hydrogen,22.66,,
-steam-cracker_*,naphtha,48,70,"JUDGEMENT: high-value chemicals (ethylene, propylene, butadiene, aromatics) about 48 GJ/t HHV, mass-weighted; a total counts the feed only above 70 GJ/t (about 1.7 t naphtha per t HVC), since cracker totals without feed reach 45"
+steam-cracker_*,naphtha,48,60,"JUDGEMENT: high-value chemicals (ethylene, propylene, butadiene, aromatics) about 48 GJ/t HHV, mass-weighted; a total counts the feed only above 60 GJ/t (about 1.7 t naphtha per t HVC). Once the per-t-ethylene examples are on t HVC (CH001) no feed-free cracker total exceeds about 30 GJ/t, while Worrell 2000 Table 6 prints 67.5 GJ/t HVC including feedstocks (threshold 70 -> 60, modeller 2026-10-13)"
 gasifier_biomass-ethylene,biomass,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
 reactor_methanol-to-olefins,methanol,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
+separator_lignin-extraction,black-liquor,26.7,,"the lignin's energy leaves the liquor in the product: lignin HHV 26.7 GJ/t dry (Tomani 2010 p.57, bomb calorimeter) (PB005, ruling 2026-10-13 item 4)"
