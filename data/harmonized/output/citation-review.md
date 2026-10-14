@@ -53,10 +53,10 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | NREL 2018 | 304 | confirmed against the held document 2026-10-03 |
 | US EPA 2019 | 282 | confirmed against the held document 2026-10-02 |
 | US DOE 2017 (food and beverage bandwidth) | 279 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
+| Lazard 2021 | 252 | confirmed against the held document 2026-10-02 |
 | NCCP Upstream Oil and Gas 1999 | 250 | confirmed against the held document 2026-10-02 |
 | Element Energy 2018 | 241 | confirmed against the held document 2026-10-02 |
 | Martin et al. 2000 (emerging technologies) | 237 | confirmed against the held document 2026-10-02 |
-| Lazard 2021 | 234 | confirmed against the held document 2026-10-02 |
 | Ramsden et al. 2009 | 234 | confirmed against the held document 2026-10-03 |
 | Daniels 2002 | 230 | confirmed against the held document 2026-10-03 |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
@@ -96,8 +96,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Dunsky 2023 | 126 | confirmed against the held document 2026-10-03 |
 | Saw et al. 2023 | 124 | confirmed against the held document 2026-10-02 |
 | Abella et al. 2022 | 123 | confirmed against the held document 2026-10-07 |
+| Martin et al. 2000 (pulp and paper) | 122 | identified 2026-10-03 from the UKERC Paper sheet citation; document not held; confirmed against the held document 2026-10-06 |
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
-| Martin et al. 2000 (pulp and paper) | 120 | identified 2026-10-03 from the UKERC Paper sheet citation; document not held; confirmed against the held document 2026-10-06 |
 | Schemme et al. 2020 | 120 | confirmed against the held document 2026-10-02 |
 | Sezgen et al. 1995 | 119 | confirmed against the held document 2026-10-02 |
 | Carbon Trust 2011 | 117 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed; confirmed against the held document 2026-10-06 |
@@ -106,11 +106,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Purola 2021 | 113 | confirmed against the held document 2026-10-07 |
 | Edberg et al. 2012 (ETSAP R02) | 111 | confirmed against the held document 2026-10-03 |
 | Rehfeldt et al. 2018 | 110 | confirmed against the held document 2026-10-02 |
+| Lazard 2023 | 106 | confirmed against the held document 2026-10-02 |
 | Rehfeldt et al. 2024 | 106 | confirmed against the held document 2026-10-02 |
 | Van Wortswinkel and Nijs 2010 (ETSAP I02) | 104 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | BC Hydro 2004 | 103 | confirmed against the held document 2026-10-02 |
 | ESMAP 2001 | 103 | confirmed against the held document 2026-10-02 |
-| Lazard 2023 | 102 | confirmed against the held document 2026-10-02 |
 | WADE 2003 | 102 | confirmed against the held document 2026-10-02 |
 | Lazard 2024 | 101 | confirmed against the held document 2026-10-02 |
 | Shell Canada 2024 | 101 | confirmed against the held document 2026-10-03 |

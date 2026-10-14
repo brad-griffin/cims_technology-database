@@ -151,14 +151,17 @@ def propagate(facts) -> int:
     per t CO2, pipeline/captureenergy.py) carry its correction-id; give them its
     assumption factor too, so the class and the counts agree."""
     from . import convert
+    fclass = {f["factor-id"]: (f.get("class") or "").strip() for f in read(REFERENCE / "conversion-factor.csv")}
     n = 0
     for r in facts:
         fid = r.get("_rebase")
-        if fid and r.get("value-norm") and not r.get("excluded"):
+        if fid and (r.get("value-norm") or r.get("value-min-norm") or r.get("value-max-norm")) and not r.get("excluded"):
             used = [x.strip() for x in (r.get("conversion-factors") or "").split(";") if x.strip()]
             if fid not in used:
                 r["conversion-factors"] = "; ".join(used + [fid])
-                r["conversion-class"] = convert.weakest([r.get("conversion-class") or "", "same-source"])
+                # the rebase factor's own class (same-source for a source's own ratio,
+                # assumption for a modelled restatement)
+                r["conversion-class"] = convert.weakest([r.get("conversion-class") or "", fclass.get(fid) or "same-source"])
         cid = r.get("correction")
         if not cid or not r.get("value-norm") or r.get("excluded"):
             continue
