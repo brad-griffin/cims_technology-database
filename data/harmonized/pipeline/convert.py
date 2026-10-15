@@ -67,6 +67,10 @@ ATOM = {
     "MMcf": ("volume", 28316.8), "Bcf": ("volume", 28316800.0),
     # a million standard cubic feet, as gas processors print it (2026-10-13, OG002)
     "MMscf": ("volume", 28316.8), "MMSCF": ("volume", 28316.8),
+    # light delivered: lumen-hours, the lighting archetypes' product (ruling
+    # 2026-10-14); Mlm-h is the base
+    "Mlm-h": ("light", 1.0), "klm-h": ("light", 1e-3), "lm-h": ("light", 1e-6),
+    "Glm-h": ("light", 1e3),
     "yr": ("time", 1.0), "a": ("time", 1.0), "h": ("time", 1 / 8760), "hr": ("time", 1 / 8760),
     "min": ("time", 1 / 525600),
     "d": ("time", 1 / 365), "day": ("time", 1 / 365),

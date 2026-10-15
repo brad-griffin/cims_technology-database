@@ -109,6 +109,14 @@ INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this 
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
+# a cost per unit of LUMEN rating (lighting, ruling 2026-10-14), as a multiple of
+# "per klm"; one klm at nameplate delivers 8.76 Mlm-h a year
+PER_LUMEN = {"lm": 1e-3, "klm": 1.0, "Mlm": 1e3, "klm-yr": 1.0, "klm-per-yr": 1.0}
+LIGHT_UNIT = "Mlm-h"
+MLMH_PER_KLM_YR = 8760 / 1000
+# efficacy (lm/W) on a lighting archetype is put as electricity per Mlm-h:
+# 1e6 lm-h / (x lm/W) = 1e6/x Wh = 3.6/x GJ
+EFFICACY_UNITS = {"lm/W", "lumen/W", "lm-per-W"}
 CASE = re.compile(r"^\s*(?:\[([^\]]+)\]|UKERC ([A-Z]+-[A-Z0-9]+):)")
 HEAT_PUMP_SPLIT = {"heat-pump_industrial"}
 MVR = re.compile(r"\bMVR\b|\bTVR\b|vapou?r[- ]?recompress|recompress(ion|or)|open[- ]cycle|"
@@ -406,6 +414,20 @@ def normalise(facts, examples, records, units) -> None:
             # (ruling 2026-10-05; before, it was labelled per t CO2-eq unconverted)
             tgt = f"{TARGET}/t-CH4"
         unit = (r.get("unit") or "").strip()
+        efficacy = None
+        if pu == LIGHT_UNIT and p == "efficiency" and unit in EFFICACY_UNITS:
+            # luminous efficacy: electricity per unit of light delivered (an
+            # inverse, so the low and high bounds swap)
+            efficacy = unit
+            if any(x is not None and x <= 0 for x in (v, lo, hi)):
+                r["excluded"] = "efficacy of zero or less"
+                continue
+            v, lo, hi = (None if v is None else 3.6 / v, None if hi is None else 3.6 / hi,
+                         None if lo is None else 3.6 / lo)
+            p = r["parameter"] = "specific-energy-consumption"
+            r["target"] = r["target-norm"] = "electricity"
+            unit = f"GJ/{LIGHT_UNIT}"
+            tgt = target_unit(p, pu, unit)
         exrow, flist = units.factors.for_row(a["archetype"], r["example-id"])
         exf = [f for f in flist if exrow and f["factor-id"] in split_list(exrow.get("factor-id", ""))]
         alias = dict(x.split("=", 1) for x in split_list((exrow or {}).get("unit-alias", "")) if "=" in x)
@@ -531,6 +553,10 @@ def normalise(facts, examples, records, units) -> None:
                     factor *= q[0]
                     used += q[1]
                     note += f"; per GJ/yr -> per {pu}/yr"
+            elif p in PER_CAPACITY and d in PER_LUMEN and pu == LIGHT_UNIT:
+                # per unit of lumen rating at nameplate (all hours of the year)
+                factor = f / (PER_LUMEN[d] * MLMH_PER_KLM_YR)
+                note = f"per {d} at nameplate (8.76 Mlm-h a year per klm)"
             elif p in PER_OUTPUT and d == "kWh" and pu == "GJ":
                 factor, note = f / 0.0036, "per kWh -> per GJ"
             elif p in PER_CAPACITY and not d and pu == "GJ" and sc.get("annual-output"):
@@ -721,6 +747,9 @@ def normalise(facts, examples, records, units) -> None:
             conv = lambda x: None if x is None else x * factor + offset
         r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
             "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
+        if efficacy:
+            note = (f"efficacy in {efficacy} -> GJ electricity per {LIGHT_UNIT} (3.6 / efficacy)"
+                    + ("; " + note if note else ""))
         r["unit-norm"], r["conversion"] = tgt, note
         if (r.get("status") or "") == "review" and "BASIS NOT RECORDED" in (r.get("note") or ""):
             r["excluded"] = "a required basis (cost-basis or capacity-basis) is not recorded"

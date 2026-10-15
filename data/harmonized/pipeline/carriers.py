@@ -166,6 +166,23 @@ def apply(summaries, facts, records) -> dict:
                     total["n"] = int(total.get("n") or 0) + 1
                 tot = csum
                 stats["range-only totals given the carrier sum"] += 1
+        elif tot is None and (records.by_key.get(key[0]) or {}).get("family") == "lighting" \
+                and len({t for e in exs for t in e["top"]}) == 1 and \
+                (one := next(iter({t for e in exs for t in e["top"]}))) in \
+                {(s.get("target") or "").strip().lower() for s in rows} and \
+                fnum(next(s for s in rows if (s.get("target") or "").strip().lower() == one)
+                     .get("central")) not in (None, 0):
+            # a lighting archetype whose examples all name the same ONE carrier
+            # (electricity): the total is that carrier's pooled median, not one
+            # example's line (2026-10-14, lighting restructure; scoped to lighting
+            # until the modeller rules on other single-carrier archetypes)
+            src = next(s for s in rows if (s.get("target") or "").strip().lower() == one)
+            total = dict(src, **{"target": "", "central-from":
+                                 f"the pooled {one}, the only carrier any example names"})
+            summaries.append(total)
+            rows.append(total)
+            tot = fnum(total["central"])
+            stats["totals from a single pooled carrier"] += 1
         elif tot is None:
             total = dict(rows[0], **{"target": "", "central": f"{csum:.6g}", "low": "", "high": "",
                                      "n": 1, "n-external": 0, "external-factors": "",

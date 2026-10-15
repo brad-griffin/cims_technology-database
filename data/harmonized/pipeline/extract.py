@@ -510,6 +510,7 @@ BRIEF_SHAPE = [
     ("iea/iea_2025_renewables-for-industry-low-temperature-heat-electrification_iea", "iea_2025_003", "EU / China / ASEAN"),
     ("other-reports/jrc/jrc_2026_idees-2023-industry-eu27", "jrc_2026_001", "EU27"),
     ("gov-usa/eia/eia_2023_buildings-appliance-equipment-costs-efficiencies", "eia_2023_002", "United States"),
+    ("gov-usa/eia/eia_2013_buildings-appliance-equipment-costs-efficiencies", "eia_2013_002", "United States"),
     ("peer-reviewed/sharp_2014_biomass-boiler-higher-steam-temperatures-costs_tappij", "sharp_2014_001", "US"),
     ("gov-usa/doe/doe_2024_iac-tipsheet-electric-boiler", "doe_2024_002", "US"),
     ("gov-usa/doe/doe_2015_qtr-process-heating-technology-assessment", "doe_2015_005", "US"),

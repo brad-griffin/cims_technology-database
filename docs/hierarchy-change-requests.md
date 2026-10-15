@@ -27,6 +27,7 @@ includes every node requested so far:
 
 | Request | Why | Raised |
 | - | - | - |
+| Lighting nodes (`<sector>.*.service.lighting`): service unit lumen-hours (Mlm-h) instead of GJ, and each split into general lighting and high-bay lighting | The lighting archetypes deliver Mlm-h (ruling 2026-10-14) so that a service request stays the same whichever lamp meets it; end uses request general or high-bay light (light industrial by end-use type). General: lighting_fluorescent-t12, -t8, lighting_led; high bay: lighting_hid, lighting_fluorescent-high-bay, lighting_led-high-bay; lighting_led-controls in both. Base-year requests: lighting electricity x stock efficacy / output. | 2026-10-14 |
 | A node for ferroalloys and silicon metal under `metal-smelting` | Electric smelting of them has no CIMS node; only titanium slag does. | 2026-09-16 |
 | Food and beverage process steps under `light-industrial` | CIMS has the aggregate demand only. Heat, refrigeration and drive are carried by the light-industrial services. | 2026-09-16 |
 | Mine air heating as its own service, or a documented home | No CIMS node. The mining ventilation end use carries it for now. | 2026-09-16 |
