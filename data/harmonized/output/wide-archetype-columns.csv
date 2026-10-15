@@ -553,6 +553,10 @@ wide-secondary-parameter,opex-fixed_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD
 wide-secondary-parameter,opex-fixed_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_host-plant_n,cost,,
+wide-secondary-parameter,opex-fixed_rebuild,cost,2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: rebuild. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-fixed_rebuild_low,cost,2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_rebuild_high,cost,2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_rebuild_n,cost,,
 wide-secondary-parameter,opex-variable_ccs-add-on,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,opex-variable_ccs-add-on_low,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
 wide-secondary-parameter,opex-variable_ccs-add-on_high,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,

@@ -75,11 +75,10 @@ est-sibling-lifetime,kiln_dry-precalciner_ccs-diffuse,lifetime,25,25,10,60,yes,1
 est-sibling-lifetime,kiln_dry-precalciner_efficiency-moderate,lifetime,25,25,10,60,yes,1,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-strong"
 est-sibling-lifetime,kiln_dry-precalciner_efficiency-strong,lifetime,32.5,25,18.75,60,yes,0.769231,"tier 1: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate"
 est-sibling-lifetime,kiln_oxy-fuel,lifetime,32.5,25,10,60,yes,0.769231,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric, kiln_tunnel-roller, kiln_tunnel-roller_efficiency-strong, kiln_ceramic-electric, kiln_ceramic-microwave-assisted, kiln_lumber-steam"
-est-sibling-lifetime,furnace_oxy-fuel,lifetime,15,25,10,31.25,yes,1.66667,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_regenerative, furnace_electric"
-est-sibling-lifetime,furnace_regenerative,lifetime,25,22.5,10,28.125,yes,0.9,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_oxy-fuel, furnace_electric"
+est-sibling-lifetime,furnace_regenerative,lifetime,25,25,10,31.25,yes,1,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_electric"
 est-sibling-lifetime,kiln_ceramic-electric,lifetime,15,25,10,60,yes,1.66667,"tier 2: kiln_dry-precalciner, kiln_dry-precalciner_ccs-diffuse, kiln_oxy-fuel, kiln_dry-precalciner_efficiency-moderate, kiln_dry-precalciner_efficiency-strong, kiln_lime-rotary, kiln_lime-electric, kiln_tunnel-roller, kiln_tunnel-roller_efficiency-strong, kiln_ceramic-microwave-assisted, kiln_lumber-steam"
 est-sibling-lifetime,kiln_tunnel-roller,lifetime,25,20,15,25,yes,0.8,tier 1: kiln_tunnel-roller_efficiency-strong
-est-sibling-lifetime,furnace_electric,lifetime,25,22.5,10,28.125,yes,0.9,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_regenerative, furnace_oxy-fuel"
+est-sibling-lifetime,furnace_electric,lifetime,25,25,10,31.25,yes,1,"tier 2: furnace_reheating_efficiency-strong, furnace_reheating, furnace_regenerative"
 est-sibling-lifetime,autothermal-reformer_hydrogen_ccs-concentrated,lifetime,40,30,22.5,37.5,no,0.75,tier 2: autothermal-reformer_ammonia
 est-sibling-lifetime,distillation-column,lifetime,25,17.5,13.125,25,yes,0.7,"tier 2: distillation-column_heat-integrated, distillation-column_atmospheric-vacuum"
 est-sibling-lifetime,distillation-column_heat-integrated,lifetime,15,22.5,16.875,28.125,no,1.5,"tier 2: distillation-column, distillation-column_atmospheric-vacuum"
@@ -275,6 +274,11 @@ est-end-use-capacity-factor,steam-turbine_condensing,capacity-factor,70,83.5,17.
 est-end-use-capacity-factor,steam-turbine_waste-heat,capacity-factor,69.2,83.5,18.1507,100,yes,1.20665,"end use on-site-power-generation: median of 8 archetypes: combined-cycle, combined-cycle_ccs-diffuse, geothermal-well_binary-power, geothermal-well_flash-power, photovoltaic-array_battery-storage, reactor_small-nuclear-power, steam-turbine_condensing, wind-turbine"
 est-end-use-capacity-factor,wind-turbine,capacity-factor,39.9543,83.5,17.6,100,yes,2.08989,"end use on-site-power-generation: median of 8 archetypes: combined-cycle, combined-cycle_ccs-diffuse, geothermal-well_binary-power, geothermal-well_flash-power, photovoltaic-array_battery-storage, reactor_small-nuclear-power, steam-turbine_condensing, steam-turbine_waste-heat"
 est-end-use-capacity-factor,geothermal-well_binary-power,capacity-factor,87.5,76,17.6,95,yes,0.868571,"end use on-site-power-generation: median of 8 archetypes: combined-cycle, combined-cycle_ccs-diffuse, geothermal-well_flash-power, photovoltaic-array_battery-storage, reactor_small-nuclear-power, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
+est-end-use-capacity-factor,lighting_fluorescent-t8,capacity-factor,46.3,44.1,33.075,55.125,yes,0.952484,"end use lighting: median of 4 archetypes: lighting_fluorescent-high-bay, lighting_hid, lighting_led, lighting_led-high-bay"
+est-end-use-capacity-factor,lighting_led,capacity-factor,39.2,46.1,33.3,57.625,yes,1.17602,"end use lighting: median of 4 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led-high-bay"
+est-end-use-capacity-factor,lighting_hid,capacity-factor,42.1,46.1,33.3,57.625,yes,1.09501,"end use lighting: median of 4 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_led, lighting_led-high-bay"
+est-end-use-capacity-factor,lighting_fluorescent-high-bay,capacity-factor,46.1,44.1,33.075,55.125,yes,0.956616,"end use lighting: median of 4 archetypes: lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay"
+est-end-use-capacity-factor,lighting_led-high-bay,capacity-factor,46.1,44.1,33.075,55.125,yes,0.956616,"end use lighting: median of 4 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led"
 est-end-use-capacity-factor,autothermal-reformer_hydrogen_ccs-concentrated,capacity-factor,90,90,10,100,yes,1,"end use centralized-hydrogen-production/refinery-hydrogen: median of 9 archetypes: autothermal-reformer_hydrogen, electrolyzer_low-temperature, electrolyzer_solid-oxide, gasifier_biomass-waste, gasifier_coal-petroleum-coke, gasifier_coal-petroleum-coke_ccs-concentrated, steam-reformer_methane, steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
 est-end-use-capacity-factor,gasifier_biomass-methanol,capacity-factor,91.3,85,57.08,100,yes,0.930997,"end use ammonia-and-methanol: median of 3 archetypes: reactor_co2-to-methanol, reactor_haber-bosch-electrolytic, steam-reformer_methanol"
 est-end-use-capacity-factor,reactor_co2-to-methanol,capacity-factor,91.3,85,57.08,100,yes,0.930997,"end use ammonia-and-methanol: median of 3 archetypes: gasifier_biomass-methanol, reactor_haber-bosch-electrolytic, steam-reformer_methanol"
@@ -321,6 +325,11 @@ est-sibling-capacity-factor,anaerobic-digester_chp,capacity-factor,70,91.3,68.47
 est-sibling-capacity-factor,steam-turbine_condensing,capacity-factor,70,74.6,17.6,95,yes,1.06571,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
 est-sibling-capacity-factor,steam-turbine_waste-heat,capacity-factor,69.2,75,56.25,93.75,yes,1.08382,"tier 2: steam-turbine_back-pressure, steam-turbine_condensing"
 est-sibling-capacity-factor,geothermal-well_binary-power,capacity-factor,87.5,92.5,55,100,yes,1.05714,"tier 2: geothermal-well_direct-use, geothermal-well_flash-power"
+est-sibling-capacity-factor,lighting_fluorescent-t8,capacity-factor,46.3,44.1,33.075,55.125,yes,0.952484,"tier 2: lighting_hid, lighting_led, lighting_fluorescent-high-bay, lighting_led-high-bay"
+est-sibling-capacity-factor,lighting_led,capacity-factor,39.2,46.1,33.3,57.625,yes,1.17602,"tier 2: lighting_fluorescent-t8, lighting_hid, lighting_fluorescent-high-bay, lighting_led-high-bay"
+est-sibling-capacity-factor,lighting_hid,capacity-factor,42.1,46.1,33.3,57.625,yes,1.09501,"tier 2: lighting_fluorescent-t8, lighting_led, lighting_fluorescent-high-bay, lighting_led-high-bay"
+est-sibling-capacity-factor,lighting_fluorescent-high-bay,capacity-factor,46.1,44.1,33.075,55.125,yes,0.956616,"tier 2: lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay"
+est-sibling-capacity-factor,lighting_led-high-bay,capacity-factor,46.1,44.1,33.075,55.125,yes,0.956616,"tier 2: lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_fluorescent-high-bay"
 est-sibling-capacity-factor,capture-unit_advanced-solvent,capacity-factor,80,87.5,65.625,100,yes,1.09375,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent"
 est-sibling-capacity-factor,capture-unit_amine,capacity-factor,85,87.5,65.625,100,yes,1.02941,"tier 2: capture-unit_dac-liquid-solvent, capture-unit_chemical-solvent, capture-unit_dac-solid-sorbent, capture-unit_advanced-solvent"
 est-sibling-capacity-factor,capture-unit_chemical-solvent,capacity-factor,85,87.5,65.625,100,yes,1.02941,"tier 2: capture-unit_amine, capture-unit_dac-liquid-solvent, capture-unit_dac-solid-sorbent, capture-unit_advanced-solvent"
@@ -405,6 +414,11 @@ est-class-capacity-factor,steam-turbine_waste-heat,capacity-factor,69.2,80,18.15
 est-class-capacity-factor,wind-turbine,capacity-factor,39.9543,80,17.6,100,yes,2.00229,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat"
 est-class-capacity-factor,geothermal-well_binary-power,capacity-factor,87.5,90,55,100,yes,1.02857,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd, well_solvent-only"
 est-class-capacity-factor,motor_induction-standard,capacity-factor,24.9423,82,38.05,100,no,3.28759,"class rotating-equipment: median of 3 archetypes: compressor_co2-dehydration, heat-recovery-unit_waste-heat, turboexpander_pressure-let-down"
+est-class-capacity-factor,lighting_fluorescent-t8,capacity-factor,46.3,46.1,34.575,95,yes,0.99568,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_coal-mine-methane-drainage, process-improvement_landfill-gas-recovery"
+est-class-capacity-factor,lighting_led,capacity-factor,39.2,46.2,33.3,95,yes,1.17857,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led-high-bay, process-improvement_coal-mine-methane-drainage, process-improvement_landfill-gas-recovery"
+est-class-capacity-factor,lighting_hid,capacity-factor,42.1,46.2,33.3,95,yes,1.09739,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_led, lighting_led-high-bay, process-improvement_coal-mine-methane-drainage, process-improvement_landfill-gas-recovery"
+est-class-capacity-factor,lighting_fluorescent-high-bay,capacity-factor,46.1,46.2,33.3,95,yes,1.00217,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_coal-mine-methane-drainage, process-improvement_landfill-gas-recovery"
+est-class-capacity-factor,lighting_led-high-bay,capacity-factor,46.1,46.2,33.3,95,yes,1.00217,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led, process-improvement_coal-mine-methane-drainage, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,capture-unit_advanced-solvent,capacity-factor,80,90,57.08,100,yes,1.125,class process-plant: median of 57 archetypes
 est-class-capacity-factor,capture-unit_amine,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 57 archetypes
 est-class-capacity-factor,capture-unit_chemical-solvent,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 57 archetypes
@@ -426,7 +440,7 @@ est-class-capacity-factor,anaerobic-digester_biomethane-upgrading,capacity-facto
 est-class-capacity-factor,fermenter_grain-dry-mill,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 57 archetypes
 est-class-capacity-factor,fermenter_lignocellulosic-enzymatic,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 57 archetypes
 est-class-capacity-factor,gasifier_biomass-fischer-tropsch,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 57 archetypes
-est-class-capacity-factor,process-improvement_landfill-gas-recovery,capacity-factor,95,90,10,100,yes,0.947368,class all (class pool too small): median of 96 archetypes
+est-class-capacity-factor,process-improvement_landfill-gas-recovery,capacity-factor,95,46.1,33.3,75,no,0.485263,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_coal-mine-methane-drainage"
 est-class-capacity-factor,reactor_alcohol-to-jet,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 57 archetypes
 est-class-capacity-factor,reactor_hydrotreating-lipids,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 57 archetypes
 est-class-capacity-factor,reactor_pyrolysis-oil,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 57 archetypes
@@ -449,9 +463,9 @@ est-class-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-facto
 est-class-capacity-factor,boiler_recovery,capacity-factor,95.09,77.06,22.8,96.325,yes,0.81039,"class heat-equipment: median of 8 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_solid-fuel, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,gasifier_black-liquor,capacity-factor,95.09,90,57.08,100,yes,0.946472,class process-plant: median of 57 archetypes
 est-class-capacity-factor,separator_lignin-extraction,capacity-factor,81.5,90,57.08,100,yes,1.10429,class process-plant: median of 57 archetypes
-est-class-capacity-factor,haul-truck_diesel,capacity-factor,75,90,10,100,yes,1.2,class all (class pool too small): median of 96 archetypes
-est-class-capacity-factor,haul-truck_hydrogen-fuel-cell,capacity-factor,75,90,10,100,yes,1.2,class all (class pool too small): median of 96 archetypes
-est-class-capacity-factor,process-improvement_coal-mine-methane-drainage,capacity-factor,75,90,10,100,yes,1.2,class all (class pool too small): median of 96 archetypes
+est-class-capacity-factor,haul-truck_diesel,capacity-factor,75,90,10,100,yes,1.2,class all (class pool too small): median of 101 archetypes
+est-class-capacity-factor,haul-truck_hydrogen-fuel-cell,capacity-factor,75,90,10,100,yes,1.2,class all (class pool too small): median of 101 archetypes
+est-class-capacity-factor,process-improvement_coal-mine-methane-drainage,capacity-factor,75,46.1,33.3,95,yes,0.614667,"class controls-and-programmes: median of 6 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,turboexpander_pressure-let-down,capacity-factor,38.05,82,20.242,100,yes,2.15506,"class rotating-equipment: median of 3 archetypes: compressor_co2-dehydration, heat-recovery-unit_waste-heat, motor_induction-standard"
 est-class-capacity-factor,well_solvent-only,capacity-factor,95,90,55,100,yes,0.947368,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd"
 est-class-capacity-factor,well_sagd,capacity-factor,90,90,55,100,yes,1,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_solvent-only"
@@ -492,17 +506,17 @@ est-class-lifetime,direct-heater_electric,lifetime,20,20,5,50,yes,1,"class heat-
 est-class-lifetime,direct-heater_fuel-fired,lifetime,22.5,20,5,50,yes,0.888889,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,direct-heater_solid-fuel,lifetime,15,20,5,50,yes,1.33333,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,fuel-cell_chp,lifetime,10,20,5,60,yes,2,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, electrolyzer_solid-oxide"
-est-class-lifetime,gasifier_biomass-chp,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_biomass-chp,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
 est-class-lifetime,heat-pump_industrial,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,heat-pump_very-high-temperature,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,reactor_small-nuclear,lifetime,40,22.5,10,60,yes,0.5625,class process-plant: median of 144 archetypes
+est-class-lifetime,reactor_small-nuclear,lifetime,40,25,10,60,yes,0.625,class process-plant: median of 143 archetypes
 est-class-lifetime,reciprocating-engine_chp,lifetime,20,25,10,50,yes,1.25,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,solar-collector,lifetime,30,20,5,50,yes,0.666667,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,solar-concentrator_line-focus,lifetime,30,20,5,50,yes,0.666667,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,solar-concentrator_point-focus,lifetime,30,20,5,50,yes,0.666667,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,steam-turbine_back-pressure,lifetime,25,25,7,50,yes,1,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,thermal-storage_electric,lifetime,25,20,5,50,yes,0.8,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_heat-charged"
-est-class-lifetime,anaerobic-digester_chp,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 144 archetypes
+est-class-lifetime,anaerobic-digester_chp,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 143 archetypes
 est-class-lifetime,combustion-turbine_simple-cycle,lifetime,25,25,7,50,yes,1,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,combined-cycle_efficiency-moderate,lifetime,30,25,7,50,yes,0.833333,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,photovoltaic-array_battery-storage,lifetime,40,25,7,50,yes,0.625,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
@@ -517,119 +531,118 @@ est-class-lifetime,motor_variable-speed,lifetime,15,20,1,25,yes,1.33333,"class r
 est-class-lifetime,heat-pump_space,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,resistance-heater_space-heating,lifetime,25,20,5,50,yes,0.8,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,space-heater_fuel-fired,lifetime,25,20,5,50,yes,0.8,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,capture-unit_advanced-solvent,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_amine,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_chemical-solvent,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_membrane-cryogenic,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_dac-liquid-solvent,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_dac-solid-sorbent,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_physical-solvent,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,capture-unit_advanced-solvent,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_amine,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_chemical-solvent,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_membrane-cryogenic,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_dac-liquid-solvent,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_dac-solid-sorbent,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_physical-solvent,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,compressor_co2-dehydration,lifetime,20,20,1,25,yes,1,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
-est-class-lifetime,air-separation-unit,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,basic-oxygen-furnace,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,basic-oxygen-furnace_efficiency-strong,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,blast-furnace,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,blast-furnace_efficiency-moderate,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,blast-furnace_top-gas-recycling,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,caster_continuous,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,caster_strip,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,coating-line_electrolytic,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,coating-line_hot-dip,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,coke-oven_by-product,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,coke-oven_by-product_efficiency-moderate,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,electric-arc-furnace,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,electric-arc-furnace_scrap-preheating,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,air-separation-unit,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,basic-oxygen-furnace,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,basic-oxygen-furnace_efficiency-strong,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,blast-furnace,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,blast-furnace_efficiency-moderate,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,blast-furnace_top-gas-recycling,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,caster_continuous,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,caster_strip,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,coating-line_electrolytic,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,coating-line_hot-dip,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,coke-oven_by-product,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,coke-oven_by-product_efficiency-moderate,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,electric-arc-furnace,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,electric-arc-furnace_scrap-preheating,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,electrolysis-cell_iron-electrowinning,lifetime,15,20,3.3,60,yes,1.33333,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
 est-class-lifetime,electrolysis-cell_molten-oxide,lifetime,15,20,3.3,60,yes,1.33333,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
-est-class-lifetime,furnace_reheating,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,furnace_reheating_efficiency-strong,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,furnace_reheating,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,furnace_reheating_efficiency-strong,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,induction-heater_reheating,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,pellet-plant_induration,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,preheater_ladle,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,rolling-mill_cold,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,rolling-mill_hot,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,rolling-mill_hot-charging,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,rolling-mill_hot_efficiency-moderate,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 144 archetypes
-est-class-lifetime,shaft-furnace_direct-reduction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,shaft-furnace_direct-reduction_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,sinter-plant_efficiency-moderate,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,sinter-plant_efficiency-strong,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,sinter-plant,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,smelting-vessel_smelting-reduction,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,smelting-vessel_smelting-reduction_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,binder_alkali-activated,lifetime,32.5,22.5,10,60,yes,0.692308,class process-plant: median of 144 archetypes
-est-class-lifetime,binder_blended-cement,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_dry-precalciner,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_dry-precalciner_ccs-diffuse,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_dry-precalciner_efficiency-moderate,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_dry-precalciner_efficiency-strong,lifetime,32.5,22.5,10,60,yes,0.692308,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_oxy-fuel,lifetime,32.5,22.5,10,60,yes,0.692308,class process-plant: median of 144 archetypes
-est-class-lifetime,furnace_oxy-fuel,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,furnace_regenerative,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_ceramic-electric,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_tunnel-roller,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,furnace_electric,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,autothermal-reformer_hydrogen_ccs-concentrated,lifetime,40,22.5,10,60,yes,0.5625,class process-plant: median of 144 archetypes
-est-class-lifetime,distillation-column,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,distillation-column_heat-integrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
+est-class-lifetime,pellet-plant_induration,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,preheater_ladle,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,rolling-mill_cold,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,rolling-mill_hot,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,rolling-mill_hot-charging,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,rolling-mill_hot_efficiency-moderate,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 143 archetypes
+est-class-lifetime,shaft-furnace_direct-reduction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,shaft-furnace_direct-reduction_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,sinter-plant_efficiency-moderate,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,sinter-plant_efficiency-strong,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,sinter-plant,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,smelting-vessel_smelting-reduction,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,smelting-vessel_smelting-reduction_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,binder_alkali-activated,lifetime,32.5,25,10,60,yes,0.769231,class process-plant: median of 143 archetypes
+est-class-lifetime,binder_blended-cement,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_dry-precalciner,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_dry-precalciner_ccs-diffuse,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_dry-precalciner_efficiency-moderate,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_dry-precalciner_efficiency-strong,lifetime,32.5,25,10,60,yes,0.769231,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_oxy-fuel,lifetime,32.5,25,10,60,yes,0.769231,class process-plant: median of 143 archetypes
+est-class-lifetime,furnace_regenerative,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_ceramic-electric,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_tunnel-roller,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,furnace_electric,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,autothermal-reformer_hydrogen_ccs-concentrated,lifetime,40,25,10,60,yes,0.625,class process-plant: median of 143 archetypes
+est-class-lifetime,distillation-column,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,distillation-column_heat-integrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
 est-class-lifetime,electrolysis-cell_chlor-alkali-membrane,lifetime,25,15,3.3,40,yes,0.6,"class electrochemical: median of 7 archetypes: electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
-est-class-lifetime,gasifier_biomass-methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_catalytic-n2o,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_chemical-depolymerization,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-methanol,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_ethanol-to-ethylene,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_haber-bosch-electrolytic,lifetime,10,25,10,60,yes,2.5,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_methanol-to-olefins,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_nitric-acid,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_plastics-pyrolysis,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_polymerization-extrusion,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_thermal-n2o-destruction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-cracker_catalytic-naphtha,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-cracker_fired-tubular_ccs-diffuse,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-cracker_electric,lifetime,18,25,10,60,yes,1.38889,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-cracker_fired-tubular,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_ammonia,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_ammonia_ccs-concentrated,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,fermenter_grain-dry-mill,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,fermenter_lignocellulosic-enzymatic,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_biomass-methanation,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_biomass-fischer-tropsch,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_alcohol-to-jet,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_hydrothermal-liquefaction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_hydrotreating-lipids,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_pyrolysis-oil,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,transesterification-unit_alkali-catalyzed,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,separator_biogas-upgrading,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,anaerobic-digester,lifetime,12,25,10,60,yes,2.08333,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_biomass-methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_catalytic-n2o,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_chemical-depolymerization,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-methanol,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_ethanol-to-ethylene,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_haber-bosch-electrolytic,lifetime,10,25,10,60,yes,2.5,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_methanol-to-olefins,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_nitric-acid,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_plastics-pyrolysis,lifetime,17.5,25,10,60,yes,1.42857,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_polymerization-extrusion,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_thermal-n2o-destruction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-cracker_catalytic-naphtha,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-cracker_fired-tubular_ccs-diffuse,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-cracker_electric,lifetime,18,25,10,60,yes,1.38889,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-cracker_fired-tubular,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_ammonia,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_ammonia_ccs-concentrated,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,fermenter_grain-dry-mill,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,fermenter_lignocellulosic-enzymatic,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_biomass-methanation,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_biomass-fischer-tropsch,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_alcohol-to-jet,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_hydrothermal-liquefaction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_hydrotreating-lipids,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_pyrolysis-oil,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,transesterification-unit_alkali-catalyzed,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,separator_biogas-upgrading,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,anaerobic-digester,lifetime,12,25,10,60,yes,2.08333,class process-plant: median of 143 archetypes
 est-class-lifetime,pipeline_hydrogen,lifetime,15,30,20,50,no,2,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, storage-cavern_hydrogen, well_co2-storage, well_sagd, well_solvent-only"
 est-class-lifetime,electrolyzer_solid-oxide,lifetime,40,15,3.3,60,yes,0.375,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, fuel-cell_chp"
-est-class-lifetime,gasifier_biomass-waste,lifetime,40,22.5,10,60,yes,0.5625,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_coal-petroleum-coke_ccs-concentrated,lifetime,35,22.5,10,60,yes,0.642857,class process-plant: median of 144 archetypes
-est-class-lifetime,liquefaction-train_hydrogen,lifetime,40,22.5,10,60,yes,0.5625,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_methane-pyrolysis,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,autothermal-reformer_ammonia,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,distillation-column_atmospheric-vacuum,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_biomass-waste,lifetime,40,25,10,60,yes,0.625,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_coal-petroleum-coke_ccs-concentrated,lifetime,35,25,10,60,yes,0.714286,class process-plant: median of 143 archetypes
+est-class-lifetime,liquefaction-train_hydrogen,lifetime,40,25,10,60,yes,0.625,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_methane-pyrolysis,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,autothermal-reformer_ammonia,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,distillation-column_atmospheric-vacuum,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,electrolyzer_low-temperature,lifetime,25,15,3.3,60,yes,0.6,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_solid-oxide, fuel-cell_chp"
-est-class-lifetime,gasifier_coal-petroleum-coke,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_alkylation,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_catalytic-reforming,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_fluid-catalytic-cracking,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_hydroprocessing,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_methane,lifetime,27.5,22.5,10,60,yes,0.818182,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_methane_ccs-concentrated,lifetime,35,22.5,10,60,yes,0.642857,class process-plant: median of 144 archetypes
-est-class-lifetime,anaerobic-digester_effluent,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_coal-petroleum-coke,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_alkylation,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_catalytic-reforming,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_fluid-catalytic-cracking,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_hydroprocessing,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_methane,lifetime,27.5,25,10,60,yes,0.909091,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_methane_ccs-concentrated,lifetime,35,25,10,60,yes,0.714286,class process-plant: median of 143 archetypes
+est-class-lifetime,anaerobic-digester_effluent,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,boiler_recovery,lifetime,25,20,5,50,yes,0.8,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,dryer_steam-heated,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,dryer_steam-heated_efficiency-moderate,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,gasifier_black-liquor,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_lime-electric,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_lime-rotary,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,paper-machine_efficiency-moderate,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,paper-machine_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,press_shoe-extended,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,pulper_refiner-low-energy,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,separator_lignin-extraction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_black-liquor,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_lime-electric,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_lime-rotary,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,paper-machine_efficiency-moderate,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,paper-machine_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,press_shoe-extended,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,pulper_refiner-low-energy,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,separator_lignin-extraction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,process-improvement_coal-mine-methane-drainage,lifetime,15,10,1,30,yes,0.666667,"class controls-and-programmes: median of 7 archetypes: flare, flare_enclosed-combustor, flare_high-efficiency, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
 est-class-lifetime,compressor_blowdown-recovery,lifetime,10,20,1.5,25,yes,2,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
 est-class-lifetime,compressor_low-emission-seal,lifetime,4.7,20,1,25,yes,4.25532,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
@@ -640,71 +653,71 @@ est-class-lifetime,evaporator_crystallizer,lifetime,25,20,5,50,yes,0.8,"class he
 est-class-lifetime,flare,lifetime,10,10,1,30,yes,1,"class controls-and-programmes: median of 7 archetypes: flare_enclosed-combustor, flare_high-efficiency, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
 est-class-lifetime,flare_enclosed-combustor,lifetime,10,10,1,30,yes,1,"class controls-and-programmes: median of 7 archetypes: flare, flare_high-efficiency, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
 est-class-lifetime,flare_high-efficiency,lifetime,10,10,1,30,yes,1,"class controls-and-programmes: median of 7 archetypes: flare, flare_enclosed-combustor, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
-est-class-lifetime,gas-treatment-unit_amine-sweetening_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,gas-treatment-unit_amine-sweetening_ccs-concentrated,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,management-system_leak-detection,lifetime,5,10,3,30,yes,2,"class controls-and-programmes: median of 7 archetypes: flare, flare_enclosed-combustor, flare_high-efficiency, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_low-emission-components, process-improvement_pfc-anode-effect-control"
 est-class-lifetime,process-improvement_low-emission-components,lifetime,10,10,1,30,yes,1,"class controls-and-programmes: median of 7 archetypes: flare, flare_enclosed-combustor, flare_high-efficiency, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_pfc-anode-effect-control"
 est-class-lifetime,pump_plunger-lift,lifetime,10,20,1,25,yes,2,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed"
 est-class-lifetime,well_solvent-only,lifetime,30,30,15,50,yes,1,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, pipeline_hydrogen, storage-cavern_hydrogen, well_co2-storage, well_sagd"
 est-class-lifetime,well_sagd,lifetime,30,30,15,50,yes,1,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, pipeline_hydrogen, storage-cavern_hydrogen, well_co2-storage, well_solvent-only"
-est-class-lifetime,gasifier_coal-methanation,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_coal-fischer-tropsch,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_gas-to-liquids,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_coal-methanation,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_coal-fischer-tropsch,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_gas-to-liquids,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
 est-class-lifetime,chiller_absorption,lifetime,23,20,1,25,yes,0.869565,"class rotating-equipment: median of 14 archetypes: chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
 est-class-lifetime,chiller_high-efficiency,lifetime,25,20,1,25,yes,0.8,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
 est-class-lifetime,chiller_vapour-compression,lifetime,25,20,1,25,yes,0.8,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
-est-class-lifetime,cleaning-system_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,cleaning-system_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,heat-exchanger_steam-heated,lifetime,20,20,1,25,yes,1,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated_efficiency-strong, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
 est-class-lifetime,oven_fuel-fired,lifetime,30,20,5,50,yes,0.666667,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
 est-class-lifetime,oven_fuel-fired_efficiency-moderate,lifetime,15,20,5,50,yes,1.33333,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,calciner_gas-suspension,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,calciner_gas-suspension,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,electrolysis-cell_inert-anode,lifetime,10,20,3.3,60,yes,2,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolysis-cell_prebaked-anode, electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
 est-class-lifetime,electrolysis-cell_prebaked-anode,lifetime,20,15,3.3,60,yes,0.75,"class electrochemical: median of 7 archetypes: electrolysis-cell_chlor-alkali-membrane, electrolysis-cell_inert-anode, electrolysis-cell_iron-electrowinning, electrolysis-cell_molten-oxide, electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
-est-class-lifetime,rolling-mill_continuous-casting,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
+est-class-lifetime,rolling-mill_continuous-casting,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
 est-class-lifetime,dryer_direct-fired_efficiency-moderate,lifetime,5,20,5,50,yes,4,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,kiln_lumber-steam,lifetime,10,25,10,60,yes,2.5,class process-plant: median of 144 archetypes
+est-class-lifetime,kiln_lumber-steam,lifetime,10,25,10,60,yes,2.5,class process-plant: median of 143 archetypes
 est-class-lifetime,heat-exchanger_steam-heated_efficiency-strong,lifetime,20,20,1,25,yes,1,"class rotating-equipment: median of 14 archetypes: chiller_absorption, chiller_high-efficiency, chiller_vapour-compression, compressor_blowdown-recovery, compressor_co2-dehydration, compressor_flare-gas-recovery, compressor_low-emission-seal, compressor_vapour-recovery, heat-exchanger_steam-heated, motor_induction-standard, motor_induction-standard_efficiency-moderate, motor_premium-efficiency, motor_variable-speed, pump_plunger-lift"
-est-class-lifetime,gasifier_biomass-ammonia,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_haber-bosch-loop,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,shaft-furnace_electrolytic-hydrogen,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,binder_sulphoaluminate,lifetime,28.75,22.5,10,60,yes,0.782609,class process-plant: median of 144 archetypes
-est-class-lifetime,binder_hydrothermal-silicate,lifetime,32.5,22.5,10,60,yes,0.692308,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_ammonia_efficiency-strong,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_biomass-ammonia,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_haber-bosch-loop,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,shaft-furnace_electrolytic-hydrogen,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,binder_sulphoaluminate,lifetime,28.75,25,10,60,yes,0.869565,class process-plant: median of 143 archetypes
+est-class-lifetime,binder_hydrothermal-silicate,lifetime,32.5,25,10,60,yes,0.769231,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_ammonia_efficiency-strong,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,pipeline_co2,lifetime,50,30,15,50,yes,0.6,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_hydrogen, storage-cavern_hydrogen, well_co2-storage, well_sagd, well_solvent-only"
 est-class-lifetime,well_co2-storage,lifetime,20,30,15,50,yes,1.5,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, pipeline_hydrogen, storage-cavern_hydrogen, well_sagd, well_solvent-only"
 est-class-lifetime,geothermal-well_direct-use,lifetime,25,30,15,50,yes,1.2,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_flash-power, pipeline_co2, pipeline_hydrogen, storage-cavern_hydrogen, well_co2-storage, well_sagd, well_solvent-only"
-est-class-lifetime,gasifier_biomass-ethylene,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,paper-machine_waterless,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_biomass-ethylene,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,paper-machine_waterless,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,thermal-storage_heat-charged,lifetime,20,20,5,50,yes,1,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, evaporator_food, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric"
 est-class-lifetime,evaporator_food,lifetime,10,20,5,50,yes,2,"class heat-equipment: median of 25 archetypes: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_recovery, boiler_solid-fuel, direct-heater_electric, direct-heater_fuel-fired, direct-heater_solid-fuel, dryer_direct-fired_efficiency-moderate, dryer_steam-heated, dryer_steam-heated_efficiency-moderate, evaporator_crystallizer, heat-pump_industrial, heat-pump_space, heat-pump_very-high-temperature, induction-heater_reheating, oven_fuel-fired, oven_fuel-fired_efficiency-moderate, resistance-heater_space-heating, solar-collector, solar-concentrator_line-focus, solar-concentrator_point-focus, space-heater_fuel-fired, thermal-storage_electric, thermal-storage_heat-charged"
-est-class-lifetime,smelting-vessel_low-shaft,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
+est-class-lifetime,smelting-vessel_low-shaft,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
 est-class-lifetime,combined-cycle,lifetime,22.5,25,7,50,yes,1.11111,"class power-equipment: median of 11 archetypes: combined-cycle_ccs-diffuse, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,combined-cycle_ccs-diffuse,lifetime,40,25,7,50,yes,0.625,"class power-equipment: median of 11 archetypes: combined-cycle, combined-cycle_efficiency-moderate, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
-est-class-lifetime,gasifier_coal-methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,incinerator_waste-to-energy,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_tunnel-roller_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,gasifier_coal-methanol,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,incinerator_waste-to-energy,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_tunnel-roller_efficiency-strong,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-class-lifetime,geothermal-well_flash-power,lifetime,30,30,15,50,yes,1,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, pipeline_co2, pipeline_hydrogen, storage-cavern_hydrogen, well_co2-storage, well_sagd, well_solvent-only"
-est-class-lifetime,calciner_electric,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,capture-unit_calcium-looping,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,kiln_ceramic-microwave-assisted,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-ethanol,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-higher-alcohols,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-dme,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-ome1,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-ome3-5,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-gasoline,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_co2-to-fischer-tropsch,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,mine_open-pit-oil-sands,lifetime,30,22.5,10,60,yes,0.75,class process-plant: median of 144 archetypes
-est-class-lifetime,gas-treatment-unit_vam-oxidiser,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
+est-class-lifetime,calciner_electric,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,capture-unit_calcium-looping,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,kiln_ceramic-microwave-assisted,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-ethanol,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-higher-alcohols,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-dme,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-ome1,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-ome3-5,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-gasoline,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_co2-to-fischer-tropsch,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,mine_open-pit-oil-sands,lifetime,30,25,10,60,yes,0.833333,class process-plant: median of 143 archetypes
+est-class-lifetime,gas-treatment-unit_vam-oxidiser,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
 est-class-lifetime,process-improvement_pfc-anode-effect-control,lifetime,30,10,1,25,no,0.333333,"class controls-and-programmes: median of 7 archetypes: flare, flare_enclosed-combustor, flare_high-efficiency, management-system_leak-detection, pneumatic-device_non-emitting, process-improvement_coal-mine-methane-drainage, process-improvement_low-emission-components"
 est-class-lifetime,storage-cavern_hydrogen,lifetime,30,30,15,50,yes,1,"class wells-and-pipelines: median of 8 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, pipeline_hydrogen, well_co2-storage, well_sagd, well_solvent-only"
-est-class-lifetime,liquefaction-train_base-load,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
-est-class-lifetime,separator_reduced-emission-completion,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_coal-methanol_ccs-concentrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,gasifier_biomass-fischer-tropsch_ccs-concentrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 144 archetypes
-est-class-lifetime,reactor_small-nuclear-power,lifetime,60,22.5,10,60,yes,0.375,class process-plant: median of 144 archetypes
-est-class-lifetime,shaft-furnace_hydrogen-direct-reduction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 144 archetypes
-est-class-lifetime,calciner_hydrogen-fired,lifetime,25,22.5,10,60,yes,0.9,class process-plant: median of 144 archetypes
+est-class-lifetime,liquefaction-train_base-load,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
+est-class-lifetime,separator_reduced-emission-completion,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_coal-methanol_ccs-concentrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,gasifier_biomass-fischer-tropsch_ccs-concentrated,lifetime,15,25,10,60,yes,1.66667,class process-plant: median of 143 archetypes
+est-class-lifetime,reactor_small-nuclear-power,lifetime,60,25,10,60,yes,0.416667,class process-plant: median of 143 archetypes
+est-class-lifetime,shaft-furnace_hydrogen-direct-reduction,lifetime,20,25,10,60,yes,1.25,class process-plant: median of 143 archetypes
+est-class-lifetime,calciner_hydrogen-fired,lifetime,25,25,10,60,yes,1,class process-plant: median of 143 archetypes
 est-end-use-annual-output,boiler_electric,annual-output,1.85747e+06,69933.5,250.2,1.85747e+06,yes,0.0376499,"end use heat-low-temp: median of 8 archetypes: anaerobic-digester_chp, boiler_fuel-fired, boiler_solid-fuel, combustion-turbine_chp, fuel-cell_chp, heat-pump_industrial, reciprocating-engine_chp, steam-turbine_back-pressure"
 est-end-use-annual-output,boiler_fuel-fired,annual-output,648226,69933.5,250.2,1.85747e+06,yes,0.107884,"end use heat-low-temp: median of 8 archetypes: anaerobic-digester_chp, boiler_electric, boiler_solid-fuel, combustion-turbine_chp, fuel-cell_chp, heat-pump_industrial, reciprocating-engine_chp, steam-turbine_back-pressure"
 est-end-use-annual-output,boiler_solid-fuel,annual-output,1.85747e+06,69933.5,250.2,1.85747e+06,yes,0.0376499,"end use heat-low-temp: median of 8 archetypes: anaerobic-digester_chp, boiler_electric, boiler_fuel-fired, combustion-turbine_chp, fuel-cell_chp, heat-pump_industrial, reciprocating-engine_chp, steam-turbine_back-pressure"
@@ -794,6 +807,12 @@ est-cost-ratio-opex-fixed,geothermal-well_binary-power,opex-fixed,7.7456,7.09163
 est-cost-ratio-opex-fixed,heat-pump_space,opex-fixed,0.571389,1.40007,0.636836,5.192,no,2.45028,"capex (sourced); opex-fixed/capex median 0.02953 of 50 archetypes (all, quartiles 0.0232-0.0541)"
 est-cost-ratio-opex-fixed,resistance-heater_space-heating,opex-fixed,0.0781981,0.189476,0.0855171,2.54846,no,2.42303,"capex (sourced); opex-fixed/capex median 0.02953 of 50 archetypes (all, quartiles 0.0232-0.0541)"
 est-cost-ratio-opex-fixed,space-heater_fuel-fired,opex-fixed,0.172729,0.112279,0.0444877,0.513788,yes,0.650028,"capex (sourced); opex-fixed/capex median 0.02846 of 50 archetypes (all, quartiles 0.0212-0.0541)"
+est-cost-ratio-opex-fixed,lighting_fluorescent-t12,opex-fixed,0.111786,0.0691159,0.0583616,0.0981158,no,0.618288,"capex (sourced); opex-fixed/capex median 0.02946 of 5 archetypes (same equipment, quartiles 0.0292-0.0322)"
+est-cost-ratio-opex-fixed,lighting_fluorescent-t8,opex-fixed,0.116622,0.127528,0.0832144,0.214827,yes,1.09352,"capex (sourced); opex-fixed/capex median 0.03222 of 5 archetypes (same equipment, quartiles 0.0292-0.0344)"
+est-cost-ratio-opex-fixed,lighting_led,opex-fixed,0.471589,0.403774,0.246465,0.874055,yes,0.8562,"capex (sourced); opex-fixed/capex median 0.02946 of 5 archetypes (same equipment, quartiles 0.0292-0.0322)"
+est-cost-ratio-opex-fixed,lighting_hid,opex-fixed,0.0767095,0.133847,0.059531,0.587125,yes,1.74486,"capex (sourced); opex-fixed/capex median 0.03222 of 5 archetypes (same equipment, quartiles 0.0295-0.0344)"
+est-cost-ratio-opex-fixed,lighting_fluorescent-high-bay,opex-fixed,0.0889133,0.0813094,0.0647223,0.102404,yes,0.914479,"capex (sourced); opex-fixed/capex median 0.02946 of 5 archetypes (same equipment, quartiles 0.0292-0.0344)"
+est-cost-ratio-opex-fixed,lighting_led-high-bay,opex-fixed,0.130755,0.144491,0.0910171,0.526294,yes,1.10505,"capex (sourced); opex-fixed/capex median 0.03222 of 5 archetypes (same equipment, quartiles 0.0295-0.0344)"
 est-cost-ratio-opex-fixed,capture-unit_amine,opex-fixed,12.5927,14.4166,2.46015,44.816,yes,1.14483,"capex (sourced); opex-fixed/capex median 0.03275 of 5 archetypes (same equipment, quartiles 0.0282-0.0434)"
 est-cost-ratio-opex-fixed,capture-unit_chemical-solvent,opex-fixed,9.54683,11.0678,0.93594,32.5737,yes,1.15932,"capex (sourced); opex-fixed/capex median 0.03275 of 5 archetypes (same equipment, quartiles 0.0286-0.0434)"
 est-cost-ratio-opex-fixed,capture-unit_cryogenic-condensation,opex-fixed,12.5284,10.9434,10.8067,17.4947,yes,0.873488,"capex (sourced); opex-fixed/capex median 0.0286 of 5 archetypes (same equipment, quartiles 0.0282-0.0434)"

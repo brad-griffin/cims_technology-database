@@ -552,15 +552,51 @@ ventilation-unit_heat-recovery,space-conditioning,<sector>.metal-smelting.servic
 ventilation-unit_heat-recovery,space-conditioning,<sector>.mining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.petroleum-refining.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
 ventilation-unit_heat-recovery,space-conditioning,<sector>.pulp-and-paper.service.hvac.space-heating,space-heating,<sector>.*.service.hvac.space-heating,cross-sector/space-heating: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_fluorescent-hid,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-high-bay,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t12,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_fluorescent-t8,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_hid,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led-controls,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led-controls,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led-controls,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
@@ -570,6 +606,15 @@ lighting_led-controls,lighting,<sector>.metal-smelting.service.lighting,lighting
 lighting_led-controls,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led-controls,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led-controls,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.metal-smelting.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-high-bay,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 mobile-equipment_battery-electric,mobile-equipment,<sector>.construction.product.transport,mobile-equipment,,cross-sector/mobile-equipment: every leaf of the end use
 mobile-equipment_battery-electric,mobile-equipment,<sector>.natural-gas.product.supply.off-road-transport,mobile-equipment,,cross-sector/mobile-equipment: every leaf of the end use
 mobile-equipment_diesel,mobile-equipment,<sector>.construction.product.transport,mobile-equipment,,cross-sector/mobile-equipment: every leaf of the end use
@@ -1205,10 +1250,6 @@ dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.d
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_heat-pump,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
-dryer_heat-pump,pulp-and-paper,<sector>.light-industrial.service.heat,drying,,food-and-beverage/drying: every leaf of the end use
-dryer_heat-pump,pulp-and-paper,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,added 2026-10-05 (archetype combination review)
-dryer_heat-pump,pulp-and-paper,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,added 2026-10-05 (archetype combination review)
-dryer_heat-pump,pulp-and-paper,<sector>.mining.service.drying,product-drying,,added 2026-10-05 (archetype combination review)
 dryer_market-pulp,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,added 2026-10-01
 dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_steam-heated,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it

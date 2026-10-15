@@ -1463,6 +1463,43 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
 
 # ---- calculated levelized cost (modeller 2026-10-10) -----------------------
 
+def pm_rebuild(rule, psum, records, target_unit, ctx, stats):
+    """A periodic rebuild the plant needs within its asset life (a glass furnace's
+    cold repair every campaign) is added to its fixed O&M as an annual allowance
+    (records/reference/rebuild-allowance.csv: the rebuild cost / the campaign / the
+    plant's annual capacity). The allowance is also kept as target `rebuild`."""
+    from .common import REFERENCE
+    from . import currency
+    p = rule["parameter"]
+    rows = [r for r in read(REFERENCE / "rebuild-allowance.csv") if r["parameter"] == p]
+    fx, _ = currency.factors([{"unit": r["unit"]} for r in rows])
+    for r in rows:
+        k = r["archetype"]
+        if k not in ctx["arch"]:
+            continue
+        h = ctx["have"].setdefault(k, {})
+        base = h.get((p, ""))
+        m = fx.get(r["unit"].split("/")[0])
+        if not _live(base) or m is None or "/" not in base.get("unit", "") or \
+                base["unit"].split("/", 1)[1] != r["unit"].split("/", 1)[1]:
+            stats["rebuild allowance not applied"] = stats.get("rebuild allowance not applied", 0) + 1
+            continue
+        c, lo, hi = (float(r[x]) * m for x in ("central", "low", "high"))
+        bc, bl, bh = _lohi(base)
+        src = f"{r['source-id']} {r['locator']}"
+        comp = _row(k, p, "rebuild", base["unit"], c, lo, hi, rule["grade"], rule,
+                    [f"{src}: {r['basis']}"], r["source-id"], "rebuild allowance")
+        psum.append(comp)
+        h[(p, "rebuild")] = comp
+        base.update({"central": _g(bc + c), "low": _g(bl + lo), "high": _g(bh + hi),
+                     "grade": worst([base.get("grade") or "sourced", rule["grade"]]),
+                     "central-from": (base.get("central-from") or "") +
+                     f"; plus a rebuild allowance of {c:.4g} ({src}, rule {rule['rule-id']})",
+                     "sources": "; ".join(x for x in [base.get("sources", ""), r["source-id"]] if x),
+                     "rule-id": rule["rule-id"], "rationale": rule["rationale"]})
+        stats[rule["rule-id"]] = stats.get(rule["rule-id"], 0) + 1
+
+
 def crf(r, n):
     return r / (1 - (1 + r) ** -n) if r > 0 else 1 / n
 
@@ -1628,7 +1665,7 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
 
 
 POST_METHODS = {"host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
-                "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized,
+                "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized, "rebuild": pm_rebuild,
                 "levelized-energy": pm_levelized_energy}
 
 

@@ -44,8 +44,13 @@ resistance-heater_space-heating,space-conditioning,GJ,sourced,sourced,not-applic
 space-heater_fuel-fired,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,estimated,identity,sourced
 ventilation-unit_demand-controlled,space-conditioning,GJ,guess,guess,not-applicable,estimated,estimated,guess,identity,sourced
 ventilation-unit_heat-recovery,space-conditioning,GJ,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
-lighting_fluorescent-hid,lighting,GJ,guess,guess,not-applicable,guess,sourced,guess,identity,sourced
-lighting_led-controls,lighting,GJ,guess,guess,not-applicable,guess,guess,guess,identity,sourced
+lighting_fluorescent-t12,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_fluorescent-t8,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_led,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_hid,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_fluorescent-high-bay,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_led-high-bay,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+lighting_led-controls,lighting,Mlm-h,guess,guess,not-applicable,guess,guess,guess,identity,sourced
 mobile-equipment_battery-electric,mobile-equipment,GJ,guess,guess,guess,sourced,guess,guess,identity,sourced
 mobile-equipment_diesel,mobile-equipment,GJ,sourced,estimated,estimated,sourced,guess,guess,identity,sourced
 mobile-equipment_diesel-electric,mobile-equipment,GJ,guess,guess,guess,guess,guess,guess,guess,sourced
@@ -125,8 +130,8 @@ kiln_oxy-fuel,cement,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,
 dryer_electric,non-metallic-minerals,t,sourced,sourced,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_rotary-direct-fired,non-metallic-minerals,t,guess,guess,not-applicable,sourced,estimated,guess,sourced,sourced
 furnace_hybrid-electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
-furnace_oxy-fuel,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
-furnace_regenerative,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
+furnace_oxy-fuel,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
+furnace_regenerative,non-metallic-minerals,t,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 furnace_tempering,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 furnace_lehr,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 furnace_lehr-electric,non-metallic-minerals,t,guess,guess,guess,guess,estimated,guess,identity,sourced
