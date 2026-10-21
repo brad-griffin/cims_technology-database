@@ -20,8 +20,9 @@ split has two levels:
     as shares of that example's named-fuel sum, each share times `fuel`, so they
     sum to `fuel`. A `fuel` row is written wherever the archetype has named
     fuels, even if no source gives one.
-  * An archetype with carriers but no total gets a total: the split example's
-    level-1 sum.
+  * An archetype with carriers but no total gets a total: the pooled median of
+    its one carrier where every example names the same single level-1 carrier
+    (modeller 2026-10-21), else the split example's level-1 sum.
   * A carrier or fuel the chosen example does not name keeps its pooled value,
     flagged in `central-from` as pooled apart (it is not part of the split).
   * Where the split example's level-1 sum and the pooled total disagree by more
@@ -139,6 +140,7 @@ def apply(summaries, facts, records) -> dict:
                           e, csum))
         if not cands:
             continue
+        single = False
         _, sp, csum = min(cands, key=lambda c: c[0])
         short = _short(records, sp["rs"])
         if tot is None and total is not None:
@@ -166,22 +168,22 @@ def apply(summaries, facts, records) -> dict:
                     total["n"] = int(total.get("n") or 0) + 1
                 tot = csum
                 stats["range-only totals given the carrier sum"] += 1
-        elif tot is None and (records.by_key.get(key[0]) or {}).get("family") == "lighting" \
-                and len({t for e in exs for t in e["top"]}) == 1 and \
+        elif tot is None and len({t for e in exs for t in e["top"]}) == 1 and \
                 (one := next(iter({t for e in exs for t in e["top"]}))) in \
                 {(s.get("target") or "").strip().lower() for s in rows} and \
                 fnum(next(s for s in rows if (s.get("target") or "").strip().lower() == one)
                      .get("central")) not in (None, 0):
-            # a lighting archetype whose examples all name the same ONE carrier
-            # (electricity): the total is that carrier's pooled median, not one
-            # example's line (2026-10-14, lighting restructure; scoped to lighting
-            # until the modeller rules on other single-carrier archetypes)
+            # an archetype whose examples all name the same ONE level-1 carrier
+            # (electricity on a lamp, fuel on a dryer): the total is that carrier's
+            # pooled median, not one example's line (lighting 2026-10-14; every
+            # archetype, modeller 2026-10-21)
             src = next(s for s in rows if (s.get("target") or "").strip().lower() == one)
             total = dict(src, **{"target": "", "central-from":
                                  f"the pooled {one}, the only carrier any example names"})
             summaries.append(total)
             rows.append(total)
             tot = fnum(total["central"])
+            single = True
             stats["totals from a single pooled carrier"] += 1
         elif tot is None:
             total = dict(rows[0], **{"target": "", "central": f"{csum:.6g}", "low": "", "high": "",
@@ -195,7 +197,9 @@ def apply(summaries, facts, records) -> dict:
         else:
             stats["totals kept (pooled)"] += 1
         tlo, thi = fnum(total.get("low")), fnum(total.get("high"))
-        agree = tot > 0 and 0.5 <= csum / tot <= 2.0
+        # with one carrier the carrier IS the total: it takes the pooled value
+        # even where the split example's own line is far from it
+        agree = single or (tot > 0 and 0.5 <= csum / tot <= 2.0)
         if not agree:
             total["central-from"] = (total.get("central-from") or "") + (
                 f"; DISAGREES with the split example's carrier sum {csum:.3g} ({short}, {sp['eid']}): "
