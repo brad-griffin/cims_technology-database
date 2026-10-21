@@ -1947,6 +1947,112 @@ def _run_judgements(psum, records, ctx, stats):
         stats["guess"] = stats.get("guess", 0) + 1
 
 
+def _sum_carriers(psum, records, ctx, stats, create=True):
+    """The energy-use total includes every carrier the archetype holds, sourced and
+    estimated (modeller 2026-10-21): where the level-1 carriers (electricity, steam,
+    ... plus `fuel`, itself at least the sum of the named fuels) add up to more
+    than the total, the total becomes their sum; an archetype with carriers and no
+    total gets one. A total above its carriers (the carriers are partial) stays.
+    Returns the archetypes whose total changed."""
+    from .carriers import NO_HV_CARRIERS, FUEL_AGG
+    changed = set()
+    have = ctx["have"]
+    for a in records.archetypes:
+        k = a["archetype"]
+        h = have.get(k, {})
+        rows = {t: r for (q, t), r in h.items()
+                if q == SEC and t and t not in ("total", "not-stated", "component") and not is_component_target(t)
+                and not t.startswith("as-sourced") and _live(r)}
+        rows = _adding_carriers(rows)
+        if not rows:
+            continue
+        tot = h.get((SEC, ""))
+        if tot is not None and (tot.get("method") in ("bucket-saving", "host-split", "host-copy")
+                                or (tot.get("rule-id") or "").startswith(("ccs-", "var-", "est-variant"))):
+            # a variant whose total and carriers one rule wrote together from its
+            # host or base (which is itself summed): left as the rule wrote it
+            continue
+        named = {t: r for t, r in rows.items() if t not in NO_HV_CARRIERS and t != FUEL_AGG}
+        nsum = [sum(_lohi(r)[i] for r in named.values()) for i in range(3)] if named else None
+        fuel = rows.get(FUEL_AGG)
+        if fuel is not None and nsum and nsum[0] > 1.01 * (fnum(fuel["central"]) or 0):
+            ins = [f"{t} {_g(_lohi(r)[0])} ({r.get('grade') or 'sourced'})" for t, r in sorted(named.items())]
+            fuel.update({"central": _g(nsum[0]), "low": _g(nsum[1]), "high": _g(nsum[2]),
+                         "grade": worst([fuel.get("grade") or "sourced"] + [r.get("grade") or "sourced"
+                                                                              for r in named.values()]),
+                         "central-from": "sum of the named fuels, sourced and estimated: " + "; ".join(ins)
+                         + f" (was {fuel['central']}: {fuel.get('central-from') or ''})"})
+            stats["fuel raised to its named fuels"] = stats.get("fuel raised to its named fuels", 0) + 1
+        l1 = {t: r for t, r in rows.items() if t in NO_HV_CARRIERS}
+        # a generic `heat` row that other carriers split (a judgement giving "the
+        # row's heat figure" as steam and natural gas) is not added on top of them
+        if "heat" in l1:
+            hv = fnum(l1["heat"]["central"]) or 0
+            split = [r for t, r in rows.items() if t not in ("heat", "electricity", FUEL_AGG)
+                     and "heat figure" in (r.get("central-from") or "")]
+            others = [r for t, r in rows.items() if t not in ("heat", "electricity", FUEL_AGG)
+                      and t not in NO_HV_CARRIERS or t == "steam"]
+            for grp in (split, [r for r in others if r is not l1.get("heat")]):
+                gs = sum(fnum(r["central"]) or 0 for r in grp)
+                if grp and hv > 0 and abs(gs - hv) <= 0.02 * hv:
+                    del l1["heat"]
+                    stats["heat rows split by other carriers"] = stats.get("heat rows split by other carriers", 0) + 1
+                    break
+        if fuel is not None:
+            l1[FUEL_AGG] = fuel
+        elif named:
+            l1.update(named)
+        if not l1:
+            continue
+        lsum = [sum(_lohi(r)[i] for r in l1.values()) for i in range(3)]
+        grades = [r.get("grade") or "sourced" for r in l1.values()]
+        ins = "; ".join(f"{t} {_g(_lohi(r)[0])} ({r.get('grade') or 'sourced'})" for t, r in sorted(l1.items()))
+        tot = h.get((SEC, ""))
+        if tot is not None and tot.get("grade") == MARKER:
+            continue
+        if tot is not None and "DISAGREES" in (tot.get("central-from") or ""):
+            # the carriers are on another scope than the total (pipeline/carriers.py):
+            # listed for review, not summed
+            ctx.setdefault("sum_disagree", set()).add(k)
+            continue
+        if tot is None and not create:
+            continue
+        if tot is None:
+            row = {"archetype": k, "parameter": SEC, "target": "", "unit": next(iter(l1.values()))["unit"],
+                   "central": _g(lsum[0]), "low": _g(lsum[1]) if lsum[1] != lsum[0] else "",
+                   "high": _g(lsum[2]) if lsum[2] != lsum[0] else "", "n": 0, "n-external": "",
+                   "central-from": "sum of the carriers, sourced and estimated: " + ins,
+                   "external-factors": "", "sources": "", "examples": "", "grade": worst(grades),
+                   "method": "sum", "rule-id": "id-sec-total-from-carriers", "inputs": ins,
+                   "rationale": "The energy-use total includes every carrier, sourced and estimated (modeller 2026-10-21)."}
+            psum.append(row)
+            h[(SEC, "")] = row
+            changed.add(k)
+            stats["totals from the carrier sum"] = stats.get("totals from the carrier sum", 0) + 1
+            continue
+        tv = fnum(tot.get("central"))
+        if tv is None or lsum[0] <= 1.01 * tv:
+            continue
+        tot.update({"central": _g(lsum[0]), "low": _g(lsum[1]), "high": _g(lsum[2]),
+                    "grade": worst([tot.get("grade") or "sourced"] + grades),
+                    "central-from": "sum of the carriers, sourced and estimated: " + ins
+                    + f" (was {_g(tv)}: {tot.get('central-from') or ''})",
+                    "inputs": ins})
+        changed.add(k)
+        stats["totals raised to the carrier sum"] = stats.get("totals raised to the carrier sum", 0) + 1
+    if changed:
+        # an efficiency derived from the old total is stale: drop it so the
+        # identity rule derives it again from the new total
+        for k in changed:
+            h = have.get(k, {})
+            for key, r in list(h.items()):
+                if key[0] == "efficiency" and r.get("rule-id") == "id-efficiency-from-sec":
+                    del h[key]
+                    if r in psum:
+                        psum.remove(r)
+    return changed
+
+
 def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     """Grade the pooled rows, then add the fills: rules, judgements, rules again.
     Returns counts by grade and rule."""
@@ -1958,12 +2064,18 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
                                    ctx["have"], ctx)}
     _run_rules(psum, records, target_unit, ctx, stats)
     _run_judgements(psum, records, ctx, stats)
+    # raise totals now (identity rules then derive from them); create missing
+    # totals only after the rules, so a total from efficiency is not pre-empted
+    _sum_carriers(psum, records, ctx, stats, create=False)
     _run_rules(psum, records, target_unit, ctx, stats)
+    if _sum_carriers(psum, records, ctx, stats):
+        _run_rules(psum, records, target_unit, ctx, stats)
     # variants made consistent with their hosts (modeller 2026-10-10), then the
     # calculated levelized costs, which read every other cell
     _run_rules(psum, records, target_unit, ctx, stats, phase="post")
     _run_rules(psum, records, target_unit, ctx, stats, phase="final")
     stats["_ccs"] = ctx["ccs_report"]
+    stats["_sum_disagree"] = sorted(ctx.get("sum_disagree", ()))
     stats["_unpriced"] = sorted(ctx["unpriced"])
     return stats
 
