@@ -181,6 +181,15 @@ def conversion_references(fail, records, loader) -> None:
             fail["efficiency-bridge names an unknown example"].append(r["example-id"])
         if r.get("bridge") not in ("yes", "no"):
             fail["efficiency-bridge: bridge must be yes or no"].append(r["example-id"])
+    fact_ids = {x["record-id"] for x in loader.facts}
+    fact_srcs = {x.get("source-id") for x in loader.facts}
+    for r in read(REFERENCE / "emission-basis.csv"):
+        if r.get("basis") not in ("output", "input"):
+            fail["emission-basis: basis must be output or input"].append(r.get("record-id") or r["source-id"])
+        if r.get("record-id") and r["record-id"] not in fact_ids:
+            fail["emission-basis names an unknown record-id"].append(r["record-id"])
+        if r["source-id"] not in fact_srcs:
+            fail["emission-basis names a source with no extraction rows"].append(r["source-id"])
 
 
 def summaries(psum) -> dict[str, list[str]]:

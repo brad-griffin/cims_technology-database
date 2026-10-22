@@ -32,3 +32,14 @@ database's.
   which load it from here. If this folder is ever removed, move `classify()` and its
   rule tables into `data/raw-data/` first.
 - `build-cims-map.py` validates names against `data/raw-data/extraction-vocabulary.csv`.
+
+## 2026-10-14: the comparison
+
+Run from this folder: `python extract_cims_values.py <model_inputs/model path>`, then
+`python build_cims_summary.py`, then `python compare_cims_archetypes.py`. The mapping in
+`comparison/mapping/` is hand judgement and is not regenerated. Findings:
+`comparison/cims-comparison-2026-10-14.md`.
+
+2026-10-21: `python compare_ccs_addon.py` adds `comparison/ccs-node-comparison.csv` (each
+sector CCS node against the capture archetype of its NETL stream type) and
+`comparison/ccs-addon-comparison.csv` (the CCS portion only of each host with capture).

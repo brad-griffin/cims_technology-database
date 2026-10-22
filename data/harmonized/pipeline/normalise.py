@@ -311,6 +311,12 @@ def normalise(facts, examples, records, units) -> None:
                 and r["parameter"] in PER_CAPACITY | PER_OUTPUT):
             r["cost-basis"] = "incremental"
     bridged = {r["example-id"]: r for r in read(REFERENCE / "efficiency-bridge.csv")}
+    # emission rows a source already states per unit of OUTPUT (per GJ of steam, heat or
+    # hydrogen): not bridged (records/reference/emission-basis.csv, ruling 2026-10-21; a
+    # blank record-id covers every emission row of the source)
+    out_basis = read(REFERENCE / "emission-basis.csv")
+    out_ids = {x["record-id"] for x in out_basis if x["basis"] == "output" and x["record-id"]}
+    out_srcs = {x["source-id"] for x in out_basis if x["basis"] == "output" and not x["record-id"]}
     chp_levelized_total = {r["record-id"] for r in read(REFERENCE / "chp-levelized-total.csv")}
 
     def heat_per_power(sc):
@@ -456,7 +462,8 @@ def normalise(facts, examples, records, units) -> None:
             # a derived row resting on a stated assumption (assembly.py `assumption`
             # column, e.g. avoided CO2 taken for captured CO2): graded `assumption`
             used.append("assume:" + r["assume"])
-        if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")):
+        if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")
+                and r["record-id"] not in out_ids and r.get("source-id") not in out_srcs):
             # an emission factor per GJ of FUEL; the archetype's basis is per GJ
             # of OUTPUT, and the two differ by the efficiency (D13): the
             # efficiency bridge (pipeline/bridge.py) divides by it

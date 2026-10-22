@@ -478,7 +478,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `compressor_vapour-recovery` | Vapour recovery unit | efficient variant | electricity | 9 | natural-gas.product.supply.venting.other-point-venting | quantified |
 | `direct-heater_line-heater` | Fired line heater and treater | conventional | natural-gas | 9 | natural-gas.product.supply.extraction.coalbed-methane; natural-gas.product.supply.extraction.conventional; natural-gas.product.supply.extraction.shale; natural-gas.product.supply.extraction.tight; petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | quantified |
 | `drilling-rig_battery-hybrid` | Battery hybrid rig power | efficient variant | diesel; electricity | 8 | natural-gas.product.supply.drilling | quantified |
-| `drilling-rig_diesel` | Diesel drilling rig | conventional | diesel | 9 | natural-gas.product.supply.drilling | estimated |
+| `drilling-rig_diesel` | Diesel drilling rig | conventional | diesel | 9 | natural-gas.product.supply.drilling | quantified |
 | `drilling-rig_electric` | Electric drilling rig | alternative | electricity | 9 | natural-gas.product.supply.drilling | quantified |
 | `evaporator_crystallizer` | Evaporator-crystallizer | alternative |  | 9 | mining.service.crystallization | quantified |
 | `evaporator_crystallizer-produced-water` | Evaporator-crystalliser for produced water | alternative |  | 9 | petroleum-crude.service.produced-water | estimated |
@@ -491,7 +491,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `gas-treatment-unit_glycol-dehydration` | Glycol dehydration | conventional | natural-gas | 9 | natural-gas.product.supply.processing | quantified |
 | `gasifier_coal-fischer-tropsch` | Coal gasification to Fischer-Tropsch liquids | alternative | coal | 9 | petroleum-refining.product.synthetic-fuels | quantified |
 | `gasifier_coal-methanation` | Coal gasification with methanation (SNG) | alternative | coal | 9 | no connection | quantified |
-| `heat-pump_oil-treating` | Heat-pump oil treating | alternative | electricity | 8 | petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | estimated |
+| `heat-pump_oil-treating` | Heat-pump oil treating | alternative | electricity | 8 | petroleum-crude.product.heavy; petroleum-crude.product.light-medium.offshore; petroleum-crude.product.light-medium.onshore | quantified |
 | `heat-recovery-unit_turbine-exhaust` | Turbine waste-heat recovery | efficient variant |  | 9 | natural-gas.product.supply.lng-liquefaction | estimated |
 | `liquefaction-train_base-load` | Base-load LNG liquefaction train | conventional | natural-gas; electricity | 9 | natural-gas.product.supply.lng-liquefaction | quantified |
 | `liquefaction-train_electric` | Electric-motor-driven LNG liquefaction train | alternative | electricity | 9 | natural-gas.product.supply.lng-liquefaction | quantified |
@@ -526,7 +526,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `separator_warm-water-extraction` | Hydrotransport and warm-water extraction | conventional | electricity | 9 | petroleum-crude.product.bitumen.mining | quantified |
 | `turboexpander_ngl-recovery` | Turboexpander NGL recovery | conventional | electricity; natural-gas | 9 | natural-gas.product.supply.processing | quantified |
 | `well_cyclic-steam` | Cyclic steam stimulation (CSS) | conventional | natural-gas | 9 | petroleum-crude.product.bitumen.in-situ | quantified |
-| `well_disposal-injection` | Disposal well injection | conventional |  | 9 | petroleum-crude.service.produced-water | estimated |
+| `well_disposal-injection` | Disposal well injection | conventional |  | 9 | petroleum-crude.service.produced-water | quantified |
 | `well_electromagnetic-heating` | Electromagnetic (radio-frequency) heating with solvent | prospective | electricity | 5-7 | petroleum-crude.product.bitumen.in-situ | quantified |
 | `well_in-situ-oxy-combustion` | In-situ oxy-combustion steam generation | prospective | natural-gas | 4-5 | petroleum-crude.product.bitumen.in-situ | quantified |
 | `well_sagd` | Steam-assisted gravity drainage (SAGD) | conventional | natural-gas | 9 | petroleum-crude.product.bitumen.in-situ | quantified |
