@@ -50,6 +50,8 @@ ATOM = {
     # solids or wood is not (2026-10-02)
     "ODt-pulp": ("mass", 1 / 0.9),
     "kcal": ("energy", 4.1868e-6), "Mcal": ("energy", 4.1868e-3), "Gcal": ("energy", 4.1868),
+    # metres drilled: the drilling-rig archetypes' product (2026-10-21)
+    "m": ("length", 1.0), "km": ("length", 1000.0),
     "m3": ("volume", 1.0), "Nm3": ("volume", 1.0), "l": ("volume", 1e-3), "L": ("volume", 1e-3),
     "Ml": ("volume", 1e3), "ML": ("volume", 1e3), "gal": ("volume", 0.003785411784),
     "bbl": ("volume", 0.158987), "barrel": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),

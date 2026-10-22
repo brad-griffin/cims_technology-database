@@ -1664,7 +1664,77 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                       rule, [f"non-energy {c:.4g}"] + ins, ""), stats, rule["rule-id"])
 
 
-POST_METHODS = {"host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
+def pm_cf_from_output(rule, psum, records, target_unit, ctx, stats):
+    """Capacity factor = annual output / capacity, for archetypes whose output is the
+    median throughput of existing facilities and whose capacity is the same
+    facilities' licensed capacity (Brad 2026-10-21: Alberta gas plants, AER ST50A).
+    Overrides the estimated capacity factor; a pooled one moves to as-sourced.
+    Scope: `archetype=` keys in the rule."""
+    keys = set()
+    for part in (rule.get("scope") or "").split(";"):
+        k, _, v = part.strip().partition("=")
+        if k == "archetype":
+            keys |= set(split_list(v.replace("|", ";")))
+    for a in records.archetypes:
+        k = a["archetype"]
+        if k not in keys:
+            continue
+        h = ctx["have"].setdefault(k, {})
+        out, cap = h.get(("annual-output", "")), h.get(("capacity", ""))
+        if not (_live(out) and _live(cap)) or not fnum(cap["central"]):
+            continue
+        kf = OUTPUT_K.get(a["product-unit"], 1.0)
+        oc, ol, oh = _lohi(out)
+        cc, cl, ch = _lohi(cap)
+        c = oc / (cc * kf) * 100
+        # the range pairs like quantiles (small plants' output over small plants'
+        # capacity), not the extremes, which would put a large plant's licence
+        # under a small plant's throughput
+        lo = ol / (cl * kf) * 100 if cl else c
+        hi = oh / (ch * kf) * 100 if ch else c
+        lo, hi = min(lo, hi, c), min(max(lo, hi, c), 100.0)
+        g = worst(["identity", out.get("grade", "sourced"), cap.get("grade", "sourced")])
+        _put(psum, h, _row(k, "capacity-factor", "", "%", c, lo, hi, g, rule,
+                           [_input(out, "annual-output"), _input(cap, "capacity"), f"x {kf:g}"],
+                           "; ".join(dict.fromkeys(split_list(out.get("sources", "")) + split_list(cap.get("sources", ""))))),
+             stats, rule["rule-id"])
+
+
+def pm_capacity_from_output(rule, psum, records, target_unit, ctx, stats):
+    """Capacity = annual output / capacity factor, for archetypes whose annual output is
+    the median of existing facilities (Brad 2026-10-21: keep capacity and output
+    consistent). Overrides a pooled capacity, which moves to target as-sourced (the
+    licensed, design or large-plant size the sources give) so it can be compared.
+    Scope: `archetype=` keys in the rule. Runs before the variant size rules, so a
+    variant takes its host's derived capacity."""
+    keys = set()
+    for part in (rule.get("scope") or "").split(";"):
+        k, _, v = part.strip().partition("=")
+        if k == "archetype":
+            keys |= set(split_list(v.replace("|", ";")))
+    for a in records.archetypes:
+        k = a["archetype"]
+        if k not in keys:
+            continue
+        h = ctx["have"].setdefault(k, {})
+        out, cf = h.get(("annual-output", "")), h.get(("capacity-factor", ""))
+        if not (_live(out) and _live(cf)) or not fnum(cf["central"]):
+            continue
+        kf = OUTPUT_K.get(a["product-unit"], 1.0)
+        oc, ol, oh = _lohi(out)
+        fc, fl, fh = _lohi(cf)
+        c = oc / (fc / 100) / kf
+        lo = ol / (max(fl, fh) / 100) / kf if max(fl, fh) else c
+        hi = oh / (min(fl, fh) / 100) / kf if min(fl, fh) else c
+        unit = target_unit("capacity", a["product-unit"], records.parameters.get("capacity", {}).get("unit-default", ""))
+        g = worst(["identity", out.get("grade", "sourced"), cf.get("grade", "sourced")])
+        _put(psum, h, _row(k, "capacity", "", unit, c, lo, hi, g, rule,
+                           [_input(out, "annual-output"), _input(cf, "capacity-factor"), f"/ {kf:g}"],
+                           "; ".join(dict.fromkeys(split_list(out.get("sources", "")) + split_list(cf.get("sources", ""))))),
+             stats, rule["rule-id"])
+
+
+POST_METHODS = {"capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
                 "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized, "rebuild": pm_rebuild,
                 "levelized-energy": pm_levelized_energy}
 
@@ -2032,6 +2102,28 @@ def _sum_carriers(psum, records, ctx, stats, create=True):
             continue
         tv = fnum(tot.get("central"))
         if tv is None or lsum[0] <= 1.01 * tv:
+            continue
+        # a total no guess fed is not raised by guessed carriers (modeller
+        # 2026-10-21): the guessed carriers are scaled down to the room the other
+        # carriers leave, so the split still sums to the total
+        guessed = {t: r for t, r in l1.items() if (r.get("grade") or "sourced") == "guess"}
+        firm = sum(_lohi(r)[0] for t, r in l1.items() if t not in guessed)
+        gsum = sum(_lohi(r)[0] for r in guessed.values())
+        # (a total that is only the one carrier any example names is not a whole
+        # total, so guessed carriers may still raise it)
+        whole = not (tot.get("central-from") or "").startswith("the pooled ")
+        if whole and (tot.get("grade") or "sourced") != "guess" and guessed and gsum > 0 and firm <= 1.01 * tv:
+            room = tv - firm
+            f = room / gsum if room > 1e-3 * tv else 0.0
+            scale = dict(guessed)
+            if FUEL_AGG in guessed:
+                scale.update({t: r for t, r in named.items() if (r.get("grade") or "sourced") == "guess"})
+            for t, r in scale.items():
+                c, lo, hi = _lohi(r)
+                r.update({"central": _g(c * f), "low": _g(lo * f) if r.get("low") not in ("", None) else "",
+                          "high": _g(hi * f) if r.get("high") not in ("", None) else "",
+                          "central-from": (r.get("central-from") or "") + f" (scaled x{f:.3g} to fit the {_g(tv)} total, 2026-10-21)"})
+            stats["guessed carriers scaled to the total"] = stats.get("guessed carriers scaled to the total", 0) + 1
             continue
         tot.update({"central": _g(lsum[0]), "low": _g(lsum[1]), "high": _g(lsum[2]),
                     "grade": worst([tot.get("grade") or "sourced"] + grades),

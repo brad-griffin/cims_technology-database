@@ -102,6 +102,42 @@ def _sources(rs):
     return "; ".join(dict.fromkeys(r.get("source-id", "") for r in rs))
 
 
+def example_totals(facts) -> dict:
+    """An example that gives two or more level-1 carriers but no total gets a total:
+    the sum of its own converted carriers (modeller 2026-10-21). Before this, only
+    examples that printed a total entered the pooled total, so a source giving gas
+    and electricity as separate lines (AER ST39 mine sites) never moved it. One
+    carrier is not enough: a lone line may be one item of a longer table
+    (sanity-check S117). The row is derived, sits beside the carriers in the
+    example, and is pooled like a printed total."""
+    groups = defaultdict(list)
+    for r in facts:
+        live = not r.get("excluded")
+        if r["parameter"] == SEC and r.get("value-norm") and live and r.get("archetype"):
+            groups[(r["example-id"], r["unit-norm"])].append(r)
+    stats = defaultdict(int)
+    new = []
+    for (eid, unit), rs in groups.items():
+        own, top, named = _example_carriers(rs)
+        if own is not None or len(top) < 2 or not _ok(top):
+            continue
+        base = next(r for r in rs if _target(r) in top or _target(r) in named)
+        tot = sum(top.values())
+        row = dict(base)
+        row.update({"record-id": base["record-id"] + "-total", "target": "", "target-norm": "",
+                    "value": "", "value-min": "", "value-max": "",
+                    "value-norm": f"{tot:.6g}", "value-min-norm": "", "value-max-norm": "",
+                    "value-type": "derived", "uncertainty-type": "", "duplicate-of": "",
+                    "formula": "sum of the example's level-1 carriers (" + " + ".join(
+                        f"{t} {v:.4g}" for t, v in sorted(top.items())) + ")",
+                    "derived-from": "; ".join(r["record-id"] for r in rs if _target(r) in top or _target(r) in named),
+                    "note": "total derived by the build from the example's own carriers (carriers.example_totals, 2026-10-21)"})
+        new.append(row)
+        stats["example totals from carriers"] += 1
+    facts.extend(new)
+    return dict(stats)
+
+
 def apply(summaries, facts, records) -> dict:
     pooled = defaultdict(lambda: defaultdict(list))
     for r in facts:

@@ -1,0 +1,5 @@
+parameter,value
+licence,BCER open data; free
+citation,"BC Energy Regulator (2026). BCER open data: drilling and well data, hydraulic fracture data, and gas processing plant design capacities (extracts to 10-16 Oct 2026). https://www.bc-er.ca/data-reports/ (accessed 2026-10-16)."
+source-id,bcer_2026_001
+extraction-note,"HELD LOCALLY since 2026-10-16. Loaded by bcer_extract.py: design raw-gas capacity of BC amine gas plants (median of 12), and BC metres drilled per active rig 2022-2025 (drill_ev.csv; the contractor field carries the rig number). Fracturing size per well (stages, fluid, proppant) to _other-values only (no fleet identifier). Graded sourced (regulator statistics, 2026-10-21)."

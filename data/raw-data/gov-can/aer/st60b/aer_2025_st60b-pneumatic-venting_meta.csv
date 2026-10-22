@@ -1,0 +1,5 @@
+parameter,value
+licence,Free public data; Alberta open data terms
+citation,"Alberta Energy Regulator (2025). ST60B: Upstream Petroleum Industry Emissions Report (2001-2025 editions, raw-data workbooks for 2022-2025). https://www.aer.ca/data-and-performance-reports/statistical-reports (accessed 2026-10-16)."
+source-id,aer_2025_001
+extraction-note,"HELD LOCALLY since 2026-10-16. The 2025 workbook carries Petrinex flare and vent volumes by facility and, per year, OneStop vented volumes by source (compressor, pneumatic instrument, pneumatic pump, fugitive, routine vent). Loaded by aer_extract.py: pneumatic venting per m3 of gas handled at Alberta facilities that report pneumatic venting, 2024 (joined to Petrinex). The other editions are held for reference only."

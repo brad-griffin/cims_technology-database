@@ -244,6 +244,8 @@ wide-carriers-species,specific-energy-consumption_biogas_low,technical,GJ/produc
 wide-carriers-species,specific-energy-consumption_biogas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biogas_n,technical,,
 wide-carriers-species,specific-energy-consumption_bioliquid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: bioliquid. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_bioliquid_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_bioliquid_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_bioliquid_n,technical,,
 wide-carriers-species,specific-energy-consumption_biomass,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_biomass_low,technical,GJ/product-unit,
@@ -254,6 +256,8 @@ wide-carriers-species,specific-energy-consumption_biomass-solid_low,technical,GJ
 wide-carriers-species,specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass-solid_n,technical,,
 wide-carriers-species,specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_black-liquor_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_black-liquor_n,technical,,
 wide-carriers-species,specific-energy-consumption_blast-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: blast-furnace-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_blast-furnace-gas_low,technical,GJ/product-unit,
@@ -344,6 +348,8 @@ wide-carriers-species,specific-energy-consumption_oil_low,technical,GJ/product-u
 wide-carriers-species,specific-energy-consumption_oil_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_oil_n,technical,,
 wide-carriers-species,specific-energy-consumption_other-fossil-fuel,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: other-fossil-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_other-fossil-fuel_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_other-fossil-fuel_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_other-fossil-fuel_n,technical,,
 wide-carriers-species,specific-energy-consumption_petroleum-coke,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: petroleum-coke. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_petroleum-coke_low,technical,GJ/product-unit,
@@ -476,12 +482,20 @@ wide-secondary-parameter,specific-energy-consumption_as-sourced_low,technical,GJ
 wide-secondary-parameter,specific-energy-consumption_as-sourced_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced_n,technical,,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-coal,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-coal. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-coal_low,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-coal_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-coal_n,technical,,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity_low,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-electricity_n,technical,,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-fuel. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel_low,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-fuel_n,technical,,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas,technical,GJ/GJ; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: as-sourced-natural-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_low,technical,GJ/GJ; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_n,technical,,
 wide-secondary-parameter,specific-energy-consumption_ccs-add-on,technical,GJ/GJ; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,specific-energy-consumption_ccs-add-on_n,technical,,

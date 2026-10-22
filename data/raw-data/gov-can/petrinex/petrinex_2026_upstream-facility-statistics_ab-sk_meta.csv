@@ -1,0 +1,5 @@
+parameter,value
+licence,Petrinex public data; free; Alberta and Saskatchewan open data terms
+citation,"Petrinex (Alberta and Saskatchewan public data) (2026). Petrinex public data, Alberta and Saskatchewan: conventional volumetrics 2022-2025, facility and well infrastructure, well-to-facility links, facility licences, code lists. https://www.petrinex.ca/public-data/apd/ (accessed 2026-10-16)."
+source-id,petrinex_2026_001
+extraction-note,"HELD LOCALLY since 2026-10-16 (downloaded by the modeller from petrinex.ca). Monthly volumes by reporting facility, activity and product. Reduced by petrinex_annual.py and petrinex_summary.py (facility-year metrics, git-ignored; group statistics, tracked) and loaded by petrinex_extract.py as one example per facility group: the median (p25-p75) over facilities reporting all 12 months of 2024. Brad 2026-10-21: graded sourced; archetype sizes are the median of existing facilities. In-situ schemes paired by hand (petrinex_2026_in-situ-scheme-pairs.csv); schemes with on-site cogeneration are left out of the fuel figures because turbine fuel is not booked as FUEL at the scheme."

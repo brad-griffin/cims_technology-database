@@ -73,3 +73,7 @@ data/raw-data/iea/iea_2026_methane-abatement-model-notes.txt
 # data/raw-data/gov-usa/eia/prices/eia_bulk_extract.py from the (ignored) zips.
 data/raw-data/gov-usa/eia/prices/eia_2026_bulk-seds_prices.csv
 data/raw-data/gov-usa/eia/prices/eia_2026_bulk-elec_prices.csv
+
+# Petrinex facility-year metrics (bulk, ~26 MB): regenerate with
+# data/raw-data/gov-can/petrinex/petrinex_annual.py then petrinex_summary.py from the (ignored) zips.
+data/raw-data/gov-can/petrinex/petrinex_2026_facility-metrics_ab-sk.csv

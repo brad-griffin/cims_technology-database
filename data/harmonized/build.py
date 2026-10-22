@@ -164,6 +164,8 @@ def main(argv) -> int:
     print("  targets rolled into their base parameter: "
           + (", ".join(f"{k} {v}" for k, v in ru.items()) or "none"))
     print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
+    et = carriers.example_totals(L.facts)
+    print("  energy totals from example carriers: " + (", ".join(f"{k} {v}" for k, v in et.items()) or "none"))
     pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
     cc = Counter(r.get("conversion-class") or "as reported" for r in pooled)
     print("  pooled parameter rows by conversion class: "

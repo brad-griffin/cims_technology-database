@@ -1,0 +1,5 @@
+parameter,value
+licence,Free public data; Alberta open data terms
+citation,"Alberta Energy Regulator (2026). ST59: Alberta Drilling Activity Monthly Statistics, and ST49: Daily Drilling Activity List (spud data), 2017-2025. https://www.aer.ca/data-and-performance-reports/statistical-reports/st59 (accessed 2026-10-16)."
+source-id,aer_2026_005
+extraction-note,"HELD LOCALLY since 2026-10-16. ST59: wells and metres drilled per year (wells include legs and recompletions). ST49: each spud with contractor and rig number (2020 not held). aer_drilling_summary.py divides ST59 metres by the ST49 rigs active in the year; aer_extract.py loads the 2022-2025 median as drilling-rig annual output. Graded sourced (regulator statistics, 2026-10-21)."

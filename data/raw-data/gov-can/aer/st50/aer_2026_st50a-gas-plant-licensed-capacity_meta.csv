@@ -1,0 +1,5 @@
+parameter,value
+licence,Free public data; Alberta open data terms
+citation,"Alberta Energy Regulator (2026). ST50A: Gas Processing Plants in Alberta, as of 30 Sep 2026. https://www.aer.ca/providing-information/data-and-reports/statistical-reports/st50 (accessed 2026-10-16)."
+source-id,aer_2026_003
+extraction-note,"HELD LOCALLY since 2026-10-16. Licensed raw-gas, sales-gas, NGL and sulphur capacities and licence status for every Alberta gas plant. Loaded by aer_extract.py: median (p25-p75) licensed raw-gas capacity of sour, sweet and ethane-recovery plants that reported throughput all of 2024 in Petrinex; also used by petrinex_extract.py to find the ethane-recovery plants. Line endings normalised to LF on 2026-10-16."

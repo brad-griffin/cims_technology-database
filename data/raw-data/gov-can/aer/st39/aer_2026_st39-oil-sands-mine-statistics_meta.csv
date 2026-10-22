@@ -1,0 +1,5 @@
+parameter,value
+licence,Free public data; Alberta open data terms
+citation,"Alberta Energy Regulator (2026). ST39: Alberta Mineable Oil Sands Plant Statistics, 2017-2025. https://www.aer.ca/data-and-performance-reports/statistical-reports/st39 (accessed 2026-10-16)."
+source-id,aer_2026_001
+extraction-note,"HELD LOCALLY since 2026-10-16. Monthly oil sands mined and processed, bitumen, purchased natural gas, other fuels and electricity by facility. Flattened by aer_st39_parse.py; loaded by aer_extract.py for the four mine-and-extraction sites in 2024 (Kearl, Fort Hills, Muskeg River with Jackpine, Aurora): bitumen produced, gross gas fuel per m3 and purchased electricity per m3. Sites with upgraders (Mildred Lake, Suncor base plant, Horizon) are left out. Graded sourced (regulator statistics, as Petrinex, 2026-10-21)."
