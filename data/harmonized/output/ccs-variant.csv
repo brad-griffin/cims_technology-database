@@ -10,7 +10,7 @@ direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,capex,2025_CAD/GJ-
 electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,capex,2025_CAD/t-per-yr,10110.8,563.449,tier 2 (reference capture plant x CO2 captured),,563.449,1.2798,10674.2,estimated
 fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,capex,2025_CAD/GJ-per-yr,42.6422,9.80191,tier 2 (capture node x CO2 captured),,9.80191,0.029,52.4441,guess
 furnace_regenerative_ccs-diffuse,furnace_regenerative,capex,2025_CAD/t-per-yr,359.138,93.7892,tier 2 (reference capture plant x CO2 captured),,93.7892,0.21303,452.927,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,capex,2025_CAD/m3-per-yr,0.0091457,0.0135199,tier 2 (capture node x CO2 captured),,0.0135199,4e-05,0.0226656,guess
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,capex,2025_CAD/e3m3-per-yr,9.1457,13.5199,tier 2 (capture node x CO2 captured),,13.5199,0.04,22.6656,guess
 gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,capex,2025_CAD/GJ-per-yr,263.11,30.4197,tier 2 (capture node x CO2 captured),,30.4197,0.09,293.53,guess
 gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,capex,2025_CAD/t-per-yr,1500,743.593,tier 2 (capture node x CO2 captured),,743.593,2.2,2243.59,guess
 gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,capex,2025_CAD/GJ-per-yr,76.1993,32.6187,tier 1 (same source),32.6187,44.3682,0.131268,108.818,estimated
@@ -37,7 +37,7 @@ direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,opex-fixed,2025_CA
 electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,opex-fixed,2025_CAD/t-per-yr,351.536,16.1161,tier 2 (reference capture plant x CO2 captured),,16.1161,1.2798,367.652,estimated
 fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-fixed,2025_CAD/GJ-per-yr,3.51171,0.276858,tier 2 (capture node x CO2 captured),,0.276858,0.029,3.78857,guess
 furnace_regenerative_ccs-diffuse,furnace_regenerative,opex-fixed,2025_CAD/t-per-yr,42.7935,2.68262,tier 2 (reference capture plant x CO2 captured),,2.68262,0.21303,45.4761,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-fixed,2025_CAD/m3-per-yr,0.000428799,0.000381873,tier 2 (capture node x CO2 captured),,0.000381873,4e-05,0.000810672,guess
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-fixed,2025_CAD/e3m3-per-yr,0.428799,0.381873,tier 2 (capture node x CO2 captured),,0.381873,0.04,0.810672,guess
 gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-fixed,2025_CAD/GJ-per-yr,6.31465,0.859215,tier 2 (capture node x CO2 captured),,0.859215,0.09,7.17386,guess
 gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-fixed,2025_CAD/t-per-yr,48.1122,21.003,tier 2 (capture node x CO2 captured),,21.003,2.2,69.1152,guess
 gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-fixed,2025_CAD/GJ-per-yr,4.08025,1.01829,tier 1 (same source),1.01829,1.25319,0.131268,5.09854,estimated
@@ -63,7 +63,7 @@ direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,opex-variable,2025
 electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,opex-variable,2025_CAD/t,279.369,23.4543,tier 2 (reference capture plant x CO2 captured),,23.4543,1.2798,302.823,estimated
 fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-variable,2025_CAD/GJ,4.20267,0.331466,tier 2 (capture node x CO2 captured),,0.331466,0.029,4.53414,guess
 furnace_regenerative_ccs-diffuse,furnace_regenerative,opex-variable,2025_CAD/t,9.92324,3.90409,tier 2 (reference capture plant x CO2 captured),,3.90409,0.21303,13.8273,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-variable,2025_CAD/m3,0.000440804,0.000457195,tier 2 (capture node x CO2 captured),,0.000457195,4e-05,0.000897999,guess
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-variable,2025_CAD/e3m3,0.440804,0.457195,tier 2 (capture node x CO2 captured),,0.457195,0.04,0.897999,guess
 gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-variable,2025_CAD/GJ,0.565735,1.02869,tier 2 (capture node x CO2 captured),,1.02869,0.09,1.59442,guess
 gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-variable,2025_CAD/t,37.2542,25.1457,tier 2 (capture node x CO2 captured),,25.1457,2.2,62.3999,guess
 gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-variable,2025_CAD/GJ,1.71407,0.59832,tier 1 (same source),0.59832,1.50038,0.131268,2.31239,estimated

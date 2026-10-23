@@ -196,7 +196,7 @@ autothermal-reformer_hydrogen,hydrogen,GJ,guess,sourced,guess,sourced,estimated,
 autothermal-reformer_ammonia,chemicals,t,missing,sourced,missing,sourced,sourced,estimated,sourced,sourced
 distillation-column_atmospheric-vacuum,petroleum-refining,m3,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
 electrolyzer_low-temperature,petroleum-refining,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
-gas-treatment-unit_acid-gas-advanced,petroleum-refining,m3,guess,guess,guess,guess,estimated,estimated,identity,sourced
+gas-treatment-unit_acid-gas-advanced,petroleum-refining,e3m3,guess,guess,guess,guess,estimated,estimated,identity,sourced
 gas-treatment-unit_sulphur-recovery,petroleum-refining,t,sourced,estimated,estimated,sourced,estimated,guess,identity,sourced
 gasifier_coal-petroleum-coke,petroleum-refining,GJ,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,m3,estimated,estimated,not-applicable,sourced,estimated,guess,estimated,sourced
@@ -267,7 +267,7 @@ separator_thickening-filtration,mining,t,guess,guess,guess,sourced,estimated,gue
 mine_open-pit-coal,mining,t,sourced,estimated,sourced,guess,estimated,estimated,identity,sourced
 mine_underground-coal,mining,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 process-improvement_coal-mine-methane-drainage,mining,t,guess,guess,not-applicable,guess,sourced,guess,missing,sourced
-adsorber_molecular-sieve,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
+adsorber_molecular-sieve,oil-and-gas,e3m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
 liquefaction-train_electric,oil-and-gas,t,sourced,estimated,not-applicable,guess,estimated,guess,identity,sourced
 compressor_blowdown-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,estimated,identity,sourced
 liquefaction-train_base-load_efficiency-moderate,oil-and-gas,t,estimated,estimated,not-applicable,guess,estimated,guess,guess,sourced
@@ -276,7 +276,7 @@ reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-
 compressor_electric,machine-drive,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
 compressor_flare-gas-recovery,oil-and-gas,t,sourced,estimated,not-applicable,guess,sourced,estimated,identity,sourced
 reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
-pneumatic-device_non-emitting,oil-and-gas,m3,sourced,sourced,not-applicable,not-applicable,sourced,sourced,identity,sourced
+pneumatic-device_non-emitting,oil-and-gas,e3m3,sourced,sourced,not-applicable,not-applicable,sourced,sourced,identity,sourced
 compressor_vapour-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,estimated,identity,sourced
 direct-heater_line-heater,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
 drilling-rig_battery-hybrid,oil-and-gas,m,guess,guess,guess,guess,guess,estimated,guess,sourced
@@ -287,13 +287,13 @@ flare,oil-and-gas,t,guess,guess,not-applicable,guess,sourced,sourced,missing,sou
 flare_enclosed-combustor,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,missing,sourced
 flare_high-efficiency,oil-and-gas,t,guess,guess,not-applicable,not-applicable,sourced,sourced,missing,sourced
 fracturing-fleet_electric,oil-and-gas,GJ,sourced,estimated,sourced,sourced,guess,sourced,identity,sourced
-gas-treatment-unit_amine-sweetening,oil-and-gas,m3,sourced,estimated,estimated,sourced,estimated,sourced,identity,sourced
-gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,m3,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
-gas-treatment-unit_glycol-dehydration,oil-and-gas,m3,sourced,estimated,estimated,guess,estimated,sourced,guess,sourced
+gas-treatment-unit_amine-sweetening,oil-and-gas,e3m3,sourced,estimated,estimated,sourced,estimated,sourced,identity,sourced
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,e3m3,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
+gas-treatment-unit_glycol-dehydration,oil-and-gas,e3m3,sourced,estimated,estimated,guess,estimated,sourced,guess,sourced
 heat-pump_oil-treating,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,identity,sourced
 liquefaction-train_small-scale,oil-and-gas,t,guess,guess,not-applicable,guess,estimated,guess,estimated,sourced
 management-system_leak-detection,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,identity,sourced
-pneumatic-device_gas-driven,oil-and-gas,m3,guess,guess,not-applicable,not-applicable,estimated,sourced,identity,sourced
+pneumatic-device_gas-driven,oil-and-gas,e3m3,guess,guess,not-applicable,not-applicable,estimated,sourced,identity,sourced
 pump_electric-station_efficiency-moderate,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 process-improvement_low-emission-components,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,missing,sourced
 pump_artificial-lift,oil-and-gas,m3,guess,guess,not-applicable,sourced,estimated,sourced,identity,sourced
@@ -311,7 +311,7 @@ separator_paraffinic-froth-treatment,oil-and-gas,m3,guess,guess,guess,guess,esti
 separator_produced-water-recycling,oil-and-gas,m3,guess,guess,guess,guess,estimated,estimated,identity,sourced
 separator_warm-lime-softening,oil-and-gas,m3,guess,guess,guess,guess,estimated,estimated,missing,sourced
 separator_warm-water-extraction,oil-and-gas,m3,guess,guess,guess,guess,estimated,guess,identity,sourced
-turboexpander_ngl-recovery,oil-and-gas,m3,sourced,estimated,not-applicable,sourced,estimated,sourced,guess,sourced
+turboexpander_ngl-recovery,oil-and-gas,e3m3,sourced,estimated,not-applicable,sourced,estimated,sourced,guess,sourced
 turboexpander_pressure-let-down,power-generation,GJ,sourced,sourced,not-applicable,sourced,estimated,sourced,estimated,sourced
 well_disposal-injection,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,missing,sourced
 well_solvent-assisted,oil-and-gas,m3,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
@@ -421,7 +421,7 @@ electrolysis-cell_electrorefining,non-ferrous-metals,t,sourced,estimated,sourced
 electrolysis-cell_zinc-electrowinning,non-ferrous-metals,t,sourced,estimated,estimated,guess,estimated,guess,identity,sourced
 furnace_regenerative_ccs-diffuse,non-metallic-minerals,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 furnace_rotary-hearth-direct-reduction,iron-and-steel,t,guess,guess,guess,sourced,estimated,estimated,guess,sourced
-gas-treatment-unit_thermal-oxidiser,chemicals,m3,sourced,estimated,estimated,guess,estimated,guess,guess,sourced
+gas-treatment-unit_thermal-oxidiser,chemicals,e3m3,sourced,estimated,estimated,guess,estimated,guess,guess,sourced
 gasifier_coal-methanol,chemicals,t,guess,guess,guess,sourced,sourced,estimated,sourced,sourced
 incinerator_waste-to-energy,heat-supply,GJ,sourced,estimated,estimated,missing,sourced,identity,estimated,sourced
 kiln_calcium-looping,cement,t,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
@@ -465,7 +465,7 @@ kiln_lime-shaft,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estima
 mine_open-pit-oil-sands,oil-and-gas,m3,sourced,sourced,estimated,sourced,sourced,sourced,sourced,sourced
 well_electromagnetic-heating,oil-and-gas,m3,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
 well_in-situ-oxy-combustion,oil-and-gas,m3,estimated,estimated,not-applicable,guess,estimated,estimated,estimated,sourced
-pneumatic-device_low-bleed,oil-and-gas,m3,guess,guess,not-applicable,not-applicable,estimated,sourced,guess,sourced
+pneumatic-device_low-bleed,oil-and-gas,e3m3,guess,guess,not-applicable,not-applicable,estimated,sourced,guess,sourced
 gas-treatment-unit_vam-oxidiser,mining,t,guess,guess,guess,guess,sourced,guess,missing,sourced
 process-improvement_pfc-anode-effect-control,non-ferrous-metals,t,guess,guess,not-applicable,guess,sourced,guess,identity,sourced
 electrolysis-cell_magnesium-chloride,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,sourced,sourced

@@ -57,6 +57,9 @@ ATOM = {
     "bbl": ("volume", 0.158987), "barrel": ("volume", 0.158987), "kb": ("volume", 158.987), "kbbl": ("volume", 158.987),
     "bbl-beer": ("volume", 0.117347765),
     "1000-Nm3": ("volume", 1000.0),
+    # Canadian gas-volume units as the regulators print them: e3m3 = 10^3 m3, e6m3 =
+    # 10^6 m3; the gas archetypes' product unit is e3m3 (user 2026-10-23)
+    "e3m3": ("volume", 1e3), "e6m3": ("volume", 1e6),
     "Mgal": ("volume", 3785.411784), "Wh": ("energy", 3.6e-6),
     "million-Nm3-CH4": ("volume", 1e6), "thousand-Nm3-biomethane": ("volume", 1e3),
     "mol-H2": ("amount-h2", 1.0),

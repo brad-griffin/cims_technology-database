@@ -387,9 +387,9 @@ wide-secondary-parameter,lifetime_stack,technical,years,"Expected technical serv
 wide-secondary-parameter,lifetime_stack_low,technical,years,
 wide-secondary-parameter,lifetime_stack_high,technical,years,
 wide-secondary-parameter,lifetime_stack_n,technical,,
-wide-secondary-parameter,capacity_as-sourced,technical,MW; kt/yr; m3/yr as-sourced,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,capacity_as-sourced_low,technical,MW; kt/yr; m3/yr as-sourced,
-wide-secondary-parameter,capacity_as-sourced_high,technical,MW; kt/yr; m3/yr as-sourced,
+wide-secondary-parameter,capacity_as-sourced,technical,MW; e3m3/yr; kt/yr; m3/yr as-sourced,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: as-sourced. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_as-sourced_low,technical,MW; e3m3/yr; kt/yr; m3/yr as-sourced,
+wide-secondary-parameter,capacity_as-sourced_high,technical,MW; e3m3/yr; kt/yr; m3/yr as-sourced,
 wide-secondary-parameter,capacity_as-sourced_n,technical,,
 wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
@@ -497,11 +497,11 @@ wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas,tech
 wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_low,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_high,technical,GJ/GJ; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_as-sourced-natural-gas_n,technical,,
-wide-secondary-parameter,specific-energy-consumption_ccs-add-on,technical,GJ/GJ; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_ccs-add-on,technical,GJ/GJ; GJ/e3m3; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,specific-energy-consumption_ccs-add-on_n,technical,,
-wide-secondary-parameter,specific-energy-consumption_host-plant,technical,GJ/GJ; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,specific-energy-consumption_host-plant_low,technical,GJ/GJ; GJ/m3; GJ/t,
-wide-secondary-parameter,specific-energy-consumption_host-plant_high,technical,GJ/GJ; GJ/m3; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_host-plant,technical,GJ/GJ; GJ/e3m3; GJ/m3; GJ/t,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,specific-energy-consumption_host-plant_low,technical,GJ/GJ; GJ/e3m3; GJ/m3; GJ/t,
+wide-secondary-parameter,specific-energy-consumption_host-plant_high,technical,GJ/GJ; GJ/e3m3; GJ/m3; GJ/t,
 wide-secondary-parameter,specific-energy-consumption_host-plant_n,technical,,
 wide-secondary-parameter,temperature-output_air,technical,degC,"Temperature of the delivered heat. Governs tier assignment. Species or stream: air. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,temperature-output_air_n,technical,,
@@ -547,37 +547,37 @@ wide-secondary-parameter,degradation-rate,technical,%,"Annual fractional loss of
 wide-secondary-parameter,degradation-rate_low,technical,%,
 wide-secondary-parameter,degradation-rate_high,technical,%,
 wide-secondary-parameter,degradation-rate_n,technical,,
-wide-secondary-parameter,capex_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,capex_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
-wide-secondary-parameter,capex_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capex_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,capex_ccs-add-on_n,cost,,
 wide-secondary-parameter,capex_component,cost,2025_CAD/GJ-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capex_component_low,cost,2025_CAD/GJ-per-yr,
 wide-secondary-parameter,capex_component_high,cost,2025_CAD/GJ-per-yr,
 wide-secondary-parameter,capex_component_n,cost,,
-wide-secondary-parameter,capex_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,capex_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
-wide-secondary-parameter,capex_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Overnight capital cost per unit of capacity, on the basis named in cost-basis. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capex_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,capex_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,capex_host-plant_n,cost,,
-wide-secondary-parameter,opex-fixed_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,opex-fixed_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
-wide-secondary-parameter,opex-fixed_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_ccs-add-on,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-fixed_ccs-add-on_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_ccs-add-on_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_ccs-add-on_n,cost,,
-wide-secondary-parameter,opex-fixed_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,opex-fixed_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
-wide-secondary-parameter,opex-fixed_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_host-plant,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-fixed_host-plant_low,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
+wide-secondary-parameter,opex-fixed_host-plant_high,cost,2025_CAD/GJ-per-yr; 2025_CAD/e3m3-per-yr; 2025_CAD/m3-per-yr; 2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_host-plant_n,cost,,
 wide-secondary-parameter,opex-fixed_rebuild,cost,2025_CAD/t-per-yr,"Annual operating and maintenance cost that does not vary with output. Species or stream: rebuild. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,opex-fixed_rebuild_low,cost,2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_rebuild_high,cost,2025_CAD/t-per-yr,
 wide-secondary-parameter,opex-fixed_rebuild_n,cost,,
-wide-secondary-parameter,opex-variable_ccs-add-on,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,opex-variable_ccs-add-on_low,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
-wide-secondary-parameter,opex-variable_ccs-add-on_high,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_ccs-add-on,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: ccs-add-on. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-variable_ccs-add-on_low,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_ccs-add-on_high,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,
 wide-secondary-parameter,opex-variable_ccs-add-on_n,cost,,
-wide-secondary-parameter,opex-variable_host-plant,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,opex-variable_host-plant_low,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
-wide-secondary-parameter,opex-variable_host-plant_high,cost,2025_CAD/GJ; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_host-plant,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: host-plant. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,opex-variable_host-plant_low,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,
+wide-secondary-parameter,opex-variable_host-plant_high,cost,2025_CAD/GJ; 2025_CAD/e3m3; 2025_CAD/m3; 2025_CAD/t,
 wide-secondary-parameter,opex-variable_host-plant_n,cost,,
 wide-secondary-parameter,opex-variable_labour,cost,2025_CAD/t,"Operating cost per unit of output, excluding purchased energy and feedstock. Species or stream: labour. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,opex-variable_labour_n,cost,,

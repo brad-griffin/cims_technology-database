@@ -991,6 +991,12 @@ def _pu(unit):
     return (unit or "").split("/")[-1].replace("-per-yr", "")
 
 
+def _ratio_unit(pu):
+    """A cost ratio (per year of the same product unit on both sides) does not depend
+    on the scale of the unit: 10^3 m3 pools with m3 (2026-10-23)."""
+    return {"e3m3": "m3", "e6m3": "m3"}.get(pu, pu)
+
+
 def e_cost_ratio(rule, a, ctx):
     """p = base parameter x the median p/base ratio of archetypes with BOTH sourced,
     from the nearest pool of at least `min-pool` (same equipment, then family,
@@ -1021,7 +1027,7 @@ def e_cost_ratio(rule, a, ctx):
     pool = {}
     for i, level in enumerate(levels):
         pool = {k: v for k, v in ratios.items()
-                if (level == "any-unit" or A[k]["product-unit"] == a["product-unit"])
+                if (level == "any-unit" or _ratio_unit(A[k]["product-unit"]) == _ratio_unit(a["product-unit"]))
                 and (level in (None, "any-unit") or A[k][level] == a[level])}
         need = needs[min(i, len(needs) - 1)]
         if len(pool) >= need:
