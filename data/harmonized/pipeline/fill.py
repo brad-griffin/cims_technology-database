@@ -994,7 +994,7 @@ def _pu(unit):
 def _ratio_unit(pu):
     """A cost ratio (per year of the same product unit on both sides) does not depend
     on the scale of the unit: 10^3 m3 pools with m3 (2026-10-23)."""
-    return {"e3m3": "m3", "e6m3": "m3"}.get(pu, pu)
+    return {"1000-m3": "m3", "e3m3": "m3", "e6m3": "m3"}.get(pu, pu)
 
 
 def e_cost_ratio(rule, a, ctx):

@@ -106,7 +106,7 @@ HEAT_DENOMINATED = re.compile(r"per MWh of heat|MWh[- ]?th\b|kWh[- ]?th\b|MWh th
 # records/reference/incremental-cost.csv), so it is not a whole-plant cost.
 INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this as the cost of "
                     "adding it to an existing plant, not as a whole plant")
-PHYSICAL_SERVICE = {"t", "GJ", "m3", "e3m3", "m", "MWh"}
+PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
 # a cost per unit of LUMEN rating (lighting, ruling 2026-10-14), as a multiple of

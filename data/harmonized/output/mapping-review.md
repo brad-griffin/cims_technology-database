@@ -3147,18 +3147,18 @@ Rows converted to the archetype's basis are pooled; these were not.
 | steam is measured in GJ, the row in t | 63 |
 | cost per plant cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 60 |
 | cost per yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 57 |
-| cost per yr cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 57 |
+| cost per yr cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 57 |
 | repeat: the source prints the same figure for carbon-limits_2021_001:pneumatic-device_non-emitting_electric-solar@sample-site-a-3-continuous-2-intermittent-1-esd-new-site-no-electricity-on-site-sect-5-table-7 (duplicate-of); pooled once | 54 |
 | cost per yr cannot be put per t: the source gives no output factor to convert it with | 52 |
 | ruled out: NCCP 1999 levelised cost net of conserved gas valued at 1.50 $/GJ: methane abatement costs are GROSS of the gas recovered; the recovered gas is an output flow (records/reference/recovered-output.csv) (OG005, ruling 2026-10-14) (user 2026-10-14) | 52 |
 | example set aside by the modeller: UKERC integrated steelworks (IS-IW): whole-route values per t crude steel (ironmaking, steelmaking, utilities), not the unit-process archetype (sanity-check R231, R286; ruling 2026-10-05: route values without a ratio are not pooled) | 49 |
 | per bbl, but the archetype's product is measured in m3 | 49 |
-| no conversion from short-ton/yr to e3m3/yr | 48 |
+| no conversion from short-ton/yr to 1000-m3/yr | 48 |
 | duplicate of the row in duplicate-of: the same number in another unit; that row is not pooled either | 47 |
 | set aside: needs a host-plant cost. UKERC gives this measure's cost as the cost of adding it to a plant and states no baseline cost for its host | 46 |
 | no conversion from MW to kt/yr | 46 |
 | cost per kWe-per-yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 42 |
-| cost per plant cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 41 |
+| cost per plant cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 41 |
 | repeat: the source prints the same figure for johansson_2012_001:capture-unit_amine@borealis-cracker-mea-capture-heat-from-ngcc-at-reboiler-duty-2800-kj-kg-co2-table-6-2030 (duplicate-of); pooled once | 40 |
 | repeat: the source prints the same figure for dea_2026_006:steam-turbine_back-pressure_waste-large-40c@08-waste-to-energy-chp-back-pressure-large-40-80-degc (duplicate-of); pooled once | 34 |
 | duplicate of the row in duplicate-of: the same number in another unit | 33 |
@@ -3246,7 +3246,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for lemar_2001_001:microturbine_natural-gas-chp@natural-gas-chp-45-75-kw-table-2 (duplicate-of); pooled once | 12 |
 | cost per yr-per-t-CH4-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 12 |
 | repeat: the source prints the same figure for zuhlsdorf_2019_001:heat-pump_industrial@alumina-case-cascade-multi-stage-steam-compression-r-718-top-cycle-r-600-bottom-cycles-sect-4-tables-6-7 (duplicate-of); pooled once | 12 |
-| no conversion from m3-natural-gas/h-per-device to t/e3m3 | 12 |
+| no conversion from m3-natural-gas/h-per-device to t/1000-m3 | 12 |
 | repeat: the source prints the same figure for mccollum_2006_001:compressor_co2-dehydration@co2-compression-0-1-7-38-mpa-plus-pumping-to-15-mpa-1-000-t-co2-day-sect-i-part-i-fig-4 (duplicate-of); pooled once | 12 |
 | natural-gas is measured in GJ, the row in t | 12 |
 | repeat: the source prints the same figure for epa_2007_001:combustion-turbine_biogas@steam (duplicate-of); pooled once | 11 |
@@ -3270,8 +3270,8 @@ Rows converted to the archetype's basis are pooled; these were not.
 | no conversion from t/yr to t/GJ | 10 |
 | repeat: the source prints the same figure for kranz_2001_001:combustion-turbine_heat-recovery-steam-generator@gas-turbine-chp-plant-1-mwe-table-1-onsite-energy-corp-estimate (duplicate-of); pooled once | 10 |
 | cost per t-methanol-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 10 |
-| no conversion from kt/yr to e3m3/yr | 10 |
-| no conversion from t/yr to e3m3/yr | 10 |
+| no conversion from kt/yr to 1000-m3/yr | 10 |
+| no conversion from t/yr to 1000-m3/yr | 10 |
 | per kWh, but the archetype's product is measured in t | 10 |
 | per t lipid feed, but the archetype's product is measured in GJ | 10 |
 | per t wood feed, but the archetype's product is measured in GJ | 10 |
@@ -3360,7 +3360,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per kW-yr cannot be put per GJ: the source gives no output factor to convert it with | 6 |
 | no conversion from % to t/GJ | 6 |
 | cost per GJ cannot be put per t: the source gives no output factor to convert it with | 6 |
-| cost per 1000-Nm3-per-h/yr cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 6 |
+| cost per 1000-Nm3-per-h/yr cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 6 |
 | repeat: the source prints the same figure for dea_2026_006:boiler_solid-fuel_waste@08-waste-to-energy-heat-only-boiler-small (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for ager_2023_001:heat-pump_hybrid-absorption-compression_hybrid-energy@hthp-market-overview-sect-3-6-table-2 (duplicate-of); pooled once | 6 |
 | ruled out: gas plant capacity is the Alberta licensed capacity (AER ST50A, aer_2026_003); other single-plant and design capacities are kept as examples but not pooled (Brad 2026-10-21) | 6 |
@@ -3386,7 +3386,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for lazard_2021_001:electrolyzer_polymer-electrolyte-membrane@pem-electrolyzer-1-mw-small-high-efficiency-case-key-assumptions (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for lemar_2001_001:combustion-turbine_heat-recovery-steam-generator@natural-gas-chp-0-75-5-mw-table-2 (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for lemar_2001_001:combustion-turbine_heat-recovery-steam-generator@natural-gas-chp-10-20-mw-table-2 (duplicate-of); pooled once | 6 |
-| cost per yr-per-t-CH4-per-yr cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 6 |
+| cost per yr-per-t-CH4-per-yr cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 6 |
 | ruled out: RTC 2022: LCOH x COP is about 41 USD/MWh in every cell, the May-2022 electricity price only; no capital (confirmed exclusion S70) (modeller 2026-10-05) | 6 |
 | repeat: the source prints the same figure for joosten_1998_001:reactor_polymerization-extrusion_gas-phase@lldpe-polymerisation-gas-phase-sect-2-2-1-table-26-2000 (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for ekbom_2003_001:gasifier_black-liquor_methanol@kam2-market-kraft-pulp-mill-2000-adt-d-recovery-boiler-vs-blgmf-ch-4-5 (duplicate-of); pooled once | 6 |
@@ -3395,7 +3395,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: whole-system scope: electricity per GJ of useful compressed-air-system output (McKane and Hasanbeigi 2010 Table 5, 1/system efficiency), not per GJ of motor shaft work; motor archetypes take 1/motor efficiency (OT001, S85) (modeller 2026-10-13) | 6 |
 | repeat: the source prints the same figure for ren_2009_001:steam-cracker_fired-tubular@petrochemicals-production-step-2030-2050-cost-analysis-ch-5-tables-5-3-5-4-yields-tables-5-1-5-2 (duplicate-of); pooled once | 6 |
 | cost per t-naphtha-per-yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 6 |
-| no conversion from MMscfd to e3m3/yr | 6 |
+| no conversion from MMscfd to 1000-m3/yr | 6 |
 | repeat: the source prints the same figure for epa_2022_002:flare_enclosed-combustor@centrifugal-compressor-with-wet-seals-gathering-and-boosting-station-route-degassing-vent-to-new-combustion-device-tables-2-1-2-3-2-4 (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for epa_2022_002:compressor_wet-seal-degassing-recovery@centrifugal-compressor-with-wet-seals-gathering-and-boosting-station-route-degassing-vent-to-process-tables-2-5-2-6 (duplicate-of); pooled once | 6 |
 | repeat: the source prints the same figure for iea_2026_005:flare_routed-vent_large-dehydrator@iea-methane-abatement-model-redtechguide-reason-vented-route-to-existing-flare-large-dehydrators (duplicate-of); pooled once | 6 |
@@ -3537,20 +3537,20 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for daniels_2002_001:electric-arc-furnace_dri-charge@electric-arc-furnace-primary-dri-charge-sect-2-4-3-table-2-20 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for daniels_2002_001:capture-unit_physical-solvent@co2-removal-on-blast-furnace-gas-sect-2-4-5-table-2-23 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for daniels_2002_001:rolling-mill_hot@eurofer-depreciation-data-sect-2-5-table-2-33 (duplicate-of); pooled once | 4 |
-| no conversion from kg-THC/h-per-source to t/e3m3 | 4 |
+| no conversion from kg-THC/h-per-source to t/1000-m3 | 4 |
 | ruled out: whole-system scope: electricity per GJ of useful fan-system output (McKane and Hasanbeigi 2010 Table 5, 1/system efficiency), not per GJ of motor shaft work; motor archetypes take 1/motor efficiency (OT001, S85) (modeller 2026-10-13) | 4 |
 | repeat: the source prints the same figure for ren_2009_001:fermenter_lignocellulosic-enzymatic@feedstock-production-step-2030-2050-cost-analysis-ch-5-tables-5-3-5-4-energy-ch-4-tables-4-2-to-4-4 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for element-energy_2021_001:capture-unit_physical-solvent@carbon-capture-technology-cost-and-performance-cindy-based-rectisol (duplicate-of); pooled once | 4 |
-| no conversion from kWh/t-CO2 to GJ/e3m3 | 4 |
-| no conversion from Btu/gal lean solution to GJ/e3m3 | 4 |
+| no conversion from kWh/t-CO2 to GJ/1000-m3 | 4 |
+| no conversion from Btu/gal lean solution to GJ/1000-m3 | 4 |
 | ruled out: Kidnay Table 10.3 reboiler duty is per litre of LEAN AMINE SOLUTION circulated, not per m3 of gas; it needs a circulation rate to put per m3 of gas, and normalised straight from kJ/L to GJ/m3 it is about 580x the per-gas duty (sanity-check 2026-10-11, OG001) (modeller 2026-10-13) | 4 |
 | repeat: the source prints the same figure for crundwell_2011_001:dryer_rotary-direct-fired@laterite-ore-dewatering-kiln-cerro-matoso-colombia-table-5-1 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for epa_2023_002:flare_enclosed-combustor@pumps-production-segment-one-natural-gas-driven-diaphragm-pump-at-site-new-source-tables-3-4-3-12 (duplicate-of); pooled once | 4 |
 | cost per event cannot be put per t: the source gives no output factor to convert it with | 4 |
 | repeat: the source prints the same figure for epa_2021_001:compressor_rod-packing-replacement_fixed-schedule@reciprocating-compressor-gathering-and-boosting-station-rod-packing-replaced-every-3-years-or-26-000-h-tables-7-3-to-7-5 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for epa_2021_001:compressor_rod-packing-replacement_monitored@reciprocating-compressor-gathering-and-boosting-station-annual-flow-monitoring-and-rod-packing-replacement-above-2-scfm-tables-7-7-7-8 (duplicate-of); pooled once | 4 |
-| no conversion from scf-natural-gas/h-per-device to t/e3m3 | 4 |
-| cost per device cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 4 |
+| no conversion from scf-natural-gas/h-per-device to t/1000-m3 | 4 |
+| cost per device cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 4 |
 | repeat: the source prints the same figure for ct_2010_002:burner-control_oven-o2-trim@innovation-opportunities-and-business-cases-sect-6-fig-33-and-business-case-tables-pp-43-59 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for iea_2013_001:reactor_polymerization-extrusion@table-5-lldpe-slurry-average-plant-annex-4 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for rootzen_2017_001:kiln_dry-precalciner@average-existing-nordic-cement-plant-c0-period-0-tables-3-4-6 (duplicate-of); pooled once | 4 |
@@ -3656,7 +3656,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: whole-cement CO2 including clinker; CIMS takes clinker from the cement clinker node, so the binder node excludes it (sanity-check 2026-10-23, MCF017) (user 2026-10-23 (sanity-check recommendations)) | 3 |
 | repeat: the source prints the same figure for jrc_2014_001:boiler_solid-fuel_fluidised-bed-steam-turbine@biomass-fluidised-bed-boiler-circulating-or-bubbling-with-steam-turbine-2013-table-46-p-71 (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for jrc_2014_001:steam-turbine_back-pressure@biomass-chp-2013-table-51-p-78 (duplicate-of); pooled once | 3 |
-| cost per t-CH4-per-yr cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 3 |
+| cost per t-CH4-per-yr cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 3 |
 | no conversion from t-CO2/y to kt/yr | 3 |
 | no conversion from L/min to GJ/t | 3 |
 | repeat: the source prints the same figure for wade_2003_001:combined-cycle_natural-gas-chp@gas-turbine-combined-cycle-cogeneration-table-2 (duplicate-of); pooled once | 3 |
@@ -3679,7 +3679,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: projected LED package efficacy for a future year (2020-2030), not a current product (modeller 2026-10-14 (lighting restructure)) | 3 |
 | repeat: the source prints the same figure for nrel_2016_001:reactor_nuclear-small-modular_helium@summary-of-international-smr-development-institute-of-nuclear-and-new-energy-technology-htr-pm-sect-4-1-2-table-10 (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for epa_2023_002:compressor_vapour-recovery_generator-powered@pumps-production-segment-one-natural-gas-driven-diaphragm-pump-at-site-new-source-tables-3-4-3-11 (duplicate-of); pooled once | 3 |
-| cost per yr-per-device cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 3 |
+| cost per yr-per-device cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 3 |
 | repeat: the source prints the same figure for carbon-limits_2016_001:pneumatic-device_non-emitting_electric-solar@electronic-controllers-solar-example-retrofit-site-1-continuous-2-intermittent-1-esd-no-grid-dry-gas-sect-4-2-tables-8-10 (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for emanuelsson_2022_001:capture-unit_amine@post-combustion-amine-capture-on-the-1-5-mt-y-cement-plant-sect-2-1-table-3 (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for iea_2013_001:reactor_benzene-from-catalytic-reformate@table-5-benzene-from-catalytic-reformate-average-plant-annex-4 (duplicate-of); pooled once | 3 |
@@ -3828,7 +3828,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out as the twin of tp-bcs_2007_001-0063 (same source, figure and parameter): BCS 2007 Exhibits 23-25 'efficiency' is theoretical minimum energy over actual (a second-law ratio), not the conversion efficiency the parameter holds (sanity-check NM015, R655); its twins in the other exhibits go with it (modeller 2026-10-13) | 2 |
 | no conversion from MW/mmtpa to GJ/t | 2 |
 | no conversion from t CO2e/t LNG to t/t | 2 |
-| no conversion from Btu/Btu to GJ/e3m3 | 2 |
+| no conversion from Btu/Btu to GJ/1000-m3 | 2 |
 | repeat: the source prints the same figure for brown_2020_001:reactor_pyrolysis-oil@pyrolysis-oil-with-refinery-co-processing-fcc-or-hydrotreatment-low-high-sect-3-5-table-11 (duplicate-of); pooled once | 2 |
 | repeat: the source prints the same figure for doe_2024_001:electrolyzer_low-temperature@pem-electrolysis-500-mw-project-2030-installation-table-a1-p-30-fig-10-fn-a-p-15 (duplicate-of); pooled once | 2 |
 | repeat: the source prints the same figure for doe_2024_001:compressor_hydrogen-pipeline@midstream-hydrogen-storage-and-delivery-cost-2030-fig-13-p-18 (duplicate-of); pooled once | 2 |
@@ -3894,7 +3894,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per t-naphtha-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 2 |
 | repeat: the source prints the same figure for ren_2009_001:gasifier_coal-methanol@feedstock-production-step-2030-2050-cost-analysis-ch-5-tables-5-3-5-4-energy-ch-4-tables-4-2-to-4-4 (duplicate-of); pooled once | 2 |
 | repeat: the source prints the same figure for ren_2009_001:gasifier_fischer-tropsch@feedstock-production-step-2030-2050-cost-analysis-ch-5-tables-5-3-5-4-energy-ch-4-tables-4-2-to-4-4 (duplicate-of); pooled once | 2 |
-| no conversion from kt-CO2/yr to e3m3/yr | 2 |
+| no conversion from kt-CO2/yr to 1000-m3/yr | 2 |
 | repeat: the source prints the same figure for etsap_2012_002:combined-cycle_natural-gas_chp-ccs-50mw@ccs-enabled-chp-table-1 (duplicate-of); pooled once | 2 |
 | no conversion from kWh/t-coke to GJ/m3 | 2 |
 | repeat: the source prints the same figure for gpsa_2004_001:gas-treatment-unit_amine-sweetening@firetube-heaters-bath-properties-sect-8-fig-8-34 (duplicate-of); pooled once | 2 |
@@ -3937,7 +3937,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per MWh cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 2 |
 | repeat: the source prints the same figure for iea_2024_002:steam-turbine_back-pressure_coal@levelised-cost-of-heat-supplied-to-district-heating-networks-comparators-2035-2050-ch-4-p-96 (duplicate-of); pooled once | 2 |
 | no conversion from mg/kg-disturbed-material to t/m3 | 2 |
-| no conversion from m3-THC/1000-m3-gas to t/e3m3 | 2 |
+| no conversion from m3-THC/1000-m3-gas to t/1000-m3 | 2 |
 | repeat: the source prints the same figure for clearstone_2019_001:reciprocating-engine_drive_2-stroke-lean-burn@engine-and-turbine-ch4-and-n2o-emission-factors-sect-3-3-2-2-tables-19-20 (duplicate-of); pooled once | 2 |
 | coking-coal is measured in GJ, the row in t | 2 |
 | naphtha is measured in t, the row in MWh | 2 |
@@ -4266,7 +4266,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per t-COD-removed cannot be put per m3: the source gives no output factor to convert it with | 1 |
 | no conversion from kWh/kg-BOD5-eliminated to GJ/m3 | 1 |
 | repeat: the source prints the same figure for brinkmann_2016_001:gas-treatment-unit_thermal-oxidation-straight@thermal-oxidation-sect-3-5-1-3-5-tables-3-202-and-3-206 (duplicate-of); pooled once | 1 |
-| no conversion from Nm3/1000-Nm3 to GJ/e3m3 | 1 |
+| no conversion from Nm3/1000-Nm3 to GJ/1000-m3 | 1 |
 | repeat: the source prints the same figure for brinkmann_2016_001:gas-treatment-unit_thermal-oxidation-recuperative@thermal-oxidation-sect-3-5-1-3-5-tables-3-202-and-3-206 (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for dea_2026_006:combustion-turbine_heat-recovery-steam-generator_combined-cycle-extraction@05-gas-turbine-combined-cycle-extraction-chp-large (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for dea_2026_006:steam-turbine_back-pressure_wood-pellets-medium@09b-biomass-chp-back-pressure-wood-pellets-medium (duplicate-of); pooled once | 1 |
@@ -4448,7 +4448,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per yr/platform cannot be put per t-per-yr: the source gives no output factor to convert it with | 1 |
 | cost per vessel-compressor-station cannot be put per t-per-yr: the source gives no output factor to convert it with | 1 |
 | cost per yr/t cannot be put per t-per-yr: the source gives no output factor to convert it with | 1 |
-| cost per system cannot be put per e3m3-per-yr: the source gives no output factor to convert it with | 1 |
+| cost per system cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 1 |
 | cost per yr/plant cannot be put per t-per-yr: the source gives no output factor to convert it with | 1 |
 | repeat: the source prints the same figure for epa_1999_001:management-system_leak-detection_production-well_enhanced@enhanced-directed-inspection-and-maintenance-at-production-sites-pro-exhibit-iii-6-p-iii-11 (duplicate-of); pooled once | 1 |
 | cost per yr/m3 cannot be put per t-per-yr: the source gives no output factor to convert it with | 1 |
@@ -4544,7 +4544,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: Pfeifer 2002 ETA_EAF is liquid-steel enthalpy over total input including chemical energy, burners, coal and electrodes; the host electric-arc-furnace efficiency (83.98 %, n=22) is electrical, so the two are not the same ratio; the bucket-saving rule can derive the variant from the host (IS015) (modeller 2026-10-13) | 1 |
 | repeat: the source prints the same figure for plaza_2020_001:capture-unit_advanced-solvent@aker-solutions-acc-without-energy-saver-norcem-brevik-pilot-sect-2-1-1-table-1 (duplicate-of); pooled once | 1 |
 | no conversion from GJ/t-CO2-avoided to GJ/t | 1 |
-| no conversion from mmscfd to e3m3/yr | 1 |
+| no conversion from mmscfd to 1000-m3/yr | 1 |
 | ruled out: HP023: seasonal COP 9.5-11 from a personal communication (Pears 2019) for commercial units; far above every rated industrial closed-cycle heat pump and the source of the 1,100% band high (modeller 2026-10-13) | 1 |
 | repeat: the source prints the same figure for rightor_2020_001:boiler_electric@electric-boilers-100-150-degc-process-heat-appendix-a-sect-boilers (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for schlosser_2020_001:heat-pump_industrial@meat-processing-case-transcritical-co2-hp-sect-6-2-table-5 (duplicate-of); pooled once | 1 |
@@ -4584,7 +4584,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | no conversion from t/t-steel to t/t | 1 |
 | no conversion from t-cement/h to kt/yr | 1 |
 | ruled out: MC003 (ruling 3): CO2 intensity of the process WITHOUT capture (0.83 t/t cement) on a capture variant whose emissions-total is net of capture (modeller 2026-10-13) | 1 |
-| no conversion from kg/Sm3-natural-gas to t/e3m3 | 1 |
+| no conversion from kg/Sm3-natural-gas to t/1000-m3 | 1 |
 | no conversion from L-ethanol/h to MW | 1 |
 | no conversion from kg/L-ethanol to t/GJ | 1 |
 | repeat: the source prints the same figure for kaiser_2017_001:reactor_hydrotreating-diesel@jieyang-china-400-mbpd-coking-refinery-cost-estimate-2014-table-11 (duplicate-of); pooled once | 1 |
@@ -4769,7 +4769,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | coke-breeze is measured in GJ, the row in t | 1 |
 | per short-ton, but the archetype's product is measured in t | 1 |
 | per mol-H2, but the archetype's product is measured in GJ | 1 |
-| per lb water removed, but the archetype's product is measured in e3m3 | 1 |
+| per lb water removed, but the archetype's product is measured in 1000-m3 | 1 |
 | per t sulphur in feed, but the archetype's product is measured in t | 1 |
 | oil is measured in GJ, the row in kg | 1 |
 
