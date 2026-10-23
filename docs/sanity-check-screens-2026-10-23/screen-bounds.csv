@@ -1,0 +1,153 @@
+archetype,family,equipment,parameter,target,unit,central,low,high,n,grade,method,sources,rule,note
+combustion-turbine_chp_ccs-diffuse,heat-supply,combustion-turbine,emissions-total,co2,t/GJ,0.0196032,0,0.075164,0,estimated,ccs-emissions,van-geene_2024_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+direct-heater_fuel-fired_ccs-diffuse,heat-supply,direct-heater,emissions-total,co2,t/GJ,0.0107968,,,0,estimated,ccs-emissions,van-geene_2024_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+fuel-cell_chp,heat-supply,fuel-cell,emissions-total,co2e,t/GJ,-0.0482432,,,1,sourced,pooled,aea_2010_001; ukerc_2013_001,negative,negative central
+fuel-cell_chp,heat-supply,fuel-cell,specific-energy-consumption,,GJ/GJ,3.17024,,,1,sourced,pooled,ieaghg_2007_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fuel-cell_chp,heat-supply,fuel-cell,specific-energy-consumption,fuel,GJ/GJ,3.17024,,,1,sourced,pooled,ieaghg_2007_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fuel-cell_chp,heat-supply,fuel-cell,specific-energy-consumption,natural-gas,GJ/GJ,3.17024,,,2,sourced,pooled,ieaghg_2007_001; lemar_2001_001,sec-per-gj-high,more than 3 GJ in per GJ out
+gasifier_biomass-chp,heat-supply,gasifier,emissions-combustion,co2,t/GJ,-0.0407306,,,1,sourced,pooled,ukerc_2013_001,negative,negative central
+gasifier_biomass-chp,heat-supply,gasifier,emissions-total,co2,t/GJ,-0.0407306,,,0,identity,sum,ukerc_2013_001,negative,negative central
+gasifier_biomass-chp,heat-supply,gasifier,emissions-total,co2e,t/GJ,-0.0722632,,,1,sourced,pooled,ukerc_2013_001,negative,negative central
+anaerobic-digester_chp,heat-supply,anaerobic-digester,specific-energy-consumption,,GJ/GJ,3.7,1.48,5.92,0,guess,sum,,sec-per-gj-high,more than 3 GJ in per GJ out
+combined-cycle_efficiency-moderate,power-generation,combined-cycle,specific-energy-consumption,diesel,GJ/GJ,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+steam-turbine_condensing,power-generation,steam-turbine,emissions-combustion,co2e,t/GJ,0.266528,0.2475,0.286389,8,sourced,pooled,jrc_2014_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+steam-turbine_condensing,power-generation,steam-turbine,emissions-total,co2,t/GJ,0.275,,,1,sourced,pooled,van-geene_2024_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+steam-turbine_condensing,power-generation,steam-turbine,specific-energy-consumption,,GJ/GJ,3.55925,2.73179,3.55925,2,sourced,pooled,pardo_2013_001,sec-per-gj-high,more than 3 GJ in per GJ out
+steam-turbine_condensing,power-generation,steam-turbine,specific-energy-consumption,steam,GJ/GJ,3.55925,2.73179,3.55925,2,sourced,pooled,nrcan_2008_001,sec-per-gj-high,more than 3 GJ in per GJ out
+steam-turbine_waste-heat,power-generation,steam-turbine,specific-energy-consumption,,GJ/GJ,9.00901,2.5,10,0,identity,inverse,csi-ecra_2017_001; schorcht_2013_001; ipieca_2025_001; worrell_2013_001; zier_2021_001,sec-per-gj-high,more than 3 GJ in per GJ out
+geothermal-well_binary-power,power-generation,geothermal-well,emissions-combustion,co2e,t/GJ,0.00111111,,,1,sourced,pooled,jrc_2014_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+geothermal-well_binary-power,power-generation,geothermal-well,specific-energy-consumption,,GJ/GJ,7.14286,6.62252,12.5,0,identity,inverse,jrc_2014_001; etsap_2010_006,sec-per-gj-high,more than 3 GJ in per GJ out
+geothermal-well_binary-power,power-generation,geothermal-well,specific-energy-consumption,geothermal,GJ/GJ,7.14286,6.62252,12.5,0,identity,single-carrier-split,jrc_2014_001; etsap_2010_006,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive,machine-drive,combustion-turbine,emissions-combustion,co2,t/GJ,0.166667,,,1,sourced,pooled,joshi_2022_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+combustion-turbine_drive,machine-drive,combustion-turbine,emissions-combustion,co2e,t/GJ,0.611837,0.508828,0.612117,0,identity,co2e-from-species,joshi_2022_001; clearstone_2004_001; clearstone_2019_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+combustion-turbine_drive,machine-drive,combustion-turbine,specific-energy-consumption,,GJ/GJ,3.3624,,,1,sourced,pooled,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive,machine-drive,combustion-turbine,specific-energy-consumption,fuel,GJ/GJ,3.3624,,,1,sourced,pooled,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive,machine-drive,combustion-turbine,specific-energy-consumption,natural-gas,GJ/GJ,3.3624,,,1,sourced,pooled,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive_efficiency-moderate,machine-drive,combustion-turbine,emissions-combustion,co2,t/GJ,0.15665,0.142559,0.172189,0,proxy,fuel-emission-factor,clearstone_2019_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+combustion-turbine_drive_efficiency-moderate,machine-drive,combustion-turbine,specific-energy-consumption,,GJ/GJ,3.09341,2.85804,3.3624,0,proxy,bucket-saving,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive_efficiency-moderate,machine-drive,combustion-turbine,specific-energy-consumption,fuel,GJ/GJ,3.09341,2.85804,3.3624,0,proxy,bucket-saving,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+combustion-turbine_drive_efficiency-moderate,machine-drive,combustion-turbine,specific-energy-consumption,natural-gas,GJ/GJ,3.09341,2.85804,3.3624,0,proxy,bucket-saving,clearstone_2019_001,sec-per-gj-high,more than 3 GJ in per GJ out
+motor_induction-standard,machine-drive,motor,emissions-total,co2e,t/GJ,2.01416,,,1,sourced,pooled,ukerc_2013_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+motor_induction-standard_efficiency-moderate,machine-drive,motor,emissions-total,co2e,t/GJ,0.328072,0.316661,0.328072,2,sourced,pooled,ukerc_2013_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+motor_premium-efficiency,machine-drive,motor,emissions-total,co2e,t/GJ,0.353553,,,1,sourced,pooled,ukerc_2013_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+motor_variable-speed,machine-drive,motor,emissions-total,co2e,t/GJ,0.303466,0.303466,0.316661,2,sourced,pooled,ukerc_2013_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+steam-turbine_drive,machine-drive,steam-turbine,specific-energy-consumption,,GJ/GJ,4.19498,1.91382,10,0,estimated,inverse,csi-ecra_2017_001; schorcht_2013_001; ipieca_2025_001; worrell_2013_001; zier_2021_001; dea_2026_006; van-geene_2024_001,sec-per-gj-high,more than 3 GJ in per GJ out
+steam-turbine_drive,machine-drive,steam-turbine,specific-energy-consumption,steam,GJ/GJ,4.19498,1.91382,10,0,estimated,single-carrier-split,csi-ecra_2017_001; schorcht_2013_001; ipieca_2025_001; worrell_2013_001; zier_2021_001; dea_2026_006; van-geene_2024_001,sec-per-gj-high,more than 3 GJ in per GJ out
+hvac-heater_fuel-fired,space-conditioning,hvac-heater,emissions-combustion,co2e,t/GJ,0.000321893,0,0.000322007,0,identity,co2e-from-species,dea_2026_007,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+mobile-equipment_diesel,mobile-equipment,mobile-equipment,emissions-combustion,co2,t/GJ,0.272545,0.237378,0.459919,0,identity,fuel-emission-factor,dea_2026_005,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+mobile-equipment_diesel,mobile-equipment,mobile-equipment,specific-energy-consumption,,GJ/GJ,3.89851,3.39548,6.57873,0,identity,inverse,dea_2026_005,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_diesel,mobile-equipment,mobile-equipment,specific-energy-consumption,diesel,GJ/GJ,3.89851,3.39548,6.57873,0,identity,single-carrier-split,dea_2026_005,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_diesel-electric,mobile-equipment,mobile-equipment,emissions-combustion,co2,t/GJ,0.2328,0.205535,0.258667,0,guess,fuel-emission-factor,,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+mobile-equipment_diesel-electric,mobile-equipment,mobile-equipment,specific-energy-consumption,,GJ/GJ,3.33333,2.94118,3.7037,0,guess,inverse,,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_diesel-electric,mobile-equipment,mobile-equipment,specific-energy-consumption,diesel,GJ/GJ,3.33,2.94,3.7,0,guess,judgement,,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_diesel-electric,mobile-equipment,mobile-equipment,specific-energy-consumption,electricity,GJ/GJ,0.0,0.0,0.28,0,guess,judgement,,sec-zero,specific energy consumption zero
+mobile-equipment_spark-ignition,mobile-equipment,mobile-equipment,emissions-combustion,co2,t/GJ,0.27373,0.226727,0.3414,0,guess,fuel-emission-factor,,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+mobile-equipment_spark-ignition,mobile-equipment,mobile-equipment,specific-energy-consumption,,GJ/GJ,5.40541,4.54545,6.66667,0,guess,inverse,,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_spark-ignition,mobile-equipment,mobile-equipment,specific-energy-consumption,natural-gas,GJ/GJ,5.40541,4.54545,6.66667,0,guess,single-carrier-split,,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_hydrogen-fuel-cell,mobile-equipment,mobile-equipment,specific-energy-consumption,,GJ/GJ,3.07013,2.81429,3.37715,0,estimated,inverse,dea_2026_005,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_hydrogen-fuel-cell,mobile-equipment,mobile-equipment,specific-energy-consumption,hydrogen,GJ/GJ,3.07013,2.81429,3.37715,0,estimated,single-carrier-split,dea_2026_005,sec-per-gj-high,more than 3 GJ in per GJ out
+capture-unit_amine,co2-capture,capture-unit,emissions-total,co2,t/t,-0.9,-0.9,0.082,2,sourced,pooled,van-geene_2024_001; csi-ecra_2017_001,negative,negative central
+capture-unit_chemical-solvent,co2-capture,capture-unit,emissions-total,co2,t/t,-1,,,1,sourced,pooled,van-geene_2024_001,negative,negative central
+compressor_co2-dehydration,co2-capture,compressor,emissions-total,co2,t/t,-0.835,-1,-0.468,4,sourced,pooled,van-geene_2024_001,negative,negative central
+caster_strip,iron-and-steel,caster,specific-energy-consumption,natural-gas,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+binder_blended-cement,cement,binder,abatement-cost,co2,2025_CAD/t-CO2-eq,-87.4797,-117.818,-22.0908,7,sourced,pooled,ricardo-aea_2013_001; doe_2023_001; doe_2023_002,negative,negative central
+binder_calcined-clay,cement,binder,abatement-cost,co2,2025_CAD/t-CO2-eq,-95.7272,-103.091,-88.3634,1,estimated,range-midpoint,doe_2023_002,negative,negative central
+kiln_dry-precalciner_efficiency-moderate,cement,kiln,abatement-cost,co2,2025_CAD/t-CO2-eq,-45.8017,-58.9089,-29.4545,3,sourced,pooled,doe_2023_001; doe_2023_002,negative,negative central
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,autothermal-reformer,emissions-total,co2e,t/GJ,0.0035,,,1,sourced,pooled,pembina_2021_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+distillation-column_heat-integrated,chemicals,distillation-column,specific-energy-consumption,natural-gas,GJ/t,0,0,1.34658,0,guess,judgement,,sec-zero,specific energy consumption zero
+distillation-column_heat-pumped,chemicals,distillation-column,efficiency,,%,550,110,1290,29,sourced,pooled,kiss_2017_001; kiss_2012_001,efficiency-over-100,efficiency above 100% on non-heat-pump
+reactor_co2-to-methanol,chemicals,reactor,specific-energy-consumption,methanol,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_haber-bosch-electrolytic,chemicals,reactor,abatement-cost,co2,2025_CAD/t-CO2-eq,-2.2091,-82.4725,78.0543,1,estimated,range-midpoint,doe_2023_001,negative,negative central
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,steam-cracker,abatement-cost,co2,2025_CAD/t-CO2-eq,-147.273,-176.727,-117.818,1,estimated,range-midpoint,doe_2023_001,negative,negative central
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,steam-cracker,specific-energy-consumption,biomass,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,steam-cracker,specific-energy-consumption,coal,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,steam-cracker,specific-energy-consumption,methanol,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,fermenter,emissions-combustion,co2,t/GJ,0.00271866,0.00229538,0.0157153,0,estimated,ccs-emissions,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+fermenter_grain-dry-mill,biofuels,fermenter,emissions-combustion,co2,t/GJ,0.00271866,0.00229538,0.0157153,0,identity,fuel-emission-factor,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+gasifier_biomass-methanation,biofuels,gasifier,emissions-combustion,co2e,t/GJ,0.00012137,,,0,identity,co2e-from-species,dea_2026_003,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+reactor_hydrotreating-lipids,biofuels,reactor,emissions-total,co2,t/GJ,0.000164116,,,1,sourced,pooled,van-geene_2024_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,emissions-combustion,co2,t/GJ,0.00147792,0.00145574,0.00149456,0,identity,fuel-emission-factor,dea_2026_003,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+separator_biogas-upgrading,biofuels,separator,emissions-process,co2e,t/GJ,0.00205799,0.000163884,0.102385,0,identity,co2e-from-species,dea_2026_003; etsap_2013_012,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+anaerobic-digester,biofuels,anaerobic-digester,specific-energy-consumption,biogas,GJ/GJ,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+anaerobic-digester,biofuels,anaerobic-digester,specific-energy-consumption,biomass,GJ/GJ,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+anaerobic-digester,biofuels,anaerobic-digester,specific-energy-consumption,municipal-waste,GJ/GJ,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+gasifier_biomass-waste,hydrogen,gasifier,emissions-total,co2,t/GJ,0.177072,,,1,sourced,pooled,nrel_2018_003,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+reactor_methane-pyrolysis,hydrogen,reactor,emissions-total,co2,t/GJ,0.0119335,,,1,sourced,pooled,van-geene_2024_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+reactor_alkylation,petroleum-refining,reactor,specific-energy-consumption,natural-gas,GJ/m3,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_alkylation,petroleum-refining,reactor,specific-energy-consumption,refinery-gas,GJ/m3,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_isomerization,petroleum-refining,reactor,specific-energy-consumption,natural-gas,GJ/m3,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+steam-reformer_methane_efficiency-moderate,petroleum-refining,steam-reformer,specific-energy-consumption,steam,GJ/GJ,0,,,0,proxy,bucket-saving,abella_2022_001,sec-zero,specific energy consumption zero
+steam-reformer_methane,petroleum-refining,steam-reformer,specific-energy-consumption,steam,GJ/GJ,0,,,1,sourced,pooled,abella_2022_001,sec-zero,specific energy consumption zero
+steam-reformer_methane_ccs-concentrated,petroleum-refining,steam-reformer,emissions-total,co2,t/GJ,0.0089501,0,0.0719038,0,estimated,ccs-emissions,iea_2019_002; van-geene_2024_001; barthe_2015_001; boulamanti_2017_001; collodi_2010_001; gccsi_2021_001; ieaghg_2017_00,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+refinery_hydroskimming,petroleum-refining,refinery,specific-energy-consumption,natural-gas,GJ/m3,0.0,0.0,0.3,0,guess,judgement,,sec-zero,specific energy consumption zero
+refinery_hydroskimming,petroleum-refining,refinery,specific-energy-consumption,refinery-gas,GJ/m3,0.0,0.0,0.9,0,guess,judgement,,sec-zero,specific energy consumption zero
+refinery_deep-conversion,petroleum-refining,refinery,specific-energy-consumption,natural-gas,GJ/m3,0.0,0.0,1.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+refinery_deep-conversion,petroleum-refining,refinery,specific-energy-consumption,petroleum-coke,GJ/m3,0.0,0.0,1.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+refinery_deep-conversion,petroleum-refining,refinery,specific-energy-consumption,refinery-gas,GJ/m3,0.0,0.0,2.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,specific-energy-consumption,biogas,GJ/m3,0,,,0,guess,host-split,,sec-zero,specific energy consumption zero
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,specific-energy-consumption,biomass,GJ/m3,0,,,0,guess,host-split,,sec-zero,specific energy consumption zero
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,specific-energy-consumption,municipal-waste,GJ/m3,0,,,0,guess,host-split,,sec-zero,specific energy consumption zero
+dryer_heat-pump,pulp-and-paper,dryer,efficiency,,%,300,,,1,sourced,pooled,suhr_2015_001,efficiency-over-100,efficiency above 100% on non-heat-pump
+kiln_lime-rotary_efficiency-strong,pulp-and-paper,kiln,specific-energy-consumption,steam,GJ/t,0,,,1,sourced,pooled,francis_2002_001,sec-zero,specific energy consumption zero
+debarker_drum,pulp-and-paper,debarker,specific-energy-consumption,steam,GJ/t,0,0,0,2,sourced,pooled,nrcan_2008_001,sec-zero,specific energy consumption zero
+debarker_drum,pulp-and-paper,debarker,specific-energy-consumption,steam,GJ/t,0,0,0,2,sourced,pooled,nrcan_2008_001,band-collapsed,n>=2 but low equals high
+compressor_low-emission-seal,oil-and-gas,compressor,abatement-cost,co2e,2025_CAD/t-CO2-eq,-11.2057,,,1,sourced,pooled,epa_2019_001,negative,negative central
+reciprocating-engine_drive,machine-drive,reciprocating-engine,emissions-combustion,co2,t/GJ,0.144324,0.09976,0.189477,0,guess,fuel-emission-factor,,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+reciprocating-engine_drive,machine-drive,reciprocating-engine,emissions-combustion,co2e,t/GJ,16.5798,4.2878,18.9878,0,identity,co2e-from-species,clearstone_2004_001; clearstone_2019_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+reciprocating-engine_drive,machine-drive,reciprocating-engine,specific-energy-consumption,diesel,GJ/GJ,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,emissions-combustion,co2,t/GJ,0.256896,0.253041,0.259788,0,identity,fuel-emission-factor,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,emissions-combustion,co2e,t/GJ,0.391111,0.249167,0.7675,13,sourced,pooled,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,specific-energy-consumption,,GJ/GJ,5.07299,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,specific-energy-consumption,fuel,GJ/GJ,5.07299,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,specific-energy-consumption,natural-gas,GJ/GJ,5.07299,,,2,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,abatement-cost,co2,2025_CAD/t-CO2-eq,-2.20335,-35.126,30.7193,2,estimated,range-midpoint,doe_2023_001; etsap_2010_007,negative,negative central
+management-system_leak-detection,oil-and-gas,management-system,abatement-cost,co2e,2025_CAD/t-CO2-eq,-1.34654,-14.8585,-1.34654,2,sourced,pooled,epa_2019_001,negative,negative central
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,co2,t/GJ,2.8275,2.8275,3.1075,0,identity,fuel-emission-factor,clearstone_2004_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,co2e,t/GJ,2.8275,2.8275,3.1075,0,identity,co2e-from-species,clearstone_2004_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,specific-energy-consumption,,GJ/GJ,40.4449,40.4449,44.45,0,identity,sec-from-emissions,clearstone_2004_001,sec-per-gj-high,more than 3 GJ in per GJ out
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,specific-energy-consumption,diesel,GJ/GJ,40.4449,40.4449,44.45,0,identity,sec-from-emissions,clearstone_2004_001,sec-per-gj-high,more than 3 GJ in per GJ out
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,specific-energy-consumption,fuel,GJ/GJ,40.4449,40.4449,44.45,0,identity,sec-from-emissions,clearstone_2004_001,sec-per-gj-high,more than 3 GJ in per GJ out
+reciprocating-engine_gasoline-propane,machine-drive,reciprocating-engine,specific-energy-consumption,,GJ/GJ,3.5,2.7,4.6,0,guess,judgement,,sec-per-gj-high,more than 3 GJ in per GJ out
+reciprocating-engine_gasoline-propane,machine-drive,reciprocating-engine,specific-energy-consumption,gasoline,GJ/GJ,3.5,2.7,4.6,0,guess,judgement,,sec-per-gj-high,more than 3 GJ in per GJ out
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,specific-energy-consumption,natural-gas,GJ/m3,0.0,0.0,0.0001,0,guess,judgement,,sec-zero,specific energy consumption zero
+chiller_absorption,food-and-beverage,chiller,emissions-combustion,co2,t/GJ,0.0162048,0.00957696,0.0229421,0,guess,fuel-emission-factor,,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+converter_peirce-smith,non-ferrous-metals,converter,specific-energy-consumption,solar,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,fuel,GJ/t,0,0,0,1,sourced,pooled,martin_2000_001,sec-zero,specific energy consumption zero
+furnace_homogenizing,non-ferrous-metals,furnace,specific-energy-consumption,coal,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+paste-plant_soderberg,non-ferrous-metals,paste-plant,specific-energy-consumption,coke,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+rolling-mill_continuous-casting,non-ferrous-metals,rolling-mill,specific-energy-consumption,natural-gas,GJ/t,0.0,0.0,0.3,0,guess,judgement,,sec-zero,specific energy consumption zero
+dryer_direct-fired_efficiency-strong,other-industry,dryer,specific-energy-consumption,biogas,GJ/t,0.0,0.0,0.09,0,guess,judgement,,sec-zero,specific energy consumption zero
+dryer_direct-fired_efficiency-strong,other-industry,dryer,specific-energy-consumption,hydrogen,GJ/t,0.0,0.0,0.09,0,guess,judgement,,sec-zero,specific energy consumption zero
+dryer_direct-fired_efficiency-strong,other-industry,dryer,specific-energy-consumption,liquid-biomass,GJ/t,0.0,0.0,0.09,0,guess,judgement,,sec-zero,specific energy consumption zero
+furnace_heat-treatment,other-industry,furnace,specific-energy-consumption,biomass,GJ/t,0.0,0.0,1.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+kiln_lumber-heat-pump,other-industry,kiln,efficiency,,%,380,300,460,2,estimated,range-midpoint,minea_2012_001; rtc_2023_001,efficiency-over-100,efficiency above 100% on non-heat-pump
+steam-reformer_ammonia_efficiency-moderate,chemicals,steam-reformer,specific-energy-consumption,steam,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+geothermal-well_direct-use,heat-supply,geothermal-well,specific-energy-consumption,,GJ/GJ,5.30504,4.01606,12.5,0,estimated,inverse,jrc_2014_001; etsap_2010_006,sec-per-gj-high,more than 3 GJ in per GJ out
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,specific-energy-consumption,blast-furnace-gas,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,specific-energy-consumption,by-product-gas,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,specific-energy-consumption,coke-oven-gas,GJ/t,0.0,0.0,0.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,specific-energy-consumption,hydrogen,GJ/t,0.0,0.0,9.0,0,guess,judgement,,sec-zero,specific energy consumption zero
+electrolysis-cell_chlor-alkali-diaphragm,chemicals,electrolysis-cell,specific-energy-consumption,fuel,GJ/t,0,,,1,sourced,pooled,rehfeldt_2018_001,sec-zero,specific energy consumption zero
+mobile-equipment_hydrogen-combustion,mobile-equipment,mobile-equipment,specific-energy-consumption,,GJ/GJ,5.55556,4.54545,6.66667,0,guess,inverse,,sec-per-gj-high,more than 3 GJ in per GJ out
+mobile-equipment_hydrogen-combustion,mobile-equipment,mobile-equipment,specific-energy-consumption,hydrogen,GJ/GJ,5.55556,4.54545,6.66667,0,guess,single-carrier-split,,sec-per-gj-high,more than 3 GJ in per GJ out
+reactor_ammonium-nitrate,chemicals,reactor,specific-energy-consumption,natural-gas,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+refinery_sugar-beet,food-and-beverage,refinery,specific-energy-consumption,steam,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+geothermal-well_flash-power,power-generation,geothermal-well,specific-energy-consumption,,GJ/GJ,4.21941,4.01606,4.34783,0,identity,inverse,jrc_2014_001,sec-per-gj-high,more than 3 GJ in per GJ out
+geothermal-well_flash-power,power-generation,geothermal-well,specific-energy-consumption,geothermal,GJ/GJ,4.21941,4.01606,4.34783,0,identity,single-carrier-split,jrc_2014_001,sec-per-gj-high,more than 3 GJ in per GJ out
+heat-pump_heat-transformer,heat-supply,heat-pump,efficiency,,%,48,45,48,2,sourced,pooled,iea-hpt_2023_001,cop-low,heat pump COP below 1
+heat-pump_heat-transformer,heat-supply,heat-pump,efficiency,heat,%,48,45,48,2,sourced,pooled,iea-hpt_2023_001,cop-low,heat pump COP below 1
+electrolysis-cell_chlor-alkali-mercury,chemicals,electrolysis-cell,specific-energy-consumption,steam,GJ/t,0,0,0,2,sourced,pooled,lindley_1997_001; worrell_2000_001,sec-zero,specific energy consumption zero
+electrolysis-cell_chlor-alkali-mercury,chemicals,electrolysis-cell,specific-energy-consumption,steam,GJ/t,0,0,0,2,sourced,pooled,lindley_1997_001; worrell_2000_001,band-collapsed,n>=2 but low equals high
+boiler_oxy-fuel,heat-supply,boiler,emissions-combustion,co2,t/GJ,0.0074,0.00188,0.01358,3,sourced,pooled,ieaghg_2007_001,emissions-per-gj-low,below 0.02 t CO2/GJ with a fossil carrier
+no-abatement_n2o,chemicals,no-abatement,specific-energy-consumption,,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+no-abatement_methane,oil-and-gas,no-abatement,specific-energy-consumption,,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+no-abatement_coal-mine-methane,mining,no-abatement,specific-energy-consumption,,GJ/t,0,0,0,0,guess,judgement,,sec-zero,specific energy consumption zero
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,emissions-combustion,co2,t/GJ,0.224415,,,0,identity,fuel-emission-factor,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,emissions-combustion,co2e,t/GJ,0.233334,0.228611,0.238056,6,sourced,pooled,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,specific-energy-consumption,,GJ/GJ,3.21005,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,specific-energy-consumption,diesel,GJ/GJ,3.21005,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,specific-energy-consumption,fuel,GJ/GJ,3.21005,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,emissions-combustion,co2,t/GJ,0.186333,0.184455,0.187742,0,identity,fuel-emission-factor,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,emissions-combustion,co2e,t/GJ,0.218889,0.213889,0.223333,5,sourced,pooled,liberty_2020_001,emissions-per-gj-high,above 0.14 t CO2/GJ (coal is ~0.095)
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,specific-energy-consumption,,GJ/GJ,3.34656,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,specific-energy-consumption,fuel,GJ/GJ,3.34656,,,1,sourced,pooled,liberty_2020_001,sec-per-gj-high,more than 3 GJ in per GJ out

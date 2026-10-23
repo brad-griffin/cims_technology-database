@@ -1,0 +1,1107 @@
+archetype,family,equipment,parameter,target,unit,central,low,high,n,grade,method,sources,group-median,ratio-to-median,group-n
+reciprocating-engine_drive,machine-drive,reciprocating-engine,emissions-combustion,ch4,t/GJ,0.538,0.099,0.624,6,sourced,pooled,clearstone_2004_001; clearstone_2019_001,4e-06,147431.19,13
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,n2o,t/GJ,0.0103,,,1,sourced,pooled,clearstone_2004_001,2e-06,4233.839,14
+reciprocating-engine_drive,machine-drive,reciprocating-engine,emissions-combustion,n2o,t/GJ,0.00572,,,2,sourced,pooled,clearstone_2004_001; clearstone_2019_001,2e-06,2351.22,14
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,annual-output,,m3,1.7e+09,5e+08,5e+09,0,guess,host-size,,1571110.0,1082.038,54
+pump_electric-station,oil-and-gas,pump,annual-output,,m3,1700000000.0,500000000.0,5000000000.0,0,guess,judgement,,1571110.0,1082.038,54
+combustion-turbine_drive,machine-drive,combustion-turbine,emissions-combustion,ch4,t/GJ,0.00369,1.1111e-05,0.0037,3,sourced,pooled,clearstone_2004_001; clearstone_2019_001; joshi_2022_001,4e-06,1011.192,13
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,ch4,t/GJ,0.0035,0.0035,0.0135,2,sourced,pooled,clearstone_2004_001,4e-06,959.125,13
+adsorber_molecular-sieve,oil-and-gas,adsorber,annual-output,,m3,9.272e+08,1.223e+08,1.849e+09,1,sourced,pooled,petrinex_2026_001,1571110.0,590.156,54
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,annual-output,,m3,9.272e+08,1.223e+08,1.849e+09,1,sourced,pooled,petrinex_2026_001,1571110.0,590.156,54
+combustion-turbine_drive,machine-drive,combustion-turbine,emissions-combustion,n2o,t/GJ,0.00129,,,2,sourced,pooled,clearstone_2004_001; clearstone_2019_001,2e-06,530.258,14
+gas-treatment-unit_acid-gas-advanced,petroleum-refining,gas-treatment-unit,annual-output,,m3,5.11105e+08,2.733e+07,1.849e+09,0,estimated,end-use-median,petrinex_2026_001,1571110.0,325.315,54
+leaching-vessel_in-situ,mining,leaching-vessel,capex,,2025_CAD/t-per-yr,118000.0,47000.0,295000.0,0,guess,judgement,,450.0,262.222,310
+leaching-vessel_in-situ,mining,leaching-vessel,opex-fixed,,2025_CAD/t-per-yr,4867.99,1095.31,25324.3,0,guess,cost-ratio,,19.5852,248.555,306
+reactor_gas-to-liquids,oil-and-gas,reactor,annual-output,,GJ,6.54445e+07,2.15536e+07,1.31673e+08,0,identity,capacity-output,etsap_2010_012,304164.0,215.162,114
+leaching-vessel_in-situ,mining,leaching-vessel,cost-levelized,calculated,2025_CAD/t,20951.6,6528.49,88500.4,0,guess,levelized,,100.079,209.351,310
+reciprocating-engine_chp,heat-supply,reciprocating-engine,emissions-combustion,ch4,t/GJ,0.000755114,0.000755114,0.00100682,2,sourced,pooled,dea_2026_006,4e-06,206.928,13
+gasifier_coal-fischer-tropsch,oil-and-gas,gasifier,annual-output,,GJ,5.72149e+07,1.88104e+07,1.15214e+08,0,identity,capacity-output,etsap_2010_012,304164.0,188.105,114
+reactor_co2-to-ome3-5,chemicals,reactor,opex-variable,,2025_CAD/t,3654.97,3478.12,3812.17,4,sourced,pooled,mantei_2021_001,19.9781,182.949,221
+adsorber_molecular-sieve,oil-and-gas,adsorber,capacity,,m3/yr,2.42725e+09,5.037e+08,4.25225e+09,1,sourced,pooled,aer_2026_003,13927300.0,174.28,20
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,capacity,,m3/yr,2.42725e+09,5.037e+08,4.25225e+09,1,sourced,pooled,aer_2026_003,13927300.0,174.28,20
+reactor_adipic-acid,chemicals,reactor,emissions-total,co2e,t/t,79.57,71.61,87.52,0,identity,sum,boulamanti_2017_001,0.461733,172.329,38
+leaching-vessel_in-situ,mining,leaching-vessel,opex-variable,,2025_CAD/t,3260.42,419.368,29656.5,0,guess,cost-ratio,,19.9781,163.2,221
+reciprocating-engine_drive,machine-drive,reciprocating-engine,emissions-combustion,co2e,t/GJ,16.5798,4.2878,18.9878,0,identity,co2e-from-species,clearstone_2004_001; clearstone_2019_001,0.103463,160.249,19
+reactor_adipic-acid,chemicals,reactor,emissions-process,co2e,t/t,79.5,71.55,87.45,0,identity,co2e-from-species,boulamanti_2017_001,0.55,144.545,17
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,65.6,39.6,65.6,3,sourced,pooled,morrey_2002_001; mpp_2023_001; martin_2000_001,0.5,131.2,248
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,annual-output,,m3,200000000.0,50000000.0,600000000.0,0,guess,judgement,,1571110.0,127.299,54
+reactor_gas-to-liquids,oil-and-gas,reactor,capacity,,MW,2441.45,804.07,4912.14,1,sourced,pooled,etsap_2010_012,20.0,122.072,83
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,57.6,52.2,63,1,estimated,range-midpoint,cusano_2017_001,0.5,115.2,248
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,54.0996,42.5209,56.9194,0,estimated,ccs-energy,cusano_2017_001; gielen_1997_003; iai_2026_001; jrc_2026_001; mpp_2023_001; nccp_1999_003,0.5,108.199,248
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,53.7002,42.1215,56.52,9,sourced,pooled,cusano_2017_001; gielen_1997_003; iai_2026_001; jrc_2026_001; mpp_2023_001; nccp_1999_003,0.5,107.4,248
+gasifier_coal-fischer-tropsch,oil-and-gas,gasifier,capacity,,MW,2134.44,701.734,4298.12,2,sourced,pooled,etsap_2010_012,20.0,106.722,83
+process-improvement_pfc-anode-effect-control,non-ferrous-metals,process-improvement,specific-energy-consumption,electricity,GJ/t,53.2,37.0,70.0,0,guess,judgement,,0.5,106.4,248
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,48.6,43.2,54,1,estimated,range-midpoint,nccp_1999_003,0.5,97.2,248
+adsorber_direct-lithium,mining,adsorber,cost-levelized,calculated,2025_CAD/t,9536.46,4170.15,25015.9,0,guess,levelized,,100.079,95.289,310
+management-system_leak-detection,oil-and-gas,management-system,opex-fixed,,2025_CAD/t-per-yr,1822.69,3.75157,5013.39,28,sourced,pooled,epa_2021_001; epa_2022_002; epa_2006_001; epa_2011_001,19.5852,93.065,306
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,46.0,32.0,60.0,0,guess,judgement,,0.5,92.0,248
+reactor_haber-bosch-electrolytic,chemicals,reactor,specific-energy-consumption,electricity,GJ/t,45.4986,35.98,45.4986,12,sourced,pooled,boulamanti_2017_001; material-economics_2019_001; iea_2013_001; rouwenhorst_2019_001; smith_2020_001,0.5,90.997,248
+gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,gasifier,annual-output,,GJ,2.73235e+07,755762,5.69394e+07,0,estimated,host-size,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003,304164.0,89.831,114
+gasifier_coal-petroleum-coke,petroleum-refining,gasifier,annual-output,,GJ,2.73235e+07,755762,5.69394e+07,0,identity,capacity-output,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003,304164.0,89.831,114
+adsorber_direct-lithium,mining,adsorber,capex,,2025_CAD/t-per-yr,40000.0,20000.0,80000.0,0,guess,judgement,,450.0,88.889,310
+adsorber_direct-lithium,mining,adsorber,opex-fixed,,2025_CAD/t-per-yr,1650.17,466.091,6867.61,0,guess,cost-ratio,,19.5852,84.256,306
+leaching-vessel_in-situ,mining,leaching-vessel,specific-energy-consumption,,GJ/t,236.0,71.0,708.0,0,guess,judgement,,3.350555,70.436,306
+gasifier_biomass-methanation,biofuels,gasifier,annual-output,,GJ,2.12736e+07,358052,2.36373e+07,0,estimated,capacity-output,van-der-meijden_2011_001; dea_2026_003; epa_2007_001; netl_2022_002; nrel_2013_001; nrel_2018_003; etsap_2010_011; ekbom,304164.0,69.941,114
+distillery_beverage-spirits,food-and-beverage,distillery,specific-energy-consumption,,GJ/m3,23.97,6.968,23.97,2,sourced,pooled,stuckrath_2022_001,0.35,68.486,53
+adsorber_direct-lithium,mining,adsorber,cost-levelized,calculated-incl-energy,2025_CAD/t,10095.5,4311.55,27254.5,0,guess,levelized-energy,,155.369,64.978,289
+haul-truck_battery-electric,mining,haul-truck,annual-output,,t,20000000.0,5000000.0,100000000.0,0,guess,judgement,,309548.0,64.61,308
+haul-truck_diesel,mining,haul-truck,annual-output,,t,20000000.0,5000000.0,100000000.0,0,guess,judgement,,309548.0,64.61,308
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,annual-output,,t,20000000.0,5000000.0,100000000.0,0,guess,judgement,,309548.0,64.61,308
+haul-truck_trolley-assist,mining,haul-truck,annual-output,,t,20000000.0,5000000.0,100000000.0,0,guess,judgement,,309548.0,64.61,308
+haul-truck_dual-fuel,mining,haul-truck,annual-output,,t,20000000.0,5000000.0,100000000.0,0,guess,judgement,,309548.0,64.61,308
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,annual-output,,m3,9.501e+07,3.124e+07,6.638e+08,1,sourced,pooled,petrinex_2026_001,1571110.0,60.473,54
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,annual-output,,m3,9.501e+07,3.124e+07,6.638e+08,0,estimated,host-size,petrinex_2026_001,1571110.0,60.473,54
+reactor_silicothermic,non-ferrous-metals,reactor,specific-energy-consumption,electricity,GJ/t,30.0,18.0,60.0,0,guess,judgement,,0.5,60.0,248
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,5854.29,2679.22,17572.4,0,guess,levelized,,100.079,58.497,310
+reactor_hydrotreating-lipids,biofuels,reactor,annual-output,,GJ,1.75983e+07,1.75983e+07,2.19979e+07,2,sourced,pooled,dea_2026_003,304164.0,57.858,114
+flare_enclosed-combustor,oil-and-gas,flare,opex-fixed,,2025_CAD/t-per-yr,1090.71,44.9564,11098.2,14,sourced,pooled,epa_2021_001; epa_2022_002; epa_2023_002; epa_2011_001,19.5852,55.691,306
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,autothermal-reformer,capacity,,MW,1083.12,,,2,sourced,pooled,doe_2024_001; netl_2022_002,20.0,54.156,83
+gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,gasifier,capacity,,MW,1083.03,29.9563,2006.15,0,estimated,host-size,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003,20.0,54.151,83
+gasifier_coal-petroleum-coke,petroleum-refining,gasifier,capacity,,MW,1083.03,29.9563,2006.15,5,sourced,pooled,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003,20.0,54.151,83
+compressor_flare-gas-recovery,oil-and-gas,compressor,opex-fixed,,2025_CAD/t-per-yr,1047.56,250.452,2014.18,0,estimated,cost-ratio,element-energy_2021_001,19.5852,53.487,306
+distillery_beverage-spirits,food-and-beverage,distillery,opex-fixed,,2025_CAD/m3-per-yr,140.656,49.1786,328.919,0,guess,cost-ratio,,2.72702,51.579,56
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,annual-output,,m3,8.036e+07,2.733e+07,2.522e+08,1,sourced,pooled,petrinex_2026_001,1571110.0,51.149,54
+compressor_low-emission-seal,oil-and-gas,compressor,opex-fixed,,2025_CAD/t-per-yr,996.252,0,3814.18,5,sourced,pooled,epa_2022_002; epa_2006_001; epa_2011_001,19.5852,50.868,306
+adsorber_direct-lithium,mining,adsorber,specific-energy-consumption,electricity,GJ/t,25.0,10.0,60.0,0,guess,judgement,,0.5,50.0,248
+distillery_beverage-spirits,food-and-beverage,distillery,specific-energy-consumption,natural-gas,GJ/m3,20.21,12.126,28.294,0,guess,judgement,,0.41475,48.728,29
+pipeline_plastic-liner,oil-and-gas,pipeline,opex-fixed,,2025_CAD/t-per-yr,914.441,363.284,3659.69,0,estimated,cost-ratio,epa_2011_001,19.5852,46.69,306
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,co2,t/GJ,2.8275,2.8275,3.1075,0,identity,fuel-emission-factor,clearstone_2004_001,0.063062,44.837,42
+reactor_silicothermic,non-ferrous-metals,reactor,specific-energy-consumption,,GJ/t,150.0,90.0,300.0,0,guess,judgement,,3.350555,44.769,306
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,6940.99,3290.07,19587.1,0,guess,levelized-energy,,155.369,44.674,289
+refinery_nickel-matte,non-ferrous-metals,refinery,capex,,2025_CAD/t-per-yr,20000.0,10000.0,40000.0,0,guess,judgement,,450.0,44.444,310
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,capex,,2025_CAD/m3-per-yr,3187.99,2439.93,4830.17,0,estimated,ccs-cost,ceri_2017_002; etsap_2014_001,72.02835,44.26,56
+reactor_co2-to-fischer-tropsch,biofuels,reactor,specific-energy-consumption,electricity,GJ/GJ,1.78018,1.63248,1.92788,2,estimated,range-midpoint,concawe_2019_002,0.041196,43.212,55
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,4293.15,1964.76,12886.4,0,guess,levelized,,100.079,42.898,310
+combined-cycle_efficiency-moderate,power-generation,combined-cycle,annual-output,,GJ,1.29298e+07,473040,1.56103e+07,0,estimated,host-size,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001; weidmann_2013_001,304164.0,42.509,114
+combined-cycle,power-generation,combined-cycle,annual-output,,GJ,1.29298e+07,473040,1.56103e+07,0,identity,capacity-output,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001; weidmann_2013_001,304164.0,42.509,114
+combined-cycle_ccs-diffuse,power-generation,combined-cycle,annual-output,,GJ,1.29298e+07,473040,1.56103e+07,0,estimated,host-size,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001; weidmann_2013_001,304164.0,42.509,114
+refinery_nickel-matte,non-ferrous-metals,refinery,opex-fixed,,2025_CAD/t-per-yr,825.083,233.046,3433.81,0,guess,cost-ratio,,19.5852,42.128,306
+reactor_co2-to-ome3-5,chemicals,reactor,cost-levelized,calculated,2025_CAD/t,4187.24,3861.14,4763.12,0,estimated,levelized,,100.079,41.839,310
+distillery_beverage-spirits,food-and-beverage,distillery,capex,,2025_CAD/m3-per-yr,3000.0,1500.0,6000.0,0,guess,judgement,,72.02835,41.65,56
+management-system_leak-detection,oil-and-gas,management-system,cost-levelized,calculated,2025_CAD/t,4122.15,10.2861,11781.2,0,estimated,levelized,,100.079,41.189,310
+mine_open-pit-oil-sands,oil-and-gas,mine,opex-fixed,,2025_CAD/m3-per-yr,109.677,,,1,sourced,pooled,ceri_2017_001,2.72702,40.219,56
+distillery_beverage-spirits,food-and-beverage,distillery,cost-levelized,calculated,2025_CAD/m3,613.141,226.832,1601.07,0,guess,levelized,,15.2681,40.158,56
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,3977.8,2031.68,8664.08,0,estimated,levelized,,100.079,39.747,310
+electrolysis-cell_sodium-chlorate,chemicals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,19.8,18,21.6,1,estimated,range-midpoint,jrc_2007_001,0.5,39.6,248
+smelting-vessel_flash,non-ferrous-metals,smelting-vessel,capex,,2025_CAD/t-per-yr,17732.8,2659.92,17732.8,6,sourced,pooled,cusano_2017_001; schlesinger_2011_001,450.0,39.406,310
+reactor_hydrotreating-lipids,biofuels,reactor,capacity,,MW,768.398,610.508,1395.1,3,sourced,pooled,dea_2026_003; concawe_2019_002,20.0,38.42,83
+reactor_silicothermic,non-ferrous-metals,reactor,emissions-process,co2e,t/t,20.915,20.915,32.9,2,sourced,pooled,nccp_1999_002,0.55,38.027,17
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,3785.32,1881.71,8442.82,0,estimated,levelized,,100.079,37.823,310
+gasifier_biomass-methanation,biofuels,gasifier,capacity,,MW,749.535,19.884,749.535,2,sourced,pooled,van-der-meijden_2011_001; dea_2026_003,20.0,37.477,83
+smelting-vessel_flash,non-ferrous-metals,smelting-vessel,opex-fixed,,2025_CAD/t-per-yr,731.552,61.9883,1522.28,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.5852,37.352,306
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,smelting-vessel,capex,,2025_CAD/t-per-yr,16480.5,2072.66,19143.2,0,estimated,modifier-ratio,cusano_2017_001; schlesinger_2011_001,450.0,36.623,310
+reactor_chemical-depolymerization,chemicals,reactor,opex-variable,,2025_CAD/t,720.631,,,1,sourced,pooled,singh_2021_001,19.9781,36.071,221
+refinery_nickel-matte,non-ferrous-metals,refinery,cost-levelized,calculated,2025_CAD/t,3551.12,1389.04,12000.1,0,guess,levelized,,100.079,35.483,310
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,capacity,,m3/yr,4.9348e+08,1.387e+08,1.75711e+09,1,sourced,pooled,aer_2026_003,13927300.0,35.433,20
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,capacity,,m3/yr,4.9348e+08,1.387e+08,1.75711e+09,0,estimated,host-size,aer_2026_003,13927300.0,35.433,20
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,specific-energy-consumption,fuel,GJ/GJ,40.4449,40.4449,44.45,0,identity,sec-from-emissions,clearstone_2004_001,1.15854,34.91,35
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,smelting-vessel,opex-fixed,,2025_CAD/t-per-yr,679.889,48.3024,1643.35,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.5852,34.714,306
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,specific-energy-consumption,,GJ/GJ,40.4449,40.4449,44.45,0,identity,sec-from-emissions,clearstone_2004_001,1.17647,34.378,105
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,5321.71,2417.24,15125,0,guess,levelized-energy,,155.369,34.252,289
+distillery_beverage-spirits,food-and-beverage,distillery,specific-energy-consumption,steam,GJ/m3,2.9516,1.771,4.1322,0,guess,judgement,,0.08736,33.787,14
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,5227.97,2666.42,10859.4,0,estimated,levelized-energy,,155.369,33.649,289
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,15000.0,7500.0,30000.0,0,guess,judgement,,450.0,33.333,310
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,autothermal-reformer,annual-output,,GJ,1.0072e+07,14462.6,5.69394e+07,0,estimated,host-size,netl_2022_002; carbo_2011_001; nrel_2013_001; nrel_2018_003; lazard_2021_001; lazard_2023_001; lazard_2024_001; kuparine,304164.0,33.114,114
+autothermal-reformer_hydrogen,hydrogen,autothermal-reformer,annual-output,,GJ,1.0072e+07,14462.6,5.69394e+07,0,estimated,end-use-median,netl_2022_002; carbo_2011_001; nrel_2013_001; nrel_2018_003; lazard_2021_001; lazard_2023_001; lazard_2024_001; kuparine,304164.0,33.114,114
+smelting-vessel_flash,non-ferrous-metals,smelting-vessel,cost-levelized,calculated,2025_CAD/t,3309.61,393.63,5480.92,0,estimated,levelized,,100.079,33.07,310
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,3308.18,3016.08,5035.35,0,guess,levelized,,100.079,33.056,310
+electrolyzer_low-temperature,petroleum-refining,electrolyzer,specific-energy-consumption,electricity,GJ/GJ,1.36117,1.36117,1.38233,43,sourced,pooled,boulamanti_2017_001; dea_2026_003; gccsi_2021_001; irena_2020_001; nrel_2009_001; nrel_2013_001; nrel_2018_003; nrel_202,0.041196,33.041,55
+conveyor_in-pit-crushing,mining,conveyor,annual-output,,t,10000000.0,3000000.0,50000000.0,0,guess,judgement,,309548.0,32.305,308
+grinding-mill_sag-ball,mining,grinding-mill,annual-output,,t,10000000.0,3000000.0,50000000.0,0,guess,judgement,,309548.0,32.305,308
+grinding-mill_stirred,mining,grinding-mill,annual-output,,t,10000000.0,3000000.0,50000000.0,0,guess,judgement,,309548.0,32.305,308
+separator_gravity-magnetic,mining,separator,annual-output,,t,10000000.0,3000000.0,30000000.0,0,guess,judgement,,309548.0,32.305,308
+separator_thickening-filtration,mining,separator,annual-output,,t,10000000.0,3000000.0,30000000.0,0,guess,judgement,,309548.0,32.305,308
+separator_dry-stack-tailings,oil-and-gas,separator,annual-output,,t,10000000.0,1000000.0,50000000.0,0,guess,judgement,,309548.0,32.305,308
+grinding-mill_hpgr,mining,grinding-mill,annual-output,,t,10000000.0,3000000.0,50000000.0,0,guess,judgement,,309548.0,32.305,308
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,cost-levelized,calculated,2025_CAD/m3,492.445,348.137,966.788,0,guess,levelized,,15.2681,32.253,56
+flare_enclosed-combustor,oil-and-gas,flare,cost-levelized,calculated,2025_CAD/t,3223.28,160.518,32448.5,0,estimated,levelized,,100.079,32.207,310
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,4986.06,2477.31,10551.6,0,estimated,levelized-energy,,155.369,32.092,289
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,cost-levelized,calculated-incl-energy,2025_CAD/GJ,932.079,928.716,1038.57,0,guess,levelized-energy,,29.1574,31.967,101
+fermenter_syngas,biofuels,fermenter,abatement-cost,co2e,2025_CAD/t-CO2-eq,2223.53,1609.21,2890.01,4,sourced,pooled,almeida-benalcazar_2022_001,70.4733,31.551,13
+gasifier_biomass-waste,hydrogen,gasifier,annual-output,,GJ,9.53605e+06,14462.6,3.07415e+07,0,estimated,end-use-median,netl_2022_002; carbo_2011_001; nrel_2013_001; nrel_2018_003; lazard_2021_001; lazard_2023_001; lazard_2024_001; kuparine,304164.0,31.352,114
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,smelting-vessel,cost-levelized,calculated,2025_CAD/t,3075.88,306.724,5916.84,0,estimated,levelized,,100.079,30.735,310
+steam-reformer_methane_efficiency-moderate,petroleum-refining,steam-reformer,annual-output,,GJ,9.27832e+06,804886,2.37477e+07,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003; nrel_2009_001; nrel_2013_001; nrel_20,304164.0,30.504,114
+steam-reformer_methane,petroleum-refining,steam-reformer,annual-output,,GJ,9.27832e+06,804886,2.37477e+07,0,identity,capacity-output,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003; nrel_2009_001; nrel_2013_001; nrel_20,304164.0,30.504,114
+steam-reformer_methane_ccs-concentrated,petroleum-refining,steam-reformer,annual-output,,GJ,9.27832e+06,804886,2.37477e+07,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003; nrel_2009_001; nrel_2013_001; nrel_20,304164.0,30.504,114
+steam-reformer_methane_ccs-diffuse,petroleum-refining,steam-reformer,annual-output,,GJ,9.27832e+06,804886,2.37477e+07,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003; nrel_2009_001; nrel_2013_001; nrel_20,304164.0,30.504,114
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,opex-total,,2025_CAD/t,2585.81,2005.32,3166.3,1,estimated,range-midpoint,etsap_2012_001,84.8328,30.481,19
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,specific-energy-consumption,steam,GJ/t,35.0,24.0,50.0,0,guess,judgement,,1.15085,30.412,75
+distillery_beverage-spirits,food-and-beverage,distillery,emissions-combustion,co2,t/m3,1.02343,0.604845,1.44894,0,guess,fuel-emission-factor,,0.034142,29.976,22
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,2995.07,1365.3,9117.51,0,guess,levelized,,100.079,29.927,310
+gasifier_biomass-ammonia,chemicals,gasifier,specific-energy-consumption,biomass,GJ/t,42.0,30.0,58.0,0,guess,judgement,,1.43996,29.167,13
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,smelting-vessel,capex,,2025_CAD/t-per-yr,13122.3,423.407,69447,0,estimated,modifier-ratio,cusano_2017_001; schlesinger_2011_001,450.0,29.161,310
+well_cyclic-steam,oil-and-gas,well,specific-energy-consumption,,GJ/m3,10.1465,9.77026,10.7876,1,sourced,pooled,petrinex_2026_001,0.35,28.99,53
+reactor_small-nuclear-power,power-generation,reactor,annual-output,,GJ,8.79854e+06,,,0,identity,capacity-output,abou-jaoude_2024_001; nrel_2025_001,304164.0,28.927,114
+mobile-equipment_battery-electric,mobile-equipment,mobile-equipment,specific-energy-consumption,electricity,GJ/GJ,1.17647,1.02041,1.88679,0,identity,single-carrier-split,dea_2026_005,0.041196,28.558,55
+electrolysis-cell_molten-oxide,iron-and-steel,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,14.2,,,5,sourced,pooled,draxler_2021_001; hasanbeigi_2013_001; allanore_2015_001; hasanbeigi_2014_001; humbert_2024_001,0.5,28.4,248
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,fermenter,annual-output,,GJ,8.57747e+06,,,0,estimated,host-size,dea_2026_003,304164.0,28.2,114
+fermenter_grain-dry-mill,biofuels,fermenter,annual-output,,GJ,8.57747e+06,,,1,sourced,pooled,dea_2026_003,304164.0,28.2,114
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,fermenter,annual-output,,GJ,8.57747e+06,,,0,estimated,host-size,dea_2026_003,304164.0,28.2,114
+reactor_small-nuclear,heat-supply,reactor,annual-output,,GJ,8.49201e+06,215706,3.1536e+07,0,estimated,capacity-output,nrel_2016_001; iea_2024_002; jrc_2014_001; neill-gunter_1999_001; epa_2007_001; etsap_2010_004; etsap_2010_005; iea_2025,304164.0,27.919,114
+refinery_nickel-matte,non-ferrous-metals,refinery,opex-variable,,2025_CAD/t,552.614,89.2273,4021.22,0,guess,cost-ratio,,19.9781,27.661,221
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,smelting-vessel,opex-fixed,,2025_CAD/t-per-yr,541.349,9.86732,5961.69,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.5852,27.641,306
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,4283.01,2103.41,11468,0,guess,levelized-energy,,155.369,27.567,289
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,emissions-combustion,co2e,t/GJ,2.8275,2.8275,3.1075,0,identity,co2e-from-species,clearstone_2004_001,0.103463,27.329,19
+reactor_silicothermic,non-ferrous-metals,reactor,specific-energy-consumption,natural-gas,GJ/t,50.0,30.0,100.0,0,guess,judgement,,1.83084,27.31,123
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,2732,1250.3,8200.47,0,guess,levelized,,100.079,27.298,310
+electrolysis-cell_zinc-electrowinning,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,13.59,12.41,14.77,0,guess,judgement,,0.5,27.18,248
+motor_induction-standard,machine-drive,motor,specific-energy-consumption,electricity,GJ/GJ,1.0989,1.07296,1.17647,0,identity,single-carrier-split,gpsa_2004_001; jones_2006_001,0.041196,26.675,55
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,521.526,218.361,2491.73,0,guess,cost-ratio,,19.5852,26.629,306
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,capex,,2025_CAD/t-per-yr,11940.1,236.437,23643.7,2,estimated,range-midpoint,crundwell_2011_001,450.0,26.534,310
+management-system_leak-detection,oil-and-gas,management-system,cost-levelized,calculated-incl-energy,2025_CAD/t,4122.15,10.2861,11781.2,0,estimated,levelized-energy,,155.369,26.531,289
+motor_variable-speed,machine-drive,motor,specific-energy-consumption,electricity,GJ/GJ,1.08196,0.940831,1.27289,0,estimated,single-carrier-split,gpsa_2004_001; jones_2006_001,0.041196,26.264,55
+pump_mine-dewatering,machine-drive,pump,specific-energy-consumption,electricity,GJ/GJ,1.08,1.0,1.45,0,guess,judgement,,0.041196,26.216,55
+kiln_lime-rotary,pulp-and-paper,kiln,specific-energy-consumption,oil,GJ/t,6.23665,,,1,sourced,pooled,kuparinen_2019_001,0.240945,25.884,19
+motor_premium-efficiency,machine-drive,motor,specific-energy-consumption,electricity,GJ/GJ,1.06553,1.0582,1.0989,0,identity,single-carrier-split,gpsa_2004_001,0.041196,25.865,55
+compressor_electric,machine-drive,compressor,specific-energy-consumption,electricity,GJ/GJ,1.06326,,,0,identity,single-carrier-split,joshi_2022_001,0.041196,25.81,55
+mine_open-pit-oil-sands,oil-and-gas,mine,cost-levelized,calculated,2025_CAD/m3,392.19,323.194,490.919,0,estimated,levelized,,15.2681,25.687,56
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,emissions-process,co2e,t/t,14.1,11.75,32.9,3,sourced,pooled,nccp_1999_002,0.55,25.636,17
+mine_open-pit-oil-sands,oil-and-gas,mine,capex,,2025_CAD/m3-per-yr,1840.27,,,1,sourced,pooled,ceri_2017_001,72.02835,25.549,56
+thermal-storage_electric,heat-supply,thermal-storage,specific-energy-consumption,electricity,GJ/GJ,1.05219,1.02041,1.11111,0,identity,single-carrier-split,dea_2026_004; iea_2025_003; ldes-council_2022_001; rissman_2023_001; doe_2025_001; spees_2023_001,0.041196,25.541,55
+reactor_silicothermic,non-ferrous-metals,reactor,opex-variable,,2025_CAD/t,509.466,74.6598,5399.63,0,guess,cost-ratio,,19.9781,25.501,221
+steam-cracker_electric,chemicals,steam-cracker,specific-energy-consumption,electricity,GJ/t,12.7461,6.36264,17.6317,6,sourced,pooled,agora_2021_001; purola_2021_001; mynko_2023_001,0.5,25.492,248
+refinery_nickel-matte,non-ferrous-metals,refinery,cost-levelized,calculated-incl-energy,2025_CAD/t,3953.54,1629.08,12777.6,0,guess,levelized-energy,,155.369,25.446,289
+distillery_beverage-spirits,food-and-beverage,distillery,cost-levelized,calculated-incl-energy,2025_CAD/m3,888.448,375.385,2070.65,0,guess,levelized-energy,,35.1922,25.246,51
+refinery_nickel-matte,non-ferrous-metals,refinery,specific-energy-consumption,electricity,GJ/t,12.6,10.8,14.4,1,estimated,range-midpoint,cusano_2017_001,0.5,25.2,248
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,opex-fixed,,2025_CAD/t-per-yr,492.579,5.51006,2029.7,0,estimated,cost-ratio,crundwell_2011_001,19.5852,25.151,306
+combined-cycle_efficiency-moderate,power-generation,combined-cycle,capacity,,MW,500,50,550,0,estimated,host-size,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001,20.0,25.0,83
+combined-cycle,power-generation,combined-cycle,capacity,,MW,500,50,550,7,sourced,pooled,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001,20.0,25.0,83
+combined-cycle_ccs-diffuse,power-generation,combined-cycle,capacity,,MW,500,50,550,0,estimated,host-size,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001,20.0,25.0,83
+shaft-furnace_electrolytic-hydrogen,iron-and-steel,shaft-furnace,specific-energy-consumption,electricity,GJ/t,12.5,11.9312,13.6601,10,sourced,pooled,vogl_2018_001; remus_2013_001; worrell_2022_001; agora_2021_001; draxler_2021_001; material-economics_2019_001; bhaskar_,0.5,25.0,248
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,opex-variable,,2025_CAD/GJ,55.5147,,,1,sourced,pooled,liberty_2020_001,2.24333,24.747,73
+electrolyzer_solid-oxide,hydrogen,electrolyzer,specific-energy-consumption,electricity,GJ/GJ,1.01559,0.821006,1.12589,8,sourced,pooled,dea_2026_003; irena_2020_001; nrel_2009_001; nrel_2018_003; nrel_2026_001; draxler_2021_001; rouwenhorst_2019_001,0.041196,24.653,55
+motor_induction-standard_efficiency-moderate,machine-drive,motor,specific-energy-consumption,electricity,GJ/GJ,1.01099,0.912016,1.17647,0,proxy,bucket-saving,gpsa_2004_001; jones_2006_001,0.041196,24.541,55
+smelting-vessel_flash,non-ferrous-metals,smelting-vessel,opex-variable,,2025_CAD/t,489.97,23.7338,1782.69,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.9781,24.525,221
+boiler_electric,heat-supply,boiler,specific-energy-consumption,electricity,GJ/GJ,1.01,1,1.01,3,sourced,pooled,doe_2024_002; element-energy_2018_001; agora_2021_001,0.041196,24.517,55
+direct-heater_electric,heat-supply,direct-heater,specific-energy-consumption,electricity,GJ/GJ,1.01,1.01,1.11,2,sourced,pooled,element-energy_2018_001,0.041196,24.517,55
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,smelting-vessel,cost-levelized,calculated,2025_CAD/t,2449.12,62.6582,21464.9,0,estimated,levelized,,100.079,24.472,310
+well_cyclic-steam,oil-and-gas,well,specific-energy-consumption,natural-gas,GJ/m3,10.1465,9.77026,10.7876,1,sourced,pooled,petrinex_2026_001,0.41475,24.464,29
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,11000.0,5500.0,22000.0,0,guess,judgement,,450.0,24.444,310
+resistance-heater_hvac,space-conditioning,resistance-heater,specific-energy-consumption,electricity,GJ/GJ,1,1,1.05263,0,identity,single-carrier-split,dea_2026_007; eia_2023_002,0.041196,24.274,55
+steam-turbine_drive,machine-drive,steam-turbine,specific-energy-consumption,steam,GJ/GJ,4.19498,1.91382,10,0,estimated,single-carrier-split,csi-ecra_2017_001; schorcht_2013_001; ipieca_2025_001; worrell_2013_001; zier_2021_001; dea_2026_006; van-geene_2024_001,0.172989,24.25,24
+electrolysis-cell_chlor-alkali-mercury,chemicals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,12.096,12.096,12.412,4,sourced,pooled,lindley_1997_001; nedo_2008_001; gielen_1997_001; worrell_2000_001,0.5,24.192,248
+gasifier_biomass-ammonia,chemicals,gasifier,capex,,2025_CAD/t-per-yr,10814.8,,,1,sourced,pooled,iea_2018_001,450.0,24.033,310
+fracturing-fleet_diesel,oil-and-gas,fracturing-fleet,opex-variable,,2025_CAD/GJ,53.0867,,,1,sourced,pooled,liberty_2020_001,2.24333,23.664,73
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,10632.5,5917.19,15404.1,0,estimated,ccs-cost,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,450.0,23.628,310
+reactor_silicothermic,non-ferrous-metals,reactor,specific-energy-consumption,coal,GJ/t,70.0,42.0,140.0,0,guess,judgement,,2.96664,23.596,37
+reactor_silicothermic,non-ferrous-metals,reactor,opex-fixed,,2025_CAD/t-per-yr,461.597,157.535,1658.42,0,guess,cost-ratio,,19.5852,23.569,306
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,opex-fixed,,2025_CAD/m3-per-yr,63.1082,62.6555,85.6126,0,guess,ccs-cost,ceri_2017_002,2.72702,23.142,56
+mine_open-pit-coal,mining,mine,annual-output,,t,7.1613e+06,375016,7.154e+07,0,estimated,capacity-output,etsap_2014_002; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_0,309548.0,23.135,308
+reactor_integrated-upgrader,oil-and-gas,reactor,opex-fixed,,2025_CAD/m3-per-yr,62.459,,,1,sourced,pooled,ceri_2017_002,2.72702,22.904,56
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,smelting-vessel,opex-variable,,2025_CAD/t,455.368,18.4938,1924.48,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.9781,22.793,221
+reactor_silicothermic,non-ferrous-metals,reactor,cost-levelized,calculated-incl-energy,2025_CAD/t,3508.11,1413.74,13184.8,0,guess,levelized-energy,,155.369,22.579,289
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,10110.8,5512.94,14816,11,sourced,pooled,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,450.0,22.468,310
+reactor_adipic-acid,chemicals,reactor,specific-energy-consumption,steam,GJ/t,25.7,15.22,25.7,3,sourced,pooled,boulamanti_2017_001; saygin_2011_001,1.15085,22.331,75
+well_sagd,oil-and-gas,well,specific-energy-consumption,,GJ/m3,7.75535,7.75535,11.8318,3,sourced,pooled,petrinex_2026_001; ceri_2017_001; ceri_2018_001,0.35,22.158,53
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,11.0,7.0,16.0,0,guess,judgement,,0.5,22.0,248
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,opex-variable,,2025_CAD/GJ,49.3094,,,1,sourced,pooled,liberty_2020_001,2.24333,21.98,73
+liquefaction-train_base-load,oil-and-gas,liquefaction-train,opex-fixed,,2025_CAD/t-per-yr,429.335,34.834,2981.9,0,estimated,cost-ratio,kidnay_2019_001; songhurst_2018_001; raj_2016_001; etsap_2011_001,19.5852,21.921,306
+smelting-vessel_flash,non-ferrous-metals,smelting-vessel,cost-levelized,calculated-incl-energy,2025_CAD/t,3405.66,452.97,5638.26,0,guess,levelized-energy,,155.369,21.92,289
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,cost-levelized,calculated,2025_CAD/t,2120.04,32.8421,7093.15,0,estimated,levelized,,100.079,21.184,310
+well_solvent-assisted,oil-and-gas,well,opex-fixed,,2025_CAD/m3-per-yr,56.7547,39.6871,66.3594,0,estimated,cost-ratio,ceri_2017_002,2.72702,20.812,56
+flare_enclosed-combustor,oil-and-gas,flare,cost-levelized,calculated-incl-energy,2025_CAD/t,3223.28,160.518,32448.5,0,estimated,levelized-energy,,155.369,20.746,289
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,414.461,66.9205,3015.92,0,guess,cost-ratio,,19.9781,20.746,221
+gasifier_biomass-ammonia,chemicals,gasifier,opex-fixed,,2025_CAD/t-per-yr,405.555,270.37,540.74,1,estimated,range-midpoint,iea_2018_001,19.5852,20.707,306
+steam-turbine_condensing,power-generation,steam-turbine,specific-energy-consumption,steam,GJ/GJ,3.55925,2.73179,3.55925,2,sourced,pooled,nrcan_2008_001,0.172989,20.575,24
+process-improvement_pre-reduction,non-ferrous-metals,process-improvement,specific-energy-consumption,electricity,GJ/t,10.26,9.36,11.16,1,estimated,range-midpoint,cusano_2017_001,0.5,20.52,248
+liquefaction-train_base-load_efficiency-moderate,oil-and-gas,liquefaction-train,opex-fixed,,2025_CAD/t-per-yr,399.015,27.1433,3219.07,0,estimated,cost-ratio,kidnay_2019_001; songhurst_2018_001; raj_2016_001; etsap_2011_001,19.5852,20.373,306
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,smelting-vessel,cost-levelized,calculated-incl-energy,2025_CAD/t,3164.25,357.834,6072.11,0,guess,levelized-energy,,155.369,20.366,289
+reactor_chemical-depolymerization,chemicals,reactor,specific-energy-consumption,electricity,GJ/t,10.18,,,1,sourced,pooled,singh_2021_001,0.5,20.36,248
+distillery_beverage-spirits,food-and-beverage,distillery,opex-variable,,2025_CAD/m3,144.594,16.058,611.084,0,guess,cost-ratio,,7.13622,20.262,36
+well_sagd,oil-and-gas,well,opex-fixed,,2025_CAD/m3-per-yr,54.3724,54.2722,64.2619,4,sourced,pooled,ceri_2017_001; ceri_2017_002; ceri_2018_001,2.72702,19.938,56
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,capacity,,m3/yr,2.774e+08,1.35926e+08,6.205e+08,1,sourced,pooled,aer_2026_003,13927300.0,19.918,20
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,8836.34,,,1,sourced,pooled,mpp_2023_001,450.0,19.636,310
+anaerobic-digester,biofuels,anaerobic-digester,opex-fixed,,2025_CAD/GJ-per-yr,33.1277,,,1,sourced,pooled,van-geene_2024_001,1.68743,19.632,115
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,65.6,39.6,65.6,2,sourced,pooled,van-geene_2024_001; martin_2000_001,3.350555,19.579,306
+electrolysis-cell_chlor-alkali-diaphragm,chemicals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,9.7799,8.52472,11.0877,7,sourced,pooled,boulamanti_2017_001; doe_2000_002; lindley_1997_001; nedo_2008_001; gielen_1997_001; rehfeldt_2018_001; worrell_2000_001,0.5,19.56,248
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,382.452,160.132,1827.27,0,guess,cost-ratio,,19.5852,19.528,306
+reactor_co2-to-fischer-tropsch,biofuels,reactor,annual-output,,GJ,5.86454e+06,,,0,identity,capacity-output,concawe_2019_002; schemme_2020_001,304164.0,19.281,114
+reactor_integrated-upgrader,oil-and-gas,reactor,capex,,2025_CAD/m3-per-yr,1388.04,639.983,3030.22,2,sourced,pooled,ceri_2017_002; etsap_2014_001,72.02835,19.271,56
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,non-ferrous-metals,electric-arc-furnace,specific-energy-consumption,electricity,GJ/t,9.62205,8.80315,10.6457,0,guess,host-split,,0.5,19.244,248
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,2977.96,1349.28,8797.43,0,guess,levelized-energy,,155.369,19.167,289
+reactor_silicothermic,non-ferrous-metals,reactor,cost-levelized,calculated,2025_CAD/t,1907.51,693.437,9001,0,guess,levelized,,100.079,19.06,310
+reactor_integrated-upgrader,oil-and-gas,reactor,cost-levelized,calculated,2025_CAD/m3,290.158,146.657,715.075,0,estimated,levelized,,15.2681,19.004,56
+electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,electric-arc-furnace,specific-energy-consumption,electricity,GJ/t,9.5,8.6,10.4,0,guess,judgement,,0.5,19.0,248
+process-improvement_pre-reduction,non-ferrous-metals,process-improvement,emissions-combustion,co2,t/t,2.96081,2.86172,3.0599,0,identity,fuel-emission-factor,cusano_2017_001,0.15677,18.886,136
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,9.41524,6.83743,11.6327,13,sourced,pooled,boulamanti_2017_001; doe_2000_002; lindley_1997_001; nedo_2008_001; brinkmann_2014_001; gielen_1997_001; rehfeldt_2018_0,0.5,18.83,248
+electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,electric-arc-furnace,specific-energy-consumption,electricity,GJ/t,9.4,8.6,10.4,0,guess,judgement,,0.5,18.8,248
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,366.954,172.908,1248.62,0,estimated,ccs-cost,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,19.5852,18.736,306
+electrolysis-cell_iron-electrowinning,iron-and-steel,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,9.36,9.36,9.61,3,sourced,pooled,draxler_2021_001; humbert_2024_001,0.5,18.72,248
+electrolysis-cell_advanced-anodes,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,1873.37,857.349,5623.18,0,guess,levelized,,100.079,18.719,310
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,opex-total,,2025_CAD/t,1576.25,,,1,sourced,pooled,schlesinger_2011_001,84.8328,18.581,19
+gasifier_biomass-ammonia,chemicals,gasifier,cost-levelized,calculated,2025_CAD/t,1844.9,1522.34,2759.08,0,estimated,levelized,,100.079,18.434,310
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,61,54.36,63,2,sourced,pooled,cusano_2017_001; etsap_2012_001,3.350555,18.206,306
+well_sagd,oil-and-gas,well,specific-energy-consumption,natural-gas,GJ/m3,7.52892,7.52892,11.4863,4,sourced,pooled,petrinex_2026_001; ceri_2017_001; ceri_2017_002; ceri_2018_001,0.41475,18.153,29
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,smelting-vessel,opex-variable,,2025_CAD/t,362.579,3.77795,6981.55,0,estimated,cost-ratio,cusano_2017_001; schlesinger_2011_001,19.9781,18.149,221
+gasifier_coal-methanation,oil-and-gas,gasifier,annual-output,,GJ,5.51882e+06,4.41505e+06,6.62258e+06,0,estimated,capacity-output,etsap_2010_011,304164.0,18.144,114
+reactor_alkylation,petroleum-refining,reactor,specific-energy-consumption,steam,GJ/m3,1.57997,1.09136,3.66599,9,sourced,pooled,abella_2022_001; barthe_2015_001; gary_2007_001; meyers_1997_001; worrell_2004_002; worrell_2015_001,0.08736,18.086,14
+dryer_through-air,pulp-and-paper,dryer,specific-energy-consumption,electricity,GJ/t,9,,,2,sourced,pooled,suhr_2015_001,0.5,18.0,248
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,351.536,160.508,1230.58,0,estimated,cost-ratio,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,19.5852,17.949,306
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,8000.0,4000.0,16000.0,0,guess,judgement,,450.0,17.778,310
+reactor_silicothermic,non-ferrous-metals,reactor,capex,,2025_CAD/t-per-yr,8000.0,4000.0,16000.0,0,guess,judgement,,450.0,17.778,310
+mine_open-pit-coal,mining,mine,capacity,,kt/yr,7957,657,71540,1,sourced,pooled,etsap_2014_002,450.0,17.682,142
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,cost-levelized,calculated-incl-energy,2025_CAD/t,2706.69,365.533,8576.39,0,guess,levelized-energy,,155.369,17.421,289
+motor_induction-standard,machine-drive,motor,emissions-total,co2e,t/GJ,2.01416,,,1,sourced,pooled,ukerc_2013_001,0.116615,17.272,10
+well_cyclic-steam,oil-and-gas,well,opex-fixed,,2025_CAD/m3-per-yr,46.8854,16.3929,109.64,0,guess,cost-ratio,,2.72702,17.193,56
+combustion-turbine_chp_ccs-diffuse,heat-supply,combustion-turbine,opex-variable,,2025_CAD/GJ,38.2051,36.2455,77.4134,0,estimated,ccs-cost,dea_2026_006; element-energy_2021_001; epa_2017_001; jrc_2014_001; weidmann_2013_001; epa_2013_001; ornl_2004_001,2.24333,17.031,73
+autothermal-reformer_ammonia_ccs-concentrated,chemicals,autothermal-reformer,specific-energy-consumption,natural-gas,GJ/t,31.1684,,,0,guess,ccs-energy,jrc_2007_002,1.83084,17.024,123
+autothermal-reformer_ammonia,chemicals,autothermal-reformer,specific-energy-consumption,natural-gas,GJ/t,31.1684,,,1,sourced,pooled,jrc_2007_002,1.83084,17.024,123
+pulper_groundwood,pulp-and-paper,pulper,specific-energy-consumption,electricity,GJ/t,8.46388,4.08442,9.01825,8,sourced,pooled,jacobs_2006_001; martin_2000_002; nrcan_2008_001; suhr_2015_001; kramer_2009_001,0.5,16.928,248
+reactor_alcohol-to-jet,biofuels,reactor,annual-output,,GJ,5.13424e+06,1.71142e+06,2.19979e+07,0,estimated,end-use-median,dea_2026_003; concawe_2019_002; schemme_2020_001,304164.0,16.88,114
+steam-turbine_condensing,power-generation,steam-turbine,annual-output,,GJ,5.13248e+06,18921.6,1.78368e+07,0,identity,capacity-output,dea_2026_006; ieaghg_2013_003; lecomte_2017_001; neill-gunter_1999_001; neuwahl_2019_001; pardo_2013_001; wade_2003_001;,304164.0,16.874,114
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,56.5158,44.9371,59.3356,0,estimated,ccs-energy,van-geene_2024_001; cusano_2017_001; etsap_2012_001; doe_2017_001,3.350555,16.868,306
+well_solvent-assisted,oil-and-gas,well,capex,,2025_CAD/m3-per-yr,1210.5,,,1,sourced,pooled,ceri_2017_002,72.02835,16.806,56
+fermenter_syngas,biofuels,fermenter,annual-output,,GJ,5.09288e+06,1.60828e+06,1.52786e+07,0,estimated,end-use-median,dea_2026_003,304164.0,16.744,114
+reactor_co2-to-ethanol,biofuels,reactor,annual-output,,GJ,5.09288e+06,1.60828e+06,1.52786e+07,0,estimated,end-use-median,dea_2026_003,304164.0,16.744,114
+pulper_thermomechanical,pulp-and-paper,pulper,specific-energy-consumption,electricity,GJ/t,8.2872,7.02799,10.9281,16,sourced,pooled,hekkert_1997_001; ietd_2013_001; jacobs_2006_001; martin_2000_002; nrcan_2008_001; suhr_2015_001; francis_2002_001; kram,0.5,16.574,248
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,opex-variable,,2025_CAD/t,329.914,2.10966,2376.91,0,estimated,cost-ratio,crundwell_2011_001,19.9781,16.514,221
+reactor_small-nuclear,heat-supply,reactor,capacity,,MW,330,30,1000,21,sourced,pooled,nrel_2016_001,20.0,16.5,83
+steam-reformer_methane_efficiency-moderate,petroleum-refining,steam-reformer,capacity,,MW,326.904,29.9563,792.668,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003,20.0,16.345,83
+steam-reformer_methane,petroleum-refining,steam-reformer,capacity,,MW,326.904,29.9563,792.668,6,sourced,pooled,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003,20.0,16.345,83
+steam-reformer_methane_ccs-concentrated,petroleum-refining,steam-reformer,capacity,,MW,326.904,29.9563,792.668,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003,20.0,16.345,83
+steam-reformer_methane_ccs-diffuse,petroleum-refining,steam-reformer,capacity,,MW,326.904,29.9563,792.668,0,estimated,host-size,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003,20.0,16.345,83
+liquefaction-train_floating,oil-and-gas,liquefaction-train,opex-fixed,,2025_CAD/t-per-yr,318.413,84.3314,2831.82,0,estimated,cost-ratio,songhurst_2018_001,19.5852,16.258,306
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,smelting-vessel,cost-levelized,calculated-incl-energy,2025_CAD/t,2521.15,99.6936,21596,0,guess,levelized-energy,,155.369,16.227,289
+pipeline_plastic-liner,oil-and-gas,pipeline,cost-levelized,calculated,2025_CAD/t,1620.48,931.529,5052.04,0,estimated,levelized,,100.079,16.192,310
+separator_ore-sorting,mining,separator,annual-output,,t,5000000.0,1500000.0,15000000.0,0,guess,judgement,,309548.0,16.153,308
+well_in-situ-oxy-combustion,oil-and-gas,well,specific-energy-consumption,,GJ/m3,5.65,3.9,8.0,0,guess,judgement,,0.35,16.143,53
+evaporator_crystallizer,oil-and-gas,evaporator,specific-energy-consumption,diesel,GJ/t,0.42104,0.285271,0.42104,1,sourced,pooled,gielen_1997_001,0.026222,16.057,8
+capture-unit_calcium-looping,co2-capture,capture-unit,annual-output,,t,4.96373e+06,3.7228e+06,5.83968e+06,0,estimated,capacity-output,element-energy_2021_001; hughes_2023_001; kearns_2021_001; ieaghg_2018_001; onarheim_2017_002; netl_2022_001; keith_2018,309548.0,16.035,308
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,53.7002,42.1215,56.52,5,sourced,pooled,van-geene_2024_001; cusano_2017_001; etsap_2012_001; doe_2017_001,3.350555,16.027,306
+coke-oven_by-product,iron-and-steel,coke-oven,specific-energy-consumption,by-product-gas,GJ/t,3.82515,3.36832,4.10514,2,sourced,pooled,remus_2013_001,0.240549,15.902,8
+process-improvement_pfc-anode-effect-control,non-ferrous-metals,process-improvement,specific-energy-consumption,,GJ/t,53.2,37.0,70.0,0,guess,judgement,,3.350555,15.878,306
+fracturing-fleet_electric,oil-and-gas,fracturing-fleet,cost-levelized,calculated,2025_CAD/GJ,189.023,155.064,231.602,0,guess,levelized,,11.937,15.835,113
+distillery_beverage-spirits,food-and-beverage,distillery,specific-energy-consumption,electricity,GJ/m3,0.80838,0.66564,0.95112,1,estimated,range-midpoint,stuckrath_2022_001,0.051239,15.777,43
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,307.225,257.269,733.927,0,estimated,cost-ratio,mpp_2023_001,19.5852,15.687,306
+pump_plunger-lift,oil-and-gas,pump,opex-fixed,,2025_CAD/t-per-yr,305.822,,,1,sourced,pooled,epa_2006_001,19.5852,15.615,306
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,7000.0,3500.0,14000.0,0,guess,judgement,,450.0,15.556,310
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,cost-levelized,calculated-incl-energy,2025_CAD/m3,545.516,393.807,1031.21,0,guess,levelized-energy,,35.1922,15.501,51
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,fermenter,capacity,,MW,309.932,16.8719,309.932,0,estimated,host-size,dea_2026_003; etsap_2013_011,20.0,15.497,83
+fermenter_grain-dry-mill,biofuels,fermenter,capacity,,MW,309.932,16.8719,309.932,2,sourced,pooled,dea_2026_003; etsap_2013_011,20.0,15.497,83
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,fermenter,capacity,,MW,309.932,16.8719,309.932,0,estimated,host-size,dea_2026_003; etsap_2013_011,20.0,15.497,83
+liquefaction-train_small-scale,oil-and-gas,liquefaction-train,opex-fixed,,2025_CAD/t-per-yr,301.168,55.8349,2812.38,0,guess,cost-ratio,,19.5852,15.377,306
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,303.938,49.075,2211.67,0,guess,cost-ratio,,19.9781,15.214,221
+refinery_deep-conversion,petroleum-refining,refinery,opex-fixed,,2025_CAD/m3-per-yr,41.4171,23.7633,48.4262,0,estimated,cost-ratio,gary_2007_001; kaiser_2017_001,2.72702,15.188,56
+kiln_lime-shaft,non-metallic-minerals,kiln,specific-energy-consumption,coke-oven-gas,GJ/t,3.94337,3.94337,4.20141,1,sourced,pooled,ieaghg_2013_003,0.260337,15.147,13
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,specific-energy-consumption,electricity,GJ/t,7.56,6.48,9,5,sourced,pooled,schlesinger_2011_001,0.5,15.12,248
+electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,non-ferrous-metals,electric-arc-furnace,specific-energy-consumption,electricity,GJ/t,7.54961,6.90709,8.35276,0,guess,host-split,,0.5,15.099,248
+well_cyclic-steam,oil-and-gas,well,emissions-combustion,co2,t/m3,0.513819,0.487341,0.552433,0,identity,fuel-emission-factor,petrinex_2026_001,0.034142,15.05,22
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,abatement-cost,co2e,2025_CAD/t-CO2-eq,1059.56,1059.56,9266.79,2,sourced,pooled,epa_2019_001,70.4733,15.035,13
+reactor_small-nuclear-power,power-generation,reactor,capacity,,MW,300,,,1,sourced,pooled,abou-jaoude_2024_001,20.0,15.0,83
+reactor_isomerization,petroleum-refining,reactor,specific-energy-consumption,steam,GJ/m3,1.30969,0.401854,4.1298,7,sourced,pooled,barthe_2015_001; meyers_1997_001; worrell_2004_002; worrell_2015_001,0.08736,14.992,14
+gasifier_biomass-ethylene,chemicals,gasifier,specific-energy-consumption,biomass,GJ/t,21.4716,6.81996,25.4624,2,sourced,pooled,joosten_1998_001; material-economics_2019_001,1.43996,14.911,13
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,297.861,63.1891,1512.91,0,estimated,ccs-cost,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,19.9781,14.909,221
+gasifier_biomass-methanol,chemicals,gasifier,capex,,2025_CAD/t-per-yr,6698.73,1916.87,10270.4,6,sourced,pooled,van-geene_2024_001; dea_2026_003; brown_2020_001; etsap_2013_007,450.0,14.886,310
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,1468.4,972.285,1528,0,estimated,levelized,,100.079,14.672,310
+compressor_flare-gas-recovery,oil-and-gas,compressor,cost-levelized,calculated,2025_CAD/t,1463.85,491.768,2642.66,0,estimated,levelized,,100.079,14.627,310
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,48.6,34.0,70.0,0,guess,judgement,,3.350555,14.505,306
+reactor_hydrothermal-liquefaction,biofuels,reactor,annual-output,,GJ,4.40395e+06,2.20198e+06,5.50494e+06,1,sourced,pooled,dea_2026_003,304164.0,14.479,114
+liquefaction-train_electric,oil-and-gas,liquefaction-train,opex-fixed,,2025_CAD/t-per-yr,282.678,112.301,1131.31,0,estimated,cost-ratio,songhurst_2018_001,19.5852,14.433,306
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,279.788,,,1,sourced,pooled,gielen_1997_001,19.5852,14.286,306
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,opex-variable,,2025_CAD/t,283.941,83.2204,1504.69,0,estimated,cost-ratio,almeida-benalcazar_2022_001,19.9781,14.213,221
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,278.147,116.459,1328.92,0,guess,cost-ratio,,19.5852,14.202,306
+reactor_haber-bosch-electrolytic,chemicals,reactor,specific-energy-consumption,,GJ/t,47.5164,37.5757,47.5164,2,sourced,pooled,van-geene_2024_001; iea_2013_001,3.350555,14.182,306
+electrolyzer_low-temperature,petroleum-refining,electrolyzer,abatement-cost,co2,2025_CAD/t-CO2-eq,1991.71,139.909,1991.71,2,sourced,pooled,concawe_2019_001; doe_2025_001,140.4905,14.177,48
+electrolysis-cell_prebaked-anode,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,279.369,49.1905,1489.46,0,estimated,cost-ratio,van-geene_2024_001; cusano_2017_001; gielen_1997_003; morrey_2002_001; mpp_2023_001; etsap_2012_001; nccp_1999_001; nccp,19.9781,13.984,221
+compressor_low-emission-seal,oil-and-gas,compressor,cost-levelized,calculated,2025_CAD/t,1394.53,26.281,10563.5,0,estimated,levelized,,100.079,13.934,310
+well_electromagnetic-heating,oil-and-gas,well,opex-fixed,,2025_CAD/m3-per-yr,37.9339,19.7447,55.0386,0,estimated,cost-ratio,toro_2021_001,2.72702,13.91,56
+well_cyclic-steam,oil-and-gas,well,capex,,2025_CAD/m3-per-yr,1000.0,500.0,2000.0,0,guess,judgement,,72.02835,13.883,56
+reactor_co2-to-gasoline,biofuels,reactor,cost-levelized,calculated-incl-energy,2025_CAD/t,2154.1,897.883,7143.25,0,guess,levelized-energy,,155.369,13.864,289
+smelting-vessel_smelting-reduction,iron-and-steel,smelting-vessel,emissions-combustion,co2,t/t,2.1671,1.57,2.9,3,sourced,pooled,hu_2009_001; etsap_2010_002,0.15677,13.823,136
+smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,smelting-vessel,emissions-combustion,co2,t/t,2.1671,1.57,2.9,0,estimated,ccs-emissions,hu_2009_001; etsap_2010_002,0.15677,13.823,136
+gasifier_coal-ammonia,chemicals,gasifier,specific-energy-consumption,electricity,GJ/t,6.9086,0.6772,16.4662,1,sourced,pooled,boulamanti_2017_001,0.5,13.817,248
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,,GJ/t,46.0,32.0,60.0,0,guess,judgement,,3.350555,13.729,306
+coke-oven_by-product_efficiency-moderate,iron-and-steel,coke-oven,specific-energy-consumption,coke-oven-gas,GJ/t,3.56666,3.02436,6.10762,0,estimated,host-split,ieaghg_2013_003; nrcan_2007_001; doe_2000_001,0.260337,13.7,13
+reactor_co2-to-ethanol,biofuels,reactor,opex-variable,,2025_CAD/GJ,30.6746,1.28811,36.4553,0,estimated,cost-ratio,almeida-benalcazar_2022_001; schemme_2020_001,2.24333,13.674,73
+gasifier_biomass-ammonia,chemicals,gasifier,cost-levelized,calculated-incl-energy,2025_CAD/t,2116.36,1705.5,3105.95,0,guess,levelized-energy,,155.369,13.622,289
+well_in-situ-oxy-combustion,oil-and-gas,well,specific-energy-consumption,natural-gas,GJ/m3,5.64826,5.27087,6.02565,1,estimated,range-midpoint,ceri_2017_002,0.41475,13.618,29
+gasifier_biomass-ammonia,chemicals,gasifier,opex-variable,,2025_CAD/t,268.598,96.2458,1032.57,0,estimated,cost-ratio,iea_2018_001,19.9781,13.445,221
+well_electromagnetic-heating,oil-and-gas,well,specific-energy-consumption,electricity,GJ/m3,0.688106,,,2,sourced,pooled,ceri_2017_002; toro_2021_001,0.051239,13.429,43
+digester_bayer,non-ferrous-metals,digester,capex,,2025_CAD/t-per-yr,6029.77,4134.7,7924.85,1,estimated,range-midpoint,gielen_1997_003,450.0,13.399,310
+mine_open-pit-coal,mining,mine,specific-energy-consumption,diesel,GJ/t,0.35,0.170732,0.682927,0,guess,judgement,,0.026222,13.348,8
+reactor_chemical-depolymerization,chemicals,reactor,opex-fixed,,2025_CAD/t-per-yr,260.662,,,1,sourced,pooled,singh_2021_001,19.5852,13.309,306
+reactor_fluid-coking,oil-and-gas,reactor,specific-energy-consumption,electricity,GJ/m3,0.679301,,,3,sourced,pooled,doe_1998_001; meyers_1997_001,0.051239,13.258,43
+pipeline_hydrogen,hydrogen,pipeline,annual-output,,GJ,4000000.0,1000000.0,15000000.0,0,guess,judgement,,304164.0,13.151,114
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,opex-fixed,,2025_CAD/t-per-yr,257.262,175.599,462.144,0,estimated,cost-ratio,almeida-benalcazar_2022_001,19.5852,13.136,306
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,capex,,2025_CAD/t-per-yr,5910.93,,,1,sourced,pooled,schlesinger_2011_001,450.0,13.135,310
+capture-unit_calcium-looping,co2-capture,capture-unit,capacity,,kt/yr,5839.68,,,1,sourced,pooled,element-energy_2021_001,450.0,12.977,142
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,specific-energy-consumption,,GJ/m3,4.53994,,,0,guess,ccs-energy,ceri_2017_002,0.35,12.971,53
+sinter-plant_efficiency-moderate,iron-and-steel,sinter-plant,annual-output,,t,4.005e+06,2.54006e+06,4.45e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,12.938,308
+sinter-plant_efficiency-strong,iron-and-steel,sinter-plant,annual-output,,t,4.005e+06,2.54006e+06,4.45e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,12.938,308
+sinter-plant,iron-and-steel,sinter-plant,annual-output,,t,4.005e+06,2.54006e+06,4.45e+06,0,estimated,capacity-output,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,12.938,308
+electrolysis-cell_advanced-anodes,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,2010.21,943.886,5851.52,0,guess,levelized-energy,,155.369,12.938,289
+pellet-plant_induration,iron-and-steel,pellet-plant,annual-output,,t,4000000.0,1500000.0,12000000.0,0,guess,judgement,,309548.0,12.922,308
+pellet-plant_plasma-electric,iron-and-steel,pellet-plant,annual-output,,t,4000000.0,1500000.0,12000000.0,0,guess,judgement,,309548.0,12.922,308
+pellet-plant_induration_efficiency-moderate,iron-and-steel,pellet-plant,annual-output,,t,4e+06,1.5e+06,1.2e+07,0,guess,host-size,,309548.0,12.922,308
+gasifier_coal-methanol,chemicals,gasifier,specific-energy-consumption,coal,GJ/t,37.9698,,,2,sourced,pooled,boulamanti_2017_001,2.96664,12.799,37
+gasifier_coal-methanol_ccs-concentrated,chemicals,gasifier,specific-energy-consumption,coal,GJ/t,37.9698,,,0,guess,ccs-energy,boulamanti_2017_001,2.96664,12.799,37
+heat-pump_very-high-temperature,heat-supply,heat-pump,specific-energy-consumption,electricity,GJ/GJ,0.5263,,,1,sourced,pooled,ciambellotti_2024_001,0.041196,12.776,55
+well_sagd,oil-and-gas,well,capex,,2025_CAD/m3-per-yr,918.632,894.597,918.632,3,sourced,pooled,ceri_2017_001; ceri_2017_002; ceri_2018_001,72.02835,12.754,56
+fan_activated-sludge,pulp-and-paper,fan,annual-output,,m3,20000000.0,6000000.0,60000000.0,0,guess,judgement,,1571110.0,12.73,54
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,annual-output,,m3,2e+07,6e+06,6e+07,0,guess,host-size,,1571110.0,12.73,54
+separator_clarifier,pulp-and-paper,separator,annual-output,,m3,20000000.0,6000000.0,60000000.0,0,guess,judgement,,1571110.0,12.73,54
+digester_bayer,non-ferrous-metals,digester,opex-fixed,,2025_CAD/t-per-yr,248.753,96.3574,680.31,0,estimated,cost-ratio,gielen_1997_003,19.5852,12.701,306
+reactor_integrated-upgrader,oil-and-gas,reactor,specific-energy-consumption,,GJ/m3,4.42929,,,1,sourced,pooled,ceri_2017_002,0.35,12.655,53
+basic-oxygen-furnace,iron-and-steel,basic-oxygen-furnace,annual-output,,t,3.915e+06,2.48298e+06,4.35e+06,0,estimated,capacity-output,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,12.647,308
+basic-oxygen-furnace_efficiency-strong,iron-and-steel,basic-oxygen-furnace,annual-output,,t,3.915e+06,2.48298e+06,4.35e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,12.647,308
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrolysis-cell,opex-variable,,2025_CAD/t,251.809,,,1,sourced,pooled,gielen_1997_001,19.9781,12.604,221
+well_solvent-assisted,oil-and-gas,well,specific-energy-consumption,,GJ/m3,4.40288,,,1,sourced,pooled,ceri_2017_002,0.35,12.58,53
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,emissions-total,co2e,t/t,5.8,,,1,sourced,pooled,cusano_2017_001,0.461733,12.561,38
+gasifier_biomass-ammonia,chemicals,gasifier,specific-energy-consumption,,GJ/t,42.0,30.0,58.0,0,guess,judgement,,3.350555,12.535,306
+reactor_fluid-coking,oil-and-gas,reactor,specific-energy-consumption,steam,GJ/m3,1.09496,,,2,sourced,pooled,doe_1998_001,0.08736,12.534,14
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,opex-fixed,,2025_CAD/t-per-yr,243.85,137.752,507.425,0,estimated,cost-ratio,schlesinger_2011_001,19.5852,12.451,306
+mine_open-pit-oil-sands,oil-and-gas,mine,opex-variable,,2025_CAD/m3,88.6973,19.7008,187.426,0,estimated,cost-ratio,ceri_2017_001,7.13622,12.429,36
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,electrolysis-cell,opex-fixed,,2025_CAD/t-per-yr,243.379,101.902,1162.81,0,guess,cost-ratio,,19.5852,12.427,306
+reactor_pyrolysis-oil,biofuels,reactor,opex-variable,,2025_CAD/t,246.05,54.0861,1629.86,0,estimated,cost-ratio,concawe_2019_002,19.9781,12.316,221
+reactor_co2-to-ethanol,biofuels,reactor,opex-fixed,,2025_CAD/GJ-per-yr,20.7507,0.836368,33.2532,0,estimated,cost-ratio,almeida-benalcazar_2022_001; schemme_2020_001,1.68743,12.297,115
+refinery_deep-conversion,petroleum-refining,refinery,capex,,2025_CAD/m3-per-yr,883.37,724.807,883.37,2,sourced,pooled,gary_2007_001; kaiser_2017_001,72.02835,12.264,56
+caster_continuous,iron-and-steel,caster,annual-output,,t,3.789e+06,570800,4.21e+06,0,estimated,capacity-output,ieaghg_2013_003; pardo_2013_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_202,309548.0,12.24,308
+electrolysis-cell_advanced-anodes,non-ferrous-metals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,6.12,,,1,sourced,pooled,schlesinger_2011_001,0.5,12.24,248
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,annual-output,,GJ,3.72031e+06,,,1,sourced,pooled,dea_2026_003,304164.0,12.231,114
+transesterification-unit_heterogeneous-catalyst,biofuels,transesterification-unit,annual-output,,GJ,3.72031e+06,1.2401e+06,1.11609e+07,0,estimated,end-use-median,dea_2026_003,304164.0,12.231,114
+transesterification-unit_acid-catalyzed,biofuels,transesterification-unit,annual-output,,GJ,3.72031e+06,1.2401e+06,1.11609e+07,0,estimated,end-use-median,dea_2026_003,304164.0,12.231,114
+transesterification-unit_supercritical-methanol,biofuels,transesterification-unit,annual-output,,GJ,3.72031e+06,1.2401e+06,1.11609e+07,0,estimated,end-use-median,dea_2026_003,304164.0,12.231,114
+electrolysis-cell_inert-anode,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,244.154,78.8443,888.322,0,estimated,cost-ratio,mpp_2023_001,19.9781,12.221,221
+well_in-situ-oxy-combustion,oil-and-gas,well,opex-fixed,,2025_CAD/m3-per-yr,33.321,22.5431,40.2266,0,estimated,cost-ratio,ceri_2017_002,2.72702,12.219,56
+compressor_blowdown-recovery,oil-and-gas,compressor,opex-fixed,,2025_CAD/t-per-yr,238.966,0,569.31,6,sourced,pooled,epa_2006_001; epa_2011_001,19.5852,12.201,306
+reactor_co2-to-gasoline,biofuels,reactor,opex-variable,,2025_CAD/t,241.996,35.4634,2564.82,0,guess,cost-ratio,,19.9781,12.113,221
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,petrinex_2026_001,1571110.0,12.055,54
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,petrinex_2026_001,1571110.0,12.055,54
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,petrinex_2026_001,1571110.0,12.055,54
+separator_non-aqueous,oil-and-gas,separator,opex-fixed,,2025_CAD/m3-per-yr,32.8197,11.475,76.7478,0,guess,cost-ratio,,2.72702,12.035,56
+mine_open-pit-oil-sands,oil-and-gas,mine,cost-levelized,calculated-incl-energy,2025_CAD/m3,422.823,344.245,535.961,0,estimated,levelized-energy,,35.1922,12.015,51
+coke-oven_by-product_efficiency-strong,iron-and-steel,coke-oven,specific-energy-consumption,by-product-gas,GJ/t,2.86886,2.02099,3.48937,0,proxy,bucket-saving,remus_2013_001,0.240549,11.926,8
+electrolysis-cell_oxygen-depolarized,chemicals,electrolysis-cell,specific-energy-consumption,electricity,GJ/t,5.94,5.76,6.12,2,estimated,range-midpoint,boulamanti_2017_001; brinkmann_2014_001,0.5,11.88,248
+reactor_chemical-depolymerization,chemicals,reactor,cost-levelized,calculated,2025_CAD/t,1184.89,1184.89,1718.37,0,estimated,levelized,,100.079,11.84,310
+refinery_deep-conversion,petroleum-refining,refinery,cost-levelized,calculated,2025_CAD/m3,180.544,109.606,235.723,0,estimated,levelized,,15.2681,11.825,56
+distillery_beverage-spirits,food-and-beverage,distillery,specific-energy-consumption,fuel,GJ/m3,20.207,19.51,20.904,1,estimated,range-midpoint,stuckrath_2022_001,1.71454,11.786,23
+well_solvent-only,oil-and-gas,well,specific-energy-consumption,electricity,GJ/m3,0.6,0.3,1.2,0,guess,judgement,,0.051239,11.71,43
+gasifier_biomass-methanol,chemicals,gasifier,cost-levelized,calculated,2025_CAD/t,1166.42,554.527,1623.46,0,identity,levelized,,100.079,11.655,310
+rolling-mill_hot,iron-and-steel,rolling-mill,annual-output,,t,3.6e+06,2.2832e+06,4e+06,0,estimated,capacity-output,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.63,308
+rolling-mill_hot_efficiency-moderate,iron-and-steel,rolling-mill,annual-output,,t,3.6e+06,2.2832e+06,4e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.63,308
+steam-turbine_condensing,power-generation,steam-turbine,capacity,,MW,232.5,1,808,21,sourced,pooled,dea_2026_006; ieaghg_2013_003; lecomte_2017_001; neill-gunter_1999_001; neuwahl_2019_001; pardo_2013_001; wade_2003_001,20.0,11.625,83
+reactor_co2-to-ethanol,biofuels,reactor,abatement-cost,co2e,2025_CAD/t-CO2-eq,819.094,544.774,1108.87,4,sourced,pooled,almeida-benalcazar_2022_001,70.4733,11.623,13
+blast-furnace,iron-and-steel,blast-furnace,annual-output,,t,3.573e+06,2.26608e+06,3.97e+06,0,estimated,capacity-output,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.543,308
+blast-furnace_ccs-diffuse,iron-and-steel,blast-furnace,annual-output,,t,3.573e+06,2.26608e+06,3.97e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.543,308
+blast-furnace_efficiency-moderate,iron-and-steel,blast-furnace,annual-output,,t,3.573e+06,2.26608e+06,3.97e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.543,308
+blast-furnace_efficiency-strong,iron-and-steel,blast-furnace,annual-output,,t,3.573e+06,2.26608e+06,3.97e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.543,308
+blast-furnace_top-gas-recycling,iron-and-steel,blast-furnace,annual-output,,t,3.573e+06,2.26608e+06,3.97e+06,0,estimated,host-size,ieaghg_2013_003; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,11.543,308
+pulper_chemi-thermomechanical,pulp-and-paper,pulper,specific-energy-consumption,electricity,GJ/t,5.76,3.6,15.48,4,sourced,pooled,suhr_2015_001,0.5,11.52,248
+smelting-vessel_low-shaft,iron-and-steel,smelting-vessel,emissions-combustion,co2,t/t,1.79,,,1,sourced,pooled,etsap_2010_002,0.15677,11.418,136
+gasifier_biomass-methanol,chemicals,gasifier,opex-variable,,2025_CAD/t,227.717,,,1,sourced,pooled,dea_2026_003,19.9781,11.398,221
+reactor_pyrolysis-oil,biofuels,reactor,opex-fixed,,2025_CAD/t-per-yr,222.931,114.124,500.59,0,estimated,cost-ratio,concawe_2019_002,19.5852,11.383,306
+well_solvent-assisted,oil-and-gas,well,cost-levelized,calculated,2025_CAD/m3,172.927,154.961,183.037,0,estimated,levelized,,15.2681,11.326,56
+gasifier_coal-methanol,chemicals,gasifier,specific-energy-consumption,fuel,GJ/t,37.9698,,,1,sourced,pooled,boulamanti_2017_001,3.36116,11.297,132
+gasifier_coal-methanol_ccs-concentrated,chemicals,gasifier,specific-energy-consumption,fuel,GJ/t,37.9698,,,0,guess,ccs-energy,boulamanti_2017_001,3.36116,11.297,132
+well_electromagnetic-heating,oil-and-gas,well,capex,,2025_CAD/m3-per-yr,809.077,602.234,1003.99,2,sourced,pooled,toro_2021_001,72.02835,11.233,56
+reactor_co2-to-gasoline,biofuels,reactor,opex-fixed,,2025_CAD/t-per-yr,219.258,74.8293,787.749,0,guess,cost-ratio,,19.5852,11.195,306
+well_sagd,oil-and-gas,well,emissions-combustion,co2,t/m3,0.381265,0.375543,0.588213,0,identity,fuel-emission-factor,petrinex_2026_001; ceri_2017_001; ceri_2017_002; ceri_2018_001,0.034142,11.167,22
+smelting-vessel_bath-tuyere,non-ferrous-metals,smelting-vessel,capex,,2025_CAD/t-per-yr,5000.0,2500.0,10000.0,0,guess,judgement,,450.0,11.111,310
+electrolysis-cell_soderberg,non-ferrous-metals,electrolysis-cell,opex-variable,,2025_CAD/t,221.046,35.6909,1608.49,0,guess,cost-ratio,,19.9781,11.064,221
+anaerobic-digester_chp,heat-supply,anaerobic-digester,opex-fixed,,2025_CAD/GJ-per-yr,18.5898,0.82248,26.8319,3,sourced,pooled,van-geene_2024_001; etsap_2010_005,1.68743,11.017,115
+kiln_lime-electric,pulp-and-paper,kiln,specific-energy-consumption,electricity,GJ/t,5.49,,,1,sourced,pooled,svensson_2021_001,0.5,10.98,248
+separator_non-aqueous,oil-and-gas,separator,cost-levelized,calculated,2025_CAD/m3,166.87,64.2576,422.479,0,guess,levelized,,15.2681,10.929,56
+gasifier_coal-methanol,chemicals,gasifier,emissions-total,co2e,t/t,5.02,2.83,5.285,3,sourced,pooled,boulamanti_2017_001; iea_2013_001,0.461733,10.872,38
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrolysis-cell,cost-levelized,calculated-incl-energy,2025_CAD/t,1686.98,1073.81,1979.64,0,estimated,levelized-energy,,155.369,10.858,289
+electrolysis-cell_zinc-electrowinning,non-ferrous-metals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,1083,941.206,1719.35,0,estimated,levelized,,100.079,10.821,310
+chiller_high-efficiency,food-and-beverage,chiller,efficiency,,%,780,640,780,2,sourced,pooled,eia_2023_002; stuckrath_2022_001,72.25,10.796,150
+gasifier_biomass-methanol,chemicals,gasifier,specific-energy-consumption,,GJ/t,36.1403,,,1,sourced,pooled,dea_2026_003,3.350555,10.786,306
+gasifier_biomass-methanol,chemicals,gasifier,specific-energy-consumption,fuel,GJ/t,36.1403,,,1,sourced,pooled,dea_2026_003,3.36116,10.752,132
+digester_bayer,non-ferrous-metals,digester,cost-levelized,calculated,2025_CAD/t,1070.62,574.327,2377.47,0,estimated,levelized,,100.079,10.698,310
+reactor_integrated-upgrader,oil-and-gas,reactor,cost-levelized,calculated-incl-energy,2025_CAD/m3,375.971,213.342,858.245,0,estimated,levelized-energy,,35.1922,10.683,51
+electrolysis-cell_advanced-anodes,non-ferrous-metals,electrolysis-cell,capex,,2025_CAD/t-per-yr,4800.0,2400.0,9600.0,0,guess,judgement,,450.0,10.667,310
+gasifier_coal-ammonia,chemicals,gasifier,emissions-total,co2e,t/t,4.91,,,1,sourced,pooled,iea_2013_001,0.461733,10.634,38
+reactor_steel-offgas-chemicals,iron-and-steel,reactor,cost-levelized,calculated,2025_CAD/t,1063.11,772.949,2508.27,0,estimated,levelized,,100.079,10.623,310
+well_solvent-assisted,oil-and-gas,well,specific-energy-consumption,natural-gas,GJ/m3,4.40288,,,1,sourced,pooled,ceri_2017_002,0.41475,10.616,29
+smelting-vessel_bath-tuyere,non-ferrous-metals,smelting-vessel,opex-fixed,,2025_CAD/t-per-yr,206.271,58.2614,858.452,0,guess,cost-ratio,,19.5852,10.532,306
+leaching-vessel_heap-atmospheric,mining,leaching-vessel,cost-levelized,calculated,2025_CAD/t,1049.52,821.053,1773.29,0,estimated,levelized,,100.079,10.487,310
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,specific-energy-consumption,,GJ/t,35.0,24.0,50.0,0,guess,judgement,,3.350555,10.446,306
+pipeline_plastic-liner,oil-and-gas,pipeline,cost-levelized,calculated-incl-energy,2025_CAD/t,1620.48,931.529,5052.04,0,estimated,levelized-energy,,155.369,10.43,289
+reactor_haber-bosch-electrolytic,chemicals,reactor,cost-levelized,calculated-incl-energy,2025_CAD/t,1610.26,1026.01,4365.34,0,guess,levelized-energy,,155.369,10.364,289
+well_sagd,oil-and-gas,well,cost-levelized,calculated,2025_CAD/m3,156.74,154.164,168.14,0,identity,levelized,,15.2681,10.266,56
+autothermal-reformer_ammonia_ccs-concentrated,chemicals,autothermal-reformer,specific-energy-consumption,,GJ/t,34.2759,,,0,guess,ccs-energy,martin_2000_001,3.350555,10.23,306
+reactor_co2-to-ethanol,biofuels,reactor,capex,,2025_CAD/GJ-per-yr,550.388,30.3225,550.388,2,sourced,pooled,almeida-benalcazar_2022_001; schemme_2020_001,54.0083,10.191,115
+gasifier_biomass-ethylene,chemicals,gasifier,cost-levelized,,2025_CAD/t,3571.42,2200,4400.01,2,sourced,pooled,gielen_1996_001; negri_2021_001,350.5615,10.188,38
+reactor_co2-to-fischer-tropsch,biofuels,reactor,capacity,,MW,203.684,,,1,sourced,pooled,concawe_2019_002,20.0,10.184,83
+pipeline_plastic-liner,oil-and-gas,pipeline,capex,,2025_CAD/t-per-yr,4554.48,,,1,sourced,pooled,epa_2011_001,450.0,10.121,310
+gasifier_biomass-ethylene,chemicals,gasifier,specific-energy-consumption,electricity,GJ/t,5.04,1.60084,5.97674,2,sourced,pooled,joosten_1998_001; material-economics_2019_001,0.5,10.08,248
+electrolysis-cell_oxygen-depolarized,chemicals,electrolysis-cell,cost-levelized,calculated,2025_CAD/t,1007.48,464.367,3019.62,0,guess,levelized,,100.079,10.067,310
+reactor_integrated-upgrader,oil-and-gas,reactor,specific-energy-consumption,natural-gas,GJ/m3,4.15757,,,1,sourced,pooled,ceri_2017_002,0.41475,10.024,29
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,reactor,specific-energy-consumption,natural-gas,GJ/m3,4.15757,,,0,guess,ccs-energy,ceri_2017_002,0.41475,10.024,29
+binder_electrochemical,cement,binder,specific-energy-consumption,electricity,GJ/t,5.0,3.5,8.0,0,guess,judgement,,0.5,10.0,248
+solar-concentrator_line-focus,heat-supply,solar-concentrator,capacity,,MW,2,0.1,392,5,sourced,pooled,saw_2023_001; mcmillan_2021_001; nrel_2016_001,20.0,0.1,83
+well_solvent-only,oil-and-gas,well,temperature-output,,degC,50,40,60,1,estimated,range-midpoint,ceri_2017_002,500.0,0.1,87
+separator_aromatics-extraction,chemicals,separator,opex-fixed,,2025_CAD/t-per-yr,1.95852,,,1,sourced,pooled,joosten_1998_001,19.5852,0.1,306
+well_co2-storage,co2-capture,well,specific-energy-consumption,electricity,GJ/t,0.05,,,1,sourced,pooled,dea_2024_002,0.5,0.1,248
+separator_membrane-bioreactor,pulp-and-paper,separator,capacity,,m3/yr,1.387e+06,438000,1.6571e+07,3,sourced,pooled,brinkmann_2016_001,13927300.0,0.1,20
+dryer_electric,non-metallic-minerals,dryer,cost-levelized,calculated,2025_CAD/t,9.95369,9.20114,11.8632,0,estimated,levelized,,100.079,0.099,310
+reactor_catalytic-n2o,chemicals,reactor,emissions-combustion,co2,t/t,0.01554,,,1,sourced,pooled,jrc_2007_002,0.15677,0.099,136
+separator_reverse-osmosis,mining,separator,cost-levelized,calculated,2025_CAD/m3,1.51039,0.809203,2.4939,0,estimated,levelized,,15.2681,0.099,56
+heat-pump_oil-treating,oil-and-gas,heat-pump,cost-levelized,calculated-incl-energy,2025_CAD/m3,3.48439,1.24603,9.96256,0,guess,levelized-energy,,35.1922,0.099,51
+dryer_electric,non-metallic-minerals,dryer,opex-fixed,,2025_CAD/t-per-yr,1.91359,1.791,2.46642,3,sourced,pooled,van-geene_2024_001,19.5852,0.098,306
+furnace_reheating_efficiency-moderate,iron-and-steel,furnace,opex-variable,,2025_CAD/t,1.96271,0.247697,5.60564,0,estimated,cost-ratio,siyambalapitiya_2026_001; bataille_2017_001; ietd_2013_001,19.9781,0.098,221
+shaft-furnace_electrolytic-hydrogen,iron-and-steel,shaft-furnace,emissions-process,co2,t/t,0.051,,,1,sourced,pooled,devlin_2023_001,0.51825,0.098,36
+reactor_silicothermic,non-ferrous-metals,reactor,annual-output,,t,30000,10000,100000,0,guess,judgement,,309548.0,0.097,308
+furnace_heat-treatment,other-industry,furnace,cost-levelized,calculated,2025_CAD/t,9.72974,4.22929,28.8486,0,guess,levelized,,100.079,0.097,310
+blast-furnace_efficiency-strong,iron-and-steel,blast-furnace,specific-energy-consumption,natural-gas,GJ/t,0.177259,0,1.77225,0,proxy,bucket-saving,remus_2013_001; doe_2000_001; otto_2017_001,1.83084,0.097,123
+converter_continuous,non-ferrous-metals,converter,emissions-combustion,co2,t/t,0.015192,0.00952254,0.0251394,0,guess,fuel-emission-factor,,0.15677,0.097,136
+dryer_superheated-steam,other-industry,dryer,emissions-combustion,co2,t/t,0.015192,0.00945226,0.0242582,0,guess,fuel-emission-factor,,0.15677,0.097,136
+boiler_fuel-fired_ccs-diffuse,heat-supply,boiler,capacity,,MW,1.91961,0.0293071,290,0,estimated,host-size,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; ieaghg_2007_001; ieaghg_2013,20.0,0.096,83
+boiler_fuel-fired,heat-supply,boiler,capacity,,MW,1.91961,0.0293071,290,23,sourced,pooled,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; ieaghg_2007_001; ieaghg_2013,20.0,0.096,83
+motor_induction-standard,machine-drive,motor,capex,,2025_CAD/GJ-per-yr,5.16769,4.29108,8.32894,4,sourced,pooled,bataille_2017_001; mccoy_2014_001,54.0083,0.096,115
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,specific-energy-consumption,,GJ/GJ,0.112823,,,1,sourced,pooled,dea_2026_003,1.17647,0.096,105
+dryer_electric,non-metallic-minerals,dryer,cost-levelized,calculated-incl-energy,2025_CAD/t,14.8953,12.0716,21.4519,0,estimated,levelized-energy,,155.369,0.096,289
+capture-unit_calcium-looping,co2-capture,capture-unit,specific-energy-consumption,natural-gas,GJ/t,0.17559,0.10535,0.24583,0,guess,judgement,,1.83084,0.096,123
+dryer_solid-fuel,other-industry,dryer,emissions-combustion,co2,t/t,0.015072,0.00989807,0.0236282,0,guess,fuel-emission-factor,,0.15677,0.096,136
+pellet-plant_induration_efficiency-moderate,iron-and-steel,pellet-plant,specific-energy-consumption,coke,GJ/t,0.287118,0.116313,0.910815,0,proxy,bucket-saving,remus_2013_001,3.0,0.096,19
+reciprocating-engine_drive_efficiency-moderate,machine-drive,reciprocating-engine,annual-output,,GJ,28914.2,1020.06,34752.7,0,estimated,host-size,gpsa_2004_001; galitsky_2008_001; ieaghg_2007_001; jrc_2009_001; epa_2007_001; etsap_2010_004,304164.0,0.095,114
+reciprocating-engine_drive,machine-drive,reciprocating-engine,annual-output,,GJ,28914.2,1020.06,34752.7,0,estimated,capacity-output,gpsa_2004_001; galitsky_2008_001; ieaghg_2007_001; jrc_2009_001; epa_2007_001; etsap_2010_004,304164.0,0.095,114
+separator_biogas-upgrading,biofuels,separator,specific-energy-consumption,,GJ/GJ,0.112028,0.0334413,0.115372,5,sourced,pooled,dea_2026_003; etsap_2013_012,1.17647,0.095,105
+direct-heater_line-heater,oil-and-gas,direct-heater,temperature-output,,degC,47.5,40,96.1,3,estimated,range-midpoint,joshi_2022_001,500.0,0.095,87
+hoist,mining,hoist,cost-levelized,calculated,2025_CAD/t,9.53646,4.17015,25.0159,0,guess,levelized,,100.079,0.095,310
+fracturing-fleet_dual-fuel,oil-and-gas,fracturing-fleet,emissions-reduction-potential,,%,6,,,1,sourced,pooled,liberty_2020_001,63.5,0.094,108
+motor_premium-efficiency,machine-drive,motor,opex-fixed,,2025_CAD/GJ-per-yr,0.159336,0.121827,0.493938,0,estimated,cost-ratio,bataille_2017_001,1.68743,0.094,115
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,specific-energy-consumption,fuel,GJ/GJ,0.108615,,,1,sourced,pooled,dea_2026_003,1.15854,0.094,35
+dryer_direct-fired,other-industry,dryer,cost-levelized,calculated,2025_CAD/t,9.45217,0.314274,15.0386,0,estimated,levelized,,100.079,0.094,310
+reactor_nitric-acid,chemicals,reactor,specific-energy-consumption,electricity,GJ/t,0.0468,0.00939109,0.0791722,8,sourced,pooled,boulamanti_2017_001; doe_2000_002; jrc_2007_002; gielen_1997_001,0.5,0.094,248
+grinding-mill_sag-ball,mining,grinding-mill,specific-energy-consumption,electricity,GJ/t,0.0468324,0.026208,0.0468324,10,sourced,pooled,bcs_2007_001; schlesinger_2011_001; doe_2002_001; norgate_2010_001; wang_2013_001,0.5,0.094,248
+reciprocating-engine_chp,heat-supply,reciprocating-engine,annual-output,,GJ,28382,,,1,sourced,pooled,epa_2007_001,304164.0,0.093,114
+furnace_oxy-fuel,non-metallic-minerals,furnace,annual-output,,t,28743.8,2083.42,155125,0,estimated,capacity-output,scalet_2013_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_,309548.0,0.093,308
+reactor_chemical-depolymerization,chemicals,reactor,annual-output,,t,28405.3,17758.7,31112,0,estimated,capacity-output,singh_2021_001; material-economics_2019_001; schemme_2020_001; etsap_2013_007; etsap_2010_012; brown_2020_001; jones_200,309548.0,0.092,308
+sinter-plant_efficiency-strong,iron-and-steel,sinter-plant,cost-levelized,calculated-incl-energy,2025_CAD/t,14.3512,9.5671,37.6591,0,estimated,levelized-energy,,155.369,0.092,289
+separator_gravity-magnetic,mining,separator,cost-levelized,calculated-incl-energy,2025_CAD/t,14.3444,4.96742,40.2072,0,guess,levelized-energy,,155.369,0.092,289
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,specific-energy-consumption,,GJ/t,0.309358,0.027961,0.835034,13,sourced,pooled,ct_2010_003; ukerc_2013_001; doe_2017_003,3.350555,0.092,306
+solar-concentrator_point-focus,heat-supply,solar-concentrator,opex-variable,,2025_CAD/GJ,0.204545,,,1,sourced,pooled,mpp_2023_001,2.24333,0.091,73
+well_cyclic-steam,oil-and-gas,well,capacity,,m3/yr,1.27053e+06,424700,2.37614e+06,0,estimated,capacity-from-output,petrinex_2026_001; ceri_2017_002; ceri_2018_001; cenovus_2025_001; cenovus_2025_002; toro_2021_001,13927300.0,0.091,20
+steam-cracker_electric,chemicals,steam-cracker,pressure-output,,bar,2.25,1.5,3,1,estimated,range-midpoint,rubini_2022_001,25.0,0.09,23
+furnace_ladle-metallurgy,iron-and-steel,furnace,cost-levelized,calculated-incl-energy,2025_CAD/t,13.9539,4.06267,28.9032,0,guess,levelized-energy,,155.369,0.09,289
+ultraviolet-curer_infrared,other-industry,ultraviolet-curer,specific-energy-consumption,,GJ/t,0.3,0.15,0.6,0,guess,judgement,,3.350555,0.09,306
+separator_reduced-emission-completion,oil-and-gas,separator,specific-energy-consumption,,GJ/t,0.3,0.1,1.0,0,guess,judgement,,3.350555,0.09,306
+hoist,mining,hoist,specific-energy-consumption,electricity,GJ/t,0.045198,0.014184,0.076212,0,estimated,single-carrier-split,nrcan_2005_001,0.5,0.09,248
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,opex-variable,,2025_CAD/t,1.79996,0.229599,7.16154,0,estimated,cost-ratio,siyambalapitiya_2026_001; epa_2012_001; ietd_2013_001; nedo_2008_001; worrell_1999_001,19.9781,0.09,221
+steam-cracker_fired-tubular_ccs-diffuse,chemicals,steam-cracker,emissions-process,co2e,t/t,0.0495253,0.0381819,0.147368,0,estimated,ccs-emissions,ukerc_2013_001; boulamanti_2017_001,0.55,0.09,17
+steam-cracker_fired-tubular,chemicals,steam-cracker,emissions-process,co2e,t/t,0.0495253,0.0381819,0.147368,0,identity,co2e-from-species,ukerc_2013_001; boulamanti_2017_001,0.55,0.09,17
+furnace_ladle-metallurgy,iron-and-steel,furnace,capex,,2025_CAD/t-per-yr,40.0,20.0,80.0,0,guess,judgement,,450.0,0.089,310
+furnace_lehr,non-metallic-minerals,furnace,capex,,2025_CAD/t-per-yr,40.0,20.0,80.0,0,guess,judgement,,450.0,0.089,310
+hoist,mining,hoist,capex,,2025_CAD/t-per-yr,40.0,20.0,80.0,0,guess,judgement,,450.0,0.089,310
+separator_gravity-magnetic,mining,separator,capex,,2025_CAD/t-per-yr,40.0,20.0,80.0,0,guess,judgement,,450.0,0.089,310
+oven_electric,food-and-beverage,oven,cost-levelized,calculated,2025_CAD/t,8.89425,3.80023,23.5173,0,guess,levelized,,100.079,0.089,310
+capture-unit_calcium-looping,co2-capture,capture-unit,specific-energy-consumption,coal,GJ/t,0.26339,0.15803,0.36875,0,guess,judgement,,2.96664,0.089,37
+converter_continuous,non-ferrous-metals,converter,specific-energy-consumption,fuel,GJ/t,0.3,0.190909,0.490909,1,guess,pooled,schlesinger_2011_001,3.36116,0.089,132
+chiller_high-efficiency,food-and-beverage,chiller,capacity,,MW,1.75833,,,1,sourced,pooled,eia_2023_002,20.0,0.088,83
+transesterification-unit_heterogeneous-catalyst,biofuels,transesterification-unit,opex-variable,,2025_CAD/GJ,0.197215,0.0769822,0.34791,0,estimated,cost-ratio,west_2008_001,2.24333,0.088,73
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,annual-output,,t,27181.8,17239.3,30202,0,estimated,capacity-output,schlesinger_2011_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_,309548.0,0.088,308
+separator_reverse-osmosis,mining,separator,capex,,2025_CAD/m3-per-yr,6.33591,4.40759,8.26422,1,estimated,range-midpoint,etsap_2013_008,72.02835,0.088,56
+motor_induction-standard,machine-drive,motor,opex-fixed,,2025_CAD/GJ-per-yr,0.147648,0.0937404,0.449034,0,estimated,cost-ratio,bataille_2017_001; mccoy_2014_001,1.68743,0.087,115
+separator_produced-water-recycling,oil-and-gas,separator,opex-fixed,,2025_CAD/m3-per-yr,0.234427,0.0655714,0.657838,0,guess,cost-ratio,,2.72702,0.086,56
+electric-arc-furnace,iron-and-steel,electric-arc-furnace,specific-energy-consumption,coal,GJ/t,0.251919,0.199826,0.452816,6,sourced,pooled,rehfeldt_2024_001; doe_2000_001; pfeifer_2002_001; otto_2017_001; toktarova_2020_001,2.96664,0.085,37
+furnace_reheating_efficiency-moderate,iron-and-steel,furnace,capex,,2025_CAD/t-per-yr,37.9669,18.9761,54.1331,0,estimated,host-increment,siyambalapitiya_2026_001; bataille_2017_001; ietd_2013_001,450.0,0.084,310
+dryer_direct-fired_efficiency-moderate,other-industry,dryer,capex,,2025_CAD/t-per-yr,37.7287,29.2791,37.7287,2,sourced,pooled,van-geene_2024_001,450.0,0.084,310
+separator_dry-stack-tailings,oil-and-gas,separator,cost-levelized,calculated,2025_CAD/t,8.40625,2.30696,28.1966,0,guess,levelized,,100.079,0.084,310
+evaporator_food,food-and-beverage,evaporator,cost-levelized,calculated-incl-energy,2025_CAD/t,12.9928,2.53047,151.688,0,estimated,levelized-energy,,155.369,0.084,289
+hoist,mining,hoist,opex-fixed,,2025_CAD/t-per-yr,1.65017,0.466091,6.86761,0,guess,cost-ratio,,19.5852,0.084,306
+furnace_heat-treatment,other-industry,furnace,opex-fixed,,2025_CAD/t-per-yr,1.64398,0.755083,3.86494,0,guess,cost-ratio,,19.5852,0.084,306
+pipeline_co2,co2-capture,pipeline,opex-fixed,,2025_CAD/t-per-yr,1.63727,0.42636,4.68233,0,guess,cost-ratio,,19.5852,0.084,306
+furnace_heat-treatment,other-industry,furnace,opex-variable,,2025_CAD/t,1.65784,0.267682,12.0637,0,guess,cost-ratio,,19.9781,0.083,221
+storage-cavern_hydrogen,hydrogen,storage-cavern,cost-levelized,calculated-incl-energy,2025_CAD/GJ,2.36008,1.90138,4.24714,0,guess,levelized-energy,,29.1574,0.081,101
+furnace_lehr-electric,non-metallic-minerals,furnace,cost-levelized,calculated,2025_CAD/t,8.10812,3.52441,24.0405,0,guess,levelized,,100.079,0.081,310
+kiln_lime-electric,pulp-and-paper,kiln,opex-fixed,,2025_CAD/t-per-yr,1.58998,1.58998,1.85574,2,sourced,pooled,svensson_2021_001,19.5852,0.081,306
+calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,calciner,specific-energy-consumption,electricity,GJ/t,0.0405721,,,0,guess,ccs-energy,,0.5,0.081,248
+compressor_co2-dehydration,co2-capture,compressor,cost-levelized,,2025_CAD/t,28.3697,9.86773,169.361,17,sourced,pooled,gielen_1997_003; hughes_2023_001; mccollum_2006_001; sanchez_2018_001; netl_2022_001,350.5615,0.081,38
+direct-heater_fuel-fired_efficiency-moderate,heat-supply,direct-heater,opex-fixed,,2025_CAD/GJ-per-yr,0.134417,0.11208,0.3255,0,estimated,cost-ratio,bataille_2017_001,1.68743,0.08,115
+separator_gravity-magnetic,mining,separator,specific-energy-consumption,electricity,GJ/t,0.04,0.025,0.07,0,guess,judgement,,0.5,0.08,248
+kiln_dry-precalciner_efficiency-moderate,cement,kiln,emissions-reduction-potential,,%,5,5,20,4,sourced,pooled,lehne-preston_2018_001; doe_2023_001; doe_2023_002,63.5,0.079,108
+furnace_rotary-hearth-direct-reduction,iron-and-steel,furnace,emissions-reduction-potential,,%,5,,,1,sourced,pooled,ricardo-aea_2013_001,63.5,0.079,108
+reactor_ammonium-nitrate,chemicals,reactor,specific-energy-consumption,,GJ/t,0.264947,0.04145,1.07461,7,sourced,pooled,doe_2000_002; jrc_2007_002,3.350555,0.079,306
+pellet-plant_induration,iron-and-steel,pellet-plant,specific-energy-consumption,coal,GJ/t,0.23473,,,1,sourced,pooled,remus_2013_001,2.96664,0.079,37
+induction-heater_reheating,iron-and-steel,induction-heater,capex,,2025_CAD/t-per-yr,34.9473,,,1,sourced,pooled,siyambalapitiya_2026_001,450.0,0.078,310
+caster_continuous,iron-and-steel,caster,emissions-total,co2,t/t,0.0279665,,,0,identity,sum,ukerc_2013_001,0.3605,0.078,74
+separator_produced-water-recycling,oil-and-gas,separator,cost-levelized,calculated,2025_CAD/m3,1.19193,0.367186,3.62125,0,guess,levelized,,15.2681,0.078,56
+fan_activated-sludge,pulp-and-paper,fan,specific-energy-consumption,electricity,GJ/m3,0.004,0.0025,0.008,0,guess,judgement,,0.051239,0.078,43
+heat-recovery-unit_waste-heat,heat-supply,heat-recovery-unit,cost-levelized,calculated,2025_CAD/GJ,0.913204,0.438686,2.03727,0,guess,levelized,,11.937,0.077,113
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,capex,,2025_CAD/t-per-yr,34.8187,17.5896,69.1583,0,estimated,host-increment,siyambalapitiya_2026_001; epa_2012_001; ietd_2013_001; nedo_2008_001; worrell_1999_001,450.0,0.077,310
+direct-heater_electric,heat-supply,direct-heater,opex-fixed,,2025_CAD/GJ-per-yr,0.127567,0,0.253432,5,sourced,pooled,dea_2026_001; element-energy_2018_001,1.68743,0.076,115
+oven_fuel-fired,food-and-beverage,oven,cost-levelized,calculated,2025_CAD/t,7.59645,3.27412,20.4009,0,guess,levelized,,100.079,0.076,310
+grinding-mill_vertical-roller,cement,grinding-mill,capex,,2025_CAD/t-per-yr,33.5499,4.75481,119.337,7,sourced,pooled,van-geene_2024_001; ietd_2013_001; martin_1999_001; nedo_2008_001; worrell_2013_001,450.0,0.075,310
+induction-heater_reheating,iron-and-steel,induction-heater,opex-fixed,,2025_CAD/t-per-yr,1.46104,0.799989,2.38252,0,estimated,cost-ratio,siyambalapitiya_2026_001,19.5852,0.075,306
+radio-frequency-heater_food,food-and-beverage,radio-frequency-heater,specific-energy-consumption,,GJ/t,0.25,0.15,0.4,0,guess,judgement,,3.350555,0.075,306
+boiler_fuel-fired_efficiency-moderate,heat-supply,boiler,opex-fixed,,2025_CAD/GJ-per-yr,0.125106,0.0862815,0.169965,0,estimated,cost-ratio,van-geene_2024_001,1.68743,0.074,115
+furnace_ladle-metallurgy,iron-and-steel,furnace,cost-levelized,calculated,2025_CAD/t,7.44908,2.90213,19.4741,0,guess,levelized,,100.079,0.074,310
+rolling-mill_thin-slab,iron-and-steel,rolling-mill,specific-energy-consumption,,GJ/t,0.2488,0.2488,0.71,2,sourced,pooled,worrell_1999_001; de-beer_1998_001,3.350555,0.074,306
+grinding-mill_stirred,mining,grinding-mill,specific-energy-consumption,electricity,GJ/t,0.037,0.025,0.05,0,guess,judgement,,0.5,0.074,248
+hvac-heater_fuel-fired,space-conditioning,hvac-heater,capex,,2025_CAD/GJ-per-yr,3.94545,2.10176,9.49783,4,sourced,pooled,dea_2026_007; eia_2023_002,54.0083,0.073,115
+paper-machine_waterless,pulp-and-paper,paper-machine,annual-output,,t,22500,14270,25000,0,estimated,capacity-output,ietd_2013_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_00,309548.0,0.073,308
+sinter-plant_efficiency-strong,iron-and-steel,sinter-plant,opex-fixed,,2025_CAD/t-per-yr,1.43572,1.43572,16.8863,0,estimated,host-increment,van-geene_2024_001; ieaghg_2013_003; ukerc_2013_001,19.5852,0.073,306
+pellet-plant_induration_efficiency-moderate,iron-and-steel,pellet-plant,specific-energy-consumption,coal,GJ/t,0.215952,0.19952,0.23473,0,proxy,bucket-saving,remus_2013_001,2.96664,0.073,37
+reactor_urea-synthesis,chemicals,reactor,emissions-process,co2,t/t,0.038,,,1,sourced,pooled,boulamanti_2017_001,0.51825,0.073,36
+reactor_plastics-pyrolysis,chemicals,reactor,annual-output,,t,22258.9,500.021,87600,0,estimated,capacity-output,negri_2021_001; riedewald_2021_001; material-economics_2019_001; schemme_2020_001; etsap_2013_007; etsap_2010_012; brown,309548.0,0.072,308
+furnace_reheating_efficiency-moderate,iron-and-steel,furnace,cost-levelized,calculated,2025_CAD/t,7.21921,2.82791,13.3895,0,estimated,levelized,,100.079,0.072,310
+cleaning-system,food-and-beverage,cleaning-system,cost-levelized,calculated-incl-energy,2025_CAD/t,11.1518,2.27882,43.4991,0,guess,levelized-energy,,155.369,0.072,289
+grinding-mill_ball,cement,grinding-mill,opex-variable,,2025_CAD/t,1.43522,0.463473,5.22186,0,estimated,cost-ratio,van-geene_2024_001,19.9781,0.072,221
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,emissions-combustion,co2,t/t,0.011304,0.0074208,0.0177184,0,guess,fuel-emission-factor,,0.15677,0.072,136
+grinding-mill_sag-ball,mining,grinding-mill,opex-total,,2025_CAD/t,6.10797,,,1,sourced,pooled,schlesinger_2011_001,84.8328,0.072,19
+steam-turbine_waste-heat,power-generation,steam-turbine,annual-output,,GJ,21600,21600,180000,2,sourced,pooled,schorcht_2013_001,304164.0,0.071,114
+electrolyzer_low-temperature,petroleum-refining,electrolyzer,opex-variable,,2025_CAD/GJ,0.158321,0.0506753,0.883311,11,sourced,pooled,nrel_2009_001; nrel_2013_001; nrel_2018_003; nrel_2026_001; lazard_2021_001; lazard_2023_001; lazard_2024_001,2.24333,0.071,73
+heat-exchanger_aseptic-uht,food-and-beverage,heat-exchanger,cost-levelized,calculated,2025_CAD/t,7.15233,3.12762,18.7619,0,guess,levelized,,100.079,0.071,310
+pipeline_co2,co2-capture,pipeline,cost-levelized,calculated,2025_CAD/t,7.15552,2.06563,14.6403,0,guess,levelized,,100.079,0.071,310
+binder_blended-cement,cement,binder,opex-fixed,,2025_CAD/t-per-yr,1.39894,,,1,sourced,pooled,gielen_1997_001,19.5852,0.071,306
+furnace_oxy-fuel,non-metallic-minerals,furnace,capacity,,kt/yr,31.9375,3.65,155.125,8,sourced,pooled,scalet_2013_001,450.0,0.071,142
+basic-oxygen-furnace,iron-and-steel,basic-oxygen-furnace,specific-energy-consumption,steam,GJ/t,0.0815,0.013,0.15,1,estimated,range-midpoint,remus_2013_001,1.15085,0.071,75
+boiler_fuel-fired_efficiency-moderate,heat-supply,boiler,capex,,2025_CAD/GJ-per-yr,3.79606,,,1,sourced,pooled,van-geene_2024_001,54.0083,0.07,115
+anaerobic-digester,biofuels,anaerobic-digester,specific-energy-consumption,,GJ/GJ,0.0829335,0.064596,0.142295,3,sourced,pooled,dea_2026_003; etsap_2013_012,1.17647,0.07,105
+dryer_solid-fuel,other-industry,dryer,cost-levelized,calculated-incl-energy,2025_CAD/t,10.9122,5.64963,18.4702,0,guess,levelized-energy,,155.369,0.07,289
+ultraviolet-curer_infrared,other-industry,ultraviolet-curer,cost-levelized,calculated-incl-energy,2025_CAD/t,10.8138,3.84024,33.2017,0,guess,levelized-energy,,155.369,0.07,289
+furnace_lehr-electric,non-metallic-minerals,furnace,opex-fixed,,2025_CAD/t-per-yr,1.36998,0.629236,3.22078,0,guess,cost-ratio,,19.5852,0.07,306
+binder_blended-cement,cement,binder,opex-variable,,2025_CAD/t,1.39894,,,1,sourced,pooled,gielen_1997_001,19.9781,0.07,221
+furnace_ladle-metallurgy,iron-and-steel,furnace,specific-energy-consumption,coke-oven-gas,GJ/t,0.0182574,,,1,sourced,pooled,ieaghg_2013_003,0.260337,0.07,13
+thermal-storage_electric,heat-supply,thermal-storage,annual-output,,GJ,21024,,,1,sourced,pooled,doe_2023_001,304164.0,0.069,114
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,capex,,2025_CAD/t-per-yr,31.0,15.0,62.0,0,guess,judgement,,450.0,0.069,310
+process-improvement_nru-optimization,oil-and-gas,process-improvement,capex,,2025_CAD/t-per-yr,31.2426,31.2426,84.458,2,sourced,pooled,epa_2011_001,450.0,0.069,310
+dryer_rotary-direct-fired,non-metallic-minerals,dryer,specific-energy-consumption,,GJ/t,0.232625,0.213678,0.435776,5,sourced,pooled,van-geene_2024_001,3.350555,0.069,306
+separator_aromatics-extraction,chemicals,separator,specific-energy-consumption,electricity,GJ/t,0.0343594,0.0123559,0.158129,6,sourced,pooled,boulamanti_2017_001; falcke_2017_001; joosten_1998_001,0.5,0.069,248
+reactor_chemical-depolymerization,chemicals,reactor,capacity,,kt/yr,31.112,,,1,sourced,pooled,singh_2021_001,450.0,0.069,142
+furnace_lehr-electric,non-metallic-minerals,furnace,opex-variable,,2025_CAD/t,1.38154,0.223068,10.0531,0,guess,cost-ratio,,19.9781,0.069,221
+separator_produced-water-recycling,oil-and-gas,separator,capex,,2025_CAD/m3-per-yr,5.0,2.0,12.0,0,guess,judgement,,72.02835,0.069,56
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,opex-fixed,,2025_CAD/m3-per-yr,0.187541,0.0655714,0.438559,0,guess,cost-ratio,,2.72702,0.069,56
+hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,hvac-heater,capex,,2025_CAD/GJ-per-yr,3.66682,1.63773,10.2533,0,estimated,modifier-ratio,dea_2026_007; eia_2023_002,54.0083,0.068,115
+direct-heater_fuel-fired,heat-supply,direct-heater,opex-variable,,2025_CAD/GJ,0.151714,0.0512939,0.201147,3,sourced,pooled,dea_2026_001; element-energy_2018_001; element-energy_2021_001,2.24333,0.068,73
+hoist,mining,hoist,cost-levelized,calculated-incl-energy,2025_CAD/t,10.5471,4.37071,27.8594,0,guess,levelized-energy,,155.369,0.068,289
+grinding-mill_ball,cement,grinding-mill,specific-energy-consumption,,GJ/t,0.229111,0.152733,0.3,6,sourced,pooled,van-geene_2024_001; doe_2017_002,3.350555,0.068,306
+separator_produced-water-recycling,oil-and-gas,separator,annual-output,,m3,107200,35733.3,321600,0,estimated,end-use-median,petrinex_2026_001,1571110.0,0.068,54
+separator_warm-lime-softening,oil-and-gas,separator,annual-output,,m3,107200,35733.3,321600,0,estimated,end-use-median,petrinex_2026_001,1571110.0,0.068,54
+well_disposal-injection,oil-and-gas,well,annual-output,,m3,107200,35830,265700,1,sourced,pooled,petrinex_2026_001,1571110.0,0.068,54
+evaporator_crystallizer-produced-water,oil-and-gas,evaporator,annual-output,,m3,107200,35733.3,321600,0,estimated,end-use-median,petrinex_2026_001,1571110.0,0.068,54
+separator_membrane-bioreactor,pulp-and-paper,separator,opex-variable,,2025_CAD/m3,0.484403,0.403669,1.00917,1,sourced,pooled,brinkmann_2016_001,7.13622,0.068,36
+heat-exchanger_aseptic-uht,food-and-beverage,heat-exchanger,capex,,2025_CAD/t-per-yr,30.0,15.0,60.0,0,guess,judgement,,450.0,0.067,310
+dryer_superheated-steam,other-industry,dryer,capex,,2025_CAD/t-per-yr,30.0,15.0,60.0,0,guess,judgement,,450.0,0.067,310
+boiler_recovery-high-solids,pulp-and-paper,boiler,cost-levelized,calculated,2025_CAD/t,6.69147,5.85063,7.08217,0,estimated,levelized,,100.079,0.067,310
+leaching-vessel_high-pressure-acid,mining,leaching-vessel,capacity,,kt/yr,30.202,,,1,sourced,pooled,schlesinger_2011_001,450.0,0.067,142
+separator_membrane-bioreactor,pulp-and-paper,separator,cost-levelized,calculated-incl-energy,2025_CAD/m3,2.35172,1.13186,4.67805,0,estimated,levelized-energy,,35.1922,0.067,51
+pickling-line_acid,iron-and-steel,pickling-line,specific-energy-consumption,,GJ/t,0.222,0.222,0.7674,2,sourced,pooled,pardo_2013_001; doe_2000_001,3.350555,0.066,306
+dryer_electric,non-metallic-minerals,dryer,specific-energy-consumption,,GJ/t,0.221,0.203,0.257,3,sourced,pooled,van-geene_2024_001,3.350555,0.066,306
+transesterification-unit_heterogeneous-catalyst,biofuels,transesterification-unit,capex,,2025_CAD/GJ-per-yr,3.53005,,,1,sourced,pooled,west_2008_001,54.0083,0.065,115
+kiln_ceramic-electric,non-metallic-minerals,kiln,annual-output,,t,20000,5000,100000,0,guess,judgement,,309548.0,0.065,308
+adsorber_direct-lithium,mining,adsorber,annual-output,,t,20000.0,5000.0,60000.0,0,guess,judgement,,309548.0,0.065,308
+rolling-mill_ring,non-ferrous-metals,rolling-mill,annual-output,,t,20000.0,7000.0,60000.0,0,guess,judgement,,309548.0,0.065,308
+kiln_ceramic-microwave-assisted,non-metallic-minerals,kiln,annual-output,,t,20000,5000,100000,0,guess,judgement,,309548.0,0.065,308
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,cost-levelized,calculated,2025_CAD/t,6.48417,2.55237,16.835,0,estimated,levelized,,100.079,0.065,310
+furnace_lehr,non-metallic-minerals,furnace,cost-levelized,calculated,2025_CAD/t,6.4865,2.81953,19.2324,0,guess,levelized,,100.079,0.065,310
+reactor_catalytic-n2o,chemicals,reactor,cost-levelized,calculated,2025_CAD/t,6.46617,5.2486,10.1632,0,estimated,levelized,,100.079,0.065,310
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,cost-levelized,calculated-incl-energy,2025_CAD/t,10.0699,5.15875,17.6241,0,guess,levelized-energy,,155.369,0.065,289
+reciprocating-engine_chp,heat-supply,reciprocating-engine,capacity,,MW,1.282,0.01282,128.2,36,sourced,pooled,dea_2026_006; doe_2001_001; epa_2017_001; ieaghg_2007_001; jrc_2009_001; neill-gunter_1999_001; suhr_2015_001; epa_2007_,20.0,0.064,83
+thermal-storage_electric,heat-supply,thermal-storage,capex,,2025_CAD/GJ-per-yr,3.47973,0.653796,23.2453,8,sourced,pooled,dea_2026_004; caelp_2024_001; rissman_2023_001; doe_2025_001,54.0083,0.064,115
+transesterification-unit_heterogeneous-catalyst,biofuels,transesterification-unit,cost-levelized,calculated,2025_CAD/GJ,0.76776,0.558687,1.09042,0,estimated,levelized,,11.937,0.064,113
+kiln_legacy,cement,kiln,specific-energy-consumption,natural-gas,GJ/t,0.116499,0.0832979,0.202209,3,sourced,pooled,pca_2002_001,1.83084,0.064,123
+pickling-line_acid,iron-and-steel,pickling-line,specific-energy-consumption,fuel,GJ/t,0.215,0.13,0.3,1,estimated,range-midpoint,gielen_1997_003,3.36116,0.064,132
+binder_portland-cement,cement,binder,cost-levelized,calculated-incl-energy,2025_CAD/t,9.74002,2.74882,18.4984,0,guess,levelized-energy,,155.369,0.063,289
+boiler_recovery-high-solids,pulp-and-paper,boiler,opex-fixed,,2025_CAD/t-per-yr,1.22563,0.426074,1.59715,0,estimated,cost-ratio,ietd_2013_001,19.5852,0.063,306
+heat-exchanger_aseptic-uht,food-and-beverage,heat-exchanger,opex-fixed,,2025_CAD/t-per-yr,1.23762,0.349569,5.15071,0,guess,cost-ratio,,19.5852,0.063,306
+furnace_reheating,iron-and-steel,furnace,opex-variable,,2025_CAD/t,1.26463,0.228085,2.53322,0,estimated,cost-ratio,siyambalapitiya_2026_001,19.9781,0.063,221
+hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,hvac-heater,opex-fixed,,2025_CAD/GJ-per-yr,0.104766,0.0357769,0.552781,0,estimated,cost-ratio,dea_2026_007; eia_2023_002,1.68743,0.062,115
+binder_blended-cement,cement,binder,capex,,2025_CAD/t-per-yr,27.9788,,,1,sourced,pooled,gielen_1997_001,450.0,0.062,310
+oven_fuel-fired,food-and-beverage,oven,specific-energy-consumption,electricity,GJ/t,0.031176,0.0247605,0.135449,6,sourced,pooled,ct_2010_002; masanet_2012_001,0.5,0.062,248
+reactor_alcohol-to-jet,biofuels,reactor,specific-energy-consumption,natural-gas,GJ/GJ,0.0661246,0.0380193,0.0661246,2,sourced,pooled,geleynse_2018_001,1.0907,0.061,42
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,cost-levelized,calculated,2025_CAD/m3,0.930486,0.355293,2.36887,0,guess,levelized,,15.2681,0.061,56
+caster_strip,iron-and-steel,caster,specific-energy-consumption,,GJ/t,0.2012,0.05,0.46795,5,sourced,pooled,de-beer_1998_001; hasanbeigi_2013_001; martin_2000_001; worrell_2010_001; epa_2012_001,3.350555,0.06,306
+reactor_catalytic-n2o,chemicals,reactor,specific-energy-consumption,electricity,GJ/t,0.03,0.01,0.08,0,guess,judgement,,0.5,0.06,248
+reactor_ethylene-oxidation,chemicals,reactor,annual-output,,t,18260,11416,600000,0,estimated,capacity-output,boulamanti_2017_001; material-economics_2019_001; schemme_2020_001; etsap_2013_007; etsap_2010_012; brown_2020_001; jone,309548.0,0.059,308
+reactor_ethylene-oxidation_ccs-concentrated,chemicals,reactor,annual-output,,t,18260,11416,600000,0,estimated,host-size,boulamanti_2017_001; material-economics_2019_001; schemme_2020_001; etsap_2013_007; etsap_2010_012; brown_2020_001; jone,309548.0,0.059,308
+induction-heater_reheating,iron-and-steel,induction-heater,cost-levelized,calculated,2025_CAD/t,5.8637,5.09162,6.93994,0,estimated,levelized,,100.079,0.059,310
+binder_blended-cement,cement,binder,cost-levelized,calculated,2025_CAD/t,5.86556,,,0,estimated,levelized,,100.079,0.059,310
+cleaning-system_efficiency-strong,food-and-beverage,cleaning-system,cost-levelized,calculated-incl-energy,2025_CAD/t,9.04215,2.08417,34.5459,0,guess,levelized-energy,,155.369,0.058,289
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,cost-levelized,calculated-incl-energy,2025_CAD/t,9.02069,2.73563,31.3107,0,estimated,levelized-energy,,155.369,0.058,289
+dryer_direct-fired_efficiency-moderate,other-industry,dryer,opex-fixed,,2025_CAD/t-per-yr,1.1299,0.876407,1.1299,2,sourced,pooled,van-geene_2024_001,19.5852,0.058,306
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,specific-energy-consumption,,GJ/t,0.195384,0.083736,0.37216,10,sourced,pooled,doe_2017_003,3.350555,0.058,306
+reactor_alcohol-to-jet,biofuels,reactor,specific-energy-consumption,fuel,GJ/GJ,0.0661246,0.0380193,0.0661246,1,sourced,pooled,geleynse_2018_001,1.15854,0.057,35
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,specific-energy-consumption,heat,GJ/t,0.195384,0.083736,0.37216,1,sourced,pooled,giner-santonja_2019_001,3.40525,0.057,32
+electric-arc-furnace,iron-and-steel,electric-arc-furnace,emissions-combustion,co2,t/t,0.009,0.009,0.058,2,sourced,pooled,nrcan_2007_001; etsap_2010_002,0.15677,0.057,136
+compressor_blowdown-recovery,oil-and-gas,compressor,abatement-cost,co2e,2025_CAD/t-CO2-eq,4.03454,2.01726,5.13032,0,identity,co2e-from-species,icf_2015_001,70.4733,0.057,13
+transesterification-unit_heterogeneous-catalyst,biofuels,transesterification-unit,specific-energy-consumption,,GJ/GJ,0.0658836,,,1,sourced,pooled,west_2008_001,1.17647,0.056,105
+separator_dry-stack-tailings,oil-and-gas,separator,capex,,2025_CAD/t-per-yr,25.0,10.0,60.0,0,guess,judgement,,450.0,0.056,310
+dryer_solid-fuel,other-industry,dryer,capex,,2025_CAD/t-per-yr,25.0,12.0,50.0,0,guess,judgement,,450.0,0.056,310
+ultraviolet-curer_infrared,other-industry,ultraviolet-curer,capex,,2025_CAD/t-per-yr,25.0,12.0,50.0,0,guess,judgement,,450.0,0.056,310
+separator_dry-stack-tailings,oil-and-gas,separator,cost-levelized,calculated-incl-energy,2025_CAD/t,8.74165,2.40594,29.689,0,guess,levelized-energy,,155.369,0.056,289
+furnace_ladle-metallurgy,iron-and-steel,furnace,opex-fixed,,2025_CAD/t-per-yr,1.09599,0.503389,2.57662,0,guess,cost-ratio,,19.5852,0.056,306
+furnace_lehr,non-metallic-minerals,furnace,opex-fixed,,2025_CAD/t-per-yr,1.09599,0.503389,2.57662,0,guess,cost-ratio,,19.5852,0.056,306
+paper-machine_waterless,pulp-and-paper,paper-machine,capacity,,kt/yr,25,,,1,sourced,pooled,ietd_2013_001,450.0,0.056,142
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,capex,,2025_CAD/m3-per-yr,4.0,2.0,8.0,0,guess,judgement,,72.02835,0.056,56
+direct-heater_line-heater,oil-and-gas,direct-heater,cost-levelized,calculated-incl-energy,2025_CAD/m3,1.97629,0.818751,4.40091,0,guess,levelized-energy,,35.1922,0.056,51
+reciprocating-engine_drive_efficiency-moderate,machine-drive,reciprocating-engine,capacity,,MW,1.102,0.070841,1.102,0,estimated,host-size,gpsa_2004_001; galitsky_2008_001,20.0,0.055,83
+reciprocating-engine_drive,machine-drive,reciprocating-engine,capacity,,MW,1.102,0.070841,1.102,2,sourced,pooled,gpsa_2004_001; galitsky_2008_001,20.0,0.055,83
+furnace_lehr,non-metallic-minerals,furnace,opex-variable,,2025_CAD/t,1.10523,0.178455,8.04244,0,guess,cost-ratio,,19.9781,0.055,221
+separator_gravity-magnetic,mining,separator,opex-variable,,2025_CAD/t,1.10523,0.178455,8.04244,0,guess,cost-ratio,,19.9781,0.055,221
+hvac-heater_fuel-fired_efficiency-strong,space-conditioning,hvac-heater,capex,,2025_CAD/GJ-per-yr,2.91963,0.334559,37.1964,0,estimated,modifier-ratio,dea_2026_007; eia_2023_002,54.0083,0.054,115
+boiler_fuel-fired_efficiency-moderate,heat-supply,boiler,cost-levelized,calculated,2025_CAD/GJ,0.639679,0.591148,0.695753,0,estimated,levelized,,11.937,0.054,113
+furnace_reheating,iron-and-steel,furnace,capex,,2025_CAD/t-per-yr,24.4631,17.4736,24.4631,2,sourced,pooled,siyambalapitiya_2026_001,450.0,0.054,310
+dryer_direct-fired_efficiency-moderate,other-industry,dryer,cost-levelized,calculated,2025_CAD/t,5.44765,4.22709,5.44765,0,estimated,levelized,,100.079,0.054,310
+reactor_plastics-pyrolysis,chemicals,reactor,capacity,,kt/yr,24.38,0.876,87.6,4,sourced,pooled,negri_2021_001; riedewald_2021_001,450.0,0.054,142
+reactor_fluid-catalytic-cracking,petroleum-refining,reactor,specific-energy-consumption,steam,GJ/m3,0.00474873,0,0.715854,7,sourced,pooled,abella_2022_001; barthe_2015_001; boulamanti_2017_001; worrell_2004_002; jones_2006_001; worrell_2015_001,0.08736,0.054,14
+well_sagd,oil-and-gas,well,capacity,,m3/yr,746628,383889,1.94337e+06,0,identity,capacity-from-output,petrinex_2026_001; ceri_2017_002; ceri_2018_001; cenovus_2025_001; cenovus_2025_002,13927300.0,0.054,20
+grinding-mill_vertical-roller,cement,grinding-mill,cost-levelized,calculated-incl-energy,2025_CAD/t,8.1605,1.84548,32.8991,0,estimated,levelized-energy,,155.369,0.053,289
+furnace_reheating_efficiency-moderate,iron-and-steel,furnace,opex-fixed,,2025_CAD/t-per-yr,1.04028,0.477618,1.74351,0,estimated,cost-ratio,siyambalapitiya_2026_001; bataille_2017_001; ietd_2013_001,19.5852,0.053,306
+ultraviolet-curer_infrared,other-industry,ultraviolet-curer,opex-fixed,,2025_CAD/t-per-yr,1.03135,0.279655,4.29226,0,guess,cost-ratio,,19.5852,0.053,306
+reactor_catalytic-n2o,chemicals,reactor,abatement-cost,co2e,2025_CAD/t-CO2-eq,3.7157,0.285824,7.14558,10,estimated,range-midpoint,jrc_2007_002; perez-ramirez_2003_001,70.4733,0.053,13
+boiler_electric,heat-supply,boiler,opex-fixed,,2025_CAD/GJ-per-yr,0.0869116,0.0268041,0.384368,18,sourced,pooled,dea_2026_006; van-geene_2024_001; dea_2026_001; doe_2024_002; element-energy_2018_001; element-energy_2021_001; iea_2025,1.68743,0.052,115
+process-improvement_pfc-anode-effect-control,non-ferrous-metals,process-improvement,cost-levelized,calculated,2025_CAD/t,5.22514,2.61257,13.9519,0,guess,levelized,,100.079,0.052,310
+basic-oxygen-furnace_efficiency-strong,iron-and-steel,basic-oxygen-furnace,specific-energy-consumption,,GJ/t,0.173819,0.173819,0.2656,2,sourced,pooled,ukerc_2013_001; epa_2012_001; nrcan_2007_001,3.350555,0.052,306
+anaerobic-digester_chp,heat-supply,anaerobic-digester,annual-output,,GJ,15624,,,1,sourced,pooled,etsap_2013_012,304164.0,0.051,114
+process-improvement_landfill-gas-recovery,biofuels,process-improvement,specific-energy-consumption,,GJ/GJ,0.06,0.04,0.09,0,guess,judgement,,1.17647,0.051,105
+annealing-furnace_hydrogen-bell,iron-and-steel,annealing-furnace,annual-output,,t,15768,10000.4,17520,0,estimated,capacity-output,jrc_2022_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_001,309548.0,0.051,308
+dryer_ceramic-hot-air,non-metallic-minerals,dryer,cost-levelized,calculated-incl-energy,2025_CAD/t,7.92656,4.15813,24.4837,0,guess,levelized-energy,,155.369,0.051,289
+sinter-plant,iron-and-steel,sinter-plant,opex-fixed,,2025_CAD/t-per-yr,0.989624,0.989624,16.4402,2,sourced,pooled,van-geene_2024_001; ieaghg_2013_003,19.5852,0.051,306
+rolling-mill_thin-slab,iron-and-steel,rolling-mill,specific-energy-consumption,natural-gas,GJ/t,0.094,0.0564,0.1316,0,guess,judgement,,1.83084,0.051,123
+separator_reverse-osmosis,mining,separator,cost-levelized,calculated-incl-energy,2025_CAD/m3,1.78408,0.885559,3.16548,0,estimated,levelized-energy,,35.1922,0.051,51
+solar-collector,heat-supply,solar-collector,capacity,,MW,1,,,1,sourced,pooled,mcmillan_2021_001,20.0,0.05,83
+dryer_ceramic-hot-air,non-metallic-minerals,dryer,specific-energy-consumption,electricity,GJ/t,0.025,0.01,0.04,1,estimated,range-midpoint,jrc_2007_004,0.5,0.05,248
+steam-turbine_drive,machine-drive,steam-turbine,annual-output,,GJ,14814.7,20.6972,2.23406e+06,0,estimated,capacity-output,gpsa_2004_001; iea_2024_002; jrc_2014_001; neill-gunter_1999_001; epa_2007_001; etsap_2010_004; etsap_2010_005; ietd_201,304164.0,0.049,114
+hvac-heater_fuel-fired_efficiency-strong,space-conditioning,hvac-heater,opex-fixed,,2025_CAD/GJ-per-yr,0.083418,0.00730858,2.00535,0,estimated,cost-ratio,dea_2026_007; eia_2023_002,1.68743,0.049,115
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,fermenter,specific-energy-consumption,natural-gas,GJ/GJ,0.053686,0.046018,0.30688,0,guess,ccs-energy,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,1.0907,0.049,42
+fermenter_grain-dry-mill,biofuels,fermenter,specific-energy-consumption,natural-gas,GJ/GJ,0.053686,0.046018,0.30688,8,sourced,pooled,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,1.0907,0.049,42
+grinding-mill_stirred,mining,grinding-mill,capex,,2025_CAD/t-per-yr,22.0,11.0,44.0,0,guess,judgement,,450.0,0.049,310
+grinding-mill_hpgr,mining,grinding-mill,capex,,2025_CAD/t-per-yr,22.2115,7.87499,43.6154,2,sourced,pooled,wang_2013_001,450.0,0.049,310
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,opex-fixed,,2025_CAD/t-per-yr,0.95402,0.44272,2.22744,0,estimated,cost-ratio,siyambalapitiya_2026_001; epa_2012_001; ietd_2013_001; nedo_2008_001; worrell_1999_001,19.5852,0.049,306
+furnace_tempering,non-metallic-minerals,furnace,annual-output,,t,15000.0,5000.0,50000.0,0,guess,judgement,,309548.0,0.048,308
+furnace_reheating,iron-and-steel,furnace,cost-levelized,calculated,2025_CAD/t,4.77785,2.69422,6.17713,0,estimated,levelized,,100.079,0.048,310
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,cost-levelized,calculated,2025_CAD/t,4.77202,2.30505,9.54593,0,guess,levelized,,100.079,0.048,310
+mine_underground-coal,mining,mine,specific-energy-consumption,,GJ/t,0.16,0.1,0.3,0,guess,judgement,,3.350555,0.048,306
+oven_fuel-fired_efficiency-moderate,food-and-beverage,oven,specific-energy-consumption,electricity,GJ/t,0.0237796,0.0188862,0.103314,0,estimated,host-split,ct_2010_002; masanet_2012_001,0.5,0.048,248
+basic-oxygen-furnace_efficiency-strong,iron-and-steel,basic-oxygen-furnace,emissions-reduction-potential,,%,3,1,5,1,estimated,range-midpoint,nccp_1999_003,63.5,0.047,108
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,emissions-reduction-potential,,%,3,,,1,sourced,pooled,wsp_2015_007,63.5,0.047,108
+grinding-mill_vertical-roller,cement,grinding-mill,cost-levelized,calculated,2025_CAD/t,4.74058,0.858792,25.1013,0,estimated,levelized,,100.079,0.047,310
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,opex-fixed,,2025_CAD/t-per-yr,0.928389,0.445798,1.85839,0,guess,cost-ratio,,19.5852,0.047,306
+grinding-mill_hpgr,mining,grinding-mill,opex-fixed,,2025_CAD/t-per-yr,0.916317,0.183523,3.74417,0,estimated,cost-ratio,wang_2013_001,19.5852,0.047,306
+caster_continuous,iron-and-steel,caster,specific-energy-consumption,,GJ/t,0.156,0.058493,0.525,7,sourced,pooled,ukerc_2013_001; epa_2012_001; worrell_1999_001; ieaghg_2013_003; worrell_2010_001; doe_2015_001,3.350555,0.047,306
+resistance-heater_hvac,space-conditioning,resistance-heater,opex-fixed,,2025_CAD/GJ-per-yr,0.0781981,0.0134546,0.187675,3,sourced,pooled,dea_2026_007,1.68743,0.046,115
+direct-heater_electric,heat-supply,direct-heater,opex-variable,,2025_CAD/GJ,0.103026,0.103026,0.134098,2,sourced,pooled,dea_2026_001; element-energy_2018_001,2.24333,0.046,73
+furnace_electric,non-metallic-minerals,furnace,annual-output,,t,14125.5,3125.13,99353,0,estimated,capacity-output,scalet_2013_001; worrell_2008_001; zier_2021_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001,309548.0,0.046,308
+dryer_superheated-steam,other-industry,dryer,cost-levelized,calculated,2025_CAD/t,4.61809,2.30505,9.238,0,guess,levelized,,100.079,0.046,310
+reactor_catalytic-n2o,chemicals,reactor,cost-levelized,calculated-incl-energy,2025_CAD/t,7.13697,5.39,13.148,0,guess,levelized-energy,,155.369,0.046,289
+pipeline_co2,co2-capture,pipeline,cost-levelized,calculated-incl-energy,2025_CAD/t,7.15552,2.06563,14.6403,0,guess,levelized-energy,,155.369,0.046,289
+grinding-mill_stirred,mining,grinding-mill,opex-fixed,,2025_CAD/t-per-yr,0.907592,0.25635,3.77719,0,guess,cost-ratio,,19.5852,0.046,306
+dryer_superheated-steam,other-industry,dryer,opex-fixed,,2025_CAD/t-per-yr,0.898441,0.445798,1.79844,0,guess,cost-ratio,,19.5852,0.046,306
+grinding-mill_vertical-roller,cement,grinding-mill,specific-energy-consumption,,GJ/t,0.152948,0.06978,0.209,6,sourced,pooled,van-geene_2024_001; etsap_2010_003; doe_2017_002,3.350555,0.046,306
+grinding-mill_vertical-roller,cement,grinding-mill,opex-variable,,2025_CAD/t,0.927008,0.0424259,11.997,0,estimated,cost-ratio,van-geene_2024_001; ietd_2013_001; martin_1999_001; nedo_2008_001; worrell_2013_001,19.9781,0.046,221
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,cost-levelized,calculated,2025_CAD/m3,0.70225,0.637776,0.70225,0,estimated,levelized,,15.2681,0.046,56
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,fermenter,specific-energy-consumption,natural-gas,GJ/GJ,0.0493911,0.0391153,0.30688,0,proxy,bucket-saving,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,1.0907,0.045,42
+fan_mine-ventilation,mining,fan,specific-energy-consumption,,GJ/t,0.149778,0.10044,0.199116,1,estimated,range-midpoint,nrcan_2005_001,3.350555,0.045,306
+grinding-mill_sag-ball,mining,grinding-mill,capex,,2025_CAD/t-per-yr,19.5865,7.26923,33.7211,2,sourced,pooled,wang_2013_001,450.0,0.044,310
+dryer_ceramic-hot-air,non-metallic-minerals,dryer,capex,,2025_CAD/t-per-yr,20.0,10.0,40.0,0,guess,judgement,,450.0,0.044,310
+reactor_ethylene-oxidation,chemicals,reactor,capacity,,kt/yr,20,20,600,2,sourced,pooled,boulamanti_2017_001,450.0,0.044,142
+reactor_ethylene-oxidation_ccs-concentrated,chemicals,reactor,capacity,,kt/yr,20,20,600,0,estimated,host-size,boulamanti_2017_001,450.0,0.044,142
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,fermenter,emissions-combustion,co2,t/GJ,0.00271866,0.00229538,0.0157153,0,estimated,ccs-emissions,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,0.063062,0.043,42
+fermenter_grain-dry-mill,biofuels,fermenter,emissions-combustion,co2,t/GJ,0.00271866,0.00229538,0.0157153,0,identity,fuel-emission-factor,dea_2026_003; kwiatkowski_2006_001; mueller_2013_001,0.063062,0.043,42
+process-improvement_nru-optimization,oil-and-gas,process-improvement,cost-levelized,calculated,2025_CAD/t,4.29419,4.29419,11.6085,0,estimated,levelized,,100.079,0.043,310
+boiler_recovery-high-solids,pulp-and-paper,boiler,cost-levelized,calculated-incl-energy,2025_CAD/t,6.69147,5.85063,7.08217,0,estimated,levelized-energy,,155.369,0.043,289
+process-improvement_log-thawing,pulp-and-paper,process-improvement,specific-energy-consumption,steam,GJ/t,0.05,0.02,0.1,0,guess,judgement,,1.15085,0.043,75
+direct-heater_line-heater,oil-and-gas,direct-heater,opex-fixed,,2025_CAD/m3-per-yr,0.117213,0.0327857,0.328919,0,guess,cost-ratio,,2.72702,0.043,56
+separator_reverse-osmosis,mining,separator,opex-variable,,2025_CAD/m3,0.305378,0.0471848,0.841688,0,estimated,cost-ratio,etsap_2013_008,7.13622,0.043,36
+separator_warm-lime-softening,oil-and-gas,separator,specific-energy-consumption,,GJ/m3,0.015,0.007,0.04,0,guess,judgement,,0.35,0.043,53
+well_disposal-injection,oil-and-gas,well,specific-energy-consumption,,GJ/m3,0.015,0.007,0.04,0,guess,judgement,,0.35,0.043,53
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,specific-energy-consumption,electricity,GJ/m3,0.0022,0.0014,0.0045,0,guess,judgement,,0.051239,0.043,43
+evaporator_food,food-and-beverage,evaporator,capex,,2025_CAD/t-per-yr,19.0014,3.94627,100.554,9,sourced,pooled,van-geene_2024_001,450.0,0.042,310
+well_co2-storage,co2-capture,well,cost-levelized,,2025_CAD/t,14.8629,1.63584,60.3288,11,sourced,pooled,agora_2021_001; kearns_2021_001; etsap_2010_007,350.5615,0.042,38
+gasifier_biomass-waste,hydrogen,gasifier,specific-energy-consumption,natural-gas,GJ/GJ,0.0446246,0.00345166,0.0471357,4,sourced,pooled,nrel_2009_001; nrel_2013_001; nrel_2018_003,1.0907,0.041,42
+melting-furnace_cupola,other-industry,melting-furnace,capex,,2025_CAD/t-per-yr,18.4496,12.2998,98.1582,3,sourced,pooled,aries_2024_001,450.0,0.041,310
+ultraviolet-curer_infrared,other-industry,ultraviolet-curer,cost-levelized,calculated,2025_CAD/t,4.10584,1.71924,10.8157,0,guess,levelized,,100.079,0.041,310
+grinding-mill_sag-ball,mining,grinding-mill,opex-fixed,,2025_CAD/t-per-yr,0.808025,0.169406,2.89479,0,estimated,cost-ratio,wang_2013_001,19.5852,0.041,306
+electrolyzer_solid-oxide,hydrogen,electrolyzer,pressure-output,,bar,1,,,2,sourced,pooled,iea_2019_002; irena_2020_001,25.0,0.04,23
+dryer_solid-fuel,other-industry,dryer,specific-energy-consumption,coal,GJ/t,0.12,0.08,0.176,0,guess,judgement,,2.96664,0.04,37
+separator_produced-water-recycling,oil-and-gas,separator,cost-levelized,calculated-incl-energy,2025_CAD/m3,1.41553,0.437886,4.74055,0,guess,levelized-energy,,35.1922,0.04,51
+grinding-mill_stirred,mining,grinding-mill,cost-levelized,calculated,2025_CAD/t,3.90624,1.52795,13.2001,0,guess,levelized,,100.079,0.039,310
+grinding-mill_hpgr,mining,grinding-mill,cost-levelized,calculated,2025_CAD/t,3.94379,1.09387,13.0847,0,estimated,levelized,,100.079,0.039,310
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,cost-levelized,calculated-incl-energy,2025_CAD/t,6.11312,1.53452,36.6511,0,estimated,levelized-energy,,155.369,0.039,289
+melting-furnace_cupola,other-industry,melting-furnace,opex-fixed,,2025_CAD/t-per-yr,0.761123,0.286642,8.42641,0,estimated,cost-ratio,aries_2024_001,19.5852,0.039,306
+annealing-furnace_hydrogen-bell,iron-and-steel,annealing-furnace,capacity,,kt/yr,17.52,,,1,sourced,pooled,jrc_2022_001,450.0,0.039,142
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,cost-levelized,calculated,2025_CAD/m3,0.594969,0.197197,1.32657,0,guess,levelized,,15.2681,0.039,56
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,cost-levelized,calculated,2025_CAD/t,3.83539,2.34803,6.53962,0,estimated,levelized,,100.079,0.038,310
+dryer_solid-fuel,other-industry,dryer,cost-levelized,calculated,2025_CAD/t,3.84841,1.84404,7.69833,0,guess,levelized,,100.079,0.038,310
+dryer_solid-fuel,other-industry,dryer,opex-fixed,,2025_CAD/t-per-yr,0.748701,0.356638,1.4987,0,guess,cost-ratio,,19.5852,0.038,306
+heat-pump_industrial,heat-supply,heat-pump,capacity,,MW,0.75,0.012,80,96,sourced,pooled,dea_2026_006; dea_2026_001; element-energy_2018_001; iea-hpt_2023_001; iea_2025_003; kiss_2017_001; rehfeldt_2024_001; a,20.0,0.037,83
+evaporator_food,food-and-beverage,evaporator,cost-levelized,calculated,2025_CAD/t,3.74398,0.788472,19.7435,0,estimated,levelized,,100.079,0.037,310
+reactor_catalytic-n2o,chemicals,reactor,opex-fixed,,2025_CAD/t-per-yr,0.731002,0.277198,2.62632,0,estimated,cost-ratio,epa_2019_001,19.5852,0.037,306
+separator_ore-sorting,mining,separator,opex-fixed,,2025_CAD/t-per-yr,0.717035,0.181569,1.92953,0,guess,cost-ratio,,19.5852,0.037,306
+separator_membrane-bioreactor,pulp-and-paper,separator,specific-energy-consumption,,GJ/m3,0.01296,0.01296,0.045,2,sourced,pooled,brinkmann_2016_001,0.35,0.037,53
+reactor_co2-to-methanol,chemicals,reactor,abatement-cost,,2025_CAD/t-CO2-eq,3.46697,,,1,sourced,pooled,ipcc_2022_001,95.3416,0.036,39
+reactor_methane-pyrolysis,hydrogen,reactor,abatement-cost,,2025_CAD/t-CO2-eq,3.46697,,,1,sourced,pooled,ipcc_2022_001,95.3416,0.036,39
+electrolyzer_solid-oxide,hydrogen,electrolyzer,opex-variable,,2025_CAD/GJ,0.0812507,0.0765351,0.15587,3,sourced,pooled,nrel_2009_001; nrel_2018_003,2.24333,0.036,73
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,capex,,2025_CAD/t-per-yr,16.0873,11.2611,20.9135,1,sourced,pooled,ct_2010_003; ukerc_2013_001,450.0,0.036,310
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,melting-furnace,annual-output,,t,10722.2,2500.1,61320,0,estimated,capacity-output,aries_2024_001; kermeli_2016_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_20,309548.0,0.035,308
+grinding-mill_sag-ball,mining,grinding-mill,cost-levelized,calculated,2025_CAD/t,3.47771,1.00973,10.1164,0,estimated,levelized,,100.079,0.035,310
+furnace_electric,non-metallic-minerals,furnace,capacity,,kt/yr,15.695,5.475,99.353,8,sourced,pooled,scalet_2013_001; worrell_2008_001; zier_2021_001,450.0,0.035,142
+separator_dry-stack-tailings,oil-and-gas,separator,opex-variable,,2025_CAD/t,0.690768,0.0892273,6.03183,0,guess,cost-ratio,,19.9781,0.035,221
+refinery_sugar-beet,food-and-beverage,refinery,specific-energy-consumption,coal,GJ/t,0.10418,0.062508,0.14585,0,guess,judgement,,2.96664,0.035,37
+dryer_rotary-direct-fired,non-metallic-minerals,dryer,emissions-total,co2,t/t,0.0125,0.00989,0.0261,5,sourced,pooled,van-geene_2024_001,0.3605,0.035,74
+direct-heater_line-heater,oil-and-gas,direct-heater,capex,,2025_CAD/m3-per-yr,2.5,1.0,6.0,0,guess,judgement,,72.02835,0.035,56
+separator_reverse-osmosis,mining,separator,specific-energy-consumption,,GJ/m3,0.01224,0.0054,0.018,3,sourced,pooled,etsap_2013_008,0.35,0.035,53
+steam-turbine_drive,machine-drive,steam-turbine,capacity,,MW,0.6711,0.003729,74.57,3,sourced,pooled,gpsa_2004_001,20.0,0.034,83
+pipeline_hydrogen,hydrogen,pipeline,cost-levelized,,2025_CAD/GJ,1.01351,1.01351,25.4911,2,sourced,pooled,doe_2024_001; etsap_2014_003,29.63835,0.034,42
+storage-cavern_hydrogen,hydrogen,storage-cavern,cost-levelized,,2025_CAD/GJ,1.01351,,,1,sourced,pooled,doe_2024_001,29.63835,0.034,42
+grinding-mill_hpgr,mining,grinding-mill,cost-levelized,calculated-incl-energy,2025_CAD/t,5.32027,1.87779,15.9994,0,estimated,levelized-energy,,155.369,0.034,289
+furnace_reheating,iron-and-steel,furnace,opex-fixed,,2025_CAD/t-per-yr,0.67028,0.439801,0.787902,0,estimated,cost-ratio,siyambalapitiya_2026_001,19.5852,0.034,306
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,opex-fixed,,2025_CAD/t-per-yr,0.663668,0.262435,1.79532,0,estimated,cost-ratio,ct_2010_003; ukerc_2013_001,19.5852,0.034,306
+electrolysis-cell_iron-electrowinning,iron-and-steel,electrolysis-cell,emissions-total,co2,t/t,0.0122,,,1,sourced,pooled,van-geene_2024_001,0.3605,0.034,74
+separator_produced-water-recycling,oil-and-gas,separator,opex-variable,,2025_CAD/m3,0.24099,0.0214107,1.22217,0,guess,cost-ratio,,7.13622,0.034,36
+direct-heater_solid-fuel,heat-supply,direct-heater,opex-variable,,2025_CAD/GJ,0.0732144,,,1,sourced,pooled,dea_2026_001,2.24333,0.033,73
+dryer_rotary-direct-fired,non-metallic-minerals,dryer,capex,,2025_CAD/t-per-yr,15.0,7.0,35.0,0,guess,judgement,,450.0,0.033,310
+cleaning-system_efficiency-strong,food-and-beverage,cleaning-system,capex,,2025_CAD/t-per-yr,15.0,7.5,30.0,0,guess,judgement,,450.0,0.033,310
+separator_thickening-filtration,mining,separator,opex-fixed,,2025_CAD/t-per-yr,0.645331,0.145255,1.73658,0,guess,cost-ratio,,19.5852,0.033,306
+basic-oxygen-furnace_efficiency-strong,iron-and-steel,basic-oxygen-furnace,specific-energy-consumption,fuel,GJ/t,0.112564,0.112564,0.172,1,sourced,pooled,nrcan_2007_001,3.36116,0.033,132
+press_high-pressure-processing,food-and-beverage,press,annual-output,,t,10000.0,3000.0,30000.0,0,guess,judgement,,309548.0,0.032,308
+press_all-electric,other-industry,press,annual-output,,t,10000.0,3000.0,30000.0,0,guess,judgement,,309548.0,0.032,308
+kiln_intermittent,non-metallic-minerals,kiln,annual-output,,t,10000,3000,30000,0,guess,judgement,,309548.0,0.032,308
+fan_mine-ventilation,mining,fan,cost-levelized,calculated-incl-energy,2025_CAD/t,5.01792,2.15,11.8068,0,guess,levelized-energy,,155.369,0.032,289
+cleaning-system_efficiency-strong,food-and-beverage,cleaning-system,opex-fixed,,2025_CAD/t-per-yr,0.618812,0.174784,2.57535,0,guess,cost-ratio,,19.5852,0.032,306
+rolling-mill_hot,iron-and-steel,rolling-mill,specific-energy-consumption,steam,GJ/t,0.037,0.037,0.1163,2,sourced,pooled,nrcan_2007_001; doe_2000_001,1.15085,0.032,75
+heat-recovery-unit_waste-heat,heat-supply,heat-recovery-unit,cost-levelized,calculated-incl-energy,2025_CAD/GJ,0.913204,0.438686,2.03727,0,guess,levelized-energy,,29.1574,0.031,101
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,emissions-reduction-potential,,%,2,,,1,sourced,pooled,wsp_2015_008,63.5,0.031,108
+dryer_ceramic-hot-air,non-metallic-minerals,dryer,cost-levelized,calculated,2025_CAD/t,3.07872,1.5367,6.15866,0,guess,levelized,,100.079,0.031,310
+dryer_ceramic-hot-air,non-metallic-minerals,dryer,opex-fixed,,2025_CAD/t-per-yr,0.59896,0.297198,1.19896,0,guess,cost-ratio,,19.5852,0.031,306
+grinding-mill_hpgr,mining,grinding-mill,opex-variable,,2025_CAD/t,0.61372,0.0702664,4.38468,0,estimated,cost-ratio,wang_2013_001,19.9781,0.031,221
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,opex-fixed,,2025_CAD/m3-per-yr,0.0843936,0.0295071,0.197351,0,guess,cost-ratio,,2.72702,0.031,56
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,autothermal-reformer,emissions-total,co2e,t/GJ,0.0035,,,1,sourced,pooled,pembina_2021_001,0.116615,0.03,10
+grinding-mill_stirred,mining,grinding-mill,cost-levelized,calculated-incl-energy,2025_CAD/t,4.73356,1.88145,15.0656,0,guess,levelized-energy,,155.369,0.03,289
+calciner_gas-suspension,non-ferrous-metals,calciner,opex-fixed,,2025_CAD/t-per-yr,0.589089,,,1,sourced,pooled,mpp_2023_001,19.5852,0.03,306
+calciner_hydrogen-fired,non-ferrous-metals,calciner,opex-fixed,,2025_CAD/t-per-yr,0.589089,,,1,sourced,pooled,mpp_2023_001,19.5852,0.03,306
+press_high-pressure-processing,food-and-beverage,press,specific-energy-consumption,,GJ/t,0.1,0.06,0.18,0,guess,judgement,,3.350555,0.03,306
+separator_dry-stack-tailings,oil-and-gas,separator,specific-energy-consumption,electricity,GJ/t,0.015,0.007,0.04,0,guess,judgement,,0.5,0.03,248
+grinding-mill_stirred,mining,grinding-mill,opex-variable,,2025_CAD/t,0.607876,0.09815,4.42334,0,guess,cost-ratio,,19.9781,0.03,221
+rolling-mill_thin-slab,iron-and-steel,rolling-mill,emissions-combustion,co2,t/t,0.00476016,0.00281323,0.00673924,0,guess,fuel-emission-factor,,0.15677,0.03,136
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,specific-energy-consumption,coal,GJ/t,0.09,0.06,0.132,0,guess,judgement,,2.96664,0.03,37
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,cost-levelized,calculated-incl-energy,2025_CAD/m3,1.03958,0.420405,2.69423,0,guess,levelized-energy,,35.1922,0.03,51
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,specific-energy-consumption,electricity,GJ/m3,0.0015227,0.00118602,0.0026126,0,guess,host-split,dea_2026_003,0.051239,0.03,43
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,cost-levelized,calculated,2025_CAD/t,2.86091,1.17461,9.26908,0,guess,levelized,,100.079,0.029,310
+grinding-mill_sag-ball,mining,grinding-mill,cost-levelized,calculated-incl-energy,2025_CAD/t,4.52488,1.38031,11.8637,0,estimated,levelized-energy,,155.369,0.029,289
+evaporator_food,food-and-beverage,evaporator,specific-energy-consumption,electricity,GJ/t,0.0143421,0.00329318,0.115838,1,sourced,pooled,galitsky_2003_002,0.5,0.029,248
+calciner_gas-suspension,non-ferrous-metals,calciner,opex-variable,,2025_CAD/t,0.589089,,,1,sourced,pooled,mpp_2023_001,19.9781,0.029,221
+calciner_hydrogen-fired,non-ferrous-metals,calciner,opex-variable,,2025_CAD/t,0.589089,,,1,sourced,pooled,mpp_2023_001,19.9781,0.029,221
+basic-oxygen-furnace,iron-and-steel,basic-oxygen-furnace,specific-energy-consumption,coke-oven-gas,GJ/t,0.00747339,0.00218963,0.0167157,3,sourced,pooled,remus_2013_001; doe_2000_001; talaei_2020_001,0.260337,0.029,13
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,cost-levelized,calculated,2025_CAD/m3,0.446027,0.201873,0.93964,0,guess,levelized,,15.2681,0.029,56
+separator_produced-water-recycling,oil-and-gas,separator,specific-energy-consumption,,GJ/m3,0.01,0.005,0.03,0,guess,judgement,,0.35,0.029,53
+turboexpander_pressure-let-down,power-generation,turboexpander,capacity,,MW,0.55,0.55,2,2,sourced,pooled,joshi_2022_001; worrell_2015_001,20.0,0.028,83
+reactor_catalytic-n2o,chemicals,reactor,capex,,2025_CAD/t-per-yr,12.6691,7.03836,25.3381,3,sourced,pooled,epa_2019_001,450.0,0.028,310
+cleaning-system_efficiency-strong,food-and-beverage,cleaning-system,cost-levelized,calculated,2025_CAD/t,2.79957,1.10989,9.27249,0,guess,levelized,,100.079,0.028,310
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,cost-levelized,calculated,2025_CAD/t,2.83819,0.373761,25.6111,0,estimated,levelized,,100.079,0.028,310
+process-improvement_nru-optimization,oil-and-gas,process-improvement,cost-levelized,calculated-incl-energy,2025_CAD/t,4.29419,4.29419,11.6085,0,estimated,levelized-energy,,155.369,0.028,289
+rolling-mill_thin-slab,iron-and-steel,rolling-mill,specific-energy-consumption,fuel,GJ/t,0.094,0.094,0.268248,2,sourced,pooled,worrell_1999_001; de-beer_1998_001,3.36116,0.028,132
+direct-heater_line-heater,oil-and-gas,direct-heater,cost-levelized,calculated,2025_CAD/m3,0.434295,0.157251,1.09791,0,guess,levelized,,15.2681,0.028,56
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,cost-levelized,calculated,2025_CAD/m3,0.424978,0.118318,0.88438,0,guess,levelized,,15.2681,0.028,56
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,specific-energy-consumption,natural-gas,GJ/GJ,0.0291849,,,1,sourced,pooled,dea_2026_003,1.0907,0.027,42
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,capex,,2025_CAD/t-per-yr,12.0,6.0,25.0,0,guess,judgement,,450.0,0.027,310
+cleaning-system,food-and-beverage,cleaning-system,capex,,2025_CAD/t-per-yr,12.0,6.0,24.0,0,guess,judgement,,450.0,0.027,310
+gas-treatment-unit_vam-oxidiser,mining,gas-treatment-unit,capex,,2025_CAD/t-per-yr,12.0,6.0,25.0,0,guess,judgement,,450.0,0.027,310
+grinding-mill_sag-ball,mining,grinding-mill,opex-variable,,2025_CAD/t,0.541189,0.0648614,3.39,0,estimated,cost-ratio,wang_2013_001,19.9781,0.027,221
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,capex,,2025_CAD/m3-per-yr,1.97285,,,1,sourced,pooled,icf_2015_001,72.02835,0.027,56
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,opex-variable,,2025_CAD/m3,0.192792,0.0214107,0.814778,0,guess,cost-ratio,,7.13622,0.027,36
+reactor_methane-pyrolysis,hydrogen,reactor,annual-output,,GJ,7881.22,875.692,8756.92,0,estimated,capacity-output,boulamanti_2017_001; netl_2022_002; nrel_2013_001; nrel_2018_003; moore_2017_001; doe_2020_001; doe_2024_001; gccsi_2021,304164.0,0.026,114
+anaerobic-digester_chp,heat-supply,anaerobic-digester,capacity,,MW,0.524,0.3144,10.48,3,sourced,pooled,etsap_2010_005; etsap_2013_012,20.0,0.026,83
+storage-cavern_hydrogen,hydrogen,storage-cavern,specific-energy-consumption,,GJ/GJ,0.03,0.015,0.06,0,guess,judgement,,1.17647,0.026,105
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,capex,,2025_CAD/t-per-yr,11.9046,1.79255,81.9036,0,estimated,modifier-ratio,ct_2010_003; ukerc_2013_001,450.0,0.026,310
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,melting-furnace,capacity,,kt/yr,11.9136,4.38,61.32,3,sourced,pooled,aries_2024_001; kermeli_2016_001,450.0,0.026,142
+fan_activated-sludge,pulp-and-paper,fan,opex-fixed,,2025_CAD/m3-per-yr,0.070328,0.02295,0.164459,0,guess,cost-ratio,,2.72702,0.026,56
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,opex-fixed,,2025_CAD/t-per-yr,0.49505,0.139827,2.14613,0,guess,cost-ratio,,19.5852,0.025,306
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,heat-exchanger,opex-fixed,,2025_CAD/t-per-yr,0.491114,0.0417746,7.03103,0,estimated,cost-ratio,ct_2010_003; ukerc_2013_001,19.5852,0.025,306
+cleaning-system,food-and-beverage,cleaning-system,opex-fixed,,2025_CAD/t-per-yr,0.49505,0.139827,2.06028,0,guess,cost-ratio,,19.5852,0.025,306
+gas-treatment-unit_vam-oxidiser,mining,gas-treatment-unit,opex-fixed,,2025_CAD/t-per-yr,0.49505,0.139827,2.14613,0,guess,cost-ratio,,19.5852,0.025,306
+vapour-recompressor_evaporation,pulp-and-paper,vapour-recompressor,specific-energy-consumption,steam,GJ/t,0.0288,,,1,sourced,pooled,jrc_2009_001,1.15085,0.025,75
+shaft-furnace_electrolytic-hydrogen,iron-and-steel,shaft-furnace,specific-energy-consumption,coal,GJ/t,0.0751995,0.0717774,0.0821784,2,sourced,pooled,otto_2017_001; toktarova_2020_001,2.96664,0.025,37
+electric-arc-furnace_scrap-preheating,iron-and-steel,electric-arc-furnace,emissions-process,co2,t/t,0.0128307,0.0111109,0.0143942,3,sourced,pooled,ukerc_2013_001,0.51825,0.025,36
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,capex,,2025_CAD/m3-per-yr,1.8,0.9,3.6,0,guess,judgement,,72.02835,0.025,56
+solar-collector,heat-supply,solar-collector,annual-output,,GJ,7190.21,,,0,identity,capacity-output,mcmillan_2021_001; philibert_2017_001,304164.0,0.024,114
+dryer_direct-fired,other-industry,dryer,annual-output,,t,7500.31,1997.28,8760,0,estimated,capacity-output,giner-santonja_2019_001; iea_2025_003; ieaghg_2007_001; epa_2007_001; doe_2024_002; agora_2021_001; rissman_2022_001; lb,309548.0,0.024,308
+dryer_direct-fired_efficiency-moderate,other-industry,dryer,annual-output,,t,7500.31,1997.28,8760,0,estimated,host-size,giner-santonja_2019_001; iea_2025_003; ieaghg_2007_001; epa_2007_001; doe_2024_002; agora_2021_001; rissman_2022_001; lb,309548.0,0.024,308
+conveyor_in-pit-crushing,mining,conveyor,cost-levelized,calculated,2025_CAD/t,2.38411,1.04254,6.25397,0,guess,levelized,,100.079,0.024,310
+debarker_drum,pulp-and-paper,debarker,specific-energy-consumption,,GJ/t,0.07992,0.0792,0.07992,2,sourced,pooled,nrcan_2008_001,3.350555,0.024,306
+fan_activated-sludge,pulp-and-paper,fan,cost-levelized,calculated,2025_CAD/m3,0.371689,0.157012,0.783033,0,guess,levelized,,15.2681,0.024,56
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,opex-fixed,,2025_CAD/m3-per-yr,0.0656395,0.0163929,0.164459,0,guess,cost-ratio,,2.72702,0.024,56
+fuel-cell_chp,heat-supply,fuel-cell,annual-output,,GJ,7096,,,1,sourced,pooled,epa_2007_001,304164.0,0.023,114
+transesterification-unit_alkali-catalyzed,biofuels,transesterification-unit,emissions-combustion,co2,t/GJ,0.00147792,0.00145574,0.00149456,0,identity,fuel-emission-factor,dea_2026_003,0.063062,0.023,42
+dryer_rotary-direct-fired,non-metallic-minerals,dryer,cost-levelized,calculated,2025_CAD/t,2.30904,1.07569,5.38883,0,guess,levelized,,100.079,0.023,310
+gas-treatment-unit_vam-oxidiser,mining,gas-treatment-unit,cost-levelized,calculated,2025_CAD/t,2.32842,0.938594,7.84681,0,guess,levelized,,100.079,0.023,310
+dryer_rotary-direct-fired,non-metallic-minerals,dryer,opex-fixed,,2025_CAD/t-per-yr,0.44922,0.208039,1.04909,0,guess,cost-ratio,,19.5852,0.023,306
+calciner_electric,non-ferrous-metals,calciner,opex-fixed,,2025_CAD/t-per-yr,0.441817,,,1,sourced,pooled,mpp_2023_001,19.5852,0.023,306
+fuel-cell_chp,heat-supply,fuel-cell,capacity,,MW,0.448972,0.000565958,7.9,17,sourced,pooled,dea_2026_006; doe_2001_001; epa_2017_001; ieaghg_2007_001; epa_2007_001; lemar_2001_001; wade_2003_001; bc-hydro_2004_00,20.0,0.022,83
+gasifier_biomass-methanation,biofuels,gasifier,specific-energy-consumption,,GJ/GJ,0.0257606,,,1,sourced,pooled,aranda_2014_001,1.17647,0.022,105
+conveyor_in-pit-crushing,mining,conveyor,capex,,2025_CAD/t-per-yr,10.0,5.0,20.0,0,guess,judgement,,450.0,0.022,310
+cleaning-system,food-and-beverage,cleaning-system,cost-levelized,calculated,2025_CAD/t,2.23965,0.887914,7.41799,0,guess,levelized,,100.079,0.022,310
+rolling-mill_cold,iron-and-steel,rolling-mill,emissions-total,co2,t/t,0.008,,,1,sourced,pooled,pardo_2013_001,0.3605,0.022,74
+haul-truck_battery-electric,mining,haul-truck,cost-levelized,calculated,2025_CAD/t,2.14568,0.978841,6.67374,0,guess,levelized,,100.079,0.021,310
+conveyor_in-pit-crushing,mining,conveyor,opex-fixed,,2025_CAD/t-per-yr,0.412542,0.116523,1.7169,0,guess,cost-ratio,,19.5852,0.021,306
+cleaning-system_efficiency-strong,food-and-beverage,cleaning-system,opex-variable,,2025_CAD/t,0.414461,0.0669205,3.01592,0,guess,cost-ratio,,19.9781,0.021,221
+fan_activated-sludge,pulp-and-paper,fan,capex,,2025_CAD/m3-per-yr,1.5,0.7,3.0,0,guess,judgement,,72.02835,0.021,56
+separator_mine-water-treatment,mining,separator,specific-energy-consumption,electricity,GJ/m3,0.0011,0.0004,0.0018,0,guess,judgement,,0.051239,0.021,43
+direct-heater_electric,heat-supply,direct-heater,construction-time,,years,0.04,,,1,sourced,pooled,dea_2026_001,2.0,0.02,224
+haul-truck_battery-electric,mining,haul-truck,capex,,2025_CAD/t-per-yr,9.0,5.0,18.0,0,guess,judgement,,450.0,0.02,310
+pump_plunger-lift,oil-and-gas,pump,specific-energy-consumption,electricity,GJ/t,0.01,0.002,0.03,0,guess,judgement,,0.5,0.02,248
+pipeline_co2,co2-capture,pipeline,cost-levelized,,2025_CAD/t,7.16782,2.04795,12.2877,1,estimated,range-midpoint,etsap_2010_007,350.5615,0.02,38
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.70225,0.637776,0.70225,0,estimated,levelized-energy,,35.1922,0.02,51
+haul-truck_trolley-assist,mining,haul-truck,cost-levelized,calculated,2025_CAD/t,1.90727,0.783073,5.93221,0,guess,levelized,,100.079,0.019,310
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,cost-levelized,calculated-incl-energy,2025_CAD/t,2.98568,1.22727,9.58437,0,guess,levelized-energy,,155.369,0.019,289
+haul-truck_battery-electric,mining,haul-truck,opex-fixed,,2025_CAD/t-per-yr,0.371287,0.116523,1.54521,0,guess,cost-ratio,,19.5852,0.019,306
+evaporator_food,food-and-beverage,evaporator,opex-fixed,,2025_CAD/t-per-yr,0.373831,0.0869791,1.91884,9,sourced,pooled,van-geene_2024_001,19.5852,0.019,306
+dryer_direct-fired,other-industry,dryer,capacity,,kt/yr,8.76,,,1,sourced,pooled,giner-santonja_2019_001,450.0,0.019,142
+dryer_direct-fired_efficiency-moderate,other-industry,dryer,capacity,,kt/yr,8.76,,,0,estimated,host-size,giner-santonja_2019_001,450.0,0.019,142
+blast-furnace,iron-and-steel,blast-furnace,specific-energy-consumption,steam,GJ/t,0.0219565,0.00348234,0.0258306,3,sourced,pooled,ieaghg_2013_003; nrcan_2007_001; remus_2013_001,1.15085,0.019,75
+digester_bayer,non-ferrous-metals,digester,specific-energy-consumption,oil,GJ/t,0.00463144,0.00463144,0.605771,2,sourced,pooled,iai_2026_001,0.240945,0.019,19
+distillery_beverage-spirits,food-and-beverage,distillery,annual-output,,m3,30000.0,10000.0,100000.0,0,guess,judgement,,1571110.0,0.019,54
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,capex,,2025_CAD/m3-per-yr,1.4,0.5,3.0,0,guess,judgement,,72.02835,0.019,56
+haul-truck_battery-electric,mining,haul-truck,specific-energy-consumption,diesel,GJ/t,0.0005,0.000333,0.000778,0,guess,judgement,,0.026222,0.019,8
+haul-truck_trolley-assist,mining,haul-truck,capex,,2025_CAD/t-per-yr,8.0,4.0,16.0,0,guess,judgement,,450.0,0.018,310
+grinding-mill_hpgr,mining,grinding-mill,specific-energy-consumption,,GJ/t,0.06156,0.05544,0.07812,3,sourced,pooled,wang_2013_001,3.350555,0.018,306
+pipeline_hydrogen,hydrogen,pipeline,specific-energy-consumption,,GJ/GJ,0.02,0.01,0.04,0,guess,judgement,,1.17647,0.017,105
+process-improvement_hydrogen-blending,hydrogen,process-improvement,specific-energy-consumption,,GJ/GJ,0.02,0.01,0.04,0,guess,judgement,,1.17647,0.017,105
+separator_ore-sorting,mining,separator,cost-levelized,calculated,2025_CAD/t,1.68125,0.576741,4.69943,0,guess,levelized,,100.079,0.017,310
+fan_mine-ventilation,mining,fan,cost-levelized,calculated,2025_CAD/t,1.66888,0.729777,4.37778,0,guess,levelized,,100.079,0.017,310
+haul-truck_dual-fuel,mining,haul-truck,cost-levelized,calculated,2025_CAD/t,1.66886,0.685189,5.19069,0,guess,levelized,,100.079,0.017,310
+haul-truck_trolley-assist,mining,haul-truck,opex-fixed,,2025_CAD/t-per-yr,0.330033,0.0932183,1.37352,0,guess,cost-ratio,,19.5852,0.017,306
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,opex-variable,,2025_CAD/t,0.331569,0.0535364,2.51326,0,guess,cost-ratio,,19.9781,0.017,221
+cleaning-system,food-and-beverage,cleaning-system,opex-variable,,2025_CAD/t,0.331569,0.0535364,2.41273,0,guess,cost-ratio,,19.9781,0.017,221
+gas-treatment-unit_vam-oxidiser,mining,gas-treatment-unit,opex-variable,,2025_CAD/t,0.331569,0.0535364,2.51326,0,guess,cost-ratio,,19.9781,0.017,221
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.59538,0.197273,1.32833,0,guess,levelized-energy,,35.1922,0.017,51
+separator_clarifier,pulp-and-paper,separator,opex-fixed,,2025_CAD/m3-per-yr,0.0468854,0.0163929,0.10964,0,guess,cost-ratio,,2.72702,0.017,56
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,opex-fixed,,2025_CAD/m3-per-yr,0.0468854,0.00983572,0.10964,0,guess,cost-ratio,,2.72702,0.017,56
+anaerobic-digester_effluent,pulp-and-paper,anaerobic-digester,specific-energy-consumption,,GJ/m3,0.006,0.003,0.012,0,guess,judgement,,0.35,0.017,53
+resistance-heater_hvac,space-conditioning,resistance-heater,capacity,,MW,0.32,0.1,0.5,2,sourced,pooled,dea_2026_007,20.0,0.016,83
+fan_mine-ventilation,mining,fan,capex,,2025_CAD/t-per-yr,7.0,3.5,14.0,0,guess,judgement,,450.0,0.016,310
+haul-truck_dual-fuel,mining,haul-truck,capex,,2025_CAD/t-per-yr,7.0,3.5,14.0,0,guess,judgement,,450.0,0.016,310
+conveyor_in-pit-crushing,mining,conveyor,cost-levelized,calculated-incl-energy,2025_CAD/t,2.51827,1.0991,6.58976,0,guess,levelized-energy,,155.369,0.016,289
+separator_clarifier,pulp-and-paper,separator,cost-levelized,calculated,2025_CAD/m3,0.238386,0.0917966,0.603542,0,guess,levelized,,15.2681,0.016,56
+heat-pump_hvac,space-conditioning,heat-pump,capacity,,MW,0.3,0.14,0.5,3,sourced,pooled,dea_2026_007; etsap_2012_002,20.0,0.015,83
+separator_thickening-filtration,mining,separator,cost-levelized,calculated,2025_CAD/t,1.51312,0.461392,4.22949,0,guess,levelized,,100.079,0.015,310
+grinding-mill_vertical-roller,cement,grinding-mill,opex-fixed,,2025_CAD/t-per-yr,0.289305,0.289305,0.614524,2,sourced,pooled,van-geene_2024_001,19.5852,0.015,306
+fan_mine-ventilation,mining,fan,opex-fixed,,2025_CAD/t-per-yr,0.288779,0.081566,1.20183,0,guess,cost-ratio,,19.5852,0.015,306
+haul-truck_dual-fuel,mining,haul-truck,opex-fixed,,2025_CAD/t-per-yr,0.288779,0.081566,1.20183,0,guess,cost-ratio,,19.5852,0.015,306
+process-improvement_log-thawing,pulp-and-paper,process-improvement,specific-energy-consumption,,GJ/t,0.05,0.02,0.1,0,guess,judgement,,3.350555,0.015,306
+compressor_low-emission-seal,oil-and-gas,compressor,specific-energy-consumption,,GJ/t,0.05,0.01,0.2,0,guess,judgement,,3.350555,0.015,306
+well_co2-storage,co2-capture,well,specific-energy-consumption,,GJ/t,0.05,,,1,sourced,pooled,dea_2024_002,3.350555,0.015,306
+calciner_electric,non-ferrous-metals,calciner,opex-variable,,2025_CAD/t,0.294545,,,1,sourced,pooled,mpp_2023_001,19.9781,0.015,221
+blast-furnace_efficiency-moderate,iron-and-steel,blast-furnace,specific-energy-consumption,steam,GJ/t,0.0174473,0.00276717,0.0205258,0,estimated,host-split,ieaghg_2013_003; nrcan_2007_001; remus_2013_001,1.15085,0.015,75
+caster_strip,iron-and-steel,caster,specific-energy-consumption,fuel,GJ/t,0.05,0.0124254,0.11629,4,sourced,pooled,de-beer_1998_001; hasanbeigi_2013_001; martin_2000_001; worrell_2010_001,3.36116,0.015,132
+turboexpander_pressure-let-down,power-generation,turboexpander,annual-output,,GJ,4154.4,4154.4,39600,2,sourced,pooled,joshi_2022_001; worrell_2015_001,304164.0,0.014,114
+reactor_methane-pyrolysis,hydrogen,reactor,capacity,,MW,0.27768,,,1,sourced,pooled,boulamanti_2017_001,20.0,0.014,83
+haul-truck_diesel,mining,haul-truck,cost-levelized,calculated,2025_CAD/t,1.43045,0.587305,4.44916,0,guess,levelized,,100.079,0.014,310
+haul-truck_battery-electric,mining,haul-truck,cost-levelized,calculated-incl-energy,2025_CAD/t,2.24657,1.02418,6.92383,0,guess,levelized-energy,,155.369,0.014,289
+grinding-mill_sag-ball,mining,grinding-mill,specific-energy-consumption,,GJ/t,0.0468324,0.026208,0.0468324,1,sourced,pooled,nrcan_2005_002,3.350555,0.014,306
+separator_ore-sorting,mining,separator,specific-energy-consumption,electricity,GJ/t,0.0072,0.004,0.012,0,guess,judgement,,0.5,0.014,248
+blast-furnace_efficiency-strong,iron-and-steel,blast-furnace,specific-energy-consumption,steam,GJ/t,0.0164674,0.0020894,0.021956,0,proxy,bucket-saving,ieaghg_2013_003; nrcan_2007_001; remus_2013_001,1.15085,0.014,75
+separator_clarifier,pulp-and-paper,separator,capex,,2025_CAD/m3-per-yr,1.0,0.5,2.0,0,guess,judgement,,72.02835,0.014,56
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,capex,,2025_CAD/m3-per-yr,1.0,0.3,2.0,0,guess,judgement,,72.02835,0.014,56
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.495219,0.221669,1.10753,0,guess,levelized-energy,,35.1922,0.014,51
+annealing-furnace_batch-bell,iron-and-steel,annealing-furnace,annual-output,,t,3942,2500.1,4380,0,estimated,capacity-output,jrc_2022_001; epa_2007_001; gielen_1996_001; gardarsdottir_2019_001; ieaghg_2008_001; emanuelsson_2022_001; jrc_2026_001,309548.0,0.013,308
+process-improvement_nru-optimization,oil-and-gas,process-improvement,annual-output,,t,4020.39,3015.29,6998.67,0,estimated,capacity-output,epa_2011_001; hallbar_2017_001; iea_2026_004,309548.0,0.013,308
+preheater_ladle,iron-and-steel,preheater,capex,,2025_CAD/t-per-yr,6.0,3.0,12.0,0,guess,judgement,,450.0,0.013,310
+haul-truck_diesel,mining,haul-truck,capex,,2025_CAD/t-per-yr,6.0,3.0,12.0,0,guess,judgement,,450.0,0.013,310
+haul-truck_diesel,mining,haul-truck,cost-levelized,calculated-incl-energy,2025_CAD/t,1.94908,0.961484,5.40232,0,guess,levelized-energy,,155.369,0.013,289
+haul-truck_trolley-assist,mining,haul-truck,cost-levelized,calculated-incl-energy,2025_CAD/t,2.0894,0.896374,6.22707,0,guess,levelized-energy,,155.369,0.013,289
+preheater_ladle,iron-and-steel,preheater,opex-fixed,,2025_CAD/t-per-yr,0.250842,0.0686739,0.818095,0,guess,cost-ratio,,19.5852,0.013,306
+haul-truck_diesel,mining,haul-truck,opex-fixed,,2025_CAD/t-per-yr,0.247525,0.0699137,1.03014,0,guess,cost-ratio,,19.5852,0.013,306
+hoist,mining,hoist,specific-energy-consumption,,GJ/t,0.045198,0.014184,0.076212,1,estimated,range-midpoint,nrcan_2005_001,3.350555,0.013,306
+separator_thickening-filtration,mining,separator,specific-energy-consumption,electricity,GJ/t,0.0063144,0.000882,0.102816,0,identity,single-carrier-split,nrcan_2005_001; nrcan_2005_002,0.5,0.013,248
+dryer_solid-fuel,other-industry,dryer,specific-energy-consumption,coke,GJ/t,0.04,0.0267,0.0587,0,guess,judgement,,3.0,0.013,19
+fan_activated-sludge,pulp-and-paper,fan,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.461129,0.192362,1.08151,0,guess,levelized-energy,,35.1922,0.013,51
+separator_ore-sorting,mining,separator,cost-levelized,calculated-incl-energy,2025_CAD/t,1.84224,0.633301,5.14715,0,guess,levelized-energy,,155.369,0.012,289
+haul-truck_dual-fuel,mining,haul-truck,cost-levelized,calculated-incl-energy,2025_CAD/t,1.88545,0.829216,5.48327,0,guess,levelized-energy,,155.369,0.012,289
+separator_gravity-magnetic,mining,separator,specific-energy-consumption,,GJ/t,0.04,0.025,0.07,0,guess,judgement,,3.350555,0.012,306
+furnace_reheating_efficiency-strong,iron-and-steel,furnace,specific-energy-consumption,electricity,GJ/t,0.00598219,0.00438591,0.00725245,3,sourced,pooled,jrc_2022_001; nrcan_2007_001,0.5,0.012,248
+conveyor_in-pit-crushing,mining,conveyor,specific-energy-consumption,electricity,GJ/t,0.006,0.004,0.009,0,guess,judgement,,0.5,0.012,248
+haul-truck_battery-electric,mining,haul-truck,opex-variable,,2025_CAD/t,0.248676,0.0446137,1.80955,0,guess,cost-ratio,,19.9781,0.012,221
+coke-oven_by-product,iron-and-steel,coke-oven,specific-energy-consumption,natural-gas,GJ/t,0.022,,,1,sourced,pooled,doe_2000_001,1.83084,0.012,123
+preheater_ladle,iron-and-steel,preheater,specific-energy-consumption,natural-gas,GJ/t,0.022192,0.02,0.022192,1,sourced,pooled,epa_2012_001,1.83084,0.012,123
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.42652,0.118602,0.890986,0,guess,levelized-energy,,35.1922,0.012,51
+geothermal-well_binary-power,power-generation,geothermal-well,emissions-combustion,co2e,t/GJ,0.00111111,,,1,sourced,pooled,jrc_2014_001,0.103463,0.011,19
+leaching-vessel_in-situ,mining,leaching-vessel,annual-output,,t,3400.0,1300.0,10200.0,0,guess,judgement,,309548.0,0.011,308
+separator_ore-sorting,mining,separator,capex,,2025_CAD/t-per-yr,5.0,2.5,10.0,0,guess,judgement,,450.0,0.011,310
+process-improvement_coal-mine-methane-drainage,mining,process-improvement,capex,,2025_CAD/t-per-yr,5.0,2.0,10.0,0,guess,judgement,,450.0,0.011,310
+separator_thickening-filtration,mining,separator,cost-levelized,calculated-incl-energy,2025_CAD/t,1.65431,0.473863,8.06555,0,guess,levelized-energy,,155.369,0.011,289
+grinding-mill_stirred,mining,grinding-mill,specific-energy-consumption,,GJ/t,0.037,0.025,0.05,0,guess,judgement,,3.350555,0.011,306
+sinter-plant_efficiency-strong,iron-and-steel,sinter-plant,specific-energy-consumption,electricity,GJ/t,0.0054,,,1,sourced,pooled,worrell_1999_001,0.5,0.011,248
+process-improvement_nru-optimization,oil-and-gas,process-improvement,capacity,,kt/yr,4.72987,4.72987,6.99867,2,sourced,pooled,epa_2011_001,450.0,0.011,142
+haul-truck_trolley-assist,mining,haul-truck,opex-variable,,2025_CAD/t,0.221046,0.0356909,1.60849,0,guess,cost-ratio,,19.9781,0.011,221
+pump_plunger-lift,oil-and-gas,pump,specific-energy-consumption,natural-gas,GJ/t,0.02,0.003,0.07,0,guess,judgement,,1.83084,0.011,123
+pickling-line_acid,iron-and-steel,pickling-line,emissions-total,co2,t/t,0.004,,,1,sourced,pooled,pardo_2013_001,0.3605,0.011,74
+mine_open-pit-coal,mining,mine,emissions-process,co2e,t/t,0.0058254,0.005628,0.0441672,0,identity,co2e-from-species,etsap_2014_002,0.55,0.011,17
+pneumatic-device_non-emitting,oil-and-gas,pneumatic-device,opex-fixed,,2025_CAD/m3-per-yr,0.0297243,1.906e-06,0.0297243,2,sourced,pooled,icf_2015_001; epa_2011_001,2.72702,0.011,56
+fan_activated-sludge,pulp-and-paper,fan,specific-energy-consumption,,GJ/m3,0.004,0.0025,0.008,0,guess,judgement,,0.35,0.011,53
+gasifier_biomass-chp,heat-supply,gasifier,annual-output,,GJ,2980.15,2554.42,127153,0,identity,capacity-output,dea_2026_006; lecomte_2017_001; epa_2007_001,304164.0,0.01,114
+resistance-heater_hvac,space-conditioning,resistance-heater,annual-output,,GJ,3000.0,1000.0,9000.0,0,guess,judgement,,304164.0,0.01,114
+separator_thickening-filtration,mining,separator,capex,,2025_CAD/t-per-yr,4.5,2.0,9.0,0,guess,judgement,,450.0,0.01,310
+reactor_ammonium-nitrate,chemicals,reactor,specific-energy-consumption,electricity,GJ/t,0.00518079,0.000810516,0.021013,11,sourced,pooled,doe_2000_002; jrc_2007_002; efma_2000_001,0.5,0.01,248
+annealing-furnace_batch-bell,iron-and-steel,annealing-furnace,capacity,,kt/yr,4.38,,,1,sourced,pooled,jrc_2022_001,450.0,0.01,142
+reactor_haber-bosch-loop,chemicals,reactor,opex-variable,,2025_CAD/t,0.208513,0.104256,66.6911,2,sourced,pooled,philibert_2017_001; dea_2026_003,19.9781,0.01,221
+haul-truck_dual-fuel,mining,haul-truck,opex-variable,,2025_CAD/t,0.193415,0.0312296,1.40743,0,guess,cost-ratio,,19.9781,0.01,221
+haul-truck_diesel,mining,haul-truck,emissions-combustion,co2,t/t,0.00156907,0.00113611,0.00284771,0,identity,fuel-emission-factor,intergroup_2017_001; drebenstedt_2014_001; ahluwalia_2023_001; doe_2002_001; norgate_2010_001,0.15677,0.01,136
+steam-cracker_electric,chemicals,steam-cracker,emissions-total,co2,t/t,0.00354379,0,0.00354379,2,sourced,pooled,van-geene_2024_001; agora_2021_001,0.3605,0.01,74
+dryer_solid-fuel_efficiency-strong,other-industry,dryer,specific-energy-consumption,coke,GJ/t,0.03,0.02,0.044,0,guess,judgement,,3.0,0.01,19
+preheater_ladle,iron-and-steel,preheater,cost-levelized,calculated,2025_CAD/t,0.903239,0.388567,2.15804,0,guess,levelized,,100.079,0.009,310
+reactor_catalytic-n2o,chemicals,reactor,specific-energy-consumption,,GJ/t,0.03,0.01,0.08,0,guess,judgement,,3.350555,0.009,306
+pump_plunger-lift,oil-and-gas,pump,specific-energy-consumption,,GJ/t,0.03,0.005,0.1,0,guess,judgement,,3.350555,0.009,306
+coke-oven_by-product_efficiency-strong,iron-and-steel,coke-oven,specific-energy-consumption,natural-gas,GJ/t,0.0165,0.0132,0.0187,0,proxy,bucket-saving,doe_2000_001,1.83084,0.009,123
+caster_continuous,iron-and-steel,caster,specific-energy-consumption,fuel,GJ/t,0.031,0.0116236,0.104327,3,sourced,pooled,worrell_1999_001; worrell_2010_001,3.36116,0.009,132
+heat-exchanger_steam-heated,food-and-beverage,heat-exchanger,emissions-total,co2e,t/t,0.00407291,,,1,sourced,pooled,ct_2010_003; ukerc_2013_001,0.461733,0.009,38
+hvac-heater_fuel-fired,space-conditioning,hvac-heater,capacity,,MW,0.16,0.1,0.5,2,sourced,pooled,dea_2026_007,20.0,0.008,83
+hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,hvac-heater,capacity,,MW,0.16,0.1,0.5,0,estimated,host-size,dea_2026_007,20.0,0.008,83
+hvac-heater_fuel-fired_efficiency-strong,space-conditioning,hvac-heater,capacity,,MW,0.16,0.1,0.5,0,estimated,host-size,dea_2026_007,20.0,0.008,83
+process-improvement_coal-mine-methane-drainage,mining,process-improvement,cost-levelized,calculated,2025_CAD/t,0.778864,0.311545,1.95458,0,guess,levelized,,100.079,0.008,310
+haul-truck_battery-electric,mining,haul-truck,specific-energy-consumption,electricity,GJ/t,0.004,0.002667,0.006222,0,guess,judgement,,0.5,0.008,248
+haul-truck_diesel,mining,haul-truck,opex-variable,,2025_CAD/t,0.165784,0.0267682,1.20637,0,guess,cost-ratio,,19.9781,0.008,221
+well_disposal-injection,oil-and-gas,well,capacity,,m3/yr,117964,35830,389840,0,estimated,capacity-from-output,petrinex_2026_001; mccollum_2006_001; ceri_2017_002; ceri_2018_001; cenovus_2025_001; cenovus_2025_002; toro_2021_001,13927300.0,0.008,20
+heat-pump_hvac,space-conditioning,heat-pump,annual-output,,GJ,2081.38,662.256,4730.4,0,guess,capacity-output,dea_2026_007; etsap_2012_002,304164.0,0.007,114
+preheater_ladle,iron-and-steel,preheater,cost-levelized,calculated-incl-energy,2025_CAD/t,1.13137,0.577567,2.40237,0,guess,levelized-energy,,155.369,0.007,289
+preheater_ladle,iron-and-steel,preheater,specific-energy-consumption,,GJ/t,0.022192,0.02,0.022192,2,sourced,pooled,remus_2013_001; worrell_2010_001,3.350555,0.007,306
+haul-truck_diesel,mining,haul-truck,specific-energy-consumption,,GJ/t,0.0226425,0.0163946,0.041094,2,sourced,pooled,nrcan_2005_002; norgate_2010_001,3.350555,0.007,306
+reactor_catalytic-n2o,chemicals,reactor,cost-levelized,,2025_CAD/t,2.44907,2.20192,2.69623,1,estimated,range-midpoint,jrc_2007_002,350.5615,0.007,38
+haul-truck_diesel,mining,haul-truck,cost-levelized,,2025_CAD/t,2.43713,1.75556,3.24262,2,sourced,pooled,drebenstedt_2014_001,350.5615,0.007,38
+separator_ore-sorting,mining,separator,opex-variable,,2025_CAD/t,0.138154,0.0223068,1.00531,0,guess,cost-ratio,,19.9781,0.007,221
+pellet-plant_induration,iron-and-steel,pellet-plant,specific-energy-consumption,natural-gas,GJ/t,0.0134672,0.00590493,0.0393039,2,sourced,pooled,gielen_1997_003; remus_2013_001,1.83084,0.007,123
+pellet-plant_induration_efficiency-moderate,iron-and-steel,pellet-plant,specific-energy-consumption,natural-gas,GJ/t,0.0123898,0.00501919,0.0393039,0,proxy,bucket-saving,gielen_1997_003; remus_2013_001,1.83084,0.007,123
+preheater_ladle,iron-and-steel,preheater,emissions-combustion,co2,t/t,0.0011238,0.0009976,0.00113645,0,identity,fuel-emission-factor,epa_2012_001,0.15677,0.007,136
+preheater_ladle,iron-and-steel,preheater,specific-energy-consumption,fuel,GJ/t,0.022192,0.02,0.022192,2,sourced,pooled,remus_2013_001; worrell_2010_001,3.36116,0.007,132
+haul-truck_diesel,mining,haul-truck,specific-energy-consumption,fuel,GJ/t,0.0224441,0.016251,0.040734,1,sourced,pooled,norgate_2010_001,3.36116,0.007,132
+separator_clarifier,pulp-and-paper,separator,opex-variable,,2025_CAD/m3,0.048198,0.00535268,0.203695,0,guess,cost-ratio,,7.13622,0.007,36
+reactor_catalytic-n2o,chemicals,reactor,abatement-cost,,2025_CAD/t-CO2-eq,0.540464,0.216186,0.864742,1,estimated,range-midpoint,boulamanti_2017_001,95.3416,0.006,39
+reactor_thermal-n2o-destruction,chemicals,reactor,abatement-cost,,2025_CAD/t-CO2-eq,0.540464,0.216186,0.864742,1,estimated,range-midpoint,boulamanti_2017_001,95.3416,0.006,39
+separator_thickening-filtration,mining,separator,opex-variable,,2025_CAD/t,0.124338,0.0178455,0.904775,0,guess,cost-ratio,,19.9781,0.006,221
+pump_plunger-lift,oil-and-gas,pump,emissions-combustion,co2,t/t,0.0010128,0.00014964,0.0035847,0,guess,fuel-emission-factor,,0.15677,0.006,136
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,fan,specific-energy-consumption,,GJ/m3,0.0022,0.0014,0.0045,0,guess,judgement,,0.35,0.006,53
+hvac-heater_fuel-fired,space-conditioning,hvac-heater,annual-output,,GJ,1500.0,500.0,4500.0,0,guess,judgement,,304164.0,0.005,114
+hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,hvac-heater,annual-output,,GJ,1500,500,4500,0,guess,host-size,,304164.0,0.005,114
+hvac-heater_fuel-fired_efficiency-strong,space-conditioning,hvac-heater,annual-output,,GJ,1500,500,4500,0,guess,host-size,,304164.0,0.005,114
+gasifier_biomass-chp,heat-supply,gasifier,capacity,,MW,0.105,0.09,4.48,2,sourced,pooled,dea_2026_006; lecomte_2017_001,20.0,0.005,83
+direct-heater_fuel-fired_ccs-diffuse,heat-supply,direct-heater,construction-time,,years,0.01,0.0075,0.04,0,estimated,sibling,dea_2026_001,2.0,0.005,224
+direct-heater_fuel-fired_efficiency-moderate,heat-supply,direct-heater,construction-time,,years,0.01,0.0075,0.04,0,estimated,sibling,dea_2026_001,2.0,0.005,224
+direct-heater_solid-fuel_efficiency-strong,heat-supply,direct-heater,construction-time,,years,0.01,0.001,0.015,0,estimated,sibling,dea_2026_001,2.0,0.005,224
+direct-heater_fuel-fired,heat-supply,direct-heater,construction-time,,years,0.01,0.01,0.04,1,sourced,pooled,dea_2026_001,2.0,0.005,224
+direct-heater_solid-fuel,heat-supply,direct-heater,construction-time,,years,0.01,0.001,0.015,1,sourced,pooled,dea_2026_001,2.0,0.005,224
+direct-heater_line-heater,oil-and-gas,direct-heater,construction-time,,years,0.01,0.001,0.04,0,estimated,sibling,dea_2026_001,2.0,0.005,224
+haul-truck_dual-fuel,mining,haul-truck,emissions-combustion,co2,t/t,0.000753415,0.000508104,0.000999871,0,guess,fuel-emission-factor,,0.15677,0.005,136
+photovoltaic-array_battery-storage,power-generation,photovoltaic-array,capacity,,MW,0.0733333,0.0623333,0.0916667,1,sourced,pooled,dea_2026_006,20.0,0.004,83
+separator_dry-stack-tailings,oil-and-gas,separator,specific-energy-consumption,,GJ/t,0.015,0.007,0.04,0,guess,judgement,,3.350555,0.004,306
+haul-truck_dual-fuel,mining,haul-truck,specific-energy-consumption,,GJ/t,0.0121,0.0082,0.016,0,guess,judgement,,3.350555,0.004,306
+haul-truck_trolley-assist,mining,haul-truck,specific-energy-consumption,electricity,GJ/t,0.0021,0.001444,0.002887,0,guess,judgement,,0.5,0.004,248
+caster_continuous,iron-and-steel,caster,emissions-process,co2,t/t,0.00219645,,,1,sourced,pooled,ukerc_2013_001,0.51825,0.004,36
+separator_clarifier,pulp-and-paper,separator,specific-energy-consumption,,GJ/m3,0.0015,0.0008,0.004,0,guess,judgement,,0.35,0.004,53
+motor_premium-efficiency,machine-drive,motor,capacity,,MW,0.05593,0.007457,0.1491,4,sourced,pooled,gpsa_2004_001,20.0,0.003,83
+hvac-heater_fuel-fired,space-conditioning,hvac-heater,emissions-combustion,co2e,t/GJ,0.000321893,0,0.000322007,0,identity,co2e-from-species,dea_2026_007,0.103463,0.003,19
+reactor_hydrotreating-lipids,biofuels,reactor,emissions-total,co2,t/GJ,0.000164116,,,1,sourced,pooled,van-geene_2024_001,0.056825,0.003,19
+gas-treatment-unit_vam-oxidiser,mining,gas-treatment-unit,specific-energy-consumption,,GJ/t,0.01,0.005,0.02,0,guess,judgement,,3.350555,0.003,306
+haul-truck_dual-fuel,mining,haul-truck,specific-energy-consumption,natural-gas,GJ/t,0.0048,0.003253,0.006347,0,guess,judgement,,1.83084,0.003,123
+haul-truck_trolley-assist,mining,haul-truck,emissions-combustion,co2,t/t,0.000412469,0.000283555,0.00056711,0,guess,fuel-emission-factor,,0.15677,0.003,136
+separator_mine-water-treatment,mining,separator,specific-energy-consumption,,GJ/m3,0.0011,0.0004,0.0018,0,guess,judgement,,0.35,0.003,53
+motor_induction-standard,machine-drive,motor,capacity,,MW,0.03729,0.007457,0.1491,5,sourced,pooled,gpsa_2004_001; rao_2021_001,20.0,0.002,83
+motor_induction-standard_efficiency-moderate,machine-drive,motor,capacity,,MW,0.03729,0.007457,0.1491,0,estimated,host-size,gpsa_2004_001; rao_2021_001,20.0,0.002,83
+conveyor_in-pit-crushing,mining,conveyor,specific-energy-consumption,,GJ/t,0.006,0.004,0.009,0,guess,judgement,,3.350555,0.002,306
+haul-truck_hydrogen-fuel-cell,mining,haul-truck,specific-energy-consumption,,GJ/t,0.007,0.0045,0.01,0,guess,judgement,,3.350555,0.002,306
+haul-truck_trolley-assist,mining,haul-truck,specific-energy-consumption,,GJ/t,0.008,0.0055,0.011,0,guess,judgement,,3.350555,0.002,306
+separator_ore-sorting,mining,separator,specific-energy-consumption,,GJ/t,0.0072,0.004,0.012,0,guess,judgement,,3.350555,0.002,306
+separator_thickening-filtration,mining,separator,specific-energy-consumption,,GJ/t,0.0063144,0.000882,0.102816,4,sourced,pooled,nrcan_2005_001; nrcan_2005_002,3.350555,0.002,306
+direct-heater_line-heater,oil-and-gas,direct-heater,annual-output,,m3,2676,846.5,9627,1,sourced,pooled,petrinex_2026_001,1571110.0,0.002,54
+heat-pump_oil-treating,oil-and-gas,heat-pump,annual-output,,m3,2676,846.5,9627,1,sourced,pooled,petrinex_2026_001,1571110.0,0.002,54
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,specific-energy-consumption,,GJ/m3,0.000577941,,,0,guess,ccs-energy,gpsa_2004_001,0.35,0.002,53
+photovoltaic-array_battery-storage,power-generation,photovoltaic-array,annual-output,,GJ,419.76,356.796,524.701,0,identity,capacity-output,dea_2026_006,304164.0,0.001,114
+combustion-turbine_drive_efficiency-moderate,machine-drive,combustion-turbine,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,end-use-median,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+motor_induction-standard,machine-drive,motor,annual-output,,GJ,293.316,47.6019,1835.86,0,identity,capacity-output,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+motor_induction-standard_efficiency-moderate,machine-drive,motor,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,host-size,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+motor_premium-efficiency,machine-drive,motor,annual-output,,GJ,439.934,43.9914,1835.86,0,estimated,capacity-output,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+motor_variable-speed,machine-drive,motor,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,end-use-median,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+mobile-equipment_battery-electric,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+mobile-equipment_diesel,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+mobile-equipment_diesel-electric,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+mobile-equipment_spark-ignition,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+mobile-equipment_hydrogen-fuel-cell,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+pump_mine-dewatering,machine-drive,pump,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,end-use-median,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+reciprocating-engine_diesel-field,machine-drive,reciprocating-engine,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,end-use-median,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+reciprocating-engine_gasoline-propane,machine-drive,reciprocating-engine,annual-output,,GJ,293.316,47.6019,1835.86,0,estimated,end-use-median,gpsa_2004_001; rao_2021_001,304164.0,0.001,114
+mobile-equipment_hydrogen-combustion,mobile-equipment,mobile-equipment,annual-output,,GJ,300.0,100.0,1000.0,0,guess,judgement,,304164.0,0.001,114
+gasifier_biomass-methanation,biofuels,gasifier,emissions-combustion,co2e,t/GJ,0.00012137,,,0,identity,co2e-from-species,dea_2026_003,0.103463,0.001,19
+compressor_low-emission-seal,oil-and-gas,compressor,annual-output,,t,444.607,4.43678,2168.82,0,estimated,capacity-output,iea_2026_005; epa_2006_001; epa_2011_001; hughes_2023_001; mccollum_2006_001; netl_2022_001,309548.0,0.001,308
+compressor_vapour-recovery,oil-and-gas,compressor,annual-output,,t,215.944,1.03235,3508.95,0,estimated,capacity-output,icf_2015_001; iea_2026_005; epa_2006_001; epa_2011_001; hughes_2023_001; mccollum_2006_001; netl_2022_001,309548.0,0.001,308
+haul-truck_battery-electric,mining,haul-truck,specific-energy-consumption,,GJ/t,0.0045,0.003,0.007,0,guess,judgement,,3.350555,0.001,306
+process-improvement_coal-mine-methane-drainage,mining,process-improvement,specific-energy-consumption,,GJ/t,0.005,0.002,0.01,0,guess,judgement,,3.350555,0.001,306
+compressor_low-emission-seal,oil-and-gas,compressor,capacity,,kt/yr,0.542204,0.0072615,2.16882,5,sourced,pooled,iea_2026_005; epa_2006_001; epa_2011_001,450.0,0.001,142
+compressor_vapour-recovery,oil-and-gas,compressor,capacity,,kt/yr,0.263346,0.0016896,3.50895,21,sourced,pooled,icf_2015_001; iea_2026_005; epa_2006_001; epa_2011_001,450.0,0.001,142
+flare,oil-and-gas,flare,capacity,,kt/yr,0.330607,0.0496232,1.4869,0,estimated,capacity-from-output,petrinex_2026_001; hallbar_2017_001; eia_2023_002; iea_2026_004,450.0,0.001,142
+flare_high-efficiency,oil-and-gas,flare,capacity,,kt/yr,0.330607,0.0496232,1.4869,0,estimated,capacity-from-output,petrinex_2026_001; hallbar_2017_001; eia_2023_002; iea_2026_004,450.0,0.001,142
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,capex,,2025_CAD/m3-per-yr,0.0378955,0.00230405,0.160468,7,sourced,pooled,brinkmann_2016_001,72.02835,0.001,56
+adsorber_molecular-sieve,oil-and-gas,adsorber,cost-levelized,calculated,2025_CAD/m3,0.0116811,0.00528689,0.0328113,0,guess,levelized,,15.2681,0.001,56
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,cost-levelized,calculated,2025_CAD/m3,0.0170991,0.00729412,0.605202,0,guess,levelized,,15.2681,0.001,56
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,cost-levelized,calculated,2025_CAD/m3,0.0128188,0.0116037,0.0135027,0,estimated,levelized,,15.2681,0.001,56
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,cost-levelized,calculated,2025_CAD/m3,0.00800956,0.000366401,0.0438656,0,estimated,levelized,,15.2681,0.001,56
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.03162,0.0173949,0.632539,0,guess,levelized-energy,,35.1922,0.001,51
+adsorber_molecular-sieve,oil-and-gas,adsorber,opex-fixed,,2025_CAD/m3-per-yr,0.00140656,0.000491786,0.00438559,0,guess,cost-ratio,,2.72702,0.001,56
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,opex-fixed,,2025_CAD/m3-per-yr,0.00154356,0.00107937,0.00180478,0,estimated,cost-ratio,kidnay_2019_001,2.72702,0.001,56
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,opex-fixed,,2025_CAD/m3-per-yr,0.00177674,7.55399e-05,0.00879683,0,estimated,cost-ratio,brinkmann_2016_001,2.72702,0.001,56
+adsorber_molecular-sieve,oil-and-gas,adsorber,specific-energy-consumption,,GJ/m3,0.00022,0.00011,0.00045,0,guess,judgement,,0.35,0.001,53
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,specific-energy-consumption,,GJ/m3,0.000512853,,,1,sourced,pooled,gpsa_2004_001,0.35,0.001,53
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,specific-energy-consumption,electricity,GJ/m3,3.71069e-05,,,0,guess,ccs-energy,gpsa_2004_001,0.051239,0.001,43
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,specific-energy-consumption,electricity,GJ/m3,5.85e-05,,,1,sourced,pooled,kidnay_2019_001,0.051239,0.001,43
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,specific-energy-consumption,steam,GJ/m3,4.6034e-05,,,0,guess,ccs-energy,,0.08736,0.001,14
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,specific-energy-consumption,natural-gas,GJ/m3,0.00045,0.00022,0.0009,0,guess,judgement,,0.41475,0.001,29
+compressor_blowdown-recovery,oil-and-gas,compressor,annual-output,,t,57.5026,0.234955,4256.96,0,estimated,capacity-output,iea_2026_005; epa_2006_001; epa_2011_001; hughes_2023_001; mccollum_2006_001; netl_2022_001,309548.0,0.0,308
+flare,oil-and-gas,flare,annual-output,,t,152.41,47.142,495.137,1,sourced,pooled,petrinex_2026_001,309548.0,0.0,308
+flare_enclosed-combustor,oil-and-gas,flare,annual-output,,t,1.5706,0.0601764,1106.56,0,estimated,capacity-output,iea_2026_005; epa_2011_001; hallbar_2017_001; eia_2023_002; iea_2026_004,309548.0,0.0,308
+flare_high-efficiency,oil-and-gas,flare,annual-output,,t,152.41,47.142,495.137,1,sourced,pooled,petrinex_2026_001,309548.0,0.0,308
+management-system_leak-detection,oil-and-gas,management-system,annual-output,,t,9.1278,0.0879363,1174.9,0,estimated,capacity-output,iea_2026_005; epa_2006_001; epa_2011_001; hallbar_2017_001; eia_2023_002; iea_2026_004,309548.0,0.0,308
+process-improvement_low-emission-components,oil-and-gas,process-improvement,annual-output,,t,57.2007,9.96642,126.514,0,estimated,capacity-output,epa_2006_001; epa_2011_001; hallbar_2017_001; iea_2026_004,309548.0,0.0,308
+pump_plunger-lift,oil-and-gas,pump,annual-output,,t,19.0,5.0,60.0,0,guess,judgement,,309548.0,0.0,308
+pipeline_plastic-liner,oil-and-gas,pipeline,annual-output,,t,3.46088,2.59566,4.3261,0,estimated,capacity-output,epa_2011_001; mccollum_2006_001,309548.0,0.0,308
+process-improvement_automatic-shutoff,oil-and-gas,process-improvement,annual-output,,t,3.31763,1.96117,9.61355,0,estimated,capacity-output,epa_2011_001; hallbar_2017_001; iea_2026_004,309548.0,0.0,308
+separator_reduced-emission-completion,oil-and-gas,separator,annual-output,,t,13.5119,10.1339,4101.14,0,estimated,capacity-output,iea_2026_005; epa_2006_001; tomani_2010_001,309548.0,0.0,308
+haul-truck_diesel,mining,haul-truck,specific-energy-consumption,electricity,GJ/t,0.000198357,0.000143623,0.00036,1,sourced,pooled,norgate_2010_001,0.5,0.0,248
+compressor_blowdown-recovery,oil-and-gas,compressor,capacity,,kt/yr,0.0701251,0.000384542,4.25696,18,sourced,pooled,iea_2026_005; epa_2006_001; epa_2011_001,450.0,0.0,142
+flare_enclosed-combustor,oil-and-gas,flare,capacity,,kt/yr,0.00340695,0.00018071,1.1648,6,sourced,pooled,iea_2026_005; epa_2011_001,450.0,0.0,142
+management-system_leak-detection,oil-and-gas,management-system,capacity,,kt/yr,0.0198,0.000264073,1.23674,28,sourced,pooled,iea_2026_005; epa_2006_001; epa_2011_001,450.0,0.0,142
+process-improvement_low-emission-components,oil-and-gas,process-improvement,capacity,,kt/yr,0.0672949,0.0156336,0.126514,5,sourced,pooled,epa_2006_001; epa_2011_001,450.0,0.0,142
+pump_plunger-lift,oil-and-gas,pump,capacity,,kt/yr,0.018651,0.00911365,0.018651,2,sourced,pooled,iea_2026_005; epa_2006_001,450.0,0.0,142
+pipeline_plastic-liner,oil-and-gas,pipeline,capacity,,kt/yr,0.0043261,,,1,sourced,pooled,epa_2011_001,450.0,0.0,142
+process-improvement_automatic-shutoff,oil-and-gas,process-improvement,capacity,,kt/yr,0.0039031,0.00307634,0.00961355,3,sourced,pooled,epa_2011_001,450.0,0.0,142
+separator_reduced-emission-completion,oil-and-gas,separator,capacity,,kt/yr,0.016579,0.016579,4.10114,2,sourced,pooled,iea_2026_005; epa_2006_001,450.0,0.0,142
+haul-truck_battery-electric,mining,haul-truck,emissions-combustion,co2,t/t,3.4955e-05,2.328e-05,5.439e-05,0,guess,fuel-emission-factor,,0.15677,0.0,136
+pump_artificial-lift,oil-and-gas,pump,annual-output,,m3,288.2,157.5,578.1,1,sourced,pooled,petrinex_2026_001,1571110.0,0.0,54
+adsorber_molecular-sieve,oil-and-gas,adsorber,capex,,2025_CAD/m3-per-yr,0.03,0.015,0.08,0,guess,judgement,,72.02835,0.0,56
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,capex,,2025_CAD/m3-per-yr,0.0091457,,,1,sourced,pooled,kidnay_2019_001,72.02835,0.0,56
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,capex,,2025_CAD/m3-per-yr,0.0226656,0.0100967,0.677943,0,guess,ccs-cost,kidnay_2019_001,72.02835,0.0,56
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,capex,,2025_CAD/m3-per-yr,0.0115231,,,1,sourced,pooled,kidnay_2019_001,72.02835,0.0,56
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,capex,,2025_CAD/m3-per-yr,0.0204494,0.00806005,0.0602793,0,guess,bucket-increment,,72.02835,0.0,56
+pump_electric-station,oil-and-gas,pump,capex,,2025_CAD/m3-per-yr,0.02,0.008,0.05,0,guess,judgement,,72.02835,0.0,56
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,capex,,2025_CAD/m3-per-yr,0.032922,,,1,sourced,pooled,kidnay_2019_001,72.02835,0.0,56
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,cost-levelized,calculated,2025_CAD/m3,0.00750621,0.00649354,0.00837378,0,estimated,levelized,,15.2681,0.0,56
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,cost-levelized,calculated,2025_CAD/m3,0.00672101,0.00572813,0.00765483,0,estimated,levelized,,15.2681,0.0,56
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,cost-levelized,calculated,2025_CAD/m3,0.00445149,0.00162827,0.0136532,0,guess,levelized,,15.2681,0.0,56
+pump_electric-station,oil-and-gas,pump,cost-levelized,calculated,2025_CAD/m3,0.00435366,0.00161614,0.011325,0,guess,levelized,,15.2681,0.0,56
+adsorber_molecular-sieve,oil-and-gas,adsorber,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.0141843,0.00637329,0.0390808,0,guess,levelized-energy,,35.1922,0.0,51
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.0162035,0.0136078,0.0237255,0,estimated,levelized-energy,,35.1922,0.0,51
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.00685465,0.00582263,0.00809523,0,guess,levelized-energy,,35.1922,0.0,51
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.00457492,0.00166433,0.0142129,0,guess,levelized-energy,,35.1922,0.0,51
+pump_electric-station,oil-and-gas,pump,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.00448782,0.00165856,0.0118847,0,guess,levelized-energy,,35.1922,0.0,51
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.0141269,0.0124309,0.0167863,0,guess,levelized-energy,,35.1922,0.0,51
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,cost-levelized,calculated-incl-energy,2025_CAD/m3,0.00902971,0.000719705,0.0467017,0,guess,levelized-energy,,35.1922,0.0,51
+adsorber_molecular-sieve,oil-and-gas,adsorber,emissions-combustion,co2,t/m3,1.0128e-05,4.988e-06,2.0484e-05,0,guess,fuel-emission-factor,,0.034142,0.0,22
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,emissions-combustion,co2,t/m3,6.5832e-07,4.988e-07,2.0484e-06,0,guess,fuel-emission-factor,,0.034142,0.0,22
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,emissions-combustion,co2,t/m3,3.24096e-06,1.59616e-06,8.1936e-06,0,guess,fuel-emission-factor,,0.034142,0.0,22
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,emissions-combustion,co2,t/m3,2.0256e-06,3.9904e-07,8.1936e-06,0,guess,fuel-emission-factor,,0.034142,0.0,22
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,opex-fixed,,2025_CAD/m3-per-yr,0.000428799,0.000299848,0.000501366,0,estimated,cost-ratio,kidnay_2019_001,2.72702,0.0,56
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,opex-fixed,,2025_CAD/m3-per-yr,0.000810672,0.000339142,0.0390907,0,guess,ccs-cost,kidnay_2019_001,2.72702,0.0,56
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,opex-fixed,,2025_CAD/m3-per-yr,0.000540265,0.000377793,0.000631694,0,estimated,cost-ratio,kidnay_2019_001,2.72702,0.0,56
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,opex-fixed,,2025_CAD/m3-per-yr,0.000958777,0.000264255,0.0033045,0,guess,cost-ratio,,2.72702,0.0,56
+pump_electric-station,oil-and-gas,pump,opex-fixed,,2025_CAD/m3-per-yr,0.000937707,0.000262286,0.00274099,0,guess,cost-ratio,,2.72702,0.0,56
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,opex-variable,,2025_CAD/m3,0.000440804,9.7908e-05,0.000931464,0,estimated,cost-ratio,kidnay_2019_001,7.13622,0.0,36
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,gas-treatment-unit,opex-variable,,2025_CAD/m3,0.000897999,0.000191299,0.0435226,0,guess,ccs-cost,kidnay_2019_001,7.13622,0.0,36
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,opex-variable,,2025_CAD/m3,0.00055539,0.000123359,0.0011736,0,estimated,cost-ratio,kidnay_2019_001,7.13622,0.0,36
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,opex-variable,,2025_CAD/m3,0.00182649,2.46657e-05,0.0163432,0,estimated,cost-ratio,brinkmann_2016_001,7.13622,0.0,36
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,specific-energy-consumption,,GJ/m3,1.3e-05,1.0e-05,4.0e-05,0,guess,judgement,,0.35,0.0,53
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,specific-energy-consumption,,GJ/m3,5.52e-06,2.55e-06,1.5e-05,0,guess,bucket-saving,,0.35,0.0,53
+pump_electric-station,oil-and-gas,pump,specific-energy-consumption,,GJ/m3,6e-06,3e-06,1.5e-05,0,guess,judgement,,0.35,0.0,53
+turboexpander_ngl-recovery,oil-and-gas,turboexpander,specific-energy-consumption,,GJ/m3,5.85e-05,,,1,sourced,pooled,kidnay_2019_001,0.35,0.0,53
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,specific-energy-consumption,,GJ/m3,8e-05,4e-05,0.0002,0,guess,judgement,,0.35,0.0,53
+adsorber_molecular-sieve,oil-and-gas,adsorber,specific-energy-consumption,electricity,GJ/m3,2e-05,1e-05,5e-05,0,guess,judgement,,0.051239,0.0,43
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-treatment-unit,specific-energy-consumption,electricity,GJ/m3,1.80529e-05,,,1,sourced,pooled,gpsa_2004_001,0.051239,0.0,43
+pump_electric-station_efficiency-moderate,oil-and-gas,pump,specific-energy-consumption,electricity,GJ/m3,5.52e-06,2.55e-06,1.5e-05,0,guess,bucket-saving,,0.051239,0.0,43
+pump_electric-station,oil-and-gas,pump,specific-energy-consumption,electricity,GJ/m3,6e-06,3e-06,1.5e-05,0,guess,judgement,,0.051239,0.0,43
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,specific-energy-consumption,electricity,GJ/m3,1.62e-05,3.6e-06,2.88e-05,3,estimated,range-midpoint,brinkmann_2016_001,0.051239,0.0,43
+adsorber_molecular-sieve,oil-and-gas,adsorber,specific-energy-consumption,natural-gas,GJ/m3,0.0002,0.0001,0.0004,0,guess,judgement,,0.41475,0.0,29
+gas-treatment-unit_glycol-dehydration,oil-and-gas,gas-treatment-unit,specific-energy-consumption,natural-gas,GJ/m3,1.3e-05,1.0e-05,4.0e-05,0,guess,judgement,,0.41475,0.0,29
+pneumatic-device_gas-driven,oil-and-gas,pneumatic-device,specific-energy-consumption,natural-gas,GJ/m3,0.00015,3e-05,0.0006,0,guess,judgement,,0.41475,0.0,29
+gas-treatment-unit_thermal-oxidiser,chemicals,gas-treatment-unit,specific-energy-consumption,natural-gas,GJ/m3,6.4e-05,3.2e-05,0.00016,0,guess,judgement,,0.41475,0.0,29
+pneumatic-device_low-bleed,oil-and-gas,pneumatic-device,specific-energy-consumption,natural-gas,GJ/m3,4e-05,8e-06,0.00016,0,guess,judgement,,0.41475,0.0,29
+direct-heater_line-heater,oil-and-gas,direct-heater,capacity,,m3/yr,3125.44,846.5,42223.7,0,estimated,capacity-from-output,petrinex_2026_001; iea_2025_003; ieaghg_2007_001; epa_2007_001; doe_2024_002; agora_2021_001; rissman_2022_001; lbnl_202,13927300.0,0.0,20
+heat-pump_oil-treating,oil-and-gas,heat-pump,capacity,,m3/yr,3547.9,897.846,22921.4,0,estimated,capacity-from-output,petrinex_2026_001; iea_2024_002; iea_2025_003; rissman_2022_001; ager_2023_001; zuhlsdorf_2019_001,13927300.0,0.0,20
+pump_artificial-lift,oil-and-gas,pump,capacity,,m3/yr,320.222,162.371,770.8,0,guess,capacity-from-output,petrinex_2026_001,13927300.0,0.0,20

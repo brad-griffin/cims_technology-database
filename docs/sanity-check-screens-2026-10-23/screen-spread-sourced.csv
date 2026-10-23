@@ -1,0 +1,328 @@
+archetype,family,end-uses,parameter,target,unit,central,low,high,n,grade,method,group-median,ratio-to-median,group-n,group-members,sources
+thermal-storage_heat-charged,heat-supply,heat-low-temp,capacity,,MW,30,0.001,1000,5,sourced,pooled,,1000000.0,,,dea_2026_004; etsap_2013_005
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,capacity,,MW,15.7206,0.00149781,716.145,34,sourced,pooled,,478128.1,,,boulamanti_2017_001; dea_2026_003; lazard_2021_001; lazard_2023_001; lazard_2024_001; kuparinen_2017
+heat-pump_very-high-temperature,heat-supply,heat-medium-temp,annual-output,,GJ,105092,25.1973,2.53373e+06,0,identity,capacity-output,,100555.6,,,iea-hpt_2023_001; arpagaus_2018_001; schlosser_2020_001; zuhlsdorf_2019_001; ager_2023_001; ciambell
+heat-pump_very-high-temperature,heat-supply,heat-medium-temp,capacity,,MW,3.65,0.001,88,37,sourced,pooled,,88000.0,,,iea-hpt_2023_001; arpagaus_2018_001; schlosser_2020_001; zuhlsdorf_2019_001; ager_2023_001; ciambell
+blast-furnace,iron-and-steel,ironmaking,specific-energy-consumption,coke-oven-gas,GJ/t,0.260337,2.7048e-05,0.920759,5,sourced,pooled,,34041.7,,,ieaghg_2013_003; nrcan_2007_001; remus_2013_001; doe_2000_001; otto_2017_001
+combustion-turbine_chp,heat-supply,heat-low-temp,capacity,,MW,22.2,0.02775,582.75,62,sourced,pooled,,21000.0,,,dea_2026_006; doe_2001_001; element-energy_2021_001; epa_2017_001; ieaghg_2007_001; lecomte_2017_001
+steam-turbine_drive,machine-drive,pumps; fans-and-blowers; compressed-air,capacity,,MW,0.6711,0.003729,74.57,3,sourced,pooled,,19997.3,,,gpsa_2004_001
+pneumatic-device_non-emitting,oil-and-gas,venting,opex-fixed,,2025_CAD/m3-per-yr,0.0297243,1.906e-06,0.0297243,2,sourced,pooled,,15595.1,,,icf_2015_001; epa_2011_001
+fuel-cell_chp,heat-supply,heat-low-temp,capacity,,MW,0.448972,0.000565958,7.9,17,sourced,pooled,,13958.6,,,dea_2026_006; doe_2001_001; epa_2017_001; ieaghg_2007_001; epa_2007_001; lemar_2001_001; wade_2003_0
+compressor_blowdown-recovery,oil-and-gas,venting,capacity,,kt/yr,0.0701251,0.000384542,4.25696,18,sourced,pooled,,11070.2,,,iea_2026_005; epa_2006_001; epa_2011_001
+reciprocating-engine_chp,heat-supply,heat-low-temp,capacity,,MW,1.282,0.01282,128.2,36,sourced,pooled,,10000.0,,,dea_2026_006; doe_2001_001; epa_2017_001; ieaghg_2007_001; jrc_2009_001; neill-gunter_1999_001; suhr
+steam-turbine_back-pressure,heat-supply,heat-low-temp,capacity,,MW,62.0333,0.15652,1565.2,30,sourced,pooled,,10000.0,,,dea_2026_006; ct_2011_001; epa_2017_001; neill-gunter_1999_001; neuwahl_2019_001; epa_2007_001; wade
+boiler_fuel-fired,heat-supply,heat-low-temp,capacity,,MW,1.91961,0.0293071,290,23,sourced,pooled,,9895.2,,,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; ieaghg_2
+heat-pump_industrial,heat-supply,heat-low-temp,capacity,,MW,0.75,0.012,80,96,sourced,pooled,,6666.7,,,dea_2026_006; dea_2026_001; element-energy_2018_001; iea-hpt_2023_001; iea_2025_003; kiss_2017_001; 
+flare_enclosed-combustor,oil-and-gas,venting,capacity,,kt/yr,0.00340695,0.00018071,1.1648,6,sourced,pooled,,6445.7,,,iea_2026_005; epa_2011_001
+boiler_electric,heat-supply,heat-low-temp,capacity,,MW,2.7,0.0120159,75,21,sourced,pooled,,6241.7,,,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; agora_20
+pneumatic-device_non-emitting,oil-and-gas,venting,abatement-cost,ch4,2025_CAD/t-CH4,976.439,49.0752,259470,81,sourced,pooled,,5287.2,,,carbon-limits_2016_001; carbon-limits_2021_001; epa_2019_001; epa_2023_002
+management-system_leak-detection,oil-and-gas,fugitive-emissions,capacity,,kt/yr,0.0198,0.000264073,1.23674,28,sourced,pooled,,4683.3,,,iea_2026_005; epa_2006_001; epa_2011_001
+solar-concentrator_line-focus,heat-supply,heat-medium-temp,capacity,,MW,2,0.1,392,5,sourced,pooled,,3920.0,,,saw_2023_001; mcmillan_2021_001; nrel_2016_001
+capture-unit_dac-liquid-solvent,co2-capture,direct-air-capture,annual-output,,t,900000,354.78,900000,0,identity,capacity-output,,2536.8,,,fasihi_2019_001; dea_2024_002; larsen_2019_001; keith_2018_001
+capture-unit_dac-liquid-solvent,co2-capture,direct-air-capture,capacity,,kt/yr,1000,0.3942,1000,3,sourced,pooled,,2536.8,,,fasihi_2019_001; dea_2024_002; larsen_2019_001
+fermenter_lignocellulosic-enzymatic,biofuels,ethanol-production,capacity,,MW,60.8795,0.0674875,168.719,3,sourced,pooled,,2500.0,,,dea_2026_003; etsap_2013_011
+gasifier_biomass-fischer-tropsch,biofuels,renewable-diesel-and-saf,capacity,,MW,78.945,0.108818,272.044,4,sourced,pooled,,2500.0,,,dea_2026_003; brown_2020_001; etsap_2013_011
+blast-furnace,iron-and-steel,ironmaking,specific-energy-consumption,by-product-gas,GJ/t,0.224204,0.000130522,0.272623,1,sourced,pooled,,2088.7,,,remus_2013_001
+combustion-turbine_chp,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,1.70765,0.0176517,36.6952,22,sourced,pooled,,2078.8,,,dea_2026_006; van-geene_2024_001; boulamanti_2017_001; element-energy_2021_001; ieaghg_2007_001; nei
+compressor_vapour-recovery,oil-and-gas,venting,capacity,,kt/yr,0.263346,0.0016896,3.50895,21,sourced,pooled,,2076.8,,,icf_2015_001; iea_2026_005; epa_2006_001; epa_2011_001
+boiler_solid-fuel,heat-supply,heat-low-temp,capacity,,MW,6.84,0.08,165.45,15,sourced,pooled,,2068.1,,,dea_2026_006; dea_2026_001; dea_2026_007; ekbom_2003_001; element-energy_2018_001; ieaghg_2007_001; 
+combustion-turbine_simple-cycle,power-generation,on-site-power-generation,capacity,,MW,57.5,0.25,500,8,sourced,pooled,,2000.0,,,dea_2026_006; lecomte_2017_001; lazard_2023_001; lazard_2024_001; wade_2003_001; etsap_2010_008; ets
+blast-furnace,iron-and-steel,ironmaking,specific-energy-consumption,blast-furnace-gas,GJ/t,1.33167,0.0012264,2.33731,3,sourced,pooled,,1905.8,,,nrcan_2007_001; remus_2013_001; doe_2000_001
+management-system_leak-detection,oil-and-gas,fugitive-emissions,opex-fixed,,2025_CAD/t-per-yr,1822.69,3.75157,5013.39,28,sourced,pooled,,1336.3,,,epa_2021_001; epa_2022_002; epa_2006_001; epa_2011_001
+steam-turbine_condensing,power-generation,on-site-power-generation,annual-output,,GJ,5.13248e+06,18921.6,1.78368e+07,0,identity,capacity-output,,942.7,,,dea_2026_006; ieaghg_2013_003; lecomte_2017_001; neill-gunter_1999_001; neuwahl_2019_001; pardo_2013
+steam-turbine_condensing,power-generation,on-site-power-generation,capacity,,MW,232.5,1,808,21,sourced,pooled,,808.0,,,dea_2026_006; ieaghg_2013_003; lecomte_2017_001; neill-gunter_1999_001; neuwahl_2019_001; pardo_2013
+compressor_vapour-recovery,oil-and-gas,venting,capex,,2025_CAD/t-per-yr,409.661,59.5837,47066.3,25,sourced,pooled,,789.9,,,epa_2021_001; epa_2023_002; icf_2015_001; epa_2006_001; epa_2011_001
+kiln_dry-precalciner,cement,clinker-production,capacity,,kt/yr,1047.5,7.3,4745,17,sourced,pooled,,650.0,,,csi-ecra_2017_001; gardarsdottir_2019_001; schorcht_2013_001; voldsund_2019_001; rootzen_2017_001; d
+reactor_haber-bosch-loop,chemicals,,opex-variable,,2025_CAD/t,0.208513,0.104256,66.6911,2,sourced,pooled,,639.7,,,philibert_2017_001; dea_2026_003
+separator_biogas-upgrading,biofuels,,emissions-process,ch4,t/GJ,7.34998e-05,5.853e-06,0.00365662,6,sourced,pooled,,624.7,,,dea_2026_003; etsap_2013_012
+separator_biogas-upgrading,biofuels,,emissions-process,co2e,t/GJ,0.00205799,0.000163884,0.102385,0,identity,co2e-from-species,,624.7,,,dea_2026_003; etsap_2013_012
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,capacity,,kt/yr,447.145,17.52,8743.32,22,sourced,pooled,,499.0,,,dea_2024_002; ieaghg_2007_001; ieaghg_2016_001; ieaghg_2017_001; irlam_2017_001; hughes_2023_001; on
+steam-turbine_back-pressure,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,77.3988,3.75237,1642.24,42,sourced,pooled,,437.7,,,bataille_2017_001; dea_2026_006; van-geene_2024_001; boulamanti_2017_001; doe_2006_001; doe_2012_002
+management-system_leak-detection,oil-and-gas,fugitive-emissions,capex,,2025_CAD/t-per-yr,309.913,3.95416,1667.94,39,sourced,pooled,,421.8,,,epa_2021_001; epa_2022_002; epa_1999_001; epa_2006_001; epa_2011_001
+solar-concentrator_point-focus,heat-supply,heat-high-temp,capacity,,MW,21.5,1,392,10,sourced,pooled,,392.0,,,saw_2023_001; nrel_2016_001
+combustion-turbine_drive,machine-drive,pumps; fans-and-blowers; compressed-air; compressor-drive-tu,emissions-combustion,ch4,t/GJ,0.00369,1.1111e-05,0.0037,3,sourced,pooled,,333.0,,,clearstone_2004_001; clearstone_2019_001; joshi_2022_001
+steam-cracker_fired-tubular,chemicals,olefins,emissions-total,co2,t/t,0.714896,0.00354379,1.0989,13,sourced,pooled,,310.1,,,van-geene_2024_001; boulamanti_2017_001; purola_2021_001; tijani_2022_001
+boiler_fuel-fired,heat-supply,heat-low-temp,emissions-combustion,co2e,t/GJ,0.0624273,0.000345819,0.104061,0,identity,co2e-from-species,,300.9,,,doe_2024_002; ieaghg_2007_001; johansson_2012_001; zuhlsdorf_2019_001; zuberi_2022_001; etsap_2010_0
+compressor_low-emission-seal,oil-and-gas,fugitive-emissions,capacity,,kt/yr,0.542204,0.0072615,2.16882,5,sourced,pooled,,298.7,,,iea_2026_005; epa_2006_001; epa_2011_001
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,capex,,2025_CAD/GJ-per-yr,56.5767,11.9707,3396.11,96,sourced,pooled,,283.7,,,armijo-philibert_2020_001; iea_2018_001; iea_2019_002; moore_2017_001; philibert_2017_001; van-geene
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,capex,,2025_CAD/t-per-yr,72.9327,7.72178,1913.59,41,sourced,pooled,,247.8,,,van-geene_2024_001; daniels_2002_001; dea_2024_002; ieaghg_2007_001; ieaghg_2016_001; ieaghg_2017_00
+separator_reduced-emission-completion,oil-and-gas,drilling-and-well-services,capacity,,kt/yr,0.016579,0.016579,4.10114,2,sourced,pooled,,247.4,,,iea_2026_005; epa_2006_001
+flare_enclosed-combustor,oil-and-gas,venting,opex-fixed,,2025_CAD/t-per-yr,1090.71,44.9564,11098.2,14,sourced,pooled,,246.9,,,epa_2021_001; epa_2022_002; epa_2023_002; epa_2011_001
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,opex-fixed,,2025_CAD/GJ-per-yr,3.07087,0.558056,132.448,25,sourced,pooled,,237.3,,,armijo-philibert_2020_001; moore_2017_001; van-geene_2024_001; dea_2026_003; nrel_2009_001; nrel_201
+heat-pump_industrial,heat-supply,heat-low-temp,annual-output,,GJ,54720,250.2,58680,3,sourced,pooled,,234.5,,,ager_2023_001
+combustion-turbine_chp,heat-supply,heat-low-temp,annual-output,,GJ,283824,2838,648226,3,sourced,pooled,,228.4,,,epa_2007_001; epa_2013_001
+capture-unit_dac-solid-sorbent,co2-capture,direct-air-capture,annual-output,,t,324000,3942,900000,0,identity,capacity-output,,228.3,,,fasihi_2019_001; dea_2024_002; larsen_2019_001
+capture-unit_dac-solid-sorbent,co2-capture,direct-air-capture,capacity,,kt/yr,360,4.38,1000,3,sourced,pooled,,228.3,,,fasihi_2019_001; dea_2024_002; larsen_2019_001
+compressor_low-emission-seal,oil-and-gas,fugitive-emissions,capex,,2025_CAD/t-per-yr,558.722,81.7625,18392.9,13,sourced,pooled,,225.0,,,epa_2021_001; epa_2022_002; epa_2006_001; epa_2011_001
+reactor_polymerization-extrusion,chemicals,polymers,specific-energy-consumption,steam,GJ/t,1.54,0.1,21.6,19,sourced,pooled,,216.0,,,gielen_1996_001; joosten_1998_001; saygin_2011_001; jrc_2007_003; mccann_2000_001
+lighting_led-high-bay,lighting,lighting,opex-fixed,,2025_CAD/Mlm-h-per-yr,0.130755,0.00157445,0.338219,4,sourced,pooled,,214.8,,,eia_2013_002; eia_2023_002
+gasifier_biomass-chp,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,39.0219,0.530211,108.045,3,sourced,pooled,,203.8,,,ukerc_2013_001; dea_2026_006; epa_2007_001
+gasifier_black-liquor,pulp-and-paper,chemical-recovery,heat-to-power-ratio,,dimensionless,2.246,1.755,357.5,6,sourced,pooled,,203.7,,,larson_2006_001
+boiler_fuel-fired,heat-supply,heat-low-temp,construction-time,,years,0.5,0.02,4,3,sourced,pooled,,200.0,,,dea_2026_006; dea_2026_001; etsap_2010_001
+lighting_led,lighting,lighting,opex-fixed,,2025_CAD/Mlm-h-per-yr,0.471589,0.0031489,0.599729,4,sourced,pooled,,190.5,,,eia_2013_002; eia_2023_002
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,annual-output,,GJ,482086,14462.6,2.55647e+06,27,sourced,pooled,,176.8,,,lazard_2021_001; lazard_2023_001; lazard_2024_001; kuparinen_2017_001
+combustion-turbine_drive,machine-drive,pumps; fans-and-blowers; compressed-air; compressor-drive-tu,capacity,,MW,14.54,0.5078,86.23,12,sourced,pooled,,169.8,,,gpsa_2004_001
+geothermal-well_direct-use,heat-supply,heat-low-temp,annual-output,,GJ,581839,17344.8,2.83824e+06,0,identity,capacity-output,,163.6,,,dea_2026_006; nrel_2016_001; etsap_2010_006; iea_2024_002
+direct-heater_fuel-fired,heat-supply,heat-low-temp; heat-medium-temp; pyrometallurgy,opex-fixed,,2025_CAD/GJ-per-yr,0.363167,0.01066,1.51842,6,sourced,pooled,,142.4,,,van-geene_2024_001; dea_2026_001; element-energy_2018_001
+steam-cracker_fired-tubular,chemicals,olefins,opex-fixed,,2025_CAD/t-per-yr,28.461,1.30069,184.753,18,sourced,pooled,,142.0,,,iea_2018_001; van-geene_2024_001; gielen_1996_001; joosten_1998_001; layritz_2021_001
+thermal-storage_electric,heat-supply,heat-medium-temp; heat-high-temp,cost-levelized,,2025_CAD/GJ,20.3727,0.40909,55.0058,16,sourced,pooled,,134.5,,,ldes-council_2022_001; rissman_2023_001; doe_2023_001; doe_2025_001; spees_2023_001; rtc_2023_001
+flare_enclosed-combustor,oil-and-gas,venting,capex,,2025_CAD/t-per-yr,2651.98,194.876,25904.8,12,sourced,pooled,,132.9,,,epa_2021_001; epa_2022_002; epa_2023_002; epa_2011_001
+digester_bayer,non-ferrous-metals,alumina-refining,specific-energy-consumption,oil,GJ/t,0.00463144,0.00463144,0.605771,2,sourced,pooled,,130.8,,,iai_2026_001
+electrolyzer_solid-oxide,hydrogen,centralized-hydrogen-production,annual-output,,GJ,218932,18585.5,2.25122e+06,0,identity,capacity-output,,121.1,,,dea_2026_003; agora_2021_001; nrel_2018_003; nrel_2026_001
+furnace_regenerative,non-metallic-minerals,glass-melting,capacity,,kt/yr,107.493,3.65,438,23,sourced,pooled,,120.0,,,scalet_2013_001; worrell_2008_001; zier_2021_001
+reactor_haber-bosch-electrolytic,chemicals,ammonia,abatement-cost,,2025_CAD/t-CO2-eq,208.637,3.46697,415.342,3,sourced,pooled,,119.8,,,ipcc_2022_001; material-economics_2019_001
+separator_thickening-filtration,mining,water-and-tailings-management,specific-energy-consumption,,GJ/t,0.0063144,0.000882,0.102816,4,sourced,pooled,,116.6,,,nrcan_2005_001; nrcan_2005_002
+separator_thickening-filtration,mining,water-and-tailings-management,specific-energy-consumption,electricity,GJ/t,0.0063144,0.000882,0.102816,0,identity,single-carrier-split,,116.6,,,nrcan_2005_001; nrcan_2005_002
+electrolyzer_solid-oxide,hydrogen,centralized-hydrogen-production,capacity,,MW,7.93176,0.714874,79.3176,3,sourced,pooled,,111.0,,,dea_2026_003; agora_2021_001
+anaerobic-digester,biofuels,,capacity,,MW,65.7791,0.598063,65.7791,3,sourced,pooled,,110.0,,,dea_2026_003; etsap_2013_012
+separator_biogas-upgrading,biofuels,,capacity,,MW,65.1191,0.598063,65.1191,4,sourced,pooled,,108.9,,,dea_2026_003; etsap_2013_012
+mine_open-pit-coal,mining,extraction-and-haulage,capacity,,kt/yr,7957,657,71540,1,sourced,pooled,,108.9,,,etsap_2014_002
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,specific-energy-consumption,,GJ/t,6.62744,0.061965,6.62744,2,sourced,pooled,,107.0,,,joosten_1998_001; riedewald_2021_001
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,specific-energy-consumption,electricity,GJ/t,2.3,0.0215045,2.3,2,sourced,pooled,,107.0,,,joosten_1998_001; riedewald_2021_001
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,specific-energy-consumption,fuel,GJ/t,4.32744,0.0404605,4.32744,1,sourced,pooled,,107.0,,,joosten_1998_001
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,specific-energy-consumption,natural-gas,GJ/t,4.32744,0.0404605,4.32744,2,sourced,pooled,,107.0,,,joosten_1998_001; riedewald_2021_001
+thermal-storage_electric,heat-supply,heat-medium-temp; heat-high-temp,pressure-output,,bar,25,1,104,4,sourced,pooled,,104.0,,,ldes-council_2022_001
+reactor_polymerization-extrusion,chemicals,polymers,specific-energy-consumption,,GJ/t,2.89,0.281446,28.2097,78,sourced,pooled,,100.2,,,van-geene_2024_001; gielen_1996_001; joosten_1998_001; jrc_2007_003; mccann_2000_001; neelis_2008_00
+reactor_polymerization-extrusion,chemicals,polymers,specific-energy-consumption,electricity,GJ/t,1.55,0.150949,15.1298,21,sourced,pooled,,100.2,,,boulamanti_2017_001; gielen_1996_001; joosten_1998_001; jrc_2007_003; mccann_2000_001; negri_2021_00
+reactor_polymerization-extrusion,chemicals,polymers,specific-energy-consumption,heat,GJ/t,1.34,0.130497,13.0799,7,sourced,pooled,,100.2,,,boulamanti_2017_001; jrc_2007_003; negri_2021_001
+direct-heater_electric,heat-supply,heat-medium-temp,capacity,,MW,6.3,0.9,90,10,sourced,pooled,,100.0,,,dea_2026_001; element-energy_2018_001; rehfeldt_2024_001; madeddu_2020_001
+thermal-storage_electric,heat-supply,heat-medium-temp; heat-high-temp,capacity,,MW,3.22595,1,100,7,sourced,pooled,,100.0,,,dea_2026_004; iea_2025_003; doe_2023_001; spees_2023_001
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,capacity,,kt/yr,24.38,0.876,87.6,4,sourced,pooled,,100.0,,,negri_2021_001; riedewald_2021_001
+geothermal-well_direct-use,heat-supply,heat-low-temp,capacity,,MW,20.5,1,100,7,sourced,pooled,,100.0,,,dea_2026_006; nrel_2016_001; etsap_2010_006
+direct-heater_fuel-fired,heat-supply,heat-low-temp; heat-medium-temp; pyrometallurgy,capacity,,MW,2.5,0.2931,28.2289,4,sourced,pooled,,96.3,,,dea_2026_001; element-energy_2018_001; element-energy_2021_001; gpsa_2004_001
+anaerobic-digester,biofuels,,annual-output,,GJ,934563,20204,1.87005e+06,3,sourced,pooled,,92.6,,,dea_2026_003; etsap_2013_012
+smelting-vessel_smelting-reduction,iron-and-steel,ironmaking,opex-variable,,2025_CAD/t,4.32371,4.32371,398.438,7,sourced,pooled,,92.2,,,de-beer_1998_001; etsap_2010_002
+melting-furnace_reverberatory-rotary,non-ferrous-metals,melting-casting-and-fabrication,capex,,2025_CAD/t-per-yr,1466.63,29.9281,2756.47,3,sourced,pooled,,92.1,,,van-geene_2024_001; cusano_2017_001; gielen_1997_003
+distillation-column,chemicals,chemical-distillation,specific-energy-consumption,,GJ/t,3.9007,0.210824,18.301,5,sourced,pooled,,86.8,,,van-geene_2024_001; doe_2015_004
+direct-heater_fuel-fired,heat-supply,heat-low-temp; heat-medium-temp; pyrometallurgy,capex,,2025_CAD/GJ-per-yr,10.8638,0.880823,75.9212,19,sourced,pooled,,86.2,,,bataille_2017_001; van-geene_2024_001; dea_2026_001; element-energy_2018_001; concawe_2019_001
+reactor_delayed-coking,petroleum-refining,bitumen-upgrading; conversion-and-treating,specific-energy-consumption,,GJ/m3,0.911506,0.0487727,3.94059,11,sourced,pooled,,80.8,,,abella_2022_001; barthe_2015_001; doe_1998_001; ieaghg_2017_002; meyers_1997_001; jones_2006_001; wo
+reactor_delayed-coking,petroleum-refining,bitumen-upgrading; conversion-and-treating,specific-energy-consumption,electricity,GJ/m3,0.140389,0.00751191,0.606925,10,sourced,pooled,,80.8,,,abella_2022_001; barthe_2015_001; doe_1998_001; ieaghg_2017_002; meyers_1997_001; jones_2006_001; wo
+process-improvement_automatic-shutoff,oil-and-gas,fugitive-emissions; venting,capex,,2025_CAD/t-per-yr,409.903,50.4806,4034.98,3,sourced,pooled,,79.9,,,epa_2011_001
+reactor_catalytic-n2o,chemicals,n2o-abatement,emissions-process,co2e,t/t,0.5035,0.019875,1.537,0,identity,co2e-from-species,,77.3,,,boulamanti_2017_001; jrc_2007_002; epa_2010_001; perez-ramirez_2003_001
+reactor_catalytic-n2o,chemicals,n2o-abatement,emissions-process,n2o,t/t,0.0019,7.5e-05,0.0058,11,sourced,pooled,,77.3,,,boulamanti_2017_001; jrc_2007_002; epa_2010_001; perez-ramirez_2003_001
+fuel-cell_chp,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,5.69978,0.408923,30.9825,7,sourced,pooled,,75.8,,,aea_2010_001; ukerc_2013_001; dea_2026_006; ieaghg_2007_001; epa_2007_001; bc-hydro_2004_001; etsap_
+gasifier_coal-petroleum-coke,petroleum-refining,refinery-hydrogen; upgrader-hydrogen,annual-output,,GJ,2.73235e+07,755762,5.69394e+07,0,identity,capacity-output,,75.3,,,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003
+reactor_co2-to-methanol,chemicals,methanol,annual-output,,t,99763.5,1360,99763.5,0,identity,capacity-output,,73.4,,,dea_2026_003; etsap_2013_007; schemme_2020_001
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,annual-output,,t,482489,103275,7.43182e+06,6,sourced,pooled,,72.0,,,hughes_2023_001
+gas-treatment-unit_thermal-oxidiser,chemicals,,capex,,2025_CAD/m3-per-yr,0.0378955,0.00230405,0.160468,7,sourced,pooled,,69.6,,,brinkmann_2016_001
+reactor_co2-to-methanol,chemicals,methanol,capacity,,kt/yr,109.27,1.6,109.27,2,sourced,pooled,,68.3,,,dea_2026_003; etsap_2013_007
+gasifier_coal-petroleum-coke,petroleum-refining,refinery-hydrogen; upgrader-hydrogen,capacity,,MW,1083.03,29.9563,2006.15,5,sourced,pooled,,67.0,,,netl_2022_002; worrell_2015_001; etsap_2010_011; etsap_2014_003
+reactor_co2-to-methanol,chemicals,methanol,capex,,2025_CAD/t-per-yr,1376.42,282.019,18068.3,4,sourced,pooled,,64.1,,,van-geene_2024_001; dea_2026_003; schemme_2020_001; etsap_2013_007
+process-improvement_low-emission-components,oil-and-gas,fugitive-emissions,emissions-reduction-potential,,%,89,1.4,89,3,sourced,pooled,,63.6,,,epa_1999_001; epa_2006_001
+rolling-mill_cold,iron-and-steel,rolling,specific-energy-consumption,,GJ/t,1.65,0.068419,4.05,11,sourced,pooled,,59.2,,,worrell_1999_001; daniels_2002_001; jrc_2022_001; pardo_2013_001; hasanbeigi_2013_001; doe_2015_001
+rolling-mill_cold,iron-and-steel,rolling,specific-energy-consumption,electricity,GJ/t,0.426709,0.0176939,1.04738,3,sourced,pooled,,59.2,,,worrell_1999_001; daniels_2002_001
+rolling-mill_cold,iron-and-steel,rolling,specific-energy-consumption,fuel,GJ/t,1.22329,0.0507251,3.00262,3,sourced,pooled,,59.2,,,worrell_1999_001; daniels_2002_001; doe_2000_001
+boiler_solid-fuel,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,33.4511,13.0518,754.385,23,sourced,pooled,,57.8,,,saygin_2012_001; ukerc_2013_001; bataille_2017_001; dea_2026_006; van-geene_2024_001; dea_2026_001; 
+electrolysis-cell_chlor-alkali-membrane,chemicals,electrochemical-products,capex,,2025_CAD/t-per-yr,2130.14,43.5497,2380.79,6,sourced,pooled,,54.7,,,boulamanti_2017_001; lindley_1997_001; brinkmann_2014_001; gielen_1997_001
+well_co2-storage,co2-capture,co2-transport-and-storage,opex-variable,,2025_CAD/t,5.33993,0.35518,18.9556,11,sourced,pooled,,53.4,,,dea_2024_002; sanchez_2018_001
+heat-pump_industrial,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,0.34443,0.101695,5.41451,19,sourced,pooled,,53.2,,,dea_2026_006; van-geene_2024_001; dea_2026_001; element-energy_2018_001; iea_2025_003; mpp_2023_001;
+gasifier_biomass-chp,heat-supply,heat-low-temp,annual-output,,GJ,2980.15,2554.42,127153,0,identity,capacity-output,,49.8,,,dea_2026_006; lecomte_2017_001; epa_2007_001
+gasifier_biomass-chp,heat-supply,heat-low-temp,capacity,,MW,0.105,0.09,4.48,2,sourced,pooled,,49.8,,,dea_2026_006; lecomte_2017_001
+boiler_fuel-fired,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,7.12473,1.09039,53.9045,27,sourced,pooled,,49.4,,,bataille_2017_001; dea_2026_006; van-geene_2024_001; dea_2026_001; element-energy_2018_001; ieaghg_2
+boiler_fuel-fired,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,0.184628,0.0253071,1.22515,19,sourced,pooled,,48.4,,,dea_2026_006; van-geene_2024_001; dea_2026_001; element-energy_2018_001; ieaghg_2007_001; ieaghg_201
+reciprocating-engine_chp,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,1.68743,0.385123,18.5965,9,sourced,pooled,,48.3,,,dea_2026_006; boulamanti_2017_001; epa_2007_001; etsap_2012_002; martin_2000_001; kermeli_2011_001; 
+coke-oven_by-product,iron-and-steel,cokemaking,opex-fixed,,2025_CAD/t-per-yr,44.6927,1.12131,52.5071,3,sourced,pooled,,46.8,,,van-geene_2024_001; ieaghg_2013_003
+reactor_hydroprocessing,petroleum-refining,bitumen-upgrading; conversion-and-treating,specific-energy-consumption,,GJ/m3,1.01883,0.0928236,4.32004,50,sourced,pooled,,46.5,,,van-geene_2024_001; abella_2022_001; barthe_2015_001; doe_1998_001; gary_2007_001; ieaghg_2017_002; 
+reactor_hydroprocessing,petroleum-refining,bitumen-upgrading; conversion-and-treating,specific-energy-consumption,electricity,GJ/m3,0.138778,0.0126438,0.588448,42,sourced,pooled,,46.5,,,abella_2022_001; barthe_2015_001; doe_1998_001; gary_2007_001; ieaghg_2017_002; meyers_1997_001; wor
+reactor_hydroprocessing,petroleum-refining,bitumen-upgrading; conversion-and-treating,specific-energy-consumption,fuel,GJ/m3,0.880052,0.0801798,3.73159,42,sourced,pooled,,46.5,,,abella_2022_001; barthe_2015_001; doe_1998_001; gary_2007_001; ieaghg_2017_002; meyers_1997_001; wor
+reactor_haber-bosch-loop,chemicals,,capex,,2025_CAD/t-per-yr,1377.08,54.0702,2487.4,3,sourced,pooled,,46.0,,,philibert_2017_001; van-geene_2024_001; dea_2026_003
+heat-pump_industrial,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,44.4956,10.5472,481.891,56,sourced,pooled,,45.7,,,dea_2026_006; van-geene_2024_001; dea_2026_001; element-energy_2018_001; iea-hpt_2023_001; iea_2024_
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,opex-fixed,,2025_CAD/t-per-yr,4.77365,0.231464,10.4349,5,sourced,pooled,,45.1,,,van-geene_2024_001; irlam_2017_001
+melting-furnace_reverberatory-rotary,non-ferrous-metals,melting-casting-and-fabrication,capacity,,kt/yr,143.226,11.9136,508.08,6,sourced,pooled,,42.6,,,aries_2024_001; schlesinger_2011_001; kermeli_2016_001
+furnace_oxy-fuel,non-metallic-minerals,glass-melting,capacity,,kt/yr,31.9375,3.65,155.125,8,sourced,pooled,,42.5,,,scalet_2013_001
+kiln_lime-rotary,pulp-and-paper,lime-kiln,capacity,,kt/yr,295.725,10.95,448.95,5,sourced,pooled,,41.0,,,schorcht_2013_001; kuparinen_2019_001; svensson_2021_001
+combustion-turbine_chp,heat-supply,heat-low-temp,opex-variable,,2025_CAD/GJ,2.99249,1.03292,42.2008,17,sourced,pooled,,40.9,,,dea_2026_006; element-energy_2021_001; epa_2017_001; jrc_2014_001; weidmann_2013_001; epa_2013_001; 
+steam-turbine_back-pressure,heat-supply,heat-low-temp,pressure-output,,bar,40.6,2.2,89.63,5,sourced,pooled,,40.7,,,ct_2011_001; epa_2017_001; neuwahl_2019_001; sharp_2014_001
+heat-pump_industrial,heat-supply,heat-low-temp,construction-time,,years,0.6,0.05,2,7,sourced,pooled,,40.0,,,dea_2026_006; dea_2026_001
+kiln_dry-precalciner,cement,clinker-production,emissions-reduction-potential,,%,40,1,40,5,sourced,pooled,,40.0,,,ipcc_2022_001; schorcht_2013_001; doe_2023_002
+motor_induction-standard,machine-drive,pumps; fans-and-blowers; compressed-air; materials-handling;,annual-output,,GJ,293.316,47.6019,1835.86,0,identity,capacity-output,,38.6,,,gpsa_2004_001; rao_2021_001
+furnace_oxy-fuel,non-metallic-minerals,glass-melting,emissions-total,co2,t/t,0.2,0.03,1.15,11,sourced,pooled,,38.3,,,van-geene_2024_001; scalet_2013_001
+separator_membrane-bioreactor,pulp-and-paper,effluent-treatment,capacity,,m3/yr,1.387e+06,438000,1.6571e+07,3,sourced,pooled,,37.8,,,brinkmann_2016_001
+gasifier_biomass-methanation,biofuels,renewable-natural-gas,capacity,,MW,749.535,19.884,749.535,2,sourced,pooled,,37.7,,,van-der-meijden_2011_001; dea_2026_003
+capture-unit_amine,co2-capture,co2-capture-diffuse,capacity,,kt/yr,1264.53,163.161,6131.27,28,sourced,pooled,,37.6,,,dea_2024_002; element-energy_2021_001; iea_2009_001; ieaghg_2007_001; ieaghg_2013_003; ieaghg_2016_0
+well_co2-storage,co2-capture,co2-transport-and-storage,cost-levelized,,2025_CAD/t,14.8629,1.63584,60.3288,11,sourced,pooled,,36.9,,,agora_2021_001; kearns_2021_001; etsap_2010_007
+steam-turbine_back-pressure,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,3.51952,0.683319,24.4798,22,sourced,pooled,,35.8,,,dea_2026_006; van-geene_2024_001; neill-gunter_1999_001; epa_2007_001; etsap_2012_002; etsap_2010_00
+thermal-storage_electric,heat-supply,heat-medium-temp; heat-high-temp,capex,,2025_CAD/GJ-per-yr,3.47973,0.653796,23.2453,8,sourced,pooled,,35.6,,,dea_2026_004; caelp_2024_001; rissman_2023_001; doe_2025_001
+evaporator_food,food-and-beverage,,specific-energy-consumption,,GJ/t,0.547,0.1256,4.418,20,sourced,pooled,,35.2,,,van-geene_2024_001; galitsky_2003_002; doe_2017_003
+evaporator_food,food-and-beverage,,specific-energy-consumption,electricity,GJ/t,0.0143421,0.00329318,0.115838,1,sourced,pooled,,35.2,,,galitsky_2003_002
+evaporator_food,food-and-beverage,,specific-energy-consumption,steam,GJ/t,0.532658,0.122307,4.30216,4,sourced,pooled,,35.2,,,giner-santonja_2019_001; galitsky_2003_002
+melting-furnace_cupola,other-industry,metal-melting-and-heat-treatment; foundry-melting,capacity,,kt/yr,87.6,17.52,613.2,6,sourced,pooled,,35.0,,,aries_2024_001
+boiler_solid-fuel,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,1.97685,0.226156,7.61709,19,sourced,pooled,,33.7,,,dea_2026_006; van-geene_2024_001; dea_2026_001; dea_2026_007; element-energy_2018_001; ieaghg_2007_0
+reactor_small-nuclear,heat-supply,heat-high-temp; heat-low-temp,capacity,,MW,330,30,1000,21,sourced,pooled,,33.3,,,nrel_2016_001
+anaerobic-digester_chp,heat-supply,heat-low-temp,capacity,,MW,0.524,0.3144,10.48,3,sourced,pooled,,33.3,,,etsap_2010_005; etsap_2013_012
+combined-cycle,power-generation,on-site-power-generation,annual-output,,GJ,1.29298e+07,473040,1.56103e+07,0,identity,capacity-output,,33.0,,,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001; weidmann_2013_00
+anaerobic-digester_chp,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,18.5898,0.82248,26.8319,3,sourced,pooled,,32.6,,,van-geene_2024_001; etsap_2010_005
+combined-cycle,power-generation,on-site-power-generation,opex-variable,,2025_CAD/GJ,0.89386,0.373986,11.7318,14,sourced,pooled,,31.4,,,eia_2024_001; nrel_2025_001; lazard_2023_001; lazard_2024_001; weidmann_2013_001; eia_1996_001
+reactor_ethylene-oxidation,chemicals,chemical-derivatives,capacity,,kt/yr,20,20,600,2,sourced,pooled,,30.0,,,boulamanti_2017_001
+heat-exchanger_steam-heated,food-and-beverage,thermal-processing,specific-energy-consumption,,GJ/t,0.309358,0.027961,0.835034,13,sourced,pooled,,29.9,,,ct_2010_003; ukerc_2013_001; doe_2017_003
+heat-exchanger_steam-heated,food-and-beverage,thermal-processing,specific-energy-consumption,steam,GJ/t,0.309358,0.027961,0.835034,2,sourced,pooled,,29.9,,,giner-santonja_2019_001
+reactor_hydroprocessing,petroleum-refining,bitumen-upgrading; conversion-and-treating,capex,,2025_CAD/m3-per-yr,124.997,22.3975,666.649,24,sourced,pooled,,29.8,,,barthe_2015_001; gary_2007_001; meyers_1997_001; kaiser_2017_001
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,annual-output,,GJ,9.27832e+06,804886,2.37477e+07,0,identity,capacity-output,,29.5,,,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003; nrel_2009_001; nr
+capture-unit_amine,co2-capture,co2-capture-diffuse,opex-variable,,2025_CAD/t,18.3265,4.74311,135.969,25,sourced,pooled,,28.7,,,dea_2024_002; johansson_2012_001; concawe_2019_001; emanuelsson_2022_001; hughes_2023_001; doe_2023_
+steam-cracker_fired-tubular,chemicals,olefins,capex,,2025_CAD/t-per-yr,1052.9,130.069,3695.05,26,sourced,pooled,,28.4,,,bataille_2017_001; iea_2018_001; van-geene_2024_001; boulamanti_2017_001; gielen_1996_001; joosten_1
+dryer_direct-fired,other-industry,drying; paper-drying,specific-energy-consumption,,GJ/t,6.69643,0.26749,7.60853,8,sourced,pooled,,28.4,,,van-geene_2024_001; jacobs_2006_001; doe_2017_003
+distillation-column_heat-integrated,chemicals,chemical-distillation,specific-energy-consumption,,GJ/t,4.46824,0.435449,12.2999,4,sourced,pooled,,28.2,,,premkumar-rangaiah_2009_001; ukerc_2013_001; doe_2015_004
+steam-reformer_ammonia,chemicals,ammonia,capex,,2025_CAD/t-per-yr,831.968,122.658,3274.38,6,sourced,pooled,,26.7,,,bataille_2017_001; iea_2018_001; boulamanti_2017_001; gielen_1997_001; worrell_2000_001; iea_2021_00
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,capacity,,MW,326.904,29.9563,792.668,6,sourced,pooled,,26.5,,,boulamanti_2017_001; doe_2024_001; ieaghg_2017_001; netl_2022_002; etsap_2014_003
+reactor_ammonium-nitrate,chemicals,fertilizers,specific-energy-consumption,,GJ/t,0.264947,0.04145,1.07461,7,sourced,pooled,,25.9,,,doe_2000_002; jrc_2007_002
+reactor_ammonium-nitrate,chemicals,fertilizers,specific-energy-consumption,electricity,GJ/t,0.00518079,0.000810516,0.021013,11,sourced,pooled,,25.9,,,doe_2000_002; jrc_2007_002; efma_2000_001
+reactor_ammonium-nitrate,chemicals,fertilizers,specific-energy-consumption,steam,GJ/t,0.259766,0.0406395,1.0536,8,sourced,pooled,,25.9,,,jrc_2007_002; efma_2000_001
+evaporator_food,food-and-beverage,,capex,,2025_CAD/t-per-yr,19.0014,3.94627,100.554,9,sourced,pooled,,25.5,,,van-geene_2024_001
+kiln_dry-precalciner,cement,clinker-production,capex,,2025_CAD/t-per-yr,495.312,40.4129,1025.81,18,sourced,pooled,,25.4,,,ecra_2009_001; ukerc_2013_001; bataille_2017_001; csi-ecra_2017_001; gardarsdottir_2019_001; ieaghg_
+blast-furnace_top-gas-recycling,iron-and-steel,ironmaking,emissions-combustion,co2,t/t,0.0434,0.0434,1.1,2,sourced,pooled,,25.3,,,ieaghg_2013_003; etsap_2010_002
+boiler_recovery,pulp-and-paper,chemical-recovery,specific-energy-consumption,,GJ/t,16.7947,0.817333,20.698,4,sourced,pooled,,25.3,,,ieaghg_2016_001; nrcan_2008_001; suhr_2015_001; martin_2000_001
+boiler_recovery,pulp-and-paper,chemical-recovery,specific-energy-consumption,black-liquor,GJ/t,16.6229,0.808975,20.4863,2,sourced,pooled,,25.3,,,ieaghg_2016_001; nrcan_2008_001
+boiler_recovery,pulp-and-paper,chemical-recovery,specific-energy-consumption,electricity,GJ/t,0.171751,0.00835847,0.211668,5,sourced,pooled,,25.3,,,ieaghg_2016_001; nrcan_2008_001; suhr_2015_001; martin_2000_001
+boiler_recovery,pulp-and-paper,chemical-recovery,specific-energy-consumption,fuel,GJ/t,16.6229,0.808975,20.4863,1,sourced,pooled,,25.3,,,martin_2000_001
+pipeline_hydrogen,hydrogen,hydrogen-distribution,cost-levelized,,2025_CAD/GJ,1.01351,1.01351,25.4911,2,sourced,pooled,,25.2,,,doe_2024_001; etsap_2014_003
+grinding-mill_vertical-roller,cement,cement-grinding-and-blending,capex,,2025_CAD/t-per-yr,33.5499,4.75481,119.337,7,sourced,pooled,,25.1,,,van-geene_2024_001; ietd_2013_001; martin_1999_001; nedo_2008_001; worrell_2013_001
+thermal-storage_electric,heat-supply,heat-medium-temp; heat-high-temp,temperature-output,,degC,390,80,2000,15,sourced,pooled,,25.0,,,dea_2026_004; ldes-council_2022_001; rissman_2023_001; spees_2023_001
+management-system_leak-detection,oil-and-gas,fugitive-emissions,lifetime,,years,5,1,25,9,sourced,pooled,,25.0,,,epa_2019_001; iea_2026_005; nccp_1999_005; epa_2006_001
+gasifier_coal-ammonia,chemicals,ammonia,specific-energy-consumption,,GJ/t,6.9086,0.6772,16.4662,3,sourced,pooled,,24.3,,,iea_2013_001; iea_2021_001
+gasifier_coal-ammonia,chemicals,ammonia,specific-energy-consumption,electricity,GJ/t,6.9086,0.6772,16.4662,1,sourced,pooled,,24.3,,,boulamanti_2017_001
+heat-pump_very-high-temperature,heat-supply,heat-medium-temp,capex,,2025_CAD/GJ-per-yr,61.314,5.2736,126.69,31,sourced,pooled,,24.0,,,van-geene_2024_001; iea-hpt_2023_001; zuhlsdorf_2019_001; ager_2023_001; ciambellotti_2024_001
+fuel-cell_chp,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,278.196,41.3193,985.873,14,sourced,pooled,,23.9,,,aea_2010_001; ukerc_2013_001; bataille_2017_001; dea_2026_006; epa_2017_001; ieaghg_2007_001; epa_20
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,specific-energy-consumption,,GJ/GJ,0.306464,0.0350043,0.830073,20,sourced,pooled,,23.7,,,van-geene_2024_001; abella_2022_001; boulamanti_2017_001; gary_2007_001; netl_2022_002; nrel_2009_00
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,specific-energy-consumption,electricity,GJ/GJ,0.0152338,0.00174,0.0412615,17,sourced,pooled,,23.7,,,abella_2022_001; barthe_2015_001; boulamanti_2017_001; gary_2007_001; netl_2022_002; nrel_2009_001; 
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,specific-energy-consumption,fuel,GJ/GJ,0.29123,0.0332643,0.788811,3,sourced,pooled,,23.7,,,barthe_2015_001; gary_2007_001; meyers_1997_001
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,specific-energy-consumption,natural-gas,GJ/GJ,0.29123,0.0332643,0.788811,18,sourced,pooled,,23.7,,,abella_2022_001; ieaghg_2017_001; meyers_1997_001; netl_2022_002; nrel_2009_001; nrel_2013_001; nrel
+capture-unit_chemical-solvent,co2-capture,co2-capture-concentrated,capex,,2025_CAD/t-per-yr,337.997,32.7221,749.878,13,sourced,pooled,,22.9,,,van-geene_2024_001; collodi_2010_001; element-energy_2021_001; ieaghg_2013_003; ieaghg_2017_001; net
+evaporator_food,food-and-beverage,,opex-fixed,,2025_CAD/t-per-yr,0.373831,0.0869791,1.91884,9,sourced,pooled,,22.1,,,van-geene_2024_001
+boiler_electric,heat-supply,heat-low-temp,opex-variable,,2025_CAD/GJ,0.252058,0.0628865,1.3632,16,sourced,pooled,,21.7,,,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; caelp_20
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-processing,annual-output,,m3,9.501e+07,3.124e+07,6.638e+08,1,sourced,pooled,,21.2,,,petrinex_2026_001
+debarker_drum,pulp-and-paper,wood-preparation,capex,,2025_CAD/t-per-yr,691.084,32.9539,691.084,2,sourced,pooled,,21.0,,,bataille_2017_001; ietd_2013_001
+boiler_fuel-fired,heat-supply,heat-low-temp,opex-variable,,2025_CAD/GJ,0.549826,0.13049,2.7264,12,sourced,pooled,,20.9,,,dea_2026_006; dea_2026_001; element-energy_2018_001; element-energy_2021_001; iea_2025_003; caelp_20
+motor_induction-standard,machine-drive,pumps; fans-and-blowers; compressed-air; materials-handling;,capacity,,MW,0.03729,0.007457,0.1491,5,sourced,pooled,,20.0,,,gpsa_2004_001; rao_2021_001
+motor_premium-efficiency,machine-drive,pumps; fans-and-blowers; compressed-air; materials-handling;,capacity,,MW,0.05593,0.007457,0.1491,4,sourced,pooled,,20.0,,,gpsa_2004_001
+liquefaction-train_hydrogen,hydrogen,hydrogen-distribution,capacity,,MW,82.0544,16.4109,328.218,4,sourced,pooled,,20.0,,,anl_2025_001
+compressor_blowdown-recovery,oil-and-gas,venting,lifetime,,years,10,1,20,7,sourced,pooled,,20.0,,,dunsky_2023_001; epa_2019_001; iea_2026_005; epa_2006_001
+process-improvement_low-emission-components,oil-and-gas,fugitive-emissions,capex,,2025_CAD/t-per-yr,222.165,75.5721,1463.94,5,sourced,pooled,,19.4,,,epa_2006_001; epa_2011_001
+pneumatic-device_gas-driven,oil-and-gas,venting,emissions-process,ch4,t/m3,4.09187e-06,2.59e-07,4.999e-06,2,sourced,pooled,,19.3,,,clearstone_2018_001; aer_2025_001
+pneumatic-device_gas-driven,oil-and-gas,venting,emissions-process,co2e,t/m3,0.000114572,7.252e-06,0.000139972,0,identity,co2e-from-species,,19.3,,,clearstone_2018_001; aer_2025_001
+capture-unit_amine,co2-capture,co2-capture-diffuse,opex-fixed,,2025_CAD/t-per-yr,12.5927,6.86008,132.048,11,sourced,pooled,,19.2,,,van-geene_2024_001; ieaghg_2008_001; ieaghg_2013_003; ieaghg_2017_001; irlam_2017_001; onarheim_2017
+blast-furnace_top-gas-recycling,iron-and-steel,ironmaking,emissions-reduction-potential,,%,35,5,95,11,sourced,pooled,,19.0,,,birat_2012_001; ipcc_2022_001; ietd_2013_001; remus_2013_001; ricardo-aea_2013_001; draxler_2021_001
+combustion-turbine_chp,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,54.882,16.4657,308.793,64,sourced,pooled,,18.8,,,worrell_1999_001; bataille_2017_001; dea_2026_006; van-geene_2024_001; boulamanti_2017_001; element-
+fermenter_grain-dry-mill,biofuels,ethanol-production,capacity,,MW,309.932,16.8719,309.932,2,sourced,pooled,,18.4,,,dea_2026_003; etsap_2013_011
+direct-heater_electric,heat-supply,heat-medium-temp,capex,,2025_CAD/GJ-per-yr,10.2053,3.50327,63.7833,9,sourced,pooled,,18.2,,,bataille_2017_001; dea_2026_001; element-energy_2018_001; concawe_2019_001
+blast-furnace_top-gas-recycling,iron-and-steel,ironmaking,capex,,2025_CAD/t-per-yr,694.96,104.244,1901.43,4,sourced,pooled,,18.2,,,van-geene_2024_001; ieaghg_2013_003; pardo_2013_001; etsap_2010_002
+reactor_co2-to-ethanol,biofuels,ethanol-production,capex,,2025_CAD/GJ-per-yr,550.388,30.3225,550.388,2,sourced,pooled,,18.2,,,almeida-benalcazar_2022_001; schemme_2020_001
+furnace_electric,non-metallic-minerals,glass-melting,capacity,,kt/yr,15.695,5.475,99.353,8,sourced,pooled,,18.1,,,scalet_2013_001; worrell_2008_001; zier_2021_001
+cleaning-system_efficiency-strong,food-and-beverage,thermal-processing,specific-energy-consumption,,GJ/t,0.353552,0.025586,0.460548,7,sourced,pooled,,18.0,,,ct_2010_003; ukerc_2013_001; doe_2017_003
+compressor_electric,machine-drive,compressor-drive-turbine; compressor-drive-engine,capacity,,MW,9.405,1.22732,21.6315,3,sourced,pooled,,17.6,,,joshi_2022_001; epa_2011_001
+steam-turbine_back-pressure,heat-supply,heat-low-temp,opex-variable,,2025_CAD/GJ,0.77841,0.301612,5.28312,20,sourced,pooled,,17.5,,,dea_2026_006; epa_2017_001; jrc_2014_001; ornl_2004_001
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,opex-variable,,2025_CAD/GJ,0.158321,0.0506753,0.883311,11,sourced,pooled,,17.4,,,nrel_2009_001; nrel_2013_001; nrel_2018_003; nrel_2026_001; lazard_2021_001; lazard_2023_001; lazard
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,cost-levelized,,2025_CAD/t,28.3697,9.86773,169.361,17,sourced,pooled,,17.2,,,gielen_1997_003; hughes_2023_001; mccollum_2006_001; sanchez_2018_001; netl_2022_001
+furnace_oxy-fuel,non-metallic-minerals,glass-melting,opex-fixed,,2025_CAD/t-per-yr,11.3727,7.78132,133.08,7,sourced,pooled,,17.1,,,van-geene_2024_001
+separator_lignin-extraction,pulp-and-paper,,annual-output,,t,83293,4890,83293,0,identity,capacity-output,,17.0,,,kong_2016_001; kuparinen_2017_001; tomani_2010_001
+separator_lignin-extraction,pulp-and-paper,,capacity,,kt/yr,102.2,6,102.2,2,sourced,pooled,,17.0,,,kong_2016_001; kuparinen_2017_001
+kiln_legacy,cement,clinker-production,capacity,,kt/yr,1314,109.5,1825,8,sourced,pooled,,16.7,,,martin_1999_001; schorcht_2013_001; etsap_2010_003; worrell_2013_001
+sinter-plant,iron-and-steel,agglomeration,opex-fixed,,2025_CAD/t-per-yr,0.989624,0.989624,16.4402,2,sourced,pooled,,16.6,,,van-geene_2024_001; ieaghg_2013_003
+flare_enclosed-combustor,oil-and-gas,venting,abatement-cost,ch4,2025_CAD/t-CH4,2662.76,921.025,15231.3,8,sourced,pooled,,16.5,,,epa_2022_002; epa_2023_002
+flare_enclosed-combustor,oil-and-gas,venting,abatement-cost,co2e,2025_CAD/t-CO2-eq,95.0986,32.8937,543.975,0,identity,co2e-from-species,,16.5,,,epa_2022_002; epa_2023_002
+coke-oven_by-product,iron-and-steel,cokemaking,capacity,,kt/yr,1400,100,1630,3,sourced,pooled,,16.3,,,ieaghg_2013_003; remus_2013_001; hasanbeigi_2013_001
+combustion-turbine_simple-cycle,power-generation,on-site-power-generation,emissions-combustion,ch4,t/GJ,8.53538e-06,4.716e-06,7.6087e-05,3,sourced,pooled,,16.1,,,dea_2026_006
+boiler_solid-fuel,heat-supply,heat-low-temp,opex-variable,,2025_CAD/GJ,0.648489,0.229768,3.6819,12,sourced,pooled,,16.0,,,saygin_2012_001; ukerc_2013_001; dea_2026_006; dea_2026_001; element-energy_2018_001; iea_2025_003; 
+capture-unit_chemical-solvent,co2-capture,co2-capture-concentrated,opex-fixed,,2025_CAD/t-per-yr,9.54683,6.15654,98.2807,5,sourced,pooled,,16.0,,,van-geene_2024_001; ieaghg_2013_003; ieaghg_2017_001
+reactor_polymerization-extrusion,chemicals,polymers,opex-fixed,,2025_CAD/t-per-yr,104.099,39.1704,626.448,13,sourced,pooled,,16.0,,,gielen_1996_001; joosten_1998_001; jrc_2007_003
+reactor_co2-to-methanol,chemicals,methanol,specific-energy-consumption,,GJ/t,3.1046,2.448,38.833,3,sourced,pooled,,15.9,,,van-geene_2024_001; dea_2026_003; iea_2013_001
+reactor_co2-to-methanol,chemicals,methanol,specific-energy-consumption,electricity,GJ/t,0.456559,0.36,5.71074,3,sourced,pooled,,15.9,,,dea_2026_003; material-economics_2019_001; iea_2013_001
+reactor_co2-to-methanol,chemicals,methanol,specific-energy-consumption,steam,GJ/t,2.64804,2.088,33.1223,1,sourced,pooled,,15.9,,,dea_2026_003
+furnace_electric,non-metallic-minerals,glass-melting,capex,,2025_CAD/t-per-yr,1110.76,419.682,6644.05,4,sourced,pooled,,15.8,,,van-geene_2024_001; scalet_2013_001; gielen_1997_001
+boiler_electric,heat-supply,heat-low-temp,capex,,2025_CAD/GJ-per-yr,6.5963,1.14925,18.0484,27,sourced,pooled,,15.7,,,dea_2026_006; van-geene_2024_001; dea_2026_001; doe_2024_002; element-energy_2018_001; element-energ
+heat-pump_very-high-temperature,heat-supply,heat-medium-temp,pressure-output,,bar,9,9,140,2,sourced,pooled,,15.6,,,zuhlsdorf_2019_001; ciambellotti_2024_001
+reciprocating-engine_drive,machine-drive,compressor-drive-engine; pumps; fans-and-blowers; compressed,capacity,,MW,1.102,0.070841,1.102,2,sourced,pooled,,15.6,,,gpsa_2004_001; galitsky_2008_001
+separator_biogas-upgrading,biofuels,,capex,,2025_CAD/GJ-per-yr,10.4626,7.17258,110.571,9,sourced,pooled,,15.4,,,van-geene_2024_001; dea_2026_003; etsap_2013_012
+adsorber_molecular-sieve,oil-and-gas,gas-processing,annual-output,,m3,9.272e+08,1.223e+08,1.849e+09,1,sourced,pooled,,15.1,,,petrinex_2026_001
+turboexpander_ngl-recovery,oil-and-gas,gas-processing,annual-output,,m3,9.272e+08,1.223e+08,1.849e+09,1,sourced,pooled,,15.1,,,petrinex_2026_001
+separator_aromatics-extraction,chemicals,aromatics,capex,,2025_CAD/t-per-yr,1059.59,69.9471,1059.59,2,sourced,pooled,,15.1,,,boulamanti_2017_001; joosten_1998_001
+direct-heater_solid-fuel,heat-supply,heat-low-temp; heat-medium-temp,construction-time,,years,0.01,0.001,0.015,1,sourced,pooled,,15.0,,,dea_2026_001
+combustion-turbine_simple-cycle,power-generation,on-site-power-generation,construction-time,,years,1.83333,0.2,3,7,sourced,pooled,,15.0,,,dea_2026_006; eia_2024_001; lazard_2023_001; lazard_2024_001; eia_1996_001; etsap_2010_008
+chiller_absorption,food-and-beverage,refrigeration,capacity,,MW,2.90125,0.3517,5.275,3,sourced,pooled,,15.0,,,eia_2023_002; masanet_2012_001; galitsky_2008_001
+digester_continuous-kraft,pulp-and-paper,chemical-pulping,capex,,2025_CAD/t-per-yr,302.937,267.558,3868.58,4,sourced,pooled,,14.5,,,ieaghg_2016_001; martin_2000_002; nedo_2008_001; etsap_2015_001
+steam-turbine_waste-heat,power-generation,on-site-power-generation,opex-variable,,2025_CAD/GJ,1.13775,0.568876,8.1792,4,sourced,pooled,,14.4,,,hedman_2008_001; epa_2022_001
+sinter-plant,iron-and-steel,agglomeration,emissions-combustion,co2,t/t,0.161285,0.0178559,0.256642,0,identity,fuel-emission-factor,,14.4,,,gielen_1997_003; remus_2013_001; doe_2000_001
+sinter-plant,iron-and-steel,agglomeration,specific-energy-consumption,,GJ/t,1.6437,0.181974,2.6155,11,sourced,pooled,,14.4,,,worrell_1999_001; van-geene_2024_001; daniels_2002_001; gielen_1997_003; ieaghg_2013_003; pardo_2013
+sinter-plant,iron-and-steel,agglomeration,specific-energy-consumption,by-product-gas,GJ/t,0.0618233,0.00684445,0.0983749,2,sourced,pooled,,14.4,,,remus_2013_001; doe_2000_001
+sinter-plant,iron-and-steel,agglomeration,specific-energy-consumption,coke,GJ/t,1.4649,0.162179,2.33099,3,sourced,pooled,,14.4,,,gielen_1997_003; remus_2013_001; doe_2000_001
+sinter-plant,iron-and-steel,agglomeration,specific-energy-consumption,electricity,GJ/t,0.116978,0.0129506,0.186139,8,sourced,pooled,,14.4,,,worrell_1999_001; daniels_2002_001; gielen_1997_003; ieaghg_2013_003; remus_2013_001; doe_2000_001; 
+sinter-plant,iron-and-steel,agglomeration,specific-energy-consumption,fuel,GJ/t,1.52672,0.169023,2.42936,5,sourced,pooled,,14.4,,,worrell_1999_001; daniels_2002_001; remus_2013_001; rehfeldt_2018_001; worrell_2010_001
+steam-reformer_methane,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,opex-variable,,2025_CAD/GJ,1.08552,0.205609,2.96153,10,sourced,pooled,,14.4,,,netl_2022_002; nrel_2009_001; nrel_2013_001; nrel_2018_003; nrel_2026_001
+boiler_electric,heat-supply,heat-low-temp,opex-fixed,,2025_CAD/GJ-per-yr,0.0869116,0.0268041,0.384368,18,sourced,pooled,,14.3,,,dea_2026_006; van-geene_2024_001; dea_2026_001; doe_2024_002; element-energy_2018_001; element-energ
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,cost-levelized,,2025_CAD/GJ,50.2439,12.464,177.643,56,sourced,pooled,,14.3,,,armijo-philibert_2020_001; vogl_2018_001; doe_2020_001; doe_2024_001; gccsi_2021_001; nrel_2026_001;
+electrolyzer_low-temperature,petroleum-refining,refinery-hydrogen; upgrader-hydrogen; centralized-hydrogen-p,abatement-cost,co2,2025_CAD/t-CO2-eq,1991.71,139.909,1991.71,2,sourced,pooled,,14.2,,,concawe_2019_001; doe_2025_001
+binder_blended-cement,cement,cement-binder,emissions-reduction-potential,,%,32,5,70,8,sourced,pooled,,14.0,,,lehne-preston_2018_001; doe_2023_002; habert_2010_001; cancio-diaz_2017_001
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,metal-melting-and-heat-treatment; melting-casting-and-fabric,capacity,,kt/yr,11.9136,4.38,61.32,3,sourced,pooled,,14.0,,,aries_2024_001; kermeli_2016_001
+resistance-heater_hvac,space-conditioning,hvac-heating,opex-fixed,,2025_CAD/GJ-per-yr,0.0781981,0.0134546,0.187675,3,sourced,pooled,,13.9,,,dea_2026_007
+capture-unit_amine,co2-capture,co2-capture-diffuse,cost-levelized,,2025_CAD/t,132.686,29.3559,402.192,22,sourced,pooled,,13.7,,,iea_2009_001; ieaghg_2008_001; emanuelsson_2022_001; hughes_2023_001; kearns_2021_001; doe_2023_002;
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,specific-energy-consumption,,GJ/GJ,0.889266,0.0687837,0.939307,4,sourced,pooled,,13.7,,,nrel_2009_001; nrel_2013_001; nrel_2018_003
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,specific-energy-consumption,biomass,GJ/GJ,0.820511,0.0634656,0.866683,3,sourced,pooled,,13.7,,,nrel_2009_001; nrel_2018_003
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,specific-energy-consumption,electricity,GJ/GJ,0.0241302,0.00186644,0.025488,4,sourced,pooled,,13.7,,,nrel_2009_001; nrel_2013_001; nrel_2018_003
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,specific-energy-consumption,fuel,GJ/GJ,0.865136,0.0669173,0.913819,1,sourced,pooled,,13.7,,,nrel_2009_001
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,specific-energy-consumption,natural-gas,GJ/GJ,0.0446246,0.00345166,0.0471357,4,sourced,pooled,,13.7,,,nrel_2009_001; nrel_2013_001; nrel_2018_003
+motor_induction-standard_efficiency-moderate,machine-drive,compressed-air; fans-and-blowers; pumps,lifetime,,years,10,1.5,20,7,sourced,pooled,,13.3,,,ukerc_2013_001; mckane-hasanbeigi_2010_001; martin_2000_001
+resistance-heater_hvac,space-conditioning,hvac-heating,capex,,2025_CAD/GJ-per-yr,6.41667,3.68335,47.1106,5,sourced,pooled,,12.8,,,dea_2026_007; eia_2023_002
+furnace_oxy-fuel,non-metallic-minerals,glass-melting,capex,,2025_CAD/t-per-yr,384.078,259.377,3332,8,sourced,pooled,,12.8,,,van-geene_2024_001; doe_2023_001
+reactor_polymerization-extrusion_efficiency-strong,chemicals,polymers,specific-energy-consumption,,GJ/t,2.4966,0.900162,11.4997,23,sourced,pooled,,12.8,,,jrc_2007_003; iea_2013_001; doe_2015_004
+separator_aromatics-extraction,chemicals,aromatics,specific-energy-consumption,,GJ/t,3.97656,1.43,18.301,14,sourced,pooled,,12.8,,,van-geene_2024_001; boulamanti_2017_001; falcke_2017_001; joosten_1998_001; neelis_2008_001; iea_201
+separator_aromatics-extraction,chemicals,aromatics,specific-energy-consumption,electricity,GJ/t,0.0343594,0.0123559,0.158129,6,sourced,pooled,,12.8,,,boulamanti_2017_001; falcke_2017_001; joosten_1998_001
+separator_aromatics-extraction,chemicals,aromatics,specific-energy-consumption,fuel,GJ/t,0.363097,0.130572,1.67105,5,sourced,pooled,,12.8,,,boulamanti_2017_001; falcke_2017_001; gielen_1996_001
+separator_aromatics-extraction,chemicals,aromatics,specific-energy-consumption,steam,GJ/t,3.5791,1.28707,16.4718,7,sourced,pooled,,12.8,,,boulamanti_2017_001; falcke_2017_001; joosten_1998_001; saygin_2011_001
+rolling-mill_hot,iron-and-steel,rolling,specific-energy-consumption,,GJ/t,1.86,0.3124,3.962,10,sourced,pooled,,12.7,,,worrell_1999_001; daniels_2002_001; nrcan_2007_001; doe_2000_001; hasanbeigi_2013_001; worrell_2010_
+rolling-mill_hot,iron-and-steel,rolling,specific-energy-consumption,electricity,GJ/t,0.327273,0.0549677,0.697126,24,sourced,pooled,,12.7,,,worrell_1999_001; daniels_2002_001; gielen_1997_003; ieaghg_2013_003; jrc_2022_001; nrcan_2007_001; 
+rolling-mill_hot,iron-and-steel,rolling,specific-energy-consumption,fuel,GJ/t,1.53273,0.257432,3.26487,6,sourced,pooled,,12.7,,,worrell_1999_001; daniels_2002_001; gielen_1997_003; nrcan_2007_001; worrell_2010_001
+furnace_electric,non-metallic-minerals,glass-melting,opex-fixed,,2025_CAD/t-per-yr,27.9788,20.9497,265.363,3,sourced,pooled,,12.7,,,van-geene_2024_001; gielen_1997_001
+gas-treatment-unit_amine-sweetening,oil-and-gas,gas-processing,capacity,,m3/yr,4.9348e+08,1.387e+08,1.75711e+09,1,sourced,pooled,,12.7,,,aer_2026_003
+pneumatic-device_non-emitting,oil-and-gas,venting,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,,12.1,,,petrinex_2026_001
+pneumatic-device_gas-driven,oil-and-gas,venting,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,,12.1,,,petrinex_2026_001
+pneumatic-device_low-bleed,oil-and-gas,venting,annual-output,,m3,1.894e+07,5.318e+06,6.446e+07,1,sourced,pooled,,12.1,,,petrinex_2026_001
+heat-pump_industrial,heat-supply,heat-low-temp,temperature-output,,degC,112.5,25,300,98,sourced,pooled,,12.0,,,dea_2026_006; iea-hpt_2023_001; johansson_2012_001; jrc_2009_001; kiss_2017_001; rissman_2023_001; a
+reactor_partial-upgrading,oil-and-gas,bitumen-upgrading,emissions-total,co2,t/m3,0.125796,0.0188695,0.226434,3,sourced,pooled,,12.0,,,ceri_2017_002
+capture-unit_amine,co2-capture,co2-capture-diffuse,capex,,2025_CAD/t-per-yr,440.263,87.0995,1031.71,70,sourced,pooled,,11.8,,,van-geene_2024_001; collodi_2010_001; element-energy_2021_001; iea_2009_001; ieaghg_2007_001; ieaghg
+kiln_dry-precalciner_ccs-diffuse,cement,clinker-production,abatement-cost,co2,2025_CAD/t-CO2-eq,162.139,29.5547,346.018,12,sourced,pooled,,11.7,,,gardarsdottir_2019_001; iea_2009_001; iea_2018_002; ricardo-aea_2013_001; rootzen_2017_001; doe_2023
+distillation-column_heat-pumped,chemicals,chemical-distillation,efficiency,,%,550,110,1290,29,sourced,pooled,,11.7,,,kiss_2017_001; kiss_2012_001
+cleaning-system,food-and-beverage,thermal-processing,specific-energy-consumption,,GJ/t,0.504742,0.100018,1.16815,7,sourced,pooled,,11.7,,,masanet_2012_001; doe_2017_003
+cleaning-system,food-and-beverage,thermal-processing,specific-energy-consumption,electricity,GJ/t,0.0807175,0.0159947,0.186809,2,sourced,pooled,,11.7,,,masanet_2012_001
+cleaning-system,food-and-beverage,thermal-processing,specific-energy-consumption,steam,GJ/t,0.424024,0.0840233,0.981341,2,sourced,pooled,,11.7,,,masanet_2012_001
+rolling-mill_thin-slab,iron-and-steel,casting,emissions-reduction-potential,,%,58,5,58,2,sourced,pooled,,11.6,,,nccp_1999_003; wsp_2015_007
+fermenter_syngas,biofuels,ethanol-production,capex,,2025_CAD/GJ-per-yr,106.411,35.469,409.285,3,sourced,pooled,,11.5,,,van-der-stricht_2025_001; almeida-benalcazar_2022_001
+gasifier_biomass-waste,hydrogen,centralized-hydrogen-production,opex-fixed,,2025_CAD/GJ-per-yr,2.67245,0.595244,6.87121,5,sourced,pooled,,11.5,,,van-geene_2024_001; nrel_2009_001; nrel_2018_003
+gasifier_coal-petroleum-coke,petroleum-refining,refinery-hydrogen; upgrader-hydrogen,opex-variable,,2025_CAD/GJ,1.71407,0.46761,5.37725,5,sourced,pooled,,11.5,,,netl_2022_002; nrel_2009_001; etsap_2010_011
+steam-turbine_waste-heat,power-generation,on-site-power-generation,capacity,,MW,6,0.7,8,5,sourced,pooled,,11.4,,,ietd_2013_001; jrc_2022_001; schorcht_2013_001; worrell_2013_001
+pellet-plant_induration,iron-and-steel,agglomeration; pelletizing,emissions-total,co2,t/t,0.057,0.017,0.193,7,sourced,pooled,,11.4,,,van-geene_2024_001; remus_2013_001; pardo_2013_001; mishra_2026_001
+reactor_nitric-acid,chemicals,nitric-and-adipic-acid,emissions-process,co2e,t/t,2.2525,0.5035,5.724,0,identity,co2e-from-species,,11.4,,,boulamanti_2017_001; jrc_2007_002; epa_2010_001; perez-ramirez_2003_001
+reactor_nitric-acid,chemicals,nitric-and-adipic-acid,emissions-process,n2o,t/t,0.0085,0.0019,0.0216,15,sourced,pooled,,11.4,,,boulamanti_2017_001; jrc_2007_002; epa_2010_001; perez-ramirez_2003_001
+direct-heater_line-heater,oil-and-gas,oil-and-gas-production,annual-output,,m3,2676,846.5,9627,1,sourced,pooled,,11.4,,,petrinex_2026_001
+heat-pump_oil-treating,oil-and-gas,oil-and-gas-production,annual-output,,m3,2676,846.5,9627,1,sourced,pooled,,11.4,,,petrinex_2026_001
+reactor_co2-to-fischer-tropsch,biofuels,renewable-diesel-and-saf,capex,,2025_CAD/GJ-per-yr,38.0994,38.0994,434.307,5,sourced,pooled,,11.4,,,concawe_2019_002; schemme_2020_001
+steam-turbine_back-pressure,heat-supply,heat-low-temp,construction-time,,years,2.41667,0.5,5.5,6,sourced,pooled,,11.0,,,dea_2026_006; etsap_2010_004; etsap_2010_005
+reactor_catalytic-n2o,chemicals,n2o-abatement,emissions-reduction-potential,,%,82.3,9,99,19,sourced,pooled,,11.0,,,boulamanti_2017_001; epa_2019_001; jrc_2007_002; epa_2010_001; perez-ramirez_2003_001
+flotation-cell_froth,mining,separation-and-processing,specific-energy-consumption,,GJ/t,0.675,0.3582,3.951,2,sourced,pooled,,11.0,,,nrcan_2005_001; norgate_2010_001
+flotation-cell_froth,mining,separation-and-processing,specific-energy-consumption,electricity,GJ/t,0.675,0.3582,3.951,1,sourced,pooled,,11.0,,,norgate_2010_001
+combined-cycle,power-generation,on-site-power-generation,capacity,,MW,500,50,550,7,sourced,pooled,,11.0,,,ieaghg_2013_003; lecomte_2017_001; lazard_2023_001; lazard_2024_001; nccp_2000_001
+boiler_solid-fuel,heat-supply,heat-low-temp,pressure-output,,bar,51.7107,13,140,5,sourced,pooled,,10.8,,,ekbom_2003_001; ieaghg_2016_001; neuwahl_2019_001; epa_2007_001
+reactor_polymerization-extrusion,chemicals,polymers,emissions-combustion,co2,t/t,0.08,0.05,0.54,7,sourced,pooled,,10.8,,,boulamanti_2017_001; jrc_2007_003
+steam-reformer_methanol,chemicals,methanol,specific-energy-consumption,,GJ/t,11.3997,1.85472,20.0962,10,sourced,pooled,,10.8,,,van-geene_2024_001; hugill_2001_001; saygin_2011_001; rehfeldt_2018_001; iea_2013_001; doe_2015_004;
+steam-reformer_methanol,chemicals,methanol,specific-energy-consumption,electricity,GJ/t,0.325377,0.0529386,0.573599,3,sourced,pooled,,10.8,,,hugill_2001_001; rehfeldt_2018_001
+steam-reformer_methanol,chemicals,methanol,specific-energy-consumption,fuel,GJ/t,11.0743,1.80178,19.5226,1,sourced,pooled,,10.8,,,rehfeldt_2018_001
+steam-reformer_methanol,chemicals,methanol,specific-energy-consumption,natural-gas,GJ/t,11.0743,1.80178,19.5226,2,sourced,pooled,,10.8,,,boulamanti_2017_001
+reactor_plastics-pyrolysis,chemicals,petrochemical-feedstock,capex,,2025_CAD/t-per-yr,957.634,253.399,2711.75,5,sourced,pooled,,10.7,,,van-geene_2024_001; negri_2021_001; riedewald_2021_001
+coke-oven_by-product,iron-and-steel,cokemaking,capex,,2025_CAD/t-per-yr,596.527,94.9247,1009.2,11,sourced,pooled,,10.6,,,daniels_2002_001; gielen_1997_003; ieaghg_2013_003; esmap_2001_001
+flare,oil-and-gas,flaring,annual-output,,t,152.41,47.142,495.137,1,sourced,pooled,,10.5,,,petrinex_2026_001
+flare_high-efficiency,oil-and-gas,flaring,annual-output,,t,152.41,47.142,495.137,1,sourced,pooled,,10.5,,,petrinex_2026_001
+combustion-turbine_chp,heat-supply,heat-low-temp,heat-to-power-ratio,,dimensionless,1.13835,0.24,2.5,36,sourced,pooled,,10.4,,,dea_2026_006; boulamanti_2017_001; epa_2017_001; ieaghg_2007_001; johansson_2012_001; jrc_2009_001; 
+electrolyzer_solid-oxide,hydrogen,centralized-hydrogen-production,capex,,2025_CAD/GJ-per-yr,62.3761,25.3522,264.724,8,sourced,pooled,,10.4,,,iea_2019_002; dea_2026_003; nrel_2009_001; nrel_2018_003; nrel_2026_001; rouwenhorst_2019_001
+reactor_isomerization,petroleum-refining,conversion-and-treating,specific-energy-consumption,,GJ/m3,1.35542,0.415886,4.27401,10,sourced,pooled,,10.3,,,doe_1998_001; meyers_1997_001; worrell_2004_002; worrell_2015_001; doe_2015_002
+reactor_isomerization,petroleum-refining,conversion-and-treating,specific-energy-consumption,electricity,GJ/m3,0.0457331,0.0140324,0.144209,12,sourced,pooled,,10.3,,,abella_2022_001; barthe_2015_001; doe_1998_001; gary_2007_001; meyers_1997_001; worrell_2004_002; wo
+reactor_isomerization,petroleum-refining,conversion-and-treating,specific-energy-consumption,steam,GJ/m3,1.30969,0.401854,4.1298,7,sourced,pooled,,10.3,,,barthe_2015_001; meyers_1997_001; worrell_2004_002; worrell_2015_001
+boiler_electric,heat-supply,heat-low-temp,cost-levelized,,2025_CAD/GJ,13.909,7.36361,75.2711,7,sourced,pooled,,10.2,,,agora_2021_001; rissman_2022_001; doe_2023_001; doe_2025_001; zuhlsdorf_2019_001; rtc_2023_001
+steam-turbine_back-pressure,heat-supply,heat-low-temp,emissions-combustion,n2o,t/GJ,2.11508e-06,1.892e-06,1.9235e-05,16,sourced,pooled,,10.2,,,dea_2026_006
+steam-turbine_back-pressure,heat-supply,heat-low-temp,heat-to-power-ratio,,dimensionless,3.0915,1.96078,20,30,sourced,pooled,,10.2,,,dea_2026_006; boulamanti_2017_001; epa_2017_001; johansson_2012_001; jrc_2009_001; lecomte_2017_001;
+compressor_co2-dehydration,co2-capture,co2-transport-and-storage,specific-energy-consumption,,GJ/t,1.878,0.45,4.58,4,sourced,pooled,,10.2,,,van-geene_2024_001
+furnace_reheating,iron-and-steel,reheating,specific-energy-consumption,,GJ/t,1.84376,0.654664,6.6576,15,sourced,pooled,,10.2,,,gielen_1997_003; jrc_2022_001; nrcan_2007_001; rehfeldt_2024_001; martin_2000_001; worrell_2010_001
+furnace_reheating,iron-and-steel,reheating,specific-energy-consumption,electricity,GJ/t,0.0684,0.0242868,0.246984,7,sourced,pooled,,10.2,,,gielen_1997_003; nrcan_2007_001; rehfeldt_2024_001; martin_2000_001; worrell_2010_001
+furnace_reheating,iron-and-steel,reheating,specific-energy-consumption,fuel,GJ/t,1.77536,0.630377,6.41062,9,sourced,pooled,,10.2,,,worrell_1999_001; gielen_1997_003; jrc_2022_001; nedo_2008_001; rehfeldt_2024_001; doe_2000_001; mar
+furnace_reheating,iron-and-steel,reheating,specific-energy-consumption,natural-gas,GJ/t,1.77536,0.630377,6.41062,5,sourced,pooled,,10.2,,,jrc_2022_001; nrcan_2007_001; ajsi_2016_001; siyambalapitiya_2026_001
+fuel-cell_chp,heat-supply,heat-low-temp,construction-time,,years,1,1,10,2,sourced,pooled,,10.0,,,dea_2026_006; bc-hydro_2004_001
+fuel-cell_chp,heat-supply,heat-low-temp,opex-total,,2025_CAD/GJ,13.5579,4.11511,41.1511,2,sourced,pooled,,10.0,,,lemar_2001_001; wade_2003_001
+reactor_polymerization-extrusion,chemicals,polymers,annual-output,,t,212500,25500,255000,0,identity,capacity-output,,10.0,,,boulamanti_2017_001; jrc_2007_003; gielen_1996_001
+reactor_polymerization-extrusion,chemicals,polymers,capacity,,kt/yr,250,30,300,5,sourced,pooled,,10.0,,,boulamanti_2017_001; jrc_2007_003
