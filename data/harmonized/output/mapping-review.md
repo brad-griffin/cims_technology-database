@@ -3129,8 +3129,8 @@ Rows converted to the archetype's basis are pooled; these were not.
 | set aside: needs a host-plant cost. The source prices this as the cost of adding it to an existing plant, not as a whole plant | 1169 |
 | a required basis (cost-basis or capacity-basis) is not recorded | 833 |
 | CCS add-on cost: this archetype holds only the host plant's cost (the same as without capture unless a source shows a significant difference); the capture plant's cost belongs to the co2-capture archetype it requests (modeller 2026-10-02). Listed in output/ccs-addon-cost.csv to move to a capture archetype | 376 |
-| per t, but the archetype's product is measured in GJ | 190 |
 | cost per plant cannot be put per t-per-yr: the source gives no output factor to convert it with | 187 |
+| per t, but the archetype's product is measured in GJ | 183 |
 | duplicate of the row in duplicate-of: its per-tonne cost divided by fuel use per tonne; that row is not pooled either | 155 |
 | repeat: the source prints the same figure for epa_2023_002:pneumatic-device_non-emitting_electric-grid@process-controllers-small-production-site-model-plant-new-source-tables-2-4-2-17-to-2-19 (duplicate-of); pooled once | 125 |
 | per kg, but the archetype's product is measured in GJ | 111 |
@@ -3191,7 +3191,6 @@ Rows converted to the archetype's basis are pooled; these were not.
 | cost per kWth-per-yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 20 |
 | cost per tph cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 20 |
 | ruled out: Dunsky 2023 net present cost net of gas sold at 5.00 CAD/Mcf: methane abatement costs are GROSS of the gas recovered; the recovered gas is an output flow (records/reference/recovered-output.csv) (OG005, ruling 2026-10-14) (user 2026-10-14) | 19 |
-| per kg, but the archetype's product is measured in t | 19 |
 | hydrogen is measured in GJ, the row in t | 19 |
 | repeat: the source prints the same figure for van-geene_2024_001:tc0241_natural-gas-boiler-corrugated-board@utilities-rademaker-and-marsidi-2019 (duplicate-of); pooled once | 18 |
 | no conversion from GJ/t to GJ/GJ | 18 |
@@ -3227,11 +3226,11 @@ Rows converted to the archetype's basis are pooled; these were not.
 | lpg is measured in GJ, the row in kg | 14 |
 | gas-oil is measured in GJ, the row in kg | 14 |
 | refinery-gas is measured in GJ, the row in kg | 14 |
+| biomass-solid is measured in GJ, the row in t | 14 |
 | cost per l-diesel-equivalent cannot be put per t: the source gives no output factor to convert it with | 13 |
 | no conversion from t/heat to kt/yr | 13 |
 | cost per t-CH4-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 13 |
 | repeat: the source prints the same figure for iea_2026_005:pneumatic-device_non-emitting_servo-challenging@iea-methane-abatement-model-redtechguide-reason-vented-replace-with-servo-motors-challenging-settings (duplicate-of); pooled once | 13 |
-| biomass-solid is measured in GJ, the row in t | 13 |
 | duplicate of the row in duplicate-of: its per-tonne cost divided by fuel use per tonne | 12 |
 | repeat: the source prints the same figure for bataille_2017_001:direct-heater_natural-gas@other-chemicals-production-processes-other-services (duplicate-of); pooled once | 12 |
 | cost per km cannot be put per t-per-yr: the source gives no output factor to convert it with | 12 |
@@ -3294,7 +3293,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for xenergy_1998_001:motor_induction-standard@us-manufacturing-motor-stock-1997-and-upgrade-standards-1800-rpm-sect-2-table-2-10 (duplicate-of); pooled once | 9 |
 | repeat: the source prints the same figure for johansson_2012_001:capture-unit_amine@borealis-cracker-mea-capture-heat-from-crnt-eh-at-reboiler-duty-2800-kj-kg-co2-table-6-2030 (duplicate-of); pooled once | 9 |
 | cost per t-per-yr/yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 9 |
-| per MWh, but the archetype's product is measured in GJ | 9 |
+| steam is measured in GJ, the row in kg | 9 |
 | per t dry wood feed, but the archetype's product is measured in t | 9 |
 | example set aside by the modeller: UKERC IS-IS1 Increasing EAF steelmaking route: whole-route values per t crude steel shifting BF-BOF to EAF (SEC 18.9 GJ/t, 1.5-1.8 t CO2/t), not an EAF; set aside (sanity-check pass R006, ruling 2026-10-05) | 8 |
 | repeat: the source prints the same figure for bataille_2017_001:direct-heater_natural-gas_efficiency-base@other-chemicals-production-processes-low-temperature-heat (duplicate-of); pooled once | 8 |
@@ -3452,7 +3451,6 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for iea_2026_005:management-system_leak-detection_quarterly@iea-methane-abatement-model-ldarguide-conventional-quarterly-ldar (duplicate-of); pooled once | 5 |
 | repeat: the source prints the same figure for eia_2023_002:heat-pump_space@commercial-rooftop-heat-pump-typical-2022-appendix-a-guidehouse-and-leidos-2023-reference-case-p-139 (duplicate-of); pooled once | 5 |
 | per MWh, but the archetype's product is measured in t | 5 |
-| steam is measured in GJ, the row in kg | 5 |
 | coke is measured in GJ, the row in kg | 5 |
 | per yr, but the archetype's product is measured in GJ | 5 |
 | black-liquor is measured in GJ, the row in t | 5 |
@@ -3937,6 +3935,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | no conversion from m3-THC/1000-m3-gas to t/m3 | 2 |
 | repeat: the source prints the same figure for clearstone_2019_001:reciprocating-engine_drive_2-stroke-lean-burn@engine-and-turbine-ch4-and-n2o-emission-factors-sect-3-3-2-2-tables-19-20 (duplicate-of); pooled once | 2 |
 | coking-coal is measured in GJ, the row in t | 2 |
+| naphtha is measured in t, the row in MWh | 2 |
 | petrochemical-feedstock is measured in t, the row in GJ | 2 |
 | gas-oil is measured in GJ, the row in t | 2 |
 | benzole-and-tars is measured in GJ, the row in t | 2 |
@@ -4747,6 +4746,8 @@ Rows converted to the archetype's basis are pooled; these were not.
 | per £k, but the archetype's product is measured in t | 1 |
 | per ft3, but the archetype's product is measured in GJ | 1 |
 | per GJ, but the archetype's product is measured in t | 1 |
+| glycerine is measured in t, the row in MWh | 1 |
+| distillers-grains is measured in t, the row in MWh | 1 |
 | blast-furnace-gas is measured in GJ, the row in t | 1 |
 | coke-oven-gas is measured in GJ, the row in t | 1 |
 | per L, but the archetype's product is measured in m3 | 1 |
@@ -7201,8 +7202,8 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `fermenter_grain-dry-mill_ccs-concentrated` | Sanchez et al. 2018 `fermenter_ccs-concentrated` | US ethanol biorefineries, fermentation CO2 (Introduction, Methods) | 2 | 1 |
 | `fermenter_grain-dry-mill_efficiency-moderate` | Galitsky et al. 2003 (corn wet milling) `adsorber_molecular-sieve-ethanol` | Ethanol dehydration (Sect. 5.3) | 4 | 3 |
 | `fermenter_lignocellulosic-enzymatic` | Bashmakov et al. 2022 `fermenter_biomass` | Cross-cutting (CCUS, H2, net zero CoOxHy fuels/feedstocks) | 2 |  |
-| `fermenter_lignocellulosic-enzymatic` | DEA 2026 (renewable fuels) `fermenter_cellulosic-ethanol` | 106 Cellulosic ethanol: Cellulosic Ethanol | 11 | 2 |
-| `fermenter_lignocellulosic-enzymatic` | Humbird et al. 2011 `fermenter_lignocellulosic-enzymatic` | Whole plant, 2,205 dry ton/day corn stover (Sect. 4, Tables 28, 30, 31, 34) | 21 | 13 |
+| `fermenter_lignocellulosic-enzymatic` | DEA 2026 (renewable fuels) `fermenter_cellulosic-ethanol` | 106 Cellulosic ethanol: Cellulosic Ethanol | 11 | 1 |
+| `fermenter_lignocellulosic-enzymatic` | Humbird et al. 2011 `fermenter_lignocellulosic-enzymatic` | Whole plant, 2,205 dry ton/day corn stover (Sect. 4, Tables 28, 30, 31, 34) | 21 | 7 |
 | `fermenter_lignocellulosic-enzymatic` | Brown et al. 2020 `fermenter_lignocellulosic-enzymatic` | Ethanol from lignocellulosic sugar via fermentation, SGAB Low/Medium/High cases (Sect. 3.3, Table 6) | 7 | 1 |
 | `fermenter_lignocellulosic-enzymatic` | Ren 2009 `fermenter_lignocellulosic-enzymatic` | Feedstock production step, 2030-2050 cost analysis (Ch.5 Tables 5-3/5-4; energy Ch.4 Tables 4-2 to 4-4) | 6 | 4 |
 | `fermenter_lignocellulosic-enzymatic` | Ren 2009 `fermenter_lignocellulosic-enzymatic_cogeneration-high` | Feedstock production step, 2030-2050 cost analysis (Ch.5 Tables 5-3/5-4; energy Ch.4 Tables 4-2 to 4-4) | 6 | 6 |
@@ -7279,8 +7280,8 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `reactor_co2-to-gasoline` | Schemme et al. 2020 `reactor_co2-to-hydrocarbon_methanol-to-gasoline` | Gasoline (methanol-to-gasoline) synthesis from H2 and CO2, 300 MW fuel output (Table 3, p.20; Tables A1-A2, p.29) | 10 | 7 |
 | `reactor_hydrothermal-liquefaction` | DEA 2026 (renewable fuels) `reactor_hydrothermal-liquefaction` | 89 Hydrothermal Liquefaction: Bio Oil | 11 |  |
 | `reactor_hydrotreating-lipids` | Van Geene et al. 2024 (MIDDEN) `tc0173_nexbtl-process` | NExBTL process [Khandelwal and Van Dril, 2020] | 5 | 4 |
-| `reactor_hydrotreating-lipids` | DEA 2026 (renewable fuels) `reactor_hvo-jet-fuel` | 103 HVO jet fuel: HVO Jet Fuel | 17 | 3 |
-| `reactor_hydrotreating-lipids` | DEA 2026 (renewable fuels) `reactor_hvo-renewable-diesel` | 104 HVO renewable diesel: HVO / renwable diesel | 17 | 5 |
+| `reactor_hydrotreating-lipids` | DEA 2026 (renewable fuels) `reactor_hvo-jet-fuel` | 103 HVO jet fuel: HVO Jet Fuel | 17 | 1 |
+| `reactor_hydrotreating-lipids` | DEA 2026 (renewable fuels) `reactor_hvo-renewable-diesel` | 104 HVO renewable diesel: HVO / renwable diesel | 17 | 3 |
 | `reactor_hydrotreating-lipids` | Brown et al. 2020 `reactor_hydrotreating-lipids` | HVO, hydrotreated vegetable oil (refinery co-processing to stand-alone), Low/Medium/High cases (Sect. 3.1, Table 3) | 5 | 1 |
 | `reactor_hydrotreating-lipids` | Gudde et al. 2019 (Refinery 2050) `reactor_hydrotreating-lipids` | Dedicated lipid hydrotreatment, ~1 Mt/a plants (Sect. 5.2.2) | 2 |  |
 | `reactor_hydrotreating-lipids` | Gudde et al. 2019 (Refinery 2050) `reactor_hydrotreating-lipids` | Mass balance for example pathways (Table 6.2.9-1) | 8 | 8 |
@@ -7475,7 +7476,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `grinding-mill_vertical-roller` | US DOE 2017 (cement bandwidth) `grinding-mill_bat` | Wet process - fuel preparation | 1 | 1 |
 | `grinding-mill_vertical-roller` | US DOE 2017 (cement bandwidth) `grinding-mill_bat` | Wet process - kiln feed preparation | 1 | 1 |
 | `kiln_calcium-looping` | Gardarsdottir et al. 2019 `kiln_dry-precalciner_calcium-looping-integrated` | Cement plant retrofitted with CO2 capture, 90% of stack CO2, EU-28 power mix (Sect. 4.1, Tables 2, 6) | 8 | 2 |
-| `kiln_calcium-looping` | Voldsund et al. 2019 `kiln_dry-precalciner_calcium-looping-integrated` | Reference plant retrofitted with CO2 capture, EU-28 2014 power mix (Sect. 4-5, Tables 8, 12-15) | 9 | 1 |
+| `kiln_calcium-looping` | Voldsund et al. 2019 `kiln_dry-precalciner_calcium-looping-integrated` | Reference plant retrofitted with CO2 capture, EU-28 2014 power mix (Sect. 4-5, Tables 8, 12-15) | 9 |  |
 | `kiln_calcium-looping` | Worrell and Boyd 2022 `kiln_calcium-looping` | Cement CCUS options (Cement section) | 1 |  |
 | `kiln_calcium-looping` | Plaza et al. 2020 `kiln_calcium-looping` | Calcium looping, integrated (entrained flow), CEMCAP (Sect. 2.2, Table 1) | 1 | 1 |
 | `kiln_dry-precalciner` | UKERC 2013 `kiln_bat` | Dry kiln | 55 | 1 |
@@ -7708,7 +7709,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `kiln_oxy-fuel` | IEAGHG 2008 `kiln_oxy-fuel` | Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26) | 12 | 6 |
 | `kiln_oxy-fuel` | IEAGHG 2008 `kiln_oxy-fuel_whole-plant` | Asian developing-country scenario, 3 Mt/y cement (Sect. 5.6, Table 5-36, App. F) | 5 | 1 |
 | `kiln_oxy-fuel` | IEAGHG 2008 `kiln_oxy-fuel_whole-plant` | Oxy-combustion in the precalciner only, new-build cement plant, 1 Mt/y cement, UK (Sect. 4.5, 5.5; Tables 4-8, 4-9, 5-21 to 5-26) | 6 | 1 |
-| `kiln_oxy-fuel` | Voldsund et al. 2019 `kiln_oxy-fuel` | Reference plant retrofitted with CO2 capture, EU-28 2014 power mix (Sect. 4-5, Tables 8, 12-15) | 9 | 1 |
+| `kiln_oxy-fuel` | Voldsund et al. 2019 `kiln_oxy-fuel` | Reference plant retrofitted with CO2 capture, EU-28 2014 power mix (Sect. 4-5, Tables 8, 12-15) | 9 |  |
 | `kiln_oxy-fuel` | Agora Energiewende 2021 `kiln_oxy-fuel` | Oxyfuel CCS fact sheet (Part E Sect. 4.2) | 7 | 1 |
 | `kiln_oxy-fuel` | IEA 2018 (cement roadmap) `kiln_oxy-fuel` | Integrating carbon capture, storage and utilisation (Sect. 4, p.37-40) | 2 |  |
 | `kiln_oxy-fuel` | IEA 2018 (cement roadmap) `kiln_oxy-fuel_partial` | Integrating carbon capture, storage and utilisation (Sect. 4, p.37-40) | 1 |  |
@@ -7920,9 +7921,9 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `reactor_catalytic-n2o` | Pérez-Ramírez et al. 2003 `reactor_catalytic-n2o_tertiary-scr` | N2O abatement options, reported performance (Sect. 5.2-5.4) | 0 |  |
 | `reactor_chemical-depolymerization` | Van Geene et al. 2024 (MIDDEN) `tc0484_pet-depolymerisation` | Chemical recycling [De Leeuw and Koelemeijer, 2022] | 5 |  |
 | `reactor_chemical-depolymerization` | Singh et al. 2021 `reactor_chemical-depolymerization` | Enzymatic PET recycling to rTPA, NREL base case 150 t/d (Tables S1-S4) | 21 | 2 |
-| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_enzymatic-hydrolysis_pet` | PET chemical recycling (150 t/d bale feed) | 7 | 4 |
-| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_glycolysis_pet` | PET chemical recycling (150 t/d bale feed) | 7 | 6 |
-| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_methanolysis_pet` | PET chemical recycling (150 t/d bale feed) | 9 | 8 |
+| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_enzymatic-hydrolysis_pet` | PET chemical recycling (150 t/d bale feed) | 7 | 1 |
+| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_glycolysis_pet` | PET chemical recycling (150 t/d bale feed) | 7 | 3 |
+| `reactor_chemical-depolymerization` | Uekert et al. 2023 `reactor_methanolysis_pet` | PET chemical recycling (150 t/d bale feed) | 9 | 3 |
 | `reactor_co2-to-dme` | Schemme et al. 2020 `reactor_co2-to-ether_dme` | DME synthesis from H2 and CO2, 300 MW fuel output (Table 3, p.20; Tables A1-A2, p.29) | 11 | 7 |
 | `reactor_co2-to-higher-alcohols` | Schemme et al. 2020 `reactor_co2-to-alcohol_1-butanol` | 1-Butanol synthesis from H2 and CO2, 300 MW fuel output (Table 3, p.20; Tables A1-A2, p.29) | 10 | 7 |
 | `reactor_co2-to-higher-alcohols` | Schemme et al. 2020 `reactor_co2-to-alcohol_2-butanol` | 2-Butanol synthesis from H2 and CO2, 300 MW fuel output (Table 3, p.20; Tables A1-A2, p.29) | 10 | 9 |
@@ -8456,7 +8457,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `steam-reformer_ammonia` | Bataille 2017 `steam-reformer_hydrogen` | chemicals | 0 |  |
 | `steam-reformer_ammonia` | IEA 2018 (petrochemicals) `steam-reformer_ammonia` | Ammonia | 3 |  |
 | `steam-reformer_ammonia` | Van Geene et al. 2024 (MIDDEN) `tc0073_ammonia-production` | Ammonia plant C [Batool and Wetzels, 2019] | 6 |  |
-| `steam-reformer_ammonia` | Boulamanti and Moya 2017 `steam-reformer_ammonia` | Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27) | 9 | 1 |
+| `steam-reformer_ammonia` | Boulamanti and Moya 2017 `steam-reformer_ammonia` | Ammonia and urea, consumption and emissions (Sect. 5.2.2, Tables 26-27) | 9 |  |
 | `steam-reformer_ammonia` | Boulamanti and Moya 2017 `steam-reformer_ammonia` | Investment costs of new plants (Sect. 6.2, Table 95) | 2 |  |
 | `steam-reformer_ammonia` | Energetics 2000 (chemicals profile) `steam-reformer_ammonia` | Ammonia manufacture, U.S. 1997 (Table 5-3) | 4 |  |
 | `steam-reformer_ammonia` | Fertilizer Canada 2023 `steam-reformer_ammonia` | Canadian SMR ammonia facilities, 2018-2020 average (pp.5-10) | 1 |  |
@@ -8466,7 +8467,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `steam-reformer_ammonia` | Saygin et al. 2011 `steam-reformer_ammonia` | Average current SEC, Canada, 2006 (Table 2) | 1 |  |
 | `steam-reformer_ammonia` | Saygin et al. 2011 `steam-reformer_ammonia` | Average current SEC, USA, 2006 (Table 2) | 1 |  |
 | `steam-reformer_ammonia` | Agora Energiewende 2021 `steam-reformer_ammonia` | Reference ammonia synthesis (Part E Sect. 3.1, Figure E.2) | 2 |  |
-| `steam-reformer_ammonia` | EC 2007 (LVIC-AAF BREF) `steam-reformer_ammonia` | Ammonia, conventional steam reforming (Sect. 2.2.3, 2.3, Tables 2.6, 2.8, 2.9) | 9 | 2 |
+| `steam-reformer_ammonia` | EC 2007 (LVIC-AAF BREF) `steam-reformer_ammonia` | Ammonia, conventional steam reforming (Sect. 2.2.3, 2.3, Tables 2.6, 2.8, 2.9) | 9 | 1 |
 | `steam-reformer_ammonia` | EC 2007 (LVIC-AAF BREF) `steam-reformer_ammonia` | Ammonia plant example, 1350 t/d fired primary reformer commissioned 1993 (Table 2.6) | 3 |  |
 | `steam-reformer_ammonia` | EC 2007 (LVIC-AAF BREF) `steam-reformer_ammonia` | Ammonia, steam reforming in general (Sect. 2.3.1, Table 2.6, German UBA 2000) | 3 |  |
 | `steam-reformer_ammonia` | EC 2007 (LVIC-AAF BREF) `steam-reformer_ammonia` | Ammonia, steam reforming, process licensor range (Sect. 2.3.1, Table 2.6, Uhde 2004) | 2 |  |

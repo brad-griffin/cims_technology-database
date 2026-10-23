@@ -1240,11 +1240,27 @@ def _captured(k, host, ctx):
             ins + [_input(sh, f"{k} share-to-capture"), f"capture rate {CAPTURE_RATE:g}%"])
 
 
+# The reference capture plant per CCS node: where a node has one, the tier-2 add-on
+# (cost and energy) is that archetype's value rather than the median of every
+# capture archetype on the node. Post-combustion (diffuse) capture is a standard
+# amine (MEA) plant, as the cement, lime, steel and power sources describe (user
+# 2026-10-23, sanity-check MCF006, IS018, S139).
+REFERENCE_CAPTURE = {"diffuse": "capture-unit_amine"}
+
+
+def _node_archetypes(node, ctx, p=None):
+    ks = ctx["ccs_nodes"].get(node, set())
+    ref = REFERENCE_CAPTURE.get(node)
+    if ref in ks and (p is None or _live(ctx["have"].get(ref, {}).get((p, "")))):
+        return {ref}
+    return ks
+
+
 def _node_medians(node, p, ctx, target=""):
     """Centrals of parameter p on the capture archetypes serving the CCS node
-    (`diffuse` or `concentrated`)."""
+    (`diffuse` or `concentrated`); the node's reference plant alone where it has one."""
     vals = {}
-    for k in ctx["ccs_nodes"].get(node, ()):
+    for k in _node_archetypes(node, ctx, p):
         r = ctx["have"].get(k, {}).get((p, target))
         if _live(r) and fnum(r["central"]) >= 0:
             vals[k] = fnum(r["central"])
@@ -1310,16 +1326,26 @@ def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
         t2 = None
         if cap and nm:
             m = median(nm.values())
-            t2 = (m * cap[0], min(nm.values()) * cap[1], max(nm.values()) * cap[2])
+            ref = REFERENCE_CAPTURE.get(node)
+            if set(nm) == {ref}:
+                # the reference plant's own band
+                _, rl, rh = _lohi(ctx["have"][ref][(p, "")])
+                t2 = (m * cap[0], rl * cap[1], rh * cap[2])
+            else:
+                t2 = (m * cap[0], min(nm.values()) * cap[1], max(nm.values()) * cap[2])
         if t1:
             ac, al, ah = t1[:3]
             ag, ains, tier = "estimated", t1[3], "tier 1 (same source)"
         elif t2:
             ac, al, ah = t2
             ag = worst(["estimated", cap[3]])
-            ains = cap[4] + [f"ccs.{node} node median {median(nm.values()):.4g} per t CO2 of "
-                             f"{len(nm)}: " + ", ".join(sorted(nm))]
-            tier = "tier 2 (capture node x CO2 captured)"
+            if set(nm) == {REFERENCE_CAPTURE.get(node)}:
+                ains = cap[4] + [f"ccs.{node} reference plant {next(iter(nm))} {m:.4g} per t CO2"]
+                tier = "tier 2 (reference capture plant x CO2 captured)"
+            else:
+                ains = cap[4] + [f"ccs.{node} node median {median(nm.values()):.4g} per t CO2 of "
+                                 f"{len(nm)}: " + ", ".join(sorted(nm))]
+                tier = "tier 2 (capture node x CO2 captured)"
         else:
             stats["ccs add-on not derivable"] = stats.get("ccs add-on not derivable", 0) + 1
             continue
@@ -1354,16 +1380,18 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
         if not (_live(tot) and cap and nm):
             continue
         per_t = median(nm.values())
-        shares = {}
-        for c in ctx["ccs_nodes"].get(node, ()):
+        # electricity's share of each node plant's total; the rest is thermal duty
+        # (the plant's thermal carriers name the same duty several ways - steam,
+        # heat, the fuel that raised it - so they are not added up)
+        eshare = []
+        for c in _node_archetypes(node, ctx, p):
             ch = ctx["have"].get(c, {})
-            t0 = ch.get((p, ""))
+            t0, te = ch.get((p, "")), ch.get((p, "electricity"))
             if not _live(t0) or fnum(t0["central"]) <= 0:
                 continue
-            for (q, t), r in ch.items():
-                if q == p and t and t not in ("fuel",) and not is_component_target(t) and _live(r):
-                    shares.setdefault(t, []).append(fnum(r["central"]) / fnum(t0["central"]))
-        sh = {t: sum(v) / len(nm) for t, v in shares.items()}
+            eshare.append(min(1.0, fnum(te["central"]) / fnum(t0["central"])) if _live(te) else 0.0)
+        e_ = sum(eshare) / len(eshare) if eshare else 0.0
+        sh = {"electricity": e_, "steam": 1.0 - e_}
         # the capture plant needs two things: electricity (fans, compression) and
         # thermal duty (the reboiler). The node archetypes name the thermal duty by
         # whatever raised it (steam, heat, gas, coal); on the host it is steam,
@@ -1371,15 +1399,11 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
         # written, never the node's fuel names or zero rows (sanity-check
         # 2026-10-11, S107); the host's fuel and named fuels are left as they are,
         # so the two carrier levels still add up.
-        elec = sh.get("electricity", 0.0)
-        therm = sum(v for t, v in sh.items() if t != "electricity")
-        ssum = (elec + therm) or 1.0
-        tname = "steam"     # a reboiler takes steam, whatever the host's own heat carrier
-        sh = {t: v / ssum for t, v in (("electricity", elec), (tname, therm)) if v > 0} \
-            or {"electricity": 1.0}
+        # a reboiler takes steam, whatever the host's own heat carrier
+        sh = {t: v for t, v in sh.items() if v > 0} or {"electricity": 1.0}
         add = per_t * cap[0]
         g = worst([rule["grade"], tot.get("grade", "sourced"), cap[3]])
-        ins = cap[4] + [f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}"]
+        ins = cap[4] + [(f"ccs.{node} reference plant {next(iter(nm))} {per_t:.4g} GJ/t CO2" if len(nm) == 1 and next(iter(nm)) == REFERENCE_CAPTURE.get(node) else f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}")]
         # host rows, every carrier, then the add-on on top
         for (q, t), r in sorted(hh.items()):
             if q != p or is_component_target(t) or not _live(r):

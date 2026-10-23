@@ -968,6 +968,16 @@ FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the arche
 def normalise_flows(flows, records, units, examples=None) -> None:
     """Flows per unit of the archetype's product: energy in GJ, mass in t,
     gas volumes in m3."""
+    from .views import product_properties
+    props = product_properties()
+    # examples whose flows are per t OF THE PRODUCT: they carry the product itself
+    # as an output of 1 per t (a per-t flow can be per t of feed otherwise)
+    per_t_product = set()
+    for r in flows:
+        a = records.by_key.get(r.get("archetype", ""))
+        if a and r.get("direction") == "output" and r.get("commodity") == a.get("product") \
+                and (r.get("per-unit") or "").strip() == "t" and fnum(r.get("value")) == 1.0:
+            per_t_product.add(r.get("example-id"))
     for r in flows:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
                   "unit-norm": "", "excluded": "", "conversion": ""})
@@ -984,9 +994,25 @@ def normalise_flows(flows, records, units, examples=None) -> None:
         per = UNIT_ALIAS.get(per, per)
         if per in FLOW_PER_UNIT:
             per = service_unit((examples or {}).get(r.get("example-id", "")), pu)
+        # per another unit of the same product: an energy unit of an energy product
+        # (per MWh on a GJ archetype), or per t / per m3 of the product on a GJ
+        # archetype with the product's energy content (product-property.csv)
+        # (user 2026-10-23: co-product outputs recorded as flows, gross-input ruling)
+        scale = 1.0
         if per != pu:
-            r["excluded"] = f"per {per}, but the archetype's product is measured in {pu}"
-            continue
+            pr = props.get(a.get("product", ""), {})
+            ec = fnum(pr.get("product-energy-content"))
+            ecu = pr.get("product-energy-content-unit", "")
+            route = units.physical(per, pu) if per and pu else None
+            if route is not None and route[1] == 0.0 and route[0]:
+                scale = 1.0 / route[0]          # value per `per` -> per pu
+                r["conversion"] = f"per {per} -> per {pu}"
+            elif pu == "GJ" and ec and per == "t" and ecu == "GJ/t" and r.get("example-id") in per_t_product:
+                scale = 1.0 / ec
+                r["conversion"] = f"per {per} of {a.get('product')} -> per GJ ({ec:g} {ecu})"
+            else:
+                r["excluded"] = f"per {per}, but the archetype's product is measured in {pu}"
+                continue
         num = (r.get("unit") or "").split("/", 1)[0].replace("Nm3", "m3")
         cls = records.commodities.get(r["commodity"], {}).get("unit-default", "")
         tnum = "GJ" if num in ("GJ", "MJ", "kWh", "MWh") else "t" if num in ("kg", "t", "g") else num
@@ -998,7 +1024,7 @@ def normalise_flows(flows, records, units, examples=None) -> None:
             r["excluded"] = f"no conversion from {num} to {tnum}"
             continue
         f, o = route
-        conv = lambda x: None if x is None else x * f + o
+        conv = lambda x: None if x is None else (x * f + o) * scale
         r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
             "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
         r["unit-norm"] = f"{tnum}/{pu}"
