@@ -46,14 +46,14 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Joosten 1998 | 514 | confirmed against the held document 2026-10-03 |
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
 | Element Energy 2021 | 471 | confirmed against the held document 2026-10-03 |
-| DEA 2026 (renewable fuels) | 467 | confirmed against the held document 2026-09-29 |
+| DEA 2026 (renewable fuels) | 469 | confirmed against the held document 2026-09-29 |
 | NREL 2025 (ATB) | 420 | confirmed against the held document 2026-10-02 |
-| IEA 2013 | 350 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2017 (refinery retrofit) | 350 | confirmed against the held document 2026-10-02 |
+| IEA 2013 | 346 | confirmed against the held document 2026-10-06 |
 | NREL 2018 | 312 | confirmed against the held document 2026-10-03 |
 | US EPA 2019 | 282 | confirmed against the held document 2026-10-02 |
 | US DOE 2017 (food and beverage bandwidth) | 279 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
-| Martin et al. 2000 (emerging technologies) | 255 | confirmed against the held document 2026-10-02 |
+| Martin et al. 2000 (emerging technologies) | 257 | confirmed against the held document 2026-10-02 |
 | Lazard 2021 | 252 | confirmed against the held document 2026-10-02 |
 | NCCP Upstream Oil and Gas 1999 | 250 | confirmed against the held document 2026-10-02 |
 | Daniels 2002 | 242 | confirmed against the held document 2026-10-03 |
@@ -191,7 +191,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Fleiter et al. 2012 | 47 | confirmed against the held document 2026-09-29 |
 | Oland 2004 | 47 | confirmed against the held document 2026-10-03 |
 | Zuberi et al. 2023 | 47 | confirmed against the held document 2026-09-29 |
-| Energetics 2000 (chemicals profile) | 45 | confirmed against the held document 2026-10-03 |
+| Energetics 2000 (chemicals profile) | 46 | confirmed against the held document 2026-10-03 |
 | Zapantis 2021 | 45 | confirmed against the held document 2026-10-03 |
 | Worrell et al. 2010 | 45 | confirmed against the held document 2026-09-29 |
 | Zhang et al. 2020 | 45 | confirmed against the held document 2026-10-03 |
@@ -298,13 +298,13 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Lindley 1997 | 21 | confirmed against the held document 2026-10-03 |
 | Nelson et al. 2011 | 21 | confirmed against the held document 2026-10-02 |
 | RTC 2023 | 21 | updated September 2023 |
+| Siyambalapitiya et al. 2026 | 21 | confirmed against the held document 2026-09-29 |
 | US EPA 2010 (pulp and paper) | 20 | confirmed against the held document 2026-09-29 |
 | GCCA 2024 | 20 | confirmed against the held document 2026-10-07 |
 | Khrushch et al. 1999 | 20 | confirmed against the held document 2026-09-29 |
 | Norgate and Haque 2010 | 20 | confirmed against the held document 2026-10-02 |
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | RTC 2022 | 20 | confirmed against the held document 2026-10-02 |
-| Siyambalapitiya et al. 2026 | 20 | confirmed against the held document 2026-09-29 |
 | Svensson et al. 2021 | 20 | confirmed against the held document 2026-09-29 |
 | Coursol et al. 2015 | 19 | confirmed against the held document 2026-10-02 |
 | Zoulias 2014 (ETSAP P12) | 19 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |

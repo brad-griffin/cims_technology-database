@@ -41,7 +41,7 @@ steam-turbine_drive,machine-drive,GJ,guess,guess,not-applicable,estimated,estima
 cooling-tower_free-evaporative,space-conditioning,GJ,guess,guess,not-applicable,guess,estimated,missing,missing,sourced
 heat-pump_hvac,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
 resistance-heater_hvac,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
-hvac-heater_fuel-fired,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
+hvac-heater_fuel-fired,space-conditioning,GJ,sourced,sourced,not-applicable,sourced,sourced,guess,guess,sourced
 hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,GJ,estimated,estimated,not-applicable,estimated,estimated,guess,guess,sourced
 hvac-heater_fuel-fired_efficiency-strong,space-conditioning,GJ,estimated,estimated,not-applicable,estimated,estimated,guess,guess,sourced
 lighting_fluorescent-t12,lighting,Mlm-h,sourced,sourced,not-applicable,sourced,sourced,guess,identity,sourced
@@ -102,7 +102,7 @@ pellet-plant_plasma-electric,iron-and-steel,t,guess,guess,guess,guess,estimated,
 pickling-line_acid,iron-and-steel,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
 preheater_ladle,iron-and-steel,t,guess,guess,not-applicable,sourced,sourced,estimated,identity,sourced
 rolling-mill_cold,iron-and-steel,t,sourced,estimated,not-applicable,sourced,sourced,guess,sourced,sourced
-rolling-mill_cold_efficiency-moderate,iron-and-steel,t,estimated,estimated,not-applicable,proxy,estimated,guess,identity,sourced
+rolling-mill_cold_efficiency-moderate,iron-and-steel,t,estimated,estimated,not-applicable,proxy,estimated,guess,guess,sourced
 rolling-mill_hot,iron-and-steel,t,sourced,sourced,not-applicable,sourced,sourced,estimated,guess,sourced
 rolling-mill_hot_efficiency-moderate,iron-and-steel,t,estimated,estimated,not-applicable,sourced,sourced,estimated,guess,sourced
 rolling-mill_thin-slab,iron-and-steel,t,sourced,estimated,not-applicable,sourced,estimated,estimated,guess,sourced
@@ -114,7 +114,7 @@ sinter-plant,iron-and-steel,t,sourced,sourced,not-applicable,sourced,sourced,est
 smelting-vessel_smelting-reduction,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,t,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
 binder_alkali-activated,cement,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
-binder_blended-cement,cement,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
+binder_blended-cement,cement,t,sourced,sourced,sourced,sourced,sourced,guess,identity,sourced
 binder_calcined-clay,cement,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 binder_carbonated,cement,t,guess,guess,guess,guess,estimated,guess,sourced,sourced
 calciner_indirect,cement,t,guess,guess,guess,guess,estimated,estimated,sourced,sourced
@@ -144,9 +144,9 @@ autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ,estimated,estimated,e
 autothermal-reformer_ammonia_ccs-concentrated,chemicals,t,missing,estimated,missing,guess,estimated,estimated,estimated,sourced
 distillation-column,chemicals,t,missing,missing,not-applicable,sourced,estimated,missing,guess,sourced
 distillation-column_heat-integrated,chemicals,t,guess,guess,not-applicable,sourced,sourced,missing,guess,sourced
-distillation-column_heat-pumped,chemicals,t,missing,missing,not-applicable,sourced,estimated,missing,identity,sourced
-electrolysis-cell_chlor-alkali-membrane,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
-electrolysis-cell_oxygen-depolarized,chemicals,t,guess,guess,guess,guess,estimated,estimated,identity,sourced
+distillation-column_heat-pumped,chemicals,t,missing,missing,not-applicable,sourced,estimated,missing,guess,sourced
+electrolysis-cell_chlor-alkali-membrane,chemicals,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
+electrolysis-cell_oxygen-depolarized,chemicals,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 electrolysis-cell_sodium-chlorate,chemicals,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 gasifier_biomass-methanol,chemicals,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 reactor_adipic-acid,chemicals,t,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
@@ -171,7 +171,7 @@ steam-reformer_ammonia_ccs-concentrated,chemicals,t,estimated,estimated,estimate
 anaerobic-digester_biomethane-upgrading,biofuels,GJ,estimated,estimated,estimated,estimated,estimated,estimated,identity,sourced
 fermenter_grain-dry-mill_ccs-concentrated,biofuels,GJ,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 fermenter_grain-dry-mill,biofuels,GJ,sourced,sourced,sourced,sourced,sourced,sourced,identity,sourced
-fermenter_grain-dry-mill_efficiency-moderate,biofuels,GJ,estimated,estimated,estimated,estimated,estimated,estimated,identity,sourced
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,GJ,estimated,estimated,estimated,estimated,estimated,estimated,proxy,sourced
 fermenter_lignocellulosic-enzymatic,biofuels,GJ,sourced,sourced,sourced,sourced,sourced,sourced,missing,sourced
 fermenter_syngas,biofuels,GJ,sourced,estimated,estimated,estimated,estimated,estimated,identity,sourced
 gasifier_biomass-methanation,biofuels,GJ,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
@@ -275,7 +275,7 @@ compressor_low-emission-seal,oil-and-gas,t,sourced,sourced,not-applicable,guess,
 reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 compressor_electric,machine-drive,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
 compressor_flare-gas-recovery,oil-and-gas,t,sourced,estimated,not-applicable,guess,sourced,estimated,identity,sourced
-reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,identity,sourced
+reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 pneumatic-device_non-emitting,oil-and-gas,m3,sourced,sourced,not-applicable,not-applicable,sourced,sourced,identity,sourced
 compressor_vapour-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,estimated,identity,sourced
 direct-heater_line-heater,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
@@ -286,7 +286,7 @@ evaporator_crystallizer,oil-and-gas,t,sourced,sourced,sourced,sourced,sourced,gu
 flare,oil-and-gas,t,guess,guess,not-applicable,guess,sourced,sourced,missing,sourced
 flare_enclosed-combustor,oil-and-gas,t,sourced,sourced,not-applicable,not-applicable,sourced,estimated,missing,sourced
 flare_high-efficiency,oil-and-gas,t,guess,guess,not-applicable,not-applicable,sourced,sourced,missing,sourced
-fracturing-fleet_electric,oil-and-gas,GJ,sourced,estimated,sourced,sourced,guess,sourced,sourced,sourced
+fracturing-fleet_electric,oil-and-gas,GJ,sourced,estimated,sourced,sourced,guess,sourced,identity,sourced
 gas-treatment-unit_amine-sweetening,oil-and-gas,m3,sourced,estimated,estimated,sourced,estimated,sourced,identity,sourced
 gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,m3,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
 gas-treatment-unit_glycol-dehydration,oil-and-gas,m3,sourced,estimated,estimated,guess,estimated,sourced,guess,sourced
@@ -302,7 +302,7 @@ pump_plunger-lift,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,gue
 reactor_ebullated-bed-hydrocracking,oil-and-gas,m3,guess,guess,guess,guess,estimated,estimated,missing,sourced
 reactor_fluid-coking,oil-and-gas,m3,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
 reactor_partial-upgrading,oil-and-gas,m3,sourced,estimated,sourced,sourced,estimated,estimated,sourced,sourced
-reciprocating-engine_diesel-field,machine-drive,GJ,guess,guess,not-applicable,identity,estimated,estimated,identity,sourced
+reciprocating-engine_diesel-field,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 reciprocating-engine_dual-fuel,oil-and-gas,m,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 reciprocating-engine_gasoline-propane,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,missing,sourced
 separator_dry-stack-tailings,oil-and-gas,t,guess,guess,guess,guess,estimated,guess,identity,sourced
@@ -417,7 +417,7 @@ dryer_ceramic-hot-air,non-metallic-minerals,t,guess,guess,not-applicable,sourced
 dryer_market-pulp,pulp-and-paper,t,sourced,sourced,not-applicable,sourced,estimated,estimated,identity,sourced
 dryer_through-air,pulp-and-paper,t,guess,guess,not-applicable,sourced,estimated,guess,guess,sourced
 electrolysis-cell_chlor-alkali-diaphragm,chemicals,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
-electrolysis-cell_electrorefining,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,estimated,identity,sourced
+electrolysis-cell_electrorefining,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,guess,identity,sourced
 electrolysis-cell_zinc-electrowinning,non-ferrous-metals,t,sourced,estimated,estimated,guess,estimated,guess,identity,sourced
 furnace_regenerative_ccs-diffuse,non-metallic-minerals,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 furnace_rotary-hearth-direct-reduction,iron-and-steel,t,guess,guess,guess,sourced,estimated,estimated,guess,sourced

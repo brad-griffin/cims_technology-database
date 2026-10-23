@@ -228,6 +228,32 @@ def m_inverse(rule, a, have, ctx):
              "sources": s.get("sources", ""), "external": []}]
 
 
+def m_inverse_net_feed(rule, a, have, ctx):
+    """On a conversion archetype (records/reference/feedstock.csv) measured per GJ of
+    product: energy use = 100 / efficiency - the energy in the product (the feed
+    whose energy ends in the product is feedstock-consumption, the rest is burned)
+    (sanity-check 2026-10-23, OG003)."""
+    from . import feedstock
+    p = rule["parameter"]
+    if any(k[0] == p and _live(v) for k, v in have.items()):
+        return []
+    t0 = feedstock.row_for(a["archetype"], ctx.get("feedstock"))
+    s = have.get(("efficiency", ""))
+    if not t0 or not _live(s) or a.get("product-unit") != "GJ":
+        return []
+    e = fnum(t0.get("energy-in-product"))
+    c, lo, hi = _vals(s)
+    if not e or not c or c <= 0 or c > 100:
+        return []
+    f = lambda x: None if not x else 100.0 / x - e
+    v = f(c)
+    if v is None or v <= 0:
+        return []
+    return [{"parameter": p, "target": "", "central": v, "low": f(hi), "high": f(lo),
+             "inputs": [_input(s, "efficiency"), f"energy in product {e:g} GJ/GJ (feedstock.csv)"],
+             "grades": [s.get("grade", "sourced")], "sources": s.get("sources", ""), "external": []}]
+
+
 def m_fuel_emission_factor(rule, a, have, ctx):
     p, t = rule["parameter"], rule["target"]
     if (p, t) in have:
@@ -273,7 +299,9 @@ def m_sec_from_emissions(rule, a, have, ctx):
     p = rule["parameter"]
     if any(k[0] == p and _live(v) for k, v in have.items()):
         return []
-    e = have.get(("emissions-combustion", "co2")) or have.get(("emissions-combustion", "co2e"))
+    # CO2 only: a CO2-eq carries CH4 and N2O, which the fuel's CO2 factor does not
+    # (sanity-check 2026-10-23, RX002)
+    e = have.get(("emissions-combustion", "co2"))
     if not _live(e) or have.get(("emissions-process", "co2")):
         return []
     fos = [c for c in split_list(a.get("carriers", "")) if c in FOSSIL]
@@ -573,6 +601,20 @@ def m_zero_if_no_fossil(rule, a, have, ctx):
         return []
     if any(k[0] == SEC and k[1] and k[1] not in NON_COMBUSTIBLE | BIOGENIC and _live(v) for k, v in have.items()):
         return []
+    # a fossil energy row the run writes later (a judgement, or a variant's rows
+    # copied from its host) counts too: look at the judgements and at the host
+    # (sanity-check 2026-10-23, S141)
+    burns = lambda t: t and t not in NON_COMBUSTIBLE | BIOGENIC and t != "fuel" or t in FOSSIL
+    if any(j["archetype"] == a["archetype"] and j["parameter"] == SEC and burns(j.get("target", ""))
+           and (j.get("status") or "") != "rejected" for j in judgements()):
+        return []
+    host = (ctx.get("hosts", {}).get(a["archetype"]) or {}).get("host")
+    if host:
+        hh = ctx["have"].get(host, {})
+        ha = ctx["arch"].get(host, {})
+        if any(k[0] == SEC and burns(k[1]) and _live(v) for k, v in hh.items()) or \
+                not set(split_list(ha.get("carriers", ""))) <= NON_COMBUSTIBLE | BIOGENIC:
+            return []
     bio = carriers & BIOGENIC
     return [{"parameter": p, "target": t, "central": 0.0, "low": None, "high": None,
              "inputs": ["carriers: " + ", ".join(sorted(carriers))], "grades": [],
@@ -717,6 +759,10 @@ def m_co2e_from_species(rule, a, have, ctx):
                  "sources": r.get("sources", ""), "external": [f"cf-gwp100-ar5-{sp}"]}]
     parts = [(sp, have.get((p, sp))) for sp in ("co2",) + tuple(G) if _live(have.get((p, sp)) or {})]
     if not any(sp != "co2" for sp, _ in parts):
+        return []
+    # CO2-eq without the CO2 is not a CO2-eq: wait for the CO2 (a fill may write it
+    # later in the run; the rules run twice) (sanity-check 2026-10-23, RX003)
+    if p == "emissions-combustion" and "co2" not in [sp for sp, _ in parts] and (p, "co2") not in have:
         return []
     c = lo = hi = 0.0
     ins, grades, srcs, ext = [], [], [], []
@@ -1104,7 +1150,7 @@ def backtest(records, rules_, have, ctx):
     return out
 
 
-METHODS = {"inverse": m_inverse, "fuel-emission-factor": m_fuel_emission_factor,
+METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed, "fuel-emission-factor": m_fuel_emission_factor,
            "sec-from-emissions": m_sec_from_emissions, "sum": m_sum, "difference": m_difference,
            "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
@@ -1610,6 +1656,11 @@ def pm_levelized_energy(rule, psum, records, target_unit, ctx, stats):
                 continue
             secs = _adding_carriers({t: r for (q, t), r in h.items()
                                      if q == SEC and t and not is_component_target(t) and _live(r)})
+            # `heat` names the duty the fuels and steam beside it supply: priced only
+            # where nothing else supplies it (sanity-check 2026-10-23, S143)
+            if "heat" in secs and any(t in FOSSIL or t in BIOGENIC or t in ("steam", "fuel")
+                                      for t in secs if t != "heat"):
+                secs = {t: r for t, r in secs.items() if t != "heat"}
             tot = h.get((SEC, ""))
             use = {t: r for t, r in secs.items() if t not in ("fuel", "total", "not-stated", "component")}
             # the feedstock the product is made from is bought too (ruling 2026-10-13)

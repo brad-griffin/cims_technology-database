@@ -23,6 +23,7 @@ from collections import defaultdict
 from .common import REFERENCE, fnum, read
 
 SEC = "specific-energy-consumption"
+EXCLUDES_FEED = re.compile(r"\bexclud\w*\s+(the\s+)?(energy\s+content\s+of\s+the\s+)?feed", re.I)
 FEED = "feedstock-consumption"
 
 
@@ -86,6 +87,11 @@ def _product_energy(eid, rs, t, stats, nxt, new) -> None:
         tg = tg.strip().lower()
         if tg not in (("",) if total_only else ("",) + tuple(feeds)):
             continue
+        if EXCLUDES_FEED.search(r.get("note") or ""):
+            # the source says its figure leaves the feed out (IEA 2013 Annex 4):
+            # nothing to take off, however high (sanity-check 2026-10-23, CHEM001)
+            stats["rows stated net of feedstock, kept"] += 1
+            continue
         v = fnum(r.get("value-norm"))
         if v is None:
             # a range-only row counts the feed when its range does (2026-10-13)
@@ -105,7 +111,7 @@ def _product_energy(eid, rs, t, stats, nxt, new) -> None:
     if not hit:
         return
     r0 = next((r for r, tg in hit if tg in feeds), hit[0][0])
-    tg0 = next((tg for _, tg in hit if tg in feeds), feeds[0])
+    tg0 = next((tg for _, tg in hit if tg in feeds and tg != "fuel"), feeds[0])
     src = r0.get("source-id", "")
     nxt[f"tp-{src}"] += 1
     row = {k: "" for k in r0}

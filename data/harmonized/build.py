@@ -158,14 +158,16 @@ def main(argv) -> int:
     ce = captureenergy.apply(L.facts, L.examples, rec)
     print(f"  capture energy on host plants: {ce.get('set aside', 0)} rows set aside, "
           f"{ce.get('derived per t CO2', 0)} restated per t CO2 on capture archetypes")
-    us = ukercsaving.derive(L.facts, rec, summarise.summarise)
-    correction.propagate(L.facts)
     ru = rollup.apply(L.facts, rec)
     print("  targets rolled into their base parameter: "
           + (", ".join(f"{k} {v}" for k, v in ru.items()) or "none"))
-    print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
+    # example totals before the UKERC savings, which apply to the host's total
+    # (sanity-check 2026-10-23, S136)
     et = carriers.example_totals(L.facts)
     print("  energy totals from example carriers: " + (", ".join(f"{k} {v}" for k, v in et.items()) or "none"))
+    us = ukercsaving.derive(L.facts, rec, summarise.summarise)
+    correction.propagate(L.facts)
+    print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
     pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
     cc = Counter(r.get("conversion-class") or "as reported" for r in pooled)
     print("  pooled parameter rows by conversion class: "
