@@ -73,7 +73,7 @@ grinding-mill_ball,,,no fuel carrier (electricity); product t cement (approved 2
 grinding-mill_vertical-roller,,,no fuel carrier (electricity); product t cement (approved 2026-10-05)
 heat-pump_industrial,,,no fuel carrier (electricity / waste-heat); product GJ (approved 2026-10-05)
 heat-pump_very-high-temperature,,,no fuel carrier (electricity / waste-heat); product GJ (approved 2026-10-05); split 2026-10-09
-heat-pump_space,,,no fuel carrier (electricity); product GJ (approved 2026-10-05)
+heat-pump_hvac,,,no fuel carrier (electricity); product GJ (approved 2026-10-05)
 kiln_intermittent,cf-hhv-lhv-methane,,single fuel natural-gas; product t product (approved 2026-10-05)
 kiln_tunnel-roller_efficiency-strong,cf-hhv-lhv-methane,,single fuel natural-gas; product t product (approved 2026-10-05)
 melting-furnace_hot-blast-cupola,cf-hhv-lhv-solid-liquid,,single fuel coke; product t melt (approved 2026-10-05)
@@ -106,9 +106,8 @@ reactor_polymerization-extrusion,cf-hhv-lhv-methane,,single fuel natural-gas; pr
 reactor_polymerization-extrusion_efficiency-strong,cf-hhv-lhv-methane,,single fuel natural-gas; product t product (approved 2026-10-05)
 reactor_urea-synthesis,,,no fuel carrier (steam / electricity); product t product (approved 2026-10-05)
 refinery_nickel-matte,cf-hhv-lhv-methane,,single fuel natural-gas; product t nickel (approved 2026-10-05)
-resistance-heater_space-heating,,,no fuel carrier (electricity); product GJ (approved 2026-10-05)
+resistance-heater_hvac,,,no fuel carrier (electricity); product GJ (approved 2026-10-05)
 rolling-mill_cold,cf-hhv-lhv-solid-liquid,,single fuel oil; product t rolled product (approved 2026-10-05)
-rolling-mill_hot-charging,cf-hhv-lhv-methane,,single fuel natural-gas; product t reheated (approved 2026-10-05)
 separator_mine-water-treatment,,,no fuel carrier (none listed); product m3 water treated (approved 2026-10-05)
 sinter-plant,cf-hhv-lhv-methane,,single fuel natural-gas; product t sinter or pellets (approved 2026-10-05)
 smelting-vessel_smelting-reduction_ccs-concentrated,cf-hhv-lhv-solid-liquid,,single fuel coal; product t iron (approved 2026-10-05)
@@ -132,7 +131,7 @@ melting-furnace_reverberatory-rotary,cf-hhv-lhv-methane,,several fuels; dominant
 gasifier_coal-petroleum-coke,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-hydrogen,"several fuels; dominant fuel coal (recommended); product GJ (decided 2026-10-05); product-out hydrogen added 2026-10-13 (an LHV efficiency or per-GJ figure converts the hydrogen out too, as on the capture variants)"
 kiln_legacy,cf-hhv-lhv-solid-liquid,,several fuels; dominant fuel coal (recommended); product t clinker (decided 2026-10-05)
 kiln_dry-precalciner,cf-hhv-lhv-solid-liquid,,several fuels; dominant fuel coal (recommended); product t clinker (decided 2026-10-05)
-space-heater_fuel-fired,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product GJ (decided 2026-10-05)
+hvac-heater_fuel-fired,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product GJ (decided 2026-10-05)
 electric-arc-furnace,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product t liquid steel (decided 2026-10-05)
 steam-cracker_fired-tubular,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product t high-value chemicals (decided 2026-10-05)
 pellet-plant_induration,cf-hhv-lhv-solid-liquid,,several fuels; dominant fuel coal (recommended); product t sinter or pellets (decided 2026-10-05)
@@ -223,3 +222,6 @@ boiler_recovery-high-solids,cf-hhv-lhv-black-liquor,,"black liquor in; steam (an
 shaft-furnace_hydrogen-direct-reduction,cf-hhv-lhv-hydrogen,,"dominant fuel hydrogen; product t iron; copied from shaft-furnace_direct-reduction with the fuel changed to hydrogen (D4, user 2026-10-14)"
 calciner_hydrogen-fired,cf-hhv-lhv-hydrogen,,"hydrogen in; product t alumina; as calciner_gas-suspension with hydrogen as the fuel (user 2026-10-14, D8)"
 separator_reverse-osmosis,,,"no fuel carrier (electricity); product m3 water treated (user 2026-10-14, as separator_mine-water-treatment)"
+fracturing-fleet_diesel,cf-hhv-lhv-solid-liquid,,single fuel diesel; product GJ hydraulic work (2026-10-23)
+fracturing-fleet_dual-fuel,cf-hhv-lhv-methane,,natural gas with 25-30% diesel; the methane ratio is about 4% high for the diesel share (2026-10-23)
+fracturing-fleet_electric,cf-hhv-lhv-methane,,gas turbines on natural gas; product GJ hydraulic work (2026-10-23)

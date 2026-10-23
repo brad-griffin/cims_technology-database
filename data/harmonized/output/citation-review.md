@@ -100,7 +100,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Dunsky 2023 | 126 | confirmed against the held document 2026-10-03 |
 | Rehfeldt et al. 2018 | 125 | confirmed against the held document 2026-10-02 |
 | Saw et al. 2023 | 124 | confirmed against the held document 2026-10-02 |
-| Carbon Trust 2011 | 121 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed; confirmed against the held document 2026-10-06 |
+| Carbon Trust 2011 | 122 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed; confirmed against the held document 2026-10-06 |
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
 | Schemme et al. 2020 | 120 | confirmed against the held document 2026-10-02 |
 | Sezgen et al. 1995 | 119 | confirmed against the held document 2026-10-02 |
@@ -168,6 +168,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ekbom et al. 2003 | 55 | confirmed against the held document 2026-10-03 |
 | Blesl and Bruchof 2010 (ETSAP P06) | 55 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | Brandt et al. 2022 | 54 | confirmed against the held document 2026-10-02 |
+| Aune et al. 2020 | 54 | confirmed against the held document 2026-10-02 |
 | McMillan et al. 2016 | 54 | confirmed against the held document 2026-10-03 |
 | Worrell and Galitsky 2004 | 54 | confirmed against the held document 2026-10-03 |
 | Gudde et al. 2019 (CO2 technologies) | 53 | confirmed against the held document 2026-10-02 |
@@ -185,7 +186,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Vattenfall 2018 | 49 | confirmed against the held document 2026-10-02 |
 | Worrell et al. 2000 | 49 | confirmed against the held document 2026-10-02 |
 | US EPA 2010 (wastewater) | 48 | confirmed against the held document 2026-10-03 |
-| Aune et al. 2020 | 48 | confirmed against the held document 2026-10-02 |
 | Simoni et al. 2022 | 48 | confirmed against the held document 2026-10-02 |
 | Zhang et al. 2003 (part 2) | 48 | confirmed against the held document 2026-10-02 |
 | Fleiter et al. 2012 | 47 | confirmed against the held document 2026-09-29 |

@@ -19,7 +19,7 @@ import re
 
 CHP = re.compile(r"\bCHP\b")
 DUAL_EXTRA = {"boiler_recovery", "gasifier_black-liquor", "incinerator_waste-to-energy"}
-STREAM_OF = {"heat": "heat", "space heating": "heat", "electricity": "electricity"}
+STREAM_OF = {"heat": "heat", "hvac heating": "heat", "electricity": "electricity"}
 
 
 def dual(a: dict) -> bool:

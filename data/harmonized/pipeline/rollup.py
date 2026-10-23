@@ -40,6 +40,18 @@ PRODUCT_PARAMS = {"capacity", "annual-output", "cost-levelized"}
 # targets that name an archetype's product, by the product name (records/archetype.csv)
 PRODUCT_TARGETS = {
     "co2": {"co2", "co2-captured"},
+    # product names written out (2026-10-23): the targets sources print keep their formulae
+    "carbon dioxide": {"co2", "co2-captured"},
+    "methane": {"ch4"},
+    "chlorine": {"cl2"},
+    "potash (k2o basis)": {"k2o"},
+    "liquefied natural gas": {"lng"},
+    "synthetic natural gas": {"sng"},
+    "methylal": {"ome1"},
+    "oxymethylene dimethyl ethers": {"ome3-5"},
+    "renewable diesel and sustainable aviation fuel": {"renewable-diesel-and-saf"},
+    "hvac heating": {"space-heating"},
+    "hvac cooling": {"space-cooling"},
     "hydrogen delivered": {"hydrogen"},
     "liquid hydrogen": {"hydrogen"},
 }

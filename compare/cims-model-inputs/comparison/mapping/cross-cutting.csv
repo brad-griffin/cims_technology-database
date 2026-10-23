@@ -33,9 +33,9 @@ Chemical Products,Chemical Products.Conveyance,Low Eff screw conveyor,,<sector>.
 Chemical Products,Chemical Products.Direct Drive,Motor speed control V belt,,<sector>.chemicals.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Chemical Products,Chemical Products.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.chemicals.service.machine-drive,same,
 Chemical Products,Chemical Products.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.chemicals.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Chemical Products,Chemical Products.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.chemicals.service.hvac.space-heating,same,
-Chemical Products,Chemical Products.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.chemicals.service.hvac.space-heating,same,
-Chemical Products,Chemical Products.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.chemicals.service.hvac.space-heating,same,
+Chemical Products,Chemical Products.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.chemicals.service.hvac.space-heating,same,
+Chemical Products,Chemical Products.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.chemicals.service.hvac.space-heating,same,
+Chemical Products,Chemical Products.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.chemicals.service.hvac.space-heating,same,
 Chemical Products,Chemical Products.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.chemicals.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Chemical Products,Chemical Products.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.chemicals.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Chemical Products,Chemical Products.Lighting,Most Eff Lighting,lighting_led,<sector>.chemicals.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -127,8 +127,8 @@ Coal Mining,Coal Mining.Conveyance,Low Eff screw conveyor,,<sector>.coal-mining.
 Coal Mining,Coal Mining.Direct Drive,Motor speed control V belt,,<sector>.coal-mining.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Coal Mining,Coal Mining.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.coal-mining.service.machine-drive,same,
 Coal Mining,Coal Mining.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.coal-mining.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Coal Mining,Coal Mining.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.coal-mining.service.hvac.space-heating,same,
-Coal Mining,Coal Mining.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.coal-mining.service.hvac.space-heating,same,
+Coal Mining,Coal Mining.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.coal-mining.service.hvac.space-heating,same,
+Coal Mining,Coal Mining.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.coal-mining.service.hvac.space-heating,same,
 Coal Mining,Coal Mining.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.coal-mining.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Coal Mining,Coal Mining.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.coal-mining.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Coal Mining,Coal Mining.Lighting,Most Eff Lighting,lighting_led,<sector>.coal-mining.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -209,8 +209,8 @@ Industrial Minerals,Industrial Minerals.Conveyance,Low Eff screw conveyor,,<sect
 Industrial Minerals,Industrial Minerals.Direct Drive,Motor speed control V belt,,<sector>.industrial-minerals.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Industrial Minerals,Industrial Minerals.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.industrial-minerals.service.machine-drive,same,
 Industrial Minerals,Industrial Minerals.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.industrial-minerals.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Industrial Minerals,Industrial Minerals.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.industrial-minerals.service.hvac.space-heating,same,
-Industrial Minerals,Industrial Minerals.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.industrial-minerals.service.hvac.space-heating,same,
+Industrial Minerals,Industrial Minerals.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.industrial-minerals.service.hvac.space-heating,same,
+Industrial Minerals,Industrial Minerals.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.industrial-minerals.service.hvac.space-heating,same,
 Industrial Minerals,Industrial Minerals.Heat,Biomass Std,direct-heater_solid-fuel,<sector>.industrial-minerals.service.kiln-heat,close,"CIMS generic kiln/process heat service, not stated as direct-fired or steam; biomass"
 Industrial Minerals,Industrial Minerals.Heat,Coal Std,direct-heater_solid-fuel,<sector>.industrial-minerals.service.kiln-heat,close,"CIMS generic kiln/process heat service, not stated as direct-fired or steam; coal"
 Industrial Minerals,Industrial Minerals.Heat,Coal Std with CCS,direct-heater_fuel-fired_ccs-diffuse,<sector>.industrial-minerals.service.kiln-heat,close,"CIMS generic kiln/process heat service, not stated as direct-fired or steam; coal-fired with capture; the only fired-heater capture archetype is natural-gas fired"
@@ -298,9 +298,9 @@ Iron and Steel,Iron and Steel.Conveyance,Low Eff screw conveyor,,<sector>.iron-a
 Iron and Steel,Iron and Steel.Direct Drive,Speed ctrl V belt,,<sector>.iron-and-steel.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Iron and Steel,Iron and Steel.Direct Drive,Variable speed ctrl and direct coupling,motor_variable-speed,<sector>.iron-and-steel.service.machine-drive,close,includes direct coupling
 Iron and Steel,Iron and Steel.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.iron-and-steel.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.iron-and-steel.service.hvac.space-heating,same,
-Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.iron-and-steel.service.hvac.space-heating,same,
-Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.iron-and-steel.service.hvac.space-heating,same,
+Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.iron-and-steel.service.hvac.space-heating,same,
+Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.iron-and-steel.service.hvac.space-heating,same,
+Iron and Steel,Iron and Steel.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.iron-and-steel.service.hvac.space-heating,same,
 Iron and Steel,Iron and Steel.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.iron-and-steel.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Iron and Steel,Iron and Steel.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.iron-and-steel.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Iron and Steel,Iron and Steel.Lighting,Most Eff Lighting,lighting_led,<sector>.iron-and-steel.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -412,10 +412,10 @@ Metal Smelting,Metal Smelting.Conveyance,Low Eff screw conveyor,,<sector>.metal-
 Metal Smelting,Metal Smelting.Direct Drive,Motor speed control V belt,,<sector>.metal-smelting.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Metal Smelting,Metal Smelting.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.metal-smelting.service.machine-drive,same,
 Metal Smelting,Metal Smelting.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.metal-smelting.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
-Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.metal-smelting.service.hvac.space-heating,same,
-Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat oil,space-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
-Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
+Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
+Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.metal-smelting.service.hvac.space-heating,same,
+Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat oil,hvac-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
+Metal Smelting,Metal Smelting.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.metal-smelting.service.hvac.space-heating,same,
 Metal Smelting,Metal Smelting.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.metal-smelting.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Metal Smelting,Metal Smelting.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.metal-smelting.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Metal Smelting,Metal Smelting.Lighting,Most Eff Lighting,lighting_led,<sector>.metal-smelting.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -496,10 +496,10 @@ Mining,Mining.Conveyance,Low Eff screw conveyor,,<sector>.mining.service.machine
 Mining,Mining.Direct Drive,Motor speed control V belt,,<sector>.mining.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Mining,Mining.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.mining.service.machine-drive,same,
 Mining,Mining.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.mining.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Mining,Mining.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
-Mining,Mining.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.mining.service.hvac.space-heating,same,
-Mining,Mining.HVAC.Space Heating,Space heat oil,space-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
-Mining,Mining.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
+Mining,Mining.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
+Mining,Mining.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.mining.service.hvac.space-heating,same,
+Mining,Mining.HVAC.Space Heating,Space heat oil,hvac-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
+Mining,Mining.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.mining.service.hvac.space-heating,same,
 Mining,Mining.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.mining.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Mining,Mining.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.mining.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Mining,Mining.Lighting,Most Eff Lighting,lighting_led,<sector>.mining.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -622,9 +622,9 @@ Petroleum Refining,Petroleum Refining.Direct Heat,Petcoke,direct-heater_solid-fu
 Petroleum Refining,Petroleum Refining.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.petroleum-refining.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
 Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Oil storage heat fired by NG,direct-heater_fuel-fired,<sector>.petroleum-refining.service.hvac.space-heating,close,"heating of oil storage tanks, not space heating; mapped to the fired heater"
 Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Oil storage heat supplied by steam,heat-exchanger_steam-heated,<sector>.petroleum-refining.service.hvac.space-heating,close,steam heating of oil storage tanks; archetype is steam-heated vessels described for food processing
-Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.petroleum-refining.service.hvac.space-heating,same,
-Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.petroleum-refining.service.hvac.space-heating,same,
-Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.petroleum-refining.service.hvac.space-heating,same,
+Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.petroleum-refining.service.hvac.space-heating,same,
+Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.petroleum-refining.service.hvac.space-heating,same,
+Petroleum Refining,Petroleum Refining.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.petroleum-refining.service.hvac.space-heating,same,
 Petroleum Refining,Petroleum Refining.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.petroleum-refining.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Petroleum Refining,Petroleum Refining.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.petroleum-refining.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Petroleum Refining,Petroleum Refining.Lighting,Most Eff Lighting,lighting_led,<sector>.petroleum-refining.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
@@ -716,9 +716,9 @@ Pulp and Paper,Pulp and Paper.Conveyance,Low Eff screw conveyor,,<sector>.pulp-a
 Pulp and Paper,Pulp and Paper.Direct Drive,Motor speed control V belt,,<sector>.pulp-and-paper.service.machine-drive,none,speed control through a V-belt transmission; no belt-drive archetype
 Pulp and Paper,Pulp and Paper.Direct Drive,Motor speed control variable speed,motor_variable-speed,<sector>.pulp-and-paper.service.machine-drive,same,
 Pulp and Paper,Pulp and Paper.HVAC.Space Cooling,Space cooling electric,chiller_vapour-compression,<sector>.pulp-and-paper.service.hvac.space-cooling,close,CIMS generic electric space cooling; equipment type (chiller or packaged AC) not stated
-Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat NG,space-heater_fuel-fired,<sector>.pulp-and-paper.service.hvac.space-heating,same,
-Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat electric,resistance-heater_space-heating,<sector>.pulp-and-paper.service.hvac.space-heating,same,
-Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat steam,space-heater_fuel-fired,<sector>.pulp-and-paper.service.hvac.space-heating,same,
+Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat NG,hvac-heater_fuel-fired,<sector>.pulp-and-paper.service.hvac.space-heating,same,
+Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat electric,resistance-heater_hvac,<sector>.pulp-and-paper.service.hvac.space-heating,same,
+Pulp and Paper,Pulp and Paper.HVAC.Space Heating,Space heat steam,hvac-heater_fuel-fired,<sector>.pulp-and-paper.service.hvac.space-heating,same,
 Pulp and Paper,Pulp and Paper.Lighting,Base Lighting,lighting_fluorescent-t12,<sector>.pulp-and-paper.service.lighting,close,CIMS generic base tier mixing general and high-bay lighting; 2000 general incumbent assumed; CIMS output GJ vs archetype Mlm-h
 Pulp and Paper,Pulp and Paper.Lighting,More Eff Lighting,lighting_fluorescent-t8,<sector>.pulp-and-paper.service.lighting,close,CIMS generic efficiency tier; T8/T5 assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h
 Pulp and Paper,Pulp and Paper.Lighting,Most Eff Lighting,lighting_led,<sector>.pulp-and-paper.service.lighting,close,CIMS generic best tier; LED assumed; mixes general and high-bay; CIMS output GJ vs archetype Mlm-h

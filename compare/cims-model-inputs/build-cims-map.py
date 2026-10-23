@@ -130,7 +130,7 @@ EQUIPMENT = [
     (r"\bmotors?\b|\bdrives?\b",                                  "motor"),
     (r"\blighting\b|\blights\b|\bluminaire",                                 "lighting"),
     (r"space cooling|\bchiller\b|refrigerat|air condition",       "chiller"),
-    (r"space heat",                                               "space-heater"),
+    (r"space heat",                                               "hvac-heater"),
     (r"ventilat",                                                 "ventilation-unit"),
     (r"\bfermenter\b|fermentation",                               "fermenter"),
     (r"transesterif",                                             "transesterification-unit"),

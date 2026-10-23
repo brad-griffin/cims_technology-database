@@ -1,5 +1,5 @@
 archetype,host,parameter,unit,host-value,add-on,tier,tier1,tier2,co2-captured,all-in,grade
-autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,capex,2025_CAD/GJ-per-yr,33,14.2335,tier 2 (capture node x CO2 captured),,14.2335,0.0621553,47.2335,guess
+autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,capex,2025_CAD/GJ-per-yr,33,21.0083,tier 2 (capture node x CO2 captured),,21.0083,0.0621553,54.0083,guess
 blast-furnace_ccs-diffuse,blast-furnace,capex,2025_CAD/t-per-yr,353.836,166.634,tier 1 (same source),166.634,153.47,0.3765,520.47,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,capex,2025_CAD/GJ-per-yr,7.12473,29.5655,tier 1 (same source),29.5655,49.2653,0.12086,36.6902,estimated
 boiler_recovery_ccs-diffuse,boiler_recovery,capex,2025_CAD/t-per-yr,396.799,410.6,tier 1 (same source),410.6,143.239,0.3514,807.399,estimated
@@ -8,25 +8,25 @@ combined-cycle_ccs-diffuse,combined-cycle,capex,2025_CAD/GJ-per-yr,55.0403,55.25
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,capex,2025_CAD/GJ-per-yr,54.882,89.6727,tier 1 (same source),89.6727,34.0657,0.0835718,144.555,estimated
 direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,capex,2025_CAD/GJ-per-yr,10.8638,18.7623,tier 2 (capture node x CO2 captured),,18.7623,0.0460286,29.6261,estimated
 electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,capex,2025_CAD/t-per-yr,10110.8,521.675,tier 2 (capture node x CO2 captured),,521.675,1.2798,10632.5,estimated
-fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,capex,2025_CAD/GJ-per-yr,42.6422,6.64096,tier 2 (capture node x CO2 captured),,6.64096,0.029,49.2832,guess
+fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,capex,2025_CAD/GJ-per-yr,42.6422,9.80191,tier 2 (capture node x CO2 captured),,9.80191,0.029,52.4441,guess
 furnace_regenerative_ccs-diffuse,furnace_regenerative,capex,2025_CAD/t-per-yr,359.138,86.8358,tier 2 (capture node x CO2 captured),,86.8358,0.21303,445.974,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,capex,2025_CAD/m3-per-yr,0.0091457,0.00915994,tier 2 (capture node x CO2 captured),,0.00915994,4e-05,0.0183056,guess
-gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,capex,2025_CAD/GJ-per-yr,263.11,20.6099,tier 2 (capture node x CO2 captured),,20.6099,0.09,283.72,guess
-gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,capex,2025_CAD/t-per-yr,1500,503.797,tier 2 (capture node x CO2 captured),,503.797,2.2,2003.8,guess
-gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,capex,2025_CAD/GJ-per-yr,76.1993,32.6187,tier 1 (same source),32.6187,30.0602,0.131268,108.818,estimated
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,capex,2025_CAD/m3-per-yr,0.0091457,0.0135199,tier 2 (capture node x CO2 captured),,0.0135199,4e-05,0.0226656,guess
+gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,capex,2025_CAD/GJ-per-yr,263.11,30.4197,tier 2 (capture node x CO2 captured),,30.4197,0.09,293.53,guess
+gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,capex,2025_CAD/t-per-yr,1500,743.593,tier 2 (capture node x CO2 captured),,743.593,2.2,2243.59,guess
+gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,capex,2025_CAD/GJ-per-yr,76.1993,32.6187,tier 1 (same source),32.6187,44.3682,0.131268,108.818,estimated
 kiln_dry-precalciner_ccs-diffuse,kiln_dry-precalciner,capex,2025_CAD/t-per-yr,495.312,249.767,tier 1 (same source),249.767,311.016,0.763,745.079,estimated
 kiln_lime-rotary-preheater_ccs-diffuse,kiln_lime-rotary-preheater,capex,2025_CAD/t-per-yr,149.739,447.534,tier 1 (same source),447.534,303.108,0.7436,597.273,estimated
-reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,capex,2025_CAD/t-per-yr,496.807,4.00939,tier 1 (same source),4.00939,55.6466,0.243,500.816,estimated
+reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,capex,2025_CAD/t-per-yr,496.807,4.00939,tier 1 (same source),4.00939,82.1333,0.243,500.816,estimated
 reactor_fluid-catalytic-cracking_ccs-diffuse,reactor_fluid-catalytic-cracking,capex,2025_CAD/m3-per-yr,136.553,100.243,tier 2 (capture node x CO2 captured),,100.243,0.245921,236.796,estimated
-reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,capex,2025_CAD/m3-per-yr,1388.04,1799.95,tier 1 (same source),1799.95,15.5719,0.068,3187.99,estimated
-shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,capex,2025_CAD/t-per-yr,364.855,149.374,tier 1 (same source),149.374,57.2496,0.25,514.229,estimated
-smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,capex,2025_CAD/t-per-yr,499.604,167.184,tier 1 (same source),167.184,228.999,1,666.788,estimated
+reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,capex,2025_CAD/m3-per-yr,1388.04,1799.95,tier 1 (same source),1799.95,22.9838,0.068,3187.99,estimated
+shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,capex,2025_CAD/t-per-yr,364.855,149.374,tier 1 (same source),149.374,84.4993,0.25,514.229,estimated
+smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,capex,2025_CAD/t-per-yr,499.604,167.184,tier 1 (same source),167.184,337.997,1,666.788,estimated
 steam-cracker_fired-tubular_ccs-diffuse,steam-cracker_fired-tubular,capex,2025_CAD/t-per-yr,1052.9,263.695,tier 2 (capture node x CO2 captured),,263.695,0.646911,1316.6,estimated
-steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,capex,2025_CAD/t-per-yr,831.968,101.775,tier 1 (same source),101.775,238.662,1.0422,933.743,estimated
-steam-reformer_methane_ccs-concentrated,steam-reformer_methane,capex,2025_CAD/GJ-per-yr,22.5221,23.7137,tier 1 (same source),23.7137,10.931,0.0477339,46.2358,estimated
+steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,capex,2025_CAD/t-per-yr,831.968,101.775,tier 1 (same source),101.775,352.26,1.0422,933.743,estimated
+steam-reformer_methane_ccs-concentrated,steam-reformer_methane,capex,2025_CAD/GJ-per-yr,22.5221,23.7137,tier 1 (same source),23.7137,16.1339,0.0477339,46.2358,estimated
 steam-reformer_methane_ccs-diffuse,steam-reformer_methane,capex,2025_CAD/GJ-per-yr,22.5221,7.36415,tier 1 (same source),7.36415,23.4557,0.0575428,29.8863,estimated
-autothermal-reformer_ammonia_ccs-concentrated,autothermal-reformer_ammonia,opex-fixed,2025_CAD/t-per-yr,6.27228,12.7505,tier 2 (capture node x CO2 captured),,12.7505,1.6,19.0228,guess
-autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-fixed,2025_CAD/GJ-per-yr,0.483551,0.495319,tier 2 (capture node x CO2 captured),,0.495319,0.0621553,0.97887,estimated
+autothermal-reformer_ammonia_ccs-concentrated,autothermal-reformer_ammonia,opex-fixed,2025_CAD/t-per-yr,6.27228,15.2749,tier 2 (capture node x CO2 captured),,15.2749,1.6,21.5472,guess
+autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-fixed,2025_CAD/GJ-per-yr,0.483551,0.593386,tier 2 (capture node x CO2 captured),,0.593386,0.0621553,1.07694,estimated
 blast-furnace_ccs-diffuse,blast-furnace,opex-fixed,2025_CAD/t-per-yr,14.944,4.53586,tier 2 (capture node x CO2 captured),,4.53586,0.3765,19.4799,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,opex-fixed,2025_CAD/GJ-per-yr,0.184628,2.2849,tier 1 (same source),2.2849,1.45605,0.12086,2.46953,estimated
 boiler_recovery_ccs-diffuse,boiler_recovery,opex-fixed,2025_CAD/t-per-yr,7.22268,19.3274,tier 1 (same source),19.3274,4.23347,0.3514,26.55,estimated
@@ -35,24 +35,24 @@ combined-cycle_ccs-diffuse,combined-cycle,opex-fixed,2025_CAD/GJ-per-yr,1.55043,
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,opex-fixed,2025_CAD/GJ-per-yr,1.70765,2.18636,tier 1 (same source),2.18636,1.00683,0.0835718,3.89401,estimated
 direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,opex-fixed,2025_CAD/GJ-per-yr,0.363167,0.554527,tier 2 (capture node x CO2 captured),,0.554527,0.0460286,0.917694,estimated
 electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,opex-fixed,2025_CAD/t-per-yr,351.536,15.4183,tier 2 (capture node x CO2 captured),,15.4183,1.2798,366.954,estimated
-fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-fixed,2025_CAD/GJ-per-yr,3.51171,0.231103,tier 2 (capture node x CO2 captured),,0.231103,0.029,3.74281,guess
+fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-fixed,2025_CAD/GJ-per-yr,3.51171,0.276858,tier 2 (capture node x CO2 captured),,0.276858,0.029,3.78857,guess
 furnace_regenerative_ccs-diffuse,furnace_regenerative,opex-fixed,2025_CAD/t-per-yr,42.7935,2.56647,tier 2 (capture node x CO2 captured),,2.56647,0.21303,45.36,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-fixed,2025_CAD/m3-per-yr,0.000428799,0.000318762,tier 2 (capture node x CO2 captured),,0.000318762,4e-05,0.000747561,guess
-gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-fixed,2025_CAD/GJ-per-yr,6.31465,0.717215,tier 2 (capture node x CO2 captured),,0.717215,0.09,7.03186,guess
-gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-fixed,2025_CAD/t-per-yr,48.1122,17.5319,tier 2 (capture node x CO2 captured),,17.5319,2.2,65.6441,guess
-gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-fixed,2025_CAD/GJ-per-yr,4.08025,1.01829,tier 1 (same source),1.01829,1.04608,0.131268,5.09854,estimated
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-fixed,2025_CAD/m3-per-yr,0.000428799,0.000381873,tier 2 (capture node x CO2 captured),,0.000381873,4e-05,0.000810672,guess
+gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-fixed,2025_CAD/GJ-per-yr,6.31465,0.859215,tier 2 (capture node x CO2 captured),,0.859215,0.09,7.17386,guess
+gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-fixed,2025_CAD/t-per-yr,48.1122,21.003,tier 2 (capture node x CO2 captured),,21.003,2.2,69.1152,guess
+gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-fixed,2025_CAD/GJ-per-yr,4.08025,1.01829,tier 1 (same source),1.01829,1.25319,0.131268,5.09854,estimated
 kiln_dry-precalciner_ccs-diffuse,kiln_dry-precalciner,opex-fixed,2025_CAD/t-per-yr,40.3164,32.957,tier 1 (same source),32.957,9.1922,0.763,73.2734,estimated
 kiln_lime-rotary-preheater_ccs-diffuse,kiln_lime-rotary-preheater,opex-fixed,2025_CAD/t-per-yr,8.3854,28.6459,tier 1 (same source),28.6459,8.95848,0.7436,37.0313,estimated
-reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,opex-fixed,2025_CAD/t-per-yr,28.6656,1.93648,tier 2 (capture node x CO2 captured),,1.93648,0.243,30.6021,estimated
+reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,opex-fixed,2025_CAD/t-per-yr,28.6656,2.31988,tier 2 (capture node x CO2 captured),,2.31988,0.243,30.9855,estimated
 reactor_fluid-catalytic-cracking_ccs-diffuse,reactor_fluid-catalytic-cracking,opex-fixed,2025_CAD/m3-per-yr,6.14461,2.96273,tier 2 (capture node x CO2 captured),,2.96273,0.245921,9.10734,estimated
-reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,opex-fixed,2025_CAD/m3-per-yr,62.459,0.541896,tier 2 (capture node x CO2 captured),,0.541896,0.068,63.0009,guess
-shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,opex-fixed,2025_CAD/t-per-yr,6.89117,1.99226,tier 2 (capture node x CO2 captured),,1.99226,0.25,8.88343,estimated
-smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,opex-fixed,2025_CAD/t-per-yr,20.6735,10.8092,tier 1 (same source),10.8092,7.96905,1,31.4827,estimated
+reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,opex-fixed,2025_CAD/m3-per-yr,62.459,0.649184,tier 2 (capture node x CO2 captured),,0.649184,0.068,63.1082,guess
+shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,opex-fixed,2025_CAD/t-per-yr,6.89117,2.38671,tier 2 (capture node x CO2 captured),,2.38671,0.25,9.27788,estimated
+smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,opex-fixed,2025_CAD/t-per-yr,20.6735,10.8092,tier 1 (same source),10.8092,9.54683,1,31.4827,estimated
 steam-cracker_fired-tubular_ccs-diffuse,steam-cracker_fired-tubular,opex-fixed,2025_CAD/t-per-yr,28.461,49.9961,tier 1 (same source),49.9961,7.79363,0.646911,78.4571,estimated
-steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,opex-fixed,2025_CAD/t-per-yr,11.1915,8.30535,tier 2 (capture node x CO2 captured),,8.30535,1.0422,19.4968,estimated
-steam-reformer_methane_ccs-concentrated,steam-reformer_methane,opex-fixed,2025_CAD/GJ-per-yr,0.763523,0.895187,tier 1 (same source),0.895187,0.380394,0.0477339,1.65871,estimated
+steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,opex-fixed,2025_CAD/t-per-yr,11.1915,9.94971,tier 2 (capture node x CO2 captured),,9.94971,1.0422,21.1412,estimated
+steam-reformer_methane_ccs-concentrated,steam-reformer_methane,opex-fixed,2025_CAD/GJ-per-yr,0.763523,0.895187,tier 1 (same source),0.895187,0.455707,0.0477339,1.65871,estimated
 steam-reformer_methane_ccs-diffuse,steam-reformer_methane,opex-fixed,2025_CAD/GJ-per-yr,0.763523,0.693244,tier 2 (capture node x CO2 captured),,0.693244,0.0575428,1.45677,estimated
-autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-variable,2025_CAD/GJ,1.71263,0.597365,tier 2 (capture node x CO2 captured),,0.597365,0.0621553,2.31,guess
+autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-variable,2025_CAD/GJ,1.84362,0.710427,tier 2 (capture node x CO2 captured),,0.710427,0.0621553,2.55405,guess
 blast-furnace_ccs-diffuse,blast-furnace,opex-variable,2025_CAD/t,4.32371,5.44001,tier 2 (capture node x CO2 captured),,5.44001,0.3765,9.76372,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,opex-variable,2025_CAD/GJ,0.549826,1.74629,tier 2 (capture node x CO2 captured),,1.74629,0.12086,2.29612,estimated
 boiler_recovery_ccs-diffuse,boiler_recovery,opex-variable,2025_CAD/t,11.9331,12.1492,tier 1 (same source),12.1492,5.07734,0.3514,24.0823,estimated
@@ -60,21 +60,21 @@ calciner_gas-suspension_ccs-diffuse,calciner_gas-suspension,opex-variable,2025_C
 combined-cycle_ccs-diffuse,combined-cycle,opex-variable,2025_CAD/GJ,0.89386,1.06772,tier 1 (same source),1.06772,1.45051,0.100389,1.96158,estimated
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,opex-variable,2025_CAD/GJ,2.99249,35.2126,tier 1 (same source),35.2126,1.20752,0.0835718,38.2051,estimated
 direct-heater_fuel-fired_ccs-diffuse,direct-heater_fuel-fired,opex-variable,2025_CAD/GJ,0.151714,0.665062,tier 2 (capture node x CO2 captured),,0.665062,0.0460286,0.816776,estimated
-electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,opex-variable,2025_CAD/t,289.788,18.4917,tier 2 (capture node x CO2 captured),,18.4917,1.2798,308.28,estimated
-fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-variable,2025_CAD/GJ,4.20267,0.278715,tier 2 (capture node x CO2 captured),,0.278715,0.029,4.48138,guess
-furnace_regenerative_ccs-diffuse,furnace_regenerative,opex-variable,2025_CAD/t,10.2933,3.07805,tier 2 (capture node x CO2 captured),,3.07805,0.21303,13.3713,estimated
-gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-variable,2025_CAD/m3,0.000380701,0.000384434,tier 2 (capture node x CO2 captured),,0.000384434,4e-05,0.000765135,guess
-gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-variable,2025_CAD/GJ,0.565735,0.864976,tier 2 (capture node x CO2 captured),,0.864976,0.09,1.43071,guess
-gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-variable,2025_CAD/t,44.1226,21.1439,tier 2 (capture node x CO2 captured),,21.1439,2.2,65.2665,guess
-gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-variable,2025_CAD/GJ,1.71407,0.59832,tier 1 (same source),0.59832,1.2616,0.131268,2.31239,estimated
+electrolysis-cell_prebaked-anode_ccs-diffuse,electrolysis-cell_prebaked-anode,opex-variable,2025_CAD/t,279.369,18.4917,tier 2 (capture node x CO2 captured),,18.4917,1.2798,297.861,estimated
+fermenter_grain-dry-mill_ccs-concentrated,fermenter_grain-dry-mill,opex-variable,2025_CAD/GJ,4.20267,0.331466,tier 2 (capture node x CO2 captured),,0.331466,0.029,4.53414,guess
+furnace_regenerative_ccs-diffuse,furnace_regenerative,opex-variable,2025_CAD/t,9.92324,3.07805,tier 2 (capture node x CO2 captured),,3.07805,0.21303,13.0013,estimated
+gas-treatment-unit_amine-sweetening_ccs-concentrated,gas-treatment-unit_amine-sweetening,opex-variable,2025_CAD/m3,0.000440804,0.000457195,tier 2 (capture node x CO2 captured),,0.000457195,4e-05,0.000897999,guess
+gasifier_biomass-fischer-tropsch_ccs-concentrated,gasifier_biomass-fischer-tropsch,opex-variable,2025_CAD/GJ,0.565735,1.02869,tier 2 (capture node x CO2 captured),,1.02869,0.09,1.59442,guess
+gasifier_coal-methanol_ccs-concentrated,gasifier_coal-methanol,opex-variable,2025_CAD/t,37.2542,25.1457,tier 2 (capture node x CO2 captured),,25.1457,2.2,62.3999,guess
+gasifier_coal-petroleum-coke_ccs-concentrated,gasifier_coal-petroleum-coke,opex-variable,2025_CAD/GJ,1.71407,0.59832,tier 1 (same source),0.59832,1.50038,0.131268,2.31239,estimated
 kiln_dry-precalciner_ccs-diffuse,kiln_dry-precalciner,opex-variable,2025_CAD/t,14.7067,27.9788,tier 1 (same source),27.9788,11.0245,0.763,42.6855,estimated
 kiln_lime-rotary-preheater_ccs-diffuse,kiln_lime-rotary-preheater,opex-variable,2025_CAD/t,9.70996,9.42647,tier 1 (same source),9.42647,10.7442,0.7436,19.1364,estimated
-reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,opex-variable,2025_CAD/t,31.6383,2.33544,tier 2 (capture node x CO2 captured),,2.33544,0.243,33.9737,estimated
-reactor_fluid-catalytic-cracking_ccs-diffuse,reactor_fluid-catalytic-cracking,opex-variable,2025_CAD/m3,5.68419,3.55329,tier 2 (capture node x CO2 captured),,3.55329,0.245921,9.23748,estimated
-reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,opex-variable,2025_CAD/m3,57.7789,0.653538,tier 2 (capture node x CO2 captured),,0.653538,0.068,58.4324,guess
-shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,opex-variable,2025_CAD/t,32.0477,2.40271,tier 2 (capture node x CO2 captured),,2.40271,0.25,34.4504,estimated
-smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,opex-variable,2025_CAD/t,4.32371,9.61085,tier 2 (capture node x CO2 captured),,9.61085,1,13.9346,guess
+reactor_ethylene-oxidation_ccs-concentrated,reactor_ethylene-oxidation,opex-variable,2025_CAD/t,31.6383,2.77746,tier 2 (capture node x CO2 captured),,2.77746,0.243,34.4158,estimated
+reactor_fluid-catalytic-cracking_ccs-diffuse,reactor_fluid-catalytic-cracking,opex-variable,2025_CAD/m3,6.58158,3.55329,tier 2 (capture node x CO2 captured),,3.55329,0.245921,10.1349,estimated
+reactor_integrated-upgrader_ccs-concentrated,reactor_integrated-upgrader,opex-variable,2025_CAD/m3,66.9007,0.777231,tier 2 (capture node x CO2 captured),,0.777231,0.068,67.6779,guess
+shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,opex-variable,2025_CAD/t,32.0477,2.85747,tier 2 (capture node x CO2 captured),,2.85747,0.25,34.9052,estimated
+smelting-vessel_smelting-reduction_ccs-concentrated,smelting-vessel_smelting-reduction,opex-variable,2025_CAD/t,4.32371,11.4299,tier 2 (capture node x CO2 captured),,11.4299,1,15.7536,guess
 steam-cracker_fired-tubular_ccs-diffuse,steam-cracker_fired-tubular,opex-variable,2025_CAD/t,9.06307,9.34715,tier 2 (capture node x CO2 captured),,9.34715,0.646911,18.4102,estimated
-steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,opex-variable,2025_CAD/t,13.9894,2.7979,tier 1 (same source),2.7979,10.0164,1.0422,16.7873,estimated
-steam-reformer_methane_ccs-concentrated,steam-reformer_methane,opex-variable,2025_CAD/GJ,1.08552,0.366634,tier 1 (same source),0.366634,0.458763,0.0477339,1.45215,estimated
+steam-reformer_ammonia_ccs-concentrated,steam-reformer_ammonia,opex-variable,2025_CAD/t,13.9894,2.7979,tier 1 (same source),2.7979,11.9122,1.0422,16.7873,estimated
+steam-reformer_methane_ccs-concentrated,steam-reformer_methane,opex-variable,2025_CAD/GJ,1.08552,0.366634,tier 1 (same source),0.366634,0.545593,0.0477339,1.45215,estimated
 steam-reformer_methane_ccs-diffuse,steam-reformer_methane,opex-variable,2025_CAD/GJ,1.08552,1.62906,tier 1 (same source),1.62906,0.83143,0.0575428,2.71458,estimated

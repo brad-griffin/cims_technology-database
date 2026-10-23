@@ -1,0 +1,275 @@
+item,kind,archetype,before,after,note
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.at-to-usa.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.on-to-usa.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.storage,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,
+A1,hierarchy: node added,,,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.storage,
+A2,hierarchy: node added,,,<sector>.chemicals.service.n2o-abatement,
+A3,hierarchy: node added,,,<sector>.chemicals.service.distillation,
+A4,hierarchy: node added,,,<sector>.industrial-minerals.product.cement.binder,
+A5,hierarchy: node added,,,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,
+A5,hierarchy: node added,,,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,
+A6,hierarchy: node added,,,<sector>.iron-and-steel.product.continuous-cast.pickling,
+A7,hierarchy: node added,,,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,
+A7,hierarchy: node added,,,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A8,hierarchy: node added,,,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,
+A8,hierarchy: node added,,,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,
+A10,hierarchy: node added,,,<sector>.natural-gas.product.supply.processing.dehydration,
+A10,hierarchy: node added,,,<sector>.natural-gas.product.supply.processing.sulphur-recovery,
+A10,hierarchy: node added,,,<sector>.natural-gas.product.supply.processing.ngl-recovery,
+A11,hierarchy: node added,,,<sector>.natural-gas.product.supply.completion,
+A12,hierarchy: node added,,,<sector>.natural-gas.service.artificial-lift,
+A12,hierarchy: node added,,,<sector>.natural-gas.service.treating,
+A12,hierarchy: node added,,,<sector>.petroleum-crude.service.artificial-lift,
+A12,hierarchy: node added,,,<sector>.petroleum-crude.service.treating,
+A13,hierarchy: node added,,,<sector>.petroleum-crude.product.bitumen.mining.extraction,
+A13,hierarchy: node added,,,<sector>.petroleum-crude.product.bitumen.mining.froth-treatment,
+A14,hierarchy: node added,,,<sector>.petroleum-crude.product.bitumen.upgrading.primary,
+A14,hierarchy: node added,,,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,
+A15,hierarchy: node added,,,<sector>.pulp-and-paper.service.effluent-treatment.primary,
+A15,hierarchy: node added,,,<sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.drying,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.process-heating,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.cleaning,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.baking-frying-roasting,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.forming-pressing,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.metal-melting,
+A16,hierarchy: node added,,,<sector>.light-industrial.service.heat.heat-treatment,
+A16,hierarchy: node added,,,<sector>.biofuels.product.solid-biofuel,
+B2,hierarchy: node added,,,<sector>.coal-mining.product.raw-product.mine-methane,
+A1,service: moved,pipeline_co2,<root>.transmission.co2-pipeline-and-storage.*,<root>.transmission.co2-pipeline-and-storage.*.pipeline,
+A1,service: moved,well_co2-storage,<root>.transmission.co2-pipeline-and-storage.*,<root>.transmission.co2-pipeline-and-storage.*.storage,
+B3,service: moved,compressor_co2-dehydration,<sector>.*.service.ccs.concentrated,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"compression and dehydration is the pipeline inlet, not part of capture"
+A2,service: moved,reactor_catalytic-n2o,<sector>.chemicals.product.adipic-acid; <sector>.chemicals.product.nitric-acid,<sector>.chemicals.service.n2o-abatement,requested by the nitric and adipic acid plants
+A2,service: moved,reactor_thermal-n2o-destruction,<sector>.chemicals.product.adipic-acid,<sector>.chemicals.service.n2o-abatement,requested by the nitric and adipic acid plants
+A3,service: moved,distillation-column,<sector>.chemicals.product.petrochemicals.all-polymerization; <sector>.chemicals.product.petrochemicals.btx-reforming; <sector>.chemicals.product.petrochemicals.intermediate-production,<sector>.chemicals.service.distillation,
+A3,service: moved,distillation-column_heat-integrated,<sector>.chemicals.product.hydrogen-peroxide; <sector>.chemicals.product.petrochemicals.all-polymerization; <sector>.chemicals.product.petrochemicals.btx-reforming; <sector>.chemicals.product.petrochemicals.intermediate-production,<sector>.chemicals.service.distillation,
+A3,service: moved,distillation-column_heat-pumped,<sector>.chemicals.product.hydrogen-peroxide; <sector>.chemicals.product.petrochemicals.all-polymerization; <sector>.chemicals.product.petrochemicals.btx-reforming; <sector>.chemicals.product.petrochemicals.intermediate-production,<sector>.chemicals.service.distillation,
+A4,service: moved,binder_alkali-activated,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_blended-cement,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_calcined-clay,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_carbonated,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_electrochemical,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_hydrothermal-silicate,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A4,service: moved,binder_sulphoaluminate,<sector>.industrial-minerals.product.cement.grinding,<sector>.industrial-minerals.product.cement.binder,
+A5,service: moved,annealing-furnace_batch-bell,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,
+A5,service: moved,annealing-furnace_continuous,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,
+A5,service: moved,annealing-furnace_hydrogen-bell,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,
+A5,service: moved,induction-heater_strip-heating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,
+A5,service: moved,coating-line_electrolytic,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,
+A5,service: moved,coating-line_hot-dip,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,
+A6,service: moved,pickling-line_acid,<sector>.iron-and-steel.product.continuous-cast.cold-rolling; <sector>.iron-and-steel.product.continuous-cast.hot-rolling,<sector>.iron-and-steel.product.continuous-cast.pickling,
+A7,service: moved,digester_bayer,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,
+A7,service: moved,calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A7,service: moved,calciner_gas-suspension,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A7,service: moved,calciner_gas-suspension_ccs-diffuse,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A7,service: moved,calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A8,service: moved,converter_continuous,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting; <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,<sector>.metal-smelting.product.copper.pyrometallurgy.converting; <sector>.metal-smelting.product.nickel.pyrometallurgy.converting,
+A8,service: moved,converter_peirce-smith,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting; <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,<sector>.metal-smelting.product.copper.pyrometallurgy.converting; <sector>.metal-smelting.product.nickel.pyrometallurgy.converting,
+A10,service: moved,adsorber_molecular-sieve,<sector>.natural-gas.product.supply.processing,<sector>.natural-gas.product.supply.processing.dehydration,
+A10,service: moved,gas-treatment-unit_glycol-dehydration,<sector>.natural-gas.product.supply.processing,<sector>.natural-gas.product.supply.processing.dehydration,
+A10,service: moved,gas-treatment-unit_sulphur-recovery,<sector>.natural-gas.product.supply.processing,<sector>.natural-gas.product.supply.processing.sulphur-recovery,
+A10,service: moved,turboexpander_ngl-recovery,<sector>.natural-gas.product.supply.processing,<sector>.natural-gas.product.supply.processing.ngl-recovery,
+A10,service: removed,gas-treatment-unit_amine-sweetening,<sector>.natural-gas.product.supply.processing,,acid gas removal sits on the formation-co2 node
+A10,service: removed,gas-treatment-unit_acid-gas-advanced,<sector>.natural-gas.product.supply.processing,,acid gas removal sits on the formation-co2 node
+A11,service: moved,fracturing-fleet_electric,<sector>.natural-gas.product.supply.drilling,<sector>.natural-gas.product.supply.completion,
+A11; B7,service: moved,reciprocating-engine_dual-fuel,<sector>.natural-gas.product.supply.well-tests,<sector>.natural-gas.product.supply.completion,engines power frac fleets; they make no well-test emissions
+A12,service: moved,pump_artificial-lift,<sector>.natural-gas.product.supply.extraction.coalbed-methane; <sector>.petroleum-crude.product.heavy; <sector>.petroleum-crude.product.light-medium.offshore; <sector>.petroleum-crude.product.light-medium.onshore,<sector>.natural-gas.service.artificial-lift; <sector>.petroleum-crude.service.artificial-lift,requested by the extraction nodes
+A12,service: moved,direct-heater_line-heater,<sector>.natural-gas.product.supply.extraction.coalbed-methane; <sector>.natural-gas.product.supply.extraction.conventional; <sector>.natural-gas.product.supply.extraction.shale; <sector>.natural-gas.product.supply.extraction.tight; <sector>.petroleum-crude.product.heavy; <sector>.petroleum-crude.product.light-medium.offshore; <sector>.petroleum-crude.product.light-medium.onshore,<sector>.natural-gas.service.treating; <sector>.petroleum-crude.service.treating,requested by the extraction nodes
+A12,service: moved,heat-pump_oil-treating,<sector>.petroleum-crude.product.heavy; <sector>.petroleum-crude.product.light-medium.offshore; <sector>.petroleum-crude.product.light-medium.onshore,<sector>.petroleum-crude.service.treating,
+A13,service: moved,separator_warm-water-extraction,<sector>.petroleum-crude.product.bitumen.mining,<sector>.petroleum-crude.product.bitumen.mining.extraction,
+A13,service: moved,separator_non-aqueous,<sector>.petroleum-crude.product.bitumen.mining,<sector>.petroleum-crude.product.bitumen.mining.extraction,
+A13,service: moved,separator_paraffinic-froth-treatment,<sector>.petroleum-crude.product.bitumen.mining,<sector>.petroleum-crude.product.bitumen.mining.froth-treatment,
+A14,service: moved,reactor_delayed-coking,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.primary,
+A14,service: moved,reactor_fluid-coking,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.primary,
+A14,service: moved,reactor_ebullated-bed-hydrocracking,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.primary,
+A14,service: moved,reactor_partial-upgrading,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.primary,partial upgrading takes the place of primary upgrading (mild thermal cracking or deasphalting)
+A14,service: moved,reactor_hydroprocessing,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,
+A15,service: moved,separator_clarifier,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.primary,
+A15,service: moved,fan_activated-sludge,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A15,service: moved,fan_fine-bubble,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A15,service: moved,separator_membrane-bioreactor,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A15,service: moved,anaerobic-digester_effluent,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A16; E2,service: moved,dryer_direct-fired,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_direct-fired_efficiency-moderate,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_direct-fired_efficiency-strong,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_electric,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_solid-fuel,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_solid-fuel_efficiency-strong,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,dryer_superheated-steam,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,kiln_lumber-continuous,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,kiln_lumber-heat-pump,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,kiln_lumber-steam,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,ultraviolet-curer_infrared,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A16; E2,service: moved,heat-exchanger_aseptic-uht,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating,
+A16; E2,service: moved,heat-exchanger_steam-heated,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating,
+A16; E2,service: moved,heat-exchanger_steam-heated_efficiency-strong,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating,
+A16; E2,service: moved,radio-frequency-heater_food,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating,
+A16; E2,service: moved,press_high-pressure-processing,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating,
+A16; E2,service: moved,cleaning-system,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.cleaning,
+A16; E2,service: moved,cleaning-system_efficiency-strong,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.cleaning,
+A16; E2,service: moved,oven_electric,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.baking-frying-roasting,
+A16; E2,service: moved,oven_fuel-fired,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.baking-frying-roasting,
+A16; E2,service: moved,oven_fuel-fired_efficiency-moderate,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.baking-frying-roasting,
+A16; E2,service: moved,press_hot-platen,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.forming-pressing,
+A16; E2,service: moved,melting-furnace_crucible-gas-fired,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,melting-furnace_cupola,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,melting-furnace_induction,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,melting-furnace_isothermal,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,melting-furnace_regenerative-oxy-fuel,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,melting-furnace_rotary-oxy-fuel,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,electric-arc-furnace,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.metal-melting,
+A16; E2,service: moved,furnace_heat-treatment,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.heat-treatment,
+A16; E2,service: moved,induction-heater_reheating,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.heat-treatment,
+B5,service: removed,heat-pump_industrial,<sector>.light-industrial.service.heat,,already on light-industrial.service.steam
+B5,service: removed,heat-pump_heat-transformer,<sector>.light-industrial.service.heat,,already on light-industrial.service.steam
+A16,service: moved,pellet-plant_wood,<sector>.light-industrial.service.heat,<sector>.biofuels.product.solid-biofuel,
+A16,service: moved,reactor_torrefaction,<sector>.light-industrial.service.heat,<sector>.biofuels.product.solid-biofuel,
+B1,service: moved,separator_thickening-filtration,<sector>.mining.service.separation,<sector>.mining.service.tailings-disposal,
+B2,service: moved,gas-treatment-unit_vam-oxidiser,<sector>.coal-mining.product.raw-product.extraction,<sector>.coal-mining.product.raw-product.mine-methane,methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
+B2,service: moved,process-improvement_coal-mine-methane-drainage,<sector>.coal-mining.product.raw-product.extraction,<sector>.coal-mining.product.raw-product.mine-methane,methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
+B4,service: removed,adsorber_direct-lithium,<sector>.mining.service.crystallization,,stays on separation
+B5,service: removed,motor_induction-standard,<sector>.light-industrial.service.hvac.space-cooling,,motors are on fans and blowers
+B5,service: removed,motor_variable-speed,<sector>.light-industrial.service.hvac.space-cooling,,motors are on fans and blowers
+E1,archetype: type -> reference,mine_open-pit-oil-sands,conventional,reference,"whole mine and extraction plant; the hierarchy keeps the chain (mine haulage, extraction, froth treatment)"
+E1,service: removed,mine_open-pit-oil-sands,<sector>.petroleum-crude.product.bitumen.mining,,reference only: serves no node
+E1,archetype: type -> reference,reactor_integrated-upgrader,conventional,reference,whole upgrader; the hierarchy keeps the chain (primary and secondary upgrading)
+E1,service: removed,reactor_integrated-upgrader,<sector>.petroleum-crude.product.bitumen.upgrading,,reference only: serves no node
+E1,archetype: type -> reference,reactor_integrated-upgrader_ccs-concentrated,alternative,reference,as reactor_integrated-upgrader
+E1,service: removed,reactor_integrated-upgrader_ccs-concentrated,<sector>.petroleum-crude.product.bitumen.upgrading,,reference only: serves no node
+C3; E1,archetype: type -> reference,refinery_hydroskimming,conventional,reference,whole refinery; the hierarchy keeps the unit chain
+C3; E1,service: removed,refinery_hydroskimming,<sector>.petroleum-refining.product.petroleum-fractions.distillation,,reference only: serves no node
+C3; E1,archetype: type -> reference,refinery_conversion,conventional,reference,whole refinery; the hierarchy keeps the unit chain
+C3; E1,service: removed,refinery_conversion,<sector>.petroleum-refining.product.petroleum-fractions.distillation,,reference only: serves no node
+C3; E1,archetype: type -> reference,refinery_deep-conversion,conventional,reference,whole refinery; the hierarchy keeps the unit chain
+C3; E1,service: removed,refinery_deep-conversion,<sector>.petroleum-refining.product.petroleum-fractions.distillation,,reference only: serves no node
+C4,archetype: type -> reference,distillery_beverage-spirits,conventional,reference,whole plant for one food product; the light-industry demand node is not split by product
+C4,service: removed,distillery_beverage-spirits,<sector>.light-industrial.product.food-tobacco-and-beverage,,reference only: serves no node
+C4,archetype: type -> reference,refinery_sugar-beet,conventional,reference,whole plant for one food product; the light-industry demand node is not split by product
+C4,service: removed,refinery_sugar-beet,<sector>.light-industrial.product.food-tobacco-and-beverage,,reference only: serves no node
+C1,archetype: type -> reference,furnace_tempering,conventional,reference,"secondary fabrication of flat glass, outside glass forming and finishing"
+C1,service: removed,furnace_tempering,<sector>.industrial-minerals.product.glass.form-and-finish,,reference only: serves no node
+C2,archetype: type -> reference,furnace_homogenizing,conventional,reference,a minor step after casting; melt-cast nodes keep the melting furnaces
+C2,service: removed,furnace_homogenizing,<sector>.metal-smelting.product.aluminum.recycle; <sector>.metal-smelting.product.copper.melt-cast; <sector>.metal-smelting.product.magnesium.melt-cast,,reference only: serves no node
+C2,archetype: type -> reference,rolling-mill_continuous-casting,efficient variant,reference,a minor step after melting; melt-cast nodes keep the melting furnaces
+C2,service: removed,rolling-mill_continuous-casting,<sector>.metal-smelting.product.aluminum.recycle; <sector>.metal-smelting.product.copper.melt-cast; <sector>.metal-smelting.product.lead.melt-cast; <sector>.metal-smelting.product.magnesium.melt-cast; <sector>.metal-smelting.product.nickel.melt-cast; <sector>.metal-smelting.product.zinc.melt-cast,,reference only: serves no node
+A16,archetype: type -> reference,press_all-electric,efficient variant,reference,"a drive (servo-electric presses), not process heat, and no hydraulic baseline archetype to compete with"
+A16,service: removed,press_all-electric,<sector>.light-industrial.service.heat,,reference only: serves no node
+D,archetype: type -> reference,process-improvement_pfc-anode-effect-control,efficient variant,reference,"set aside: anode-effect control is standard practice, so the base cell reflects it"
+D,service: removed,process-improvement_pfc-anode-effect-control,<sector>.metal-smelting.product.aluminum.primary-aluminum.electrolysis,,reference only: serves no node
+D,archetype: type -> reference,process-improvement_log-thawing,efficient variant,reference,set aside: small saving on the wood room's steam
+D,service: removed,process-improvement_log-thawing,<sector>.pulp-and-paper.product.pulp.wood-preparation,,reference only: serves no node
+D,archetype: type -> reference,separator_lignin-extraction,alternative,reference,set aside: its numbers are per t lignin and a variant of the recovery boiler needs them per t black liquor solids (no ratio sourced yet)
+D,service: removed,separator_lignin-extraction,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,,reference only: serves no node
+D,archetype: renamed into a variant,heat-recovery-unit_off-gas,heat-recovery-unit_off-gas,electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,host electric-arc-furnace_smelting-submerged-arc
+D,archetype: renamed into a variant,process-improvement_biocarbon-reductant,process-improvement_biocarbon-reductant,electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,host electric-arc-furnace_smelting-submerged-arc
+D,archetype: renamed into a variant,process-improvement_bio-pitch,process-improvement_bio-pitch,furnace_anode-baking_biogenic-carbon,host furnace_anode-baking
+D,archetype: renamed into a variant,fan_fine-bubble,fan_fine-bubble,fan_activated-sludge_efficiency-moderate,host fan_activated-sludge
+D,archetype: renamed into a variant,compressor_boil-off-recovery,compressor_boil-off-recovery,liquefaction-train_base-load_efficiency-moderate,host liquefaction-train_base-load
+D,archetype: renamed into a variant,process-improvement_drag-reducing-agent,process-improvement_drag-reducing-agent,pump_electric-station_efficiency-moderate,host pump_electric-station
+D,archetype: renamed into a variant,ventilation-unit_demand-controlled,ventilation-unit_demand-controlled,space-heater_fuel-fired_efficiency-moderate,host space-heater_fuel-fired
+D,archetype: renamed into a variant,ventilation-unit_heat-recovery,ventilation-unit_heat-recovery,space-heater_fuel-fired_efficiency-strong,host space-heater_fuel-fired
+D,archetype: merged into a variant,press_dewatering,press_dewatering,dryer_direct-fired_efficiency-moderate,
+D,service: removed,press_dewatering,<sector>.coal-mining.product.coal-preparation.drying; <sector>.mining.service.drying,,merged into dryer_direct-fired_efficiency-moderate
+D,archetype: merged into a variant,press_shoe-extended,press_shoe-extended,paper-machine_efficiency-strong,
+D,service: removed,press_shoe-extended,<sector>.pulp-and-paper.product.paper.coated.forming; <sector>.pulp-and-paper.product.paper.linerboard.forming; <sector>.pulp-and-paper.product.paper.newsprint.forming; <sector>.pulp-and-paper.product.paper.tissue.forming; <sector>.pulp-and-paper.product.paper.uncoated.forming,,merged into paper-machine_efficiency-strong
+D,archetype: merged into a variant,press_dewatering-advanced,press_dewatering-advanced,paper-machine_efficiency-moderate,
+D,service: removed,press_dewatering-advanced,<sector>.pulp-and-paper.product.paper.coated.forming; <sector>.pulp-and-paper.product.paper.linerboard.forming; <sector>.pulp-and-paper.product.paper.newsprint.forming; <sector>.pulp-and-paper.product.paper.tissue.forming; <sector>.pulp-and-paper.product.paper.uncoated.forming,,merged into paper-machine_efficiency-moderate
+D,archetype: merged into a variant,rolling-mill_hot-charging,rolling-mill_hot-charging,furnace_reheating_efficiency-strong,
+D,service: removed,rolling-mill_hot-charging,<sector>.iron-and-steel.service.reheating,,merged into furnace_reheating_efficiency-strong
+D,archetype: merged into a variant,heat-recovery-unit_turbine-exhaust,heat-recovery-unit_turbine-exhaust,liquefaction-train_base-load_efficiency-moderate,
+D,service: removed,heat-recovery-unit_turbine-exhaust,<sector>.natural-gas.product.supply.lng-liquefaction,,merged into liquefaction-train_base-load_efficiency-moderate
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,bataille_2017_001:dryer@production-processes-alternative-drying-systems,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,bataille_2017_001:press@production-processes-dryer-including-improvement-processes,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,iea_2024_001:press@other-production-techniques,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,ukerc_2013_001:press_efficiency-moderate@press,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,ukerc_2013_001:rolling-mill_efficiency-strong@hot-rolling-not-including-heavy-section,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,kong_2016_001:press_displacement@3-3-emerging-papermaking-technologies,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,kong_2016_001:press_impulse-drying@3-3-emerging-papermaking-technologies,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,doe_2023_001:press_shoe-extended@appendix-b-macc-2030-pulp-and-paper-pp-103-104,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,kramer_2009_001:press_shoe-extended@papermaking-ch-17,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,jrc_2022_001:furnace_reheating_hot-charging@effect-of-hot-charging-mild-steel-billets-in-a-top-fired-pusher-furnace-discharge-1-200-degc-sect-2-4-2-16-table-2-23,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,jrc_2022_001:furnace_reheating_direct-charging@effect-of-hot-charging-mild-steel-billets-in-a-top-fired-pusher-furnace-discharge-1-200-degc-sect-2-4-2-16-table-2-23,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,jrc_2022_001:furnace_reheating_direct-charging@liberty-steel-ostrava-almost-100-direct-charging-at-850-degc-sect-2-4-2-16,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,jrc_2022_001:furnace_reheating_hot-charging@imatra-steel-hot-charging-of-blooms-1998-production-sect-2-4-2-16,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,suhr_2015_001:press_shoe-extended@shoe-press-rebuild-sect-7-3-15-1,
+D,example: moved,space-heater_fuel-fired_efficiency-strong,ventilation-unit_heat-recovery,galitsky_2008_001:ventilation-unit_heat-recovery_wheel@hvac-heat-recovery-systems-sect-5-2,
+D,example: moved,space-heater_fuel-fired_efficiency-strong,ventilation-unit_heat-recovery,galitsky_2008_001:ventilation-unit_heat-recovery_heat-pipe@hvac-heat-recovery-systems-sect-5-2,
+D,example: moved,space-heater_fuel-fired_efficiency-strong,ventilation-unit_heat-recovery,galitsky_2008_001:ventilation-unit_heat-recovery_run-around-loop@hvac-heat-recovery-systems-sect-5-2,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,kim_2022_001:rolling-mill_hot-charging@innovations-by-maturity-as-of-2020-sect-5-5-table-6-table-a1,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,wsp_2015_007:rolling-mill_hot-charging@secondary-processes-options-hot-charging-app-c-table-14,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,wsp_2015_008:press_shoe-extended@paper-machine-options-register-app-c-table-14-extended-nip-press-tissue,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,wsp_2015_008:press_shoe-extended@paper-machine-options-register-app-c-table-14-extended-nip-press-non-tissue,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,wsp_2015_008:press_dewatering-advanced@paper-machine-options-register-app-c-table-14-hot-pressing,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,wsp_2015_008:press_dewatering-advanced@paper-machine-options-register-app-c-table-14-improved-dewatering-in-press-section-beyond-shoe-press,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,jacobs_2006_001:press_shoe-extended@modern-kraft-mill-and-papermaking-technology-sect-7-pp-44-54-sect-8-pp-64-66,
+D,example: moved,electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,process-improvement_biocarbon-reductant,surup_2020_001:process-improvement_biocarbon-reductant@charcoal-and-biomass-in-ferroalloy-reduction-sect-1-p-2-sect-2-8-p-9,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,worrell_1999_001:rolling-mill_hot-charging@hot-rolling-sect-vi,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,martin_2000_002:press_shoe-extended@energy-efficiency-technologies-table-4-p-21-and-sect-vi-pp-22-36,
+D,example: moved,paper-machine_efficiency-moderate,press_dewatering-advanced,martin_2000_002:press_impulse-drying@advanced-technologies-sect-vi-pp-36-38,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,nedo_2008_001:rolling-mill_hot-charging@2-2-1-iron-and-steel-hot-charging-and-direct-rolling-pp-88-89,
+D,example: moved,furnace_reheating_efficiency-strong,rolling-mill_hot-charging,ietd_2013_001:rolling-mill_hot-charging@iron-and-steel-hot-charging-parent-process-rolling-mills,
+D,example: moved,paper-machine_efficiency-strong,press_shoe-extended,ietd_2013_001:press_shoe-extended@pulp-and-paper-shoe-extended-nip-press-parent-process-papermaking,
+D,judgement: dropped (describes the add-on alone),compressor_boil-off-recovery,capex,,
+D,judgement: dropped (describes the add-on alone),compressor_boil-off-recovery,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),compressor_boil-off-recovery,specific-energy-consumption electricity,,
+D,judgement: dropped (describes the add-on alone),heat-recovery-unit_turbine-exhaust,capex,,
+D,judgement: dropped (describes the add-on alone),heat-recovery-unit_turbine-exhaust,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),heat-recovery-unit_turbine-exhaust,annual-output,,
+D,judgement: dropped (describes the add-on alone),process-improvement_drag-reducing-agent,capex,,
+D,judgement: dropped (describes the add-on alone),process-improvement_drag-reducing-agent,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),rolling-mill_hot-charging,annual-output,,
+D,judgement: dropped (describes the add-on alone),press_dewatering,capex,,
+D,judgement: dropped (describes the add-on alone),press_dewatering,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),press_dewatering,specific-energy-consumption electricity,,
+D,judgement: dropped (describes the add-on alone),press_dewatering,annual-output,,
+D,judgement: dropped (describes the add-on alone),process-improvement_bio-pitch,capex,,
+D,judgement: dropped (describes the add-on alone),heat-recovery-unit_off-gas,capex,,
+D,judgement: dropped (describes the add-on alone),process-improvement_biocarbon-reductant,capex,,
+D,judgement: dropped (describes the add-on alone),press_dewatering-advanced,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),press_dewatering-advanced,specific-energy-consumption electricity,,
+D,judgement: dropped (describes the add-on alone),press_dewatering-advanced,specific-energy-consumption steam,,
+D,judgement: dropped (describes the add-on alone),press_dewatering-advanced,annual-output,,
+D,judgement: dropped (describes the add-on alone),press_shoe-extended,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),press_shoe-extended,specific-energy-consumption electricity,,
+D,judgement: dropped (describes the add-on alone),press_shoe-extended,annual-output,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_demand-controlled,capex,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_heat-recovery,capex,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_heat-recovery,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_heat-recovery,specific-energy-consumption electricity,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_demand-controlled,specific-energy-consumption,,
+D,judgement: dropped (describes the add-on alone),ventilation-unit_demand-controlled,specific-energy-consumption electricity,,
+D,reference/heating-value-stream.csv: dropped (merged),rolling-mill_hot-charging,rolling-mill_hot-charging,furnace_reheating_efficiency-strong,
+A,annotation: branches set,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*,<root>.transmission.co2-pipeline-and-storage.*.pipeline; <root>.transmission.co2-pipeline-and-storage.*.storage,
+A,annotation: branches set,annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing; <sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,
+A,annotation: branches set,alumina-refining,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion; <sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,
+A,annotation: branches set,bitumen-upgrading,<sector>.petroleum-crude.product.bitumen.upgrading,<sector>.petroleum-crude.product.bitumen.upgrading.primary; <sector>.petroleum-crude.product.bitumen.upgrading.secondary,
+A,annotation: branches set,effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment,<sector>.pulp-and-paper.service.effluent-treatment.primary; <sector>.pulp-and-paper.service.effluent-treatment.secondary,
+A,annotation: branches set,thermal-processing,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.process-heating; <sector>.light-industrial.service.heat.cleaning,
+A,annotation: branches set,baking-frying-and-roasting,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.baking-frying-roasting,
+A,annotation: branches set,drying,<sector>.light-industrial.service.heat,<sector>.light-industrial.service.heat.drying,
+A,annotation: branches added,rolling,<sector>.iron-and-steel.product.continuous-cast.cold-rolling; <sector>.iron-and-steel.product.continuous-cast.hot-rolling,<sector>.iron-and-steel.product.continuous-cast.cold-rolling; <sector>.iron-and-steel.product.continuous-cast.hot-rolling; <sector>.iron-and-steel.product.continuous-cast.pickling,
+A,annotation: branches added,pyrometallurgy,<sector>.metal-smelting.product.copper.pyrometallurgy.refining; <sector>.metal-smelting.product.copper.pyrometallurgy.smelting; <sector>.metal-smelting.product.lead.pyrometallurgy.refining; <sector>.metal-smelting.product.lead.pyrometallurgy.roasting; <sector>.metal-smelting.product.lead.pyrometallurgy.smelting; <sector>.metal-smelting.product.magnesium.thermal-reduction; <sector>.metal-smelting.product.nickel.pyrometallurgy.refining; <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting; <sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,<sector>.metal-smelting.product.copper.pyrometallurgy.refining; <sector>.metal-smelting.product.copper.pyrometallurgy.smelting; <sector>.metal-smelting.product.lead.pyrometallurgy.refining; <sector>.metal-smelting.product.lead.pyrometallurgy.roasting; <sector>.metal-smelting.product.lead.pyrometallurgy.smelting; <sector>.metal-smelting.product.magnesium.thermal-reduction; <sector>.metal-smelting.product.nickel.pyrometallurgy.refining; <sector>.metal-smelting.product.nickel.pyrometallurgy.smelting; <sector>.metal-smelting.product.zinc.pyrometallurgy.roasting; <sector>.metal-smelting.product.copper.pyrometallurgy.converting; <sector>.metal-smelting.product.nickel.pyrometallurgy.converting,
+A,annotation: branches added,drilling-and-well-services,<sector>.natural-gas.product.supply.drilling; <sector>.natural-gas.product.supply.well-tests; <sector>.petroleum-crude.product.exploration,<sector>.natural-gas.product.supply.drilling; <sector>.natural-gas.product.supply.well-tests; <sector>.petroleum-crude.product.exploration; <sector>.natural-gas.product.supply.completion,
+A,annotation: branches added,oil-and-gas-production,<sector>.natural-gas.product.supply.extraction.coalbed-methane; <sector>.natural-gas.product.supply.extraction.conventional; <sector>.natural-gas.product.supply.extraction.shale; <sector>.natural-gas.product.supply.extraction.tight; <sector>.natural-gas.product.supply.gas-compression; <sector>.petroleum-crude.product.heavy; <sector>.petroleum-crude.product.light-medium.offshore; <sector>.petroleum-crude.product.light-medium.onshore,<sector>.natural-gas.product.supply.extraction.coalbed-methane; <sector>.natural-gas.product.supply.extraction.conventional; <sector>.natural-gas.product.supply.extraction.shale; <sector>.natural-gas.product.supply.extraction.tight; <sector>.natural-gas.product.supply.gas-compression; <sector>.petroleum-crude.product.heavy; <sector>.petroleum-crude.product.light-medium.offshore; <sector>.petroleum-crude.product.light-medium.onshore; <sector>.natural-gas.service.artificial-lift; <sector>.natural-gas.service.treating; <sector>.petroleum-crude.service.artificial-lift; <sector>.petroleum-crude.service.treating,
+A,annotation: branches replaced,gas-processing,<sector>.natural-gas.product.supply.formation-co2; <sector>.natural-gas.product.supply.processing,<sector>.natural-gas.product.supply.formation-co2; <sector>.natural-gas.product.supply.processing.dehydration; <sector>.natural-gas.product.supply.processing.sulphur-recovery; <sector>.natural-gas.product.supply.processing.ngl-recovery,
+A,annotation: branches replaced,oil-sands-mining-and-extraction,<sector>.petroleum-crude.product.bitumen.mining; <sector>.petroleum-crude.service.mine-haulage,<sector>.petroleum-crude.service.mine-haulage; <sector>.petroleum-crude.product.bitumen.mining.extraction; <sector>.petroleum-crude.product.bitumen.mining.froth-treatment,
+A,annotation: branches replaced,metal-melting-and-heat-treatment,<sector>.iron-and-steel.product.foundry; <sector>.light-industrial.service.heat,<sector>.iron-and-steel.product.foundry; <sector>.light-industrial.service.heat.metal-melting; <sector>.light-industrial.service.heat.heat-treatment,
+A16,annotation: removed (its archetypes moved to the light-industrial heat sub-nodes),drying-curing-and-forming,<sector>.light-industrial.service.heat,,
+A16,annotation: removed (its archetypes moved to the light-industrial heat sub-nodes),wood-drying-and-pressing,<sector>.light-industrial.service.heat,,
+A,annotation: added,n2o-abatement,,<sector>.chemicals.service.n2o-abatement,
+A,annotation: added,chemical-distillation,,<sector>.chemicals.service.distillation,
+A,annotation: added,cement-binder,,<sector>.industrial-minerals.product.cement.binder,
+A,annotation: added,coal-mine-methane,,<sector>.coal-mining.product.raw-product.mine-methane,
+A,annotation: added,solid-biofuel,,<sector>.biofuels.product.solid-biofuel,
+A,annotation: added,forming-and-pressing,,<sector>.light-industrial.service.heat.forming-pressing,
+D,vocabulary: modifier added,,,biogenic-carbon,

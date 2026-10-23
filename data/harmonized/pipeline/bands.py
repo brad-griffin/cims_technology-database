@@ -18,7 +18,20 @@ gives the derived families column.
     repeated in that family like any other archetype's;
   * sub-bands with the same label (oxygen supply for steel and for smelters,
     on-site hydrogen for refineries and upgraders) are one sub-band;
-  * an archetype that serves no end use goes in a closing "(no connection)" sub-band.
+  * an archetype that serves no end use goes in a closing "(no connection)" sub-band;
+  * one product per sub-band (modeller 2026-10-21): where the archetypes on an end
+    use make more than one product (ammonia and methanol), the end use splits into
+    one sub-band per product, labelled "<end use>: <product> (<unit>)". A split that
+    only reflects two names for one product shows up here and is fixed by renaming
+    the product in records/archetype.csv (docs/band-product-review-2026-10-22.csv);
+  * a product override (modeller 2026-10-22): a records/archetype-service.csv row with
+    `product` and `product-unit` shows the archetype under that end use in another
+    product. `factor` is the new units in one home unit (18.5 GJ of pellets per t;
+    blank = 1, a label change), or `process-heat`: GJ of process heat per home unit = the archetype's SEC
+    x its efficiency, or the judged efficiency or host in
+    records/reference/process-heat-efficiency.csv (ruling E2, light-industrial heat).
+    Per-unit columns are divided by the factor, per-year output and capacity
+    multiplied. The CSV wide views stay on the home product.
 """
 from __future__ import annotations
 
@@ -28,7 +41,7 @@ from .common import RECORDS, read
 
 ORDER = [
     "heat-low-temp", "heat-medium-temp", "heat-high-temp", "on-site-power-generation", "gas-pipelines",
-    "space-heating", "space-cooling", "refrigeration", "lighting", "mobile-equipment",
+    "hvac-heating", "hvac-cooling", "refrigeration", "lighting", "mobile-equipment",
     "co2-capture-concentrated", "co2-capture-diffuse", "direct-air-capture", "co2-transport-and-storage",
     "extraction-and-haulage", "ventilation-and-air-heating", "comminution", "separation-and-processing",
     "product-drying", "pelletizing",
@@ -40,18 +53,19 @@ ORDER = [
     "crude-distillation", "conversion-and-treating", "refinery-hydrogen",
     "centralized-hydrogen-production", "hydrogen-distribution",
     "cokemaking", "agglomeration", "ironmaking", "steel-oxygen-supply", "steelmaking", "casting", "reheating",
-    "rolling", "annealing-and-coating", "metal-melting-and-heat-treatment",
+    "rolling", "annealing-and-coating", "foundry-melting", "metal-melting-and-heat-treatment",
     "clinker-production", "cement-grinding-and-blending", "lime-calcination",
     "glass-melting", "glass-forming-and-finishing", "drying-and-low-temp-calcining", "ceramic-firing",
-    "petrochemical-feedstock", "steam-cracking", "ammonia-and-methanol", "nitric-and-adipic-acid",
-    "electrochemical-products", "other-chemicals",
+    "petrochemical-feedstock", "olefins", "aromatics", "polymers", "chemical-derivatives", "ammonia", "methanol", "urea", "fertilizers", "nitric-and-adipic-acid",
+    "electrochemical-products", "hydrogen-peroxide",
     "ethanol-production", "biodiesel-production", "renewable-diesel-and-saf", "renewable-natural-gas",
     "wood-preparation", "chemical-pulping", "mechanical-pulping", "recycled-pulping", "chemical-recovery",
     "lime-kiln", "paper-forming", "paper-drying", "effluent-treatment",
     "alumina-refining", "anode-production", "aluminum-smelting", "pyrometallurgy", "electric-smelting",
     "hydrometallurgy", "smelter-oxygen-supply", "melting-casting-and-fabrication",
     "thermal-processing", "baking-frying-and-roasting", "drying", "drying-curing-and-forming",
-    "wood-drying-and-pressing",
+    "wood-drying-and-pressing", "forming-and-pressing", "solid-biofuel", "coal-mine-methane",
+    "cement-binder", "chemical-distillation", "n2o-abatement",
 ]
 TIER = {"low-temp": "heat-low-temp", "medium-temp": "heat-medium-temp", "high-temp": "heat-high-temp"}
 BY_EQUIPMENT = {"machine-drive"}
@@ -60,6 +74,69 @@ FAMILY_NOTE = {"machine-drive": "Shown by equipment, not end use: most machine-d
                                 "handling and processing, compressor drive). Drives that serve a "
                                 "sector's own end use also appear in that sector's band."}
 NO_CONNECTION = "(no connection)"
+
+
+def _num(v):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _overrides(records):
+    """(archetype, end use) -> the service row carrying a product override. An end use
+    shows an archetype once, so all its rows under that end use must agree."""
+    seen = {}
+    for s in records.service:
+        key = (s["archetype"], s.get("end-use", ""))
+        sig = (s.get("product", ""), s.get("product-unit", ""), s.get("factor", ""))
+        if seen.setdefault(key, sig) != sig:
+            raise SystemExit(f"archetype-service.csv: {key[0]} has rows under end use {key[1]} with "
+                             f"different product overrides; give them one override or split the end use")
+    return {(s["archetype"], s.get("end-use", "")): s for s in records.service if s.get("product-unit")}
+
+
+def _factor_fn(rows):
+    """archetype -> GJ of process heat per home unit, or None."""
+    by = {r.get("archetype"): r for r in rows}
+    ph = {r["archetype"]: r for r in read(RECORDS / "reference" / "process-heat-efficiency.csv")}
+
+    def f(a, depth=0):
+        ref = ph.get(a, {})
+        if ref.get("factor-from") and depth < 3:
+            return f(ref["factor-from"], depth + 1)
+        r = by.get(a, {})
+        sec = _num(r.get("specific-energy-consumption"))
+        eff = _num(r.get("efficiency")) or _num(ref.get("efficiency"))
+        return sec * eff / 100 if sec and eff else None
+    return f
+
+
+def _apply(r, o, units, factor):
+    """The row shown in the override's product: per-unit columns rescaled."""
+    k = r.get("archetype", "")
+    f = factor(k) if o.get("factor") == "process-heat" else (_num(o.get("factor")) or 1.0)
+    out = dict(r, product=o["product"], **{"product-unit": o["product-unit"]})
+    if not f:
+        out["product"] = f"{r.get('product', '')} (no process-heat factor: per {r.get('product-unit', '')})"
+        out["product-unit"] = r.get("product-unit", "")
+        return out
+    if f != 1.0:
+        for c, u in units.items():
+            v = _num(r.get(c))
+            if v is None or "product-unit" not in u or c.endswith("_n"):
+                continue
+            out[c] = v / f if ("/product-unit" in u or "/(product-unit" in u) else v * f
+        note = (f"per {o['product-unit']} {o['product']}: per-unit values divided by {f:.4g} "
+                f"{o['product-unit']} per {r.get('product-unit', '')}"
+                + (" (SEC x efficiency)" if o.get("factor") == "process-heat" else ""))
+        if "filled" in out:
+            out["filled"] = "; ".join(x for x in (note, out.get("filled", "")) if x)
+    return out
+
+
+def _product(a) -> str:
+    return f"{a.get('product', '')} ({a.get('product-unit', '')})"
 
 
 def _context(records):
@@ -71,6 +148,25 @@ def _context(records):
         if s.get("end-use") and s["end-use"] not in eus[s["archetype"]]:
             eus[s["archetype"]].append(s["end-use"])
     return label, asector, eus
+
+
+def _products_by_end_use(records, eus) -> dict[str, set]:
+    """end use -> the products its archetypes make (heat tiers included), after overrides."""
+    out = defaultdict(set)
+    ov = _overrides(records)
+    for a in records.archetypes:
+        ids = list(eus.get(a["archetype"], []))
+        if a.get("family") == "heat-supply":
+            ids += [TIER[t.strip()] for t in (a.get("heat-tier") or "").split(";") if t.strip() in TIER]
+        for e in ids:
+            o = ov.get((a["archetype"], e))
+            out[e].add(_product({"product": o["product"], "product-unit": o["product-unit"]} if o else a))
+    return out
+
+
+def sub_label(e, lab, a, prods) -> str:
+    """The sub-band label: the end use's, plus the product when the end use has several."""
+    return f"{lab}: {_product(a)}" if len(prods.get(e, ())) > 1 else lab
 
 
 def _home_of(e, f, asector, records):
@@ -94,13 +190,17 @@ def families(records) -> dict[str, str]:
     return out
 
 
-def expand(rows: list[dict], records) -> list[dict]:
+def expand(rows: list[dict], records, units: dict | None = None,
+           factor_rows: list[dict] | None = None) -> list[dict]:
     """One workbook row per (archetype, end-use sub-band), placed in the family whose
     sector owns the end use (modeller 2026-10-09), sorted by family (the rows' own
     order, then any family reached only through another family's archetypes),
     sub-band, then equipment and archetype. Adds `_family` (the band the row sits in)
     and `_sub` (sub-band label). All rows are shown alike (no repeat styling)."""
     label, asector, eus = _context(records)
+    prods = _products_by_end_use(records, eus)
+    ov, units = _overrides(records), units or {}
+    factor = _factor_fn(factor_rows or rows)
     service_fams = {f for f, r in records.families.items() if r.get("kind") == "service"}
 
     def own(f, e):
@@ -120,7 +220,7 @@ def expand(rows: list[dict], records) -> list[dict]:
             placed, seen = [(f, "", r.get("equipment", ""))], set()
             for e in eus.get(k, []):
                 h = _home_of(e, f, asector, records)
-                lab = label.get(e, e)
+                lab = sub_label(e, label.get(e, e), ov.get((k, e), r), prods)
                 if h != f and (h, lab) not in seen:
                     seen.add((h, lab))
                     placed.append((h, e, lab))
@@ -132,14 +232,15 @@ def expand(rows: list[dict], records) -> list[dict]:
             seen, placed = set(), []
             for e in ids:
                 h = _home_of(e, f, asector, records)
-                lab = label.get(e, e)
+                lab = sub_label(e, label.get(e, e), ov.get((k, e), r), prods)
                 if (h, lab) not in seen:
                     seen.add((h, lab))
                     placed.append((h, e, lab))
             placed = placed or [(f, "~", NO_CONNECTION)]
         for h, e, lab in placed:
             fam_pos.setdefault(h, len(fam_pos))
-            out.append(dict(r, _family=h, _sub=lab,
+            rr = _apply(r, ov[(k, e)], units, factor) if (k, e) in ov else r
+            out.append(dict(rr, _family=h, _sub=lab,
                             _key=(fam_pos[h], (0 if (e == "" or own(h, e)) else 1000 if e != "~" else 5000)
                                   + rank.get(e, 998), lab,
                                   r.get("equipment", ""), k)))

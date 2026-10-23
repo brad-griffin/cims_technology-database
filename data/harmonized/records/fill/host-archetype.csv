@@ -53,8 +53,6 @@ paper-machine_efficiency-moderate,paper-machine,active,the archetype name less i
 paper-machine_efficiency-strong,paper-machine,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 paper-machine_waterless,,unmapped,no host archetype by name; name the plant this is added to
 preheater_ladle,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-press_dewatering-advanced,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
-press_shoe-extended,,unmapped,no single host: the equipment match points at a different duty (mine dewatering pump / panel hot press); name the plant this is added to
 process-improvement_log-thawing,debarker_drum,active,the only conventional archetype with the same equipment (process-improvement) and product unit: the plant the efficiency variant is added to (modeller rule 2026-10-02)
 pulper_refiner-low-energy,,unmapped,"no archetype by name; name the host plant this is added to, or leave unmapped"
 reactor_catalytic-n2o,,unmapped,no host archetype by name; name the plant this is added to
@@ -68,7 +66,6 @@ reactor_nitric-acid,,unmapped,"no archetype by name; name the host plant this is
 reactor_oxygen-delignification,,unmapped,no host archetype by name; name the plant this is added to
 reactor_steel-offgas-chemicals,,unmapped,no host archetype by name; name the plant this is added to
 reactor_thermal-n2o-destruction,,unmapped,no host archetype by name; name the plant this is added to
-rolling-mill_hot-charging,rolling-mill_hot,active,hot charging is added to a hot rolling mill (modeller rule 2026-10-02)
 rolling-mill_hot_efficiency-moderate,rolling-mill_hot,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 shaft-furnace_direct-reduction_ccs-concentrated,shaft-furnace_direct-reduction,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
 shaft-furnace_electrolytic-hydrogen,,unmapped,no host archetype by name; name the plant this is added to
@@ -98,3 +95,13 @@ reciprocating-engine_drive_efficiency-moderate,reciprocating-engine_drive,active
 combined-cycle_ccs-diffuse,combined-cycle,active,the host plant the capture archetype serves (modeller rule 2026-10-02); set 2026-10-07
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,active,the host plant the capture archetype serves (modeller rule 2026-10-02); set 2026-10-07
 distillation-column_heat-pumped,distillation-column,active,"host named 2026-10-13 (CH015): the heat-pumped or heat-integrated column is an increment on the conventional distillation train, so it can be costed as host plus increment on one scope"
+electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,electric-arc-furnace_smelting-submerged-arc,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,electric-arc-furnace_smelting-submerged-arc,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+furnace_anode-baking_biogenic-carbon,furnace_anode-baking,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+fan_activated-sludge_efficiency-moderate,fan_activated-sludge,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+liquefaction-train_base-load_efficiency-moderate,liquefaction-train_base-load,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+pump_electric-station_efficiency-moderate,pump_electric-station,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+hvac-heater_fuel-fired_efficiency-moderate,hvac-heater_fuel-fired,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+hvac-heater_fuel-fired_efficiency-strong,hvac-heater_fuel-fired,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+dryer_direct-fired_efficiency-moderate,dryer_direct-fired,active,the archetype name less its last modifier (node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv))
+separator_aromatics-extraction_efficiency-moderate,separator_aromatics-extraction,active,the archetype name less its last modifier (baselines 2026-10-23 (modeller: build the missing baselines))
