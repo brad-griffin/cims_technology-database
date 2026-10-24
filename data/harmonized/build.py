@@ -187,6 +187,9 @@ def main(argv) -> int:
     print("fill")
     fst = fill.apply(psum, rec, normalise.target_unit, L.facts, units)
     bt = fst.pop("_backtest")
+    above = fst.pop("_above_host", [])
+    if above:
+        print(f"  efficiency variants above their host's energy use ({len(above)}): " + "; ".join(above))
     write(OUTPUT / "ccs-variant.csv", ["archetype", "host", "parameter", "unit", "host-value", "add-on",
                                        "tier", "tier1", "tier2", "co2-captured", "all-in", "grade"],
           fst.pop("_ccs"))

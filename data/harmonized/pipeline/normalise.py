@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
+from statistics import median
 
 from .common import REFERENCE, fnum, read, split_list
 from . import bridge, convert, heating
@@ -160,6 +161,48 @@ CCS_HOST_NOTE = ("CCS add-on cost: this archetype holds only the host plant's co
                  "without capture unless a source shows a significant difference); the capture "
                  "plant's cost belongs to the co2-capture archetype it requests (modeller "
                  "2026-10-02). Listed in output/ccs-addon-cost.csv to move to a capture archetype")
+
+
+def _mixed_carriers(a) -> bool:
+    """An archetype whose listed carriers include one with no heating value
+    (electricity, heat, steam) or fuels with different HHV/LHV ratios (S144)."""
+    listed = [c.strip().lower() for c in split_list(a.get("carriers", "")) if c.strip()]
+    ratios = {heating.CARRIER_RATIO.get(c, "?") for c in listed}
+    return bool(listed) and ("" in ratios or len(ratios) > 1)
+
+
+def _gj_per_den(r):
+    """(value in GJ, denominator) of an energy-use row as printed, or None: the
+    numerator put in GJ so carriers in kWh/t and a total in GJ/t compare (S144).
+    A range-only row takes its midpoint."""
+    u = (r.get("unit") or "")
+    if "/" not in u:
+        return None
+    num, den = u.split("/", 1)
+    at = convert.atom(num)
+    v = fnum(r.get("value"))
+    if v is None:
+        lo, hi = fnum(r.get("value-min")), fnum(r.get("value-max"))
+        v = (lo + hi) / 2 if lo is not None and hi is not None else None
+    if not at or at[0] != "energy" or v is None:
+        return None
+    return v * at[1], den
+
+
+def _fuel_share(r, carriers, a):
+    """The fuel share of an all-carrier total: from the example's own carriers in
+    the same unit, else 1 on a conversion archetype or one whose first listed
+    carrier is a fuel, else 0 (S144)."""
+    from . import feedstock
+    cs = {t: v for t, v in (carriers or {}).items()
+          if t in heating.CARRIER_RATIO and t not in ("total", "component") and v and v > 0}
+    if cs:
+        fuel = sum(v for t, v in cs.items() if heating.CARRIER_RATIO[t])
+        return fuel / sum(cs.values())
+    listed = [c.strip().lower() for c in split_list(a.get("carriers", "")) if c.strip()]
+    if feedstock.row_for(a["archetype"]) or (listed and heating.CARRIER_RATIO.get(listed[0], "?") not in ("",)):
+        return 1.0
+    return 0.0
 
 
 def case_of(r) -> str:
@@ -416,6 +459,16 @@ def normalise(facts, examples, records, units) -> None:
         # nameplate: the capacity factor is not applied (modeller 2026-10-10)
         return per_yr, x["record-id"], ids, basis
 
+    # each example's own carrier figures by raw unit, for the fuel share of an
+    # all-carrier total (S144)
+    ex_carriers = defaultdict(dict)
+    arch_carriers = defaultdict(dict)
+    for r in facts:
+        t = (r.get("target") or "").strip().lower()
+        g = _gj_per_den(r)
+        if r["parameter"] == "specific-energy-consumption" and t and g:
+            ex_carriers[(r["example-id"], g[1])][t] = g[0]
+            arch_carriers[(r.get("archetype", ""), g[1])].setdefault(t, []).append(g[0])
     for r in facts:
         r.update({"value-norm": "", "value-min-norm": "", "value-max-norm": "",
                   "unit-norm": "", "excluded": "", "conversion": "",
@@ -735,8 +788,30 @@ def normalise(facts, examples, records, units) -> None:
             dlabel = "regional default" if dkind == "regional" else "source default"
             r["heating-value"] = hv or (f"LHV ({dlabel})" if default == "LHV" else
                                         f"HHV ({dlabel})" if default == "HHV" else "not stated")
-            if hv == "LHV" or default == "LHV":
+            fs = None
+            if (how == "energy-use" and (r.get("target") or "").strip() in ("", "total", "not-stated")
+                    and _mixed_carriers(a)):
+                # an all-carrier total on an archetype that also uses electricity or
+                # heat: the fuel's HHV/LHV ratio goes on the fuel share only (sanity-check
+                # 2026-10-23, S144/NFM011: the methane ratio was lifting electricity 11%).
+                # The share is the example's own carriers where it gives them, else all
+                # fuel on a conversion archetype or one whose first carrier is a fuel,
+                # else none
+                g = _gj_per_den(r)
+                own = ex_carriers.get((r["example-id"], g[1])) if g else None
+                if not own and g:
+                    # no carriers in the example: the archetype's other examples' median
+                    # carriers on the same denominator
+                    ac = arch_carriers.get((a["archetype"], g[1]))
+                    own = {t: median(v) for t, v in ac.items()} if ac else None
+                fs = _fuel_share(r, own, a)
+            if (hv == "LHV" or default == "LHV") and fs == 0.0:
+                r["heating-value"] = f"{r['heating-value']}; no fuel share, not converted"
+            elif hv == "LHV" or default == "LHV":
                 h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit)
+                if h is not None and fs is not None and fs < 1.0:
+                    h = (1 + (h[0] - 1) * fs, h[1])
+                    r["heating-value"] = f"{r['heating-value']}; ratio on the fuel share {fs:.0%}"
                 if h is None and hv == "LHV":
                     r["excluded"] = ("reported on a lower-heating-value basis; "
                                      "records/reference/heating-value-stream.csv names no fuel or "

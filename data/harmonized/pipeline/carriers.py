@@ -114,14 +114,14 @@ def _example_carriers(rows, ranges=True):
     return out.get(""), top, named
 
 
-def _l1_pooled(rows):
+def _l1_pooled(rows, min_n=0):
     """{level-1 carrier: pooled central} of an archetype's summary rows, before the split."""
     out = {}
     for s in rows:
         t = (s.get("target") or "").strip().lower()
         if t and _level1(t) == t and t not in NOT_CARRIER:
             v = fnum(s.get("central"))
-            if v is not None and v > 0:
+            if v is not None and v > 0 and int(s.get("n") or 0) >= min_n:
                 out[t] = v
     return out
 
@@ -248,6 +248,15 @@ def apply(summaries, facts, records) -> dict:
             exs.append({"eid": eid, "rs": rs, "top": top, "named": named, "rank": rank, "own": own,
                         "top_r": top_r})
         # ---- level 1 -------------------------------------------------------
+        # the carrier mix the sources agree on: each level-1 carrier's pooled
+        # median as a share of their sum. A split example far from it (a 50%
+        # electricity steam reformer) loses to one near it (S135 follow-on,
+        # 2026-10-24: which example closed its balance had decided the split)
+        cons = _l1_pooled(rows, min_n=3)
+        if not _additive(cons):
+            cons = {}       # fuel beside steam: two scopes, no mix to agree on
+        cons_sum = sum(cons.values())
+        cons = {t: v / cons_sum for t, v in cons.items()} if cons_sum > 0 else {}
         cands = []
         for e in exs:
             if not _ok(e["top"]):
@@ -260,7 +269,15 @@ def apply(summaries, facts, records) -> dict:
             # (sanity-check 2026-10-11, S117: a lone "other fuel" line had become
             # the smelting-reduction vessel's whole fuel)
             balanced = bool(e["own"] and e["own"] > 0 and 0.8 <= csum / e["own"] <= 1.25)
-            cands.append(((not covers, not balanced, len(e["top"]) < 2, closeness, e["rank"], e["eid"]),
+            if cons and len(cons) > 1:
+                sh = {t: v / csum for t, v in e["top"].items()}
+                dist = sum(abs(sh.get(t, 0.0) - cons.get(t, 0.0)) for t in set(sh) | set(cons))
+                # 0.3 bands: within a band, the old order (sum nearest the total) decides
+                far = round(dist / 0.3)
+            else:
+                far = 0
+            within = (0.5 <= csum / tot <= 2.0) if tot and tot > 0 else True
+            cands.append(((not covers, not within, not balanced, far, len(e["top"]) < 2, closeness, e["rank"], e["eid"]),
                           e, csum))
         if not cands:
             continue

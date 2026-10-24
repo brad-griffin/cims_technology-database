@@ -2386,6 +2386,32 @@ def _sum_carriers(psum, records, ctx, stats, create=True):
     return changed
 
 
+def _variant_above_host(ctx):
+    """An efficiency variant must not use more energy per unit of product than the
+    plant it improves (sanity-check 2026-10-23, MCF005). Flags each one whose
+    energy-use total is above its host's or base archetype's in `central-from`;
+    returns them for the build log. Values are not changed: the sources or the
+    comparison need a look."""
+    out = []
+    for k, a in ctx["arch"].items():
+        if not any(m.startswith("efficiency") for m in split_list(a.get("modifiers", ""))):
+            continue
+        hrow = ctx["hosts"].get(k, {})
+        host = hrow.get("host") if hrow.get("status") == "active" else None
+        host = host or _base_of(a, ctx)
+        if not host:
+            continue
+        v, hv = ctx["have"].get(k, {}).get((SEC, "")), ctx["have"].get(host, {}).get((SEC, ""))
+        if not (_live(v) and _live(hv)) or v.get("unit") != hv.get("unit"):
+            continue
+        vc, hc = fnum(v["central"]), fnum(hv["central"])
+        if hc and vc > hc * 1.02:
+            v["central-from"] = (v.get("central-from") or "") + (
+                f"; ABOVE ITS HOST: {vc:.4g} against {host} {hc:.4g} (check the sources' scope)")
+            out.append(f"{k} {vc:.4g} > {host} {hc:.4g}")
+    return sorted(out)
+
+
 def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     """Grade the pooled rows, then add the fills: rules, judgements, rules again.
     Returns counts by grade and rule."""
@@ -2407,6 +2433,7 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     # calculated levelized costs, which read every other cell
     _run_rules(psum, records, target_unit, ctx, stats, phase="post")
     _run_rules(psum, records, target_unit, ctx, stats, phase="final")
+    stats["_above_host"] = _variant_above_host(ctx)
     stats["_ccs"] = ctx["ccs_report"]
     stats["_sum_disagree"] = sorted(ctx.get("sum_disagree", ()))
     stats["_unpriced"] = sorted(ctx["unpriced"])
