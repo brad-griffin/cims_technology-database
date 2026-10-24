@@ -95,8 +95,7 @@ def apply(facts, flows, records) -> dict:
 
 def recovered_flows(flows, records) -> int:
     """An output flow for what a measure or plant recovers (records/reference/recovered-output.csv):
-    methane kept in the system and sold, per t CH4 abated; heat a nickel refinery
-    recovers from its process steps (S145, 2026-10-24). One derived flow row per
+    methane kept in the system and sold, per t CH4 abated. One derived flow row per
     archetype, example `identity:<archetype>` (ruling 2026-10-14: methane abatement
     costs are gross; the recovered gas is recorded instead of netted)."""
     n = 0
