@@ -316,6 +316,25 @@ def normalise(facts, examples, records, units) -> None:
         if (((r["example-id"], "") in incremental or (r["example-id"], case_of(r)) in incremental)
                 and r["parameter"] in PER_CAPACITY | PER_OUTPUT):
             r["cost-basis"] = "incremental"
+    # an equipment or installed cost of an add-on is incremental too: on an
+    # efficiency variant where the same source prices the measure as an add-on, its
+    # equipment-only or installed rows are the same add-on, not a whole plant
+    # (sanity-check 2026-10-23, S139/IS007: coke dry quenching had pooled as the
+    # whole coke oven)
+    inc_src = {(r.get("archetype"), r.get("source-id")) for r in facts
+               if r.get("cost-basis") == "incremental" and r["parameter"] in PER_CAPACITY | PER_OUTPUT}
+    for r in facts:
+        a_ = records.by_key.get(r.get("archetype", "")) or {}
+        if not any(m.startswith("efficiency") for m in split_list(a_.get("modifiers", ""))):
+            continue        # only on efficiency variants, whose costs are a measure's
+        if (r["parameter"] in PER_CAPACITY | PER_OUTPUT
+                and (r.get("cost-basis") or "") in ("equipment", "installed")
+                and ((r.get("archetype"), r.get("source-id")) in inc_src
+                     or "incremental add-on" in (r.get("note") or "")
+                     or "of an incremental" in (r.get("note") or ""))):
+            r["cost-basis"] = "incremental"
+            r["note"] = (r.get("note") or "") + ("  COST BASIS read as incremental: the same source "
+                                                 "prices this measure as an add-on (S139, 2026-10-24).")
     bridged = {r["example-id"]: r for r in read(REFERENCE / "efficiency-bridge.csv")}
     # emission rows a source already states per unit of OUTPUT (per GJ of steam, heat or
     # hydrogen): not bridged (records/reference/emission-basis.csv, ruling 2026-10-21; a

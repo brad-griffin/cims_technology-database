@@ -114,6 +114,25 @@ def _example_carriers(rows, ranges=True):
     return out.get(""), top, named
 
 
+def _l1_pooled(rows):
+    """{level-1 carrier: pooled central} of an archetype's summary rows, before the split."""
+    out = {}
+    for s in rows:
+        t = (s.get("target") or "").strip().lower()
+        if t and _level1(t) == t and t not in NOT_CARRIER:
+            v = fnum(s.get("central"))
+            if v is not None and v > 0:
+                out[t] = v
+    return out
+
+
+def _additive(l1):
+    """Carriers that can be added into one total: not fuel beside steam or heat
+    (the fuel that raised the steam), nor two names for the same heat."""
+    hv = set(l1) & STEAMLIKE
+    return not ((FUEL_AGG in l1 and hv) or len(hv) > 1)
+
+
 def _apart_only_zero(s):
     return (fnum(s.get("central")) or 0) <= 0
 
@@ -140,7 +159,10 @@ def example_totals(facts, records=None) -> dict:
     example, and is pooled like a printed total."""
     groups = defaultdict(list)
     for r in facts:
-        live = not r.get("excluded")
+        # a row dropped only as a repeat of another example's figure still belongs
+        # to this example's balance, as in apply (S135/MCF005: Worrell's container
+        # hybrid furnace lost its electricity, and with it its total)
+        live = not r.get("excluded") or (r.get("duplicate-of") and r["excluded"].startswith("repeat:"))
         if r["parameter"] == SEC and r.get("value-norm") and live and r.get("archetype"):
             groups[(r["example-id"], r["unit-norm"])].append(r)
     # the printed totals per archetype and unit, to catch a partial table summed
@@ -150,6 +172,18 @@ def example_totals(facts, records=None) -> dict:
         own = _example_carriers(rs, ranges=False)[0]
         if own is not None and own > 0:
             printed[(rs[0]["archetype"], unit)].append(own)
+    # where no example prints a total, the carrier sums of the examples that do
+    # name the archetype's own carriers stand in (S135/PB011: sootblowing steam and
+    # electricity had become a 0.82 GJ/t recovery-boiler total beside 16 GJ/t)
+    main_sums = defaultdict(list)
+    for (eid, unit), rs in groups.items():
+        own, top, named = _example_carriers(rs, ranges=False)
+        if own is not None or not _ok(top) or records is None:
+            continue
+        a = records.by_key.get(rs[0]["archetype"]) or {}
+        listed = {t.strip().lower() for t in split_list(a.get("carriers", ""))}
+        if listed & (set(top) | set(named)):
+            main_sums[(rs[0]["archetype"], unit)].append(sum(top.values()))
     stats = defaultdict(int)
     new = []
     for (eid, unit), rs in groups.items():
@@ -161,7 +195,7 @@ def example_totals(facts, records=None) -> dict:
         has_fuel_row = FUEL_AGG in {_target(r) for r in rs}
         names_main = (not listed or bool(listed & (set(top) | set(named)))
                       or (has_fuel_row and any(_level1(t) == FUEL_AGG for t in listed)))
-        ref = printed.get((rs[0]["archetype"], unit))
+        ref = printed.get((rs[0]["archetype"], unit)) or main_sums.get((rs[0]["archetype"], unit))
         if not names_main and ref and sum(top.values()) < 0.3 * median(ref):
             # names none of the archetype's carriers and sums to under 0.3 x the
             # printed totals: one part of a table (the stove fuels of a blast
@@ -231,6 +265,7 @@ def apply(summaries, facts, records) -> dict:
         if not cands:
             continue
         single = False
+        keep_pooled = False
         _, sp, csum = min(cands, key=lambda c: c[0])
         # the chosen example's range-only carriers join its split at their
         # midpoints (S135/NFM004); they do not change which example is chosen
@@ -282,6 +317,27 @@ def apply(summaries, facts, records) -> dict:
             tot = fnum(total["central"])
             single = True
             stats["totals from a single pooled carrier"] += 1
+        elif tot is None and len(_l1_pooled(rows)) > len(sp["top"]) \
+                and sum(_l1_pooled(rows).values()) > csum and _additive(_l1_pooled(rows)):
+            # the examples name different carriers (an electricity line from one
+            # source, the fuel firing from another): the total is the sum of the
+            # pooled carriers, and each keeps its pooled value (S135/RX007: a
+            # refinery's total had been its electricity alone, beside 2.2 GJ/m3 fuel)
+            l1p = _l1_pooled(rows)
+            total = dict(rows[0], **{"target": "", "central": f"{sum(l1p.values()):.6g}", "low": "",
+                                     "high": "", "n": 0, "n-external": 0, "external-factors": "",
+                                     "central-from": "sum of the pooled carriers, which different examples "
+                                                     "give: " + " + ".join(f"{t} {v:.4g}" for t, v in sorted(l1p.items()))
+                                                     + " (S135)",
+                                     "sources": "; ".join(dict.fromkeys(x for s_ in rows for x in (s_.get("sources") or "").split("; ") if x)),
+                                     "examples": ""})
+            summaries.append(total)
+            rows.append(total)
+            tot = sum(l1p.values())
+            csum = tot
+            sp = dict(sp, top=dict(l1p))
+            keep_pooled = True
+            stats["totals summed from carriers of different examples"] += 1
         elif tot is None:
             total = dict(rows[0], **{"target": "", "central": f"{csum:.6g}", "low": "", "high": "",
                                      "n": 1, "n-external": 0, "external-factors": "",
@@ -349,7 +405,13 @@ def apply(summaries, facts, records) -> dict:
         # with no pooled other, the carrier keeps its own pooled value and the
         # rest goes to the one other carrier the archetype lists, if there is one
         in_split = set()
-        if agree and not single and len(sp["top"]) == 1 and tot and tot > 0:
+        if keep_pooled:
+            for t in sp["top"]:
+                s = have.get(t)
+                if s is not None:
+                    s["central-from"] = (s.get("central-from") or "") + "; part of the total as pooled (S135)"
+                    in_split.add(t)
+        if agree and not single and not keep_pooled and len(sp["top"]) == 1 and tot and tot > 0:
             c = next(iter(sp["top"]))
             # steam or heat beside fuel is the same energy on another scope (the
             # fuel that raised the steam), not a second carrier to add

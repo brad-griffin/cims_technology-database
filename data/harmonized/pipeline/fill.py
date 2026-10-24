@@ -405,6 +405,12 @@ def _base_of(a, ctx):
     return base if base in ctx["arch"] else None
 
 
+# the highest efficiency a device of this equipment can reach (per cent, the
+# database's heating-value basis); a saving never carries a variant past it (S142)
+EFF_MAX = {"motor": 97.0, "drive": 97.0, "pump": 92.0, "fan": 92.0, "compressor": 92.0}
+EFF_MAX_DEFAULT = 97.0     # a condensing fuel-fired heater on the HHV basis
+
+
 def m_bucket_saving(rule, a, have, ctx):
     """A variant's energy use = its base archetype's x (1 - s). s is the variant's
     own sourced emissions-reduction-potential (same-fuel measure: the emission
@@ -440,6 +446,21 @@ def m_bucket_saving(rule, a, have, ctx):
         src = f"assumption {row['assumption-id']} (proxy)"
         grades = ["proxy"]
         ext = [row["assumption-id"]]
+    # a device cannot pass its thermodynamic limit: on a GJ-output archetype whose
+    # base converts energy at an efficiency of 100% or less, the saving is capped
+    # where the variant's efficiency would reach EFF_MAX (sanity-check 2026-10-23,
+    # S142/HPCH006, RX005: a UKERC system-level saving gave a solid-fuel heater
+    # 127% and a motor 98.9%)
+    be = bh.get(("efficiency", ""))
+    floor = None
+    if a.get("product-unit") == "GJ" and _live(be) and 0 < fnum(be["central"]) <= 100 \
+            and not cop_capable(a):
+        emax = EFF_MAX.get(a["equipment"], EFF_MAX_DEFAULT)
+        smax = max(0.0, (1 - fnum(be["central"]) / emax) * 100)
+        if s > smax:
+            src += f"; saving {s:.3g}% capped at {smax:.3g}% (efficiency {fnum(be['central']):.3g}% to at most {emax:g}%)"
+        s, sl, sh = min(s, smax), min(sl, smax), min(sh, smax)
+        floor = 100.0 / emax
     out = []
     for (q, t), r in sorted(bh.items()):
         if q != p or not _live(r):
@@ -447,8 +468,11 @@ def m_bucket_saving(rule, a, have, ctx):
         c, lo, hi = _vals(r)
         lo = c if lo is None else lo
         hi = c if hi is None else hi
+        low = min(lo, hi) * (1 - sh / 100)
+        if floor is not None and not t:
+            low = max(low, min(floor, c * (1 - s / 100)))
         out.append({"parameter": p, "target": t, "central": c * (1 - s / 100),
-                    "low": min(lo, hi) * (1 - sh / 100), "high": max(lo, hi) * (1 - sl / 100),
+                    "low": low, "high": max(lo, hi) * (1 - sl / 100),
                     "inputs": [_input(r, f"{base} {p}" + (f"_{t}" if t else "")), src],
                     "grades": grades + [r.get("grade", "sourced")],
                     "sources": r.get("sources", ""), "external": ext})
@@ -896,7 +920,10 @@ def _siblings(a, p, ctx, exclude_chp=False):
             b = A[k]
             if ((b["product-unit"] != a["product-unit"] and p not in UNIT_FREE)
                     or any(b[f] != a[f] for f in same)
-                    or (exclude_chp and is_chp(b))):
+                    or (exclude_chp and is_chp(b))
+                    # an efficiency is of one product: a geothermal heat well does
+                    # not take a geothermal power plant's (S142/HPCH005)
+                    or (p == "efficiency" and (b.get("product") or "") != (a.get("product") or ""))):
                 continue
             r = h.get((p, ""))
             if _sourced(r):
@@ -950,6 +977,10 @@ def e_sibling(rule, a, ctx):
     and at least +/- `widen` of the central."""
     p = rule["parameter"]
     sc = _scope(rule)
+    if p == "efficiency":
+        hv = _host_efficiency(a, ctx)
+        if hv:
+            return hv
     tier, rows = _siblings(a, p, ctx, exclude_chp=sc.get("sibling-exclude-chp") == "yes")
     if not rows or ("tier" in sc and tier > int(sc["tier"])):
         return None
@@ -959,6 +990,34 @@ def e_sibling(rule, a, ctx):
     return {"central": c, "low": lo, "high": hi, "grade": "sourced",
             "inputs": [f"tier {tier}: " + ", ".join(k for k, _ in rows)],
             "sources": [x for _, r in rows for x in split_list(r.get("sources", ""))]}
+
+
+def _host_efficiency(a, ctx):
+    """A capture or efficiency variant's efficiency from its host ahead of any
+    sibling (S142/PB009): the host's efficiency with the variant's extra energy
+    use added to the input, 100 / (100 / host efficiency + (variant SEC - host
+    SEC)); the host's value where either SEC is missing."""
+    k = a["archetype"]
+    hrow = ctx["hosts"].get(k, {})
+    host = hrow.get("host") if hrow.get("status") == "active" else None
+    if not host:
+        return None
+    hh, h = ctx["have"].get(host, {}), ctx["have"].get(k, {})
+    he = hh.get(("efficiency", ""))
+    if not _live(he) or fnum(he["central"]) <= 0:
+        return None
+    c, lo, hi = _lohi(he)
+    vs, hs = h.get((SEC, "")), hh.get((SEC, ""))
+    note = "the host's efficiency"
+    if _live(vs) and _live(hs) and a.get("product-unit") == "GJ":
+        d = fnum(vs["central"]) - fnum(hs["central"])
+        if d > 0:
+            f = lambda e: 100.0 / (100.0 / e + d) if e and e > 0 else None
+            c, lo, hi = f(c), f(lo), f(hi)
+            note = f"the host's efficiency with the variant's extra {d:.3g} GJ/GJ of energy use added to the input"
+    return {"central": c, "low": lo, "high": hi, "grade": he.get("grade", "sourced"),
+            "inputs": [_input(he, f"{host} efficiency"), note],
+            "sources": split_list(he.get("sources", ""))}
 
 
 def e_class_median(rule, a, ctx):
@@ -1008,6 +1067,10 @@ def _ratio_unit(pu):
     return {"1000-m3": "m3", "e3m3": "m3", "e6m3": "m3"}.get(pu, pu)
 
 
+def _abates(b):
+    return (b.get("product") or "").strip().lower() in ("methane", "carbon dioxide")
+
+
 def e_cost_ratio(rule, a, ctx):
     """p = base parameter x the median p/base ratio of archetypes with BOTH sourced,
     from the nearest pool of at least `min-pool` (same equipment, then family,
@@ -1032,6 +1095,10 @@ def e_cost_ratio(rule, a, ctx):
             if "vom-class" in sc and ctx["classes"].get(A[k]["equipment"], {}).get("vom-class") not in sc["vom-class"].split("|"):
                 continue
             ratios[k] = fnum(y["central"]) / fnum(x["central"])
+    # an abatement device (product: t of methane or CO2 abated) prices its capital
+    # and labour on another footing from a plant making a product: the two never
+    # share a ratio pool (S142/OG001: methane devices had set the LNG trains' O&M)
+    ratios = {k: v for k, v in ratios.items() if _abates(A[k]) == _abates(a)}
     # same product unit at the first three levels; the last level pools every unit
     # (the ratio is per year of the same product unit on both sides)
     levels = ["equipment", "family", None, "any-unit"]
@@ -1075,8 +1142,13 @@ def e_modifier_ratio(rule, a, ctx):
         return None
     sc = _scope(rule)
     need = int(sc.get("min-pool", "2"))
+    A = ctx["arch"]
+    # pairs from the same equipment only, and an efficiency modifier never makes the
+    # plant cheaper (S142/RX014: ammonia reformers and tunnel kilns had priced a
+    # melting furnace's and an HVAC heater's efficient variants below their bases)
     ratios = [(r, sid, v) for (r, sid, v) in ctx["mod_ratios"].get((mod, p), [])
-              if v != a["archetype"]]
+              if v != a["archetype"] and v in A and A[v]["equipment"] == a["equipment"]
+              and not (mod.startswith("efficiency") and r < 1)]
     if len(ratios) < need:
         return None
     rs = [r for r, _, _ in ratios]
@@ -1376,15 +1448,27 @@ def _tier1(k, host, p, unit, ctx):
     for r in rows:
         if (r.get("cost-basis") or "") != "incremental":
             whole.setdefault(r["source-id"], []).append(fnum(r["value-norm"]))
+    hp = ctx["have"].get(host, {}).get((p, ""))
+    hpc = fnum(hp["central"]) if _live(hp) else None
     for sid, vs in whole.items():
         hv = [fnum(r["value-norm"]) for r in ctx["pooled_facts"].get((host, p, sid), [])
               if r.get("unit-norm") == unit]
         if not hv:
             continue
-        d = median(vs) - median(hv)
+        w, wo = median(vs), median(hv)
+        if hpc and hpc > 0 and wo > 0 and not (0.5 <= wo / hpc <= 2.0):
+            # the source's plant without capture is on another scale from the pooled
+            # host (a cost per MWh of electricity read per GJ of heat): its with/without
+            # RATIO goes on the pooled host, not its difference (S139/HPCH011)
+            d = hpc * (w / wo - 1)
+            how = (f"{sid}: with capture {w:.4g} / without {wo:.4g} = x{w / wo:.3g} on the pooled "
+                   f"host {hpc:.4g} (the source's host is {wo / hpc:.2g}x the pooled host)")
+        else:
+            d = w - wo
+            how = f"{sid}: with capture {w:.4g} less without {wo:.4g}"
         if d > 0:
             vals.append(d)
-            ins.append(f"{sid}: with capture {median(vs):.4g} less without {median(hv):.4g}")
+            ins.append(how)
     if not vals:
         return None
     return median(vals), min(vals), max(vals), ins
@@ -1425,6 +1509,16 @@ def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
                 t2 = (m * cap[0], rl * cap[1], rh * cap[2])
             else:
                 t2 = (m * cap[0], min(nm.values()) * cap[1], max(nm.values()) * cap[2])
+        if t1 and t2 and t2[0] > 0 and not (0.2 <= t1[0] / t2[0] <= 5.0):
+            # a same-source add-on five times off the capture plant's own cost per t
+            # CO2 captured is on another scope (an announced project cost, a
+            # with-capture plant of another size): tier 2 stands (S139/OG006, HPCH011)
+            stats["tier 1 add-ons set aside (5x off tier 2)"] = \
+                stats.get("tier 1 add-ons set aside (5x off tier 2)", 0) + 1
+            t1_off = t1
+            t1 = None
+        else:
+            t1_off = None
         if t1:
             ac, al, ah = t1[:3]
             ag, ains, tier = "estimated", t1[3], "tier 1 (same source)"
@@ -1438,6 +1532,8 @@ def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
                 ains = cap[4] + [f"ccs.{node} node median {median(nm.values()):.4g} per t CO2 of "
                                  f"{len(nm)}: " + ", ".join(sorted(nm))]
                 tier = "tier 2 (capture node x CO2 captured)"
+            if t1_off:
+                tier += f"; tier 1 {t1_off[0]:.4g} set aside, {t1_off[0] / t2[0]:.2g}x tier 2"
         else:
             stats["ccs add-on not derivable"] = stats.get("ccs add-on not derivable", 0) + 1
             continue
