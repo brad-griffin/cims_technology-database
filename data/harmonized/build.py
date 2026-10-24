@@ -191,6 +191,12 @@ def main(argv) -> int:
     fst = fill.apply(psum, rec, normalise.target_unit, L.facts, units)
     bt = fst.pop("_backtest")
     above = fst.pop("_above_host", [])
+    cc = fst.pop("_comb_conflict", [])
+    cco = fst.pop("_comb_conflict_old", [])
+    if cco:
+        print(f"  combustion CO2 written but above a sourced total with the process CO2 ({len(cco)}; to review): " + "; ".join(cco))
+    if cc:
+        print(f"  combustion CO2 not written, fuel plus process above a sourced total ({len(cc)}): " + "; ".join(cc))
     if above:
         print(f"  efficiency variants above their host's energy use ({len(above)}): " + "; ".join(above))
     write(OUTPUT / "ccs-variant.csv", ["archetype", "host", "parameter", "unit", "host-value", "add-on",

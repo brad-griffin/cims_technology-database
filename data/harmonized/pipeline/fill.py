@@ -254,6 +254,64 @@ def m_inverse_net_feed(rule, a, have, ctx):
              "grades": [s.get("grade", "sourced")], "sources": s.get("sources", ""), "external": []}]
 
 
+def m_chp_heat_inverse(rule, a, have, ctx):
+    """A CHP archetype's energy use per GJ of heat (its product) = 100 / its heat
+    efficiency: the efficiency row with target heat, else the total CHP efficiency
+    less the electric efficiency (sanity-check run 2026-10-24, P-C6; biomass CHP had
+    no energy use). Heat efficiency outside 15-80% is not used."""
+    p = rule["parameter"]
+    if not is_chp(a) or a.get("product-unit") != "GJ" or any(k[0] == p and _live(v) for k, v in have.items()):
+        return []
+    eh = have.get(("efficiency", "heat"))
+    if _live(eh):
+        h, hl, hh = _vals(eh)
+        ins, grades = [_input(eh, "efficiency_heat")], [eh.get("grade", "sourced")]
+    else:
+        # the total is efficiency-chp: an untargeted efficiency row on a CHP archetype
+        # is unspecified until the roll-in (pipeline/rollin.py) (Fable review)
+        et, ee = have.get(("efficiency-chp", "")), have.get(("efficiency", "electricity"))
+        if not (_live(et) and _live(ee)):
+            return []
+        h = fnum(et["central"]) - fnum(ee["central"])
+        hl = hh = None
+        ins = [_input(et, "efficiency (total CHP)"), _input(ee, "efficiency_electricity")]
+        grades = [et.get("grade", "sourced"), ee.get("grade", "sourced")]
+    if h is None or not 15 <= h <= 80:
+        return []
+    return [{"parameter": p, "target": "", "central": 100.0 / h,
+             "low": 100.0 / hh if hh else None, "high": 100.0 / hl if hl else None,
+             "inputs": ins, "grades": grades, "sources": "", "external": []}]
+
+
+def m_inverse_net_feed_efficiency(rule, a, have, ctx):
+    """The inverse of id-sec-from-efficiency-net-feed: on a conversion archetype per
+    GJ of product, efficiency = 100 / (energy use + the energy in the product)
+    (sanity-check run 2026-10-24, P-C8). Not where the energy use itself came from
+    the efficiency, nor on CHP."""
+    from . import feedstock
+    p = rule["parameter"]
+    if (p, "") in have or a.get("product-unit") != "GJ" or is_chp(a):
+        return []
+    t0 = feedstock.row_for(a["archetype"], ctx.get("feedstock"))
+    s = have.get((SEC, ""))
+    hrow = ctx["hosts"].get(a["archetype"], {})
+    if hrow.get("status") == "active" and hrow.get("host"):
+        return []       # a variant takes its host's efficiency (est-sibling-efficiency)
+    if not t0 or not _live(s) or (s.get("grade") or "sourced") != "sourced":
+        return []
+    e = fnum(t0.get("energy-in-product"))
+    c, lo, hi = _vals(s)
+    if not e or not c or c <= 0:
+        return []
+    v = 100.0 / (c + e)
+    if not 10 <= v <= 100:
+        return []
+    return [{"parameter": p, "target": "", "central": v,
+             "low": 100.0 / (hi + e) if hi else None, "high": 100.0 / (lo + e) if lo else None,
+             "inputs": [_input(s, SEC), f"energy in product {e:g} GJ/GJ (feedstock.csv)"],
+             "grades": [s.get("grade", "sourced")], "sources": s.get("sources", ""), "external": []}]
+
+
 def m_fuel_emission_factor(rule, a, have, ctx):
     p, t = rule["parameter"], rule["target"]
     if (p, t) in have:
@@ -287,6 +345,32 @@ def m_fuel_emission_factor(rule, a, have, ctx):
         grades.append(r.get("grade", "sourced"))
         srcs += split_list(r.get("sources", ""))
         ext.append(f["factor-id"])
+    tot = have.get(("emissions-total", "co2"))
+    pr = have.get(("emissions-process", "co2"))
+    newly = (_live(pr) or a["equipment"] in ("steam-reformer", "reactor")) and "_ccs-" not in a["archetype"] \
+        and a.get("family") != "co2-capture"
+    if c <= 0 and newly:
+        return []       # zero-valued (guessed) fuel rows say nothing about the carbon
+    # the fuel's CO2 with the process CO2 must fit inside a sourced total: where it
+    # does not, the energy rows and the total are on different scopes (2026-10-24,
+    # sanity-check run P-C1); listed in the build log, not written. Only on the
+    # archetypes the rule newly reaches (a process-CO2 row, a reformer or reactor);
+    # a capture variant's total is net of capture
+    if _live(tot) and (tot.get("grade") or "sourced") == "sourced" and "_ccs-" not in a["archetype"] \
+            and a.get("family") != "co2-capture":
+        tv = fnum(tot["central"]) or 0.0
+        pv = (fnum(pr["central"]) or 0.0) if _live(pr) else 0.0
+        if (tv <= 0 or c + pv > 1.1 * tv) and not newly:
+            # written as before this rule was widened, but shown (Fable review)
+            ctx.setdefault("comb_conflict_old", []).append(
+                f"{a['archetype']}: fuel CO2 {c:.4g} + process {pv:.4g} against sourced total {tv:.4g}")
+    if newly and _live(tot) and (tot.get("grade") or "sourced") == "sourced":
+        tv = fnum(tot["central"]) or 0.0
+        pv = (fnum(pr["central"]) or 0.0) if _live(pr) else 0.0
+        if tv <= 0 or c + pv > 1.1 * tv:
+            ctx.setdefault("comb_conflict", []).append(
+                f"{a['archetype']}: fuel CO2 {c:.4g} + process {pv:.4g} against sourced total {tv:.4g}")
+            return []
     return [{"parameter": p, "target": t, "central": c, "low": lo, "high": hi,
              "inputs": ins + ext, "grades": grades,
              "sources": "; ".join(dict.fromkeys(srcs)), "external": ext}]
@@ -1239,7 +1323,8 @@ def backtest(records, rules_, have, ctx):
     return out
 
 
-METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed, "fuel-emission-factor": m_fuel_emission_factor,
+METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed,
+           "chp-heat-inverse": m_chp_heat_inverse, "inverse-net-feed-efficiency": m_inverse_net_feed_efficiency, "fuel-emission-factor": m_fuel_emission_factor,
            "sec-from-emissions": m_sec_from_emissions, "sum": m_sum, "difference": m_difference,
            "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
@@ -1378,22 +1463,23 @@ def _host_gross_co2(host, ctx):
         return (tuple(sum(_lohi(x)[i] for x in xs) for i in range(3)),
                 [_input(x, f"{host} {x['parameter']}_co2") for x in xs],
                 [x.get("grade", "sourced") for x in xs])
+    # last: a CO2-eq total, where the host records no other gas and the CO2-eq was
+    # not built from species (sanity-check run 2026-10-24, P-C7: coal-to-methanol)
+    te = hh.get(("emissions-total", "co2e"))
+    others = any(k[0].startswith("emissions-") and k[1] not in ("", "co2", "co2e") and _live(v)
+                 for k, v in hh.items())
+    if _live(te) and not others and not (te.get("rule-id") or "").startswith("id-co2e-from-species"):
+        return (_lohi(te), [_input(te, f"{host} emissions-total_co2e") + " (CO2-eq read as CO2)"],
+                [worst([te.get("grade", "sourced"), "estimated"])])
     return None
 
 
 def _captured_derived(k, host, ctx, rate):
-    h, hh = ctx["have"].get(k, {}), ctx["have"].get(host, {})
-    tot = hh.get(("emissions-total", "co2"))
-    parts = [hh.get(("emissions-combustion", "co2")), hh.get(("emissions-process", "co2"))]
-    if _live(tot):
-        co2, ins, gs = _lohi(tot), [_input(tot, f"{host} emissions-total_co2")], [tot.get("grade", "sourced")]
-    elif any(_live(x) for x in parts):
-        xs = [x for x in parts if _live(x)]
-        co2 = tuple(sum(_lohi(x)[i] for x in xs) for i in range(3))
-        ins = [_input(x, f"{host} {x['parameter']}_co2") for x in xs]
-        gs = [x.get("grade", "sourced") for x in xs]
-    else:
+    h = ctx["have"].get(k, {})
+    g = _host_gross_co2(host, ctx)
+    if not g:
         return None
+    co2, ins, gs = g
     sh = h.get(("share-to-capture", "co2")) or h.get(("share-to-capture", ""))
     if not _live(sh) or co2[0] <= 0:
         return None
@@ -2434,6 +2520,8 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     _run_rules(psum, records, target_unit, ctx, stats, phase="post")
     _run_rules(psum, records, target_unit, ctx, stats, phase="final")
     stats["_above_host"] = _variant_above_host(ctx)
+    stats["_comb_conflict"] = sorted(set(ctx.get("comb_conflict", [])))
+    stats["_comb_conflict_old"] = sorted(set(ctx.get("comb_conflict_old", [])))
     stats["_ccs"] = ctx["ccs_report"]
     stats["_sum_disagree"] = sorted(ctx.get("sum_disagree", ()))
     stats["_unpriced"] = sorted(ctx["unpriced"])
