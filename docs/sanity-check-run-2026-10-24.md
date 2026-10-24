@@ -79,3 +79,22 @@ Side effects, all checked:
 - Fixed O&M from the capex-ratio rule moved about 5% on a dozen archetypes, because the ratio pool changed with the corrected MIDDEN rows.
 - The solar concentrators' annual output now comes from the end-use median (21,000 and 63,000 GJ), not capacity x factor, because a guessed factor ranks below an estimated output. Annual output sets only the stock count.
 - Still listed in the build log, and unchanged by this batch: direct-heater_fuel-fired_efficiency-moderate 1.21 GJ/GJ above its host's 1.09.
+
+## Batch E: host plants for set-aside incremental costs (S20-S67)
+
+All checks pass. For each archetype with set-aside incremental costs, the question was whether to name the host plant or confirm there is none. The Fable reviewer first checked what a host does: the variant takes the host's size where the host has one, and an increment fills a cost only where the variant has none and the increment has a usable unit.
+
+| Group | Items | Proposal | Fable verdict | Result |
+| - | - | - | - | - |
+| Stale | S24, S26, S34, S35, S40, S43, S44, S46, S51, S52, S54, S64; S50 | Close: merged or renamed since 2026-10-02 | Apply, and give S50 and two more successors a status | Closed |
+| Conversions from another technology | S20, S23, S25, S28-S30, S32, S33, S36, S38, S39, S42, S45, S48, S49, S55-S63, S65-S67, and the successors | No host (status `off`): the rows price converting another plant (ingot to continuous casting, mercury to membrane, Soderberg to prebaked, and so on), or are plant totals with no size, or a generic capture cost per t CO2 | Apply; move S41 here | 36 archetypes `off`. Their rows stay in output/set-aside-host-cost.csv as retrofit costs |
+| Same plant plus a measure | S31 ODC cell; motor_variable-speed | Name a host | Apply. Fable found that S31's increments have no unit, so the capex stays a judgement, and added the variable-speed drive | ODC: host membrane cell; capex judgement 2,280 (was 2,600); capacity 640 kt/yr from the host. Variable-speed drive: host standard motor; capex 22.6 (was a guess of 18) from McKane's drive increments |
+| | S41 VRM | Host ball mill | Do not apply: a different mill, and the ball mill's guessed size would overwrite VRM's | `off` |
+| | S53 low-energy refiner | Host TMP refiner | Apply | Reverted after the build: the UKERC saving rows rebuilt the total on the host (8.89 GJ/t) against Hekkert's 3.2 GJe/t. For Brad |
+| | S21 calcined clay | Host Portland binder if the binders are grinding nodes | Do not apply; for Brad | `off`. The LC3 retrofit figures include the calciner (about 10-14 CAD/t-yr) against the judgement of 100 |
+| | S27 | `off` | Do not apply: its host is already named (CH015) | Closed with the host kept |
+| New: electrified and hydrogen-fuelled refinery cards (P-E4) | reactor_hydroprocessing, reactor_catalytic-reforming | Rule out the pooled rows of the MIDDEN electrified-furnace cards | Apply, plus the two hydrogen-as-fuel hydrotreating cards | Both archetypes' fixed O&M had come from these cards; it is now estimated. Catalytic-reforming electricity 0.066 (was 0.16). The hydrogen fuel no longer shows as hydroprocessing feedstock. Variants for Brad (S149) |
+| Found after the build | the same two archetypes | Reject the 70/30 natural-gas name for their fuel: their MIDDEN cards name it refinery gas (the batch-B alkylation precedent) | (precedent) | Natural gas no longer priced beside refinery gas. Catalytic reforming incl. energy 39.8 (was 42.6) |
+| New: incremental costs on abatement options (P-E5) | about 400 rows on methane controls and others | For Brad | Agree; a safe route exists (read incremental as the whole cost, as for capture), but it is a cost-basis ruling | S148 |
+
+Side effects: the capex-ratio fixed O&M fell about 35% on about 40 oil-and-gas and refinery archetypes, because the two electrified-card O&M values had been in the ratio pool. That is a correct consequence, but it is large, so it is listed here.
