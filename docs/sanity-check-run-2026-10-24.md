@@ -137,3 +137,39 @@ A triage of all 63 high-severity findings of the 2026-10-23 review against the c
 Side effects:
 - The pooled cost ratio moved about 7% (fixed O&M on about 90 archetypes), because the zeolite cards' O&M left the pool.
 - The zero-combustion identity had been blocked by an as-sourced row on the heat pump; fixed.
+
+## Batch H: the medium-severity findings
+
+The triage of all 71 medium findings found 11 resolved, 11 partly resolved and 49 open. Each open one was classed A (a safe data fix), B (code) or C (a ruling). The tables are in docs/sanity-check-run-2026-10-24-medium-triage.md and, for the high findings, docs/sanity-check-run-2026-10-24-high-triage.md. All checks pass.
+
+**A code defect (P-H1).** On per-GJ archetypes, a number per tonne of product had its HHV/LHV ratio applied twice: once by the HHV mass factor, then again. Per-tonne hydrogen emissions were 18% low. The fix is in `heating.kind`, and absolute sums on a mass capacity are covered too, per the Fable reviewer. It moved 84 values on 28 archetypes, each by exactly the fuel's ratio:
+- autothermal reformer CO2 0.049 to 0.058 t/GJ;
+- steam methane reformer CO2 0.057 to 0.063 t/GJ;
+- methane-pyrolysis capex 50 to 59;
+- annual outputs in GJ up 8-18%.
+
+**Class-A fixes applied** (Fable checked each; the changes it asked for are included):
+
+| Finding | Change | Result |
+| - | - | - |
+| CHEM005, CHEM008 | Ruled out a naphtha-route row on the gas reformer and a membranes-only capex | |
+| CHEM011 | Same-source factor of 2.11 t HVC per t ethylene on Joosten's MTO datasheet | MTO total 12.5 to 7.3 GJ/t; combustion CO2 0.47 to 0.28 |
+| CHEM013 | Ruled out IPCC text cells loaded as 2.0; remapped the olefins example | HB electrolytic abatement 209 to 415 |
+| HPCH009 | Ruled out JRC CHP rows with an unknown denominator | Gas-turbine CHP CO2e 0.064 to 0.098 |
+| HPCH013, HPCH015, HPCH016 | Negative capture totals out; biogenic CO2 to emissions-biomass; the chlor-alkali CHP bucket out | Combined-cycle moderate capex 138 to 56 |
+| IS012, IS015 | Heat-to-steel shares out of efficiency; ETSAP $/t-yr to fixed O&M; de Beer operating totals out | Variable O&M's pooled ratio moved, so about 150 archetypes' variable O&M changed (BOF 11.9 to 3.6) |
+| MCF007, MCF010, MCF012, MCF015 | A base-plant electricity share, steel-mill lime-plant rows, process-only MIDDEN emissions, and a direct-fired absorption chiller ruled out | Lime shaft kiln total CO2 1.10; absorption chiller 71.5% |
+| MCF008, OG011, OG012, OG014, RX016 | Judgements that sat outside their totals rejected or restated; carriers corrected | HVAC heater natural gas 0.93 to 1.12 |
+| NFM013, NFM014, OG007, OG009 | Another product, step or reprint ruled out | SAGD total 7.76 to 8.84 GJ/m3 |
+| RX012, RX014 | Hosts named; the host-ratio O&M rule moved after the bucket capex | Reverberatory strong fixed O&M 60 to 154 |
+| RX021 | Cooling tower carriers set to electricity | Combustion CO2 0 |
+
+Found and fixed in the build checks:
+- A ruled-out set-aside increment still fed the host-increment capex (HPCH016); it no longer does.
+- A variant whose only fuel row is unnamed now takes its host's named-fuel shares. Naming the reverberatory variant's host had cost it its natural gas. The same rule now names fuel on four other variants (BOF strong, hot-mill moderate, precalciner strong, crude-unit strong).
+
+Not applied:
+- MCF019: a re-target is not a source error.
+- CHEM012, HPCH014, RX021 engine: each needs a sourced factor (S156).
+- OG008, PB016: Brad's call (S157).
+- The class-B and class-C items: S158.

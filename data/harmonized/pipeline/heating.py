@@ -86,6 +86,19 @@ def reported(text: str) -> str:
     return "LHV" if lo else "HHV" if hi else ""
 
 
+MASS_VOLUME = ("mass", "volume", "amount-h2")
+
+
+def _dim(tok: str) -> str:
+    """The physical dimension of a unit token ('mass', 'volume', 'energy', 'time',
+    ...), or '' if unknown; 'kg-H2' reads as 'kg'."""
+    if not tok:
+        return ""
+    from .convert import atom
+    a = atom(tok) or atom(tok.split("-")[0])
+    return a[0] if a else ""
+
+
 def kind(param: str, unit: str, pu: str, capacity_basis: str, per_pu: bool) -> str:
     """How a number depends on the heating value, or '' if it does not."""
     num = (unit or "").split("/", 1)[0]
@@ -95,9 +108,20 @@ def kind(param: str, unit: str, pu: str, capacity_basis: str, per_pu: bool) -> s
         return "energy-use"
     if param in ("capacity", "annual-output") and (unit in ENERGY_RATE or num in ENERGY):
         return "capacity-in" if capacity_basis in INPUT_BASES else "capacity-out"
-    if pu == "GJ" and per_pu:
-        return "per-product"
     den = (unit or "").split("/", 1)[1] if "/" in (unit or "") else ""
+    if pu == "GJ" and per_pu:
+        # a number per TONNE (or m3) of the product carries no heating-value basis:
+        # the mass or volume factor that puts it per GJ is already HHV (sanity-check
+        # run 2026-10-24, HPCH017/RX011: per-t-H2 emission factors had been divided
+        # by hydrogen's HHV/LHV ratio a second time, 18% low). The denominator's
+        # dimension decides; with no denominator, or a time one (t/yr), the numerator's
+        # does. An unknown token (hkWh, ng/J's J) keeps the correction.
+        if _dim(den.split("/", 1)[0].split("-per-")[0]) in MASS_VOLUME:
+            return ""
+        if (not den or _dim(den.split("/", 1)[0].split("-per-")[0]) == "time") \
+                and _dim(num) in MASS_VOLUME:
+            return ""
+        return "per-product"
     if (per_pu and den in ENERGY_DEN and param.startswith(("capex", "opex", "cost-"))
             and capacity_basis not in INPUT_BASES):
         # a cost per kW or MWh of the product's own energy on a per-tonne archetype

@@ -817,9 +817,38 @@ def m_host_split(rule, a, have, ctx):
     tot = have.get((SEC, ""))
     if not _live(tot) or fnum(tot["central"]) <= 0:
         return []
-    if any(q == SEC and t and not is_component_target(t) and _live(r)
-           for (q, t), r in have.items()):
-        return []
+    own = {t: r for (q, t), r in have.items() if q == SEC and t and not is_component_target(t) and _live(r)}
+    if own:
+        # the variant's own carriers stand; but where its fuel is unnamed (a 'fuel' row
+        # and no named fuel), the host's named fuels name it, in the host's shares of
+        # its fuel (2026-10-24, sanity-check run batch H: the reverberatory furnace's
+        # strong variant had lost its natural gas once its host was named)
+        hh = ctx["have"].get(host, {})
+        vf = own.get("fuel")
+        if vf is None or any(t != "fuel" and t not in NON_COMBUSTIBLE for t in own):
+            return []
+        hf = hh.get((SEC, "fuel"))
+        named = {t: r for (q, t), r in hh.items() if q == SEC and t and t != "fuel"
+                 and not is_component_target(t) and t not in NON_COMBUSTIBLE and _live(r)
+                 and "pooled apart" not in (r.get("central-from") or "")}
+        if not (_live(hf) and named) or fnum(hf["central"]) <= 0:
+            return []
+        hfc = fnum(hf["central"])
+        if abs(sum(fnum(r["central"]) for r in named.values()) / hfc - 1) > 0.05:
+            return []
+        out = []
+        for t, r in sorted(named.items()):
+            sh = fnum(r["central"]) / hfc
+            c, lo, hi = _vals(vf)
+            out.append({"parameter": SEC, "target": t, "central": c * sh,
+                        "low": lo * sh if lo is not None else None,
+                        "high": hi * sh if hi is not None else None,
+                        "inputs": [_input(vf, f"{k} {SEC}_fuel"), _input(r, f"{host} {SEC}_{t}"),
+                                   _input(hf, f"{host} {SEC}_fuel")],
+                        "grades": [vf.get("grade", "sourced"), r.get("grade", "sourced")],
+                        "sources": r.get("sources", ""), "external": [],
+                        "note": f"names the variant's fuel by {host}'s share {sh:.1%} of its fuel"})
+        return out
     hh = ctx["have"].get(host, {})
     htot = hh.get((SEC, ""))
     if not _live(htot) or fnum(htot["central"]) <= 0:
@@ -2296,7 +2325,9 @@ def _ctx(psum, records, facts, units):
         have.setdefault(r["archetype"], {})[(r["parameter"], r.get("target", ""))] = r
     increments, per_gj = {}, {}
     for r in facts:
+        # a set-aside increment that is also ruled out does not count (2026-10-24, HPCH016)
         if (r.get("set-aside") == "needs-host-cost" and r.get("archetype")
+                and not (r.get("excluded") or "").startswith("ruled out")
                 and fnum(r.get("value-norm")) is not None):
             increments.setdefault((r["archetype"], r["parameter"]), []).append(r)
         if (r.get("archetype") and r["parameter"] in ("capex", "opex-fixed")

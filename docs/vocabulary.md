@@ -108,11 +108,11 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 
 | archetype | label | type | carriers | TRL | applies to | status |
 |---|---|---|---|---:|---|---|
-| `cooling-tower_free-evaporative` | Free or evaporative cooling | efficient variant |  | 9 | *.service.hvac.cooling; light-industrial.service.refrigeration | estimated |
+| `cooling-tower_free-evaporative` | Free or evaporative cooling | efficient variant | electricity | 9 | *.service.hvac.cooling; light-industrial.service.refrigeration | estimated |
 | `heat-pump_hvac` | HVAC heat pump (heating or reversible) | alternative | electricity | 9 | light-industrial.service.hvac.cooling; *.service.hvac.heating | quantified |
-| `hvac-heater_fuel-fired` | Fuel-fired HVAC or make-up air heater | conventional | natural-gas; steam; oil; electricity | 9 | *.service.hvac.heating | quantified |
-| `hvac-heater_fuel-fired_efficiency-moderate` | HVAC heating efficiency measures, moderate (demand-controlled ventilation) | efficient variant | natural-gas; steam; oil; electricity | 9 | *.service.hvac.heating | estimated |
-| `hvac-heater_fuel-fired_efficiency-strong` | HVAC heating efficiency measures, strong (heat-recovery ventilation) | efficient variant | natural-gas; steam; oil; electricity | 9 | *.service.hvac.heating | estimated |
+| `hvac-heater_fuel-fired` | Fuel-fired HVAC or make-up air heater | conventional | natural-gas; oil; electricity | 9 | *.service.hvac.heating | quantified |
+| `hvac-heater_fuel-fired_efficiency-moderate` | HVAC heating efficiency measures, moderate (demand-controlled ventilation) | efficient variant | natural-gas; oil; electricity | 9 | *.service.hvac.heating | estimated |
+| `hvac-heater_fuel-fired_efficiency-strong` | HVAC heating efficiency measures, strong (heat-recovery ventilation) | efficient variant | natural-gas; oil; electricity | 9 | *.service.hvac.heating | estimated |
 | `resistance-heater_hvac` | Electric resistance HVAC or mine-air heating | conventional | electricity | 9 | *.service.hvac.heating | quantified |
 
 ### Lighting
@@ -490,7 +490,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `fracturing-fleet_dual-fuel` | Dual-fuel fracturing fleet (Tier IV) | alternative | natural-gas; diesel | 9 | natural-gas.product.supply.completion; petroleum-crude.product.completion | quantified |
 | `fracturing-fleet_electric` | Electric fracturing fleet | alternative | electricity; natural-gas | 9 | natural-gas.product.supply.completion; petroleum-crude.product.completion | quantified |
 | `gas-treatment-unit_amine-sweetening` | Amine sweetening | conventional | steam; electricity | 9 | natural-gas.product.supply.formation-co2 | quantified |
-| `gas-treatment-unit_amine-sweetening_ccs-concentrated` | Amine sweetening with capture of the separated CO2 | alternative | natural-gas | 9 | natural-gas.product.supply.formation-co2 | quantified |
+| `gas-treatment-unit_amine-sweetening_ccs-concentrated` | Amine sweetening with capture of the separated CO2 | alternative | steam; electricity | 9 | natural-gas.product.supply.formation-co2 | quantified |
 | `gas-treatment-unit_glycol-dehydration` | Glycol dehydration | conventional | natural-gas | 9 | natural-gas.product.supply.processing.dehydration | quantified |
 | `gasifier_coal-fischer-tropsch` | Coal gasification to Fischer-Tropsch liquids | alternative | coal | 9 | petroleum-refining.product.synthetic-fuels | quantified |
 | `gasifier_coal-methanation` | Coal gasification with methanation (SNG) | alternative | coal | 9 | no connection | quantified |

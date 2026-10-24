@@ -457,7 +457,7 @@ def normalise(facts, examples, records, units) -> None:
         v = fnum(x["value"]) * route[0]
         per_yr = v * GJ_PER_KW_YR * 1000 if tcap == "MW" else v * 1000 if tcap.startswith("k") else v
         # nameplate: the capacity factor is not applied (modeller 2026-10-10)
-        return per_yr, x["record-id"], ids, basis
+        return per_yr, x["record-id"], ids, basis, cu
 
     # each example's own carrier figures by raw unit, for the fuel share of an
     # all-carrier total (S144)
@@ -580,6 +580,7 @@ def normalise(facts, examples, records, units) -> None:
         if not unit and tgt == "dimensionless":
             unit = tgt              # a ratio a source prints without a unit
         factor, offset, note = None, 0.0, ""
+        hv_unit = ""
         m = convert.MONEY.match(unit)
         if m:
             cur = f"{m.group(1)}_{m.group(2)}"
@@ -677,14 +678,16 @@ def normalise(facts, examples, records, units) -> None:
                 # an annual sum (fixed O&M in EUR-million/yr) over the same source's
                 # annual capacity for the case: a cost per unit of capacity per year
                 # (added 2026-10-02)
-                per_yr, rid, ids, basis = oc
+                per_yr, rid, ids, basis, cu_ = oc
+                hv_unit = f"{unit.split('/', 1)[0]}/{cu_.split('/', 1)[0]}"
                 factor, used = f / per_yr, used + ids
                 note = f"annual sum over the source's own capacity for this case ({rid})"
                 cls.append("same-source")
                 if basis in heating.INPUT_BASES:
                     bridge_kind = "per-input"
             elif p in PER_CAPACITY and not d and (oc := own_capacity(r, sc, pu, flist, alias)):
-                per_yr, rid, ids, basis = oc
+                per_yr, rid, ids, basis, cu_ = oc
+                hv_unit = f"{unit.split('/', 1)[0]}/{cu_.split('/', 1)[0]}"
                 factor, used = f / per_yr, used + ids
                 note = f"absolute sum over the source's own capacity for this case ({rid})"
                 cls.append("same-source")
@@ -779,7 +782,9 @@ def normalise(facts, examples, records, units) -> None:
         if (p in PER_CAPACITY and pu == "GJ" and not bridge_kind
                 and r.get("capacity-basis") in heating.INPUT_BASES):
             bridge_kind = "per-input"
-        how = heating.kind(p, unit, pu, r.get("capacity-basis") or "", per_product)
+        # an absolute sum put on the same source's capacity: that capacity's unit decides
+        # the heating-value basis (2026-10-24, P-H1)
+        how = heating.kind(p, hv_unit or unit, pu, r.get("capacity-basis") or "", per_product)
         if how:
             hv = heating.reported(r.get("note") or "")
             # a source that reports on LHV unless it says otherwise (ruling 2026-10-05)
