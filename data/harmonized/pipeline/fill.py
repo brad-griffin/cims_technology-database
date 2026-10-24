@@ -96,6 +96,8 @@ def _in_scope(rule, a, have, ctx=None):
         return False
     if "family" in sc and a.get("family") not in sc["family"].split("|"):
         return False
+    if "product" in sc and a.get("product") not in sc["product"].split("|"):
+        return False
     if sc.get("exclude-feedstock") == "yes" and ctx is not None and _feedstock_row(a, ctx):
         return False
     if sc.get("exclude-ccs") == "yes" and ("_ccs-" in a["archetype"]
@@ -911,6 +913,21 @@ def m_marker(rule, a, have, ctx):
              "inputs": [], "grades": [], "sources": "", "external": []}]
 
 
+def m_constant(rule, a, have, ctx):
+    """A value fixed by definition (the rule's formula is the number): written
+    only where the archetype has no row of the parameter. Added 2026-10-24
+    (sanity-check run P-D4, S91): a methane control's capacity is the methane it
+    avoids in a year, so its capacity factor is 100% by definition."""
+    p = rule["parameter"]
+    if (p, rule.get("target") or "") in have:
+        return []
+    v = fnum((rule.get("formula") or "").strip())
+    if v is None:
+        return []
+    return [{"parameter": p, "target": rule.get("target") or "", "central": v, "low": v, "high": v,
+             "inputs": [f"by definition: {v:g}"], "grades": [], "sources": "", "external": []}]
+
+
 # ---- assumptions (records/fill/fill-assumption.csv) -------------------------
 
 def _applies(row, a, ctx):
@@ -1329,7 +1346,7 @@ METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed,
            "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
            "bucket-increment": m_bucket_increment, "per-gj-via-sec": m_per_gj_via_sec,
-           "assumption": m_assumption, "marker": m_marker, "zero-if-no-fossil": m_zero_if_no_fossil,
+           "assumption": m_assumption, "marker": m_marker, "constant": m_constant, "zero-if-no-fossil": m_zero_if_no_fossil,
            "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
            "host-split": m_host_split, "feedstock-identity": m_feedstock_identity,
            "co2e-from-species": m_co2e_from_species,
@@ -1517,23 +1534,46 @@ def _node_medians(node, p, ctx, target=""):
     return vals
 
 
+def _rebase_factor(k, host, sid, eid, ctx):
+    """(factor, note) putting a same-source add-on on this variant's CO2 captured:
+    the variant's captured CO2 per unit of product over the source's own, from the
+    same example where it gives one, else the source's median (sanity-check run
+    2026-10-24, P-D7, S103). (1.0, "") where the source gives none."""
+    a = ctx["arch"][k]
+    cu = "t/" + a["product-unit"]
+    rows = [r for r in ctx.get("captured_facts", {}).get((k, sid), []) if r.get("unit-norm") == cu]
+    if not rows:
+        return 1.0, ""
+    same = [fnum(r["value-norm"]) for r in rows if r["example-id"] == eid]
+    src = median(same) if same else median(fnum(r["value-norm"]) for r in rows)
+    cap = _captured(k, host, ctx)
+    if not cap or cap[0] <= 0 or src <= 0:
+        return 1.0, ""
+    f = cap[0] / src
+    return f, (f"; rebased per t CO2: x {f:.3g} (this variant captures {cap[0]:.4g} {cu}, "
+               f"the source {src:.4g})")
+
+
 def _tier1(k, host, p, unit, ctx):
     """Same-source add-on: the source's incremental capture cost on this variant,
-    else the same source's plant with capture less its plant without. Median of
-    the per-source values."""
+    else the same source's plant with capture less its plant without. Each
+    source's add-on is put on this variant's CO2 captured where the source gives
+    its own (2026-10-24, S103). Median of the per-source values."""
     rows = [r for r in ctx["addon_facts"].get((k, p), []) if r.get("unit-norm") == unit]
     vals, ins = [], []
     inc = {}
     for r in rows:
         if (r.get("cost-basis") or "") == "incremental":
-            inc.setdefault(r["example-id"], []).append(fnum(r["value-norm"]))
-    for eid, vs in inc.items():
-        vals.append(median(vs))
-        ins.append(f"incremental {median(vs):.4g} ({eid})")
-    whole = {}
+            inc.setdefault((r["example-id"], r["source-id"]), []).append(fnum(r["value-norm"]))
+    for (eid, sid), vs in inc.items():
+        rf, rn = _rebase_factor(k, host, sid, eid, ctx)
+        vals.append(median(vs) * rf)
+        ins.append(f"incremental {median(vs):.4g} ({eid}){rn}")
+    whole, whole_ex = {}, {}
     for r in rows:
         if (r.get("cost-basis") or "") != "incremental":
             whole.setdefault(r["source-id"], []).append(fnum(r["value-norm"]))
+            whole_ex.setdefault(r["source-id"], r["example-id"])
     hp = ctx["have"].get(host, {}).get((p, ""))
     hpc = fnum(hp["central"]) if _live(hp) else None
     for sid, vs in whole.items():
@@ -1553,8 +1593,9 @@ def _tier1(k, host, p, unit, ctx):
             d = w - wo
             how = f"{sid}: with capture {w:.4g} less without {wo:.4g}"
         if d > 0:
-            vals.append(d)
-            ins.append(how)
+            rf, rn = _rebase_factor(k, host, sid, whole_ex[sid], ctx)
+            vals.append(d * rf)
+            ins.append(how + rn)
     if not vals:
         return None
     return median(vals), min(vals), max(vals), ins
@@ -2225,8 +2266,14 @@ def _ctx(psum, records, facts, units):
     service = {}
     for s in records.service:
         service.setdefault(s["archetype"], set()).add(s.get("end-use", ""))
-    addon_facts, pooled_facts = {}, {}
+    addon_facts, pooled_facts, captured_facts = {}, {}, {}
     for r in facts:
+        if (r.get("parameter") == "emissions-captured" and (r.get("target-norm") or r.get("target")) == "co2"
+                and "_ccs-" in (r.get("archetype") or "") and not r.get("excluded")
+                and fnum(r.get("value-norm")) is not None and fnum(r.get("value-norm")) > 0):
+            # a capture variant's own sourced captured CO2, kept per source so a
+            # same-source add-on can be rebased per t CO2 (sanity-check run P-D7, S103)
+            captured_facts.setdefault((r["archetype"], r["source-id"]), []).append(r)
         if fnum(r.get("value-norm")) is None or not r.get("archetype") or r.get("target-norm"):
             continue
         if r.get("set-aside") == "ccs-add-on":
@@ -2241,6 +2288,7 @@ def _ctx(psum, records, facts, units):
                 ccs_nodes.setdefault(node, set()).add(s_["archetype"])
     from .common import REFERENCE
     return {"addon_facts": addon_facts, "pooled_facts": pooled_facts, "ccs_nodes": ccs_nodes,
+            "captured_facts": captured_facts,
             "ccs_report": [], "unpriced": set(),
             "energy_prices": read(REFERENCE / "energy-price.csv"),
             "factors": convert.Factors(), "have": have, "increments": increments, "per_gj": per_gj,

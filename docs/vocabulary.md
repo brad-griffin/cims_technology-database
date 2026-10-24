@@ -196,7 +196,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `binder_hydrothermal-silicate` | Hydrothermal calcium hydrosilicate binder | prospective | electricity; steam | 6 | industrial-minerals.product.cement.binder | quantified |
 | `binder_portland-cement` | Portland cement (GU, Type 10) | conventional | electricity | 9 | industrial-minerals.product.cement.binder | quantified |
 | `binder_sulphoaluminate` | Calcium sulphoaluminate clinker | alternative | natural-gas; coal; electricity | 9 | industrial-minerals.product.cement.binder | quantified |
-| `calciner_indirect` | Electrified or indirectly heated calciner | prospective | steam | 6 | industrial-minerals.product.cement.clinker; industrial-minerals.service.kiln-heat | quantified |
+| `calciner_indirect` | Electrified or indirectly heated calciner | prospective | electricity; natural-gas | 6 | industrial-minerals.product.cement.clinker; industrial-minerals.service.kiln-heat | quantified |
 | `grinding-mill_ball` | Ball mill | conventional | electricity | 9 | industrial-minerals.product.cement.grinding | quantified |
 | `grinding-mill_vertical-roller` | Vertical roller mill or high-pressure grinding rolls | efficient variant | electricity | 9 | industrial-minerals.product.cement.grinding | quantified |
 | `kiln_calcium-looping` | Cement kiln with integrated calcium looping | prospective | coal; natural-gas | 6 | industrial-minerals.product.cement.clinker | quantified |
@@ -344,7 +344,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `pellet-plant_plasma-electric` | Plasma or electric induration | prospective | electricity | 5 | iron-and-steel.service.agglomeration; mining.service.pelletizing | estimated |
 | `pickling-line_acid` | Acid pickling line | conventional | steam; electricity | 9 | iron-and-steel.product.continuous-cast.pickling | quantified |
 | `preheater_ladle` | Ladle preheating | conventional | natural-gas; electricity | 9 | iron-and-steel.service.ladle-preheating | quantified |
-| `reactor_steel-offgas-chemicals` | Steel off-gases to chemicals and fuels | prospective | blast-furnace-gas; coke-oven-gas; by-product-gas; hydrogen | 7 | iron-and-steel.service.ccs.concentrated | quantified |
+| `reactor_steel-offgas-chemicals` | Steel off-gases to chemicals and fuels | prospective | steam | 7 | iron-and-steel.service.ccs.concentrated | quantified |
 | `rolling-mill_cold` | Cold rolling mill | conventional | oil; electricity | 9 | iron-and-steel.product.continuous-cast.cold-rolling | quantified |
 | `rolling-mill_cold_efficiency-moderate` | Cold mill efficiency measures, moderate (coupled pickling) | efficient variant | electricity; steam | 9 | iron-and-steel.product.continuous-cast.cold-rolling | estimated |
 | `rolling-mill_hot` | Hot rolling mill | conventional | electricity | 9 | iron-and-steel.product.continuous-cast.hot-rolling | quantified |
@@ -402,7 +402,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `calciner_gas-suspension_ccs-diffuse` | Gas-suspension calciner with post-combustion capture | prospective | natural-gas; steam | 4 | metal-smelting.product.aluminum.primary-aluminum.alumina.calcination | estimated |
 | `calciner_hydrogen-fired` | Hydrogen-fired alumina calciner | prospective | hydrogen | 5-7 | metal-smelting.product.aluminum.primary-aluminum.alumina.calcination | quantified |
 | `converter_continuous` | Continuous converting | efficient variant | electricity; natural-gas | 9 | metal-smelting.product.copper.pyrometallurgy.converting; metal-smelting.product.nickel.pyrometallurgy.converting | quantified |
-| `converter_peirce-smith` | Peirce-Smith converting | conventional | oil; solar | 9 | metal-smelting.product.copper.pyrometallurgy.converting; metal-smelting.product.nickel.pyrometallurgy.converting | quantified |
+| `converter_peirce-smith` | Peirce-Smith converting | conventional | electricity; oil | 9 | metal-smelting.product.copper.pyrometallurgy.converting; metal-smelting.product.nickel.pyrometallurgy.converting | quantified |
 | `digester_bayer` | Bayer digester | conventional | natural-gas; electricity; hydrogen; biomass | 9 | metal-smelting.product.aluminum.primary-aluminum.alumina.digestion | quantified |
 | `electric-arc-furnace_smelting-open-arc-dc` | Open-arc DC furnace | alternative | electricity; coke | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | estimated |
 | `electric-arc-furnace_smelting-submerged-arc` | Submerged-arc furnace | conventional | electricity; oil; coke | 9 | metal-smelting.product.titanium-slag.pyrometallurgy.smelting | estimated |
@@ -425,7 +425,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `melting-furnace_regenerative-oxy-fuel` | Regenerative or oxy-fuel melting | efficient variant | natural-gas | 9 | light-industrial.service.heat.metal-melting; metal-smelting.product.aluminum.recycle; metal-smelting.product.copper.melt-cast; metal-smelting.product.lead.melt-cast; metal-smelting.product.magnesium.melt-cast; metal-smelting.product.nickel.melt-cast; metal-smelting.product.zinc.melt-cast | quantified |
 | `melting-furnace_reverberatory-rotary` | Reverberatory or rotary melting furnace | conventional | natural-gas; oil | 9 | metal-smelting.product.aluminum.recycle; metal-smelting.product.copper.melt-cast; metal-smelting.product.lead.melt-cast; metal-smelting.product.magnesium.melt-cast; metal-smelting.product.nickel.melt-cast; metal-smelting.product.zinc.melt-cast | quantified |
 | `melting-furnace_twin-chamber` | Twin-chamber furnace with decoating | efficient variant | natural-gas | 9 | metal-smelting.product.aluminum.recycle | quantified |
-| `paste-plant_soderberg` | Soderberg paste plant | conventional | natural-gas; coke | 9 | metal-smelting.service.anode-production | estimated |
+| `paste-plant_soderberg` | Soderberg paste plant | conventional | natural-gas | 9 | metal-smelting.service.anode-production | estimated |
 | `process-improvement_pfc-anode-effect-control` | Anode-effect control for PFC reduction | reference | electricity | 9 | no connection | quantified |
 | `process-improvement_pre-reduction` | Pre-reduction of feed | efficient variant |  | 6-7 | metal-smelting.product.titanium-slag.pyrometallurgy.roasting | quantified |
 | `reactor_silicothermic` | Silicothermic magnesium reduction | conventional | coal; natural-gas; electricity | 9 | metal-smelting.product.magnesium.thermal-reduction | quantified |

@@ -57,3 +57,25 @@ All checks pass.
 Missed in review and left for Brad:
 - reactor_integrated-upgrader counts natural gas "including hydrogen plant feed" and also a separate hydrogen feedstock, which double counts energy and cost.
 - reactor_methane-pyrolysis blends the thermal and plasma routes.
+
+## Batch D: the older open items (S87-S103, S68, S69, S110, S117)
+
+All checks pass. Ten items were already resolved by earlier rounds and are closed after a re-check; the others were changed.
+
+| Item | Problem | Proposal | Fable verdict | Result |
+| - | - | - | - | - |
+| S87 | Capex on two bases (rated against delivered); the electrolyzer's band ran 12-3,396 | The 2026-10-10 nameplate ruling settles the basis. Correct MIDDEN's electrolyzer cards, rule out Lazard's stack-only rows and DOE's net-of-tax-credit wind row | Apply with changes: all 26 Lazard stack rows; keep the ranges. The reviewer found the same slip on other MIDDEN cards | MIDDEN TC0365/TC0366 printed 20x their own per-MW comments (the 20 MW reference size), in capex and fixed O&M; corrected. The same reference-size slip is corrected on two heat-pump and three digester cards. Electrolyzer capex 64 (12.6-194). Wind 45-71 |
+| S90 | Pneumatic-device capex priced a site at about CAD 81 million | Rule out ICF's per-pump rows; draft per facility from EPA 2006 over the Petrinex site | Apply | Capex 1.5 / 2.1 / 3.0 CAD per 1000-m3/yr (gas-driven, low-bleed, non-emitting; guesses). Levelized cost 0.6-1.0 CAD per 1000 m3 (was 425-702) |
+| Batch C side effect | Gas-driven pneumatics got combustion CO2 from the gas they vent | Exclude them from the fuel-CO2 identity | Apply | No combustion CO2; their methane stays in process CH4 |
+| S91 | Methane-control capacities looked small | The reading is right (methane avoided per installation per year), but a capacity factor was applied on top | Apply | Capacity factor 100% by definition on 11 methane controls. Flare 1,486 CAD/t CH4 (was 3,223); leak detection 1,900 (was 4,122) |
+| S94 | Carriers lists named steam on a 900 degC calciner, solar on a converter, coke on a paste plant, and feedstock gases on a chemicals plant | Correct the four lists; split the converter's blower electricity; reject the zero rows | Apply with changes: the steel off-gas plant lists steam only, and its zero hydrogen row goes too | No total changes. Peirce-Smith combustion CO2 0.073 t/t (was 0.109) |
+| S95 | Flash smelting capex 17,733 looked whole-plant | Rule out Schlesinger's figure as mine-to-cathode | Do not apply: Table 22.1 lists the smelter (with acid plant) apart from the mine, concentrator and refinery | No value change; the drafts' rationale corrected. For Brad |
+| S103, S100 | A same-source capture add-on carried the source plant's CO2 captured per unit | Rebase it per t CO2 with the same source's captured CO2 | Apply with changes: the same example first, the guard after the rebase | 10 variants rebased: recovery boiler capex add-on 410 to 145, SMR concentrated 23.7 to 14.5, fuel-fired boiler 29.6 to 14.5. The lime kiln rises 448 to 603, because its source captures less than the database's host |
+| S69 | Landfill methane collection held as a CO2 capture rate | A new collection-efficiency parameter | Apply with changes: use emissions-reduction-potential, as the other methane measures do | Remapped (75%, 35-90) |
+| S102 | Calculated against sourced levelized cost, now that fuels are priced | Report | Keep open for the solar concentrators | Median 0.85 on 57 archetypes; 46 within 2x. The solar concentrators had a fired plant's 86% capacity factor; now 25% (guess), and their levelized cost is 17 and 43 against sourced 21 and 56. For Brad: the hydrogen pipeline's capex has no length basis (13x) |
+| S93, S96-S99, S101, S110, S68, S117 | (see docs/sanity-check-list.csv) | Close | Agree | Closed. S117's three remaining disagreements are for Brad |
+
+Side effects, all checked:
+- Fixed O&M from the capex-ratio rule moved about 5% on a dozen archetypes, because the ratio pool changed with the corrected MIDDEN rows.
+- The solar concentrators' annual output now comes from the end-use median (21,000 and 63,000 GJ), not capacity x factor, because a guessed factor ranks below an estimated output. Annual output sets only the stock count.
+- Still listed in the build log, and unchanged by this batch: direct-heater_fuel-fired_efficiency-moderate 1.21 GJ/GJ above its host's 1.09.
