@@ -94,8 +94,9 @@ def apply(facts, flows, records) -> dict:
 
 
 def recovered_flows(flows, records) -> int:
-    """An output flow for what a measure recovers (records/reference/recovered-output.csv):
-    methane kept in the system and sold, per t CH4 abated. One derived flow row per
+    """An output flow for what a measure or plant recovers (records/reference/recovered-output.csv):
+    methane kept in the system and sold, per t CH4 abated; heat a nickel refinery
+    recovers from its process steps (S145, 2026-10-24). One derived flow row per
     archetype, example `identity:<archetype>` (ruling 2026-10-14: methane abatement
     costs are gross; the recovered gas is recorded instead of netted)."""
     n = 0
@@ -108,7 +109,8 @@ def recovered_flows(flows, records) -> int:
         flows.append({
             "record-id": f"tf-identity-d{n:03d}", "example-id": f"identity:{t['archetype']}",
             "archetype": t["archetype"], "source-technology": "", "direction": "output",
-            "commodity": t["commodity"], "value": t["value"], "value-min": "", "value-max": "",
+            "commodity": t["commodity"], "value": t["value"], "value-min": t.get("value-min", ""),
+            "value-max": t.get("value-max", ""),
             "unit": t["unit"], "per-unit": pu, "co-product": "", "value-type": "derived",
             "formula": t.get("factor-id", ""), "region": "", "year": "", "source-id": "",
             "source-file": "records/reference/recovered-output.csv", "source-locator": "",
