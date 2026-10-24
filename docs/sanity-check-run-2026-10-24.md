@@ -5,7 +5,71 @@ Brad switched his computer off and asked for this run. Each remaining open item 
 How it was run:
 - The work was done in a cloud copy of the repo (a snapshot of ec56fc3, build inputs only, no source PDFs).
 - Each batch is one commit with no output files. On Brad's return, the patches are applied to `C:\_dev\tech_data`, then the build runs and outputs are committed there.
-- Every item that needs a source re-read or a ruling is listed under "For Brad" at the end.
+- Every item that needs a source re-read or a ruling is in "For Brad" below.
+
+## Summary for Brad
+
+**What was done.** Seven batches (B to H), each a commit in the cloud copy and a patch in the project (`claude/sanity-run-patches/0001` to `0007`, plus `0008` with this summary):
+- **B:** MIDDEN totals carry their own carriers.
+- **C:** combustion CO2 where fuel is burned.
+- **D:** the older open items S87-S103.
+- **E:** host plants for the set-aside incremental costs, S20-S67.
+- **F:** the remaining high-severity findings of the 2026-10-23 review.
+- **G:** what a triage of all 63 high findings left.
+- **H:** the medium findings, plus a heating-value defect.
+
+Every build passes all checks, and the totals that disagree with their carriers went from 10 to 3. Of the 2026-10-23 review's 63 high findings, 48 are resolved; the rest are rulings, listed below. Every change was proposed, reviewed by a Fable reviewer, applied only as the reviewer approved, and rebuilt and diffed.
+
+**To apply on C:\_dev\tech_data** (on top of ec56fc3):
+1. Run `git am --keep-cr 0001-*.patch ... 0008-*.patch` on the patches downloaded from the project. `--keep-cr` is needed because parameter-remap.csv has CRLF line endings.
+2. Run `python data/harmonized/build.py`.
+3. Commit the outputs.
+
+The series was tested: it applies cleanly to the snapshot of ec56fc3 and reproduces the cloud copy exactly.
+
+**Largest value changes to look at first:**
+- Per-tonne numbers on GJ archetypes had a double HHV/LHV correction (batch H). Hydrogen per-tonne CO2 and costs rise 18%, ethanol 11%, methane products 11%.
+- The pneumatic devices' capex is now per facility: 1.5-3.0 CAD per 1000 m3/yr, was 1,000-1,973.
+- MIDDEN cards printed the reference plant's total as a per-capacity cost: electrolyzers 20x, heat pumps and digesters 2-5.5x. These are corrected as marked typos.
+- Methane controls take capacity factor 100%, so their levelized costs fall 15-54%.
+- Five energy-service archetypes take energy use = 100 / pooled efficiency. The fuel-fired boiler goes from 1.43 to 1.23.
+- A capture add-on from the same source is rebased per t CO2. The recovery boiler's add-on falls from 410 to 145.
+- Variants' fixed O&M follows the host's own ratio. Coke dry quenching goes from 29 to 52.
+
+**For Brad: rulings and source re-reads** (all are rows of docs/sanity-check-list.csv):
+
+| Item | Question |
+| - | - |
+| S21 | LC3 capex: the retrofit figures, about 10-14 CAD/t-yr, include the calciner. The judgement is 100 |
+| S53 | Low-energy refiner: Hekkert's 3.2 GJe/t against the TMP host's 8.3; re-read before naming the host |
+| S95 | Smelting vessels: whole smelter (17,733) or furnace section (2,660)? |
+| S121 | Alkali-activated binder: E-crete 0.51 against activated slag 2.55; which scope? |
+| S124 | Nine MIDDEN dairy spray-dryer cards (steam-heated), set aside pending a remap |
+| S127 | Pickling line: Pardo 0.22 against DOE 0.77 (acid regeneration?) |
+| S148 | Abatement options: read "incremental" cost as the option's whole cost? About 400 rows |
+| S149 | Electrified and hydrogen-fired variants of refinery units and crackers (their MIDDEN cards are set aside) |
+| S150 | H2 shaft furnace: Devlin's additive electricity rows are medianed (7.74 against 8.65); Rechberger's natural gas is unconverted |
+| S151 | Pump station: per m3-km unit, and the pressure gradient |
+| S152 | Hybrid glass furnace: Rehfeldt's flat-glass, 68%-electric case is the central; no host comparator (P-C9) |
+| S153 | Engine CH4 and N2O are per GJ of fuel; they need an engine efficiency before they can be bridged |
+| S154 | Motor moderate variant pinned at 97% by a system-level UKERC saving |
+| S155 | HPCH004 (coal CFB on the gas-boiler capture variant), NFM003, PB003, IS010, and the high-solids boiler capex |
+| S156 | Factors to source: OME3-5 heating value, moist wood-chip HHV/LHV, gasoline CO2 factor |
+| S157 | OG008 (CERI's 0.83 t/m3 benchmark), PB016 (partial-capture designs), MCF019 (a heat-to-steam alias) |
+| S158 | Code items and rulings from the medium triage |
+| Batch C | Fluid coker combustion CO2, drafted at 0.17 t/m3; Hu's gross combustion on smelting reduction (IS008); aluminium PFC basis (NFM005); the integrated upgrader's double-counted hydrogen-plant gas; methane pyrolysis blends thermal and plasma routes |
+| Batch B | S127 Pardo; S121 scope |
+
+**Drafted values to confirm** (all graded guess, author claude-draft, 2026-10-24 in records/fill/fill-judgement.csv):
+- pneumatic-device capex (3 rows);
+- electric ceramic kiln energy 2.5 GJ/t;
+- solar concentrators' capacity factor 25%;
+- CO2-to-FT efficiency 56%;
+- ODC cell capex 2,280;
+- fluid coker combustion CO2 0.17;
+- Peirce-Smith electricity 0.5 / oil 1.0.
+
+**Not covered:** the 18 low-severity findings of the 2026-10-23 review.
 
 ## Batch B: energy totals that disagree with their carriers (S117, S120-S132)
 
