@@ -709,7 +709,8 @@ def m_zero_if_no_fossil(rule, a, have, ctx):
     carriers = set(split_list(a.get("carriers", "")))
     if not carriers or not carriers <= NON_COMBUSTIBLE | BIOGENIC:
         return []
-    if any(k[0] == SEC and k[1] and k[1] not in NON_COMBUSTIBLE | BIOGENIC and _live(v) for k, v in have.items()):
+    if any(k[0] == SEC and k[1] and not is_component_target(k[1]) and k[1] not in NON_COMBUSTIBLE | BIOGENIC
+           and _live(v) for k, v in have.items()):
         return []
     # a fossil energy row the run writes later (a judgement, or a variant's rows
     # copied from its host) counts too: look at the judgements and at the host
@@ -926,6 +927,32 @@ def m_constant(rule, a, have, ctx):
         return []
     return [{"parameter": p, "target": rule.get("target") or "", "central": v, "low": v, "high": v,
              "inputs": [f"by definition: {v:g}"], "grades": [], "sources": "", "external": []}]
+
+
+def m_host_scaled(rule, a, have, ctx):
+    """A variant's parameter (fixed O&M) = the host's sourced value x the variant's
+    capex / the host's capex, where the variant has none: the host's own ratio, not
+    a pooled one (sanity-check run 2026-10-24, P-G3, IS007: a pooled ratio had put
+    a variant's fixed O&M at two-thirds of its host's while its capex was higher)."""
+    p, k = rule["parameter"], a["archetype"]
+    if (p, "") in have:
+        return []
+    h = ctx["hosts"].get(k)
+    if not h or h.get("status") != "active" or not h.get("host"):
+        return []
+    hh = ctx["have"].get(h["host"], {})
+    ho, hc, vc = hh.get((p, "")), hh.get(("capex", "")), have.get(("capex", ""))
+    if not (_live(ho) and ho.get("grade") == "sourced" and _live(hc) and _live(vc)):
+        return []
+    hcv, vcv = fnum(hc["central"]), fnum(vc["central"])
+    if not hcv or hcv <= 0 or vcv is None or vcv <= 0:
+        return []
+    f = vcv / hcv
+    c, lo, hi = _lohi(ho)
+    return [{"parameter": p, "target": "", "central": c * f, "low": lo * f, "high": hi * f,
+             "inputs": [_input(ho, f"{h['host']} {p}"), f"x capex {vcv:.4g} / host capex {hcv:.4g}"],
+             "grades": [ho.get("grade", "sourced"), vc.get("grade", "sourced")],
+             "sources": ho.get("sources", ""), "external": []}]
 
 
 # ---- assumptions (records/fill/fill-assumption.csv) -------------------------
@@ -1346,7 +1373,7 @@ METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed,
            "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
            "bucket-increment": m_bucket_increment, "per-gj-via-sec": m_per_gj_via_sec,
-           "assumption": m_assumption, "marker": m_marker, "constant": m_constant, "zero-if-no-fossil": m_zero_if_no_fossil,
+           "assumption": m_assumption, "marker": m_marker, "constant": m_constant, "host-scaled": m_host_scaled, "zero-if-no-fossil": m_zero_if_no_fossil,
            "range-midpoint": m_range_midpoint, "single-carrier-split": m_single_carrier_split,
            "host-split": m_host_split, "feedstock-identity": m_feedstock_identity,
            "co2e-from-species": m_co2e_from_species,
@@ -2102,7 +2129,45 @@ def pm_capacity_from_output(rule, psum, records, target_unit, ctx, stats):
              stats, rule["rule-id"])
 
 
-POST_METHODS = {"capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
+def pm_sec_from_efficiency(rule, psum, records, target_unit, ctx, stats):
+    """On the energy-service archetypes the rule names, the energy-use total =
+    100 / the pooled efficiency, where the total rests on one or two examples and
+    the efficiency on many (sanity-check run 2026-10-24, P-G6): the sourced total
+    moves to target as-sourced, and the carriers in the total are scaled to it
+    (pooled-apart carriers are left as they are)."""
+    for a in records.archetypes:
+        k = a["archetype"]
+        h = ctx["have"].get(k, {})
+        if not _in_scope(rule, a, h, ctx):
+            continue
+        tot, eff = h.get((SEC, "")), h.get(("efficiency", ""))
+        if not (_live(tot) and _live(eff)) or tot.get("grade") != "sourced":
+            continue
+        ec, el, eh = _lohi(eff)
+        oc = fnum(tot["central"])
+        if not ec or ec <= 0 or not oc or oc <= 0:
+            continue
+        nc, nlo, nhi = 100 / ec, 100 / eh, 100 / el
+        f = nc / oc
+        g = worst([rule["grade"], eff.get("grade", "sourced")])
+        ins = [_input(eff, f"{k} efficiency (n={eff.get('n', '')})"),
+               f"replaces the sourced total {oc:.4g} (n={tot.get('n', '')})"]
+        _put(psum, h, _row(k, SEC, "", tot["unit"], nc, nlo, nhi, g, rule, ins,
+                           eff.get("sources", "")), stats, rule["rule-id"])
+        for (q, t), r in list(h.items()):
+            if q != SEC or not t or t.startswith("as-sourced") or is_component_target(t) or not _live(r):
+                continue
+            if "pooled apart" in (r.get("central-from") or ""):
+                continue
+            c, lo, hi = _lohi(r)
+            _put(psum, h, _row(k, SEC, t, r["unit"], c * f, lo * f, hi * f,
+                               worst([g, r.get("grade", "sourced")]), rule,
+                               [_input(r, f"{k} {SEC}_{t}"), f"x {f:.4g} (the total on the efficiency)"],
+                               r.get("sources", ""), f"scaled x {f:.3g} to the efficiency-based total"),
+                 stats, rule["rule-id"] + ":carrier")
+
+
+POST_METHODS = {"sec-from-efficiency": pm_sec_from_efficiency, "capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
                 "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized, "rebuild": pm_rebuild,
                 "levelized-energy": pm_levelized_energy}
 

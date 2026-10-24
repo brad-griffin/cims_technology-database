@@ -118,3 +118,22 @@ All checks pass. Ids are from docs/sanity-check-review-2026-10-23.csv.
 | RX006 | Acid-gas removal on two product bases | Close: restated 2026-10-23 | Agree | Closed |
 
 Found in the build check: reactor_co2-to-fischer-tropsch's sibling efficiency rose from 66% to 82% once alcohol-to-jet's efficiency was on an energy basis. Its siblings are biofuel upgrading units, so it is now excluded from that rule and drafted at 56% from its own energy use (1.78 GJ of electricity per GJ).
+
+## Batch G: what the triage of the high-severity findings left
+
+A triage of all 63 high-severity findings of the 2026-10-23 review against the current build found 48 resolved, 11 partly resolved and 4 open. This batch fixed the ones a data change could settle. All checks pass, and the build log's one "variant above host" warning is gone.
+
+| Item | Problem | Proposal | Fable verdict | Result |
+| - | - | - | - | - |
+| NFM008 | The oxy-fuel melter's lifetime (6 years) was a refractory lining | Rule it out | Apply | 25 years (class) |
+| HPCH006 | A variant's carrier drafts summed to the old total | Reject them | Apply with changes: also name its host, or nothing replaces them | Host named; coal 0.46, biomass 0.36, coke 0.15, tars 0.05 (sum 1.031); CO2 0.058 t/GJ |
+| IS007 and 10 more | Variants' fixed O&M from a pooled ratio, far from their host's own | New rule: host's O&M x capex ratio | Apply | Coke dry quenching 28.9 to 51.9 (now above its host); lime strong 50 to 3.2; aromatics 34.6 to 2.0; ODC 73 to 299 |
+| PB007 | Steam-heated dryer carried its boiler's CO2 (0.24 t/t) from UKERC | Rule it out | Apply, with the same card's CO2e total | 0 on the host and both variants |
+| Batch B side effect | The zeolite dairy cards' cost rows were still pooled on the direct-fired dryer variant | Rule them out | Apply | Variant capex 67.4 (was 37.7, below its host) |
+| P-G6 | Five energy-service archetypes' energy use contradicted their efficiency | 100 / pooled efficiency where the total rests on one or two examples and the efficiency on 15 or more | Apply: the scope reaches exactly these five, and the results agree with the carrier pools | Fuel-fired boiler 1.43 to 1.23; solid-fuel boiler 1.39 to 1.20; direct heater 1.09 to 1.28; condensing turbine 3.56 to 2.73; very-high-temperature heat pump 0.53 to 0.45 |
+| RX001 | Engine CH4 and N2O per GJ of fuel, beside CO2 per GJ of shaft work | A one-token unit fix (Fable's suggestion) | (tried) | Reverted: it fixed the turbine but dropped the reciprocating engines' rows (no efficiency to bridge by). S153 |
+| RX005, HPCH004, NFM003, PB003, IS010, high-solids boiler capex | | For Brad | Agree | S154, S155 |
+
+Side effects:
+- The pooled cost ratio moved about 7% (fixed O&M on about 90 archetypes), because the zeolite cards' O&M left the pool.
+- The zero-combustion identity had been blocked by an as-sourced row on the heat pump; fixed.
