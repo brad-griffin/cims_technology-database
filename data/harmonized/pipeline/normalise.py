@@ -106,6 +106,12 @@ HEAT_DENOMINATED = re.compile(r"per MWh of heat|MWh[- ]?th\b|kWh[- ]?th\b|MWh th
 # records/reference/incremental-cost.csv), so it is not a whole-plant cost.
 INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this as the cost of "
                     "adding it to an existing plant, not as a whole plant")
+# an emission factor per unit of FUEL in an energy unit other than GJ (lb/MMBtu,
+# t/MMBtu, kg/MWh of fuel): bridged per GJ of output like a per-GJ factor
+# (sanity-check 2026-10-23, S140/HPCH001: EIA and DOE factors had pooled as per GJ
+# of electricity or heat, about half the true value on a combined cycle)
+ENERGY_DEN = re.compile(r"/(MMBtu|mmbtu|MBtu|Btu|therm|MWh|kWh|GWh|MJ|TJ|PJ)$")
+FUEL_INPUT = re.compile(r"fuel[- ]input|of fuel\b|per (MMBtu|MWh|kWh|GJ|MJ|therm) (of )?(fuel|input)", re.I)
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
@@ -462,7 +468,8 @@ def normalise(facts, examples, records, units) -> None:
             # a derived row resting on a stated assumption (assembly.py `assumption`
             # column, e.g. avoided CO2 taken for captured CO2): graded `assumption`
             used.append("assume:" + r["assume"])
-        if (p.startswith("emissions-") and pu == "GJ" and unit.endswith("/GJ")
+        if (p.startswith("emissions-") and pu == "GJ"
+                and (unit.endswith("/GJ") or (ENERGY_DEN.search(unit) and FUEL_INPUT.search(r.get("note") or "")))
                 and r["record-id"] not in out_ids and r.get("source-id") not in out_srcs):
             # an emission factor per GJ of FUEL; the archetype's basis is per GJ
             # of OUTPUT, and the two differ by the efficiency (D13): the
@@ -766,6 +773,31 @@ def normalise(facts, examples, records, units) -> None:
             r["conversion"] = FUEL_INPUT_NOTE.format(parent=r["duplicate-of"])
             r["_fuel_input"] = r["duplicate-of"]
             r["excluded"] = "per GJ of fuel input"          # settled in the last pass
+    # UKERC emission columns that are not the step's own direct emissions
+    # (sanity-check 2026-10-23, S140/RX004, HPCH007, HPCH008): a negative value is
+    # a change against UKERC's baseline, not an emission; a 'Specific emissions'
+    # above the example's direct fuel plus process emissions (less captured)
+    # carries UKERC's grid or steam emissions (scope 2), which the scope-1
+    # emissions-total does not hold (2.0 t/GJ on an electric motor)
+    ukc = defaultdict(dict)
+    for r in facts:
+        m = re.search(r"UKERC column '([^']+)'", r.get("note") or "")
+        if m and r["parameter"].startswith("emissions-") and fnum(r.get("value")) is not None:
+            ukc[r["example-id"]][m.group(1)] = r
+    for eid, cols in ukc.items():
+        for col, r in cols.items():
+            if fnum(r["value"]) < 0 and not r.get("excluded"):
+                r["excluded"] = ("UKERC measure delta: a negative emission is a change against "
+                                 "UKERC's baseline, not the step's own emissions (S140)")
+        sp_ = cols.get("Specific emissions")
+        if sp_ is not None and not sp_.get("excluded"):
+            direct = sum(fnum(cols[c]["value"]) for c in ("Direct fuel related emissions",
+                                                          "Process related emissions") if c in cols)
+            cap = fnum(cols["Captured emissions"]["value"]) if "Captured emissions" in cols else 0.0
+            if fnum(sp_["value"]) > 1.05 * max(direct - cap, 0.0) + 1e-9:
+                sp_["excluded"] = ("UKERC 'Specific emissions' above the example's direct fuel and "
+                                   "process emissions: it includes indirect (grid or steam) "
+                                   "emissions, not scope 1 (S140)")
     # per GJ of fuel input, per unit of input capacity and (where approved) per
     # tonne of a host plant's product -> per GJ of output, by the efficiency
     bridge.apply(facts, records, examples, units)

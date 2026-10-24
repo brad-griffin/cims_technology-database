@@ -651,6 +651,17 @@ def m_single_carrier_split(rule, a, have, ctx):
     named = [k[1] for k in have if k[0] == p and k[1] and k[1] not in ("fuel", "total")]
     if named:
         return []
+    # a variant whose host splits its energy over two or more carriers takes the
+    # host's mix (est-variant-host-split), not one listed carrier (sanity-check
+    # 2026-10-23, S135/PB004: the strong paper machine had lost its electricity)
+    k = a["archetype"]
+    hrow = ctx["hosts"].get(k, {})
+    host = hrow.get("host") if hrow.get("status") == "active" else None
+    if host and "_ccs-" not in k:
+        hh = ctx["have"].get(host, {})
+        if sum(1 for (hp, ht), r in hh.items() if hp == p and ht and ht not in ("fuel", "total")
+               and _live(r) and not _apart(r)) >= 2:
+            return []
     # an unnamed `fuel` row with one listed carrier: that carrier is the fuel;
     # else the archetype's total is all that carrier
     src, note = have.get((p, "fuel")), "all of fuel, split from the carriers list"
@@ -1263,14 +1274,43 @@ def pm_host_size(rule, psum, records, target_unit, ctx, stats):
 
 
 def _captured(k, host, ctx):
-    """(t CO2 captured per unit of product, low, high, grade, inputs) for a
-    host-with-capture variant: its own emissions-captured where it has one, else
-    the host's CO2 x the variant's share-to-capture x the capture plant's rate."""
+    """(t CO2 captured per unit of product, low, high, grade, inputs, derived) for
+    a host-with-capture variant: the capture rate x the variant's share-to-capture
+    x the host's gross CO2 (user 2026-10-24, sanity-check S138: a captured tonnage
+    from another plant had been netted off this host, giving 61% capture on lime
+    and zero net emissions where it exceeded the host's gross). The variant's own
+    sourced emissions-captured is used only where no share can be had."""
+    from .captureshare import RATES
     h, hh = ctx["have"].get(k, {}), ctx["have"].get(host, {})
     e = h.get(("emissions-captured", "co2"))
+    d = _captured_derived(k, host, ctx, RATES.get(k, CAPTURE_RATE))
+    if d:
+        return d + (True,)
     if _live(e) and fnum(e["central"]) > 0:
         c, lo, hi = _lohi(e)
-        return c, lo, hi, e.get("grade", "sourced"), [_input(e, f"{k} emissions-captured_co2")]
+        return c, lo, hi, e.get("grade", "sourced"), [_input(e, f"{k} emissions-captured_co2")], False
+    return None
+
+
+def _host_gross_co2(host, ctx):
+    """(central, low, high, inputs, grades) of the host's gross CO2: its
+    emissions-total, else its combustion plus process CO2 (S138: a combined cycle
+    gives only combustion)."""
+    hh = ctx["have"].get(host, {})
+    tot = hh.get(("emissions-total", "co2"))
+    parts = [hh.get(("emissions-combustion", "co2")), hh.get(("emissions-process", "co2"))]
+    if _live(tot):
+        return _lohi(tot), [_input(tot, f"{host} emissions-total_co2")], [tot.get("grade", "sourced")]
+    xs = [x for x in parts if _live(x)]
+    if xs:
+        return (tuple(sum(_lohi(x)[i] for x in xs) for i in range(3)),
+                [_input(x, f"{host} {x['parameter']}_co2") for x in xs],
+                [x.get("grade", "sourced") for x in xs])
+    return None
+
+
+def _captured_derived(k, host, ctx, rate):
+    h, hh = ctx["have"].get(k, {}), ctx["have"].get(host, {})
     tot = hh.get(("emissions-total", "co2"))
     parts = [hh.get(("emissions-combustion", "co2")), hh.get(("emissions-process", "co2"))]
     if _live(tot):
@@ -1286,10 +1326,10 @@ def _captured(k, host, ctx):
     if not _live(sh) or co2[0] <= 0:
         return None
     s, sl, shi = _lohi(sh)
-    f = CAPTURE_RATE / 100 / 100
+    f = rate / 100 / 100
     return (co2[0] * s * f, co2[1] * sl * f, co2[2] * shi * f,
             worst(gs + [sh.get("grade", "sourced")]),
-            ins + [_input(sh, f"{k} share-to-capture"), f"capture rate {CAPTURE_RATE:g}%"])
+            ins + [_input(sh, f"{k} share-to-capture"), f"capture rate {rate:.4g}%"])
 
 
 # The reference capture plant per CCS node: where a node has one, the tier-2 add-on
@@ -1487,14 +1527,15 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
             continue
         h, hh = ctx["have"].setdefault(k, {}), ctx["have"].get(host, {})
         e = h.get(("emissions-captured", "co2"))
-        if not _live(e):
-            cap = _captured(k, host, ctx)
-            if cap:
-                unit = target_unit("emissions-captured", a["product-unit"], "")
-                _put(psum, h, _row(k, "emissions-captured", "co2", unit, cap[0], cap[1], cap[2],
-                                   worst([rule["grade"], cap[3]]), rule, cap[4], ""), stats,
-                     rule["rule-id"] + ":captured")
-                e = h.get(("emissions-captured", "co2"))
+        cap = _captured(k, host, ctx)
+        derived_cap = bool(cap and cap[5])
+        if cap and (cap[5] or not _live(e)):
+            unit = target_unit("emissions-captured", a["product-unit"], "")
+            _put(psum, h, _row(k, "emissions-captured", "co2", unit, cap[0], cap[1], cap[2],
+                               worst([rule["grade"], cap[3]]), rule, cap[4],
+                               "", "captured = capture rate x share-to-capture x the host's gross CO2 (S138)"),
+                 stats, rule["rule-id"] + ":captured")
+            e = h.get(("emissions-captured", "co2"))
         # captured CO2 split between fossil and biogenic in proportion to the host's
         # gross fossil and biogenic CO2 (ruling 2026-10-14: capture on biogenic CO2
         # lowers emissions-biomass, which can go negative; fossil emissions-total
@@ -1518,7 +1559,20 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                                bio.get("sources", ""),
                                "the host's biogenic CO2 less the biogenic part of the CO2 captured"),
                  stats, rule["rule-id"] + ":biogenic")
-        for (q, t), r in sorted(hh.items()):
+        items = dict(hh)
+        if not _live(items.get(("emissions-total", "co2"))):
+            g = _host_gross_co2(host, ctx)
+            if g:
+                (gc, gl, gh), gins, ggs = g
+                unit = target_unit("emissions-total", a["product-unit"], "")
+                items[("emissions-total", "co2")] = {
+                    "parameter": "emissions-total", "target": "co2", "unit": unit,
+                    "central": _g(gc), "low": _g(gl), "high": _g(gh), "grade": worst(ggs),
+                    "sources": "", "inputs": "; ".join(gins),
+                    "central-from": "the host's combustion plus process CO2"}
+                stats["net totals from the host's combustion plus process"] = \
+                    stats.get("net totals from the host's combustion plus process", 0) + 1
+        for (q, t), r in sorted(items.items()):
             if q in ("emissions-combustion", "emissions-process", "emissions-total") and _live(r) \
                     and not is_component_target(t):
                 c, lo, hi = _lohi(r)
@@ -1529,10 +1583,20 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                     # emissions-captured it adds back to the host's gross. Combustion
                     # and process stay gross: they say where the CO2 is made.
                     ec, el, eh = (x * fshare for x in _lohi(e))
-                    c, lo, hi = max(c - ec, 0.0), max(lo - eh, 0.0), max(hi - el, 0.0)
+                    if c - ec < -1e-9:
+                        stats["net below zero (captured above the host's gross)"] = \
+                            stats.get("net below zero (captured above the host's gross)", 0) + 1
+                        note = "CAPTURED EXCEEDS THE HOST'S GROSS: check the scopes; "
+                    # a derived captured band follows the gross band (captured = P x
+                    # gross), so low pairs with low (S138); a sourced one is independent
+                    if derived_cap:
+                        c, lo, hi = max(c - ec, 0.0), max(lo - el, 0.0), max(hi - eh, 0.0)
+                    else:
+                        c, lo, hi = max(c - ec, 0.0), max(lo - eh, 0.0), max(hi - el, 0.0)
+                    lo, hi = min(lo, c), max(hi, c)
                     ins.append(_input(e, f"{k} emissions-captured_co2"))
                     g = worst([g, e.get("grade", "sourced")])
-                    note = "net of capture: the host's gross less the CO2 captured"
+                    note += "net of capture: the host's gross less the CO2 captured"
                 _put(psum, h, _row(k, q, t, r["unit"], c, lo, hi, g, rule, ins, r.get("sources", ""), note),
                      stats, rule["rule-id"])
 

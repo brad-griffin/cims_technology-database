@@ -163,7 +163,7 @@ def main(argv) -> int:
           + (", ".join(f"{k} {v}" for k, v in ru.items()) or "none"))
     # example totals before the UKERC savings, which apply to the host's total
     # (sanity-check 2026-10-23, S136)
-    et = carriers.example_totals(L.facts)
+    et = carriers.example_totals(L.facts, rec)
     print("  energy totals from example carriers: " + (", ".join(f"{k} {v}" for k, v in et.items()) or "none"))
     us = ukercsaving.derive(L.facts, rec, summarise.summarise)
     correction.propagate(L.facts)

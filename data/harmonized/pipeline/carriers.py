@@ -52,11 +52,12 @@ from collections import defaultdict
 from math import log
 from statistics import median
 
-from .common import fnum
+from .common import fnum, split_list
 
 SEC = "specific-energy-consumption"
 NOT_CARRIER = {"", "component", "total", "not-stated"}
 FUEL_AGG = "fuel"
+STEAMLIKE = {"steam", "heat", "hot-water", "district-heat", "waste-heat"}
 NO_HV_CARRIERS = {"electricity", "heat", "steam", "cooling", "hot-water", "waste-heat", "solar",
                   "geothermal", "nuclear", "hydrogen-as-feed"}
 
@@ -66,7 +67,28 @@ def _target(r):
     return t.strip().lower()
 
 
-def _example_carriers(rows):
+def _val(r):
+    """A row's value: its central, else the midpoint of a range the source printed
+    without one (sanity-check 2026-10-23, S135: a range-only electricity row sat
+    outside the split, so coke took the whole total and counted it twice)."""
+    v = fnum(r.get("value-norm"))
+    if v is not None:
+        return v
+    lo, hi = fnum(r.get("value-min-norm")), fnum(r.get("value-max-norm"))
+    return (lo + hi) / 2 if lo is not None and hi is not None else None
+
+
+def _has(r):
+    return _val(r) is not None
+
+
+def _level1(t):
+    """The level-1 carrier a listed carrier belongs to: itself, or `fuel`."""
+    t = (t or "").strip().lower()
+    return t if t in NO_HV_CARRIERS or t == FUEL_AGG else (FUEL_AGG if t else "")
+
+
+def _example_carriers(rows, ranges=True):
     """(own total, level-1 carriers, named fuels) for one example's pooled SEC
     rows: the median of its rows per target (as-reported rows preferred to
     derived, as in summarise). Level 1 has `fuel` = the example's own fuel row,
@@ -76,8 +98,10 @@ def _example_carriers(rows):
         by_t[_target(r)].append(r)
     out = {}
     for t, rs in by_t.items():
+        get = _val if ranges else (lambda r: fnum(r.get("value-norm")))
+        rs = [r for r in rs if get(r) is not None]
         rep = [r for r in rs if r.get("value-type") != "derived"] or rs
-        vals = [fnum(r["value-norm"]) for r in rep if fnum(r.get("value-norm")) is not None]
+        vals = [get(r) for r in rep]
         if vals:
             out[t] = median(vals)
     carriers = {t: v for t, v in out.items() if t not in NOT_CARRIER}
@@ -88,6 +112,10 @@ def _example_carriers(rows):
     elif named:
         top[FUEL_AGG] = sum(named.values())
     return out.get(""), top, named
+
+
+def _apart_only_zero(s):
+    return (fnum(s.get("central")) or 0) <= 0
 
 
 def _ok(d):
@@ -102,7 +130,7 @@ def _sources(rs):
     return "; ".join(dict.fromkeys(r.get("source-id", "") for r in rs))
 
 
-def example_totals(facts) -> dict:
+def example_totals(facts, records=None) -> dict:
     """An example that gives two or more level-1 carriers but no total gets a total:
     the sum of its own converted carriers (modeller 2026-10-21). Before this, only
     examples that printed a total entered the pooled total, so a source giving gas
@@ -115,11 +143,31 @@ def example_totals(facts) -> dict:
         live = not r.get("excluded")
         if r["parameter"] == SEC and r.get("value-norm") and live and r.get("archetype"):
             groups[(r["example-id"], r["unit-norm"])].append(r)
+    # the printed totals per archetype and unit, to catch a partial table summed
+    # into a whole-plant total (sanity-check 2026-10-23, S135/IS002)
+    printed = defaultdict(list)
+    for (eid, unit), rs in groups.items():
+        own = _example_carriers(rs, ranges=False)[0]
+        if own is not None and own > 0:
+            printed[(rs[0]["archetype"], unit)].append(own)
     stats = defaultdict(int)
     new = []
     for (eid, unit), rs in groups.items():
-        own, top, named = _example_carriers(rs)
+        own, top, named = _example_carriers(rs, ranges=False)
         if own is not None or len(top) < 2 or not _ok(top):
+            continue
+        a = (records.by_key.get(rs[0]["archetype"]) if records is not None else None) or {}
+        listed = {t.strip().lower() for t in split_list(a.get("carriers", ""))}
+        has_fuel_row = FUEL_AGG in {_target(r) for r in rs}
+        names_main = (not listed or bool(listed & (set(top) | set(named)))
+                      or (has_fuel_row and any(_level1(t) == FUEL_AGG for t in listed)))
+        ref = printed.get((rs[0]["archetype"], unit))
+        if not names_main and ref and sum(top.values()) < 0.3 * median(ref):
+            # names none of the archetype's carriers and sums to under 0.3 x the
+            # printed totals: one part of a table (the stove fuels of a blast
+            # furnace, no coke), not a whole-plant balance
+            stats["partial carrier tables not summed"] += 1
+            stats.setdefault("_skipped", []).append(f"{eid} {sum(top.values()):.4g} vs {median(ref):.4g}")
             continue
         base = next(r for r in rs if _target(r) in top or _target(r) in named)
         tot = sum(top.values())
@@ -135,6 +183,9 @@ def example_totals(facts) -> dict:
         new.append(row)
         stats["example totals from carriers"] += 1
     facts.extend(new)
+    skipped = stats.pop("_skipped", [])
+    if skipped:
+        print("  partial carrier tables not summed: " + "; ".join(skipped))
     return dict(stats)
 
 
@@ -144,7 +195,7 @@ def apply(summaries, facts, records) -> dict:
         # a row dropped only as a repeat of another example's figure still belongs to
         # this example's energy balance (it is pooled once, but split here in full)
         live = not r.get("excluded") or (r.get("duplicate-of") and r["excluded"].startswith("repeat:"))
-        if r["parameter"] == SEC and r.get("value-norm") and live and r.get("archetype"):
+        if r["parameter"] == SEC and _has(r) and live and r.get("archetype"):
             pooled[(r["archetype"], r["unit-norm"])][r["example-id"]].append(r)
     by_arch = defaultdict(list)
     for s in summaries:
@@ -156,9 +207,12 @@ def apply(summaries, facts, records) -> dict:
         tot = fnum(total["central"]) if total else None
         exs = []
         for eid, rs in pooled.get(key, {}).items():
-            own, top, named = _example_carriers(rs)
-            rank = min(records.rank(r.get("via-source-id") or r.get("source-id", "")) for r in rs)
-            exs.append({"eid": eid, "rs": rs, "top": top, "named": named, "rank": rank, "own": own})
+            own, top, named = _example_carriers(rs, ranges=False)
+            top_r = _example_carriers(rs)[1]
+            rank = min(records.rank(r.get("via-source-id") or r.get("source-id", ""))
+                       for r in ([x for x in rs if x.get("value-norm")] or rs))
+            exs.append({"eid": eid, "rs": rs, "top": top, "named": named, "rank": rank, "own": own,
+                        "top_r": top_r})
         # ---- level 1 -------------------------------------------------------
         cands = []
         for e in exs:
@@ -178,6 +232,13 @@ def apply(summaries, facts, records) -> dict:
             continue
         single = False
         _, sp, csum = min(cands, key=lambda c: c[0])
+        # the chosen example's range-only carriers join its split at their
+        # midpoints (S135/NFM004); they do not change which example is chosen
+        extra = {t: v for t, v in sp["top_r"].items() if t not in sp["top"] and v is not None and v >= 0}
+        if extra:
+            sp = dict(sp, top={**sp["top"], **extra})
+            csum = sum(sp["top"].values())
+            stats["range-only carriers joined to the split"] += len(extra)
         short = _short(records, sp["rs"])
         if tot is None and total is not None:
             # a total the sources give only as a range (sanity-check 2026-10-11,
@@ -232,6 +293,35 @@ def apply(summaries, facts, records) -> dict:
             stats["totals derived from carriers"] += 1
         else:
             stats["totals kept (pooled)"] += 1
+            # a total from fewer than three examples against a larger pool of the
+            # one carrier every example names: the carrier pool sets the total
+            # (sanity-check 2026-10-23, S135/NFM003: one NRCan gold-mill total had
+            # replaced ten electricity rows on the SAG-ball mill)
+            l1 = {(s.get("target") or "").strip().lower(): s for s in rows
+                  if _level1(s.get("target")) == (s.get("target") or "").strip().lower()
+                  and (s.get("target") or "").strip() and (fnum(s.get("central")) or 0) > 0}
+            tn = int(total.get("n") or 0)
+            a = records.by_key.get(key[0]) or {}
+            listed = {_level1(t) for t in split_list(a.get("carriers", ""))} - {""}
+            if len(l1) == 1 and tn < 3:
+                one, src = next(iter(l1.items()))
+                # only where the total is impossible -- below the one carrier it
+                # must contain -- and that carrier is all the archetype lists (a
+                # pool of electricity lines is not the whole of a fuel-fired kiln)
+                if (int(src.get("n") or 0) > tn and fnum(src["central"]) > tot
+                        and listed <= {one}):
+                    old = tot
+                    for k in ("central", "low", "high"):
+                        total[k] = src.get(k, "")
+                    total["central-from"] = (
+                        f"the pooled {one} (n={src.get('n')}), the archetype's one carrier, above the total; "
+                        f"it replaces a total from {tn} example(s), {old:.4g} "
+                        "(sanity-check 2026-10-23, S135)")
+                    total["sources"] = "; ".join(dict.fromkeys(
+                        [x for x in ((total.get("sources") or "") + "; " + (src.get("sources") or "")).split("; ") if x]))
+                    tot = fnum(total["central"])
+                    single = True
+                    stats["small totals replaced by the larger carrier pool"] += 1
         tlo, thi = fnum(total.get("low")), fnum(total.get("high"))
         # with one carrier the carrier IS the total: it takes the pooled value
         # even where the split example's own line is far from it
@@ -253,7 +343,54 @@ def apply(summaries, facts, records) -> dict:
                 have[t] = s
             return s
 
+        # a split example that names ONE level-1 carrier is not a 100% share of a
+        # multi-carrier total (sanity-check 2026-10-23, S135/CHEM002, CHEM014): the
+        # other carriers keep their pooled values and this carrier takes the rest;
+        # with no pooled other, the carrier keeps its own pooled value and the
+        # rest goes to the one other carrier the archetype lists, if there is one
+        in_split = set()
+        if agree and not single and len(sp["top"]) == 1 and tot and tot > 0:
+            c = next(iter(sp["top"]))
+            # steam or heat beside fuel is the same energy on another scope (the
+            # fuel that raised the steam), not a second carrier to add
+            alt = STEAMLIKE if c == FUEL_AGG else ({FUEL_AGG} if c in STEAMLIKE else set())
+            others = {t: s for t, s in have.items() if t != c and _level1(t) == t
+                      and t not in NOT_CARRIER and t not in alt and not _apart_only_zero(s)}
+            osum = sum(fnum(s["central"]) for s in others.values())
+            a = records.by_key.get(key[0]) or {}
+            listed = [_level1(t) for t in split_list(a.get("carriers", ""))]
+            other_listed = sorted({t for t in listed if t and t != c and t not in alt})
+            own_c = fnum(have[c]["central"]) if c in have and have[c].get("central") else None
+            if others and 0 < osum <= 0.75 * tot:
+                rem = tot - osum
+                s = row_for(c, sp["rs"], sp["eid"])
+                s["central"] = f"{rem:.6g}"
+                s["low"] = f"{tlo * rem / tot:.6g}" if tlo is not None else ""
+                s["high"] = f"{thi * rem / tot:.6g}" if thi is not None else ""
+                s["central-from"] = (f"the total less the pooled {', '.join(sorted(others))} "
+                                     f"({osum:.4g}): {short} ({sp['eid']}) names only {c}, so it is "
+                                     "not a 100% share (S135)")
+                for t, o in others.items():
+                    o["central-from"] = (o.get("central-from") or "") + \
+                        f"; part of the split: its pooled value, with {c} the rest of the total"
+                in_split |= set(others) | {c}
+                stats["single-carrier examples given the remainder"] += 1
+            elif not others and len(other_listed) == 1 and own_c and 0 < own_c < tot:
+                rest = other_listed[0]
+                s = have[c]
+                s["central-from"] = (s.get("central-from") or "") + (
+                    f"; its own pooled value: {short} ({sp['eid']}) names only {c}, so it is not "
+                    f"a 100% share; the rest of the total goes to {rest}, the archetype's other "
+                    "listed carrier (S135)")
+                r2 = row_for(rest, sp["rs"], sp["eid"])
+                r2.update({"central": f"{tot - own_c:.6g}", "low": "", "high": "", "n": 0,
+                           "central-from": f"the total less {c} ({own_c:.4g}): the archetype's other "
+                                           "listed carrier (S135)"})
+                in_split |= {c, rest}
+                stats["single-carrier examples kept at their own value"] += 1
         for t, v in sp["top"].items():
+            if t in in_split:
+                continue
             share = v / csum
             s = row_for(t, sp["rs"], sp["eid"])
             if agree:
@@ -296,7 +433,7 @@ def apply(summaries, facts, records) -> dict:
                 named_split.add(t)
                 stats["fuels set as shares of fuel"] += 1
         for t, s in have.items():
-            if t in NOT_CARRIER or t in sp["top"] or t in named_split:
+            if t in NOT_CARRIER or t in sp["top"] or t in named_split or t in in_split:
                 continue
             level = "of fuel" if t not in NO_HV_CARRIERS and t != FUEL_AGG else "of the total"
             s["central-from"] = (s.get("central-from") or "") + \
