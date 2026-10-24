@@ -463,8 +463,8 @@ def m_bucket_saving(rule, a, have, ctx):
         floor = 100.0 / emax
     out = []
     for (q, t), r in sorted(bh.items()):
-        if q != p or not _live(r):
-            continue
+        if q != p or not _live(r) or (t and _apart(r)):
+            continue    # a carrier pooled apart is not part of the base's total (2026-10-24)
         c, lo, hi = _vals(r)
         lo = c if lo is None else lo
         hi = c if hi is None else hi
@@ -1594,8 +1594,8 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
         ins = cap[4] + [(f"ccs.{node} reference plant {next(iter(nm))} {per_t:.4g} GJ/t CO2" if len(nm) == 1 and next(iter(nm)) == REFERENCE_CAPTURE.get(node) else f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}")]
         # host rows, every carrier, then the add-on on top
         for (q, t), r in sorted(hh.items()):
-            if q != p or is_component_target(t) or not _live(r):
-                continue
+            if q != p or is_component_target(t) or not _live(r) or (t and _apart(r)):
+                continue    # a carrier pooled apart is not part of the host's total (2026-10-24)
             c, lo, hi = _lohi(r)
             extra = add if not t else add * sh.get(t, 0.0)
             _put(psum, h, _row(k, p, t, r["unit"], c + extra, lo + extra, hi + extra,

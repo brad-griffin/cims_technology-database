@@ -121,6 +121,9 @@ def main(argv) -> int:
             r["parameter"] = x["parameter"]
     if remap:
         print(f"  parameters re-mapped: {len(remap)} rows (records/reference/parameter-remap.csv)")
+    from pipeline import middencarriers
+    mc = middencarriers.apply(L.facts)
+    print("  " + ", ".join(f"{k} {v}" for k, v in mc.items()))
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     backlog = fail.pop("_backlog")

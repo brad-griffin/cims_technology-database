@@ -1086,6 +1086,22 @@ def normalise(facts, examples, records, units) -> None:
             r["duplicate-of"] = first[k]["record-id"]
             r["excluded"] = (f"repeat: the source prints the same figure for "
                              f"{first[k]['example-id']} (duplicate-of); pooled once")
+    # a carrier row split from a MIDDEN total goes with its total, whatever rules
+    # the total out: a ruling, a twin, a repeat (pipeline/middencarriers.py, 2026-10-24)
+    for r in facts:
+        if r.get("derived-kind") != "carrier-term" or r.get("excluded") == "no number":
+            continue
+        par = by_id.get(r.get("derived-from", ""))
+        if par is None or not par.get("excluded"):
+            continue
+        pe = par["excluded"]
+        if pe.startswith("repeat:"):
+            twin = par.get("duplicate-of", "")
+            r["duplicate-of"] = f"{twin}-{r.get('target-norm') or r.get('target')}" if twin else ""
+            r["excluded"] = pe
+        elif pe.startswith(("ruled out", "example not mapped", "example set aside")):
+            r["duplicate-of"] = ""
+            r["excluded"] = f"goes with its total {par['record-id']}: {pe}"
 
 
 FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the archetype's own unit

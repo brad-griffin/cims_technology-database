@@ -126,6 +126,16 @@ def _l1_pooled(rows, min_n=0):
     return out
 
 
+def _listed_energy(a):
+    """The archetype's listed carriers less its feedstock carriers
+    (records/reference/feedstock.csv): hydrogen reacted into ammonia is feed, not a
+    carrier the rest of a total can go to (2026-10-24)."""
+    from . import feedstock
+    feed = {f.strip().lower() for t in feedstock.rows_for(a.get("archetype", ""))
+            if (t.get("mode") or "") == "whole-carrier" for f in t["feedstock"].split("|")}
+    return [t.strip().lower() for t in split_list(a.get("carriers", "")) if t.strip().lower() not in feed]
+
+
 def _additive(l1):
     """Carriers that can be added into one total: not fuel beside steam or heat
     (the fuel that raised the steam), nor two names for the same heat."""
@@ -165,6 +175,12 @@ def example_totals(facts, records=None) -> dict:
         live = not r.get("excluded") or (r.get("duplicate-of") and r["excluded"].startswith("repeat:"))
         if r["parameter"] == SEC and r.get("value-norm") and live and r.get("archetype"):
             groups[(r["example-id"], r["unit-norm"])].append(r)
+    # an example whose own total a modeller ruled out is not given a total again
+    # from its carriers (2026-10-24: a ruled-out MIDDEN total came back as a
+    # derived one from its carrier rows)
+    ruled = {r["example-id"] for r in facts
+             if r["parameter"] == SEC and not _target(r) and r.get("excluded")
+             and not r["excluded"].startswith("repeat:") and r["excluded"] != "no number"}
     # the printed totals per archetype and unit, to catch a partial table summed
     # into a whole-plant total (sanity-check 2026-10-23, S135/IS002)
     printed = defaultdict(list)
@@ -188,7 +204,7 @@ def example_totals(facts, records=None) -> dict:
     new = []
     for (eid, unit), rs in groups.items():
         own, top, named = _example_carriers(rs, ranges=False)
-        if own is not None or len(top) < 2 or not _ok(top):
+        if own is not None or len(top) < 2 or not _ok(top) or eid in ruled:
             continue
         a = (records.by_key.get(rs[0]["archetype"]) if records is not None else None) or {}
         listed = {t.strip().lower() for t in split_list(a.get("carriers", ""))}
@@ -375,19 +391,23 @@ def apply(summaries, facts, records) -> dict:
                   and (s.get("target") or "").strip() and (fnum(s.get("central")) or 0) > 0}
             tn = int(total.get("n") or 0)
             a = records.by_key.get(key[0]) or {}
-            listed = {_level1(t) for t in split_list(a.get("carriers", ""))} - {""}
+            listed = {_level1(t) for t in _listed_energy(a)} - {""}
             if len(l1) == 1 and tn < 3:
                 one, src = next(iter(l1.items()))
                 # only where the total is impossible -- below the one carrier it
                 # must contain -- and that carrier is all the archetype lists (a
                 # pool of electricity lines is not the whole of a fuel-fired kiln)
-                if (int(src.get("n") or 0) > tn and fnum(src["central"]) > tot
-                        and listed <= {one}):
+                # (2026-10-24: either way where the pool has 3 or more examples and
+                # the carrier is the archetype's only energy carrier once its
+                # feedstock is left out, as hydrogen on the Haber-Bosch loop)
+                sn = int(src.get("n") or 0)
+                if (sn > tn and listed <= {one}
+                        and (fnum(src["central"]) > tot or (sn >= 3 and listed == {one}))):
                     old = tot
                     for k in ("central", "low", "high"):
                         total[k] = src.get(k, "")
                     total["central-from"] = (
-                        f"the pooled {one} (n={src.get('n')}), the archetype's one carrier, above the total; "
+                        f"the pooled {one} (n={src.get('n')}), the archetype's one energy carrier; "
                         f"it replaces a total from {tn} example(s), {old:.4g} "
                         "(sanity-check 2026-10-23, S135)")
                     total["sources"] = "; ".join(dict.fromkeys(
@@ -437,7 +457,7 @@ def apply(summaries, facts, records) -> dict:
                       and t not in NOT_CARRIER and t not in alt and not _apart_only_zero(s)}
             osum = sum(fnum(s["central"]) for s in others.values())
             a = records.by_key.get(key[0]) or {}
-            listed = [_level1(t) for t in split_list(a.get("carriers", ""))]
+            listed = [_level1(t) for t in _listed_energy(a)]
             other_listed = sorted({t for t in listed if t and t != c and t not in alt})
             own_c = fnum(have[c]["central"]) if c in have and have[c].get("central") else None
             if others and 0 < osum <= 0.75 * tot:
@@ -498,7 +518,11 @@ def apply(summaries, facts, records) -> dict:
             closeness = abs(log(nsum / f_tot)) if f_tot and f_tot > 0 else 0.0
             fcands.append(((len(e["named"]) < 2, closeness, e["rank"], e["eid"]), e, nsum))
         named_split = set()
-        if fcands and f_tot and f_tot > 0:
+        # where `fuel` itself is pooled apart (not in the level-1 split), its named
+        # fuels are too: splitting them would put them in totals that leave the
+        # fuel out (2026-10-24, reactor_alkylation)
+        fuel_in = FUEL_AGG in sp["top"] or FUEL_AGG in in_split
+        if fcands and f_tot and f_tot > 0 and fuel_in:
             _, fs, nsum = min(fcands, key=lambda c: c[0])
             fshort = _short(records, fs["rs"])
             flo, fhi = fnum(fuel_row.get("low")), fnum(fuel_row.get("high"))
