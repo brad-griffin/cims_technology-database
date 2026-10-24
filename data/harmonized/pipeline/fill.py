@@ -2162,6 +2162,13 @@ def check(records, fail) -> None:
             fail["host-archetype status must be active, unmapped or off"].append(h.get("archetype", ""))
         if h.get("status") == "active" and not h.get("host"):
             fail["host-archetype active with no host"].append(h.get("archetype", ""))
+        a_, b_ = records.by_key.get(h.get("archetype")), records.by_key.get(h.get("host"))
+        if (h.get("status") == "active" and a_ and b_
+                and a_.get("product-unit") != b_.get("product-unit")):
+            # a host on another product unit would hand the variant its size and
+            # carrier shares in the wrong unit (sanity-check run 2026-10-24, PB008)
+            fail["host-archetype active across product units"].append(
+                f"{h['archetype']} ({a_.get('product-unit')}) on {h['host']} ({b_.get('product-unit')})")
     cls = classes()
     for eq in records.equipment:
         if eq not in cls:

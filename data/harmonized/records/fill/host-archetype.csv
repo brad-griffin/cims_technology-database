@@ -1,5 +1,5 @@
 archetype,host,status,note
-anaerobic-digester_effluent,anaerobic-digester,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02)
+anaerobic-digester_effluent,,off,"no host (sanity-check run 2026-10-24, PB008; Fable review): a pulp-mill effluent digester makes treated effluent (m3), not biogas (GJ), so the biogas digester's size and carrier shares do not apply; it keeps its own judgements"
 autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,active,the archetype name less its capture modifier: the host plant the capture archetype serves (modeller rule 2026-10-02)
 basic-oxygen-furnace_efficiency-strong,basic-oxygen-furnace,active,the archetype name less its last modifier: the plant the variant is added to (modeller rule 2026-10-02: host costs are needed where a competition holds both the host and the host plus an add-on)
 binder_blended-cement,,off,"no host (sanity-check run 2026-10-24, batch E; Fable review): the set-aside incremental rows price converting or retrofitting another technology or plant into this one, or a retrofit given only as a plant total; the archetype keeps its own whole-plant cost, and the incremental rows stay in output/set-aside-host-cost.csv as retrofit costs"

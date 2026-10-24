@@ -98,3 +98,23 @@ All checks pass. For each archetype with set-aside incremental costs, the questi
 | New: incremental costs on abatement options (P-E5) | about 400 rows on methane controls and others | For Brad | Agree; a safe route exists (read incremental as the whole cost, as for capture), but it is a cost-basis ruling | S148 |
 
 Side effects: the capex-ratio fixed O&M fell about 35% on about 40 oil-and-gas and refinery archetypes, because the two electrified-card O&M values had been in the ratio pool. That is a correct consequence, but it is large, so it is listed here.
+
+## Batch F: the remaining high-severity findings of the 2026-10-23 review
+
+All checks pass. Ids are from docs/sanity-check-review-2026-10-23.csv.
+
+| Finding | Problem | Proposal | Fable verdict | Result |
+| - | - | - | - | - |
+| IS005 | The hydrogen DR shaft's hydrogen (Rechberger 8.09 GJ/t) was split 57/43 hydrogen/natural gas on Otto's Circored mix, putting hydrogen below stoichiometry | Rule out Otto's Circored energy rows (a fluidized-bed process that fires gas for heat). A general fix (the split example's own fuels first) was prototyped and reverted: it made the cement kiln 100% coal and the tunnel kiln 100% gas | Apply; the reviewer corrected the expected total | Total 7.74 (Devlin), hydrogen 6.82, electricity 0.91. No natural gas, so combustion CO2 is not written. For Brad: S150 |
+| MCF004 | The electric ceramic kiln had no energy use | Draft 1.6 GJ/t | Apply with changes: 2.5 (1.8-3.5), from WSP 2015's own +666% electricity on this archetype | 2.5 GJ/t (guess) |
+| MCF005 | The hybrid furnace mixes flat and container glass | Rule out Worrell's flat-glass rows | Apply; the central does not move (Rehfeldt is top-ranked) | High end 7.56 to 6.61. For Brad with P-C9: S152 |
+| NFM006 | The Bayer digester's capex looked mine-to-metal | Rule it out | Do not apply: Gielen Table 5.2 lists refining alone, per t aluminium; convert it instead | cf-alumina-per-aluminium on that example: capex 3,160 (was 6,030) |
+| NFM007 | HPAL capex pooled per-metal and per-feed rows | Rule out the per-feed row | Apply | 21,673 (was 11,940) |
+| NFM009 | The anode-baking high end was per t aluminium | Rule out ETSAP's row | Apply | Band 2.29-4.62 |
+| PB001 | The drum debarker's capex was an aggregate UKTM row | Rule it out | Apply | 33 (was 691); log thawing 34 (was 693) |
+| PB008 | The effluent digester (m3) took the biogas digester's size (GJ) | Host off, plus a guard | Apply with changes: a check that fails an active host on another product unit | Its own judgements stand: annual output 3 million m3 |
+| PB010 | Alcohol-to-jet efficiency was a mass yield | Rule out Geleynse; add a heating-value stream | Apply | 90.3% (Tao, HHV) |
+| OG005 | Pump-station drafts are per m3-km on an m3 archetype | For Brad | Agree | S151 |
+| RX006 | Acid-gas removal on two product bases | Close: restated 2026-10-23 | Agree | Closed |
+
+Found in the build check: reactor_co2-to-fischer-tropsch's sibling efficiency rose from 66% to 82% once alcohol-to-jet's efficiency was on an energy basis. Its siblings are biofuel upgrading units, so it is now excluded from that rule and drafted at 56% from its own energy use (1.78 GJ of electricity per GJ).
