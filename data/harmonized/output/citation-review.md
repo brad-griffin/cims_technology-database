@@ -38,7 +38,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 
 | source | rows | correction |
 |---|---:|---|
-| Van Geene et al. 2024 (MIDDEN) | 2518 | confirmed against the held document 2026-09-29 |
+| Van Geene et al. 2024 (MIDDEN) | 3323 | confirmed against the held document 2026-09-29 |
 | UKERC 2013 | 1872 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson and Vellei 2014 | 658 | confirmed against the held document 2026-10-02 |
 | Gielen 1997 (ceramics) | 642 | confirmed against the held document 2026-10-02 |
@@ -104,9 +104,9 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
 | Schemme et al. 2020 | 120 | confirmed against the held document 2026-10-02 |
 | Sezgen et al. 1995 | 119 | confirmed against the held document 2026-10-02 |
-| Purola 2021 | 115 | confirmed against the held document 2026-10-07 |
 | Rehfeldt et al. 2024 | 115 | confirmed against the held document 2026-10-02 |
 | US EPA 1999 | 114 | confirmed against the held document 2026-10-02 |
+| Purola 2021 | 113 | confirmed against the held document 2026-10-07 |
 | Edberg et al. 2012 (ETSAP R02) | 111 | confirmed against the held document 2026-10-03 |
 | Lazard 2023 | 108 | confirmed against the held document 2026-10-02 |
 | de Beer et al. 1998 | 105 | confirmed against the held document 2026-10-02 |
@@ -276,7 +276,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Larsen et al. 2019 | 25 | confirmed against the held document 2026-10-02 |
 | Lipiainen et al. 2022 | 25 | confirmed against the held document 2026-09-29 |
 | Zier et al. 2021 | 25 | confirmed against the held document 2026-10-02 |
-| Millington 2018 | 24 | confirmed against the held document 2026-10-03 |
 | Lako 2010 (ETSAP E05) | 24 | the only reachable edition is the January 2015 IEA-ETSAP/IRENA brief; a 2010 ETSAP-only E05 may exist but could not be verified |
 | Hatch 1999 | 24 | confirmed against the held document 2026-10-02 |
 | Neelis et al. 2008 | 24 | confirmed against the held document 2026-09-29 |
@@ -286,6 +285,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Philibert 2017a | 23 | confirmed 2026-09-22 against the held copy, data/raw-data/iea/philibert_2017_renewable-energy-for-industry_iea.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Uekert et al. 2023 | 23 | confirmed against the held document 2026-09-29 |
 | Chatfield 2022 (MVR evaporation) | 22 | confirmed against the held document 2026-10-06 |
+| Millington 2018 | 22 | confirmed against the held document 2026-10-03 |
 | Clearstone 2004 | 22 | confirmed against the held document 2026-10-03 |
 | DEA 2015 (savings potential) | 22 | confirmed against the held document 2026-10-02 |
 | Van Wortswinkel and Nijs 2010 (ETSAP I01) | 22 | May 2010; authorship read from the printed VITO contact addresses |

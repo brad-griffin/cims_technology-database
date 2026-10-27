@@ -78,9 +78,9 @@ direct-heater_electric,heat-supply,<sector>.natural-gas.product.supply.direct-he
 direct-heater_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
@@ -688,27 +688,27 @@ capture-unit_physical-solvent,co2-capture,<sector>.metal-smelting.service.ccs.co
 capture-unit_physical-solvent,co2-capture,<sector>.natural-gas.service.ccs.concentrated,co2-capture-concentrated,<sector>.*.service.ccs.concentrated,cross-sector/co2-capture-concentrated: every leaf of the end use
 capture-unit_physical-solvent,co2-capture,<sector>.petroleum-crude.service.ccs.concentrated,co2-capture-concentrated,<sector>.*.service.ccs.concentrated,cross-sector/co2-capture-concentrated: every leaf of the end use
 capture-unit_physical-solvent,co2-capture,<sector>.petroleum-refining.service.ccs.concentrated,co2-capture-concentrated,<sector>.*.service.ccs.concentrated,cross-sector/co2-capture-concentrated: every leaf of the end use
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+compressor_co2-dehydration,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): compression and dehydration is the pipeline inlet, not part of capture"
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+pipeline_co2,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.pipeline,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.ab-to-ab.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.at-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.bc-to-ab.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.mb-to-sk.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.on-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.qc-to-usa.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+well_co2-storage,co2-capture,<root>.transmission.co2-pipeline-and-storage.sk-to-sk.storage,co2-transport-and-storage,<root>.transmission.co2-pipeline-and-storage.*.storage,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 anaerobic-digester_biomethane-upgrading,biofuels,<sector>.biofuels.product.renewable-natural-gas,renewable-natural-gas,,biofuels/renewable-natural-gas: every leaf of the end use
 fermenter_grain-dry-mill,biofuels,<sector>.biofuels.product.ethanol,ethanol-production,,biofuels/ethanol-production: every leaf of the end use
 fermenter_grain-dry-mill_ccs-concentrated,biofuels,<sector>.biofuels.product.ethanol,ethanol-production,,biofuels/ethanol-production: every leaf of the end use
@@ -728,14 +728,14 @@ transesterification-unit_acid-catalyzed,biofuels,<sector>.biofuels.product.biodi
 transesterification-unit_alkali-catalyzed,biofuels,<sector>.biofuels.product.biodiesel,biodiesel-production,,biofuels/biodiesel-production: every leaf of the end use
 transesterification-unit_heterogeneous-catalyst,biofuels,<sector>.biofuels.product.biodiesel,biodiesel-production,,biofuels/biodiesel-production: every leaf of the end use
 transesterification-unit_supercritical-methanol,biofuels,<sector>.biofuels.product.biodiesel,biodiesel-production,,biofuels/biodiesel-production: every leaf of the end use
-binder_alkali-activated,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-binder_blended-cement,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-binder_calcined-clay,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-binder_carbonated,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-binder_electrochemical,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-binder_hydrothermal-silicate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+binder_alkali-activated,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+binder_blended-cement,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+binder_calcined-clay,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+binder_carbonated,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+binder_electrochemical,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+binder_hydrothermal-silicate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 binder_portland-cement,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,baselines 2026-10-23 (modeller: build the missing baselines)
-binder_sulphoaluminate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+binder_sulphoaluminate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 calciner_indirect,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 calciner_indirect,cement,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,,"non-metallic-minerals/lime-calcination: the leaves its sources placed it on Product override (band product review 2026-10-22, approved 2026-10-23): calcining duty scales with CaO: about 0.65 t CaO per t clinker, so 1 t clinker of calcination makes about 0.65 t lime; estimated."
 grinding-mill_ball,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
@@ -751,9 +751,9 @@ kiln_legacy,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-p
 kiln_oxy-fuel,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 autothermal-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,added 2026-10-05 (archetype combination review)
 autothermal-reformer_ammonia_ccs-concentrated,chemicals,<sector>.chemicals.product.ammonia,ammonia,,added 2026-10-05 (archetype combination review)
-distillation-column,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-distillation-column_heat-integrated,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-distillation-column_heat-pumped,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+distillation-column,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+distillation-column_heat-integrated,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+distillation-column_heat-pumped,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 electrolysis-cell_chlor-alkali-diaphragm,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,added 2026-10-01
 electrolysis-cell_chlor-alkali-membrane,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,corrected 2026-09-23: membrane cells make chlorine and caustic soda
 electrolysis-cell_chlor-alkali-mercury,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,corrected 2026-09-23: membrane cells make chlorine and caustic soda
@@ -761,28 +761,28 @@ electrolysis-cell_oxygen-depolarized,chemicals,<sector>.chemicals.product.chlor-
 electrolysis-cell_sodium-chlorate,chemicals,<sector>.chemicals.product.sodium-chlorate,electrochemical-products,,corrected 2026-09-23: the sodium chlorate leaf
 gasifier_biomass-ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,whole plant
 gasifier_biomass-ethylene,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,as steam-cracker_fired-tubular
-gasifier_biomass-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+gasifier_biomass-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 gasifier_coal-ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,whole plant
 gasifier_coal-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,added 2026-10-01
 gasifier_coal-methanol_ccs-concentrated,chemicals,<sector>.chemicals.product.methanol,methanol,,"added 2026-10-03, as gasifier_coal-methanol"
 no-abatement_n2o,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,no-abatement options 2026-10-22 (modeller)
-reactor_adipic-acid,chemicals,<sector>.chemicals.product.adipic-acid,nitric-and-adipic-acid,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+reactor_adipic-acid,chemicals,<sector>.chemicals.product.adipic-acid,nitric-and-adipic-acid,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 reactor_ammonium-nitrate,chemicals,<sector>.chemicals.product.fertilizer,fertilizers,,added 2026-10-01
 reactor_anthraquinone-autoxidation,chemicals,<sector>.chemicals.product.hydrogen-peroxide,hydrogen-peroxide,,the leaf its name or label names
-reactor_catalytic-n2o,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the nitric and adipic acid plants
-reactor_chemical-depolymerization,chemicals,<sector>.chemicals.product.petrochemicals.derivatives,chemical-derivatives,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+reactor_catalytic-n2o,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the nitric and adipic acid plants
+reactor_chemical-depolymerization,chemicals,<sector>.chemicals.product.petrochemicals.derivatives,chemical-derivatives,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 reactor_co2-to-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,chemicals/ammonia-and-methanol: the leaves its sources placed it on
 reactor_ethanol-to-ethylene,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 reactor_ethylene-oxidation,chemicals,<sector>.chemicals.product.petrochemicals.derivatives,chemical-derivatives,,ethylene oxide/glycol is an intermediate
 reactor_ethylene-oxidation_ccs-concentrated,chemicals,<sector>.chemicals.product.petrochemicals.derivatives,chemical-derivatives,,copied from reactor_ethylene-oxidation 2026-10-01
-reactor_haber-bosch-electrolytic,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+reactor_haber-bosch-electrolytic,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 reactor_methanol-to-olefins,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 reactor_nitric-acid,chemicals,<sector>.chemicals.product.nitric-acid,nitric-and-adipic-acid,,chemicals/nitric-and-adipic-acid: the leaf its name or label names
 reactor_plastics-pyrolysis,chemicals,<root>.common-energy.petrochemical-feedstock,petrochemical-feedstock,,"moved from steam cracking 2026-10-09: pyrolysis oil is a cracker feedstock, not HVC"
 reactor_polymerization-extrusion,chemicals,<sector>.chemicals.product.petrochemicals.polymers,polymers,,chemicals/other-chemicals: the leaf its name or label names
 reactor_polymerization-extrusion_efficiency-strong,chemicals,<sector>.chemicals.product.petrochemicals.polymers,polymers,,as reactor_polymerization-extrusion
 reactor_propane-dehydrogenation,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,added 2026-10-02 Moved to olefins (petrochemicals restructure 2026-10-23 (modeller: whatever makes most sense for Canada)): PDH competes with crackers for propylene.
-reactor_thermal-n2o-destruction,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the nitric and adipic acid plants
+reactor_thermal-n2o-destruction,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the nitric and adipic acid plants
 reactor_urea-synthesis,chemicals,<sector>.chemicals.product.urea,urea,,urea node added to the snapshot 2026-09-30
 separator_aromatics-extraction,chemicals,<sector>.chemicals.product.petrochemicals.aromatics,aromatics,,baselines 2026-10-23 (modeller: build the missing baselines)
 separator_aromatics-extraction_efficiency-moderate,chemicals,<sector>.chemicals.product.petrochemicals.aromatics,aromatics,,baselines 2026-10-23 (modeller: build the missing baselines)
@@ -791,11 +791,11 @@ steam-cracker_electric,chemicals,<sector>.chemicals.product.petrochemicals.olefi
 steam-cracker_fired-tubular,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular_ccs-diffuse,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular_efficiency-moderate,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,as its host steam-cracker_fired-tubular
-steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-steam-reformer_ammonia_ccs-concentrated,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+steam-reformer_ammonia_ccs-concentrated,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 steam-reformer_ammonia_efficiency-moderate,chemicals,<sector>.chemicals.product.ammonia,ammonia,,added 2026-10-05 (archetype combination review)
 steam-reformer_ammonia_efficiency-strong,chemicals,<sector>.chemicals.product.ammonia,ammonia,,as steam-reformer_ammonia
-steam-reformer_methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+steam-reformer_methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 chiller_absorption,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
 chiller_high-efficiency,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,food-and-beverage/refrigeration: every leaf of the end use
 chiller_vapour-compression,food-and-beverage,<sector>.chemicals.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
@@ -809,16 +809,16 @@ chiller_vapour-compression,food-and-beverage,<sector>.mining.service.hvac.coolin
 chiller_vapour-compression,food-and-beverage,<sector>.petroleum-refining.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
 chiller_vapour-compression,food-and-beverage,<sector>.pulp-and-paper.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
 chiller_vapour-compression,food-and-beverage,<sector>.light-industrial.service.refrigeration,refrigeration,,"food-and-beverage/refrigeration: every leaf of the end use Product override (band product review 2026-10-22, approved 2026-10-23): label: the same GJ of cooling."
-cleaning-system,food-and-beverage,<sector>.light-industrial.service.heat.cleaning,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-cleaning-system_efficiency-strong,food-and-beverage,<sector>.light-industrial.service.heat.cleaning,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-heat-exchanger_aseptic-uht,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-heat-exchanger_steam-heated,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-oven_electric,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-oven_fuel-fired,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-oven_fuel-fired_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-press_high-pressure-processing,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-radio-frequency-heater_food,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+cleaning-system,food-and-beverage,<sector>.light-industrial.service.heat.cleaning,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+cleaning-system_efficiency-strong,food-and-beverage,<sector>.light-industrial.service.heat.cleaning,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+heat-exchanger_aseptic-uht,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+heat-exchanger_steam-heated,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+oven_electric,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+oven_fuel-fired,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+oven_fuel-fired_efficiency-moderate,food-and-beverage,<sector>.light-industrial.service.heat.baking-frying-roasting,baking-frying-and-roasting,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+press_high-pressure-processing,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+radio-frequency-heater_food,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 autothermal-reformer_hydrogen,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 autothermal-reformer_hydrogen,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
@@ -833,9 +833,9 @@ reactor_methane-pyrolysis,hydrogen,<sector>.hydrogen.product.centralized-hydroge
 storage-cavern_hydrogen,hydrogen,<sector>.hydrogen.service.distribution,hydrogen-distribution,,hydrogen/hydrogen-distribution: every leaf of the end use
 air-separation-unit,iron-and-steel,<sector>.iron-and-steel.service.oxygen,steel-oxygen-supply,,iron-and-steel/steel-oxygen-supply: every leaf of the end use
 air-separation-unit,iron-and-steel,<sector>.metal-smelting.service.oxygen,smelter-oxygen-supply,,non-ferrous-metals/smelter-oxygen-supply: every leaf of the end use
-annealing-furnace_batch-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-annealing-furnace_continuous,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-annealing-furnace_hydrogen-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+annealing-furnace_batch-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+annealing-furnace_continuous,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+annealing-furnace_hydrogen-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 basic-oxygen-furnace,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 basic-oxygen-furnace_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 blast-furnace,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
@@ -846,33 +846,33 @@ blast-furnace_top-gas-recycling,iron-and-steel,<sector>.iron-and-steel.service.h
 caster_continuous,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
 caster_ingot,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
 caster_strip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
-coating-line_electrolytic,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-coating-line_hot-dip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+coating-line_electrolytic,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+coating-line_hot-dip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 coke-oven_by-product,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
 coke-oven_by-product_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
 coke-oven_by-product_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
 coke-oven_heat-recovery,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
-electric-arc-furnace,iron-and-steel,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+electric-arc-furnace,iron-and-steel,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 electric-arc-furnace,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 electric-arc-furnace,iron-and-steel,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products. Product override (band product review 2026-10-22, approved 2026-10-23): label: the same tonne of molten metal."
 electric-arc-furnace_scrap-preheating,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 electrolysis-cell_iron-electrowinning,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
-electrolysis-cell_molten-oxide,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+electrolysis-cell_molten-oxide,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 furnace_ladle-metallurgy,iron-and-steel,<sector>.iron-and-steel.service.ladle-refining,steelmaking,,mapping review 2026-09-30: ladle furnace refines steel
 furnace_reheating,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
 furnace_reheating_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
 furnace_reheating_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
 furnace_rotary-hearth-direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,added 2026-10-01
-induction-heater_reheating,iron-and-steel,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+induction-heater_reheating,iron-and-steel,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 induction-heater_reheating,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
-induction-heater_strip-heating,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-melting-furnace_electric-smelting,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+induction-heater_strip-heating,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+melting-furnace_electric-smelting,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 pellet-plant_induration,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 pellet-plant_induration,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 pellet-plant_induration_efficiency-moderate,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 pellet-plant_plasma-electric,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 pellet-plant_plasma-electric,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
-pickling-line_acid,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.pickling,rolling,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+pickling-line_acid,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.pickling,rolling,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 preheater_ladle,iron-and-steel,<sector>.iron-and-steel.service.ladle-preheating,steelmaking,,iron-and-steel/steelmaking: the leaf its name or label names
 reactor_steel-offgas-chemicals,iron-and-steel,<sector>.iron-and-steel.service.ccs.concentrated,co2-capture-concentrated,,utilisation alternative to capture
 rolling-mill_cold,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.cold-rolling,rolling,,iron-and-steel/rolling: the leaf its name or label names
@@ -896,10 +896,10 @@ fan_mine-ventilation,mining,<sector>.coal-mining.product.raw-product.mine-ventil
 flotation-cell_froth,mining,<sector>.coal-mining.product.coal-preparation.washing,separation-and-processing,,mining/separation-and-processing: the leaves its sources placed it on
 flotation-cell_froth,mining,<sector>.mining.service.separation,separation-and-processing,,added 2026-09-23: froth flotation of metal ores
 flotation-cell_potash,mining,<sector>.mining.service.crystallization,separation-and-processing,,"added 2026-10-14 (user, sanity-check NM005, D8): as evaporator_crystallizer, the CIMS potash processing node"
-gas-treatment-unit_vam-oxidiser,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
-grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-grinding-mill_sag-ball,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-grinding-mill_stirred,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+gas-treatment-unit_vam-oxidiser,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
+grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+grinding-mill_sag-ball,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+grinding-mill_stirred,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 haul-truck_battery-electric,mining,<sector>.coal-mining.service.mine-haulage,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,mining,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
@@ -933,25 +933,25 @@ mine_open-pit-coal,mining,<sector>.coal-mining.product.simplified-extraction,ext
 mine_underground-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_underground-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 no-abatement_coal-mine-methane,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,no-abatement options 2026-10-22 (modeller)
-process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
+process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): methane control requested by coal extraction (the node docs/cims-to-fix.md asked for)
 separator_gravity-magnetic,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
-separator_ore-sorting,mining,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-separator_ore-sorting,mining,<sector>.mining.service.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+separator_ore-sorting,mining,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+separator_ore-sorting,mining,<sector>.mining.service.crushing,comminution,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 separator_thickening-filtration,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
 separator_thickening-filtration,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
-calciner_electric,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-calciner_hydrogen-fired,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-converter_peirce-smith,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-converter_peirce-smith,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-digester_bayer,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-refining,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+calciner_electric,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_gas-suspension,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_hydrogen-fired,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+converter_continuous,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+converter_peirce-smith,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+converter_peirce-smith,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,pyrometallurgy,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+digester_bayer,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-refining,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 electrolysis-cell_advanced-anodes,non-ferrous-metals,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
 electrolysis-cell_advanced-anodes,non-ferrous-metals,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
 electrolysis-cell_advanced-anodes,non-ferrous-metals,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
@@ -969,7 +969,7 @@ electrolysis-cell_zinc-electrowinning,non-ferrous-metals,<sector>.metal-smelting
 furnace_anode-baking,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking-electric,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking_biogenic-carbon,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -982,9 +982,9 @@ melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_reverberatory-rotary,non-ferrous-metals,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-melting-furnace_twin-chamber,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+melting-furnace_twin-chamber,non-ferrous-metals,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 paste-plant_soderberg,non-ferrous-metals,<sector>.metal-smelting.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
-process-improvement_pre-reduction,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+process-improvement_pre-reduction,non-ferrous-metals,<sector>.metal-smelting.product.titanium-slag.pyrometallurgy.roasting,electric-smelting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 reactor_silicothermic,non-ferrous-metals,<sector>.metal-smelting.product.magnesium.thermal-reduction,pyrometallurgy,,added 2026-10-02
 refinery_nickel-matte,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.refining,pyrometallurgy,,added 2026-10-01
 smelting-vessel_bath-tuyere,non-ferrous-metals,<sector>.metal-smelting.product.copper.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
@@ -1006,7 +1006,7 @@ smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.p
 smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_top-submerged-lance,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 dryer_ceramic-hot-air,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
-dryer_electric,non-metallic-minerals,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+dryer_electric,non-metallic-minerals,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 dryer_electric,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_electric,non-metallic-minerals,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_electric,non-metallic-minerals,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
@@ -1036,21 +1036,21 @@ kiln_lime-shaft,non-metallic-minerals,<sector>.industrial-minerals.product.lime,
 kiln_tunnel-roller,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,non-metallic-minerals/ceramic-firing: every leaf of the end use
 kiln_tunnel-roller_efficiency-strong,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,copied from kiln_tunnel-roller 2026-10-01
 melting-furnace_hot-blast-cupola,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,added 2026-10-01
-adsorber_molecular-sieve,oil-and-gas,<sector>.natural-gas.product.supply.processing.dehydration,gas-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+adsorber_molecular-sieve,oil-and-gas,<sector>.natural-gas.product.supply.processing.dehydration,gas-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 compressor_blowdown-recovery,oil-and-gas,<sector>.natural-gas.product.supply.venting.blowdowns,venting,,oil-and-gas/venting: the leaf its name or label names
 compressor_flare-gas-recovery,oil-and-gas,<sector>.natural-gas.product.supply.flaring,flaring,,oil-and-gas/flaring: every leaf of the end use
 compressor_low-emission-seal,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
-compressor_vapour-recovery,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-direct-heater_line-heater,oil-and-gas,<sector>.natural-gas.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the extraction nodes
-direct-heater_line-heater,oil-and-gas,<sector>.petroleum-crude.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the extraction nodes
+compressor_vapour-recovery,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+direct-heater_line-heater,oil-and-gas,<sector>.natural-gas.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the extraction nodes
+direct-heater_line-heater,oil-and-gas,<sector>.petroleum-crude.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the extraction nodes
 drilling-rig_battery-hybrid,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_diesel,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_electric,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 evaporator_crystallizer,oil-and-gas,<sector>.mining.service.crystallization,separation-and-processing,,added 2026-10-05 (archetype combination review)
 evaporator_crystallizer-produced-water,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,split from evaporator_crystallizer 2026-10-09: per m3 of produced water
 flare,oil-and-gas,<sector>.natural-gas.product.supply.flaring,flaring,,oil-and-gas/flaring: every leaf of the end use
-flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+flare_enclosed-combustor,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 flare_high-efficiency,oil-and-gas,<sector>.natural-gas.product.supply.flaring,flaring,,oil-and-gas/flaring: every leaf of the end use
 fracturing-fleet_diesel,oil-and-gas,<sector>.natural-gas.product.supply.completion,drilling-and-well-services,,frac fleet baselines 2026-10-23 (modeller: build the missing baselines)
 fracturing-fleet_diesel,oil-and-gas,<sector>.petroleum-crude.product.completion,drilling-and-well-services,,frac fleet baselines 2026-10-23 (modeller: build the missing baselines)
@@ -1060,9 +1060,9 @@ fracturing-fleet_electric,oil-and-gas,<sector>.natural-gas.product.supply.comple
 fracturing-fleet_electric,oil-and-gas,<sector>.petroleum-crude.product.completion,drilling-and-well-services,,frac fleet baselines 2026-10-23 (modeller: build the missing baselines)
 gas-treatment-unit_amine-sweetening,oil-and-gas,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,oil-and-gas/gas-processing: every leaf of oil-and-gas/gas-processing; no evidence to narrow it
 gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,oil-and-gas/gas-processing: the leaf its name or label names
-gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.processing.dehydration,gas-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.processing.dehydration,gas-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 gasifier_coal-fischer-tropsch,oil-and-gas,<sector>.petroleum-refining.product.synthetic-fuels,synthetic-fuels,,"new node 2026-10-09 (modeller), from crude distillation"
-heat-pump_oil-treating,oil-and-gas,<sector>.petroleum-crude.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+heat-pump_oil-treating,oil-and-gas,<sector>.petroleum-crude.service.treating,oil-and-gas-production,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 liquefaction-train_base-load,oil-and-gas,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,,oil-and-gas/lng-liquefaction: every leaf of the end use
 liquefaction-train_base-load_efficiency-moderate,oil-and-gas,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,,oil-and-gas/lng-liquefaction: every leaf of the end use
 liquefaction-train_electric,oil-and-gas,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,,oil-and-gas/lng-liquefaction: every leaf of the end use
@@ -1077,33 +1077,33 @@ no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.well-tests,
 pipeline_plastic-liner,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 pneumatic-device_gas-driven,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,oil-and-gas/venting: the leaf its name or label names
 pneumatic-device_low-bleed,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,oil-and-gas/venting: the leaf its name or label names
-pneumatic-device_non-emitting,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+pneumatic-device_non-emitting,oil-and-gas,<sector>.natural-gas.product.supply.venting.controls,venting,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 process-improvement_automatic-shutoff,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 process-improvement_automatic-shutoff,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 process-improvement_low-emission-components,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
 process-improvement_nru-optimization,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
-pump_artificial-lift,oil-and-gas,<sector>.natural-gas.service.artificial-lift,oil-and-gas-production,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the extraction nodes
-pump_artificial-lift,oil-and-gas,<sector>.petroleum-crude.service.artificial-lift,oil-and-gas-production,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): requested by the extraction nodes
+pump_artificial-lift,oil-and-gas,<sector>.natural-gas.service.artificial-lift,oil-and-gas-production,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the extraction nodes
+pump_artificial-lift,oil-and-gas,<sector>.petroleum-crude.service.artificial-lift,oil-and-gas-production,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): requested by the extraction nodes
 pump_electric-station,oil-and-gas,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 pump_electric-station_efficiency-moderate,oil-and-gas,<sector>.petroleum-crude.product.transmission,oil-pipelines,,oil-and-gas/oil-pipelines: every leaf of the end use
 pump_plunger-lift,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,oil-and-gas/venting: the leaf its name or label names
-reactor_ebullated-bed-hydrocracking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-reactor_fluid-coking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+reactor_ebullated-bed-hydrocracking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+reactor_fluid-coking,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 reactor_gas-to-liquids,oil-and-gas,<sector>.petroleum-refining.product.synthetic-fuels,synthetic-fuels,,"new node 2026-10-09 (modeller), from crude distillation"
-reactor_partial-upgrading,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv): partial upgrading takes the place of primary upgrading (mild thermal cracking or deasphalting)
+reactor_partial-upgrading,oil-and-gas,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv): partial upgrading takes the place of primary upgrading (mild thermal cracking or deasphalting)
 reciprocating-engine_dual-fuel,oil-and-gas,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
 reciprocating-engine_dual-fuel,oil-and-gas,<sector>.petroleum-crude.product.exploration,drilling-and-well-services,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
-separator_dry-stack-tailings,oil-and-gas,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-separator_dry-stack-tailings,oil-and-gas,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
+separator_dry-stack-tailings,oil-and-gas,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+separator_dry-stack-tailings,oil-and-gas,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 separator_dry-stack-tailings,oil-and-gas,<sector>.petroleum-crude.service.tailings-disposal,oil-sands-tailings,,"new node 2026-10-09 (modeller), from bitumen mining"
 separator_naphthenic-froth-treatment,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.froth-treatment,oil-sands-mining-and-extraction,,baselines 2026-10-23 (modeller: build the missing baselines)
-separator_non-aqueous,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.extraction,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-separator_paraffinic-froth-treatment,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.froth-treatment,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+separator_non-aqueous,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.extraction,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+separator_paraffinic-froth-treatment,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.froth-treatment,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 separator_produced-water-recycling,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 separator_reduced-emission-completion,oil-and-gas,<sector>.natural-gas.product.supply.well-tests,drilling-and-well-services,,Natural Gas STAR archetype added 2026-10-03 (Brad); see the archetype note
 separator_warm-lime-softening,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
-separator_warm-water-extraction,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.extraction,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.processing.ngl-recovery,gas-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+separator_warm-water-extraction,oil-and-gas,<sector>.petroleum-crude.product.bitumen.mining.extraction,oil-sands-mining-and-extraction,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+turboexpander_ngl-recovery,oil-and-gas,<sector>.natural-gas.product.supply.processing.ngl-recovery,gas-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 well_cyclic-steam,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_disposal-injection,oil-and-gas,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,oil-and-gas/produced-water-handling: every leaf of the end use
 well_electromagnetic-heating,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
@@ -1111,21 +1111,21 @@ well_in-situ-oxy-combustion,oil-and-gas,<sector>.petroleum-crude.product.bitumen
 well_sagd,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_solvent-assisted,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_solvent-only,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,oil-and-gas/in-situ-bitumen: every leaf of the end use
-dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired_efficiency-moderate,other-industry,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_direct-fired_efficiency-moderate,other-industry,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-dryer_direct-fired_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-dryer_solid-fuel,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-dryer_solid-fuel_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-dryer_superheated-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-kiln_lumber-continuous,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-kiln_lumber-heat-pump,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-kiln_lumber-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-melting-furnace_crucible-gas-fired,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+dryer_direct-fired_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+dryer_solid-fuel,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+dryer_solid-fuel_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+dryer_superheated-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+kiln_lumber-continuous,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+kiln_lumber-heat-pump,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+kiln_lumber-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+melting-furnace_crucible-gas-fired,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
@@ -1133,9 +1133,9 @@ melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.produc
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_induction 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_cupola,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -1143,7 +1143,7 @@ melting-furnace_induction,other-industry,<sector>.metal-smelting.product.magnesi
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-melting-furnace_isothermal,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+melting-furnace_isothermal,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.lead.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
@@ -1157,31 +1157,31 @@ melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.m
 melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_reverberatory-rotary 2026-10-01
 melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_reverberatory-rotary 2026-10-01
 melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_reverberatory-rotary 2026-10-01
-melting-furnace_rotary-oxy-fuel,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+melting-furnace_rotary-oxy-fuel,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_rotary-oxy-fuel,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_cupola 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-pellet-plant_wood,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): wood pellets about 18.5 GJ/t HHV; estimated."
-press_hot-platen,other-industry,<sector>.light-industrial.service.heat.forming-pressing,forming-and-pressing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+pellet-plant_wood,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): wood pellets about 18.5 GJ/t HHV; estimated."
+press_hot-platen,other-industry,<sector>.light-industrial.service.heat.forming-pressing,forming-and-pressing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 pulper_fibreboard-refiner,other-industry,<sector>.light-industrial.product.wood-products,forming-and-pressing,,added 2026-10-01 End use wood-drying-and-pressing -> forming-and-pressing (node-split review 2026-10-22).
-reactor_torrefaction,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): torrefied pellets about 21.5 GJ/t HHV; estimated."
-ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+reactor_torrefaction,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): torrefied pellets about 21.5 GJ/t HHV; estimated."
+ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 distillation-column_atmospheric-vacuum,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
-gas-treatment-unit_acid-gas-advanced,petroleum-refining,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/archetype-service-review_2026-09-30.csv)
-gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.natural-gas.product.supply.processing.sulphur-recovery,gas-processing,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+gas-treatment-unit_acid-gas-advanced,petroleum-refining,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
+gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.natural-gas.product.supply.processing.sulphur-recovery,gas-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 reactor_alkylation,petroleum-refining,<sector>.petroleum-refining.product.alkylates,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_catalytic-reforming,petroleum-refining,<sector>.petroleum-refining.product.reforming,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
-reactor_delayed-coking,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
+reactor_delayed-coking,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_delayed-coking,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_fluid-catalytic-cracking,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
 reactor_fluid-catalytic-cracking-oxy-fuel,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
 reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
-reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
+reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_isomerization,petroleum-refining,<sector>.petroleum-refining.product.isomerization,conversion-and-treating,,added 2026-10-05 (archetype combination review)
@@ -1195,7 +1195,7 @@ steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-refinin
 steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 steam-reformer_methane_efficiency-moderate,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
-anaerobic-digester_effluent,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+anaerobic-digester_effluent,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 boiler_recovery,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 boiler_recovery-high-solids,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 boiler_recovery_ccs-diffuse,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
@@ -1230,8 +1230,8 @@ dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.prod
 dryer_steam-heated_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-drying,,as its host dryer_steam-heated
 dryer_through-air,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,added 2026-10-01
 evaporator_multiple-effect,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
-fan_activated-sludge,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-fan_activated-sludge_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+fan_activated-sludge,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 gasifier_black-liquor,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 kiln_lime-electric,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,pulp-and-paper/lime-kiln: every leaf of the end use
 kiln_lime-rotary,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,pulp-and-paper/lime-kiln: every leaf of the end use
@@ -1263,7 +1263,7 @@ pulper_refiner-low-energy,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pu
 pulper_thermomechanical,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-mechanical,mechanical-pulping,,pulp-and-paper/mechanical-pulping: every leaf of the end use
 reactor_ecf-bleaching,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,,the leaf its name or label names
 reactor_oxygen-delignification,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,,pulp-and-paper/chemical-pulping: the leaf its name or label names
-separator_clarifier,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.primary,effluent-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
-separator_membrane-bioreactor,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/node-split-review-2026-10-22.csv)
+separator_clarifier,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.primary,effluent-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+separator_membrane-bioreactor,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 vapour-recompressor_evaporation,pulp-and-paper,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,,chemicals/electrochemical-products: the leaf its name or label names
 vapour-recompressor_evaporation,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,"pulp-and-paper/chemical-recovery: the leaf its name or label names Product override (band product review 2026-10-22, approved 2026-10-23): about 5.3 t water evaporated per t BLS (weak liquor about 15% solids to 70-80%); estimated."

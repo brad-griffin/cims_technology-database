@@ -119,10 +119,6 @@ wide-archetype,emissions-total_co2e,emissions,t/product-unit,"Combustion plus pr
 wide-archetype,emissions-total_co2e_low,emissions,t/product-unit,
 wide-archetype,emissions-total_co2e_high,emissions,t/product-unit,
 wide-archetype,emissions-total_co2e_n,emissions,,
-wide-archetype,capture-rate_ch4,emissions,%,"Fraction of the CO2 entering the capture plant that it captures. Recorded on capture plants (the co2-capture family) only. The plant-level capture rate is share-to-capture on the host times this, and is not recorded directly. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-archetype,capture-rate_ch4_low,emissions,%,
-wide-archetype,capture-rate_ch4_high,emissions,%,
-wide-archetype,capture-rate_ch4_n,emissions,,
 wide-archetype,capture-rate_co2,emissions,%,"Fraction of the CO2 entering the capture plant that it captures. Recorded on capture plants (the co2-capture family) only. The plant-level capture rate is share-to-capture on the host times this, and is not recorded directly. Species or stream: co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,capture-rate_co2_low,emissions,%,
 wide-archetype,capture-rate_co2_high,emissions,%,
@@ -233,6 +229,8 @@ wide-carriers-species,specific-energy-consumption_biomass-solid,technical,GJ/pro
 wide-carriers-species,specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass-solid_n,technical,,
+wide-carriers-species,specific-energy-consumption_biomethane,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomethane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_biomethane_n,technical,,
 wide-carriers-species,specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: black-liquor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_black-liquor_high,technical,GJ/product-unit,
@@ -307,6 +305,10 @@ wide-carriers-species,specific-energy-consumption_process-off-gas,technical,GJ/p
 wide-carriers-species,specific-energy-consumption_process-off-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_n,technical,,
+wide-carriers-species,specific-energy-consumption_refinery-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: refinery-gas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-carriers-species,specific-energy-consumption_refinery-gas_low,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_refinery-gas_high,technical,GJ/product-unit,
+wide-carriers-species,specific-energy-consumption_refinery-gas_n,technical,,
 wide-carriers-species,specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: steam. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-carriers-species,specific-energy-consumption_steam_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_high,technical,GJ/product-unit,
