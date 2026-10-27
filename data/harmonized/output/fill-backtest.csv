@@ -736,11 +736,10 @@ est-end-use-annual-output,well_cyclic-steam,annual-output,1.207e+06,647700,21590
 est-end-use-annual-output,pneumatic-device_low-bleed,annual-output,18940,18940,5318,64460,yes,1,"end use venting: median of 2 archetypes: pneumatic-device_gas-driven, pneumatic-device_non-emitting"
 est-end-use-annual-output,fracturing-fleet_diesel,annual-output,224294,224294,74764.7,672882,yes,1,"end use drilling-and-well-services: median of 2 archetypes: fracturing-fleet_dual-fuel, fracturing-fleet_electric"
 est-end-use-annual-output,fracturing-fleet_dual-fuel,annual-output,224294,224294,74764.7,672882,yes,1,"end use drilling-and-well-services: median of 2 archetypes: fracturing-fleet_diesel, fracturing-fleet_electric"
-est-sibling-efficiency,boiler_fuel-fired_ccs-diffuse,efficiency,56.8673,81.1103,51,95,yes,1.42631,boiler_fuel-fired efficiency (sourced); the host's efficiency
-est-sibling-efficiency,boiler_electric,efficiency,99,81.1103,51,103.553,yes,0.819296,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_fuel-fired_ccs-diffuse, boiler_oxy-fuel"
-est-sibling-efficiency,boiler_fuel-fired,efficiency,81.1103,70.9337,56.8673,95,yes,0.874533,"tier 1: boiler_fuel-fired_efficiency-moderate, boiler_fuel-fired_ccs-diffuse"
-est-sibling-efficiency,boiler_fuel-fired_efficiency-moderate,efficiency,85,68.9888,51,95,yes,0.811633,"tier 1: boiler_fuel-fired, boiler_fuel-fired_ccs-diffuse"
-est-sibling-efficiency,boiler_solid-fuel,efficiency,83.3263,81.1103,51,100,yes,0.973406,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_fuel-fired_ccs-diffuse, boiler_oxy-fuel"
+est-sibling-efficiency,boiler_electric,efficiency,99,82.2183,51,103.553,yes,0.830488,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
+est-sibling-efficiency,boiler_fuel-fired,efficiency,81.1103,85,72.25,97.75,yes,1.04796,tier 1: boiler_fuel-fired_efficiency-moderate
+est-sibling-efficiency,boiler_fuel-fired_efficiency-moderate,efficiency,85,81.1103,51,95,yes,0.954239,tier 1: boiler_fuel-fired
+est-sibling-efficiency,boiler_solid-fuel,efficiency,83.3263,83.0551,51,100,yes,0.996746,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
 est-sibling-efficiency,direct-heater_fuel-fired_efficiency-moderate,efficiency,82.4621,77.9561,54.0735,90.1226,yes,0.945357,tier 1: direct-heater_fuel-fired
 est-sibling-efficiency,direct-heater_electric,efficiency,99.5,82.4621,54.0735,95.0029,no,0.828765,"tier 2: direct-heater_solid-fuel, direct-heater_fuel-fired, direct-heater_fuel-fired_efficiency-moderate"
 est-sibling-efficiency,direct-heater_fuel-fired,efficiency,77.9561,82.4621,70.0928,94.8314,yes,1.0578,tier 1: direct-heater_fuel-fired_efficiency-moderate
@@ -773,7 +772,7 @@ est-sibling-efficiency,combustion-turbine_oxy-fuel,efficiency,53,31.5429,22.5306
 est-sibling-efficiency,thermal-storage_heat-charged,efficiency,80,95.04,80.784,109.296,no,1.188,tier 2: thermal-storage_electric
 est-sibling-efficiency,geothermal-well_flash-power,efficiency,23.7,14,8,16.1,no,0.590717,tier 2: geothermal-well_binary-power
 est-sibling-efficiency,heat-pump_heat-transformer,efficiency,48,285,150,700,no,5.9375,"tier 2: heat-pump_industrial, heat-pump_very-high-temperature"
-est-sibling-efficiency,boiler_oxy-fuel,efficiency,78.0461,83.3263,51,103.553,yes,1.06765,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_fuel-fired_ccs-diffuse"
+est-sibling-efficiency,boiler_oxy-fuel,efficiency,78.0461,84.1632,51,103.553,yes,1.07838,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
 est-sibling-efficiency,fracturing-fleet_diesel,efficiency,33.251,26.5861,21.6294,33.3453,yes,0.799559,"tier 2: fracturing-fleet_dual-fuel, fracturing-fleet_electric"
 est-sibling-efficiency,fracturing-fleet_dual-fuel,efficiency,31.5429,27.4402,21.6294,35.1511,yes,0.869933,"tier 2: fracturing-fleet_diesel, fracturing-fleet_electric"
 est-cost-ratio-opex-fixed,boiler_electric,opex-fixed,0.0869116,0.15533,0.0225528,0.674639,yes,1.78721,"capex (sourced); opex-fixed/capex median 0.02355 of 17 archetypes (same family, quartiles 0.0196-0.0374)"

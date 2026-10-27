@@ -2,7 +2,7 @@ archetype,host,parameter,unit,host-value,add-on,tier,tier1,tier2,co2-captured,al
 autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,capex,2025_CAD/GJ-per-yr,33,18.6296,tier 2 (capture node x CO2 captured),,18.6296,0.0551178,51.6296,guess
 blast-furnace_ccs-diffuse,blast-furnace,capex,2025_CAD/t-per-yr,353.836,166.634,tier 1 (same source),166.634,165.738,0.376451,520.47,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,capex,2025_CAD/GJ-per-yr,7.12473,14.5308,tier 1 (same source),14.5308,26.1516,0.0594,21.6555,estimated
-boiler_recovery_ccs-diffuse,boiler_recovery,capex,2025_CAD/t-per-yr,396.799,145.222,tier 1 (same source),145.222,154.708,0.3514,542.021,estimated
+boiler_recovery_ccs-diffuse,boiler_recovery,capex,2025_CAD/t-per-yr,396.799,410.6,tier 1 (same source),410.6,437.422,0.993548,807.399,estimated
 calciner_gas-suspension_ccs-diffuse,calciner_gas-suspension,capex,2025_CAD/t-per-yr,110.454,57.2342,tier 2 (reference capture plant x CO2 captured),,57.2342,0.13,167.688,guess
 combined-cycle_ccs-diffuse,combined-cycle,capex,2025_CAD/GJ-per-yr,55.0403,55.2551,tier 1 (same source),55.2551,42.3645,0.0962255,110.295,estimated
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,capex,2025_CAD/GJ-per-yr,54.882,68.6528,tier 1 (same source),68.6528,40.8817,0.0928575,123.535,estimated
@@ -29,7 +29,7 @@ autothermal-reformer_ammonia_ccs-concentrated,autothermal-reformer_ammonia,opex-
 autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-fixed,2025_CAD/GJ-per-yr,0.483551,0.5262,tier 2 (capture node x CO2 captured),,0.5262,0.0551178,1.00975,estimated
 blast-furnace_ccs-diffuse,blast-furnace,opex-fixed,2025_CAD/t-per-yr,14.944,4.74054,tier 2 (reference capture plant x CO2 captured),,4.74054,0.376451,19.6845,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,opex-fixed,2025_CAD/GJ-per-yr,0.184628,1.12298,tier 1 (same source),1.12298,0.748006,0.0594,1.30761,estimated
-boiler_recovery_ccs-diffuse,boiler_recovery,opex-fixed,2025_CAD/t-per-yr,7.22268,6.83573,tier 1 (same source),6.83573,4.42507,0.3514,14.0584,estimated
+boiler_recovery_ccs-diffuse,boiler_recovery,opex-fixed,2025_CAD/t-per-yr,7.22268,19.3274,tier 1 (same source),19.3274,12.5115,0.993548,26.55,estimated
 calciner_gas-suspension_ccs-diffuse,calciner_gas-suspension,opex-fixed,2025_CAD/t-per-yr,0.589089,1.63705,tier 2 (reference capture plant x CO2 captured),,1.63705,0.13,2.22614,guess
 combined-cycle_ccs-diffuse,combined-cycle,opex-fixed,2025_CAD/GJ-per-yr,1.55043,1.49672,tier 1 (same source),1.49672,1.21174,0.0962255,3.04716,estimated
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,opex-fixed,2025_CAD/GJ-per-yr,1.70765,2.18636,tier 1 (same source),2.18636,1.16933,0.0928575,3.89401,estimated
@@ -55,7 +55,7 @@ steam-reformer_methane_ccs-diffuse,steam-reformer_methane,opex-fixed,2025_CAD/GJ
 autothermal-reformer_hydrogen_ccs-concentrated,autothermal-reformer_hydrogen,opex-variable,2025_CAD/GJ,1.84362,0.52224,tier 2 (capture node x CO2 captured),,0.52224,0.0551178,2.36586,guess
 blast-furnace_ccs-diffuse,blast-furnace,opex-variable,2025_CAD/t,4.32371,6.89904,tier 2 (reference capture plant x CO2 captured),,6.89904,0.376451,11.2227,estimated
 boiler_fuel-fired_ccs-diffuse,boiler_fuel-fired,opex-variable,2025_CAD/GJ,0.549826,1.08859,tier 2 (reference capture plant x CO2 captured),,1.08859,0.0594,1.63842,estimated
-boiler_recovery_ccs-diffuse,boiler_recovery,opex-variable,2025_CAD/t,11.9331,4.29695,tier 1 (same source),4.29695,6.43993,0.3514,16.2301,estimated
+boiler_recovery_ccs-diffuse,boiler_recovery,opex-variable,2025_CAD/t,11.9331,12.1492,tier 1 (same source),12.1492,18.2083,0.993548,24.0823,estimated
 calciner_gas-suspension_ccs-diffuse,calciner_gas-suspension,opex-variable,2025_CAD/t,0.589089,2.38245,tier 2 (reference capture plant x CO2 captured),,2.38245,0.13,2.97153,guess
 combined-cycle_ccs-diffuse,combined-cycle,opex-variable,2025_CAD/GJ,0.89386,0.893868,tier 1 (same source),0.893868,1.76348,0.0962255,1.78773,estimated
 combustion-turbine_chp_ccs-diffuse,combustion-turbine_chp,opex-variable,2025_CAD/GJ,2.99249,2.58078,tier 1 (same source),2.58078,1.70175,0.0928575,5.57327,estimated

@@ -1,5 +1,5 @@
 archetype,family,product-unit,capex,opex-fixed,opex-variable,energy,lifetime,annual-output,emissions,trl
-boiler_fuel-fired_ccs-diffuse,heat-supply,GJ,estimated,estimated,estimated,sourced,estimated,estimated,estimated,sourced
+boiler_fuel-fired_ccs-diffuse,heat-supply,GJ,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 boiler_electric,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 boiler_fuel-fired,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 boiler_fuel-fired_efficiency-moderate,heat-supply,GJ,sourced,estimated,not-applicable,sourced,sourced,estimated,sourced,sourced
@@ -221,7 +221,7 @@ refinery_conversion,petroleum-refining,m3,sourced,estimated,estimated,guess,esti
 refinery_deep-conversion,petroleum-refining,m3,sourced,estimated,estimated,sourced,estimated,guess,sourced,sourced
 anaerobic-digester_effluent,pulp-and-paper,m3,guess,guess,guess,guess,sourced,guess,missing,sourced
 boiler_recovery,pulp-and-paper,t,sourced,sourced,sourced,sourced,sourced,sourced,guess,sourced
-boiler_recovery-high-solids,pulp-and-paper,t,sourced,estimated,not-applicable,sourced,estimated,estimated,guess,sourced
+boiler_recovery-high-solids,pulp-and-paper,t,estimated,estimated,not-applicable,sourced,estimated,estimated,guess,sourced
 boiler_recovery_ccs-diffuse,pulp-and-paper,t,estimated,estimated,estimated,estimated,estimated,estimated,guess,sourced
 digester_batch-kraft,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 digester_continuous-kraft,pulp-and-paper,t,sourced,sourced,estimated,sourced,estimated,estimated,identity,sourced
@@ -420,7 +420,7 @@ digester_sulphite,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,ide
 distillery_beverage-spirits,food-and-beverage,m3,guess,guess,guess,sourced,estimated,guess,guess,sourced
 dryer_ceramic-hot-air,non-metallic-minerals,t,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_market-pulp,pulp-and-paper,t,sourced,sourced,not-applicable,sourced,estimated,estimated,identity,sourced
-dryer_through-air,pulp-and-paper,t,guess,guess,not-applicable,estimated,estimated,guess,missing,sourced
+dryer_through-air,pulp-and-paper,t,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
 electrolysis-cell_chlor-alkali-diaphragm,chemicals,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
 electrolysis-cell_electrorefining,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,guess,identity,sourced
 electrolysis-cell_zinc-electrowinning,non-ferrous-metals,t,sourced,estimated,estimated,guess,estimated,guess,identity,sourced
