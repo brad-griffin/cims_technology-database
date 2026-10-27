@@ -111,7 +111,7 @@ INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this 
 # t/MMBtu, kg/MWh of fuel): bridged per GJ of output like a per-GJ factor
 # (sanity-check 2026-10-23, S140/HPCH001: EIA and DOE factors had pooled as per GJ
 # of electricity or heat, about half the true value on a combined cycle)
-ENERGY_DEN = re.compile(r"/(MMBtu|mmbtu|MBtu|Btu|therm|MWh|kWh|GWh|MJ|TJ|PJ)$")
+ENERGY_DEN = re.compile(r"/(MMBtu|mmbtu|MBtu|Btu|therm|MWh|kWh|GWh|MJ|TJ|PJ|J)$")  # J: Clearstone ng/J (S153)
 FUEL_INPUT = re.compile(r"fuel[- ]input|of fuel\b|per (MMBtu|MWh|kWh|GJ|MJ|therm) (of )?(fuel|input)", re.I)
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
@@ -140,6 +140,20 @@ HOURS_NOTE = ("  SPECIES: {sp} (a life in operating hours, not the plant's servi
 def is_capture(a) -> bool:
     """A capture-plant archetype (the co2-capture family): it holds the add-on's cost."""
     return bool(a) and a.get("family") == "co2-capture"
+
+
+def abatement_options(records) -> set:
+    """Archetypes that compete at a CIMS node with a zero-cost no-abatement option
+    (a `no-abatement_*` archetype on the same branch of records/archetype-service.csv).
+    Against a baseline that costs nothing, an option's incremental cost IS its whole
+    cost, so it needs no host (ruling 2026-10-27, S148)."""
+    nab = {s["branch"] for s in records.service if s["archetype"].startswith("no-abatement_")}
+    return {s["archetype"] for s in records.service
+            if s["branch"] in nab and not s["archetype"].startswith("no-abatement_")}
+
+
+ABATEMENT_NOTE = ("  COST BASIS: incremental over a zero-cost no-abatement option, so it is this "
+                  "option's whole cost (ruling 2026-10-27, S148).")
 
 
 def is_ccs_host(a) -> bool:
@@ -813,7 +827,8 @@ def normalise(facts, examples, records, units) -> None:
             if (hv == "LHV" or default == "LHV") and fs == 0.0:
                 r["heating-value"] = f"{r['heating-value']}; no fuel share, not converted"
             elif hv == "LHV" or default == "LHV":
-                h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit)
+                h = units.streams.to_hhv(a["archetype"], how, pu, r.get("target") or "", unit,
+                                         r.get("example-id") or "")
                 if h is not None and fs is not None and fs < 1.0:
                     h = (1 + (h[0] - 1) * fs, h[1])
                     r["heating-value"] = f"{r['heating-value']}; ratio on the fuel share {fs:.0%}"
@@ -995,6 +1010,7 @@ def normalise(facts, examples, records, units) -> None:
         for t in by_twin.get(_twin_key(by_id[rid]), []):
             if t != rid and t not in ruled_out:
                 twin_of.setdefault(t, rid)
+    abatement = abatement_options(records)
     for r in facts:
         a = records.by_key.get(r.get("archetype", ""))
         if r.get("_superseded"):
@@ -1025,12 +1041,15 @@ def normalise(facts, examples, records, units) -> None:
             if r.get("excluded") != "no number":
                 r["set-aside"], r["excluded"] = "ccs-add-on", CCS_HOST_NOTE
             continue
-        if is_capture(a):
-            # a capture plant's incremental cost IS its own cost: no host needed
+        if is_capture(a) or (a and a["archetype"] in abatement):
+            # a capture plant's incremental cost IS its own cost: no host needed;
+            # so is an abatement option's against a zero-cost no-abatement option
             if r.get("set-aside") == "needs-host-cost":
                 r["set-aside"] = ""
                 if r.get("excluded") in (NEEDS_HOST, INCREMENTAL_NOTE):
                     r["excluded"] = ""
+                if not is_capture(a) and ABATEMENT_NOTE not in (r.get("note") or ""):
+                    r["note"] = (r.get("note") or "") + ABATEMENT_NOTE
         elif (r["parameter"] in PER_CAPACITY | PER_OUTPUT and r.get("cost-basis") == "incremental"
                 and r.get("excluded") != "no number"):
             r["set-aside"], r["excluded"] = "needs-host-cost", INCREMENTAL_NOTE

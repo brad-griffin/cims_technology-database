@@ -142,9 +142,9 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Vaillancourt 2014 (ETSAP P04) | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | Mantei et al. 2021 | 72 | confirmed against the held document 2026-10-02 |
 | IEA 2024 | 71 | confirmed against the held document 2026-10-11 |
-| Energetics 2000 (iron and steel profile) | 70 | confirmed against the held document 2026-10-02 |
 | Lako 2010 (ETSAP E04) | 70 | authorship confirmed from the printed 'send comments to Paul Lako, Author' line; month unverified |
 | PCA 2002 | 70 | confirmed against the held document 2026-10-02 |
+| Energetics 2000 (iron and steel profile) | 69 | confirmed against the held document 2026-10-02 |
 | Songhurst 2018 | 69 | confirmed against the held document 2026-10-02 |
 | World Bank 1996 | 67 | confirmed against the held document 2026-10-02 |
 | XENERGY 1998 | 66 | confirmed against the held document 2026-10-06 |

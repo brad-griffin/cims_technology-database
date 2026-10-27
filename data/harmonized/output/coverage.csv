@@ -99,7 +99,7 @@ induction-heater_strip-heating,iron-and-steel,t,guess,guess,not-applicable,guess
 melting-furnace_electric-smelting,iron-and-steel,t,guess,guess,guess,sourced,estimated,estimated,identity,sourced
 pellet-plant_induration,iron-and-steel,t,sourced,estimated,estimated,sourced,sourced,guess,sourced,sourced
 pellet-plant_plasma-electric,iron-and-steel,t,guess,guess,guess,guess,estimated,guess,identity,sourced
-pickling-line_acid,iron-and-steel,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
+pickling-line_acid,iron-and-steel,t,guess,guess,guess,estimated,estimated,guess,sourced,sourced
 preheater_ladle,iron-and-steel,t,guess,guess,not-applicable,sourced,sourced,estimated,identity,sourced
 rolling-mill_cold,iron-and-steel,t,sourced,estimated,not-applicable,sourced,sourced,guess,sourced,sourced
 rolling-mill_cold_efficiency-moderate,iron-and-steel,t,estimated,estimated,not-applicable,proxy,estimated,guess,missing,sourced
@@ -239,7 +239,7 @@ debarker_drum,pulp-and-paper,t,sourced,estimated,not-applicable,sourced,estimate
 process-improvement_log-thawing,pulp-and-paper,t,estimated,estimated,not-applicable,guess,estimated,estimated,identity,sourced
 pulper_chemi-thermomechanical,pulp-and-paper,t,guess,guess,not-applicable,sourced,estimated,guess,identity,sourced
 pulper_recycled-fibre,pulp-and-paper,t,sourced,estimated,sourced,sourced,estimated,guess,missing,sourced
-pulper_refiner-low-energy,pulp-and-paper,t,sourced,estimated,sourced,sourced,sourced,guess,identity,sourced
+pulper_refiner-low-energy,pulp-and-paper,t,sourced,estimated,sourced,guess,sourced,estimated,identity,sourced
 pulper_thermomechanical,pulp-and-paper,t,sourced,estimated,sourced,sourced,estimated,estimated,missing,sourced
 reactor_oxygen-delignification,pulp-and-paper,t,estimated,estimated,estimated,sourced,estimated,estimated,identity,sourced
 separator_clarifier,pulp-and-paper,m3,guess,guess,guess,guess,estimated,guess,missing,sourced
@@ -272,10 +272,10 @@ liquefaction-train_electric,oil-and-gas,t,sourced,estimated,not-applicable,guess
 compressor_blowdown-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,identity,sourced
 liquefaction-train_base-load_efficiency-moderate,oil-and-gas,t,estimated,estimated,not-applicable,guess,estimated,guess,guess,sourced
 compressor_low-emission-seal,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,missing,sourced
-reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
+reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-applicable,proxy,estimated,estimated,proxy,sourced
 compressor_electric,machine-drive,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,identity,sourced
 compressor_flare-gas-recovery,oil-and-gas,t,sourced,estimated,not-applicable,guess,sourced,estimated,identity,sourced
-reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
+reciprocating-engine_drive,machine-drive,GJ,guess,guess,not-applicable,sourced,estimated,estimated,identity,sourced
 pneumatic-device_non-emitting,oil-and-gas,1000-m3,guess,estimated,not-applicable,not-applicable,sourced,sourced,identity,sourced
 compressor_vapour-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,identity,sourced
 direct-heater_line-heater,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
@@ -304,7 +304,7 @@ reactor_fluid-coking,oil-and-gas,m3,sourced,estimated,estimated,sourced,estimate
 reactor_partial-upgrading,oil-and-gas,m3,sourced,estimated,sourced,sourced,estimated,estimated,identity,sourced
 reciprocating-engine_diesel-field,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
 reciprocating-engine_dual-fuel,oil-and-gas,m,guess,guess,not-applicable,guess,estimated,estimated,guess,sourced
-reciprocating-engine_gasoline-propane,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,estimated,missing,sourced
+reciprocating-engine_gasoline-propane,machine-drive,GJ,guess,guess,not-applicable,estimated,estimated,estimated,guess,sourced
 separator_dry-stack-tailings,oil-and-gas,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 separator_non-aqueous,oil-and-gas,m3,guess,guess,guess,guess,estimated,guess,identity,sourced
 separator_paraffinic-froth-treatment,oil-and-gas,m3,guess,guess,guess,guess,estimated,guess,guess,sourced

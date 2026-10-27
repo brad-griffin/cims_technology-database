@@ -40,6 +40,7 @@ chiller_vapour-compression,,,no fuel carrier (electricity); product GJ (approved
 coke-oven_by-product,cf-hhv-lhv-solid-liquid,,single fuel coal; product t coke (approved 2026-10-05)
 combined-cycle,cf-hhv-lhv-methane,,single fuel natural-gas; product GJ electricity (approved 2026-10-05)
 combustion-turbine_drive,cf-hhv-lhv-methane,,single fuel natural-gas; product GJ (approved 2026-10-05)
+reciprocating-engine_drive,cf-hhv-lhv-methane,,"gas engine on natural gas; shaft work out (S153, 2026-10-27: puts Clearstone 2019 LHV efficiencies and heat rates on HHV)"
 compressor_co2-dehydration,,,no fuel carrier (electricity); product t CO2 (approved 2026-10-05)
 digester_continuous-kraft,,,no fuel carrier (steam); product ADt pulp (approved 2026-10-05)
 direct-heater_electric,,,no fuel carrier (electricity); product GJ (approved 2026-10-05)
@@ -202,7 +203,7 @@ pump_artificial-lift,,,derived 2026-10-09 from carriers (electricity) and produc
 reactor_adipic-acid,,,derived 2026-10-09 from carriers (steam; electricity) and product (product) for the regional LHV default; review
 reactor_co2-to-ethanol,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ethanol,derived 2026-10-09 from carriers (hydrogen; electricity) and product (ethanol) for the regional LHV default; review
 reactor_co2-to-fischer-tropsch,cf-hhv-lhv-hydrogen,cf-hhv-lhv-solid-liquid,derived 2026-10-09 from carriers (hydrogen; electricity) and product (renewable diesel and SAF) for the regional LHV default; review
-reactor_co2-to-ome3-5,cf-hhv-lhv-hydrogen,,derived 2026-10-09 from carriers (hydrogen; electricity; steam) and product (product) for the regional LHV default; review
+reactor_co2-to-ome3-5,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ome3-5,"hydrogen in, OME3-5 out (product ratio added 2026-10-27, S156/CHEM012)"
 reactor_ethanol-to-ethylene,,,derived 2026-10-09 from carriers (none) and product (high-value chemicals) for the regional LHV default; review
 reactor_methanol-to-olefins,cf-hhv-lhv-methanol,,derived 2026-10-09 from carriers (methanol) and product (high-value chemicals) for the regional LHV default; review
 reactor_propane-dehydrogenation,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; electricity) and product (intermediate chemical) for the regional LHV default; review

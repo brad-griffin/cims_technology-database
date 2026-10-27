@@ -63,7 +63,7 @@ CARRIER_RATIO = {
     "ammonia": "cf-hhv-lhv-ammonia", "ethanol": "cf-hhv-lhv-ethanol",
     "black-liquor": "cf-hhv-lhv-black-liquor", "coke-oven-gas": "cf-hhv-lhv-coke-oven-gas",
     "blast-furnace-gas": "cf-hhv-lhv-blast-furnace-gas",
-    **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "naphtha",
+    **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "gasoline", "naphtha",
                                                "petroleum-coke", "biomass", "biomass-solid",
                                                "bioliquid", "liquid-biomass", "fuel-oil",
                                                "heavy-fuel-oil")},
@@ -132,6 +132,10 @@ def kind(param: str, unit: str, pu: str, capacity_basis: str, per_pu: bool) -> s
 class Streams:
     def __init__(self, factors):
         self.rows = {r["archetype"]: r for r in read(REFERENCE / "heating-value-stream.csv")}
+        # an example whose fuel differs from its archetype's usual fuel (moist wood
+        # chips on a solid-fuel boiler): its own fuel-in factor (S156, 2026-10-27)
+        self.example_fuel = {r["example-id"]: r["fuel-in"].strip()
+                             for r in read(REFERENCE / "heating-value-example.csv")}
         self.factors = factors
         self.defaults = [(r["source-pattern"].strip(), (r.get("default-basis") or "").strip().upper())
                          for r in read(REFERENCE / "source-heating-basis.csv")
@@ -170,7 +174,8 @@ class Streams:
         f = self.factors.rows.get(fid)
         return fnum(f["factor"]) if f else None
 
-    def to_hhv(self, archetype: str, how: str, pu: str, target: str = "", unit: str = ""):
+    def to_hhv(self, archetype: str, how: str, pu: str, target: str = "", unit: str = "",
+               example_id: str = ""):
         """(multiplier, [factor ids]) that puts an LHV number on HHV, or None when
         the archetype's streams are not recorded."""
         s = self.rows.get(archetype)
@@ -187,6 +192,8 @@ class Streams:
         fin, fout = s.get("fuel-in", "").strip(), s.get("product-out", "").strip()
         if how == "energy-use" and (target or "").strip() in CARRIER_RATIO:
             fin = CARRIER_RATIO[target.strip()]
+        if example_id in self.example_fuel:
+            fin = self.example_fuel[example_id]
         rin, rout = self._r(fin), self._r(fout)
         if rin is None or rout is None:
             return None

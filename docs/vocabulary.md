@@ -101,7 +101,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reciprocating-engine_diesel-field` | Diesel field engine | conventional | diesel | 9 | petroleum-crude.service.field-engines | quantified |
 | `reciprocating-engine_drive` | Gas-engine drive (compressors and pumps) | conventional | natural-gas; diesel | 9 | natural-gas.service.compressor-drive.engine; *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | quantified |
 | `reciprocating-engine_drive_efficiency-moderate` | Gas-engine drive efficiency measures, moderate | efficient variant | natural-gas | 9 | natural-gas.service.compressor-drive.engine | estimated |
-| `reciprocating-engine_gasoline-propane` | Gasoline or propane field engine | conventional |  | 9 | petroleum-crude.service.field-engines | estimated |
+| `reciprocating-engine_gasoline-propane` | Gasoline or propane field engine | conventional | gasoline | 9 | petroleum-crude.service.field-engines | estimated |
 | `steam-turbine_drive` | Steam turbine drive | conventional | steam | 9 | *.service.machine-drive.pumps; *.service.machine-drive.fans-and-blowers; *.service.machine-drive.compressed-air | quantified |
 
 ### Space conditioning

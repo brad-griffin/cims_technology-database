@@ -52,7 +52,7 @@ STATUSES = ("active", "off")
 JUDGEMENT_STATUSES = ("draft", "accepted", "changed", "rejected", "active")
 JUDGEMENT_LIVE = ("draft", "accepted", "changed", "active")
 JUDGEMENT_BASES = ("analogue-archetype", "held-source-figure", "engineering-relation", "experience")
-FOSSIL = {"natural-gas", "coal", "oil", "diesel", "coke", "petroleum-coke", "lpg", "naphtha",
+FOSSIL = {"natural-gas", "coal", "oil", "diesel", "gasoline", "coke", "petroleum-coke", "lpg", "naphtha",
           "fuel-oil", "heavy-fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
 CHP = re.compile(r"\bCHP\b")
 SEC = "specific-energy-consumption"

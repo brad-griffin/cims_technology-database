@@ -79,6 +79,13 @@ def apply(facts, records, examples, units) -> dict:
         c = fnum(s["central"])
         if c:
             pooled[s["archetype"]][s["parameter"]] = (c, s["n"])
+    # judged efficiencies (non-CHP), used only where no example on the archetype
+    # states one
+    from .common import RECORDS, read
+    judged = {j["archetype"]: fnum(j["central"])
+              for j in read(RECORDS / "fill" / "fill-judgement.csv")
+              if j["parameter"] == "efficiency" and not (j.get("target") or "").strip()
+              and j.get("status") != "rejected" and fnum(j.get("central"))}
     sec = defaultdict(list)
     for r in facts:
         if r["parameter"] == "specific-energy-consumption" and fnum(r.get("value")) is not None:
@@ -109,16 +116,24 @@ def apply(facts, records, examples, units) -> dict:
         else:
             p = {k: v[0] for k, v in pooled.get(a, {}).items()}
             e = _heat_eff(p, chp)
-            if not e:
+            if not e and a in judged:
+                # no example states an efficiency: the modeller's judgement on the
+                # archetype (records/fill/fill-judgement.csv; ruling 2026-10-27, S153)
+                j = judged[a]
+                eff, how, cls = j, f"judgement on {a} (records/fill/fill-judgement.csv)", "assumption"
+                tag = f"eff:judgement:{a}"
+                e = (eff, how)
+            elif not e:
                 r["value-norm"] = r["value-min-norm"] = r["value-max-norm"] = ""
                 r["excluded"] = ("needs an efficiency to go from an input to an output basis; neither "
                                  "the example nor the archetype has one")
                 r["set-aside"] = "needs-efficiency"
                 stats["no efficiency"] += 1
                 continue
-            n = pooled[a].get("efficiency", pooled[a].get("efficiency-chp"))[1]
-            eff, how, cls = e[0], e[1] + f" pooled on {a} (n={n})", "internal"
-            tag = f"eff:{a}"
+            else:
+                n = pooled[a].get("efficiency", pooled[a].get("efficiency-chp"))[1]
+                eff, how, cls = e[0], e[1] + f" pooled on {a} (n={n})", "internal"
+                tag = f"eff:{a}"
         if eff <= 0:
             r["excluded"] = "efficiency bridge: the efficiency is not positive"
             continue
