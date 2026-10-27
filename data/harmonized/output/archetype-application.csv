@@ -791,6 +791,7 @@ steam-cracker_electric,chemicals,<sector>.chemicals.product.petrochemicals.olefi
 steam-cracker_fired-tubular,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular_ccs-diffuse,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-cracker_fired-tubular_efficiency-moderate,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,as its host steam-cracker_fired-tubular
+steam-cracker_fired-tubular_hydrogen-fuel,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,"as its host steam-cracker_fired-tubular (S149, 2026-10-27)"
 steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 steam-reformer_ammonia_ccs-concentrated,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 steam-reformer_ammonia_efficiency-moderate,chemicals,<sector>.chemicals.product.ammonia,ammonia,,added 2026-10-05 (archetype combination review)
@@ -1018,6 +1019,7 @@ dryer_rotary-direct-fired,non-metallic-minerals,<sector>.mining.service.drying,p
 dryer_rotary-direct-fired,non-metallic-minerals,<sector>.industrial-minerals.product.gypsum,drying-and-low-temp-calcining,,mapping review 2026-09-30: description covers gypsum calcining; gypsum would otherwise be empty
 furnace_electric,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,non-metallic-minerals/glass-melting: every leaf of the end use
 furnace_hybrid-electric,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_hybrid-majority-electric,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,"split from furnace_hybrid-electric (S152, 2026-10-27)"
 furnace_lehr,non-metallic-minerals,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 furnace_lehr-electric,non-metallic-minerals,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 furnace_oxy-fuel,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,non-metallic-minerals/glass-melting: every leaf of the end use
@@ -1176,6 +1178,7 @@ gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-refining.serv
 gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 reactor_alkylation,petroleum-refining,<sector>.petroleum-refining.product.alkylates,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_catalytic-reforming,petroleum-refining,<sector>.petroleum-refining.product.reforming,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
+reactor_catalytic-reforming_electric-heating,petroleum-refining,<sector>.petroleum-refining.product.reforming,conversion-and-treating,,"as its host reactor_catalytic-reforming (S149, 2026-10-27)"
 reactor_delayed-coking,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_delayed-coking,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_fluid-catalytic-cracking,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
@@ -1184,6 +1187,12 @@ reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,<sector>.petrole
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
+reactor_hydroprocessing_electric-heating,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
+reactor_hydroprocessing_electric-heating,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
+reactor_hydroprocessing_electric-heating,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
+reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
+reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
+reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
 reactor_isomerization,petroleum-refining,<sector>.petroleum-refining.product.isomerization,conversion-and-treating,,added 2026-10-05 (archetype combination review)
 steam-reformer_methane,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 steam-reformer_methane,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use

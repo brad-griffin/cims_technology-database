@@ -61,6 +61,7 @@ electrolysis-cell_zinc-electrowinning,,,no fuel carrier (electricity); product t
 evaporator_food,,,no fuel carrier (steam / electricity); product t product (approved 2026-10-05)
 furnace_electric,,,no fuel carrier (electricity); product t glass (approved 2026-10-05)
 furnace_hybrid-electric,cf-hhv-lhv-methane,,single fuel natural-gas; product t glass (approved 2026-10-05)
+furnace_hybrid-majority-electric,cf-hhv-lhv-methane,,"as furnace_hybrid-electric (S152, 2026-10-27)"
 furnace_reheating_efficiency-strong,cf-hhv-lhv-methane,,single fuel natural-gas; product t reheated (approved 2026-10-05)
 melting-furnace_twin-chamber,cf-hhv-lhv-methane,,single fuel natural-gas; product t metal (approved 2026-10-05)
 gas-treatment-unit_sulphur-recovery,cf-hhv-lhv-methane,,single fuel natural-gas; product t throughput (approved 2026-10-05)
@@ -227,3 +228,7 @@ fracturing-fleet_diesel,cf-hhv-lhv-solid-liquid,,single fuel diesel; product GJ 
 fracturing-fleet_dual-fuel,cf-hhv-lhv-methane,,natural gas with 25-30% diesel; the methane ratio is about 4% high for the diesel share (2026-10-23)
 fracturing-fleet_electric,cf-hhv-lhv-methane,,gas turbines on natural gas; product GJ hydraulic work (2026-10-23)
 reactor_alcohol-to-jet,cf-hhv-lhv-ethanol,cf-hhv-lhv-solid-liquid,"ethanol in; jet and diesel out (Tao 2017's ratio includes gasoline and diesel co-products) (sanity-check run 2026-10-24, PB010)"
+reactor_hydroprocessing_electric-heating,cf-hhv-lhv-methane,,S149 variant of reactor_hydroprocessing: fuel-in as the host (2026-10-27)
+reactor_hydroprocessing_hydrogen-fuel,cf-hhv-lhv-hydrogen,,S149 variant of reactor_hydroprocessing: fuel-in hydrogen (2026-10-27)
+reactor_catalytic-reforming_electric-heating,,,S149 variant of reactor_catalytic-reforming: fuel-in as the host (2026-10-27)
+steam-cracker_fired-tubular_hydrogen-fuel,cf-hhv-lhv-hydrogen,,S149 variant of steam-cracker_fired-tubular: fuel-in hydrogen (2026-10-27)

@@ -34,7 +34,7 @@ geothermal-well_binary-power,power-generation,GJ,sourced,sourced,sourced,sourced
 combustion-turbine_drive,machine-drive,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,sourced,sourced
 combustion-turbine_drive_efficiency-moderate,machine-drive,GJ,estimated,estimated,not-applicable,proxy,estimated,estimated,proxy,sourced
 motor_induction-standard,machine-drive,GJ,sourced,estimated,not-applicable,sourced,sourced,identity,sourced,sourced
-motor_induction-standard_efficiency-moderate,machine-drive,GJ,estimated,estimated,not-applicable,proxy,sourced,estimated,sourced,sourced
+motor_induction-standard_efficiency-moderate,machine-drive,GJ,estimated,estimated,not-applicable,guess,sourced,estimated,sourced,sourced
 motor_premium-efficiency,machine-drive,GJ,sourced,estimated,not-applicable,sourced,sourced,estimated,sourced,sourced
 motor_variable-speed,machine-drive,GJ,estimated,estimated,not-applicable,estimated,sourced,estimated,sourced,sourced
 steam-turbine_drive,machine-drive,GJ,guess,guess,not-applicable,missing,estimated,estimated,identity,sourced
@@ -99,7 +99,7 @@ induction-heater_strip-heating,iron-and-steel,t,guess,guess,not-applicable,guess
 melting-furnace_electric-smelting,iron-and-steel,t,guess,guess,guess,sourced,estimated,estimated,identity,sourced
 pellet-plant_induration,iron-and-steel,t,sourced,estimated,estimated,sourced,sourced,guess,sourced,sourced
 pellet-plant_plasma-electric,iron-and-steel,t,guess,guess,guess,guess,estimated,guess,identity,sourced
-pickling-line_acid,iron-and-steel,t,guess,guess,guess,estimated,estimated,guess,sourced,sourced
+pickling-line_acid,iron-and-steel,t,guess,guess,guess,sourced,estimated,guess,sourced,sourced
 preheater_ladle,iron-and-steel,t,guess,guess,not-applicable,sourced,sourced,estimated,identity,sourced
 rolling-mill_cold,iron-and-steel,t,sourced,estimated,not-applicable,sourced,sourced,guess,sourced,sourced
 rolling-mill_cold_efficiency-moderate,iron-and-steel,t,estimated,estimated,not-applicable,proxy,estimated,guess,missing,sourced
@@ -128,7 +128,8 @@ kiln_dry-precalciner_efficiency-strong,cement,t,estimated,estimated,estimated,so
 kiln_oxy-fuel,cement,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 dryer_electric,non-metallic-minerals,t,sourced,sourced,not-applicable,sourced,estimated,guess,identity,sourced
 dryer_rotary-direct-fired,non-metallic-minerals,t,guess,guess,not-applicable,sourced,estimated,guess,sourced,sourced
-furnace_hybrid-electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
+furnace_hybrid-electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,guess,sourced,sourced
+furnace_hybrid-majority-electric,non-metallic-minerals,t,missing,missing,missing,sourced,estimated,estimated,missing,sourced
 furnace_oxy-fuel,non-metallic-minerals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
 furnace_regenerative,non-metallic-minerals,t,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 furnace_tempering,non-metallic-minerals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
@@ -165,6 +166,7 @@ steam-cracker_catalytic-naphtha,chemicals,t,guess,guess,guess,estimated,sourced,
 steam-cracker_fired-tubular_ccs-diffuse,chemicals,t,estimated,estimated,estimated,estimated,sourced,estimated,estimated,sourced
 steam-cracker_electric,chemicals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
 steam-cracker_fired-tubular,chemicals,t,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
+steam-cracker_fired-tubular_hydrogen-fuel,chemicals,t,estimated,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 steam-cracker_fired-tubular_efficiency-moderate,chemicals,t,estimated,estimated,estimated,sourced,estimated,estimated,missing,sourced
 steam-reformer_ammonia,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 steam-reformer_ammonia_ccs-concentrated,chemicals,t,estimated,estimated,estimated,estimated,sourced,estimated,estimated,sourced
@@ -203,11 +205,14 @@ distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,m3,e
 reactor_alkylation,petroleum-refining,m3,sourced,estimated,sourced,sourced,sourced,estimated,sourced,sourced
 reactor_isomerization,petroleum-refining,m3,sourced,estimated,sourced,sourced,estimated,estimated,missing,sourced
 reactor_catalytic-reforming,petroleum-refining,m3,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
+reactor_catalytic-reforming_electric-heating,petroleum-refining,m3,estimated,sourced,estimated,sourced,sourced,estimated,missing,sourced
 reactor_delayed-coking,petroleum-refining,m3,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
 reactor_fluid-catalytic-cracking,petroleum-refining,m3,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 reactor_fluid-catalytic-cracking-oxy-fuel,petroleum-refining,m3,guess,guess,guess,guess,estimated,estimated,guess,sourced
 reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,m3,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 reactor_hydroprocessing,petroleum-refining,m3,sourced,estimated,estimated,sourced,sourced,identity,sourced,sourced
+reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,m3,missing,missing,missing,sourced,sourced,estimated,missing,sourced
+reactor_hydroprocessing_electric-heating,petroleum-refining,m3,estimated,sourced,estimated,sourced,sourced,estimated,missing,sourced
 steam-reformer_methane_efficiency-moderate,petroleum-refining,GJ,estimated,estimated,estimated,estimated,estimated,estimated,proxy,sourced
 steam-reformer_methane,petroleum-refining,GJ,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
 steam-reformer_methane_ccs-concentrated,petroleum-refining,GJ,estimated,estimated,estimated,sourced,sourced,estimated,sourced,sourced
@@ -269,7 +274,7 @@ mine_underground-coal,mining,t,guess,guess,guess,guess,estimated,guess,identity,
 process-improvement_coal-mine-methane-drainage,mining,t,guess,guess,not-applicable,guess,sourced,guess,missing,sourced
 adsorber_molecular-sieve,oil-and-gas,1000-m3,guess,guess,not-applicable,guess,estimated,sourced,guess,sourced
 liquefaction-train_electric,oil-and-gas,t,sourced,estimated,not-applicable,guess,estimated,guess,identity,sourced
-compressor_blowdown-recovery,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,identity,sourced
+compressor_blowdown-recovery,oil-and-gas,t,sourced,sourced,not-applicable,sourced,sourced,identity,identity,sourced
 liquefaction-train_base-load_efficiency-moderate,oil-and-gas,t,estimated,estimated,not-applicable,guess,estimated,guess,guess,sourced
 compressor_low-emission-seal,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,missing,sourced
 reciprocating-engine_drive_efficiency-moderate,machine-drive,GJ,guess,guess,not-applicable,proxy,estimated,estimated,proxy,sourced
@@ -318,7 +323,7 @@ well_solvent-assisted,oil-and-gas,m3,sourced,estimated,not-applicable,sourced,es
 well_solvent-only,oil-and-gas,m3,sourced,estimated,sourced,guess,sourced,estimated,identity,sourced
 well_sagd,oil-and-gas,m3,sourced,sourced,not-applicable,sourced,sourced,sourced,sourced,sourced
 well_cyclic-steam,oil-and-gas,m3,guess,guess,not-applicable,sourced,estimated,sourced,identity,sourced
-reactor_integrated-upgrader,oil-and-gas,m3,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
+reactor_integrated-upgrader,oil-and-gas,m3,sourced,sourced,estimated,sourced,estimated,estimated,identity,sourced
 gasifier_coal-methanation,oil-and-gas,GJ,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
 gasifier_coal-fischer-tropsch,oil-and-gas,GJ,sourced,sourced,estimated,sourced,sourced,identity,sourced,sourced
 reactor_gas-to-liquids,oil-and-gas,GJ,guess,sourced,estimated,sourced,sourced,identity,sourced,sourced
@@ -334,7 +339,7 @@ oven_fuel-fired_efficiency-moderate,food-and-beverage,t,guess,guess,not-applicab
 press_high-pressure-processing,food-and-beverage,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 radio-frequency-heater_food,food-and-beverage,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 calciner_gas-suspension,non-ferrous-metals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
-converter_continuous,non-ferrous-metals,t,sourced,estimated,sourced,guess,estimated,estimated,guess,sourced
+converter_continuous,non-ferrous-metals,t,sourced,estimated,sourced,guess,estimated,estimated,estimated,sourced
 converter_peirce-smith,non-ferrous-metals,t,guess,guess,guess,guess,estimated,estimated,guess,sourced
 digester_bayer,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,guess,sourced,sourced
 electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced

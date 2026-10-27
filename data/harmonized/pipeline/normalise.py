@@ -111,6 +111,10 @@ INCREMENTAL_NOTE = ("set aside: needs a host-plant cost. The source prices this 
 # t/MMBtu, kg/MWh of fuel): bridged per GJ of output like a per-GJ factor
 # (sanity-check 2026-10-23, S140/HPCH001: EIA and DOE factors had pooled as per GJ
 # of electricity or heat, about half the true value on a combined cycle)
+JUDGED_CAP = "judged-site-size:"
+SITE_DEN = re.compile(r"/(station|plant|well|facility|platform|site)$")
+# a gas carrier's heating value per cubic metre, for an energy use stated by volume
+CARRIER_VOLUME = {"natural-gas": "cf-natural-gas-hhv-volume", "hydrogen": "cf-h2-hhv-volume"}
 ENERGY_DEN = re.compile(r"/(MMBtu|mmbtu|MBtu|Btu|therm|MWh|kWh|GWh|MJ|TJ|PJ|J)$")  # J: Clearstone ng/J (S153)
 FUEL_INPUT = re.compile(r"fuel[- ]input|of fuel\b|per (MMBtu|MWh|kWh|GJ|MJ|therm) (of )?(fuel|input)", re.I)
 PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "MWh"}
@@ -293,6 +297,14 @@ def normalise(facts, examples, records, units) -> None:
     # per example, what turns a rating or an absolute sum into a rate: the
     # SOURCE'S OWN factors only, and only on an output basis
     scale = defaultdict(dict)
+    # a judged size for an example that prices a whole site (records/reference/
+    # example-capacity.csv; S148, 2026-10-27): its absolute and per-year costs go
+    # per unit of that size, graded as an assumption
+    judged_cap = {x["example-id"]: x for x in read(REFERENCE / "example-capacity.csv")}
+    for eid, x in judged_cap.items():
+        scale[eid]["caps"] = [{"record-id": JUDGED_CAP + eid, "value": x["capacity"],
+                               "unit": x["unit"], "capacity-basis": "product-output",
+                               "example-id": eid, "note": ""}]
     for r in facts:
         v = fnum(r.get("value"))
         if v is None:
@@ -305,7 +317,7 @@ def normalise(facts, examples, records, units) -> None:
               and r.get("capacity-basis") in OUTPUT_BASES):
             mw = v / 1000 if r["unit"] == "kW" else v
             scale[r["example-id"]].setdefault("mw-out", (mw, r["record-id"]))
-        if r["parameter"] == "capacity":
+        if r["parameter"] == "capacity" and r["example-id"] not in judged_cap:
             scale[r["example-id"]].setdefault("caps", []).append(r)
         # the same source's heat-to-power ratio, or the efficiencies it follows from
         tg = (r.get("target") or "").strip().lower()
@@ -450,7 +462,7 @@ def normalise(facts, examples, records, units) -> None:
         one for the case; its basis is its own, else the cost row's."""
         caps = sc.get("caps", [])
         c = case_of(r)
-        if c:
+        if c and not any(x["record-id"].startswith(JUDGED_CAP) for x in caps):
             caps = [x for x in caps if case_of(x) == c]
         caps = [x for x in caps if fnum(x.get("value")) is not None]
         if len(caps) != 1:
@@ -505,6 +517,15 @@ def normalise(facts, examples, records, units) -> None:
             continue
         pu = a["product-unit"]
         p = r["parameter"]
+        if (p == "specific-energy-consumption" and (r.get("target") or "").strip().lower() == "heat"
+                and "steam-heated" in a["archetype"]
+                and "steam" in split_list(a.get("carriers", ""))
+                and "heat" not in split_list(a.get("carriers", ""))):
+            # heat a source states for a steam-heated unit is its steam (S157/MCF019,
+            # 2026-10-27): the same duty, under the carrier the archetype lists
+            r["target-norm"] = "steam"
+            r["note"] = (r.get("note") or "") + ("  CARRIER: heat on a steam-heated unit, "
+                                                 "pooled as its steam (S157, 2026-10-27).")
         pdef = records.parameters.get(p, {})
         tgt = target_unit(p, pu, pdef.get("unit-default", "") or r.get("unit", ""))
         if p == "abatement-cost" and (r.get("target") or "").strip().lower() == "ch4":
@@ -564,6 +585,18 @@ def normalise(facts, examples, records, units) -> None:
         for k, s in UNIT_ALIAS.items():
             unit = unit.replace(k, s)
         unit = product_tonne(unit, a, p)
+        if ((a.get("product") or "").lower() == "methane" and "/" in unit
+                and p.startswith(("capex", "opex", "cost-"))):
+            # a methane-abatement option is measured per t of methane (abated):
+            # a cost per t-CH4 (IEA, NCCP) is the archetype's own tonne, and a
+            # cost per yr per (t CH4 per yr) is a cost per t-per-yr (S148, 2026-10-27)
+            num_, den_ = unit.split("/", 1)
+            den_ = den_.replace("yr-per-t-CH4-per-yr", "t-per-yr").replace("t-CH4", "t")
+            unit = f"{num_}/{den_}"
+        if r["example-id"] in judged_cap and p.startswith(("capex", "opex")):
+            # a cost per site (or per year per site) of an example with a judged site size
+            unit = SITE_DEN.sub("", unit)
+            unit = re.sub(r"-per-yr$", "/yr", unit) if "/" not in unit else unit
         # steam reported as a MASS (kg or t of steam per unit of product): put in GJ
         # with the steam enthalpy in conversion-factor.csv (cf-steam-enthalpy,
         # 2026-10-02) before any other conversion
@@ -696,7 +729,12 @@ def normalise(facts, examples, records, units) -> None:
                 hv_unit = f"{unit.split('/', 1)[0]}/{cu_.split('/', 1)[0]}"
                 factor, used = f / per_yr, used + ids
                 note = f"annual sum over the source's own capacity for this case ({rid})"
-                cls.append("same-source")
+                if rid.startswith(JUDGED_CAP):
+                    note = note.replace("the source's own capacity", "a judged site size")
+                    cls.append("assumption")
+                    used.append("assume:" + rid)
+                else:
+                    cls.append("same-source")
                 if basis in heating.INPUT_BASES:
                     bridge_kind = "per-input"
             elif p in PER_CAPACITY and not d and (oc := own_capacity(r, sc, pu, flist, alias)):
@@ -704,7 +742,12 @@ def normalise(facts, examples, records, units) -> None:
                 hv_unit = f"{unit.split('/', 1)[0]}/{cu_.split('/', 1)[0]}"
                 factor, used = f / per_yr, used + ids
                 note = f"absolute sum over the source's own capacity for this case ({rid})"
-                cls.append("same-source")
+                if rid.startswith(JUDGED_CAP):
+                    note = note.replace("the source's own capacity", "a judged site size")
+                    cls.append("assumption")
+                    used.append("assume:" + rid)
+                else:
+                    cls.append("same-source")
                 if basis in heating.INPUT_BASES:
                     bridge_kind = "per-input"
             else:
@@ -744,6 +787,18 @@ def normalise(facts, examples, records, units) -> None:
                 ext = (convert.extensive(unit, tgt, flist, alias, annual=p == "annual-output")
                        if p in EXTENSIVE
                        else convert.intensive(unit, tgt, flist, species_ok, alias))
+                if (not ext and p == "specific-energy-consumption"
+                        and (cv := CARRIER_VOLUME.get((r.get("target") or "").strip().lower()))
+                        and unit.split("/", 1)[0] in ("m3", "Nm3")
+                        and cv in units.factors.rows):
+                    # a gas carrier stated by volume (m3 of natural gas or hydrogen per
+                    # t): its own heating value per m3 (S150, 2026-10-27); a cubic
+                    # metre the source states at STP (0 degC) takes the normal-m3 factor
+                    fid = cv
+                    if fid == "cf-natural-gas-hhv-volume" and (unit.startswith("Nm3") or re.search(r"\bSTP\b|\bNm3\b|0 ?degC", r.get("note") or "")):
+                        fid = "cf-natural-gas-hhv-nm3"
+                    ext = convert.intensive(unit, tgt, flist + [units.factors.rows[fid]],
+                                            species_ok, alias)
                 if not ext:
                     r["excluded"] = f"no conversion from {unit or '(none)'} to {tgt}"
                     continue
@@ -1007,6 +1062,8 @@ def normalise(facts, examples, records, units) -> None:
     for r in facts:
         by_twin[_twin_key(r)].append(r["record-id"])
     for rid in ruled_out:
+        if "(this example only)" in (ruled_out[rid].get("reason") or ""):
+            continue        # a reason about the example, not the figure (S152, 2026-10-27)
         for t in by_twin.get(_twin_key(by_id[rid]), []):
             if t != rid and t not in ruled_out:
                 twin_of.setdefault(t, rid)
@@ -1090,6 +1147,30 @@ def normalise(facts, examples, records, units) -> None:
                    else "the same number in another unit")
             r["excluded"] = (f"duplicate of the row in duplicate-of: {how}"
                              + ("" if not par.get("excluded") else "; that row is not pooled either"))
+
+    # rows of one example that are parts of one quantity (two electricity uses of
+    # one plant): the first keeps the sum, the others point to it (records/reference/
+    # additive-row.csv; S150, 2026-10-27). Otherwise the pool would take their median
+    groups = defaultdict(list)
+    for x in read(REFERENCE / "additive-row.csv"):
+        if x["record-id"] not in by_id:
+            raise SystemExit(f"additive-row.csv names an unknown record-id: {x['record-id']}")
+        groups[x["group"]].append(by_id[x["record-id"]])
+    for g, parts in groups.items():
+        live = [x for x in parts if not x.get("excluded") and x.get("value-norm")]
+        if len(live) < 2:
+            continue
+        if len({x.get("unit-norm") for x in live}) != 1:
+            raise SystemExit(f"additive-row.csv group {g}: parts on different units")
+        head = live[0]
+        head["value-norm"] = f"{sum(fnum(x['value-norm']) for x in live):.6g}"
+        head["value-min-norm"] = head["value-max-norm"] = ""
+        head["conversion"] = ((head.get("conversion") + "; ") if head.get("conversion") else "") + (
+            "sum of the example's additive rows " + " + ".join(x["record-id"] for x in live)
+            + f" (records/reference/additive-row.csv, group {g})")
+        for x in live[1:]:
+            x["duplicate-of"] = head["record-id"]
+            x["excluded"] = f"part of the sum in {head['record-id']} (additive-row.csv, group {g}); not pooled twice"
 
     # A figure one source prints more than once for the same archetype (the same
     # cost for several technologies, one lifetime for a whole table) is pooled

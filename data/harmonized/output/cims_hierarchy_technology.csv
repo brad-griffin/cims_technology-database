@@ -181,6 +181,7 @@ branch,technology,data-filepath
 <sector>.chemicals.product.petrochemicals.olefins,steam-cracker_fired-tubular,data/service-technology-map/chemicals/product/petrochemicals/olefins
 <sector>.chemicals.product.petrochemicals.olefins,steam-cracker_fired-tubular_ccs-diffuse,data/service-technology-map/chemicals/product/petrochemicals/olefins
 <sector>.chemicals.product.petrochemicals.olefins,steam-cracker_fired-tubular_efficiency-moderate,data/service-technology-map/chemicals/product/petrochemicals/olefins
+<sector>.chemicals.product.petrochemicals.olefins,steam-cracker_fired-tubular_hydrogen-fuel,data/service-technology-map/chemicals/product/petrochemicals/olefins
 <sector>.chemicals.product.sodium-chlorate,electrolysis-cell_sodium-chlorate,data/service-technology-map/chemicals/product/sodium-chlorate
 <sector>.chemicals.product.urea,reactor_urea-synthesis,data/service-technology-map/chemicals/product/urea
 <sector>.chemicals.service,,data/service-technology-map/general-services
@@ -481,6 +482,7 @@ branch,technology,data-filepath
 <sector>.industrial-minerals.product.glass.form-and-finish,furnace_lehr-electric,data/service-technology-map/industrial-minerals/product/glass/form-and-finish
 <sector>.industrial-minerals.product.glass.furnaces,furnace_electric,data/service-technology-map/industrial-minerals/product/glass/furnaces
 <sector>.industrial-minerals.product.glass.furnaces,furnace_hybrid-electric,data/service-technology-map/industrial-minerals/product/glass/furnaces
+<sector>.industrial-minerals.product.glass.furnaces,furnace_hybrid-majority-electric,data/service-technology-map/industrial-minerals/product/glass/furnaces
 <sector>.industrial-minerals.product.glass.furnaces,furnace_oxy-fuel,data/service-technology-map/industrial-minerals/product/glass/furnaces
 <sector>.industrial-minerals.product.glass.furnaces,furnace_oxy-fuel-thermochemical,data/service-technology-map/industrial-minerals/product/glass/furnaces
 <sector>.industrial-minerals.product.glass.furnaces,furnace_regenerative,data/service-technology-map/industrial-minerals/product/glass/furnaces
@@ -1240,6 +1242,8 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.product.bitumen.upgrading.primary,reactor_fluid-coking,data/service-technology-map/petroleum-crude/product/bitumen/upgrading/primary
 <sector>.petroleum-crude.product.bitumen.upgrading.primary,reactor_partial-upgrading,data/service-technology-map/petroleum-crude/product/bitumen/upgrading/primary
 <sector>.petroleum-crude.product.bitumen.upgrading.secondary,reactor_hydroprocessing,data/service-technology-map/petroleum-crude/product/bitumen/upgrading/secondary
+<sector>.petroleum-crude.product.bitumen.upgrading.secondary,reactor_hydroprocessing_electric-heating,data/service-technology-map/petroleum-crude/product/bitumen/upgrading/secondary
+<sector>.petroleum-crude.product.bitumen.upgrading.secondary,reactor_hydroprocessing_hydrogen-fuel,data/service-technology-map/petroleum-crude/product/bitumen/upgrading/secondary
 <sector>.petroleum-crude.product.exploration,reciprocating-engine_dual-fuel,data/service-technology-map/petroleum-crude/product/exploration
 <sector>.petroleum-crude.product.completion,fracturing-fleet_diesel,data/service-technology-map/petroleum-crude/product/completion
 <sector>.petroleum-crude.product.completion,fracturing-fleet_dual-fuel,data/service-technology-map/petroleum-crude/product/completion
@@ -1318,13 +1322,18 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking-oxy-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking_ccs-diffuse,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing_electric-heating,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing_hydrogen-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,distillation-column_atmospheric-vacuum,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.distillation,distillation-column_atmospheric-vacuum_efficiency-strong,data/service-technology-map/petroleum-refining/product/petroleum-fractions/distillation
 <sector>.petroleum-refining.product.petroleum-fractions.hydrotreating,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating
 <sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,reactor_hydroprocessing,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating/desulphurization
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,reactor_hydroprocessing_electric-heating,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating/desulphurization
+<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,reactor_hydroprocessing_hydrogen-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating/desulphurization
 <sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,gas-treatment-unit_sulphur-recovery,data/service-technology-map/petroleum-refining/product/petroleum-fractions/hydrotreating/sulphur-recovery
 <sector>.petroleum-refining.product.petroleum-fractions.lubes,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/lubes
 <sector>.petroleum-refining.product.reforming,reactor_catalytic-reforming,data/service-technology-map/petroleum-refining/product/reforming
+<sector>.petroleum-refining.product.reforming,reactor_catalytic-reforming_electric-heating,data/service-technology-map/petroleum-refining/product/reforming
 <sector>.petroleum-refining.product.synthetic-fuels,gasifier_coal-fischer-tropsch,data/service-technology-map/petroleum-refining/product/synthetic-fuels
 <sector>.petroleum-refining.product.synthetic-fuels,reactor_gas-to-liquids,data/service-technology-map/petroleum-refining/product/synthetic-fuels
 <sector>.petroleum-refining.service,,data/service-technology-map/petroleum-refining/service

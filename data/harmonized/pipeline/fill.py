@@ -112,6 +112,8 @@ def _in_scope(rule, a, have, ctx=None):
         mods = split_list(a.get("modifiers", ""))
         if not any(m in mods for m in sc["modifier"].split("|")):
             return False
+    if "exclude-modifier" in sc and set(split_list(a.get("modifiers", ""))) & set(sc["exclude-modifier"].split("|")):
+        return False
     if sc.get("no-modifier") == "yes" and split_list(a.get("modifiers", "")):
         return False
     if ctx is not None:
