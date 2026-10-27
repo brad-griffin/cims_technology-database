@@ -473,7 +473,7 @@ deliberate marker) in every cell CIMS reads: capex, fixed and variable O&M, ener
 use or efficiency, lifetime, annual output, TRL. Where the examples give none, the
 fill step (`pipeline/fill.py`, after the summaries) writes one, graded by how it
 was reached. Adopted 2026-09-30; widened 2026-10-09 (the fill-methods proposal,
-`docs/fill-methods-proposal-2026-10-03.md`).
+`docs/reviews/fill-methods-proposal_2026-10-03.md`).
 
 | Grade | What it means | Workbook |
 | - | - | - |
@@ -627,7 +627,7 @@ median, else all). Both are in the main wide view.
 
 Still missing after the fill (2026-10-09): fossil combustion CO2 on 45
 archetypes whose `carriers` cell in `records/archetype.csv` is blank
-(`docs/carrier-proposals-2026-10-09.csv` proposes the carriers) and on the
+(`docs/reviews/carrier-proposals_2026-10-09.csv` proposes the carriers) and on the
 reformers, gasifiers and reactors the CO2 identity excludes by design.
 
 ## 7. Traceability

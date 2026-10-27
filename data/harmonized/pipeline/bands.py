@@ -23,7 +23,7 @@ gives the derived families column.
     use make more than one product (ammonia and methanol), the end use splits into
     one sub-band per product, labelled "<end use>: <product> (<unit>)". A split that
     only reflects two names for one product shows up here and is fixed by renaming
-    the product in records/archetype.csv (docs/band-product-review-2026-10-22.csv);
+    the product in records/archetype.csv (docs/reviews/band-product-review_2026-10-22.csv);
   * a product override (modeller 2026-10-22): a records/archetype-service.csv row with
     `product` and `product-unit` shows the archetype under that end use in another
     product. `factor` is the new units in one home unit (18.5 GJ of pellets per t;

@@ -11,9 +11,9 @@ or a misfiring rule counts as a finding alongside a bad extraction.
 Nothing in `records/`, `pipeline/` or `data/raw-data/` was changed by this pass. What it
 wrote:
 
-- `docs/sanity-check-review-2026-10-11.csv` — 183 findings (94 high, 76 medium, 13 low);
+- `docs/sanity-checks/2026-10-11/review.csv` — 183 findings (94 high, 76 medium, 13 low);
   172 traced to the example rows or the pipeline code (`verified = yes`).
-- `docs/sanity-check-screens-2026-10-11/` — the eight screens the pass ran, so the next
+- `docs/sanity-checks/2026-10-11/screens/` — the eight screens the pass ran, so the next
   one can be run the same way: `screen-bounds.csv` (physical bounds), `screen-spread.csv`
   and `screen-spread-sourced.csv` (high/low >= 10), `screen-outlier.csv` and
   `screen-family-outlier.csv` (central far from the group median), `screen-carriers.csv`

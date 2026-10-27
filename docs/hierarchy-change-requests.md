@@ -53,7 +53,7 @@ includes every node requested so far:
 
 These are in `records/cims_hierarchy.csv` at the modeller's request (one competition per node: alternatives,
 not steps). CIMS needs the same nodes, and the parent nodes need techs that request the new services. The full
-log is `docs/node-split-review-2026-10-22.csv`; the summary is in the project note node-split-2026-10-22.
+log is `docs/reviews/node-split-review_2026-10-22.csv`; the summary is in the project note node-split-2026-10-22.
 
 | Change | Nodes |
 | - | - |

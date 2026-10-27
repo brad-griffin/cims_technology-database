@@ -165,7 +165,7 @@ Side effects: the capex-ratio fixed O&M fell about 35% on about 40 oil-and-gas a
 
 ## Batch F: the remaining high-severity findings of the 2026-10-23 review
 
-All checks pass. Ids are from docs/sanity-check-review-2026-10-23.csv.
+All checks pass. Ids are from docs/sanity-checks/2026-10-23/review.csv.
 
 | Finding | Problem | Proposal | Fable verdict | Result |
 | - | - | - | - | - |
@@ -204,7 +204,7 @@ Side effects:
 
 ## Batch H: the medium-severity findings
 
-The triage of all 71 medium findings found 11 resolved, 11 partly resolved and 49 open. Each open one was classed A (a safe data fix), B (code) or C (a ruling). The tables are in docs/sanity-check-run-2026-10-24-medium-triage.md and, for the high findings, docs/sanity-check-run-2026-10-24-high-triage.md. All checks pass.
+The triage of all 71 medium findings found 11 resolved, 11 partly resolved and 49 open. Each open one was classed A (a safe data fix), B (code) or C (a ruling). The tables are in docs/sanity-checks/2026-10-24/medium-triage.md and, for the high findings, docs/sanity-checks/2026-10-24/high-triage.md. All checks pass.
 
 **A code defect (P-H1).** On per-GJ archetypes, a number per tonne of product had its HHV/LHV ratio applied twice: once by the HHV mass factor, then again. Per-tonne hydrogen emissions were 18% low. The fix is in `heating.kind`, and absolute sums on a mass capacity are covered too, per the Fable reviewer. It moved 84 values on 28 archetypes, each by exactly the fuel's ratio:
 - autothermal reformer CO2 0.049 to 0.058 t/GJ;

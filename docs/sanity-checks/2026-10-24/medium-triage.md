@@ -1,6 +1,6 @@
 # Medium-severity findings triage (review 2026-10-23, checked against the working-tree output of 2026-10-24 07:59)
 
-Source: docs/sanity-check-review-2026-10-23.csv, severity = medium (71). Values come from data/harmonized/output/archetype-parameter.csv and example-parameter.csv (working tree, not HEAD). I checked every record id below in example-parameter.csv and read its note.
+Source: docs/sanity-checks/2026-10-23/review.csv, severity = medium (71). Values come from data/harmonized/output/archetype-parameter.csv and example-parameter.csv (working tree, not HEAD). I checked every record id below in example-parameter.csv and read its note.
 
 Counts: RESOLVED 11, PARTLY 11, OPEN 49.
 

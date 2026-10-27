@@ -26,17 +26,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="sanity-check-review-2026-10-04_files/libs/clipboard/clipboard.min.js"></script>
-<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/popper.min.js"></script>
-<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="sanity-check-review-2026-10-04_files/libs/quarto-html/anchor.min.js"></script>
-<link href="sanity-check-review-2026-10-04_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="sanity-check-review-2026-10-04_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="sanity-check-review-2026-10-04_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="review_files/libs/clipboard/clipboard.min.js"></script>
+<script src="review_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="review_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="review_files/libs/quarto-html/popper.min.js"></script>
+<script src="review_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="review_files/libs/quarto-html/anchor.min.js"></script>
+<link href="review_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="review_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="review_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="review_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="review_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -58,7 +58,7 @@ ul.task-list li input[type="checkbox"] {
 <li>a family-by-family comparison of every archetype’s values with the literature (IEA, ETSAP, DEA, NREL ATB, BREFs, LBNL/DOE bandwidth studies, engineering relations), run as seven parallel reviews over the per-family summaries;</li>
 <li>a disposition of the set-aside items S01–S70 in <code>docs/sanity-check-list.csv</code>.</li>
 </ol>
-<p>Findings are in <code>docs/sanity-check-review-2026-10-04.csv</code> (673 rows: 92 high, 258 medium, 323 low). The first 21 rows (R001–R021, <code>verified = yes</code>) were traced to the example rows and the pipeline; the rest (<code>verified = no</code>) come from the family reviews and were spot-checked, not individually traced. Nothing in the repository was changed by this pass except <code>docs/sanity-check-list.csv</code> (statuses and new rows S71–S88) and the two files named here.</p>
+<p>Findings are in <code>docs/sanity-checks/2026-10-04/review.csv</code> (673 rows: 92 high, 258 medium, 323 low). The first 21 rows (R001–R021, <code>verified = yes</code>) were traced to the example rows and the pipeline; the rest (<code>verified = no</code>) come from the family reviews and were spot-checked, not individually traced. Nothing in the repository was changed by this pass except <code>docs/sanity-check-list.csv</code> (statuses and new rows S71–S88) and the two files named here.</p>
 <p>The short version: a handful of pipeline and loader defects, each small, produce most of the values that look absurd; the remaining problems are scope (whole-plant or whole-route numbers pooled into unit-process archetypes, savings pooled as absolutes, stack lives pooled as plant lives) rather than wrong digits. The centrals of the big, well-sourced archetypes (boilers, kilns, EAF, chlor-alkali, SMR, amine capture, electrolysis, lime, aluminium) are in range; the ranges around them are what carry the errors.</p>
 <section id="pipeline-and-record-defects-confirmed-fix-in-code-or-records-then-rebuild" class="level2">
 <h2 class="anchored" data-anchor-id="pipeline-and-record-defects-confirmed-fix-in-code-or-records-then-rebuild">1. Pipeline and record defects (confirmed; fix in code or records, then rebuild)</h2>

@@ -1,6 +1,6 @@
 # High-severity findings triage (review 2026-10-23, checked against output of 2026-10-24 07:36)
 
-Source: docs/sanity-check-review-2026-10-23.csv, severity = high (63). Values read from data/harmonized/output/archetype-parameter.csv and example-parameter.csv.
+Source: docs/sanity-checks/2026-10-23/review.csv, severity = high (63). Values read from data/harmonized/output/archetype-parameter.csv and example-parameter.csv.
 
 Counts: RESOLVED 48, PARTLY 11, OPEN 4. [R] marks items that need a modeller ruling, not only a data fix.
 

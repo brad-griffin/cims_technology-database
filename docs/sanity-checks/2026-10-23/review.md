@@ -2,8 +2,8 @@
 
 Third full pass over every pooled value in `data/harmonized/output/archetype-parameter.csv`, sourced and filled. Build of 2026-10-23 on commit 108a81d (clean tree, rebuilt before the screens): 503 archetypes, 7,825 pooled rows, 437 quantified. Eight family reviews ran in parallel from the same brief and screens as the 2026-10-11 pass. Nothing in `records/`, `pipeline/` or `data/raw-data/` was changed.
 
-- `sanity-check-review-2026-10-23.csv`: 152 findings (63 high, 71 medium, 18 low), 141 traced to example rows or pipeline code.
-- `sanity-check-screens-2026-10-23/`: the eight screens. Scripts and the brief are in `C:\_dev\staging\sanity-2026-10-23\`.
+- `sanity-checks/2026-10-23/review.csv`: 152 findings (63 high, 71 medium, 18 low), 141 traced to example rows or pipeline code.
+- `sanity-checks/2026-10-23/screens/`: the eight screens. Scripts and the brief are in `C:\_dev\staging\sanity-2026-10-23\`.
 - `sanity-check-list.csv`: S133 to S146 added for the systematic defects below.
 
 ## Screens against the earlier passes
