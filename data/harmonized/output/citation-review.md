@@ -41,8 +41,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Van Geene et al. 2024 (MIDDEN) | 3323 | confirmed against the held document 2026-09-29 |
 | UKERC 2013 | 1872 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson and Vellei 2014 | 658 | confirmed against the held document 2026-10-02 |
-| Gielen 1997 (ceramics) | 642 | confirmed against the held document 2026-10-02 |
-| IEA 2026 (methane abatement model) | 528 | confirmed against the held document 2026-10-07 |
+| Gielen 1997 (ceramics) | 638 | confirmed against the held document 2026-10-02 |
+| IEA 2026 (methane abatement model) | 560 | confirmed against the held document 2026-10-07 |
 | Joosten 1998 | 524 | confirmed against the held document 2026-10-03 |
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
 | DEA 2026 (renewable fuels) | 474 | confirmed against the held document 2026-09-29 |

@@ -67,6 +67,37 @@ def _example_values(rows):
     return (median(cents) if cents else None), allv
 
 
+_WEIGHTS = None
+
+
+def _weights():
+    """{archetype: ({example-id: group}, {group: weight})} from records/reference/
+    example-group.csv and group-weight.csv (S148, 2026-10-27): an archetype whose
+    examples cover several site types is summarised on a stated mix of them."""
+    global _WEIGHTS
+    if _WEIGHTS is None:
+        from .common import REFERENCE, read
+        groups = defaultdict(dict)
+        for r in read(REFERENCE / "example-group.csv"):
+            groups[r["archetype"]][r["example-id"]] = r["group"]
+        w = defaultdict(dict)
+        for r in read(REFERENCE / "group-weight.csv"):
+            w[r["archetype"]][r["group"]] = fnum(r["weight"]) or 0.0
+        _WEIGHTS = {a: (groups[a], w[a]) for a in w}
+    return _WEIGHTS
+
+
+def _wquantile(pairs, q):
+    """Weighted quantile of [(value, weight)], weights summing to 1."""
+    pairs = sorted(pairs)
+    acc = 0.0
+    for v, w in pairs:
+        acc += w
+        if acc >= q - 1e-12:
+            return v
+    return pairs[-1][0]
+
+
 def summarise(rows, records, keys, examples_by_id):
     """Rows (already normalised, excluded ones skipped) -> one summary per
     (archetype, *keys, unit-norm)."""
@@ -91,7 +122,29 @@ def summarise(rows, records, keys, examples_by_id):
                         "sources": sids, "external": ext,
                         "corrected": any(r.get("correction") for r in rs)})
         with_c = [p for p in per if p["central"] is not None]
-        if len(with_c) >= 3:
+        wt = _weights().get(k[0])
+        wrange = None
+        if wt:
+            # weighted on the archetype's stated mix: each group's weight is shared
+            # by its examples; groups weighted 0 are off the node and left out
+            ex_group, gw = wt
+            live = [p for p in with_c if gw.get(ex_group.get(p["example"], "unspecified"), 0) > 0]
+            cnt = defaultdict(int)
+            for p in live:
+                cnt[ex_group[p["example"]]] += 1
+            tot = sum(gw[g] for g in cnt)
+            if live and tot > 0:
+                pairs = [(p["central"], gw[ex_group[p["example"]]] / cnt[ex_group[p["example"]]] / tot)
+                         for p in live]
+                with_c = live
+                per = [p for p in per if gw.get(ex_group.get(p["example"], "unspecified"), 0) > 0]
+                wrange = (_wquantile(pairs, 0.1), _wquantile(pairs, 0.9))
+        if wrange is not None:
+            central = _wquantile(pairs, 0.5)
+            how = ("weighted median of " + str(len(with_c)) + " on the site mix (records/reference/"
+                   "group-weight.csv: " + ", ".join(f"{g} {gw[g]:.0%}" for g in sorted(cnt))
+                   + "); low and high are the weighted 10th and 90th percentiles")
+        elif len(with_c) >= 3:
             central = median(p["central"] for p in with_c)
             how = f"median of {len(with_c)}"
         elif with_c:
@@ -119,9 +172,13 @@ def summarise(rows, records, keys, examples_by_id):
                 if s and s not in sources:
                     sources.append(s)
         row = dict(zip(("archetype",) + tuple(keys) + ("unit",), k))
+        if wrange is not None:
+            vals = {round(x, 9) for p in per for x in p["all"]}
         row.update({"central": "" if central is None else f"{central:.6g}",
-                    "low": f"{min(vals):.6g}" if len(vals) > 1 else one_lo,
-                    "high": f"{max(vals):.6g}" if len(vals) > 1 else one_hi,
+                    "low": (f"{wrange[0]:.6g}" if wrange is not None
+                            else f"{min(vals):.6g}" if len(vals) > 1 else one_lo),
+                    "high": (f"{wrange[1]:.6g}" if wrange is not None
+                             else f"{max(vals):.6g}" if len(vals) > 1 else one_hi),
                     "n": len(per), "central-from": how,
                     "n-external": sum(1 for p in per if p["external"]),
                     "n-corrected": sum(1 for p in per if p["corrected"]),

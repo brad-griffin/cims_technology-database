@@ -114,9 +114,12 @@ sinter-plant_efficiency-strong,iron-and-steel,t,estimated,estimated,not-applicab
 sinter-plant,iron-and-steel,t,sourced,sourced,not-applicable,sourced,sourced,estimated,sourced,sourced
 smelting-vessel_smelting-reduction,iron-and-steel,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,t,estimated,estimated,estimated,guess,sourced,estimated,estimated,sourced
-binder_alkali-activated,cement,t,sourced,sourced,sourced,sourced,sourced,guess,sourced,sourced
-binder_blended-cement,cement,t,sourced,sourced,sourced,sourced,sourced,guess,identity,sourced
-binder_calcined-clay,cement,t,guess,guess,guess,guess,estimated,guess,guess,sourced
+binder_alkali-activated,cement,t,guess,guess,guess,guess,sourced,guess,sourced,sourced
+binder_blended-cement,cement,t,guess,guess,guess,guess,sourced,guess,identity,sourced
+binder_calcined-clay,cement,t,guess,guess,guess,guess,estimated,guess,missing,sourced
+grinding-mill_slag,cement,t,guess,guess,guess,guess,estimated,guess,guess,sourced
+kiln_clay-calcination,cement,t,guess,guess,guess,guess,sourced,estimated,guess,sourced
+calciner_clay-flash,cement,t,sourced,estimated,sourced,guess,sourced,estimated,sourced,sourced
 binder_carbonated,cement,t,guess,guess,guess,guess,estimated,guess,sourced,sourced
 calciner_indirect,cement,t,guess,guess,guess,guess,estimated,estimated,sourced,sourced
 grinding-mill_ball,cement,t,sourced,estimated,estimated,sourced,estimated,guess,identity,sourced
@@ -505,6 +508,6 @@ no-abatement_coal-mine-methane,mining,t,guess,guess,not-applicable,guess,guess,n
 fracturing-fleet_diesel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,sourced,sourced
 fracturing-fleet_dual-fuel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,sourced,sourced
 separator_naphthenic-froth-treatment,oil-and-gas,m3,guess,guess,guess,guess,estimated,missing,guess,sourced
-binder_portland-cement,cement,t,guess,guess,missing,sourced,estimated,missing,identity,sourced
+binder_portland-cement,cement,t,guess,guess,missing,guess,estimated,missing,identity,sourced
 separator_aromatics-extraction,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 separator_aromatics-extraction_efficiency-moderate,chemicals,t,estimated,estimated,estimated,sourced,estimated,estimated,missing,sourced

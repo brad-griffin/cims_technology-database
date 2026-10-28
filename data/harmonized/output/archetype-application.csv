@@ -736,12 +736,15 @@ binder_electrochemical,cement,<sector>.industrial-minerals.product.cement.binder
 binder_hydrothermal-silicate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 binder_portland-cement,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,baselines 2026-10-23 (modeller: build the missing baselines)
 binder_sulphoaluminate,cement,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_clay-flash,cement,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,added 2026-10-27 (S121)
 calciner_indirect,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 calciner_indirect,cement,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,,"non-metallic-minerals/lime-calcination: the leaves its sources placed it on Product override (band product review 2026-10-22, approved 2026-10-23): calcining duty scales with CaO: about 0.65 t CaO per t clinker, so 1 t clinker of calcination makes about 0.65 t lime; estimated."
 grinding-mill_ball,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
+grinding-mill_slag,cement,<sector>.industrial-minerals.product.cement.ground-slag,cement-ground-slag,,added 2026-10-27 (S121)
 grinding-mill_vertical-roller,cement,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement/cement-grinding-and-blending: every leaf of the end use
 kiln_calcium-looping,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,copied from kiln_oxy-fuel 2026-10-01
 kiln_calcium-silicate-feed,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,as kiln_dry-precalciner
+kiln_clay-calcination,cement,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,added 2026-10-27 (S121)
 kiln_dry-precalciner,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_dry-precalciner_ccs-diffuse,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route
 kiln_dry-precalciner_efficiency-moderate,cement,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement/clinker-production: the device's route

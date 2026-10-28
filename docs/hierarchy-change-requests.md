@@ -80,10 +80,19 @@ log is `docs/reviews/node-split-review_2026-10-22.csv`; the summary is in the pr
 
 | Item | Detail |
 | - | - |
+| Smelter acid plant (S95, 2026-10-27) | Add `metal-smelting.service.acid-plant` (t sulphuric acid) and give the copper smelting and converting techs a service_request to it: 3.25 t acid per t copper (range 2.5-4.0; factor `cf-acid-per-copper-schlesinger`, Schlesinger 2011). Its technology is `reactor_sulphuric-acid-metallurgical`. Not yet applied to the model inputs. |
 | `industrial-minerals.service.kiln-heat` | Most lime kilns request their fuel directly rather than this service. Revisit the service requests when the sector is reviewed. |
 | CCS cost sets | `service.ccs.concentrated` and `.diffuse` need their own cost sets. CIMS priced one CCS service per sector. |
 | Magnesium SF6 | The casting SF6 factors are in the Alberta and Ontario files only. Quebec, British Columbia and Manitoba carry demand with no factor. |
 | Titanium slag | `metal-smelting.product.titanium-slag` has no demand series. |
+
+## Applied to the CIMS model inputs
+
+The model inputs (`data/model_inputs/model/` in the cims repo) are gitignored there, so each change made to them is logged here with a script that applies it and one that reverts it (`docs/cims-changes/`).
+
+| Date | Change | Files | Scripts |
+| - | - | - | - |
+| 2026-10-27 | Cement recipes (S121). New techs at Products.Cement that request a recipe: LC3 calcined clay cement (clinker 0.50, finish grinding, calcined clay 0.30), Slag blended cement (clinker 0.55, finish grinding, ground slag 0.40), Alkali-activated cement (ground slag 0.85, drive 0.03 GJ; the activator is not modelled), Electrochemical cement (Sublime; electricity 5.0 GJ, available 2030). Clinker requests scale with each province's clinker per t Portland cement over 0.95. New nodes Products.Cement.Calcined Clay (Flash calciner: fcc 151.6, heat 3.03 GJ, drive 0.10 GJ; Rotary kiln calciner: fcc 170, heat 3.59, drive 0.12) and Products.Cement.Ground Slag (Slag drying and grinding mill: fcc 90, heat 0.55, drive 0.16). Existing techs kept for calibration. Costs in 2025 CAD per t-yr; the source label is "EMRG technology database 2026-10-27 (2025 CAD)". | `industrial_minerals_{ab,bc,nl,ns,on,qc,sk}.csv` (87 rows each) | `apply_cement_recipes_2026_10_27.py`, `revert_cement_recipes_2026_10_27.py` |
 
 ## Nodes no archetype serves
 

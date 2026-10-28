@@ -107,7 +107,7 @@ def main(argv) -> int:
               "(records/reference/source-correction.csv)")
     # a record whose parameter the extraction got wrong (biogenic CO2 entered as
     # combustion or process CO2): records/reference/parameter-remap.csv (2026-10-14)
-    from pipeline.common import REFERENCE, read
+    from pipeline.common import REFERENCE, read, split_list
     remap = {r["record-id"]: r for r in read(REFERENCE / "parameter-remap.csv")}
     unknown = set(remap) - {r["record-id"] for r in L.facts}
     if unknown:
@@ -208,6 +208,35 @@ def main(argv) -> int:
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
     ri = rollin.apply(psum, rec)
     print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
+    # a carrier another example names but the archetype's split leaves out (S160,
+    # 2026-10-27): listed for the modeller to add by hand (a judgement or an
+    # additive row), never added by the pipeline
+    have = {(r["archetype"], r.get("target", "")) for r in psum
+            if r["parameter"] == "specific-energy-consumption" and r.get("central") not in ("", None)}
+    gaps = {}
+    for r in L.facts:
+        a = rec.by_key.get(r.get("archetype", ""))
+        t = (r.get("target-norm") or r.get("target") or "").strip()
+        if (not a or r["parameter"] != "specific-energy-consumption" or t not in rec.carriers
+                or not (r.get("value-norm") or r.get("value-min-norm"))):
+            continue
+        ex = r.get("excluded") or ""
+        if ex and "kept out until" not in ex:
+            continue
+        if (a["archetype"], t) in have:
+            continue
+        g = gaps.setdefault((a["archetype"], t), {"archetype": a["archetype"], "carrier": t,
+                                                   "listed": "yes" if t in split_list(a.get("carriers", "")) else "no",
+                                                   "examples": set(), "records": [], "values": []})
+        g["examples"].add(r["example-id"])
+        g["records"].append(r["record-id"])
+        g["values"].append(r.get("value-norm") or r.get("value-min-norm"))
+    rows = [dict(g, examples="; ".join(sorted(g["examples"])), records="; ".join(g["records"]),
+                 values="; ".join(g["values"])) for g in gaps.values()]
+    write(OUTPUT / "carrier-check.csv", ["archetype", "carrier", "listed", "values", "records", "examples"],
+          sorted(rows, key=lambda r: (r["archetype"], r["carrier"])))
+    print(f"  carriers named by an example but missing from the archetype: {len(rows)} "
+          "(output/carrier-check.csv; add by hand)")
     for r in unfilled:
         r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "", "rationale": ""})
     rollin.apply(unfilled, rec)
