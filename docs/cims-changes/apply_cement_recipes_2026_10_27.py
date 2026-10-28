@@ -14,9 +14,9 @@ The existing techs (Std process, Carbon curing, Increased clinker substitution) 
 for calibration. Values are the database's central values (2025 CAD), from
 data/harmonized/output after the S121 build. The clinker request is scaled by the
 province's own clinker per t Portland cement over 0.95. The alkali activator is a
-cost only, not a service request (Brad 2026-10-28: the sectors are not linked): the
-database's opex-variable of 75 CAD per t binder is added to the tech's fom, since the
-model inputs have no variable O&M parameter.
+cost only (Brad 2026-10-28: the sectors are not linked): the database's opex-variable
+of 75 CAD per t binder is a service request to CIMS.Generic Fuels.VOM, which costs $1
+per unit, as the CCS nodes carry their variable cost.
 
 STATUS (Brad 2026-10-28): NOT APPLIED. The design stays in the tech_data hierarchy
 (records/cims_hierarchy.csv) and the change log (docs/hierarchy-change-requests.md)
@@ -90,8 +90,9 @@ def main(folder):
                     [(CL, "tonne", round(0.50 * k, 4)), (FG, "tonne", fg), (CCn, "tonne", 0.30)] + aux)
         new += tech(cem, "Cement", "Slag blended cement", 2020, 25, 0, 8.0, 0.651,
                     [(CL, "tonne", round(0.55 * k, 4)), (FG, "tonne", fg), (GSn, "tonne", 0.40)] + aux)
-        new += tech(cem, "Cement", "Alkali-activated cement", 2025, 25, 0, 15.0, 1.221 + 75.0,
-                    [(GSn, "tonne", 0.85), (f"{pre}.Direct Drive", "GJ", 0.03)] + aux)
+        new += tech(cem, "Cement", "Alkali-activated cement", 2025, 25, 0, 15.0, 1.221,
+                    [(GSn, "tonne", 0.85), (f"{pre}.Direct Drive", "GJ", 0.03),
+                     ("CIMS.Generic Fuels.VOM", "$", 75.0)] + aux)
         new += tech(cem, "Cement", "Electrochemical cement", 2030, 25, 0, 1200.0, 97.68,
                     [(f"CIMS.CAN.{R}.Electricity", "GJ", 5.0)] + aux)
         new += node(CCn, "Calcined Clay", "tonne")
