@@ -306,7 +306,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
 | RTC 2022 | 20 | confirmed against the held document 2026-10-02 |
 | Svensson et al. 2021 | 20 | confirmed against the held document 2026-09-29 |
-| Coursol et al. 2015 | 19 | confirmed against the held document 2026-10-02 |
 | Zoulias 2014 (ETSAP P12) | 19 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
 | Hu et al. 2009 | 19 | confirmed against the held document 2026-10-03 |
 | Kwiatkowski et al. 2006 | 19 | confirmed against the held document 2026-10-02 |
@@ -331,6 +330,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Sharp 2014 | 16 | confirmed against the held document 2026-10-11 |
 | Worrell and Boyd 2022 | 16 | confirmed against the held document 2026-10-03 |
 | Zier et al. 2023 | 16 | confirmed against the held document 2026-10-02 |
+| Coursol et al. 2015 | 15 | confirmed against the held document 2026-10-02 |
 | IAI 2026 | 15 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2000 | 15 | supplied by the modeller; UKERC's short form says 2000 but the document is dated April 2013 |
 | NCCP 1999 (magnesium options) | 15 | confirmed against the held document 2026-10-02 |

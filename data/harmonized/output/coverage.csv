@@ -366,7 +366,7 @@ process-improvement_pre-reduction,non-ferrous-metals,t,guess,guess,not-applicabl
 rolling-mill_continuous-casting,non-ferrous-metals,t,estimated,estimated,not-applicable,sourced,sourced,guess,guess,sourced
 smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,t,estimated,estimated,estimated,proxy,estimated,guess,guess,sourced
 smelting-vessel_flash_efficiency-strong,non-ferrous-metals,t,estimated,estimated,estimated,proxy,estimated,guess,guess,sourced
-smelting-vessel_flash,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,estimated,guess,sourced
+smelting-vessel_flash,non-ferrous-metals,t,sourced,estimated,sourced,sourced,estimated,estimated,missing,sourced
 smelting-vessel_top-submerged-lance,non-ferrous-metals,t,sourced,estimated,estimated,sourced,estimated,guess,sourced,sourced
 dryer_direct-fired,other-industry,t,estimated,estimated,not-applicable,sourced,estimated,estimated,sourced,sourced
 dryer_solid-fuel,other-industry,t,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
@@ -484,8 +484,8 @@ fan_mine-ventilation,mining,t,guess,guess,not-applicable,estimated,estimated,gue
 storage-cavern_hydrogen,hydrogen,GJ,sourced,sourced,not-applicable,guess,sourced,guess,identity,sourced
 liquefaction-train_base-load,oil-and-gas,t,sourced,estimated,sourced,guess,sourced,guess,estimated,sourced
 liquefaction-train_floating,oil-and-gas,t,sourced,estimated,not-applicable,guess,estimated,guess,guess,sourced
-smelting-vessel_bath-tuyere,non-ferrous-metals,t,guess,guess,guess,sourced,estimated,estimated,guess,sourced
-smelting-vessel_bottom-blowing,non-ferrous-metals,t,guess,guess,guess,sourced,estimated,guess,guess,sourced
+smelting-vessel_bath-tuyere,non-ferrous-metals,t,guess,guess,guess,guess,estimated,estimated,missing,sourced
+smelting-vessel_bottom-blowing,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,missing,sourced
 grinding-mill_hpgr,mining,t,sourced,estimated,estimated,sourced,estimated,guess,identity,sourced
 boiler_oxy-fuel,heat-supply,GJ,sourced,sourced,not-applicable,sourced,estimated,identity,sourced,sourced
 pipeline_plastic-liner,oil-and-gas,t,sourced,estimated,not-applicable,not-applicable,estimated,identity,missing,sourced
@@ -498,7 +498,7 @@ gasifier_biomass-fischer-tropsch_ccs-concentrated,biofuels,GJ,estimated,estimate
 reactor_small-nuclear-power,power-generation,GJ,sourced,sourced,sourced,sourced,sourced,identity,identity,sourced
 evaporator_crystallizer-produced-water,oil-and-gas,m3,guess,guess,not-applicable,guess,estimated,estimated,missing,sourced
 melting-furnace_twin-chamber,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,estimated,sourced
-shaft-furnace_hydrogen-direct-reduction,iron-and-steel,t,sourced,estimated,estimated,sourced,sourced,estimated,sourced,sourced
+shaft-furnace_hydrogen-direct-reduction,iron-and-steel,t,sourced,estimated,estimated,guess,sourced,estimated,sourced,sourced
 flotation-cell_potash,mining,t,missing,missing,missing,estimated,estimated,guess,missing,sourced
 calciner_hydrogen-fired,non-ferrous-metals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 separator_reverse-osmosis,mining,m3,estimated,estimated,estimated,sourced,estimated,estimated,identity,sourced

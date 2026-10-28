@@ -521,7 +521,10 @@ Judgements (`fill-judgement.csv`), ground rules adopted 2026-10-09:
   parameter's target unit; a cost's range at least a factor of two, an energy
   use's at least ±30%, a plant size's at least a factor of three;
 - `basis` is one of `analogue-archetype`, `held-source-figure`,
-  `engineering-relation`, `experience`, so the weakest guesses are findable;
+  `engineering-relation`, `experience` or `added-carrier`, so the weakest guesses are findable;
+  `added-carrier` is a carrier another example names that the archetype's split leaves out
+  (output/carrier-check.csv), added by hand: it adds to the energy-use total rather than
+  being scaled to fit inside it (S160, 2026-10-28);
 - the rationale names the analogue or relation and the step to the number;
 - `author` is `claude-draft` until the modeller accepts; `status` is `draft`,
   `accepted`, `changed` or `rejected` (a rejected row stays, with the reason, so

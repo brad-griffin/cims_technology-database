@@ -51,7 +51,8 @@ MARKER = "not-applicable"
 STATUSES = ("active", "off")
 JUDGEMENT_STATUSES = ("draft", "accepted", "changed", "rejected", "active")
 JUDGEMENT_LIVE = ("draft", "accepted", "changed", "active")
-JUDGEMENT_BASES = ("analogue-archetype", "held-source-figure", "engineering-relation", "experience")
+JUDGEMENT_BASES = ("analogue-archetype", "held-source-figure", "engineering-relation", "experience",
+                   "added-carrier")
 FOSSIL = {"natural-gas", "coal", "oil", "diesel", "gasoline", "coke", "petroleum-coke", "lpg", "naphtha",
           "fuel-oil", "heavy-fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
 CHP = re.compile(r"\bCHP\b")
@@ -2315,7 +2316,7 @@ def check(records, fail) -> None:
         if (j.get("status") or "active") not in JUDGEMENT_STATUSES:
             fail["fill-judgement status must be draft, accepted, changed or rejected"].append(k)
         if j.get("basis") and j["basis"] not in JUDGEMENT_BASES:
-            fail["fill-judgement basis must be analogue-archetype, held-source-figure, engineering-relation or experience"].append(k)
+            fail["fill-judgement basis must be analogue-archetype, held-source-figure, engineering-relation, experience or added-carrier"].append(k)
         c, lo, hi = fnum(j.get("central")), fnum(j.get("low")), fnum(j.get("high"))
         if c is None or lo is None or hi is None or not lo <= c <= hi:
             fail["fill-judgement needs central within a stated low-high range"].append(k)
@@ -2586,7 +2587,12 @@ def _sum_carriers(psum, records, ctx, stats, create=True):
         # a total no guess fed is not raised by guessed carriers (modeller
         # 2026-10-21): the guessed carriers are scaled down to the room the other
         # carriers leave, so the split still sums to the total
-        guessed = {t: r for t, r in l1.items() if (r.get("grade") or "sourced") == "guess"}
+        # (a carrier another example names, added by hand with basis added-carrier
+        # (S160, 2026-10-28), adds to the total rather than fitting inside it)
+        added = any((r.get("inputs") or "").startswith("added-carrier") for r in rows.values())
+        guessed = {t: r for t, r in l1.items() if (r.get("grade") or "sourced") == "guess"
+                   and not (r.get("inputs") or "").startswith("added-carrier")
+                   and not (added and t == FUEL_AGG)}
         firm = sum(_lohi(r)[0] for t, r in l1.items() if t not in guessed)
         gsum = sum(_lohi(r)[0] for r in guessed.values())
         # (a total that is only the one carrier any example names is not a whole
