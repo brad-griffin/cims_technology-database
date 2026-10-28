@@ -185,5 +185,12 @@ def summarise(rows, records, keys, examples_by_id):
                     "external-factors": "; ".join(dict.fromkeys(x for p in per for x in p["external"])),
                     "sources": "; ".join(sources),
                     "examples": "; ".join(sorted(by_ex))})
+        # an energy use's band stops at zero: a negative bound is a source's net-export
+        # case (an assay range whose low end exports steam), not a use (Brad
+        # 2026-10-28, RX017); a negative central (energy recovered) is left as it is
+        if row.get("parameter") == "specific-energy-consumption" and central is not None and central >= 0 \
+                and fnum(row["low"]) is not None and fnum(row["low"]) < 0:
+            row["low"] = "0"
+            row["central-from"] += "; low floored at 0 (a negative bound is net export)"
         out.append(row)
     return out

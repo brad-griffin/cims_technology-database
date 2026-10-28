@@ -208,7 +208,7 @@ reactor_co2-to-ome3-5,cf-hhv-lhv-hydrogen,cf-hhv-lhv-ome3-5,"hydrogen in, OME3-5
 reactor_ethanol-to-ethylene,,,derived 2026-10-09 from carriers (none) and product (high-value chemicals) for the regional LHV default; review
 reactor_methanol-to-olefins,cf-hhv-lhv-methanol,,derived 2026-10-09 from carriers (methanol) and product (high-value chemicals) for the regional LHV default; review
 reactor_propane-dehydrogenation,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; electricity) and product (intermediate chemical) for the regional LHV default; review
-reactor_pyrolysis-oil,,,derived 2026-10-09 from carriers (none) and product (product) for the regional LHV default; review
+reactor_pyrolysis-oil,cf-hhv-lhv-solid-liquid,cf-hhv-lhv-solid-liquid,"biomass in; upgraded hydrocarbon blendstocks out (PB014, 2026-10-28)"
 rolling-mill_hot,,,derived 2026-10-09 from carriers (electricity) and product (rolled product) for the regional LHV default; review
 rolling-mill_thin-slab,cf-hhv-lhv-methane,,derived 2026-10-09 from carriers (natural-gas; electricity) and product (cast product) for the regional LHV default; review
 sinter-plant_efficiency-strong,,,derived 2026-10-09 from carriers (none) and product (sinter or pellets) for the regional LHV default; review
@@ -235,3 +235,5 @@ steam-cracker_fired-tubular_hydrogen-fuel,cf-hhv-lhv-hydrogen,,S149 variant of s
 calciner_clay-flash,cf-hhv-lhv-methane,,"fuel natural gas (D21); product t calcined clay (S121, 2026-10-27)"
 kiln_clay-calcination,cf-hhv-lhv-methane,,"fuel natural gas (D21); product t calcined clay (S121, 2026-10-27)"
 grinding-mill_slag,cf-hhv-lhv-methane,,"drier fuel natural gas; product t ground slag (S121, 2026-10-27)"
+reactor_co2-to-gasoline,cf-hhv-lhv-hydrogen,cf-hhv-lhv-solid-liquid,"hydrogen in; gasoline out (PB014, 2026-10-28)"
+chiller_hvac,,,"no fuel carrier (electricity); product GJ (split from chiller_vapour-compression 2026-10-28, S164)"

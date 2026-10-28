@@ -198,7 +198,7 @@ branch,technology,data-filepath
 <sector>.chemicals.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.chemicals.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.chemicals.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.chemicals.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.chemicals.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.chemicals.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.chemicals.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.chemicals.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -298,7 +298,7 @@ branch,technology,data-filepath
 <sector>.coal-mining.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.coal-mining.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.coal-mining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.coal-mining.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.coal-mining.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.coal-mining.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.coal-mining.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.coal-mining.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -380,7 +380,7 @@ branch,technology,data-filepath
 <sector>.commercial.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.commercial.service.hot-water,,data/service-technology-map/commercial/service/hot-water
 <sector>.commercial.service.hvac,,data/service-technology-map/commercial/service/hvac
-<sector>.commercial.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/commercial/service/hvac/cooling
+<sector>.commercial.service.hvac.cooling,chiller_hvac,data/service-technology-map/commercial/service/hvac/cooling
 <sector>.commercial.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/commercial/service/hvac/cooling
 <sector>.commercial.service.hvac.heating_cold,,data/service-technology-map/commercial/service/hvac/heating_cold
 <sector>.commercial.service.hvac.heating_marine,,data/service-technology-map/commercial/service/hvac/heating_marine
@@ -507,7 +507,7 @@ branch,technology,data-filepath
 <sector>.industrial-minerals.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.industrial-minerals.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.industrial-minerals.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.industrial-minerals.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.industrial-minerals.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.industrial-minerals.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.industrial-minerals.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.industrial-minerals.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -623,7 +623,7 @@ branch,technology,data-filepath
 <sector>.iron-and-steel.service.hot-metal,smelting-vessel_smelting-reduction,data/service-technology-map/iron-and-steel/service/hot-metal
 <sector>.iron-and-steel.service.hot-metal,smelting-vessel_smelting-reduction_ccs-concentrated,data/service-technology-map/iron-and-steel/service/hot-metal
 <sector>.iron-and-steel.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.iron-and-steel.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.iron-and-steel.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.iron-and-steel.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.iron-and-steel.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.iron-and-steel.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -743,7 +743,7 @@ branch,technology,data-filepath
 <sector>.light-industrial.service.heat.heat-treatment,furnace_heat-treatment,data/service-technology-map/light-industrial/service/heat/heat-treatment
 <sector>.light-industrial.service.heat.heat-treatment,induction-heater_reheating,data/service-technology-map/light-industrial/service/heat/heat-treatment
 <sector>.light-industrial.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.light-industrial.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.light-industrial.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.light-industrial.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.light-industrial.service.hvac.cooling,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.light-industrial.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
@@ -918,7 +918,7 @@ branch,technology,data-filepath
 <sector>.metal-smelting.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.metal-smelting.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.metal-smelting.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.metal-smelting.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.metal-smelting.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.metal-smelting.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.metal-smelting.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.metal-smelting.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -1015,7 +1015,7 @@ branch,technology,data-filepath
 <sector>.mining.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.mining.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.mining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.mining.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.mining.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.mining.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.mining.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.mining.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -1323,8 +1323,8 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil,,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,reactor_delayed-coking,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/coking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
-<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking-oxy-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking_ccs-diffuse,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
+<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_fluid-catalytic-cracking_ccs-oxy-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing_electric-heating,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
 <sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,reactor_hydroprocessing_hydrogen-fuel,data/service-technology-map/petroleum-refining/product/petroleum-fractions/cracked-gas-oil/hydrocracking
@@ -1364,7 +1364,7 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.petroleum-refining.service.fuel-blend.still-gas,,data/service-technology-map/general-services/fuel-blend/still-gas
 <sector>.petroleum-refining.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.petroleum-refining.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.petroleum-refining.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.petroleum-refining.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.petroleum-refining.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.petroleum-refining.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating
@@ -1529,7 +1529,7 @@ branch,technology,data-filepath
 <sector>.pulp-and-paper.service.fuel-blend.diesel,,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.pulp-and-paper.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.pulp-and-paper.service.hvac,,data/service-technology-map/general-services/industrial/hvac
-<sector>.pulp-and-paper.service.hvac.cooling,chiller_vapour-compression,data/service-technology-map/general-services/industrial/hvac/cooling
+<sector>.pulp-and-paper.service.hvac.cooling,chiller_hvac,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.pulp-and-paper.service.hvac.cooling,cooling-tower_free-evaporative,data/service-technology-map/general-services/industrial/hvac/cooling
 <sector>.pulp-and-paper.service.hvac.heating,heat-pump_hvac,data/service-technology-map/general-services/industrial/hvac/heating
 <sector>.pulp-and-paper.service.hvac.heating,hvac-heater_fuel-fired,data/service-technology-map/general-services/industrial/hvac/heating

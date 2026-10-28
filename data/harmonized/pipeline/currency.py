@@ -49,7 +49,7 @@ def exchange_source(year: int) -> str:
 MONEY = re.compile(r"^(\d{4})_([A-Z]{3})")
 
 
-def factors(fact_rows) -> tuple[dict[str, float], list[str]]:
+def factors(fact_rows, write_output=True) -> tuple[dict[str, float], list[str]]:
     deflator = {(r["Context"], int(r["Year"])): float(r["Value"])
                 for r in read(REFERENCE / "reference-currency-deflator.csv")}
     exchange = {(r["Context"], int(r["Year"])): float(r["Value"])
@@ -85,6 +85,7 @@ def factors(fact_rows) -> tuple[dict[str, float], list[str]]:
                      "source-id": "; ".join([DEFLATOR_SOURCE.get(cur, DEFLATOR_DEFAULT)]
                                             + ([exchange_source(TARGET_YEAR)] if cur != TARGET_CUR else [])
                                             + EXCHANGE_EXTRA.get(cur, []))})
-    write(OUTPUT / "currency-conversion.csv",
+    if write_output:   # a second call (the fill's energy prices) must not overwrite the build's table
+        write(OUTPUT / "currency-conversion.csv",
           ["from-currency", "to-currency", "factor", "method", "source-id"], rows)
     return out, skipped

@@ -117,7 +117,7 @@ SITE_DEN = re.compile(r"/(station|plant|well|facility|platform|site)$")
 CARRIER_VOLUME = {"natural-gas": "cf-natural-gas-hhv-volume", "hydrogen": "cf-h2-hhv-volume"}
 ENERGY_DEN = re.compile(r"/(MMBtu|mmbtu|MBtu|Btu|therm|MWh|kWh|GWh|MJ|TJ|PJ|J)$")  # J: Clearstone ng/J (S153)
 FUEL_INPUT = re.compile(r"fuel[- ]input|of fuel\b|per (MMBtu|MWh|kWh|GJ|MJ|therm) (of )?(fuel|input)", re.I)
-PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "MWh"}
+PHYSICAL_SERVICE = {"t", "GJ", "m3", "1000-m3", "m", "m3-km", "MWh"}
 # a cost per unit of power rating, as a multiple of "per kW"
 PER_POWER = {"W": 1e3, "kW": 1.0, "MW": 1e-3, "kW-yr": 1.0, "kW-per-yr": 1.0}
 # a cost per unit of LUMEN rating (lighting, ruling 2026-10-14), as a multiple of

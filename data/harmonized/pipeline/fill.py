@@ -319,8 +319,14 @@ def m_inverse_net_feed_efficiency(rule, a, have, ctx):
 
 def m_fuel_emission_factor(rule, a, have, ctx):
     p, t = rule["parameter"], rule["target"]
+    mid = None
     if (p, t) in have:
-        return []
+        # a range midpoint that implies a CO2 factor above every fuel the archetype
+        # burns gives way to the fuel identity, where that sits inside the source's
+        # range (Brad 2026-10-28, MCF014)
+        mid = have[(p, t)]
+        if not _live(mid) or mid.get("method") != "range-midpoint":
+            return []
     secs = _adding_carriers({k[1]: v for k, v in have.items() if k[0] == SEC and k[1] and _live(v)})
     if "fuel" in secs:
         # `fuel` is known by fuel only where named fuels stand beside it: the carriers
@@ -376,9 +382,20 @@ def m_fuel_emission_factor(rule, a, have, ctx):
             ctx.setdefault("comb_conflict", []).append(
                 f"{a['archetype']}: fuel CO2 {c:.4g} + process {pv:.4g} against sourced total {tv:.4g}")
             return []
-    return [{"parameter": p, "target": t, "central": c, "low": lo, "high": hi,
-             "inputs": ins + ext, "grades": grades,
-             "sources": "; ".join(dict.fromkeys(srcs)), "external": ext}]
+    out = {"parameter": p, "target": t, "central": c, "low": lo, "high": hi,
+           "inputs": ins + ext, "grades": grades,
+           "sources": "; ".join(dict.fromkeys(srcs)), "external": ext}
+    if mid is not None:
+        mv, ml, mh = _vals(mid)
+        fuel = sum(_vals(r)[0] or 0.0 for r in fos.values())
+        efmax = max(fnum(ctx["factors"].rows[f"cf-ef-co2-{k}"]["factor"]) for k in fos)
+        if mv is None or ml is None or mh is None or fuel <= 0 or mv / fuel <= efmax or not (ml <= c <= mh):
+            return []
+        ctx.setdefault("total_below_parts", []).append(
+            f"{a['archetype']} {t}: combustion midpoint {mv:.4g} (implies {mv / fuel:.3g} t/GJ, above every listed fuel) "
+            f"replaced by the fuel identity {c:.4g}")
+        out.update({"replace": mid, "inputs": ins + ext + [f"replaced range midpoint {mv:.4g} ({ml:.4g}-{mh:.4g})"]})
+    return [out]
 
 
 def m_sec_from_emissions(rule, a, have, ctx):
@@ -420,7 +437,12 @@ def m_sum(rule, a, have, ctx):
     species = {k[1] for k in have if k[0] in parts and k[1]}
     out = []
     for t in sorted(species):
-        if rule["target"] not in ("*", t) or (p, t) in have:
+        if rule["target"] not in ("*", t):
+            continue
+        if (p, t) in have:
+            r = _below_parts(p, t, parts, a, have, ctx, _scope(rule))
+            if r:
+                out.append(r)
             continue
         rows = [have.get((q, t)) for q in parts]
         if not all(_live(r) for r in rows):
@@ -434,6 +456,44 @@ def m_sum(rule, a, have, ctx):
                     "sources": "; ".join(dict.fromkeys(s for r in rows for s in split_list(r.get("sources", "")))),
                     "external": []})
     return out
+
+
+BELOW_PARTS_GRADES = ("sourced", "identity", "estimated")
+
+
+def _below_parts(p, t, parts, a, have, ctx, sc=None):
+    """A sourced total below its own parts (combustion + process, same species) is on
+    another scope: the parts replace it where they are sourced, identities or
+    estimates, the combustion part is present and the sum is more than 10% above the
+    total (Brad 2026-10-28, IS009/MCF011). An absent process row counts as zero; a
+    capture variant's total is net of capture and is left alone."""
+    sc = sc or {}
+    tot = have.get((p, t))
+    if not _live(tot) or (tot.get("grade") or "sourced") != "sourced" or tot.get("method") not in (None, "", "pooled"):
+        return None
+    if "_ccs-" in a["archetype"] or a.get("family") == "co2-capture" or _live(have.get(("emissions-captured", t))):
+        return None                       # a total net of capture
+    if a["archetype"] in split_list(sc.get("below-parts-exclude", "").replace("|", ";")):
+        return None                       # parts on another basis, ruled on (see the rule's rationale)
+    rows = [have.get((q, t)) for q in parts]
+    present = [(q, r) for q, r in zip(parts, rows) if _live(r)]
+    if not present or present[0][0] != parts[0]:
+        return None                       # no combustion part
+    if any((r.get("grade") or "sourced") not in BELOW_PARTS_GRADES for _, r in present):
+        return None
+    tv = fnum(tot["central"])
+    c = sum(fnum(r["central"]) or 0.0 for _, r in present)
+    if tv is None or tv <= 0 or c <= 1.1 * tv:
+        return None
+    lo = sum(fnum(r.get("low")) if fnum(r.get("low")) is not None else fnum(r["central"]) for _, r in present)
+    hi = sum(fnum(r.get("high")) if fnum(r.get("high")) is not None else fnum(r["central"]) for _, r in present)
+    ctx.setdefault("total_below_parts", []).append(
+        f"{a['archetype']} {t}: sourced total {tv:.4g} replaced by the parts {c:.4g}")
+    return {"parameter": p, "target": t, "central": c, "low": lo, "high": hi, "replace": tot,
+            "inputs": [_input(r, f"{q}_{t}") for q, r in present] + [f"replaced sourced total {tv:.4g}"],
+            "grades": ["identity"] + [r.get("grade", "sourced") for _, r in present],
+            "sources": "; ".join(dict.fromkeys(s for _, r in present for s in split_list(r.get("sources", "")))),
+            "external": []}
 
 
 def m_difference(rule, a, have, ctx):
@@ -1210,6 +1270,12 @@ def e_class_median(rule, a, ctx):
     widen = fnum(rule.get("widen")) or 0.0
     c = median(fnum(r["central"]) for _, r in rows)
     lo, hi = _range(rows, c, widen, p)
+    if p == "lifetime":
+        # the band of a class lifetime comes from the members' centrals (10th-90th
+        # percentile), not from the lowest low any member prints (a stack or
+        # measure interval of a year): Brad 2026-10-28, RX019/OT023
+        cs = [fnum(r["central"]) for _, r in rows]
+        lo, hi = min(_quantile(cs, 0.1), c * (1 - widen)), max(_quantile(cs, 0.9), c * (1 + widen))
     return {"central": c, "low": lo, "high": hi, "grade": "sourced",
             "inputs": [f"class {cls}: median of {len(rows)} archetypes"
                        + (": " + ", ".join(sorted(k for k, _ in rows)) if len(rows) <= 25 else "")],
@@ -1258,14 +1324,18 @@ def e_cost_ratio(rule, a, ctx):
     # an abatement device (product: t of methane or CO2 abated) prices its capital
     # and labour on another footing from a plant making a product: the two never
     # share a ratio pool (S142/OG001: methane devices had set the LNG trains' O&M)
-    ratios = {k: v for k, v in ratios.items() if _abates(A[k]) == _abates(a)}
+    # `pool-as-plant`: an abatement archetype that is a process plant in its own right
+    # (flare-gas recovery: a compressor station) takes its ratio from the plants, at
+    # any product unit, not from the methane devices (Brad 2026-10-28, OG002)
+    as_plant = a["archetype"] in split_list(sc.get("pool-as-plant", "").replace("|", ";"))
+    ratios = {k: v for k, v in ratios.items() if _abates(A[k]) == (_abates(a) and not as_plant)}
     # same product unit at the first three levels; the last level pools every unit
     # (the ratio is per year of the same product unit on both sides)
     levels = ["equipment", "family", None, "any-unit"]
     pool = {}
     for i, level in enumerate(levels):
         pool = {k: v for k, v in ratios.items()
-                if (level == "any-unit" or _ratio_unit(A[k]["product-unit"]) == _ratio_unit(a["product-unit"]))
+                if (level == "any-unit" or as_plant or _ratio_unit(A[k]["product-unit"]) == _ratio_unit(a["product-unit"]))
                 and (level in (None, "any-unit") or A[k][level] == a[level])}
         need = needs[min(i, len(needs) - 1)]
         if len(pool) >= need:
@@ -1660,6 +1730,19 @@ def _tier1(k, host, p, unit, ctx):
     return median(vals), min(vals), max(vals), ins
 
 
+def _ccs_extra(k, p, t=""):
+    """An add-on a capture variant needs beyond the capture node's plant, per t CO2
+    captured (records/reference/ccs-addon-extra.csv): the air separation unit of
+    an oxy-fired host (S169, Brad 2026-10-28). Returns (central, low, high, note)
+    or None."""
+    for r in read(RECORDS / "reference" / "ccs-addon-extra.csv"):
+        if r["archetype"] == k and r["parameter"] == p and (r.get("target") or "") == t:
+            c = fnum(r["value"])
+            lo, hi = fnum(r.get("value-min")), fnum(r.get("value-max"))
+            return c, (lo if lo is not None else c), (hi if hi is not None else c), r.get("note", "")
+    return None
+
+
 def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
     """A host-with-capture variant's cost = the host plant's + the capture
     add-on's. The add-on: same-source evidence first (tier 1), else the median
@@ -1723,6 +1806,12 @@ def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
         else:
             stats["ccs add-on not derivable"] = stats.get("ccs add-on not derivable", 0) + 1
             continue
+        x = _ccs_extra(k, p)
+        if x and cap:
+            ac, al, ah = ac + x[0] * cap[0], al + x[1] * cap[1], ah + x[2] * cap[2]
+            ag = worst([ag, "guess"])
+            ains = ains + [f"plus {x[0]:.4g} per t CO2 captured ({x[3][:60]})"]
+            tier += "; plus records/reference/ccs-addon-extra.csv"
         g = worst([rule["grade"], hg, ag])
         ctx["ccs_report"].append({"archetype": k, "host": host, "parameter": p, "unit": unit,
                                   "host-value": _g(hc), "add-on": _g(ac), "tier": tier,
@@ -1777,24 +1866,31 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
         sh = {t: v for t, v in sh.items() if v > 0} or {"electricity": 1.0}
         add = per_t * cap[0]
         g = worst([rule["grade"], tot.get("grade", "sourced"), cap[3]])
+        xe = _ccs_extra(k, p, "electricity")
+        xadd = xe[0] * cap[0] if xe else 0.0
+        if xe:
+            g = worst([g, "guess"])
+            sh.setdefault("electricity", 0.0)
         ins = cap[4] + [(f"ccs.{node} reference plant {next(iter(nm))} {per_t:.4g} GJ/t CO2" if len(nm) == 1 and next(iter(nm)) == REFERENCE_CAPTURE.get(node) else f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}")]
         # host rows, every carrier, then the add-on on top
         for (q, t), r in sorted(hh.items()):
             if q != p or is_component_target(t) or not _live(r) or (t and _apart(r)):
                 continue    # a carrier pooled apart is not part of the host's total (2026-10-24)
             c, lo, hi = _lohi(r)
-            extra = add if not t else add * sh.get(t, 0.0)
+            extra = (add + xadd) if not t else add * sh.get(t, 0.0) + (xadd if t == "electricity" else 0.0)
             _put(psum, h, _row(k, p, t, r["unit"], c + extra, lo + extra, hi + extra,
                                worst([g, r.get("grade", "sourced")]), rule,
                                [_input(r, f"{host} {p}" + (f"_{t}" if t else "")), f"add-on {extra:.4g}"] + ins,
                                r.get("sources", "")), stats, rule["rule-id"])
         for t, s in sh.items():
             if (p, t) not in hh:
-                _put(psum, h, _row(k, p, t, tot["unit"], add * s, add * s, add * s, g, rule,
+                v = add * s + (xadd if t == "electricity" else 0.0)
+                _put(psum, h, _row(k, p, t, tot["unit"], v, v, v, g, rule,
                                    [f"capture add-on only ({s:.0%} of {add:.4g})"] + ins, ""), stats, rule["rule-id"])
         _put(psum, h, _row(k, p, "host-plant", tot["unit"], *_lohi(tot), worst([g, tot.get("grade", "sourced")]),
                            rule, [_input(tot, f"{host} {p}")], tot.get("sources", "")), stats, rule["rule-id"] + ":host-plant")
-        _put(psum, h, _row(k, p, "ccs-add-on", tot["unit"], add, add, add, g, rule, ins, ""),
+        _put(psum, h, _row(k, p, "ccs-add-on", tot["unit"], add + xadd, add + xadd, add + xadd, g, rule,
+                           ins + ([f"plus {xe[0]:.4g} GJ electricity per t CO2 ({xe[3][:60]})"] if xe else []), ""),
              stats, rule["rule-id"] + ":ccs-add-on")
 
 
@@ -1894,7 +1990,7 @@ def pm_rebuild(rule, psum, records, target_unit, ctx, stats):
     from . import currency
     p = rule["parameter"]
     rows = [r for r in read(REFERENCE / "rebuild-allowance.csv") if r["parameter"] == p]
-    fx, _ = currency.factors([{"unit": r["unit"]} for r in rows])
+    fx, _ = currency.factors([{"unit": r["unit"]} for r in rows], write_output=False)
     for r in rows:
         k = r["archetype"]
         if k not in ctx["arch"]:
@@ -2426,6 +2522,11 @@ def _run_rules(psum, records, target_unit, ctx, stats, phase="main"):
                 if f.get("replace") is not None:
                     r0 = f["replace"]
                     grade = worst([rule["grade"]] + f["grades"])
+                    if f.get("low") is not None and f.get("high") is not None:
+                        lo_, hi_ = min(f["low"], f["high"]), max(f["low"], f["high"])
+                        spread_ = abs(hi_ - lo_) > 1e-12 * max(1, abs(f["central"]))
+                        r0.update({"low": _g(lo_) if spread_ else "", "high": _g(hi_) if spread_ else "",
+                                   "sources": f.get("sources") or r0.get("sources", "")})
                     r0.update({"central": _g(f["central"]), "grade": grade, "method": rule["method"],
                                "rule-id": rule["rule-id"], "inputs": "; ".join(f["inputs"]),
                                "rationale": rule["rationale"],
@@ -2681,6 +2782,7 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     stats["_above_host"] = _variant_above_host(ctx)
     stats["_comb_conflict"] = sorted(set(ctx.get("comb_conflict", [])))
     stats["_comb_conflict_old"] = sorted(set(ctx.get("comb_conflict_old", [])))
+    stats["_total_below_parts"] = sorted(set(ctx.get("total_below_parts", [])))
     stats["_ccs"] = ctx["ccs_report"]
     stats["_sum_disagree"] = sorted(ctx.get("sum_disagree", ()))
     stats["_unpriced"] = sorted(ctx["unpriced"])

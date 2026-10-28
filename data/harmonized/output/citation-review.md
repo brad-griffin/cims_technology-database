@@ -47,7 +47,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
 | DEA 2026 (renewable fuels) | 474 | confirmed against the held document 2026-09-29 |
 | Element Energy 2021 | 472 | confirmed against the held document 2026-10-03 |
-| NREL 2025 (ATB) | 420 | confirmed against the held document 2026-10-02 |
+| NREL 2025 (ATB) | 458 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017 (refinery retrofit) | 355 | confirmed against the held document 2026-10-02 |
 | IEA 2013 | 346 | confirmed against the held document 2026-10-06 |
 | NREL 2018 | 312 | confirmed against the held document 2026-10-03 |
@@ -61,8 +61,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ramsden et al. 2009 | 241 | confirmed against the held document 2026-10-03 |
 | Johansson et al. 2012 | 224 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
-| Jacobs 2006 | 220 | confirmed against the held document 2026-10-02 |
-| US DOE 2015 (chemicals bandwidth) | 218 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
+| US DOE 2015 (chemicals bandwidth) | 221 | confirmed 2026-09-22 against the held copy, data/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
+| Jacobs 2006 | 218 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2017 (SMR hydrogen) | 204 | confirmed against the held document 2026-10-02 |
 | BCS 2007 | 197 | confirmed against the held document 2026-10-02 |
 | IEA 2026 (methane tracker) | 192 | confirmed against the held document 2026-10-06 |
@@ -104,8 +104,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
 | Schemme et al. 2020 | 120 | confirmed against the held document 2026-10-02 |
 | Sezgen et al. 1995 | 119 | confirmed against the held document 2026-10-02 |
-| Rehfeldt et al. 2024 | 115 | confirmed against the held document 2026-10-02 |
 | US EPA 1999 | 114 | confirmed against the held document 2026-10-02 |
+| Rehfeldt et al. 2024 | 114 | confirmed against the held document 2026-10-02 |
 | Purola 2021 | 113 | confirmed against the held document 2026-10-07 |
 | Edberg et al. 2012 (ETSAP R02) | 111 | confirmed against the held document 2026-10-03 |
 | Lazard 2023 | 108 | confirmed against the held document 2026-10-02 |
@@ -117,15 +117,15 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | WADE 2003 | 102 | confirmed against the held document 2026-10-02 |
 | Shell Canada 2024 | 101 | confirmed against the held document 2026-10-03 |
 | Arpagaus et al. 2018 | 97 | confirmed against the held document 2026-10-02 |
-| Nduagu et al. 2017 | 96 | confirmed against the held document 2026-10-02 |
+| Nduagu et al. 2017 | 97 | confirmed against the held document 2026-10-02 |
 | Zuberi et al. 2022 | 95 | confirmed against the held document 2026-09-29 |
 | McKane and Hasanbeigi 2010 | 94 | confirmed against the held document 2026-10-03 |
+| Sargent and Lundy 2024 | 90 | confirmed against the held document 2026-10-02 |
 | Labriet 2013 (ETSAP P11) | 90 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
 | NEDO 2008 | 90 | no catalogue or archived copy located; the Kawasaki imprint is consistent with NEDO's headquarters; confirmed against the held document 2026-10-06 |
 | Jones and Pujadó 2006 | 89 | confirmed against the held document 2026-10-08 |
 | DEA 2026 (energy storage) | 88 | confirmed against the held document 2026-09-29 |
 | Worrell et al. 1999 | 88 | sponsored by US EPA |
-| Sargent and Lundy 2024 | 87 | confirmed against the held document 2026-10-02 |
 | Hagberg Börjesson and Ahlgren 2015 (ETSAP I07) | 87 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Ramsden et al. 2013 | 87 | confirmed against the held document 2026-10-03 |
 | Neill and Gunter 1999 | 86 | confirmed against the held document 2026-10-03 |
@@ -136,11 +136,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Brown et al. 2020 | 81 | confirmed against the held document 2026-10-02 |
 | US DOE 2024 (Liftoff hydrogen) | 79 | confirmed against the held document 2026-10-02 |
 | NRCan 2007 | 77 | confirmed against the held document 2026-10-03 |
+| Mantei et al. 2021 | 76 | confirmed against the held document 2026-10-02 |
 | Gardarsdottir et al. 2019 | 75 | confirmed against the held document 2026-10-02 |
 | Wallace 2021 | 75 | confirmed against the held document 2026-10-02 |
 | Weidmann 2013 | 75 | confirmed against the held document 2026-10-08 |
 | Vaillancourt 2014 (ETSAP P04) | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
-| Mantei et al. 2021 | 72 | confirmed against the held document 2026-10-02 |
 | IEA 2024 | 71 | confirmed against the held document 2026-10-11 |
 | Lako 2010 (ETSAP E04) | 70 | authorship confirmed from the printed 'send comments to Paul Lako, Author' line; month unverified |
 | PCA 2002 | 70 | confirmed against the held document 2026-10-02 |
@@ -201,13 +201,13 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Blesl and Bruchof 2010 (ETSAP P05) | 43 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | ECCC 2025 | 42 | confirmed against the held document 2026-10-02 |
 | IEA 2020 | 42 | confirmed against the held document 2026-09-29 |
+| Jones et al. 2013 | 42 | confirmed against the held document 2026-10-02 |
 | Labriet 2013 (ETSAP P09) | 41 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
+| Humbird et al. 2011 | 41 | confirmed against the held document 2026-10-02 |
 | InterGroup 2017 | 41 | confirmed against the held document 2026-10-03 |
 | Kidnay et al. 2019 | 41 | confirmed against the held document 2026-10-06 |
 | Rao et al. 2022 | 41 | confirmed against the held document 2026-10-06 |
 | Millington 2017 | 40 | confirmed against the held document 2026-10-02 |
-| Humbird et al. 2011 | 40 | confirmed against the held document 2026-10-02 |
-| Jones et al. 2013 | 40 | confirmed against the held document 2026-10-02 |
 | Keith et al. 2018 | 40 | confirmed against the held document 2026-10-02 |
 | Mueller and Kwik 2013 | 40 | confirmed against the held document 2026-10-02 |
 | Clearstone Engineering Ltd. 2019 | 39 | confirmed against the held document 2026-10-11 |

@@ -70,7 +70,7 @@ motor_induction-standard_efficiency-moderate,<sector>.*.service.machine-drive.pu
 steam-turbine_drive,<sector>.*.service.machine-drive.pumps,pumps,,,,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,<sector>.*.service.machine-drive.fans-and-blowers,fans-and-blowers,,,,cross-sector/fans-and-blowers: every leaf of the end use
 steam-turbine_drive,<sector>.*.service.machine-drive.compressed-air,compressed-air,,,,cross-sector/compressed-air: every leaf of the end use
-chiller_vapour-compression,<sector>.*.service.hvac.cooling,hvac-cooling,,,,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
+chiller_hvac,<sector>.*.service.hvac.cooling,hvac-cooling,,,,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller)) Moved to chiller_hvac 2026-10-28 (S164).
 cooling-tower_free-evaporative,<sector>.*.service.hvac.cooling,hvac-cooling,,,,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
 cooling-tower_free-evaporative,<sector>.light-industrial.service.refrigeration,refrigeration,cooling,GJ,,"food-and-beverage/refrigeration: every leaf of the end use Product override (band product review 2026-10-22, approved 2026-10-23): label: the same GJ of cooling."
 heat-pump_hvac,<sector>.light-industrial.service.hvac.cooling,hvac-cooling,,,,cross-sector/space-cooling: every leaf of the end use
@@ -300,7 +300,7 @@ reactor_catalytic-reforming_electric-heating,<sector>.petroleum-refining.product
 reactor_delayed-coking,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,synthetic crude,m3,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_delayed-coking,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.coking,conversion-and-treating,,,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_fluid-catalytic-cracking,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
-reactor_fluid-catalytic-cracking-oxy-fuel,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
 reactor_fluid-catalytic-cracking_ccs-diffuse,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
 reactor_hydroprocessing,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,synthetic crude,m3,,"node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
 reactor_hydroprocessing,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,,,petroleum-refining/conversion-and-treating: the leaf its name or label names
@@ -466,7 +466,7 @@ well_solvent-only,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitum
 well_cyclic-steam,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 chiller_absorption,<sector>.light-industrial.service.refrigeration,refrigeration,,,,food-and-beverage/refrigeration: every leaf of the end use
 chiller_high-efficiency,<sector>.light-industrial.service.refrigeration,refrigeration,,,,food-and-beverage/refrigeration: every leaf of the end use
-chiller_vapour-compression,<sector>.light-industrial.service.refrigeration,refrigeration,cooling,GJ,,"food-and-beverage/refrigeration: every leaf of the end use Product override (band product review 2026-10-22, approved 2026-10-23): label: the same GJ of cooling."
+chiller_vapour-compression,<sector>.light-industrial.service.refrigeration,refrigeration,,,,"food-and-beverage/refrigeration: every leaf of the end use (product override dropped 2026-10-28, S164: the archetype's own product is cooling)"
 dryer_direct-fired_efficiency-moderate,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired_efficiency-moderate,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_direct-fired_efficiency-moderate,<sector>.mining.service.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it

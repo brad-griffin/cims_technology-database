@@ -193,6 +193,9 @@ def main(argv) -> int:
     above = fst.pop("_above_host", [])
     cc = fst.pop("_comb_conflict", [])
     cco = fst.pop("_comb_conflict_old", [])
+    tbp = fst.pop("_total_below_parts", [])
+    if tbp:
+        print(f"  sourced totals below their parts, replaced by the parts ({len(tbp)}): " + "; ".join(tbp))
     if cco:
         print(f"  combustion CO2 written but above a sourced total with the process CO2 ({len(cco)}; to review): " + "; ".join(cco))
     if cc:

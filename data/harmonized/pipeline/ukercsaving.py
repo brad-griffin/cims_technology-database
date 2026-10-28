@@ -90,6 +90,30 @@ def derive(facts, records, summarise_fn) -> dict:
             continue
         r["excluded"] = NOTE + f"; median saving {sm:.1%} applied to {base}"
         queued.append((r, base, sm, min(s), max(s)))
+    # a same-source pair (records/reference/pair-saving.csv): a source that prints a
+    # base and an improved level for the same product (DOE bandwidth current typical
+    # and state of the art) gives the improved archetype a saving on this database's
+    # base, the same way (Brad 2026-10-28, S07)
+    by_id = {r["record-id"]: r for r in facts}
+    for p_ in read(REFERENCE / "pair-saving.csv"):
+        r, b = by_id.get(p_["record-id"]), by_id.get(p_["base-record-id"])
+        if r is None or b is None:
+            raise SystemExit(f"pair-saving.csv: {p_['record-id']} or {p_['base-record-id']} not found")
+        v, bv = fnum(r.get("value-norm")), fnum(b.get("value-norm"))
+        base = hosts.get(r.get("archetype", ""))
+        if v is None or not bv or not base or r.get("unit-norm") != b.get("unit-norm"):
+            r["excluded"] = f"pair saving ({p_['base-record-id']}) not applied: no value, base archetype or common unit"
+            continue
+        sm = (bv - v) / bv
+        r["set-aside"] = SET_ASIDE
+        if not 0.0 < sm < 0.9:
+            r["excluded"] = f"a same-source pair saving {sm:.0%} outside 0% to 90%, not applied"
+            continue
+        r["excluded"] = (f"a same-source level for the whole product, read as a saving of {sm:.1%} against "
+                         f"{p_['base-record-id']} and applied to {base} ({p_.get('note', '')})")
+        r["note"] = "BUCKET of 1 same-source pair. " + (r.get("note") or "")
+        stats["pair savings"] += 1
+        queued.append((r, base, sm, sm, sm))
     if not queued:
         return dict(stats)
     # the base archetypes' pooled totals, from the rows as they stand
@@ -124,7 +148,7 @@ def derive(facts, records, summarise_fn) -> dict:
                            f"{sm:.1%}; members {smin:.1%} to {smax:.1%})"),
             "conversion-class": "internal", "conversion-factors": f"base:{base}",
             "excluded": "", "set-aside": "", "duplicate-of": "",
-            "note": "UKERC SAVING ON THE BASE ARCHETYPE (ruling 2026-10-05). " + (r.get("note") or "")}))
+            "note": ("SAME-SOURCE PAIR SAVING ON THE BASE ARCHETYPE (S07, 2026-10-28). " if r["note"].startswith("BUCKET of 1 same-source pair") else "UKERC SAVING ON THE BASE ARCHETYPE (ruling 2026-10-05). ") + (r.get("note") or "")}))
         stats["derived on the base archetype"] += 1
     facts.extend(new)
     return dict(stats)
