@@ -35,9 +35,9 @@ wide-archetype,capacity-factor,technical,%,"Annual output as a fraction of outpu
 wide-archetype,capacity-factor_low,technical,%,
 wide-archetype,capacity-factor_high,technical,%,
 wide-archetype,capacity-factor_n,technical,,
-wide-archetype,annual-output,technical,product-unit made in a year,"Useful output of one unit over a typical year: capacity x capacity-factor. In the database's units, MW x 31,536 GJ/yr per MW, or kt/yr x 1000 t per kt, times the capacity factor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-archetype,annual-output_low,technical,product-unit made in a year,
-wide-archetype,annual-output_high,technical,product-unit made in a year,
+wide-archetype,annual-output,technical,product-unit per yr,"Useful output of one unit over a typical year: capacity x capacity-factor. In the database's units, MW x 31,536 GJ/yr per MW, or kt/yr x 1000 t per kt, times the capacity factor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,annual-output_low,technical,product-unit per yr,
+wide-archetype,annual-output_high,technical,product-unit per yr,
 wide-archetype,annual-output_n,technical,,
 wide-archetype,efficiency,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. On CHP archetypes (label says CHP) this column is the total CHP efficiency, electricity plus useful heat over fuel in (efficiency-chp); the electric and heat efficiencies are beside it. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,efficiency_low,technical,%,
@@ -618,17 +618,23 @@ wide-secondary-parameter,emissions-combustion_as-sourced-co2,emissions,t/GJ; t/t
 wide-secondary-parameter,emissions-combustion_as-sourced-co2_low,emissions,t/GJ; t/t,
 wide-secondary-parameter,emissions-combustion_as-sourced-co2_high,emissions,t/GJ; t/t,
 wide-secondary-parameter,emissions-combustion_as-sourced-co2_n,emissions,,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2e,emissions,t/GJ; t/t,"Emissions from burning fuel at the technology, per unit of energy input or product output. Species named in target. Excludes the process reaction, which is emissions-process, and excludes purchased energy, which is out of scope. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-combustion_as-sourced-co2e_low,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2e_high,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-combustion_as-sourced-co2e_n,emissions,,
 wide-secondary-parameter,emissions-process_as-sourced-co2,emissions,t/t,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,emissions-process_as-sourced-co2_n,emissions,,
 wide-secondary-parameter,emissions-process_as-sourced-co2e,emissions,t/t,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-process_as-sourced-co2e_low,emissions,t/t,
+wide-secondary-parameter,emissions-process_as-sourced-co2e_high,emissions,t/t,
 wide-secondary-parameter,emissions-process_as-sourced-co2e_n,emissions,,
 wide-secondary-parameter,emissions-total_as-sourced-co2,emissions,t/GJ; t/t,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,emissions-total_as-sourced-co2_low,emissions,t/GJ; t/t,
 wide-secondary-parameter,emissions-total_as-sourced-co2_high,emissions,t/GJ; t/t,
 wide-secondary-parameter,emissions-total_as-sourced-co2_n,emissions,,
-wide-secondary-parameter,emissions-total_as-sourced-co2e,emissions,t/t,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-secondary-parameter,emissions-total_as-sourced-co2e_low,emissions,t/t,
-wide-secondary-parameter,emissions-total_as-sourced-co2e_high,emissions,t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2e,emissions,t/GJ; t/t,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: as-sourced-co2e. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,emissions-total_as-sourced-co2e_low,emissions,t/GJ; t/t,
+wide-secondary-parameter,emissions-total_as-sourced-co2e_high,emissions,t/GJ; t/t,
 wide-secondary-parameter,emissions-total_as-sourced-co2e_n,emissions,,
 wide-secondary-parameter,emissions-captured_as-sourced-co2,emissions,t/GJ; t/t,"Emissions captured rather than released, per unit of energy input or product output. Species named in target. The counterpart of capture-rate as an absolute quantity. Species or stream: as-sourced-co2. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,emissions-captured_as-sourced-co2_low,emissions,t/GJ; t/t,

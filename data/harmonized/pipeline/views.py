@@ -152,7 +152,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     # label a reader sees (modeller 2026-09-26, 2026-10-08)
     fam_rank = {f: ((0, i, "") if r.get("kind") == "service" else (1, 0, (r.get("label") or f).lower()))
                 for i, (f, r) in enumerate(records.families.items())}
-    arows.sort(key=lambda r: (fam_rank.get(r["family"], (2, 0, r["family"])), r["equipment"], r["archetype"]))
+    from .bands import type_rank
+    arows.sort(key=lambda r: (fam_rank.get(r["family"], (2, 0, r["family"])), type_rank(r), r["archetype"]))
     if not wide_only:
         write(outdir / "archetype.csv",
               IDENT + ["trl-basis", "description", "examples-named", "note"], arows)
@@ -228,7 +229,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 return f"{u} {t}" + (" per yr" if p == "annual-output" else "")
             return u or unit_label(p, t)
         if p == "annual-output":
-            return "product-unit made in a year"
+            return "product-unit per yr"
         return unit_label(p, t)
 
     def note_of(b):

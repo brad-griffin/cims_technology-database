@@ -73,7 +73,6 @@ steam-turbine_drive,<sector>.*.service.machine-drive.compressed-air,compressed-a
 chiller_hvac,<sector>.*.service.hvac.cooling,hvac-cooling,,,,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller)) Moved to chiller_hvac 2026-10-28 (S164).
 cooling-tower_free-evaporative,<sector>.*.service.hvac.cooling,hvac-cooling,,,,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller))
 cooling-tower_free-evaporative,<sector>.light-industrial.service.refrigeration,refrigeration,cooling,GJ,,"food-and-beverage/refrigeration: every leaf of the end use Product override (band product review 2026-10-22, approved 2026-10-23): label: the same GJ of cooling."
-heat-pump_hvac,<sector>.light-industrial.service.hvac.cooling,hvac-cooling,,,,cross-sector/space-cooling: every leaf of the end use
 heat-pump_hvac,<sector>.*.service.hvac.heating,hvac-heating,,,,cross-sector/space-heating: every leaf of the end use
 resistance-heater_hvac,<sector>.*.service.hvac.heating,hvac-heating,,,,cross-sector/space-heating: every leaf of the end use
 hvac-heater_fuel-fired,<sector>.*.service.hvac.heating,hvac-heating,,,,cross-sector/space-heating: every leaf of the end use
@@ -682,11 +681,11 @@ induction-heater_strip-heating,<sector>.iron-and-steel.product.continuous-cast.a
 coating-line_electrolytic,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 coating-line_hot-dip,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 pickling-line_acid,<sector>.iron-and-steel.product.continuous-cast.pickling,rolling,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
-digester_bayer,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-refining,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
-calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
-calciner_gas-suspension,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
-calciner_gas-suspension_ccs-diffuse,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
-calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-refining,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+digester_bayer,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-digestion,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_gas-suspension,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_gas-suspension_ccs-diffuse,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
+calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 converter_continuous,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 converter_continuous,<sector>.metal-smelting.product.nickel.pyrometallurgy.converting,pyrometallurgy,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 converter_peirce-smith,<sector>.metal-smelting.product.copper.pyrometallurgy.converting,pyrometallurgy,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
@@ -757,3 +756,4 @@ reactor_sulphuric-acid-metallurgical,<sector>.metal-smelting.service.acid-plant,
 calciner_clay-flash,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,,,added 2026-10-27 (S121)
 kiln_clay-calcination,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,,,added 2026-10-27 (S121)
 grinding-mill_slag,<sector>.industrial-minerals.product.cement.ground-slag,cement-ground-slag,,,,added 2026-10-27 (S121)
+digester_bayer_electric-heating,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-digestion,,,,added 2026-10-28 (Brad 2026-10-28 (split alumina)): MVR digestion

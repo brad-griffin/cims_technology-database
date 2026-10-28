@@ -61,7 +61,7 @@ ORDER = [
     "ethanol-production", "biodiesel-production", "renewable-diesel-and-saf", "renewable-natural-gas",
     "wood-preparation", "chemical-pulping", "mechanical-pulping", "recycled-pulping", "chemical-recovery",
     "lime-kiln", "paper-forming", "paper-drying", "effluent-treatment",
-    "alumina-refining", "anode-production", "aluminum-smelting", "pyrometallurgy", "electric-smelting",
+    "alumina-digestion", "alumina-calcination", "anode-production", "aluminum-smelting", "pyrometallurgy", "electric-smelting",
     "hydrometallurgy", "smelter-oxygen-supply", "melting-casting-and-fabrication",
     "thermal-processing", "baking-frying-and-roasting", "drying", "drying-curing-and-forming",
     "wood-drying-and-pressing", "forming-and-pressing", "solid-biofuel", "coal-mine-methane",
@@ -127,12 +127,31 @@ def _apply(r, o, units, factor):
             if v is None or "product-unit" not in u or c.endswith("_n"):
                 continue
             out[c] = v / f if ("/product-unit" in u or "/(product-unit" in u) else v * f
+        canon = r.get("_capacity-canonical")
+        if canon and o["product-unit"] == "GJ" and r.get("product-unit") in ("t", "m3", "GJ"):
+            # one capacity unit per end use (Brad 2026-10-28): restated in MW of the
+            # override's product (process heat) from the canonical capacity
+            per_yr = 1000.0 if r.get("product-unit") == "t" else 31536.0 if r.get("product-unit") == "GJ" else 1.0
+            for c, v in canon.items():
+                if v is not None:
+                    out[c] = float(f"{v * per_yr * f / 31536:.5g}")
+            out["capacity-unit"] = "MW"
         note = (f"per {o['product-unit']} {o['product']}: per-unit values divided by {f:.4g} "
                 f"{o['product-unit']} per {r.get('product-unit', '')}"
                 + (" (SEC x efficiency)" if o.get("factor") == "process-heat" else ""))
         if "filled" in out:
             out["filled"] = "; ".join(x for x in (note, out.get("filled", "")) if x)
     return out
+
+
+def type_rank(a) -> int:
+    """Order within an end use (Brad 2026-10-28): conventional, efficient
+    variants, capture variants, low-carbon alternatives; anything else after,
+    alphabetical within each group."""
+    if "_ccs-" in (a.get("archetype") or ""):
+        return 2
+    return {"conventional": 0, "efficient variant": 1, "alternative": 3,
+            "prospective": 3}.get((a.get("type") or "").strip(), 4)
 
 
 def _product(a) -> str:
@@ -195,7 +214,7 @@ def expand(rows: list[dict], records, units: dict | None = None,
     """One workbook row per (archetype, end-use sub-band), placed in the family whose
     sector owns the end use (modeller 2026-10-09), sorted by family (the rows' own
     order, then any family reached only through another family's archetypes),
-    sub-band, then equipment and archetype. Adds `_family` (the band the row sits in)
+    sub-band, then type (type_rank) and archetype. Adds `_family` (the band the row sits in)
     and `_sub` (sub-band label). All rows are shown alike (no repeat styling)."""
     label, asector, eus = _context(records)
     prods = _products_by_end_use(records, eus)
@@ -243,7 +262,7 @@ def expand(rows: list[dict], records, units: dict | None = None,
             out.append(dict(rr, _family=h, _sub=lab,
                             _key=(fam_pos[h], (0 if (e == "" or own(h, e)) else 1000 if e != "~" else 5000)
                                   + rank.get(e, 998), lab,
-                                  r.get("equipment", ""), k)))
+                                  type_rank(r), k)))
     # within a family, a sub-band label sits at the rank of its first end use
     first = {}
     for o in out:

@@ -145,7 +145,7 @@ kiln_lime-rotary-preheater,non-metallic-minerals,t,sourced,estimated,estimated,s
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,t,estimated,estimated,estimated,estimated,estimated,estimated,estimated,sourced
 kiln_tunnel-roller,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,identity,sourced
 furnace_electric,non-metallic-minerals,t,sourced,sourced,estimated,sourced,sourced,estimated,sourced,sourced
-autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ,estimated,estimated,estimated,estimated,sourced,guess,sourced,sourced
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,GJ,estimated,estimated,estimated,estimated,sourced,guess,estimated,sourced
 autothermal-reformer_ammonia_ccs-concentrated,chemicals,t,guess,estimated,guess,guess,estimated,estimated,estimated,sourced
 distillation-column,chemicals,t,missing,missing,not-applicable,sourced,estimated,guess,guess,sourced
 distillation-column_heat-integrated,chemicals,t,guess,guess,not-applicable,sourced,sourced,guess,guess,sourced
@@ -154,7 +154,7 @@ electrolysis-cell_chlor-alkali-membrane,chemicals,t,sourced,sourced,sourced,sour
 electrolysis-cell_oxygen-depolarized,chemicals,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 electrolysis-cell_sodium-chlorate,chemicals,t,guess,guess,guess,guess,estimated,guess,identity,sourced
 gasifier_biomass-methanol,chemicals,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
-reactor_adipic-acid,chemicals,t,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
+reactor_adipic-acid,chemicals,t,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
 reactor_catalytic-n2o,chemicals,t,sourced,estimated,sourced,guess,sourced,estimated,sourced,sourced
 reactor_chemical-depolymerization,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 reactor_co2-to-methanol,chemicals,t,sourced,sourced,sourced,sourced,sourced,identity,missing,sourced
@@ -219,7 +219,7 @@ reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,m3,missing,missing,miss
 reactor_hydroprocessing_electric-heating,petroleum-refining,m3,estimated,sourced,estimated,sourced,sourced,estimated,missing,sourced
 steam-reformer_methane_efficiency-moderate,petroleum-refining,GJ,estimated,estimated,estimated,estimated,estimated,estimated,proxy,sourced
 steam-reformer_methane,petroleum-refining,GJ,sourced,sourced,sourced,sourced,sourced,identity,sourced,sourced
-steam-reformer_methane_ccs-concentrated,petroleum-refining,GJ,estimated,estimated,estimated,sourced,sourced,estimated,sourced,sourced
+steam-reformer_methane_ccs-concentrated,petroleum-refining,GJ,estimated,estimated,estimated,sourced,sourced,estimated,estimated,sourced
 refinery_hydroskimming,petroleum-refining,m3,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
 refinery_conversion,petroleum-refining,m3,sourced,estimated,estimated,guess,estimated,estimated,sourced,sourced
 refinery_deep-conversion,petroleum-refining,m3,sourced,estimated,estimated,sourced,estimated,estimated,sourced,sourced
@@ -346,7 +346,7 @@ radio-frequency-heater_food,food-and-beverage,t,guess,guess,not-applicable,guess
 calciner_gas-suspension,non-ferrous-metals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
 converter_continuous,non-ferrous-metals,t,sourced,estimated,sourced,guess,estimated,estimated,estimated,sourced
 converter_peirce-smith,non-ferrous-metals,t,guess,guess,guess,guess,estimated,estimated,guess,sourced
-digester_bayer,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,estimated,sourced,sourced
+digester_bayer,non-ferrous-metals,t,estimated,estimated,estimated,estimated,estimated,guess,estimated,sourced
 electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 electrolysis-cell_advanced-anodes,non-ferrous-metals,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
@@ -404,7 +404,7 @@ reactor_ecf-bleaching,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess
 reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,m3,estimated,estimated,estimated,guess,estimated,estimated,estimated,sourced
 pipeline_co2,co2-capture,t,guess,guess,not-applicable,not-applicable,sourced,identity,identity,sourced
 well_co2-storage,co2-capture,t,sourced,estimated,sourced,sourced,sourced,identity,identity,sourced
-geothermal-well_direct-use,heat-supply,GJ,sourced,sourced,sourced,not-applicable,sourced,identity,identity,sourced
+geothermal-well_direct-use,heat-supply,GJ,sourced,sourced,sourced,not-applicable,sourced,identity,missing,sourced
 reactor_steel-offgas-chemicals,iron-and-steel,t,sourced,estimated,missing,estimated,estimated,estimated,identity,sourced
 calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,t,estimated,estimated,estimated,guess,estimated,estimated,estimated,sourced
 gasifier_biomass-ethylene,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
@@ -463,7 +463,7 @@ kiln_ceramic-microwave-assisted,non-metallic-minerals,t,guess,guess,guess,guess,
 dryer_superheated-steam,other-industry,t,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
 transesterification-unit_acid-catalyzed,biofuels,GJ,sourced,estimated,sourced,sourced,estimated,estimated,identity,sourced
 transesterification-unit_supercritical-methanol,biofuels,GJ,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
-reactor_co2-to-ethanol,biofuels,GJ,sourced,estimated,estimated,missing,sourced,identity,identity,sourced
+reactor_co2-to-ethanol,biofuels,GJ,sourced,estimated,estimated,guess,sourced,identity,identity,sourced
 reactor_co2-to-higher-alcohols,chemicals,t,sourced,estimated,estimated,guess,sourced,identity,identity,sourced
 reactor_co2-to-dme,chemicals,t,sourced,estimated,estimated,guess,sourced,identity,identity,sourced
 reactor_co2-to-ome1,chemicals,t,sourced,estimated,estimated,guess,sourced,identity,identity,sourced
@@ -479,7 +479,7 @@ pneumatic-device_low-bleed,oil-and-gas,1000-m3,guess,guess,not-applicable,not-ap
 gas-treatment-unit_vam-oxidiser,mining,t,guess,guess,guess,guess,sourced,guess,missing,sourced
 process-improvement_pfc-anode-effect-control,non-ferrous-metals,t,guess,guess,not-applicable,guess,sourced,guess,identity,sourced
 electrolysis-cell_magnesium-chloride,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,sourced,sourced
-reactor_silicothermic,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,sourced,sourced
+reactor_silicothermic,non-ferrous-metals,t,guess,guess,guess,guess,estimated,guess,guess,sourced
 reactor_propane-dehydrogenation,chemicals,t,sourced,sourced,estimated,sourced,estimated,estimated,sourced,sourced
 fan_mine-ventilation,mining,t,guess,guess,not-applicable,estimated,estimated,guess,identity,sourced
 storage-cavern_hydrogen,hydrogen,GJ,sourced,sourced,not-applicable,guess,sourced,guess,identity,sourced
@@ -506,8 +506,8 @@ separator_reverse-osmosis,mining,m3,estimated,estimated,estimated,sourced,estima
 no-abatement_n2o,chemicals,t,guess,guess,not-applicable,guess,guess,not-applicable,missing,sourced
 no-abatement_methane,oil-and-gas,t,guess,guess,not-applicable,guess,guess,not-applicable,missing,sourced
 no-abatement_coal-mine-methane,mining,t,guess,guess,not-applicable,guess,guess,not-applicable,missing,sourced
-fracturing-fleet_diesel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,sourced,sourced
-fracturing-fleet_dual-fuel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,sourced,sourced
+fracturing-fleet_diesel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,identity,sourced
+fracturing-fleet_dual-fuel,oil-and-gas,GJ,sourced,estimated,sourced,sourced,missing,sourced,identity,sourced
 separator_naphthenic-froth-treatment,oil-and-gas,m3,guess,guess,guess,guess,estimated,guess,guess,sourced
 binder_portland-cement,cement,t,guess,guess,missing,guess,estimated,guess,identity,sourced
 separator_aromatics-extraction,chemicals,t,sourced,sourced,sourced,sourced,sourced,estimated,sourced,sourced
@@ -515,3 +515,5 @@ separator_aromatics-extraction_efficiency-moderate,chemicals,t,estimated,estimat
 direct-heater_refinery,heat-supply,GJ,sourced,estimated,not-applicable,sourced,estimated,estimated,guess,sourced
 direct-heater_refinery_efficiency-moderate,heat-supply,GJ,estimated,estimated,not-applicable,sourced,estimated,estimated,guess,sourced
 electrolyzer_low-temperature-central,hydrogen,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
+refinery_alumina,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,guess,identity,sourced
+digester_bayer_electric-heating,non-ferrous-metals,t,estimated,estimated,estimated,guess,estimated,guess,guess,sourced

@@ -2364,6 +2364,147 @@ def pm_scale_ratio(rule, psum, records, target_unit, ctx, stats):
          stats, rule["rule-id"])
 
 
+def pm_co2e_consistency(rule, psum, records, target_unit, ctx, stats):
+    """CO2-eq = the species x their AR5 GWPs wherever the species are held
+    (Brad 2026-10-28: the CO2-eq should sum up the species). The main-phase rule
+    fills CO2-eq only where it is missing; a CO2-eq pooled from different examples
+    than its species can disagree with them. Where CO2 itself is held and the
+    species sum differs from the CO2-eq by more than `tolerance` (default 2%), the
+    sum replaces it (a sourced CO2-eq moves to target as-sourced). Skipped when
+    the CO2 is the no-fossil zero marker (the CO2-eq then carries a non-fuel CO2
+    the species rows do not)."""
+    from . import gwp
+    sc = _scope(rule)
+    tol = fnum(sc.get("tolerance")) or 0.02
+    G = gwp.ar5(ctx["factors"])
+    params = split_list(sc.get("parameters", "emissions-combustion|emissions-process|emissions-total").replace("|", ";"))
+    for a in records.archetypes:
+        k = a["archetype"]
+        h = ctx["have"].get(k, {})
+        for p in params:
+            co2, e = h.get((p, "co2")), h.get((p, "co2e"))
+            if not (_live(co2) and _live(e)) or co2.get("rule-id") == "id-zero-combustion-no-fossil":
+                continue
+            parts = [("co2", co2)] + [(sp, h.get((p, sp))) for sp in G if _live(h.get((p, sp)) or {})]
+            if p == "emissions-total":
+                # a gas the total does not list but a part does (PFCs on a smelter's
+                # process emissions) counts at the parts' sum
+                held = {sp for sp, _ in parts}
+                for sp in G:
+                    if sp in held:
+                        continue
+                    rs = [h.get((q, sp)) for q in ("emissions-combustion", "emissions-process")]
+                    rs = [r for r in rs if _live(r or {})]
+                    if rs:
+                        cs = [_vals(r) for r in rs]
+                        parts.append((sp, {"central": sum(c[0] for c in cs),
+                                           "low": sum(c[1] if c[1] is not None else c[0] for c in cs),
+                                           "high": sum(c[2] if c[2] is not None else c[0] for c in cs),
+                                           "grade": worst([r.get("grade", "sourced") for r in rs]),
+                                           "sources": "; ".join(r.get("sources", "") for r in rs),
+                                           "parameter": "emissions-combustion+process", "target": sp,
+                                           "unit": rs[0].get("unit", ""), "method": "sum"}))
+            c = lo = hi = 0.0
+            ins, grades, srcs = [], [], []
+            for sp, r in parts:
+                f = 1.0 if sp == "co2" else G[sp]
+                v, vl, vh = _vals(r)
+                c += v * f
+                lo += (vl if vl is not None else v) * f
+                hi += (vh if vh is not None else v) * f
+                ins.append(_input(r, f"{p}_{sp}") + ("" if sp == "co2" else f" x {f:g}"))
+                grades.append(r.get("grade", "sourced"))
+                srcs += split_list(r.get("sources", ""))
+            ec = fnum(e["central"])
+            if ec is not None and abs(c - ec) <= tol * max(abs(ec), abs(c), 1e-12):
+                continue
+            g = worst(["identity"] + grades)
+            _put(psum, ctx["have"].setdefault(k, {}),
+                 _row(k, p, "co2e", e.get("unit", ""), c, lo, hi, g, rule, ins,
+                      "; ".join(dict.fromkeys(srcs)), f"was {ec:.4g}" if ec is not None else ""),
+                 stats, rule["rule-id"])
+
+
+def pm_process_heat_efficiency(rule, psum, records, target_unit, ctx, stats):
+    """Thermal efficiency (heat into the product over energy in) for the
+    light-industrial heat archetypes that hold none, from
+    records/reference/process-heat-efficiency.csv (Brad 2026-10-28: add
+    efficiencies where they matter; the same figures put these archetypes per GJ
+    of process heat in the workbook bands). A judged efficiency is graded guess;
+    a variant (`factor-from` its host) heats the same product, so its efficiency
+    = the host's efficiency x the host's energy use / its own (an identity). Rows
+    whose basis says non-thermal are skipped."""
+    rows = {r["archetype"]: r for r in read(RECORDS / "reference" / "process-heat-efficiency.csv")}
+
+    def eff_of(k, depth=0):
+        h = ctx["have"].get(k, {})
+        e = h.get(("efficiency", ""))
+        if _live(e):
+            return fnum(e["central"]), e.get("grade", "sourced"), _input(e, f"{k} efficiency")
+        r = rows.get(k, {})
+        if fnum(r.get("efficiency")):
+            return fnum(r["efficiency"]), "guess", f"{k} efficiency {r['efficiency']}% (process-heat-efficiency.csv)"
+        if r.get("factor-from") and depth < 3:
+            host = r["factor-from"]
+            he = eff_of(host, depth + 1)
+            hs = ctx["have"].get(host, {}).get((SEC, ""))
+            ms = h.get((SEC, ""))
+            if he and _live(hs) and _live(ms) and fnum(ms["central"]):
+                v = he[0] * fnum(hs["central"]) / fnum(ms["central"])
+                return v, worst(["identity", he[1], hs.get("grade", "sourced"), ms.get("grade", "sourced")]), \
+                    f"{he[2]} x {host} energy use {fnum(hs['central']):.4g} / own {fnum(ms['central']):.4g}"
+        return None
+
+    for k, r in rows.items():
+        if k not in ctx["arch"] or "non-thermal" in (r.get("basis") or ""):
+            continue
+        h = ctx["have"].setdefault(k, {})
+        if _live(h.get(("efficiency", ""))):
+            continue
+        got = eff_of(k)
+        if not got or not got[0]:
+            continue
+        v, g, why = got
+        v = min(v, 100.0) if "heat-pump" not in k else v
+        _put(psum, h, _row(k, "efficiency", "", "%", v, v, v, worst([rule["grade"], g]) if g != "guess" else "guess",
+                           rule, [why], "", r.get("basis", "")), stats, rule["rule-id"])
+
+
+def pm_less_step(rule, psum, records, target_unit, ctx, stats):
+    """A process step's value = the whole plant's less a sibling step's
+    (Brad 2026-10-28: alumina digestion = the whole Bayer refinery less the gas
+    calciner). Scope: `archetype=` (the step filled), `whole=`, `less=`,
+    `parameters=` (each with all its targets). Fills only cells the step does
+    not hold; a target the sibling step does not hold is taken whole; a result
+    below zero is floored at zero."""
+    sc = _scope(rule)
+    k, wh, ls = sc.get("archetype", ""), sc.get("whole", ""), sc.get("less", "")
+    if k not in ctx["arch"]:
+        return
+    h = ctx["have"].setdefault(k, {})
+    W, L = ctx["have"].get(wh, {}), ctx["have"].get(ls, {})
+    for p in split_list(sc.get("parameters", "").replace("|", ";")):
+        for (pp, t), w in list(W.items()):
+            if pp != p or not _live(w) or (p, t) in h or t.startswith("as-sourced"):
+                continue
+            l = L.get((p, t))
+            wc, wl, whi = _lohi(w)
+            if _live(l) and l.get("unit") == w.get("unit"):
+                lc = fnum(l["central"])
+                c, lo, hi = max(wc - lc, 0.0), max(wl - lc, 0.0), max(whi - lc, 0.0)
+                ins = [_input(w, f"{wh} {p}{'_' + t if t else ''}"), _input(l, f"less {ls}")]
+                g = worst([rule["grade"], w.get("grade", "sourced"), l.get("grade", "sourced")])
+            else:
+                c, lo, hi = wc, wl, whi
+                ins = [_input(w, f"{wh} {p}{'_' + t if t else ''}"), f"{ls} holds none: taken whole"]
+                g = worst([rule["grade"], w.get("grade", "sourced")])
+            row = _row(k, p, t, w.get("unit", ""), c, lo, hi, g, rule, ins,
+                       "; ".join(dict.fromkeys(split_list(w.get("sources", "")) + split_list((l or {}).get("sources", "")))))
+            psum.append(row)
+            h[(p, t)] = row
+            stats[rule["rule-id"]] = stats.get(rule["rule-id"], 0) + 1
+
+
 def pm_sec_from_efficiency(rule, psum, records, target_unit, ctx, stats):
     """On the energy-service archetypes the rule names, the energy-use total =
     100 / the pooled efficiency, where the total rests on one or two examples and
@@ -2402,7 +2543,7 @@ def pm_sec_from_efficiency(rule, psum, records, target_unit, ctx, stats):
                  stats, rule["rule-id"] + ":carrier")
 
 
-POST_METHODS = {"sec-from-efficiency": pm_sec_from_efficiency, "size-anchor": pm_size_anchor, "scale-ratio": pm_scale_ratio, "capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
+POST_METHODS = {"sec-from-efficiency": pm_sec_from_efficiency, "size-anchor": pm_size_anchor, "scale-ratio": pm_scale_ratio, "co2e-consistency": pm_co2e_consistency, "less-step": pm_less_step, "process-heat-efficiency": pm_process_heat_efficiency, "capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
                 "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized, "rebuild": pm_rebuild,
                 "levelized-energy": pm_levelized_energy}
 
