@@ -237,3 +237,9 @@ kiln_clay-calcination,cf-hhv-lhv-methane,,"fuel natural gas (D21); product t cal
 grinding-mill_slag,cf-hhv-lhv-methane,,"drier fuel natural gas; product t ground slag (S121, 2026-10-27)"
 reactor_co2-to-gasoline,cf-hhv-lhv-hydrogen,cf-hhv-lhv-solid-liquid,"hydrogen in; gasoline out (PB014, 2026-10-28)"
 chiller_hvac,,,"no fuel carrier (electricity); product GJ (split from chiller_vapour-compression 2026-10-28, S164)"
+reactor_co2-to-higher-alcohols,cf-hhv-lhv-hydrogen,cf-hhv-lhv-higher-alcohols,hydrogen (and CO2) in; C4-C8 alcohols out (capacity conversion 2026-10-28)
+reactor_co2-to-dme,cf-hhv-lhv-hydrogen,cf-hhv-lhv-dme,hydrogen (and CO2) in; DME out (capacity conversion 2026-10-28)
+reactor_co2-to-ome1,cf-hhv-lhv-hydrogen,cf-hhv-lhv-methylal,hydrogen (and CO2) in; methylal out (capacity conversion 2026-10-28)
+electrolyzer_low-temperature-central,,cf-hhv-lhv-hydrogen,electricity in; hydrogen out (central split 2026-10-28)
+direct-heater_refinery,cf-hhv-lhv-methane,,natural gas burners (refinery heater split 2026-10-28)
+direct-heater_refinery_efficiency-moderate,cf-hhv-lhv-methane,,several fuels; dominant fuel natural-gas (recommended); product GJ (decided 2026-10-05) (refinery heater split 2026-10-28)

@@ -77,13 +77,13 @@ combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.pulp-and-paper.service.s
 direct-heater_electric,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_electric,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_fuel-fired,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
-direct-heater_fuel-fired_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_fuel-fired_efficiency-moderate,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_refinery,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves; moved to direct-heater_refinery 2026-10-28
+direct-heater_refinery_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_refinery_efficiency-moderate,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves; moved 2026-10-28
 direct-heater_solid-fuel,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,as direct-heater_air-water
 direct-heater_solid-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,as direct-heater_fuel-fired
 direct-heater_solid-fuel_efficiency-strong,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,as direct-heater_fuel-fired_efficiency-moderate
@@ -827,6 +827,7 @@ autothermal-reformer_hydrogen,hydrogen,<sector>.petroleum-refining.service.hydro
 autothermal-reformer_hydrogen,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
 autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,added 2026-10-05 (archetype combination review)
+electrolyzer_low-temperature-central,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use; moved to the central archetype 2026-10-28
 electrolyzer_solid-oxide,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gasifier_biomass-waste,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
@@ -1174,7 +1175,6 @@ distillation-column_atmospheric-vacuum,petroleum-refining,<sector>.petroleum-ref
 distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
-electrolyzer_low-temperature,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gas-treatment-unit_acid-gas-advanced,petroleum-refining,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.natural-gas.product.supply.processing.sulphur-recovery,gas-processing,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names

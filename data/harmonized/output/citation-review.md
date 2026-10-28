@@ -100,7 +100,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Dunsky 2023 | 126 | confirmed against the held document 2026-10-03 |
 | Rehfeldt et al. 2018 | 126 | confirmed against the held document 2026-10-02 |
 | Saw et al. 2023 | 124 | confirmed against the held document 2026-10-02 |
-| Carbon Trust 2011 | 122 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed; confirmed against the held document 2026-10-06 |
+| Carbon Trust 2011 | 123 | the CTG059 code is confirmed on a third-party upload; the year and exact Carbon Trust title wording are unconfirmed; confirmed against the held document 2026-10-06 |
 | DEA 2026 (process heat) | 121 | confirmed against the held document 2026-09-29 |
 | Schemme et al. 2020 | 120 | confirmed against the held document 2026-10-02 |
 | Sezgen et al. 1995 | 119 | confirmed against the held document 2026-10-02 |
@@ -240,11 +240,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Abou-Jaoude et al. 2024 | 32 | confirmed against the held document 2026-10-02 |
 | Hedman 2008 | 32 | confirmed against the held document 2026-10-02 |
 | Beddows and Hatch 2000 | 32 | confirmed against the held document 2026-10-02 |
+| Premkumar and Rangaiah 2009 | 32 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Stork et al. 2014 | 32 | confirmed against the held document 2026-10-06 |
 | Tao et al. 2017 | 32 | confirmed against the held document 2026-10-02 |
 | US EPA 2023 (regulatory impact analysis) | 31 | confirmed against the held document 2026-10-02 |
 | NRCan 2005 (underground mines) | 31 | confirmed against the held document 2026-10-02 |
-| Premkumar and Rangaiah 2009 | 31 | confirmed on the author's NUS publication list; DOI not seen verbatim |
 | Drebenstedt and Singhal 2014 | 30 | confirmed against the held document 2026-10-06 |
 | US EPA 2001 | 30 | confirmed against the held document 2026-10-02 |
 | Watson et al. 2012 (ETSAP R04) | 30 | confirmed against the held document 2026-10-03 |

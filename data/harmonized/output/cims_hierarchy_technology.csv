@@ -424,7 +424,7 @@ branch,technology,data-filepath
 <sector>.hydrogen.product,,data/service-technology-map/hydrogen/product
 <sector>.hydrogen.product.centralized-hydrogen,autothermal-reformer_hydrogen,data/service-technology-map/hydrogen/product/centralized-hydrogen
 <sector>.hydrogen.product.centralized-hydrogen,autothermal-reformer_hydrogen_ccs-concentrated,data/service-technology-map/hydrogen/product/centralized-hydrogen
-<sector>.hydrogen.product.centralized-hydrogen,electrolyzer_low-temperature,data/service-technology-map/hydrogen/product/centralized-hydrogen
+<sector>.hydrogen.product.centralized-hydrogen,electrolyzer_low-temperature-central,data/service-technology-map/hydrogen/product/centralized-hydrogen
 <sector>.hydrogen.product.centralized-hydrogen,electrolyzer_solid-oxide,data/service-technology-map/hydrogen/product/centralized-hydrogen
 <sector>.hydrogen.product.centralized-hydrogen,gasifier_biomass-waste,data/service-technology-map/hydrogen/product/centralized-hydrogen
 <sector>.hydrogen.product.centralized-hydrogen,gasifier_coal-petroleum-coke_ccs-concentrated,data/service-technology-map/hydrogen/product/centralized-hydrogen
@@ -1351,9 +1351,9 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.service.ccs.diffuse,capture-unit_calcium-looping,data/service-technology-map/general-services/ccs/diffuse
 <sector>.petroleum-refining.service.ccs.diffuse,capture-unit_membrane-cryogenic,data/service-technology-map/general-services/ccs/diffuse
 <sector>.petroleum-refining.service.direct-heat,direct-heater_electric,data/service-technology-map/petroleum-refining/service/direct-heat
-<sector>.petroleum-refining.service.direct-heat,direct-heater_fuel-fired,data/service-technology-map/petroleum-refining/service/direct-heat
-<sector>.petroleum-refining.service.direct-heat,direct-heater_fuel-fired_ccs-diffuse,data/service-technology-map/petroleum-refining/service/direct-heat
-<sector>.petroleum-refining.service.direct-heat,direct-heater_fuel-fired_efficiency-moderate,data/service-technology-map/petroleum-refining/service/direct-heat
+<sector>.petroleum-refining.service.direct-heat,direct-heater_refinery,data/service-technology-map/petroleum-refining/service/direct-heat
+<sector>.petroleum-refining.service.direct-heat,direct-heater_refinery_ccs-diffuse,data/service-technology-map/petroleum-refining/service/direct-heat
+<sector>.petroleum-refining.service.direct-heat,direct-heater_refinery_efficiency-moderate,data/service-technology-map/petroleum-refining/service/direct-heat
 <sector>.petroleum-refining.service.direct-heat,direct-heater_solid-fuel,data/service-technology-map/petroleum-refining/service/direct-heat
 <sector>.petroleum-refining.service.direct-heat,direct-heater_solid-fuel_efficiency-strong,data/service-technology-map/petroleum-refining/service/direct-heat
 <sector>.petroleum-refining.service.direct-heat,reactor_small-nuclear,data/service-technology-map/petroleum-refining/service/direct-heat

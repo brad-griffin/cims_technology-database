@@ -12,7 +12,7 @@ import ast
 import sys
 from collections import defaultdict
 
-from .common import VOCAB, currency_year, read
+from .common import REFERENCE, VOCAB, currency_year, read
 
 UNIT_SPELLING = {"C": "degC", "c": "degC", "degrees C": "degC",
                  "kgeCO2/unit": "kg/unit", "kgCO2/unit": "kg/unit",
@@ -119,6 +119,46 @@ def clean(facts, flows, cons) -> dict:
             r["cost-basis"] = "installed"
             r["note"] = (r.get("note") or "") + ASSUMED_INSTALLED
             stats["capex cost basis assumed installed"] += 1
+
+    # capacity bases the extraction left out, recorded per row after reading the
+    # source (records/reference/capacity-basis.csv; Brad 2026-10-28: recover the
+    # dropped source capacities). A `value-new` is the per-unit figure the
+    # source's own numbers give (one LNG train = plant nameplate / trains).
+    def _k(x):
+        try:
+            return f"{float(x):.6g}"
+        except (TypeError, ValueError):
+            return ""
+    cb = {(c["example-id"], _k(c["value"]), _k(c["value-min"]), _k(c["value-max"])): c
+          for c in read(REFERENCE / "capacity-basis.csv")}
+    used = set()
+    for r in facts:
+        if r["parameter"] != "capacity":
+            continue
+        key = (r["example-id"], _k(r.get("value")), _k(r.get("value-min")), _k(r.get("value-max")))
+        c = cb.get(key)
+        if not c:
+            continue
+        used.add(key)
+        r["capacity-basis"] = c["capacity-basis"]
+        if c.get("value-new"):
+            # a range-only row is restated as its midpoint
+            r["value"], r["formula"], r["value-type"] = c["value-new"], c["formula"], "derived"
+            r["value-min"] = r["value-max"] = ""
+        if c.get("unit-new"):
+            r["unit"] = c["unit-new"]
+        if c.get("target-new") is not None and c.get("target-new") != "":
+            r["target"] = "" if c["target-new"] == "-" else c["target-new"]
+        if c.get("assume"):
+            # the restatement rests on a proxy: graded as an assumption downstream
+            r["assume"] = c["assume"]
+        r["note"] = ((r.get("note") or "") + f"  CAPACITY BASIS RECORDED: {c['capacity-basis']} "
+                     f"(records/reference/capacity-basis.csv; {c['decided']})"
+                     + (f": {c['note']}." if c.get("note") else "."))
+        stats["capacity bases recorded"] += 1
+    missing = set(cb) - used
+    if missing:
+        sys.exit(f"capacity-basis.csv: {len(missing)} rows match no capacity fact: {sorted(missing)[:3]}")
 
     # the basis each parameter requires, read from the dictionary
     basis_req = {r["parameter"]: (r.get("basis-required") or "").strip()

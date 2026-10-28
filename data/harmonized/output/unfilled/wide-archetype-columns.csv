@@ -26,17 +26,18 @@ wide-archetype,lifetime,technical,years,"Expected technical service life of the 
 wide-archetype,lifetime_low,technical,years,
 wide-archetype,lifetime_high,technical,years,
 wide-archetype,lifetime_n,technical,,
-wide-archetype,capacity,technical,product-unit/yr,"Rated capacity of one unit, on the basis named in capacity-basis. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-archetype,capacity_low,technical,product-unit/yr,
-wide-archetype,capacity_high,technical,product-unit/yr,
+wide-archetype,capacity-unit,technical,,"The unit the capacity columns are in, chosen per archetype as the unit its industry rates plants in (records/reference/capacity-unit.csv). Not the product-unit: annual output and the per-capacity costs stay per product-unit."
+wide-archetype,capacity,technical,see capacity-unit,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,capacity_low,technical,see capacity-unit,
+wide-archetype,capacity_high,technical,see capacity-unit,
 wide-archetype,capacity_n,technical,,
 wide-archetype,capacity-factor,technical,%,"Annual output as a fraction of output at rated capacity running continuously. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,capacity-factor_low,technical,%,
 wide-archetype,capacity-factor_high,technical,%,
 wide-archetype,capacity-factor_n,technical,,
-wide-archetype,annual-output,technical,product-unit per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
-wide-archetype,annual-output_low,technical,product-unit per yr,
-wide-archetype,annual-output_high,technical,product-unit per yr,
+wide-archetype,annual-output,technical,product-unit made in a year,"Useful output of one unit over a typical year: capacity x capacity-factor. In the database's units, MW x 31,536 GJ/yr per MW, or kt/yr x 1000 t per kt, times the capacity factor. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-archetype,annual-output_low,technical,product-unit made in a year,
+wide-archetype,annual-output_high,technical,product-unit made in a year,
 wide-archetype,annual-output_n,technical,,
 wide-archetype,efficiency,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. On CHP archetypes (label says CHP) this column is the total CHP efficiency, electricity plus useful heat over fuel in (efficiency-chp); the electric and heat efficiencies are beside it. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-archetype,efficiency_low,technical,%,
@@ -325,29 +326,33 @@ wide-secondary-parameter,lifetime_stack,technical,years,"Expected technical serv
 wide-secondary-parameter,lifetime_stack_low,technical,years,
 wide-secondary-parameter,lifetime_stack_high,technical,years,
 wide-secondary-parameter,lifetime_stack_n,technical,,
-wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: ch4. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_n,technical,,
-wide-secondary-parameter,capacity_cooling,technical,MW cooling,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_component,technical,kt/yr component,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: component. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_component_n,technical,,
+wide-secondary-parameter,capacity_cooling,technical,MW cooling,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: cooling. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_cooling_low,technical,MW cooling,
 wide-secondary-parameter,capacity_cooling_high,technical,MW cooling,
 wide-secondary-parameter,capacity_cooling_n,technical,,
-wide-secondary-parameter,capacity_electricity,technical,MW electricity,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_electricity,technical,MW electricity,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_electricity_low,technical,MW electricity,
 wide-secondary-parameter,capacity_electricity_high,technical,MW electricity,
 wide-secondary-parameter,capacity_electricity_n,technical,,
-wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: ethylene. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_ethylene,technical,kt/yr ethylene,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: ethylene. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_ethylene_low,technical,kt/yr ethylene,
+wide-secondary-parameter,capacity_ethylene_high,technical,kt/yr ethylene,
 wide-secondary-parameter,capacity_ethylene_n,technical,,
-wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_feed,technical,MW feed,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: feed. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_feed_n,technical,,
-wide-secondary-parameter,capacity_heat,technical,MW heat,"Rated capacity of one unit, on the basis named in capacity-basis. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,capacity_heat,technical,MW heat,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: heat. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,capacity_heat_low,technical,MW heat,
 wide-secondary-parameter,capacity_heat_high,technical,MW heat,
 wide-secondary-parameter,capacity_heat_n,technical,,
-wide-secondary-parameter,annual-output_electricity,technical,GJ electricity per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,annual-output_electricity,technical,GJ electricity per yr,"Useful output of one unit over a typical year: capacity x capacity-factor. In the database's units, MW x 31,536 GJ/yr per MW, or kt/yr x 1000 t per kt, times the capacity factor. Species or stream: electricity. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,annual-output_electricity_n,technical,,
-wide-secondary-parameter,annual-output_methane,technical,GJ methane per yr,"Useful output of one unit over a year. Equals capacity x capacity-factor x 8760 where both are known. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
+wide-secondary-parameter,annual-output_methane,technical,GJ methane per yr,"Useful output of one unit over a typical year: capacity x capacity-factor. In the database's units, MW x 31,536 GJ/yr per MW, or kt/yr x 1000 t per kt, times the capacity factor. Species or stream: methane. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,annual-output_methane_n,technical,,
 wide-secondary-parameter,efficiency_biogas,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biogas. Central value: the median of three or more examples, otherwise the value from the highest-ranked source; low and high are the widest values any example gives."
 wide-secondary-parameter,efficiency_biogas_low,technical,%,

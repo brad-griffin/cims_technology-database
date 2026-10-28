@@ -7,14 +7,14 @@ boiler_solid-fuel,<sector>.*.service.steam,heat-low-temp,,,,cross-sector/heat-lo
 combustion-turbine_chp,<sector>.*.service.steam,heat-low-temp,,,,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp_ccs-diffuse,<sector>.*.service.steam,heat-low-temp,,,,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_fuel-fired,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,,,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_fuel-fired_ccs-diffuse,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,,,cross-sector/heat-high-temp: direct-heat leaves
+direct-heater_refinery_ccs-diffuse,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,,,cross-sector/heat-high-temp: direct-heat leaves
 direct-heater_fuel-fired_efficiency-moderate,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,,,cross-sector/heat-low-temp: direct-heat leaves
-direct-heater_fuel-fired_efficiency-moderate,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_refinery_efficiency-moderate,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves; moved 2026-10-28
 direct-heater_solid-fuel_efficiency-strong,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,,,as direct-heater_fuel-fired_efficiency-moderate
 direct-heater_solid-fuel_efficiency-strong,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,as direct-heater_fuel-fired_efficiency-moderate
 direct-heater_electric,<sector>.natural-gas.product.supply.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves
 direct-heater_electric,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves
-direct-heater_fuel-fired,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves
+direct-heater_refinery,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,cross-sector/heat-medium-temp: direct-heat leaves; moved to direct-heater_refinery 2026-10-28
 direct-heater_solid-fuel,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,,,as direct-heater_air-water
 direct-heater_solid-fuel,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,,,as direct-heater_fuel-fired
 fuel-cell_chp,<sector>.*.service.steam,heat-low-temp,,,,cross-sector/heat-low-temp: steam leaves
@@ -287,7 +287,7 @@ autothermal-reformer_hydrogen,<sector>.hydrogen.product.centralized-hydrogen,cen
 distillation-column_atmospheric-vacuum,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,,,petroleum-refining/crude-distillation: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
-electrolyzer_low-temperature,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,,,hydrogen/centralized-hydrogen-production: every leaf of the end use
+electrolyzer_low-temperature-central,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,,,hydrogen/centralized-hydrogen-production: every leaf of the end use; moved to the central archetype 2026-10-28
 gas-treatment-unit_acid-gas-advanced,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 gas-treatment-unit_sulphur-recovery,<sector>.natural-gas.product.supply.processing.sulphur-recovery,gas-processing,,,,node-split review 2026-10-22 (docs/reviews/node-split-review_2026-10-22.csv)
 gas-treatment-unit_sulphur-recovery,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,,,,petroleum-refining/conversion-and-treating: the leaf its name or label names

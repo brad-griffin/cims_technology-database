@@ -23,6 +23,7 @@ from .hierarchy import Hierarchy
 from .normalise import target_unit
 from .placement import placement
 from .bands import families
+from . import capacityunit
 
 IDENT = ["archetype", "label", "family", "families", "end-uses", "equipment", "discriminator", "modifiers",
          "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
@@ -227,7 +228,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 return f"{u} {t}" + (" per yr" if p == "annual-output" else "")
             return u or unit_label(p, t)
         if p == "annual-output":
-            return "product-unit per yr"
+            return "product-unit made in a year"
         return unit_label(p, t)
 
     def note_of(b):
@@ -254,6 +255,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "Central value: the median of three or more examples, otherwise the value from the "
             "highest-ranked source; low and high are the widest values any example gives.") if x)
 
+    cap_rules = capacityunit.load()
+
     def emit(name, cells, ident, order):
         keys = sorted({b for c in cells.values() for b in c}, key=order)
         spread = {b for b in keys if any(c[b].get("low") for c in cells.values() if b in c)}
@@ -266,10 +269,19 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                 cols.remove("heat-tier")
                 cols.append("heat-tier")
             extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
+            if name == "wide-archetype" and b == "capacity":
+                cols.append("capacity-unit")
+                groups["capacity-unit"] = records.parameters.get("capacity", {}).get("parameter-class", "")
+                units["capacity-unit"] = ""
+                notes["capacity-unit"] = ("The unit the capacity columns are in, chosen per archetype as the "
+                                          "unit its industry rates plants in (records/reference/capacity-unit.csv). "
+                                          "Not the product-unit: annual output and the per-capacity costs stay "
+                                          "per product-unit.")
             cols += extra
             p = (pt.get(b) or colmeta.get(b, (b, "")))[0]
             for c in extra:
-                units[c] = "" if c.endswith("_n") else unit_of(b)
+                units[c] = ("" if c.endswith("_n") else
+                            "see capacity-unit" if name == "wide-archetype" and b == "capacity" else unit_of(b))
                 groups[c] = records.parameters.get(p, {}).get("parameter-class", "")
             notes[b] = note_of(b)
         index = {c: i for i, c in enumerate(cols)}
@@ -293,6 +305,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                     ext.append((b, f"{b} {s['n-external']}/{s['n']}"))
                     flagged |= {(a["archetype"], c) for c in (b, f"{b}_low", f"{b}_high")}
             if name == "wide-archetype":
+                capacityunit.apply(cap_rules, row)
                 row["external-conversions"] = "; ".join(t for _, t in sorted(ext, key=lambda x: index.get(x[0], 0)))
                 row["source-corrections"] = "; ".join(t for _, t in sorted(cor, key=lambda x: index.get(x[0], 0)))
                 row["filled"] = "; ".join(t for _, t in sorted(filled, key=lambda x: index.get(x[0], 0)))

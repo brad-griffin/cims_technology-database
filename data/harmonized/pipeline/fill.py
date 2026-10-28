@@ -2257,6 +2257,113 @@ def pm_capacity_from_output(rule, psum, records, target_unit, ctx, stats):
              stats, rule["rule-id"])
 
 
+def _strength(r):
+    """How well a size value is supported: its grade first, then its example count."""
+    g = r.get("grade", "sourced")
+    n = fnum(r.get("n")) or 0
+    return (-GRADES.index(g) if g in GRADES else -len(GRADES), n)
+
+
+def pm_size_anchor(rule, psum, records, target_unit, ctx, stats):
+    """Capacity, capacity factor and annual output agree: output = capacity x
+    capacity factor x hours (Brad 2026-10-28, extending the 2026-10-21 ruling "keep
+    capacity and output consistent" to every archetype).
+
+      * an archetype with an annual output and a capacity factor but no capacity
+        gets capacity = output / capacity factor;
+      * where all three are held and disagree by more than `tolerance` (default
+        10%), one size value anchors and the other is recalculated from it:
+          - the annual output anchors when its sources include facility statistics
+            (source ids starting with a prefix in `facility-sources`): the median of
+            existing plants describes the typical plant (Brad 2026-10-21);
+          - otherwise the better-supported value anchors: the better grade, then
+            the one pooled from more examples; a tie anchors capacity, the
+            nameplate rating sources state;
+        a sourced value that is recalculated moves to target as-sourced (kept for
+        comparison), as in the other size rules.
+    Two rules use it: `mode=align` in the main phase, before annual outputs are
+    filled from capacity and before the end-use and sibling medians, so those
+    medians read aligned sizes; `mode=fill` in the post phase, after every annual
+    output is filled and before the variant size rules, so a variant takes its
+    host's capacity."""
+    sc = _scope(rule)
+    mode = sc.get("mode", "align")      # align: all three held; fill: no capacity held
+    tol = fnum(sc.get("tolerance")) or 0.10
+    fac = tuple(x for x in sc.get("facility-sources", "").split("|") if x)
+    # archetypes a facility-statistics rule sizes (capacity-from-output,
+    # cf-from-output) are left to that rule, which knows which value anchors
+    own = set()
+    for r in rules():
+        if r.get("status") == "active" and r.get("method") in ("capacity-from-output", "cf-from-output"):
+            own |= set(split_list(_scope(r).get("archetype", "").replace("|", ";")))
+    for a in records.archetypes:
+        k = a["archetype"]
+        if k in own or not _in_scope(rule, a, ctx["have"].get(k, {}), ctx):
+            continue
+        h = ctx["have"].setdefault(k, {})
+        cap, cf, out = h.get(("capacity", "")), h.get(("capacity-factor", "")), h.get(("annual-output", ""))
+        if not (_live(cf) and fnum(cf["central"])) or not _live(out):
+            continue
+        kf = OUTPUT_K.get(a["product-unit"], 1.0)
+        unit = target_unit("capacity", a["product-unit"], records.parameters.get("capacity", {}).get("unit-default", ""))
+        fc, fl, fh = _lohi(cf)
+        oc, ol, oh = _lohi(out)
+        anchor = "annual-output"
+        held = bool(_live(cap) and fnum(cap["central"]))
+        if held != (mode == "align"):
+            continue
+        if held:
+            cc, cl, ch = _lohi(cap)
+            implied = cc * fc / 100 * kf
+            if implied and abs(oc / implied - 1) <= tol:
+                continue
+            facility = bool(fac) and any(s.startswith(fac) for s in split_list(out.get("sources", "")))
+            if not facility and _strength(cap) >= _strength(out):
+                anchor = "capacity"
+            note = f"was {oc:.4g} {out.get('unit')} against {implied:.4g} from capacity" if anchor == "capacity" \
+                else f"was {cc:.4g} {cap.get('unit')}; output / capacity factor gives {oc / (fc / 100) / kf:.4g}"
+        else:
+            note = "no capacity held"
+        if anchor == "capacity":
+            g = worst(["identity", cap.get("grade", "sourced"), cf.get("grade", "sourced")])
+            c, lo, hi = cc * fc / 100 * kf, cl * fl / 100 * kf, ch * fh / 100 * kf
+            row = _row(k, "annual-output", "", out.get("unit") or a["product-unit"], c, lo, hi, g, rule,
+                       [_input(cap, "capacity"), _input(cf, "capacity-factor"), f"x {kf:g}"],
+                       "; ".join(dict.fromkeys(split_list(cap.get("sources", "")) + split_list(cf.get("sources", "")))),
+                       f"capacity anchors; {note}")
+        else:
+            g = worst(["identity", out.get("grade", "sourced"), cf.get("grade", "sourced")])
+            c = oc / (fc / 100) / kf
+            lo = ol / (max(fl, fh) / 100) / kf if max(fl, fh) else c
+            hi = oh / (min(fl, fh) / 100) / kf if min(fl, fh) else c
+            row = _row(k, "capacity", "", unit, c, lo, hi, g, rule,
+                       [_input(out, "annual-output"), _input(cf, "capacity-factor"), f"/ {kf:g}"],
+                       "; ".join(dict.fromkeys(split_list(out.get("sources", "")) + split_list(cf.get("sources", "")))),
+                       f"annual output anchors; {note}")
+        _put(psum, h, row, stats, rule["rule-id"])
+
+
+def pm_scale_ratio(rule, psum, records, target_unit, ctx, stats):
+    """A smaller-scale archetype's cost = the larger archetype's x a same-source
+    scale ratio (Brad 2026-10-28: on-site electrolysis from the central plant).
+    Pooled costs across sources differ more by cost year than by plant size, so
+    the size effect is taken from sources that price both sizes. Scope:
+    `archetype=` (the target), `from=` (the archetype scaled), `ratio=c|lo|hi`.
+    A sourced value moves to target as-sourced."""
+    sc = _scope(rule)
+    p, k, src = rule["parameter"], sc.get("archetype", ""), sc.get("from", "")
+    rc, rl, rh = (float(x) for x in sc["ratio"].split("|"))
+    hr = ctx["have"].get(src, {}).get((p, ""))
+    if k not in ctx["arch"] or not _live(hr):
+        return
+    c, lo, hi = _lohi(hr)
+    g = worst([rule["grade"], hr.get("grade", "sourced")])
+    _put(psum, ctx["have"].setdefault(k, {}),
+         _row(k, p, "", hr["unit"], c * rc, lo * rl, hi * rh, g, rule,
+              [_input(hr, f"{src} {p}"), f"x {rc:g} ({rl:g}-{rh:g})"], hr.get("sources", "")),
+         stats, rule["rule-id"])
+
+
 def pm_sec_from_efficiency(rule, psum, records, target_unit, ctx, stats):
     """On the energy-service archetypes the rule names, the energy-use total =
     100 / the pooled efficiency, where the total rests on one or two examples and
@@ -2295,7 +2402,7 @@ def pm_sec_from_efficiency(rule, psum, records, target_unit, ctx, stats):
                  stats, rule["rule-id"] + ":carrier")
 
 
-POST_METHODS = {"sec-from-efficiency": pm_sec_from_efficiency, "capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
+POST_METHODS = {"sec-from-efficiency": pm_sec_from_efficiency, "size-anchor": pm_size_anchor, "scale-ratio": pm_scale_ratio, "capacity-from-output": pm_capacity_from_output, "cf-from-output": pm_cf_from_output, "host-size": pm_host_size, "ccs-cost": pm_ccs_cost, "ccs-energy": pm_ccs_energy,
                 "ccs-emissions": pm_ccs_emissions, "levelized": pm_levelized, "rebuild": pm_rebuild,
                 "levelized-energy": pm_levelized_energy}
 
