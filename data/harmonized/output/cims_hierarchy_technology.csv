@@ -156,6 +156,7 @@ branch,technology,data-filepath
 <sector>.chemicals.product.methanol,reactor_co2-to-methanol,data/service-technology-map/chemicals/product/methanol
 <sector>.chemicals.product.methanol,steam-reformer_methanol,data/service-technology-map/chemicals/product/methanol
 <sector>.chemicals.product.chlor-alkali,,data/service-technology-map/chemicals/product/chlor-alkali
+<sector>.chemicals.product.chlor-alkali.caustic-evaporation,evaporator_caustic-soda,data/service-technology-map/chemicals/product/chlor-alkali/caustic-evaporation
 <sector>.chemicals.product.chlor-alkali.caustic-evaporation,vapour-recompressor_evaporation,data/service-technology-map/chemicals/product/chlor-alkali/caustic-evaporation
 <sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrolysis-cell_chlor-alkali-diaphragm,data/service-technology-map/chemicals/product/chlor-alkali/chlorine-electrolysis
 <sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrolysis-cell_chlor-alkali-membrane,data/service-technology-map/chemicals/product/chlor-alkali/chlorine-electrolysis
@@ -1124,6 +1125,7 @@ branch,technology,data-filepath
 <sector>.natural-gas,,data/service-technology-map/natural-gas
 <sector>.natural-gas.product,,data/service-technology-map/natural-gas/product
 <sector>.natural-gas.product.distribution,turboexpander_pressure-let-down,data/service-technology-map/natural-gas/product/distribution
+<sector>.natural-gas.product.distribution,valve_pressure-let-down,data/service-technology-map/natural-gas/product/distribution
 <sector>.natural-gas.product.supply,,data/service-technology-map/natural-gas/product/supply
 <sector>.natural-gas.product.supply.direct-heat,direct-heater_electric,data/service-technology-map/natural-gas/product/supply/direct-heat
 <sector>.natural-gas.product.supply.direct-heat,direct-heater_fuel-fired,data/service-technology-map/natural-gas/product/supply/direct-heat
@@ -1188,7 +1190,9 @@ branch,technology,data-filepath
 <sector>.natural-gas.product.supply.completion,fracturing-fleet_diesel,data/service-technology-map/natural-gas/product/supply/completion
 <sector>.natural-gas.product.supply.completion,fracturing-fleet_dual-fuel,data/service-technology-map/natural-gas/product/supply/completion
 <sector>.natural-gas.product.supply.completion,fracturing-fleet_electric,data/service-technology-map/natural-gas/product/supply/completion
+<sector>.natural-gas.product.transmission,pipeline_natural-gas,data/service-technology-map/natural-gas/product/transmission
 <sector>.natural-gas.product.transmission,turboexpander_pressure-let-down,data/service-technology-map/natural-gas/product/transmission
+<sector>.natural-gas.product.transmission,valve_pressure-let-down,data/service-technology-map/natural-gas/product/transmission
 <sector>.natural-gas.service,,data/service-technology-map/general-services
 <sector>.natural-gas.service.ccs,,data/service-technology-map/general-services/ccs
 <sector>.natural-gas.service.ccs.concentrated,adsorber_pressure-swing,data/service-technology-map/general-services/ccs/concentrated
@@ -1256,8 +1260,7 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.product.light-medium,,data/service-technology-map/petroleum-crude/product/light-medium
 <sector>.petroleum-crude.product.light-medium.offshore,,data/service-technology-map/petroleum-crude/product/light-medium/offshore
 <sector>.petroleum-crude.product.light-medium.onshore,,data/service-technology-map/petroleum-crude/product/light-medium/onshore
-<sector>.petroleum-crude.product.transmission,pump_electric-station,data/service-technology-map/petroleum-crude/product/transmission
-<sector>.petroleum-crude.product.transmission,pump_electric-station_efficiency-moderate,data/service-technology-map/petroleum-crude/product/transmission
+<sector>.petroleum-crude.product.transmission,pipeline_crude-oil,data/service-technology-map/petroleum-crude/product/transmission
 <sector>.petroleum-crude.service,,data/service-technology-map/petroleum-crude/service
 <sector>.petroleum-crude.service.ccs,,data/service-technology-map/general-services/ccs
 <sector>.petroleum-crude.service.ccs.concentrated,adsorber_pressure-swing,data/service-technology-map/general-services/ccs/concentrated
@@ -1284,6 +1287,8 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_battery-electric,data/service-technology-map/petroleum-crude/service/mine-haulage
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_diesel,data/service-technology-map/petroleum-crude/service/mine-haulage
 <sector>.petroleum-crude.service.mine-haulage,haul-truck_dual-fuel,data/service-technology-map/petroleum-crude/service/mine-haulage
+<sector>.petroleum-crude.service.pumping,pump_electric-station,data/service-technology-map/petroleum-crude/service/pumping
+<sector>.petroleum-crude.service.pumping,pump_electric-station_efficiency-moderate,data/service-technology-map/petroleum-crude/service/pumping
 <sector>.petroleum-crude.service.produced-water,evaporator_crystallizer-produced-water,data/service-technology-map/petroleum-crude/service/produced-water
 <sector>.petroleum-crude.service.produced-water,separator_produced-water-recycling,data/service-technology-map/petroleum-crude/service/produced-water
 <sector>.petroleum-crude.service.produced-water,separator_warm-lime-softening,data/service-technology-map/petroleum-crude/service/produced-water
@@ -1311,6 +1316,7 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/petroleum-crude/service/tailings-disposal
+<sector>.petroleum-crude.service.tailings-disposal,separator_thickening-filtration,data/service-technology-map/petroleum-crude/service/tailings-disposal
 <sector>.petroleum-crude.service.artificial-lift,pump_artificial-lift,data/service-technology-map/petroleum-crude/service/artificial-lift
 <sector>.petroleum-crude.service.treating,direct-heater_line-heater,data/service-technology-map/petroleum-crude/service/treating
 <sector>.petroleum-crude.service.treating,heat-pump_oil-treating,data/service-technology-map/petroleum-crude/service/treating

@@ -517,3 +517,7 @@ direct-heater_refinery_efficiency-moderate,heat-supply,GJ,estimated,estimated,no
 electrolyzer_low-temperature-central,hydrogen,GJ,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 refinery_alumina,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,guess,identity,sourced
 digester_bayer_electric-heating,non-ferrous-metals,t,estimated,estimated,estimated,guess,estimated,guess,guess,sourced
+evaporator_caustic-soda,chemicals,t,guess,guess,not-applicable,sourced,sourced,guess,identity,sourced
+valve_pressure-let-down,oil-and-gas,1000-m3,guess,guess,not-applicable,guess,guess,guess,guess,sourced
+pipeline_natural-gas,oil-and-gas,1000-m3,guess,guess,not-applicable,guess,guess,guess,missing,sourced
+pipeline_crude-oil,oil-and-gas,m3,guess,guess,not-applicable,guess,guess,guess,missing,sourced

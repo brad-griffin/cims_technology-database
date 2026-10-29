@@ -77,25 +77,25 @@ WIDE_NOTES = {
     "source-corrections": (
         "Parameters whose pooled value includes a figure the source prints wrongly and the "
         "modeller corrected (a slipped decimal or zero, a wrong unit or carrier label), as "
-        "examples so corrected / examples pooled. Each correction, the figure as printed and "
+        "examples so corrected / examples pooled. Each correction, the figure as printed, and "
         "the evidence: records/reference/source-correction.csv; the rows carry the "
         "correction-id in example-parameter.csv (correction) and a note starting "
         "ASSUMED CORRECTION. These values are also counted in external-conversions and "
-        "shaded purple in the workbook."),
+        "shaded as converted in the workbook (see readme)."),
     "filled": (
         "Parameters with no sourced value, filled by the fill step and graded: identity "
         "(calculated from this archetype's own values), estimated (from other archetypes or a "
         "class rule fitted on this database), proxy (a class constant from a named outside "
         "catalogue, records/fill/fill-assumption.csv) or guess (a judgement, "
         "records/fill/fill-judgement.csv); not-applicable marks a parameter that does "
-        "not characterise the archetype. Shaded in the workbook; their _n is 0. Rule, "
-        "inputs and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, "
+        "not characterise the archetype. Shaded by grade in the workbook (see readme); their _n is 0. Rule, "
+        "inputs, and rationale: archetype-parameter.csv (grade, method, rule-id, inputs, "
         "rationale); rules in records/fill/."),
     "external-conversions": (
         "Parameters whose pooled value rests on a conversion factor from outside the source "
-        "(a heating value, a density, a process ratio, a pooled efficiency or an assumption), "
-        "as examples so converted / examples pooled. Those values are shaded purple in the "
-        "workbook. Which factors: archetype-parameter.csv (external-factors); how each example "
+        "(a heating value, a density, a process ratio, a pooled efficiency, or an assumption), "
+        "as examples so converted / examples pooled. Those values are shaded as converted in the "
+        "workbook (see readme). Which factors: archetype-parameter.csv (external-factors); how each example "
         "was converted: example-parameter.csv (conversion, conversion-class, "
         "conversion-factors)."),
 }
@@ -149,8 +149,10 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                        "named" if exs else "gap")}))
     # cross-cutting service families first, in records/vocabulary order (heat supply,
     # power, machine drive, ...), then the sector families alphabetically by the
-    # label a reader sees (modeller 2026-09-26, 2026-10-08)
-    fam_rank = {f: ((0, i, "") if r.get("kind") == "service" else (1, 0, (r.get("label") or f).lower()))
+    # label a reader sees (modeller 2026-09-26, 2026-10-08); the catch-all other
+    # industry family last (Brad 2026-10-29)
+    fam_rank = {f: ((0, i, "") if r.get("kind") == "service" else
+                    (1, 1 if f == "other-industry" else 0, (r.get("label") or f).lower()))
                 for i, (f, r) in enumerate(records.families.items())}
     from .bands import type_rank
     arows.sort(key=lambda r: (fam_rank.get(r["family"], (2, 0, r["family"])), type_rank(r), r["archetype"]))
@@ -252,9 +254,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                                   "temperatures sources give (temperature-min, temperature-max).",
         }.get(b, "")
         return " ".join(x for x in (
-            pdef.get("definition", ""), f"Species or stream: {t}." if t else "", extra,
-            "Central value: the median of three or more examples, otherwise the value from the "
-            "highest-ranked source; low and high are the widest values any example gives.") if x)
+            pdef.get("definition", ""), f"Species or stream: {t}." if t else "", extra) if x)
 
     cap_rules = capacityunit.load()
 

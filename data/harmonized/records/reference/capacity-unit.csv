@@ -17,24 +17,15 @@ product:biogas,m3/h,3.6,energy-content,MW x 3.6 GJ/h over the raw-biogas energy 
 product:renewable natural gas,GJ/yr,31536,,"MW x 31,536 GJ/yr per MW; Canadian RNG projects and supply contracts are stated in GJ a year (Brad 2026-10-28: the unit the product is generally discussed in)"
 product:biomethane,GJ/yr,31536,,as renewable natural gas (Brad 2026-10-28: the unit the product is generally discussed in)
 product:synthetic natural gas,Mm3/d,0.00225059,,"MW x 86.4 GJ/d over 38,390 GJ per million m3 (cf-natural-gas-hhv-volume, 15 degC), in million m3/d; SNG plants are stated in million m3 or bcm a year (Brad 2026-10-29: on the same m3 as the shown 1000-m3 product)"
-product:ammonia,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:methanol,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:urea,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:nitric acid,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:acid,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:adipic acid,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:chlorine,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:oxygen,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:sulphuric acid,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:lime,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:melt,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:air-dry pulp,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:black liquor solids,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:paper,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:clinker,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
-product:calcined clay,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
+product:clinker,Mt/yr,0.001,,kt/yr / 1000; as cement (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:calcined clay,Mt/yr,0.001,,kt/yr / 1000; as cement (Brad 2026-10-29: one unit within a sector where reading ease allows)
 product:alumina,Mt/yr,0.001,,kt/yr / 1000; alumina refineries are stated in Mt a year (Brad 2026-10-28: the unit the product is generally discussed in)
-product:pyrolysis oil,t/d,2.73973,,kt/yr x 1000 / 365; this industry rates plants in t/d
 product:iron,Mt/yr,0.001,,kt/yr / 1000; steel and coal plants are rated in Mt/yr
 product:liquid steel,Mt/yr,0.001,,kt/yr / 1000; steel and coal plants are rated in Mt/yr
 product:rolled product,Mt/yr,0.001,,kt/yr / 1000; steel and coal plants are rated in Mt/yr
@@ -51,7 +42,7 @@ product:synthetic crude,m3/d,0.00273973,,"m3/yr / 365; the regulator unit for oi
 product:refined petroleum products,m3/d,0.00273973,,"m3/yr / 365; the regulator unit for oil, bitumen and refinery throughput (AER, CER) (Brad 2026-10-28: oil and gas units metric)"
 product-unit:m3-km,m3-km/d,0.00273973,,canonical m3-km/yr over 365 d
 product:mobile work,kW,1000,,vehicles and mobile machines are rated in kW
-product:gasoline,m3/d,86.4,energy-content density,"MW x 86.4 GJ/d over the HHV and density, in m3/d of liquid fuel (Brad 2026-10-28: oil and gas units metric)"
+product:gasoline,ML/yr,31.536,energy-content density,"MW x 31,536 GJ/yr per MW over the HHV and density, in megalitres; as the other biofuels (Brad 2026-10-29: one unit within a sector where reading ease allows)"
 product:liquefied natural gas,Mt/yr,0.001,,kt/yr / 1000; LNG trains are rated in Mt/yr (mtpa)
 product:ore,Mt/yr,0.001,,kt/yr / 1000; mines are rated in Mt of ore a year
 product:tailings,Mt/yr,0.001,,kt/yr / 1000; mine tailings handling is rated in Mt/yr
@@ -69,3 +60,10 @@ product:hydraulic work,hhp,1341.02,,"MW x 1,341 hp per MW; frac fleets are rated
 product:cement,Mt/yr,0.001,,kt/yr / 1000; cement plants are stated in Mt a year (Brad 2026-10-28: the unit the product is generally discussed in)
 product:pure alcohol,ML/yr,0.001,,m3/yr / 1000; distilleries are stated in litres of absolute alcohol a year (Brad 2026-10-28: the unit the product is generally discussed in)
 product:glass,t/d,2.73973,,"kt/yr x 1000 / 365; as glass melt, glass plants are rated in t/d (Brad 2026-10-28: the unit the product is generally discussed in)"
+product:ground slag,Mt/yr,0.001,,kt/yr / 1000; as cement (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:concentrate,Mt/yr,0.001,,kt/yr / 1000; as ore and coal (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:potash (K2O basis),Mt/yr,0.001,,kt/yr / 1000; as ore and coal; potash mines are stated in Mt a year (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:ceramic product,t/d,2.73973,,kt/yr x 1000 / 365; as lime and glass (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:wood,t/d,2.73973,,kt/yr x 1000 / 365; as pulp and paper (Brad 2026-10-29: one unit within a sector where reading ease allows)
+product:lignin,t/d,2.73973,,kt/yr x 1000 / 365; as pulp and paper (Brad 2026-10-29: one unit within a sector where reading ease allows)
+archetype:reactor_pyrolysis-oil,kt/yr,31.536,energy-content,"MW x 31,536 GJ/yr per MW over the HHV, in kt/yr: the home product is per GJ, unlike the per-t plastics pyrolysis (Brad 2026-10-29: as the other pyrolysis oil and solid biofuels)"

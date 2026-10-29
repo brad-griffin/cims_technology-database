@@ -445,9 +445,9 @@ liquefaction-train_small-scale,<sector>.natural-gas.product.supply.lng-liquefact
 management-system_leak-detection,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,,,oil-and-gas/fugitive-emissions: every leaf of the end use
 motor_induction-standard,<sector>.petroleum-crude.service.field-engines,field-engines,,,,oil-and-gas/field-engines: every leaf of the end use
 pneumatic-device_gas-driven,<sector>.natural-gas.product.supply.venting.controls,venting,,,,oil-and-gas/venting: the leaf its name or label names
-pump_electric-station_efficiency-moderate,<sector>.petroleum-crude.product.transmission,oil-pipelines,,,,oil-and-gas/oil-pipelines: every leaf of the end use
+pump_electric-station_efficiency-moderate,<sector>.petroleum-crude.service.pumping,crude-pipeline-pumping,,,,oil-and-gas/oil-pipelines: every leaf of the end use Moved to the pumping node (Brad 2026-10-29).
 process-improvement_low-emission-components,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,,,oil-and-gas/fugitive-emissions: every leaf of the end use
-pump_electric-station,<sector>.petroleum-crude.product.transmission,oil-pipelines,,,,oil-and-gas/oil-pipelines: every leaf of the end use
+pump_electric-station,<sector>.petroleum-crude.service.pumping,crude-pipeline-pumping,,,,oil-and-gas/oil-pipelines: every leaf of the end use Moved to the pumping node (Brad 2026-10-29).
 pump_plunger-lift,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,,,oil-and-gas/venting: the leaf its name or label names
 reciprocating-engine_diesel-field,<sector>.petroleum-crude.service.field-engines,field-engines,,,,oil-and-gas/field-engines: every leaf of the end use
 reciprocating-engine_dual-fuel,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,,,oil-and-gas/drilling-and-well-services: every leaf of oil-and-gas/drilling-and-well-services; no evidence to narrow it
@@ -457,8 +457,8 @@ separator_dry-stack-tailings,<sector>.coal-mining.product.coal-preparation.taili
 separator_dry-stack-tailings,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,,,narrowed in the mapping review 2026-09-30 (docs/reviews/archetype-service-review_2026-09-30.csv)
 separator_produced-water-recycling,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,,,oil-and-gas/produced-water-handling: every leaf of the end use
 separator_warm-lime-softening,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,,,oil-and-gas/produced-water-handling: every leaf of the end use
-turboexpander_pressure-let-down,<sector>.natural-gas.product.distribution,gas-pipelines,,,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
-turboexpander_pressure-let-down,<sector>.natural-gas.product.transmission,gas-pipelines,,,,oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it
+turboexpander_pressure-let-down,<sector>.natural-gas.product.distribution,gas-pipelines,gas let down,1000-m3,per cf-letdown-electricity-per-gas,"oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it Product override (Brad 2026-10-29): shown per 1000 m3 of gas let down, the CIMS transmission basis, with the electricity the expander makes per 1000 m3."
+turboexpander_pressure-let-down,<sector>.natural-gas.product.transmission,gas-pipelines,gas let down,1000-m3,per cf-letdown-electricity-per-gas,"oil-and-gas/gas-pipelines: every leaf of oil-and-gas/gas-pipelines; no evidence to narrow it Product override (Brad 2026-10-29): shown per 1000 m3 of gas let down, the CIMS transmission basis, with the electricity the expander makes per 1000 m3."
 well_disposal-injection,<sector>.petroleum-crude.service.produced-water,produced-water-handling,,,,oil-and-gas/produced-water-handling: every leaf of the end use
 well_solvent-assisted,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,,,oil-and-gas/in-situ-bitumen: every leaf of the end use
 well_solvent-only,<sector>.petroleum-crude.product.bitumen.in-situ,in-situ-bitumen,,,,oil-and-gas/in-situ-bitumen: every leaf of the end use
@@ -757,3 +757,9 @@ calciner_clay-flash,<sector>.industrial-minerals.product.cement.calcined-clay,ce
 kiln_clay-calcination,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,,,added 2026-10-27 (S121)
 grinding-mill_slag,<sector>.industrial-minerals.product.cement.ground-slag,cement-ground-slag,,,,added 2026-10-27 (S121)
 digester_bayer_electric-heating,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.digestion,alumina-digestion,,,,added 2026-10-28 (Brad 2026-10-28 (split alumina)): MVR digestion
+evaporator_caustic-soda,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,,,,added 2026-10-29 (Brad 2026-10-29): conventional option beside the MVR evaporator
+valve_pressure-let-down,<sector>.natural-gas.product.distribution,gas-pipelines,,,,added 2026-10-29 (Brad 2026-10-29): conventional option beside the let-down turboexpander
+valve_pressure-let-down,<sector>.natural-gas.product.transmission,gas-pipelines,,,,added 2026-10-29 (Brad 2026-10-29): conventional option beside the let-down turboexpander
+separator_thickening-filtration,<sector>.petroleum-crude.service.tailings-disposal,oil-sands-tailings,,,,"added 2026-10-29 (Brad 2026-10-29): the slurry-tailings baseline beside dry stacking, as on the mining tailings nodes"
+pipeline_natural-gas,<sector>.natural-gas.product.transmission,gas-pipelines,,,,added 2026-10-29 (Brad 2026-10-29): transmission pipeline with its compression
+pipeline_crude-oil,<sector>.petroleum-crude.product.transmission,oil-pipelines,,,,"added 2026-10-29 (Brad 2026-10-29): the pipe, drawing on crude-pipeline-pumping"

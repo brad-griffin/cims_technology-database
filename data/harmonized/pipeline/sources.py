@@ -174,7 +174,8 @@ RENAMED = [
 
 
 
-COLS = ["source-id", "short-name", "full-citation", "year", "doi", "url", "verification",
+# short name first, so the sheet reads by name (Brad 2026-10-29)
+COLS = ["short-name", "source-id", "full-citation", "year", "doi", "url", "verification",
         "role", "held-locally", "rows-in-database", "families", "licence",
         "citation-as-cited", "note"]
 

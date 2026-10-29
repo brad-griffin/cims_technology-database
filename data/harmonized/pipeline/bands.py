@@ -35,7 +35,8 @@ gives the derived families column.
   * a display unit by product (Brad 2026-10-29): records/reference/product-display-unit.csv
     shows every archetype whose home product and unit match in the unit the product
     is generally discussed in (hydrogen per t, liquid biofuels per m3), wherever no
-    service-row override applies. The home unit stays the CIMS basis;
+    service-row override applies, under `product-shown` where the name changes too
+    (crude per m3 moved 1000 km). The home unit stays the CIMS basis;
   * `factor` is a number or a product of conversion-factor.csv ids and numbers,
     `a x b per c x d` (= a*b / (c*d)), so no outside factor is typed inline;
   * where an override changes the product (water evaporated -> black liquor solids)
@@ -51,15 +52,15 @@ from .common import REFERENCE, RECORDS, read
 from . import capacityunit
 
 ORDER = [
-    "heat-low-temp", "heat-medium-temp", "heat-high-temp", "on-site-power-generation", "gas-pipelines",
+    "heat-low-temp", "heat-medium-temp", "heat-high-temp", "on-site-power-generation",
     "hvac-heating", "hvac-cooling", "refrigeration", "lighting", "mobile-equipment",
     "co2-capture-concentrated", "co2-capture-diffuse", "direct-air-capture", "co2-transport-and-storage",
     "extraction-and-haulage", "ventilation-and-air-heating", "comminution", "separation-and-processing",
     "product-drying", "pelletizing",
-    "drilling-and-well-services", "oil-and-gas-production", "field-engines", "in-situ-bitumen", "oil-sands-mining-and-extraction",
+    "drilling-and-well-services", "field-engines", "oil-and-gas-production", "gas-processing", "in-situ-bitumen", "oil-sands-mining-and-extraction",
     "bitumen-upgrading", "upgrader-hydrogen", "water-and-tailings-management", "oil-sands-tailings",
-    "produced-water-handling", "gas-processing", "compressor-drive-engine", "compressor-drive-turbine",
-    "lng-liquefaction", "oil-pipelines", "venting", "flaring",
+    "produced-water-handling", "compressor-drive-engine", "compressor-drive-turbine",
+    "lng-liquefaction", "oil-pipelines", "crude-pipeline-pumping", "gas-pipelines", "venting", "flaring",
     "fugitive-emissions", "synthetic-fuels",
     "crude-distillation", "conversion-and-treating", "refinery-hydrogen",
     "centralized-hydrogen-production", "hydrogen-distribution",
@@ -144,7 +145,7 @@ def _display_units():
     out = {}
     for r in read(REFERENCE / "product-display-unit.csv"):
         factor_value(r["factor"])      # fails the build on an unknown factor id
-        out[(r["product"], r["home-unit"])] = {"product": r["product"], "product-unit": r["product-unit"],
+        out[(r["product"], r["home-unit"])] = {"product": r.get("product-shown") or r["product"], "product-unit": r["product-unit"],
                                                "factor": r["factor"], "note": r.get("note", "")}
     return out
 
