@@ -71,10 +71,13 @@ def factor_for(rule, row):
 def apply(rules, row, cols=("capacity", "capacity_low", "capacity_high")):
     """Rewrite the row's capacity cells in the shown unit; set `capacity-unit`.
     Returns the canonical unit kept when no rule applies (product property missing)."""
-    if _num(row.get("capacity")) is None:
-        row["capacity-unit"] = ""
-        return
     rule = rule_for(rules, row)
+    if _num(row.get("capacity")) is None:
+        # no capacity (the no-abatement options): the unit is still shown, so the
+        # column reads the same down an end use (Brad 2026-10-29)
+        row["capacity-unit"] = rule["capacity-unit"] if rule else ""
+        row["_capacity-canonical"] = {c: None for c in cols}
+        return
     f = factor_for(rule, row) if rule else None
     if f is None:
         raise SystemExit(f"capacity-unit.csv: no usable rule for {row.get('archetype')} "

@@ -31,13 +31,24 @@ gives the derived families column.
     x its efficiency, or the judged efficiency or host in
     records/reference/process-heat-efficiency.csv (ruling E2, light-industrial heat).
     Per-unit columns are divided by the factor, per-year output and capacity
-    multiplied. The CSV wide views stay on the home product.
+    multiplied. The CSV wide views stay on the home product;
+  * a display unit by product (Brad 2026-10-29): records/reference/product-display-unit.csv
+    shows every archetype whose home product and unit match in the unit the product
+    is generally discussed in (hydrogen per t, liquid biofuels per m3), wherever no
+    service-row override applies. The home unit stays the CIMS basis;
+  * `factor` is a number or a product of conversion-factor.csv ids and numbers,
+    `a x b per c x d` (= a*b / (c*d)), so no outside factor is typed inline;
+  * where an override changes the product (water evaporated -> black liquor solids)
+    and is not per GJ, capacity is restated from the canonical value in the new
+    product's unit from records/reference/capacity-unit.csv (Brad 2026-10-29).
 """
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 
-from .common import RECORDS, read
+from .common import REFERENCE, RECORDS, read
+from . import capacityunit
 
 ORDER = [
     "heat-low-temp", "heat-medium-temp", "heat-high-temp", "on-site-power-generation", "gas-pipelines",
@@ -96,6 +107,72 @@ def _overrides(records):
     return {(s["archetype"], s.get("end-use", "")): s for s in records.service if s.get("product-unit")}
 
 
+_CF = None
+
+
+def _cf():
+    global _CF
+    if _CF is None:
+        _CF = {r["factor-id"]: _num(r["factor"]) for r in read(REFERENCE / "conversion-factor.csv")}
+    return _CF
+
+
+def factor_value(expr):
+    """An override factor: blank = 1, a number, or `a x b per c x d` of numbers and
+    conversion-factor.csv ids."""
+    expr = (expr or "").strip()
+    if not expr or expr == "process-heat":
+        return 1.0 if not expr else None
+    if _num(expr) is not None:
+        return _num(expr)
+    parts = re.split(r"(?:^|\s)per\s", expr, maxsplit=1)
+    num, den = (parts + [""])[:2]
+
+    def prod(part):
+        out = 1.0
+        for t in [x.strip() for x in part.split(" x ") if x.strip()]:
+            v = _num(t) if _num(t) is not None else _cf().get(t)
+            if not v:
+                raise SystemExit(f"override factor {expr!r}: unknown or zero term {t!r}")
+            out *= v
+        return out
+    return prod(num) / prod(den)
+
+
+def _display_units():
+    """(home product, home unit) -> a display override (product-display-unit.csv)."""
+    out = {}
+    for r in read(REFERENCE / "product-display-unit.csv"):
+        factor_value(r["factor"])      # fails the build on an unknown factor id
+        out[(r["product"], r["home-unit"])] = {"product": r["product"], "product-unit": r["product-unit"],
+                                               "factor": r["factor"], "note": r.get("note", "")}
+    return out
+
+
+def override_for(ov, disp, k, e, a):
+    """The override an archetype takes under end use e: its service row's, else its product's."""
+    return ov.get((k, e)) or disp.get((a.get("product", ""), a.get("product-unit", "")))
+
+
+PER_YR = {"GJ": 31536.0, "t": 1000.0}   # home units per canonical capacity unit a year
+_RULES = None
+
+
+def _restate_capacity(out, r, o, f):
+    global _RULES
+    _RULES = _RULES or capacityunit.load()
+    hu, ou = r.get("product-unit", ""), o["product-unit"]
+    row = {"archetype": "", "end-uses": "", "product": o["product"], "product-unit": ou,
+           "product-energy-content": r.get("product-energy-content"), "product-density": r.get("product-density")}
+    rule = capacityunit.rule_for(_RULES, row)
+    k = capacityunit.factor_for(rule, row) if rule else None
+    if k is None:
+        raise SystemExit(f"capacity-unit.csv: no usable rule for {r.get('archetype')} shown as {o['product']} ({ou})")
+    for c, v in r["_capacity-canonical"].items():
+        out[c] = "" if v is None else float(f"{v * PER_YR.get(hu, 1.0) * f / PER_YR.get(ou, 1.0) * k:.5g}")
+    out["capacity-unit"] = rule["capacity-unit"]
+
+
 def _factor_fn(rows):
     """archetype -> GJ of process heat per home unit, or None."""
     by = {r.get("archetype"): r for r in rows}
@@ -115,7 +192,7 @@ def _factor_fn(rows):
 def _apply(r, o, units, factor):
     """The row shown in the override's product: per-unit columns rescaled."""
     k = r.get("archetype", "")
-    f = factor(k) if o.get("factor") == "process-heat" else (_num(o.get("factor")) or 1.0)
+    f = factor(k) if o.get("factor") == "process-heat" else factor_value(o.get("factor"))
     out = dict(r, product=o["product"], **{"product-unit": o["product-unit"]})
     if not f:
         out["product"] = f"{r.get('product', '')} (no process-heat factor: per {r.get('product-unit', '')})"
@@ -126,7 +203,8 @@ def _apply(r, o, units, factor):
             v = _num(r.get(c))
             if v is None or "product-unit" not in u or c.endswith("_n"):
                 continue
-            out[c] = v / f if ("/product-unit" in u or "/(product-unit" in u) else v * f
+            x = v / f if ("/product-unit" in u or "/(product-unit" in u) else v * f
+            out[c] = float(f"{x:.6g}")    # 6 significant figures, as the CSVs
         canon = r.get("_capacity-canonical")
         if canon and o["product-unit"] == "GJ" and r.get("product-unit") in ("t", "m3", "GJ"):
             # one capacity unit per end use (Brad 2026-10-28): restated in MW of the
@@ -141,6 +219,9 @@ def _apply(r, o, units, factor):
                 + (" (SEC x efficiency)" if o.get("factor") == "process-heat" else ""))
         if "filled" in out:
             out["filled"] = "; ".join(x for x in (note, out.get("filled", "")) if x)
+    if (o["product"] != r.get("product") and o["product-unit"] != "GJ"
+            and r.get("_capacity-canonical") is not None):
+        _restate_capacity(out, r, o, f)
     return out
 
 
@@ -172,13 +253,13 @@ def _context(records):
 def _products_by_end_use(records, eus) -> dict[str, set]:
     """end use -> the products its archetypes make (heat tiers included), after overrides."""
     out = defaultdict(set)
-    ov = _overrides(records)
+    ov, disp = _overrides(records), _display_units()
     for a in records.archetypes:
         ids = list(eus.get(a["archetype"], []))
         if a.get("family") == "heat-supply":
             ids += [TIER[t.strip()] for t in (a.get("heat-tier") or "").split(";") if t.strip() in TIER]
         for e in ids:
-            o = ov.get((a["archetype"], e))
+            o = override_for(ov, disp, a["archetype"], e, a)
             out[e].add(_product({"product": o["product"], "product-unit": o["product-unit"]} if o else a))
     return out
 
@@ -219,6 +300,7 @@ def expand(rows: list[dict], records, units: dict | None = None,
     label, asector, eus = _context(records)
     prods = _products_by_end_use(records, eus)
     ov, units = _overrides(records), units or {}
+    disp = _display_units()
     factor = _factor_fn(factor_rows or rows)
     service_fams = {f for f, r in records.families.items() if r.get("kind") == "service"}
 
@@ -239,7 +321,7 @@ def expand(rows: list[dict], records, units: dict | None = None,
             placed, seen = [(f, "", r.get("equipment", ""))], set()
             for e in eus.get(k, []):
                 h = _home_of(e, f, asector, records)
-                lab = sub_label(e, label.get(e, e), ov.get((k, e), r), prods)
+                lab = sub_label(e, label.get(e, e), override_for(ov, disp, k, e, r) or r, prods)
                 if h != f and (h, lab) not in seen:
                     seen.add((h, lab))
                     placed.append((h, e, lab))
@@ -251,14 +333,15 @@ def expand(rows: list[dict], records, units: dict | None = None,
             seen, placed = set(), []
             for e in ids:
                 h = _home_of(e, f, asector, records)
-                lab = sub_label(e, label.get(e, e), ov.get((k, e), r), prods)
+                lab = sub_label(e, label.get(e, e), override_for(ov, disp, k, e, r) or r, prods)
                 if (h, lab) not in seen:
                     seen.add((h, lab))
                     placed.append((h, e, lab))
             placed = placed or [(f, "~", NO_CONNECTION)]
         for h, e, lab in placed:
             fam_pos.setdefault(h, len(fam_pos))
-            rr = _apply(r, ov[(k, e)], units, factor) if (k, e) in ov else r
+            o = override_for(ov, disp, k, e, r)
+            rr = _apply(r, o, units, factor) if o else r
             out.append(dict(rr, _family=h, _sub=lab,
                             _key=(fam_pos[h], (0 if (e == "" or own(h, e)) else 1000 if e != "~" else 5000)
                                   + rank.get(e, 998), lab,
