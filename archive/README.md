@@ -1,8 +1,8 @@
 # Archive
 
 This folder keeps the records behind the current design. Nothing here is read by
-the build. [docs/decisions.md](../docs/decisions.md) indexes the decisions, and
-[docs/design.md](../docs/design.md) states the rules now in force.
+the build. [database/docs/decisions.md](../database/docs/decisions.md) indexes the decisions, and
+[database/docs/design.md](../database/docs/design.md) states the rules now in force.
 
 The exact tree before the 2026-09-23 restructure is at the git tag
 `pre-archetype-restructure`. That includes the generated tables deleted then:
@@ -40,3 +40,11 @@ The documents that recorded each decision, dated by when the work started:
 
 Copies of the design files taken before two earlier revisions:
 `2026-09-16_pre-harmonization` and `2026-09-22_pre-revision-7`.
+
+## intake/ (not tracked)
+
+The intake working folders `high/`, `medium/`, and `low/`, moved from
+`database/raw-data/_high`, `_medium`, and `_low` on 2026-10-30 after the intake rounds
+finished: triage lists, mapping proposals, extraction specs, page renders, and
+duplicate copies of held documents. Every source document in them is either held in
+`database/raw-data/` or recorded as a duplicate in its triage list.

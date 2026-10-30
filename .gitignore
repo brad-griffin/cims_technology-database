@@ -7,7 +7,7 @@
 # only what a tool writes for its own benefit and can regenerate from scratch.
 
 # Python bytecode and tool caches. Every script here is run straight from the
-# working tree (python data/harmonized/populate.py), so these appear on any run
+# working tree (python database/harmonized/populate.py), so these appear on any run
 # and are pure noise in a diff.
 __pycache__/
 *.py[cod]
@@ -40,40 +40,44 @@ desktop.ini
 # disk beside their extractions but are not tracked: git holds only what was
 # extracted from them (the CSVs and their _meta/_nodes sidecars) and the
 # manifest that says where each document came from (source-details_*.csv).
-data/raw-data/**/*.pdf
-data/raw-data/**/*.doc
-data/raw-data/**/*.docx
-data/raw-data/**/*.xls
-data/raw-data/**/*.xlsx
-data/raw-data/**/*.xlsm
-data/raw-data/**/*.xlsb
-data/raw-data/**/*.ods
-data/raw-data/**/*.html
-data/raw-data/**/*.mhtml
-docs/context/*.xlsx
+database/raw-data/**/*.pdf
+database/raw-data/**/*.doc
+database/raw-data/**/*.docx
+database/raw-data/**/*.xls
+database/raw-data/**/*.xlsx
+database/raw-data/**/*.xlsm
+database/raw-data/**/*.xlsb
+database/raw-data/**/*.ods
+database/raw-data/**/*.html
+database/raw-data/**/*.mhtml
+cims/reporting-accounting/context/*.xlsx
 # the retired manifest workbook is the project's own file, not a source document
-!data/raw-data/superseded/source_details.xlsx
-# intake folders: documents waiting to be processed
-data/raw-data/_high/
-data/raw-data/_medium/
-data/raw-data/_low/
+!database/raw-data/superseded/source_details.xlsx
+# intake working folders (triage lists, mapping proposals, page renders, and
+# duplicate copies), archived 2026-10-30 after the intake rounds finished
+archive/intake/high/
+archive/intake/medium/
+archive/intake/low/
 # bulk source datasets kept beside their extractions (primary data, like the PDFs)
-data/raw-data/gov-usa/nrel/nrel_2025_annual-technology-baseline-electricity-data.csv
-data/raw-data/superseded/nrel_2024_annual-technology-baseline-electricity-data.csv
-data/raw-data/background-no-data-extracted/epa_2023_methane-mitigation-options.json
-data/raw-data/background-no-data-extracted/epa_2023_methane-mitigation-emission-join.json
-data/raw-data/**/*.zip
-data/raw-data/iea/iea_2026_methane-tracker-*-data.csv
-data/raw-data/other-reports/iai/iai_2026_*-data.csv
-data/raw-data/**/*.json
-data/raw-data/iea/iea_2026_methane-abatement-model-*-data.csv
-data/raw-data/iea/iea_2026_methane-abatement-model-notes.txt
+database/raw-data/gov-usa/nrel/nrel_2025_annual-technology-baseline-electricity-data.csv
+database/raw-data/superseded/nrel_2024_annual-technology-baseline-electricity-data.csv
+database/raw-data/background-no-data-extracted/epa_2023_methane-mitigation-options.json
+database/raw-data/background-no-data-extracted/epa_2023_methane-mitigation-emission-join.json
+database/raw-data/**/*.zip
+database/raw-data/iea/iea_2026_methane-tracker-*-data.csv
+database/raw-data/other-reports/iai/iai_2026_*-data.csv
+database/raw-data/**/*.json
+database/raw-data/iea/iea_2026_methane-abatement-model-*-data.csv
+database/raw-data/iea/iea_2026_methane-abatement-model-notes.txt
 
 # Large extracts of the EIA bulk files: regenerate with
-# data/raw-data/gov-usa/eia/prices/eia_bulk_extract.py from the (ignored) zips.
-data/raw-data/gov-usa/eia/prices/eia_2026_bulk-seds_prices.csv
-data/raw-data/gov-usa/eia/prices/eia_2026_bulk-elec_prices.csv
+# database/raw-data/gov-usa/eia/prices/eia_bulk_extract.py from the (ignored) zips.
+database/raw-data/gov-usa/eia/prices/eia_2026_bulk-seds_prices.csv
+database/raw-data/gov-usa/eia/prices/eia_2026_bulk-elec_prices.csv
 
 # Petrinex facility-year metrics (bulk, ~26 MB): regenerate with
-# data/raw-data/gov-can/petrinex/petrinex_annual.py then petrinex_summary.py from the (ignored) zips.
-data/raw-data/gov-can/petrinex/petrinex_2026_facility-metrics_ab-sk.csv
+# database/raw-data/gov-can/petrinex/petrinex_annual.py then petrinex_summary.py from the (ignored) zips.
+database/raw-data/gov-can/petrinex/petrinex_2026_facility-metrics_ab-sk.csv
+
+# files the Claude app saves into the connected folder
+Claude outputs/
