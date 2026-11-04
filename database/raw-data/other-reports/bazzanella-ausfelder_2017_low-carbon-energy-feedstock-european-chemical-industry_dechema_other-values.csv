@@ -1,0 +1,65 @@
+process,technology,item,value,unit,reference,note
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-cracker_fired-tubular,"specific energy consumption, world average",13.8,GJ/t product,"p.34, Table 1",World average column; OECD Europe value is in the main file
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_methanol,"specific energy consumption, world average",13.8,GJ/t product,"p.34, Table 1",World average column; OECD Europe value is in the main file
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_ammonia,"specific energy consumption, world average",17.8,GJ/t product,"p.34, Table 1",World average column; OECD Europe value is in the main file
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-mercury,total electrical energy requirement if all energy is electric,3600,kWh/t Cl2,"p.43, Table 6",Table 6 assumes all energy (incl. caustic concentration) supplied as electricity
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-diaphragm,total electrical energy requirement if all energy is electric,3800,kWh/t Cl2,"p.43, Table 6",
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-membrane,total electrical energy requirement if all energy is electric,3050,kWh/t Cl2,"p.43, Table 6",
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_oxygen-depolarized,total electrical energy requirement if all energy is electric,2250,kWh/t Cl2,"p.43, Table 6",
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",,indirect CO2 at EU 2013 grid intensity 558 g/kWh: mercury; diaphragm; membrane; ODC,2.0; 2.1; 1.7; 1.3,t CO2/t Cl2,"p.43, Table 6","Grid-electricity (scope 2) emissions, not loaded"
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-membrane,expected power consumption by 2050,2400,kWh/t Cl2,"p.42, Sect. 3.3.2",Projection; caustic concentration energy expected constant. reprinted from Cefic/Ecofys 2013
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-membrane,"recent plant capacities (Spain; Germany, 2009)",30; 430,kt/yr,p.41,Plant examples
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",,European chlorine production 2015,9.58,Mt,"p.43, Table 7",Eurochlor
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,2030 and beyond: investment cost,600 (ref 28); 800 (ref 34); 370-800 (ref 32),EUR/kW,"p.48, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,2030 and beyond: efficiency,48-63,kWh/kg H2,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,2030 and beyond: system sizes,500 MW installations,,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_pem,2030 and beyond: investment cost,500 (ref 28); 700 (ref 34); 250-1270 (ref 32),EUR/kW,"p.48, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_pem,2030 and beyond: efficiency,44-53,kWh/kg H2,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_pem,2030 and beyond: system sizes,MW stacks,,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_solid-oxide,2030 and beyond: investment cost,300-1000 (ref 28); 625 (ref 32),EUR/kW,"p.48, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_solid-oxide,2030 and beyond: efficiency,37,kWh/kg H2,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_solid-oxide,2030 and beyond: system sizes,MW stacks (long term),,"p.49, Table 9",Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,"hydrogen production cost, further reduction indicated",2,EUR/kg H2,"p.49, Table 9",Smolinka et al. 2011
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,alkaline system cost by 2030; optimistic (used for 2050),600; 370,EUR/kW,p.47,Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_pem,PEM system cost by 2020; manufacturers; 2030 and beyond,1000; 700; 500,EUR/kW,p.47,Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_solid-oxide,SOE cost 2020-2030; longer term,1000; 300,EUR/kW,p.48,Projection
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",,theoretical minimum electrical input (HHV of hydrogen),39.4,kWh/kg H2,p.49,
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",,carbon footprint of electrolytic H2 at 4.3 kWh/Nm3 and wind power 11.2 g CO2e/kWh; asset construction and operation,0.56; 0.213,t CO2e/t H2,"p.52, Table 10",Life-cycle electricity footprint; not loaded
+Alternative low-carbon hydrogen production (Sect. 4.1.2),reactor_methane-pyrolysis,reaction enthalpy CH4 -> 2H2 + C,37.4,kJ/mol H2,p.53,
+Alternative low-carbon hydrogen production (Sect. 4.1.2),reactor_methane-pyrolysis,"carbon footprint reduction of H2 and carbon vs today (today power mix, with carbon use and heat integration)",~50,%,p.53,
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,life-cycle footprint (electrolysis 0.1 + other steam 0.02),0.12,t CO2e/t NH3,"p.58, Table 11",Low-carbon electricity footprint; not scope 1
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,avoided CO2 vs NG ammonia,1.71,t CO2/t NH3,p.58,
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,ASU electricity per t N2,0.4,MWh/t N2,p.57,reprinted from Matzen et al. 2015
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,electricity cost per t NH3 at 50 EUR/MWh; with capital and operating cost,626; 800,EUR/t NH3,p.58,
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",steam-reformer_ammonia,NG ammonia production cost in Europe,350,EUR/t NH3,p.59,reprinted from Boulamanti and Moya 2016
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",steam-reformer_ammonia,total energy demand incl. feedstock,35.04,GJ/t NH3,"p.57, Table 11",
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",,European ammonia production,17,Mt/yr,p.55,IFA
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,total energy incl. low-carbon ammonia feed,29,GJ/t urea,p.61,8.1 MWh/t; chain value
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,footprint of low-carbon urea; fossil urea,-0.35; 1.7,t CO2/t urea,p.61,Life-cycle incl. CO2 feed credit
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,low-carbon urea production cost,450-500,EUR/t,p.62,
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",steam-reformer_methanol,feedstock-related CO2; total; cradle to gate,0.97; 1.49; 1.82,t CO2/t methanol,"p.65, Table 14","Scope of ""feedstock related"" unclear (stoichiometric product carbon is 1.373 t)"
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,life-cycle footprint: process (H2 0.106 + other 0.017); feedstock credit; total,0.123; -0.79; -0.67,t CO2/t methanol,"p.65-66, Table 14",
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,production cost at 5000 h/yr (10; 30; 50 EUR/MWh),335; 536; 737,EUR/t,"p.66, Table 15",
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,production cost at 3000 h/yr (10; 30; 50 EUR/MWh),447; 625; 826,EUR/t,"p.66, Table 15",
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,electrolysers share of total installed cost,75,%,p.67,
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,CRI George Olah plant: cost; capacity; production; electrolysis,7.1 MEUR; 1300 t; 4000 t/yr; 5 MW,,"p.64, Box 2",Ambiguous capacity wording; not loaded
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",steam-reformer_methanol,JRC production cost Europe; worldwide range,400; 60-260,EUR/t,p.67,
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",reactor_methanol-to-olefins,power-to-olefins chain energy (electricity),95.5; 26.6,GJ/t HVC; MWh/t HVC,p.69,Chain incl. power-to-methanol
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",reactor_methanol-to-olefins,NG-methanol-MTO chain: energy; CO2,17.5; 2.9,GJ/t HVC; t CO2/t HVC,p.69,
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",steam-cracker_fired-tubular,feedstock energy content; total incl. feedstock (ethylene; propylene),42.5; 63.6; 62.3,GJ/t,"p.69; p.123, Table 34",
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",steam-cracker_fired-tubular,JRC naphtha HVC production cost Europe,816,EUR/t HVC,p.70,
+"BTX, naphtha route vs methanol-to-aromatics (Sect. 4.6)",reactor_methanol-to-aromatics,power-to-BTX chain energy,176,GJ/t BTX,"p.72; p.123, Table 34",
+"BTX, naphtha route vs methanol-to-aromatics (Sect. 4.6)",separator_aromatics-extraction,fossil BTX route emissions (Sect. 6.5.3),0.84,t CO2e/t BTX,p.95,Conflicts with 0.55 on p.72
+"Low-carbon olefins and BTX, economics (Ch. 11, Table 35)",steam-cracker_fired-tubular,specific production cost 2015: propylene; BTX,1063; 956,EUR/t,"p.128, Table 35",
+Biomethanol by biomass gasification (Sect. 6.1),gasifier_biomass-methanol,cradle-to-gate emissions: short rotation coppice; forest residues; NG methanol,0.64; 0.56; 0.84,t CO2e/t methanol,p.86,reprinted from Majer and Groengroeft 2010
+Biomethanol by biomass gasification (Sect. 6.1),gasifier_biomass-methanol,capital cost per unit capacity relative to NG plants,>=3.4,times,p.87,reprinted from IEA-ETSAP/IRENA I08
+Bioethylene by ethanol dehydration (Sect. 6.3),reactor_ethanol-to-ethylene,minimum theoretical energy (endothermic),1.68,GJ/t ethylene,p.91,reprinted from Kochar et al. 1981
+Bioethylene by ethanol dehydration (Sect. 6.3),reactor_ethanol-to-ethylene,chain energy incl. 1.74 t wood ethanol; wood feed,85.5; 10.5,GJ/t; t/t,p.91,
+Bioethanol (Sect. 6.2),,well-to-tank energy: sugar beet with credits; without; wood,23.85; 38; 47.7,GJ/t ethanol,p.89,reprinted from JRC well-to-wheels
+Bioethanol (Sect. 6.2),,lignocellulosic ethanol production cost,975,EUR/t (2012),p.90,reprinted from IRENA
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),,CO2 from natural gas combustion (100% efficiency),55.9,kg CO2/GJ,p.36,German Environment Agency
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),,steam export: naphtha cracking; NG methanol; NG ammonia,1.5; 2; 4.3,GJ/t product,p.37,
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),,European chemical industry derived heat 2014,319,PJ,p.36,eurostat
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),vapour-recompressor_steam,fuel saving at 8.18 EUR/GJ NG and 40 EUR/MWh electricity,190-225,MEUR/yr,p.40,Sector-wide
+Scenario economics (Ch. 11),,electrolyser investment cost path 2015 to 2050,1450 to 375,EUR/kW,p.127,Linear decrease assumed
+Scenario economics (Ch. 11),,electricity price assumed,40,EUR/MWh,p.127,

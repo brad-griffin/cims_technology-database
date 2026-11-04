@@ -26,10 +26,10 @@ combustion-turbine_chp,heat-supply,<sector>.mining.service.steam,heat-low-temp,<
 combustion-turbine_chp,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 combustion-turbine_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
-direct-heater_fuel-fired,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.refining,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.lead.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 direct-heater_fuel-fired,heat-supply,<sector>.metal-smelting.product.zinc.pyrometallurgy.roasting,pyrometallurgy,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
+direct-heater_fuel-fired,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,cross-sector/heat-low-temp: direct-heat leaves
 direct-heater_refinery,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,cross-sector/heat-medium-temp: direct-heat leaves; moved to direct-heater_refinery 2026-10-28
 direct-heater_solid-fuel,heat-supply,<sector>.natural-gas.product.supply.direct-heat,heat-low-temp,,as direct-heater_air-water
 direct-heater_solid-fuel,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-medium-temp,,as direct-heater_fuel-fired
@@ -92,6 +92,15 @@ combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.petroleum-crude.service.
 combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 combustion-turbine_chp_ccs-diffuse,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,"cross-sector/heat-low-temp: steam leaves; as combustion-turbine_chp, 2026-10-07"
 direct-heater_refinery_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: direct-heat leaves
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.metal-smelting.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.mining.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,as its host steam-turbine_back-pressure
 anaerobic-digester_chp,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,,sectors with an organic waste or wastewater stream (2026-09-30)
 anaerobic-digester_chp,heat-supply,<sector>.light-industrial.service.steam,heat-low-temp,,sectors with an organic waste or wastewater stream (2026-09-30)
 anaerobic-digester_chp,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,,sectors with an organic waste or wastewater stream (2026-09-30)
@@ -169,7 +178,6 @@ heat-pump_very-high-temperature,heat-supply,<sector>.mining.service.steam,heat-m
 heat-pump_very-high-temperature,heat-supply,<sector>.petroleum-crude.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 heat-pump_very-high-temperature,heat-supply,<sector>.petroleum-refining.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
 heat-pump_very-high-temperature,heat-supply,<sector>.pulp-and-paper.service.steam,heat-medium-temp,<sector>.*.service.steam,cross-sector/heat-medium-temp: steam leaves
-reactor_small-nuclear,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -179,6 +187,7 @@ reactor_small-nuclear,heat-supply,<sector>.mining.service.steam,heat-low-temp,<s
 reactor_small-nuclear,heat-supply,<sector>.petroleum-crude.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.petroleum-refining.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 reactor_small-nuclear,heat-supply,<sector>.pulp-and-paper.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
+reactor_small-nuclear,heat-supply,<sector>.petroleum-refining.service.direct-heat,heat-high-temp,,cross-sector/heat-high-temp: steam leaves
 solar-collector,heat-supply,<sector>.biofuels.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.chemicals.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
 solar-collector,heat-supply,<sector>.iron-and-steel.service.steam,heat-low-temp,<sector>.*.service.steam,cross-sector/heat-low-temp: steam leaves
@@ -231,6 +240,22 @@ photovoltaic-array_battery-storage,power-generation,<sector>.mining.service.on-s
 reactor_small-nuclear-power,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,split from reactor_small-nuclear 2026-10-09: power archetype for the power node
 steam-turbine_waste-heat,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
 wind-turbine,power-generation,<sector>.mining.service.on-site-power,on-site-power-generation,,cross-sector/on-site-power-generation: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -240,40 +265,7 @@ combustion-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.pum
 combustion-turbine_drive,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 combustion-turbine_drive,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
@@ -282,6 +274,14 @@ motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-d
 motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
@@ -297,12 +297,36 @@ motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-d
 motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_induction-standard,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
 motor_induction-standard,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
 pump_mine-dewatering,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,,"moved from tailings-disposal 2026-10-09: a pump provides shaft work, not tailings disposed"
 pump_mine-dewatering,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,,moved from tailings-disposal 2026-10-09
 reciprocating-engine_diesel-field,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
-reciprocating-engine_drive,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
+reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
@@ -312,23 +336,24 @@ reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.p
 reciprocating-engine_drive,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
 reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
-reciprocating-engine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,added 2026-10-05 (archetype combination review)
+reciprocating-engine_drive,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
 reciprocating-engine_gasoline-propane,machine-drive,<sector>.petroleum-crude.service.field-engines,field-engines,,oil-and-gas/field-engines: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+steam-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -338,22 +363,22 @@ steam-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.pumps,pu
 steam-turbine_drive,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 steam-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-steam-turbine_drive,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
@@ -363,22 +388,6 @@ combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.servi
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.iron-and-steel.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.metal-smelting.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
-combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 combustion-turbine_drive_efficiency-moderate,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
@@ -405,23 +414,6 @@ motor_induction-standard_efficiency-moderate,machine-drive,<sector>.mining.servi
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_induction-standard_efficiency-moderate,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
@@ -430,6 +422,14 @@ motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-d
 motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
@@ -445,24 +445,16 @@ motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-d
 motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_premium-efficiency,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_premium-efficiency,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
-motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
@@ -471,6 +463,14 @@ motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive
 motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.compressed-air,compressed-air,<sector>.*.service.machine-drive.compressed-air,cross-sector/compressed-air: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.iron-and-steel.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.fans-and-blowers,fans-and-blowers,<sector>.*.service.machine-drive.fans-and-blowers,cross-sector/fans-and-blowers: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.materials-handling,materials-handling,<sector>.*.service.machine-drive.materials-handling,cross-sector/materials-handling: every leaf of the end use
@@ -486,10 +486,19 @@ motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive
 motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.materials-processing,materials-processing,<sector>.*.service.machine-drive.materials-processing,cross-sector/materials-processing: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.chemicals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.coal-mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.industrial-minerals.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.iron-and-steel.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.metal-smelting.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.mining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.natural-gas.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.petroleum-refining.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
+motor_variable-speed,machine-drive,<sector>.pulp-and-paper.service.machine-drive.pumps,pumps,<sector>.*.service.machine-drive.pumps,cross-sector/pumps: every leaf of the end use
 motor_variable-speed,machine-drive,<sector>.light-industrial.service.machine-drive,materials-processing,,cross-sector/materials-processing: every leaf of the end use
 reciprocating-engine_drive_efficiency-moderate,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
-compressor_electric,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
 compressor_electric,machine-drive,<sector>.natural-gas.service.compressor-drive.engine,compressor-drive-engine,,oil-and-gas/compressor-drive-engine: every leaf of the end use
+compressor_electric,machine-drive,<sector>.natural-gas.service.compressor-drive.turbine,compressor-drive-turbine,,oil-and-gas/compressor-drive-turbine: every leaf of the end use
 chiller_hvac,space-conditioning,<sector>.chemicals.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller)) Moved to chiller_hvac 2026-10-28 (S164).
 chiller_hvac,space-conditioning,<sector>.coal-mining.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller)) Moved to chiller_hvac 2026-10-28 (S164).
 chiller_hvac,space-conditioning,<sector>.commercial.service.hvac.cooling,hvac-cooling,<sector>.*.service.hvac.cooling,every sector's hvac cooling node (naming and end-use split 2026-10-23 (modeller)) Moved to chiller_hvac 2026-10-28 (S164).
@@ -824,11 +833,11 @@ oven_electric,food-and-beverage,<sector>.light-industrial.service.heat.baking-fr
 press_high-pressure-processing,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 radio-frequency-heater_food,food-and-beverage,<sector>.light-industrial.service.heat.process-heating,thermal-processing,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 pipeline_hydrogen,hydrogen,<sector>.hydrogen.service.distribution,hydrogen-distribution,,hydrogen/hydrogen-distribution: every leaf of the end use
-autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
 autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,added 2026-10-05 (archetype combination review)
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,added 2026-10-05 (archetype combination review)
 gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
-autothermal-reformer_hydrogen,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 autothermal-reformer_hydrogen,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
+autothermal-reformer_hydrogen,hydrogen,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature-central,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use; moved to the central archetype 2026-10-28
 electrolyzer_solid-oxide,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
 gasifier_biomass-waste,hydrogen,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
@@ -846,9 +855,9 @@ caster_ingot,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.cast
 coating-line_electrolytic,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 coating-line_hot-dip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.coating,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 coke-oven_by-product,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
-electric-arc-furnace,iron-and-steel,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-electric-arc-furnace,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 electric-arc-furnace,iron-and-steel,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products. Product override (band product review 2026-10-22, approved 2026-10-23): label: the same tonne of molten metal."
+electric-arc-furnace,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
+electric-arc-furnace,iron-and-steel,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 furnace_ladle-metallurgy,iron-and-steel,<sector>.iron-and-steel.service.ladle-refining,steelmaking,,mapping review 2026-09-30: ladle furnace refines steel
 furnace_reheating,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
 pellet-plant_induration,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
@@ -878,14 +887,15 @@ blast-furnace_ccs-diffuse,iron-and-steel,<sector>.iron-and-steel.service.hot-met
 shaft-furnace_direct-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the device's route
 smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host smelting-vessel_bath-reduction
 annealing-furnace_continuous,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+blast-furnace_biogenic-carbon,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host blast-furnace
 blast-furnace_top-gas-recycling,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 caster_strip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
 coke-oven_heat-recovery,iron-and-steel,<sector>.iron-and-steel.service.coke,cokemaking,,iron-and-steel/cokemaking: every leaf of the end use
 electrolysis-cell_iron-electrowinning,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
 electrolysis-cell_molten-oxide,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 furnace_rotary-hearth-direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,added 2026-10-01
-induction-heater_reheating,iron-and-steel,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 induction-heater_reheating,iron-and-steel,<sector>.iron-and-steel.service.reheating,reheating,,iron-and-steel/reheating: every leaf of the end use
+induction-heater_reheating,iron-and-steel,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 induction-heater_strip-heating,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_electric-smelting,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 pellet-plant_plasma-electric,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
@@ -906,18 +916,18 @@ haul-truck_diesel,mining,<sector>.mining.service.mine-haulage.underground,extrac
 haul-truck_diesel,mining,<sector>.petroleum-crude.service.mine-haulage,oil-sands-mining-and-extraction,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 hoist,mining,<sector>.coal-mining.service.mine-haulage,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 hoist,mining,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
-leaching-vessel_heap-atmospheric,mining,<sector>.mining.service.leaching,separation-and-processing,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
 leaching-vessel_heap-atmospheric,mining,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
 leaching-vessel_heap-atmospheric,mining,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
 leaching-vessel_heap-atmospheric,mining,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
+leaching-vessel_heap-atmospheric,mining,<sector>.mining.service.leaching,separation-and-processing,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
 mine_open-pit-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_open-pit-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_underground-coal,mining,<sector>.coal-mining.product.raw-product.extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 mine_underground-coal,mining,<sector>.coal-mining.product.simplified-extraction,extraction-and-haulage,,mining/extraction-and-haulage: the coal leaves
 no-abatement_coal-mine-methane,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,no-abatement options 2026-10-22 (modeller)
 separator_gravity-magnetic,mining,<sector>.mining.service.separation,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
-separator_thickening-filtration,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
 separator_thickening-filtration,mining,<sector>.coal-mining.product.coal-preparation.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
+separator_thickening-filtration,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
 separator_thickening-filtration,mining,<sector>.petroleum-crude.service.tailings-disposal,oil-sands-tailings,,"added 2026-10-29 (Brad 2026-10-29): the slurry-tailings baseline beside dry stacking, as on the mining tailings nodes"
 conveyor_in-pit-crushing,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
@@ -938,10 +948,10 @@ haul-truck_hydrogen-fuel-cell,mining,<sector>.mining.service.mine-haulage.underg
 haul-truck_trolley-assist,mining,<sector>.coal-mining.service.mine-haulage,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_trolley-assist,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_trolley-assist,mining,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
-leaching-vessel_high-pressure-acid,mining,<sector>.mining.service.leaching,separation-and-processing,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_high-pressure-acid,mining,<sector>.metal-smelting.product.zinc.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
+leaching-vessel_high-pressure-acid,mining,<sector>.mining.service.leaching,separation-and-processing,,"corrected 2026-09-23: pressure leaching: copper, nickel and zinc"
 leaching-vessel_in-situ,mining,<sector>.mining.service.leaching,separation-and-processing,,mining/separation-and-processing: the leaf its name or label names
 process-improvement_coal-mine-methane-drainage,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv): methane control requested by coal extraction (the node cims/to-fix.md asked for)
 separator_ore-sorting,mining,<sector>.coal-mining.product.size-reduced-product.crushing,comminution,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
@@ -1015,10 +1025,10 @@ smelting-vessel_bottom-blowing,non-ferrous-metals,<sector>.metal-smelting.produc
 smelting-vessel_bottom-blowing,non-ferrous-metals,<sector>.metal-smelting.product.lead.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_bottom-blowing,non-ferrous-metals,<sector>.metal-smelting.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 dryer_ceramic-hot-air,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
-dryer_rotary-direct-fired,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_rotary-direct-fired,non-metallic-minerals,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-dryer_rotary-direct-fired,non-metallic-minerals,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+dryer_rotary-direct-fired,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_rotary-direct-fired,non-metallic-minerals,<sector>.industrial-minerals.product.gypsum,drying-and-low-temp-calcining,,mapping review 2026-09-30: description covers gypsum calcining; gypsum would otherwise be empty
+dryer_rotary-direct-fired,non-metallic-minerals,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 furnace_lehr,non-metallic-minerals,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
 furnace_regenerative,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,non-metallic-minerals/glass-melting: every leaf of the end use
 kiln_intermittent,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,copied from kiln_tunnel-roller 2026-10-01
@@ -1033,9 +1043,9 @@ kiln_tunnel-roller_efficiency-strong,non-metallic-minerals,<sector>.industrial-m
 furnace_regenerative_ccs-diffuse,non-metallic-minerals,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,copied from furnace_regenerative 2026-10-01
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,<sector>.industrial-minerals.product.lime,lime-calcination,,non-metallic-minerals/lime-calcination: the device's route
 kiln_lime-rotary-preheater_ccs-diffuse,non-metallic-minerals,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,pulp-and-paper/lime-kiln: every leaf of the end use
-dryer_electric,non-metallic-minerals,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-dryer_electric,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_electric,non-metallic-minerals,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+dryer_electric,non-metallic-minerals,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
+dryer_electric,non-metallic-minerals,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_electric,non-metallic-minerals,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_electric,non-metallic-minerals,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: the leaves its sources placed it on
 dryer_electric,non-metallic-minerals,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,mapping review 2026-09-30: hoods and air dryers are tissue and coating
@@ -1056,10 +1066,10 @@ gas-treatment-unit_amine-sweetening,oil-and-gas,<sector>.natural-gas.product.sup
 gas-treatment-unit_glycol-dehydration,oil-and-gas,<sector>.natural-gas.product.supply.processing.dehydration,gas-processing,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 liquefaction-train_base-load,oil-and-gas,<sector>.natural-gas.product.supply.lng-liquefaction,lng-liquefaction,,oil-and-gas/lng-liquefaction: every leaf of the end use
 management-system_leak-detection,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,oil-and-gas/fugitive-emissions: every leaf of the end use
+no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,no-abatement options 2026-10-22 (modeller)
 no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.venting.blowdowns,venting,,no-abatement options 2026-10-22 (modeller)
 no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.venting.liquid-unloading,venting,,no-abatement options 2026-10-22 (modeller)
 no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.venting.other-point-venting,venting,,no-abatement options 2026-10-22 (modeller)
-no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.fugitive,fugitive-emissions,,no-abatement options 2026-10-22 (modeller)
 no-abatement_methane,oil-and-gas,<sector>.natural-gas.product.supply.well-tests,drilling-and-well-services,,no-abatement options 2026-10-22 (modeller)
 pipeline_crude-oil,oil-and-gas,<sector>.petroleum-crude.product.transmission,oil-pipelines,,"added 2026-10-29 (Brad 2026-10-29): the pipe, drawing on crude-pipeline-pumping"
 pipeline_natural-gas,oil-and-gas,<sector>.natural-gas.product.transmission,gas-pipelines,,added 2026-10-29 (Brad 2026-10-29): transmission pipeline with its compression
@@ -1127,8 +1137,8 @@ well_solvent-only,oil-and-gas,<sector>.petroleum-crude.product.bitumen.in-situ,i
 distillation-column_atmospheric-vacuum,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.natural-gas.product.supply.processing.sulphur-recovery,gas-processing,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 gas-treatment-unit_sulphur-recovery,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.sulphur-recovery,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
-gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+gasifier_coal-petroleum-coke,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 reactor_alkylation,petroleum-refining,<sector>.petroleum-refining.product.alkylates,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_catalytic-reforming,petroleum-refining,<sector>.petroleum-refining.product.reforming,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_delayed-coking,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.primary,bitumen-upgrading,,"node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): label: same m3 of liquid as in refining."
@@ -1138,22 +1148,22 @@ reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-crude.product.bitu
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_hydroprocessing,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.hydrotreating.desulphurization,conversion-and-treating,,petroleum-refining/conversion-and-treating: the leaf its name or label names
 reactor_isomerization,petroleum-refining,<sector>.petroleum-refining.product.isomerization,conversion-and-treating,,added 2026-10-05 (archetype combination review)
-steam-reformer_methane,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
-steam-reformer_methane,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 steam-reformer_methane,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
+steam-reformer_methane,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+steam-reformer_methane,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.distillation,crude-distillation,,petroleum-refining/crude-distillation: every leaf of the end use
 gas-treatment-unit_acid-gas-advanced,petroleum-refining,<sector>.natural-gas.product.supply.formation-co2,gas-processing,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 steam-reformer_methane_efficiency-moderate,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
 reactor_fluid-catalytic-cracking_ccs-oxy-fuel,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,the hierarchy has no FCC node; hydrocracking is the nearest catalytic gas-oil conversion (2026-09-30)
-steam-reformer_methane_ccs-concentrated,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
-steam-reformer_methane_ccs-concentrated,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
 steam-reformer_methane_ccs-concentrated,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
-steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
-steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-concentrated,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-concentrated,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.hydrogen.product.centralized-hydrogen,centralized-hydrogen-production,,hydrogen/centralized-hydrogen-production: every leaf of the end use
-electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+steam-reformer_methane_ccs-diffuse,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-crude.service.hydrogen,upgrader-hydrogen,,oil-and-gas/upgrader-hydrogen: every leaf of the end use
+electrolyzer_low-temperature,petroleum-refining,<sector>.petroleum-refining.service.hydrogen,refinery-hydrogen,,petroleum-refining/refinery-hydrogen: every leaf of the end use
 reactor_catalytic-reforming_electric-heating,petroleum-refining,<sector>.petroleum-refining.product.reforming,conversion-and-treating,,"as its host reactor_catalytic-reforming (S149, 2026-10-27)"
 reactor_hydroprocessing_electric-heating,petroleum-refining,<sector>.petroleum-crude.product.bitumen.upgrading.secondary,bitumen-upgrading,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
 reactor_hydroprocessing_electric-heating,petroleum-refining,<sector>.petroleum-refining.product.petroleum-fractions.cracked-gas-oil.hydrocracking,conversion-and-treating,,"as its host reactor_hydroprocessing (S149, 2026-10-27)"
@@ -1238,7 +1248,9 @@ dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.coated.d
 dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 dryer_solid-fuel,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 furnace_heat-treatment,other-industry,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+kiln_charcoal-retort,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"added 2026-11-04: biocarbon supply; product override charcoal, per t (label change)"
 kiln_lumber-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+melting-furnace_crucible-gas-fired,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_induction 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
 melting-furnace_crucible-gas-fired,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
@@ -1246,14 +1258,13 @@ melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.produc
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_crucible-gas-fired,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
-melting-furnace_crucible-gas-fired,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_induction 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_cupola,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
+melting-furnace_cupola,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 pellet-plant_wood,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): wood pellets about 18.5 GJ/t HHV; estimated. Product unit GJ -> t (Brad 2026-10-29): pellet plants are sized and priced per tonne; the override is now a label change."
 press_hot-platen,other-industry,<sector>.light-industrial.service.heat.forming-pressing,forming-and-pressing,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 pulper_fibreboard-refiner,other-industry,<sector>.light-industrial.product.wood-products,forming-and-pressing,,added 2026-10-01 End use wood-drying-and-pressing -> forming-and-pressing (node-split review 2026-10-22).
-dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired_efficiency-moderate,other-industry,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
+dryer_direct-fired_efficiency-moderate,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired_efficiency-moderate,other-industry,<sector>.mining.service.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_direct-fired_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_solid-fuel_efficiency-strong,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
@@ -1266,6 +1277,7 @@ melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.m
 melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_reverberatory-rotary 2026-10-01
 dryer_superheated-steam,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 kiln_lumber-heat-pump,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+melting-furnace_induction,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
 melting-furnace_induction,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
@@ -1273,7 +1285,7 @@ melting-furnace_induction,other-industry,<sector>.metal-smelting.product.lead.me
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
 melting-furnace_induction,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-melting-furnace_induction,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"other-industry/metal-melting-and-heat-treatment: every leaf of other-industry/metal-melting-and-heat-treatment; no evidence to narrow it node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
+melting-furnace_isothermal,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_induction 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
 melting-furnace_isothermal,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.aluminum.recycle,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.copper.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
@@ -1281,8 +1293,7 @@ melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.lead.m
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.magnesium.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.nickel.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
 melting-furnace_isothermal,other-industry,<sector>.metal-smelting.product.zinc.melt-cast,melting-casting-and-fabrication,,copied from melting-furnace_induction 2026-10-01
-melting-furnace_isothermal,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_induction 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
-melting-furnace_rotary-oxy-fuel,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_rotary-oxy-fuel,other-industry,<sector>.iron-and-steel.product.foundry,foundry-melting,,"copied from melting-furnace_cupola 2026-10-01 node-split follow-up 2026-10-22: foundry melting split from light-industrial metal melting, so one end use is not shown in two products."
+melting-furnace_rotary-oxy-fuel,other-industry,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 reactor_torrefaction,other-industry,<sector>.biofuels.product.solid-biofuel,solid-biofuel,,"node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv) Product override (band product review 2026-10-22, approved 2026-10-23): torrefied pellets about 21.5 GJ/t HHV; estimated. Product unit GJ -> t (Brad 2026-10-29): pellet plants are sized and priced per tonne; the override is now a label change."
 ultraviolet-curer_infrared,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)

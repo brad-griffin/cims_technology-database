@@ -1,0 +1,22 @@
+process,technology,sector,end-use,process-step,service-unit
+"UK cement kilns by type, capacity-weighted, 2010 (Sect. 7.2.4.1, Table 7-3)",kiln_legacy_semi-wet-precalciner,cement,process-heat-high-temp,clinker making,t
+"UK cement kilns by type, capacity-weighted, 2010 (Sect. 7.2.4.1, Table 7-3)",kiln_legacy_semi-dry-lepol,cement,process-heat-high-temp,clinker making,t
+"UK cement kilns by type, capacity-weighted, 2010 (Sect. 7.2.4.1, Table 7-3)",kiln_dry-preheater_4-stage,cement,process-heat-high-temp,clinker making,t
+"UK cement kilns by type, capacity-weighted, 2010 (Sect. 7.2.4.1, Table 7-3)",kiln_dry-precalciner_4-stage,cement,process-heat-high-temp,clinker making,t
+"UK cement kilns by type, capacity-weighted, 2010 (Sect. 7.2.4.1, Table 7-3)",kiln_dry-precalciner_5-stage,cement,process-heat-high-temp,clinker making,t
+Best available technology cement kiln (Sect. 7.2.1 and 7.2.4.1),kiln_dry-precalciner_bat,cement,process-heat-high-temp,clinker making,t
+"Indian five-stage preheater precalciner plant, Khurana et al. 2002 (Sect. 7.2.3)",kiln_dry-precalciner_5-stage,cement,process-heat-high-temp,clinker making,t
+"Fluidised bed cement kiln, NEDO 2006 (Sect. 7.2.4.1)",kiln_fluidized-bed,cement,process-heat-high-temp,clinker making,t
+"Waste heat to power in cement kilns (Sect. 7.2.4.2, Table 7-4)",steam-turbine_waste-heat_preheater-cooler,cement,power-generation,waste heat recovery,GJ
+"Waste heat to power in cement kilns (Sect. 7.2.4.2, Table 7-4)",steam-turbine_waste-heat_four-stage-kiln,cement,power-generation,waste heat recovery,GJ
+"Waste heat to power in cement kilns (Sect. 7.2.4.2, Table 7-4)",steam-turbine_waste-heat_survey,cement,power-generation,waste heat recovery,GJ
+"Waste heat to power in cement kilns (Sect. 7.2.4.2, Table 7-4)",steam-turbine_waste-heat_cooler-exhaust,cement,power-generation,waste heat recovery,GJ
+Heat pumps for low-temperature heat in UK food and drink (Sect. 7.1.3.2),heat-pump_industrial_waste-heat-source,food-and-beverage,steam-and-hot-water,low-temperature heat,GJ
+Heat pumps in UK malting sites (Sect. 6.3.3),heat-pump_industrial_malting,food-and-beverage,steam-and-hot-water,malting,GJ
+Absorption chillers and heat transformers (Sect. 6.1.2.2 and 6.2.4),chiller_absorption_single-effect,cross-cutting,process-cooling,absorption chilling,GJ
+Absorption chillers and heat transformers (Sect. 6.1.2.2 and 6.2.4),chiller_absorption_double-effect,cross-cutting,process-cooling,absorption chilling,GJ
+Absorption chillers and heat transformers (Sect. 6.1.2.2 and 6.2.4),heat-pump_heat-transformer,cross-cutting,steam-and-hot-water,heat upgrading,GJ
+"CHP parameters for UK technical potential (Sect. 3.5.3, Table 3-6)",chp_unspecified,cross-cutting,steam-and-hot-water,CHP,GJ
+Industrial steam systems (Sect. 3.5.2),boiler_fuel-fired,cross-cutting,steam-and-hot-water,steam generation,GJ
+Savings calculation assumptions (Sect. 3.5.4 and 7.1.3.2),boiler_fuel-fired_natural-gas,cross-cutting,steam-and-hot-water,steam generation,GJ
+CCS on cement kilns (Sect. 7.2.5),kiln_dry-precalciner_ccs-diffuse,cement,process-heat-high-temp,clinker making,t

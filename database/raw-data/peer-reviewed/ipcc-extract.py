@@ -93,7 +93,8 @@ FOOTNOTE_CITES = {
     "a": ["Birat 2012", "Leeson et al 2017", "Axelson et al 2018"],
     "b": ["Axelson et al 2018"],
     "c": ["Fischedick et al 2014b", "Vogl et al 2018"],
-    "g": ["Fechner and Kray 2012", "Lehne and Preston 2018", "Habert et al 2020"],
+    # Fechner and Kray 2012 dropped from g (user, 2026-11-04): see MISCITED.
+    "g": ["Lehne and Preston 2018", "Habert et al 2020"],
     "j": ["De Luna et al 2019"],
     "k": ["Bazzanella and Ausfelder 2017", "Philibert 2017a", "Philibert 2017b",
           "IEA 2019f", "Armijo and Philibert 2020"],
@@ -110,6 +111,12 @@ CROSSED = {
          "hydrogen from SMR and ATR, not cement calcination. The chapter's e and f "
          "look transposed, so no primary source is attached.",
 }
+
+MISCITED_TEXT = ("Footnote g also cites Fechner and Kray 2012, but the chapter's reference "
+                 "list resolves it to a paper on location privacy (UbiComp '12), not a "
+                 "cement source. Treated as an IPCC citation error and not attached "
+                 "(user, 2026-11-04).")
+MISCITED = {"g": MISCITED_TEXT}
 
 # One line per row of Table 11.3, keyed on the option text as the dump writes it.
 # Names use only terms already in design doc section 6.2 -- this table needed no
@@ -263,6 +270,8 @@ def main() -> int:
                      if c in cited]
         if r["footnote"] in CROSSED:
             base += " " + CROSSED[r["footnote"]]
+        if r["footnote"] in MISCITED:
+            base += " " + MISCITED[r["footnote"]]
 
         mapped = OPTIONS.get(opt)
         seen.add(opt)

@@ -1,0 +1,44 @@
+process,technology,sector,end-use,process-step,service-unit
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-cracker_fired-tubular,chemicals,material-conversion,steam-cracking,t
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-cracker_fired-tubular_bat,chemicals,material-conversion,steam-cracking,t
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_methanol,chemicals,material-conversion,methanol,t
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_methanol_bat,chemicals,material-conversion,methanol,t
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Average and best-practice specific energy consumption (Sect. 2.2, Table 1)",steam-reformer_ammonia_bat,chemicals,material-conversion,ammonia,t
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-mercury,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-diaphragm,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-membrane,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_oxygen-depolarized,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Chlorine plant conversions and retrofits (Sect. 3.3.1, Table 8)",electrolysis-cell_chlor-alkali-membrane_retrofit,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Chlorine plant conversions and retrofits (Sect. 3.3.1, Table 8)",electrolysis-cell_oxygen-depolarized_retrofit,chemicals,electrochemical,chlor-alkali electrolysis,t
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_alkaline,hydrogen,material-conversion,hydrogen-production,kg
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_pem,hydrogen,material-conversion,hydrogen-production,kg
+"Water electrolysis technologies today (Sect. 4.1.1, Table 9)",electrolyzer_solid-oxide,hydrogen,material-conversion,hydrogen-production,kg
+"Steam methane reforming benchmark (Sect. 4.1.1.4, Table 9)",steam-reformer_methane,hydrogen,material-conversion,hydrogen-production,kW
+Alternative low-carbon hydrogen production (Sect. 4.1.2),reactor_methane-pyrolysis,hydrogen,material-conversion,hydrogen-production,kg
+Alternative low-carbon hydrogen production (Sect. 4.1.2),reactor_thermochemical-water-splitting,hydrogen,material-conversion,hydrogen-production,kg
+Alternative low-carbon hydrogen production (Sect. 4.1.2),reactor_photocatalytic-water-splitting,hydrogen,material-conversion,hydrogen-production,kg
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,chemicals,material-conversion,ammonia,t
+"Low-carbon ammonia via hydrogen, economics (Ch. 11, Table 35)",steam-reformer_ammonia,chemicals,material-conversion,ammonia,t
+"Low-carbon ammonia via hydrogen, economics (Ch. 11, Table 35)",reactor_haber-bosch-electrolytic,chemicals,material-conversion,ammonia,t
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,chemicals,material-conversion,urea,t
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",steam-reformer_methanol,chemicals,material-conversion,methanol,t
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,chemicals,material-conversion,methanol,t
+"Methanol via hydrogen, economics (Ch. 11, Table 35)",steam-reformer_methanol,chemicals,material-conversion,methanol,t
+"Methanol via hydrogen, economics (Ch. 11, Table 35)",reactor_co2-to-methanol,chemicals,material-conversion,methanol,t
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",steam-cracker_fired-tubular,chemicals,material-conversion,steam-cracking,t
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",reactor_methanol-to-olefins,chemicals,material-conversion,steam-cracking,t
+"BTX, naphtha route vs methanol-to-aromatics (Sect. 4.6)",separator_aromatics-extraction,chemicals,material-conversion,aromatics,t
+"BTX, naphtha route vs methanol-to-aromatics (Sect. 4.6)",reactor_methanol-to-aromatics,chemicals,material-conversion,aromatics,t
+"Low-carbon olefins and BTX, economics (Ch. 11, Table 35)",steam-cracker_fired-tubular,chemicals,material-conversion,steam-cracking,t
+"Low-carbon olefins and BTX, economics (Ch. 11, Table 35)",reactor_methanol-to-olefins,chemicals,material-conversion,steam-cracking,t
+"Low-carbon olefins and BTX, economics (Ch. 11, Table 35)",reactor_methanol-to-aromatics,chemicals,material-conversion,aromatics,t
+"Synthetic fuels from hydrogen and CO2 (Sect. 4.7.2, Box 3)",reactor_co2-to-fischer-tropsch,biofuels,material-conversion,fuel synthesis,t
+Synthetic methane from hydrogen and CO2 (Sect. 4.8),reactor_co2-methanation,oil-and-gas,material-conversion,synthetic natural gas,t
+Biomethanol by biomass gasification (Sect. 6.1),gasifier_biomass-methanol,chemicals,material-conversion,methanol,t
+Bioethylene by ethanol dehydration (Sect. 6.3),reactor_ethanol-to-ethylene,chemicals,material-conversion,steam-cracking,t
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),boiler_electric,heat-supply,steam-and-hot-water,steam supply,GJ
+Electricity-based steam and steam recompression (Sect. 3.1-3.2),vapour-recompressor_steam,heat-supply,steam-and-hot-water,steam supply,GJ
+Hydrogen cost assumptions (Annex 1),electrolyzer_alkaline,hydrogen,material-conversion,hydrogen-production,kg
+Hydrogen cost assumptions (Annex 1),electrolyzer_pem,hydrogen,material-conversion,hydrogen-production,kg

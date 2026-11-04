@@ -89,6 +89,10 @@ CANONICAL = {
     # Correcting the short form is what moves the id to collodi_2010_001; the
     # References tab still spells it the long way, which ALIAS handles.
     "Collodi and Wheeler 2010": "Collodi 2010",
+    # One report, IEAGHG 2013/TR3 (user, 2026-11-04): the References tab lists it as
+    # IEAGHG 2013a; the data tables also cite it unsuffixed and, misdated, as IEAGHG 2000.
+    "IEAGHG 2000": "IEAGHG 2013a",
+    "IEAGHG 2013": "IEAGHG 2013a",
 }
 
 

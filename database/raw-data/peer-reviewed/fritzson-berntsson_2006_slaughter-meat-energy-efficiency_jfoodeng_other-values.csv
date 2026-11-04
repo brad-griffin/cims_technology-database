@@ -1,0 +1,10 @@
+process,technology,item,value,unit,reference,note
+Studied plants (Table 1),,plant heat demand NIP1/NIP2/IP1/IP2,2.9 / 5.9 / 2.9 / 5.9,MW,"p.794, Table 1","x = slaughter of about 700,000 animals/yr (mostly pigs) plus processing; operation 6300 h/yr."
+Studied plants (Table 1),,fuel demand NIP1/NIP2/IP1/IP2,26.7 / 53.3 / 13.2 / 26.3,GWh/yr,"p.794, Table 1","Heavy fuel oil steam boiler; no product tonnage printed, so no per-tonne intensity."
+Studied plants (Table 1),,electricity demand NIP1/NIP2/IP1/IP2,31 / 62 / 32.2 / 64.3,GWh/yr,"p.794, Table 1","Refrigeration, freezing, air compressors and conveyors."
+Studied plants (Table 1),,"process steam demand / total steam demand NIP1, NIP2, IP1, IP2",0.9/3.8; 1.8/7.7; 0.9/1.9; 1.8/3.8,MW,"p.794, Table 1",
+Fuel CO2 factors (Table 8),,combustion CO2 heavy fuel oil / natural gas,76.6 / 57.1,g CO2/MJ fuel,"p.797, Table 8","Production and distribution 5.9 / 2.6; pellets 1.2, wood chips 3 (upstream only). reprinted from Adahl & Harvey (2004) and Uppenberg et al. (2001)."
+Energy prices (Table 7),,"heavy fuel oil / natural gas / wood fuels / pellets price incl. CO2 cost, blocks I-IV",22.0-33.6 / 14.2-26.0 / 13.7-24.3 / 21.4-32.0,EUR/MWh fuel,"p.797, Table 7",reprinted from Adahl & Harvey (2004).
+Electricity (Table 9),,"marginal electricity CO2 incl. 7% grid losses, blocks I-IV",834 / 778 / 374 / 97,kg/MWh el,"p.797, Table 9",Price of marginal electricity 38.8/38.4/50.3/67.8 EUR/MWh.
+"Steam turbines for SMP plants (Sect. 3.2.4, Table 4)",steam-turbine_back-pressure,isentropic efficiency turbines A/B/C,50 / 50 / 71,%,"p.796, Table 4",Printed alpha (electricity/heat) 13/13/21%.
+Payback periods (Figs. 1-3),,payback periods of measures by block,read from chart only,years,"pp.798-799, Figs. 1-3",Not loaded: chart values without printed numbers.

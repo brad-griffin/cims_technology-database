@@ -52,7 +52,7 @@ from collections import defaultdict
 from math import log
 from statistics import median
 
-from .common import fnum, split_list
+from .common import REFERENCE, fnum, read, split_list
 
 SEC = "specific-energy-consumption"
 NOT_CARRIER = {"", "component", "total", "not-stated"}
@@ -159,6 +159,14 @@ def _sources(rs):
     return "; ".join(dict.fromkeys(r.get("source-id", "") for r in rs))
 
 
+def _single_carrier():
+    p = REFERENCE / "single-carrier-archetype.csv"
+    return {r["archetype"] for r in read(p)} if p.exists() else set()
+
+
+SINGLE_CARRIER = _single_carrier()
+
+
 def example_totals(facts, records=None) -> dict:
     """An example that gives two or more level-1 carriers but no total gets a total:
     the sum of its own converted carriers (modeller 2026-10-21). Before this, only
@@ -204,7 +212,11 @@ def example_totals(facts, records=None) -> dict:
     new = []
     for (eid, unit), rs in groups.items():
         own, top, named = _example_carriers(rs, ranges=False)
-        if own is not None or len(top) < 2 or not _ok(top) or eid in ruled:
+        # one carrier is enough for an archetype whose energy is naturally a single
+        # carrier (records/reference/single-carrier-archetype.csv; user 2026-11-04):
+        # there a lone line is the whole balance, not one item of a longer table
+        single = rs[0]["archetype"] in SINGLE_CARRIER and len(top) == 1
+        if own is not None or (len(top) < 2 and not single) or not _ok(top) or eid in ruled:
             continue
         a = (records.by_key.get(rs[0]["archetype"]) if records is not None else None) or {}
         listed = {t.strip().lower() for t in split_list(a.get("carriers", ""))}
@@ -232,6 +244,8 @@ def example_totals(facts, records=None) -> dict:
                     "note": "total derived by the build from the example's own carriers (carriers.example_totals, 2026-10-21)"})
         new.append(row)
         stats["example totals from carriers"] += 1
+        if single:
+            stats["of which single-carrier archetypes"] += 1
     facts.extend(new)
     skipped = stats.pop("_skipped", [])
     if skipped:

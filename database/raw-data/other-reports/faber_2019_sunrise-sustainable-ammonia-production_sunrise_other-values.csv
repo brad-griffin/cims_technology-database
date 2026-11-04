@@ -1,0 +1,18 @@
+process,technology,item,value,unit,reference,note
+"Conventional fossil-based ammonia, process data (pp.5-6)",,total energy demand: mean; state-of-the-art factory mean,28; 36,GJ/t NH3,p.6,As printed; the mean (28) is below both the NG (33.6) and coal (46.2) values - likely mislabelled
+"Conventional fossil-based ammonia, process data (pp.5-6)",,cradle-to-gate CO2: range; average gas and coal; current technology,1.6-2.7; 2.5; 1.9,t CO2/t NH3,p.6,Life-cycle incl. feedstock production
+"Conventional fossil-based ammonia, process data (pp.5-6)",,current cost depending on location and feedstock cost,100-300,USD/t NH3,p.6,
+"Conventional fossil-based ammonia, process data (pp.5-6)",,global production; share NG / coal,180; 50 / 50,Mt/yr; %,p.5,Energy Transitions Commission 2018
+"Biomass-based ammonia, process data (p.7)",gasifier_biomass-ammonia,electricity needs,70,MWh/t NH3,p.7,"As printed (""About 70 MWh/t ammonia are needed to power the plant""); implausible (exceeds all-electric ammonia ~12 MWh/t) - not loaded"
+"Biomass-based ammonia, process data (p.7)",gasifier_biomass-ammonia,cradle-to-gate CO2,about 3,t CO2 per t biomass (as printed),p.7,Unit as printed; likely per t ammonia
+"Renewable Haber-Bosch, state of the art (Sect. 3, pp.12-13)",reactor_haber-bosch-electrolytic,cradle-to-gate CO2 (12-12.5 MWh/t; PV 20-25 g CO2/kWh),0.240-0.313,t CO2/t NH3,p.12-13,Life-cycle
+"Renewable Haber-Bosch, state of the art (Sect. 3, pp.12-13)",reactor_haber-bosch-electrolytic,share of hydrogen production in total energy needs,83-92,%,p.10,
+"Renewable Haber-Bosch, state of the art (Sect. 3, pp.12-13)",reactor_haber-bosch-electrolytic,solar-to-hydrogen efficiency,25,%,p.12,
+"Renewable Haber-Bosch, state of the art (Sect. 3, pp.12-13)",reactor_haber-bosch-electrolytic,demonstrators: Siemens/Oxford pilot; ThyssenKrupp Port Lincoln; Starfire target,"30 kg/d; 15 MW electrolyser, 20 MW PV, 50 t/d; 50 t/d",,p.11-12,Projects
+"Renewable Haber-Bosch, state of the art (Sect. 3, pp.12-13)",reactor_haber-bosch-electrolytic,levelized cost of electrolytic ammonia relative to SMR ammonia,1.5-3,times,p.14,reprinted from Oxford ammonia-based ESS report
+"Hybrid renewable Haber-Bosch milestone, by 2025 (Sect. 5, p.15)",steam-reformer_ammonia_hybrid-electrolytic,target specific CO2 by 2025 with 40-50% renewable H2,1,t CO2/t NH3,p.14,Milestone
+"Emerging ammonia synthesis routes, state of the art (pp.22-66)",electrolysis-cell_nitrogen-reduction,energetic conversion yield; total energy demand; stability,0.008; ~10 GJ/t; 24 h,,p.24-25,As printed; the ~10 GJ/t is inconsistent with a 0.008 yield (solvation and NH3 recovery ignored) - not loaded
+"Emerging ammonia synthesis routes, state of the art (pp.22-66)",plasma-torch_ammonia-synthesis,energetic conversion efficiency targeted at TRL 6,50,%,p.63,Milestone
+"Emerging ammonia synthesis routes, state of the art (pp.22-66)",reactor_photosynthetic-ammonium,production volume at TRL 5-6; 7-8; 9,~40; ~400; ~40000,m3 NH3 liquid/yr,p.53,Roadmap
+"Emerging ammonia synthesis routes, state of the art (pp.22-66)",electrolysis-cell_nitrogen-reduction,roadmap TRL 2020-25; 2025-30; 2030-50,4; 5; 6-7,,p.23,
+"Emerging ammonia synthesis routes, state of the art (pp.22-66)",electrolysis-cell_photoelectrochemical-nitrogen-reduction,roadmap TRL 2020-25; 2025-30; 2030-50,3; 4; 5-7,,p.35,

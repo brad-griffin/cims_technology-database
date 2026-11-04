@@ -1,0 +1,17 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Chlorine production by chlor-alkali electrolysis (Sect. 3.3, Tables 5, 6 and 8)",electrolysis-cell_chlor-alkali-membrane,output,hydrogen,0.0284,t/unit,t,,,yes,28.4/1000,"p.43, Sect. 3.3.3",28.4 kg hydrogen per ton of chlorine,Stoichiometric hydrogen co-product of the membrane process; ODC delivers none
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",steam-reformer_ammonia,output,steam,4.3,GJ/unit,t,,,yes,,"p.56; p.57, Table 11",net steam exporting process of about 4.3 GJ/t NH3,Steam balance -4.3 GJ/t
+"Ammonia, fossil vs power-to-ammonia (Sect. 4.2, Table 11)",reactor_haber-bosch-electrolytic,input,hydrogen,0.178,t/unit,t,,,,178/1000,"p.57, Sect. 4.2.3",178 kg hydrogen needed per ton of ammonia,
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,input,co2,0.73,t/unit,t,,,,,p.60,0.73 t CO2 per t urea are required,Stoichiometric CO2 feed
+Urea from low-carbon ammonia and CO2 (Sect. 4.3),reactor_urea-synthesis,input,ammonia,0.57,t/unit,t,,,,,p.61,0.57 t ammonia are required per ton of urea,
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",steam-reformer_methanol,output,steam,2,GJ/unit,t,,,yes,,"p.63; p.65, Table 14",net steam exporter of around 2 GJ/t methanol,
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,input,hydrogen,0.189,t/unit,t,,,,189/1000,p.64-65; p.51,189 kg hydrogen stoichiometrically needed per ton of methanol,
+"Methanol, fossil vs power-to-methanol (Sect. 4.4, Table 14)",reactor_co2-to-methanol,input,co2,1.373,t/unit,t,,,,,p.66,1.373 t CO2 are required per ton of methanol,Stoichiometric
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",steam-cracker_fired-tubular,output,steam,1.5,GJ/unit,t,,,yes,,p.37; p.69,net steam exporting process (1.5 GJ/tHVC),
+"Ethylene and propylene, steam cracking vs MTO (Sect. 4.5)",reactor_methanol-to-olefins,input,methanol,2.28,t/unit,t,,,,,p.69; p.93,"Stoichiometrically, 2.28 tons of methanol are required per ton of ethylene or propylene",p.123 rounds to 2.3; the NG chain text cites 2.83 t (p.69)
+"BTX, naphtha route vs methanol-to-aromatics (Sect. 4.6)",reactor_methanol-to-aromatics,input,methanol,4.3,t/unit,t,,,,,p.71; p.94,the methanol demand of the process is 4.3 tons of methanol per ton of BTX,
+"Synthetic fuels from hydrogen and CO2 (Sect. 4.7.2, Box 3)",reactor_co2-to-fischer-tropsch,input,co2,3.15,t/unit,t,,,,,"p.80, Table 20",CO2 as feed 3.15 t per ton (diesel),Kerosene 2.85 t/t
+Synthetic methane from hydrogen and CO2 (Sect. 4.8),reactor_co2-methanation,input,hydrogen,0.5,t/unit,t,,,,,p.78,0.5 t hydrogen per t of methane,
+Synthetic methane from hydrogen and CO2 (Sect. 4.8),reactor_co2-methanation,input,co2,2.7,t/unit,t,,,,,p.78,2.7 t CO2 are required,
+Biomethanol by biomass gasification (Sect. 6.1),gasifier_biomass-methanol,input,biomass-solid,2.6,t/unit,t,,,,,p.86,2.6 tons dry wood biomass would be required as feedstock per ton of methanol,"Dry wood at 60% efficiency (18.5 MJ/kg at 30% moisture basis, fn 94)"
+Bioethylene by ethanol dehydration (Sect. 6.3),reactor_ethanol-to-ethylene,input,ethanol,1.74,t/unit,t,,,,,p.91,One ton of bio-ethylene requires 1.74 t of (hydrated) ethanol,"Conversion 99%, selectivity 97%"

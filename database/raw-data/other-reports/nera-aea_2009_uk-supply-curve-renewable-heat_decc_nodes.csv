@@ -1,0 +1,25 @@
+process,technology,sector,end-use,process-step,service-unit
+"Air-source heat pumps, Industrial - Small (Table B.2)",heat-pump_air-source,space-conditioning,space-heating,heat-pump,GJ
+"Air-source heat pumps, Industrial - Large (Table B.2)",heat-pump_air-source,space-conditioning,space-heating,heat-pump,GJ
+"Air-source heat pumps, Commercial / Public - Large (Table B.2)",heat-pump_air-source,space-conditioning,space-heating,heat-pump,GJ
+"Ground-source heat pumps, Industrial - Small (Table B.5)",heat-pump_ground-source,space-conditioning,space-heating,heat-pump,GJ
+"Ground-source heat pumps, Industrial - Large (Table B.5)",heat-pump_ground-source,space-conditioning,space-heating,heat-pump,GJ
+"Ground-source heat pumps, Commercial / Public - Large (Table B.5)",heat-pump_ground-source,space-conditioning,space-heating,heat-pump,GJ
+"Biomass boilers, Industrial - Small (Table B.8)",boiler_solid-fuel_biomass,heat-supply,steam-and-hot-water,boiler,GJ
+"Biomass boilers, Industrial - Large (Table B.8)",boiler_solid-fuel_biomass,heat-supply,steam-and-hot-water,boiler,GJ
+"Biomass boilers, Commercial / Public - Large (Table B.8)",boiler_solid-fuel_biomass,heat-supply,steam-and-hot-water,boiler,GJ
+"Biomass district heating, Industrial - Small (Table B.10)",boiler_solid-fuel_biomass-district-heating,heat-supply,steam-and-hot-water,boiler,GJ
+"Biomass district heating, Industrial - Large (Table B.10)",boiler_solid-fuel_biomass-district-heating,heat-supply,steam-and-hot-water,boiler,GJ
+"Biomass district heating, Commercial / Public - Large (Table B.10)",boiler_solid-fuel_biomass-district-heating,heat-supply,steam-and-hot-water,boiler,GJ
+"Solar thermal, Industrial - Large (Table B.14)",solar-collector_flat-plate,heat-supply,steam-and-hot-water,solar-thermal,GJ
+"Natural gas heating (counterfactual), Industrial - Small (Table B.15)",boiler_fuel-fired_natural-gas,heat-supply,steam-and-hot-water,boiler,GJ
+"Natural gas heating (counterfactual), Industrial - Large (Table B.15)",boiler_fuel-fired_natural-gas,heat-supply,steam-and-hot-water,boiler,GJ
+"Natural gas heating (counterfactual), Commercial / Public - Large (Table B.15)",boiler_fuel-fired_natural-gas,heat-supply,steam-and-hot-water,boiler,GJ
+"Off-grid fossil fuel heating (counterfactual), Industrial - Small (Table B.16)",boiler_fuel-fired_oil-lpg,heat-supply,steam-and-hot-water,boiler,GJ
+"Off-grid fossil fuel heating (counterfactual), Industrial - Large (Table B.16)",boiler_fuel-fired_oil-lpg,heat-supply,steam-and-hot-water,boiler,GJ
+"Off-grid fossil fuel heating (counterfactual), Commercial / Public - Large (Table B.16)",boiler_fuel-fired_oil-lpg,heat-supply,steam-and-hot-water,boiler,GJ
+"Electric heating (counterfactual), Industrial - Small (Table B.17)",boiler_electric_resistance,heat-supply,steam-and-hot-water,boiler,GJ
+"Electric heating (counterfactual), Industrial - Large (Table B.17)",boiler_electric_resistance,heat-supply,steam-and-hot-water,boiler,GJ
+"Electric heating (counterfactual), Commercial / Public - Large (Table B.17)",boiler_electric_resistance,heat-supply,steam-and-hot-water,boiler,GJ
+"Biogas injection, non-domestic (Tables B.11-B.12)",anaerobic-digester_biomethane-upgrading,biofuels,material-conversion,biogas-upgrading,GJ
+"Bio-SNG plant, large industrial host (Sect. C.2.5.5, Table C.13)",gasifier_biomass-methanation,biofuels,material-conversion,gasification-methanation,GJ

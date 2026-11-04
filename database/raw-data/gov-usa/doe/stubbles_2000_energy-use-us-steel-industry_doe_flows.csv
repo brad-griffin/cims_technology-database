@@ -1,0 +1,17 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"U.S. hot metal production, good practice 1997-1998 (Table 2)",blast-furnace,input,coke,0.325,t/unit,t,,,,,"p.8, Table 2",0.325 tons coke/NTHM,per net ton hot metal; mass ratio
+"U.S. hot metal production, good practice 1997-1998 (Table 2)",blast-furnace,input,coal,0.15,t/unit,t,,,,,"p.8, Table 2",0.15 tons tuyere injectants/NTHM,"tuyere injectants (coal/gas/oil), mass ratio; 25 MBtu/ton"
+"U.S. hot metal production, good practice 1997-1998 (Table 2)",blast-furnace,input,pellets,1.3,t/unit,t,,,,,"p.8, Table 2",1.3 tons pellets/NTHM,
+"U.S. hot metal production, good practice 1997-1998 (Table 2)",blast-furnace,input,sinter,0.24,t/unit,t,,,,,"p.8, Table 2",0.24 tons sinter/NTHM,
+"U.S. hot metal production, good practice 1997-1998 (Table 2)",blast-furnace,output,blast-furnace-gas,4.6,MBtu/unit,t,,,,,"p.8, Table 2",Top gas credit (4.60) MBtu/NTHM,top gas exported (credit)
+"Alternate ironmaking processes, per metric ton output (Table 4)",furnace_rotary-hearth-direct-reduction,input,coal,0.35,t/unit,t,,,,,"p.10, Table 4",Coal 0.35 metric ton per metric ton output,
+"Alternate ironmaking processes, per metric ton output (Table 4)",kiln_coal-direct-reduction,input,coal,0.75,t/unit,t,,,,,"p.10, Table 4",Coal 0.75 metric ton per metric ton output,
+Iron Dynamics RHF + submerged arc furnace (Table 11),melting-furnace_electric-smelting,input,direct-reduced-iron,1.39,t/unit,t,,,,,"p.17, Table 11",1.39 tons DRI per NTHM,
+Iron Dynamics RHF + submerged arc furnace (Table 11),melting-furnace_electric-smelting,input,lime,0.075,t/unit,t,,,,150/2000,"p.17, Table 11",150 lbs lime per NTHM,150 lb / 2000 lb per short ton
+"U.S. BOF operations, good practice 1997-1998 (Table 5)",basic-oxygen-furnace,input,hot-metal,0.833,t/unit,t,,,,,"p.10, Table 5",0.833 NTHM per ton cast product,
+"U.S. BOF operations, good practice 1997-1998 (Table 5)",basic-oxygen-furnace,input,oxygen,1800,scf/unit,t,,,,,"p.10, Table 5","1,800 scf per ton cast product",per short ton
+"U.S. BOF operations, good practice 1997-1998 (Table 5)",basic-oxygen-furnace,input,lime,0.04,t/unit,t,,,,,"p.10, Table 5",0.04 ton lime per ton cast product,
+"U.S. EAF operations, good practice 1998 (Table 6)",electric-arc-furnace,input,coal,0.025,t/unit,t,,,,50/2000,"p.12, Table 6",50 lbs carbon per ton steel tapped,"charge/injection carbon at 12,500 Btu/lb"
+"U.S. EAF operations, good practice 1998 (Table 6)",electric-arc-furnace,input,oxygen,1200,scf/unit,t,,,,,"p.12, Table 6","1,200 scf per ton steel tapped",per short ton
+"U.S. EAF operations, good practice 1998 (Table 6)",electric-arc-furnace,input,lime,0.05,t/unit,t,,,,,"p.12, Table 6",0.05 ton lime per ton steel tapped,
+Alternative ironmaking (Sect. 6.C),smelting-vessel_coal_corex,input,coal,0.995,t/unit,t,,,,,"p.16, Sect. 6.C","fuel rate 995 kg/NTHM, double that of the blast furnace","fuel rate (coal plus coke); kg per net ton as printed, read as a mass ratio"

@@ -99,6 +99,7 @@ branch,technology,data-filepath
 <sector>.biofuels.product.renewable-natural-gas,anaerobic-digester_biomethane-upgrading,data/service-technology-map/biofuels/product/renewable-natural-gas
 <sector>.biofuels.product.renewable-natural-gas,gasifier_biomass-methanation,data/service-technology-map/biofuels/product/renewable-natural-gas
 <sector>.biofuels.product.renewable-natural-gas,process-improvement_landfill-gas-recovery,data/service-technology-map/biofuels/product/renewable-natural-gas
+<sector>.biofuels.product.solid-biofuel,kiln_charcoal-retort,data/service-technology-map/biofuels/product/solid-biofuel
 <sector>.biofuels.product.solid-biofuel,pellet-plant_wood,data/service-technology-map/biofuels/product/solid-biofuel
 <sector>.biofuels.product.solid-biofuel,reactor_torrefaction,data/service-technology-map/biofuels/product/solid-biofuel
 <sector>.biofuels.service,,data/service-technology-map/biofuels/service
@@ -136,6 +137,7 @@ branch,technology,data-filepath
 <sector>.biofuels.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.biofuels.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.biofuels.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.biofuels.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.biofuels.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.biofuels.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.chemicals,,data/service-technology-map/chemicals
@@ -264,6 +266,7 @@ branch,technology,data-filepath
 <sector>.chemicals.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.chemicals.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.chemicals.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.chemicals.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.chemicals.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.chemicals.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.chemicals.service.n2o-abatement,no-abatement_n2o,data/service-technology-map/chemicals/service/n2o-abatement
@@ -614,6 +617,7 @@ branch,technology,data-filepath
 <sector>.iron-and-steel.service.fuel-blend.methane,,data/service-technology-map/general-services/fuel-blend/methane
 <sector>.iron-and-steel.service.fuel-blend.process-gas,,data/service-technology-map/general-services/fuel-blend/process-gas
 <sector>.iron-and-steel.service.hot-metal,blast-furnace,data/service-technology-map/iron-and-steel/service/hot-metal
+<sector>.iron-and-steel.service.hot-metal,blast-furnace_biogenic-carbon,data/service-technology-map/iron-and-steel/service/hot-metal
 <sector>.iron-and-steel.service.hot-metal,blast-furnace_ccs-diffuse,data/service-technology-map/iron-and-steel/service/hot-metal
 <sector>.iron-and-steel.service.hot-metal,blast-furnace_efficiency-moderate,data/service-technology-map/iron-and-steel/service/hot-metal
 <sector>.iron-and-steel.service.hot-metal,blast-furnace_efficiency-strong,data/service-technology-map/iron-and-steel/service/hot-metal
@@ -696,6 +700,7 @@ branch,technology,data-filepath
 <sector>.iron-and-steel.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.iron-and-steel.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.iron-and-steel.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.iron-and-steel.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.iron-and-steel.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.iron-and-steel.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.light-industrial,,data/service-technology-map/light-industrial
@@ -786,6 +791,7 @@ branch,technology,data-filepath
 <sector>.light-industrial.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.light-industrial.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.light-industrial.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.light-industrial.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.light-industrial.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.light-industrial.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.metal-smelting,,data/service-technology-map/metal-smelting
@@ -985,6 +991,7 @@ branch,technology,data-filepath
 <sector>.metal-smelting.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.metal-smelting.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.metal-smelting.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.metal-smelting.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.metal-smelting.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.metal-smelting.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.mining,,data/service-technology-map/mining
@@ -1118,6 +1125,7 @@ branch,technology,data-filepath
 <sector>.mining.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.mining.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.mining.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.mining.service.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/mining/service/tailings-disposal
@@ -1313,6 +1321,7 @@ branch,technology,data-filepath
 <sector>.petroleum-crude.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.petroleum-crude.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.petroleum-crude.service.tailings-disposal,separator_dry-stack-tailings,data/service-technology-map/petroleum-crude/service/tailings-disposal
@@ -1440,6 +1449,7 @@ branch,technology,data-filepath
 <sector>.petroleum-refining.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.petroleum-refining.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.petroleum-refining.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.petroleum-refining.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.petroleum-refining.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.petroleum-refining.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.pulp-and-paper,,data/service-technology-map/pulp-and-paper
@@ -1601,6 +1611,7 @@ branch,technology,data-filepath
 <sector>.pulp-and-paper.service.steam,solar-collector,data/service-technology-map/general-services/steam
 <sector>.pulp-and-paper.service.steam,solar-concentrator_line-focus,data/service-technology-map/general-services/steam
 <sector>.pulp-and-paper.service.steam,steam-turbine_back-pressure,data/service-technology-map/general-services/steam
+<sector>.pulp-and-paper.service.steam,steam-turbine_back-pressure_ccs-diffuse,data/service-technology-map/general-services/steam
 <sector>.pulp-and-paper.service.steam,thermal-storage_electric,data/service-technology-map/general-services/steam
 <sector>.pulp-and-paper.service.steam,thermal-storage_heat-charged,data/service-technology-map/general-services/steam
 <sector>.residential,,data/service-technology-map/residential

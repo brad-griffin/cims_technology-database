@@ -217,19 +217,31 @@ wide-carriers-species,feedstock-consumption_biomass-solid_n,technical,,
 wide-carriers-species,feedstock-consumption_black-liquor,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: black-liquor."
 wide-carriers-species,feedstock-consumption_black-liquor_n,technical,,
 wide-carriers-species,feedstock-consumption_coal,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: coal."
+wide-carriers-species,feedstock-consumption_coal_low,technical,GJ/product-unit,
+wide-carriers-species,feedstock-consumption_coal_high,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_coal_n,technical,,
+wide-carriers-species,feedstock-consumption_coke,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: coke."
+wide-carriers-species,feedstock-consumption_coke_n,technical,,
 wide-carriers-species,feedstock-consumption_ethane,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: ethane."
 wide-carriers-species,feedstock-consumption_ethane_n,technical,,
 wide-carriers-species,feedstock-consumption_ethanol,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: ethanol."
 wide-carriers-species,feedstock-consumption_ethanol_n,technical,,
+wide-carriers-species,feedstock-consumption_feedstock,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: feedstock."
+wide-carriers-species,feedstock-consumption_feedstock_n,technical,,
 wide-carriers-species,feedstock-consumption_hydrogen,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: hydrogen."
 wide-carriers-species,feedstock-consumption_hydrogen_low,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_hydrogen_high,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_hydrogen_n,technical,,
 wide-carriers-species,feedstock-consumption_methanol,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: methanol."
 wide-carriers-species,feedstock-consumption_methanol_n,technical,,
+wide-carriers-species,feedstock-consumption_naphtha,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: naphtha."
+wide-carriers-species,feedstock-consumption_naphtha_n,technical,,
 wide-carriers-species,feedstock-consumption_natural-gas,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: natural-gas."
+wide-carriers-species,feedstock-consumption_natural-gas_low,technical,GJ/product-unit,
+wide-carriers-species,feedstock-consumption_natural-gas_high,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_natural-gas_n,technical,,
+wide-carriers-species,feedstock-consumption_petroleum-coke,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: petroleum-coke."
+wide-carriers-species,feedstock-consumption_petroleum-coke_n,technical,,
 wide-carriers-species,specific-energy-consumption_basic-oxygen-furnace-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: basic-oxygen-furnace-gas."
 wide-carriers-species,specific-energy-consumption_basic-oxygen-furnace-gas_n,technical,,
 wide-carriers-species,specific-energy-consumption_benzole-and-tars,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: benzole-and-tars."
@@ -266,6 +278,8 @@ wide-carriers-species,specific-energy-consumption_by-product-gas,technical,GJ/pr
 wide-carriers-species,specific-energy-consumption_by-product-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_by-product-gas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_by-product-gas_n,technical,,
+wide-carriers-species,specific-energy-consumption_charcoal,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: charcoal."
+wide-carriers-species,specific-energy-consumption_charcoal_n,technical,,
 wide-carriers-species,specific-energy-consumption_coal,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: coal."
 wide-carriers-species,specific-energy-consumption_coal_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_coal_high,technical,GJ/product-unit,
@@ -390,6 +404,8 @@ wide-secondary-parameter,capacity_as-sourced,technical,1000-m3/yr; MW; kt/yr; m3
 wide-secondary-parameter,capacity_as-sourced_low,technical,1000-m3/yr; MW; kt/yr; m3/yr as-sourced,
 wide-secondary-parameter,capacity_as-sourced_high,technical,1000-m3/yr; MW; kt/yr; m3/yr as-sourced,
 wide-secondary-parameter,capacity_as-sourced_n,technical,,
+wide-secondary-parameter,capacity_biomethane,technical,MW biomethane,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: biomethane."
+wide-secondary-parameter,capacity_biomethane_n,technical,,
 wide-secondary-parameter,capacity_ch4,technical,kt/yr ch4,"Rated (nameplate) capacity of one unit: the most it can make running flat out, on the basis named in capacity-basis. A rate, not what the unit makes; see annual-output. Species or stream: ch4."
 wide-secondary-parameter,capacity_ch4_low,technical,kt/yr ch4,
 wide-secondary-parameter,capacity_ch4_high,technical,kt/yr ch4,
@@ -434,6 +450,8 @@ wide-secondary-parameter,efficiency_biomass-solid,technical,%,"Useful output per
 wide-secondary-parameter,efficiency_biomass-solid_low,technical,%,
 wide-secondary-parameter,efficiency_biomass-solid_high,technical,%,
 wide-secondary-parameter,efficiency_biomass-solid_n,technical,,
+wide-secondary-parameter,efficiency_biomethane,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biomethane."
+wide-secondary-parameter,efficiency_biomethane_n,technical,,
 wide-secondary-parameter,efficiency_black-liquor,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: black-liquor."
 wide-secondary-parameter,efficiency_black-liquor_n,technical,,
 wide-secondary-parameter,efficiency_component,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: component."
@@ -608,6 +626,14 @@ wide-secondary-parameter,cost-levelized_component,cost,2025_CAD/GJ,"Cost per uni
 wide-secondary-parameter,cost-levelized_component_low,cost,2025_CAD/GJ,
 wide-secondary-parameter,cost-levelized_component_high,cost,2025_CAD/GJ,
 wide-secondary-parameter,cost-levelized_component_n,cost,,
+wide-secondary-parameter,cost-levelized_conversion,cost,2025_CAD/t,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen, or product, a production cost, or a cost per tonne of CO2 captured, transported, or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices, and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: conversion."
+wide-secondary-parameter,cost-levelized_conversion_n,cost,,
+wide-secondary-parameter,cost-levelized_delivered-total,cost,2025_CAD/t,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen, or product, a production cost, or a cost per tonne of CO2 captured, transported, or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices, and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: delivered-total."
+wide-secondary-parameter,cost-levelized_delivered-total_n,cost,,
+wide-secondary-parameter,cost-levelized_steam,cost,2025_CAD/GJ,"Cost per unit of product or service including capital recovery, as the source reports it: a levelized cost of electricity, heat, hydrogen, or product, a production cost, or a cost per tonne of CO2 captured, transported, or stored. NOT a capex or opex and never pooled with one; it depends on the source's discount rate, fuel prices, and capacity factor, which its note records (discount-rate is recorded as its own parameter where printed). Added 2026-09-25; loaded from main files and from the sidecars that held levelized costs, 2026-09-26. Species or stream: steam."
+wide-secondary-parameter,cost-levelized_steam_low,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_steam_high,cost,2025_CAD/GJ,
+wide-secondary-parameter,cost-levelized_steam_n,cost,,
 wide-secondary-parameter,cost-learning-rate_component,cost,%,Fractional capex reduction per doubling of cumulative installed capacity. Species or stream: component.
 wide-secondary-parameter,cost-learning-rate_component_low,cost,%,
 wide-secondary-parameter,cost-learning-rate_component_high,cost,%,

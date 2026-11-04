@@ -48,4 +48,3 @@ CIMS or changes in it.
 | `database/reviews/` | Dated review files behind each decision; `sanity-checks/` holds each sanity-check run and the running issue list, `sanity-check-list.csv`. |
 | `cims/` | Everything about the CIMS model. See [cims/README.md](cims/README.md). |
 | `archive/` | The decision records behind the earlier design, superseded scripts and snapshots, and `intake/` (the finished intake working folders, not tracked). Git holds the exact state before the 2026-09-23 restructure at tag `pre-archetype-restructure`. |
-| `_staging/` | Scratch space, not tracked. |

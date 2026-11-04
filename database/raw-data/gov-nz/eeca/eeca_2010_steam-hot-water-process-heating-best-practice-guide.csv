@@ -1,0 +1,5 @@
+process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+"Hot water boilers, boiler replacement (Sect. 6.1.8)",boiler_fuel-fired,description,,,"Commercial and industrial hot water boiler (gas, liquid or solid fuel) supplying a circulating hot water system.",,,,"p.31, Sect. 6.1.8; Appendix B",
+"Hot water boilers, boiler replacement (Sect. 6.1.8)",boiler_fuel-fired,lifetime,,years,15,,,,"p.31, Sect. 6.1.8","""Typical boiler lifetimes are 15 years"". reprinted from Carbon Trust (2006), Low Temperature Hot Water Boilers technology overview (ref. 7)."
+"High-pressure steam turbine with process use of exhaust steam (Sect. 5, Steam usage)",steam-turbine_back-pressure,description,,,"High-pressure (>4,200 kPa) superheated steam drives a turbine for electricity and the turbine exhaust steam serves heat-transfer applications, with condensate returned to the boiler.",,,,"p.22, Sect. 5",
+"High-pressure steam turbine with process use of exhaust steam (Sect. 5, Steam usage)",steam-turbine_back-pressure,efficiency-chp,,%,,,80,,"p.22, Sect. 5","""the overall efficiency is almost 80%""; recorded as an upper bound. heating-value basis not stated."

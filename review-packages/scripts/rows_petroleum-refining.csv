@@ -1,0 +1,104 @@
+archetype,band
+adsorber_pressure-swing,"CO2 capture, concentrated streams"
+autothermal-reformer_hydrogen,On-site hydrogen production
+autothermal-reformer_hydrogen_ccs-concentrated,On-site hydrogen production
+boiler_electric,"Heat, low temperature (< 150 degC)"
+boiler_electric,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired,"Heat, low temperature (< 150 degC)"
+boiler_fuel-fired,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired_ccs-diffuse,"Heat, low temperature (< 150 degC)"
+boiler_fuel-fired_ccs-diffuse,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired_efficiency-moderate,"Heat, low temperature (< 150 degC)"
+boiler_fuel-fired_efficiency-moderate,"Heat, medium temperature (150-400 degC)"
+boiler_oxy-fuel,"Heat, low temperature (< 150 degC)"
+boiler_oxy-fuel,"Heat, medium temperature (150-400 degC)"
+boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
+boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
+capture-unit_advanced-solvent,"CO2 capture, diffuse (dilute) streams"
+capture-unit_amine,"CO2 capture, diffuse (dilute) streams"
+capture-unit_calcium-looping,"CO2 capture, diffuse (dilute) streams"
+capture-unit_chemical-solvent,"CO2 capture, concentrated streams"
+capture-unit_cryogenic-condensation,"CO2 capture, concentrated streams"
+capture-unit_membrane-cryogenic,"CO2 capture, diffuse (dilute) streams"
+capture-unit_physical-solvent,"CO2 capture, concentrated streams"
+chiller_hvac,HVAC cooling
+combustion-turbine_chp,"Heat, low temperature (< 150 degC)"
+combustion-turbine_chp,"Heat, medium temperature (150-400 degC)"
+combustion-turbine_chp_ccs-diffuse,"Heat, low temperature (< 150 degC)"
+combustion-turbine_chp_ccs-diffuse,"Heat, medium temperature (150-400 degC)"
+combustion-turbine_drive,combustion-turbine
+combustion-turbine_drive_efficiency-moderate,combustion-turbine
+cooling-tower_free-evaporative,HVAC cooling
+direct-heater_electric,"Heat, high temperature (> 400 degC)"
+direct-heater_electric,"Heat, medium temperature (150-400 degC)"
+direct-heater_refinery,"Heat, high temperature (> 400 degC)"
+direct-heater_refinery,"Heat, medium temperature (150-400 degC)"
+direct-heater_refinery_ccs-diffuse,"Heat, high temperature (> 400 degC)"
+direct-heater_refinery_efficiency-moderate,"Heat, medium temperature (150-400 degC)"
+direct-heater_solid-fuel,"Heat, medium temperature (150-400 degC)"
+direct-heater_solid-fuel_efficiency-strong,"Heat, medium temperature (150-400 degC)"
+distillation-column_atmospheric-vacuum,Crude distillation
+distillation-column_atmospheric-vacuum_efficiency-strong,Crude distillation
+electrolyzer_low-temperature,On-site hydrogen production
+fuel-cell_chp,"Heat, low temperature (< 150 degC)"
+fuel-cell_chp,"Heat, medium temperature (150-400 degC)"
+gas-treatment-unit_sulphur-recovery,"Conversion, upgrading and treating: sulphur recovered (t)"
+gasifier_biomass-chp,"Heat, low temperature (< 150 degC)"
+gasifier_biomass-chp,"Heat, medium temperature (150-400 degC)"
+gasifier_coal-fischer-tropsch,Synthetic fuels
+gasifier_coal-petroleum-coke,On-site hydrogen production
+geothermal-well_direct-use,"Heat, low temperature (< 150 degC)"
+heat-pump_heat-transformer,"Heat, low temperature (< 150 degC)"
+heat-pump_heat-transformer,"Heat, medium temperature (150-400 degC)"
+heat-pump_hvac,HVAC heating
+heat-pump_industrial,"Heat, low temperature (< 150 degC)"
+heat-pump_very-high-temperature,"Heat, medium temperature (150-400 degC)"
+heat-recovery-unit_waste-heat,"Heat, low temperature (< 150 degC)"
+heat-recovery-unit_waste-heat,"Heat, medium temperature (150-400 degC)"
+hvac-heater_fuel-fired,HVAC heating
+hvac-heater_fuel-fired_efficiency-moderate,HVAC heating
+hvac-heater_fuel-fired_efficiency-strong,HVAC heating
+lighting_fluorescent-high-bay,Lighting
+lighting_fluorescent-t12,Lighting
+lighting_fluorescent-t8,Lighting
+lighting_hid,Lighting
+lighting_led,Lighting
+lighting_led-controls,Lighting
+lighting_led-high-bay,Lighting
+motor_induction-standard,motor
+motor_induction-standard_efficiency-moderate,motor
+motor_premium-efficiency,motor
+motor_variable-speed,motor
+reactor_alkylation,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_catalytic-reforming,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_catalytic-reforming_electric-heating,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_delayed-coking,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_fluid-catalytic-cracking,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_fluid-catalytic-cracking_ccs-diffuse,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_gas-to-liquids,Synthetic fuels
+reactor_hydroprocessing,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_hydroprocessing_electric-heating,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_hydroprocessing_hydrogen-fuel,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_isomerization,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_small-nuclear,"Heat, high temperature (> 400 degC)"
+reactor_small-nuclear,"Heat, low temperature (< 150 degC)"
+reactor_small-nuclear,"Heat, medium temperature (150-400 degC)"
+reciprocating-engine_chp,"Heat, low temperature (< 150 degC)"
+reciprocating-engine_chp,"Heat, medium temperature (150-400 degC)"
+reciprocating-engine_drive,reciprocating-engine
+resistance-heater_hvac,HVAC heating
+solar-collector,"Heat, low temperature (< 150 degC)"
+solar-concentrator_line-focus,"Heat, medium temperature (150-400 degC)"
+solar-concentrator_point-focus,"Heat, high temperature (> 400 degC)"
+steam-reformer_methane,On-site hydrogen production
+steam-reformer_methane_ccs-concentrated,On-site hydrogen production
+steam-reformer_methane_ccs-diffuse,On-site hydrogen production
+steam-reformer_methane_efficiency-moderate,On-site hydrogen production
+steam-turbine_back-pressure,"Heat, low temperature (< 150 degC)"
+steam-turbine_back-pressure,"Heat, medium temperature (150-400 degC)"
+steam-turbine_back-pressure_ccs-diffuse,"Heat, low temperature (< 150 degC)"
+steam-turbine_drive,steam-turbine
+thermal-storage_electric,"Heat, high temperature (> 400 degC)"
+thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
+thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"

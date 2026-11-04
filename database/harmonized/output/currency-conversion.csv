@@ -4,8 +4,10 @@ from-currency,to-currency,factor,method,source-id
 1980_EUR,2025_CAD,2.797883,"deflator EUR 120.21/67.81 = 1.77275, then x 1.57828 CAD_per_EUR (2025) [assumption: 1980_EUR taken at the 1995 deflator]",ecb_2026_001; can-statcan_2026_001
 1980_USD,2025_CAD,4.578101,"deflator USD 122.362/37.3623 = 3.275, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 1981_USD,2025_CAD,4.182360,"deflator USD 122.362/40.8976 = 2.99191, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
+1985_USD,2025_CAD,3.546371,"deflator USD 122.362/48.2319 = 2.53694, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 1986_USD,2025_CAD,3.476361,"deflator USD 122.362/49.2033 = 2.48686, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 1987_USD,2025_CAD,3.392320,"deflator USD 122.362/50.4222 = 2.42674, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
+1988_USD,2025_CAD,3.276733,"deflator USD 122.362/52.2009 = 2.34405, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 1989_DEM,2025_CAD,1.628533,"deflator DEM 123.839/61.3638 = 2.01811, then x 0.806959 CAD_per_DEM (2025)",world-bank_2026_001; can-statcan_2026_001; eu-council_1998_001
 1989_USD,2025_CAD,3.153108,"deflator USD 122.362/54.2475 = 2.25562, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 1990_CAD,2025_CAD,2.164004,"deflator CAD 124.4/57.4862 = 2.164, then x 1 CAD_per_CAD (2025)",world-bank_2026_001
@@ -37,6 +39,7 @@ from-currency,to-currency,factor,method,source-id
 1999_SEK,2025_CAD,0.250106,"deflator SEK 120.166/68.5736 = 1.75236, then x 0.142725 CAD_per_SEK (2025)",world-bank_2026_001; can-statcan_2026_001
 1999_USD,2025_CAD,2.534702,"deflator USD 122.362/67.4826 = 1.81323, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 2000_CAD,2025_CAD,1.803111,"deflator CAD 124.4/68.992 = 1.80311, then x 1 CAD_per_CAD (2025)",world-bank_2026_001
+2000_EUR,2025_CAD,2.624854,"deflator EUR 120.21/72.28 = 1.66312, then x 1.57828 CAD_per_EUR (2025)",ecb_2026_001; can-statcan_2026_001
 2000_JPY,2025_CAD,0.009661,"deflator JPY 112.269/108.632 = 1.03348, then x 0.00934833 CAD_per_JPY (2025)",world-bank_2026_001; can-statcan_2026_001
 2000_USD,2025_CAD,2.478557,"deflator USD 122.362/69.0112 = 1.77307, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 2001_CNY,2025_CAD,0.383395,"deflator CNY 104.176/52.8426 = 1.97143, then x 0.194475 CAD_per_CNY (2025)",world-bank_2026_001; can-statcan_2026_001
@@ -52,6 +55,7 @@ from-currency,to-currency,factor,method,source-id
 2004_USD,2025_CAD,2.279378,"deflator USD 122.362/75.0416 = 1.63058, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 2005_EUR,2025_CAD,2.350402,"deflator EUR 120.21/80.72 = 1.48922, then x 1.57828 CAD_per_EUR (2025)",ecb_2026_001; can-statcan_2026_001
 2005_USD,2025_CAD,2.210082,"deflator USD 122.362/77.3945 = 1.58101, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
+2006_EUR,2025_CAD,2.303320,"deflator EUR 120.21/82.37 = 1.45939, then x 1.57828 CAD_per_EUR (2025)",ecb_2026_001; can-statcan_2026_001
 2006_USD,2025_CAD,2.143966,"deflator USD 122.362/79.7813 = 1.53371, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 2007_CAD,2025_CAD,1.505001,"deflator CAD 124.4/82.6579 = 1.505, then x 1 CAD_per_CAD (2025)",world-bank_2026_001
 2007_EUR,2025_CAD,2.246855,"deflator EUR 120.21/84.44 = 1.42361, then x 1.57828 CAD_per_EUR (2025)",ecb_2026_001; can-statcan_2026_001
@@ -59,6 +63,7 @@ from-currency,to-currency,factor,method,source-id
 2007_USD,2025_CAD,2.087412,"deflator USD 122.362/81.9427 = 1.49326, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001
 2008_CNY,2025_CAD,0.276148,"deflator CNY 104.176/73.3649 = 1.41997, then x 0.194475 CAD_per_CNY (2025)",world-bank_2026_001; can-statcan_2026_001
 2008_EUR,2025_CAD,2.199959,"deflator EUR 120.21/86.24 = 1.3939, then x 1.57828 CAD_per_EUR (2025)",ecb_2026_001; can-statcan_2026_001
+2008_GBP,2025_CAD,2.857286,"deflator GBP 121.986/78.6402 = 1.55119, then x 1.842 CAD_per_GBP (2025)",world-bank_2026_001; can-statcan_2026_001
 2008_JPY,2025_CAD,0.010635,"deflator JPY 112.269/98.6866 = 1.13763, then x 0.00934833 CAD_per_JPY (2025)",world-bank_2026_001; can-statcan_2026_001
 2008_SEK,2025_CAD,0.211739,"deflator SEK 120.166/80.999 = 1.48355, then x 0.142725 CAD_per_SEK (2025)",world-bank_2026_001; can-statcan_2026_001
 2008_USD,2025_CAD,2.047954,"deflator USD 122.362/83.5215 = 1.46503, then x 1.39789 CAD_per_USD (2025)",world-bank_2026_001; can-statcan_2026_001

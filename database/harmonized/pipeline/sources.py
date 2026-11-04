@@ -50,36 +50,32 @@ OVERRIDE = {
         "pollution prevention and control, Publications Office, 2013, "
         "https://data.europa.eu/doi/10.2791/98516",
         "supplied by the modeller for the short form IPPC 2012, which was merged into EC 2012 on 2026-08-29; the References tab's nearest entry is the 2010 draft of the same BAT reference document"),
-    "IEAGHG 2000": (
-        'IEAGHG, "Current State of the Art Technology for Iron & Steel Production", '
-        "2013-TR3, April 2013.",
-        "supplied by the modeller. NOTE the short form says 2000 but the document "
-        "is dated 2013 - the short form is UKERC's and is kept as the key so the "
-        "data tables still resolve, but anyone citing this should use the 2013 date"),
 }
-UNRESOLVED = {
-    "IEAGHG 2013": "cited without the a/b suffix the References tab requires; "
-                   "could be either the CO2-capture overview or the iron and steel "
-                   "CCS study",
-}
+UNRESOLVED = {}
+# "IEAGHG 2013" (no suffix) was resolved 2026-11-04: it is IEAGHG 2013a (2013/TR3); see MERGED.
 
 # Ids left behind when a short form was canonicalized. They stay registered in
 # the manifest (it is append-only and the history is worth keeping) but they are
 # superseded, not pending.
 SUPERSEDED = {
-    "ietd_2013_001": "iip_2012_001", "itp_2012_001": "iip_2012_001",
+    "itp_2012_001": "iip_2012_001",
+    # ietd_2013_001 was retired here 2026-08-29 but came back 2026-10-07 as the held IETD
+    # archive, so it is live again (2026-11-04)
+
     "fritzson_2006_002": "fritzson-berntsson_2006_002",
     "fritzson_2006_003": "fritzson-berntsson_2006_003",
     "novacem_2011_002": "novacem_2011_001",
     # merged 2026-08-29 after the citation check confirmed each pair is one document
     "martin_2000_003": "martin_2000_001",
+    "ieaghg_2000_001": "ieaghg_2013_002",   # merged 2026-11-04 (user): one report, 2013/TR3
+    "ieaghg_2013_001": "ieaghg_2013_002",
     "ecra_2009_002": "ecra_2009_001",
     "novacem_2011_003": "novacem_2011_001",
     "ippc_2012_001": "ec_2012_001",
     # Renamed 2026-08-29: the issuer was misidentified, not the document.
     "collodi-wheeler_2010_001": "collodi_2010_001",
     # the held file is the 2024 edition, not the 2026 one it was registered as
-    "iea_2026_002": "iea_2024_001",
+    "iea_2026_002": "iea_2024_001",  # the Electrification report that reused this id is iea_2026_006 (2026-11-04)
     "nera-ea_2009_001": "nera-aea_2009_001",
     "nera_2009_001": "nera-aea_2009_001",
     "ecra_2009_003": "ecra_2009_002",
@@ -161,6 +157,10 @@ MERGED = [
      "one 31st Cement and Concrete Science Conference paper"),
     ("IPPC 2012 -> EC 2012", "ippc_2012_001 -> ec_2012_001",
      "one iron and steel BREF; 'EC' names the issuer where 'IPPC' names a directive"),
+    ("IEAGHG 2000, IEAGHG 2013 -> IEAGHG 2013a", "ieaghg_2000_001, ieaghg_2013_001 -> ieaghg_2013_002",
+     "one report, IEAGHG 2013/TR3 (merged 2026-11-04 on the user's instruction): the References tab "
+     "lists it as 2013a, the data tables cite it unsuffixed and, misdated, as 2000; the modeller had "
+     "identified the 2000 form as 2013-TR3. TR3 prints no costs, so UKERC's cost rows on it are UKERC's own"),
 ]
 
 # Renames, not merges: the document is the same, the attribution was wrong. It

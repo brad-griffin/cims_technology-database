@@ -1,0 +1,3 @@
+process,technology,direction,commodity,value,unit,per-unit,value-min,value-max,co-product,formula,reference,source-original,note
+"Bio-SNG plant, large industrial host (Sect. C.2.5.5, Table C.13)",gasifier_biomass-methanation,input,biomass-solid,1.5184,MWh/unit,MWh biomethane,,,,1173/772.5,"p.135, Table C.13",Biomass In 1173 MWf; SNG production 772.5 MW SNG,"Derived ratio; half waste-derived fuels, half clean biomass. LHV (gasification efficiency stated LHV)."
+"Bio-SNG plant, large industrial host (Sect. C.2.5.5, Table C.13)",gasifier_biomass-methanation,output,heat,0.5178,MWh/unit,MWh biomethane,,,yes,400/772.5,"p.135, Table C.13",By-product heat 400.0 MW T,"Derived ratio; 360 MWt (2,880,000 MWh/yr) available to the host site."
