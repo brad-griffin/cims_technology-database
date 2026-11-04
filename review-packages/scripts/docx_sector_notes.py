@@ -238,12 +238,22 @@ SECTORS = {
             "electrowinning (readiness level 5), and electric smelting of direct-reduced iron.",
         ],
     },
-    "cement": {
-        "title": "Cement",
+    "cement-and-lime": {
+        "title": "Cement and lime", "adj": "cement and lime",
         "covers": "the archetypes that create cement products (clinker, grinding, binder, calcined clay, and "
-                  "ground slag) and provide more general services to industrial-minerals (kiln heat, capture, "
-                  "machine drive, heating and cooling, and lighting)",
+                  "ground slag), the archetypes that calcine lime and dolime, and those that provide more general "
+                  "services to mineral plants (kiln heat, capture, machine drive, heating and cooling, and "
+                  "lighting)",
         "calls": [
+            ("Lime kilns", [
+                "Lime and dolime calcination has five kiln archetypes: long rotary, rotary with preheater (and "
+                "its post-combustion capture variant), shaft (mixed-feed and annular), and oxy-fuel kilns. The "
+                "indirectly heated calciner serves both lime and clinker. All are per tonne of lime.",
+                "Process CO2 from calcination (0.785 t per t of quicklime, the stoichiometric value) is held "
+                "separately from combustion CO2. Check the quicklime and dolime bases of the kiln rows.",
+                "Cement and lime share kiln heat, so the indirect calciner appears under "
+                "both. Lime-mud kilns in kraft pulp mills are a different process and are not included here.",
+            ]),
             ("Options that may have stalled", [
                 "Development of these options may have stalled. We have kept them for now; tell us whether they are still being pursued, and whether the database should keep them as options.",
                 "`kiln_electric-plasma`: the electrified clinker kiln studied by Cementa and Vattenfall (CemZero). "
@@ -288,14 +298,7 @@ SECTORS = {
             "One example: `binder_electrochemical`. Most binder archetypes have guessed capital and operating "
             "costs (eight guessed cells each).",
             "Two examples: `kiln_electric-plasma`.",
-        ],
-        "extra": [
-            ("h2", "Lime: an optional add-on"),
-            ("p", "This review covers cement only. Lime and dolime calcination is a separate process, with five "
-                  "archetypes: long rotary, rotary with preheater (and its capture variant), shaft, and oxy-fuel "
-                  "kilns, plus the indirect calciner, which also serves clinker production. Cement and lime share "
-                  "kiln heat. If you also know lime kilns and are willing to review them, tell us and we will "
-                  "send the lime kilns in the same format."),
+            "One example: `kiln_lime-oxy-fuel`; its capital cost, energy use, and emissions are judgements.",
         ],
     },
     "pulp-and-paper": {

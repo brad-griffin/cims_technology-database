@@ -84,7 +84,7 @@ gate a commit.
 | `reference-source-list.csv` | Each reference source, the factors it backs (or `currency-conversion.csv`) and the pooled rows that rest on it. |
 | `mapping-review.md` | How examples reach archetypes, what was not pooled, and what needs a decision. |
 | `currency-conversion.csv`, `hierarchy-stamp.csv` | The factors and the snapshot the build used. |
-| `technology-database.xlsx` | The workbook. |
+| `technology-database.xlsx` | The workbook: readme (with a list of the CSV tables and what they hold), archetypes (the wide view), energy, emissions and feedstocks (the carriers-and-species view, split), and source-list. The other tables are CSV only (2026-11-04). |
 
 ## How to
 

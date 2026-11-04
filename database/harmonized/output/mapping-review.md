@@ -8168,7 +8168,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `separator_biogas-upgrading` | Labriet 2013 (ETSAP P11) `separator_biogas_pressure-swing-adsorption` | Biogas upgrading (Table 6) | 8 | 4 |
 | `separator_biogas-upgrading` | Labriet 2013 (ETSAP P11) `separator_biogas_water-scrubbing` | Biogas upgrading (Table 6) | 8 | 1 |
 
-### Cement
+### Cement and lime
 
 | archetype | example | process | rows | not pooled |
 |---|---|---|---:|---:|
@@ -8384,6 +8384,39 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `kiln_legacy` | Sánchez Berriel et al. 2016 `kiln_wet` | Clinker and clay calcination energy, Cuba (Sect. 3.2) | 1 |  |
 | `kiln_legacy` | US DOE 2017 (cement bandwidth) `kiln_bat` | Wet process - pyroprocessing with cooling | 1 |  |
 | `kiln_legacy` | US DOE 2017 (cement bandwidth) `kiln_efficiency-base` | Wet process - pyroprocessing with cooling | 1 |  |
+| `kiln_lime-long-rotary` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-long-rotary` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
+| `kiln_lime-long-rotary` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-long-rotary` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
+| `kiln_lime-long-rotary` | Stork et al. 2014 `kiln_lime-long-rotary` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
+| `kiln_lime-long-rotary` | Rehfeldt et al. 2024 `kiln_lime-long-rotary` | Lime, long rotary kiln with or without preheater (Sect. 4.1.4) | 5 |  |
+| `kiln_lime-long-rotary` | Gielen 1997 (ceramics) `kiln_lime-long-rotary` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), long-rotary | 1 |  |
+| `kiln_lime-long-rotary` | NCCP 1999 (foundation paper) `kiln_lime-long-rotary` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
+| `kiln_lime-long-rotary` | Simoni et al. 2022 `kiln_lime-long-rotary` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
+| `kiln_lime-rotary-preheater` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-rotary-preheater` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
+| `kiln_lime-rotary-preheater` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-rotary-preheater` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
+| `kiln_lime-rotary-preheater` | Stork et al. 2014 `kiln_lime-rotary-preheater` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
+| `kiln_lime-rotary-preheater` | Stork et al. 2014 `kiln_lime-rotary-preheater` | Kiln switch LRK to PRK (Sect. 5.2.5, Table 9) | 3 |  |
+| `kiln_lime-rotary-preheater` | Gielen 1997 (ceramics) `kiln_lime-rotary-preheater` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), rotary-preheater | 1 |  |
+| `kiln_lime-rotary-preheater` | NCCP 1999 (foundation paper) `kiln_lime-rotary-preheater` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
+| `kiln_lime-rotary-preheater` | Simoni et al. 2022 `kiln_lime-rotary-preheater` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
+| `kiln_lime-rotary-preheater` | Vattenfall 2018 `kiln_lime-rotary-preheater` | Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3) | 1 |  |
+| `kiln_lime-shaft` | IEAGHG 2013 (steel CCS) `kiln_lime-parallel-flow` | Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D) | 8 | 3 |
+| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Austrian lime kilns 2004 (Annex 6.3.2.3, Table 6.32) | 2 |  |
+| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
+| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft` | Kiln switch rotary to shaft kilns (Sect. 5.2.5, Table 9) | 4 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_annular` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_mixed-feed` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Best energy efficiencies of new large furnaces (Sect. 5.1.1.1, Table 6) | 1 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
+| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Kiln switch all shaft kilns to PFRK (Sect. 5.2.5, Table 9) | 4 | 2 |
+| `kiln_lime-shaft` | Rehfeldt et al. 2024 `kiln_lime-parallel-flow` | Soft-burnt lime, parallel-flow regenerative kiln (Sect. 4.1.4) | 5 |  |
+| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-parallel-flow` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), parallel-flow | 1 |  |
+| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-ring-shaft` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), ring-shaft | 1 |  |
+| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-shaft` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), shaft | 1 |  |
+| `kiln_lime-shaft` | NCCP 1999 (foundation paper) `kiln_lime-double-shaft` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
+| `kiln_lime-shaft` | NCCP 1999 (foundation paper) `kiln_lime-shaft` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
+| `kiln_lime-shaft` | Simoni et al. 2022 `kiln_lime-parallel-flow` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
+| `kiln_lime-shaft` | Vattenfall 2018 `kiln_lime-parallel-flow` | Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3) | 1 |  |
 | `grinding-mill_vertical-roller` | IEA 2024 `grinding-mill` | Other production techniques | 0 |  |
 | `grinding-mill_vertical-roller` | Van Geene et al. 2024 (MIDDEN) `tc0327_cement-production-roller-press-two-vertical-roller-mill` | Section 2: Grinding with Vertical Roller Mill [Xavier & Oliveira, 2021] | 8 |  |
 | `grinding-mill_vertical-roller` | Van Geene et al. 2024 (MIDDEN) `tc0328_cement-production-roller-press-two-high-pressure-rolls` | Section 2: Grinding with High-Pressure Rolls [Xavier & Oliveira, 2021] | 8 |  |
@@ -8486,6 +8519,9 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `kiln_dry-precalciner_ccs-diffuse` | Vattenfall 2018 `kiln_dry-precalciner_amine-scrubbing` | Scenario Amine: post-combustion amine capture with electric boiler (Sect. 8.3, Tables 11-12, 15-16) | 8 | 4 |
 | `kiln_dry-precalciner_ccs-diffuse` | Schneider 2015 `kiln_dry-precalciner_ccs-diffuse` | CO2 reduction and capture (Sect. 3.3) | 0 |  |
 | `kiln_dry-precalciner_ccs-diffuse` | Simbolotti 2010 (ETSAP E14) `kiln_post-combustion` | Cement production | 6 | 1 |
+| `kiln_lime-rotary-preheater_ccs-diffuse` | IEAGHG 2013 (steel CCS) `kiln_lime_ccs-diffuse` | Post-combustion MEA capture, EOP-L2 (Vol. II Sect. C) | 4 | 1 |
+| `kiln_lime-rotary-preheater_ccs-diffuse` | IEAGHG 2016 `kiln_lime_ccs-diffuse` | CCS retrofit case 2A-3 at the 800,000 adt/y market kraft pulp mill: capture on lime kiln flue gas, per adt pulp | 10 | 7 |
+| `kiln_lime-rotary-preheater_ccs-diffuse` | Stork et al. 2014 `kiln_lime_ccs-diffuse` | CCS capture, lime plant, TNO 2012 (Sect. 5.2.3 and 5.2.5, Table 9) | 1 |  |
 | `binder_alkali-activated` | UKERC 2013 `binder_alkali-activated` | Cement subsector (2030 kiln efficiency) | 19 | 4 |
 | `binder_alkali-activated` | Lehne and Preston 2018 `binder_geopolymer` | Cement binders | 1 |  |
 | `binder_alkali-activated` | CSI and ECRA 2017 `binder_alkali-activated` | TP 38 Alkali-activated binders | 1 |  |
@@ -8605,6 +8641,7 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `kiln_calcium-looping` | Plaza et al. 2020 `kiln_calcium-looping` | Calcium looping, integrated (entrained flow), CEMCAP (Sect. 2.2, Table 1) | 1 | 1 |
 | `kiln_electric-plasma` | Element Energy 2021 `kiln_electric-plasma` | FS New Build: Kiln - Cement - Plasma Gas Technology | 1 | 1 |
 | `kiln_electric-plasma` | Vattenfall 2018 `kiln_dry-precalciner_plasma` | Scenario Plasma: plasma-heated preheater/precalciner kiln (Sect. 6.1, 8.4, Tables 13-16) | 17 | 4 |
+| `kiln_lime-oxy-fuel` | Simoni et al. 2022 `kiln_lime-oxy-fuel` | CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3) | 3 | 1 |
 | `kiln_oxy-fuel` | UKERC 2013 `kiln_oxyfuel` | Cement plant | 91 | 2 |
 | `kiln_oxy-fuel` | Bataille 2017 `kiln_oxyfuel-ccs` | cement | 0 |  |
 | `kiln_oxy-fuel` | Bataille 2017 `kiln_oxyfuel-ccs` | Production processes: Kilns with CCS (replacement and retrofit) | 3 |  |
@@ -9739,6 +9776,270 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `evaporator_food` | US DOE 2017 (food and beverage bandwidth) `evaporator_efficiency-base` | Evaporated and dry milk - Concentration | 1 |  |
 | `refinery_sugar-beet` | Giner Santonja et al. 2019 (FDM BREF) `refinery_sugar-beet` | Sugar beet processing (BAT conclusions, Table 17.28) | 1 |  |
 | `refinery_sugar-beet` | Rehfeldt et al. 2018 `refinery_sugar-beet` | Food, beverages and tobacco: Sugar (Table 1) | 3 |  |
+
+### Glass and ceramics
+
+| archetype | example | process | rows | not pooled |
+|---|---|---|---:|---:|
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn100-150` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn200-300` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn500-fittings` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_fireclay` | Refractory chamber dryers (Sect. 2.3.3.4, Table 2.9) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_sanitaryware` | Sanitaryware chamber dryers (Sect. 2.3.7.4, Table 2.21) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_silica` | Refractory chamber dryers (Sect. 2.3.3.4, Table 2.9) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tile` | Wall and floor tile drying (Sect. 3.3.5.2) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tile` | Wall and floor tile process steps, Italian plants (Sect. 3.3.5.2, Table 3.32) | 2 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tunnel_fireclay` | Refractory tunnel dryers (Sect. 2.3.3.4, Table 2.10) | 1 |  |
+| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tunnel_magnesite` | Refractory tunnel dryers (Sect. 2.3.3.4, Table 2.10) | 1 |  |
+| `dryer_rotary-direct-fired` | Bataille 2017 `calciner_coal` | mining | 0 |  |
+| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0322_natural-gas-dryer-for-blast-furnace-slag` | Section 1: Drying [Xavier & Oliveira, 2021] | 4 |  |
+| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0489_rotary-drum-heating-and-drying-of-reclaimed-asphalt-rap` | Section 2: Mixing and Heating RAP [Xavier, Oliveira, Uleman, 2022] | 4 |  |
+| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0491_rotary-drum-heating-and-drying-with-reclaimed-asphalt-r` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 4 |  |
+| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0494_rotary-drum-heating-and-drying` | Section 2: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 4 |  |
+| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0504_rotary-drum-heating-and-drying-with-increased-recycling` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 6 |  |
+| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Cerro Matoso, Colombia (Table 5.1) | 2 |  |
+| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Codemin, Brazil (Table 5.1) | 2 | 2 |
+| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Hyuga Smelting, Japan (Table 5.1) | 2 | 1 |
+| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Loma de Niquel, Venezuela (Table 5.1) | 2 | 1 |
+| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, PT Antam, Indonesia (Table 5.1) | 2 | 2 |
+| `furnace_lehr` | Worrell et al. 2008 `furnace_lehr` | Container glass post-forming and finishing (Table 9) | 3 |  |
+| `furnace_lehr` | Worrell et al. 2008 `furnace_lehr` | Flat glass post-forming and finishing (Table 9) | 3 |  |
+| `furnace_lehr` | WSP and DNV GL 2015 (glass) `furnace_lehr` | UK melting furnaces (Sect. 3.3, Table 6) | 3 | 2 |
+| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0001_regenerative-end-port-furnace-with-electric-boosting` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 1 |
+| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0002_regenerative-end-port-furnace-with-electric-boosting-an` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 1 |
+| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0003_green-gas-regenerative-end-port-furnace-with-electric-b` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 7 |
+| `furnace_regenerative` | Element Energy 2021 `furnace_glass-hydrogen-fired` | FS Retrofit: Furnace - Glass - Hydrogen Furnace - Glass | 2 | 2 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-fuel-fired` | Container glass, process CO2 from virgin batch (Sect. 3.3.2.2, p.104 note 4) | 1 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-fuel-fired` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 1 | 1 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 | 1 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Furnace thermal efficiency (Sect. 3.2.3, 4.8.1) | 1 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Glass wool, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative_lonox` | LoNOX melter example, container glass 358 t/d (Sect. 4.4.2.3) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative_lonox` | LoNOX melter, high-cullet operation (Sect. 4.4.2.3) | 2 | 1 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_batch-cullet-preheat` | Container glass cross-fired furnace with direct batch and cullet preheater, 350 t/d (Sect. 4.8.5, Table 4.45) | 4 | 3 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass EU-27 melting energy (Sect. 3.4.5) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass sector overview (Sect. 1.4.3) | 1 | 1 |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass side-port regenerative example with waste heat boiler, 350 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Float glass energy balance example, cross-fired regenerative 600 t/d (Sect. 3.2.3, Table 3.7) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Float glass side-port regenerative example with waste heat boiler, 800 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass, borosilicate glass tubes (Sect. 3.7.1, Table 3.34) | 3 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass side-port regenerative example with waste heat boiler, 220 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass, soda-lime lamp bulbs (Sect. 3.7.1, Table 3.34) | 3 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Television tube glass (screen), guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass end-port regenerative example with waste heat boiler, 300 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass energy balance example, end-fired regenerative 260 t/d (Sect. 3.2.3, Table 3.7) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass melting energy and ageing (Sect. 3.3.5) | 1 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Furnace thermal efficiency (Sect. 3.2.3, 4.8.1) | 1 |  |
+| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_regenerative` | Stork et al. 2014 `furnace_regenerative` | Best energy efficiencies of new large furnaces (Sect. 5.1.1.1, Table 6) | 1 |  |
+| `furnace_regenerative` | Haydock and Napp 2013 `furnace_regenerative` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
+| `furnace_regenerative` | US DOE 2023 (Liftoff industrial) `furnace_hydrogen-fired` | Appendix B MACC 2030 - Glass (pp.106-107) | 1 |  |
+| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2000 | 10 | 1 |
+| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2020 | 7 | 3 |
+| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2050 | 10 | 6 |
+| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Melting energy, fossil-fired furnaces, Germany/Austria/Switzerland 1993, container glass (p.31) | 1 |  |
+| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Melting energy, fossil-fired furnaces, Germany/Austria/Switzerland 1993, flat glass (p.31) | 1 |  |
+| `furnace_regenerative` | Martin et al. 2000 (emerging technologies) `furnace_glass-container` | Glass-1: 100% Recycled Cullet Feed and Cullet Preheating (data table, reference technology) | 3 |  |
+| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
+| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Energy benchmark: BAT or most efficient plant (Sect. 2.3.1, Table 2-3) | 1 |  |
+| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Energy benchmark: international benchmark BPT (Sect. 2.3.1, Table 2-3) | 1 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-recuperative` | Fiberglass insulation melting furnaces (Table 7) | 1 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-recuperative` | Textile and reinforcement fibers melting furnaces (Table 7) | 1 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Container glass melting furnaces (Table 7) | 3 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Flat glass melting furnaces (Table 7) | 3 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Specialty glass melting furnaces (Table 7) | 1 |  |
+| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative_end-fired` | End-fired regenerative furnace, Vetropack Straza (Sect. 5.8.2) | 2 |  |
+| `furnace_regenerative` | Zier et al. 2021 `furnace_glass-regenerative_end-port` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 4 |  |
+| `furnace_regenerative` | Zier et al. 2021 `furnace_glass-regenerative_side-port` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 2 |  |
+| `furnace_regenerative` | Zier et al. 2021 `furnace_hydrogen-fired_glass` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 0 |  |
+| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | Flat patterned glass furnace, constant SEC (Table G2) | 1 |  |
+| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | German container glass furnaces, modelled 2019 mean (Sect. 2.2, App. G) | 3 | 1 |
+| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | German flat glass furnaces, modelled 2019 mean (Sect. 2.2, App. G) | 3 | 1 |
+| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative_hydrogen-fired` | Hydrogen option, air-regenerative furnace (Table 1) | 0 |  |
+| `furnace_regenerative` | WSP and DNV GL 2015 (glass) `furnace_glass-regenerative` | Efficient large furnace (Sect. 3.3.1) | 3 | 1 |
+| `furnace_regenerative` | WSP and DNV GL 2015 (glass) `furnace_glass-regenerative` | UK melting furnaces (Sect. 3.3, Table 6) | 3 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_electrical-insulator` | Electrical insulator shuttle kiln (Sect. 3.3.8.2) | 1 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_fireclay-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 2 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_high-alumina-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 1 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_porcelain` | Porcelain tableware shuttle kiln (Sect. 2.3.6.5, Table 2.17) | 2 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware-first-firing` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware-repair-firing` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware` | Sanitaryware kilns (Sect. 2.3.7.5, Tables 2.22-2.23) | 1 |  |
+| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_silica-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 1 |  |
+| `kiln_rotary-expanded-clay` | EC 2007 (CER BREF) `kiln_rotary_expanded-clay` | Expanded clay aggregates (Sect. 3.3.4.2) | 1 |  |
+| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0332_firing-and-subsequent-treatment-of-bricks` | Production of bricks [Besier and Marsidi, 2020] | 6 |  |
+| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0334_firing-and-subsequent-treatment-of-roof-tiles` | Production of roof tiles [Besier and Marsidi, 2020] | 6 | 4 |
+| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0339_firing-of-wall-tiles` | Production of wall tiles [Besier and Marsidi, 2020] | 6 |  |
+| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0340_firing-of-floor-tiles` | Production of floor tiles [Besier and Marsidi, 2020] | 6 |  |
+| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0342_firing-and-subsequent-treatment-of-refractory-products` | Production of refractory products [Besier and Marsidi, 2020] | 6 |  |
+| `kiln_tunnel-roller` | Element Energy 2018 `kiln_tunnel-roller` | Technology assumption table (App. 7.2, pp.65-66): Natural gas fired kiln | 5 | 3 |
+| `kiln_tunnel-roller` | Element Energy 2018 `kiln_tunnel-roller` | Technology data sheet (App. 7.3): Counterfactual natural gas fired ceramic tunnel kiln (electric kiln sheet) | 3 | 1 |
+| `kiln_tunnel-roller` | Element Energy 2021 `kiln_tunnel-roller` | Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired kiln - Kiln - Lime; Kiln - Other | 2 | 1 |
+| `kiln_tunnel-roller` | Element Energy 2021 `kiln_tunnel-roller` | FS Retrofit: Kiln - Other - Hydrogen Kiln | 2 | 1 |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_sanitaryware` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-glazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-glost` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-once-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-single-fired` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-twice-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-unglazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 | 1 |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tile` | Wall and floor tile process steps, Italian plants (Sect. 3.3.5.2, Table 3.32) | 2 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_clay-block` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_facing-brick` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_pressed-roof-tile` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_bauxite-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_clay-block` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_facing-brick-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 4 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_facing-brick` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_fireclay-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_magnesia-brick` | Magnesia refractory brick manufacture (Sect. 3.3.3.2, Table 3.17) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_magnesia-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_masonry-brick-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 3 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_perforated-block` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 | 1 |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn100-150` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn200-300` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn500-fittings` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_porous-clay-block` | Porous clay block tunnel kilns, average clean gas (Sect. 3.3.1.1, Table 3.5) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_roof-tile-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 3 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_roof-tile` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware-conventional` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware` | Sanitaryware kilns (Sect. 2.3.7.5, Tables 2.22-2.23) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_silica-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-biscuit` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-once-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-twice-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-unglazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
+| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_vitrified-clay-pipe` | Vitrified clay pipe tunnel kilns (Sect. 2.3.2.5, Table 2.7) | 1 |  |
+| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2000 | 9 | 1 |
+| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2020 | 9 | 5 |
+| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2050 | 9 | 8 |
+| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller_tile` | Ceramic tiles (Table 2.4.2), 2000 | 8 | 2 |
+| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller_tile` | Ceramic tiles (Table 2.4.2), 2020 | 5 | 3 |
+| `kiln_tunnel-roller` | Martin et al. 2000 (emerging technologies) `kiln_roller` | Ceramics-1: Roller Kiln (data table) | 6 | 2 |
+| `kiln_tunnel-roller` | Martin et al. 2000 (emerging technologies) `kiln_tunnel` | Ceramics-1: Roller Kiln (data table, reference technology) | 3 | 2 |
+| `kiln_tunnel-roller` | Saygin 2012 `kiln_tunnel-roller_bricks` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
+| `kiln_tunnel-roller` | Saygin 2012 `kiln_tunnel-roller_tiles` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
+| `melting-furnace_hot-blast-cupola` | Scalet et al. 2013 (GLS BREF) `melting-furnace_hot-blast-cupola` | Stone wool, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `melting-furnace_hot-blast-cupola` | DEA 2015 (energy use) `melting-furnace_hot-blast-cupola` | Stone wool production, cupola melting (Branche 31 Fremstilling af stenuld mv., Sect. 4.2, p.205) | 1 |  |
+| `furnace_hybrid-electric` | Van Geene et al. 2024 (MIDDEN) `tc0066_glass-fibre-production-using-oxy-fuel-furnace-with-25-e` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 4 |
+| `furnace_hybrid-electric` | Worrell et al. 2008 `furnace_glass-hybrid-electric` | Container glass melting furnaces (Table 7) | 3 |  |
+| `furnace_hybrid-electric` | Worrell et al. 2008 `furnace_glass-hybrid-electric` | Flat glass melting furnaces (Table 7) | 2 | 2 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0004_oxy-fuel-furnace-with-electric-boosting` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0005_oxy-fuel-furnace-with-electric-boosting-and-electricity` | Container glass production [Papadogeorgos and Schure, 2019] | 10 | 3 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0006_oxy-fuel-furnace-with-bubblers-and-electricity-generati` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0007_oxy-fuel-furnace-with-electric-boosting-and-air-ng-cull` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 3 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0008_green-gas-oxy-fuel-furnace-with-electric-boosting-and-a` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 7 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0012_optimelt-tcr-plus-cg` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0013_optimelt-tcr-tableware` | Tableware glass melting [Papadogeorgos and Schure, 2019] | 10 | 3 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0016_optimelt-tcr-plus-tableware` | Tableware glass melting [Papadogeorgos and Schure, 2019] | 10 | 2 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0065_glass-fibre-production-using-oxy-fuel-furnace` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 1 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0067_green-gas-fired-glass-fibre-production-using-oxy-fuel-f` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 4 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0068_hydrogen-fired-glass-fibre-production-using-oxy-fuel-fu` | Glass fibre production [Krijgsman and Marsidi, 2019] | 9 | 5 |
+| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0072_glass-wool-production-using-hydrogen-fired-furnace` | Glass wool production [Krijgsman and Marsidi, 2019] | 9 | 2 |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass oxy-fuel example, two furnaces 300 + 350 t/d (Sect. 4.4.2.5, Tables 4.17, 4.18, 4.44) | 2 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Frits melting energy (Sect. 3.10.5) | 1 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Frits oxy-fired, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 0 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Glass wool oxy-fuel melting cost estimate, 125 t/d (Sect. 4.4.2.5) | 2 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass, borosilicate glass tubes (Sect. 3.7.1, Table 3.34) | 3 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass, glass ceramic (Sect. 3.7.1, Table 3.34) | 4 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, borosilicate 50 t/d, 40% cullet (Sect. 4.4.2.5, Tables 4.17, 4.18) | 2 | 1 |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, borosilicate 50 t/d, 60% cullet (Sect. 4.4.2.5, Tables 4.17, 4.18) | 2 |  |
+| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, glass ceramics 40 t/d (Sect. 4.4.2.5, Tables 4.17, 4.44) | 2 |  |
+| `furnace_oxy-fuel` | Haydock and Napp 2013 `furnace_oxy-fuel` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
+| `furnace_oxy-fuel` | US DOE 2023 (Liftoff industrial) `furnace_glass-oxy-fuel` | Appendix B MACC 2030 - Glass (pp.106-107) | 3 | 1 |
+| `furnace_oxy-fuel` | Saygin 2012 `furnace_oxy-fuel` | Dutch FYSI 2.0 model: new and emerging technologies, 2040 (Appendix 5.D, Table 5.D-4) | 3 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Container glass melting furnaces (Table 7) | 3 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Fiberglass insulation melting furnaces (Table 7) | 1 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Flat glass melting furnaces (Table 7) | 3 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Oxy-fuel flint container furnace, Heye Glas Obernkirchen (Sect. 5.8.3) | 1 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Specialty glass melting furnaces (Table 7) | 1 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Textile and reinforcement fibers melting furnaces (Table 7) | 1 | 1 |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel_cullet-preheating` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
+| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel_tall-crown` | Tall crown oxy-fuel furnace, Praxair and Heye Glas (Sect. 5.8.3) | 1 |  |
+| `furnace_oxy-fuel` | Zier et al. 2021 `furnace_glass-oxy-fuel` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 0 |  |
+| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel` | Flat patterned glass furnace, constant SEC (Table G2) | 1 |  |
+| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel` | Oxy-fuel option (Table 1, App. F-G) | 2 | 1 |
+| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel_hydrogen-fired` | Hydrogen efficient option, oxy-fuel furnace (Table 1) | 0 |  |
+| `furnace_oxy-fuel` | WSP and DNV GL 2015 (glass) `furnace_glass-oxy-fuel` | Glass options register (Appendix C, Table 11) | 2 | 1 |
+| `kiln_tunnel-roller_efficiency-strong` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware-fibre-insulated` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
+| `kiln_tunnel-roller_efficiency-strong` | Gielen 1997 (ceramics) `kiln_tunnel-roller_efficiency-strong` | Bricks, roller kiln (Table 2.2.3), 2000 | 8 | 1 |
+| `kiln_tunnel-roller_efficiency-strong` | Gielen 1997 (ceramics) `kiln_tunnel-roller_efficiency-strong` | Bricks, roller kiln (Table 2.2.3), 2020 | 8 | 7 |
+| `furnace_regenerative_ccs-diffuse` | US DOE 2023 (Liftoff industrial) `furnace_glass-regenerative_ccs-diffuse` | Appendix B MACC 2030 - Glass (pp.106-107) | 2 |  |
+| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0499_electric-rotary-drum-heating-and-drying` | Section 2: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 5 |  |
+| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0500_electric-rotary-drum-heating-and-drying-of-reclaimed-as` | Section 2: Mixing and Heating RAP [Xavier, Oliveira, Uleman, 2022] | 5 |  |
+| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0501_electric-rotary-drum-heating-and-drying-with-reclaimed` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 5 |  |
+| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Chemicals - Electric Dryer - Chemicals | 0 |  |
+| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - F&D - Electric Dryer - F&D | 0 |  |
+| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Paper - Electric Dryer | 0 |  |
+| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Rotary - Electric Dryer | 0 |  |
+| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Vehicles - Electric Dryer | 0 |  |
+| `dryer_electric` | Martin et al. 2000 (pulp and paper) `dryer_electric` | Advanced technologies, Sect. VI (pp.36-38) | 3 | 3 |
+| `furnace_electric` | Bataille 2017 `melting-furnace_electricity` | non-metallic-minerals | 0 |  |
+| `furnace_electric` | Van Geene et al. 2024 (MIDDEN) `tc0011_electric-cold-top-furnace` | Container glass melting [Papadogeorgos and Schure, 2019] | 7 | 2 |
+| `furnace_electric` | Van Geene et al. 2024 (MIDDEN) `tc0070_glass-wool-production-using-electric-furnace` | Glass wool production [Krijgsman and Marsidi, 2019] | 10 | 5 |
+| `furnace_electric` | Element Energy 2018 `melting-furnace_electric-melter` | Technology assumption table (App. 7.2, pp.65-66): Electric glass furnace | 5 | 5 |
+| `furnace_electric` | Element Energy 2018 `melting-furnace_electric-melter` | Technology data sheet (App. 7.3): All-electric glass furnace | 3 | 1 |
+| `furnace_electric` | Element Energy 2021 `melting-furnace_electric-melter` | FS New Build: Furnace - Glass - Electric Glass Furnace | 1 | 1 |
+| `furnace_electric` | Element Energy 2021 `melting-furnace_electric-melter` | FS New Build: Glass Other - Electric Furnace | 1 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Container glass bottles and jars, electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 3 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric furnace example, Furnace 1, lead crystal 27 t/d (Sect. 4.2.1, Table 4.3) | 3 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric furnace example, Furnace 2, magnesium/lead crystal 15-20 t/d (Sect. 4.2.1, Table 4.3) | 3 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass melting energy (Sect. 3.6.5) | 1 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass sector overview: furnace costs and campaigns (Sect. 1.6.3) | 3 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 1 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Glass wool electric melting (Sect. 3.8.5) | 1 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | High temperature insulation wools (Sect. 1.9.3, 3.9.5) | 2 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric furnace example, Furnace 1, borosilicate 38 t/d (Sect. 4.2.1, Table 4.4) | 4 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric furnace example, Furnace 2, borosilicate 48 t/d (Sect. 4.2.1, Table 4.4) | 4 | 1 |
+| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass sector overview (Sect. 1.7.3) | 1 |  |
+| `furnace_electric` | Haydock and Napp 2013 `furnace_electric` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
+| `furnace_electric` | US DOE 2023 (Liftoff industrial) `melting-furnace_electric-melter` | Appendix B MACC 2030 - Glass (pp.106-107) | 1 |  |
+| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2000 | 11 | 1 |
+| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2020 | 8 | 3 |
+| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2050 | 11 | 6 |
+| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Melting energy, electric furnaces, Germany/Austria/Switzerland 1993 (p.31) | 2 | 2 |
+| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Container glass melting furnaces (Table 7) | 2 |  |
+| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Electric furnaces over 10 t/d, German survey (Sect. 4) | 2 |  |
+| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Electric melters, state of the art (Sect. 4 and 5.8.5) | 2 |  |
+| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Fiberglass insulation melting furnaces (Table 7) | 2 |  |
+| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Specialty glass melting furnaces (Table 7) | 2 |  |
+| `furnace_electric` | Zier et al. 2021 `melting-furnace_electric-melter` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 2 |  |
+| `furnace_electric` | Zier et al. 2021 `melting-furnace_electric-melter` | Model assumptions for electric melting and hydrogen firing (Sect. 6, Table B2) | 3 |  |
+| `furnace_electric` | Zier et al. 2023 `melting-furnace_electric-melter` | All-electric melting option, cold-top electric furnace (Table 1, App. F-G) | 4 | 2 |
+| `furnace_electric` | WSP and DNV GL 2015 (glass) `melting-furnace_electric-melter` | Glass options register (Appendix C, Table 11) | 2 | 2 |
+| `furnace_hybrid-majority-electric` | Worrell and Boyd 2022 `furnace_glass-hybrid-electric` | Glass furnaces, electrification (Glass section) | 0 |  |
+| `furnace_hybrid-majority-electric` | Rehfeldt et al. 2024 `furnace_glass-hybrid-electric` | Flat glass melting, 60-70 % electrified (Sect. 4.1.4) | 3 |  |
+| `furnace_hybrid-majority-electric` | Zier et al. 2021 `furnace_glass-hybrid-electric` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 1 |  |
+| `furnace_oxy-fuel-thermochemical` | Zier et al. 2021 `heat-recovery-unit_glass-thermochemical` | Waste heat recovery to the furnace (Sect. 4.1, Tables 7-8, 11) | 1 |  |
+| `furnace_oxy-fuel-thermochemical` | Zier et al. 2023 `furnace_glass-oxy-fuel-thermochemical` | Thermo-chemical heat recovery option (Table 1, App. F) | 0 |  |
+| `kiln_ceramic-electric` | Element Energy 2018 `kiln_ceramic-electric` | Technology assumption table (App. 7.2, pp.65-66): Electric Ceramic Tunnel Kilns | 5 | 3 |
+| `kiln_ceramic-electric` | Element Energy 2018 `kiln_ceramic-electric` | Technology data sheet (App. 7.3): Large-scale electric ceramic tunnel kiln | 5 | 3 |
+| `kiln_ceramic-electric` | Element Energy 2021 `kiln_ceramic-electric` | FS New Build: Kiln - Other - Electric Kiln | 0 |  |
+| `kiln_ceramic-electric` | Haydock and Napp 2013 `kiln_ceramic-electric` | Ceramics (Sect. 3.1.8, Table 9) | 0 |  |
+| `kiln_ceramic-electric` | WSP and DNV GL 2015 (ceramics) `kiln_ceramic-electric` | Ceramics options register - all subsectors (App. C, Tables 14-15) | 2 | 1 |
+| `kiln_ceramic-microwave-assisted` | Element Energy 2018 `kiln_ceramic-microwave-assisted-gas` | Technology data sheet (App. 7.3): Microwave assisted gas fired (MAGF) kiln | 4 | 3 |
+| `furnace_tempering` | Worrell et al. 2008 `furnace_glass-tempering_electricity` | Flat glass post-forming and finishing (Table 9) | 1 |  |
+| `furnace_tempering` | Worrell et al. 2008 `furnace_glass-tempering_natural-gas` | Flat glass post-forming and finishing (Table 9) | 3 |  |
 
 ### Hydrogen
 
@@ -11259,307 +11560,6 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `rolling-mill_continuous-casting` | Cusano et al. 2017 (NFM BREF) `rolling-mill_continuous-casting_southwire` | Copper wire rod plants, investment (Table 13.12) 1992 220 | 1 |  |
 | `rolling-mill_continuous-casting` | Cusano et al. 2017 (NFM BREF) `rolling-mill_continuous-casting_southwire` | Copper wire rod plants, investment (Table 13.12) 1995 80 | 1 |  |
 | `rolling-mill_continuous-casting` | Martin et al. 2000 (emerging technologies) `caster_thin-strip-aluminium` | Alum-1: Advanced forming/near net shape technology (data table) | 6 | 2 |
-
-### Non-metallic minerals
-
-| archetype | example | process | rows | not pooled |
-|---|---|---|---:|---:|
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn100-150` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn200-300` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_ceramic_pipe-dn500-fittings` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_fireclay` | Refractory chamber dryers (Sect. 2.3.3.4, Table 2.9) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_sanitaryware` | Sanitaryware chamber dryers (Sect. 2.3.7.4, Table 2.21) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_chamber_silica` | Refractory chamber dryers (Sect. 2.3.3.4, Table 2.9) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tile` | Wall and floor tile drying (Sect. 3.3.5.2) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tile` | Wall and floor tile process steps, Italian plants (Sect. 3.3.5.2, Table 3.32) | 2 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tunnel_fireclay` | Refractory tunnel dryers (Sect. 2.3.3.4, Table 2.10) | 1 |  |
-| `dryer_ceramic-hot-air` | EC 2007 (CER BREF) `dryer_tunnel_magnesite` | Refractory tunnel dryers (Sect. 2.3.3.4, Table 2.10) | 1 |  |
-| `dryer_rotary-direct-fired` | Bataille 2017 `calciner_coal` | mining | 0 |  |
-| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0322_natural-gas-dryer-for-blast-furnace-slag` | Section 1: Drying [Xavier & Oliveira, 2021] | 4 |  |
-| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0489_rotary-drum-heating-and-drying-of-reclaimed-asphalt-rap` | Section 2: Mixing and Heating RAP [Xavier, Oliveira, Uleman, 2022] | 4 |  |
-| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0491_rotary-drum-heating-and-drying-with-reclaimed-asphalt-r` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 4 |  |
-| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0494_rotary-drum-heating-and-drying` | Section 2: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 4 |  |
-| `dryer_rotary-direct-fired` | Van Geene et al. 2024 (MIDDEN) `tc0504_rotary-drum-heating-and-drying-with-increased-recycling` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 6 |  |
-| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Cerro Matoso, Colombia (Table 5.1) | 2 |  |
-| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Codemin, Brazil (Table 5.1) | 2 | 2 |
-| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Hyuga Smelting, Japan (Table 5.1) | 2 | 1 |
-| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, Loma de Niquel, Venezuela (Table 5.1) | 2 | 1 |
-| `dryer_rotary-direct-fired` | Crundwell et al. 2011 `dryer_rotary-direct-fired` | Laterite ore dewatering kiln, PT Antam, Indonesia (Table 5.1) | 2 | 2 |
-| `furnace_lehr` | Worrell et al. 2008 `furnace_lehr` | Container glass post-forming and finishing (Table 9) | 3 |  |
-| `furnace_lehr` | Worrell et al. 2008 `furnace_lehr` | Flat glass post-forming and finishing (Table 9) | 3 |  |
-| `furnace_lehr` | WSP and DNV GL 2015 (glass) `furnace_lehr` | UK melting furnaces (Sect. 3.3, Table 6) | 3 | 2 |
-| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0001_regenerative-end-port-furnace-with-electric-boosting` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 1 |
-| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0002_regenerative-end-port-furnace-with-electric-boosting-an` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 1 |
-| `furnace_regenerative` | Van Geene et al. 2024 (MIDDEN) `tc0003_green-gas-regenerative-end-port-furnace-with-electric-b` | Container glass melting [Papadogeorgos and Schure, 2019] | 9 | 7 |
-| `furnace_regenerative` | Element Energy 2021 `furnace_glass-hydrogen-fired` | FS Retrofit: Furnace - Glass - Hydrogen Furnace - Glass | 2 | 2 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-fuel-fired` | Container glass, process CO2 from virgin batch (Sect. 3.3.2.2, p.104 note 4) | 1 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-fuel-fired` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 1 | 1 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 | 1 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Furnace thermal efficiency (Sect. 3.2.3, 4.8.1) | 1 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Glass wool, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative_lonox` | LoNOX melter example, container glass 358 t/d (Sect. 4.4.2.3) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-recuperative_lonox` | LoNOX melter, high-cullet operation (Sect. 4.4.2.3) | 2 | 1 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_batch-cullet-preheat` | Container glass cross-fired furnace with direct batch and cullet preheater, 350 t/d (Sect. 4.8.5, Table 4.45) | 4 | 3 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass EU-27 melting energy (Sect. 3.4.5) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass sector overview (Sect. 1.4.3) | 1 | 1 |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Flat glass side-port regenerative example with waste heat boiler, 350 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Float glass energy balance example, cross-fired regenerative 600 t/d (Sect. 3.2.3, Table 3.7) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Float glass side-port regenerative example with waste heat boiler, 800 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass, borosilicate glass tubes (Sect. 3.7.1, Table 3.34) | 3 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass side-port regenerative example with waste heat boiler, 220 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Special glass, soda-lime lamp bulbs (Sect. 3.7.1, Table 3.34) | 3 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_cross-fired` | Television tube glass (screen), guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass end-port regenerative example with waste heat boiler, 300 t/d (Sect. 4.8.4, Table 4.44) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass energy balance example, end-fired regenerative 260 t/d (Sect. 3.2.3, Table 3.7) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Container glass melting energy and ageing (Sect. 3.3.5) | 1 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Furnace thermal efficiency (Sect. 3.2.3, 4.8.1) | 1 |  |
-| `furnace_regenerative` | Scalet et al. 2013 (GLS BREF) `furnace_glass-regenerative_end-fired` | Tableware, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_regenerative` | Stork et al. 2014 `furnace_regenerative` | Best energy efficiencies of new large furnaces (Sect. 5.1.1.1, Table 6) | 1 |  |
-| `furnace_regenerative` | Haydock and Napp 2013 `furnace_regenerative` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
-| `furnace_regenerative` | US DOE 2023 (Liftoff industrial) `furnace_hydrogen-fired` | Appendix B MACC 2030 - Glass (pp.106-107) | 1 |  |
-| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2000 | 10 | 1 |
-| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2020 | 7 | 3 |
-| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Glass, gas-fired tank furnace (100% primary) (Table 2.7.4), 2050 | 10 | 6 |
-| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Melting energy, fossil-fired furnaces, Germany/Austria/Switzerland 1993, container glass (p.31) | 1 |  |
-| `furnace_regenerative` | Gielen 1997 (ceramics) `furnace_glass-regenerative` | Melting energy, fossil-fired furnaces, Germany/Austria/Switzerland 1993, flat glass (p.31) | 1 |  |
-| `furnace_regenerative` | Martin et al. 2000 (emerging technologies) `furnace_glass-container` | Glass-1: 100% Recycled Cullet Feed and Cullet Preheating (data table, reference technology) | 3 |  |
-| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
-| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Energy benchmark: BAT or most efficient plant (Sect. 2.3.1, Table 2-3) | 1 |  |
-| `furnace_regenerative` | Saygin 2012 `furnace_glass-melting` | Energy benchmark: international benchmark BPT (Sect. 2.3.1, Table 2-3) | 1 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-recuperative` | Fiberglass insulation melting furnaces (Table 7) | 1 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-recuperative` | Textile and reinforcement fibers melting furnaces (Table 7) | 1 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Container glass melting furnaces (Table 7) | 3 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Flat glass melting furnaces (Table 7) | 3 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative` | Specialty glass melting furnaces (Table 7) | 1 |  |
-| `furnace_regenerative` | Worrell et al. 2008 `furnace_glass-regenerative_end-fired` | End-fired regenerative furnace, Vetropack Straza (Sect. 5.8.2) | 2 |  |
-| `furnace_regenerative` | Zier et al. 2021 `furnace_glass-regenerative_end-port` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 4 |  |
-| `furnace_regenerative` | Zier et al. 2021 `furnace_glass-regenerative_side-port` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 2 |  |
-| `furnace_regenerative` | Zier et al. 2021 `furnace_hydrogen-fired_glass` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 0 |  |
-| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | Flat patterned glass furnace, constant SEC (Table G2) | 1 |  |
-| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | German container glass furnaces, modelled 2019 mean (Sect. 2.2, App. G) | 3 | 1 |
-| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative` | German flat glass furnaces, modelled 2019 mean (Sect. 2.2, App. G) | 3 | 1 |
-| `furnace_regenerative` | Zier et al. 2023 `furnace_glass-regenerative_hydrogen-fired` | Hydrogen option, air-regenerative furnace (Table 1) | 0 |  |
-| `furnace_regenerative` | WSP and DNV GL 2015 (glass) `furnace_glass-regenerative` | Efficient large furnace (Sect. 3.3.1) | 3 | 1 |
-| `furnace_regenerative` | WSP and DNV GL 2015 (glass) `furnace_glass-regenerative` | UK melting furnaces (Sect. 3.3, Table 6) | 3 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_electrical-insulator` | Electrical insulator shuttle kiln (Sect. 3.3.8.2) | 1 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_fireclay-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 2 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_high-alumina-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 1 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_porcelain` | Porcelain tableware shuttle kiln (Sect. 2.3.6.5, Table 2.17) | 2 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware-first-firing` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware-repair-firing` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_sanitaryware` | Sanitaryware kilns (Sect. 2.3.7.5, Tables 2.22-2.23) | 1 |  |
-| `kiln_intermittent` | EC 2007 (CER BREF) `kiln_shuttle_silica-brick` | Refractory shuttle kilns (Sect. 2.3.3.5, Table 2.12) | 1 |  |
-| `kiln_lime-long-rotary` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-long-rotary` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
-| `kiln_lime-long-rotary` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-long-rotary` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
-| `kiln_lime-long-rotary` | Stork et al. 2014 `kiln_lime-long-rotary` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
-| `kiln_lime-long-rotary` | Rehfeldt et al. 2024 `kiln_lime-long-rotary` | Lime, long rotary kiln with or without preheater (Sect. 4.1.4) | 5 |  |
-| `kiln_lime-long-rotary` | Gielen 1997 (ceramics) `kiln_lime-long-rotary` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), long-rotary | 1 |  |
-| `kiln_lime-long-rotary` | NCCP 1999 (foundation paper) `kiln_lime-long-rotary` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
-| `kiln_lime-long-rotary` | Simoni et al. 2022 `kiln_lime-long-rotary` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
-| `kiln_lime-rotary-preheater` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-rotary-preheater` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
-| `kiln_lime-rotary-preheater` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-rotary-preheater` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
-| `kiln_lime-rotary-preheater` | Stork et al. 2014 `kiln_lime-rotary-preheater` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
-| `kiln_lime-rotary-preheater` | Stork et al. 2014 `kiln_lime-rotary-preheater` | Kiln switch LRK to PRK (Sect. 5.2.5, Table 9) | 3 |  |
-| `kiln_lime-rotary-preheater` | Gielen 1997 (ceramics) `kiln_lime-rotary-preheater` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), rotary-preheater | 1 |  |
-| `kiln_lime-rotary-preheater` | NCCP 1999 (foundation paper) `kiln_lime-rotary-preheater` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
-| `kiln_lime-rotary-preheater` | Simoni et al. 2022 `kiln_lime-rotary-preheater` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
-| `kiln_lime-rotary-preheater` | Vattenfall 2018 `kiln_lime-rotary-preheater` | Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3) | 1 |  |
-| `kiln_lime-shaft` | IEAGHG 2013 (steel CCS) `kiln_lime-parallel-flow` | Reference integrated mill - process units (Vol. I Sect. D-E; Vol. III Sect. C-D) | 8 | 3 |
-| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Austrian lime kilns 2004 (Annex 6.3.2.3, Table 6.32) | 2 |  |
-| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Lime kilns EU-27 (Sect. 2.2.7 and 2.3, Tables 2.15, 2.23, 2.25) | 7 |  |
-| `kiln_lime-shaft` | Schorcht et al. 2013 (CLM BREF) `kiln_lime-parallel-flow` | Spanish lime kilns (Annex 6.3.2.3, Table 6.33) | 1 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft` | Kiln switch rotary to shaft kilns (Sect. 5.2.5, Table 9) | 4 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_annular` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_mixed-feed` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Best energy efficiencies of new large furnaces (Sect. 5.1.1.1, Table 6) | 1 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Heat use per kiln type for quicklime, EU (Sect. 5.1.1.1, Table 5) | 1 |  |
-| `kiln_lime-shaft` | Stork et al. 2014 `kiln_lime-shaft_parallel-flow-regenerative` | Kiln switch all shaft kilns to PFRK (Sect. 5.2.5, Table 9) | 4 | 2 |
-| `kiln_lime-shaft` | Rehfeldt et al. 2024 `kiln_lime-parallel-flow` | Soft-burnt lime, parallel-flow regenerative kiln (Sect. 4.1.4) | 5 |  |
-| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-parallel-flow` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), parallel-flow | 1 |  |
-| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-ring-shaft` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), ring-shaft | 1 |  |
-| `kiln_lime-shaft` | Gielen 1997 (ceramics) `kiln_lime-shaft` | Oven types for quicklime production, West Germany 1986 (Table 2.13.1), shaft | 1 |  |
-| `kiln_lime-shaft` | NCCP 1999 (foundation paper) `kiln_lime-double-shaft` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
-| `kiln_lime-shaft` | NCCP 1999 (foundation paper) `kiln_lime-shaft` | Merchant lime production, SEC by kiln design (Sect. 8.3, Table 8-5) | 1 |  |
-| `kiln_lime-shaft` | Simoni et al. 2022 `kiln_lime-parallel-flow` | Lime kiln types, EU-27 (Sect. 2.1, Table 2) | 5 |  |
-| `kiln_lime-shaft` | Vattenfall 2018 `kiln_lime-parallel-flow` | Lime shaft and rotary kilns, thermal energy quoted from the EU BREF (Sect. 5.2.3) | 1 |  |
-| `kiln_rotary-expanded-clay` | EC 2007 (CER BREF) `kiln_rotary_expanded-clay` | Expanded clay aggregates (Sect. 3.3.4.2) | 1 |  |
-| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0332_firing-and-subsequent-treatment-of-bricks` | Production of bricks [Besier and Marsidi, 2020] | 6 |  |
-| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0334_firing-and-subsequent-treatment-of-roof-tiles` | Production of roof tiles [Besier and Marsidi, 2020] | 6 | 4 |
-| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0339_firing-of-wall-tiles` | Production of wall tiles [Besier and Marsidi, 2020] | 6 |  |
-| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0340_firing-of-floor-tiles` | Production of floor tiles [Besier and Marsidi, 2020] | 6 |  |
-| `kiln_tunnel-roller` | Van Geene et al. 2024 (MIDDEN) `tc0342_firing-and-subsequent-treatment-of-refractory-products` | Production of refractory products [Besier and Marsidi, 2020] | 6 |  |
-| `kiln_tunnel-roller` | Element Energy 2018 `kiln_tunnel-roller` | Technology assumption table (App. 7.2, pp.65-66): Natural gas fired kiln | 5 | 3 |
-| `kiln_tunnel-roller` | Element Energy 2018 `kiln_tunnel-roller` | Technology data sheet (App. 7.3): Counterfactual natural gas fired ceramic tunnel kiln (electric kiln sheet) | 3 | 1 |
-| `kiln_tunnel-roller` | Element Energy 2021 `kiln_tunnel-roller` | Counterfactual technologies (ProcessCounterfactualsNew): Natural gas fired kiln - Kiln - Lime; Kiln - Other | 2 | 1 |
-| `kiln_tunnel-roller` | Element Energy 2021 `kiln_tunnel-roller` | FS Retrofit: Kiln - Other - Hydrogen Kiln | 2 | 1 |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_sanitaryware` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-glazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-glost` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-once-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-single-fired` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-twice-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_roller_tile-unglazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 | 1 |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tile` | Wall and floor tile process steps, Italian plants (Sect. 3.3.5.2, Table 3.32) | 2 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_clay-block` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_facing-brick` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel-fast_pressed-roof-tile` | Fast-firing tunnel kilns, bricks and roof tiles (Sect. 2.3.1.5, Table 2.4) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_bauxite-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_clay-block` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_facing-brick-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 4 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_facing-brick` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_fireclay-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_magnesia-brick` | Magnesia refractory brick manufacture (Sect. 3.3.3.2, Table 3.17) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_magnesia-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_masonry-brick-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 3 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_perforated-block` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 | 1 |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn100-150` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn200-300` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_pipe-dn500-fittings` | Vitrified clay pipe production by pipe size, Germany (Sect. 3.3.2.2, Table 3.13) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_porous-clay-block` | Porous clay block tunnel kilns, average clean gas (Sect. 3.3.1.1, Table 3.5) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_roof-tile-installation` | Brick and roof tile installations, Austria and Spain (Sect. 3.3.1.2, Table 3.10) | 3 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_roof-tile` | Brick and roof tile tunnel kilns (Sect. 2.3.1.5, Table 2.2) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware-conventional` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware` | Sanitaryware kilns (Sect. 2.3.7.5, Tables 2.22-2.23) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_silica-brick` | Refractory tunnel kilns (Sect. 2.3.3.5, Table 2.11) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-biscuit` | Wall and floor tile kilns, higher water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-once-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-twice-fired` | Wall and floor tile kiln comparison at 1150 degC (Sect. 3.3.5.2, Table 3.31) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_tile-unglazed` | Wall and floor tile kilns, lower water absorption (Sect. 2.3.5.5, Table 2.14) | 1 |  |
-| `kiln_tunnel-roller` | EC 2007 (CER BREF) `kiln_tunnel_vitrified-clay-pipe` | Vitrified clay pipe tunnel kilns (Sect. 2.3.2.5, Table 2.7) | 1 |  |
-| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2000 | 9 | 1 |
-| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2020 | 9 | 5 |
-| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller` | Bricks, tunnel kiln (gradual introduction) (Table 2.2.2), 2050 | 9 | 8 |
-| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller_tile` | Ceramic tiles (Table 2.4.2), 2000 | 8 | 2 |
-| `kiln_tunnel-roller` | Gielen 1997 (ceramics) `kiln_tunnel-roller_tile` | Ceramic tiles (Table 2.4.2), 2020 | 5 | 3 |
-| `kiln_tunnel-roller` | Martin et al. 2000 (emerging technologies) `kiln_roller` | Ceramics-1: Roller Kiln (data table) | 6 | 2 |
-| `kiln_tunnel-roller` | Martin et al. 2000 (emerging technologies) `kiln_tunnel` | Ceramics-1: Roller Kiln (data table, reference technology) | 3 | 2 |
-| `kiln_tunnel-roller` | Saygin 2012 `kiln_tunnel-roller_bricks` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
-| `kiln_tunnel-roller` | Saygin 2012 `kiln_tunnel-roller_tiles` | Dutch FYSI 2.0 model: current best practice technology (Appendix 5.D, Table 5.D-4) | 3 |  |
-| `melting-furnace_hot-blast-cupola` | Scalet et al. 2013 (GLS BREF) `melting-furnace_hot-blast-cupola` | Stone wool, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `melting-furnace_hot-blast-cupola` | DEA 2015 (energy use) `melting-furnace_hot-blast-cupola` | Stone wool production, cupola melting (Branche 31 Fremstilling af stenuld mv., Sect. 4.2, p.205) | 1 |  |
-| `furnace_hybrid-electric` | Van Geene et al. 2024 (MIDDEN) `tc0066_glass-fibre-production-using-oxy-fuel-furnace-with-25-e` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 4 |
-| `furnace_hybrid-electric` | Worrell et al. 2008 `furnace_glass-hybrid-electric` | Container glass melting furnaces (Table 7) | 3 |  |
-| `furnace_hybrid-electric` | Worrell et al. 2008 `furnace_glass-hybrid-electric` | Flat glass melting furnaces (Table 7) | 2 | 2 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0004_oxy-fuel-furnace-with-electric-boosting` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0005_oxy-fuel-furnace-with-electric-boosting-and-electricity` | Container glass production [Papadogeorgos and Schure, 2019] | 10 | 3 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0006_oxy-fuel-furnace-with-bubblers-and-electricity-generati` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0007_oxy-fuel-furnace-with-electric-boosting-and-air-ng-cull` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 3 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0008_green-gas-oxy-fuel-furnace-with-electric-boosting-and-a` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 7 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0012_optimelt-tcr-plus-cg` | Container glass melting [Papadogeorgos and Schure, 2019] | 10 | 1 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0013_optimelt-tcr-tableware` | Tableware glass melting [Papadogeorgos and Schure, 2019] | 10 | 3 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0016_optimelt-tcr-plus-tableware` | Tableware glass melting [Papadogeorgos and Schure, 2019] | 10 | 2 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0065_glass-fibre-production-using-oxy-fuel-furnace` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 1 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0067_green-gas-fired-glass-fibre-production-using-oxy-fuel-f` | Glass fibre production [Krijgsman and Marsidi, 2019] | 11 | 4 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0068_hydrogen-fired-glass-fibre-production-using-oxy-fuel-fu` | Glass fibre production [Krijgsman and Marsidi, 2019] | 9 | 5 |
-| `furnace_oxy-fuel` | Van Geene et al. 2024 (MIDDEN) `tc0072_glass-wool-production-using-hydrogen-fired-furnace` | Glass wool production [Krijgsman and Marsidi, 2019] | 9 | 2 |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 2 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass, guide values for new furnaces (Sect. 3.2.3, Table 3.8) | 2 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Container glass oxy-fuel example, two furnaces 300 + 350 t/d (Sect. 4.4.2.5, Tables 4.17, 4.18, 4.44) | 2 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Frits melting energy (Sect. 3.10.5) | 1 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Frits oxy-fired, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 0 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Glass wool oxy-fuel melting cost estimate, 125 t/d (Sect. 4.4.2.5) | 2 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass, borosilicate glass tubes (Sect. 3.7.1, Table 3.34) | 3 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass, glass ceramic (Sect. 3.7.1, Table 3.34) | 4 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, borosilicate 50 t/d, 40% cullet (Sect. 4.4.2.5, Tables 4.17, 4.18) | 2 | 1 |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, borosilicate 50 t/d, 60% cullet (Sect. 4.4.2.5, Tables 4.17, 4.18) | 2 |  |
-| `furnace_oxy-fuel` | Scalet et al. 2013 (GLS BREF) `furnace_glass-oxy-fuel` | Special glass oxy-fuel example, glass ceramics 40 t/d (Sect. 4.4.2.5, Tables 4.17, 4.44) | 2 |  |
-| `furnace_oxy-fuel` | Haydock and Napp 2013 `furnace_oxy-fuel` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
-| `furnace_oxy-fuel` | US DOE 2023 (Liftoff industrial) `furnace_glass-oxy-fuel` | Appendix B MACC 2030 - Glass (pp.106-107) | 3 | 1 |
-| `furnace_oxy-fuel` | Saygin 2012 `furnace_oxy-fuel` | Dutch FYSI 2.0 model: new and emerging technologies, 2040 (Appendix 5.D, Table 5.D-4) | 3 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Container glass melting furnaces (Table 7) | 3 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Fiberglass insulation melting furnaces (Table 7) | 1 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Flat glass melting furnaces (Table 7) | 3 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Oxy-fuel flint container furnace, Heye Glas Obernkirchen (Sect. 5.8.3) | 1 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Specialty glass melting furnaces (Table 7) | 1 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel` | Textile and reinforcement fibers melting furnaces (Table 7) | 1 | 1 |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel_cullet-preheating` | Oxy-fuel container furnace, Glashutte Gerresheim Dusseldorf (Sect. 5.8.3-5.8.4) | 1 |  |
-| `furnace_oxy-fuel` | Worrell et al. 2008 `furnace_glass-oxy-fuel_tall-crown` | Tall crown oxy-fuel furnace, Praxair and Heye Glas (Sect. 5.8.3) | 1 |  |
-| `furnace_oxy-fuel` | Zier et al. 2021 `furnace_glass-oxy-fuel` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 0 |  |
-| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel` | Flat patterned glass furnace, constant SEC (Table G2) | 1 |  |
-| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel` | Oxy-fuel option (Table 1, App. F-G) | 2 | 1 |
-| `furnace_oxy-fuel` | Zier et al. 2023 `furnace_glass-oxy-fuel_hydrogen-fired` | Hydrogen efficient option, oxy-fuel furnace (Table 1) | 0 |  |
-| `furnace_oxy-fuel` | WSP and DNV GL 2015 (glass) `furnace_glass-oxy-fuel` | Glass options register (Appendix C, Table 11) | 2 | 1 |
-| `kiln_tunnel-roller_efficiency-strong` | EC 2007 (CER BREF) `kiln_tunnel_sanitaryware-fibre-insulated` | Sanitaryware kiln comparison (Sect. 3.3.7.2, Table 3.45) | 1 |  |
-| `kiln_tunnel-roller_efficiency-strong` | Gielen 1997 (ceramics) `kiln_tunnel-roller_efficiency-strong` | Bricks, roller kiln (Table 2.2.3), 2000 | 8 | 1 |
-| `kiln_tunnel-roller_efficiency-strong` | Gielen 1997 (ceramics) `kiln_tunnel-roller_efficiency-strong` | Bricks, roller kiln (Table 2.2.3), 2020 | 8 | 7 |
-| `furnace_regenerative_ccs-diffuse` | US DOE 2023 (Liftoff industrial) `furnace_glass-regenerative_ccs-diffuse` | Appendix B MACC 2030 - Glass (pp.106-107) | 2 |  |
-| `kiln_lime-rotary-preheater_ccs-diffuse` | IEAGHG 2013 (steel CCS) `kiln_lime_ccs-diffuse` | Post-combustion MEA capture, EOP-L2 (Vol. II Sect. C) | 4 | 1 |
-| `kiln_lime-rotary-preheater_ccs-diffuse` | IEAGHG 2016 `kiln_lime_ccs-diffuse` | CCS retrofit case 2A-3 at the 800,000 adt/y market kraft pulp mill: capture on lime kiln flue gas, per adt pulp | 10 | 7 |
-| `kiln_lime-rotary-preheater_ccs-diffuse` | Stork et al. 2014 `kiln_lime_ccs-diffuse` | CCS capture, lime plant, TNO 2012 (Sect. 5.2.3 and 5.2.5, Table 9) | 1 |  |
-| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0499_electric-rotary-drum-heating-and-drying` | Section 2: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 5 |  |
-| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0500_electric-rotary-drum-heating-and-drying-of-reclaimed-as` | Section 2: Mixing and Heating RAP [Xavier, Oliveira, Uleman, 2022] | 5 |  |
-| `dryer_electric` | Van Geene et al. 2024 (MIDDEN) `tc0501_electric-rotary-drum-heating-and-drying-with-reclaimed` | Section 3: Mixing and Heating Aggregates [Xavier, Oliveira, Uleman, 2022] | 5 |  |
-| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Chemicals - Electric Dryer - Chemicals | 0 |  |
-| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - F&D - Electric Dryer - F&D | 0 |  |
-| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Paper - Electric Dryer | 0 |  |
-| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Rotary - Electric Dryer | 0 |  |
-| `dryer_electric` | Element Energy 2021 `dryer_electric` | FS New Build: Dryer - Vehicles - Electric Dryer | 0 |  |
-| `dryer_electric` | Martin et al. 2000 (pulp and paper) `dryer_electric` | Advanced technologies, Sect. VI (pp.36-38) | 3 | 3 |
-| `furnace_electric` | Bataille 2017 `melting-furnace_electricity` | non-metallic-minerals | 0 |  |
-| `furnace_electric` | Van Geene et al. 2024 (MIDDEN) `tc0011_electric-cold-top-furnace` | Container glass melting [Papadogeorgos and Schure, 2019] | 7 | 2 |
-| `furnace_electric` | Van Geene et al. 2024 (MIDDEN) `tc0070_glass-wool-production-using-electric-furnace` | Glass wool production [Krijgsman and Marsidi, 2019] | 10 | 5 |
-| `furnace_electric` | Element Energy 2018 `melting-furnace_electric-melter` | Technology assumption table (App. 7.2, pp.65-66): Electric glass furnace | 5 | 5 |
-| `furnace_electric` | Element Energy 2018 `melting-furnace_electric-melter` | Technology data sheet (App. 7.3): All-electric glass furnace | 3 | 1 |
-| `furnace_electric` | Element Energy 2021 `melting-furnace_electric-melter` | FS New Build: Furnace - Glass - Electric Glass Furnace | 1 | 1 |
-| `furnace_electric` | Element Energy 2021 `melting-furnace_electric-melter` | FS New Build: Glass Other - Electric Furnace | 1 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Container glass bottles and jars, electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Container glass furnaces, FEVE survey 2005 (Sect. 3.3.2.2, Tables 3.11, 3.13) | 3 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric furnace example, Furnace 1, lead crystal 27 t/d (Sect. 4.2.1, Table 4.3) | 3 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass electric furnace example, Furnace 2, magnesium/lead crystal 15-20 t/d (Sect. 4.2.1, Table 4.3) | 3 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass melting energy (Sect. 3.6.5) | 1 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Domestic glass sector overview: furnace costs and campaigns (Sect. 1.6.3) | 3 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Glass furnace campaign lengths and status (Sect. 2.3, 4.2.1, 4.4.2.5) | 1 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Glass wool electric melting (Sect. 3.8.5) | 1 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | High temperature insulation wools (Sect. 1.9.3, 3.9.5) | 2 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Mineral wool sector overview (Sect. 1.8.3) | 1 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric, BAT-achievable (Sect. 4.8, Table 4.43) | 1 |  |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric furnace example, Furnace 1, borosilicate 38 t/d (Sect. 4.2.1, Table 4.4) | 4 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass electric furnace example, Furnace 2, borosilicate 48 t/d (Sect. 4.2.1, Table 4.4) | 4 | 1 |
-| `furnace_electric` | Scalet et al. 2013 (GLS BREF) `melting-furnace_electric-melter` | Special glass sector overview (Sect. 1.7.3) | 1 |  |
-| `furnace_electric` | Haydock and Napp 2013 `furnace_electric` | Glass (Sect. 3.1.9, Table 10) | 0 |  |
-| `furnace_electric` | US DOE 2023 (Liftoff industrial) `melting-furnace_electric-melter` | Appendix B MACC 2030 - Glass (pp.106-107) | 1 |  |
-| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2000 | 11 | 1 |
-| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2020 | 8 | 3 |
-| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Glass, electric tank furnace (100% primary) (Table 2.7.5), 2050 | 11 | 6 |
-| `furnace_electric` | Gielen 1997 (ceramics) `melting-furnace_electric-melter` | Melting energy, electric furnaces, Germany/Austria/Switzerland 1993 (p.31) | 2 | 2 |
-| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Container glass melting furnaces (Table 7) | 2 |  |
-| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Electric furnaces over 10 t/d, German survey (Sect. 4) | 2 |  |
-| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Electric melters, state of the art (Sect. 4 and 5.8.5) | 2 |  |
-| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Fiberglass insulation melting furnaces (Table 7) | 2 |  |
-| `furnace_electric` | Worrell et al. 2008 `melting-furnace_electric-melter` | Specialty glass melting furnaces (Table 7) | 2 |  |
-| `furnace_electric` | Zier et al. 2021 `melting-furnace_electric-melter` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 2 |  |
-| `furnace_electric` | Zier et al. 2021 `melting-furnace_electric-melter` | Model assumptions for electric melting and hydrogen firing (Sect. 6, Table B2) | 3 |  |
-| `furnace_electric` | Zier et al. 2023 `melting-furnace_electric-melter` | All-electric melting option, cold-top electric furnace (Table 1, App. F-G) | 4 | 2 |
-| `furnace_electric` | WSP and DNV GL 2015 (glass) `melting-furnace_electric-melter` | Glass options register (Appendix C, Table 11) | 2 | 2 |
-| `furnace_hybrid-majority-electric` | Worrell and Boyd 2022 `furnace_glass-hybrid-electric` | Glass furnaces, electrification (Glass section) | 0 |  |
-| `furnace_hybrid-majority-electric` | Rehfeldt et al. 2024 `furnace_glass-hybrid-electric` | Flat glass melting, 60-70 % electrified (Sect. 4.1.4) | 3 |  |
-| `furnace_hybrid-majority-electric` | Zier et al. 2021 `furnace_glass-hybrid-electric` | Glass melting furnace types (Sect. 3.2.1, Table 6, Table B2) | 1 |  |
-| `furnace_oxy-fuel-thermochemical` | Zier et al. 2021 `heat-recovery-unit_glass-thermochemical` | Waste heat recovery to the furnace (Sect. 4.1, Tables 7-8, 11) | 1 |  |
-| `furnace_oxy-fuel-thermochemical` | Zier et al. 2023 `furnace_glass-oxy-fuel-thermochemical` | Thermo-chemical heat recovery option (Table 1, App. F) | 0 |  |
-| `kiln_ceramic-electric` | Element Energy 2018 `kiln_ceramic-electric` | Technology assumption table (App. 7.2, pp.65-66): Electric Ceramic Tunnel Kilns | 5 | 3 |
-| `kiln_ceramic-electric` | Element Energy 2018 `kiln_ceramic-electric` | Technology data sheet (App. 7.3): Large-scale electric ceramic tunnel kiln | 5 | 3 |
-| `kiln_ceramic-electric` | Element Energy 2021 `kiln_ceramic-electric` | FS New Build: Kiln - Other - Electric Kiln | 0 |  |
-| `kiln_ceramic-electric` | Haydock and Napp 2013 `kiln_ceramic-electric` | Ceramics (Sect. 3.1.8, Table 9) | 0 |  |
-| `kiln_ceramic-electric` | WSP and DNV GL 2015 (ceramics) `kiln_ceramic-electric` | Ceramics options register - all subsectors (App. C, Tables 14-15) | 2 | 1 |
-| `kiln_ceramic-microwave-assisted` | Element Energy 2018 `kiln_ceramic-microwave-assisted-gas` | Technology data sheet (App. 7.3): Microwave assisted gas fired (MAGF) kiln | 4 | 3 |
-| `kiln_lime-oxy-fuel` | Simoni et al. 2022 `kiln_lime-oxy-fuel` | CO2 capture options for lime kilns, numbers from cement studies (Sect. 4.1, Table 3) | 3 | 1 |
-| `furnace_tempering` | Worrell et al. 2008 `furnace_glass-tempering_electricity` | Flat glass post-forming and finishing (Table 9) | 1 |  |
-| `furnace_tempering` | Worrell et al. 2008 `furnace_glass-tempering_natural-gas` | Flat glass post-forming and finishing (Table 9) | 3 |  |
 
 ### Oil and gas
 

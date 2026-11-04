@@ -19,7 +19,7 @@ import docx_methodology  # noqa: E402
 import docx_sector_notes  # noqa: E402
 
 OUT = HERE.parent
-PACKAGES = ["breweries", "steel", "pulp-and-paper", "cement", "chemicals", "conventional-oil", "oil-sands", "natural-gas", "biofuels", "hydrogen", "mining", "aluminum", "petroleum-refining", "whole-database"]
+PACKAGES = ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemicals", "conventional-oil", "oil-sands", "natural-gas", "biofuels", "hydrogen", "mining", "aluminum", "petroleum-refining", "whole-database"]
 
 
 def main():

@@ -20,7 +20,8 @@ from package_map import EXCLUDE_BANDS, HARM, PACKAGES, ROOT, load, row_nodes
 warnings.filterwarnings("ignore")
 FIRST_BODY = 8          # rows 1-7 are the banner and the header block
 HEAD_ROW, GROUP_ROW = 4, 3
-WIDE = ("wide-archetype", "wide-carriers-species")
+# the main workbook already splits energy, emissions and feedstocks (2026-11-04)
+WIDE = ("archetypes", "energy", "emissions", "feedstocks")
 # columns left out of the review files (Brad 2026-11-04)
 DROP_COLS = {"families", "end-uses", "discriminator", "modifiers", "applies-to", "external-conversions",
              "source-corrections"}
@@ -125,7 +126,7 @@ def insert_comment_column(ws, at=2):
 
 # the sector's own family goes in the top band (Brad 2026-11-03)
 SECTOR_FAMILY = {"breweries": "food-and-beverage", "steel": "iron-and-steel", "pulp-and-paper": "pulp-and-paper",
-                 "cement": "cement", "chemicals": "chemicals", "conventional-oil": "oil-and-gas",
+                 "cement-and-lime": "cement-and-lime", "chemicals": "chemicals", "conventional-oil": "oil-and-gas",
                  "oil-sands": "oil-and-gas", "natural-gas": "oil-and-gas", "biofuels": "biofuels",
                  "hydrogen": "hydrogen", "mining": "mining", "aluminum": "non-ferrous-metals",
                  "petroleum-refining": "petroleum-refining"}
@@ -276,6 +277,10 @@ def legend_sheet(wb, sheets):
 
 
 def readme(ws, package, title, build, sheets, n_rows, n_arch):
+    # the main readme's sheet list and CSV section start at row 29; the package
+    # writes its own sheet list there (merged paragraph rows unmerged first)
+    for m in [m for m in ws.merged_cells.ranges if m.min_row >= 29]:
+        ws.unmerge_cells(str(m))
     for row in ws.iter_rows(min_row=29, max_row=ws.max_row):
         for c in row:
             c.value = None
@@ -286,6 +291,9 @@ def readme(ws, package, title, build, sheets, n_rows, n_arch):
                       "the archetypes sheet, and see the reviewer guide for what to check.")
     ws["B4"].alignment = Alignment(wrap_text=True, vertical="top")
     ws["B12"].value = "Hover over a column heading for its definition, or see the column-legend sheet."
+    if str(ws["B17"].value or "").startswith("The bands break sorting"):
+        ws["B17"].value = ("The bands break sorting and filtering, so the sheets are for reading. Ask us if you "
+                           "would like the values as flat tables.")
     if package in SECTOR_FAMILY and ws["B15"].value:
         ws["B15"].value = ("In this file the sector's own family is the top band, followed by the shared services "
                            "and any other families. " + ws["B15"].value)
@@ -320,23 +328,22 @@ def main(package, build):
         famlabel = {v: k for k, v in ctx[5].items()}[SECTOR_FAMILY[package]]
         for s in WIDE:
             sector_family_first(wb[s], famlabel, set(ctx[5]))
-    wa = wb["wide-archetype"]
+    wa = wb["archetypes"]
     keep_columns(wa, {j for j in range(1, wa.max_column + 1) if wa.cell(HEAD_ROW, j).value not in DROP_COLS})
     BAND_LABELS.update(ctx[5])
     insert_comment_column(wa)
-    wb["wide-archetype"].title = "archetypes"
     wb["archetypes"]["B1"].value = None           # the comment column; the banner moved to C1
     wb["archetypes"]["C1"].value = ("One row per archetype in each end use it serves. Capacity is in the unit named in "
                                     "capacity-unit; energy use by carrier, emissions by species, and feedstocks are on "
                                     "the energy, emissions, and feedstocks sheets.")
-    split = split_carriers(wb, "wide-carriers-species")
+    split = [name for name, _, _ in SPLIT]
     legend_sheet(wb, WIDE)
     widen_notes(wb)
     for n in ["archetypes", *split]:
         wb[n].sheet_view.showGridLines = False
     sheets = ["column-legend", "archetypes", *split] + (
         ["source-list"] if package == "whole-database" else [])
-    rows = counts["wide-archetype"]
+    rows = counts["archetypes"]
     readme(wb["readme"], package, title, build, sheets, len(rows), len({a for a, _ in rows.values()}))
     # sheet order: readme, column-legend, archetypes, energy, emissions, feedstocks[, source-list]
     wb._sheets = [wb[s] for s in ["readme"] + sheets]

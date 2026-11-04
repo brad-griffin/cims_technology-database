@@ -69,26 +69,56 @@ README = [
     ("p", "Some end uses show an archetype per another unit than its own: per GJ of process heat, "
           "hydrogen per t, liquid fuels per m3, flaring per 1000 m3 of gas. The filled column names "
           "the factor. The long tables and the CSVs stay on the archetype's own unit."),
-    ("p", "The bands break sorting and filtering, so the banded sheets are for reading. The flat "
-          "sheets and the CSVs in database/harmonized/output/ are the working tables."),
+    ("p", "The bands break sorting and filtering, so the sheets are for reading. The CSVs in "
+          "database/harmonized/output/ are the working tables; the next section lists what they hold."),
     ("h2", "Shading: how certain a value is, most certain first"),
     ("legend", None),
     ("h2", "Sheets"),
     ("sheets", None),
+    ("h2", "More detail in the CSV files (database/harmonized/output/)"),
+    ("p", "The workbook shows each archetype's pooled values. The CSV files behind it hold the detail: "
+          "how each value was reached, and every source figure it rests on. Each is a flat table you "
+          "can sort and filter."),
+    ("files", None),
+]
+# the detail tables behind the workbook (Brad 2026-11-04)
+CSV_NOTES = [
+    ("archetype.csv", "One row per archetype: label, family, equipment, discriminator and modifiers, type, "
+     "carriers, heat tier, the end uses it serves, readiness level and its basis, product and secondary "
+     "products, product density and energy content, a description, named real-world examples, sources, and "
+     "notes on merges and renames."),
+    ("archetype-parameter.csv", "One row per archetype, parameter, and target (carrier or species): central, "
+     "low, and high values with their unit; the number of examples pooled, and how many rest on an outside "
+     "conversion or an assumed source correction; which example or rule set the central value; the sources "
+     "and examples pooled; and, for a filled value, its grade, fill method and rule, the inputs it was "
+     "calculated from, and the rationale for a judgement."),
+    ("archetype-secondary-parameter.csv", "The same layout for values kept off the archetypes sheet: the "
+     "host-plant and capture add-on parts of each capture variant's costs and energy, values as the "
+     "source sized them before the size alignment, component efficiencies and lifetimes, and part-load "
+     "limits."),
+    ("archetype-flow.csv", "Input and output flows per unit of product (materials, co-products, and "
+     "by-product gases, for example coke and scrap per tonne of steel), pooled like the parameters."),
+    ("archetype-application.csv", "Where each archetype applies in the CIMS hierarchy: one row per "
+     "archetype and node, with any annotation and the route it reaches the node by."),
+    ("example.csv", "One row per source example: the source, the technology and process as the source "
+     "names them, the archetype it is mapped to (or why it is not), the sector, end use, and unit the source "
+     "reports, its readiness level as printed and as converted, and the extraction file it comes from."),
+    ("example-parameter.csv", "Every source figure: the value, range, and unit as printed and as "
+     "normalised; the conversion applied and its factors and class; the heating-value basis, cost basis, "
+     "capacity basis, currency, discount rate, region, and year; whether it was excluded, set aside, "
+     "corrected, or a duplicate, and why; the formula for a derived figure; and the source file and page "
+     "or table it was read from."),
+    ("example-flow.csv", "Every source flow (inputs and outputs per unit of product), as printed and as "
+     "normalised, with its co-product flag, region, year, and locator."),
+    ("example-constraint.csv", "Source constraints by region and year: adoption potentials, applicability "
+     "limits, and maximum shares, with their basis and locator."),
 ]
 SHEET_NOTES = {
-    "wide-archetype": "One row per archetype in each end use: the main parameters.",
-    "wide-carriers-species": "Energy by carrier and emissions by species.",
-    "wide-flow": "Input and output flows.",
-    "archetype": "The archetype list.",
-    "source-list": "The sources.",
-    "archetype-parameter": "Long table: one row per archetype, parameter, and target, with grade and method.",
-    "archetype-flow": "Long table: one row per archetype flow.",
-    "example": "The source examples behind each archetype.",
-    "example-parameter": "Every source figure, as printed and normalised.",
-    "example-flow": "Every source flow, as printed and normalised.",
-    "example-constraint": "Source constraints (potentials, limits) by region and year.",
-    "archetype-application": "Where each archetype applies in the CIMS hierarchy.",
+    "archetypes": "One row per archetype in each end use: the main parameters.",
+    "energy": "Energy use by carrier, for the same rows.",
+    "emissions": "Emissions by type and species, for the same rows.",
+    "feedstocks": "Feedstock use by carrier, for the same rows.",
+    "source-list": "The sources, by the family they inform.",
 }
 
 
@@ -197,6 +227,13 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
             ws.cell(r, 2, "(none)").font = f_body
             ws.cell(r, 3, "Text, identifiers, and counts are not shaded.").font = f_body
             r += 1
+        elif kind == "files":
+            for name, text in CSV_NOTES:
+                ws.cell(r, 2, name).font = Font(sz=11, bold=True)
+                c = ws.cell(r, 3, text)
+                c.font, c.alignment = f_body, Alignment(wrap_text=True, vertical="top")
+                ws.row_dimensions[r].height = 15 * (1 + len(text) // 220)
+                r += 1
         elif kind == "sheets":
             for name in list(banded) + list(flat):
                 ws.cell(r, 2, name).font = Font(sz=11, bold=True)

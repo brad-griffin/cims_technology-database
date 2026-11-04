@@ -20,7 +20,7 @@ arch = {r["archetype"]: r for r in rd(HARM / "records" / "archetype.csv")}
 ex = rd(HARM / "output" / "example.csv")
 src = {r["source-id"]: r for r in rd(HARM / "output" / "source-list.csv")}
 out = {}
-for pkg in ["breweries", "steel", "pulp-and-paper", "cement", "chemicals", "conventional-oil", "oil-sands", "natural-gas", "biofuels", "hydrogen", "mining", "aluminum", "petroleum-refining", "whole-database"]:
+for pkg in ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemicals", "conventional-oil", "oil-sands", "natural-gas", "biofuels", "hydrogen", "mining", "aluminum", "petroleum-refining", "whole-database"]:
     rows = rd(ROOT / "review-packages" / "scripts" / f"rows_{pkg}.csv")
     bands = OrderedDict()
     # the database's own order, read from the package workbook: bands in process order, and within

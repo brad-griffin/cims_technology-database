@@ -733,7 +733,8 @@ compilation cites it as an original.
   archetype.
 - The wide view is three views: `wide-archetype` (one column set per parameter),
   `wide-carriers-species` (`wide-archetype-carriers-species.csv`: specific energy by
-  carrier, emissions by species, alphabetical), both in the workbook, and the
+  carrier, emissions by species, alphabetical; in the workbook it is split into the
+  energy, emissions and feedstocks sheets, 2026-11-04), both in the workbook, and the
   secondary parameters (`wide-archetype-secondary-parameter.csv`, CSV only: values by
   stream or part, load-range-min, degradation-rate and a non-CHP efficiency-chp).
   Where each (parameter, target) goes, and what is dropped from the wide views, is

@@ -2,12 +2,12 @@
 from docx_lib import make_doc, render
 
 SECTORS = {"breweries": "Breweries", "steel": "Iron and steel", "pulp-and-paper": "Pulp and paper",
-           "cement": "Cement", "chemicals": "Chemicals", "conventional-oil": "Conventional oil production",
+           "cement-and-lime": "Cement and lime", "chemicals": "Chemicals", "conventional-oil": "Conventional oil production",
            "oil-sands": "Oil sands", "natural-gas": "Natural gas production", "biofuels": "Biofuels",
            "hydrogen": "Hydrogen", "mining": "Mining", "aluminum": "Aluminum",
            "petroleum-refining": "Petroleum refining"}
 EXTRA_OUT_OF_SCOPE = {
-    "cement": "Lime, glass, ceramics, and gypsum, which share the industrial-minerals sector. We can provide the lime kilns on request; see the sector note.",
+    "cement-and-lime": "Glass, ceramics, and gypsum, which share the industrial-minerals sector.",
     "natural-gas": "Gas transmission pipelines and distribution. We can provide them on request; see the sector note.",
     "conventional-oil": "Methane venting, flaring, and leak controls at oil sites, which the database holds with natural gas production.",
     "aluminum": "Copper, nickel, lead, zinc, magnesium, and titanium smelting.",

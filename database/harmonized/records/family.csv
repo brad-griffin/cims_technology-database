@@ -7,8 +7,8 @@ lighting,service,Lighting,Industrial lighting.,,,,
 mobile-equipment,service,Mobile equipment,Off-road vehicles and mobile machinery at a site.,,,,
 co2-capture,service,CO2 capture,"Capture plants on concentrated or dilute streams, and direct air capture. The stream is the hierarchy node an archetype serves.",,,,
 iron-and-steel,sector,Iron and steel,"Coke making, ironmaking, steelmaking, casting and rolling. Excludes downstream fabrication.",IIS,3311;3312,241,
-cement,sector,Cement,"Clinker production, grinding and blending. Split from non-metallic minerals because the kiln dominates.",ICM,32731,2394,
-non-metallic-minerals,sector,Non-metallic minerals,"Lime, glass, ceramics, gypsum and other mineral products. Cement is its own sector.",INM,327,239,
+cement-and-lime,sector,Cement and lime,"Clinker production, grinding and blending, cement binders, and lime and dolime calcination. Split from the other mineral products because the kiln dominates.",ICM,32731;32741,2394,Renamed from cement 2026-11-04 (Brad): lime kilns moved in from non-metallic-minerals.
+glass-and-ceramics,sector,Glass and ceramics,"Glass melting, forming and finishing; ceramic, brick and tile firing and drying; gypsum calcining; expanded clay aggregate and mineral wool.",INM,3271;3272;32742;32799,231;2391;2392;2393;2395;2399,Renamed from non-metallic-minerals 2026-11-04 (Brad): lime kilns moved to cement-and-lime.
 chemicals,sector,Chemicals,"Petrochemicals, industrial gases, ammonia and fertilizer, and other bulk and fine chemicals.",ICH,325,20,
 biofuels,sector,Biofuels,"Ethanol, biodiesel, renewable diesel and SAF, and renewable natural gas production.",,325193,2011,
 hydrogen,sector,Hydrogen,Centralized hydrogen production and its distribution by pipeline to industrial users. On-site hydrogen stays in the sector that makes it.,,325120,2011,

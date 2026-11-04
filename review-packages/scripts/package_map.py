@@ -37,8 +37,10 @@ PACKAGES = {
                   and not n.startswith(BREWERY_EXCLUDE)),
     "steel": ("Iron and steel", lambda n: n.startswith("iron-and-steel.")),
     "pulp-and-paper": ("Pulp and paper", lambda n: n.startswith("pulp-and-paper.")),
-    "cement": ("Cement", lambda n: n.startswith("industrial-minerals.product.cement")
-               or n.startswith("industrial-minerals.service.")),
+    # lime added 2026-11-04 (Brad), following the cement-and-lime family
+    "cement-and-lime": ("Cement and lime", lambda n: n.startswith(("industrial-minerals.product.cement",
+                                                                    "industrial-minerals.product.lime"))
+                        or n.startswith("industrial-minerals.service.")),
     "chemicals": ("Chemicals", lambda n: n.startswith("chemicals.")),
     # added 2026-11-04
     "conventional-oil": ("Conventional oil production", lambda n: n.startswith(CONVENTIONAL_OIL)),
@@ -55,7 +57,7 @@ PACKAGES = {
 # sub-bands left out of a package even where a shared node matches: the lime band
 # reaches the cement package only through the shared kiln-heat service node
 # (cement nodes only, Brad 2026-11-03; lime is an add-on noted in the package)
-EXCLUDE_BANDS = {"cement": {"Lime and dolime calcination"}}
+EXCLUDE_BANDS = {}   # lime was left out of the cement package until 2026-11-04
 
 
 def _read(p):

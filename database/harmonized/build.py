@@ -354,41 +354,42 @@ def main(argv) -> int:
     # general reading notes and the shading key are on the workbook's readme sheet
     # (pipeline/workbook.py README); each banner keeps only what is about its sheet
     # (Brad 2026-10-29)
+    # The workbook (Brad 2026-11-04): the archetypes sheet, the carriers-and-species
+    # view split into energy, emissions and feedstocks (as in the review packages),
+    # and the source list. wide-flow, the archetype list and the long tables are
+    # left to the CSVs in output/, which the readme lists.
+    wa, wc = W["wide-archetype"], W["wide-carriers-species"]
+    wa_rows = bands.expand(wa[1], rec, wa[3])
+    wc_rows = bands.expand(wc[1], rec, wc[3], wa[1])
+    ident = [c for c in wc[0] if not c.startswith(("specific-energy-consumption", "emissions-",
+                                                   "feedstock-consumption"))]
+    SPLIT = {"energy": ("specific-energy-consumption",
+                        "Energy use by carrier, per product-unit, for the same rows as the archetypes sheet. "
+                        "The all-carrier total is on the archetypes sheet. Do not add the columns up: fuel is "
+                        "the sum of the named fuels beside it, and a carrier pooled apart "
+                        "(archetype-parameter.csv central-from) is not part of the split."),
+             "emissions": ("emissions-",
+                           "Emissions by type and species, per product-unit, for the same rows as the "
+                           "archetypes sheet. CO2-equivalent totals are on the archetypes sheet."),
+             "feedstocks": ("feedstock-consumption",
+                            "Feedstock use by carrier (feed whose energy ends up in the product, not counted "
+                            "as energy use), per product-unit, for the same rows as the archetypes sheet.")}
+    banded = {"archetypes": (wa[0], wa_rows) + wa[2:4] + ("_family", "_sub",
+                             "One row per archetype in each end use it serves. Capacity is in the unit named "
+                             "in capacity-unit; energy by carrier, emissions by species, and feedstocks are on "
+                             "the energy, emissions, and feedstocks sheets.")}
+    for name, (pre, banner) in SPLIT.items():
+        banded[name] = (ident + [c for c in wc[0] if c.startswith(pre)], wc_rows) + wc[2:4] + (
+            "_family", "_sub", banner)
+    banded["source-list"] = (sources.COLS, src_band, {}, {}, "_band", "", "The sources, by the family they inform.")
+    sheet_of = {"archetypes": "wide-archetype", **{n: "wide-carriers-species" for n in SPLIT}}
     print("  " + workbook.write_book(
-        {"wide-archetype": W["wide-archetype"][:1] + (bands.expand(W["wide-archetype"][1], rec, W["wide-archetype"][3]),)
-                           + W["wide-archetype"][2:4] + ("_family", "_sub",
-                            "One row per archetype in each end use it serves. Capacity is in the unit "
-                            "named in capacity-unit; energy by carrier and emissions by species are in "
-                            "wide-carriers-species."),
-         "wide-carriers-species": W["wide-carriers-species"][:1]
-                           + (bands.expand(W["wide-carriers-species"][1], rec, W["wide-carriers-species"][3],
-                                         W["wide-archetype"][1]),)
-                           + W["wide-carriers-species"][2:4] + ("_family", "_sub",
-                            "Specific energy consumption by carrier and emissions by species, per "
-                            "product-unit, alphabetical. The all-carrier total and CO2-eq emissions are "
-                            "in wide-archetype. Do not add the columns up: fuel is the sum of the named "
-                            "fuels beside it, and a carrier pooled apart (archetype-parameter "
-                            "central-from) is not part of the split."),
-         "wide-flow": (fcols, frows, fgroups, funits, "family", "equipment",
-                       "Input and output flows per product-unit, by family and equipment."),
-         "archetype": (acols, arows, {}, {}, "family", "equipment",
-                       "The archetypes, by family and equipment: what each is, the end uses it serves"
-                       ", and its status."),
-         "source-list": (sources.COLS, src_band, {}, {}, "_band", "",
-                         "The sources, by the family they inform.")},
-        {"archetype-parameter": (["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, main),
-         "archetype-flow": (["archetype", "direction", "commodity", "unit"] + SUM_COLS, fsum),
-         "example": (EX_COLS, sorted(L.examples.values(), key=lambda e: e["example-id"])),
-         "example-parameter": (FACT_COLS, L.facts),
-         "example-flow": (FLOW_COLS, L.flows),
-         "example-constraint": (CONS_COLS, L.cons),
-         "archetype-application": (["archetype", "family", "node", "annotation", "via", "note"],
-                                   v["application"])},
+        banded, {},
         {**fam, "": "(not tied to one family)"},
-        {k: o[4] for k, o in W.items() if k != "wide-secondary-parameter"},
-        {k: o[5] for k, o in W.items() if k != "wide-secondary-parameter"},
-        {k: o[6] for k, o in W.items() if k != "wide-secondary-parameter"},
-        grouped={k for k in W if k != "wide-secondary-parameter"},
+        {n: W[k][4] for n, k in sheet_of.items()},
+        {n: W[k][5] for n, k in sheet_of.items()},
+        {n: W[k][6] for n, k in sheet_of.items()},
+        grouped=set(sheet_of),
         band_notes=bands.FAMILY_NOTE))
     q = Counter(a["status"] for a in arows)
     print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "

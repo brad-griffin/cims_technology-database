@@ -227,9 +227,13 @@ def _apply(r, o, units, factor):
 
 
 def type_rank(a) -> int:
-    """Order within an end use (Brad 2026-10-28): conventional, efficient
+    """Order within an end use (Brad 2026-10-28): no-abatement first (2026-11-04), conventional, efficient
     variants, capture variants, low-carbon alternatives; anything else after,
     alphabetical within each group."""
+    if (a.get("archetype") or "").startswith("no-abatement"):
+        # the no-abatement option opens its end use, ahead of the other
+        # conventional archetypes (Brad 2026-11-04)
+        return -1
     if "_ccs-" in (a.get("archetype") or ""):
         return 2
     return {"conventional": 0, "efficient variant": 1, "alternative": 3,

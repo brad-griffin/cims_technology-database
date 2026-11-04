@@ -48,8 +48,8 @@ calciner_electric,<sector>.metal-smelting.product.aluminum.primary-aluminum.alum
 calciner_gas-suspension,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 calciner_gas-suspension_ccs-diffuse,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 calciner_hydrogen-fired,<sector>.metal-smelting.product.aluminum.primary-aluminum.alumina.calcination,alumina-calcination,,,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-calciner_indirect,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-calciner_indirect,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,lime,t,0.65,"non-metallic-minerals/lime-calcination: the leaves its sources placed it on Product override (band product review 2026-10-22, approved 2026-10-23): calcining duty scales with CaO: about 0.65 t CaO per t clinker, so 1 t clinker of calcination makes about 0.65 t lime; estimated."
+calciner_indirect,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+calciner_indirect,<sector>.industrial-minerals.service.kiln-heat,lime-calcination,lime,t,0.65,"cement-and-lime/lime-calcination: the leaves its sources placed it on Product override (band product review 2026-10-22, approved 2026-10-23): calcining duty scales with CaO: about 0.65 t CaO per t clinker, so 1 t clinker of calcination makes about 0.65 t lime; estimated."
 capture-unit_advanced-solvent,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,,,,cross-sector/co2-capture-diffuse: every leaf of the end use
 capture-unit_amine,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,,,,cross-sector/co2-capture-diffuse: every leaf of the end use
 capture-unit_calcium-looping,<sector>.*.service.ccs.diffuse,co2-capture-diffuse,,,,cross-sector/co2-capture-diffuse: every leaf of the end use
@@ -136,7 +136,7 @@ distillation-column_heat-pumped,<sector>.chemicals.service.distillation,chemical
 drilling-rig_battery-hybrid,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_diesel,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
 drilling-rig_electric,<sector>.natural-gas.product.supply.drilling,drilling-and-well-services,,,,oil-and-gas/drilling-and-well-services: the leaf its name or label names
-dryer_ceramic-hot-air,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
+dryer_ceramic-hot-air,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,glass-and-ceramics/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_direct-fired,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 dryer_direct-fired,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
@@ -145,7 +145,7 @@ dryer_direct-fired_efficiency-moderate,<sector>.light-industrial.service.heat.dr
 dryer_direct-fired_efficiency-moderate,<sector>.mining.service.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_direct-fired_efficiency-strong,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_electric,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-dryer_electric,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
+dryer_electric,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,glass-and-ceramics/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_electric,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_electric,<sector>.mining.service.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_electric,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,,,pulp-and-paper/paper-drying: the leaves its sources placed it on
@@ -158,7 +158,7 @@ dryer_heat-pump,<sector>.pulp-and-paper.product.paper.uncoated.drying,paper-dryi
 dryer_heat-pump,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_market-pulp,<sector>.pulp-and-paper.product.pulp.drying,paper-drying,,,,added 2026-10-01
 dryer_rotary-direct-fired,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
-dryer_rotary-direct-fired,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,non-metallic-minerals/drying-and-low-temp-calcining: the leaf its name or label names
+dryer_rotary-direct-fired,<sector>.industrial-minerals.product.ceramics.dryer,drying-and-low-temp-calcining,,,,glass-and-ceramics/drying-and-low-temp-calcining: the leaf its name or label names
 dryer_rotary-direct-fired,<sector>.industrial-minerals.product.gypsum,drying-and-low-temp-calcining,,,,mapping review 2026-09-30: description covers gypsum calcining; gypsum would otherwise be empty
 dryer_rotary-direct-fired,<sector>.mining.service.drying,product-drying,,,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
 dryer_solid-fuel,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
@@ -242,16 +242,16 @@ fuel-cell_chp,<sector>.*.service.steam,heat-low-temp,,,,cross-sector/heat-low-te
 furnace_anode-baking,<sector>.metal-smelting.service.anode-production,anode-production,,,,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking-electric,<sector>.metal-smelting.service.anode-production,anode-production,,,,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking_biogenic-carbon,<sector>.metal-smelting.service.anode-production,anode-production,,,,non-ferrous-metals/anode-production: every leaf of the end use
-furnace_electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,glass-and-ceramics/glass-melting: every leaf of the end use
 furnace_heat-treatment,<sector>.light-industrial.service.heat.heat-treatment,metal-melting-and-heat-treatment,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-furnace_hybrid-electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_hybrid-electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,glass-and-ceramics/glass-melting: every leaf of the end use
 furnace_hybrid-majority-electric,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,"split from furnace_hybrid-electric (S152, 2026-10-27)"
 furnace_ladle-metallurgy,<sector>.iron-and-steel.service.ladle-refining,steelmaking,,,,mapping review 2026-09-30: ladle furnace refines steel
-furnace_lehr,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,,,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
-furnace_lehr-electric,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,,,non-metallic-minerals/glass-forming-and-finishing: every leaf of the end use
-furnace_oxy-fuel,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,non-metallic-minerals/glass-melting: every leaf of the end use
-furnace_oxy-fuel-thermochemical,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,non-metallic-minerals/glass-melting: every leaf of the end use
-furnace_regenerative,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,non-metallic-minerals/glass-melting: every leaf of the end use
+furnace_lehr,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,,,glass-and-ceramics/glass-forming-and-finishing: every leaf of the end use
+furnace_lehr-electric,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,,,glass-and-ceramics/glass-forming-and-finishing: every leaf of the end use
+furnace_oxy-fuel,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,glass-and-ceramics/glass-melting: every leaf of the end use
+furnace_oxy-fuel-thermochemical,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,glass-and-ceramics/glass-melting: every leaf of the end use
+furnace_regenerative,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,glass-and-ceramics/glass-melting: every leaf of the end use
 furnace_regenerative_ccs-diffuse,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,,,copied from furnace_regenerative 2026-10-01
 furnace_reheating,<sector>.iron-and-steel.service.reheating,reheating,,,,iron-and-steel/reheating: every leaf of the end use
 furnace_reheating_efficiency-moderate,<sector>.iron-and-steel.service.reheating,reheating,,,,iron-and-steel/reheating: every leaf of the end use
@@ -283,12 +283,12 @@ gasifier_coal-petroleum-coke_ccs-concentrated,<sector>.hydrogen.product.centrali
 geothermal-well_binary-power,<sector>.mining.service.on-site-power,on-site-power-generation,,,,cross-sector/on-site-power-generation: every leaf of the end use
 geothermal-well_direct-use,<sector>.*.service.steam,heat-low-temp,,,,cross-sector/heat-low-temp: steam leaves
 geothermal-well_flash-power,<sector>.mining.service.on-site-power,on-site-power-generation,,,,cross-sector/on-site-power-generation: every leaf of the end use
-grinding-mill_ball,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,,,cement/cement-grinding-and-blending: every leaf of the end use
+grinding-mill_ball,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,,,cement-and-lime/cement-grinding-and-blending: every leaf of the end use
 grinding-mill_hpgr,<sector>.mining.service.milling,comminution,,,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 grinding-mill_sag-ball,<sector>.mining.service.milling,comminution,,,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 grinding-mill_slag,<sector>.industrial-minerals.product.cement.ground-slag,cement-ground-slag,,,,added 2026-10-27 (S121)
 grinding-mill_stirred,<sector>.mining.service.milling,comminution,,,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
-grinding-mill_vertical-roller,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,,,cement/cement-grinding-and-blending: every leaf of the end use
+grinding-mill_vertical-roller,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,,,cement-and-lime/cement-grinding-and-blending: every leaf of the end use
 haul-truck_battery-electric,<sector>.coal-mining.service.mine-haulage,extraction-and-haulage,,,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,,,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
@@ -325,31 +325,31 @@ induction-heater_reheating,<sector>.light-industrial.service.heat.heat-treatment
 induction-heater_strip-heating,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 kiln_calcium-looping,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,copied from kiln_oxy-fuel 2026-10-01
 kiln_calcium-silicate-feed,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,as kiln_dry-precalciner
-kiln_ceramic-electric,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,non-metallic-minerals/ceramic-firing: every leaf of the end use
-kiln_ceramic-microwave-assisted,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,non-metallic-minerals/ceramic-firing: every leaf of the end use
+kiln_ceramic-electric,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,glass-and-ceramics/ceramic-firing: every leaf of the end use
+kiln_ceramic-microwave-assisted,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,glass-and-ceramics/ceramic-firing: every leaf of the end use
 kiln_charcoal-retort,<sector>.biofuels.product.solid-biofuel,solid-biofuel,charcoal,t,,"added 2026-11-04: biocarbon supply; product override charcoal, per t (label change)"
 kiln_clay-calcination,<sector>.industrial-minerals.product.cement.calcined-clay,cement-calcined-clay,,,,added 2026-10-27 (S121)
-kiln_dry-precalciner,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-kiln_dry-precalciner_ccs-diffuse,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-kiln_dry-precalciner_efficiency-moderate,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-kiln_dry-precalciner_efficiency-strong,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-kiln_electric-plasma,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
+kiln_dry-precalciner,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+kiln_dry-precalciner_ccs-diffuse,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+kiln_dry-precalciner_efficiency-moderate,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+kiln_dry-precalciner_efficiency-strong,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+kiln_electric-plasma,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
 kiln_intermittent,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,copied from kiln_tunnel-roller 2026-10-01
 kiln_legacy,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,as kiln_dry-precalciner
 kiln_lime-electric,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,,,pulp-and-paper/lime-kiln: every leaf of the end use
 kiln_lime-long-rotary,<sector>.industrial-minerals.product.lime,lime-calcination,,,,copied from kiln_lime-rotary-preheater 2026-10-01
-kiln_lime-oxy-fuel,<sector>.industrial-minerals.product.lime,lime-calcination,,,,non-metallic-minerals/lime-calcination: the device's route
+kiln_lime-oxy-fuel,<sector>.industrial-minerals.product.lime,lime-calcination,,,,cement-and-lime/lime-calcination: the device's route
 kiln_lime-rotary,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,,,pulp-and-paper/lime-kiln: every leaf of the end use
-kiln_lime-rotary-preheater,<sector>.industrial-minerals.product.lime,lime-calcination,,,,non-metallic-minerals/lime-calcination: the device's route
-kiln_lime-rotary-preheater_ccs-diffuse,<sector>.industrial-minerals.product.lime,lime-calcination,,,,non-metallic-minerals/lime-calcination: the device's route
+kiln_lime-rotary-preheater,<sector>.industrial-minerals.product.lime,lime-calcination,,,,cement-and-lime/lime-calcination: the device's route
+kiln_lime-rotary-preheater_ccs-diffuse,<sector>.industrial-minerals.product.lime,lime-calcination,,,,cement-and-lime/lime-calcination: the device's route
 kiln_lime-rotary-preheater_ccs-diffuse,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,,,pulp-and-paper/lime-kiln: every leaf of the end use
 kiln_lime-rotary_efficiency-strong,<sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,lime-kiln,,,,pulp-and-paper/lime-kiln: every leaf of the end use
-kiln_lime-shaft,<sector>.industrial-minerals.product.lime,lime-calcination,,,,non-metallic-minerals/lime-calcination: the device's route
+kiln_lime-shaft,<sector>.industrial-minerals.product.lime,lime-calcination,,,,cement-and-lime/lime-calcination: the device's route
 kiln_lumber-continuous,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 kiln_lumber-heat-pump,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 kiln_lumber-steam,<sector>.light-industrial.service.heat.drying,drying,process heat,GJ,process-heat,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-kiln_oxy-fuel,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement/clinker-production: the device's route
-kiln_tunnel-roller,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,non-metallic-minerals/ceramic-firing: every leaf of the end use
+kiln_oxy-fuel,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,,,cement-and-lime/clinker-production: the device's route
+kiln_tunnel-roller,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,glass-and-ceramics/ceramic-firing: every leaf of the end use
 kiln_tunnel-roller_efficiency-strong,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,,,copied from kiln_tunnel-roller 2026-10-01
 leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.copper.hydrometallurgy,hydrometallurgy,,,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
 leaching-vessel_heap-atmospheric,<sector>.metal-smelting.product.nickel.hydrometallurgy,hydrometallurgy,,,,"corrected 2026-09-23: bioleaching: copper, nickel and zinc"
