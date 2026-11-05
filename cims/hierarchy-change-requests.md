@@ -15,8 +15,8 @@ includes every node requested so far:
 - `iron-and-steel.service.coke`, and `hot-metal` and `direct-reduced-iron`;
 - `direct-air-capture.product.co2-removal`;
 - `mining.service.on-site-power`;
-- `petroleum-crude.product.transmission`;
-- `petroleum-crude.service.produced-water`;
+- `crude-oil.product.transmission`;
+- `crude-oil.service.produced-water`;
 - `pulp-and-paper.service.effluent-treatment`;
 - `industrial-minerals.product.ceramics.dryer` and `product.gypsum`;
 - `chemicals.product.nitric-acid`;
@@ -27,19 +27,20 @@ includes every node requested so far:
 
 | Request | Why | Raised |
 | - | - | - |
+| Sector renames: APPLIED 2026-11-04 to records/cims_hierarchy.csv, ahead of CIMS: `petroleum-crude` to `crude-oil`, `metal-smelting` to `non-ferrous-metals`, `transportation-passenger` to `passenger-transportation`, and `transportation-freight` to `freight-transportation` (branches and data folders) | The names match the documentation's chapter titles (Crude Oil, Non-Ferrous Metals, Passenger Transportation, and Freight Transportation). CIMS needs the same branches and `data/service-technology-map/` folders, and the model's display names should follow, along with `Chemical Products` becoming `Chemicals`. | 2026-11-04 |
 | Lighting nodes (`<sector>.*.service.lighting`): service unit lumen-hours (Mlm-h) instead of GJ, and each split into general lighting and high-bay lighting | The lighting archetypes deliver Mlm-h (ruling 2026-10-14) so that a service request stays the same whichever lamp meets it; end uses request general or high-bay light (light industrial by end-use type). General: lighting_fluorescent-t12, -t8, lighting_led; high bay: lighting_hid, lighting_fluorescent-high-bay, lighting_led-high-bay; lighting_led-controls in both. Base-year requests: lighting electricity x stock efficacy / output. | 2026-10-14 |
-| A node for ferroalloys and silicon metal under `metal-smelting` | Electric smelting of them has no CIMS node; only titanium slag does. | 2026-09-16 |
+| A node for ferroalloys and silicon metal under `non-ferrous-metals` | Electric smelting of them has no CIMS node; only titanium slag does. | 2026-09-16 |
 | Food and beverage process steps under `light-industrial` | CIMS has the aggregate demand only. Heat, refrigeration and drive are carried by the light-industrial services. | 2026-09-16 |
 | Mine air heating as its own service, or a documented home | No CIMS node. The mining ventilation end use carries it for now. | 2026-09-16 |
 | A synthetic-fuels node (coal-to-SNG, coal-to-liquids, gas-to-liquids): ADDED 2026-10-09 as `petroleum-refining.product.synthetic-fuels` at the modeller's request, ahead of CIMS | `gasifier_coal-to-liquids` and `reactor_gas-to-liquids` are linked provisionally to crude distillation. `gasifier_coal-methanation` was taken off the hierarchy 2026-09-30 (no connection). | 2026-09-23 |
 | A coal-mine methane node under `coal-mining`: ADDED 2026-10-22 as `coal-mining.product.raw-product.mine-methane` (node split), ahead of CIMS | Drainage, the VAM oxidiser and no-abatement now sit there; coal extraction requests it. | 2026-09-23 |
 | Urea and fertilizer nodes under `chemicals` (`chemicals.product.urea`, `chemicals.product.fertilizer`) | ADDED to records/cims_hierarchy.csv 2026-09-30 at the modeller's request, ahead of CIMS. `reactor_urea-synthesis` serves `urea` (it consumes ammonia-plant CO2); `fertilizer` holds the other fertilizers (ammonium nitrate, UAN, ammonium phosphates and sulphate) and no archetype serves it yet. CIMS needs the same nodes. | 2026-09-25 |
 | A fluid catalytic cracking node under `petroleum-refining` | The three FCC archetypes sit on `cracked-gas-oil.hydrocracking`, the nearest catalytic gas-oil conversion (2026-09-30). | 2026-09-30 |
-| A CO2 capture node for metal smelting (`metal-smelting.service.ccs.concentrated`/`.diffuse`) | ADDED to records/cims_hierarchy.csv 2026-09-26 at the modeller's request, ahead of CIMS: the capture units now serve it through the `<sector>.*.service.ccs.*` links, and the alumina and smelter capture hosts (`digester_bayer_ccs-diffuse`, `electrolysis-cell_prebaked-anode_ccs-diffuse`) stay on their host nodes. CIMS needs the same node. | 2026-09-26 |
+| A CO2 capture node for metal smelting (`non-ferrous-metals.service.ccs.concentrated`/`.diffuse`) | ADDED to records/cims_hierarchy.csv 2026-09-26 at the modeller's request, ahead of CIMS: the capture units now serve it through the `<sector>.*.service.ccs.*` links, and the alumina and smelter capture hosts (`digester_bayer_ccs-diffuse`, `electrolysis-cell_prebaked-anode_ccs-diffuse`) stay on their host nodes. CIMS needs the same node. | 2026-09-26 |
 | On-site power nodes beyond mining (cement, iron and steel, glass, refining, chemicals, pulp and paper, metal smelting) | Waste-heat power (`steam-turbine_waste-heat`) should be available wherever it is feasible, but `mining.service.on-site-power` is the only on-site power node; the archetype cannot be offered elsewhere until the nodes exist. | 2026-09-26 |
-| On-site power for offshore platforms (`petroleum-crude`) | The other candidate beside `mining.service.on-site-power`. Oil-sands cogeneration is CHP and stays on steam. | 2026-09-16 |
-| Oil sands tailings: ADDED 2026-10-09 as `petroleum-crude.service.tailings-disposal`, ahead of CIMS | `separator_dry-stack-tailings` serves it per t tailings (it also serves the mining tailings nodes). | 2026-10-09 |
-| Crude pipeline pumping: ADDED 2026-10-29 as `petroleum-crude.service.pumping`, ahead of CIMS | The crude pipeline (`pipeline_crude-oil`, pipe only) requests pumping as the gas transmission pipeline requests compression from the compressor-drive nodes; `pump_electric-station` and its efficiency variant serve it per m3 pumped 1000 km. CIMS would need the crude transmission node to request this service. | 2026-10-29 |
+| On-site power for offshore platforms (`crude-oil`) | The other candidate beside `mining.service.on-site-power`. Oil-sands cogeneration is CHP and stays on steam. | 2026-09-16 |
+| Oil sands tailings: ADDED 2026-10-09 as `crude-oil.service.tailings-disposal`, ahead of CIMS | `separator_dry-stack-tailings` serves it per t tailings (it also serves the mining tailings nodes). | 2026-10-09 |
+| Crude pipeline pumping: ADDED 2026-10-29 as `crude-oil.service.pumping`, ahead of CIMS | The crude pipeline (`pipeline_crude-oil`, pipe only) requests pumping as the gas transmission pipeline requests compression from the compressor-drive nodes; `pump_electric-station` and its efficiency variant serve it per m3 pumped 1000 km. CIMS would need the crude transmission node to request this service. | 2026-10-29 |
 | A mine-water treatment node (coal and metal mining) | `separator_mine-water-treatment` is per m3 of water and was taken off tailings disposal (2026-10-09); it has no node. | 2026-10-09 |
 | A mine ventilation node under `mining` (metal mines) | `fan_mine-ventilation` was taken off the fans node (2026-10-09); only coal mining has a ventilation node. | 2026-10-09 |
 | Check `chemicals.product.petrochemicals.intermediate-production` | A catch-all node: distillation, depolymerization, ethylene oxide and PDH make different products, so costs per t are not comparable across its technologies. | 2026-10-09 |
@@ -48,8 +49,8 @@ includes every node requested so far:
 | `natural-gas.product.transmission` and `.distribution` provide 1000 m3 | `turboexpander_pressure-let-down` produces electricity (its primary product); in CIMS it would be a negative electricity request on a let-down step rather than a provider of gas transport. | 2026-10-09 |
 | Light industrial | Products are in M$ of GDP; the heat-node and food-node unit changes from the 2026-10-09 review are deferred (modeller). | 2026-10-09 |
 | Confirm `industrial-minerals.product.ceramics` warrants its own branch in every province | Check against NRCan's NAICS 3271 industrial energy series. | 2026-09-18 |
-| A smelter acid-plant service: ADDED 2026-10-27 as `metal-smelting.service.acid-plant` (S95), ahead of CIMS | The copper smelting and converting archetypes now hold their furnace sections only; the acid plant (about 30% of smelter capex, Schlesinger 2011 Table 22.6) is `reactor_sulphuric-acid-metallurgical`, per t sulphuric acid. CIMS needs the node, and the smelting and converting techs need a request of about 2.5-4.0 t acid per t copper. | 2026-10-27 |
-| A calcination sub-node under the alumina node (`metal-smelting.product.aluminum.primary-aluminum.alumina.calcination`), with the digester narrowed to digestion and precipitation | `digester_bayer` holds the whole Bayer refinery per t alumina, calcination included (NM003, 2026-10-13), while `calciner_gas-suspension`, `calciner_gas-suspension_ccs-diffuse`, `calciner_electric` and `calciner_hydrogen-fired` sit on the same node; a calciner cannot make alumina from bauxite, so it needs its own service (user 2026-10-14) | 2026-10-14 |
+| A smelter acid-plant service: ADDED 2026-10-27 as `non-ferrous-metals.service.acid-plant` (S95), ahead of CIMS | The copper smelting and converting archetypes now hold their furnace sections only; the acid plant (about 30% of smelter capex, Schlesinger 2011 Table 22.6) is `reactor_sulphuric-acid-metallurgical`, per t sulphuric acid. CIMS needs the node, and the smelting and converting techs need a request of about 2.5-4.0 t acid per t copper. | 2026-10-27 |
+| A calcination sub-node under the alumina node (`non-ferrous-metals.product.aluminum.primary-aluminum.alumina.calcination`), with the digester narrowed to digestion and precipitation | `digester_bayer` holds the whole Bayer refinery per t alumina, calcination included (NM003, 2026-10-13), while `calciner_gas-suspension`, `calciner_gas-suspension_ccs-diffuse`, `calciner_electric` and `calciner_hydrogen-fired` sit on the same node; a calciner cannot make alumina from bauxite, so it needs its own service (user 2026-10-14) | 2026-10-14 |
 
 ## Applied ahead of CIMS, 2026-10-22 and 23 (node split and petrochemicals)
 
@@ -67,8 +68,8 @@ log is `database/reviews/node-split-review_2026-10-22.csv`; the summary is in th
 | Alumina steps | `alumina.digestion`, `alumina.calcination` |
 | Converting split from smelting | `copper.pyrometallurgy.converting`, `nickel.pyrometallurgy.converting` |
 | Gas processing steps (acid gas removal is `formation-co2`) | `processing.dehydration`, `.sulphur-recovery`, `.ngl-recovery` |
-| Well completion (frac fleets, per GJ of hydraulic work) | `natural-gas.product.supply.completion`, `petroleum-crude.product.completion` |
-| Production services requested by the extraction nodes | `natural-gas.service.artificial-lift` and `.treating`; `petroleum-crude.service.artificial-lift` and `.treating` |
+| Well completion (frac fleets, per GJ of hydraulic work) | `natural-gas.product.supply.completion`, `crude-oil.product.completion` |
+| Production services requested by the extraction nodes | `natural-gas.service.artificial-lift` and `.treating`; `crude-oil.service.artificial-lift` and `.treating` |
 | Oil sands mining steps | `bitumen.mining.extraction`, `.froth-treatment`; `bitumen.upgrading.primary`, `.secondary` |
 | Pulp mill effluent steps | `effluent-treatment.primary`, `.secondary` |
 | Light-industrial heat by operation (GJ of process heat) | `light-industrial.service.heat.drying`, `.process-heating`, `.cleaning`, `.baking-frying-roasting`, `.forming-pressing`, `.metal-melting`, `.heat-treatment` |
@@ -81,11 +82,11 @@ log is `database/reviews/node-split-review_2026-10-22.csv`; the summary is in th
 
 | Item | Detail |
 | - | - |
-| Smelter acid plant (S95, 2026-10-27) | Add `metal-smelting.service.acid-plant` (t sulphuric acid) and give the copper smelting and converting techs a service_request to it: 3.25 t acid per t copper (range 2.5-4.0; factor `cf-acid-per-copper-schlesinger`, Schlesinger 2011). Its technology is `reactor_sulphuric-acid-metallurgical`. Not yet applied to the model inputs. |
+| Smelter acid plant (S95, 2026-10-27) | Add `non-ferrous-metals.service.acid-plant` (t sulphuric acid) and give the copper smelting and converting techs a service_request to it: 3.25 t acid per t copper (range 2.5-4.0; factor `cf-acid-per-copper-schlesinger`, Schlesinger 2011). Its technology is `reactor_sulphuric-acid-metallurgical`. Not yet applied to the model inputs. |
 | `industrial-minerals.service.kiln-heat` | Most lime kilns request their fuel directly rather than this service. Revisit the service requests when the sector is reviewed. |
 | CCS cost sets | `service.ccs.concentrated` and `.diffuse` need their own cost sets. CIMS priced one CCS service per sector. |
 | Magnesium SF6 | The casting SF6 factors are in the Alberta and Ontario files only. Quebec, British Columbia and Manitoba carry demand with no factor. |
-| Titanium slag | `metal-smelting.product.titanium-slag` has no demand series. |
+| Titanium slag | `non-ferrous-metals.product.titanium-slag` has no demand series. |
 
 ## Changes to make in the CIMS model inputs
 

@@ -1,5 +1,5 @@
-technology: "urban-passenger-vehicle-hov"
-branch: ".transportation-passenger.product.urban"
+technology: "urban-public-transit"
+branch: ".passenger-transportation.product.urban"
 unit: "k_pkm"
 note: 
 parameter: 
@@ -58,11 +58,11 @@ parameter:
         sub-context: 
         target: 
         value-type: "fixed"
-        value: 10
+        value: 5
         by-year: 
         by-region: 
         source: "JCIMS"
-        note: "lifetime is longer for vehicles (vs. walk or transit) to have some stickiness in decision to use a personal vehicle"
+        note: 
     output: 
         context: 
         sub-context: 
@@ -87,12 +87,12 @@ parameter:
         context: 
         sub-context: 
         target: 
-        value-type: 
-        value: 
+        value-type: "fixed"
+        value: 0
         by-year: 
         by-region: 
-        source: 
-        note: "motor costs are included at .transportation-passenger.passenger-vehicles"
+        source: "assumption"
+        note: 
     capital-recovery: 
         context: 
         sub-context: 
@@ -107,22 +107,22 @@ parameter:
         context: 
         sub-context: 
         target: 
-        value-type: 
-        value: 
+        value-type: "fixed"
+        value: 1564.22
         by-year: 
         by-region: 
-        source: 
-        note: 
+        source: "JCIMS"
+        note: "fom included here as average transit operating costs; service split into bus and rapid transit below"
     service-request: 
         context: 
         sub-context: 
-        target: ".transportation-passenger.passenger-vehicles"
-        value-type: "calculation"
-        value: 0.2
+        target: ".passenger-transportation.transit"
+        value-type: "fixed"
+        value: 1.0
         by-year: 
         by-region: 
-        source: "data/assumptions/transportation-passenger/occupancy.py"
-        note: "passenger-vehicles service-provide unit is k_vkm"
+        source: "default"
+        note: 
     emissions: 
         context: 
         sub-context: 

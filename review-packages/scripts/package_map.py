@@ -16,21 +16,21 @@ HARM = ROOT / "database" / "harmonized"
 BREWERY_EXCLUDE = ("light-industrial.service.heat.drying", "light-industrial.service.heat.metal-melting",
                    "light-industrial.service.heat.heat-treatment", "light-industrial.service.heat.forming-pressing")
 
-# petroleum-crude holds both conventional oil and oil sands; services both use go in both
-_CRUDE_SHARED = ("petroleum-crude.service.produced-water", "petroleum-crude.service.steam",
-                 "petroleum-crude.service.ccs")
-CONVENTIONAL_OIL = ("petroleum-crude.product.exploration", "petroleum-crude.product.completion",
-                    "petroleum-crude.product.heavy", "petroleum-crude.product.light-medium",
-                    "petroleum-crude.product.transmission", "petroleum-crude.service.field-engines",
-                    "petroleum-crude.service.artificial-lift", "petroleum-crude.service.pumping",
-                    "petroleum-crude.service.treating") + _CRUDE_SHARED
-OIL_SANDS = ("petroleum-crude.product.bitumen", "petroleum-crude.service.hydrogen",
-             "petroleum-crude.service.mine-haulage", "petroleum-crude.service.tailings-disposal") + _CRUDE_SHARED
+# crude-oil holds both conventional oil and oil sands; services both use go in both
+_CRUDE_SHARED = ("crude-oil.service.produced-water", "crude-oil.service.steam",
+                 "crude-oil.service.ccs")
+CONVENTIONAL_OIL = ("crude-oil.product.exploration", "crude-oil.product.completion",
+                    "crude-oil.product.heavy", "crude-oil.product.light-medium",
+                    "crude-oil.product.transmission", "crude-oil.service.field-engines",
+                    "crude-oil.service.artificial-lift", "crude-oil.service.pumping",
+                    "crude-oil.service.treating") + _CRUDE_SHARED
+OIL_SANDS = ("crude-oil.product.bitumen", "crude-oil.service.hydrogen",
+             "crude-oil.service.mine-haulage", "crude-oil.service.tailings-disposal") + _CRUDE_SHARED
 # aluminum: its own product nodes, anode production, and the smelting services it uses
 # (not the oxygen or acid plants, which serve copper, nickel, lead, and zinc)
-ALUMINUM = ("metal-smelting.product.aluminum", "metal-smelting.service.anode-production",
-            "metal-smelting.service.ccs", "metal-smelting.service.hvac", "metal-smelting.service.lighting",
-            "metal-smelting.service.machine-drive", "metal-smelting.service.steam")
+ALUMINUM = ("non-ferrous-metals.product.aluminum", "non-ferrous-metals.service.anode-production",
+            "non-ferrous-metals.service.ccs", "non-ferrous-metals.service.hvac", "non-ferrous-metals.service.lighting",
+            "non-ferrous-metals.service.machine-drive", "non-ferrous-metals.service.steam")
 
 PACKAGES = {
     "breweries": ("Breweries", lambda n: n.startswith("light-industrial.service.")
