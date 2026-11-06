@@ -247,12 +247,12 @@ def widen_notes(wb):
 def legend_sheet(wb, sheets):
     ws = wb.create_sheet("column-legend", 1)
     rows = []
-    for r in csv.DictReader(open(HARM / "output" / "wide-archetype-columns.csv", encoding="utf-8-sig")):
+    for r in csv.DictReader(open(HARM / "output" / "column-legend.csv", encoding="utf-8-sig")):
         if r["column"] in DROP_COLS:
             continue
-        if r["sheet"] == "wide-archetype":
-            rows.append(dict(r, sheet="archetypes"))
-        elif r["sheet"] == "wide-carriers-species":
+        if r["sheet"] == "archetypes":
+            rows.append(r)
+        elif r["sheet"] == "carriers-species":
             for name, prefix, _ in SPLIT:
                 if r["column"].startswith(prefix):
                     rows.append(dict(r, sheet=name))

@@ -817,7 +817,7 @@ compilation cites it as an original.
 
 ## 9. Reading the outputs
 
-- `wide-archetype.csv` has one row per archetype, including blank ones and
+- The workbook's archetypes sheet has one row per archetype, including blank ones and
   those that serve no hierarchy node (`applies-to` reads `no connection`). `end-uses`
   names the annotation groups each archetype serves. `status` (also in
   `archetype.csv`) is one of:
@@ -832,12 +832,12 @@ compilation cites it as an original.
   with an external factor) and their `_n` is 0. `output/unfilled/` holds the same
   tables without any fill; `output/coverage.csv` the grade of each CIMS cell per
   archetype.
-- The wide view is three views: `wide-archetype` (one column set per parameter),
-  `wide-carriers-species` (`wide-archetype-carriers-species.csv`: specific energy by
-  carrier, emissions by species, alphabetical; in the workbook it is split into the
-  energy, emissions and feedstocks sheets, 2026-11-04), both in the workbook, and the
-  secondary parameters (`wide-archetype-secondary-parameter.csv`, CSV only: values by
-  stream or part, load-range-min, degradation-rate and a non-CHP efficiency-chp).
+- The wide view is built for the workbook only; the wide CSVs were dropped
+  (Brad 2026-11-06). It has `wide-archetype` (the archetypes sheet, one column set
+  per parameter) and `wide-carriers-species` (specific energy by carrier, emissions
+  by species, alphabetical; split into the energy, emissions and feedstocks sheets,
+  2026-11-04). The secondary parameters (values by stream or part, load-range-min,
+  degradation-rate and a non-CHP efficiency-chp) are in long form only.
   Where each (parameter, target) goes, and what is dropped from the wide views, is
   `pipeline/placement.py`. Secondary parameters are in `archetype-secondary-parameter.csv`,
   not `archetype-parameter.csv`. Targets that restate the base are pooled with it first

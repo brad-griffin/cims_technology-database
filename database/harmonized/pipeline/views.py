@@ -325,15 +325,14 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                                ("wide-carriers-species", ident_side, lambda b: b),
                                ("wide-secondary-parameter", ident_side, by_param)):
         out[name] = emit(name, sheets[name], ident, order)
-    for name, csvname in (("wide-archetype", "wide-archetype.csv"),
-                          ("wide-carriers-species", "wide-archetype-carriers-species.csv"),
-                          ("wide-secondary-parameter", "wide-archetype-secondary-parameter.csv")):
-        cols, rows = out[name][0], out[name][1]
-        write(outdir / csvname, cols, rows)
-    write(outdir / "wide-archetype-columns.csv", ["sheet", "column", "group", "unit", "note"],
-          [{"sheet": name, "column": c, "group": o[2].get(c, ""), "unit": o[3].get(c, ""),
-            "note": o[4].get(c, "")} for name, o in out.items() for c in o[0]],
-          quiet=True)
+    # the wide views are built for the workbook only; no wide CSVs (Brad 2026-11-06).
+    # The column legend serves the workbook and the review packages.
+    if not wide_only:
+        legend_sheet = {"wide-archetype": "archetypes", "wide-carriers-species": "carriers-species"}
+        write(outdir / "column-legend.csv", ["sheet", "column", "group", "unit", "note"],
+              [{"sheet": legend_sheet[name], "column": c, "group": o[2].get(c, ""), "unit": o[3].get(c, ""),
+                "note": o[4].get(c, "")} for name, o in out.items() if name in legend_sheet for c in o[0]],
+              quiet=True)
 
     # ---- wide-flow.csv: central values per commodity --------------------------
     fby = defaultdict(dict)
@@ -352,8 +351,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             row = {c: a.get(c, "") for c in fident}
             row.update(fby[a["archetype"]])
             frows.append(row)
-    if not wide_only:
-        write(outdir / "wide-flow.csv", flow_cols, frows)
     funits = {c: ("" if c in fident or c.endswith("_n") else "per product-unit") for c in flow_cols}
     fgroups = {c: ("identity" if c in fident else "inputs" if c.startswith("in_") else "outputs")
                for c in flow_cols}

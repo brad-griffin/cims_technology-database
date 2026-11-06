@@ -19,7 +19,7 @@ Stages (database/docs/pipeline.md):
      fill        graded values for empty cells: identity, estimated, proxy, guess,
                  and not-applicable markers (records/fill/); the summaries before
                  the fill are also written, to output/unfilled/
-  9. views       archetype, application and the wide views
+  9. views       archetype, application, and the wide views (for the workbook only)
  10. reports     source list, citation review, mapping review, database/docs/vocabulary.md
  11. workbook    the Excel workbook, last, from the outputs
 
@@ -335,8 +335,6 @@ def main(argv) -> int:
     print(f"  service requests: {len(sr)}; chain validations: {len({r['chain-id'] for r in cv})} chains")
     print("views")
     v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--quantified-only" not in argv)
-    views.build(rec, hier, L.examples, unfilled, fsum, include_empty="--quantified-only" not in argv,
-                outdir=OUTPUT / "unfilled", wide_only=True)
     print("reports")
     srcs = sources.source_list(rec, L.examples, (L.facts, L.flows, L.cons))
     sources.citation_review(srcs)

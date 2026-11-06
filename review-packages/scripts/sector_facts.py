@@ -1,6 +1,7 @@
 """Facts for the sector notes: each package's archetypes and main sources, as JSON."""
 import csv
 import json
+import sys
 
 import openpyxl
 from collections import Counter, OrderedDict
@@ -15,7 +16,14 @@ def rd(p):
     return list(csv.DictReader(open(p, encoding="utf-8-sig")))
 
 
-wide = {r["archetype"]: r for r in rd(HARM / "output" / "wide-archetype.csv")}
+# one record per archetype from output/archetype.csv, with the count of guessed cells on the
+# archetypes sheet from archetype-parameter.csv (the wide CSVs are gone, Brad 2026-11-06)
+sys.path.insert(0, str(HARM))
+from pipeline.placement import placement  # noqa: E402
+wide = {r["archetype"]: dict(r, guesses=0) for r in rd(HARM / "output" / "archetype.csv")}
+for r in rd(HARM / "output" / "archetype-parameter.csv"):
+    if r.get("grade") == "guess" and r["archetype"] in wide and placement(r["parameter"], r["target"]) == "main":
+        wide[r["archetype"]]["guesses"] += 1
 arch = {r["archetype"]: r for r in rd(HARM / "records" / "archetype.csv")}
 ex = rd(HARM / "output" / "example.csv")
 src = {r["source-id"]: r for r in rd(HARM / "output" / "source-list.csv")}
@@ -45,10 +53,9 @@ for pkg in ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemical
         for a in al:
             if a in own:
                 w = wide[a]
-                g = Counter(x.strip().split(" ")[-1] for x in w["filled"].split(";") if x.strip())
                 table.append(dict(band=b, archetype=a, label=w["label"], status=w["status"],
                                   n=w["n-examples"], trl=w["trl"], unit=w["product-unit"],
-                                  guesses=g.get("guess", 0)))
+                                  guesses=w["guesses"]))
     c = Counter(e["source-id"] for e in ex if e["archetype"] in own)
     top = [dict(short=src.get(s, {}).get("short-name", s), id=s, n=n,
                 citation=src.get(s, {}).get("full-citation", "")) for s, n in c.most_common(10)]

@@ -8,23 +8,20 @@ All energy is on a higher heating value (HHV) basis, all costs are in 2025 Canad
 
 | File | Use it for |
 | - | - |
-| `technology-database.xlsx` | The workbook for reading: a readme, the wide archetype view, energy by carrier, emissions by species, feedstocks, and the source list. It is a view: anything typed into it is lost on the next build. |
-| `wide-archetype.csv` | One row per archetype with its central values for every CIMS parameter (cost, energy use, efficiency, emissions, lifetime, size). The quickest way to see or compare archetypes. `wide-archetype-columns.csv` explains each column. |
-| `wide-archetype-carriers-species.csv` | Energy use by carrier and emissions by species, one row per archetype. |
-| `wide-archetype-secondary-parameter.csv` | The other targets of each parameter (capex by cost basis, as-sourced values, host-plant and capture add-on parts), one row per archetype. |
+| `technology-database.xlsx` | The workbook for reading, and the only wide view: one row per archetype with its central values for every CIMS parameter (cost, energy use, efficiency, emissions, lifetime, size), then energy by carrier, emissions by species, feedstocks, and the source list. It is a view: anything typed into it is lost on the next build. |
+| `column-legend.csv` | Each column of the workbook's archetypes and carriers-and-species sheets: its group, unit, and definition. |
 | `archetype.csv` | Every archetype: label, family, type, product and unit, carriers, the CIMS nodes it serves, its examples, and its status. |
 
 ## Archetype values in long form
 
 | File | Use it for |
 | - | - |
-| `archetype-parameter.csv` | Every pooled or filled value: one row per archetype, parameter, and target, with central, low, and high, the number of examples (`n`), the sources, and, for filled values, the `grade` (sourced, identity, estimated, proxy, guess), `method`, `rule-id`, `inputs`, and `rationale`. This is the table the wide views and the CIMS values come from. |
-| `archetype-secondary-parameter.csv` | The rows of `archetype-parameter.csv` that sit in the secondary wide view. |
+| `archetype-parameter.csv` | Every pooled or filled value: one row per archetype, parameter, and target, with central, low, and high, the number of examples (`n`), the sources, and, for filled values, the `grade` (sourced, identity, estimated, proxy, guess), `method`, `rule-id`, `inputs`, and `rationale`. This is the table the workbook and the CIMS values come from. |
+| `archetype-secondary-parameter.csv` | The other targets of each parameter (capex by cost basis, as-sourced values, host-plant and capture add-on parts), in the same form as `archetype-parameter.csv`. |
 | `archetype-flow.csv` | Pooled input and output streams per unit of product: materials (air, water, chemicals, ore), co-products, and energy streams where sources list them as flows. Pooled separately from the parameters, from the sources that give flows (mostly the MIDDEN cards), so an energy flow can differ from the energy use in `archetype-parameter.csv`. CIMS energy requests come from the parameters; flows are supporting detail. |
-| `wide-flow.csv` | `archetype-flow.csv` as one row per archetype. |
 | `archetype-service-request.csv` | Service requests that are not energy carriers: bought intermediates (reduced iron, anodes, oxygen, acid), CO2 to capture, gas to abatement nodes, and zero or negative requests for a step a route skips or supplies itself. |
 | `archetype-application.csv` | Every CIMS node each archetype serves, with patterns expanded. |
-| `unfilled/` | `archetype-parameter.csv`, `archetype-secondary-parameter.csv`, and the three wide views as the sources alone give them, before the fill step, so any check can be run with and without the fills. |
+| `unfilled/` | `archetype-parameter.csv` and `archetype-secondary-parameter.csv` as the sources alone give them, before the fill step, so any check can be run with and without the fills. |
 
 ## Examples and source facts
 

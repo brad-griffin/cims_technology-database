@@ -285,7 +285,7 @@ BODY = [('h1', '1. What the database is'),
     'The summaries, one row per archetype, parameter, and target: central, low, high, and n, and for filled '
     'values the grade, rule, inputs, and rationale.'],
    ['archetype-application.csv', 'Every CIMS node each archetype serves.'],
-   ['wide-archetype-secondary-parameter.csv',
+   ['archetype-secondary-parameter.csv',
     'Values by stream or part, and other parameters left out of the wide view.'],
    ['unfilled/', 'The same tables before any fill, with sourced values only.']]),
  ('gap',),
