@@ -81,3 +81,7 @@ database/raw-data/gov-can/petrinex/petrinex_2026_facility-metrics_ab-sk.csv
 
 # files the Claude app saves into the connected folder
 Claude outputs/
+
+# the workbook is rebuilt from the CSVs on every build; its versions are not kept
+# (Brad 2026-11-06)
+database/harmonized/output/technology-database.xlsx
