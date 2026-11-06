@@ -101,15 +101,27 @@ gate a commit.
 ## How to
 
 **Add a source.** Pick it from `data/raw_data/technology_database/to-get.csv` where it is listed there,
-and remove it from that list once it is held. If it cannot be obtained, move its row to `data/raw_data/technology_database/unavailable.csv` with the reason and any substitute. If the document turns out to hold
-nothing usable, move it to `data/raw_data/technology_database/background-no-data-extracted/` and add
-a row to `data/raw_data/technology_database/background-register.csv` instead of registering it.
-1. Register it in `data/raw_data/technology_database/source-details_sources.csv` and `_files.csv`.
-2. Extract it to a long CSV in the template format (`src/technology_database/extraction/input_template.py`). A multi-context source also gets a `_nodes.csv`.
-3. Add its loader to `pipeline/extract.py`: a file in the template format needs one line in `TEMPLATE_FILES`. A file in the ETSAP-brief shape (process/technology rows with `_nodes` and optional `_flows`) needs one line in `ETSAP_BRIEFS`, or in `BRIEF_SHAPE` with the region of its data for a non-ETSAP source.
-4. Build. The new examples are appended to `records/source-example.csv` with a blank archetype.
-5. Fill in each new example's `archetype` (or `(none)`), then build again.
-6. Give the source a row in `records/reference/source-priority.csv`.
+and remove it from that list once it is held. If it cannot be obtained, move its row to
+`data/raw_data/technology_database/unavailable.csv` with the reason and any substitute. If the
+document turns out to hold nothing usable, put it in `primary-sources/background-no-data-extracted/`
+and add a row to `data/raw_data/technology_database/background-register.csv` instead of registering it.
+1. Put the document in its publisher folder under `primary-sources/` (new downloads arrive in
+   `primary-sources/to-process/`), named `author_year_slug[_source]`.
+2. Extract it to a long CSV in the template format (`src/technology_database/extraction/input_template.py`),
+   in the same publisher folder under `data/raw_data/technology_database/`. A multi-context source also
+   gets a `_nodes.csv`, and every extraction a `_meta.csv` (licence, citation and extraction notes). A
+   source that needs code (a workbook, a bulk download, a PDF table) gets a script under
+   `src/technology_database/extraction/sources/<publisher>/` that reads the document from
+   `primary-sources/` and writes the CSVs to the raw data (`extraction/paths.py`).
+3. Register it with `src/technology_database/extraction/register_source.py` (the manifest,
+   `source-details_sources.csv` with its `licence_type`, and `source-details_files.csv`; the citation
+   and priority records; the loader line), or by hand.
+4. Add its loader to `pipeline/extract.py` if `register_source.py` did not: a file in the template format needs one line in `TEMPLATE_FILES`. A file in the ETSAP-brief shape (process/technology rows with `_nodes` and optional `_flows`) needs one line in `ETSAP_BRIEFS`, or in `BRIEF_SHAPE` with the region of its data for a non-ETSAP source.
+5. Build. The new examples are appended to `records/source-example.csv` with a blank archetype.
+6. Fill in each new example's `archetype` (or `(none)`), then build again.
+7. Give the source a row in `records/reference/source-priority.csv`.
+8. Run `check_manifest.py` and `check_names.py`. The new extraction goes to FRDR with the next
+   deposit of `data/raw_data/technology_database/` (its README).
 
 **Correct a figure a source prints wrongly.** Leave the extraction as printed. Add a row to `records/reference/source-correction.csv`: `add` (with `example-id` and the corrected parameter, value, unit and bases) for a value the extraction set aside, `replace` (with `record-id` and only the fields that change) for a loaded row, `mark` (with `record-id`) for a row the extraction already corrected. `as-printed`, `correction`, `evidence` and `decided` are required. Build.
 
@@ -125,8 +137,9 @@ a row to `data/raw_data/technology_database/background-register.csv` instead of 
 2. `mapping-review.md` lists the nodes added and removed.
 3. The build fails on any service link or annotation whose path has gone. Repoint those, then rebuild.
 
-**Refresh currency.** Copy the two reference tables from the CIMS repository
-(`data/processed_data/deflator_exchange/`) into `records/reference/` and build.
+**Refresh currency.** Rebuild the two tables in CIMS (`python -m CIMS.data_processing.source.deflator_exchange.deflator_exchange`),
+which writes `data/processed_data/deflator_exchange/currency_deflator.csv` and `currency_exchange.csv`.
+In the technology-database repo, copy those two files to the same path, then build.
 
 ## Other checks
 
