@@ -48,7 +48,7 @@ FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "param
              "extraction-file", "via-source-id", "via-locator", "confidence", "status", "note"]
 FLOW_COLS = ["record-id", "example-id", "archetype", "source-technology", "direction",
              "commodity", "value", "value-min", "value-max", "unit", "per-unit", "value-norm",
-             "value-min-norm", "value-max-norm", "unit-norm", "excluded", "co-product",
+             "value-min-norm", "value-max-norm", "unit-norm", "conversion", "excluded", "co-product",
              "value-type", "formula", "region", "year", "source-id", "source-file",
              "source-locator", "via-source-id", "status", "note"]
 CONS_COLS = ["record-id", "example-id", "archetype", "source-technology", "constraint", "region",

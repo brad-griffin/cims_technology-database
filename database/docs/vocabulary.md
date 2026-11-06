@@ -529,8 +529,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `process-improvement_nru-optimization` | Nitrogen rejection unit optimization | efficient variant |  | 9 | natural-gas.product.supply.venting.other-point-venting | quantified |
 | `pump_electric-station_efficiency-moderate` | Pump station efficiency measures, moderate (drag-reducing agents) | efficient variant | electricity | 9 | crude-oil.service.pumping | estimated |
 | `pump_plunger-lift` | Plunger lift and smart liquids unloading | efficient variant | electricity | 9 | natural-gas.product.supply.venting.liquid-unloading | quantified |
-| `reciprocating-engine_dual-fuel` | Dual-fuel or natural-gas engines | efficient variant | natural-gas; diesel | 9 | natural-gas.product.supply.drilling; crude-oil.product.exploration | quantified |
-| `separator_dry-stack-tailings` | Filtered or paste (dry-stack) tailings | efficient variant | electricity | 8 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal; crude-oil.service.tailings-disposal | estimated |
 | `gas-treatment-unit_amine-sweetening_ccs-concentrated` | Amine sweetening with capture of the separated CO2 | alternative | steam; electricity | 9 | natural-gas.product.supply.formation-co2 | quantified |
 | `reactor_integrated-upgrader_ccs-concentrated` | Integrated bitumen upgrader with capture | reference | natural-gas; refinery-gas; petroleum-coke | 9 | no connection | quantified |
 | `adsorber_molecular-sieve` | Molecular-sieve dehydration | alternative | natural-gas; electricity | 9 | natural-gas.product.supply.processing.dehydration | quantified |
@@ -553,6 +551,8 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `process-improvement_low-emission-components` | Low-emission valves and connectors | alternative |  | 9 | natural-gas.product.supply.fugitive | quantified |
 | `reactor_gas-to-liquids` | Gas-to-liquids (reforming and Fischer-Tropsch) | alternative | natural-gas | 9 | petroleum-refining.product.synthetic-fuels | quantified |
 | `reactor_partial-upgrading` | Partial upgrading | prospective | natural-gas; electricity | 6-7 | crude-oil.product.bitumen.upgrading.primary | quantified |
+| `reciprocating-engine_dual-fuel` | Dual-fuel or natural-gas engines | alternative | natural-gas; diesel | 9 | natural-gas.product.supply.drilling; crude-oil.product.exploration | quantified |
+| `separator_dry-stack-tailings` | Filtered or paste (dry-stack) tailings | alternative | electricity | 8 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal; crude-oil.service.tailings-disposal | estimated |
 | `separator_non-aqueous` | Non-aqueous extraction | prospective | electricity | 5-6 | crude-oil.product.bitumen.mining.extraction | estimated |
 | `separator_paraffinic-froth-treatment` | Paraffinic froth treatment | alternative | natural-gas; electricity | 9 | crude-oil.product.bitumen.mining.froth-treatment | estimated |
 | `separator_produced-water-recycling` | Produced water recycling for makeup | alternative | electricity | 9 | crude-oil.service.produced-water | estimated |

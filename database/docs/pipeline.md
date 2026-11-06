@@ -67,8 +67,9 @@ gate a commit.
 
 | File | What it is |
 | - | - |
+| `README.md` | What each output file is for, grouped by use (kept in the output folder; not written by the build). |
 | `example.csv` | Every example, with its archetype, its source's context and the readiness it reports. |
-| `example-parameter.csv`, `example-flow.csv`, `example-constraint.csv` | Every fact as reported, and converted to the archetype's basis (`*-norm`), or `excluded` with the reason. |
+| `example-parameter.csv`, `example-flow.csv`, `example-constraint.csv` | Every fact as reported, and converted to the archetype's basis (`*-norm`), or `excluded` with the reason. Flows are put on HHV like the parameters (2026-11-06); `example-flow.csv`'s `conversion` column says what was done. |
 | `archetype.csv` | Every archetype with its parsed key, the nodes it applies to, its examples and its status. |
 | `archetype-parameter.csv`, `archetype-flow.csv` | The summaries; `n-corrected` counts the examples that rest on a source correction. `archetype-parameter.csv` also holds the filled rows, with `grade`, `method`, `rule-id`, `inputs` and `rationale`. |
 | `archetype-application.csv` | Every hierarchy node each archetype serves, patterns expanded. |

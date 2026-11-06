@@ -1268,6 +1268,36 @@ def apply_flow_exclusions(flows, factors) -> dict:
     return dict(stats)
 
 
+def _flow_hhv(r, a, pu, per, tnum, units) -> None:
+    """Puts an energy flow on the HHV basis the parameters use (Brad 2026-11-06):
+    an energy quantity of a fuel commodity is multiplied by the fuel's HHV/LHV
+    ratio, and any flow per GJ of an energy product is divided by the product's,
+    as heating.py does for parameters. Only rows the source states, or reports by
+    default, on LHV change; the conversion column says so."""
+    how = ""
+    if tnum == "GJ" and r.get("commodity", "") in heating.CARRIER_RATIO:
+        how = "energy-use"
+    elif pu == "GJ" and (per == pu or per in heating.ENERGY):
+        how = "per-product"
+    if not how:
+        return
+    hv = heating.reported(r.get("note") or "")
+    default = "" if hv else units.streams.default(r.get("source-id"), r.get("via-source-id"))[0]
+    if "LHV" not in (hv, default):
+        return
+    h = units.streams.to_hhv(a["archetype"], how, pu, r.get("commodity", "") if how == "energy-use" else "",
+                             f"{tnum}/{pu}", r.get("example-id") or "")
+    label = "LHV" if hv else "LHV (source default)"
+    if h is None:
+        r["conversion"] = "; ".join(x for x in [r.get("conversion", ""), f"{label}? no stream, not converted"] if x)
+        return
+    for c in ("value-norm", "value-min-norm", "value-max-norm"):
+        x = fnum(r.get(c))
+        if x is not None:
+            r[c] = f"{x * h[0]:.6g}"
+    r["conversion"] = "; ".join(x for x in [r.get("conversion", ""), f"{label} -> HHV x {h[0]:.4g} ({', '.join(h[1])})"] if x)
+
+
 def normalise_flows(flows, records, units, examples=None) -> None:
     """Flows per unit of the archetype's product: energy in GJ, mass in t,
     gas volumes in m3."""
@@ -1331,6 +1361,7 @@ def normalise_flows(flows, records, units, examples=None) -> None:
             r["unit-norm"] = f"t/{pu}"
             r["conversion"] = "; ".join(x for x in [r.get("conversion", ""),
                                                     f"{num} of {r['commodity']} -> t at {gas * 1000:g} kg/m3"] if x)
+            _flow_hhv(r, a, pu, per, "t", units)
             continue
         if cls and cls in ("GJ", "t") and tnum != cls and tnum in ("GJ", "t"):
             r["excluded"] = f"{r['commodity']} is measured in {cls}, the row in {num}"
@@ -1344,3 +1375,4 @@ def normalise_flows(flows, records, units, examples=None) -> None:
         r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
             "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
         r["unit-norm"] = f"{tnum}/{pu}"
+        _flow_hhv(r, a, pu, per, tnum, units)
