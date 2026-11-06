@@ -2,7 +2,7 @@
 
 This compares the values in the CIMS model inputs (`data_processing_calibration`,
 `cims/data/model_inputs/model/`, staging branch) with the archetype values in
-`database/harmonized/output/` (build at commit 31893e3). It feeds nothing back into the
+`database/harmonized/output/` (build at commit f7775d3). It feeds nothing back into the
 database: the CIMS values remain unused there (ruling 2026-10-04).
 
 ## Headline

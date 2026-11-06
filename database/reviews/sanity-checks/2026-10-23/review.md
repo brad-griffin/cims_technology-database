@@ -1,6 +1,6 @@
 # Sanity-check review, 2026-10-23
 
-Third full pass over every pooled value in `database/harmonized/output/archetype-parameter.csv`, sourced and filled. Build of 2026-10-23 on commit cb7392f (clean tree, rebuilt before the screens): 503 archetypes, 7,825 pooled rows, 437 quantified. Eight family reviews ran in parallel from the same brief and screens as the 2026-10-11 pass. Nothing in `records/`, `pipeline/` or `database/raw-data/` was changed.
+Third full pass over every pooled value in `database/harmonized/output/archetype-parameter.csv`, sourced and filled. Build of 2026-10-23 on commit dca09dc (clean tree, rebuilt before the screens): 503 archetypes, 7,825 pooled rows, 437 quantified. Eight family reviews ran in parallel from the same brief and screens as the 2026-10-11 pass. Nothing in `records/`, `pipeline/` or `database/raw-data/` was changed.
 
 - `sanity-checks/2026-10-23/review.csv`: 152 findings (63 high, 71 medium, 18 low), 141 traced to example rows or pipeline code.
 - `sanity-checks/2026-10-23/screens/`: the eight screens. Scripts and the brief are in `C:\_dev\staging\sanity-2026-10-23\`.
@@ -51,7 +51,7 @@ The bounds screen rose by 25: 40 new flags, 15 cleared. Most new flags are the C
     - The fixed-O&M ratio for LNG trains comes from methane-abatement devices (20% of capex a year), and its rule text still says "parked".
 11. **S143 The levelized cost including energy prices `heat` as a fuel** (MCF001). It is priced on top of the fuels and steam that supply it, on 34 rows, and only on variants, so a host and its variant sit on different bases.
 12. **S144 A per-fuel heating-value uplift is applied to mixed whole-plant totals** (NFM011). This adds 11% to totals that include electricity or coal (Cusano, Van Geene, ETSAP, IAI).
-13. **S145 The nickel refinery's net-heat restatement contradicts the gross-input ruling** (NFM010, commit 5c4a905). It also assumes more recovery than the source prints.
+13. **S145 The nickel refinery's net-heat restatement contradicts the gross-input ruling** (NFM010, commit f0eda1b). It also assumes more recovery than the source prints.
 14. **S146 Whole-route levelized costs sit on unit archetypes** (IS010). EAF, electrolytic-hydrogen DRI and electrowinning carry Material Economics production costs that include rolling, raw materials and a return.
 
 ## Record defects worth doing first

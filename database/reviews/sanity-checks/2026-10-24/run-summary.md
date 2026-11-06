@@ -3,7 +3,7 @@
 Brad switched his computer off and asked for this run. Each remaining open item gets a review and a proposed fix. A Fable reviewer then decides APPLY, APPLY WITH CHANGES, or DO NOT APPLY, and approved fixes are applied, rebuilt, and checked. This file records every problem, proposal, verdict, and result, for Brad to review.
 
 How it was run:
-- The work was done in a cloud copy of the repo (a snapshot of cb84706, build inputs only, no source PDFs).
+- The work was done in a cloud copy of the repo (a snapshot of e9c33ed, build inputs only, no source PDFs).
 - Each batch is one commit with no output files. On Brad's return, the patches are applied to `C:\_dev\tech_data`, then the build runs and outputs are committed there.
 - Every item that needs a source re-read or a ruling is in "For Brad" below.
 
@@ -20,12 +20,12 @@ How it was run:
 
 Every build passes all checks, and the totals that disagree with their carriers went from 10 to 3. Of the 2026-10-23 review's 63 high findings, 48 are resolved; the rest are rulings, listed below. Every change was proposed, reviewed by a Fable reviewer, applied only as the reviewer approved, and rebuilt and diffed.
 
-**To apply on C:\_dev\tech_data** (on top of cb84706):
+**To apply on C:\_dev\tech_data** (on top of e9c33ed):
 1. Run `git am --keep-cr 0001-*.patch ... 0008-*.patch` on the patches downloaded from the project. `--keep-cr` is needed because parameter-remap.csv has CRLF line endings.
 2. Run `python database/harmonized/build.py`.
 3. Commit the outputs.
 
-The series was tested: it applies cleanly to the snapshot of cb84706 and reproduces the cloud copy exactly.
+The series was tested: it applies cleanly to the snapshot of e9c33ed and reproduces the cloud copy exactly.
 
 **Largest value changes to look at first:**
 - Per-tonne numbers on GJ archetypes had a double HHV/LHV correction (batch H). Hydrogen per-tonne CO2 and costs rise 18%, ethanol 11%, methane products 11%.

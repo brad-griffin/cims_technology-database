@@ -1,7 +1,7 @@
 # Sanity-check pass (2026-10-11)
 
 A second full review of every pooled value in `output/archetype-parameter.csv`, the
-first since the fill was completed. Build of 2026-10-11 on commit 7f27007 (clean tree
+first since the fill was completed. Build of 2026-10-11 on commit cbbaa89 (clean tree
 apart from an untracked `database/raw-data/gov-usa/eia/prices/` folder): 491 archetypes,
 7,615 pooled rows, 423 quantified, checks and back-tests pass, `exit 0`.
 
