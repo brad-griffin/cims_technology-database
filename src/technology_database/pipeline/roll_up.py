@@ -22,7 +22,7 @@ examples instead of sitting in a column of its own:
   * efficiency `heat` or `electricity` on an archetype with a single useful
     output (not CHP, not boiler_recovery, gasifier_black-liquor or the
     waste-to-energy incinerator): the stream efficiency is the overall
-    efficiency (modeller 2026-10-09). pipeline/rollin.py repeats the pooled value
+    efficiency (modeller 2026-10-09). pipeline/roll_in.py repeats the pooled value
     in the stream's column afterwards.
 
 A row is relabelled only when its normalised unit is the unit the base already
@@ -33,7 +33,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from .rollin import dual
+from .roll_in import dual
 
 ALWAYS = {("capex", "greenfield"), ("specific-energy-consumption", "total")}
 PRODUCT_PARAMS = {"capacity", "annual-output", "cost-levelized"}

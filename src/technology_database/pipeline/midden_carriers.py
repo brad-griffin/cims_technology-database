@@ -59,11 +59,11 @@ def apply(facts) -> dict:
         for t in f_.split(" + "):
             m = TERM.match(t.strip())
             if not m:
-                raise SystemExit(f"middencarriers: cannot parse '{t}' in {r['record-id']}")
+                raise SystemExit(f"midden_carriers: cannot parse '{t}' in {r['record-id']}")
             lab = m.group(1).strip().lower()
             c = CARD_LABEL.get((card, lab)) or LABEL.get(lab)
             if c is None:
-                raise SystemExit(f"middencarriers: unknown MIDDEN label '{lab}' in {r['record-id']}; "
+                raise SystemExit(f"midden_carriers: unknown MIDDEN label '{lab}' in {r['record-id']}; "
                                  "add it to LABEL")
             sums[c] = sums.get(c, 0.0) + float(m.group(2))
         for c, v in sums.items():
@@ -76,7 +76,7 @@ def apply(facts) -> dict:
                         "derived-kind": "carrier-term",
                         "duplicate-of": "", "formula": f"{c} term of the card's total ({r['formula']})",
                         "note": ("carrier of the MIDDEN card's energy-use total, from its formula "
-                                 "(pipeline/middencarriers.py, 2026-10-24). " + (r.get("note") or ""))})
+                                 "(pipeline/midden_carriers.py, 2026-10-24). " + (r.get("note") or ""))})
             new.append(row)
             stats["MIDDEN carrier rows written"] += 1
         stats["MIDDEN totals split"] += 1

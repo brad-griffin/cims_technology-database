@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.23.4"
-app = marimo.App(width="medium", css_file="input_template.css")
+app = marimo.App(width="medium", css_file="input-template.css")
 
 
 @app.cell
@@ -557,7 +557,7 @@ def _(
 def _(get_loaded, mo):
     # Persistent, compact reminder of which file is currently loaded.
     # Rendered as a small badge styled via the .loaded-badge CSS class
-    # (see input_template.css) so it stays small.
+    # (see input-template.css) so it stays small.
     import html as _html
 
     _ln = get_loaded()

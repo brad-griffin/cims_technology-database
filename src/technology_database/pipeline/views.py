@@ -23,7 +23,7 @@ from .hierarchy import Hierarchy
 from .normalise import target_unit
 from .placement import placement
 from .bands import families
-from . import capacityunit
+from . import capacity_unit
 
 IDENT = ["archetype", "label", "family", "families", "end-uses", "equipment", "discriminator", "modifiers",
          "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
@@ -173,8 +173,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
         write(outdir / "archetype-application.csv",
               ["archetype", "family", "node", "annotation", "via", "note"], app)
 
-    # ---- cims_hierarchy.csv and cims_hierarchy_technology.csv -----------------
-    # cims_hierarchy.csv is the snapshot as the build used it. The technology
+    # ---- cims-hierarchy.csv and cims-hierarchy_technology.csv -----------------
+    # cims-hierarchy.csv is the snapshot as the build used it. The technology
     # version keeps its row order, with `technology` as the second column: a node
     # is repeated once per archetype serving it; a node nothing serves appears
     # once with `technology` blank.
@@ -185,7 +185,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     hrows = read(hier.path) if not wide_only else []
     hcols = [c for c in (list(hrows[0]) if hrows else ["branch"]) if c != "technology"]
     if not wide_only:
-        write(outdir / "cims_hierarchy.csv", hcols, hrows)
+        write(outdir / "cims-hierarchy.csv", hcols, hrows)
     tech = []
     for h in hrows:
         b = (h.get("branch") or "").strip()
@@ -194,7 +194,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
         for t in sorted(by_node.get(b, [])) or [""]:
             tech.append(dict(h, technology=t))
     if not wide_only:
-        write(outdir / "cims_hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
+        write(outdir / "cims-hierarchy_technology.csv", hcols[:1] + ["technology"] + hcols[1:], tech)
 
     # ---- the wide views ---------------------------------------------------------
     # Three views (modeller 2026-10-08/09), placed by pipeline/placement.py:
@@ -204,7 +204,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     #   wide-secondary-parameter         every other target (CSV only, not in the
     #                                    workbook): values by stream or part
     # The CHP efficiency, the temperature range and the single-stream efficiency
-    # are already rolled into the summaries (pipeline/rollin.py).
+    # are already rolled into the summaries (pipeline/roll_in.py).
     by_arch = defaultdict(dict)
     pt, sunit = {}, defaultdict(set)
     for s in summaries:
@@ -256,7 +256,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
         return " ".join(x for x in (
             pdef.get("definition", ""), f"Species or stream: {t}." if t else "", extra) if x)
 
-    cap_rules = capacityunit.load()
+    cap_rules = capacity_unit.load()
 
     def emit(name, cells, ident, order):
         keys = sorted({b for c in cells.values() for b in c}, key=order)
@@ -306,7 +306,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                     ext.append((b, f"{b} {s['n-external']}/{s['n']}"))
                     flagged |= {(a["archetype"], c) for c in (b, f"{b}_low", f"{b}_high")}
             if name == "wide-archetype":
-                capacityunit.apply(cap_rules, row)
+                capacity_unit.apply(cap_rules, row)
                 row["external-conversions"] = "; ".join(t for _, t in sorted(ext, key=lambda x: index.get(x[0], 0)))
                 row["source-corrections"] = "; ".join(t for _, t in sorted(cor, key=lambda x: index.get(x[0], 0)))
                 row["filled"] = "; ".join(t for _, t in sorted(filled, key=lambda x: index.get(x[0], 0)))

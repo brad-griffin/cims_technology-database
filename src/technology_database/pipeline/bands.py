@@ -49,7 +49,7 @@ import re
 from collections import defaultdict
 
 from .common import REFERENCE, RECORDS, read
-from . import capacityunit
+from . import capacity_unit
 
 ORDER = [
     "heat-low-temp", "heat-medium-temp", "heat-high-temp", "on-site-power-generation",
@@ -161,12 +161,12 @@ _RULES = None
 
 def _restate_capacity(out, r, o, f):
     global _RULES
-    _RULES = _RULES or capacityunit.load()
+    _RULES = _RULES or capacity_unit.load()
     hu, ou = r.get("product-unit", ""), o["product-unit"]
     row = {"archetype": "", "end-uses": "", "product": o["product"], "product-unit": ou,
            "product-energy-content": r.get("product-energy-content"), "product-density": r.get("product-density")}
-    rule = capacityunit.rule_for(_RULES, row)
-    k = capacityunit.factor_for(rule, row) if rule else None
+    rule = capacity_unit.rule_for(_RULES, row)
+    k = capacity_unit.factor_for(rule, row) if rule else None
     if k is None:
         raise SystemExit(f"capacity-unit.csv: no usable rule for {r.get('archetype')} shown as {o['product']} ({ou})")
     for c, v in r["_capacity-canonical"].items():

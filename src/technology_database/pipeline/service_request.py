@@ -43,10 +43,10 @@ def check(records, hier_paths, fail) -> None:
             fail["service-request names an unknown archetype"].append(a)
         n = (r.get("node") or "").strip()
         if n and n not in hier_paths and not any(fnmatch.fnmatchcase(h, n) for h in hier_paths):
-            fail["service-request names a node not in records/cims_hierarchy.csv"].append(f"{a}: {n}")
+            fail["service-request names a node not in records/cims-hierarchy.csv"].append(f"{a}: {n}")
         at = (r.get("at-node") or "").strip()
         if at and at not in hier_paths:
-            fail["service-request at-node is not in records/cims_hierarchy.csv"].append(f"{a}: {at}")
+            fail["service-request at-node is not in records/cims-hierarchy.csv"].append(f"{a}: {at}")
         if fnum(r.get("quantity")) is None:
             fail["service-request quantity is not a number"].append(f"{a}: {r.get('request')}")
         if (r.get("grade") or "") not in GRADES:

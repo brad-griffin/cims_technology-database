@@ -273,7 +273,7 @@ def m_chp_heat_inverse(rule, a, have, ctx):
         ins, grades = [_input(eh, "efficiency_heat")], [eh.get("grade", "sourced")]
     else:
         # the total is efficiency-chp: an untargeted efficiency row on a CHP archetype
-        # is unspecified until the roll-in (pipeline/rollin.py) (Fable review)
+        # is unspecified until the roll-in (pipeline/roll_in.py) (Fable review)
         et, ee = have.get(("efficiency-chp", "")), have.get(("efficiency", "electricity"))
         if not (_live(et) and _live(ee)):
             return []
@@ -1583,7 +1583,7 @@ def _captured(k, host, ctx):
     from another plant had been netted off this host, giving 61% capture on lime
     and zero net emissions where it exceeded the host's gross). The variant's own
     sourced emissions-captured is used only where no share can be had."""
-    from .captureshare import RATES
+    from .capture_share import RATES
     h, hh = ctx["have"].get(k, {}), ctx["have"].get(host, {})
     e = h.get(("emissions-captured", "co2"))
     d = _captured_derived(k, host, ctx, RATES.get(k, CAPTURE_RATE))

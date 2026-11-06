@@ -11,7 +11,7 @@ archetype-parameter.csv itself, not only the wide view. Runs after the fill step
     and not the dual-output list) whose product is heat or electricity, the
     overall efficiency is repeated in that stream's column (efficiency_heat on a
     boiler). The stream-named efficiencies of such archetypes were already pooled
-    into `efficiency` before summarise (pipeline/rollup.py).
+    into `efficiency` before summarise (pipeline/roll_up.py).
 """
 from __future__ import annotations
 

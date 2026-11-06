@@ -22,7 +22,7 @@ REMOVED_ANY_TARGET = {"pressure-output", "abatement-cost"}
 EMISSIONS = {"emissions-combustion", "emissions-process", "emissions-total", "emissions-captured",
              "emissions-biomass"}
 # secondary with or without a target; efficiency-chp left here is a non-CHP
-# archetype's (CHP archetypes carry it as their efficiency, pipeline/rollin.py)
+# archetype's (CHP archetypes carry it as their efficiency, pipeline/roll_in.py)
 SECONDARY_PARAMS = {"load-range-min", "degradation-rate", "efficiency-chp"}
 
 

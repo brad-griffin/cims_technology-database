@@ -27,7 +27,7 @@ VOCAB = RECORDS / "vocabulary"            # controlled vocabularies
 REFERENCE = RECORDS / "reference"         # conversion and ranking tables
 OUTPUT = DATA / "processed_data" / "technology_database"   # everything the build writes
 DB = DATA                                 # paths in messages are shown relative to data/
-HIERARCHY = RECORDS / "cims_hierarchy.csv"
+HIERARCHY = RECORDS / "cims-hierarchy.csv"
 
 def find_file(rel: str) -> Path | None:
     """A manifest path: under the extractions, then the source documents, then the

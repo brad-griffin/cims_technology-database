@@ -1,7 +1,7 @@
 # CIMS model inputs: the later comparison stage
 
 Parked here on 2026-09-23. **Nothing in this folder feeds the database.** The CIMS
-hierarchy (`data/technology_database/cims_hierarchy.csv`) is the definitive list of
+hierarchy (`data/technology_database/cims-hierarchy.csv`) is the definitive list of
 CIMS services and end uses. The CIMS model inputs predate it and are out of date,
 so they are not used to decide which technologies the database holds.
 

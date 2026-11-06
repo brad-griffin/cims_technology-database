@@ -7,7 +7,7 @@
                                                pooled numbers (default: every archetype)
 
 Stages (src/technology_database/docs/pipeline.md):
-  1. hierarchy   stamp records/cims_hierarchy.csv, report what changed, and hold
+  1. hierarchy   stamp records/cims-hierarchy.csv, report what changed, and hold
                  every path in the records to it
   2. records     load the archetypes and vocabularies and hold them to the rules
   3. extract     read every extraction as reported (layer 1 -> facts)
@@ -32,12 +32,16 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+if __package__ in (None, ""):
+    # run as a script (python src/technology_database/build.py): import the package it sits in
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    __package__ = "technology_database"
+    import technology_database  # noqa: F401,E402
 
-from pipeline import (assembly, netsec, feedstock, suppliedheat, capitalshare, servicerequest, chainvalidation, gwp, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
-                      bands, factoruse, facts, fill, hierarchy, normalise, placement, records, reports, rollin, rollup, sources,
-                      summarise, views, wholeplant, workbook)
-from pipeline.common import OUTPUT, write  # noqa: E402
+from .pipeline import (assembly, net_sec, feedstock, supplied_heat, capital_share, service_request, chain_validation, gwp, capture_energy, capture_share, carriers, checks, correction, ukerc_saving, currency, examples, extract,  # noqa: E402
+                      bands, factor_use, facts, fill, hierarchy, normalise, placement, records, reports, roll_in, roll_up, sources,
+                      summarise, views, whole_plant, workbook)
+from .pipeline.common import OUTPUT, write  # noqa: E402
 
 FACT_COLS = ["record-id", "example-id", "archetype", "source-technology", "parameter", "target",
              "value", "value-min", "value-max", "unit", "value-norm", "value-min-norm",
@@ -91,7 +95,7 @@ def main(argv) -> int:
         print(f"  {len(ex['stale'])} rows in source-example.csv match no extraction: "
               + ", ".join(ex["stale"][:5]))
 
-    wp = wholeplant.derive(L)
+    wp = whole_plant.derive(L)
     print(f"  UKERC measures: {wp.get('whole-plant rows', 0)} whole-plant rows derived, "
           f"{wp.get('set aside', 0)} measure costs set aside for a host-plant cost")
     asm = assembly.derive(L)
@@ -107,7 +111,7 @@ def main(argv) -> int:
               "(records/reference/source-correction.csv)")
     # a record whose parameter the extraction got wrong (biogenic CO2 entered as
     # combustion or process CO2): records/reference/parameter-remap.csv (2026-10-14)
-    from pipeline.common import REFERENCE, read, split_list
+    from .pipeline.common import REFERENCE, read, split_list
     remap = {r["record-id"]: r for r in read(REFERENCE / "parameter-remap.csv")}
     unknown = set(remap) - {r["record-id"] for r in L.facts}
     if unknown:
@@ -121,15 +125,15 @@ def main(argv) -> int:
             r["parameter"] = x["parameter"]
     if remap:
         print(f"  parameters re-mapped: {len(remap)} rows (records/reference/parameter-remap.csv)")
-    from pipeline import middencarriers
-    mc = middencarriers.apply(L.facts)
+    from .pipeline import midden_carriers
+    mc = midden_carriers.apply(L.facts)
     print("  " + ", ".join(f"{k} {v}" for k, v in mc.items()))
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     # service requests and chain validations (general rules 2 and 3, 2026-11-05)
-    servicerequest.check(rec, {n for n in hier.nodes}, fail)
-    chainvalidation.check(rec, fail)
-    capitalshare.check(rec, fail)
+    service_request.check(rec, {n for n in hier.nodes}, fail)
+    chain_validation.check(rec, fail)
+    capital_share.check(rec, fail)
     backlog = fail.pop("_backlog")
     if backlog:
         print(f"  basis backfill outstanding: {sum(backlog.values())} rows marked for review "
@@ -154,31 +158,31 @@ def main(argv) -> int:
         print(f"  no currency factor for {', '.join(skipped)}; those rows are not pooled")
     units = normalise.Units(factors)
     normalise.normalise(L.facts, L.examples, rec, units)
-    ns = netsec.apply(L.facts, L.flows, rec)
+    ns = net_sec.apply(L.facts, L.flows, rec)
     print("  gross energy use: " + (", ".join(f"{k} {v}" for k, v in ns.items()) or "nothing net"))
-    print(f"  recovered-product output flows: {netsec.recovered_flows(L.flows, rec)}")
+    print(f"  recovered-product output flows: {net_sec.recovered_flows(L.flows, rec)}")
     gw = gwp.species(L.facts, units.factors)
     print("  CO2-eq on AR5: " + (", ".join(f"{k} {v}" for k, v in gw.items()) or "none"))
     fs = feedstock.apply(L.facts, rec)
     print("  feedstock out of energy use: " + (", ".join(f"{k} {v}" for k, v in fs.items()) or "none"))
-    shs = suppliedheat.apply(L.facts, rec)
+    shs = supplied_heat.apply(L.facts, rec)
     print("  supplied heat bought from the heat node: " + (", ".join(f"{k} {v}" for k, v in shs.items()) or "none"))
-    cps = capitalshare.apply(L.facts)
+    cps = capital_share.apply(L.facts)
     print("  capital the unit chain misses (capital-share.csv): " + (", ".join(f"{k} {v}" for k, v in cps.items()) or "none"))
     normalise.normalise_flows(L.flows, rec, units, L.examples)
     xf = normalise.apply_flow_exclusions(L.flows, units.factors)
     print("  flow rows ruled out or rebased (excluded-flow.csv): " + (", ".join(f"{k} {v}" for k, v in xf.items()) or "none"))
-    ce = captureenergy.apply(L.facts, L.examples, rec)
+    ce = capture_energy.apply(L.facts, L.examples, rec)
     print(f"  capture energy on host plants: {ce.get('set aside', 0)} rows set aside, "
           f"{ce.get('derived per t CO2', 0)} restated per t CO2 on capture archetypes")
-    ru = rollup.apply(L.facts, rec)
+    ru = roll_up.apply(L.facts, rec)
     print("  targets rolled into their base parameter: "
           + (", ".join(f"{k} {v}" for k, v in ru.items()) or "none"))
     # example totals before the UKERC savings, which apply to the host's total
     # (sanity-check 2026-10-23, S136)
     et = carriers.example_totals(L.facts, rec)
     print("  energy totals from example carriers: " + (", ".join(f"{k} {v}" for k, v in et.items()) or "none"))
-    us = ukercsaving.derive(L.facts, rec, summarise.summarise)
+    us = ukerc_saving.derive(L.facts, rec, summarise.summarise)
     correction.propagate(L.facts)
     print("  UKERC buckets: " + ", ".join(f"{k} {v}" for k, v in us.items()))
     pooled = [r for r in L.facts if r.get("value-norm") and not r.get("excluded")]
@@ -191,7 +195,7 @@ def main(argv) -> int:
         r["target"] = r.pop("target-norm")
     cs = carriers.apply(psum, L.facts, rec)
     print("  energy carriers: " + ", ".join(f"{k} {v}" for k, v in cs.items()))
-    sh = captureshare.apply(psum, rec, L.facts)
+    sh = capture_share.apply(psum, rec, L.facts)
     print("  share-to-capture: " + (", ".join(f"{k} {v}" for k, v in sh.items()) or "none derived"))
     fsum = summarise.summarise(L.flows, rec, ("direction", "commodity"), L.examples)
     # the summaries as the sources alone give them, kept apart so every check can
@@ -219,7 +223,7 @@ def main(argv) -> int:
     if unp:
         print("  carriers with no reference price (records/reference/energy-price.csv): " + ", ".join(unp))
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
-    ri = rollin.apply(psum, rec)
+    ri = roll_in.apply(psum, rec)
     print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
     # a carrier another example names but the archetype's split leaves out (S160,
     # 2026-10-27): listed for the modeller to add by hand (a judgement or an
@@ -252,7 +256,7 @@ def main(argv) -> int:
           "(output/carrier-check.csv; add by hand)")
     for r in unfilled:
         r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "", "rationale": ""})
-    rollin.apply(unfilled, rec)
+    roll_in.apply(unfilled, rec)
     cov = fill.coverage(psum, rec)
     write(OUTPUT / "coverage.csv", ["archetype", "family", "product-unit"] + [c for c, _ in fill.CIMS_CELLS] + ["trl"], cov)
     cc = Counter(g for r in cov for c, _ in fill.CIMS_CELLS for g in [r[c]])
@@ -284,7 +288,7 @@ def main(argv) -> int:
     write(OUTPUT / "ccs-addon-energy.csv",
           ["archetype", "example-id", "record-id", "parameter", "target", "value", "unit",
            "value-norm", "unit-norm", "source-id", "via-source-id", "source-locator", "note"],
-          sorted((r for r in L.facts if r.get("set-aside") == captureenergy.SET_ASIDE),
+          sorted((r for r in L.facts if r.get("set-aside") == capture_energy.SET_ASIDE),
                  key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     # the worklist for establishing efficiency factors later
     sec = {}
@@ -299,7 +303,7 @@ def main(argv) -> int:
            "via-source-id", "source-locator", "note"],
           sorted(aside, key=lambda r: (r["archetype"], r["example-id"], r["record-id"])))
     write(OUTPUT / "example-flow.csv", FLOW_COLS, L.flows)
-    factoruse.write_outputs(L.facts, units.factors)
+    factor_use.write_outputs(L.facts, units.factors)
     write(OUTPUT / "example-constraint.csv", CONS_COLS, L.cons)
     order = {a["archetype"]: i for i, a in enumerate(rec.archetypes)}
     psum.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
@@ -330,8 +334,8 @@ def main(argv) -> int:
                  if r.get("value") or r.get("value-min") or r.get("value-max"))
     for e in L.examples.values():
         e["n-facts"] = nf.get(e["example-id"], 0)
-    sr = servicerequest.build(rec)
-    cv = chainvalidation.build(psum, rec)
+    sr = service_request.build(rec)
+    cv = chain_validation.build(psum, rec)
     print(f"  service requests: {len(sr)}; chain validations: {len({r['chain-id'] for r in cv})} chains")
     print("views")
     v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--quantified-only" not in argv)

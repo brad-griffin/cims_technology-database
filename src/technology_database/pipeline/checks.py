@@ -13,7 +13,7 @@ from .common import RAW, REFERENCE, currency_year, PRIMARY, find_file, read, spl
 from . import convert, fill
 
 # a carrier row split from a MIDDEN total carries the total's id and the carrier
-# (tp-van-geene_2024_001-0869-natural-gas; pipeline/middencarriers.py, 2026-10-24)
+# (tp-van-geene_2024_001-0869-natural-gas; pipeline/midden_carriers.py, 2026-10-24)
 RECORD_ID = re.compile(r"^t[pfc]-[a-z0-9_-]+-(\d{4}(-[a-z][a-z-]*)?|[wadx]\d{3})$")
 
 

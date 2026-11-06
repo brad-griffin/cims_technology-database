@@ -5486,7 +5486,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: reprint of NEDO 2008 (same JPY 1,300 million recovery boiler) on a per t/h steam basis; excluded with tp-nedo_2008_001-0084 (modeller 2026-10-07 (coordinator check)) | 1 |
 | ruled out: boiler steam capacity (150 t/h of steam), not a black-liquor-solids firing rate; the same example gives the firing rate in tp-ietd_2013_001-0156 (PB006) (modeller 2026-10-13) | 1 |
 | repeat: the source prints the same figure for meyers_1997_001:reactor_fluid-catalytic-cracking@exxon-flexicracking-iiir-fcc-30-kbpsd-vacuum-gas-oil-ch-3-1-tables-3-1-4-3-1-5 (duplicate-of); pooled once | 1 |
-| net of recovered energy, gross input not printed: steam PRODUCTION 40-200 lb/bbl loaded as a negative range with no central; netsec reads only a negative central, so the export stayed in the pool; gross consumption not printed (ruling 1, 2026-10-13) | 1 |
+| net of recovered energy, gross input not printed: steam PRODUCTION 40-200 lb/bbl loaded as a negative range with no central; net_sec reads only a negative central, so the export stayed in the pool; gross consumption not printed (ruling 1, 2026-10-13) | 1 |
 | repeat: the source prints the same figure for meyers_1997_001:reactor_fluid-catalytic-cracking@uop-fcc-35-000-bpsd-without-power-recovery-ch-3-3-tables-3-3-8-3-3-9 (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for meyers_1997_001:reactor_catalytic-reforming_semi-regenerative@uop-sr-platforming-case-study-20-000-bpsd-ch-4-1-tables-4-1-2-4-1-5 (duplicate-of); pooled once | 1 |
 | no conversion from MMscfd to MW | 1 |

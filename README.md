@@ -7,7 +7,7 @@ or a blast furnace with top-gas recycling. The technologies the sources describe
 **examples** of those archetypes. The database summarises what the examples say
 about each archetype. It does not reproduce every source's detail.
 
-The services and end uses are the CIMS hierarchy, `data/technology_database/cims_hierarchy.csv`,
+The services and end uses are the CIMS hierarchy, `data/technology_database/cims-hierarchy.csv`,
 which is the definitive list.
 
 ## Three layers

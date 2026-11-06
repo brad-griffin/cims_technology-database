@@ -320,7 +320,7 @@ traversals; `CIMS.log_ledger(model, flows_file)` writes `results_flows.csv` and
 `results_flows_emissions.csv`, and `scenarios/Reference.py` calls it; `carbon_content`
 added to `PARAM` and to the local `data/model_inputs/defaults/defaults_Parameters.csv`
 (that file is not in git). Here: `common-energy.{blast-furnace-gas, bof-gas,
-coke-oven-gas}` added to `cims_hierarchy.csv` (crosswalk unchanged: common-energy is
+coke-oven-gas}` added to `cims-hierarchy.csv` (crosswalk unchanged: common-energy is
 out of its scope). Not yet done: the process-gas technologies (one per gas, plus
 natural gas), which need the technology data folders; and `carbon_content` values.
 

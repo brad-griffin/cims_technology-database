@@ -1,13 +1,13 @@
 """The CIMS hierarchy: the definitive list of services and end uses.
 
-records/cims_hierarchy.csv is a snapshot of the hierarchy as the CIMS project
+records/cims-hierarchy.csv is a snapshot of the hierarchy as the CIMS project
 keeps it. Replace the file with the latest copy whenever it changes; the build
 then
 
   * stamps the snapshot it used (row count and a content hash) in
     output/hierarchy-stamp.csv,
   * reports the nodes added and removed since the last build, against the copy
-    output/cims_hierarchy.csv, the copy the last build wrote (views.py rewrites it
+    output/cims-hierarchy.csv, the copy the last build wrote (views.py rewrites it
     after this comparison), and
   * fails if any archetype-service row or annotation points at a path the
     snapshot no longer has.
@@ -24,7 +24,7 @@ import hashlib
 from .common import HIERARCHY, OUTPUT, read, write
 
 # written by views.build(); read here before this build overwrites it
-PREVIOUS = OUTPUT / "cims_hierarchy.csv"
+PREVIOUS = OUTPUT / "cims-hierarchy.csv"
 
 
 class Hierarchy:
@@ -59,7 +59,7 @@ def stamp(h: Hierarchy) -> dict:
     removed = sorted(set(prev) - h.set) if prev else []
     write(OUTPUT / "hierarchy-stamp.csv", ["file", "rows", "leaves", "sha256-16",
                                            "added-since-last-build", "removed-since-last-build"],
-          [{"file": "records/cims_hierarchy.csv", "rows": len(h.nodes), "leaves": len(h.leaves),
+          [{"file": "records/cims-hierarchy.csv", "rows": len(h.nodes), "leaves": len(h.leaves),
             "sha256-16": h.digest,
             "added-since-last-build": "; ".join(added),
             "removed-since-last-build": "; ".join(removed)}], quiet=True)

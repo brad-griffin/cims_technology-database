@@ -19,7 +19,7 @@ of 75 CAD per t binder is a service request to CIMS.Generic Fuels.VOM, which cos
 per unit, as the CCS nodes carry their variable cost.
 
 STATUS (Brad 2026-10-28): NOT APPLIED. The design stays in the tech_data hierarchy
-(records/cims_hierarchy.csv) and the change log (cims/hierarchy-change-requests.md)
+(records/cims-hierarchy.csv) and the change log (cims/hierarchy-change-requests.md)
 until it is built into the CIMS data processing, calibration and model scripts.
 
 Usage: python apply_cement_recipes_2026_10_27.py <cims>/data/model_inputs/model/industrial_minerals

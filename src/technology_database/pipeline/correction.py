@@ -148,7 +148,7 @@ def superseded_note(r) -> str:
 
 def propagate(facts) -> int:
     """Rows derived after normalisation from a corrected row (capture energy restated
-    per t CO2, pipeline/captureenergy.py) carry its correction-id; give them its
+    per t CO2, pipeline/capture_energy.py) carry its correction-id; give them its
     assumption factor too, so the class and the counts agree."""
     from . import convert
     fclass = {f["factor-id"]: (f.get("class") or "").strip() for f in read(REFERENCE / "conversion-factor.csv")}

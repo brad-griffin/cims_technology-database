@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "technology-database"
+version = "0.1.0"
+description = "Industrial technology archetypes for CIMS, summarised from published sources"
+requires-python = ">=3.10"
+dependencies = ["openpyxl"]
+
+[project.optional-dependencies]
+# the per-source extraction scripts and the marimo input template
+extraction = ["pandas", "pdfplumber", "marimo"]
+
+[project.urls]
+Repository = "https://github.com/brad-griffin/technology-database"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["technology_database*"]

@@ -36,7 +36,7 @@ from statistics import median
 from .common import REFERENCE, fnum, read, split_list
 from . import bridge, convert, heating
 from .currency import TARGET
-from .wholeplant import NEEDS_HOST
+from .whole_plant import NEEDS_HOST
 
 PER_CAPACITY = {"capex", "opex-fixed", "decommissioning-cost"}
 PER_OUTPUT = {"opex-variable", "opex-total", "cost-levelized"}
@@ -1207,7 +1207,7 @@ def normalise(facts, examples, records, units) -> None:
             r["excluded"] = (f"repeat: the source prints the same figure for "
                              f"{first[k]['example-id']} (duplicate-of); pooled once")
     # a carrier row split from a MIDDEN total goes with its total, whatever rules
-    # the total out: a ruling, a twin, a repeat (pipeline/middencarriers.py, 2026-10-24)
+    # the total out: a ruling, a twin, a repeat (pipeline/midden_carriers.py, 2026-10-24)
     for r in facts:
         if r.get("derived-kind") != "carrier-term" or r.get("excluded") == "no number":
             continue

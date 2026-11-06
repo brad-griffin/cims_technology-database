@@ -159,7 +159,7 @@ validated against the chain (s4a, rule 3).
 
 **Reference archetypes.** Type `reference` keeps the numbers for a step the CIMS hierarchy does not resolve (food evaporation). Like a component it serves no hierarchy node, and it is shown in the wide view.
 
-**No connection.** Any archetype that serves no hierarchy node (a component, a reference archetype, or one whose route the hierarchy leaves out, such as coal gasification to SNG) stays in the database; its `applies-to` reads `no connection`. It has no row in `cims_hierarchy_technology.csv`.
+**No connection.** Any archetype that serves no hierarchy node (a component, a reference archetype, or one whose route the hierarchy leaves out, such as coal gasification to SNG) stays in the database; its `applies-to` reads `no connection`. It has no row in `cims-hierarchy_technology.csv`.
 
 ## 3. Naming
 
@@ -212,7 +212,7 @@ and unit values keep `_` as their separator: `2013_GBP`.
 ## 4. Services: the CIMS hierarchy
 
 **The hierarchy.**
-- `records/cims_hierarchy.csv` is the definitive list of services and end uses.
+- `records/cims-hierarchy.csv` is the definitive list of services and end uses.
 - Replace the file with the latest copy whenever it changes.
 - The build stamps the snapshot it used, reports the nodes added and removed since
   the last build, and fails on any record pointing at a path the snapshot lacks.
@@ -847,10 +847,10 @@ compilation cites it as an original.
   Where each (parameter, target) goes, and what is dropped from the wide views, is
   `pipeline/placement.py`. Secondary parameters are in `archetype-secondary-parameter.csv`,
   not `archetype-parameter.csv`. Targets that restate the base are pooled with it first
-  (`pipeline/rollup.py`); the CHP efficiency (total CHP efficiency on CHP archetypes),
+  (`pipeline/roll_up.py`); the CHP efficiency (total CHP efficiency on CHP archetypes),
   the temperature range (temperature-min/max) and the single-stream efficiency
   (repeated in efficiency_heat or efficiency_electricity) are roll-ins on the
-  summaries (`pipeline/rollin.py`), so both CSVs carry them. In the workbook each
+  summaries (`pipeline/roll_in.py`), so both CSVs carry them. In the workbook each
   parameter's `_low`, `_high` and `_n` columns are folded into an outline group beside
   the central column, with their own header shading.
 - `product-density` and `product-energy-content` give the conversions for products
