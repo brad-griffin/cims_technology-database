@@ -53,11 +53,11 @@ database/raw-data/**/*.mhtml
 cims/reporting-accounting/context/*.xlsx
 # the retired manifest workbook is the project's own file, not a source document
 !database/raw-data/superseded/source_details.xlsx
-# intake working folders (triage lists, mapping proposals, page renders, and
-# duplicate copies), archived 2026-10-30 after the intake rounds finished
-archive/intake/high/
-archive/intake/medium/
-archive/intake/low/
+# large source tables the build does not read: kept on disk, not tracked, like
+# the PDFs (Brad 2026-11-06)
+database/raw-data/gov-usa/nrel/nrel_2019_manufacturing-thermal-energy-use-2014_end-use-temperatures.csv
+database/raw-data/gov-usa/nrel/nrel_2018_county-industrial-energy-use_*-end-use.csv
+database/raw-data/background-no-data-extracted/nrel_2018_industrial-process-heat-demand.csv
 # bulk source datasets kept beside their extractions (primary data, like the PDFs)
 database/raw-data/gov-usa/nrel/nrel_2025_annual-technology-baseline-electricity-data.csv
 database/raw-data/superseded/nrel_2024_annual-technology-baseline-electricity-data.csv

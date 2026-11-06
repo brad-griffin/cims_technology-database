@@ -1,0 +1,130 @@
+process,technology,sector,end-use,process-step,service-unit
+"Chlor-alkali electrolysis (App. 7.1b, ISTUM EL CCL HG)",electrolysis-cell_chlor-alkali-mercury,chemicals,electrochemical,electrolysis,MECU
+"Chlor-alkali electrolysis (App. 7.1b, ISTUM EL CCL DIA)",electrolysis-cell_chlor-alkali-diaphragm,chemicals,electrochemical,electrolysis,MECU
+"Chlor-alkali electrolysis (App. 7.1b, ISTUM EL CCL MB)",electrolysis-cell_chlor-alkali-membrane,chemicals,electrochemical,electrolysis,MECU
+"Chlor-alkali electrolysis (App. 7.1b, ISTUM EL CAUSTIC)",electrolysis-cell_caustic-soda-alternative,chemicals,electrochemical,electrolysis,MECU
+"Chlor-alkali electrolysis (App. 7.1b, ISTUM NONEL CAU)",reactor_caustic-soda-non-electrolytic,chemicals,material-conversion,caustic soda,MECU
+"Sodium chlorate electrolysis (App. 7.1b, ISTUM EL S - C G)",electrolysis-cell_sodium-chlorate,chemicals,electrochemical,electrolysis,t
+"Sodium chlorate electrolysis (App. 7.1b, ISTUM EL S - C M)",electrolysis-cell_sodium-chlorate,chemicals,electrochemical,electrolysis,t
+"Sodium chlorate electrolysis (App. 7.1b, ISTUM EL S - C BM)",electrolysis-cell_sodium-chlorate-bipolar-membrane,chemicals,electrochemical,electrolysis,t
+"Hydrogen peroxide (App. 7.1b, ISTUM OR HP AN)",reactor_hydrogen-peroxide-anthraquinone,chemicals,material-conversion,hydrogen peroxide,t
+"Hydrogen peroxide (App. 7.1b, ISTUM OR HP ALC)",reactor_hydrogen-peroxide-benzyl-alcohol,chemicals,material-conversion,hydrogen peroxide,t
+"Ammonia and methanol (App. 7.1b, ISTUM AMM SYN)",steam-reformer_ammonia,chemicals,material-conversion,ammonia synthesis,t
+"Ammonia and methanol (App. 7.1b, ISTUM AMV AMM)",steam-reformer_ammonia-amv,chemicals,material-conversion,ammonia synthesis,t
+"Ammonia and methanol (App. 7.1b, ISTUM METH SYN)",reactor_syngas-methanol,chemicals,material-conversion,methanol synthesis,t
+"Ammonia and methanol (App. 7.1b, ISTUM AMV METH)",reactor_syngas-methanol-amv,chemicals,material-conversion,methanol synthesis,t
+"Ammonia and methanol (App. 7.1b, ISTUM COMB AM&ME)",reactor_ammonia-methanol-combined,chemicals,material-conversion,ammonia and methanol,t
+"Ethylene cracking (App. 7.1b, ISTUM ETH CRA NG)",steam-cracker_fired-tubular,chemicals,process-heat-high-temp,steam cracking,t
+"Ethylene cracking (App. 7.1b, ISTUM ETH CRA OL)",steam-cracker_fired-tubular,chemicals,process-heat-high-temp,steam cracking,t
+"Polymerization (App. 7.1b, ISTUM POLY PROP)",reactor_polypropylene,chemicals,material-conversion,polymerization,t
+"Polymerization (App. 7.1b, ISTUM PVC LP)",reactor_polyvinyl-chloride,chemicals,material-conversion,polymerization,t
+"Polymerization (App. 7.1b, ISTUM LDPR LP)",reactor_polyethylene-ldpe,chemicals,material-conversion,polymerization,t
+"Caustic soda evaporation (App. 7.1b, ISTUM EVAP)",evaporator_multiple-effect_caustic,chemicals,drying-and-separation,evaporation,t
+"Caustic soda evaporation (App. 7.1b, ISTUM EVAP VR)",evaporator_multiple-effect_caustic-vapour-recompression,chemicals,drying-and-separation,evaporation,t
+"Sintering (App. 6.1b, ISTUM SINTER)",sinter-plant_strand,iron-and-steel,process-heat-high-temp,agglomeration,t
+"Integrated mills (App. 6.1b, ISTUM BL BOF G)",integrated-mill_blast-furnace-bof-gas,iron-and-steel,material-conversion,steelmaking,t
+"Integrated mills (App. 6.1b, ISTUM PL BOF G)",integrated-mill_plasma-smelting-bof-gas,iron-and-steel,material-conversion,steelmaking,t
+"Integrated mills (App. 6.1b, ISTUM CX BOF G)",integrated-mill_corex-bof-gas,iron-and-steel,material-conversion,steelmaking,t
+"Integrated mills (App. 6.1b, ISTUM HI BOF G)",integrated-mill_hismelt-bof-gas,iron-and-steel,material-conversion,steelmaking,t
+"Integrated mills (App. 6.1b, ISTUM UHP ECX G)",integrated-mill_corex-electric-arc-gas,iron-and-steel,material-conversion,steelmaking,t
+"Integrated mills (App. 6.1b, ISTUM UHP EFM G)",integrated-mill_midrex-electric-arc-gas,iron-and-steel,material-conversion,steelmaking,t
+"Ladle reheating and refining (App. 6.1b, ISTUM LADREH G)",preheater_ladle,iron-and-steel,process-heat-high-temp,ladle reheating,t
+"Ladle reheating and refining (App. 6.1b, ISTUM LAD REF)",furnace_ladle-metallurgy,iron-and-steel,material-conversion,ladle metallurgy,t
+"Electric arc mills (App. 6.1b, ISTUM AVE EAF G)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Electric arc mills (App. 6.1b, ISTUM H EAF G)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Electric arc mills (App. 6.1b, ISTUM U EAF WG)",electric-arc-furnace,iron-and-steel,material-conversion,steelmaking,t
+"Electric arc mills (App. 6.1b, ISTUM U EAF WLP)",electric-arc-furnace_high-efficiency,iron-and-steel,material-conversion,steelmaking,t
+"Casting (App. 6.1b, ISTUM BLM CC G)",caster_continuous,iron-and-steel,forming-and-finishing,casting,t
+"Casting (App. 6.1b, ISTUM BLM IN G)",caster_ingot,iron-and-steel,forming-and-finishing,casting,t
+"Casting (App. 6.1b, ISTUM SLB CC G)",caster_continuous,iron-and-steel,forming-and-finishing,casting,t
+"Casting (App. 6.1b, ISTUM SLB ING CG)",caster_ingot,iron-and-steel,forming-and-finishing,casting,t
+"Casting (App. 6.1b, ISTUM SLB TC G)",rolling-mill_thin-slab,iron-and-steel,forming-and-finishing,casting,t
+"Reheating furnaces (App. 6.1b, ISTUM R G REHE)",furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"Reheating furnaces (App. 6.1b, ISTUM U G REHE)",furnace_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"Reheating furnaces (App. 6.1b, ISTUM IND G REHE)",induction-heater_reheating,iron-and-steel,process-heat-high-temp,reheating,t
+"Reheating furnaces (App. 6.1b, ISTUM DR G REHE)",rolling-mill_hot-charging,iron-and-steel,process-heat-high-temp,reheating,t
+"Rolling and pickling (App. 6.1b, ISTUM ROUG M)",rolling-mill_hot,iron-and-steel,forming-and-finishing,rolling,t
+"Rolling and pickling (App. 6.1b, ISTUM FIN M)",rolling-mill_hot,iron-and-steel,forming-and-finishing,rolling,t
+"Rolling and pickling (App. 6.1b, ISTUM PICKLE)",pickling-line_acid,iron-and-steel,forming-and-finishing,pickling,t
+"Cold rolling and annealing (App. 6.1b, ISTUM COLD R G)",rolling-mill_cold,iron-and-steel,forming-and-finishing,rolling,t
+"Cold rolling and annealing (App. 6.1b, ISTUM ANNEA B G)",annealing-furnace_batch-bell,iron-and-steel,process-heat-high-temp,annealing,t
+"Cold rolling and annealing (App. 6.1b, ISTUM ANNEA C G)",annealing-furnace_continuous,iron-and-steel,process-heat-high-temp,annealing,t
+"Oxygen (App. 6.1b, ISTUM CRYO AIR)",air-separation-unit,iron-and-steel,material-conversion,air separation,t
+"Chemical pulp digesters (App. 3.1b, ISTUM KR BA)",digester_batch-kraft,pulp-and-paper,material-conversion,pulping,t
+"Chemical pulp digesters (App. 3.1b, ISTUM KR CO)",digester_continuous-kraft,pulp-and-paper,material-conversion,pulping,t
+"Chemical pulp digesters (App. 3.1b, ISTUM AL/OX)",digester_alkaline-oxygen,pulp-and-paper,material-conversion,pulping,t
+"Chemical pulp digesters (App. 3.1b, ISTUM NS BA)",digester_semi-chemical,pulp-and-paper,material-conversion,pulping,t
+"Chemical pulp digesters (App. 3.1b, ISTUM NS CO)",digester_semi-chemical,pulp-and-paper,material-conversion,pulping,t
+"Mechanical pulping (App. 3.1b, ISTUM TMP I)",pulper_thermomechanical,pulp-and-paper,material-conversion,pulping,t
+"Mechanical pulping (App. 3.1b, ISTUM TMP II)",pulper_thermomechanical,pulp-and-paper,material-conversion,pulping,t
+"Mechanical pulping (App. 3.1b, ISTUM GRO)",pulper_groundwood,pulp-and-paper,material-conversion,pulping,t
+"Mechanical pulping (App. 3.1b, ISTUM RMP)",pulper_refiner-low-energy,pulp-and-paper,material-conversion,pulping,t
+"Mechanical pulping (App. 3.1b, ISTUM C/TMP EXPL)",pulper_chemi-thermomechanical,pulp-and-paper,material-conversion,pulping,t
+"Recycled fibre deinking (App. 3.1b, ISTUM RPWDI/W)",pulper_recycled-fibre,pulp-and-paper,material-conversion,pulping,t
+"Recycled fibre deinking (App. 3.1b, ISTUM RPWDI/F)",pulper_recycled-fibre-flotation,pulp-and-paper,material-conversion,pulping,t
+"Pulp bleaching (App. 3.1b, ISTUM CEDED C)",reactor_conventional-chlorine-bleaching,pulp-and-paper,material-conversion,bleaching,t
+"Pulp bleaching (App. 3.1b, ISTUM CEDED D)",reactor_chlorine-displacement-bleaching,pulp-and-paper,material-conversion,bleaching,t
+"Pulp bleaching (App. 3.1b, ISTUM ODED D)",reactor_ecf-bleaching,pulp-and-paper,material-conversion,bleaching,t
+"Pulp bleaching (App. 3.1b, ISTUM ODE D)",reactor_ecf-bleaching,pulp-and-paper,material-conversion,bleaching,t
+"Pulp bleaching (App. 3.1b, ISTUM CEH C)",reactor_conventional-chlorine-bleaching,pulp-and-paper,material-conversion,bleaching,t
+"Market pulp dryers (App. 3.1b, ISTUM PU DR ST)",dryer_market-pulp,pulp-and-paper,drying-and-separation,drying,t
+"Market pulp dryers (App. 3.1b, ISTUM PU DR STV)",dryer_market-pulp_vapour-recompression,pulp-and-paper,drying-and-separation,drying,t
+"Black liquor evaporators (App. 3.1b, ISTUM EVA II)",evaporator_multiple-effect,pulp-and-paper,drying-and-separation,evaporation,t
+"Black liquor evaporators (App. 3.1b, ISTUM EVA II AL)",vapour-recompressor_evaporation,pulp-and-paper,drying-and-separation,evaporation,t
+"Lime kilns (kraft) (App. 3.1b, ISTUM LK NG)",kiln_lime-rotary,pulp-and-paper,process-heat-high-temp,lime burning,t
+"Lime kilns (kraft) (App. 3.1b, ISTUM LK/W/NG)",kiln_lime-rotary_flash-dryer,pulp-and-paper,process-heat-high-temp,lime burning,t
+"Recovery boilers (App. 3.1b, ISTUM TOM RE II)",boiler_recovery,pulp-and-paper,steam-and-hot-water,chemical recovery,t
+"Recovery boilers (App. 3.1b, ISTUM TOM RE CO)",boiler_recovery,pulp-and-paper,steam-and-hot-water,chemical recovery,t
+"Newsprint forming and pressing (App. 3.1b, ISTUM F/P NW)",press_wet-end-newsprint,pulp-and-paper,forming-and-finishing,forming and pressing,t
+"Newsprint forming and pressing (App. 3.1b, ISTUM FEF/PEN NW)",press_shoe-extended,pulp-and-paper,forming-and-finishing,forming and pressing,t
+"Paper drying (App. 3.1b, ISTUM DRI/ST)",dryer_steam-heated,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DRII/STAL)",dryer_steam-heated_efficiency-strong,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DRII/EL)",dryer_electric-air,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DR LB/ST)",dryer_steam-heated,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DR UCP/ST)",dryer_steam-heated,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DR CP/NG)",dryer_gas-fired-hood,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DR CP/EL)",dryer_electric-air,pulp-and-paper,drying-and-separation,drying,t
+"Paper drying (App. 3.1b, ISTUM DR TI/NG)",dryer_through-air,pulp-and-paper,drying-and-separation,drying,t
+"Atmospheric distillation (App. 4.1b, ISTUM DIST ATM)",distillation-column_atmospheric-vacuum,petroleum-refining,process-heat-high-temp,crude distillation,m3
+"Atmospheric distillation (App. 4.1b, ISTUM DIST AMSE)",distillation-column_atmospheric-vacuum,petroleum-refining,process-heat-high-temp,crude distillation,m3
+"Vacuum distillation (App. 4.1b, ISTUM VAC STM)",distillation-column_atmospheric-vacuum,petroleum-refining,process-heat-high-temp,vacuum distillation,m3
+"Vacuum distillation (App. 4.1b, ISTUM VAC EFF)",distillation-column_atmospheric-vacuum,petroleum-refining,process-heat-high-temp,vacuum distillation,m3
+"Thermal cracking (App. 4.1b, ISTUM DEL COKE)",reactor_delayed-coking,petroleum-refining,material-conversion,coking,m3
+"Catalytic cracking (App. 4.1b, ISTUM FCC STD)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,m3
+"Catalytic cracking (App. 4.1b, ISTUM FCC EFF)",reactor_fluid-catalytic-cracking,petroleum-refining,material-conversion,catalytic cracking,m3
+"Hydrocracking (App. 4.1b, ISTUM HC STD MD)",reactor_hydrocracking-standard,petroleum-refining,material-conversion,hydrocracking,m3
+"Desulfurization (App. 4.1b, ISTUM HYD GOLOS)",reactor_hydrotreating-fixed-bed,petroleum-refining,material-conversion,hydrotreating,m3
+"Alkylation (App. 4.1b, ISTUM ALK HF)",reactor_alkylation-isomerization,petroleum-refining,material-conversion,alkylation,m3
+"Isomerization (App. 4.1b, ISTUM ISOMER’N)",reactor_alkylation-isomerization,petroleum-refining,material-conversion,isomerization,m3
+"Catalytic reforming (App. 4.1b, ISTUM CAT REF)",reactor_catalytic-reforming,petroleum-refining,material-conversion,catalytic reforming,m3
+"Cement kilns (App. 8.1b, ISTUM R W ST)",kiln_legacy,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R W STSE)",kiln_legacy,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R LD ST)",kiln_legacy,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R LD PC)",kiln_legacy,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R D PH)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R D PC)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker burning,t
+"Cement kilns (App. 8.1b, ISTUM R D HC W/C)",kiln_dry-precalciner,cement,process-heat-high-temp,clinker burning,t
+"Cement grinding (App. 8.1b, ISTUM RAW B MILD)",grinding-mill_ball,cement,material-conversion,raw grinding,t
+"Cement grinding (App. 8.1b, ISTUM RAW R MILD)",grinding-mill_vertical-roller,cement,material-conversion,raw grinding,t
+"Cement grinding (App. 8.1b, ISTUM FIN B MILL)",grinding-mill_ball,cement,material-conversion,finish grinding,t
+"Cement grinding (App. 8.1b, ISTUM FIN R MILL)",grinding-mill_vertical-roller,cement,material-conversion,finish grinding,t
+"Lime kilns (App. 8.1b, ISTUM LIME NG)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime burning,t
+"Lime kilns (App. 8.1b, ISTUM LIME PH NG)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime burning,t
+"Lime kilns (App. 8.1b, ISTUM LIME CO)",kiln_lime-long-rotary,non-metallic-minerals,process-heat-high-temp,lime burning,t
+"Lime kilns (App. 8.1b, ISTUM LIME PH CO)",kiln_lime-rotary-preheater,non-metallic-minerals,process-heat-high-temp,lime burning,t
+"Metal mining (App. 5.1b, ISTUM MU MILL)",grinding-mill_sag-ball,mining,material-conversion,grinding,t
+"Metal mining (App. 5.1b, ISTUM MU MILL CC)",grinding-mill_sag-ball,mining,material-conversion,grinding,t
+"Metal mining (App. 5.1b, ISTUM MO MILL)",grinding-mill_sag-ball,mining,material-conversion,grinding,t
+"Metal mining (App. 5.1b, ISTUM MU TRANS DI)",haul-truck_diesel-fleet,mining,material-conversion,haulage,t
+"Metal mining (App. 5.1b, ISTUM MO TRANS DI)",haul-truck_diesel-fleet,mining,material-conversion,haulage,t
+"Metal mining (App. 5.1b, ISTUM MUG ROT DRY)",dryer_rotary-direct-fired,mining,drying-and-separation,drying,t
+"Oil sands and crude oil (App. 5.1b, ISTUM BIT UP C)",reactor_integrated-upgrader,mining,material-conversion,upgrading,t
+"Oil sands and crude oil (App. 5.1b, ISTUM BIT NONUP)",separator_warm-water-extraction,mining,material-conversion,extraction,t
+"Steam generation (App. 2.2, ISTUM BL NG I)",boiler_fuel-fired,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM BL NG IA)",boiler_fuel-fired_efficiency-moderate,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM BL LS I)",boiler_fuel-fired,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM BL HF I)",boiler_solid-fuel,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM BL CL I)",boiler_solid-fuel,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM BL ELEC)",boiler_electric,heat-supply,steam-and-hot-water,steam generation,GJ steam
+"Steam generation (App. 2.2, ISTUM CO NG I)",steam-turbine_back-pressure,heat-supply,power-generation,cogeneration,GJ steam
+"Steam generation (App. 2.2, ISTUM COG NG IV)",steam-turbine_back-pressure,heat-supply,power-generation,cogeneration,GJ steam

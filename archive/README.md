@@ -41,10 +41,17 @@ The documents that recorded each decision, dated by when the work started:
 Copies of the design files taken before two earlier revisions:
 `2026-09-16_pre-harmonization` and `2026-09-22_pre-revision-7`.
 
-## intake/ (not tracked)
+## intake-records/
 
-The intake working folders `high/`, `medium/`, and `low/`, moved from
-`database/raw-data/_high`, `_medium`, and `_low` on 2026-10-30 after the intake rounds
-finished: triage lists, mapping proposals, extraction specs, page renders, and
-duplicate copies of held documents. Every source document in them is either held in
-`database/raw-data/` or recorded as a duplicate in its triage list.
+What was kept of the intake working folders (`high/`, `medium/`, `low/`) when they were
+deleted on 2026-11-06 (Brad):
+
+| Path | What it is |
+| - | - |
+| `triage/` | The five triage lists, one per intake round, prefixed by the folder they came from. |
+| `excluded-extractions/` | The two extractions stopped before loading: CIEEDAC 2000 (M.K. Jaccard and Associates) and Element Energy 2021 (N-ZIP model assumptions log, CCC). |
+
+Every source document in the intake folders was held in `database/raw-data/` or logged as a
+duplicate in its triage list, except the two CIEEDAC 2000 PDFs, which moved to
+`database/raw-data/background-no-data-extracted/` (CIEEDAC 2000 is in the background register).
+Page renders, scratch scripts, and duplicate copies were deleted.
