@@ -81,8 +81,12 @@ vendor designs and product names are never archetypes.
   carrier rows), not the variant's, and the capture plant's energy comes through
   the request. The only additions on the CIMS capture technology are the costs and
   energy the capture node's archetypes do not include, listed in
-  `records/reference/ccs-addon-extra.csv` (the oxy-fired FCC's air separation
-  unit, per t CO2 captured). The database variant stays the whole plant, so its
+  `records/reference/ccs-addon-extra.csv`, per t CO2 captured: the oxy-fired
+  FCC's air separation unit, and the lime kiln's capture heat-supply premium
+  (about 105 CAD of capital per t CO2 captured a year). A row with `applies` =
+  `tier-2` is a premium the variant's same-source add-on already includes, so the
+  fill adds it only to an add-on taken from the capture node; the export always
+  adds it. The database variant stays the whole plant, so its
   levelized cost compares with the host's.
 - The capture plant itself is a `capture-unit` archetype serving the matching
   `service.ccs.*` node. Its `capture-rate` is the share of the CO2 entering it that

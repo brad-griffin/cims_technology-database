@@ -1733,13 +1733,16 @@ def _tier1(k, host, p, unit, ctx):
 def _ccs_extra(k, p, t=""):
     """An add-on a capture variant needs beyond the capture node's plant, per t CO2
     captured (records/reference/ccs-addon-extra.csv): the air separation unit of
-    an oxy-fired host (S169, Brad 2026-10-28). Returns (central, low, high, note)
-    or None."""
+    an oxy-fired host (S169, Brad 2026-10-28), or a host-specific premium such as
+    a lime kiln's capture heat supply. Returns (central, low, high, note, applies)
+    or None; applies = "tier-2" means the fill adds it only to a capture-node
+    add-on (the CIMS export always adds it)."""
     for r in read(RECORDS / "reference" / "ccs-addon-extra.csv"):
         if r["archetype"] == k and r["parameter"] == p and (r.get("target") or "") == t:
             c = fnum(r["value"])
             lo, hi = fnum(r.get("value-min")), fnum(r.get("value-max"))
-            return c, (lo if lo is not None else c), (hi if hi is not None else c), r.get("note", "")
+            return (c, (lo if lo is not None else c), (hi if hi is not None else c), r.get("note", ""),
+                    (r.get("applies") or "").strip())
     return None
 
 
@@ -1807,6 +1810,11 @@ def pm_ccs_cost(rule, psum, records, target_unit, ctx, stats):
             stats["ccs add-on not derivable"] = stats.get("ccs add-on not derivable", 0) + 1
             continue
         x = _ccs_extra(k, p)
+        if x and x[4] == "tier-2" and t1:
+            # a premium the same-source add-on already includes (applies = tier-2):
+            # added only on a capture-node add-on, and always in the CIMS export
+            # (Brad 2026-11-06, IM18)
+            x = None
         if x and cap:
             ac, al, ah = ac + x[0] * cap[0], al + x[1] * cap[1], ah + x[2] * cap[2]
             ag = worst([ag, "guess"])
