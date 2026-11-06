@@ -37,7 +37,7 @@ dotted, dropping grouping folders and the `technology/` leaf.
 Currency and unit values keep the underscore as their component separator by the
 same rule (`2015_CAD`, `k_pkm`).
 
-The full statement of the rule is in `database/docs/design.md` (Naming). Extraction names
-use the terms in `database/raw-data/extraction-vocabulary.csv`; archetype names use the
-vocabularies in `database/harmonized/records/vocabulary/`. Run
-`python database/raw-data/check-names.py` from the repo root to check the tree.
+The full statement of the rule is in `src/technology_database/docs/design.md` (Naming). Extraction names
+use the terms in `data/raw_data/technology_database/extraction-vocabulary.csv`; archetype names use the
+vocabularies in `data/technology_database/vocabulary/`. Run
+`python src/technology_database/extraction/check_names.py` from the repo root to check the tree.

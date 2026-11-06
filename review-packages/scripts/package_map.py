@@ -11,7 +11,10 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-HARM = ROOT / "database" / "harmonized"
+RECORDS = ROOT / "data" / "technology_database"
+OUTPUT = ROOT / "data" / "processed_data" / "technology_database"
+PACKAGE = ROOT / "src" / "technology_database"
+HARM = PACKAGE   # kept for older imports
 
 BREWERY_EXCLUDE = ("light-industrial.service.heat.drying", "light-industrial.service.heat.metal-melting",
                    "light-industrial.service.heat.heat-treatment", "light-industrial.service.heat.forming-pressing")
@@ -68,17 +71,17 @@ def load():
     ann = defaultdict(set)
     branches = {}
     asector = {}
-    for r in _read(HARM / "records" / "hierarchy-annotation.csv"):
+    for r in _read(RECORDS / "hierarchy-annotation.csv"):
         ann[r["label"] or r["annotation"]].add(r["annotation"])
         asector[r["annotation"]] = r["sector"]
         branches[r["annotation"]] = [b.strip() for b in r["branches"].split(";") if b.strip()]
     app = defaultdict(set)
     allnodes = defaultdict(set)
-    for r in _read(HARM / "output" / "archetype-application.csv"):
+    for r in _read(OUTPUT / "archetype-application.csv"):
         n = ".".join(r["node"].split(".")[1:])
         app[(r["archetype"], r["annotation"])].add(n)
         allnodes[r["archetype"]].add(n)
-    famlabel = {r["label"]: r["family"] for r in _read(HARM / "records" / "family.csv")}
+    famlabel = {r["label"]: r["family"] for r in _read(RECORDS / "family.csv")}
     return ann, branches, app, allnodes, asector, famlabel
 
 

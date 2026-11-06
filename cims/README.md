@@ -2,7 +2,7 @@
 
 What the technology database asks of the CIMS model, and the work done on the model
 itself. The database (`../database/`) does not read anything here, except that its
-hierarchy, `database/harmonized/records/cims_hierarchy.csv`, is the definitive list of
+hierarchy, `data/technology_database/cims_hierarchy.csv`, is the definitive list of
 CIMS services and end uses.
 
 | Item | Kind | What it is |

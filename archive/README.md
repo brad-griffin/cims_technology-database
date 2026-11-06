@@ -1,8 +1,8 @@
 # Archive
 
 This folder keeps the records behind the current design. Nothing here is read by
-the build. [database/docs/decisions.md](../database/docs/decisions.md) indexes the decisions, and
-[database/docs/design.md](../database/docs/design.md) states the rules now in force.
+the build. [src/technology_database/docs/decisions.md](../src/technology_database/docs/decisions.md) indexes the decisions, and
+[src/technology_database/docs/design.md](../src/technology_database/docs/design.md) states the rules now in force.
 
 The exact tree before the 2026-09-23 restructure is at the git tag
 `pre-archetype-restructure`. That includes the generated tables deleted then:
@@ -51,7 +51,7 @@ deleted on 2026-11-06 (Brad):
 | `triage/` | The five triage lists, one per intake round, prefixed by the folder they came from. |
 | `excluded-extractions/` | The two extractions stopped before loading: CIEEDAC 2000 (M.K. Jaccard and Associates) and Element Energy 2021 (N-ZIP model assumptions log, CCC). |
 
-Every source document in the intake folders was held in `database/raw-data/` or logged as a
+Every source document in the intake folders was held in `data/raw_data/technology_database/` or logged as a
 duplicate in its triage list, except the two CIEEDAC 2000 PDFs, which moved to
-`database/raw-data/background-no-data-extracted/` (CIEEDAC 2000 is in the background register).
+`data/raw_data/technology_database/background-no-data-extracted/` (CIEEDAC 2000 is in the background register).
 Page renders, scratch scripts, and duplicate copies were deleted.

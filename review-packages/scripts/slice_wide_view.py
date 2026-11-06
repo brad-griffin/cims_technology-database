@@ -2,7 +2,7 @@
 
     python review-packages/scripts/slice_wide_view.py <package> [build-label]
 
-Reads database/harmonized/output/technology-database.xlsx (never edits it) and
+Reads data/processed_data/technology_database/technology-database.xlsx (never edits it) and
 writes review-packages/review-package_<package>/wide-view_<package>.xlsx.
 """
 import copy
@@ -15,7 +15,7 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.dimensions import ColumnDimension
 
-from package_map import EXCLUDE_BANDS, HARM, PACKAGES, ROOT, load, row_nodes
+from package_map import EXCLUDE_BANDS, HARM, OUTPUT, PACKAGES, ROOT, load, row_nodes
 
 warnings.filterwarnings("ignore")
 FIRST_BODY = 8          # rows 1-7 are the banner and the header block
@@ -247,7 +247,7 @@ def widen_notes(wb):
 def legend_sheet(wb, sheets):
     ws = wb.create_sheet("column-legend", 1)
     rows = []
-    for r in csv.DictReader(open(HARM / "output" / "column-legend.csv", encoding="utf-8-sig")):
+    for r in csv.DictReader(open(OUTPUT / "column-legend.csv", encoding="utf-8-sig")):
         if r["column"] in DROP_COLS:
             continue
         if r["sheet"] == "archetypes":
@@ -313,7 +313,7 @@ def readme(ws, package, title, build, sheets, n_rows, n_arch):
 def main(package, build):
     title, test = PACKAGES[package]
     ctx = load()
-    wb = openpyxl.load_workbook(HARM / "output" / "technology-database.xlsx")
+    wb = openpyxl.load_workbook(OUTPUT / "technology-database.xlsx")
     wanted = ["readme", *WIDE] + (["source-list"] if package == "whole-database" else [])
     for s in list(wb.sheetnames):
         if s not in wanted:

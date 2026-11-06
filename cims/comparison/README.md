@@ -1,7 +1,7 @@
 # CIMS model inputs: the later comparison stage
 
 Parked here on 2026-09-23. **Nothing in this folder feeds the database.** The CIMS
-hierarchy (`database/harmonized/records/cims_hierarchy.csv`) is the definitive list of
+hierarchy (`data/technology_database/cims_hierarchy.csv`) is the definitive list of
 CIMS services and end uses. The CIMS model inputs predate it and are out of date,
 so they are not used to decide which technologies the database holds.
 
@@ -11,14 +11,14 @@ database's.
 
 | File | What it is |
 | - | - |
-| `extract-cims-roster.py` | Reads the model inputs in the `data_processing_calibration` repo (`cims/data/model_inputs/model/`) and writes `cims-roster.csv`, one row per distinct technology, region-collapsed. |
-| `build-cims-map.py` | A rules engine that names each CIMS technology in the extraction form `equipment_carrier_variant`. It writes `cims-map.csv`. |
+| `extract_cims_roster.py` | Reads the model inputs in the `data_processing_calibration` repo (`cims/data/model_inputs/model/`) and writes `cims-roster.csv`, one row per distinct technology, region-collapsed. |
+| `build_cims_map.py` | A rules engine that names each CIMS technology in the extraction form `equipment_carrier_variant`. It writes `cims-map.csv`. |
 | `cims-map.csv`, `cims-roster.csv` | Its output as of 2026-08-27. |
-| `build-cims-review.py`, `cims-review.md` | The rename / merge / remove advice as of 2026-09-22. |
+| `build_cims_review.py`, `cims-review.md` | The rename / merge / remove advice as of 2026-09-22. |
 
 ## Before this stage is picked up again
 
-- `build-cims-review.py` compares against the retired source roster (`source-roster/`,
+- `build_cims_review.py` compares against the retired source roster (`source-roster/`,
   deleted 2026-09-23 and still in git at the tag `pre-archetype-restructure`). It
   needs rewriting against `records/archetype.csv` and `output/archetype-parameter.csv`.
 - Two findings from the retired pipeline belong here:
@@ -26,12 +26,12 @@ database's.
     flow on an archetype, not an example of one;
   - **merge-review**: CIMS sub-types (motor, fan, pump and compressor types) have no
     slot in an archetype name. They would be examples of one archetype.
-- `classify()` in `build-cims-map.py` also names technologies in four extractors
-  (`database/raw-data/other-reports/ukerc-extract.py`, `bataille-extract.py`,
-  `database/raw-data/iea/iea-guide-extract.py`, `database/raw-data/peer-reviewed/ipcc-extract.py`),
+- `classify()` in `build_cims_map.py` also names technologies in four extractors
+  (`data/raw_data/technology_database/other-reports/ukerc-extract.py`, `bataille-extract.py`,
+  `data/raw_data/technology_database/iea/iea-guide-extract.py`, `data/raw_data/technology_database/peer-reviewed/ipcc-extract.py`),
   which load it from here. If this folder is ever removed, move `classify()` and its
-  rule tables into `database/raw-data/` first.
-- `build-cims-map.py` validates names against `database/raw-data/extraction-vocabulary.csv`.
+  rule tables into `data/raw_data/technology_database/` first.
+- `build_cims_map.py` validates names against `data/raw_data/technology_database/extraction-vocabulary.csv`.
 
 ## 2026-10-14: the comparison
 

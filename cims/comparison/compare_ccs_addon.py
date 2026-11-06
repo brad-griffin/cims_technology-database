@@ -22,7 +22,7 @@ import csv, glob, os, re, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 OUT = os.path.join(HERE, 'comparison')
-H = os.path.join(ROOT, 'database', 'harmonized', 'output')
+H = os.path.join(ROOT, 'data', 'processed_data', 'technology_database')
 RATE, INFL = 0.08, 124.400255 / 100.0
 UNIT = {('tonne', 't'): 1, ('GJ', 'GJ'): 1, ('m3 of RPP', 'm3'): 1, ('kt', 't'): 1e-3, ('tCO2', 't'): 1}
 

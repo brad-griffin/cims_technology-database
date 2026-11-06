@@ -12,7 +12,7 @@ What it adds to each province file:
     rotary kiln calciner) and Products.Cement.Ground Slag (slag drying and grinding).
 The existing techs (Std process, Carbon curing, Increased clinker substitution) stay
 for calibration. Values are the database's central values (2025 CAD), from
-database/harmonized/output after the S121 build. The clinker request is scaled by the
+data/processed_data/technology_database after the S121 build. The clinker request is scaled by the
 province's own clinker per t Portland cement over 0.95. The alkali activator is a
 cost only (Brad 2026-10-28: the sectors are not linked): the database's opex-variable
 of 75 CAD per t binder is a service request to CIMS.Generic Fuels.VOM, which costs $1

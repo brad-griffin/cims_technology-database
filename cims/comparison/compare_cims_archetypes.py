@@ -1,7 +1,7 @@
 """Compare CIMS model-input technology values with the database archetypes they map to.
 
 Inputs : comparison/cims-values.csv (extract_cims_values.py), comparison/mapping/*.csv,
-         database/harmonized/output/archetype*.csv
+         data/processed_data/technology_database/archetype*.csv
 Outputs: comparison/comparison-long.csv       one row per CIMS technology x quantity
          comparison/comparison-archetype.csv  one row per archetype x quantity (same/close matches)
 
@@ -29,7 +29,7 @@ def f(x):
     except (TypeError, ValueError):
         return None
 
-H = os.path.join(ROOT, 'database', 'harmonized', 'output')
+H = os.path.join(ROOT, 'data', 'processed_data', 'technology_database')
 arch = {r['archetype']: r for r in csv.DictReader(open(os.path.join(H, 'archetype.csv'), encoding='utf-8-sig'))}
 par = collections.defaultdict(dict)
 for r in csv.DictReader(open(os.path.join(H, 'archetype-parameter.csv'), encoding='utf-8-sig')):

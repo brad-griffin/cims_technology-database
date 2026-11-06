@@ -6,7 +6,7 @@ import sys
 import openpyxl
 from collections import Counter, OrderedDict
 
-from package_map import HARM, ROOT
+from package_map import HARM, OUTPUT, RECORDS, ROOT
 
 CROSS = {"heat-supply", "power-generation", "machine-drive", "space-conditioning", "lighting",
          "mobile-equipment", "co2-capture"}
@@ -20,13 +20,13 @@ def rd(p):
 # archetypes sheet from archetype-parameter.csv (the wide CSVs are gone, Brad 2026-11-06)
 sys.path.insert(0, str(HARM))
 from pipeline.placement import placement  # noqa: E402
-wide = {r["archetype"]: dict(r, guesses=0) for r in rd(HARM / "output" / "archetype.csv")}
-for r in rd(HARM / "output" / "archetype-parameter.csv"):
+wide = {r["archetype"]: dict(r, guesses=0) for r in rd(OUTPUT / "archetype.csv")}
+for r in rd(OUTPUT / "archetype-parameter.csv"):
     if r.get("grade") == "guess" and r["archetype"] in wide and placement(r["parameter"], r["target"]) == "main":
         wide[r["archetype"]]["guesses"] += 1
-arch = {r["archetype"]: r for r in rd(HARM / "records" / "archetype.csv")}
-ex = rd(HARM / "output" / "example.csv")
-src = {r["source-id"]: r for r in rd(HARM / "output" / "source-list.csv")}
+arch = {r["archetype"]: r for r in rd(RECORDS / "archetype.csv")}
+ex = rd(OUTPUT / "example.csv")
+src = {r["source-id"]: r for r in rd(OUTPUT / "source-list.csv")}
 out = {}
 for pkg in ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemicals", "conventional-oil", "oil-sands", "natural-gas", "biofuels", "hydrogen", "mining", "aluminum", "petroleum-refining", "whole-database"]:
     rows = rd(ROOT / "review-packages" / "scripts" / f"rows_{pkg}.csv")
