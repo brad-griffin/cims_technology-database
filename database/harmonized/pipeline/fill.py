@@ -1884,6 +1884,19 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
                                worst([g, r.get("grade", "sourced")]), rule,
                                [_input(r, f"{host} {p}" + (f"_{t}" if t else "")), f"add-on {extra:.4g}"] + ins,
                                r.get("sources", "")), stats, rule["rule-id"])
+        # the fuel aggregate follows the host's named fuels where the host has no
+        # `fuel` row of its own, so a sourced `fuel` on the variant (a whole plant
+        # with capture) moves to as-sourced and the carriers add up (Brad 2026-11-06)
+        if "fuel" not in written:
+            from .carriers import NO_HV_CARRIERS, FUEL_AGG
+            named = [r for (q, t), r in hh.items() if q == p and t and t not in NO_HV_CARRIERS
+                     and t != FUEL_AGG and not is_component_target(t) and not t.startswith("as-sourced")
+                     and _live(r) and not _apart(r)]
+            if named:
+                lo3 = [sum(_lohi(r)[i] for r in named) for i in range(3)]
+                _put(psum, h, _row(k, p, FUEL_AGG, tot["unit"], *lo3, worst([g] + [r.get("grade", "sourced") for r in named]), rule,
+                                   [f"sum of {host}'s named fuels"] + ins, ""), stats, rule["rule-id"])
+                written.add("fuel")
         for t, s in sh.items():
             # a capture carrier the host has no live row for in its total (none, or
             # one pooled apart, as the steam reformer's zero steam) still gets the

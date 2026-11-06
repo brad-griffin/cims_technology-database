@@ -201,9 +201,9 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 24,
    "lighting": 7,
+   "space-conditioning": 7,
    "machine-drive": 3
   }
  },
@@ -341,7 +341,7 @@
     "n": "7",
     "trl": "7",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -819,11 +819,11 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 23,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "pulp-and-paper": {
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 24,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 4
+   "co2-capture": 4,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "cement-and-lime": {
@@ -1677,10 +1677,10 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "space-conditioning": 7,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "chemicals": {
@@ -2235,11 +2235,11 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 23,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "conventional-oil": {
@@ -2485,8 +2485,8 @@
   "n_examples": 59,
   "cross_families": {
    "heat-supply": 23,
-   "co2-capture": 8,
-   "machine-drive": 3
+   "machine-drive": 3,
+   "co2-capture": 8
   }
  },
  "oil-sands": {
@@ -3328,9 +3328,9 @@
   "n_examples": 819,
   "cross_families": {
    "heat-supply": 5,
+   "co2-capture": 8,
    "machine-drive": 10,
-   "mobile-equipment": 6,
-   "co2-capture": 8
+   "mobile-equipment": 6
   }
  },
  "biofuels": {
@@ -4206,10 +4206,10 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "power-generation": 12,
-   "space-conditioning": 7,
    "heat-supply": 23,
    "lighting": 7,
+   "space-conditioning": 7,
+   "power-generation": 12,
    "machine-drive": 9
   }
  },
@@ -4485,11 +4485,11 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 23,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "petroleum-refining": {
@@ -4774,11 +4774,11 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "space-conditioning": 7,
    "heat-supply": 30,
    "lighting": 7,
-   "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7,
+   "machine-drive": 8
   }
  },
  "whole-database": {
@@ -6955,7 +6955,7 @@
     "n": "7",
     "trl": "7",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -7955,7 +7955,7 @@
     "n": "1",
     "trl": "8",
     "unit": "t",
-    "guesses": 7
+    "guesses": 8
    },
    {
     "band": "Leaching and electrowinning",
@@ -9633,13 +9633,13 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
-   "lighting": 7,
+   "co2-capture": 13,
    "heat-supply": 34,
    "space-conditioning": 7,
+   "lighting": 7,
+   "power-generation": 13,
    "machine-drive": 13,
-   "co2-capture": 13,
-   "mobile-equipment": 6,
-   "power-generation": 13
+   "mobile-equipment": 6
   }
  },
  "_totals": {
