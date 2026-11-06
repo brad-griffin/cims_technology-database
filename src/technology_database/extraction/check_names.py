@@ -137,6 +137,23 @@ def check_label(name: str, where: str) -> None:
             return
 
 
+def _manifest_stems() -> set[str]:
+    """Every document stem the file manifest names (its sidecars are recognised by it,
+    with or without the document on the disk)."""
+    out = set()
+    for name, col in (("source-details_files.csv", "file_on_disk"),
+                      ("source-details_reference.csv", "file_on_disk"),
+                      ("background-register.csv", "file")):
+        p = RAW / name
+        if p.exists():
+            with p.open(encoding="utf-8-sig", newline="") as fh:
+                out |= {Path(r.get(col) or "").name.rsplit(".", 1)[0] for r in csv.DictReader(fh)}
+    return out
+
+
+MANIFEST_STEMS = _manifest_stems()
+
+
 def twin_dirs(folder: Path) -> list[Path]:
     """A raw-data folder and its primary-sources twin (the document sits in one,
     the extraction in the other)."""
@@ -271,9 +288,10 @@ def main() -> int:
         rel = path.relative_to(ROOT).as_posix()
         if parts and parts[-1] == "meta":     # reserved sidecar marker
             parts = parts[:-1]
-        elif len(parts) >= 4 and path.suffix.lower() == ".csv" and any(
+        elif len(parts) >= 4 and path.suffix.lower() == ".csv" and (
+                "_".join(parts[:-1]) in MANIFEST_STEMS or any(
                 f != path and f.is_file() for d in twin_dirs(path.parent)
-                for f in d.glob("_".join(parts[:-1]) + ".*")):
+                for f in d.glob("_".join(parts[:-1]) + ".*"))):
             # An extraction sidecar (<source stem>_nodes.csv, _flows.csv, ...): a file
             # with the source stem sits beside it (the document in any format, or the
             # main extraction), so the last component names the sidecar, as '_meta'

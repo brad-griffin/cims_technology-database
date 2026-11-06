@@ -76,7 +76,9 @@ def main() -> int:
         rel = f"{d['file_path']}/{on_disk}" if d["file_path"] else on_disk
         # a source document is checked only where primary-sources/ is on this disk
         # (an FRDR download holds the extractions alone)
-        if find(rel) is None and (PRIMARY.is_dir() or on_disk.endswith(".csv")):
+        # an extraction is a .csv the manifest does not describe as a source file
+        extraction = on_disk.endswith(".csv") and not (d.get("description") or "").startswith("source")
+        if find(rel) is None and (PRIMARY.is_dir() or extraction):
             fail["file recorded but missing"].append(rel)
 
     ref = read(REFERENCE)
