@@ -744,11 +744,11 @@ est-end-use-annual-output,steam-turbine_back-pressure,annual-output,85147,169272
 est-end-use-annual-output,turboexpander_ngl-recovery,annual-output,927200,95010,27330,1.849e+06,yes,0.10247,"end use gas-processing: median of 3 archetypes: adsorber_molecular-sieve, gas-treatment-unit_amine-sweetening, gas-treatment-unit_glycol-dehydration"
 est-end-use-annual-output,well_cyclic-steam,annual-output,1.207e+06,647700,215900,1.9431e+06,yes,0.53662,end use in-situ-bitumen: median of 1 archetypes: well_sagd
 est-end-use-annual-output,well_sagd,annual-output,647700,1.207e+06,402333,3.621e+06,yes,1.86352,end use in-situ-bitumen: median of 1 archetypes: well_cyclic-steam
-est-sibling-efficiency,boiler_electric,efficiency,99,80.7107,51,98.803,no,0.81526,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
-est-sibling-efficiency,boiler_fuel-fired,efficiency,81.9214,79.5,67.575,91.425,yes,0.970442,tier 1: boiler_fuel-fired_efficiency-moderate
-est-sibling-efficiency,boiler_fuel-fired_efficiency-moderate,efficiency,79.5,81.9214,51,95,yes,1.03046,boiler_fuel-fired efficiency (sourced); the host's efficiency
-est-sibling-efficiency,boiler_oxy-fuel,efficiency,78.0461,82.6239,51,100,yes,1.05865,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
-est-sibling-efficiency,boiler_solid-fuel,efficiency,83.3263,80.7107,51,100,yes,0.96861,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
+est-sibling-efficiency,boiler_electric,efficiency,99,82.6239,51,98.803,no,0.834584,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
+est-sibling-efficiency,boiler_fuel-fired,efficiency,81.9214,87.2154,74.1331,100.298,yes,1.06462,tier 1: boiler_fuel-fired_efficiency-moderate
+est-sibling-efficiency,boiler_fuel-fired_efficiency-moderate,efficiency,87.2154,81.9214,51,95,yes,0.9393,boiler_fuel-fired efficiency (sourced); the host's efficiency
+est-sibling-efficiency,boiler_oxy-fuel,efficiency,78.0461,85.2708,51,100,yes,1.09257,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate"
+est-sibling-efficiency,boiler_solid-fuel,efficiency,83.3263,84.5684,51,100,yes,1.01491,"tier 2: boiler_electric, boiler_fuel-fired, boiler_fuel-fired_efficiency-moderate, boiler_oxy-fuel"
 est-sibling-efficiency,chiller_absorption,efficiency,100,525,410,700,no,5.25,"tier 2: chiller_vapour-compression, chiller_high-efficiency"
 est-sibling-efficiency,chiller_high-efficiency,efficiency,640,410,410,700,yes,0.640625,chiller_vapour-compression efficiency (sourced); the host's efficiency
 est-sibling-efficiency,chiller_vapour-compression,efficiency,410,370,68,640,yes,0.902439,"tier 2: chiller_absorption, chiller_high-efficiency"
