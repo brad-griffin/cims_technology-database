@@ -120,7 +120,20 @@ def derive(facts, records, summarise_fn) -> dict:
     # carrier split would otherwise still read (Brad 2026-11-06)
     paired = {r.get("archetype") for r, *_ in queued if r["note"].startswith("BUCKET of 1 same-source pair")
               and (records.by_key.get(r.get("archetype")) or {}).get("type") == "efficient variant"}
+    # except a variant whose sources show the step shifting the mix
+    # (variant-own-carriers.csv): it keeps the carrier rows of its own examples
+    # that report electricity and a fuel both, and the carrier split scales them
+    # to the derived total (Brad 2026-11-06)
+    own = {r["archetype"] for r in read(REFERENCE / "variant-own-carriers.csv")}
+    both = defaultdict(set)
     for x in facts:
+        t = (x.get("target-norm") or "").strip()
+        if x.get("archetype") in own and x["parameter"] == SEC and t and x.get("value-norm") and not x.get("excluded"):
+            both[x.get("example-id")].add("electricity" if t == "electricity" else "steam" if t in ("steam", "heat") else "fuel")
+    keep = {e for e, g in both.items() if "electricity" in g and "fuel" in g}
+    for x in facts:
+        if x.get("archetype") in own and x.get("example-id") in keep:
+            continue
         if (x.get("archetype") in paired and x["parameter"] == SEC and (x.get("target-norm") or "").strip()
                 and (not x.get("excluded") or x["excluded"].startswith("repeat:"))):
             x["excluded"] = ("a carrier level of an efficient variant set on same-source savings: its "

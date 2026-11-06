@@ -673,7 +673,7 @@ Rules in force (2026-10-09), in the order they run:
   improved level against the base level, total against total where the source
   gives totals, else on its main carrier). The variant's absolute levels with no
   same-source base are ruled out (`excluded-row.csv`), and so are its own carrier
-  rows: its carriers come from the host's split of the derived total. A pair
+  rows: its carriers come from the host's split of the derived total. The exception is a variant whose sources show the step shifting the mix (`variant-own-carriers.csv`; so far the scrap-preheating arc furnace, which trades electricity for burner fuel): it keeps the carrier rows of its own examples that report electricity and a fuel both, scaled to the derived total. A pair
   outside 0–90% is not applied. An archetype whose sources describe a different
   technology rather than a step on the host is typed `alternative` and keeps its
   own absolute pool (14 retyped; `reviews/efficiency-variant-ratio-test_2026-11-06.csv`).

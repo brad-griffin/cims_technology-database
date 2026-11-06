@@ -203,8 +203,8 @@
   "cross_families": {
    "heat-supply": 24,
    "space-conditioning": 7,
-   "machine-drive": 3,
-   "lighting": 7
+   "lighting": 7,
+   "machine-drive": 3
   }
  },
  "steel": {
@@ -545,16 +545,6 @@
    },
    {
     "band": "Casting",
-    "archetype": "rolling-mill_thin-slab",
-    "label": "Thin-slab casting with direct rolling",
-    "status": "quantified",
-    "n": "15",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Casting",
     "archetype": "caster_strip",
     "label": "Strip casting",
     "status": "quantified",
@@ -562,6 +552,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 4
+   },
+   {
+    "band": "Casting",
+    "archetype": "rolling-mill_thin-slab",
+    "label": "Thin-slab casting with direct rolling",
+    "status": "quantified",
+    "n": "15",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Reheating",
@@ -685,16 +685,6 @@
    },
    {
     "band": "Annealing and coating",
-    "archetype": "annealing-furnace_hydrogen-bell",
-    "label": "Bell annealing in a hydrogen atmosphere",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 3
-   },
-   {
-    "band": "Annealing and coating",
     "archetype": "annealing-furnace_continuous",
     "label": "Continuous annealing line",
     "status": "quantified",
@@ -702,6 +692,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 1
+   },
+   {
+    "band": "Annealing and coating",
+    "archetype": "annealing-furnace_hydrogen-bell",
+    "label": "Bell annealing in a hydrogen atmosphere",
+    "status": "quantified",
+    "n": "2",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 3
    },
    {
     "band": "Annealing and coating",
@@ -821,8 +821,8 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
-   "co2-capture": 8,
    "machine-drive": 8,
+   "co2-capture": 8,
    "lighting": 7
   }
  },
@@ -1300,8 +1300,8 @@
   "cross_families": {
    "heat-supply": 24,
    "space-conditioning": 7,
-   "co2-capture": 4,
    "machine-drive": 8,
+   "co2-capture": 4,
    "lighting": 7
   }
  },
@@ -1678,8 +1678,8 @@
   "n_examples": 508,
   "cross_families": {
    "space-conditioning": 7,
-   "co2-capture": 8,
    "machine-drive": 8,
+   "co2-capture": 8,
    "lighting": 7
   }
  },
@@ -2237,8 +2237,8 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
-   "co2-capture": 8,
    "machine-drive": 8,
+   "co2-capture": 8,
    "lighting": 7
   }
  },
@@ -3327,10 +3327,10 @@
   "n_sources": 49,
   "n_examples": 819,
   "cross_families": {
+   "mobile-equipment": 6,
    "machine-drive": 10,
    "co2-capture": 8,
-   "heat-supply": 5,
-   "mobile-equipment": 6
+   "heat-supply": 5
   }
  },
  "biofuels": {
@@ -4207,8 +4207,8 @@
   "n_examples": 163,
   "cross_families": {
    "heat-supply": 23,
-   "power-generation": 12,
    "space-conditioning": 7,
+   "power-generation": 12,
    "machine-drive": 9,
    "lighting": 7
   }
@@ -4487,8 +4487,8 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
-   "co2-capture": 8,
    "machine-drive": 8,
+   "co2-capture": 8,
    "lighting": 7
   }
  },
@@ -4776,8 +4776,8 @@
   "cross_families": {
    "heat-supply": 30,
    "space-conditioning": 7,
-   "co2-capture": 8,
    "machine-drive": 8,
+   "co2-capture": 8,
    "lighting": 7
   }
  },
@@ -6539,16 +6539,6 @@
    },
    {
     "band": "Glass melting",
-    "archetype": "furnace_oxy-fuel",
-    "label": "Oxy-fuel glass furnace",
-    "status": "quantified",
-    "n": "42",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Glass melting",
     "archetype": "furnace_regenerative_ccs-diffuse",
     "label": "Regenerative glass furnace with post-combustion capture",
     "status": "quantified",
@@ -6576,6 +6566,16 @@
     "trl": "7",
     "unit": "t",
     "guesses": 6
+   },
+   {
+    "band": "Glass melting",
+    "archetype": "furnace_oxy-fuel",
+    "label": "Oxy-fuel glass furnace",
+    "status": "quantified",
+    "n": "42",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Glass melting",
@@ -7149,16 +7149,6 @@
    },
    {
     "band": "Casting",
-    "archetype": "rolling-mill_thin-slab",
-    "label": "Thin-slab casting with direct rolling",
-    "status": "quantified",
-    "n": "15",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Casting",
     "archetype": "caster_strip",
     "label": "Strip casting",
     "status": "quantified",
@@ -7166,6 +7156,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 4
+   },
+   {
+    "band": "Casting",
+    "archetype": "rolling-mill_thin-slab",
+    "label": "Thin-slab casting with direct rolling",
+    "status": "quantified",
+    "n": "15",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Reheating",
@@ -7289,16 +7289,6 @@
    },
    {
     "band": "Annealing and coating",
-    "archetype": "annealing-furnace_hydrogen-bell",
-    "label": "Bell annealing in a hydrogen atmosphere",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 3
-   },
-   {
-    "band": "Annealing and coating",
     "archetype": "annealing-furnace_continuous",
     "label": "Continuous annealing line",
     "status": "quantified",
@@ -7306,6 +7296,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 1
+   },
+   {
+    "band": "Annealing and coating",
+    "archetype": "annealing-furnace_hydrogen-bell",
+    "label": "Bell annealing in a hydrogen atmosphere",
+    "status": "quantified",
+    "n": "2",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 3
    },
    {
     "band": "Annealing and coating",
@@ -7489,16 +7489,6 @@
    },
    {
     "band": "Crushing and grinding",
-    "archetype": "grinding-mill_hpgr",
-    "label": "HPGR-based grinding circuit",
-    "status": "quantified",
-    "n": "4",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Crushing and grinding",
     "archetype": "grinding-mill_stirred",
     "label": "Stirred fine grinding mills",
     "status": "estimated",
@@ -7506,6 +7496,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 8
+   },
+   {
+    "band": "Crushing and grinding",
+    "archetype": "grinding-mill_hpgr",
+    "label": "HPGR-based grinding circuit",
+    "status": "quantified",
+    "n": "4",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Crushing and grinding",
@@ -8059,16 +8059,6 @@
    },
    {
     "band": "Melting, casting, rolling and extrusion: metal (t)",
-    "archetype": "melting-furnace_regenerative-oxy-fuel",
-    "label": "Regenerative or oxy-fuel melting",
-    "status": "quantified",
-    "n": "17",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 5
-   },
-   {
-    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_reverberatory-rotary_efficiency-strong",
     "label": "Reverberatory or rotary melting furnace, strong efficiency measures",
     "status": "quantified",
@@ -8108,6 +8098,16 @@
     "guesses": 8
    },
    {
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
+    "archetype": "melting-furnace_regenerative-oxy-fuel",
+    "label": "Regenerative or oxy-fuel melting",
+    "status": "quantified",
+    "n": "17",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 5
+   },
+   {
     "band": "Smelter acid plant",
     "archetype": "reactor_sulphuric-acid-metallurgical",
     "label": "Smelter sulphuric acid plant",
@@ -8139,16 +8139,6 @@
    },
    {
     "band": "Drilling and well services: drilling (m)",
-    "archetype": "reciprocating-engine_dual-fuel",
-    "label": "Dual-fuel or natural-gas engines",
-    "status": "quantified",
-    "n": "1",
-    "trl": "9",
-    "unit": "m",
-    "guesses": 5
-   },
-   {
-    "band": "Drilling and well services: drilling (m)",
     "archetype": "drilling-rig_electric",
     "label": "Electric drilling rig",
     "status": "quantified",
@@ -8156,6 +8146,16 @@
     "trl": "9",
     "unit": "m",
     "guesses": 9
+   },
+   {
+    "band": "Drilling and well services: drilling (m)",
+    "archetype": "reciprocating-engine_dual-fuel",
+    "label": "Dual-fuel or natural-gas engines",
+    "status": "quantified",
+    "n": "1",
+    "trl": "9",
+    "unit": "m",
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -9099,16 +9099,6 @@
    },
    {
     "band": "Chemical pulping and bleaching",
-    "archetype": "reactor_oxygen-delignification",
-    "label": "Oxygen delignification with ECF bleaching",
-    "status": "quantified",
-    "n": "9",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 4
-   },
-   {
-    "band": "Chemical pulping and bleaching",
     "archetype": "digester_batch-kraft",
     "label": "Batch kraft digester",
     "status": "quantified",
@@ -9126,6 +9116,16 @@
     "trl": "4",
     "unit": "t",
     "guesses": 6
+   },
+   {
+    "band": "Chemical pulping and bleaching",
+    "archetype": "reactor_oxygen-delignification",
+    "label": "Oxygen delignification with ECF bleaching",
+    "status": "quantified",
+    "n": "9",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 4
    },
    {
     "band": "Mechanical pulping",
@@ -9199,31 +9199,21 @@
    },
    {
     "band": "Black liquor evaporation and recovery",
-    "archetype": "boiler_recovery-high-solids",
-    "label": "High-solids firing and high-pressure recovery boiler",
-    "status": "quantified",
-    "n": "15",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Black liquor evaporation and recovery",
-    "archetype": "vapour-recompressor_evaporation",
-    "label": "Mechanical vapour recompression evaporation",
-    "status": "quantified",
-    "n": "9",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Black liquor evaporation and recovery",
     "archetype": "boiler_recovery_ccs-diffuse",
     "label": "Recovery boiler with post-combustion capture",
     "status": "quantified",
     "n": "5",
     "trl": "5",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "Black liquor evaporation and recovery",
+    "archetype": "boiler_recovery-high-solids",
+    "label": "High-solids firing and high-pressure recovery boiler",
+    "status": "quantified",
+    "n": "15",
+    "trl": "9",
     "unit": "t",
     "guesses": 0
    },
@@ -9236,6 +9226,16 @@
     "trl": "6-7",
     "unit": "t",
     "guesses": 1
+   },
+   {
+    "band": "Black liquor evaporation and recovery",
+    "archetype": "vapour-recompressor_evaporation",
+    "label": "Mechanical vapour recompression evaporation",
+    "status": "quantified",
+    "n": "9",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Lime kiln",
@@ -9499,16 +9499,6 @@
    },
    {
     "band": "Metal melting and heat treatment",
-    "archetype": "melting-furnace_regenerative-oxy-fuel",
-    "label": "Regenerative or oxy-fuel melting",
-    "status": "quantified",
-    "n": "17",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 5
-   },
-   {
-    "band": "Metal melting and heat treatment",
     "archetype": "induction-heater_reheating",
     "label": "Induction reheating",
     "status": "quantified",
@@ -9536,6 +9526,16 @@
     "trl": "8",
     "unit": "t",
     "guesses": 8
+   },
+   {
+    "band": "Metal melting and heat treatment",
+    "archetype": "melting-furnace_regenerative-oxy-fuel",
+    "label": "Regenerative or oxy-fuel melting",
+    "status": "quantified",
+    "n": "17",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 5
    },
    {
     "band": "Metal melting and heat treatment",
@@ -9634,12 +9634,12 @@
   "n_examples": 5531,
   "cross_families": {
    "heat-supply": 34,
-   "machine-drive": 13,
-   "mobile-equipment": 6,
-   "co2-capture": 13,
    "power-generation": 13,
+   "space-conditioning": 7,
    "lighting": 7,
-   "space-conditioning": 7
+   "co2-capture": 13,
+   "mobile-equipment": 6,
+   "machine-drive": 13
   }
  },
  "_totals": {
