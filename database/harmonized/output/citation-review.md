@@ -42,30 +42,30 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Van Geene et al. 2024 (MIDDEN) | 3335 | confirmed against the held document 2026-09-29 |
 | UKERC 2013 | 2045 | UKERC's landing page is dated 2016 and there is also a 2016 WIREs Energy and Environment article, doi 10.1002/wene.212; the workbook in hand is dated 2013 |
 | Carlsson and Vellei 2014 | 658 | confirmed against the held document 2026-10-02 |
-| Gielen 1997 (ceramics) | 644 | confirmed against the held document 2026-10-02 |
+| Gielen 1997 (ceramics) | 646 | confirmed against the held document 2026-10-02 |
 | IEA 2026 (methane abatement model) | 560 | confirmed against the held document 2026-10-07 |
 | Joosten 1998 | 525 | confirmed against the held document 2026-10-03 |
 | DEA 2026 (renewable fuels) | 481 | confirmed against the held document 2026-09-29 |
 | US EPA 2023 (final TSD) | 480 | confirmed against the held document 2026-10-06 |
 | Element Energy 2021 | 472 | confirmed against the held document 2026-10-03 |
 | NREL 2025 (ATB) | 458 | confirmed against the held document 2026-10-02 |
+| IEA 2013 | 368 | confirmed against the held document 2026-10-06 |
 | IEAGHG 2017 (refinery retrofit) | 363 | confirmed against the held document 2026-10-02 |
-| IEA 2013 | 353 | confirmed against the held document 2026-10-06 |
 | NREL 2018 | 316 | confirmed against the held document 2026-10-03 |
-| Saygin 2012 | 302 | confirmed against the held document 2026-11-04 |
+| Saygin 2012 | 303 | confirmed against the held document 2026-11-04 |
+| US DOE 2017 (food and beverage bandwidth) | 293 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
 | US EPA 2019 | 282 | confirmed against the held document 2026-10-02 |
-| US DOE 2017 (food and beverage bandwidth) | 279 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
 | Lazard 2021 | 270 | confirmed against the held document 2026-10-02 |
-| Martin et al. 2000 (emerging technologies) | 254 | confirmed against the held document 2026-10-02 |
+| Martin et al. 2000 (emerging technologies) | 255 | confirmed against the held document 2026-10-02 |
 | NCCP Upstream Oil and Gas 1999 | 250 | confirmed against the held document 2026-10-02 |
 | Element Energy 2018 | 248 | confirmed against the held document 2026-10-02 |
 | Ramsden et al. 2009 | 245 | confirmed against the held document 2026-10-03 |
 | Daniels 2002 | 243 | confirmed against the held document 2026-10-03 |
+| US DOE 2015 (chemicals bandwidth) | 234 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
 | Johansson et al. 2012 | 226 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
-| US DOE 2015 (chemicals bandwidth) | 223 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
-| Jacobs 2006 | 218 | confirmed against the held document 2026-10-02 |
-| IETD 2013 | 212 | confirmed against the held document 2026-10-07 |
+| Jacobs 2006 | 220 | confirmed against the held document 2026-10-02 |
+| IETD 2013 | 211 | confirmed against the held document 2026-10-07 |
 | IEAGHG 2017 (SMR hydrogen) | 209 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2007 | 200 | confirmed against the held document 2026-10-02 |
 | BCS 2007 | 198 | confirmed against the held document 2026-10-02 |
@@ -87,11 +87,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Link 2008 | 152 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | NERA and AEA 2009 | 148 | confirmed against the held document 2026-11-04 |
 | GPSA 2004 | 147 | confirmed against the held document 2026-10-06 |
+| US EPA 2012 | 146 | confirmed against the held document 2026-09-29 |
 | Bazzanella and Ausfelder 2017 | 145 | confirmed against the held document 2026-11-04 |
-| US EPA 2012 | 145 | confirmed against the held document 2026-09-29 |
+| Gielen and van Dril 1997 | 144 | confirmed against the held document 2026-10-03 |
 | Crundwell et al. 2011 | 143 | confirmed against the held document 2026-10-06 |
 | Hekkert and Worrell 1997 | 143 | confirmed against the held document 2026-10-03 |
-| Gielen and van Dril 1997 | 142 | confirmed against the held document 2026-10-03 |
 | Gary et al. 2007 | 137 | confirmed against the held document 2026-10-06 |
 | Sezgen and Koomey 1995 | 137 | confirmed against the held document 2026-10-02 |
 | US EPA 2022 (supplemental TSD) | 136 | confirmed against the held document 2026-10-06 |
@@ -116,8 +116,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Rehfeldt et al. 2024 | 112 | confirmed against the held document 2026-10-02 |
 | Edberg et al. 2012 (ETSAP R02) | 111 | confirmed against the held document 2026-10-03 |
 | Shell Canada 2024 | 109 | confirmed against the held document 2026-10-03 |
+| de Beer et al. 1998 | 107 | confirmed against the held document 2026-10-02 |
 | Lazard 2024 | 107 | confirmed against the held document 2026-10-02 |
-| de Beer et al. 1998 | 105 | confirmed against the held document 2026-10-02 |
 | Van Wortswinkel and Nijs 2010 (ETSAP I02) | 104 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | BC Hydro 2004 | 103 | confirmed against the held document 2026-10-02 |
 | ESMAP 2001 | 103 | confirmed against the held document 2026-10-02 |
@@ -127,12 +127,12 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Zuberi et al. 2022 | 95 | confirmed against the held document 2026-09-29 |
 | McKane and Hasanbeigi 2010 | 94 | confirmed against the held document 2026-10-03 |
 | NEDO 2008 | 94 | no catalogue or archived copy located; the Kawasaki imprint is consistent with NEDO's headquarters; confirmed against the held document 2026-10-06 |
+| Worrell et al. 1999 | 93 | sponsored by US EPA |
 | Jones and Pujadó 2006 | 92 | confirmed against the held document 2026-10-08 |
 | Sargent and Lundy 2024 | 90 | confirmed against the held document 2026-10-02 |
 | Labriet 2013 (ETSAP P11) | 90 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
 | Ramsden et al. 2013 | 89 | confirmed against the held document 2026-10-03 |
 | DEA 2026 (energy storage) | 88 | confirmed against the held document 2026-09-29 |
-| Worrell et al. 1999 | 88 | sponsored by US EPA |
 | Hagberg Börjesson and Ahlgren 2015 (ETSAP I07) | 87 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Neill and Gunter 1999 | 86 | confirmed against the held document 2026-10-03 |
 | Irlam 2017 | 85 | confirmed against the held document 2026-10-02 |
@@ -141,11 +141,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | IPIECA 2025 | 82 | confirmed against the held document 2026-10-06 |
 | Brown et al. 2020 | 81 | confirmed against the held document 2026-10-02 |
 | US DOE 2024 (Liftoff hydrogen) | 79 | confirmed against the held document 2026-10-02 |
-| NRCan 2007 | 77 | confirmed against the held document 2026-10-03 |
 | Mantei et al. 2021 | 76 | confirmed against the held document 2026-10-02 |
 | Wallace 2021 | 76 | confirmed against the held document 2026-10-02 |
 | Fritzson and Berntsson 2006a | 75 | confirmed against the held document 2026-11-04 |
 | Gardarsdottir et al. 2019 | 75 | confirmed against the held document 2026-10-02 |
+| NRCan 2007 | 75 | confirmed against the held document 2026-10-03 |
 | Weidmann 2013 | 75 | confirmed against the held document 2026-10-08 |
 | Vaillancourt 2014 (ETSAP P04) | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
 | IEA 2024 | 71 | confirmed against the held document 2026-10-11 |
@@ -239,11 +239,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | MPA 2011 | 37 | personal communication, not a publication; MPA Cement is confirmed real, the named individual's role is not independently verified |
 | NETL 2022 | 37 | confirmed 2026-09-23 against the held workbook (public Revision 59, 2022-12-20) and the OSTI record |
 | Rootzén and Johnsson 2017 | 37 | confirmed against the held document 2026-10-08 |
+| Tijani et al. 2022 | 37 | confirmed against the held document 2026-10-07 |
 | Almeida Benalcazar et al. 2022 | 36 | confirmed against the held document 2026-10-02 |
 | Deloitte 2022 | 36 | confirmed against the held document 2026-10-02 |
 | Kranz and Worrell 2001 | 36 | confirmed against the held document 2026-10-02 |
 | T. J. McCann 2000 | 36 | confirmed against the held document 2026-10-02 |
-| Tijani et al. 2022 | 36 | confirmed against the held document 2026-10-07 |
 | Carbon Limits 2016 | 34 | confirmed against the held document 2026-10-06 |
 | Simbolotti 2013 (ETSAP P10) | 34 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | IEA 2021 | 34 | confirmed 2026-09-22 against the held copy, database/raw-data/iea/iea_2021_ammonia-technology-roadmap.pdf |
@@ -260,6 +260,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Norman 2013 | 32 | confirmed against the held document 2026-11-04 |
 | Stork et al. 2014 | 32 | confirmed against the held document 2026-10-06 |
 | Tao et al. 2017 | 32 | confirmed against the held document 2026-10-02 |
+| US DOE 2015 (iron and steel bandwidth) | 31 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
 | US EPA 2023 (regulatory impact analysis) | 31 | confirmed against the held document 2026-10-02 |
 | NRCan 2005 (underground mines) | 31 | confirmed against the held document 2026-10-02 |
 | Drebenstedt and Singhal 2014 | 30 | confirmed against the held document 2026-10-06 |
@@ -267,6 +268,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Kong et al. 2016 | 30 | confirmed against the held document 2026-09-29 |
 | Martin et al. 1999 | 30 | confirmed against the held document 2026-10-03 |
 | Ren et al. 2006 | 30 | confirmed against the held document 2026-09-29 |
+| Smith et al. 2020 | 30 | confirmed against the held document 2026-09-29 |
 | Zhang et al. 2003 (part 1) | 30 | confirmed against the held document 2026-10-06 |
 | Birat et al. 2008 | 29 | UKERC cites the 2008 ULCOS seminar; the paper was published in 2009 in the selected-papers issue |
 | US DOE 2016 | 29 | confirmed against the held document 2026-10-07 |
@@ -274,13 +276,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | IEA 2018 (petrochemicals) | 29 | confirmed 2026-09-22 against the held copy, database/raw-data/iea/iea_2018_future-of-petrochemicals.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | IEAGHG 2013a | 29 | confirmed against the held document 2026-11-04 |
 | Rissman 2022 | 29 | confirmed against the held document 2026-09-29 |
-| Smith et al. 2020 | 29 | confirmed against the held document 2026-09-29 |
 | Collodi 2010 | 28 | renamed from collodi-wheeler_2010_001 on 2026-08-29: UKERC's 'Wheeler, F.' is the affiliation Foster Wheeler mis-parsed as a second author, and Collodi is sole author. DOI is likely 10.3303/CET1019007 but was not seen verbatim |
+| US DOE 2017 (cement bandwidth) | 28 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study.pdf |
 | Isaka 2013 (ETSAP I12) | 28 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line |
 | Warren 2021 | 28 | confirmed against the held document 2026-10-02 |
-| US DOE 2015 (iron and steel bandwidth) | 27 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_iron-and-steel-bandwidth-study.pdf |
 | US DOE 2017 (aluminum bandwidth) | 27 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_aluminum-bandwidth-study.pdf |
-| US DOE 2017 (cement bandwidth) | 27 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_cement-bandwidth-study.pdf |
 | Lako 2010 (ETSAP E07) | 27 | May 2010; the ETSAP original is dead and this is a mirror |
 | Broeren 2013 (ETSAP I09) | 27 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'January 2013'; authors from the 'Please send comments to' line; the header prints I08 although the file and series index give I09 |
 | IEA 2019 | 27 | confirmed 2026-09-22 against the held copy, database/raw-data/iea/iea_2019_future-of-hydrogen.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
@@ -320,11 +320,14 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Nelson et al. 2011 | 21 | confirmed against the held document 2026-10-02 |
 | Petrinex 2026 | 21 | confirmed against the held data 2026-10-21 |
 | RTC 2023 | 21 | updated September 2023 |
+| AJSI 2016 | 20 | confirmed against the held document 2026-10-06 |
+| US DOE 2015 (pulp and paper bandwidth) | 20 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_pulp-and-paper-bandwidth-study.pdf |
 | US EPA 2010 (pulp and paper) | 20 | confirmed against the held document 2026-09-29 |
 | GCCA 2024 | 20 | confirmed against the held document 2026-10-07 |
 | Handler et al. 2016 | 20 | confirmed against the held document 2026-10-02 |
 | Khrushch et al. 1999 | 20 | confirmed against the held document 2026-09-29 |
 | Novacem 2011 | 20 | 31st Cement and Concrete Science Conference, Imperial College London, 12-13 September 2011; the individual paper is not online. Absorbed the duplicate short form 'Novacem 2011b' on 2026-08-29 |
+| Pfeifer and Kirschen 2002 | 20 | confirmed against the held document 2026-10-02 |
 | RTC 2022 | 20 | confirmed against the held document 2026-10-02 |
 | Abbas and Wan Daud 2010 | 19 | confirmed against the held document 2026-11-04 |
 | Zoulias 2014 (ETSAP P12) | 19 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'February 2014'; authors from the 'Please send comments to' line; the author is named only by the address mzoulias@cres.gr (CRES) |
@@ -332,15 +335,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Kwiatkowski et al. 2006 | 19 | confirmed against the held document 2026-10-02 |
 | Leblanc et al. 2014 | 19 | confirmed against the held document 2026-10-02 |
 | Pape et al. 2000 | 19 | confirmed against the held document 2026-10-02 |
-| Pfeifer and Kirschen 2002 | 19 | confirmed against the held document 2026-10-02 |
 | WSP and DNV GL 2015 (ceramics) | 19 | confirmed against the held document 2026-10-02 |
-| AJSI 2016 | 18 | confirmed against the held document 2026-10-06 |
-| US DOE 2015 (pulp and paper bandwidth) | 18 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_pulp-and-paper-bandwidth-study.pdf |
 | Gielen and Moriguchi 2002 | 18 | confirmed against the held document 2026-10-02 |
 | HPTSTCJ 2010 | 18 | confirmed against the held document 2026-11-04 |
 | Hasanbeigi et al. 2014 | 17 | confirmed against the held document 2026-09-29 |
 | McMillan et al. 2021 | 17 | confirmed against the held document 2026-10-02 |
-| Worrell and Boyd 2022 | 17 | confirmed against the held document 2026-10-03 |
 | Zier et al. 2023 | 17 | confirmed against the held document 2026-10-02 |
 | AER ST39 2026 | 16 | confirmed against the held data 2026-10-21 |
 | Habert et al. 2010 | 16 | confirmed against the held document 2026-10-02 |
@@ -349,6 +348,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Gorski et al. 2021 | 16 | confirmed against the held document 2026-10-03 |
 | Sharp 2014 | 16 | confirmed against the held document 2026-10-11 |
 | Van Geene 2025 | 16 | confirmed against the held document 2026-09-29 |
+| Worrell and Boyd 2022 | 16 | confirmed against the held document 2026-10-03 |
 | Coursol et al. 2015 | 15 | confirmed against the held document 2026-10-02 |
 | IAI 2026 | 15 | confirmed against the held document 2026-10-06 |
 | Zuberi 2022 | 15 | confirmed against the held document 2026-10-11 |
@@ -423,6 +423,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | US EPA 2022 (waste heat to power) | 7 | confirmed 2026-09-23 against the held copy, database/raw-data/gov-usa/epa/epa_2022_waste-heat-to-power.pdf; 'Last Updated: April 2022' |
 | Hills et al. 2017 | 7 | confirmed against the held document 2026-10-02 |
 | Pag 2024 | 7 | confirmed against the held document 2026-10-11 |
+| Khatir et al. 2013 | 7 | confirmed against the held document 2026-11-04 |
 | Leeson et al. 2017 | 7 | confirmed 2026-09-22 against the held copy, database/raw-data/peer-reviewed/leeson_2017_industrial-ccs-techno-economics_ijggc.pdf (was partial: transcribed from the IPCC AR6 Ch.11 reference list) |
 | Mishra et al. 2026 | 7 | confirmed against the held document 2026-10-02 |
 | NCCP 1999 (cement options) | 7 | confirmed against the held document 2026-10-03 |
@@ -433,7 +434,6 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Gielen 1997 (building materials) | 6 | confirmed against the held document 2026-10-03 |
 | Jadun et al. 2017 | 6 | confirmed against the held document 2026-10-02 |
 | JRC-IDEES-2023 | 6 | confirmed against the held document 2026-10-13 |
-| Khatir et al. 2013 | 6 | confirmed against the held document 2026-11-04 |
 | Kukkonen 2017 | 6 | confirmed against the held document 2026-10-02 |
 | Rightor et al. 2020 | 6 | confirmed against the held document 2026-10-02 |
 | Li et al. 2007 | 6 | confirmed against the held document 2026-11-04 |

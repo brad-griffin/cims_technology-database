@@ -667,6 +667,16 @@ Rules in force (2026-10-09), in the order they run:
   the variant's sourced emissions-reduction-potential, else the bucket definition
   (fill-assumption `bucket-saving`, proxy); every carrier scaled alike. The UKERC
   stage (7c) does the same for UKERC members before summarise.
+- **Efficient variants are set on same-source ratios** (Brad 2026-11-06). A
+  variant's energy use is its host's pooled total x (1 − s), with s read from a
+  source that prints both levels for the same process (`pair-saving.csv`: the
+  improved level against the base level, total against total where the source
+  gives totals, else on its main carrier). The variant's absolute levels with no
+  same-source base are ruled out (`excluded-row.csv`), and so are its own carrier
+  rows: its carriers come from the host's split of the derived total. A pair
+  outside 0–90% is not applied. An archetype whose sources describe a different
+  technology rather than a step on the host is typed `alternative` and keeps its
+  own absolute pool (14 retyped; `reviews/efficiency-variant-ratio-test_2026-11-06.csv`).
 - `est-sibling-efficiency`: GJ-product archetypes take the median efficiency of
   non-CHP siblings (range at least ±15% of the central). Never per-tonne process
   archetypes.

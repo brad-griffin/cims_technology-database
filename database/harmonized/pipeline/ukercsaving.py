@@ -114,6 +114,18 @@ def derive(facts, records, summarise_fn) -> dict:
         r["note"] = "BUCKET of 1 same-source pair. " + (r.get("note") or "")
         stats["pair savings"] += 1
         queued.append((r, base, sm, sm, sm))
+    # an efficient variant set on same-source savings takes its carriers from its
+    # host's split of the derived total, so the carrier levels its own sources print
+    # (absolute, on their own basis) are ruled out, repeats included, which the
+    # carrier split would otherwise still read (Brad 2026-11-06)
+    paired = {r.get("archetype") for r, *_ in queued if r["note"].startswith("BUCKET of 1 same-source pair")
+              and (records.by_key.get(r.get("archetype")) or {}).get("type") == "efficient variant"}
+    for x in facts:
+        if (x.get("archetype") in paired and x["parameter"] == SEC and (x.get("target-norm") or "").strip()
+                and (not x.get("excluded") or x["excluded"].startswith("repeat:"))):
+            x["excluded"] = ("a carrier level of an efficient variant set on same-source savings: its "
+                             "carriers come from the host's split of the derived total (Brad 2026-11-06)")
+            stats["variant carrier rows ruled out"] += 1
     if not queued:
         return dict(stats)
     # the base archetypes' pooled totals, from the rows as they stand
@@ -141,6 +153,9 @@ def derive(facts, records, summarise_fn) -> dict:
         new.append(dict(r, **{
             "record-id": f"tp-{sid}-s{seq[sid]:03d}", "value-type": "derived",
             "derived-from": r["record-id"], "derived-kind": "ukerc-saving",
+            # the saving lands on the host's total, so the derived row is a total
+            # even when the pair was read on the source's one carrier (Brad 2026-11-06)
+            "target": "", "target-norm": "",
             "value-norm": f"{bt * (1 - sm):.6g}", "value-min-norm": f"{bt * (1 - smax):.6g}",
             "value-max-norm": f"{bt * (1 - smin):.6g}", "unit-norm": bu,
             "formula": f"{bt:.6g} x (1 - {sm:.4g})",

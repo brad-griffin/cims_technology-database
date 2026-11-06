@@ -187,7 +187,7 @@ est-sibling-lifetime,steam-reformer_ammonia_efficiency-strong,lifetime,25,25,18.
 est-sibling-lifetime,steam-reformer_methane,lifetime,27.5,30,22.5,40,yes,1.09091,"tier 1: steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
 est-sibling-lifetime,steam-reformer_methane_ccs-concentrated,lifetime,35,26.25,19.6875,40,yes,0.75,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
 est-sibling-lifetime,steam-reformer_methane_ccs-diffuse,lifetime,25,31.25,20,40,yes,1.25,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
-est-sibling-lifetime,steam-reformer_methanol,lifetime,15,25,18.75,40,no,1.66667,"tier 2: steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated, steam-reformer_methane, steam-reformer_ammonia_efficiency-strong, steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
+est-sibling-lifetime,steam-reformer_methanol,lifetime,15,25,18.75,40,no,1.66667,"tier 2: steam-reformer_ammonia, steam-reformer_ammonia_ccs-concentrated, steam-reformer_methane, steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse, steam-reformer_ammonia_efficiency-strong"
 est-sibling-lifetime,steam-turbine_back-pressure,lifetime,25,22.5,16.875,40,yes,0.9,"tier 2: steam-turbine_waste-heat, steam-turbine_condensing"
 est-sibling-lifetime,steam-turbine_condensing,lifetime,25,22.5,15,50,yes,0.9,"tier 2: steam-turbine_back-pressure, steam-turbine_waste-heat"
 est-sibling-lifetime,steam-turbine_waste-heat,lifetime,20,25,15,50,yes,1.25,"tier 2: steam-turbine_back-pressure, steam-turbine_condensing"

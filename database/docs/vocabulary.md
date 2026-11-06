@@ -125,9 +125,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 |---|---|---|---|---:|---|---|
 | `lighting_fluorescent-t12` | T12 fluorescent with magnetic ballast | conventional | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
 | `lighting_hid` | High-intensity discharge high bay | conventional | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
-| `lighting_fluorescent-high-bay` | Fluorescent high bay (T5 HO or T8 HO) | efficient variant | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
-| `lighting_fluorescent-t8` | T8 or T5 fluorescent with electronic ballast | efficient variant | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
 | `lighting_led-controls` | LED lighting with occupancy or daylight controls | efficient variant | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | estimated |
+| `lighting_fluorescent-high-bay` | Fluorescent high bay (T5 HO or T8 HO) | alternative | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
+| `lighting_fluorescent-t8` | T8 or T5 fluorescent with electronic ballast | alternative | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
 | `lighting_led` | LED luminaire or lamp, general lighting | alternative | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
 | `lighting_led-high-bay` | LED high-bay luminaire | alternative | electricity | 9 | chemicals.service.lighting; coal-mining.service.lighting; industrial-minerals.service.lighting; iron-and-steel.service.lighting; light-industrial.service.lighting; non-ferrous-metals.service.lighting; mining.service.lighting; petroleum-refining.service.lighting; pulp-and-paper.service.lighting | quantified |
 
@@ -153,7 +153,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `compressor_co2-dehydration` | CO2 dehydration and compression | conventional | electricity | 9 | <root>.transmission.co2-pipeline-and-storage.*.compression | quantified |
 | `pipeline_co2` | CO2 pipeline transport | conventional | electricity | 9 | <root>.transmission.co2-pipeline-and-storage.*.pipeline | quantified |
 | `well_co2-storage` | CO2 injection and geological storage | conventional | electricity | 9 | <root>.transmission.co2-pipeline-and-storage.*.storage | quantified |
-| `capture-unit_advanced-solvent` | Advanced low-energy solvent | efficient variant | steam; electricity | 8 | *.service.ccs.diffuse | quantified |
+| `capture-unit_advanced-solvent` | Advanced low-energy solvent | alternative | steam; electricity | 8 | *.service.ccs.diffuse | quantified |
 | `capture-unit_calcium-looping` | Tail-end calcium-looping capture | prospective | coal; natural-gas; electricity | 6-7 | *.service.ccs.diffuse | quantified |
 | `capture-unit_cryogenic-condensation` | Cryogenic separation | prospective | electricity | 6 | *.service.ccs.concentrated | quantified |
 | `capture-unit_dac-liquid-solvent` | Liquid-solvent DAC | prospective | electricity | 6 | direct-air-capture.product.co2-removal | quantified |
@@ -202,7 +202,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `kiln_lime-long-rotary` | Long rotary lime kiln | conventional | coal; natural-gas; petroleum-coke | 9 | industrial-minerals.product.lime | quantified |
 | `kiln_lime-rotary-preheater` | Rotary lime kiln with preheater | conventional | natural-gas; coal; petroleum-coke | 9 | industrial-minerals.product.lime | quantified |
 | `kiln_lime-shaft` | Mixed-feed or annular shaft lime kiln | conventional | natural-gas; coal; coke | 9 | industrial-minerals.product.lime | quantified |
-| `grinding-mill_vertical-roller` | Vertical roller mill or high-pressure grinding rolls | efficient variant | electricity | 9 | industrial-minerals.product.cement.grinding | quantified |
 | `kiln_dry-precalciner_efficiency-moderate` | Cement kiln efficiency measures, moderate | efficient variant | coal; petroleum-coke; natural-gas | 9 | industrial-minerals.product.cement.clinker | quantified |
 | `kiln_dry-precalciner_efficiency-strong` | Cement kiln efficiency measures, strong | efficient variant | coal; petroleum-coke; natural-gas | 9 | industrial-minerals.product.cement.clinker | quantified |
 | `kiln_dry-precalciner_ccs-diffuse` | Cement kiln with post-combustion capture | prospective | waste-heat; coal; petroleum-coke; natural-gas | 7 | industrial-minerals.product.cement.clinker | quantified |
@@ -215,6 +214,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `binder_hydrothermal-silicate` | Hydrothermal calcium hydrosilicate binder | prospective | electricity; steam | 6 | industrial-minerals.product.cement.binder | quantified |
 | `binder_sulphoaluminate` | Calcium sulphoaluminate clinker | alternative | natural-gas; coal; electricity | 9 | industrial-minerals.product.cement.binder | quantified |
 | `calciner_indirect` | Electrified or indirectly heated calciner | prospective | electricity; natural-gas | 6 | industrial-minerals.product.cement.clinker; industrial-minerals.product.lime | quantified |
+| `grinding-mill_vertical-roller` | Vertical roller mill or high-pressure grinding rolls | alternative | electricity | 9 | industrial-minerals.product.cement.grinding | quantified |
 | `kiln_calcium-looping` | Cement kiln with integrated calcium looping | prospective | coal; natural-gas | 6 | industrial-minerals.product.cement.clinker | quantified |
 | `kiln_calcium-silicate-feed` | Portland clinker from calcium-silicate rock | prospective | natural-gas; electricity | 6 | industrial-minerals.product.cement.clinker | estimated |
 | `kiln_electric-plasma` | Electrified clinker kiln (plasma) | prospective | electricity | 4-5 | industrial-minerals.product.cement.clinker | quantified |
@@ -244,8 +244,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `steam-cracker_fired-tubular` | Fired tubular steam cracker | conventional | oil; coal; methanol; biomass; steam; hydrogen; natural-gas; naphtha; ethane | 9 | chemicals.product.petrochemicals.olefins | quantified |
 | `steam-reformer_ammonia` | Steam reforming with Haber-Bosch synthesis | conventional | ammonia; hydrogen; electricity | 9 | chemicals.product.ammonia | quantified |
 | `steam-reformer_methanol` | Natural-gas reforming and methanol synthesis (whole plant) | conventional | electricity; natural-gas | 9 | chemicals.product.methanol | quantified |
-| `distillation-column_heat-integrated` | Heat-integrated, progressive or divided-wall distillation | efficient variant | steam; natural-gas | 9 | chemicals.service.distillation | quantified |
-| `electrolysis-cell_oxygen-depolarized` | Oxygen-depolarized cathode chlor-alkali cell | efficient variant | electricity | 8 | chemicals.product.chlor-alkali.chlorine-electrolysis | quantified |
 | `reactor_catalytic-n2o` | Catalytic N2O abatement | efficient variant | electricity | 9 | chemicals.service.n2o-abatement | quantified |
 | `reactor_polymerization-extrusion_efficiency-strong` | Polymerization and extrusion efficiency measures, strong | efficient variant | natural-gas; electricity; steam | 9 | chemicals.product.petrochemicals.polymers | quantified |
 | `separator_aromatics-extraction_efficiency-moderate` | Aromatics extraction plant, best practice | efficient variant | natural-gas; steam; electricity | 9 | chemicals.product.petrochemicals.aromatics | quantified |
@@ -258,7 +256,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `steam-cracker_fired-tubular_ccs-diffuse` | Steam cracker with capture on the furnace flue gas | prospective | steam; natural-gas | 3-4 | chemicals.product.petrochemicals.olefins | quantified |
 | `steam-reformer_ammonia_ccs-concentrated` | Ammonia plant with capture on the process CO2 | alternative | ammonia; steam | 9 | chemicals.product.ammonia | quantified |
 | `autothermal-reformer_ammonia` | Autothermal reforming ammonia plant | prospective | natural-gas | 5 | chemicals.product.ammonia | quantified |
+| `distillation-column_heat-integrated` | Heat-integrated, progressive or divided-wall distillation | alternative | steam; natural-gas | 9 | chemicals.service.distillation | quantified |
 | `distillation-column_heat-pumped` | Heat-pumped distillation | alternative | electricity | 9 | chemicals.service.distillation | quantified |
+| `electrolysis-cell_oxygen-depolarized` | Oxygen-depolarized cathode chlor-alkali cell | alternative | electricity | 8 | chemicals.product.chlor-alkali.chlorine-electrolysis | quantified |
 | `gasifier_biomass-ammonia` | Biomass gasification to ammonia (whole plant) | prospective | biomass | 6 | chemicals.product.ammonia | quantified |
 | `gasifier_biomass-methanol` | Biomass or waste gasification to methanol | prospective | biomass | 8 | chemicals.product.methanol | quantified |
 | `gasifier_coal-methanol` | Coal gasification to methanol | alternative | coal | 9 | chemicals.product.methanol | quantified |
@@ -317,13 +317,13 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `kiln_rotary-expanded-clay` | Rotary kiln for expanded clay aggregate | conventional | natural-gas; coal; oil | 9 | no connection | quantified |
 | `kiln_tunnel-roller` | Tunnel or roller kiln | conventional | natural-gas; hydrogen | 9 | industrial-minerals.product.ceramics.kiln | quantified |
 | `furnace_hybrid-electric` | Hybrid furnace with electric boosting | efficient variant | natural-gas; electricity | 9 | industrial-minerals.product.glass.furnaces | quantified |
-| `furnace_oxy-fuel` | Oxy-fuel glass furnace | efficient variant | natural-gas; hydrogen | 9 | industrial-minerals.product.glass.furnaces | quantified |
 | `kiln_tunnel-roller_efficiency-strong` | Ceramic tunnel or roller kiln, strong efficiency measures | efficient variant | natural-gas | 9 | industrial-minerals.product.ceramics.kiln | quantified |
 | `furnace_regenerative_ccs-diffuse` | Regenerative glass furnace with post-combustion capture | prospective | natural-gas | 6 | industrial-minerals.product.glass.furnaces | quantified |
 | `dryer_electric` | Electric dryer | alternative | electricity | 7-9 | coal-mining.product.coal-preparation.drying; industrial-minerals.product.ceramics.dryer; light-industrial.service.heat.drying; mining.service.drying | quantified |
 | `furnace_electric` | All-electric glass melter | alternative | electricity | 9 | industrial-minerals.product.glass.furnaces | quantified |
 | `furnace_hybrid-majority-electric` | Hybrid furnace, majority electric | alternative | natural-gas; electricity | 7 | industrial-minerals.product.glass.furnaces | quantified |
 | `furnace_lehr-electric` | Electric annealing lehr | alternative | electricity | 9 | industrial-minerals.product.glass.form-and-finish | estimated |
+| `furnace_oxy-fuel` | Oxy-fuel glass furnace | alternative | natural-gas; hydrogen | 9 | industrial-minerals.product.glass.furnaces | quantified |
 | `furnace_oxy-fuel-thermochemical` | Oxy-fuel glass furnace with thermochemical heat recovery | prospective | natural-gas | 4-7 | industrial-minerals.product.glass.furnaces | quantified |
 | `kiln_ceramic-electric` | Electric kiln | alternative | electricity | 9 | industrial-minerals.product.ceramics.kiln | quantified |
 | `kiln_ceramic-microwave-assisted` | Microwave-assisted ceramic kiln | prospective | natural-gas; electricity | 5-7 | industrial-minerals.product.ceramics.kiln | quantified |
@@ -369,7 +369,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `rolling-mill_hot` | Hot rolling mill | conventional | electricity | 9 | iron-and-steel.product.continuous-cast.hot-rolling | quantified |
 | `shaft-furnace_direct-reduction` | Shaft-furnace direct reduction | conventional | natural-gas; hydrogen; coal; ammonia | 9 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `sinter-plant` | Sinter plant | conventional | natural-gas; electricity | 9 | iron-and-steel.service.agglomeration | quantified |
-| `annealing-furnace_hydrogen-bell` | Bell annealing in a hydrogen atmosphere | efficient variant |  | 9 | iron-and-steel.product.continuous-cast.annealing-and-coating.annealing | quantified |
 | `basic-oxygen-furnace_efficiency-strong` | Basic oxygen furnace efficiency measures, strong | efficient variant |  | 9 | iron-and-steel.product.molten-steel | quantified |
 | `blast-furnace_efficiency-moderate` | Blast furnace efficiency measures, moderate | efficient variant | coke; coal; natural-gas | 9 | iron-and-steel.service.hot-metal | quantified |
 | `blast-furnace_efficiency-strong` | Blast furnace efficiency measures, strong | efficient variant | coke; coal; natural-gas | 9 | iron-and-steel.service.hot-metal | quantified |
@@ -381,13 +380,13 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `pellet-plant_induration_efficiency-moderate` | Induration machine efficiency measures, moderate | efficient variant |  | 9 | mining.service.pelletizing | estimated |
 | `rolling-mill_cold_efficiency-moderate` | Cold mill efficiency measures, moderate (coupled pickling) | efficient variant | electricity; steam | 9 | iron-and-steel.product.continuous-cast.cold-rolling | estimated |
 | `rolling-mill_hot_efficiency-moderate` | Hot rolling mill efficiency measures, moderate | efficient variant |  | 9 | iron-and-steel.product.continuous-cast.hot-rolling | quantified |
-| `rolling-mill_thin-slab` | Thin-slab casting with direct rolling | efficient variant | natural-gas; electricity | 9 | iron-and-steel.product.continuous-cast.casting | quantified |
 | `sinter-plant_efficiency-moderate` | Sinter plant efficiency measures, moderate | efficient variant | natural-gas | 9 | iron-and-steel.service.agglomeration | quantified |
 | `sinter-plant_efficiency-strong` | Sinter plant efficiency measures, strong | efficient variant |  | 9 | iron-and-steel.service.agglomeration | quantified |
 | `blast-furnace_ccs-diffuse` | Blast furnace with post-combustion capture | prospective | by-product-gas; hydrogen; coke; coal | 5 | iron-and-steel.service.hot-metal | quantified |
 | `shaft-furnace_direct-reduction_ccs-concentrated` | Shaft-furnace direct reduction with capture | alternative | by-product-gas; natural-gas | 9 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `smelting-vessel_smelting-reduction_ccs-concentrated` | Coal-based smelting reduction with capture | prospective | coal | 9 | iron-and-steel.service.hot-metal | quantified |
 | `annealing-furnace_continuous` | Continuous annealing line | alternative | natural-gas; electricity | 9 | iron-and-steel.product.continuous-cast.annealing-and-coating.annealing | quantified |
+| `annealing-furnace_hydrogen-bell` | Bell annealing in a hydrogen atmosphere | alternative |  | 9 | iron-and-steel.product.continuous-cast.annealing-and-coating.annealing | quantified |
 | `blast-furnace_biogenic-carbon` | Blast furnace with biocarbon injection or bio-coke | alternative | coke; biomass; electricity | 7 | iron-and-steel.service.hot-metal | quantified |
 | `blast-furnace_top-gas-recycling` | Top-gas recycling oxygen blast furnace | prospective | coke; coal | 6 | iron-and-steel.service.hot-metal | quantified |
 | `caster_strip` | Strip casting | alternative | electricity | 9 | iron-and-steel.product.continuous-cast.casting | quantified |
@@ -400,6 +399,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `induction-heater_strip-heating` | Induction strip heating | alternative | electricity | 9 | iron-and-steel.product.continuous-cast.annealing-and-coating.annealing | estimated |
 | `melting-furnace_electric-smelting` | Electric smelting furnace for DRI | prospective | electricity | 6-7 | iron-and-steel.service.hot-metal | quantified |
 | `pellet-plant_plasma-electric` | Plasma or electric induration | prospective | electricity | 5 | mining.service.pelletizing | estimated |
+| `rolling-mill_thin-slab` | Thin-slab casting with direct rolling | alternative | natural-gas; electricity | 9 | iron-and-steel.product.continuous-cast.casting | quantified |
 | `shaft-furnace_hydrogen-direct-reduction` | Hydrogen direct reduction | prospective | hydrogen; electricity; natural-gas | 6 | iron-and-steel.service.direct-reduced-iron | quantified |
 | `smelting-vessel_low-shaft` | Low-shaft smelting reduction | prospective | coal; biomass; coke | 7 | iron-and-steel.service.hot-metal | quantified |
 | `smelting-vessel_smelting-reduction` | Coal-based smelting reduction | alternative | coal | 9 | iron-and-steel.service.hot-metal | quantified |
@@ -426,10 +426,10 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `separator_mine-water-treatment` | Mine water treatment plant | conventional |  | 9 | no connection | estimated |
 | `separator_thickening-filtration` | Thickening, filtration and water reclaim (slurry tailings) | conventional | electricity | 9 | coal-mining.product.coal-preparation.tailings-disposal; mining.service.tailings-disposal; crude-oil.service.tailings-disposal | quantified |
 | `conveyor_in-pit-crushing` | In-pit crushing and conveying | efficient variant | electricity | 9 | mining.service.mine-haulage.open-pit | estimated |
-| `grinding-mill_hpgr` | HPGR-based grinding circuit | efficient variant | electricity | 9 | mining.service.milling | quantified |
 | `grinding-mill_stirred` | Stirred fine grinding mills | efficient variant | electricity | 9 | mining.service.milling | estimated |
 | `evaporator_crystallizer` | Evaporator-crystallizer | alternative |  | 9 | mining.service.crystallization | quantified |
 | `gas-treatment-unit_vam-oxidiser` | Ventilation-air methane oxidiser | alternative |  | 7-9 | coal-mining.product.raw-product.mine-methane | estimated |
+| `grinding-mill_hpgr` | HPGR-based grinding circuit | alternative | electricity | 9 | mining.service.milling | quantified |
 | `haul-truck_battery-electric` | Battery-electric haulage | prospective | electricity; diesel | 8 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground; crude-oil.service.mine-haulage | quantified |
 | `haul-truck_dual-fuel` | Dual-fuel (LNG-diesel) haul trucks | alternative | natural-gas; diesel | 7-8 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; crude-oil.service.mine-haulage | quantified |
 | `haul-truck_hydrogen-fuel-cell` | Hydrogen fuel-cell haulage | prospective | hydrogen | 6 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground | quantified |
@@ -467,7 +467,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `electric-arc-furnace_smelting-submerged-arc_efficiency-moderate` | Submerged-arc furnace efficiency measures, moderate (off-gas energy recovery) | efficient variant | electricity; oil; coke | 9 | non-ferrous-metals.product.titanium-slag.pyrometallurgy.smelting | estimated |
 | `electric-arc-furnace_smelting-submerged-arc_pre-reduction` | Electric smelting with pre-reduced feed (whole route) | efficient variant | electricity; coal | 6-7 | non-ferrous-metals.product.titanium-slag.pyrometallurgy.smelting | quantified |
 | `electrolysis-cell_advanced-anodes` | Electrowinning with advanced anodes and energy control | efficient variant | electricity | 8 | non-ferrous-metals.product.copper.hydrometallurgy | quantified |
-| `melting-furnace_regenerative-oxy-fuel` | Regenerative or oxy-fuel melting | efficient variant | natural-gas | 9 | light-industrial.service.heat.metal-melting; non-ferrous-metals.product.aluminum.recycle; non-ferrous-metals.product.copper.melt-cast; non-ferrous-metals.product.lead.melt-cast; non-ferrous-metals.product.magnesium.melt-cast; non-ferrous-metals.product.nickel.melt-cast; non-ferrous-metals.product.zinc.melt-cast | quantified |
 | `melting-furnace_twin-chamber` | Twin-chamber furnace with decoating | efficient variant | natural-gas | 9 | non-ferrous-metals.product.aluminum.recycle | quantified |
 | `smelting-vessel_flash_efficiency-moderate` | Smelting efficiency measures, moderate | efficient variant | natural-gas; electricity | 9 | non-ferrous-metals.product.copper.pyrometallurgy.smelting; non-ferrous-metals.product.nickel.pyrometallurgy.smelting | estimated |
 | `smelting-vessel_flash_efficiency-strong` | Smelting efficiency measures, strong | efficient variant | natural-gas | 9 | non-ferrous-metals.product.copper.pyrometallurgy.smelting; non-ferrous-metals.product.nickel.pyrometallurgy.smelting | estimated |
@@ -482,6 +481,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `electrolysis-cell_inert-anode` | Inert anode cell | prospective | electricity | 7 | non-ferrous-metals.product.aluminum.primary-aluminum.electrolysis | quantified |
 | `furnace_anode-baking-electric` | Electric anode baking furnace | prospective | electricity; hydrogen | 6-8 | non-ferrous-metals.service.anode-production | estimated |
 | `furnace_anode-baking_biogenic-carbon` | Prebake anodes with bio-pitch and bio-coke | prospective | natural-gas; oil | 6 | non-ferrous-metals.service.anode-production | estimated |
+| `melting-furnace_regenerative-oxy-fuel` | Regenerative or oxy-fuel melting | alternative | natural-gas | 9 | light-industrial.service.heat.metal-melting; non-ferrous-metals.product.aluminum.recycle; non-ferrous-metals.product.copper.melt-cast; non-ferrous-metals.product.lead.melt-cast; non-ferrous-metals.product.magnesium.melt-cast; non-ferrous-metals.product.nickel.melt-cast; non-ferrous-metals.product.zinc.melt-cast | quantified |
 | `process-improvement_magnesium-cover-gas` | SF6-free magnesium cover gas | alternative |  | 9 | non-ferrous-metals.product.magnesium.cover-gas | estimated |
 | `rolling-mill_ring` | Ring rolling with variable wall thickness | prospective | electricity; natural-gas | 4 | no connection | estimated |
 | `smelting-vessel_bottom-blowing` | Oxygen bottom-blowing bath smelting | alternative | natural-gas; coal | 9 | non-ferrous-metals.product.copper.pyrometallurgy.smelting; non-ferrous-metals.product.lead.pyrometallurgy.smelting; non-ferrous-metals.product.nickel.pyrometallurgy.smelting | quantified |
@@ -614,7 +614,6 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `pulper_thermomechanical` | Thermomechanical pulping refiners | conventional |  | 9 | pulp-and-paper.product.pulp.pulping-mechanical | quantified |
 | `reactor_ecf-bleaching` | Conventional ECF bleach plant | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.bleaching | quantified |
 | `separator_clarifier` | Clarification and sludge dewatering | conventional |  | 9 | pulp-and-paper.service.effluent-treatment.primary | estimated |
-| `boiler_recovery-high-solids` | High-solids firing and high-pressure recovery boiler | efficient variant | black-liquor | 9 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `dryer_steam-heated_efficiency-moderate` | Paper dryer section efficiency measures, moderate | efficient variant | steam; electricity | 9 | pulp-and-paper.product.paper.coated.drying; pulp-and-paper.product.paper.linerboard.drying; pulp-and-paper.product.paper.newsprint.drying; pulp-and-paper.product.paper.tissue.drying; pulp-and-paper.product.paper.uncoated.drying | quantified |
 | `dryer_steam-heated_efficiency-strong` | Paper dryer section efficiency measures, strong | efficient variant | steam | 9 | pulp-and-paper.product.paper.coated.drying; pulp-and-paper.product.paper.linerboard.drying; pulp-and-paper.product.paper.newsprint.drying; pulp-and-paper.product.paper.tissue.drying; pulp-and-paper.product.paper.uncoated.drying | quantified |
 | `fan_activated-sludge_efficiency-moderate` | Activated sludge efficiency measures, moderate (fine-bubble aeration) | efficient variant | electricity | 9 | pulp-and-paper.service.effluent-treatment.secondary | estimated |
@@ -622,10 +621,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `paper-machine_efficiency-moderate` | Paper machine efficiency measures, moderate | efficient variant | steam; electricity | 9 | pulp-and-paper.product.paper.coated.forming; pulp-and-paper.product.paper.linerboard.forming; pulp-and-paper.product.paper.newsprint.forming; pulp-and-paper.product.paper.tissue.forming; pulp-and-paper.product.paper.uncoated.forming | quantified |
 | `paper-machine_efficiency-strong` | Paper machine efficiency measures, strong | efficient variant | steam | 9 | pulp-and-paper.product.paper.coated.forming; pulp-and-paper.product.paper.linerboard.forming; pulp-and-paper.product.paper.newsprint.forming; pulp-and-paper.product.paper.tissue.forming; pulp-and-paper.product.paper.uncoated.forming | quantified |
 | `pulper_refiner-low-energy` | Low-energy refining | efficient variant | electricity | 9 | pulp-and-paper.product.pulp.pulping-mechanical | quantified |
-| `reactor_oxygen-delignification` | Oxygen delignification with ECF bleaching | efficient variant | steam | 9 | pulp-and-paper.product.pulp.bleaching | quantified |
-| `vapour-recompressor_evaporation` | Mechanical vapour recompression evaporation | efficient variant | electricity; steam | 9 | chemicals.product.chlor-alkali.caustic-evaporation; pulp-and-paper.service.chemical-recovery.evaporator | quantified |
 | `boiler_recovery_ccs-diffuse` | Recovery boiler with post-combustion capture | prospective |  | 5 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `anaerobic-digester_effluent` | Anaerobic treatment with biogas recovery | alternative |  | 9 | pulp-and-paper.service.effluent-treatment.secondary | quantified |
+| `boiler_recovery-high-solids` | High-solids firing and high-pressure recovery boiler | alternative | black-liquor | 9 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `digester_batch-kraft` | Batch kraft digester | alternative | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `digester_deep-eutectic-solvent` | Deep eutectic solvent pulping | prospective | steam; electricity | 4 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `dryer_electric-paper` | Electric paper dryer | alternative | electricity | 6-7 | pulp-and-paper.product.paper.coated.drying; pulp-and-paper.product.paper.linerboard.drying; pulp-and-paper.product.paper.newsprint.drying; pulp-and-paper.product.paper.tissue.drying; pulp-and-paper.product.paper.uncoated.drying | estimated |
@@ -634,7 +632,9 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `kiln_lime-electric` | Electrified lime kiln | prospective | electricity | 5-6 | pulp-and-paper.service.chemical-recovery.lime-kiln | quantified |
 | `paper-machine_waterless` | Dry or foam forming | prospective | electricity | 4 | pulp-and-paper.product.paper.coated.forming; pulp-and-paper.product.paper.linerboard.forming; pulp-and-paper.product.paper.newsprint.forming; pulp-and-paper.product.paper.tissue.forming; pulp-and-paper.product.paper.uncoated.forming | quantified |
 | `pulper_chemi-thermomechanical` | Chemi-thermomechanical pulping | alternative | electricity | 9 | pulp-and-paper.product.pulp.pulping-mechanical | quantified |
+| `reactor_oxygen-delignification` | Oxygen delignification with ECF bleaching | alternative | steam | 9 | pulp-and-paper.product.pulp.bleaching | quantified |
 | `separator_membrane-bioreactor` | Membrane bioreactor effluent treatment | alternative | electricity | 9 | pulp-and-paper.service.effluent-treatment.secondary | quantified |
+| `vapour-recompressor_evaporation` | Mechanical vapour recompression evaporation | alternative | electricity; steam | 9 | chemicals.product.chlor-alkali.caustic-evaporation; pulp-and-paper.service.chemical-recovery.evaporator | quantified |
 | `gasifier_black-liquor-fuels` | Black liquor gasification to motor fuels (whole plant) | reference | black-liquor; biomass; electricity | 6-7 | no connection | quantified |
 | `paper-machine_with-dryer-section` | Paper machine with dryer section (whole papermaking) | reference | steam; electricity | 9 | no connection | quantified |
 | `process-improvement_log-thawing` | Log and chip thawing with recovered heat | reference | steam | 9 | no connection | estimated |

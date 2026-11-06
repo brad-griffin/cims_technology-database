@@ -594,6 +594,15 @@ lighting_hid,lighting,<sector>.non-ferrous-metals.service.lighting,lighting,,cro
 lighting_hid,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_hid,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_hid,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.non-ferrous-metals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
+lighting_led-controls,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-high-bay,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-high-bay,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-high-bay,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
@@ -612,15 +621,6 @@ lighting_fluorescent-t8,lighting,<sector>.non-ferrous-metals.service.lighting,li
 lighting_fluorescent-t8,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-t8,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_fluorescent-t8,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.iron-and-steel.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.light-industrial.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.non-ferrous-metals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.petroleum-refining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
-lighting_led-controls,lighting,<sector>.pulp-and-paper.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led,lighting,<sector>.chemicals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led,lighting,<sector>.coal-mining.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
 lighting_led,lighting,<sector>.industrial-minerals.service.lighting,lighting,,cross-sector/lighting: every leaf of the end use
@@ -775,7 +775,6 @@ kiln_legacy,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,
 kiln_lime-long-rotary,cement-and-lime,<sector>.industrial-minerals.product.lime,lime-calcination,,copied from kiln_lime-rotary-preheater 2026-10-01
 kiln_lime-rotary-preheater,cement-and-lime,<sector>.industrial-minerals.product.lime,lime-calcination,,cement-and-lime/lime-calcination: the device's route
 kiln_lime-shaft,cement-and-lime,<sector>.industrial-minerals.product.lime,lime-calcination,,cement-and-lime/lime-calcination: the device's route
-grinding-mill_vertical-roller,cement-and-lime,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement-and-lime/cement-grinding-and-blending: every leaf of the end use
 kiln_dry-precalciner_efficiency-moderate,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement-and-lime/clinker-production: the device's route
 kiln_dry-precalciner_efficiency-strong,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement-and-lime/clinker-production: the device's route
 kiln_dry-precalciner_ccs-diffuse,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement-and-lime/clinker-production: the device's route
@@ -790,6 +789,7 @@ binder_hydrothermal-silicate,cement-and-lime,<sector>.industrial-minerals.produc
 binder_sulphoaluminate,cement-and-lime,<sector>.industrial-minerals.product.cement.binder,cement-binder,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 calciner_indirect,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement-and-lime/clinker-production: the device's route
 calciner_indirect,cement-and-lime,<sector>.industrial-minerals.product.lime,lime-calcination,,"node alignment review 2026-11-05 (IM01), Brad 2026-11-05: apply as suggested or by judgement: calcining duty scales with heat of calcination: about 1.7 GJ per t clinker against 3.18 GJ per t CaO, so 1 t clinker of duty calcines about 0.535 t lime; estimated"
+grinding-mill_vertical-roller,cement-and-lime,<sector>.industrial-minerals.product.cement.grinding,cement-grinding-and-blending,,cement-and-lime/cement-grinding-and-blending: every leaf of the end use
 kiln_calcium-looping,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,copied from kiln_oxy-fuel 2026-10-01
 kiln_calcium-silicate-feed,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,as kiln_dry-precalciner
 kiln_electric-plasma,cement-and-lime,<sector>.industrial-minerals.product.cement.clinker,clinker-production,,cement-and-lime/clinker-production: the device's route
@@ -814,8 +814,6 @@ separator_aromatics-extraction,chemicals,<sector>.chemicals.product.petrochemica
 steam-cracker_fired-tubular,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 steam-reformer_methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
-distillation-column_heat-integrated,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-electrolysis-cell_oxygen-depolarized,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,chemicals/electrochemical-products: the leaf its name or label names
 reactor_catalytic-n2o,chemicals,<sector>.chemicals.service.n2o-abatement,n2o-abatement,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv): requested by the nitric and adipic acid plants
 reactor_polymerization-extrusion_efficiency-strong,chemicals,<sector>.chemicals.product.petrochemicals.polymers,polymers,,as reactor_polymerization-extrusion
 separator_aromatics-extraction_efficiency-moderate,chemicals,<sector>.chemicals.product.petrochemicals.aromatics,aromatics,,baselines 2026-10-23 (modeller: build the missing baselines)
@@ -828,7 +826,9 @@ reactor_ethylene-oxidation_ccs-concentrated,chemicals,<sector>.chemicals.product
 steam-cracker_fired-tubular_ccs-diffuse,chemicals,<sector>.chemicals.product.petrochemicals.olefins,olefins,,chemicals/steam-cracking: every leaf of the end use
 steam-reformer_ammonia_ccs-concentrated,chemicals,<sector>.chemicals.product.ammonia,ammonia,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 autothermal-reformer_ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,added 2026-10-05 (archetype combination review)
+distillation-column_heat-integrated,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 distillation-column_heat-pumped,chemicals,<sector>.chemicals.service.distillation,chemical-distillation,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+electrolysis-cell_oxygen-depolarized,chemicals,<sector>.chemicals.product.chlor-alkali.chlorine-electrolysis,electrochemical-products,,chemicals/electrochemical-products: the leaf its name or label names
 gasifier_biomass-ammonia,chemicals,<sector>.chemicals.product.ammonia,ammonia,,whole plant
 gasifier_biomass-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 gasifier_coal-methanol,chemicals,<sector>.chemicals.product.methanol,methanol,,added 2026-10-01
@@ -866,7 +866,6 @@ furnace_regenerative,glass-and-ceramics,<sector>.industrial-minerals.product.gla
 kiln_intermittent,glass-and-ceramics,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,copied from kiln_tunnel-roller 2026-10-01
 kiln_tunnel-roller,glass-and-ceramics,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,glass-and-ceramics/ceramic-firing: every leaf of the end use
 furnace_hybrid-electric,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,glass-and-ceramics/glass-melting: every leaf of the end use
-furnace_oxy-fuel,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,glass-and-ceramics/glass-melting: every leaf of the end use
 kiln_tunnel-roller_efficiency-strong,glass-and-ceramics,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,copied from kiln_tunnel-roller 2026-10-01
 furnace_regenerative_ccs-diffuse,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,copied from furnace_regenerative 2026-10-01
 dryer_electric,glass-and-ceramics,<sector>.coal-mining.product.coal-preparation.drying,product-drying,,mining/product-drying: every leaf of mining/product-drying; no evidence to narrow it
@@ -876,6 +875,7 @@ dryer_electric,glass-and-ceramics,<sector>.mining.service.drying,product-drying,
 furnace_electric,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,glass-and-ceramics/glass-melting: every leaf of the end use
 furnace_hybrid-majority-electric,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,"split from furnace_hybrid-electric (S152, 2026-10-27)"
 furnace_lehr-electric,glass-and-ceramics,<sector>.industrial-minerals.product.glass.form-and-finish,glass-forming-and-finishing,,glass-and-ceramics/glass-forming-and-finishing: every leaf of the end use
+furnace_oxy-fuel,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,glass-and-ceramics/glass-melting: every leaf of the end use
 furnace_oxy-fuel-thermochemical,glass-and-ceramics,<sector>.industrial-minerals.product.glass.furnaces,glass-melting,,glass-and-ceramics/glass-melting: every leaf of the end use
 kiln_ceramic-electric,glass-and-ceramics,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,glass-and-ceramics/ceramic-firing: every leaf of the end use
 kiln_ceramic-microwave-assisted,glass-and-ceramics,<sector>.industrial-minerals.product.ceramics.kiln,ceramic-firing,,glass-and-ceramics/ceramic-firing: every leaf of the end use
@@ -913,7 +913,6 @@ rolling-mill_cold,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast
 rolling-mill_hot,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.hot-rolling,rolling,,iron-and-steel/rolling: the leaf its name or label names
 shaft-furnace_direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
 sinter-plant,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
-annealing-furnace_hydrogen-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 basic-oxygen-furnace_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.product.molten-steel,steelmaking,,iron-and-steel/steelmaking: the device's route
 blast-furnace_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 blast-furnace_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
@@ -925,13 +924,13 @@ furnace_reheating_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.servi
 pellet-plant_induration_efficiency-moderate,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
 rolling-mill_cold_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.cold-rolling,rolling,,iron-and-steel/rolling: the leaf its name or label names
 rolling-mill_hot_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.hot-rolling,rolling,,iron-and-steel/rolling: the leaf its name or label names
-rolling-mill_thin-slab,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
 sinter-plant_efficiency-moderate,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 sinter-plant_efficiency-strong,iron-and-steel,<sector>.iron-and-steel.service.agglomeration,agglomeration,,iron-and-steel/agglomeration: every leaf of the end use
 blast-furnace_ccs-diffuse,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 shaft-furnace_direct-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the device's route
 smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host smelting-vessel_bath-reduction
 annealing-furnace_continuous,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+annealing-furnace_hydrogen-bell,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 blast-furnace_biogenic-carbon,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as its host blast-furnace
 blast-furnace_top-gas-recycling,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
 caster_strip,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
@@ -945,6 +944,7 @@ induction-heater_reheating,iron-and-steel,<sector>.light-industrial.service.heat
 induction-heater_strip-heating,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.annealing-and-coating.annealing,annealing-and-coating,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 melting-furnace_electric-smelting,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 pellet-plant_plasma-electric,iron-and-steel,<sector>.mining.service.pelletizing,pelletizing,,mining/pelletizing: every leaf of the end use
+rolling-mill_thin-slab,iron-and-steel,<sector>.iron-and-steel.product.continuous-cast.casting,casting,,iron-and-steel/casting: every leaf of the end use
 shaft-furnace_hydrogen-direct-reduction,iron-and-steel,<sector>.iron-and-steel.service.direct-reduced-iron,ironmaking,,iron-and-steel/ironmaking: the leaf its name or label names
 smelting-vessel_low-shaft,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,as the other smelting-reduction routes
 smelting-vessel_smelting-reduction,iron-and-steel,<sector>.iron-and-steel.service.hot-metal,ironmaking,,iron-and-steel/ironmaking: the device's route
@@ -970,10 +970,10 @@ separator_thickening-filtration,mining,<sector>.coal-mining.product.coal-prepara
 separator_thickening-filtration,mining,<sector>.mining.service.tailings-disposal,water-and-tailings-management,,"node-split follow-up 2026-10-22 (B1 revised, modeller)"
 separator_thickening-filtration,mining,<sector>.crude-oil.service.tailings-disposal,oil-sands-tailings,,"added 2026-10-29 (Brad 2026-10-29): the slurry-tailings baseline beside dry stacking, as on the mining tailings nodes"
 conveyor_in-pit-crushing,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
-grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 grinding-mill_stirred,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 evaporator_crystallizer,mining,<sector>.mining.service.crystallization,separation-and-processing,,added 2026-10-05 (archetype combination review)
 gas-treatment-unit_vam-oxidiser,mining,<sector>.coal-mining.product.raw-product.mine-methane,coal-mine-methane,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv): methane control requested by coal extraction (the node cims/to-fix.md asked for)
+grinding-mill_hpgr,mining,<sector>.mining.service.milling,comminution,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 haul-truck_battery-electric,mining,<sector>.coal-mining.service.mine-haulage,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,mining,<sector>.mining.service.mine-haulage.open-pit,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
 haul-truck_battery-electric,mining,<sector>.mining.service.mine-haulage.underground,extraction-and-haulage,,haulage archetypes sit only on the mine-haulage nodes (2026-09-30)
@@ -1026,13 +1026,6 @@ converter_continuous,non-ferrous-metals,<sector>.non-ferrous-metals.product.nick
 electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,non-ferrous-metals,<sector>.non-ferrous-metals.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 electric-arc-furnace_smelting-submerged-arc_pre-reduction,non-ferrous-metals,<sector>.non-ferrous-metals.product.titanium-slag.pyrometallurgy.smelting,electric-smelting,,"node alignment NF23 (Brad 2026-11-05, rule 3): the whole route (pre-reduction and furnace) competes at smelting; was on roasting"
 electrolysis-cell_advanced-anodes,non-ferrous-metals,<sector>.non-ferrous-metals.product.copper.hydrometallurgy,hydrometallurgy,,"corrected 2026-09-23: electrowinning of copper, nickel and zinc"
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.copper.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; copper needs 0.6 of aluminium's melting heat (melting heat about 0.65 GJ/t against aluminium's 1.1), so 1 t aluminium-equivalent melts 1.67 t copper. Salt-slag flows apply to aluminium only. [factor 1 per 0.6, product copper melted t]"
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.lead.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; lead needs 0.06 of aluminium's melting heat (about 0.06 GJ/t), so 1 t aluminium-equivalent melts 16.67 t lead. Salt-slag flows apply to aluminium only. [factor 1 per 0.06, product lead melted t]"
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.magnesium.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; magnesium needs 0.85 of aluminium's melting heat (about 0.95 GJ/t), so 1 t aluminium-equivalent melts 1.18 t magnesium. Salt-slag flows apply to aluminium only. [factor 1 per 0.85, product magnesium melted t]"
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.nickel.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; nickel needs 0.9 of aluminium's melting heat (about 1.0 GJ/t), so 1 t aluminium-equivalent melts 1.11 t nickel. Salt-slag flows apply to aluminium only. [factor 1 per 0.9, product nickel melted t]"
-melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.zinc.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; zinc needs 0.12 of aluminium's melting heat (about 0.13 GJ/t), so 1 t aluminium-equivalent melts 8.33 t zinc. Salt-slag flows apply to aluminium only. [factor 1 per 0.12, product zinc melted t]"
 melting-furnace_twin-chamber,non-ferrous-metals,<sector>.non-ferrous-metals.product.aluminum.recycle,melting-casting-and-fabrication,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,<sector>.non-ferrous-metals.product.copper.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,<sector>.non-ferrous-metals.product.nickel.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
@@ -1050,6 +1043,13 @@ electrolysis-cell_electrolytic-smelting,non-ferrous-metals,<sector>.non-ferrous-
 electrolysis-cell_inert-anode,non-ferrous-metals,<sector>.non-ferrous-metals.product.aluminum.primary-aluminum.electrolysis,aluminum-smelting,,non-ferrous-metals/aluminum-smelting: every leaf of the end use
 furnace_anode-baking-electric,non-ferrous-metals,<sector>.non-ferrous-metals.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
 furnace_anode-baking_biogenic-carbon,non-ferrous-metals,<sector>.non-ferrous-metals.service.anode-production,anode-production,,non-ferrous-metals/anode-production: every leaf of the end use
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.light-industrial.service.heat.metal-melting,metal-melting-and-heat-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.aluminum.recycle,melting-casting-and-fabrication,,non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.copper.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; copper needs 0.6 of aluminium's melting heat (melting heat about 0.65 GJ/t against aluminium's 1.1), so 1 t aluminium-equivalent melts 1.67 t copper. Salt-slag flows apply to aluminium only. [factor 1 per 0.6, product copper melted t]"
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.lead.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; lead needs 0.06 of aluminium's melting heat (about 0.06 GJ/t), so 1 t aluminium-equivalent melts 16.67 t lead. Salt-slag flows apply to aluminium only. [factor 1 per 0.06, product lead melted t]"
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.magnesium.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; magnesium needs 0.85 of aluminium's melting heat (about 0.95 GJ/t), so 1 t aluminium-equivalent melts 1.18 t magnesium. Salt-slag flows apply to aluminium only. [factor 1 per 0.85, product magnesium melted t]"
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.nickel.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; nickel needs 0.9 of aluminium's melting heat (about 1.0 GJ/t), so 1 t aluminium-equivalent melts 1.11 t nickel. Salt-slag flows apply to aluminium only. [factor 1 per 0.9, product nickel melted t]"
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,<sector>.non-ferrous-metals.product.zinc.melt-cast,melting-casting-and-fabrication,,"non-ferrous-metals/melting-casting-and-fabrication: every leaf of non-ferrous-metals/melting-casting-and-fabrication; no evidence to narrow it ; CIMS input factor, not shown as a review-view override (one override per end use; other nodes of this end use keep the home product) (node alignment NF12, Brad 2026-11-05): the values are aluminium remelt figures; zinc needs 0.12 of aluminium's melting heat (about 0.13 GJ/t), so 1 t aluminium-equivalent melts 8.33 t zinc. Salt-slag flows apply to aluminium only. [factor 1 per 0.12, product zinc melted t]"
 process-improvement_magnesium-cover-gas,non-ferrous-metals,<sector>.non-ferrous-metals.product.magnesium.cover-gas,melting-casting-and-fabrication,,"node alignment review NF25 (Brad 2026-11-06): magnesium cover gas, per t SF6 the producers would use"
 smelting-vessel_bottom-blowing,non-ferrous-metals,<sector>.non-ferrous-metals.product.copper.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
 smelting-vessel_bottom-blowing,non-ferrous-metals,<sector>.non-ferrous-metals.product.lead.pyrometallurgy.smelting,pyrometallurgy,,non-ferrous-metals/pyrometallurgy: the leaf its name or label names
@@ -1190,7 +1190,6 @@ pulper_recycled-fibre,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulpin
 pulper_thermomechanical,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-mechanical,mechanical-pulping,,pulp-and-paper/mechanical-pulping: every leaf of the end use
 reactor_ecf-bleaching,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,,the leaf its name or label names
 separator_clarifier,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.primary,effluent-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
-boiler_recovery-high-solids,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.linerboard.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
 dryer_steam-heated_efficiency-moderate,pulp-and-paper,<sector>.pulp-and-paper.product.paper.newsprint.drying,paper-drying,,pulp-and-paper/paper-drying: every leaf of pulp-and-paper/paper-drying; no evidence to narrow it
@@ -1214,11 +1213,9 @@ paper-machine_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.p
 paper-machine_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,,as its host paper-machine
 paper-machine_efficiency-strong,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,,as its host paper-machine
 pulper_refiner-low-energy,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-mechanical,mechanical-pulping,,pulp-and-paper/mechanical-pulping: every leaf of the end use
-reactor_oxygen-delignification,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,,pulp-and-paper/chemical-pulping: the leaf its name or label names
-vapour-recompressor_evaporation,pulp-and-paper,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,,chemicals/electrochemical-products: the leaf its name or label names
-vapour-recompressor_evaporation,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,"pulp-and-paper/chemical-recovery: the leaf its name or label names Product override (band product review 2026-10-22, approved 2026-10-23): about 5.3 t water evaporated per t BLS (weak liquor about 15% solids to 70-80%); estimated. Capacity restated in t/d of black liquor solids (Brad 2026-10-29)."
 boiler_recovery_ccs-diffuse,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 anaerobic-digester_effluent,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+boiler_recovery-high-solids,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.recovery-furnace,chemical-recovery,,pulp-and-paper/chemical-recovery: the device's route
 digester_batch-kraft,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-chemical,chemical-pulping,,pulp-and-paper/chemical-pulping: the leaves its sources placed it on
 digester_deep-eutectic-solvent,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-chemical,chemical-pulping,,as digester_continuous-kraft
 dryer_electric-paper,pulp-and-paper,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,"node alignment review 2026-11-05 (PP02), Brad 2026-11-05: apply as suggested or by judgement"
@@ -1240,7 +1237,10 @@ paper-machine_waterless,pulp-and-paper,<sector>.pulp-and-paper.product.paper.new
 paper-machine_waterless,pulp-and-paper,<sector>.pulp-and-paper.product.paper.tissue.forming,paper-forming,,as paper-machine
 paper-machine_waterless,pulp-and-paper,<sector>.pulp-and-paper.product.paper.uncoated.forming,paper-forming,,as paper-machine
 pulper_chemi-thermomechanical,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.pulping-mechanical,mechanical-pulping,,pulp-and-paper/mechanical-pulping: every leaf of the end use
+reactor_oxygen-delignification,pulp-and-paper,<sector>.pulp-and-paper.product.pulp.bleaching,chemical-pulping,,pulp-and-paper/chemical-pulping: the leaf its name or label names
 separator_membrane-bioreactor,pulp-and-paper,<sector>.pulp-and-paper.service.effluent-treatment.secondary,effluent-treatment,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
+vapour-recompressor_evaporation,pulp-and-paper,<sector>.chemicals.product.chlor-alkali.caustic-evaporation,electrochemical-products,,chemicals/electrochemical-products: the leaf its name or label names
+vapour-recompressor_evaporation,pulp-and-paper,<sector>.pulp-and-paper.service.chemical-recovery.evaporator,chemical-recovery,,"pulp-and-paper/chemical-recovery: the leaf its name or label names Product override (band product review 2026-10-22, approved 2026-10-23): about 5.3 t water evaporated per t BLS (weak liquor about 15% solids to 70-80%); estimated. Capacity restated in t/d of black liquor solids (Brad 2026-10-29)."
 dryer_direct-fired,other-industry,<sector>.light-industrial.service.heat.drying,drying,,node-split review 2026-10-22 (database/reviews/node-split-review_2026-10-22.csv)
 dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.coated.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
 dryer_direct-fired,other-industry,<sector>.pulp-and-paper.product.paper.tissue.drying,paper-drying,,narrowed in the mapping review 2026-09-30 (database/reviews/archetype-service-review_2026-09-30.csv)
