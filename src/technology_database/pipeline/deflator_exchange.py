@@ -28,10 +28,10 @@ bank-of-canada_2026_fx-rates-pre-2017.csv
     Bank of Canada "Legacy Monthly Average Rates" (Valet export), monthly, 1999-01
     to 2017-04. Wide format: a SERIES block mapping series ids to ISO codes, then
     an OBSERVATIONS block with one column per series. Discontinued 2017-04-28.
-bank-of-canada_2026_fx-rates-post-2017.csv
+can-statcan_2026_fx-rates-post-2017.csv
     Statistics Canada / Bank of Canada monthly average exchange rates, 2017-01
     onward. Long format, one row per currency-month.
-eurofxref-hist.csv
+ecb_2026_euro-reference-rates.csv
     ECB euro foreign exchange reference rates, daily, 1999-01-04 onward. Wide
     format: one row per business day, one column per currency, quoted as units
     of that currency per one euro; "N/A" where a currency is not quoted. Used
@@ -104,9 +104,9 @@ OUT_DIR = DATA_ROOT / 'processed_data' / 'deflator_exchange'
 
 WORLD_BANK_FILE = RAW_DIR / 'world-bank_2026_gdp-deflator.csv'
 ECB_FILE = RAW_DIR / 'ecb_2026_gdp-deflator.csv'
-ECB_FX_FILE = RAW_DIR / 'eurofxref-hist.csv'
+ECB_FX_FILE = RAW_DIR / 'ecb_2026_euro-reference-rates.csv'
 FX_LEGACY_FILE = RAW_DIR / 'bank-of-canada_2026_fx-rates-pre-2017.csv'
-FX_CURRENT_FILE = RAW_DIR / 'bank-of-canada_2026_fx-rates-post-2017.csv'
+FX_CURRENT_FILE = RAW_DIR / 'can-statcan_2026_fx-rates-post-2017.csv'
 
 DEFLATOR_OUT = OUT_DIR / 'currency_deflator.csv'
 EXCHANGE_OUT = OUT_DIR / 'currency_exchange.csv'
