@@ -22,7 +22,7 @@ from __future__ import annotations
 import re
 from collections import defaultdict
 
-from .common import PRIMARY, RAW, REFERENCE, currency_year, read
+from .common import RAW, REFERENCE, currency_year, read
 
 # UK TIMES (via Bataille) prices its "improvement technologies" and add-ons as
 # the cost of adding them to an existing plant: cost-basis incremental.
@@ -598,6 +598,26 @@ def example_id(source_id: str, tech: str, process: str = "") -> str:
     return f"{source_id}:{tech}" + (f"@{slug(process)}" if process else "")
 
 
+
+_DOCS = None
+
+
+def held_document(stem: str) -> str | None:
+    """The document file a source's extraction comes from, as the file manifest names
+    it (so the build gives the same answer without primary-sources/ on the disk)."""
+    global _DOCS
+    if _DOCS is None:
+        _DOCS = {}
+        for r in read(RAW / "source-details_files.csv"):
+            f = (r.get("file_on_disk") or "").strip()
+            if f and not f.endswith(".csv"):
+                folder = (r.get("file_path") or "").strip()
+                k = f"{folder}/{f.rsplit('.', 1)[0]}" if folder else f.rsplit(".", 1)[0]
+                _DOCS.setdefault(k, []).append(f)
+    # several formats of one document (the MIDDEN .ods and .pdf): the first by name,
+    # as the build read them from the disk before
+    return min(_DOCS[stem]) if _DOCS.get(stem) else None
+
 class Loader:
     def __init__(self):
         self.facts, self.flows, self.cons = [], [], []
@@ -897,8 +917,7 @@ class Loader:
         if not nm:
             return
         base = stem.split("/")[-1]
-        held = [p.name for p in (PRIMARY / stem).parent.glob(base + ".*") if p.suffix != ".csv"]
-        src_file = held[0] if held else base + ".pdf"
+        src_file = held_document(stem) or base + ".pdf"
         for row in read(RAW / f"{stem}.csv"):
             key = (row.get("process", ""), row["technology"])
             if key not in nm:

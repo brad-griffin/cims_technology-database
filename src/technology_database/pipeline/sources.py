@@ -18,10 +18,10 @@ import csv
 import re
 import warnings
 
-from .common import OUTPUT, PRIMARY, RAW, REFERENCE, read, write
+from .common import OUTPUT, RAW, REFERENCE, read, write
 
 warnings.filterwarnings("ignore")
-UKERC_XLSX = PRIMARY / "other-reports" / "ukerc_2013_usable-energy-database.xlsx"
+UKERC_REFS = RAW / "other-reports" / "ukerc_2013_usable-energy-database_references.csv"
 MANIFEST = RAW / "source-details_sources.csv"
 MANIFEST_FILES = RAW / "source-details_files.csv"
 CITES = RAW / "other-reports" / "ukerc_2013_usable-energy-database_citations.csv"
@@ -89,22 +89,13 @@ def key(c):
 
 
 def ukerc_references():
-    import openpyxl
-    if not UKERC_XLSX.exists():
+    """UKERC's References tab, extracted to ..._references.csv (sector, citation as
+    UKERC writes it, full reference), so the build needs no workbook (2026-11-06)."""
+    if not UKERC_REFS.exists():
         return {}
-    wb = openpyxl.load_workbook(UKERC_XLSX, read_only=True, data_only=True)
-    if "References" not in wb.sheetnames:
-        return {}
-    out, sector = {}, ""
-    for row in wb["References"].iter_rows(values_only=True):
-        v = [("" if c is None else str(c).strip()) for c in row]
-        a, b, c = (v + ["", "", ""])[:3]
-        if a and not b and not c and a.lower() != "references":
-            sector = a
-            continue
-        if b and c and b.lower() != "citation":
-            out.setdefault(key(b), (re.sub(r"\s+", " ", c), sector))
-    wb.close()
+    out = {}
+    for r in read(UKERC_REFS):
+        out.setdefault(key(r["citation"]), (r["reference"], r["sector"]))
     return out
 
 
