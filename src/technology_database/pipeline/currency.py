@@ -8,9 +8,10 @@ target year's rate.
                                    x exchange[CAD_per_XXX][2025]
 
 The factor is not symmetric and must not be chained or reversed: convert once,
-from the currency the estimate was published in. The two reference tables are
-copied verbatim from the CIMS repository (data/processed_data/deflator_exchange/);
-refresh them there, not by hand. Deflators cover 1976-2025 (EUR 1995-2025) and
+from the currency the estimate was published in. The two tables are the CIMS repository's own
+(data/processed_data/deflator_exchange/currency_deflator.csv and currency_exchange.csv,
+built by CIMS.data_processing.source.deflator_exchange); tech_data holds a copy at the
+same path. Refresh them there, not by hand. Deflators cover 1976-2025 (EUR 1995-2025) and
 exchange rates 1999-2025 (all years the raw files carry, 2026-10-02) for CAD, USD,
 GBP, EUR, JPY, INR, CNY and DKK; AUD, SEK, CHF and the pre-euro NLG and DEM (through
 the fixed euro rates) added 2026-10-03, with deflators from 1960. An earlier source year needs only its deflator,
@@ -28,7 +29,11 @@ from __future__ import annotations
 
 import re
 
-from .common import OUTPUT, REFERENCE, read, write
+from .common import DATA, OUTPUT, read, write
+
+# the CIMS currency tables, written by CIMS.data_processing.source.deflator_exchange
+# (in tech_data, a copy of them); read as they are (Brad 2026-11-06)
+CURRENCY = DATA / "processed_data" / "deflator_exchange"
 
 TARGET_YEAR, TARGET_CUR = 2025, "CAD"
 TARGET = f"{TARGET_YEAR}_{TARGET_CUR}"
@@ -51,9 +56,9 @@ MONEY = re.compile(r"^(\d{4})_([A-Z]{3})")
 
 def factors(fact_rows, write_output=True) -> tuple[dict[str, float], list[str]]:
     deflator = {(r["Context"], int(r["Year"])): float(r["Value"])
-                for r in read(REFERENCE / "reference-currency-deflator.csv")}
+                for r in read(CURRENCY / "currency_deflator.csv")}
     exchange = {(r["Context"], int(r["Year"])): float(r["Value"])
-                for r in read(REFERENCE / "reference-currency-exchange.csv")}
+                for r in read(CURRENCY / "currency_exchange.csv")}
     used = set()
     for r in fact_rows:
         for f in ("unit", "currency"):

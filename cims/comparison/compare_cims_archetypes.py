@@ -18,7 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 OUT = os.path.join(HERE, 'comparison')
 RATE = 0.08
-INFL = 124.400255 / 100.0   # CAD GDP deflator 2025/2020 (records/reference/reference-currency-deflator.csv)
+INFL = 124.400255 / 100.0   # CAD GDP deflator 2025/2020 (data/processed_data/deflator_exchange/currency_deflator.csv)
 
 def crf(r, n):
     return r / (1 - (1 + r) ** -n)
