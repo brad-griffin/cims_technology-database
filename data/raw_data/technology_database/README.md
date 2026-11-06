@@ -8,7 +8,9 @@ database reads it from `data/raw_data/technology_database/` in the technology-da
 repository (https://github.com/brad-griffin/technology-database) or in the CIMS
 repository (https://github.com/EMRG-SFU/cims).
 
-The source documents themselves are not part of this deposit. The manifest records each
+Everything the build reads is in this deposit or in the repository's committed records
+(`data/technology_database/`); nothing comes from elsewhere. The source documents themselves
+are not part of this deposit. The manifest records each
 one: its citation, DOI or URL, the date it was obtained, and its licence.
 
 ## What is here
@@ -18,8 +20,8 @@ one: its citation, DOI or URL, the date it was obtained, and its licence.
 | `source-details_sources.csv` | One row per source: `source_id`, author, institution, title, a description of what was extracted and how, year, `licence_type` (the licence or copyright terms the document prints, as recorded when it was extracted), update schedule, and download instructions. |
 | `source-details_files.csv` | One row per file: the source document and every extraction file made from it. `file_path` is the publisher folder (the same in this deposit and in the local `primary-sources/` folder of documents), `file_on_disk` the file name, `csv_data_extract` the extraction a document feeds, and `file_source`, `doi`, and `date_accessed` where the file came from. |
 | `source-details_reference.csv` | Sources behind conversion factors, prices, and currency tables, with what each one is used for. |
-| `background-register.csv` | Documents read that yielded no usable figures, and why. Their `_meta.csv` files are in `background-no-data-extracted/`. |
-| `to-get.csv`, `unavailable.csv` | Documents still to obtain, and those that could not be obtained, with the reason and any substitute. |
+| `background-register.csv` | The log of documents read and tested that yielded no usable figures, and why. |
+| `currency/` | The raw currency downloads (World Bank and ECB GDP deflators, Bank of Canada and Statistics Canada exchange rates, ECB euro reference rates). The build turns them into its currency tables with CIMS's deflator_exchange builder. |
 | `extraction-vocabulary.csv` | The controlled terms the extraction files use. |
 | `gov-can/`, `gov-dk/`, `gov-eu/`, `gov-nl/`, `gov-nz/`, `gov-uk/`, `gov-usa/`, `iea/`, `other-reports/`, `peer-reviewed/` | The extractions, by publisher. |
 

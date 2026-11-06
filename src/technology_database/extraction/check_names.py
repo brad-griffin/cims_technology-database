@@ -68,6 +68,9 @@ VOCABULARY_SCOPE = {"general-services"}
 ORIGINAL_NAME_DIRS = {
     "energy_commodities", "nir", "ceedc", "archive",
     "__marimo__", "__pycache__",
+    # currency/ holds the raw downloads under the names CIMS's deflator_exchange
+    # builder reads them by (the ECB's own eurofxref-hist.csv among them)
+    "currency",
     # superseded/ archives retired artefacts under the names they had when they
     # were retired -- renaming them would break the link to the code and notes
     # that reference them, so the naming rule does not apply inside it.

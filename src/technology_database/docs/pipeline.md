@@ -100,9 +100,9 @@ gate a commit.
 
 ## How to
 
-**Add a source.** Pick it from `data/raw_data/technology_database/to-get.csv` where it is listed there,
+**Add a source.** Pick it from `source-intake/to-get.csv` where it is listed there,
 and remove it from that list once it is held. If it cannot be obtained, move its row to
-`data/raw_data/technology_database/unavailable.csv` with the reason and any substitute. If the
+`source-intake/unavailable.csv` with the reason and any substitute. If the
 document turns out to hold nothing usable, put it in `primary-sources/background-no-data-extracted/`
 and add a row to `data/raw_data/technology_database/background-register.csv` instead of registering it.
 1. Put the document in its publisher folder under `primary-sources/` (new downloads arrive in
@@ -137,9 +137,11 @@ and add a row to `data/raw_data/technology_database/background-register.csv` ins
 2. `mapping-review.md` lists the nodes added and removed.
 3. The build fails on any service link or annotation whose path has gone. Repoint those, then rebuild.
 
-**Refresh currency.** Rebuild the two tables in CIMS (`python -m CIMS.data_processing.source.deflator_exchange.deflator_exchange`),
-which writes `data/processed_data/deflator_exchange/currency_deflator.csv` and `currency_exchange.csv`.
-In the technology-database repo, copy those two files to the same path, then build.
+**Refresh currency.** Replace the raw downloads in `data/raw_data/technology_database/currency/`
+(the file names `deflator_exchange.py` expects) and build. The build turns them into
+`output/currency/currency_deflator.csv` and `currency_exchange.csv` with CIMS's
+deflator_exchange builder (CIMS's own module in CIMS; `pipeline/deflator_exchange.py`, a copy,
+in the technology-database repo: keep the copy in step with CIMS).
 
 ## Other checks
 

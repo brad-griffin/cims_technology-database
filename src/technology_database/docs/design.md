@@ -792,12 +792,12 @@ originals a compilation cites (registered but not held), and sources queued for
 extraction.
 
 **Documents to get.** Documents worth obtaining are listed in
-`data/raw_data/technology_database/to-get.csv`, with priority, the source that cites each one, and
+`source-intake/to-get.csv`, with priority, the source that cites each one, and
 what it would supply. A document leaves the list when it is downloaded and
-registered. Documents that turn out to be unobtainable move to `data/raw_data/technology_database/unavailable.csv`, with the reason and any substitute held, so they are not searched for again.
+registered. Documents that turn out to be unobtainable move to `source-intake/unavailable.csv`, with the reason and any substitute held, so they are not searched for again.
 
 **Background documents.** A downloaded document that yields nothing for the
-database goes to `data/raw_data/technology_database/background-no-data-extracted/` and is recorded
+database goes to `source-intake/background-no-data-extracted/ (its `_meta.csv`; the document in `primary-sources/background-no-data-extracted/`)` and is recorded
 in `data/raw_data/technology_database/background-register.csv` (why it has no data, what little it
 has), not in `source-details_files.csv`. Its source row stays only if a
 compilation cites it as an original.

@@ -8,10 +8,10 @@ target year's rate.
                                    x exchange[CAD_per_XXX][2025]
 
 The factor is not symmetric and must not be chained or reversed: convert once,
-from the currency the estimate was published in. The two tables are the CIMS repository's own
-(data/processed_data/deflator_exchange/currency_deflator.csv and currency_exchange.csv,
-built by CIMS.data_processing.source.deflator_exchange); tech_data holds a copy at the
-same path. Refresh them there, not by hand. Deflators cover 1976-2025 (EUR 1995-2025) and
+from the currency the estimate was published in. The two tables are built at each build with CIMS's own builder
+(CIMS.data_processing.source.deflator_exchange; a copy in pipeline/deflator_exchange.py
+outside CIMS) from the raw downloads in data/raw_data/technology_database/currency/, and
+written to output/currency/. To refresh them, replace the raw downloads. Deflators cover 1976-2025 (EUR 1995-2025) and
 exchange rates 1999-2025 (all years the raw files carry, 2026-10-02) for CAD, USD,
 GBP, EUR, JPY, INR, CNY and DKK; AUD, SEK, CHF and the pre-euro NLG and DEM (through
 the fixed euro rates) added 2026-10-03, with deflators from 1960. An earlier source year needs only its deflator,
@@ -29,11 +29,33 @@ from __future__ import annotations
 
 import re
 
-from .common import DATA, OUTPUT, read, write
+from .common import OUTPUT, RAW, read, write
 
-# the CIMS currency tables, written by CIMS.data_processing.source.deflator_exchange
-# (in tech_data, a copy of them); read as they are (Brad 2026-11-06)
-CURRENCY = DATA / "processed_data" / "deflator_exchange"
+# The currency tables are built at each build from the raw downloads in the deposit
+# (data/raw_data/technology_database/currency/), with CIMS's deflator_exchange builder:
+# CIMS's own module inside CIMS, a copy of it (pipeline/deflator_exchange.py) in the
+# technology-database repo. Nothing comes from outside the repo and the deposit
+# (Brad 2026-11-06).
+CURRENCY_RAW = RAW / "currency"
+CURRENCY = OUTPUT / "currency"
+
+
+def _builder():
+    try:
+        from ...source.deflator_exchange import deflator_exchange as dx   # in CIMS
+    except ImportError:
+        from . import deflator_exchange as dx                             # standalone copy
+    return dx
+
+
+def build_tables() -> None:
+    """Write currency/currency_deflator.csv and currency_exchange.csv under the outputs,
+    as CIMS's builder writes them (the same rounding), from the deposit's raw files."""
+    dx = _builder()
+    dx._write(dx.build_deflator_table(raw_dir=CURRENCY_RAW), CURRENCY / "currency_deflator.csv",
+              f".{dx.DEFLATOR_DECIMALS}f")
+    dx._write(dx.build_exchange_table(raw_dir=CURRENCY_RAW), CURRENCY / "currency_exchange.csv",
+              f".{dx.EXCHANGE_SIG_DIGITS}g")
 
 TARGET_YEAR, TARGET_CUR = 2025, "CAD"
 TARGET = f"{TARGET_YEAR}_{TARGET_CUR}"
@@ -55,6 +77,8 @@ MONEY = re.compile(r"^(\d{4})_([A-Z]{3})")
 
 
 def factors(fact_rows, write_output=True) -> tuple[dict[str, float], list[str]]:
+    if not (CURRENCY / "currency_exchange.csv").exists() or write_output:
+        build_tables()
     deflator = {(r["Context"], int(r["Year"])): float(r["Value"])
                 for r in read(CURRENCY / "currency_deflator.csv")}
     exchange = {(r["Context"], int(r["Year"])): float(r["Value"])

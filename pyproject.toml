@@ -7,7 +7,7 @@ name = "technology-database"
 version = "0.1.0"
 description = "Industrial technology archetypes for CIMS, summarised from published sources"
 requires-python = ">=3.10"
-dependencies = ["openpyxl"]
+dependencies = ["openpyxl", "pandas"]
 
 [project.optional-dependencies]
 # the per-source extraction scripts and the marimo input template
