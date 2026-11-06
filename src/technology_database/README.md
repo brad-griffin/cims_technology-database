@@ -29,7 +29,11 @@ working directory does not matter.
 | `extraction/check_names.py` | The names in the extraction layer against the naming rule. |
 | `extraction/register_source.py` | Registers one extracted source in the manifest and the records. |
 | `extraction/input_template.py` | A marimo app for entering a source's values in the extraction format. |
-| `extraction/sources/<publisher>/` | The scripts that extracted the sources that needed one (workbooks, bulk downloads, PDF tables). A script reads its document from the same folder under `primary-sources/` and writes its CSVs to the same folder under the raw data (`extraction/paths.py`). |
+| `extraction/paths.py` | Where the extractions, documents, records, and outputs are, for the scripts above. |
+
+The scripts written for single sources (workbooks, bulk downloads, PDF tables) are not in the
+package: each sits beside its CSVs in `data/raw_data/technology_database/<publisher>/`, so it
+goes to FRDR with them, and reads its document from the same folder under `primary-sources/`.
 
 To change what an example is an example of, edit its row in
 `data/technology_database/source-example.csv`. For everything else, see the *How to*

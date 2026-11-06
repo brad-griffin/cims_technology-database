@@ -25,14 +25,14 @@ TODAY = "2026-09-29"
 
 
 def rw(path, key, new_rows, sort):
-    rows = list(csv.reader(open(path, encoding="utf-8")))
+    rows = list(csv.reader(open(path, encoding="utf-8-sig")))
     h, body = rows[0], rows[1:]
     body = [r for r in body if not key(r)] + new_rows
     for r in new_rows:
         assert len(r) == len(h), (path, len(r), len(h), r)
     if sort:
         body.sort(key=sort)
-    with open(path, "w", newline="", encoding="utf-8") as f:
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
         csv.writer(f, lineterminator="\n").writerows([h] + body)
     return h
 

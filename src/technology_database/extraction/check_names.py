@@ -217,7 +217,7 @@ def main() -> int:
     # --- YAML technology files -------------------------------------------
     for path in sorted(STM.rglob("*.yaml")):
         rel = path.relative_to(ROOT).as_posix()
-        head = path.read_text(encoding="utf-8").splitlines()[:3]
+        head = path.read_text(encoding="utf-8-sig").splitlines()[:3]
         fields = {}
         for line in head:
             m = re.match(r'^(technology|branch):\s*"([^"]*)"', line)
@@ -247,7 +247,7 @@ def main() -> int:
     # --- YAML field and parameter names -----------------------------------
     for path in sorted(STM.rglob("*.yaml")):
         rel = path.relative_to(ROOT).as_posix()
-        for line in path.read_text(encoding="utf-8").splitlines():
+        for line in path.read_text(encoding="utf-8-sig").splitlines():
             m = re.match(r"^\s*([A-Za-z][A-Za-z0-9_-]*)\s*:", line)
             if not m:
                 continue

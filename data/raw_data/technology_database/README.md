@@ -45,21 +45,39 @@ extraction keeps it, and the correction is a separate record in the database
 
 ## Licences
 
-`licence_type` in `source-details_sources.csv` records each source's terms. A first sort
-of the 602 sources (2026-11-06, by keyword; read the text before relying on it):
+`licence_type` in `source-details_sources.csv` records each source's terms as the document
+prints them. `reviews/frdr-licence-review_2026-11-06.csv` in the technology-database repository
+sorts the 602 sources by keyword (read the text before relying on a class):
 
 | Terms | Sources |
 | - | - |
-| Copyright, no open licence (journal articles, commercial reports) | 225 |
-| Open licence: Creative Commons | 85 |
-| Public domain (US government work) | 77 |
-| Free to reproduce with acknowledgement, or freely available | 65 |
-| Open licence: government open data (OGL, Alberta, BC) | 56 |
-| No licence stated | 38 |
-| Cited only, document not held | 45 |
-| Other (read the text) | 11 |
+| Copyright, no open licence (journal articles, commercial and regulatory reports) | 122 |
+| No licence stated | 88 |
+| Open licence: Creative Commons | 84 |
+| Public domain or US government work | 77 |
+| Freely available, but no reuse licence stated (some also say "all rights reserved") | 68 |
+| Free to reproduce with acknowledgement | 59 |
+| Open licence: government open data (OGL, Alberta, BC, EU re-use decision) | 57 |
+| Not held; figures taken from UKERC 2013, so UKERC's terms apply | 40 |
+| Not held; figures taken from IPCC AR6 WGIII chapter 11, so the IPCC's terms apply | 3 |
+| Other (read the text) | 4 |
 
 The extractions hold figures and short labels from these documents, not their text.
+
+## Extraction scripts
+
+Where a source needed code to extract (a workbook, a bulk download, a table read from a PDF),
+the script sits beside its extractions, for example
+`other-reports/ukerc_extract.py`. A script reads its document from the same folder under
+`primary-sources/` in the technology-database repository; the documents are not in this
+deposit. The UKERC, IPCC, Bataille, and IEA guide scripts also use that repository's
+`cims/comparison/build_cims_map.py`.
+
+## Encoding
+
+Every CSV is UTF-8. Files with characters outside ASCII (©, –, °, €, m³, accented names) carry a
+byte-order mark so that Excel reads them correctly. `iea/iea_2024_clean-energy-technology-guide.csv`
+is the IEA's download as published (Windows-1252).
 
 ## Adding a source
 

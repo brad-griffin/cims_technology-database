@@ -52,7 +52,7 @@ def read(path: Path) -> list[dict]:
 def write(path: Path, cols: list[str], rows: list[dict], quiet: bool = False) -> None:
     """Write rows in the given column order; missing keys are blank."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as fh:
+    with path.open("w", encoding="utf-8-sig", newline="") as fh:   # with a BOM, so Excel reads the accents and symbols (Brad 2026-11-06)
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         for r in rows:

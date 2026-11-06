@@ -92,7 +92,7 @@ def main() -> int:
         fail["registered in both the main and the reference manifest"].append(k)
     for d in ref:
         held = (d.get("file_on_disk") or "").strip()
-        if held and find(held) is None and (PRIMARY.is_dir() or held.endswith(".csv")):
+        if held and find(held) is None and (PRIMARY.is_dir() or held.startswith("data/")):
             fail["reference file recorded but missing"].append(held)
 
     used = collections.Counter()

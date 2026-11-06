@@ -8,9 +8,9 @@ data/technology_database/ is the repo root (found by walking up from here).
     data/technology_database/               the hand-edited records
     data/processed_data/technology_database/  what the build writes
 
-An extraction script under extraction/sources/<publisher>/... reads its document from
-the same folder under primary-sources/ and writes its CSVs to the same folder under
-the raw data: ``PRIMARY_DIR, RAW_DIR = source_dirs(__file__)``.
+The scripts written for single sources sit beside their extractions in the raw data
+(and so in the FRDR deposit); each reads its document from the same folder under
+primary-sources/.
 """
 from __future__ import annotations
 
@@ -32,10 +32,3 @@ RAW = DATA / "raw_data" / "technology_database"
 PRIMARY = ROOT / "primary-sources"
 RECORDS = DATA / "technology_database"
 OUTPUT = DATA / "processed_data" / "technology_database"
-SOURCES = HERE / "sources"
-
-
-def source_dirs(script: str) -> tuple[Path, Path]:
-    """(the document folder, the extraction folder) for a script under sources/."""
-    sub = Path(script).resolve().parent.relative_to(SOURCES)
-    return PRIMARY / sub, RAW / sub

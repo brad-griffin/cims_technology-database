@@ -110,9 +110,9 @@ and add a row to `data/raw_data/technology_database/background-register.csv` ins
 2. Extract it to a long CSV in the template format (`src/technology_database/extraction/input_template.py`),
    in the same publisher folder under `data/raw_data/technology_database/`. A multi-context source also
    gets a `_nodes.csv`, and every extraction a `_meta.csv` (licence, citation and extraction notes). A
-   source that needs code (a workbook, a bulk download, a PDF table) gets a script under
-   `src/technology_database/extraction/sources/<publisher>/` that reads the document from
-   `primary-sources/` and writes the CSVs to the raw data (`extraction/paths.py`).
+   source that needs code (a workbook, a bulk download, a PDF table) gets a script
+   beside its CSVs in the raw data (so it goes to FRDR with them), which reads the document
+   from the same folder under `primary-sources/`.
 3. Register it with `src/technology_database/extraction/register_source.py` (the manifest,
    `source-details_sources.csv` with its `licence_type`, and `source-details_files.csv`; the citation
    and priority records; the loader line), or by hand.

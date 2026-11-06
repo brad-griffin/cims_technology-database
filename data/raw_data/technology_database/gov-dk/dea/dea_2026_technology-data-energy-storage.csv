@@ -1,4 +1,4 @@
-process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
+﻿process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
 140 Pit Thermal Energy Storage (PTES),thermal-storage_pit-water,description,,,"Pit Thermal Energy Storage (PTES): water-filled lined pit storing heat for district heating, seasonal or short-term (form: Heat; application: System).",,,,sheet title and datasheet rows/notes,
 140 Pit Thermal Energy Storage (PTES),thermal-storage_pit-water,capacity,,MW,30,30,150,,"sheet '140 PTES seasonal', row 'Output capacity for one unit [MW]', 2020 central (lower/upper as min/max), note A, ref 5",CAPACITY BASIS: thermal-output. Output = input capacity; example sized for a 40% solar fraction (note A).
 140 Pit Thermal Energy Storage (PTES),thermal-storage_pit-water,lifetime,,years,20,20,40,,"sheet '140 PTES seasonal', row 'Technical lifetime [years]', 2020 central (lower/upper as min/max), note D, ref 24",technical lifetime; depends on liner temperature profile (note D)
