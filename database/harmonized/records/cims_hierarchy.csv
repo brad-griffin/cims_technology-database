@@ -40,24 +40,31 @@
 <root>.transmission,data/service-technology-map/transmission
 <root>.transmission.co2-pipeline-and-storage,data/service-technology-map/transmission/co2-pipeline-and-storage
 <root>.transmission.co2-pipeline-and-storage.ab-to-ab,data/service-technology-map/transmission/co2-pipeline-and-storage/ab-to-ab
+<root>.transmission.co2-pipeline-and-storage.ab-to-ab.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/ab-to-ab/compression
 <root>.transmission.co2-pipeline-and-storage.ab-to-ab.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/ab-to-ab/pipeline
 <root>.transmission.co2-pipeline-and-storage.ab-to-ab.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/ab-to-ab/storage
 <root>.transmission.co2-pipeline-and-storage.at-to-usa,data/service-technology-map/transmission/co2-pipeline-and-storage/at-to-usa
+<root>.transmission.co2-pipeline-and-storage.at-to-usa.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/at-to-usa/compression
 <root>.transmission.co2-pipeline-and-storage.at-to-usa.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/at-to-usa/pipeline
 <root>.transmission.co2-pipeline-and-storage.at-to-usa.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/at-to-usa/storage
 <root>.transmission.co2-pipeline-and-storage.bc-to-ab,data/service-technology-map/transmission/co2-pipeline-and-storage/bc-to-ab
+<root>.transmission.co2-pipeline-and-storage.bc-to-ab.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/bc-to-ab/compression
 <root>.transmission.co2-pipeline-and-storage.bc-to-ab.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/bc-to-ab/pipeline
 <root>.transmission.co2-pipeline-and-storage.bc-to-ab.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/bc-to-ab/storage
 <root>.transmission.co2-pipeline-and-storage.mb-to-sk,data/service-technology-map/transmission/co2-pipeline-and-storage/mb-to-sk
+<root>.transmission.co2-pipeline-and-storage.mb-to-sk.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/mb-to-sk/compression
 <root>.transmission.co2-pipeline-and-storage.mb-to-sk.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/mb-to-sk/pipeline
 <root>.transmission.co2-pipeline-and-storage.mb-to-sk.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/mb-to-sk/storage
 <root>.transmission.co2-pipeline-and-storage.on-to-usa,data/service-technology-map/transmission/co2-pipeline-and-storage/on-to-usa
+<root>.transmission.co2-pipeline-and-storage.on-to-usa.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/on-to-usa/compression
 <root>.transmission.co2-pipeline-and-storage.on-to-usa.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/on-to-usa/pipeline
 <root>.transmission.co2-pipeline-and-storage.on-to-usa.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/on-to-usa/storage
 <root>.transmission.co2-pipeline-and-storage.qc-to-usa,data/service-technology-map/transmission/co2-pipeline-and-storage/qc-to-usa
+<root>.transmission.co2-pipeline-and-storage.qc-to-usa.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/qc-to-usa/compression
 <root>.transmission.co2-pipeline-and-storage.qc-to-usa.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/qc-to-usa/pipeline
 <root>.transmission.co2-pipeline-and-storage.qc-to-usa.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/qc-to-usa/storage
 <root>.transmission.co2-pipeline-and-storage.sk-to-sk,data/service-technology-map/transmission/co2-pipeline-and-storage/sk-to-sk
+<root>.transmission.co2-pipeline-and-storage.sk-to-sk.compression,data/service-technology-map/transmission/co2-pipeline-and-storage/sk-to-sk/compression
 <root>.transmission.co2-pipeline-and-storage.sk-to-sk.pipeline,data/service-technology-map/transmission/co2-pipeline-and-storage/sk-to-sk/pipeline
 <root>.transmission.co2-pipeline-and-storage.sk-to-sk.storage,data/service-technology-map/transmission/co2-pipeline-and-storage/sk-to-sk/storage
 <root>.vom,data/service-technology-map/vom
@@ -198,6 +205,8 @@
 <sector>.direct-air-capture,data/service-technology-map/direct-air-capture
 <sector>.direct-air-capture.product,data/service-technology-map/direct-air-capture/product
 <sector>.direct-air-capture.product.co2-removal,data/service-technology-map/direct-air-capture/product/co2-removal
+<sector>.direct-air-capture.service,data/service-technology-map/direct-air-capture/service
+<sector>.direct-air-capture.service.heat,data/service-technology-map/direct-air-capture/service/heat
 <sector>.electricity,data/service-technology-map/electricity
 <sector>.electricity.product,data/service-technology-map/electricity/product
 <sector>.electricity.product.base-load,data/service-technology-map/electricity/product/base-load
@@ -247,6 +256,7 @@
 <sector>.industrial-minerals.service,data/service-technology-map/industrial-minerals/service
 <sector>.industrial-minerals.service.ccs,data/service-technology-map/general-services/ccs
 <sector>.industrial-minerals.service.ccs.diffuse,data/service-technology-map/general-services/ccs/diffuse
+<sector>.industrial-minerals.service.ccs.concentrated,data/service-technology-map/general-services/ccs/concentrated
 <sector>.industrial-minerals.service.fuel-blend,data/service-technology-map/general-services/fuel-blend
 <sector>.industrial-minerals.service.fuel-blend.diesel,data/service-technology-map/general-services/fuel-blend/diesel
 <sector>.industrial-minerals.service.fuel-blend.methane,data/service-technology-map/general-services/fuel-blend/methane
@@ -261,6 +271,7 @@
 <sector>.industrial-minerals.service.machine-drive.materials-handling,data/service-technology-map/general-services/machine-drive/materials-handling
 <sector>.industrial-minerals.service.machine-drive.materials-processing,data/service-technology-map/general-services/machine-drive/materials-processing
 <sector>.industrial-minerals.service.machine-drive.pumps,data/service-technology-map/general-services/machine-drive/pumps
+<sector>.industrial-minerals.service.oxygen,data/service-technology-map/industrial-minerals/service/oxygen
 <sector>.iron-and-steel,data/service-technology-map/iron-and-steel
 <sector>.iron-and-steel.product,data/service-technology-map/iron-and-steel/product
 <sector>.iron-and-steel.product.continuous-cast,data/service-technology-map/iron-and-steel/product/continuous-cast
@@ -440,6 +451,7 @@
 <sector>.natural-gas,data/service-technology-map/natural-gas
 <sector>.natural-gas.product,data/service-technology-map/natural-gas/product
 <sector>.natural-gas.product.distribution,data/service-technology-map/natural-gas/product/distribution
+<sector>.natural-gas.product.distribution.fugitive,data/service-technology-map/natural-gas/product/distribution/fugitive
 <sector>.natural-gas.product.supply,data/service-technology-map/natural-gas/product/supply
 <sector>.natural-gas.product.supply.direct-heat,data/service-technology-map/natural-gas/product/supply/direct-heat
 <sector>.natural-gas.product.supply.drilling,data/service-technology-map/natural-gas/product/supply/drilling
@@ -508,6 +520,7 @@
 <sector>.crude-oil.service.ccs,data/service-technology-map/general-services/ccs
 <sector>.crude-oil.service.ccs.concentrated,data/service-technology-map/general-services/ccs/concentrated
 <sector>.crude-oil.service.ccs.diffuse,data/service-technology-map/general-services/ccs/diffuse
+<sector>.crude-oil.service.direct-heat,data/service-technology-map/crude-oil/service/direct-heat
 <sector>.crude-oil.service.field-engines,data/service-technology-map/crude-oil/service/field-engines
 <sector>.crude-oil.service.fuel-blend,data/service-technology-map/general-services/fuel-blend
 <sector>.crude-oil.service.fuel-blend.diesel,data/service-technology-map/general-services/fuel-blend/diesel
@@ -586,6 +599,8 @@
 <sector>.pulp-and-paper.product.pulp.washing,data/service-technology-map/pulp-and-paper/product/pulp/washing
 <sector>.pulp-and-paper.product.pulp.wood-preparation,data/service-technology-map/pulp-and-paper/product/pulp/wood-preparation
 <sector>.pulp-and-paper.service,data/service-technology-map/pulp-and-paper/service
+<sector>.pulp-and-paper.service.ccs,data/service-technology-map/general-services/ccs
+<sector>.pulp-and-paper.service.ccs.diffuse,data/service-technology-map/general-services/ccs/diffuse
 <sector>.pulp-and-paper.service.chemical-recovery,data/service-technology-map/pulp-and-paper/service/chemical-recovery
 <sector>.pulp-and-paper.service.chemical-recovery.evaporator,data/service-technology-map/pulp-and-paper/service/chemical-recovery/evaporator
 <sector>.pulp-and-paper.service.chemical-recovery.lime-kiln,data/service-technology-map/pulp-and-paper/service/chemical-recovery/lime-kiln
@@ -721,3 +736,4 @@
 <sector>.waste.service,data/service-technology-map/general-services
 <sector>.waste.service.fuel-blend,data/service-technology-map/general-services/fuel-blend
 <sector>.waste.service.fuel-blend.methane,data/service-technology-map/general-services/fuel-blend/methane
+<sector>.non-ferrous-metals.product.magnesium.cover-gas,data/service-technology-map/non-ferrous-metals/product/magnesium/cover-gas

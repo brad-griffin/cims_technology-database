@@ -34,6 +34,7 @@ CHECK_WHOLE = [
     "**Coverage.** Missing technologies, thin archetypes (one or two examples, or filled values only), and major sources missing from the source list.",
     "**Readiness.** Technology readiness levels, and how they translate into the year an option becomes available in the model.",
     "**Options that may have stalled.** We have kept these for now: black liquor gasification (`gasifier_black-liquor`; its developer, Chemrec, now only licenses its patents), the electrified plasma clinker kiln (`kiln_electric-plasma`; feasibility study finished 2019), the hydrothermal calcium hydrosilicate binder (`binder_hydrothermal-silicate`), radio-frequency heating of oil sands (`well_electromagnetic-heating`; pilot about 2015 to 2017), and the microwave-assisted ceramic kiln (`kiln_ceramic-microwave-assisted`). Should a technology-choice model keep options whose development has stopped?",
+    "**Source error.** If a value traces to a misread source, tell us and we will check the transcription.",
 ]
 
 
@@ -45,6 +46,7 @@ def check_sector(lname):
         "**Sources.** Better, newer, or Canadian sources for any archetype, especially the thin ones.",
         "**The cross-cutting rows** (boilers, combined heat and power, motors, heating and cooling, lighting, and CO2 capture) that serve your sector. Tell us whether they fit how your sector uses them. A detailed check of their values is optional.",
         "**Readiness.** The technology readiness level of emerging options.",
+        "**Source error.** If a value traces to a misread source, tell us and we will check the transcription.",
     ]
 
 
@@ -62,12 +64,9 @@ def guide(outdir, key, facts):
                  ["methodology-summary.docx", "How the database is built and how to read it."],
                  [f"sector-note_{key}.docx", f"The {lname} archetypes, their main sources, and the judgement calls we most want you to test."],
                  [f"wide-view_{key}.xlsx", f"The {lname} part of the database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, and feedstocks, and a column legend."]]
-    out_of_scope = [
-        "Purchased electricity and the emissions from generating it: the model prices electricity, not the database.",
-        "How each source was transcribed. If a value traces to a misread source, tell us and we will check the transcription.",
-    ]
-    if key in EXTRA_OUT_OF_SCOPE:
-        out_of_scope.append(EXTRA_OUT_OF_SCOPE[key])
+    # Out of scope appears only where a sector has its own exclusion (user edit 2026-11-05).
+    out_of_scope = [EXTRA_OUT_OF_SCOPE[key]] if key in EXTRA_OUT_OF_SCOPE else []
+    sec = iter(range(3, 9))
     intro = ("This package is for energy-economy technology modellers. It asks you to review the database as a whole: its structure, its rules, and its fitness as an input to a technology-choice model."
              if whole else f"This package asks you to review the {lname} part of the database as a sector expert.")
     body = [
@@ -82,9 +81,8 @@ def guide(outdir, key, facts):
         ("h1", "2. What to check"),
         ("bullets", CHECK_WHOLE if whole else check_sector(lname)),
         ("p", "You do not need to check every row. A careful look at the rows you know best is worth more than a quick pass over all of them."),
-        ("h1", "3. What is out of scope"),
-        ("bullets", out_of_scope),
-        ("h1", "4. How to read the database"),
+        *([("h1", f"{next(sec)}. What is out of scope"), ("bullets", out_of_scope)] if out_of_scope else []),
+        ("h1", f"{next(sec)}. How to read the database"),
         ("bullets", [
             "Open the `archetypes` sheet first. Each row is one archetype under one end use; an archetype serving several end uses repeats under each." + ("" if whole else " Your sector's own family is the top band."),
             "Read every cost and energy use against the `product-unit` column: a kiln row is per tonne and a boiler row is per GJ. Do not sort the sheet, because that breaks the grouping of rows.",
@@ -92,7 +90,7 @@ def guide(outdir, key, facts):
             "The shading shows how certain a value is; the key is on the `readme` sheet. The `filled` column says which values were filled and how.",
             "The `column-legend` sheet defines every column.",
         ]),
-        ("h1", "5. How to return comments"),
+        ("h1", f"{next(sec)}. How to return comments"),
         ("h2", "Row comments"),
         ("lead", "Write comments on a row in the **reviewer-comment** column of the `archetypes` sheet (column B, the shaded column just before the archetype name). Say which column you mean. The kinds of problem we hope you will find, with examples:"),
         PROBLEMS,

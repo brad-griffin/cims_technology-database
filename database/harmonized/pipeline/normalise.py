@@ -78,9 +78,10 @@ PRODUCT_TONNE = {
     "cement": ("cement",), "brick": ("ceramic product", "brick"),
     "tile": ("ceramic product",), "steel": ("crude steel", "steel"),
     "pulp": ("pulp",), "paper": ("paper",), "lime": ("lime", "quicklime"),
+    "methanol": ("methanol",),
     "product": None,                 # the archetype's product by definition
 }
-TONNE_Q = re.compile(r"^(?P<num>[^/]+)/(?P<k>k|M)?t-(?P<prod>[a-z]+)$")
+TONNE_Q = re.compile(r"^(?P<num>[^/]+)/(?P<k>k|M)?t-(?P<prod>[a-z]+)(?P<yr>-per-yr)?$")
 
 
 def product_tonne(unit, a, p):
@@ -94,7 +95,7 @@ def product_tonne(unit, a, p):
     num = m.group("num")
     if p.startswith("emissions-") and re.fullmatch(r"(t|kg)-CO2(-eq)?", num):
         num = num.split("-", 1)[0]
-    return f"{num}/{m.group('k') or ''}t"
+    return f"{num}/{m.group('k') or ''}t{m.group('yr') or ''}"
 
 # a note saying a cost per MWh is per MWh of HEAT (2026-10-02: the test used to be
 # the literal "per MWh of heat", which excluded MWh-th, kWh th and levelized cost
@@ -291,9 +292,23 @@ def _num(r):
     return fnum(r.get("value")), fnum(r.get("value-min")), fnum(r.get("value-max"))
 
 
+CARRIER_ALIAS = {"biomass-solid": "biomass"}
+# steam-heated units named outright whose sources give the same duty as heat and steam
+# (node alignment PP08, PP14, Brad 2026-11-05)
+HEAT_AS_STEAM = {"digester_semi-chemical", "dryer_market-pulp"}
+
+
 def normalise(facts, examples, records, units) -> None:
     """Adds value-norm, value-min-norm, value-max-norm, unit-norm, target-norm,
     duplicate-of and excluded to each fact row, in place."""
+    # one solid-biomass carrier (Brad 2026-11-05): CIMS has one solid biomass fuel,
+    # and records/vocabulary/commodity.csv already gives biomass-solid the energy
+    # carrier biomass; sources and the MIDDEN map that say "solid biomass" pool with it
+    for r in facts:
+        t = (r.get("target") or "").strip().lower()
+        if t in CARRIER_ALIAS:
+            r["target"] = CARRIER_ALIAS[t]
+            r["note"] = (r.get("note") or "") + f"  CARRIER: {t} pooled as {CARRIER_ALIAS[t]} (2026-11-05)."
     # per example, what turns a rating or an absolute sum into a rate: the
     # SOURCE'S OWN factors only, and only on an output basis
     scale = defaultdict(dict)
@@ -518,7 +533,7 @@ def normalise(facts, examples, records, units) -> None:
         pu = a["product-unit"]
         p = r["parameter"]
         if (p == "specific-energy-consumption" and (r.get("target") or "").strip().lower() == "heat"
-                and "steam-heated" in a["archetype"]
+                and ("steam-heated" in a["archetype"] or a["archetype"] in HEAT_AS_STEAM)
                 and "steam" in split_list(a.get("carriers", ""))
                 and "heat" not in split_list(a.get("carriers", ""))):
             # heat a source states for a steam-heated unit is its steam (S157/MCF019,
@@ -1212,6 +1227,47 @@ def normalise(facts, examples, records, units) -> None:
 FLOW_PER_UNIT = {"unit-baseline-output": None, "unit": None}   # None: the archetype's own unit
 
 
+# t per normal m3 (0 degC, 1 atm)
+GAS_DENSITY = {"oxygen": 0.001429, "nitrogen": 0.0012506, "co2": 0.001977, "co2-captured": 0.001977,
+               "hydrogen": 0.0000899, "air": 0.001293}
+# normal m3 per unit of volume: scf is at 60 degF and 1 atm (0.0283168 m3 x 273.15/288.71)
+GAS_VOLUME = {"m3": 1.0, "1000 m3": 1000.0, "scf": 0.0283168 * 273.15 / 288.71, "Mscf": 28.3168 * 273.15 / 288.71}
+
+
+def apply_flow_exclusions(flows, factors) -> dict:
+    """records/reference/excluded-flow.csv: a flow row ruled out (action exclude) or
+    put on the archetype's basis by a registered factor (divide or multiply), as
+    excluded-row.csv does for parameters (general rule 5, 2026-11-05)."""
+    from collections import Counter
+    T = {r["record-id"]: r for r in read(REFERENCE / "excluded-flow.csv")}
+    stats = Counter()
+    for r in flows:
+        x = T.get(r.get("record-id", ""))
+        if not x:
+            continue
+        act = (x.get("action") or "exclude").strip()
+        if act == "exclude":
+            r["excluded"] = "ruled out: " + x.get("reason", "")
+            stats["excluded"] += 1
+            continue
+        f = factors.rows.get(x.get("factor-id", ""), {}).get("_f")
+        if not f:
+            r["excluded"] = f"ruled out: factor {x.get('factor-id')} not found ({x.get('reason', '')})"
+            stats["factor not found"] += 1
+            continue
+        k = 1.0 / f if act == "divide" else f
+        for c in ("value-norm", "value-min-norm", "value-max-norm"):
+            v = fnum(r.get(c))
+            if v is not None:
+                r[c] = f"{v * k:.6g}"
+        r["conversion"] = "; ".join(y for y in [r.get("conversion", ""), f"{act} by {x['factor-id']}"] if y)
+        stats[act] += 1
+    unknown = set(T) - {r.get("record-id", "") for r in flows}
+    if unknown:
+        stats["unknown record-ids"] = len(unknown)
+    return dict(stats)
+
+
 def normalise_flows(flows, records, units, examples=None) -> None:
     """Flows per unit of the archetype's product: energy in GJ, mass in t,
     gas volumes in m3."""
@@ -1262,7 +1318,20 @@ def normalise_flows(flows, records, units, examples=None) -> None:
                 continue
         num = (r.get("unit") or "").split("/", 1)[0].replace("Nm3", "m3")
         cls = records.commodities.get(r["commodity"], {}).get("unit-default", "")
-        tnum = "GJ" if num in ("GJ", "MJ", "kWh", "MWh") else "t" if num in ("kg", "t", "g") else num
+        tnum = "GJ" if num in ("GJ", "MJ", "kJ", "TJ", "kWh", "MWh") else "t" if num in ("kg", "t", "g") else num
+        # a gas measured by volume on a commodity measured in t: by its density at
+        # normal conditions (0 degC, 1 atm; scf at 60 degF), so the rows pool on one
+        # basis (general rule 5, 2026-11-05)
+        gas = GAS_DENSITY.get(r.get("commodity", ""))
+        if cls == "t" and gas and num in GAS_VOLUME:
+            k = gas * GAS_VOLUME[num]
+            conv = lambda x, k=k: None if x is None else x * k * scale
+            r["value-norm"], r["value-min-norm"], r["value-max-norm"] = (
+                "" if x is None else f"{x:.6g}" for x in (conv(v), conv(lo), conv(hi)))
+            r["unit-norm"] = f"t/{pu}"
+            r["conversion"] = "; ".join(x for x in [r.get("conversion", ""),
+                                                    f"{num} of {r['commodity']} -> t at {gas * 1000:g} kg/m3"] if x)
+            continue
         if cls and cls in ("GJ", "t") and tnum != cls and tnum in ("GJ", "t"):
             r["excluded"] = f"{r['commodity']} is measured in {cls}, the row in {num}"
             continue

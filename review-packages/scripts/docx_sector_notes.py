@@ -97,6 +97,9 @@ EXAMPLES = {
     "boiler_recovery-high-solids": "High dry-solids, high-pressure recovery boilers",
     "evaporator_multiple-effect": "Falling-film multiple-effect evaporator trains",
     "gasifier_black-liquor": "Chemrec DP-1 pilot (Piteå, Sweden)",
+    "gasifier_black-liquor-fuels": "Chemrec DP-1 pilot (Piteå, Sweden); Domsjö BioDME design (cancelled 2012)",
+    "pulp-mill_kraft": "Canadian market kraft mills",
+    "paper-machine_with-dryer-section": "Whole newsprint, board, and tissue machines",
     "vapour-recompressor_evaporation": "Mechanical vapour recompression evaporators",
     "debarker_drum": "Drum debarkers with disc chippers",
     "digester_batch-kraft": "Displacement batch cooking (SuperBatch, RDH)",
@@ -108,6 +111,7 @@ EXAMPLES = {
     "dryer_steam-heated": "Steam-cylinder dryer sections; Yankee dryers",
     "dryer_steam-heated_efficiency-moderate": "Less air infiltration; hood humidity control; condensate return; flash-steam use; heat recovery",
     "dryer_steam-heated_efficiency-strong": "Hot press ahead of the dryer section",
+    "dryer_heat-pump": "Exhaust-air heat pumps on paper machine hoods (pilots)",
     "dryer_through-air": "Through-air-dried (TAD) premium tissue machines",
     "kiln_lime-rotary": "Lime-mud rotary kilns in kraft mills",
     "kiln_lime-rotary_efficiency-strong": "Better cooler, chain section, and lime-mud drying",
@@ -196,7 +200,9 @@ SECTORS = {
                 "It skips pelletizing, which the database treats as a separate step. Should it stand apart?",
                 "Membrane air separation (low-purity oxygen) is pooled into `air-separation-unit`.",
                 "Fermentation of steel off-gas is pooled into `reactor_steel-offgas-chemicals`, so steel off-gas "
-                "use is held once.",
+                "use is held once. It is kept for reference only, not as a capture option: it makes methanol or "
+                "ethanol and needs hydrogen, which the database does not record, and those products have their own "
+                "nodes in chemicals and biofuels.",
                 "The foundry electric arc furnace is pooled into `electric-arc-furnace`. Foundry heats are "
                 "smaller and tap hotter, but the energy gap measured under 15%.",
                 "Coupled pickling and cold rolling are pooled into `rolling-mill_cold`, which also absorbs the "
@@ -211,10 +217,17 @@ SECTORS = {
                 "buckets.",
             ]),
             ("Framing", [
-                "`shaft-furnace_electrolytic-hydrogen` is a whole plant (electrolysers, hydrogen direct "
-                "reduction, and an electric arc furnace), an alternative to the unit archetypes. Some of its "
-                "sourced route costs include a return or the electrolyser; whole-route production costs from "
-                "Material Economics 2019 and Draxler 2021 were ruled out.",
+                "The hydrogen route reaches the model as a chain: hydrogen direct reduction "
+                "(`shaft-furnace_hydrogen-direct-reduction`, buying about 6.8 GJ of hydrogen per t of reduced iron "
+                "from the hydrogen sector) feeds the electric arc furnace. The whole plant "
+                "(`shaft-furnace_electrolytic-hydrogen`: electrolysers, shaft furnace, and electric arc furnace) is "
+                "kept for reference, so the route is not offered twice. Its values are compared with the chain: "
+                "the chain uses about 10% more electricity and some natural gas. Its capital cost came to about 16% "
+                "less than the whole plant's, and hydrogen storage adds only about 2%, so the rest (hydrogen "
+                "handling at the shaft and site integration) is added to hydrogen direct reduction as a capital "
+                "share (x 1.5). The chain and the whole plant now cost the same. Is that share reasonable?",
+                "Some of the whole plant's sourced route costs include a return or the electrolyser; whole-route "
+                "production costs from Material Economics 2019 and Draxler 2021 were ruled out.",
                 "Ironmaking has two products: iron (t), from blast furnaces and smelting reduction, and reduced "
                 "iron (t), from direct reduction. Check that each archetype makes the right one.",
                 "Energy use is gross input. Recovered converter gas, coke-oven gas, and steam are outputs, not "
@@ -222,11 +235,35 @@ SECTORS = {
                 "The capture variants (blast furnace, smelting reduction, and direct reduction with capture) "
                 "take their host's size and costs, plus a capture add-on.",
             ]),
+            ("What each furnace buys", [
+                "Each archetype asks the other steel nodes for what it uses, per tonne of its product. The blast "
+                "furnace buys coke (its coke energy, about 0.4 t), about 1.45 t of pellets and 0.1 t of sinter, "
+                "and about 0.05 t of oxygen. That is a Canadian burden of mostly fluxed pellets; the sources' "
+                "European burden (about 1.1 t of sinter and 0.55 t of pellets) stays in their rows. "
+                "Smelting reduction buys about 0.7 t of oxygen, the basic oxygen furnace about 0.07 t, and the "
+                "electric arc furnaces about 0.05 t.",
+                "The arc furnace charged with reduced iron (`electric-arc-furnace_reduced-iron-charge`) buys about "
+                "1.0 t of reduced iron per t of steel from the direct-reduction step.",
+                "The electric smelting furnace melts bought reduced iron, about 1.1 t per t of iron.",
+                "Pellets come from the mines, which make most Canadian pellets, so pellet plants serve the mining "
+                "sector only and steel's agglomeration step holds sinter plants. Direct reduction buys about "
+                "1.4 t of pellets per t of reduced iron.",
+                "Casting routes that skip a later step ask for none of it. The thin-slab caster rolls in line and "
+                "the strip caster casts near final thickness, so neither asks for hot rolling or reheating. "
+                "Ingot casting reheats in its own soaking pits, so it asks for hot rolling but not reheating.",
+                "Is each quantity right for a Canadian plant?",
+            ]),
             ("Scope and accounting", [
                 "Rolling-mill energy pools rows covering the mill plus its reheat furnace or annealing; "
                 "off-scope rows were ruled out. Check that what remains is the mill alone.",
                 "The heat-recovery coke oven burns its volatiles, while the by-product oven exports gas, so the "
                 "two count energy differently.",
+                "The electric arc furnace is split by charge. `electric-arc-furnace` melts mostly scrap (up to about "
+                "a third reduced iron or pig iron) and uses about 2.1 GJ/t. "
+                "`electric-arc-furnace_reduced-iron-charge` takes the examples charged half or more with reduced "
+                "iron or hot-briquetted iron and uses about 3.6 GJ/t, since the gangue and lower metallisation "
+                "of reduced iron add electricity and slag. One source's biomass-carbon furnace no longer sets the "
+                "carrier split, since the database has no biomass-carbon arc furnace.",
             ]),
         ],
         "gaps": [
@@ -247,12 +284,12 @@ SECTORS = {
         "calls": [
             ("Lime kilns", [
                 "Lime and dolime calcination has five kiln archetypes: long rotary, rotary with preheater (and "
-                "its post-combustion capture variant), shaft (mixed-feed and annular), and oxy-fuel kilns. The "
-                "indirectly heated calciner serves both lime and clinker. All are per tonne of lime.",
+                "its post-combustion capture variant), shaft (mixed-feed and annular), and oxy-fuel kilns. All are "
+                "per tonne of lime. The indirectly heated calciner is held per tonne of clinker, on the clinker "
+                "archetypes and the kiln-heat service; it is not yet a lime kiln option.",
                 "Process CO2 from calcination (0.785 t per t of quicklime, the stoichiometric value) is held "
                 "separately from combustion CO2. Check the quicklime and dolime bases of the kiln rows.",
-                "Cement and lime share kiln heat, so the indirect calciner appears under "
-                "both. Lime-mud kilns in kraft pulp mills are a different process and are not included here.",
+                "Lime-mud kilns in kraft pulp mills are a different process and are not included here.",
             ]),
             ("Options that may have stalled", [
                 "Development of these options may have stalled. We have kept them for now; tell us whether they are still being pursued, and whether the database should keep them as options.",
@@ -262,13 +299,21 @@ SECTORS = {
                 "developer became part of Schwenk Zement in 2020, ahead of a decision on a first industrial plant; we "
                 "found no later news.",
             ]),
-            ("Binders are recipes", [
-                "The binder archetypes (Portland, blended, calcined clay or LC3, alkali-activated, "
-                "sulphoaluminate, carbonated, hydrothermal, and electrochemical) are recipes. Each draws on "
-                "clinker, grinding, and supplementary materials from the archetypes that make them, rather than "
-                "carrying their energy itself; calcined clay and ground slag have their own archetypes for this. "
-                "Check that the binder values hold only the blending step, and that each recipe's ratios are "
-                "sound.",
+            ("Binders: recipes and binder plants", [
+                "Four binders are recipes: Portland, blended (slag), calcined clay (LC3), and alkali-activated. "
+                "Each holds only its own blending step and buys the rest from the archetypes that make it. Per "
+                "tonne of cement, Portland cement buys 0.95 t of clinker, the blended cement 0.55 t of clinker "
+                "and 0.40 t of ground slag, and LC3 0.50 t of clinker and 0.30 t of calcined clay; all three buy "
+                "finish grinding for the whole tonne. The alkali-activated binder buys 0.85 t of ground slag and "
+                "pays for its activator as an operating cost.",
+                "Four binders are plants that make their own binder: sulphoaluminate, carbonated, hydrothermal, "
+                "and electrochemical. Their energy and costs include firing (or electrolysis) and grinding, so "
+                "they buy no clinker and no finish grinding. The hydrothermal binder also buys the 0.18 t of "
+                "Portland clinker per tonne that its source blends in.",
+                "One source's capital cost for an alkali-activated binder covers a whole geopolymer works "
+                "(about 620 dollars per tonne-year); it is kept in the detailed tables but not used, since the "
+                "slag grinding is counted with the ground slag. Check that each recipe's ratios are sound, and "
+                "that the binder plants' energy covers their whole process.",
             ]),
             ("Merged", [
                 "The fluidized-bed kiln (a niche demonstration) and flash or fluid calciners (part of a "
@@ -279,13 +324,26 @@ SECTORS = {
             ]),
             ("Capture and electrification", [
                 "Oxy-fuel and calcium-looping kilns keep their own archetypes, since they concentrate their own "
-                "CO2 stream. Post-combustion capture is the variant `kiln_dry-precalciner_ccs-diffuse`, which "
-                "takes the host kiln's size and costs plus a capture add-on. On a capture variant, total "
-                "emissions are net.",
+                "CO2 stream. They send that CO2 to a concentrated-stream capture service, which purifies and "
+                "compresses it: per tonne of clinker, about 0.77 t from the oxy-fuel kiln and 1.0 t from the "
+                "calcium-looping kiln. Their energy use leaves out the CO2 purification unit (about 0.35 to 0.43 "
+                "GJ of electricity per tonne of clinker), which the capture service carries. They also buy their "
+                "oxygen from the oxygen service (about 0.25 t per tonne of clinker for the oxy-fuel kiln and "
+                "0.38 t for the calcium-looping kiln), so their energy use leaves out the air separation unit "
+                "too (about 0.22 and 0.31 GJ per tonne of clinker). The sources do not split these units' capital "
+                "cost, so it is taken off as a judged share: about 80% of the oxy-fuel kiln's capital above the "
+                "base kiln and about 30% of the calcium-looping kiln's. Are those shares reasonable? The oxy-fuel lime kiln (about 0.93 t CO2 per tonne of lime) and the "
+                "indirectly heated calciner (about 0.50 t of process CO2 per tonne of clinker) use the same "
+                "service.",
+                "Post-combustion capture is the variant `kiln_dry-precalciner_ccs-diffuse`, which takes the host "
+                "kiln's size and costs plus a capture add-on. On a capture variant, total emissions are net.",
                 "Electrified routes are `calciner_indirect` (readiness level 6) and `kiln_electric-plasma` "
                 "(readiness level 4–5, two examples).",
             ]),
             ("Bases", [
+                "Clinker covers raw-meal preparation through the clinker cooler; finish grinding is separate. "
+                "A few legacy-kiln sources leave out raw milling or count the whole plant to finished cement; the "
+                "difference is small beside the kiln's fuel, so they are kept.",
                 "Clinker and cement are separate products. Where a source printed a value per tonne of cement "
                 "that is really per tonne of clinker, the database takes it on an assumed correction, flagged in "
                 "the detailed tables. Check the clinker-to-cement basis of the kiln rows.",
@@ -340,6 +398,39 @@ SECTORS = {
                 "Stone groundwood and thermomechanical pulping stay separate: groundwood is a legacy type in "
                 "Canadian stock, and thermomechanical pulping recovers refiner heat.",
             ]),
+            ("Whole mills and whole machines", [
+                "The model builds a mill from its steps, so whole-mill figures are not options in it. They are kept "
+                "as reference archetypes and compared with the sum of the steps: `pulp-mill_kraft` (a whole kraft "
+                "pulp mill per air-dry tonne) and `paper-machine_with-dryer-section` (forming, pressing, and drying "
+                "together, per tonne of paper). The steps reached about two thirds of the whole mill's capital cost and "
+                "0.85 of the whole paper machine's, because causticizing, washing, screening, stock preparation, "
+                "and offsites have no archetype. That capital is added back as a share: x 1.63 on the kraft "
+                "steps (cooking, bleaching, evaporation, the recovery furnace, and the lime kiln) and x 1.53 on "
+                "the paper machine of every grade. Are these the missing pieces, and is the share reasonable?",
+                "Dry or foam forming (`paper-machine_waterless`) removes most of the water before the dryer, and its "
+                "energy and cost include the drying. In the model it gives back the drying its paper grade asks for "
+                "(minus 1 tonne of dried paper per tonne).",
+                "Black liquor gasification competes as a combined-cycle (power) route. The fuel routes (DME, "
+                "methanol, FT liquids, mixed alcohols) are kept as the reference `gasifier_black-liquor-fuels`, "
+                "since the model has no outlet for the fuels at the recovery boiler.",
+                "Sulphite cooking is the cooking stage only; sulphite mills ask the lime kiln for nothing.",
+            ]),
+            ("What each step buys and gives back", [
+                "Each step buys its steam from the mill's steam service, which chooses how the steam is made. "
+                "Steps that raise steam give it back: the recovery boiler (about 10.6 GJ per tonne of solids), the "
+                "high-solids recovery boiler (about 11.2), the "
+                "black liquor gasifier (about 7 GJ of steam and 4 GJ of electricity), and the refiners of "
+                "thermomechanical (2.5 GJ per air-dry tonne), low-energy (2.1), and chemi-thermomechanical (2.7) "
+                "pulping.",
+                "The make-up biomass a gasifier burns to replace the recovery boiler's steam is bought as steam "
+                "from the steam service, not burned in the gasifier.",
+                "Heat-pump-assisted drying (`dryer_heat-pump`) is the steam-heated dryer section with a heat pump "
+                "added: 1.26 GJ of steam and 1.12 GJ of electricity per tonne, from the same source's dryer less the "
+                "2.7 GJ the pump returns. Its capital cost is the dryer's plus the heat pump's.",
+                "Anaerobic effluent treatment gives back its biogas as fuel, about 0.05 GJ per m3 of high-strength "
+                "effluent; this is a judgement, since no source gives the yield.",
+                "Capture on the recovery boiler and the lime kiln sends its CO2 to the mill's capture service.",
+            ]),
             ("Scope", [
                 "Groundwood pulping uses no steam, following NRCan's 2008 survey of 49 Canadian mills; the U.S. "
                 "area allocations in Jacobs 2006 and Kramer 2009 were ruled out.",
@@ -350,7 +441,8 @@ SECTORS = {
         "gaps": [
             "No sourced examples: activated-sludge aeration (base and moderate) and clarification; every value "
             "is filled.",
-            "Two examples: `dryer_heat-pump`, `dryer_through-air`, and `kiln_lime-electric`.",
+            "Two examples: `dryer_through-air` and `kiln_lime-electric`. `dryer_heat-pump` rests on one source's "
+            "heat pump added to its own dryer.",
             "Deep eutectic solvent pulping and waterless forming are at readiness level 4.",
             "Anaerobic effluent treatment has seven examples, several from food and brewery sources; check that "
             "it suits mill effluent.",
@@ -375,10 +467,18 @@ SECTORS = {
                 "3.1–3.8 GJ/t does not show in the pooled totals.",
             ]),
             ("Framing", [
-                "The fossil and biomass ammonia and methanol routes are whole plants (reforming or gasification "
-                "plus synthesis). Electrolytic Haber-Bosch is the synthesis loop alone, buying hydrogen. Check "
-                "that the two framings compete fairly and do not double count with stand-alone hydrogen "
-                "reformers.",
+                "All ammonia and methanol routes are whole plants that make their own hydrogen: reforming or "
+                "gasification plus synthesis, or on-site electrolysers plus synthesis for "
+                "`reactor_haber-bosch-electrolytic` and `reactor_co2-to-methanol`. None of them buys hydrogen. "
+                "The synthesis loops priced alone (`reactor_haber-bosch-loop` and `reactor_methanol-loop`) are "
+                "kept only to check the whole plants: the loop plus a central electrolyser comes within about "
+                "10% of the whole plant's energy use and about 10-30% of its capital cost. Check that the "
+                "electrolytic plants do not double count with the hydrogen sector.",
+                "`reactor_co2-to-methanol` buys captured CO2 (1.4 t per t methanol) from the capture service.",
+                "Biomass reaches olefins through `gasifier_biomass-methanol` and `reactor_methanol-to-olefins`, "
+                "which buys 2.3 t of methanol per tonne of high-value chemicals. The whole biomass-to-olefins "
+                "plant is kept for comparison only. Flash pyrolysis of biomass to olefins "
+                "(`reactor_biomass-flash-pyrolysis`) is a route of its own.",
                 "Feedstock whose energy ends up in the product is recorded as `feedstock-consumption`, not as "
                 "energy use, for crackers, reformers, and gasifiers. Check that the energy columns hold process "
                 "energy only.",
@@ -389,14 +489,21 @@ SECTORS = {
                 "judgement.",
             ]),
             ("Products and units", [
-                "Chlor-alkali cells are per tonne of chlorine; caustic evaporation is per tonne of water "
-                "evaporated, as its own step.",
+                "Chlor-alkali cells are per tonne of chlorine and hold the electrolysis alone. The steam that "
+                "concentrates their caustic to 50% is on the caustic-evaporation step, per tonne of water "
+                "evaporated. Each cell asks that step for its water: 1.27 t per tonne of chlorine for membrane "
+                "and oxygen-depolarized cells, 6.8 t for diaphragm cells, and none for mercury cells, which make "
+                "50% caustic directly. Do these quantities match your plants?",
+                "Plants that include their own separation columns (aromatics extraction, steam crackers, and "
+                "ethylene oxide) do not also ask the distillation service for them.",
+                "Steam is bought from the steam service. Where a source gave fuel that includes the steam it "
+                "raises, alongside other sources giving that steam separately (adipic acid), the combined fuel "
+                "figure is kept as an example but not pooled.",
                 "Mercury and diaphragm cells remain as legacy types. Are they still in Canadian stock?",
             ]),
             ("Energy scope", [
                 "For several archetypes the sourced total and its carrier split come from sources with "
-                "different scopes, notably `gasifier_coal-methanol` and `gasifier_biomass-ethylene`. Check "
-                "which scope the total holds.",
+                "different scopes, notably `gasifier_coal-methanol`. Check which scope the total holds.",
             ]),
         ],
         "gaps": [
@@ -433,6 +540,8 @@ SECTORS = {
                 "Regenerative pasteurizers are in the strong efficiency bucket of the steam-heated archetype, "
                 "not a separate archetype.",
                 "Keg washing is on `cleaning-system`.",
+                "Process heat is bought as steam from the light-industry steam service: aseptic and UHT "
+                "processing asks for 0.77 GJ of steam per tonne of product.",
             ]),
             ("Brewery examples set aside", [
                 "DOE 2017 state-of-the-art brewhouse: only 5% below current typical, and the archetype has no "

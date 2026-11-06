@@ -1,6 +1,6 @@
 {
  "breweries": {
-  "rows": 70,
+  "rows": 69,
   "archetypes": 54,
   "own": 13,
   "cross": 41,
@@ -201,16 +201,16 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
-   "heat-supply": 24,
    "space-conditioning": 7,
-   "machine-drive": 3,
-   "lighting": 7
+   "heat-supply": 24,
+   "lighting": 7,
+   "machine-drive": 3
   }
  },
  "steel": {
-  "rows": 127,
-  "archetypes": 111,
-  "own": 58,
+  "rows": 122,
+  "archetypes": 106,
+  "own": 53,
   "cross": 53,
   "table": [
    {
@@ -255,16 +255,6 @@
    },
    {
     "band": "Sintering and pelletizing",
-    "archetype": "pellet-plant_induration",
-    "label": "Pellet induration (straight-grate, grate-kiln)",
-    "status": "quantified",
-    "n": "21",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 2
-   },
-   {
-    "band": "Sintering and pelletizing",
     "archetype": "sinter-plant",
     "label": "Sinter plant",
     "status": "quantified",
@@ -292,16 +282,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 0
-   },
-   {
-    "band": "Sintering and pelletizing",
-    "archetype": "pellet-plant_plasma-electric",
-    "label": "Plasma or electric induration",
-    "status": "estimated",
-    "n": "1",
-    "trl": "5",
-    "unit": "t",
-    "guesses": 8
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -361,7 +341,7 @@
     "n": "7",
     "trl": "7",
     "unit": "t",
-    "guesses": 0
+    "guesses": 5
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -428,7 +408,7 @@
     "archetype": "shaft-furnace_direct-reduction_ccs-concentrated",
     "label": "Shaft-furnace direct reduction with capture",
     "status": "quantified",
-    "n": "16",
+    "n": "15",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -488,7 +468,7 @@
     "archetype": "electric-arc-furnace",
     "label": "Electric arc furnace",
     "status": "quantified",
-    "n": "106",
+    "n": "86",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -535,11 +515,11 @@
    },
    {
     "band": "Steelmaking",
-    "archetype": "shaft-furnace_electrolytic-hydrogen",
-    "label": "Electrolytic-hydrogen direct reduction with EAF (whole plant)",
+    "archetype": "electric-arc-furnace_reduced-iron-charge",
+    "label": "Electric arc furnace charged with reduced iron",
     "status": "quantified",
-    "n": "25",
-    "trl": "7",
+    "n": "17",
+    "trl": "9",
     "unit": "t",
     "guesses": 0
    },
@@ -738,20 +718,10 @@
     "archetype": "electric-arc-furnace",
     "label": "Electric arc furnace",
     "status": "quantified",
-    "n": "106",
+    "n": "86",
     "trl": "9",
     "unit": "t",
     "guesses": 0
-   },
-   {
-    "band": "Foundry melting",
-    "archetype": "melting-furnace_crucible-gas-fired",
-    "label": "Gas-fired crucible melting furnace",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 7
    },
    {
     "band": "Foundry melting",
@@ -775,16 +745,6 @@
    },
    {
     "band": "Foundry melting",
-    "archetype": "melting-furnace_isothermal",
-    "label": "Isothermal (immersion) melting furnace",
-    "status": "quantified",
-    "n": "1",
-    "trl": "8",
-    "unit": "t",
-    "guesses": 8
-   },
-   {
-    "band": "Foundry melting",
     "archetype": "melting-furnace_rotary-oxy-fuel",
     "label": "Oxy-fuel rotary iron melting furnace",
     "status": "quantified",
@@ -792,16 +752,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 2
-   },
-   {
-    "band": "CO2 capture, concentrated streams",
-    "archetype": "reactor_steel-offgas-chemicals",
-    "label": "Steel off-gases to chemicals and fuels",
-    "status": "quantified",
-    "n": "15",
-    "trl": "7",
-    "unit": "t",
-    "guesses": 0
    }
   ],
   "top": [
@@ -820,20 +770,20 @@
    {
     "short": "Daniels 2002",
     "id": "daniels_2002_001",
-    "n": 42,
+    "n": 41,
     "citation": "Daniels, B.W. 2002. Transition Paths towards CO2 Emission Reduction in the Steel Industry."
-   },
-   {
-    "short": "Remus et al. 2013 (IS BREF)",
-    "id": "remus_2013_001",
-    "n": 39,
-    "citation": "Remus, R., Aguado-Monsonet, M.A., Roudier, S. and Delgado Sancho, L.. 2013. Best Available Techniques (BAT) Reference Document for Iron and Steel Production. European Commission Joint Research Centre"
    },
    {
     "short": "Aries et al. 2024 (SF BREF)",
     "id": "aries_2024_001",
     "n": 36,
     "citation": "Aries, E., Chronopoulos, G., Schorcht, F. and Roudier, S.. 2024. Best Available Techniques (BAT) Reference Document for the Smitheries and Foundries Industry. European Commission Joint Research Centre"
+   },
+   {
+    "short": "Remus et al. 2013 (IS BREF)",
+    "id": "remus_2013_001",
+    "n": 35,
+    "citation": "Remus, R., Aguado-Monsonet, M.A., Roudier, S. and Delgado Sancho, L.. 2013. Best Available Techniques (BAT) Reference Document for Iron and Steel Production. European Commission Joint Research Centre"
    },
    {
     "short": "Worrell et al. 1999",
@@ -844,43 +794,43 @@
    {
     "short": "Gielen and van Dril 1997",
     "id": "gielen_1997_003",
-    "n": 31,
+    "n": 29,
     "citation": "Gielen, D.J. and van Dril, A.W.N. 1997. The Basic Metal Industry and its Energy Use: Prospects for the Dutch Energy Intensive Industry."
    },
    {
     "short": "UKERC 2013",
     "id": "ukerc_2013_001",
-    "n": 30,
+    "n": 28,
     "citation": "Griffin, P. W., Hammond, G. P., Norman, J. B. 2013. Industrial Energy Use and Carbon Emissions Reduction: A UK Perspective (Usable Energy Database). University of Bath and UK Energy Research Centre."
    },
    {
     "short": "Pardo and Moya 2013",
     "id": "pardo_2013_001",
-    "n": 27,
+    "n": 26,
     "citation": "Pardo, N. and Moya, J.A.. 2013. Prospective scenarios on energy efficiency and CO2 emissions in the European Iron & Steel industry"
    },
    {
     "short": "Moya and Pardo 2013",
     "id": "moya_2013_001",
-    "n": 26,
+    "n": 25,
     "citation": "Moya, J.A. and Pardo, N.. 2013. The potential for improvements in energy efficiency and CO2 emissions in the EU27 iron and steel industry under different payback periods"
    }
   ],
-  "n_sources": 90,
-  "n_examples": 943,
+  "n_sources": 86,
+  "n_examples": 874,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 23,
    "space-conditioning": 7,
+   "heat-supply": 23,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 8
   }
  },
  "pulp-and-paper": {
-  "rows": 101,
-  "archetypes": 86,
+  "rows": 105,
+  "archetypes": 90,
   "own": 40,
-  "cross": 46,
+  "cross": 50,
   "table": [
    {
     "band": "Wood preparation",
@@ -897,7 +847,7 @@
     "archetype": "digester_continuous-kraft",
     "label": "Continuous kraft digester",
     "status": "quantified",
-    "n": "18",
+    "n": "16",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -934,6 +884,16 @@
    },
    {
     "band": "Chemical pulping and bleaching",
+    "archetype": "reactor_oxygen-delignification",
+    "label": "Oxygen delignification with ECF bleaching",
+    "status": "quantified",
+    "n": "9",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 4
+   },
+   {
+    "band": "Chemical pulping and bleaching",
     "archetype": "digester_batch-kraft",
     "label": "Batch kraft digester",
     "status": "quantified",
@@ -941,16 +901,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 7
-   },
-   {
-    "band": "Chemical pulping and bleaching",
-    "archetype": "reactor_oxygen-delignification",
-    "label": "Oxygen delignification with ECF bleaching",
-    "status": "quantified",
-    "n": "9",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Chemical pulping and bleaching",
@@ -1067,10 +1017,10 @@
     "archetype": "gasifier_black-liquor",
     "label": "Black liquor gasification",
     "status": "quantified",
-    "n": "29",
+    "n": "20",
     "trl": "6-7",
     "unit": "t",
-    "guesses": 0
+    "guesses": 1
    },
    {
     "band": "Lime kiln",
@@ -1117,7 +1067,7 @@
     "archetype": "paper-machine",
     "label": "Paper machine (forming and press sections)",
     "status": "quantified",
-    "n": "24",
+    "n": "22",
     "trl": "9",
     "unit": "t",
     "guesses": 2
@@ -1210,27 +1160,27 @@
     "n": "7",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
-   },
-   {
-    "band": "Paper and pulp drying",
-    "archetype": "dryer_electric",
-    "label": "Electric dryer",
-    "status": "quantified",
-    "n": "9",
-    "trl": "7-9",
-    "unit": "t",
     "guesses": 3
    },
    {
     "band": "Paper and pulp drying",
+    "archetype": "dryer_electric-paper",
+    "label": "Electric paper dryer",
+    "status": "estimated",
+    "n": "0",
+    "trl": "6-7",
+    "unit": "t",
+    "guesses": 7
+   },
+   {
+    "band": "Paper and pulp drying",
     "archetype": "dryer_heat-pump",
-    "label": "Heat-pump drying",
+    "label": "Heat-pump-assisted steam drying",
     "status": "quantified",
     "n": "2",
     "trl": "7",
     "unit": "t",
-    "guesses": 2
+    "guesses": 7
    },
    {
     "band": "Effluent treatment",
@@ -1297,16 +1247,16 @@
     "citation": "Jacobs Greenhouse Gas and Institute of Paper Science and Technology. 2006. Pulp and Paper Industry Energy Bandwidth Study."
    },
    {
-    "short": "Martin et al. 2000 (pulp and paper)",
-    "id": "martin_2000_002",
-    "n": 26,
-    "citation": "Martin, N., Anglani, N., Einstein, D., Khrushch, M., Worrell, E. and Price, L.K. 2000. Opportunities to Improve Energy Efficiency and Reduce Greenhouse Gas Emissions in the U.S. Pulp and Paper Industry (LBNL-46141). Lawrence Berkeley National Laboratory, LBNL-46141."
-   },
-   {
     "short": "NRCan 2008",
     "id": "nrcan_2008_001",
     "n": 26,
     "citation": "Natural Resources Canada, Canadian Industry Program for Energy Conservation (CIPEC), in collaboration with the Pulp and Paper Research Institute of Canada (Paprican). 2008. Benchmarking Energy Use in Canadian Pulp and Paper Mills"
+   },
+   {
+    "short": "Martin et al. 2000 (pulp and paper)",
+    "id": "martin_2000_002",
+    "n": 25,
+    "citation": "Martin, N., Anglani, N., Einstein, D., Khrushch, M., Worrell, E. and Price, L.K. 2000. Opportunities to Improve Energy Efficiency and Reduce Greenhouse Gas Emissions in the U.S. Pulp and Paper Industry (LBNL-46141). Lawrence Berkeley National Laboratory, LBNL-46141."
    },
    {
     "short": "Bataille 2017",
@@ -1345,20 +1295,21 @@
     "citation": "Owttrim, C.G., Davis, M. and Kumar, A.. 2022. Development of technology-explicit energy saving bandwidths: A case study for the pulp and paper sector"
    }
   ],
-  "n_sources": 55,
-  "n_examples": 477,
+  "n_sources": 54,
+  "n_examples": 455,
   "cross_families": {
-   "heat-supply": 24,
    "space-conditioning": 7,
+   "heat-supply": 24,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 4
   }
  },
  "cement-and-lime": {
-  "rows": 55,
-  "archetypes": 54,
-  "own": 28,
-  "cross": 26,
+  "rows": 60,
+  "archetypes": 59,
+  "own": 29,
+  "cross": 30,
   "table": [
    {
     "band": "Clinker production",
@@ -1558,7 +1509,7 @@
     "n": "13",
     "trl": "9",
     "unit": "t",
-    "guesses": 6
+    "guesses": 8
    },
    {
     "band": "Cement binders and blending",
@@ -1649,6 +1600,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 8
+   },
+   {
+    "band": "Oxygen supply",
+    "archetype": "air-separation-unit",
+    "label": "Air separation unit",
+    "status": "quantified",
+    "n": "14",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    }
   ],
   "top": [
@@ -1713,19 +1674,19 @@
     "citation": "IEA and WBCSD Cement Sustainability Initiative. 2018. Technology Roadmap: Low-Carbon Transition in the Cement Industry"
    }
   ],
-  "n_sources": 67,
-  "n_examples": 494,
+  "n_sources": 71,
+  "n_examples": 508,
   "cross_families": {
-   "co2-capture": 4,
    "space-conditioning": 7,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 8
   }
  },
  "chemicals": {
-  "rows": 117,
-  "archetypes": 102,
-  "own": 49,
+  "rows": 116,
+  "archetypes": 101,
+  "own": 48,
   "cross": 53,
   "table": [
    {
@@ -1760,11 +1721,11 @@
    },
    {
     "band": "Olefins (high-value chemicals)",
-    "archetype": "gasifier_biomass-ethylene",
-    "label": "Ethylene from lignocellulosic biomass (gasification or pyrolysis)",
+    "archetype": "reactor_biomass-flash-pyrolysis",
+    "label": "Flash pyrolysis of biomass to olefins",
     "status": "quantified",
-    "n": "5",
-    "trl": "5",
+    "n": "2",
+    "trl": "4",
     "unit": "t",
     "guesses": 0
    },
@@ -1796,7 +1757,7 @@
     "n": "4",
     "trl": "9",
     "unit": "t",
-    "guesses": 0
+    "guesses": 1
    },
    {
     "band": "Olefins (high-value chemicals)",
@@ -1887,16 +1848,6 @@
     "trl": "7",
     "unit": "t",
     "guesses": 2
-   },
-   {
-    "band": "Olefin derivatives",
-    "archetype": "reactor_chemical-depolymerization",
-    "label": "Chemical depolymerization",
-    "status": "quantified",
-    "n": "5",
-    "trl": "8-9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Ammonia",
@@ -2026,17 +1977,17 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 0
    },
    {
     "band": "Methanol",
     "archetype": "reactor_co2-to-methanol",
     "label": "CO2-to-methanol",
     "status": "quantified",
-    "n": "9",
+    "n": "6",
     "trl": "6-7",
     "unit": "t",
-    "guesses": 1
+    "guesses": 0
    },
    {
     "band": "Urea",
@@ -2086,7 +2037,7 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 4
    },
    {
     "band": "Chlor-alkali and sodium chlorate: chlorine (t)",
@@ -2116,7 +2067,7 @@
     "n": "6",
     "trl": "8",
     "unit": "t",
-    "guesses": 3
+    "guesses": 4
    },
    {
     "band": "Chlor-alkali and sodium chlorate: sodium chlorate (t)",
@@ -2196,7 +2147,7 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "N2O abatement",
@@ -2216,7 +2167,7 @@
     "n": "3",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
+    "guesses": 3
    }
   ],
   "top": [
@@ -2241,7 +2192,7 @@
    {
     "short": "Van Geene et al. 2024 (MIDDEN)",
     "id": "van-geene_2024_001",
-    "n": 52,
+    "n": 50,
     "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
    },
    {
@@ -2281,22 +2232,42 @@
     "citation": "Saygin, D., Patel, M.K., Worrell, E., Tam, C. and Gielen, D.J.. 2011. Potential of best practice technology to improve energy efficiency in the global chemical and petrochemical sector"
    }
   ],
-  "n_sources": 83,
-  "n_examples": 885,
+  "n_sources": 80,
+  "n_examples": 874,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 23,
    "space-conditioning": 7,
+   "heat-supply": 23,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 8
   }
  },
  "conventional-oil": {
-  "rows": 66,
-  "archetypes": 48,
-  "own": 14,
+  "rows": 69,
+  "archetypes": 51,
+  "own": 17,
   "cross": 34,
   "table": [
+   {
+    "band": "Drilling and well services: drilling (m)",
+    "archetype": "drilling-rig_diesel",
+    "label": "Diesel drilling rig",
+    "status": "quantified",
+    "n": "2",
+    "trl": "9",
+    "unit": "m",
+    "guesses": 9
+   },
+   {
+    "band": "Drilling and well services: drilling (m)",
+    "archetype": "drilling-rig_battery-hybrid",
+    "label": "Battery hybrid rig power",
+    "status": "quantified",
+    "n": "1",
+    "trl": "8",
+    "unit": "m",
+    "guesses": 9
+   },
    {
     "band": "Drilling and well services: drilling (m)",
     "archetype": "reciprocating-engine_dual-fuel",
@@ -2308,6 +2279,16 @@
     "guesses": 5
    },
    {
+    "band": "Drilling and well services: drilling (m)",
+    "archetype": "drilling-rig_electric",
+    "label": "Electric drilling rig",
+    "status": "quantified",
+    "n": "1",
+    "trl": "9",
+    "unit": "m",
+    "guesses": 9
+   },
+   {
     "band": "Drilling and well services: hydraulic work (GJ)",
     "archetype": "fracturing-fleet_diesel",
     "label": "Diesel fracturing fleet (Tier IV)",
@@ -2315,7 +2296,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -2325,7 +2306,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -2395,7 +2376,7 @@
     "n": "0",
     "trl": "9",
     "unit": "m3",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Produced water handling",
@@ -2448,7 +2429,7 @@
    {
     "short": "IPIECA 2025",
     "id": "ipieca_2025_001",
-    "n": 6,
+    "n": 8,
     "citation": "Ipieca and IOGP. 2025. Energy efficiency compendium: technology and good-practice info sheets for the oil and gas industry. Ipieca."
    },
    {
@@ -2462,6 +2443,18 @@
     "id": "gpsa_2004_001",
     "n": 3,
     "citation": "Gas Processors Suppliers Association. 2004. Engineering Data Book, FPS Version, 12th ed., Volumes I & II. GPSA / Gas Processors Association."
+   },
+   {
+    "short": "AER ST59/ST49 2026",
+    "id": "aer_2026_005",
+    "n": 1,
+    "citation": "2026. ST59: Alberta Drilling Activity Monthly Statistics, and ST49: Daily Drilling Activity List (spud data), 2017-2025. Alberta Energy Regulator."
+   },
+   {
+    "short": "BCER 2026",
+    "id": "bcer_2026_001",
+    "n": 1,
+    "citation": "2026. BCER open data: drilling and well data, hydraulic fracture data, and gas processing plant design capacities (extracts to 10-16 Oct 2026). BC Energy Regulator."
    },
    {
     "short": "Brandt et al. 2022",
@@ -2488,18 +2481,18 @@
     "citation": "Joshi, J.U. and Bolech, M.. 2022. Decarbonisation options for the Dutch onshore gas and oil industry (MIDDEN). PBL Netherlands Environmental Assessment Agency and TNO"
    }
   ],
-  "n_sources": 8,
-  "n_examples": 55,
+  "n_sources": 10,
+  "n_examples": 59,
   "cross_families": {
-   "co2-capture": 8,
    "heat-supply": 23,
+   "co2-capture": 8,
    "machine-drive": 3
   }
  },
  "oil-sands": {
-  "rows": 77,
-  "archetypes": 62,
-  "own": 31,
+  "rows": 75,
+  "archetypes": 60,
+  "own": 29,
   "cross": 31,
   "table": [
    {
@@ -2674,26 +2667,6 @@
    },
    {
     "band": "Bitumen upgrading",
-    "archetype": "reactor_hydroprocessing_electric-heating",
-    "label": "Hydroprocessing with electric heating",
-    "status": "quantified",
-    "n": "4",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Bitumen upgrading",
-    "archetype": "reactor_hydroprocessing_hydrogen-fuel",
-    "label": "Hydroprocessing with hydrogen-fired heaters",
-    "status": "quantified",
-    "n": "2",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Bitumen upgrading",
     "archetype": "reactor_partial-upgrading",
     "label": "Partial upgrading",
     "status": "quantified",
@@ -2800,7 +2773,7 @@
     "n": "0",
     "trl": "9",
     "unit": "m3",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Produced water handling",
@@ -2831,12 +2804,6 @@
     "id": "meyers_1997_001",
     "n": 18,
     "citation": "Meyers, R.A. (ed.). 1997. Handbook of Petroleum Refining Processes, 2nd ed. McGraw-Hill."
-   },
-   {
-    "short": "Van Geene et al. 2024 (MIDDEN)",
-    "id": "van-geene_2024_001",
-    "n": 17,
-    "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
    },
    {
     "short": "Gary et al. 2007",
@@ -2873,19 +2840,25 @@
     "id": "lazard_2021_001",
     "n": 12,
     "citation": "Lazard. 2021. Lazard's Levelized Cost of Hydrogen Analysis - Version 2.0."
+   },
+   {
+    "short": "Zapantis 2021",
+    "id": "gccsi_2021_001",
+    "n": 11,
+    "citation": "Zapantis, A. 2021. Blue Hydrogen."
    }
   ],
   "n_sources": 92,
-  "n_examples": 435,
+  "n_examples": 429,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 23
+   "heat-supply": 23,
+   "co2-capture": 8
   }
  },
  "natural-gas": {
-  "rows": 80,
-  "archetypes": 68,
-  "own": 39,
+  "rows": 78,
+  "archetypes": 67,
+  "own": 38,
   "cross": 29,
   "table": [
    {
@@ -2936,7 +2909,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -2946,7 +2919,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -2976,7 +2949,7 @@
     "n": "6",
     "trl": "9",
     "unit": "t",
-    "guesses": 1
+    "guesses": 2
    },
    {
     "band": "Conventional oil and gas production",
@@ -2999,7 +2972,7 @@
     "guesses": 7
    },
    {
-    "band": "Natural gas processing: gas processed (1000-m3)",
+    "band": "Natural gas processing: formation CO2 removed (t)",
     "archetype": "gas-treatment-unit_amine-sweetening",
     "label": "Amine sweetening",
     "status": "quantified",
@@ -3226,7 +3199,7 @@
     "n": "11",
     "trl": "9",
     "unit": "t",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Flaring",
@@ -3276,27 +3249,7 @@
     "n": "37",
     "trl": "9",
     "unit": "t",
-    "guesses": 1
-   },
-   {
-    "band": "Fugitive emissions",
-    "archetype": "pipeline_plastic-liner",
-    "label": "Plastic insert liners in leak-prone mains",
-    "status": "quantified",
-    "n": "1",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Fugitive emissions",
-    "archetype": "process-improvement_automatic-shutoff",
-    "label": "Automatic shutoff and relief valves",
-    "status": "quantified",
-    "n": "3",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
+    "guesses": 2
    },
    {
     "band": "Fugitive emissions",
@@ -3349,7 +3302,7 @@
    {
     "short": "US EPA 2011 (Natural Gas STAR PRO)",
     "id": "epa_2011_001",
-    "n": 42,
+    "n": 41,
     "citation": "US EPA Natural Gas STAR Program. 2011. Natural Gas STAR Partner Reported Opportunities (PRO) Fact Sheets (series). U.S. Environmental Protection Agency"
    },
    {
@@ -3372,12 +3325,12 @@
    }
   ],
   "n_sources": 49,
-  "n_examples": 820,
+  "n_examples": 819,
   "cross_families": {
-   "co2-capture": 8,
+   "heat-supply": 5,
    "machine-drive": 10,
    "mobile-equipment": 6,
-   "heat-supply": 5
+   "co2-capture": 8
   }
  },
  "biofuels": {
@@ -3444,7 +3397,7 @@
     "n": "7",
     "trl": "4",
     "unit": "GJ",
-    "guesses": 1
+    "guesses": 3
    },
    {
     "band": "Biodiesel production",
@@ -3554,7 +3507,7 @@
     "n": "2",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Renewable natural gas",
@@ -3564,7 +3517,7 @@
     "n": "5",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 0
+    "guesses": 2
    },
    {
     "band": "Renewable natural gas",
@@ -3577,7 +3530,7 @@
     "guesses": 0
    },
    {
-    "band": "Solid biofuels (pellets): charcoal (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "kiln_charcoal-retort",
     "label": "Industrial charcoal retort",
     "status": "quantified",
@@ -3587,7 +3540,7 @@
     "guesses": 6
    },
    {
-    "band": "Solid biofuels (pellets): solid biofuel (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "pellet-plant_wood",
     "label": "Wood pellet mill",
     "status": "quantified",
@@ -3597,7 +3550,7 @@
     "guesses": 2
    },
    {
-    "band": "Solid biofuels (pellets): solid biofuel (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "reactor_torrefaction",
     "label": "Biomass torrefaction and pelletising",
     "status": "quantified",
@@ -3672,14 +3625,14 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 24
+   "heat-supply": 24,
+   "co2-capture": 8
   }
  },
  "hydrogen": {
-  "rows": 18,
-  "archetypes": 18,
-  "own": 14,
+  "rows": 16,
+  "archetypes": 16,
+  "own": 12,
   "cross": 4,
   "table": [
    {
@@ -3801,26 +3754,6 @@
     "trl": "9",
     "unit": "GJ",
     "guesses": 0
-   },
-   {
-    "band": "Hydrogen distribution",
-    "archetype": "process-improvement_hydrogen-blending",
-    "label": "Blending into the natural gas network",
-    "status": "estimated",
-    "n": "1",
-    "trl": "8",
-    "unit": "GJ",
-    "guesses": 7
-   },
-   {
-    "band": "Hydrogen distribution",
-    "archetype": "storage-cavern_hydrogen",
-    "label": "Underground hydrogen storage (salt or lined rock cavern)",
-    "status": "quantified",
-    "n": "6",
-    "trl": "7-9",
-    "unit": "GJ",
-    "guesses": 4
    }
   ],
   "top": [
@@ -3833,7 +3766,7 @@
    {
     "short": "US DOE 2024 (Liftoff hydrogen)",
     "id": "doe_2024_001",
-    "n": 18,
+    "n": 16,
     "citation": "U.S. Department of Energy. 2024. Pathways to Commercial Liftoff: Clean Hydrogen, December 2024 Update."
    },
    {
@@ -3855,16 +3788,16 @@
     "citation": "National Renewable Energy Laboratory. 2018. H2A Hydrogen Production Model, Version 3.2018 - technology case workbooks (17 .xlsm files, Title-sheet dates 2018-02-06 to 2022-04-28): Current Central Hydrogen from Biomass via Gasification and Catalytic Steam Reforming (2018-02-06, M."
    },
    {
-    "short": "Elgowainy et al. 2025",
-    "id": "anl_2025_001",
-    "n": 11,
-    "citation": "Elgowainy, A., Reddi, K., Poudel, S., Tanveer, S. and Fang, Z. 2025. Hydrogen Delivery Scenario Analysis Model (HDSAM), Version 5.5 (Excel model; change history to 2025-06-24)."
-   },
-   {
     "short": "NREL 2026",
     "id": "nrel_2026_001",
     "n": 11,
     "citation": "National Renewable Energy Laboratory. 2026. H2A-Lite: Hydrogen Analysis Lite Production model, version 1.5 (May 2026). National Renewable Energy Laboratory / Alliance for Energy Innovation, LLC."
+   },
+   {
+    "short": "Elgowainy et al. 2025",
+    "id": "anl_2025_001",
+    "n": 10,
+    "citation": "Elgowainy, A., Reddi, K., Poudel, S., Tanveer, S. and Fang, Z. 2025. Hydrogen Delivery Scenario Analysis Model (HDSAM), Version 5.5 (Excel model; change history to 2025-06-24)."
    },
    {
     "short": "IEA 2025",
@@ -3885,16 +3818,16 @@
     "citation": "Boulamanti, A. and Moya, J.A.. 2017. Energy efficiency and GHG emissions: Prospective scenarios for the Chemical and Petrochemical Industry. European Commission Joint Research Centre"
    }
   ],
-  "n_sources": 54,
-  "n_examples": 251,
+  "n_sources": 52,
+  "n_examples": 244,
   "cross_families": {
    "co2-capture": 4
   }
  },
  "mining": {
-  "rows": 106,
-  "archetypes": 91,
-  "own": 33,
+  "rows": 104,
+  "archetypes": 89,
+  "own": 31,
   "cross": 58,
   "table": [
    {
@@ -3909,10 +3842,30 @@
    },
    {
     "band": "Extraction and haulage: coal (t)",
+    "archetype": "mine_open-pit-coal-excavation",
+    "label": "Open-pit coal excavation (drilling, blasting and loading)",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Extraction and haulage: coal (t)",
     "archetype": "mine_underground-coal",
     "label": "Underground coal mine (whole mine)",
     "status": "quantified",
     "n": "1",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Extraction and haulage: coal (t)",
+    "archetype": "mine_underground-coal-cutting",
+    "label": "Underground coal cutting (continuous miner or longwall)",
+    "status": "estimated",
+    "n": "0",
     "trl": "9",
     "unit": "t",
     "guesses": 6
@@ -4058,36 +4011,6 @@
     "guesses": 8
    },
    {
-    "band": "Mineral separation and processing: concentrate (t)",
-    "archetype": "adsorber_direct-lithium",
-    "label": "Direct lithium extraction",
-    "status": "quantified",
-    "n": "7",
-    "trl": "6",
-    "unit": "t",
-    "guesses": 7
-   },
-   {
-    "band": "Mineral separation and processing: metal (t)",
-    "archetype": "leaching-vessel_heap-atmospheric",
-    "label": "Heap or atmospheric leaching with SX-EW",
-    "status": "quantified",
-    "n": "8",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Mineral separation and processing: metal (t)",
-    "archetype": "leaching-vessel_high-pressure-acid",
-    "label": "High-pressure acid leaching",
-    "status": "quantified",
-    "n": "5",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 2
-   },
-   {
     "band": "Mineral separation and processing: metal (t)",
     "archetype": "leaching-vessel_in-situ",
     "label": "In-situ leaching",
@@ -4095,7 +4018,7 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 7
+    "guesses": 8
    },
    {
     "band": "Mineral separation and processing: potash (K2O basis) (t)",
@@ -4126,16 +4049,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 6
-   },
-   {
-    "band": "Concentrate and product drying",
-    "archetype": "dryer_direct-fired_efficiency-moderate",
-    "label": "Direct-fired dryer efficiency measures, moderate",
-    "status": "quantified",
-    "n": "10",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Concentrate and product drying",
@@ -4205,42 +4118,30 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "Coal-mine methane",
     "archetype": "gas-treatment-unit_vam-oxidiser",
     "label": "Ventilation-air methane oxidiser",
-    "status": "quantified",
+    "status": "estimated",
     "n": "4",
     "trl": "7-9",
     "unit": "t",
-    "guesses": 7
+    "guesses": 9
    },
    {
     "band": "Coal-mine methane",
     "archetype": "process-improvement_coal-mine-methane-drainage",
     "label": "Coal-mine methane drainage and use",
-    "status": "quantified",
+    "status": "estimated",
     "n": "10",
     "trl": "9",
     "unit": "t",
-    "guesses": 6
+    "guesses": 8
    }
   ],
   "top": [
-   {
-    "short": "Schlesinger et al. 2011",
-    "id": "schlesinger_2011_001",
-    "n": 15,
-    "citation": "Schlesinger, M.E., King, M.J., Sole, K.C. and Davenport, W.G. 2011. Extractive Metallurgy of Copper, 5th ed. Elsevier."
-   },
-   {
-    "short": "Van Geene et al. 2024 (MIDDEN)",
-    "id": "van-geene_2024_001",
-    "n": 14,
-    "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
-   },
    {
     "short": "Tokac et al. 2025",
     "id": "tokac_2025_001",
@@ -4266,10 +4167,16 @@
     "citation": "U.S. Environmental Protection Agency. 2019. Global Non-CO2 Greenhouse Gas Emission Projections & Marginal Abatement Cost Analysis: Methodology Documentation."
    },
    {
-    "short": "Crundwell et al. 2011",
-    "id": "crundwell_2011_001",
+    "short": "Van Geene et al. 2024 (MIDDEN)",
+    "id": "van-geene_2024_001",
+    "n": 10,
+    "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
+   },
+   {
+    "short": "Schlesinger et al. 2011",
+    "id": "schlesinger_2011_001",
     "n": 8,
-    "citation": "Crundwell, F.K., Moats, M.S., Ramachandran, V., Robinson, T.G. and Davenport, W.G. 2011. Extractive Metallurgy of Nickel, Cobalt and Platinum Group Metals. Elsevier."
+    "citation": "Schlesinger, M.E., King, M.J., Sole, K.C. and Davenport, W.G. 2011. Extractive Metallurgy of Copper, 5th ed. Elsevier."
    },
    {
     "short": "InterGroup 2017",
@@ -4288,22 +4195,28 @@
     "id": "robben_2019_001",
     "n": 6,
     "citation": "Robben, C. and Wotruba, H. 2019. Sensor-Based Ore Sorting Technology in Mining - Past, Present and Future."
+   },
+   {
+    "short": "Wallace 2021",
+    "id": "wallace_2021_001",
+    "n": 6,
+    "citation": "Wallace, C.D. 2021. Utilizing renewable hydrogen for fuel-cell mine haul vehicles in Canada: a techno-economic assessment."
    }
   ],
-  "n_sources": 48,
-  "n_examples": 193,
+  "n_sources": 41,
+  "n_examples": 163,
   "cross_families": {
-   "heat-supply": 23,
    "power-generation": 12,
    "space-conditioning": 7,
-   "machine-drive": 9,
-   "lighting": 7
+   "heat-supply": 23,
+   "lighting": 7,
+   "machine-drive": 9
   }
  },
  "aluminum": {
-  "rows": 90,
-  "archetypes": 75,
-  "own": 22,
+  "rows": 88,
+  "archetypes": 73,
+  "own": 20,
   "cross": 53,
   "table": [
    {
@@ -4314,7 +4227,7 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
+    "guesses": 4
    },
    {
     "band": "Alumina digestion",
@@ -4378,16 +4291,6 @@
    },
    {
     "band": "Anode production",
-    "archetype": "paste-plant_soderberg",
-    "label": "Soderberg paste plant",
-    "status": "estimated",
-    "n": "0",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 8
-   },
-   {
-    "band": "Anode production",
     "archetype": "furnace_anode-baking-electric",
     "label": "Electric anode baking furnace",
     "status": "estimated",
@@ -4447,17 +4350,7 @@
     "guesses": 5
    },
    {
-    "band": "Aluminum smelting",
-    "archetype": "electrolysis-cell_multipolar-chloride",
-    "label": "Multipolar or chloride cell",
-    "status": "estimated",
-    "n": "1",
-    "trl": "5",
-    "unit": "t",
-    "guesses": 9
-   },
-   {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_crucible-gas-fired",
     "label": "Gas-fired crucible melting furnace",
     "status": "quantified",
@@ -4467,7 +4360,7 @@
     "guesses": 7
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_reverberatory-rotary",
     "label": "Reverberatory or rotary melting furnace",
     "status": "quantified",
@@ -4477,17 +4370,17 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_regenerative-oxy-fuel",
     "label": "Regenerative or oxy-fuel melting",
     "status": "quantified",
     "n": "17",
     "trl": "9",
     "unit": "t",
-    "guesses": 0
+    "guesses": 5
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_reverberatory-rotary_efficiency-strong",
     "label": "Reverberatory or rotary melting furnace, strong efficiency measures",
     "status": "quantified",
@@ -4497,7 +4390,7 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_twin-chamber",
     "label": "Twin-chamber furnace with decoating",
     "status": "quantified",
@@ -4507,7 +4400,7 @@
     "guesses": 8
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_induction",
     "label": "Induction melting and holding furnace",
     "status": "quantified",
@@ -4517,7 +4410,7 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_isothermal",
     "label": "Isothermal (immersion) melting furnace",
     "status": "quantified",
@@ -4590,19 +4483,19 @@
    }
   ],
   "n_sources": 28,
-  "n_examples": 192,
+  "n_examples": 191,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 23,
    "space-conditioning": 7,
+   "heat-supply": 23,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 8
   }
  },
  "petroleum-refining": {
-  "rows": 103,
-  "archetypes": 84,
-  "own": 24,
+  "rows": 100,
+  "archetypes": 81,
+  "own": 21,
   "cross": 60,
   "table": [
    {
@@ -4726,36 +4619,6 @@
     "guesses": 7
    },
    {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_catalytic-reforming_electric-heating",
-    "label": "Catalytic reforming with electric heating",
-    "status": "quantified",
-    "n": "1",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_hydroprocessing_electric-heating",
-    "label": "Hydroprocessing with electric heating",
-    "status": "quantified",
-    "n": "4",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_hydroprocessing_hydrogen-fuel",
-    "label": "Hydroprocessing with hydrogen-fired heaters",
-    "status": "quantified",
-    "n": "2",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
     "band": "Conversion, upgrading and treating: sulphur recovered (t)",
     "archetype": "gas-treatment-unit_sulphur-recovery",
     "label": "Sulphur recovery and acid gas removal",
@@ -4872,12 +4735,6 @@
     "citation": "Meyers, R.A. (ed.). 1997. Handbook of Petroleum Refining Processes, 2nd ed. McGraw-Hill."
    },
    {
-    "short": "Van Geene et al. 2024 (MIDDEN)",
-    "id": "van-geene_2024_001",
-    "n": 25,
-    "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
-   },
-   {
     "short": "Jones and Pujad\u00f3 2006",
     "id": "jones_2006_001",
     "n": 24,
@@ -4888,6 +4745,12 @@
     "id": "kaiser_2017_001",
     "n": 22,
     "citation": "Kaiser, M.J. 2017. A review of refinery complexity applications."
+   },
+   {
+    "short": "Van Geene et al. 2024 (MIDDEN)",
+    "id": "van-geene_2024_001",
+    "n": 18,
+    "citation": "Van Geene, L., Van Dam, D. and Ilhan, B. 2024. Manufacturing Industry Decarbonisation Data Exchange Network - The database (version 0.4). PBL Netherlands Environmental Assessment Agency and TNO."
    },
    {
     "short": "US DOE 2015 (refining bandwidth)",
@@ -4909,19 +4772,19 @@
    }
   ],
   "n_sources": 69,
-  "n_examples": 475,
+  "n_examples": 468,
   "cross_families": {
-   "co2-capture": 8,
-   "heat-supply": 30,
    "space-conditioning": 7,
+   "heat-supply": 30,
+   "lighting": 7,
    "machine-drive": 8,
-   "lighting": 7
+   "co2-capture": 8
   }
  },
  "whole-database": {
-  "rows": 609,
-  "archetypes": 525,
-  "own": 432,
+  "rows": 612,
+  "archetypes": 537,
+  "own": 444,
   "cross": 93,
   "table": [
    {
@@ -5016,11 +4879,41 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "gasifier_biomass-ethylene",
+    "label": "Ethylene from biomass via gasification, methanol and methanol-to-olefins (whole plant)",
+    "status": "quantified",
+    "n": "3",
+    "trl": "5",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "reactor_chemical-depolymerization",
+    "label": "Chemical depolymerization",
+    "status": "quantified",
+    "n": "5",
+    "trl": "8-9",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
     "archetype": "reactor_haber-bosch-loop",
     "label": "Haber-Bosch synthesis loop with air separation (component)",
     "status": "quantified",
     "n": "6",
     "trl": "9",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "reactor_methanol-loop",
+    "label": "Methanol synthesis loop from bought hydrogen and CO2 (component)",
+    "status": "quantified",
+    "n": "3",
+    "trl": "7-8",
     "unit": "t",
     "guesses": 0
    },
@@ -5076,6 +4969,56 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "melting-furnace_hot-blast-cupola",
+    "label": "Hot-blast cupola for stone wool",
+    "status": "quantified",
+    "n": "2",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 7
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "process-improvement_hydrogen-blending",
+    "label": "Blending into the natural gas network",
+    "status": "estimated",
+    "n": "1",
+    "trl": "8",
+    "unit": "GJ",
+    "guesses": 7
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "storage-cavern_hydrogen",
+    "label": "Underground hydrogen storage (salt or lined rock cavern)",
+    "status": "quantified",
+    "n": "6",
+    "trl": "7-9",
+    "unit": "GJ",
+    "guesses": 4
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "reactor_steel-offgas-chemicals",
+    "label": "Steel off-gases to chemicals and fuels",
+    "status": "quantified",
+    "n": "15",
+    "trl": "7",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "shaft-furnace_electrolytic-hydrogen",
+    "label": "Electrolytic-hydrogen direct reduction with EAF (whole plant)",
+    "status": "quantified",
+    "n": "25",
+    "trl": "7",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
     "archetype": "separator_mine-water-treatment",
     "label": "Mine water treatment plant",
     "status": "estimated",
@@ -5096,6 +5039,16 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "adsorber_direct-lithium",
+    "label": "Direct lithium extraction",
+    "status": "quantified",
+    "n": "7",
+    "trl": "6",
+    "unit": "t",
+    "guesses": 7
+   },
+   {
+    "band": "(no connection)",
     "archetype": "rolling-mill_ring",
     "label": "Ring rolling with variable wall thickness",
     "status": "estimated",
@@ -5106,6 +5059,16 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "electrolysis-cell_multipolar-chloride",
+    "label": "Multipolar or chloride cell",
+    "status": "estimated",
+    "n": "1",
+    "trl": "5",
+    "unit": "t",
+    "guesses": 9
+   },
+   {
+    "band": "(no connection)",
     "archetype": "furnace_homogenizing",
     "label": "Homogenizing and reheat furnaces",
     "status": "quantified",
@@ -5113,6 +5076,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 7
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "paste-plant_soderberg",
+    "label": "Soderberg paste plant",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 8
    },
    {
     "band": "(no connection)",
@@ -5186,6 +5159,36 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "reactor_catalytic-reforming_electric-heating",
+    "label": "Catalytic reforming with electric heating",
+    "status": "quantified",
+    "n": "1",
+    "trl": "6-7",
+    "unit": "m3",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "reactor_hydroprocessing_electric-heating",
+    "label": "Hydroprocessing with electric heating",
+    "status": "quantified",
+    "n": "4",
+    "trl": "6-7",
+    "unit": "m3",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "reactor_hydroprocessing_hydrogen-fuel",
+    "label": "Hydroprocessing with hydrogen-fired heaters",
+    "status": "quantified",
+    "n": "2",
+    "trl": "6-7",
+    "unit": "m3",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
     "archetype": "refinery_conversion",
     "label": "Conversion (cracking) refinery (whole plant)",
     "status": "quantified",
@@ -5216,6 +5219,26 @@
    },
    {
     "band": "(no connection)",
+    "archetype": "gasifier_black-liquor-fuels",
+    "label": "Black liquor gasification to motor fuels (whole plant)",
+    "status": "quantified",
+    "n": "9",
+    "trl": "6-7",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "paper-machine_with-dryer-section",
+    "label": "Paper machine with dryer section (whole papermaking)",
+    "status": "quantified",
+    "n": "10",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "(no connection)",
     "archetype": "process-improvement_log-thawing",
     "label": "Log and chip thawing with recovered heat",
     "status": "estimated",
@@ -5223,6 +5246,16 @@
     "trl": "9",
     "unit": "t",
     "guesses": 2
+   },
+   {
+    "band": "(no connection)",
+    "archetype": "pulp-mill_kraft",
+    "label": "Kraft pulp mill (whole mill)",
+    "status": "quantified",
+    "n": "4",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "(no connection)",
@@ -5243,16 +5276,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 7
-   },
-   {
-    "band": "CO2 capture, concentrated streams",
-    "archetype": "reactor_steel-offgas-chemicals",
-    "label": "Steel off-gases to chemicals and fuels",
-    "status": "quantified",
-    "n": "15",
-    "trl": "7",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Ethanol production",
@@ -5312,7 +5335,7 @@
     "n": "7",
     "trl": "4",
     "unit": "GJ",
-    "guesses": 1
+    "guesses": 3
    },
    {
     "band": "Biodiesel production",
@@ -5422,7 +5445,7 @@
     "n": "2",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Renewable natural gas",
@@ -5432,7 +5455,7 @@
     "n": "5",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 0
+    "guesses": 2
    },
    {
     "band": "Renewable natural gas",
@@ -5445,7 +5468,7 @@
     "guesses": 0
    },
    {
-    "band": "Solid biofuels (pellets): charcoal (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "kiln_charcoal-retort",
     "label": "Industrial charcoal retort",
     "status": "quantified",
@@ -5455,7 +5478,7 @@
     "guesses": 6
    },
    {
-    "band": "Solid biofuels (pellets): solid biofuel (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "pellet-plant_wood",
     "label": "Wood pellet mill",
     "status": "quantified",
@@ -5465,7 +5488,7 @@
     "guesses": 2
    },
    {
-    "band": "Solid biofuels (pellets): solid biofuel (t)",
+    "band": "Solid biofuels (pellets)",
     "archetype": "reactor_torrefaction",
     "label": "Biomass torrefaction and pelletising",
     "status": "quantified",
@@ -5672,7 +5695,7 @@
     "n": "13",
     "trl": "9",
     "unit": "t",
-    "guesses": 6
+    "guesses": 8
    },
    {
     "band": "Cement binders and blending",
@@ -5796,11 +5819,11 @@
    },
    {
     "band": "Olefins (high-value chemicals)",
-    "archetype": "gasifier_biomass-ethylene",
-    "label": "Ethylene from lignocellulosic biomass (gasification or pyrolysis)",
+    "archetype": "reactor_biomass-flash-pyrolysis",
+    "label": "Flash pyrolysis of biomass to olefins",
     "status": "quantified",
-    "n": "5",
-    "trl": "5",
+    "n": "2",
+    "trl": "4",
     "unit": "t",
     "guesses": 0
    },
@@ -5832,7 +5855,7 @@
     "n": "4",
     "trl": "9",
     "unit": "t",
-    "guesses": 0
+    "guesses": 1
    },
    {
     "band": "Olefins (high-value chemicals)",
@@ -5923,16 +5946,6 @@
     "trl": "7",
     "unit": "t",
     "guesses": 2
-   },
-   {
-    "band": "Olefin derivatives",
-    "archetype": "reactor_chemical-depolymerization",
-    "label": "Chemical depolymerization",
-    "status": "quantified",
-    "n": "5",
-    "trl": "8-9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Ammonia",
@@ -6062,17 +6075,17 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 0
    },
    {
     "band": "Methanol",
     "archetype": "reactor_co2-to-methanol",
     "label": "CO2-to-methanol",
     "status": "quantified",
-    "n": "9",
+    "n": "6",
     "trl": "6-7",
     "unit": "t",
-    "guesses": 1
+    "guesses": 0
    },
    {
     "band": "Urea",
@@ -6122,7 +6135,7 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 4
    },
    {
     "band": "Chlor-alkali and sodium chlorate: chlorine (t)",
@@ -6152,7 +6165,7 @@
     "n": "6",
     "trl": "8",
     "unit": "t",
-    "guesses": 3
+    "guesses": 4
    },
    {
     "band": "Chlor-alkali and sodium chlorate: sodium chlorate (t)",
@@ -6232,7 +6245,7 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "N2O abatement",
@@ -6252,7 +6265,7 @@
     "n": "3",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
+    "guesses": 3
    },
    {
     "band": "Petrochemical feedstock",
@@ -6516,23 +6529,13 @@
    },
    {
     "band": "Glass melting",
-    "archetype": "melting-furnace_hot-blast-cupola",
-    "label": "Hot-blast cupola for stone wool",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 7
-   },
-   {
-    "band": "Glass melting",
     "archetype": "furnace_hybrid-electric",
     "label": "Hybrid furnace with electric boosting",
     "status": "quantified",
     "n": "3",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
+    "guesses": 7
    },
    {
     "band": "Glass melting",
@@ -6572,7 +6575,7 @@
     "n": "3",
     "trl": "7",
     "unit": "t",
-    "guesses": 0
+    "guesses": 6
    },
    {
     "band": "Glass melting",
@@ -6605,7 +6608,7 @@
     "guesses": 8
    },
    {
-    "band": "Drying and low-temperature calcining",
+    "band": "Drying and low-temperature calcining: dried product (t)",
     "archetype": "dryer_ceramic-hot-air",
     "label": "Ceramic ware dryer (chamber or tunnel)",
     "status": "quantified",
@@ -6615,7 +6618,7 @@
     "guesses": 6
    },
    {
-    "band": "Drying and low-temperature calcining",
+    "band": "Drying and low-temperature calcining: dried product (t)",
     "archetype": "dryer_rotary-direct-fired",
     "label": "Direct-fired rotary or fluid-bed dryer or calciner",
     "status": "quantified",
@@ -6625,7 +6628,7 @@
     "guesses": 6
    },
    {
-    "band": "Drying and low-temperature calcining",
+    "band": "Drying and low-temperature calcining: dried product (t)",
     "archetype": "dryer_electric",
     "label": "Electric dryer",
     "status": "quantified",
@@ -6633,6 +6636,16 @@
     "trl": "7-9",
     "unit": "t",
     "guesses": 3
+   },
+   {
+    "band": "Drying and low-temperature calcining: stucco (t)",
+    "archetype": "calciner_gypsum",
+    "label": "Gypsum calciner (kettle or flash)",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 8
    },
    {
     "band": "Ceramic firing",
@@ -6683,6 +6696,16 @@
     "trl": "5-7",
     "unit": "t",
     "guesses": 8
+   },
+   {
+    "band": "Oxygen supply",
+    "archetype": "air-separation-unit",
+    "label": "Air separation unit",
+    "status": "quantified",
+    "n": "14",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
    },
    {
     "band": "Centralized hydrogen production",
@@ -6805,26 +6828,6 @@
     "guesses": 0
    },
    {
-    "band": "Hydrogen distribution",
-    "archetype": "process-improvement_hydrogen-blending",
-    "label": "Blending into the natural gas network",
-    "status": "estimated",
-    "n": "1",
-    "trl": "8",
-    "unit": "GJ",
-    "guesses": 7
-   },
-   {
-    "band": "Hydrogen distribution",
-    "archetype": "storage-cavern_hydrogen",
-    "label": "Underground hydrogen storage (salt or lined rock cavern)",
-    "status": "quantified",
-    "n": "6",
-    "trl": "7-9",
-    "unit": "GJ",
-    "guesses": 4
-   },
-   {
     "band": "Cokemaking",
     "archetype": "coke-oven_by-product",
     "label": "By-product coke oven battery",
@@ -6866,16 +6869,6 @@
    },
    {
     "band": "Sintering and pelletizing",
-    "archetype": "pellet-plant_induration",
-    "label": "Pellet induration (straight-grate, grate-kiln)",
-    "status": "quantified",
-    "n": "21",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 2
-   },
-   {
-    "band": "Sintering and pelletizing",
     "archetype": "sinter-plant",
     "label": "Sinter plant",
     "status": "quantified",
@@ -6903,16 +6896,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 0
-   },
-   {
-    "band": "Sintering and pelletizing",
-    "archetype": "pellet-plant_plasma-electric",
-    "label": "Plasma or electric induration",
-    "status": "estimated",
-    "n": "1",
-    "trl": "5",
-    "unit": "t",
-    "guesses": 8
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -6972,7 +6955,7 @@
     "n": "7",
     "trl": "7",
     "unit": "t",
-    "guesses": 0
+    "guesses": 5
    },
    {
     "band": "Ironmaking: iron (t)",
@@ -7039,7 +7022,7 @@
     "archetype": "shaft-furnace_direct-reduction_ccs-concentrated",
     "label": "Shaft-furnace direct reduction with capture",
     "status": "quantified",
-    "n": "16",
+    "n": "15",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -7075,16 +7058,6 @@
     "guesses": 2
    },
    {
-    "band": "Oxygen supply",
-    "archetype": "air-separation-unit",
-    "label": "Air separation unit",
-    "status": "quantified",
-    "n": "14",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
     "band": "Steelmaking",
     "archetype": "basic-oxygen-furnace",
     "label": "Basic oxygen furnace",
@@ -7099,7 +7072,7 @@
     "archetype": "electric-arc-furnace",
     "label": "Electric arc furnace",
     "status": "quantified",
-    "n": "106",
+    "n": "86",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -7146,11 +7119,11 @@
    },
    {
     "band": "Steelmaking",
-    "archetype": "shaft-furnace_electrolytic-hydrogen",
-    "label": "Electrolytic-hydrogen direct reduction with EAF (whole plant)",
+    "archetype": "electric-arc-furnace_reduced-iron-charge",
+    "label": "Electric arc furnace charged with reduced iron",
     "status": "quantified",
-    "n": "25",
-    "trl": "7",
+    "n": "17",
+    "trl": "9",
     "unit": "t",
     "guesses": 0
    },
@@ -7349,20 +7322,10 @@
     "archetype": "electric-arc-furnace",
     "label": "Electric arc furnace",
     "status": "quantified",
-    "n": "106",
+    "n": "86",
     "trl": "9",
     "unit": "t",
     "guesses": 0
-   },
-   {
-    "band": "Foundry melting",
-    "archetype": "melting-furnace_crucible-gas-fired",
-    "label": "Gas-fired crucible melting furnace",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 7
    },
    {
     "band": "Foundry melting",
@@ -7386,16 +7349,6 @@
    },
    {
     "band": "Foundry melting",
-    "archetype": "melting-furnace_isothermal",
-    "label": "Isothermal (immersion) melting furnace",
-    "status": "quantified",
-    "n": "1",
-    "trl": "8",
-    "unit": "t",
-    "guesses": 8
-   },
-   {
-    "band": "Foundry melting",
     "archetype": "melting-furnace_rotary-oxy-fuel",
     "label": "Oxy-fuel rotary iron melting furnace",
     "status": "quantified",
@@ -7416,10 +7369,30 @@
    },
    {
     "band": "Extraction and haulage: coal (t)",
+    "archetype": "mine_open-pit-coal-excavation",
+    "label": "Open-pit coal excavation (drilling, blasting and loading)",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Extraction and haulage: coal (t)",
     "archetype": "mine_underground-coal",
     "label": "Underground coal mine (whole mine)",
     "status": "quantified",
     "n": "1",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Extraction and haulage: coal (t)",
+    "archetype": "mine_underground-coal-cutting",
+    "label": "Underground coal cutting (continuous miner or longwall)",
+    "status": "estimated",
+    "n": "0",
     "trl": "9",
     "unit": "t",
     "guesses": 6
@@ -7565,36 +7538,6 @@
     "guesses": 8
    },
    {
-    "band": "Mineral separation and processing: concentrate (t)",
-    "archetype": "adsorber_direct-lithium",
-    "label": "Direct lithium extraction",
-    "status": "quantified",
-    "n": "7",
-    "trl": "6",
-    "unit": "t",
-    "guesses": 7
-   },
-   {
-    "band": "Mineral separation and processing: metal (t)",
-    "archetype": "leaching-vessel_heap-atmospheric",
-    "label": "Heap or atmospheric leaching with SX-EW",
-    "status": "quantified",
-    "n": "8",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
-   },
-   {
-    "band": "Mineral separation and processing: metal (t)",
-    "archetype": "leaching-vessel_high-pressure-acid",
-    "label": "High-pressure acid leaching",
-    "status": "quantified",
-    "n": "5",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 2
-   },
-   {
     "band": "Mineral separation and processing: metal (t)",
     "archetype": "leaching-vessel_in-situ",
     "label": "In-situ leaching",
@@ -7602,7 +7545,7 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 7
+    "guesses": 8
    },
    {
     "band": "Mineral separation and processing: potash (K2O basis) (t)",
@@ -7633,16 +7576,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 6
-   },
-   {
-    "band": "Concentrate and product drying",
-    "archetype": "dryer_direct-fired_efficiency-moderate",
-    "label": "Direct-fired dryer efficiency measures, moderate",
-    "status": "quantified",
-    "n": "10",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Concentrate and product drying",
@@ -7712,27 +7645,27 @@
     "n": "0",
     "trl": "9",
     "unit": "t",
-    "guesses": 5
+    "guesses": 6
    },
    {
     "band": "Coal-mine methane",
     "archetype": "gas-treatment-unit_vam-oxidiser",
     "label": "Ventilation-air methane oxidiser",
-    "status": "quantified",
+    "status": "estimated",
     "n": "4",
     "trl": "7-9",
     "unit": "t",
-    "guesses": 7
+    "guesses": 9
    },
    {
     "band": "Coal-mine methane",
     "archetype": "process-improvement_coal-mine-methane-drainage",
     "label": "Coal-mine methane drainage and use",
-    "status": "quantified",
+    "status": "estimated",
     "n": "10",
     "trl": "9",
     "unit": "t",
-    "guesses": 6
+    "guesses": 8
    },
    {
     "band": "Alumina digestion",
@@ -7742,7 +7675,7 @@
     "n": "8",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
+    "guesses": 4
    },
    {
     "band": "Alumina digestion",
@@ -7806,16 +7739,6 @@
    },
    {
     "band": "Anode production",
-    "archetype": "paste-plant_soderberg",
-    "label": "Soderberg paste plant",
-    "status": "estimated",
-    "n": "0",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 8
-   },
-   {
-    "band": "Anode production",
     "archetype": "furnace_anode-baking-electric",
     "label": "Electric anode baking furnace",
     "status": "estimated",
@@ -7875,16 +7798,6 @@
     "guesses": 5
    },
    {
-    "band": "Aluminum smelting",
-    "archetype": "electrolysis-cell_multipolar-chloride",
-    "label": "Multipolar or chloride cell",
-    "status": "estimated",
-    "n": "1",
-    "trl": "5",
-    "unit": "t",
-    "guesses": 9
-   },
-   {
     "band": "Fuel-fired roasting, smelting and refining: metal (t)",
     "archetype": "converter_peirce-smith",
     "label": "Peirce-Smith converting",
@@ -7908,11 +7821,11 @@
     "band": "Fuel-fired roasting, smelting and refining: metal (t)",
     "archetype": "reactor_silicothermic",
     "label": "Silicothermic magnesium reduction",
-    "status": "quantified",
+    "status": "estimated",
     "n": "2",
     "trl": "9",
     "unit": "t",
-    "guesses": 9
+    "guesses": 8
    },
    {
     "band": "Fuel-fired roasting, smelting and refining: metal (t)",
@@ -7986,16 +7899,6 @@
    },
    {
     "band": "Fuel-fired roasting, smelting and refining: metal (t)",
-    "archetype": "electrolysis-cell_electrolytic-smelting",
-    "label": "Hydro- or electrolytic non-ferrous smelting",
-    "status": "quantified",
-    "n": "1",
-    "trl": "5",
-    "unit": "t",
-    "guesses": 9
-   },
-   {
-    "band": "Fuel-fired roasting, smelting and refining: metal (t)",
     "archetype": "smelting-vessel_bottom-blowing",
     "label": "Oxygen bottom-blowing bath smelting",
     "status": "quantified",
@@ -8008,11 +7911,11 @@
     "band": "Electric smelting (silicon, ferroalloys, titanium slag)",
     "archetype": "electric-arc-furnace_smelting-submerged-arc",
     "label": "Submerged-arc furnace",
-    "status": "estimated",
-    "n": "0",
+    "status": "quantified",
+    "n": "2",
     "trl": "9",
     "unit": "t",
-    "guesses": 8
+    "guesses": 7
    },
    {
     "band": "Electric smelting (silicon, ferroalloys, titanium slag)",
@@ -8026,20 +7929,20 @@
    },
    {
     "band": "Electric smelting (silicon, ferroalloys, titanium slag)",
-    "archetype": "process-improvement_pre-reduction",
-    "label": "Pre-reduction of feed",
+    "archetype": "electric-arc-furnace_smelting-submerged-arc_pre-reduction",
+    "label": "Electric smelting with pre-reduced feed (whole route)",
     "status": "quantified",
-    "n": "2",
+    "n": "1",
     "trl": "6-7",
     "unit": "t",
-    "guesses": 6
+    "guesses": 8
    },
    {
     "band": "Electric smelting (silicon, ferroalloys, titanium slag)",
     "archetype": "electric-arc-furnace_smelting-open-arc-dc",
     "label": "Open-arc DC furnace",
-    "status": "estimated",
-    "n": "1",
+    "status": "quantified",
+    "n": "4",
     "trl": "9",
     "unit": "t",
     "guesses": 8
@@ -8052,7 +7955,7 @@
     "n": "1",
     "trl": "8",
     "unit": "t",
-    "guesses": 8
+    "guesses": 7
    },
    {
     "band": "Leaching and electrowinning",
@@ -8096,6 +7999,16 @@
    },
    {
     "band": "Leaching and electrowinning",
+    "archetype": "electrolysis-cell_electrolytic-smelting",
+    "label": "Hydro- or electrolytic non-ferrous smelting",
+    "status": "quantified",
+    "n": "1",
+    "trl": "5",
+    "unit": "t",
+    "guesses": 9
+   },
+   {
+    "band": "Leaching and electrowinning",
     "archetype": "leaching-vessel_high-pressure-acid",
     "label": "High-pressure acid leaching",
     "status": "quantified",
@@ -8105,7 +8018,27 @@
     "guesses": 2
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: SF6 (t)",
+    "archetype": "no-abatement_sf6",
+    "label": "SF6 cover gas (no abatement)",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Melting, casting, rolling and extrusion: SF6 (t)",
+    "archetype": "process-improvement_magnesium-cover-gas",
+    "label": "SF6-free magnesium cover gas",
+    "status": "estimated",
+    "n": "0",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 8
+   },
+   {
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_crucible-gas-fired",
     "label": "Gas-fired crucible melting furnace",
     "status": "quantified",
@@ -8115,7 +8048,7 @@
     "guesses": 7
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_reverberatory-rotary",
     "label": "Reverberatory or rotary melting furnace",
     "status": "quantified",
@@ -8125,17 +8058,17 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_regenerative-oxy-fuel",
     "label": "Regenerative or oxy-fuel melting",
     "status": "quantified",
     "n": "17",
     "trl": "9",
     "unit": "t",
-    "guesses": 0
+    "guesses": 5
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_reverberatory-rotary_efficiency-strong",
     "label": "Reverberatory or rotary melting furnace, strong efficiency measures",
     "status": "quantified",
@@ -8145,7 +8078,7 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_twin-chamber",
     "label": "Twin-chamber furnace with decoating",
     "status": "quantified",
@@ -8155,7 +8088,7 @@
     "guesses": 8
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_induction",
     "label": "Induction melting and holding furnace",
     "status": "quantified",
@@ -8165,7 +8098,7 @@
     "guesses": 0
    },
    {
-    "band": "Melting, casting, rolling and extrusion",
+    "band": "Melting, casting, rolling and extrusion: metal (t)",
     "archetype": "melting-furnace_isothermal",
     "label": "Isothermal (immersion) melting furnace",
     "status": "quantified",
@@ -8232,7 +8165,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -8242,7 +8175,7 @@
     "n": "10",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 2
+    "guesses": 5
    },
    {
     "band": "Drilling and well services: hydraulic work (GJ)",
@@ -8272,7 +8205,7 @@
     "n": "6",
     "trl": "9",
     "unit": "t",
-    "guesses": 1
+    "guesses": 2
    },
    {
     "band": "Conventional oil and gas production",
@@ -8305,7 +8238,7 @@
     "guesses": 5
    },
    {
-    "band": "Natural gas processing: gas processed (1000-m3)",
+    "band": "Natural gas processing: formation CO2 removed (t)",
     "archetype": "gas-treatment-unit_amine-sweetening",
     "label": "Amine sweetening",
     "status": "quantified",
@@ -8546,26 +8479,6 @@
    },
    {
     "band": "Bitumen upgrading",
-    "archetype": "reactor_hydroprocessing_electric-heating",
-    "label": "Hydroprocessing with electric heating",
-    "status": "quantified",
-    "n": "4",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Bitumen upgrading",
-    "archetype": "reactor_hydroprocessing_hydrogen-fuel",
-    "label": "Hydroprocessing with hydrogen-fired heaters",
-    "status": "quantified",
-    "n": "2",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Bitumen upgrading",
     "archetype": "reactor_partial-upgrading",
     "label": "Partial upgrading",
     "status": "quantified",
@@ -8702,7 +8615,7 @@
     "n": "0",
     "trl": "9",
     "unit": "m3",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Produced water handling",
@@ -8922,7 +8835,7 @@
     "n": "11",
     "trl": "9",
     "unit": "t",
-    "guesses": 4
+    "guesses": 5
    },
    {
     "band": "Flaring",
@@ -8972,7 +8885,7 @@
     "n": "37",
     "trl": "9",
     "unit": "t",
-    "guesses": 1
+    "guesses": 2
    },
    {
     "band": "Fugitive emissions",
@@ -9125,36 +9038,6 @@
     "guesses": 7
    },
    {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_catalytic-reforming_electric-heating",
-    "label": "Catalytic reforming with electric heating",
-    "status": "quantified",
-    "n": "1",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_hydroprocessing_electric-heating",
-    "label": "Hydroprocessing with electric heating",
-    "status": "quantified",
-    "n": "4",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
-    "band": "Conversion, upgrading and treating: refined petroleum products (m3)",
-    "archetype": "reactor_hydroprocessing_hydrogen-fuel",
-    "label": "Hydroprocessing with hydrogen-fired heaters",
-    "status": "quantified",
-    "n": "2",
-    "trl": "6-7",
-    "unit": "m3",
-    "guesses": 0
-   },
-   {
     "band": "Conversion, upgrading and treating: sulphur recovered (t)",
     "archetype": "gas-treatment-unit_sulphur-recovery",
     "label": "Sulphur recovery and acid gas removal",
@@ -9179,7 +9062,7 @@
     "archetype": "digester_continuous-kraft",
     "label": "Continuous kraft digester",
     "status": "quantified",
-    "n": "18",
+    "n": "16",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -9216,6 +9099,16 @@
    },
    {
     "band": "Chemical pulping and bleaching",
+    "archetype": "reactor_oxygen-delignification",
+    "label": "Oxygen delignification with ECF bleaching",
+    "status": "quantified",
+    "n": "9",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 4
+   },
+   {
+    "band": "Chemical pulping and bleaching",
     "archetype": "digester_batch-kraft",
     "label": "Batch kraft digester",
     "status": "quantified",
@@ -9223,16 +9116,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 7
-   },
-   {
-    "band": "Chemical pulping and bleaching",
-    "archetype": "reactor_oxygen-delignification",
-    "label": "Oxygen delignification with ECF bleaching",
-    "status": "quantified",
-    "n": "9",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 0
    },
    {
     "band": "Chemical pulping and bleaching",
@@ -9349,10 +9232,10 @@
     "archetype": "gasifier_black-liquor",
     "label": "Black liquor gasification",
     "status": "quantified",
-    "n": "29",
+    "n": "20",
     "trl": "6-7",
     "unit": "t",
-    "guesses": 0
+    "guesses": 1
    },
    {
     "band": "Lime kiln",
@@ -9399,7 +9282,7 @@
     "archetype": "paper-machine",
     "label": "Paper machine (forming and press sections)",
     "status": "quantified",
-    "n": "24",
+    "n": "22",
     "trl": "9",
     "unit": "t",
     "guesses": 2
@@ -9492,27 +9375,27 @@
     "n": "7",
     "trl": "9",
     "unit": "t",
-    "guesses": 2
-   },
-   {
-    "band": "Paper and pulp drying",
-    "archetype": "dryer_electric",
-    "label": "Electric dryer",
-    "status": "quantified",
-    "n": "9",
-    "trl": "7-9",
-    "unit": "t",
     "guesses": 3
    },
    {
     "band": "Paper and pulp drying",
+    "archetype": "dryer_electric-paper",
+    "label": "Electric paper dryer",
+    "status": "estimated",
+    "n": "0",
+    "trl": "6-7",
+    "unit": "t",
+    "guesses": 7
+   },
+   {
+    "band": "Paper and pulp drying",
     "archetype": "dryer_heat-pump",
-    "label": "Heat-pump drying",
+    "label": "Heat-pump-assisted steam drying",
     "status": "quantified",
     "n": "2",
     "trl": "7",
     "unit": "t",
-    "guesses": 2
+    "guesses": 7
    },
    {
     "band": "Effluent treatment",
@@ -9569,7 +9452,7 @@
     "archetype": "electric-arc-furnace",
     "label": "Electric arc furnace",
     "status": "quantified",
-    "n": "106",
+    "n": "86",
     "trl": "9",
     "unit": "t",
     "guesses": 0
@@ -9606,13 +9489,23 @@
    },
    {
     "band": "Metal melting and heat treatment",
+    "archetype": "melting-furnace_reverberatory-rotary",
+    "label": "Reverberatory or rotary melting furnace",
+    "status": "quantified",
+    "n": "32",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "Metal melting and heat treatment",
     "archetype": "melting-furnace_regenerative-oxy-fuel",
     "label": "Regenerative or oxy-fuel melting",
     "status": "quantified",
     "n": "17",
     "trl": "9",
     "unit": "t",
-    "guesses": 0
+    "guesses": 5
    },
    {
     "band": "Metal melting and heat treatment",
@@ -9709,7 +9602,7 @@
    {
     "short": "UKERC 2013",
     "id": "ukerc_2013_001",
-    "n": 85,
+    "n": 83,
     "citation": "Griffin, P. W., Hammond, G. P., Norman, J. B. 2013. Industrial Energy Use and Carbon Emissions Reduction: A UK Perspective (Usable Energy Database). University of Bath and UK Energy Research Centre."
    },
    {
@@ -9727,7 +9620,7 @@
    {
     "short": "Cusano et al. 2017 (NFM BREF)",
     "id": "cusano_2017_001",
-    "n": 70,
+    "n": 68,
     "citation": "Cusano, G., Rodrigo Gonzalo, M., Farrell, F., Remus, R., Roudier, S. and Delgado Sancho, L.. 2017. Best Available Techniques (BAT) Reference Document for the Non-Ferrous Metals Industries. European Commission Joint Research Centre"
    },
    {
@@ -9737,26 +9630,26 @@
     "citation": "US EPA Natural Gas STAR Program. 2006. Natural Gas STAR Lessons Learned studies (series). U.S. Environmental Protection Agency"
    }
   ],
-  "n_sources": 406,
-  "n_examples": 5521,
+  "n_sources": 409,
+  "n_examples": 5531,
   "cross_families": {
    "lighting": 7,
-   "machine-drive": 13,
    "heat-supply": 34,
-   "co2-capture": 13,
    "space-conditioning": 7,
-   "power-generation": 13,
-   "mobile-equipment": 6
+   "machine-drive": 13,
+   "co2-capture": 13,
+   "mobile-equipment": 6,
+   "power-generation": 13
   }
  },
  "_totals": {
-  "archetypes": 525,
+  "archetypes": 537,
   "status": {
-   "quantified": 457,
-   "estimated": 68
+   "quantified": 462,
+   "estimated": 75
   },
-  "examples": 12323,
-  "mapped": 7787,
-  "sources": 599
+  "examples": 12331,
+  "mapped": 7800,
+  "sources": 602
  }
 }

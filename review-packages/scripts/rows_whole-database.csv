@@ -1,7 +1,8 @@
 archetype,band
-adsorber_direct-lithium,Mineral separation and processing: concentrate (t)
+adsorber_direct-lithium,(no connection)
 adsorber_molecular-sieve,Natural gas processing: gas processed (1000-m3)
 adsorber_pressure-swing,"CO2 capture, concentrated streams"
+air-separation-unit,Oxygen supply
 air-separation-unit,Oxygen supply
 air-separation-unit,Oxygen supply
 anaerobic-digester,(no connection)
@@ -52,6 +53,7 @@ calciner_clay-flash,Calcined clay
 calciner_electric,Alumina calcination
 calciner_gas-suspension,Alumina calcination
 calciner_gas-suspension_ccs-diffuse,Alumina calcination
+calciner_gypsum,Drying and low-temperature calcining: stucco (t)
 calciner_hydrogen-fired,Alumina calcination
 calciner_indirect,Clinker production
 calciner_indirect,Lime and dolime calcination
@@ -104,7 +106,6 @@ converter_continuous,"Fuel-fired roasting, smelting and refining: metal (t)"
 converter_peirce-smith,"Fuel-fired roasting, smelting and refining: metal (t)"
 conveyor_in-pit-crushing,Extraction and haulage: ore (t)
 cooling-tower_free-evaporative,HVAC cooling
-cooling-tower_free-evaporative,Refrigeration and cold storage
 debarker_drum,Wood preparation
 digester_batch-kraft,Chemical pulping and bleaching
 digester_bayer,Alumina digestion
@@ -139,20 +140,19 @@ distillery_beverage-spirits,(no connection)
 drilling-rig_battery-hybrid,Drilling and well services: drilling (m)
 drilling-rig_diesel,Drilling and well services: drilling (m)
 drilling-rig_electric,Drilling and well services: drilling (m)
-dryer_ceramic-hot-air,Drying and low-temperature calcining
+dryer_ceramic-hot-air,Drying and low-temperature calcining: dried product (t)
 dryer_direct-fired,Drying and curing
 dryer_direct-fired,Paper and pulp drying
-dryer_direct-fired_efficiency-moderate,Concentrate and product drying
 dryer_direct-fired_efficiency-moderate,Drying and curing
 dryer_direct-fired_efficiency-strong,Drying and curing
 dryer_electric,Concentrate and product drying
 dryer_electric,Drying and curing
-dryer_electric,Drying and low-temperature calcining
-dryer_electric,Paper and pulp drying
+dryer_electric,Drying and low-temperature calcining: dried product (t)
+dryer_electric-paper,Paper and pulp drying
 dryer_heat-pump,Paper and pulp drying
 dryer_market-pulp,Paper and pulp drying
 dryer_rotary-direct-fired,Concentrate and product drying
-dryer_rotary-direct-fired,Drying and low-temperature calcining
+dryer_rotary-direct-fired,Drying and low-temperature calcining: dried product (t)
 dryer_solid-fuel,Drying and curing
 dryer_solid-fuel_efficiency-strong,Drying and curing
 dryer_steam-heated,Paper and pulp drying
@@ -163,22 +163,24 @@ dryer_through-air,Paper and pulp drying
 electric-arc-furnace,Foundry melting
 electric-arc-furnace,Metal melting and heat treatment
 electric-arc-furnace,Steelmaking
+electric-arc-furnace_reduced-iron-charge,Steelmaking
 electric-arc-furnace_scrap-preheating,Steelmaking
 electric-arc-furnace_smelting-open-arc-dc,"Electric smelting (silicon, ferroalloys, titanium slag)"
 electric-arc-furnace_smelting-submerged-arc,"Electric smelting (silicon, ferroalloys, titanium slag)"
 electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,"Electric smelting (silicon, ferroalloys, titanium slag)"
 electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,"Electric smelting (silicon, ferroalloys, titanium slag)"
+electric-arc-furnace_smelting-submerged-arc_pre-reduction,"Electric smelting (silicon, ferroalloys, titanium slag)"
 electrolysis-cell_advanced-anodes,Leaching and electrowinning
 electrolysis-cell_chlor-alkali-diaphragm,Chlor-alkali and sodium chlorate: chlorine (t)
 electrolysis-cell_chlor-alkali-membrane,Chlor-alkali and sodium chlorate: chlorine (t)
 electrolysis-cell_chlor-alkali-mercury,Chlor-alkali and sodium chlorate: chlorine (t)
-electrolysis-cell_electrolytic-smelting,"Fuel-fired roasting, smelting and refining: metal (t)"
+electrolysis-cell_electrolytic-smelting,Leaching and electrowinning
 electrolysis-cell_electrorefining,"Fuel-fired roasting, smelting and refining: metal (t)"
 electrolysis-cell_inert-anode,Aluminum smelting
 electrolysis-cell_iron-electrowinning,Ironmaking: reduced iron (t)
 electrolysis-cell_magnesium-chloride,Leaching and electrowinning
 electrolysis-cell_molten-oxide,Ironmaking: iron (t)
-electrolysis-cell_multipolar-chloride,Aluminum smelting
+electrolysis-cell_multipolar-chloride,(no connection)
 electrolysis-cell_oxygen-depolarized,Chlor-alkali and sodium chlorate: chlorine (t)
 electrolysis-cell_prebaked-anode,Aluminum smelting
 electrolysis-cell_prebaked-anode_ccs-diffuse,Aluminum smelting
@@ -233,7 +235,7 @@ furnace_reheating_efficiency-strong,Reheating
 furnace_rotary-hearth-direct-reduction,Ironmaking: reduced iron (t)
 furnace_tempering,(no connection)
 gas-treatment-unit_acid-gas-advanced,Natural gas processing: gas processed (1000-m3)
-gas-treatment-unit_amine-sweetening,Natural gas processing: gas processed (1000-m3)
+gas-treatment-unit_amine-sweetening,Natural gas processing: formation CO2 removed (t)
 gas-treatment-unit_amine-sweetening_ccs-concentrated,Natural gas processing: gas processed (1000-m3)
 gas-treatment-unit_glycol-dehydration,Natural gas processing: gas processed (1000-m3)
 gas-treatment-unit_sulphur-recovery,"Conversion, upgrading and treating: sulphur recovered (t)"
@@ -243,13 +245,14 @@ gas-treatment-unit_vam-oxidiser,Coal-mine methane
 gasifier_biomass-ammonia,Ammonia
 gasifier_biomass-chp,"Heat, low temperature (< 150 degC)"
 gasifier_biomass-chp,"Heat, medium temperature (150-400 degC)"
-gasifier_biomass-ethylene,Olefins (high-value chemicals)
+gasifier_biomass-ethylene,(no connection)
 gasifier_biomass-fischer-tropsch,Renewable diesel and SAF
 gasifier_biomass-fischer-tropsch_ccs-concentrated,Renewable diesel and SAF
 gasifier_biomass-methanation,Renewable natural gas
 gasifier_biomass-methanol,Methanol
 gasifier_biomass-waste,Centralized hydrogen production
 gasifier_black-liquor,Black liquor evaporation and recovery
+gasifier_black-liquor-fuels,(no connection)
 gasifier_coal-ammonia,Ammonia
 gasifier_coal-fischer-tropsch,Synthetic fuels
 gasifier_coal-methanation,(no connection)
@@ -298,7 +301,7 @@ kiln_calcium-looping,Clinker production
 kiln_calcium-silicate-feed,Clinker production
 kiln_ceramic-electric,Ceramic firing
 kiln_ceramic-microwave-assisted,Ceramic firing
-kiln_charcoal-retort,Solid biofuels (pellets): charcoal (t)
+kiln_charcoal-retort,Solid biofuels (pellets)
 kiln_clay-calcination,Calcined clay
 kiln_dry-precalciner,Clinker production
 kiln_dry-precalciner_ccs-diffuse,Clinker production
@@ -324,9 +327,7 @@ kiln_rotary-expanded-clay,(no connection)
 kiln_tunnel-roller,Ceramic firing
 kiln_tunnel-roller_efficiency-strong,Ceramic firing
 leaching-vessel_heap-atmospheric,Leaching and electrowinning
-leaching-vessel_heap-atmospheric,Mineral separation and processing: metal (t)
 leaching-vessel_high-pressure-acid,Leaching and electrowinning
-leaching-vessel_high-pressure-acid,Mineral separation and processing: metal (t)
 leaching-vessel_in-situ,Mineral separation and processing: metal (t)
 lighting_fluorescent-high-bay,Lighting
 lighting_fluorescent-t12,Lighting
@@ -342,29 +343,30 @@ liquefaction-train_floating,LNG liquefaction
 liquefaction-train_hydrogen,Hydrogen distribution
 liquefaction-train_small-scale,LNG liquefaction
 management-system_leak-detection,Fugitive emissions
-melting-furnace_crucible-gas-fired,Foundry melting
-melting-furnace_crucible-gas-fired,"Melting, casting, rolling and extrusion"
+melting-furnace_crucible-gas-fired,"Melting, casting, rolling and extrusion: metal (t)"
 melting-furnace_crucible-gas-fired,Metal melting and heat treatment
 melting-furnace_cupola,Foundry melting
 melting-furnace_cupola,Metal melting and heat treatment
 melting-furnace_electric-smelting,Ironmaking: iron (t)
-melting-furnace_hot-blast-cupola,Glass melting
+melting-furnace_hot-blast-cupola,(no connection)
 melting-furnace_induction,Foundry melting
-melting-furnace_induction,"Melting, casting, rolling and extrusion"
+melting-furnace_induction,"Melting, casting, rolling and extrusion: metal (t)"
 melting-furnace_induction,Metal melting and heat treatment
-melting-furnace_isothermal,Foundry melting
-melting-furnace_isothermal,"Melting, casting, rolling and extrusion"
+melting-furnace_isothermal,"Melting, casting, rolling and extrusion: metal (t)"
 melting-furnace_isothermal,Metal melting and heat treatment
-melting-furnace_regenerative-oxy-fuel,"Melting, casting, rolling and extrusion"
+melting-furnace_regenerative-oxy-fuel,"Melting, casting, rolling and extrusion: metal (t)"
 melting-furnace_regenerative-oxy-fuel,Metal melting and heat treatment
-melting-furnace_reverberatory-rotary,"Melting, casting, rolling and extrusion"
-melting-furnace_reverberatory-rotary_efficiency-strong,"Melting, casting, rolling and extrusion"
+melting-furnace_reverberatory-rotary,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_reverberatory-rotary,Metal melting and heat treatment
+melting-furnace_reverberatory-rotary_efficiency-strong,"Melting, casting, rolling and extrusion: metal (t)"
 melting-furnace_rotary-oxy-fuel,Foundry melting
 melting-furnace_rotary-oxy-fuel,Metal melting and heat treatment
-melting-furnace_twin-chamber,"Melting, casting, rolling and extrusion"
+melting-furnace_twin-chamber,"Melting, casting, rolling and extrusion: metal (t)"
 mine_open-pit-coal,Extraction and haulage: coal (t)
+mine_open-pit-coal-excavation,Extraction and haulage: coal (t)
 mine_open-pit-oil-sands,(no connection)
 mine_underground-coal,Extraction and haulage: coal (t)
+mine_underground-coal-cutting,Extraction and haulage: coal (t)
 mobile-equipment_battery-electric,On-site mobile equipment
 mobile-equipment_diesel,On-site mobile equipment
 mobile-equipment_diesel-electric,On-site mobile equipment
@@ -381,6 +383,7 @@ no-abatement_methane,Drilling and well services: methane (t)
 no-abatement_methane,Fugitive emissions
 no-abatement_methane,Venting: methane (t)
 no-abatement_n2o,N2O abatement
+no-abatement_sf6,"Melting, casting, rolling and extrusion: SF6 (t)"
 oven_electric,"Baking, frying and roasting"
 oven_fuel-fired,"Baking, frying and roasting"
 oven_fuel-fired_efficiency-moderate,"Baking, frying and roasting"
@@ -388,13 +391,12 @@ paper-machine,"Stock preparation, forming and pressing"
 paper-machine_efficiency-moderate,"Stock preparation, forming and pressing"
 paper-machine_efficiency-strong,"Stock preparation, forming and pressing"
 paper-machine_waterless,"Stock preparation, forming and pressing"
-paste-plant_soderberg,Anode production
+paper-machine_with-dryer-section,(no connection)
+paste-plant_soderberg,(no connection)
 pellet-plant_induration,Iron ore pelletizing
-pellet-plant_induration,Sintering and pelletizing
 pellet-plant_induration_efficiency-moderate,Iron ore pelletizing
 pellet-plant_plasma-electric,Iron ore pelletizing
-pellet-plant_plasma-electric,Sintering and pelletizing
-pellet-plant_wood,Solid biofuels (pellets): solid biofuel (t)
+pellet-plant_wood,Solid biofuels (pellets)
 photovoltaic-array_battery-storage,On-site power-only generation
 pickling-line_acid,Hot and cold rolling
 pipeline_co2,CO2 transport and storage
@@ -412,13 +414,14 @@ press_hot-platen,Forming and pressing: process heat (GJ)
 process-improvement_automatic-shutoff,Fugitive emissions
 process-improvement_automatic-shutoff,Venting: methane (t)
 process-improvement_coal-mine-methane-drainage,Coal-mine methane
-process-improvement_hydrogen-blending,Hydrogen distribution
+process-improvement_hydrogen-blending,(no connection)
 process-improvement_landfill-gas-recovery,Renewable natural gas
 process-improvement_log-thawing,(no connection)
 process-improvement_low-emission-components,Fugitive emissions
+process-improvement_magnesium-cover-gas,"Melting, casting, rolling and extrusion: SF6 (t)"
 process-improvement_nru-optimization,Venting: methane (t)
 process-improvement_pfc-anode-effect-control,(no connection)
-process-improvement_pre-reduction,"Electric smelting (silicon, ferroalloys, titanium slag)"
+pulp-mill_kraft,(no connection)
 pulper_chemi-thermomechanical,Mechanical pulping
 pulper_fibreboard-refiner,Forming and pressing: dry fibre (t)
 pulper_groundwood,Mechanical pulping
@@ -436,10 +439,11 @@ reactor_alcohol-to-jet,Renewable diesel and SAF
 reactor_alkylation,"Conversion, upgrading and treating: refined petroleum products (m3)"
 reactor_ammonium-nitrate,Other fertilizers
 reactor_anthraquinone-autoxidation,Hydrogen peroxide
+reactor_biomass-flash-pyrolysis,Olefins (high-value chemicals)
 reactor_catalytic-n2o,N2O abatement
 reactor_catalytic-reforming,"Conversion, upgrading and treating: refined petroleum products (m3)"
-reactor_catalytic-reforming_electric-heating,"Conversion, upgrading and treating: refined petroleum products (m3)"
-reactor_chemical-depolymerization,Olefin derivatives
+reactor_catalytic-reforming_electric-heating,(no connection)
+reactor_chemical-depolymerization,(no connection)
 reactor_co2-to-dme,(no connection)
 reactor_co2-to-ethanol,Ethanol production
 reactor_co2-to-fischer-tropsch,Renewable diesel and SAF
@@ -464,16 +468,15 @@ reactor_haber-bosch-electrolytic,Ammonia
 reactor_haber-bosch-loop,(no connection)
 reactor_hydroprocessing,Bitumen upgrading
 reactor_hydroprocessing,"Conversion, upgrading and treating: refined petroleum products (m3)"
-reactor_hydroprocessing_electric-heating,Bitumen upgrading
-reactor_hydroprocessing_electric-heating,"Conversion, upgrading and treating: refined petroleum products (m3)"
-reactor_hydroprocessing_hydrogen-fuel,Bitumen upgrading
-reactor_hydroprocessing_hydrogen-fuel,"Conversion, upgrading and treating: refined petroleum products (m3)"
+reactor_hydroprocessing_electric-heating,(no connection)
+reactor_hydroprocessing_hydrogen-fuel,(no connection)
 reactor_hydrothermal-liquefaction,Renewable diesel and SAF
 reactor_hydrotreating-lipids,Renewable diesel and SAF
 reactor_integrated-upgrader,(no connection)
 reactor_integrated-upgrader_ccs-concentrated,(no connection)
 reactor_isomerization,"Conversion, upgrading and treating: refined petroleum products (m3)"
 reactor_methane-pyrolysis,Centralized hydrogen production
+reactor_methanol-loop,(no connection)
 reactor_methanol-to-olefins,Olefins (high-value chemicals)
 reactor_nitric-acid,Nitric and adipic acid: nitric acid (t)
 reactor_oxygen-delignification,Chemical pulping and bleaching
@@ -488,10 +491,10 @@ reactor_small-nuclear,"Heat, high temperature (> 400 degC)"
 reactor_small-nuclear,"Heat, low temperature (< 150 degC)"
 reactor_small-nuclear,"Heat, medium temperature (150-400 degC)"
 reactor_small-nuclear-power,On-site power-only generation
-reactor_steel-offgas-chemicals,"CO2 capture, concentrated streams"
+reactor_steel-offgas-chemicals,(no connection)
 reactor_sulphuric-acid-metallurgical,Smelter acid plant
 reactor_thermal-n2o-destruction,N2O abatement
-reactor_torrefaction,Solid biofuels (pellets): solid biofuel (t)
+reactor_torrefaction,Solid biofuels (pellets)
 reactor_urea-synthesis,Urea
 reciprocating-engine_chp,"Heat, low temperature (< 150 degC)"
 reciprocating-engine_chp,"Heat, medium temperature (150-400 degC)"
@@ -541,7 +544,7 @@ separator_warm-lime-softening,Produced water handling
 separator_warm-water-extraction,Oil sands mining and extraction: bitumen (m3)
 shaft-furnace_direct-reduction,Ironmaking: reduced iron (t)
 shaft-furnace_direct-reduction_ccs-concentrated,Ironmaking: reduced iron (t)
-shaft-furnace_electrolytic-hydrogen,Steelmaking
+shaft-furnace_electrolytic-hydrogen,(no connection)
 shaft-furnace_hydrogen-direct-reduction,Ironmaking: reduced iron (t)
 sinter-plant,Sintering and pelletizing
 sinter-plant_efficiency-moderate,Sintering and pelletizing
@@ -585,7 +588,7 @@ steam-turbine_back-pressure_ccs-diffuse,"Heat, low temperature (< 150 degC)"
 steam-turbine_condensing,On-site power-only generation
 steam-turbine_drive,steam-turbine
 steam-turbine_waste-heat,On-site power-only generation
-storage-cavern_hydrogen,Hydrogen distribution
+storage-cavern_hydrogen,(no connection)
 thermal-storage_electric,"Heat, high temperature (> 400 degC)"
 thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
 thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"

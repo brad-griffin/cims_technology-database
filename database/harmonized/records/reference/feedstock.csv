@@ -1,7 +1,7 @@
 archetype,feedstock,mode,energy-in-product,inclusive-above,note
 steam-reformer_methane*,natural-gas|fuel,product-energy,1,,"hydrogen from methane: the hydrogen's energy comes from the gas feed; feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 autothermal-reformer_hydrogen*,natural-gas|fuel,product-energy,1,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
-reactor_methane-pyrolysis,natural-gas|fuel,product-energy,1,,"the solid carbon is a co-product: its energy counts as energy used; feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
+reactor_methane-pyrolysis,natural-gas|fuel,product-energy,1.689,,"hydrogen (1 GJ) plus the carbon held in the carbon black (0.689 GJ per GJ H2: CH4 -> C + 2 H2, C at 394 kJ/mol against 2 H2 at 572) are feedstock; only the reaction heat and losses count as energy used (node alignment HY01, Brad 2026-11-05; replaces S134's carbon-as-energy)"
 gasifier_biomass-waste,biomass|biomass-solid|fuel,product-energy,1,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 gasifier_coal-petroleum-coke*,coal|fuel,product-energy,1,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 gasifier_biomass-fischer-tropsch*,biomass|biomass-solid|fuel,product-energy,1,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
@@ -24,6 +24,7 @@ gasifier_coal-ammonia,coal|fuel,product-energy,22.48,,"feed rows tagged fuel or 
 steam-reformer_methanol,natural-gas|fuel,product-energy,22.66,,"methanol HHV; feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 gasifier_coal-methanol*,coal|fuel,product-energy,22.66,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 gasifier_biomass-methanol,biomass|biomass-solid|fuel,product-energy,22.66,,"feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
+steam-cracker_catalytic-naphtha,naphtha,product-energy,50,60,"the catalytic cracker cracks naphtha, not ethane (node alignment CH11, Brad 2026-11-05): its feed is about 2 t naphtha per t HVC (about 95 GJ HHV), of which about 50 GJ/t stays in the high-value chemicals, as on the ethane row below"
 steam-cracker_*,ethane,product-energy,50,60,JUDGEMENT: the archetype represents an ethane cracker (ruling 2026-10-14; Canadian crackers are ethane-fed). Its high-value chemicals are mostly ethylene (50.3 GJ/t HHV) with some propylene and hydrogen: about 50 GJ/t HHV. A total counts the feed only above 60 GJ/t (about 1.25 t ethane at 51.9 GJ/t per t HVC); feed-free cracker totals stay below about 30 GJ/t on the HVC basis.
 gasifier_biomass-ethylene,biomass|biomass-solid|fuel,product-energy,48,40,"JUDGEMENT: HVC about 48 GJ/t HHV; feed rows tagged fuel or biomass-solid count too (sanity-check 2026-10-23, S134)"
 reactor_methanol-to-olefins,methanol,product-energy,48,40,JUDGEMENT: HVC about 48 GJ/t HHV
@@ -36,5 +37,7 @@ reactor_hydrotreating-lipids,hydrogen,whole-carrier,,,"hydrogen reacted into the
 reactor_alcohol-to-jet,hydrogen,whole-carrier,,,"hydrogen reacted into the product is feedstock, the whole hydrogen use (ruling 2026-10-14): recorded as feedstock-consumption hydrogen so CIMS can still request it"
 reactor_co2-to-*,hydrogen,whole-carrier,,,"hydrogen reacted into the product is feedstock, the whole hydrogen use (ruling 2026-10-14): recorded as feedstock-consumption hydrogen so CIMS can still request it"
 reactor_haber-bosch-loop,hydrogen,whole-carrier,25.2,22,"hydrogen reacted into the product is feedstock, the whole hydrogen use (ruling 2026-10-14): recorded as feedstock-consumption hydrogen so CIMS can still request it; where an example gives only a total that counts the hydrogen, the stoichiometric hydrogen (about 178 kg H2 per t NH3, 25.2 GJ HHV) is taken off it"
-reactor_co2-to-methanol,hydrogen,whole-carrier,26.8,24,"(stoichiometric fallback only; the reactor_co2-to-* row moves the hydrogen rows) where an example gives only a total that counts the hydrogen, the stoichiometric hydrogen (about 189 kg H2 per t methanol, 26.8 GJ HHV) is taken off it (ruling 2026-10-14)"
+reactor_methanol-loop,hydrogen,whole-carrier,,,"hydrogen reacted into the product is feedstock, the whole hydrogen use (ruling 2026-10-14); the loop buys hydrogen (component, CH02, Brad 2026-11-05)"
+reactor_methanol-loop,hydrogen,whole-carrier,26.8,24,"(stoichiometric fallback only; the reactor_co2-to-* row moves the hydrogen rows) where an example gives only a total that counts the hydrogen, the stoichiometric hydrogen (about 189 kg H2 per t methanol, 26.8 GJ HHV) is taken off it (ruling 2026-10-14)"
 reactor_ethanol-to-ethylene,ethanol,product-energy,48.7,,"IEA 2013 Annex 6 Table 9 (Ren 2009): ethanol to ethylene at a 61% mass yield, 1.64 t ethanol per t ethylene x 29.67 GJ/t HHV = 48.7 GJ/t (CHEM015, Brad 2026-10-28)"
+transesterification-unit_alkali-catalyzed,methanol,whole-carrier,,,"methanol is a reactant of transesterification (about 0.1 t per t biodiesel), not energy use (BF06, Brad 2026-11-05 rule 2)"

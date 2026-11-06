@@ -1873,9 +1873,11 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
             sh.setdefault("electricity", 0.0)
         ins = cap[4] + [(f"ccs.{node} reference plant {next(iter(nm))} {per_t:.4g} GJ/t CO2" if len(nm) == 1 and next(iter(nm)) == REFERENCE_CAPTURE.get(node) else f"ccs.{node} node median {per_t:.4g} GJ/t CO2 of {len(nm)}")]
         # host rows, every carrier, then the add-on on top
+        written = set()
         for (q, t), r in sorted(hh.items()):
             if q != p or is_component_target(t) or not _live(r) or (t and _apart(r)):
                 continue    # a carrier pooled apart is not part of the host's total (2026-10-24)
+            written.add(t)
             c, lo, hi = _lohi(r)
             extra = (add + xadd) if not t else add * sh.get(t, 0.0) + (xadd if t == "electricity" else 0.0)
             _put(psum, h, _row(k, p, t, r["unit"], c + extra, lo + extra, hi + extra,
@@ -1883,7 +1885,10 @@ def pm_ccs_energy(rule, psum, records, target_unit, ctx, stats):
                                [_input(r, f"{host} {p}" + (f"_{t}" if t else "")), f"add-on {extra:.4g}"] + ins,
                                r.get("sources", "")), stats, rule["rule-id"])
         for t, s in sh.items():
-            if (p, t) not in hh:
+            # a capture carrier the host has no live row for in its total (none, or
+            # one pooled apart, as the steam reformer's zero steam) still gets the
+            # add-on, so the carriers add up to the total (Brad 2026-11-06, PR06)
+            if t not in written:
                 v = add * s + (xadd if t == "electricity" else 0.0)
                 _put(psum, h, _row(k, p, t, tot["unit"], v, v, v, g, rule,
                                    [f"capture add-on only ({s:.0%} of {add:.4g})"] + ins, ""), stats, rule["rule-id"])

@@ -76,7 +76,14 @@ vendor designs and product names are never archetypes.
 - In CIMS it differs from its host by a service request to the capture node, so
   the CIMS export writes the `host-plant` part as `fcc` and `fom` plus that
   service request; the capture node's technologies carry the capture cost there
-  (ruling 2026-10-10).
+  (ruling 2026-10-10). Energy follows the same split (Brad 2026-11-06, PR06): the
+  export writes the host plant's carriers (target `host-plant` and the host's own
+  carrier rows), not the variant's, and the capture plant's energy comes through
+  the request. The only additions on the CIMS capture technology are the costs and
+  energy the capture node's archetypes do not include, listed in
+  `records/reference/ccs-addon-extra.csv` (the oxy-fired FCC's air separation
+  unit, per t CO2 captured). The database variant stays the whole plant, so its
+  levelized cost compares with the host's.
 - The capture plant itself is a `capture-unit` archetype serving the matching
   `service.ccs.*` node. Its `capture-rate` is the share of the CO2 entering it that
   it captures.
@@ -106,7 +113,9 @@ which UKERC host step. A measure whose source gives no host cost is set aside
   mobile equipment.
 
 **Whole-plant archetypes** (a whole mine, refinery or upgrader) are alternatives to
-the unit archetypes inside them. A model uses one framing or the other, never both.
+the unit archetypes inside them. A model uses one framing or the other, never both:
+where the hierarchy has the unit chain, the whole plant is a `reference` archetype,
+validated against the chain (s4a, rule 3).
 
 **Components and assembled whole-plant costs.**
 - A `component` archetype (type `component`) is a part priced only to build
@@ -242,6 +251,84 @@ Granularity follows **rule 7**: keep a service at the most general aggregation t
 still captures a real difference in energy use or emissions. Do not bundle services
 when the energy service differs, when the emissions differ in kind or in how they
 are abated, or when a policy instrument treats them separately.
+
+## 4a. Footing at a node: what an archetype counts and what it asks for
+
+Archetypes at one CIMS node compete on the same footing, and each piece of a
+route is counted at one node only (node alignment review, Brad 2026-11-05;
+`database/reviews/node-alignment-review_2026-11-05.csv`). Five rules:
+
+1. **Supplied heat is a request.** At a node whose sector has a steam or fired-heater
+   (`direct-heat`) service, a unit archetype carries no boiler or heater fuel. Where
+   its sources include their own boiler or fired heater, that fuel becomes a `steam`
+   (or `heat`, bought from the direct-heat node) carrier at the generator's
+   efficiency: request = fuel x efficiency, and the total loses fuel x (1 -
+   efficiency). The source rows stay in `example-parameter.csv`, excluded with the
+   reason, and the request is a derived row (`tp-<source>-hNNN`, conversion class
+   ratio). `records/reference/supplied-heat.csv` lists the archetypes, the fuels
+   restated, the efficiency, the share of capital cost the unit keeps, and the heat
+   node. The rule holds only where the sector's heat node offers the generation
+   options the unit's sources describe (Brad 2026-11-05); a unit whose heat is made
+   inside the process (integral heat: a kiln, a blast furnace, downhole
+   oxy-combustion) or whose sector has no heat node keeps its fuel.
+2. **Bought intermediates are requests.** An intermediate made at another CIMS node
+   (reduced iron, coke, sinter, anodes, oxygen, hydrogen, methanol, ethanol, captured
+   CO2, grain) is a request per unit of the archetype's product, never left out and
+   never an energy carrier. Energy carriers and feedstocks become requests one per
+   carrier (s10); everything else is a row of `records/reference/service-request.csv`
+   (written to `output/archetype-service-request.csv`); an `at-node` column limits a
+   row to one of the archetype's nodes where the quantity differs by node (a
+   smelter's acid per t of copper, lead or nickel). Each request has one line in
+   the sector note.
+3. **One framing per route.** Where a whole plant competes with the chain of unit
+   nodes inside it, the whole plant becomes a `reference` archetype (no CIMS node)
+   and keeps its values. Where a source splits the plant, its unit-scope parts are
+   examples of the unit archetypes. A major component the whole plant has and the
+   chain lacks (hydrogen storage, a steam plant, an air separation unit) is added to
+   the chain, as an archetype, an add-on or a request; small missing pieces are
+   left out. A route that skips or supplies a downstream step itself stays at its
+   node with a zero or negative request for that step (a thin-slab caster asks for
+   no reheating; a dry-forming paper machine gives back the drying its paper node
+   asks for). Where the hierarchy has only a whole-plant node, the whole plant stays
+   and the units are reference (the 2026-10-22 rule).
+4. **Hydrogen where the sources make it.** The electrolytic and CO2-to-fuel routes
+   (ammonia, methanol, CO2 to ethanol and to Fischer-Tropsch fuels) are on the footing
+   their sources describe, which is on-site electrolysis: the electrolysers' energy
+   and cost are in the archetype, and it asks for no hydrogen. Examples that buy
+   hydrogen are restated by adding the same source's (or the central electrolyser's)
+   energy and cost. Units whose sector has its own hydrogen node (refining,
+   upgrading, steel) buy from it. The CIMS hydrogen sector is to be revised later to
+   choose between on-site and pipeline hydrogen (Brad 2026-11-05).
+5. **Flows come from the same scope as the parameters.** Route-level, whole-mill and
+   baseline-output rows are kept off unit archetypes' flows (they stay on the
+   reference whole plant), and flow units are put on one basis before pooling.
+
+**Validation of the chain against the whole plant.** Each reference whole plant
+replaced by a chain has a row set in `records/reference/chain-validation.csv`: the
+component archetypes, the quantity of each component's product per unit of the
+whole plant's product, and the carrier a component makes for another
+(`supplies`). The build writes `output/chain-validation.csv`: the chain's energy by
+carrier (less what the chain makes for itself), capital cost, fixed operating
+cost, direct emissions and calculated levelized cost beside the whole plant's own,
+with the ratio. The comparison itself changes no value: a ratio far from 1 points at
+a component the chain misses or at a basis difference to look into.
+
+**Capital the chain misses.** Where a chain's capital cost falls well below its
+reference plant's (offsites and utilities, site integration, steps with no
+archetype), the gap is added back as a capital share on the units that belong only
+to that route, never on shared heat supply, hydrogen or haulage (Brad 2026-11-05).
+`records/reference/capital-share.csv` gives each unit's multiplier, set once from
+the chain validation so the chain then matches its reference plant; every
+archetype at the route's nodes takes the same multiplier, so the options there
+still compete on the same footing. Sourced capital costs are multiplied row by row
+(the source's value stays in the note); judged ones are multiplied in
+`fill-judgement.csv`. The multipliers in use: refining and upgrading process units
+x 2.39 (fitted to three refineries and the upgrader), oil sands extraction and froth
+treatment x 2.51, kraft pulping, bleaching, evaporation, recovery and lime kilns
+x 1.63, paper machines x 1.53, and hydrogen direct reduction x 1.5. A multiplier
+below 1 takes off the share of a source's capital for parts the archetype now buys
+from another node (oxy-fuel kiln x 0.81 and calcium-looping kiln x 0.873, whose air
+separation and CO2 purification units are on the oxygen and capture nodes).
 
 ## 5. Parameters, units and bases
 
@@ -771,12 +858,14 @@ compilation cites it as an original.
 
 | Database | CIMS YAML |
 | - | - |
-| `capex` (with `cost-basis`); on a host-with-capture variant its `host-plant` part | `fcc` |
+| `capex` (with `cost-basis`); on a host-with-capture variant its `host-plant` part, plus any `ccs-addon-extra.csv` cost | `fcc` |
 | `opex-fixed` (+ `opex-variable` x annual output); on a host-with-capture variant the `host-plant` parts | `fom`, `vom` |
 | a host-with-capture variant's CO2 to capture | `service-request` to the CCS node |
 | `lifetime` | `lifetime` |
 | `annual-output` | `output` |
-| `efficiency`, or input flows | `service-request`, one per carrier |
+| `efficiency`, or input flows (on a host-with-capture variant, the host plant's, plus any `ccs-addon-extra.csv` energy) | `service-request`, one per carrier |
+| `feedstock-consumption` by carrier | `service-request`, one per carrier |
+| `records/reference/service-request.csv` (`output/archetype-service-request.csv`) | `service-request` to the named node, including zero and negative requests |
 | `emissions-*` | `emissions`, `emissions-biomass`, `emissions-removal` |
 | `trl` → rule above | `available` |
 | constraint shares | `market-share-new-max`, `market-share-new-min`, `market-share-total` |

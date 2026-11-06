@@ -34,7 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from pipeline import (assembly, netsec, feedstock, gwp, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
+from pipeline import (assembly, netsec, feedstock, suppliedheat, capitalshare, servicerequest, chainvalidation, gwp, captureenergy, captureshare, carriers, checks, correction, ukercsaving, currency, examples, extract,  # noqa: E402
                       bands, factoruse, facts, fill, hierarchy, normalise, placement, records, reports, rollin, rollup, sources,
                       summarise, views, wholeplant, workbook)
 from pipeline.common import OUTPUT, write  # noqa: E402
@@ -126,6 +126,10 @@ def main(argv) -> int:
     print("  " + ", ".join(f"{k} {v}" for k, v in mc.items()))
     print("checks")
     fail = checks.run(rec, hier, L, ex)
+    # service requests and chain validations (general rules 2 and 3, 2026-11-05)
+    servicerequest.check(rec, {n for n in hier.nodes}, fail)
+    chainvalidation.check(rec, fail)
+    capitalshare.check(rec, fail)
     backlog = fail.pop("_backlog")
     if backlog:
         print(f"  basis backfill outstanding: {sum(backlog.values())} rows marked for review "
@@ -157,7 +161,13 @@ def main(argv) -> int:
     print("  CO2-eq on AR5: " + (", ".join(f"{k} {v}" for k, v in gw.items()) or "none"))
     fs = feedstock.apply(L.facts, rec)
     print("  feedstock out of energy use: " + (", ".join(f"{k} {v}" for k, v in fs.items()) or "none"))
+    shs = suppliedheat.apply(L.facts, rec)
+    print("  supplied heat bought from the heat node: " + (", ".join(f"{k} {v}" for k, v in shs.items()) or "none"))
+    cps = capitalshare.apply(L.facts)
+    print("  capital the unit chain misses (capital-share.csv): " + (", ".join(f"{k} {v}" for k, v in cps.items()) or "none"))
     normalise.normalise_flows(L.flows, rec, units, L.examples)
+    xf = normalise.apply_flow_exclusions(L.flows, units.factors)
+    print("  flow rows ruled out or rebased (excluded-flow.csv): " + (", ".join(f"{k} {v}" for k, v in xf.items()) or "none"))
     ce = captureenergy.apply(L.facts, L.examples, rec)
     print(f"  capture energy on host plants: {ce.get('set aside', 0)} rows set aside, "
           f"{ce.get('derived per t CO2', 0)} restated per t CO2 on capture archetypes")
@@ -320,6 +330,9 @@ def main(argv) -> int:
                  if r.get("value") or r.get("value-min") or r.get("value-max"))
     for e in L.examples.values():
         e["n-facts"] = nf.get(e["example-id"], 0)
+    sr = servicerequest.build(rec)
+    cv = chainvalidation.build(psum, rec)
+    print(f"  service requests: {len(sr)}; chain validations: {len({r['chain-id'] for r in cv})} chains")
     print("views")
     v = views.build(rec, hier, L.examples, psum, fsum, include_empty="--quantified-only" not in argv)
     views.build(rec, hier, L.examples, unfilled, fsum, include_empty="--quantified-only" not in argv,

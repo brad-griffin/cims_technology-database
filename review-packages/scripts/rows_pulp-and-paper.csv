@@ -16,6 +16,10 @@ boiler_recovery-high-solids,Black liquor evaporation and recovery
 boiler_recovery_ccs-diffuse,Black liquor evaporation and recovery
 boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
 boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
+capture-unit_advanced-solvent,"CO2 capture, diffuse (dilute) streams"
+capture-unit_amine,"CO2 capture, diffuse (dilute) streams"
+capture-unit_calcium-looping,"CO2 capture, diffuse (dilute) streams"
+capture-unit_membrane-cryogenic,"CO2 capture, diffuse (dilute) streams"
 chiller_hvac,HVAC cooling
 combustion-turbine_chp,"Heat, low temperature (< 150 degC)"
 combustion-turbine_chp,"Heat, medium temperature (150-400 degC)"
@@ -31,7 +35,7 @@ digester_deep-eutectic-solvent,Chemical pulping and bleaching
 digester_semi-chemical,Chemical pulping and bleaching
 digester_sulphite,Chemical pulping and bleaching
 dryer_direct-fired,Paper and pulp drying
-dryer_electric,Paper and pulp drying
+dryer_electric-paper,Paper and pulp drying
 dryer_heat-pump,Paper and pulp drying
 dryer_market-pulp,Paper and pulp drying
 dryer_steam-heated,Paper and pulp drying

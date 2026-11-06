@@ -199,9 +199,20 @@ SECTORS_MORE = {
                 "consortium at the Dover site from about 2015 to 2017. We found no later plan to take it further.",
             ]),
             ("In-situ recovery", [
-                "The SAGD and cyclic steam archetypes cover the whole recovery process, including the once-through "
-                "steam generators that supply them. The boiler and CHP rows under heat supply are separate steam "
-                "suppliers. Check that the two framings do not double count steam.",
+                "The SAGD, cyclic steam, and solvent-assisted archetypes cover the wells, pads, and central "
+                "processing facility, and buy their steam from the oil sands steam service, where the model "
+                "chooses between gas boilers, cogeneration, electric boilers, and other options. Their sources "
+                "include the once-through steam generators, so the database restates the generators' gas as "
+                "steam at 80% efficiency (about 6.8 GJ of steam per cubic metre of bitumen for SAGD) and takes "
+                "the generators' share of capital cost (about 9%) out. Is 80% right for the generators the "
+                "sources describe?",
+                "Downhole oxy-fuel steam generation makes its steam in the reservoir, so it keeps its own gas.",
+                "The steam service has no direct-contact steam generator, an emerging option for in-situ "
+                "steam. Should it have one?",
+                "Solvent lost in the reservoir is bought as propane or butane: about 8.8 GJ per cubic metre of "
+                "bitumen for solvent-only recovery, 1.8 GJ for solvent-assisted SAGD, and 5.8 GJ for "
+                "electromagnetic heating with solvent, all worked out from the sources' solvent-to-oil ratios "
+                "and make-up costs. Are these losses plausible?",
                 "Solvent-assisted SAGD, solvent-only recovery, electromagnetic heating, and downhole oxy-fuel "
                 "steam generation are kept as separate prospective options, each with few examples. Are their "
                 "steam-to-oil ratios and costs plausible?",
@@ -211,6 +222,19 @@ SECTORS_MORE = {
                 "ratio. Extraction and froth treatment are per cubic metre of bitumen.",
                 "Naphthenic and paraffinic froth treatment are kept apart, since paraffinic treatment rejects "
                 "asphaltenes and gives a cleaner product. Both rest on few or no sourced examples.",
+                "Warm-water extraction buys its hot process water as about 1.4 GJ of steam per cubic metre of "
+                "bitumen, worked out from the mining and extraction gas use in CERI 2017 less froth treatment. "
+                "Non-aqueous extraction buys about 0.5 GJ of steam to recover its solvent. Both are estimates; "
+                "please check them.",
+                "Froth treatment and non-aqueous extraction lose about 4 volumes of solvent per 1,000 volumes of "
+                "bitumen, bought as naphtha. Paraffinic treatment also asks extraction for about 9% more bitumen, "
+                "to make up for the asphaltenes it rejects.",
+                "The whole mine (`mine_open-pit-oil-sands`) is a reference archetype. Added up from haulage, "
+                "extraction, froth treatment, steam, and tailings, the chain uses about the same energy as the "
+                "whole mine but only about 45% of its capital cost. The missing capital (site, ore preparation, "
+                "hydrotransport, utilities, and infrastructure) is added back as a share (x 2.5) on the extraction "
+                "and froth-treatment plants, so the chain and the whole mine now cost the same. Is that the right "
+                "place for it?",
             ]),
             ("Upgrading", [
                 "Upgrading uses the same unit archetypes as refining (delayed coking, hydroprocessing), so their "
@@ -218,7 +242,20 @@ SECTORS_MORE = {
                 "`reactor_hydroprocessing`. Do upgrader units differ enough from refinery units to need their "
                 "own values?",
                 "Partial upgrading is a prospective field-scale option that meets pipeline specification without "
-                "full upgrading.",
+                "full upgrading. It sits with primary upgrading and gives back the hydroprocessing that "
+                "secondary upgrading would otherwise do.",
+                "The upgrading units buy the heat their fired heaters supply from the oil sands sector's fired-heater "
+                "service, which offers the same heaters as refining (fuel-fired, electric, solid-fuel, and "
+                "others).",
+                "In-situ steam comes from the sector's steam service: fuel-fired boilers (once-through steam "
+                "generators), cogeneration, electric boilers, and small nuclear reactors. Direct-contact steam "
+                "generation has one source with no cost data, so it is not yet an option there.",
+                "Hydroprocessing buys about 1.8 GJ of hydrogen per cubic metre from the upgrader hydrogen "
+                "service.",
+                "The whole upgrader (`reactor_integrated-upgrader`) is a reference archetype. The chain of "
+                "coking, hydroprocessing, heaters, steam, and hydrogen comes to about half its energy (before "
+                "the reformer's gas feed) and, before the offsite share described under refining, about 43% of its "
+                "capital cost.",
                 "Upgrader hydrogen comes from on-site reformers, coke gasification, or electrolysis. Steam "
                 "reforming with capture on the shifted syngas is the Quest design.",
             ]),
@@ -250,16 +287,30 @@ SECTORS_MORE = {
                 "survey frequency left to its range.",
                 "Hot taps and composite wrap repairs are pooled into `compressor_blowdown-recovery`, since both "
                 "avoid venting a line before maintenance.",
-                "Claus sulphur recovery is one archetype with refining.",
+                "Claus sulphur recovery is one archetype with refining. Its examples are Claus units with or "
+                "without tail-gas treatment.",
                 "Gas-turbine and electric-motor refrigeration drives are folded into the LNG trains; the "
                 "all-electric train is kept apart.",
             ]),
             ("Processing", [
                 "Amine sweetening with capture sends the separated CO2 to injection instead of venting it, as "
                 "acid gas injection does in Alberta.",
+                "Gas processing has no steam service, so the heat that regenerates amine and glycol and heats "
+                "molecular-sieve regeneration gas is bought from the fired-heater service, where the model "
+                "chooses between gas-fired and electric heaters. Where a source gives the fuel burned, the "
+                "database restates it as heat at 79%.",
+                "Sulphur recovery covers the Claus unit and tail-gas treatment only; amine treating is its own "
+                "archetype. The steam a Claus unit raises is not credited, since gas processing has no steam "
+                "service.",
+            ]),
+            ("Flaring", [
+                "Flare gas recovery returns the gas it captures to the fuel or sales line: about 20 GJ for "
+                "each tonne of CO2 that flaring would have made, counted as natural gas given back.",
             ]),
             ("Scope", [
-                "Transmission pipelines and distribution systems are not part of this review.",
+                "Transmission pipelines and distribution systems are not part of this review. Plastic liners "
+                "and automatic shut-off valves, which act on distribution leaks, sit on a distribution leak "
+                "step of their own, with a no-abatement option.",
             ]),
         ],
         "gaps": [
@@ -291,6 +342,13 @@ SECTORS_MORE = {
                 "up in the fuel is recorded as feedstock use, not energy use.",
                 "Molecular-sieve dehydration and distillers' grain dryers are part of the grain dry-mill plant, "
                 "not separate archetypes. Methanol recovery is part of the transesterification plants.",
+                "Plants ask other parts of the model for what they buy: corn for grain ethanol (about 0.1 t per "
+                "GJ of ethanol), ethanol for alcohol-to-jet (1.11 GJ per GJ of jet fuel), methanol for "
+                "biodiesel (about 0.06 GJ per GJ), hydrogen for hydrotreating lipids (0.17 GJ per GJ), and "
+                "captured CO2 for the CO2-to-fuel routes (about 0.065 t per GJ).",
+                "The CO2-to-ethanol and CO2-to-Fischer-Tropsch plants make their own hydrogen with on-site "
+                "electrolysers, as most of their sources describe. A source pricing the synthesis alone, with "
+                "hydrogen bought, is kept as an example but not pooled.",
             ]),
             ("Merged", [
                 "Methanol-to-jet is pooled into `reactor_alcohol-to-jet`; ethanol is dehydrated directly while "
@@ -332,6 +390,11 @@ SECTORS_MORE = {
                 "Pipelines, liquefaction, cavern storage, and blending into the gas system are each a way to "
                 "deliver hydrogen. Blending rests on one example.",
             ]),
+            ("Hydrogen made inside other plants", [
+                "Ammonia, methanol, and CO2-to-fuel plants make their own hydrogen, with reformers, gasifiers, or "
+                "on-site electrolysers, so they do not buy from these plants. Central hydrogen demand should "
+                "count only hydrogen that is sold or piped, not the hydrogen those plants make for themselves.",
+            ]),
         ],
         "gaps": [
             "One example: hydrogen blending into the gas system.",
@@ -349,8 +412,19 @@ SECTORS_MORE = {
                 "Haul trucks are per tonne of ore, with waste rock counted through each mine's waste-to-ore "
                 "ratio. Diesel, trolley-assist, dual-fuel LNG, battery-electric, and fuel-cell trucks are kept "
                 "apart.",
-                "Coal mines are whole-mine archetypes (open-pit and underground), while metal mines are built "
-                "from unit archetypes. Is that difference sensible?",
+                "Coal mines are whole-mine archetypes (open-pit and underground) on the simplified coal "
+                "extraction step only, so they are not counted again beside haul trucks, hoists, and ventilation "
+                "fans. Metal mines are built from unit archetypes. Is that difference sensible?",
+                "The detailed coal chain has its own extraction step: `mine_open-pit-coal-excavation` (drilling, "
+                "blasting, and loading by shovels or draglines, about 0.12 GJ per t of coal) and "
+                "`mine_underground-coal-cutting` (continuous miners or longwalls, about 0.03 GJ/t). Haulage, "
+                "hoisting, and ventilation are their own steps. Both are judgements: their energy splits the whole "
+                "mines' energy by the drilling, digging, and haulage shares of the US mining bandwidth study, and "
+                "their capital is the whole mine's less its haulage and ventilation. Are they reasonable?",
+                "Added up, the open-pit chain (excavation plus trucks moving about 13 t of material per t of coal) "
+                "matches the whole mine's energy and comes to about 90% of its capital. The underground chain uses "
+                "about 40% more electricity than the whole mine, because the ventilation fans are metal-mine values, "
+                "and about 85% of its capital.",
             ]),
             ("Merged", [
                 "Overland conveyors are pooled into in-pit crushing and conveying.",
@@ -367,6 +441,15 @@ SECTORS_MORE = {
                 "Potash is counted per tonne of K2O; uranium leaching per tonne of uranium; pellets per tonne of "
                 "pellets.",
             ]),
+            ("What processing steps buy", [
+                "Conventional potash milling (`flotation-cell_potash`) includes its product dryers, so it asks "
+                "for no separate drying. The crystallizer buys its heat as steam from the mine's steam step.",
+                "Ore sorting saves energy by rejecting waste before the mill: it reduces the milling request by "
+                "about 20% (15–30%) of the ore sorted.",
+                "Stirred mills are counted as a whole grinding circuit whose regrind stage uses stirred mills, "
+                "about 7% below the SAG and ball mill circuit.",
+                "Pellet plants serve the mining sector only; steel mills buy the pellets.",
+            ]),
         ],
         "gaps": [
             "No sourced examples: stirred mills, in-pit crushing and conveying, gravity and magnetic "
@@ -381,9 +464,10 @@ SECTORS_MORE = {
                   "services to aluminum plants (steam, capture, machine drive, heating and cooling, and lighting)",
         "calls": [
             ("Merged and kept apart", [
-                "Electric, hydrogen, and biomass heat for Bayer digestion are carriers on `digester_bayer`, not "
-                "separate archetypes. Mechanical vapour recompression in the Bayer refinery is kept apart, since "
-                "it changes the process.",
+                "Bayer digestion buys its steam from the steam service, about 5 GJ of steam per tonne of alumina, "
+                "so the choice of boiler, combined heat and power, electric boiler, or heat pump is made there, not "
+                "on `digester_bayer`. Mechanical vapour recompression in the Bayer refinery is kept apart, since it "
+                "changes the process and asks for no steam.",
                 "The hydrogen-fired calciner is kept apart from the gas-suspension calciner because its emissions "
                 "differ in kind.",
                 "Regenerative burners for foundries are pooled into `melting-furnace_regenerative-oxy-fuel`.",
@@ -391,18 +475,28 @@ SECTORS_MORE = {
             ("Smelting", [
                 "Prebake and Söderberg cells are both conventional; Söderberg is the older Canadian stock. Inert "
                 "anodes (ELYSIS) are prospective.",
+                "Prebake cells buy baked anodes from anode production, about 0.42 tonnes per tonne of aluminum. "
+                "Söderberg cells bake their own paste in the cell, and inert anodes are not consumed, so neither "
+                "buys anodes. That is where the inert anode saves its process CO2.",
+                "Cell fuel is casthouse and holding fuel only. One source's smelter fuel included anode baking, "
+                "which is taken off because anode baking has its own node.",
+                "Alumina reaches the cells from the digestion and calcination steps, not as a purchase by the cell.",
+                "The Söderberg paste plant and the chloride cell are kept as reference values only. The paste plant "
+                "has no sourced values and is small, and the chloride cell needs aluminum chloride, which no "
+                "process in the model makes.",
                 "Process emissions include perfluorocarbons, kept by species rather than as CO2-equivalent.",
                 "The value of smelter power modulation (varying amperage to follow the grid) is not represented.",
             ]),
             ("Whole refinery", [
                 "A whole alumina refinery is kept as reference values only, since the database splits it into "
-                "digestion and calcination.",
+                "digestion and calcination. Digestion, calcination, and a boiler raising the digestion steam add "
+                "up to within a few per cent of the whole refinery's energy use and capital cost.",
             ]),
         ],
         "gaps": [
-            "No sourced examples: the Söderberg paste plant, electric and biogenic-carbon anode baking, and "
-            "capture on the alumina calciner.",
-            "One example: chloride and multipolar cells, the twin-chamber furnace, and isothermal melting.",
+            "No sourced examples: electric and biogenic-carbon anode baking.",
+            "One example: capture on the alumina calciner, the twin-chamber furnace, and isothermal melting.",
+            "Digestion energy is estimated from whole refineries less the calciner, not measured for the step.",
         ],
     },
     "petroleum-refining": {
@@ -417,7 +511,19 @@ SECTORS_MORE = {
                 "only; the database represents refining by its process units. Most units are per cubic metre of "
                 "refined products, and sulphur recovery per tonne of sulphur.",
                 "Fired heaters are heat-supply rows of their own, split from fired heaters in other industries. "
-                "They carry much of a refinery's fuel use, so please review them with the process units.",
+                "The process units buy their heat from them: where a source gives a unit's heater fuel, the "
+                "database restates it as heat at 76%, the fired heater's efficiency, so the model chooses how "
+                "the heat is made. Steam is bought from the steam service the same way. Please review the "
+                "heaters with the process units.",
+                "Hydroprocessing buys about 1.8 GJ of hydrogen per cubic metre from the refinery hydrogen "
+                "service, and catalytic reforming gives back about 2.5 GJ of hydrogen per cubic metre.",
+                "The three whole refineries are compared with the sum of their units, heaters, steam, and "
+                "hydrogen. Energy agrees within about 10%, but the units added up to only about 40–63% of the "
+                "whole refineries' and the upgrader's capital cost, because tankage, utilities, and other offsites "
+                "are not in any unit. Every refining and upgrading process unit now carries that capital as a "
+                "share (x 2.39, fitted to the three refineries and the upgrader together). The hydroskimming, "
+                "deep-conversion, and upgrader chains then come within 5% of their whole plants; the conversion "
+                "refinery comes out about 45% above its own. Is one share for all units reasonable?",
             ]),
             ("Merged", [
                 "Fixed-bed hydrotreating is pooled into `reactor_hydroprocessing`, which covers hydrocracking and "
@@ -425,8 +531,12 @@ SECTORS_MORE = {
                 "Claus sulphur recovery is one archetype with gas processing.",
             ]),
             ("Low-carbon options", [
-                "Electric-heated and hydrogen-fired versions of hydroprocessing and catalytic reforming rest on "
-                "one source (the MIDDEN database).",
+                "Electric heating and hydrogen firing are chosen at the fired-heater service, not in each "
+                "process unit. The electric-heated and hydrogen-fired versions of hydroprocessing and catalytic "
+                "reforming from one source (the MIDDEN database) are kept as reference values only. They use "
+                "much more energy than the process unit plus an electric heater (for hydroprocessing, about "
+                "four times as much), which is worth checking.",
+                "The fired-heater service has no hydrogen-fired heater. Should it have one?",
                 "Capture on the fluid catalytic cracker is kept as a post-combustion variant and an oxy-fuel "
                 "variant; the oxy-fuel variant includes an air separation unit.",
                 "Delayed coking and hydroprocessing are shared with oil sands upgraders, so their values pool "
@@ -434,8 +544,7 @@ SECTORS_MORE = {
             ]),
         ],
         "gaps": [
-            "One or two examples: electric-heated catalytic reforming, hydrogen-fired hydroprocessing, the "
-            "efficient steam reformer, and gas-to-liquids.",
+            "One or two examples: the efficient steam reformer and gas-to-liquids.",
             "No archetype for lubricant or asphalt production, or for co-processing of bio-feeds.",
         ],
     },

@@ -237,7 +237,7 @@ def example_totals(facts, records=None) -> dict:
         row.update({"record-id": base["record-id"] + "-total", "target": "", "target-norm": "",
                     "value": "", "value-min": "", "value-max": "",
                     "value-norm": f"{tot:.6g}", "value-min-norm": "", "value-max-norm": "",
-                    "value-type": "derived", "uncertainty-type": "", "duplicate-of": "",
+                    "value-type": "derived", "uncertainty-type": "", "duplicate-of": "", "excluded": "",
                     "formula": "sum of the example's level-1 carriers (" + " + ".join(
                         f"{t} {v:.4g}" for t, v in sorted(top.items())) + ")",
                     "derived-from": "; ".join(r["record-id"] for r in rs if _target(r) in top or _target(r) in named),

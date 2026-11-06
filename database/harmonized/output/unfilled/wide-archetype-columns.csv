@@ -186,10 +186,6 @@ wide-carriers-species,emissions-process_pfc,emissions,t/product-unit,"Emissions 
 wide-carriers-species,emissions-process_pfc_low,emissions,t/product-unit,
 wide-carriers-species,emissions-process_pfc_high,emissions,t/product-unit,
 wide-carriers-species,emissions-process_pfc_n,emissions,,
-wide-carriers-species,emissions-process_sf6,emissions,t/product-unit,"Emissions from the chemical reaction rather than fuel combustion, per unit of product. Species or stream: sf6."
-wide-carriers-species,emissions-process_sf6_low,emissions,t/product-unit,
-wide-carriers-species,emissions-process_sf6_high,emissions,t/product-unit,
-wide-carriers-species,emissions-process_sf6_n,emissions,,
 wide-carriers-species,emissions-total_ch4,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: ch4."
 wide-carriers-species,emissions-total_ch4_low,emissions,t/product-unit,
 wide-carriers-species,emissions-total_ch4_high,emissions,t/product-unit,
@@ -204,14 +200,10 @@ wide-carriers-species,feedstock-consumption_bioliquid,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_bioliquid_n,technical,,
 wide-carriers-species,feedstock-consumption_biomass,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: biomass."
 wide-carriers-species,feedstock-consumption_biomass_n,technical,,
-wide-carriers-species,feedstock-consumption_biomass-solid,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: biomass-solid."
-wide-carriers-species,feedstock-consumption_biomass-solid_n,technical,,
 wide-carriers-species,feedstock-consumption_coal,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: coal."
 wide-carriers-species,feedstock-consumption_coal_low,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_coal_high,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_coal_n,technical,,
-wide-carriers-species,feedstock-consumption_coke,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: coke."
-wide-carriers-species,feedstock-consumption_coke_n,technical,,
 wide-carriers-species,feedstock-consumption_ethane,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: ethane."
 wide-carriers-species,feedstock-consumption_ethane_n,technical,,
 wide-carriers-species,feedstock-consumption_feedstock,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: feedstock."
@@ -220,6 +212,8 @@ wide-carriers-species,feedstock-consumption_hydrogen,technical,GJ/product-unit,"
 wide-carriers-species,feedstock-consumption_hydrogen_low,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_hydrogen_high,technical,GJ/product-unit,
 wide-carriers-species,feedstock-consumption_hydrogen_n,technical,,
+wide-carriers-species,feedstock-consumption_methanol,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: methanol."
+wide-carriers-species,feedstock-consumption_methanol_n,technical,,
 wide-carriers-species,feedstock-consumption_naphtha,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: naphtha."
 wide-carriers-species,feedstock-consumption_naphtha_n,technical,,
 wide-carriers-species,feedstock-consumption_natural-gas,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: natural-gas."
@@ -238,12 +232,6 @@ wide-carriers-species,specific-energy-consumption_biomass,technical,GJ/product-u
 wide-carriers-species,specific-energy-consumption_biomass_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_biomass_n,technical,,
-wide-carriers-species,specific-energy-consumption_biomass-solid,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomass-solid."
-wide-carriers-species,specific-energy-consumption_biomass-solid_low,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_biomass-solid_high,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_biomass-solid_n,technical,,
-wide-carriers-species,specific-energy-consumption_biomethane,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: biomethane."
-wide-carriers-species,specific-energy-consumption_biomethane_n,technical,,
 wide-carriers-species,specific-energy-consumption_black-liquor,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: black-liquor."
 wide-carriers-species,specific-energy-consumption_black-liquor_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_black-liquor_high,technical,GJ/product-unit,
@@ -256,8 +244,6 @@ wide-carriers-species,specific-energy-consumption_by-product-gas,technical,GJ/pr
 wide-carriers-species,specific-energy-consumption_by-product-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_by-product-gas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_by-product-gas_n,technical,,
-wide-carriers-species,specific-energy-consumption_charcoal,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: charcoal."
-wide-carriers-species,specific-energy-consumption_charcoal_n,technical,,
 wide-carriers-species,specific-energy-consumption_coal,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: coal."
 wide-carriers-species,specific-energy-consumption_coal_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_coal_high,technical,GJ/product-unit,
@@ -296,8 +282,6 @@ wide-carriers-species,specific-energy-consumption_hydrogen,technical,GJ/product-
 wide-carriers-species,specific-energy-consumption_hydrogen_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_hydrogen_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_hydrogen_n,technical,,
-wide-carriers-species,specific-energy-consumption_methanol,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: methanol."
-wide-carriers-species,specific-energy-consumption_methanol_n,technical,,
 wide-carriers-species,specific-energy-consumption_natural-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: natural-gas."
 wide-carriers-species,specific-energy-consumption_natural-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_natural-gas_high,technical,GJ/product-unit,
@@ -320,10 +304,6 @@ wide-carriers-species,specific-energy-consumption_process-off-gas,technical,GJ/p
 wide-carriers-species,specific-energy-consumption_process-off-gas_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_high,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_process-off-gas_n,technical,,
-wide-carriers-species,specific-energy-consumption_refinery-gas,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: refinery-gas."
-wide-carriers-species,specific-energy-consumption_refinery-gas_low,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_refinery-gas_high,technical,GJ/product-unit,
-wide-carriers-species,specific-energy-consumption_refinery-gas_n,technical,,
 wide-carriers-species,specific-energy-consumption_steam,technical,GJ/product-unit,"Total final energy input per unit of product output, all carriers, on a final-energy basis. Species or stream: steam."
 wide-carriers-species,specific-energy-consumption_steam_low,technical,GJ/product-unit,
 wide-carriers-species,specific-energy-consumption_steam_high,technical,GJ/product-unit,
@@ -374,14 +354,8 @@ wide-secondary-parameter,efficiency_biogas,technical,%,"Useful output per unit o
 wide-secondary-parameter,efficiency_biogas_low,technical,%,
 wide-secondary-parameter,efficiency_biogas_high,technical,%,
 wide-secondary-parameter,efficiency_biogas_n,technical,,
-wide-secondary-parameter,efficiency_biomass-solid,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biomass-solid."
-wide-secondary-parameter,efficiency_biomass-solid_low,technical,%,
-wide-secondary-parameter,efficiency_biomass-solid_high,technical,%,
-wide-secondary-parameter,efficiency_biomass-solid_n,technical,,
 wide-secondary-parameter,efficiency_biomethane,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: biomethane."
 wide-secondary-parameter,efficiency_biomethane_n,technical,,
-wide-secondary-parameter,efficiency_black-liquor,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: black-liquor."
-wide-secondary-parameter,efficiency_black-liquor_n,technical,,
 wide-secondary-parameter,efficiency_component,technical,%,"Useful output per unit of energy input, on a higher heating value (HHV) basis: a source's LHV figure is converted with the heating values of the fuel in and the product out (pipeline/heating.py). For multi-carrier technologies record one tech-flow row per input instead. Species or stream: component."
 wide-secondary-parameter,efficiency_component_low,technical,%,
 wide-secondary-parameter,efficiency_component_high,technical,%,

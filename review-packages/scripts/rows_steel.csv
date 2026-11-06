@@ -50,6 +50,7 @@ combustion-turbine_drive_efficiency-moderate,combustion-turbine
 cooling-tower_free-evaporative,HVAC cooling
 electric-arc-furnace,Foundry melting
 electric-arc-furnace,Steelmaking
+electric-arc-furnace_reduced-iron-charge,Steelmaking
 electric-arc-furnace_scrap-preheating,Steelmaking
 electrolysis-cell_iron-electrowinning,Ironmaking: reduced iron (t)
 electrolysis-cell_molten-oxide,Ironmaking: iron (t)
@@ -82,23 +83,18 @@ lighting_hid,Lighting
 lighting_led,Lighting
 lighting_led-controls,Lighting
 lighting_led-high-bay,Lighting
-melting-furnace_crucible-gas-fired,Foundry melting
 melting-furnace_cupola,Foundry melting
 melting-furnace_electric-smelting,Ironmaking: iron (t)
 melting-furnace_induction,Foundry melting
-melting-furnace_isothermal,Foundry melting
 melting-furnace_rotary-oxy-fuel,Foundry melting
 motor_induction-standard,motor
 motor_induction-standard_efficiency-moderate,motor
 motor_premium-efficiency,motor
 motor_variable-speed,motor
-pellet-plant_induration,Sintering and pelletizing
-pellet-plant_plasma-electric,Sintering and pelletizing
 pickling-line_acid,Hot and cold rolling
 preheater_ladle,Steelmaking
 reactor_small-nuclear,"Heat, low temperature (< 150 degC)"
 reactor_small-nuclear,"Heat, medium temperature (150-400 degC)"
-reactor_steel-offgas-chemicals,"CO2 capture, concentrated streams"
 reciprocating-engine_chp,"Heat, low temperature (< 150 degC)"
 reciprocating-engine_chp,"Heat, medium temperature (150-400 degC)"
 reciprocating-engine_drive,reciprocating-engine
@@ -110,7 +106,6 @@ rolling-mill_hot_efficiency-moderate,Hot and cold rolling
 rolling-mill_thin-slab,Casting
 shaft-furnace_direct-reduction,Ironmaking: reduced iron (t)
 shaft-furnace_direct-reduction_ccs-concentrated,Ironmaking: reduced iron (t)
-shaft-furnace_electrolytic-hydrogen,Steelmaking
 shaft-furnace_hydrogen-direct-reduction,Ironmaking: reduced iron (t)
 sinter-plant,Sintering and pelletizing
 sinter-plant_efficiency-moderate,Sintering and pelletizing

@@ -72,7 +72,21 @@ BODY = [('h1', '1. What the database is'),
   "measure to an existing plant is incremental. It pools only as a whole-plant cost: the same source's "
   "host-plant cost plus the measure's. An incremental cost with no host cost from the same source is set "
   'aside. **Whole-plant archetypes** (a whole mine, refinery, or integrated route) are alternatives to the '
-  'unit archetypes inside them: a model uses one framing or the other, never both.'),
+  'unit archetypes inside them: a model uses one framing or the other, never both. Where the hierarchy has the '
+  'chain of unit steps, the whole plant is kept as a reference archetype, and its values are compared with the '
+  'sum of the chain (the database\'s chain validation table) to find components the chain misses. Capital '
+  'the chain misses, such as offsites and utilities, is added back as a share on the route\'s own units, so '
+  'the chain costs what the whole plant costs.'),
+ ('h2', 'What an archetype counts and what it asks for'),
+ ('p',
+  'Archetypes at one node compete on the same footing, and each part of a route is counted at one node only. '
+  'A unit whose sources include their own boiler or fired heater buys that heat from the sector\'s steam or '
+  'fired-heater service instead: its fuel becomes a steam request at the generator\'s efficiency, so the '
+  'model can choose how the steam is made. Heat released inside the process itself (a kiln, a blast furnace) '
+  'stays with the unit. Anything a unit buys that another node makes (reduced iron, coke, anodes, oxygen, '
+  'hydrogen, methanol, captured CO2) is a request per unit of product. A route that skips a later step asks for '
+  'none of it: a thin-slab caster asks for no reheating. The electrolytic ammonia and methanol routes include '
+  'their own electrolysers, as their sources describe.'),
  ('p',
   'Some archetypes serve no CIMS node: **components** priced only to build whole-plant costs, **reference** '
   'archetypes for steps the hierarchy does not resolve, and routes the hierarchy leaves out. They stay in '

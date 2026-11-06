@@ -582,6 +582,9 @@ BRIEF_SHAPE = [
     ("gov-usa/doe/stubbles_2000_energy-use-us-steel-industry_doe", "stubbles_2000_001", "US"),
     ("other-reports/van-den-brink_2002_combined-catalytic-nox-n2o-nitric-acid_ecn", "van-den-brink_2002_001", "EU"),
     ("peer-reviewed/walenta-gartner_2007_low-co2-belite-sulfoaluminate-ferrite-cement_iccc", "walenta-gartner_2011_001", "EU"),
+    ("other-reports/bisaka_2016_prereduction-dc-smelting-ilmenite-pellets_saimm", "bisaka_2016_001", "South Africa"),
+    ("peer-reviewed/song_2025_ilmenite-pellets-eaf-titania-slag_rineng", "song_2025_001", "China"),
+    ("peer-reviewed/pistorius_2009_partial-slag-solidification-ilmenite-smelter_up", "pistorius_2009_001", "South Africa"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

@@ -34,7 +34,6 @@ cooling-tower_free-evaporative,HVAC cooling
 digester_bayer,Alumina digestion
 digester_bayer_electric-heating,Alumina digestion
 electrolysis-cell_inert-anode,Aluminum smelting
-electrolysis-cell_multipolar-chloride,Aluminum smelting
 electrolysis-cell_prebaked-anode,Aluminum smelting
 electrolysis-cell_prebaked-anode_ccs-diffuse,Aluminum smelting
 electrolysis-cell_soderberg,Aluminum smelting
@@ -63,18 +62,17 @@ lighting_hid,Lighting
 lighting_led,Lighting
 lighting_led-controls,Lighting
 lighting_led-high-bay,Lighting
-melting-furnace_crucible-gas-fired,"Melting, casting, rolling and extrusion"
-melting-furnace_induction,"Melting, casting, rolling and extrusion"
-melting-furnace_isothermal,"Melting, casting, rolling and extrusion"
-melting-furnace_regenerative-oxy-fuel,"Melting, casting, rolling and extrusion"
-melting-furnace_reverberatory-rotary,"Melting, casting, rolling and extrusion"
-melting-furnace_reverberatory-rotary_efficiency-strong,"Melting, casting, rolling and extrusion"
-melting-furnace_twin-chamber,"Melting, casting, rolling and extrusion"
+melting-furnace_crucible-gas-fired,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_induction,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_isothermal,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_regenerative-oxy-fuel,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_reverberatory-rotary,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_reverberatory-rotary_efficiency-strong,"Melting, casting, rolling and extrusion: metal (t)"
+melting-furnace_twin-chamber,"Melting, casting, rolling and extrusion: metal (t)"
 motor_induction-standard,motor
 motor_induction-standard_efficiency-moderate,motor
 motor_premium-efficiency,motor
 motor_variable-speed,motor
-paste-plant_soderberg,Anode production
 reactor_small-nuclear,"Heat, low temperature (< 150 degC)"
 reactor_small-nuclear,"Heat, medium temperature (150-400 degC)"
 reciprocating-engine_chp,"Heat, low temperature (< 150 degC)"

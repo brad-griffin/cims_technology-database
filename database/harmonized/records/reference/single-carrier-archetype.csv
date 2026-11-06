@@ -52,3 +52,11 @@ reciprocating-engine_drive,fuel,one fuel or heat stream is its whole energy inpu
 separator_membrane-bioreactor,electricity,electric device: all its energy is electricity,user 2026-11-04 (exemption to the S117 single-carrier rule)
 steam-turbine_condensing,fuel,one fuel or heat stream is its whole energy input; auxiliaries negligible,user 2026-11-04 (exemption to the S117 single-carrier rule)
 well_co2-storage,electricity,electric device: all its energy is electricity,user 2026-11-04 (exemption to the S117 single-carrier rule)
+electrolysis-cell_chlor-alkali-diaphragm,electricity,electrolysis cell on the electrolysis step alone: its energy is electricity once caustic concentration is on the caustic-evaporation step (CH03),Brad 2026-11-05 node alignment
+electrolysis-cell_chlor-alkali-membrane,electricity,electrolysis cell on the electrolysis step alone: its energy is electricity once caustic concentration is on the caustic-evaporation step (CH03),Brad 2026-11-05 node alignment
+electrolysis-cell_chlor-alkali-mercury,electricity,electrolysis cell on the electrolysis step alone: its energy is electricity once caustic concentration is on the caustic-evaporation step (CH03),Brad 2026-11-05 node alignment
+electrolysis-cell_oxygen-depolarized,electricity,electrolysis cell on the electrolysis step alone: its energy is electricity once caustic concentration is on the caustic-evaporation step (CH03),Brad 2026-11-05 node alignment
+flare,natural-gas,"pilot and purge gas (the gas flared is the service, not fuel bought)",Brad 2026-11-05 (node alignment review NG06)
+separator_reduced-emission-completion,diesel,"the completion unit's separators, heaters and pumps run on diesel engines at the wellsite",Brad 2026-11-05 (node alignment review NG06)
+compressor_low-emission-seal,electricity,dry-seal support (seal-gas boosting and filtration) is electric,Brad 2026-11-05 (node alignment review NG06)
+evaporator_crystallizer-produced-water,electricity,a vapour-compression brine concentrator; 0.2 GJ/m3 (55 kWh/m3) is within the 20-70 kWh/m3 reported for mechanical-vapour-compression ZLD,Brad 2026-11-05 (node alignment review NG06)

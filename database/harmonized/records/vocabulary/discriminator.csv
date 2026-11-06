@@ -54,6 +54,7 @@ biomass-ammonia,Ammonia from gasified biomass,no
 biomass-chp,Biomass gasifier CHP,no
 biomass-ethylene,Ethylene from gasified biomass,no
 biomass-fischer-tropsch,Biomass or waste gasification with Fischer-Tropsch synthesis to liquid hydrocarbons,yes
+biomass-flash-pyrolysis,Flash pyrolysis of biomass to olefins and aromatics,no
 biomass-methanation,Biomass gasification with methanation,no
 biomass-methanol,Biomass or waste gasification to methanol,no
 biomass-waste,Biomass or waste gasification,no
@@ -351,6 +352,7 @@ methane,Steam methane reformer; Steam methane reformer with capture on the shift
 methane-monitoring,Continuous methane monitoring,no
 methane-pyrolysis,Methane pyrolysis,no
 methanol,Natural-gas reforming with methanol synthesis (whole plant),yes
+methanol-loop,Methanol synthesis loop without the hydrogen plant,no
 methanol-recovery,Methanol recovery with heat integration,no
 methanol-to-jet,Methanol-to-jet,no
 methanol-to-olefins,Methanol to olefins,no
@@ -522,3 +524,13 @@ waterless,Paper formed without water,no
 wet-seal-degassing-recovery,Wet-seal degassing gas recovery,no
 wood,Wood pellet mill,no
 zinc-electrowinning,Zinc electrowinning from sulphate solution,no
+kraft,Kraft (sulphate) pulping,no
+with-dryer-section,Whole paper machine: forming and press with the dryer section,no
+black-liquor-fuels,"Black liquor gasification making motor fuels or chemicals (DME, methanol, FT liquids, mixed alcohols)",no
+reduced-iron-charge,Charged mostly with reduced iron (DRI or HBI) rather than scrap,no
+open-pit-coal-excavation,"Drilling, blasting and loading at an open-pit coal mine",no
+underground-coal-cutting,Cutting and loading of coal underground,no
+gypsum,Gypsum calcining to stucco,no
+electric-paper,Electrically heated paper drying,no
+sf6,Sulphur hexafluoride,no
+magnesium-cover-gas,SF6-free cover gas for molten magnesium,no
