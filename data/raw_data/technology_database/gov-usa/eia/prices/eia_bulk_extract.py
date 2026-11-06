@@ -59,10 +59,8 @@ def series(zip_name):
                     yield d
 
 
-def write(path, cols, rows, folder=None):
-    # the two bulk price tables are large intermediates the build does not read:
-    # kept with the downloads in primary-sources/, not in the deposit (2026-11-06)
-    with open((folder or HERE) / path, "w", encoding="utf-8-sig", newline="") as fh:
+def write(path, cols, rows):
+    with open(HERE / path, "w", encoding="utf-8-sig", newline="") as fh:
         w = csv.writer(fh, lineterminator="\n")
         w.writerow(cols)
         n = 0
@@ -104,7 +102,7 @@ def seds():
         for period, value in d.get("data", []):
             rows.append([sid, msn, state, d.get("name", ""), period, value, d["units"]])
     write("eia_2026_bulk-seds_prices.csv",
-          ["series-id", "msn", "state", "name", "year", "value", "unit"], rows, DOCS)
+          ["series-id", "msn", "state", "name", "year", "value", "unit"], rows)
 
 
 ELEC_KEEP = {"ELEC.COST": "fuel cost per physical unit",
@@ -133,7 +131,7 @@ def elec():
         for period, value in d.get("data", []):
             rows.append([sid, kind, region, sector, fuel, freq, period, value, d.get("units", "")])
     write("eia_2026_bulk-elec_prices.csv",
-          ["series-id", "measure", "region", "sector", "fuel", "frequency", "period", "value", "unit"], rows, DOCS)
+          ["series-id", "measure", "region", "sector", "fuel", "frequency", "period", "value", "unit"], rows)
 
 
 if __name__ == "__main__":

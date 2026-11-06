@@ -40,7 +40,7 @@ def g3(x):
 
 def load_metrics():
     out = {}
-    for r in csv.DictReader(open(os.path.join(DOCS, 'petrinex_2026_facility-metrics_ab-sk.csv'), encoding='utf-8-sig')):
+    for r in csv.DictReader(open(os.path.join(HERE, 'petrinex_2026_facility-metrics_ab-sk.csv'), encoding='utf-8-sig')):
         if r['year'] == YEAR:
             out[r['facility-id']] = r
     return out

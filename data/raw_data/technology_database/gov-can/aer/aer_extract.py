@@ -48,7 +48,7 @@ def write(stem, rows, nodes, other):
 
 def metrics():
     out = {}
-    for r in csv.DictReader(open(os.path.join(DOCS, '..', 'petrinex', 'petrinex_2026_facility-metrics_ab-sk.csv'), encoding='utf-8-sig')):
+    for r in csv.DictReader(open(os.path.join(HERE, '..', 'petrinex', 'petrinex_2026_facility-metrics_ab-sk.csv'), encoding='utf-8-sig')):
         if r['year'] == '2024':
             out[r['facility-id']] = r
     return out
