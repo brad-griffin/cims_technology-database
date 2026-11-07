@@ -172,10 +172,11 @@ def apply(psum: list[dict], records, hosts: dict, have: dict | None = None, stag
                 old = cur.get("central")
                 for k in ("central", "low", "high"):
                     cur[k] = base.get(k, "")
-                cur["central-from"] = (f"all of fuel, named {keep}: the most likely fuel ({tag}); "
-                                       f"was {old or 'none'}; " + (cur.get("central-from") or "").replace(MARK, "kept apart by the carriers step, now in the split"))
+                if not (cur.get("central-from") or "").startswith("all of fuel, named"):
+                    cur["central-from"] = (f"all of fuel, named {keep}: the most likely fuel ({tag}); "
+                                           f"was {old or 'none'}; " + (cur.get("central-from") or "").replace(MARK, "kept apart by the carriers step, now in the split"))
+                    stats["fuels renamed or rescaled"] += 1
                 _worse(cur)
-                stats["fuels renamed or rescaled"] += 1
                 for t, r in list(named.items()):
                     if t != keep:
                         v = fnum(r.get("central")) or 0

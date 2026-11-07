@@ -50,7 +50,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Element Energy 2021 | 472 | confirmed against the held document 2026-10-03 |
 | NREL 2025 (ATB) | 458 | confirmed against the held document 2026-10-02 |
 | IEA 2013 | 368 | confirmed against the held document 2026-10-06 |
-| IEAGHG 2017 (refinery retrofit) | 363 | confirmed against the held document 2026-10-02 |
+| IEAGHG 2017 (refinery retrofit) | 364 | confirmed against the held document 2026-10-02 |
 | NREL 2018 | 316 | confirmed against the held document 2026-10-03 |
 | Saygin 2012 | 303 | confirmed against the held document 2026-11-04 |
 | US DOE 2017 (food and beverage bandwidth) | 293 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2017_food-and-beverage-bandwidth-study.pdf |
@@ -131,7 +131,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Jones and Pujadó 2006 | 92 | confirmed against the held document 2026-10-08 |
 | Sargent and Lundy 2024 | 90 | confirmed against the held document 2026-10-02 |
 | Labriet 2013 (ETSAP P11) | 90 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'December 2013'; authors from the 'Please send comments to' line |
-| Ramsden et al. 2013 | 89 | confirmed against the held document 2026-10-03 |
+| Ramsden et al. 2013 | 90 | confirmed against the held document 2026-10-03 |
 | DEA 2026 (energy storage) | 88 | confirmed against the held document 2026-09-29 |
 | Hagberg Börjesson and Ahlgren 2015 (ETSAP I07) | 87 | the PDF filename indicates I07, May 2015; the Hagberg Börjesson and Ahlgren attribution is unverified |
 | Neill and Gunter 1999 | 86 | confirmed against the held document 2026-10-03 |

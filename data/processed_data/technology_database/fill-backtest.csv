@@ -784,7 +784,7 @@ est-sibling-efficiency,reactor_alcohol-to-jet,efficiency,90.3397,66,56.1,90.2,no
 est-sibling-efficiency,reactor_hydrothermal-liquefaction,efficiency,82,66,56.1,90.3397,yes,0.804878,"tier 2: reactor_hydrotreating-lipids, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
 est-sibling-efficiency,reactor_hydrotreating-lipids,efficiency,66,82,62.3367,94.3,yes,1.24242,"tier 2: reactor_hydrothermal-liquefaction, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
 est-sibling-efficiency,steam-reformer_methane,efficiency,76.5914,76.6446,65.1479,88.1413,yes,1.00069,tier 1: steam-reformer_methane_ccs-concentrated
-est-sibling-efficiency,steam-reformer_methane_ccs-concentrated,efficiency,76.6446,70.0667,61.1362,86.7173,yes,0.914177,steam-reformer_methane efficiency (sourced); the host's efficiency with the variant's extra 0.122 GJ/GJ of energy use added to the input
+est-sibling-efficiency,steam-reformer_methane_ccs-concentrated,efficiency,76.6446,70.0335,61.1109,86.6664,yes,0.913744,steam-reformer_methane efficiency (sourced); the host's efficiency with the variant's extra 0.122 GJ/GJ of energy use added to the input
 est-sibling-efficiency,steam-turbine_condensing,efficiency,36.5761,11.1,9.435,40,yes,0.303477,tier 2: steam-turbine_waste-heat
 est-sibling-efficiency,steam-turbine_waste-heat,efficiency,11.1,36.5761,13.3004,52.2516,no,3.29514,tier 2: steam-turbine_condensing
 est-sibling-efficiency,thermal-storage_electric,efficiency,95.04,80,50,99,yes,0.841751,tier 2: thermal-storage_heat-charged

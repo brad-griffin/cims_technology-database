@@ -3426,6 +3426,25 @@ def _ccs_efficiency(psum, ctx, stats):
                                    "net of capture; the host keeps its own efficiency"), stats, "ccs-efficiency")
         n += 1
     stats["capture-variant efficiencies net of capture"] = n
+    # a capture variant is its host's plant plus the add-on (Brad 2026-10-10): it
+    # takes the host's lifetime (Fable review F5, 2026-11-07)
+    m = 0
+    lrule = {"rule-id": "ccs-lifetime", "method": "host-copy", "formula": "the host's lifetime",
+             "rationale": "Consistency check 2026-11-07, F5: a capture variant is its host's plant."}
+    for k in ctx["arch"]:
+        hm = (ctx["hosts"].get(k) or {}).get("host")
+        if "_ccs-" not in k or not hm or (ctx["hosts"].get(k) or {}).get("status") != "active":
+            continue
+        h, hh = ctx["have"].get(k, {}), ctx["have"].get(hm, {})
+        hl, vl = hh.get(("lifetime", "")), h.get(("lifetime", ""))
+        if _live(hl) and _live(vl) and abs(fnum(hl["central"]) - fnum(vl["central"])) > 1e-9:
+            c, lo, hi = _lohi(hl)
+            _put(psum, h, _row(k, "lifetime", "", hl["unit"], c, lo, hi,
+                               worst(["estimated", hl.get("grade") or "sourced"]), lrule,
+                               [_input(hl, f"{hm} lifetime")], hl.get("sources", ""),
+                               f"was {fnum(vl['central']):g} years"), stats, "ccs-lifetime")
+            m += 1
+    stats["capture-variant lifetimes from the host"] = m
 
 
 
