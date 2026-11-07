@@ -96,9 +96,76 @@ def run(records, hier, loader, ex_result) -> dict[str, list[str]]:
             fail["flow commodity not in vocabulary/commodity.csv"].append(
                 f"{r['record-id']}: {r['commodity']}")
     conversion_references(fail, records, loader)
+    record_keys(fail, loader)
     fail = {k: v for k, v in fail.items() if v}
     fail["_backlog"] = backlog
     return fail
+
+
+KEY_FILE = REFERENCE / "record-key.csv"
+
+
+def record_key(r) -> str:
+    """What a record id stands for, independent of its position: the example, the
+    parameter target or flow commodity, the value as reported and its unit. Record ids
+    are numbered by position within a source, so a re-extraction or a change in which
+    source a row is credited to can move an id onto another row (2fc1d2b, 2026-11-04:
+    26 exclusions then ruled out unrelated rows; consistency check 2026-11-07)."""
+    what = r.get("commodity") if "commodity" in r else r.get("target")
+    return "|".join(str(r.get(k) or "") for k in ("example-id",)) + "|" + "|".join(
+        str(x or "") for x in (what, r.get("value"), r.get("value-min"), r.get("value-max"), r.get("unit")))
+
+
+def keyed_ids() -> dict[str, list[str]]:
+    """{record id: [reference tables naming it]} for every reference table with a
+    record-id column."""
+    out = defaultdict(list)
+    for f in sorted(REFERENCE.glob("*.csv")):
+        if f.name == KEY_FILE.name:
+            continue
+        rows = read(f)
+        if rows and "record-id" in rows[0]:
+            for r in rows:
+                if r.get("record-id"):
+                    out[r["record-id"]].append(f.name)
+    return out
+
+
+def record_keys(fail, loader) -> None:
+    """Every record id a reference table names must still stand for the row it was
+    written for: records/reference/record-key.csv holds that row's key. A missing key
+    or a key that no longer matches fails the build; `build --record-keys` adds the
+    keys of newly keyed rows (it never changes an existing key)."""
+    rows = {r["record-id"]: r for r in [*loader.facts, *loader.flows, *loader.cons]}
+    keys = {r["record-id"]: r["key"] for r in read(KEY_FILE)} if KEY_FILE.exists() else {}
+    for i, tables in sorted(keyed_ids().items()):
+        r = rows.get(i)
+        if r is None:
+            continue        # an unknown id is each table's own check
+        if i not in keys:
+            fail["keyed record has no entry in reference/record-key.csv (run build --record-keys)"].append(
+                f"{i} ({', '.join(tables)})")
+        elif keys[i] != record_key(r):
+            fail["keyed record now stands for another row (record ids moved): re-key it"].append(
+                f"{i} ({', '.join(tables)}): was {keys[i]}, now {record_key(r)}")
+
+
+def write_record_keys(loader) -> int:
+    """Add the key of every keyed record that has none; existing keys are kept."""
+    import csv
+    rows = {r["record-id"]: r for r in [*loader.facts, *loader.flows, *loader.cons]}
+    keys = {r["record-id"]: r["key"] for r in read(KEY_FILE)} if KEY_FILE.exists() else {}
+    n = 0
+    for i in keyed_ids():
+        if i in rows and i not in keys:
+            keys[i] = record_key(rows[i])
+            n += 1
+    with open(KEY_FILE, "w", newline="", encoding="utf-8-sig") as fh:
+        w = csv.writer(fh)
+        w.writerow(["record-id", "key"])
+        for i in sorted(keys):
+            w.writerow([i, keys[i]])
+    return n
 
 
 def conversion_references(fail, records, loader) -> None:

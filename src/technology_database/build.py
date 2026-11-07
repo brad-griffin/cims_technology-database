@@ -2,6 +2,9 @@
 
     python -m technology_database.build            everything
     python -m technology_database.build --check    stop after the checks (no outputs)
+    python -m technology_database.build --record-keys
+                                               first add the key of every newly keyed record
+                                               to records/reference/record-key.csv
     python -m technology_database.build --quantified-only
                                                the wide view lists only archetypes with
                                                pooled numbers (default: every archetype)
@@ -128,6 +131,9 @@ def main(argv) -> int:
     from .pipeline import midden_carriers
     mc = midden_carriers.apply(L.facts)
     print("  " + ", ".join(f"{k} {v}" for k, v in mc.items()))
+    if "--record-keys" in argv:
+        n = checks.write_record_keys(L)
+        print(f"  record keys: {n} added to records/reference/record-key.csv")
     print("checks")
     fail = checks.run(rec, hier, L, ex)
     # service requests and chain validations (general rules 2 and 3, 2026-11-05)
