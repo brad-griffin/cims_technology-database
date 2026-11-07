@@ -54,7 +54,11 @@ BODY = [('h1', '1. What the database is'),
  ('bullets',
   ['**Carriers** are a list on the archetype, not separate archetypes. The exception is a carrier that '
    'changes the equipment itself (a solid-fuel boiler, an electrode boiler, a heat pump). Differences '
-   'between carriers on one archetype show up as the range of its values.',
+   'between carriers on one archetype show up as the range of its values. Each archetype carries one set '
+   'of carriers that adds up to its total, with its fuel on the most likely fuel for Canadian industry (or '
+   'every fuel a co-fired process needs, such as coke and coal in a blast furnace); other fuels that could '
+   'serve the same end use, and purchased steam against on-site firing, are listed separately in '
+   '`archetype-alternative-carrier.csv`, outside the workbook.',
    '**Efficiency measures** on one device go into two buckets: `efficiency-moderate` (up to about 15% '
    'saving) and `efficiency-strong` (more). An option a model would choose in its own right, such as a '
    'condensing boiler, a shoe press, or a variable-speed drive, is its own archetype rather than a bucket.',
@@ -312,8 +316,8 @@ BODY = [('h1', '1. What the database is'),
    'value was filled. `n-examples` counts the examples behind the archetype.',
    '**Energy use by carrier, emissions by species, and feedstocks** are on the `energy`, `emissions`, and '
    '`feedstocks` sheets, for the same rows as the `archetypes` sheet. The carriers on the energy sheet are '
-   "one example's shares of the pooled total, so do not add the columns: `fuel` is the sum of the named "
-   'fuels beside it.',
+   "one example's shares of the pooled total and add up to it; `fuel` is the sum of the named "
+   'fuels beside it, so add the named fuels or `fuel`, not both.',
    '**Some end uses restate an archetype in another unit** (per GJ of process heat, hydrogen per tonne, '
    "liquid fuels per m3). The `filled` column names the factor; the long tables keep the archetype's own "
    'unit.',

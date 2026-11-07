@@ -1,0 +1,282 @@
+﻿archetype,carrier,grade,method,group,added
+adsorber_molecular-sieve,heat,guess,judgement,guess or derived row: check the row,False
+air-separation-unit,steam,sourced,pooled,sourced row,True
+anaerobic-digester,electricity,sourced,pooled,sourced row,True
+anaerobic-digester,heat,sourced,pooled,sourced row,False
+anaerobic-digester_biomethane-upgrading,electricity,guess,judgement,guess or derived row: check the row,True
+annealing-furnace_batch-bell,electricity,sourced,pooled,sourced row,True
+autothermal-reformer_ammonia,electricity,sourced,pooled,sourced row,True
+autothermal-reformer_ammonia_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+autothermal-reformer_ammonia_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+autothermal-reformer_hydrogen,electricity,sourced,pooled,sourced row,True
+autothermal-reformer_hydrogen_ccs-concentrated,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+autothermal-reformer_hydrogen_ccs-concentrated,steam,estimated,ccs-energy,guess or derived row: check the row,True
+basic-oxygen-furnace,coke-oven-gas,sourced,pooled,sourced row,True
+basic-oxygen-furnace,electricity,sourced,pooled,sourced row,True
+basic-oxygen-furnace,natural-gas,sourced,pooled,sourced row,True
+basic-oxygen-furnace_efficiency-strong,coke-oven-gas,estimated,host-split,guess or derived row: check the row,True
+basic-oxygen-furnace_efficiency-strong,electricity,sourced,pooled,sourced row,True
+basic-oxygen-furnace_efficiency-strong,natural-gas,estimated,host-split,guess or derived row: check the row,True
+binder_alkali-activated,electricity,guess,judgement,guess or derived row: check the row,True
+binder_carbonated,electricity,guess,judgement,guess or derived row: check the row,True
+binder_carbonated,natural-gas,guess,judgement,guess or derived row: check the row,True
+blast-furnace,electricity,sourced,pooled,sourced row,True
+blast-furnace_biogenic-carbon,charcoal,guess,judgement,guess or derived row: check the row,False
+blast-furnace_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+blast-furnace_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+blast-furnace_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+blast-furnace_efficiency-strong,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+blast-furnace_top-gas-recycling,electricity,sourced,pooled,sourced row,True
+blast-furnace_top-gas-recycling,natural-gas,sourced,pooled,sourced row,True
+blast-furnace_top-gas-recycling,steam,sourced,pooled,sourced row,True
+boiler_fuel-fired_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+boiler_fuel-fired_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+boiler_oxy-fuel,electricity,sourced,pooled,sourced row,True
+boiler_recovery,electricity,sourced,pooled,sourced row,True
+boiler_recovery,steam,sourced,pooled,sourced row,True
+boiler_recovery_ccs-diffuse,black-liquor,estimated,ccs-energy,guess or derived row: check the row,True
+boiler_recovery_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+boiler_recovery_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+boiler_solid-fuel,electricity,identity,sec-from-efficiency,sourced row,True
+calciner_gas-suspension_ccs-diffuse,electricity,guess,ccs-energy,guess or derived row: check the row,True
+capture-unit_advanced-solvent,heat,sourced,pooled,sourced row,False
+capture-unit_calcium-looping,heat,sourced,pooled,sourced row,False
+capture-unit_chemical-solvent,natural-gas,sourced,pooled,sourced row,True
+capture-unit_dac-liquid-solvent,natural-gas,sourced,pooled,sourced row,True
+capture-unit_dac-solid-sorbent,heat,sourced,pooled,sourced row,False
+caster_continuous,coke-oven-gas,sourced,pooled,sourced row,True
+caster_strip,natural-gas,estimated,pooled,guess or derived row: check the row,True
+chiller_absorption,heat,sourced,pooled,sourced row,False
+coating-line_electrolytic,natural-gas,guess,judgement,guess or derived row: check the row,True
+coating-line_hot-dip,electricity,sourced,pooled,sourced row,True
+coke-oven_by-product,blast-furnace-gas,sourced,pooled,sourced row,True
+coke-oven_by-product,coke-oven-gas,sourced,pooled,sourced row,True
+coke-oven_by-product,electricity,sourced,pooled,sourced row,True
+coke-oven_by-product,steam,sourced,pooled,sourced row,True
+coke-oven_by-product_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+coke-oven_by-product_efficiency-moderate,steam,estimated,host-split,guess or derived row: check the row,True
+coke-oven_by-product_efficiency-strong,blast-furnace-gas,proxy,bucket-saving,guess or derived row: check the row,True
+coke-oven_by-product_efficiency-strong,coke-oven-gas,proxy,bucket-saving,guess or derived row: check the row,True
+coke-oven_by-product_efficiency-strong,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+coke-oven_by-product_efficiency-strong,steam,proxy,bucket-saving,guess or derived row: check the row,True
+coke-oven_heat-recovery,electricity,guess,judgement,guess or derived row: check the row,True
+combined-cycle_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+combined-cycle_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+combustion-turbine_chp_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+combustion-turbine_chp_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+digester_continuous-kraft,electricity,sourced,pooled,sourced row,True
+digester_semi-chemical,electricity,sourced,pooled,sourced row,True
+digester_semi-chemical,natural-gas,guess,judgement,guess or derived row: check the row,True
+direct-heater_refinery,refinery-gas,guess,judgement,guess or derived row: check the row,True
+direct-heater_refinery_ccs-diffuse,electricity,guess,ccs-energy,guess or derived row: check the row,True
+direct-heater_refinery_ccs-diffuse,refinery-gas,guess,ccs-energy,guess or derived row: check the row,True
+direct-heater_refinery_ccs-diffuse,steam,guess,ccs-energy,guess or derived row: check the row,True
+direct-heater_refinery_efficiency-moderate,refinery-gas,guess,judgement,guess or derived row: check the row,True
+distillation-column_atmospheric-vacuum,heat,sourced,pooled,sourced row,False
+distillation-column_atmospheric-vacuum_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+distillation-column_atmospheric-vacuum_efficiency-strong,heat,estimated,host-split,guess or derived row: check the row,False
+distillation-column_atmospheric-vacuum_efficiency-strong,steam,estimated,host-split,guess or derived row: check the row,True
+distillation-column_heat-integrated,electricity,guess,judgement,guess or derived row: check the row,True
+distillation-column_heat-pumped,heat,sourced,pooled,sourced row,False
+dryer_ceramic-hot-air,electricity,estimated,range-midpoint,guess or derived row: check the row,True
+dryer_direct-fired_efficiency-moderate,electricity,estimated,bucket-saving,guess or derived row: check the row,True
+dryer_heat-pump,steam,guess,judgement,guess or derived row: check the row,True
+dryer_rotary-direct-fired,electricity,sourced,pooled,sourced row,True
+dryer_steam-heated,electricity,sourced,pooled,sourced row,True
+dryer_steam-heated_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+electric-arc-furnace,coal,sourced,pooled,sourced row,True
+electric-arc-furnace_reduced-iron-charge,coal,sourced,pooled,sourced row,True
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,charcoal,guess,judgement,guess or derived row: check the row,False
+electrolysis-cell_prebaked-anode_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+electrolyzer_solid-oxide,heat,sourced,pooled,sourced row,False
+evaporator_crystallizer,diesel,sourced,pooled,sourced row,True
+evaporator_crystallizer,electricity,sourced,pooled,sourced row,True
+evaporator_crystallizer,steam,sourced,pooled,sourced row,True
+fermenter_grain-dry-mill,electricity,sourced,pooled,sourced row,True
+fermenter_grain-dry-mill,natural-gas,sourced,pooled,sourced row,True
+fermenter_grain-dry-mill,steam,sourced,pooled,sourced row,True
+fermenter_grain-dry-mill_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+fermenter_grain-dry-mill_ccs-concentrated,natural-gas,guess,ccs-energy,guess or derived row: check the row,True
+fermenter_grain-dry-mill_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+fermenter_grain-dry-mill_efficiency-moderate,natural-gas,proxy,bucket-saving,guess or derived row: check the row,True
+furnace_anode-baking,electricity,sourced,pooled,sourced row,True
+furnace_anode-baking_biogenic-carbon,electricity,guess,host-split,guess or derived row: check the row,True
+furnace_heat-treatment,electricity,sourced,pooled,sourced row,True
+furnace_ladle-metallurgy,natural-gas,sourced,pooled,sourced row,True
+furnace_lehr,electricity,sourced,pooled,sourced row,True
+furnace_oxy-fuel,electricity,sourced,pooled,sourced row,True
+furnace_oxy-fuel-thermochemical,electricity,guess,judgement,guess or derived row: check the row,True
+furnace_regenerative,electricity,sourced,pooled,sourced row,True
+furnace_regenerative_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+furnace_regenerative_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+furnace_reheating,electricity,sourced,pooled,sourced row,True
+furnace_reheating_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+furnace_reheating_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+furnace_rotary-hearth-direct-reduction,electricity,sourced,pooled,sourced row,True
+furnace_tempering,natural-gas,sourced,pooled,sourced row,True
+gas-treatment-unit_acid-gas-advanced,heat,guess,judgement,guess or derived row: check the row,False
+gas-treatment-unit_amine-sweetening,heat,sourced,pooled,sourced row,False
+gas-treatment-unit_amine-sweetening_ccs-concentrated,heat,guess,ccs-energy,guess or derived row: check the row,False
+gas-treatment-unit_glycol-dehydration,heat,guess,judgement,guess or derived row: check the row,False
+gas-treatment-unit_vam-oxidiser,electricity,guess,judgement,guess or derived row: check the row,True
+gasifier_biomass-ethylene,electricity,sourced,pooled,sourced row,True
+gasifier_biomass-fischer-tropsch_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+gasifier_biomass-fischer-tropsch_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+gasifier_biomass-methanation,electricity,sourced,pooled,sourced row,True
+gasifier_biomass-waste,electricity,sourced,pooled,sourced row,True
+gasifier_biomass-waste,natural-gas,sourced,pooled,sourced row,True
+gasifier_black-liquor,electricity,sourced,pooled,sourced row,True
+gasifier_coal-ammonia,electricity,sourced,pooled,sourced row,True
+gasifier_coal-methanol_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+gasifier_coal-methanol_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+gasifier_coal-petroleum-coke,electricity,sourced,pooled,sourced row,True
+gasifier_coal-petroleum-coke_ccs-concentrated,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+gasifier_coal-petroleum-coke_ccs-concentrated,steam,estimated,ccs-energy,guess or derived row: check the row,True
+heat-exchanger_steam-heated,electricity,sourced,pooled,sourced row,True
+kiln_calcium-looping,electricity,sourced,pooled,sourced row,True
+kiln_dry-precalciner,electricity,sourced,pooled,sourced row,True
+kiln_dry-precalciner_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+kiln_dry-precalciner_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+kiln_dry-precalciner_efficiency-moderate,electricity,estimated,bucket-saving,guess or derived row: check the row,True
+kiln_dry-precalciner_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+kiln_legacy,electricity,sourced,pooled,sourced row,True
+kiln_lime-long-rotary,electricity,sourced,pooled,sourced row,True
+kiln_lime-oxy-fuel,electricity,guess,judgement,guess or derived row: check the row,True
+kiln_lime-rotary,electricity,sourced,pooled,sourced row,True
+kiln_lime-rotary,steam,sourced,pooled,sourced row,True
+kiln_lime-rotary-preheater,electricity,estimated,range-midpoint,guess or derived row: check the row,True
+kiln_lime-rotary-preheater_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+kiln_lime-rotary-preheater_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+kiln_lime-rotary_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+kiln_lime-rotary_efficiency-strong,steam,estimated,host-split,guess or derived row: check the row,True
+kiln_lime-shaft,electricity,sourced,pooled,sourced row,True
+kiln_lumber-continuous,steam,guess,judgement,guess or derived row: check the row,True
+kiln_lumber-steam,electricity,sourced,pooled,sourced row,True
+kiln_lumber-steam,steam,sourced,pooled,sourced row,True
+kiln_oxy-fuel,electricity,sourced,pooled,sourced row,True
+kiln_rotary-expanded-clay,electricity,guess,judgement,guess or derived row: check the row,True
+kiln_tunnel-roller,electricity,sourced,pooled,sourced row,True
+kiln_tunnel-roller_efficiency-strong,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+leaching-vessel_heap-atmospheric,electricity,sourced,pooled,sourced row,True
+leaching-vessel_in-situ,electricity,guess,judgement,guess or derived row: check the row,True
+leaching-vessel_in-situ,natural-gas,guess,judgement,guess or derived row: check the row,True
+melting-furnace_reverberatory-rotary,electricity,sourced,pooled,sourced row,True
+melting-furnace_reverberatory-rotary_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+oven_fuel-fired,electricity,sourced,pooled,sourced row,True
+paper-machine,electricity,sourced,pooled,sourced row,True
+paper-machine_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+pellet-plant_induration_efficiency-moderate,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+pellet-plant_induration_efficiency-moderate,natural-gas,proxy,bucket-saving,guess or derived row: check the row,True
+pipeline_hydrogen,electricity,guess,judgement,guess or derived row: check the row,True
+process-improvement_coal-mine-methane-drainage,electricity,guess,judgement,guess or derived row: check the row,True
+process-improvement_hydrogen-blending,electricity,guess,judgement,guess or derived row: check the row,True
+process-improvement_landfill-gas-recovery,electricity,guess,judgement,guess or derived row: check the row,True
+pulper_chemi-thermomechanical,heat,estimated,range-midpoint,guess or derived row: check the row,False
+pulper_fibreboard-refiner,heat,estimated,range-midpoint,guess or derived row: check the row,False
+pulper_thermomechanical,electricity,sourced,pooled,sourced row,True
+pulper_thermomechanical,steam,sourced,pooled,sourced row,True
+reactor_adipic-acid,natural-gas,guess,judgement,guess or derived row: check the row,True
+reactor_alcohol-to-jet,electricity,sourced,pooled,sourced row,True
+reactor_alcohol-to-jet,natural-gas,sourced,pooled,sourced row,True
+reactor_alcohol-to-jet,steam,sourced,pooled,sourced row,True
+reactor_alkylation,electricity,sourced,pooled,sourced row,True
+reactor_catalytic-reforming,heat,sourced,pooled,sourced row,False
+reactor_catalytic-reforming,steam,sourced,pooled,sourced row,True
+reactor_chemical-depolymerization,electricity,sourced,pooled,sourced row,True
+reactor_chemical-depolymerization,heat,sourced,pooled,sourced row,False
+reactor_co2-to-methanol,natural-gas,estimated,pooled,guess or derived row: check the row,True
+reactor_delayed-coking,electricity,sourced,pooled,sourced row,True
+reactor_delayed-coking,heat,sourced,pooled,sourced row,False
+reactor_ethylene-oxidation_ccs-concentrated,steam,estimated,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking,natural-gas,guess,judgement,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking,refinery-gas,guess,judgement,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-diffuse,natural-gas,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-diffuse,refinery-gas,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,electricity,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,natural-gas,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,refinery-gas,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,steam,guess,ccs-energy,guess or derived row: check the row,True
+reactor_fluid-coking,electricity,sourced,pooled,sourced row,True
+reactor_haber-bosch-electrolytic,natural-gas,guess,judgement,guess or derived row: check the row,True
+reactor_hydroprocessing,heat,sourced,pooled,sourced row,False
+reactor_hydroprocessing,steam,sourced,pooled,sourced row,True
+reactor_hydroprocessing_electric-heating,steam,sourced,pooled,sourced row,True
+reactor_hydroprocessing_hydrogen-fuel,steam,sourced,pooled,sourced row,True
+reactor_hydrothermal-liquefaction,biomass,sourced,pooled,sourced row,True
+reactor_hydrothermal-liquefaction,electricity,sourced,pooled,sourced row,True
+reactor_hydrotreating-lipids,bioliquid,sourced,pooled,sourced row,False
+reactor_hydrotreating-lipids,electricity,sourced,pooled,sourced row,True
+reactor_integrated-upgrader,electricity,sourced,pooled,sourced row,True
+reactor_integrated-upgrader_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+reactor_integrated-upgrader_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+reactor_isomerization,electricity,sourced,pooled,sourced row,True
+reactor_methanol-to-olefins,electricity,sourced,pooled,sourced row,True
+reactor_methanol-to-olefins,natural-gas,guess,judgement,guess or derived row: check the row,True
+reactor_methanol-to-olefins,process-off-gas,guess,judgement,guess or derived row: check the row,False
+reactor_methanol-to-olefins,steam,sourced,pooled,sourced row,True
+reactor_nitric-acid,steam,sourced,pooled,sourced row,True
+reactor_oxygen-delignification,electricity,sourced,pooled,sourced row,True
+reactor_plastics-pyrolysis,electricity,sourced,pooled,sourced row,True
+reactor_polymerization-extrusion,heat,sourced,pooled,sourced row,False
+reactor_polymerization-extrusion_efficiency-strong,heat,estimated,host-split,guess or derived row: check the row,False
+reactor_pyrolysis-oil,electricity,sourced,pooled,sourced row,True
+reactor_pyrolysis-oil,natural-gas,sourced,pooled,sourced row,True
+refinery_deep-conversion,electricity,sourced,pooled,sourced row,True
+refinery_hydroskimming,electricity,sourced,pooled,sourced row,True
+rolling-mill_hot,natural-gas,guess,judgement,guess or derived row: check the row,True
+rolling-mill_hot,steam,guess,judgement,guess or derived row: check the row,True
+rolling-mill_hot_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+rolling-mill_hot_efficiency-moderate,natural-gas,guess,host-split,guess or derived row: check the row,True
+separator_biogas-upgrading,electricity,sourced,pooled,sourced row,True
+separator_biogas-upgrading,heat,sourced,pooled,sourced row,False
+separator_mine-water-treatment,electricity,guess,judgement,guess or derived row: check the row,True
+shaft-furnace_direct-reduction,electricity,sourced,pooled,sourced row,True
+shaft-furnace_direct-reduction_ccs-concentrated,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+shaft-furnace_direct-reduction_ccs-concentrated,steam,estimated,ccs-energy,guess or derived row: check the row,True
+shaft-furnace_electrolytic-hydrogen,biomass,estimated,pooled,guess or derived row: check the row,True
+sinter-plant,by-product-gas,sourced,pooled,sourced row,True
+sinter-plant,coke,sourced,pooled,sourced row,True
+sinter-plant_efficiency-moderate,by-product-gas,estimated,host-split,guess or derived row: check the row,True
+sinter-plant_efficiency-moderate,coke,estimated,host-split,guess or derived row: check the row,True
+sinter-plant_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+sinter-plant_efficiency-strong,by-product-gas,estimated,host-split,guess or derived row: check the row,True
+sinter-plant_efficiency-strong,coke,estimated,host-split,guess or derived row: check the row,True
+sinter-plant_efficiency-strong,electricity,estimated,host-split,guess or derived row: check the row,True
+smelting-vessel_bath-tuyere,electricity,guess,judgement,guess or derived row: check the row,True
+smelting-vessel_bottom-blowing,electricity,guess,judgement,guess or derived row: check the row,True
+smelting-vessel_flash,electricity,sourced,pooled,sourced row,True
+smelting-vessel_flash_efficiency-strong,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+smelting-vessel_smelting-reduction,electricity,sourced,pooled,sourced row,True
+smelting-vessel_smelting-reduction_ccs-concentrated,electricity,guess,ccs-energy,guess or derived row: check the row,True
+smelting-vessel_smelting-reduction_ccs-concentrated,steam,guess,ccs-energy,guess or derived row: check the row,True
+smelting-vessel_top-submerged-lance,electricity,guess,judgement,guess or derived row: check the row,True
+steam-cracker_electric,electricity,sourced,pooled,sourced row,True
+steam-cracker_electric,steam,sourced,pooled,sourced row,True
+steam-cracker_fired-tubular,electricity,sourced,pooled,sourced row,True
+steam-cracker_fired-tubular,process-off-gas,sourced,pooled,sourced row,False
+steam-cracker_fired-tubular_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+steam-cracker_fired-tubular_ccs-diffuse,process-off-gas,estimated,ccs-energy,guess or derived row: check the row,False
+steam-cracker_fired-tubular_efficiency-moderate,electricity,estimated,host-split,guess or derived row: check the row,True
+steam-cracker_fired-tubular_efficiency-moderate,process-off-gas,estimated,host-split,guess or derived row: check the row,False
+steam-reformer_ammonia,natural-gas,sourced,pooled,sourced row,True
+steam-reformer_ammonia_ccs-concentrated,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_ammonia_ccs-concentrated,natural-gas,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_methane,electricity,sourced,pooled,sourced row,True
+steam-reformer_methane_ccs-concentrated,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_methane_ccs-concentrated,steam,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_methane_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_methane_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+steam-reformer_methane_efficiency-moderate,electricity,proxy,bucket-saving,guess or derived row: check the row,True
+steam-turbine_back-pressure_ccs-diffuse,electricity,estimated,ccs-energy,guess or derived row: check the row,True
+steam-turbine_back-pressure_ccs-diffuse,steam,estimated,ccs-energy,guess or derived row: check the row,True
+transesterification-unit_acid-catalyzed,heat,sourced,pooled,sourced row,False
+transesterification-unit_heterogeneous-catalyst,steam,sourced,pooled,sourced row,True
+well_cyclic-steam,steam,sourced,pooled,sourced row,True
+well_electromagnetic-heating,natural-gas,sourced,pooled,sourced row,True
+well_sagd,electricity,sourced,pooled,sourced row,True
+well_sagd,steam,sourced,pooled,sourced row,True
+well_solvent-assisted,steam,sourced,pooled,sourced row,True
+pulp-mill_kraft,heat,sourced,pooled,sourced row,False
+paper-machine_with-dryer-section,heat,sourced,pooled,sourced row,False
