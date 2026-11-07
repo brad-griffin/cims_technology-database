@@ -3038,20 +3038,33 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     for r in psum:
         r.update({"grade": "sourced", "method": "pooled", "rule-id": "", "inputs": "",
                   "rationale": ""})
+    # one set of carriers that adds up, on the most likely fuel (Brad 2026-11-07)
+    from . import fuel_choice
+    hosts_ = {h["archetype"]: h for h in read(FILL / "host-archetype.csv") if h.get("status") == "active"}
+    fc = fuel_choice.apply(psum, records, hosts_, stage="pooled")
     ctx = _ctx(psum, records, facts, units)
     stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"],
                                    ctx["have"], ctx)}
     _run_rules(psum, records, target_unit, ctx, stats)
     _run_judgements(psum, records, ctx, stats)
+    # the judgements' carriers: chosen fuel only; the sums are the fill's, then closed below
+    fc2 = fuel_choice.apply(psum, records, hosts_, have=ctx["have"], stage="judgements", closure=False)
+    stats["_fuel_choice"] = {k: fc.get(k, 0) + fc2.get(k, 0) for k in {**fc, **fc2}}
     # raise totals now (identity rules then derive from them); create missing
     # totals only after the rules, so a total from efficiency is not pre-empted
     _sum_carriers(psum, records, ctx, stats, create=False)
     _run_rules(psum, records, target_unit, ctx, stats)
     if _sum_carriers(psum, records, ctx, stats):
         _run_rules(psum, records, target_unit, ctx, stats)
+    # what the fill's own carrier sums left unclosed (fuel_choice, 2026-11-07)
+    fc3 = fuel_choice.apply(psum, records, hosts_, have=ctx["have"], stage="closure", choose=False)
+    for k, v in fc3.items():
+        stats["_fuel_choice"][k] = stats["_fuel_choice"].get(k, 0) + v
+    _run_rules(psum, records, target_unit, ctx, stats)
     # variants made consistent with their hosts (modeller 2026-10-10), then the
     # calculated levelized costs, which read every other cell
     _run_rules(psum, records, target_unit, ctx, stats, phase="post")
+    stats["_fuel_choice"]["zero carrier guesses dropped at the end"] = fuel_choice.drop_zero_guesses(psum, ctx["have"])
     _run_rules(psum, records, target_unit, ctx, stats, phase="final")
     stats["_above_host"] = _variant_above_host(ctx)
     stats["_comb_conflict"] = sorted(set(ctx.get("comb_conflict", [])))

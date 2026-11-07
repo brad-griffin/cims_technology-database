@@ -96,6 +96,11 @@ CSV_NOTES = [
      "host-plant and capture add-on parts of each capture variant's costs and energy, values as the "
      "source sized them before the size alignment, component efficiencies and lifetimes, and part-load "
      "limits."),
+    ("archetype-alternative-carrier.csv", "Energy carriers kept out of this workbook so that each "
+     "archetype's carriers add up: other fuels that could serve the same end use, purchased steam or heat "
+     "against on-site firing (with the fuel or steam it equals at the fuel-fired boiler's efficiency), other "
+     "estimates of a carrier, and fuels a source lists with no quantity; ranked by number of examples. The "
+     "wide view carries the most likely fuel, or every fuel a co-fired process needs (2026-11-07)."),
     ("archetype-flow.csv", "Input and output flows per unit of product (materials, co-products, and "
      "by-product gases, for example coke and scrap per tonne of steel), pooled like the parameters."),
     ("archetype-application.csv", "Where each archetype applies in the CIMS hierarchy: one row per "

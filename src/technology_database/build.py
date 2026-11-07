@@ -225,6 +225,8 @@ def main(argv) -> int:
     write(OUTPUT / "ccs-variant.csv", ["archetype", "host", "parameter", "unit", "host-value", "add-on",
                                        "tier", "tier1", "tier2", "co2-captured", "all-in", "grade"],
           fst.pop("_ccs"))
+    fch = fst.pop("_fuel_choice", {})
+    print("  fuel choice: " + ", ".join(f"{k} {v}" for k, v in fch.items()))
     unp = fst.pop("_unpriced")
     if unp:
         print("  carriers with no reference price (records/reference/energy-price.csv): " + ", ".join(unp))
@@ -236,6 +238,9 @@ def main(argv) -> int:
     # additive row), never added by the pipeline
     have = {(r["archetype"], r.get("target", "")) for r in psum
             if r["parameter"] == "specific-energy-consumption" and r.get("central") not in ("", None)}
+    # carriers moved to the alternatives table on purpose (fuel_choice, 2026-11-07)
+    from .pipeline import fuel_choice as _fc
+    moved = {(r["archetype"], r.get("target", "")) for r in _fc.alternatives}
     gaps = {}
     for r in L.facts:
         a = rec.by_key.get(r.get("archetype", ""))
@@ -246,7 +251,7 @@ def main(argv) -> int:
         ex = r.get("excluded") or ""
         if ex and "kept out until" not in ex:
             continue
-        if (a["archetype"], t) in have:
+        if (a["archetype"], t) in have or (a["archetype"], t) in moved:
             continue
         g = gaps.setdefault((a["archetype"], t), {"archetype": a["archetype"], "carrier": t,
                                                    "listed": "yes" if t in split_list(a.get("carriers", "")) else "no",
@@ -325,6 +330,12 @@ def main(argv) -> int:
     main = [r for r in psum if placement.placement(r["parameter"], r["target"]) != "secondary"]
     write(OUTPUT / "archetype-parameter.csv",
           ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS, main)
+    # the carriers left out of the wide view: other fuels, purchased steam against
+    # on-site firing, other estimates (Brad 2026-11-07); CSV only, not in the workbook
+    from .pipeline import fuel_choice
+    alt = fuel_choice.alt_rows(psum, rec)
+    alt.sort(key=lambda r: (order.get(r["archetype"], 9999), r["rank"] == "", r["rank"] or 0, r["carrier"]))
+    write(OUTPUT / "archetype-alternative-carrier.csv", fuel_choice.ALT_COLS, alt)
     unfilled.sort(key=lambda r: (order.get(r["archetype"], 9999), r["parameter"], r["target"]))
     write(OUTPUT / "unfilled" / "archetype-parameter.csv",
           ["archetype", "parameter", "target", "unit"] + SUM_COLS + FILL_COLS,
@@ -386,9 +397,11 @@ def main(argv) -> int:
                                                    "feedstock-consumption"))]
     SPLIT = {"energy": ("specific-energy-consumption",
                         "Energy use by carrier, per product-unit, for the same rows as the archetypes sheet. "
-                        "The all-carrier total is on the archetypes sheet. Do not add the columns up: fuel is "
-                        "the sum of the named fuels beside it, and a carrier pooled apart "
-                        "(archetype-parameter.csv central-from) is not part of the split."),
+                        "The all-carrier total is on the archetypes sheet. The carriers add up to it, with fuel "
+                        "on the most likely fuel (or the fuels a co-fired process needs); fuel is the sum of "
+                        "the named fuels beside it, so add the named fuels or fuel, not both. Other fuels "
+                        "that could serve the same end use, and purchased steam against on-site firing, are "
+                        "in archetype-alternative-carrier.csv, which is not in this workbook."),
              "emissions": ("emissions-",
                            "Emissions by type and species, per product-unit, for the same rows as the "
                            "archetypes sheet. CO2-equivalent totals are on the archetypes sheet."),
