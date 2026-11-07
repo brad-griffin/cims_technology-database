@@ -1951,6 +1951,10 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
             b0 = fnum(bio["central"]) or 0.0
             f0 = (fnum(fos["central"]) or 0.0) if _live(fos) else 0.0
             fshare = f0 / (f0 + b0) if (f0 + b0) > 0 else 0.0
+            if k in ctx.get("captured_biogenic", ()):
+                # a stream of biogenic CO2 only (fermentation): none of it is fossil
+                # (reference/emission-fix.csv, 2026-11-07)
+                fshare = 0.0
             ec, el, eh = _lohi(e)
             bc, bl, bh = _lohi(bio)
             kb = 1.0 - fshare
@@ -1963,6 +1967,17 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
                                bio.get("sources", ""),
                                "the host's biogenic CO2 less the biogenic part of the CO2 captured"),
                  stats, rule["rule-id"] + ":biogenic")
+        # the variant's own sourced combustion or process rows where the host has
+        # none: the variant's plant is its host's (M, consistency check 2026-11-07)
+        for (q, t), r in list(h.items()):
+            if q in ("emissions-combustion", "emissions-process") and t and not t.startswith("as-sourced") \
+                    and (q, t) not in hh and _live(r) and (r.get("grade") or "sourced") == "sourced":
+                del h[(q, t)]
+                r["target"] = _as_sourced(t)
+                r["central-from"] = ("as the variant's own sources give it; the host has no such row, and the "
+                                     "variant's plant is its host's (2026-11-07). " + (r.get("central-from") or ""))
+                h[(q, r["target"])] = r
+                stats["variant rows the host lacks set aside"] = stats.get("variant rows the host lacks set aside", 0) + 1
         items = dict(hh)
         if not _live(items.get(("emissions-total", "co2"))):
             g = _host_gross_co2(host, ctx)
@@ -3060,10 +3075,14 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     fc3 = fuel_choice.apply(psum, records, hosts_, have=ctx["have"], stage="closure", choose=False)
     for k, v in fc3.items():
         stats["_fuel_choice"][k] = stats["_fuel_choice"].get(k, 0) + v
+    _efficiency_fixes(psum, records, ctx, stats)
+    _emission_fixes(psum, records, ctx, stats)
+    _size_closure(psum, ctx, stats)
     _run_rules(psum, records, target_unit, ctx, stats)
     # variants made consistent with their hosts (modeller 2026-10-10), then the
     # calculated levelized costs, which read every other cell
     _run_rules(psum, records, target_unit, ctx, stats, phase="post")
+    _ccs_efficiency(psum, ctx, stats)
     stats["_fuel_choice"]["zero carrier guesses dropped at the end"] = fuel_choice.drop_zero_guesses(psum, ctx["have"])
     _run_rules(psum, records, target_unit, ctx, stats, phase="final")
     stats["_above_host"] = _variant_above_host(ctx)
@@ -3113,3 +3132,339 @@ def coverage(psum, records):
             row[name] = best or "missing"
         rows.append(row)
     return rows
+
+
+# ---- emission fixes (consistency check 2026-11-07) ----------------------------
+
+def _emission_fixes(psum, records, ctx, stats):
+    """Make each archetype's emissions agree with its own energy rows and totals,
+    per records/reference/emission-fix.csv (the calls are a Fable review's, made
+    for Brad under his scope-1 rules). Actions:
+
+      identity              combustion CO2 = the named fossil fuels x their ECCC
+                            factors (0 where none is fossil); total = parts
+      identity-capture      the same as gross; captured = share-to-capture x
+                            gross; total = gross - captured
+      identity-remainder    combustion = identity; process = total - combustion
+      zero                  combustion CO2 0 (bought heat or electricity only);
+                            total = parts
+      to-process            the combustion CO2 becomes process CO2
+      remainder-process     process = total - combustion
+      remainder-combustion  combustion = total - process
+      parts-total           total = combustion + process
+      reductant (arg fuels) combustion = the other fuels x factors; process =
+                            the reductant fuels x factors; total = parts
+      net-identity          total = combustion + process - captured
+      captured-biogenic     (a capture variant) its captured CO2 is biogenic
+                            only; read by the capture-emissions rule
+
+    A value replaced moves to target as-sourced(-co2). An efficient variant with
+    no row of its own takes its host's action if that is `identity`, or its
+    host's combustion CO2 scaled by their fuel use otherwise."""
+    from .common import REFERENCE
+    fix = {r["archetype"]: r for r in read(REFERENCE / "emission-fix.csv")}
+    ctx["captured_biogenic"] = {k for k, r in fix.items() if r["action"] == "captured-biogenic"}
+    hosts = {k: h["host"] for k, h in ctx["hosts"].items() if h.get("status") == "active" and h.get("host")}
+    rule = {"rule-id": "emission-fix", "method": "emission-fix", "formula": "emissions made consistent "
+            "with the archetype's energy rows and totals (records/reference/emission-fix.csv)",
+            "rationale": "Consistency check 2026-11-07: an archetype's combustion, process and total CO2 "
+            "must agree with each other and with the fuel it burns."}
+
+    def fuel_co2(h, only=None, skip=()):
+        c = lo = hi = 0.0
+        ins = []
+        for (p, t), r in h.items():
+            if p != SEC or not t or t in skip or (only and t not in only) or not _live(r):
+                continue
+            if t not in FOSSIL:
+                continue
+            f = ctx["factors"].rows.get(f"cf-ef-co2-{t}")
+            v = fnum(r.get("central"))
+            if not f or v is None:
+                continue
+            ef = fnum(f["factor"])
+            c += v * ef
+            lo += (fnum(r.get("low")) if fnum(r.get("low")) is not None else v) * (fnum(f.get("factor-low")) or ef)
+            hi += (fnum(r.get("high")) if fnum(r.get("high")) is not None else v) * (fnum(f.get("factor-high")) or ef)
+            ins.append(f"{t} {v:.4g} GJ x {ef:.4g} ({f['factor-id']})")
+        return c, lo, hi, ins
+
+    def setv(k, h, p, c, lo, hi, ins, note, grade="identity"):
+        a = ctx["arch"][k]
+        lo, hi = min(lo, hi, c), max(lo, hi, c)
+        unit = _unit_for(h, p, a)
+        _put(psum, h, _row(k, p, "co2", unit, c, lo, hi, grade, rule, ins, "", note), stats, "emission-fix")
+
+    def val(h, p):
+        r = h.get((p, "co2"))
+        return (_lohi(r) if _live(r) else (0.0, 0.0, 0.0)), r
+
+    def parts_total(k, h, note):
+        (cc, cl, ch), _ = val(h, "emissions-combustion")
+        (pc, pl, ph), pr = val(h, "emissions-process")
+        setv(k, h, "emissions-total", cc + pc, cl + pl, ch + ph,
+             ["emissions-combustion_co2 + emissions-process_co2"], note)
+
+    done = 0
+    order = sorted(ctx["arch"], key=lambda k: (k in hosts, k))
+    for k in order:
+        h = ctx["have"].setdefault(k, {})
+        r = fix.get(k)
+        note = (r or {}).get("note", "")
+        act = (r or {}).get("action", "")
+        if not r and k in hosts and hosts[k] in fix and "_ccs-" not in k \
+                and ctx["arch"][k].get("type") == "efficient variant":
+            ha = fix[hosts[k]]["action"]
+            act = ha if ha in ("identity", "zero") else "host-scaled"
+            note = f"as its host {hosts[k]} ({fix[hosts[k]]['action']}): {fix[hosts[k]]['note']}"
+        if not act:
+            cr = h.get(("emissions-combustion", "co2"))
+            if _live(cr) and cr.get("method") == "fuel-emission-factor" and "_ccs-" not in k:
+                c, lo, hi, ins = fuel_co2(h)
+                if c > 0 and abs(c - (fnum(cr["central"]) or 0)) > 1e-3 * max(c, 1e-9):
+                    setv(k, h, "emissions-combustion", c, lo, hi, ins,
+                         "recomputed after the energy rows changed (consistency fixes 2026-11-07)")
+                    tr = h.get(("emissions-total", "co2"))
+                    if _live(tr) and tr.get("method") in ("sum", "emission-fix"):
+                        parts_total(k, h, "recomputed with the combustion CO2")
+                    done += 1
+            continue
+        if act == "captured-biogenic":
+            continue
+        g = "identity"
+        if act in ("identity", "identity-capture", "identity-remainder"):
+            c, lo, hi, ins = fuel_co2(h)
+            setv(k, h, "emissions-combustion", c, lo, hi, ins, note)
+            if act == "identity":
+                parts_total(k, h, note)
+            elif act == "identity-remainder":
+                (tc, tl, th), tr = val(h, "emissions-total")
+                if _live(tr):
+                    setv(k, h, "emissions-process", max(tc - c, 0), max(tl - lo, 0), max(th - hi, 0),
+                         ["emissions-total_co2 - emissions-combustion_co2"], note, "estimated")
+            else:
+                s = h.get(("share-to-capture", "co2"))
+                sh = (fnum(s.get("central")) or 100) / 100 if _live(s) else 1.0
+                setv(k, h, "emissions-captured", c * sh, lo * sh, hi * sh,
+                     [f"share-to-capture {sh:.1%} x gross combustion CO2"], note, "estimated")
+                setv(k, h, "emissions-total", c * (1 - sh), lo * (1 - sh), hi * (1 - sh),
+                     ["gross combustion CO2 - captured"], note, "estimated")
+        elif act == "zero":
+            setv(k, h, "emissions-combustion", 0, 0, 0, ["no fuel burned at the unit"], note)
+            parts_total(k, h, note)
+        elif act == "to-process":
+            (cc, cl, ch), cr = val(h, "emissions-combustion")
+            setv(k, h, "emissions-process", cc, cl, ch, [_input(cr, f"{k} emissions-combustion_co2")] if cr else [],
+                 note, (cr or {}).get("grade", "sourced") if cr and cr.get("grade") != "sourced" else "estimated")
+            setv(k, h, "emissions-combustion", 0, 0, 0, ["moved to process CO2"], note)
+            parts_total(k, h, note)
+        elif act in ("remainder-process", "remainder-combustion"):
+            (tc, tl, th), tr = val(h, "emissions-total")
+            other = "emissions-combustion" if act == "remainder-process" else "emissions-process"
+            target = "emissions-process" if act == "remainder-process" else "emissions-combustion"
+            (oc, ol, oh), _ = val(h, other)
+            if _live(tr):
+                setv(k, h, target, max(tc - oc, 0), max(tl - ol, 0), max(th - oh, 0),
+                     [f"emissions-total_co2 - {other}_co2"], note, "estimated")
+        elif act == "parts-total":
+            parts_total(k, h, note)
+        elif act == "reductant":
+            red = set(split_list((r.get("arg") or "").replace("|", ";")))
+            c, lo, hi, ins = fuel_co2(h, skip=red)
+            setv(k, h, "emissions-combustion", c, lo, hi, ins, note)
+            c2, lo2, hi2, ins2 = fuel_co2(h, only=red)
+            setv(k, h, "emissions-process", c2, lo2, hi2, ins2, note, "estimated")
+            parts_total(k, h, note)
+        elif act == "net-identity":
+            (cc, cl, ch), _ = val(h, "emissions-combustion")
+            (pc, pl, ph), _ = val(h, "emissions-process")
+            (xc, xl, xh), _ = val(h, "emissions-captured")
+            setv(k, h, "emissions-total", max(cc + pc - xc, 0), max(cl + pl - xh, 0), max(ch + ph - xl, 0),
+                 ["combustion + process - captured"], note)
+        elif act == "host-scaled":
+            hh = ctx["have"].get(hosts[k], {})
+            hc = hh.get(("emissions-combustion", "co2"))
+            hf, vf = hh.get((SEC, "fuel")), h.get((SEC, "fuel"))
+            if _live(hc) and _live(hf) and _live(vf) and (fnum(hf["central"]) or 0) > 0:
+                f = fnum(vf["central"]) / fnum(hf["central"])
+                c, lo, hi = (x * f for x in _lohi(hc))
+                setv(k, h, "emissions-combustion", c, lo, hi,
+                     [_input(hc, f"{hosts[k]} emissions-combustion_co2"), f"x fuel ratio {f:.4g}"], note, "estimated")
+        done += 1
+    stats["emission fixes"] = done
+
+
+def _unit_for(h, p, a):
+    for (q, t), r in h.items():
+        if q.startswith("emissions-") and r.get("unit"):
+            return r["unit"]
+    return f"t/{a['product-unit']}"
+
+
+def _efficiency_fixes(psum, records, ctx, stats):
+    """Make efficiency, energy use and feed agree, per
+    records/reference/efficiency-fix.csv (a Fable review's calls for Brad,
+    2026-11-07). Conversion efficiency = product energy / (energy use + feed).
+
+      feed-identity (arg carrier)   feed = 100 / efficiency - energy use
+      set-aside-energy (arg)        energy rows to as-sourced; feed = 100 / efficiency
+      eff-identity (arg optional)   efficiency = 100 / (energy use + feed); with an
+                                    arg and no feed row, a feed of 1 GJ/GJ is written
+      sec-identity                  energy use = 100 / efficiency, carriers scaled
+      chp-from-overall              electricity = overall / (1 + HPR), heat = overall
+                                    x HPR / (1 + HPR); energy = 100 / heat efficiency
+    """
+    from .common import REFERENCE
+    rule = {"rule-id": "efficiency-fix", "method": "efficiency-fix", "formula": "efficiency, energy use and "
+            "feed made consistent (records/reference/efficiency-fix.csv)",
+            "rationale": "Consistency check 2026-11-07: an archetype's efficiency, energy use and feed must agree."}
+    n = 0
+    for r in read(REFERENCE / "efficiency-fix.csv"):
+        k = r["archetype"]
+        if k not in ctx["arch"]:
+            continue
+        h = ctx["have"].setdefault(k, {})
+        act, arg, note = r["action"], (r.get("arg") or "").strip(), r.get("note", "")
+        chp = act == "chp-from-overall"
+        effk = ("efficiency-chp", "") if chp and _live(h.get(("efficiency-chp", ""))) else ("efficiency", "")
+        eff, sec = h.get(effk), h.get((SEC, ""))
+        pu = ctx["arch"][k]["product-unit"]
+
+        def feed_sum():
+            return sum(fnum(x.get("central")) or 0 for (p, t), x in h.items()
+                       if p == "feedstock-consumption" and t and _live(x))
+
+        def put(p, t, c, lo, hi, unit, ins, grade="identity"):
+            lo, hi = (min(lo, hi, c), max(lo, hi, c)) if lo is not None and hi is not None else (None, None)
+            _put(psum, h, _row(k, p, t, unit, c, lo, hi, grade, rule, ins, "", note), stats, "efficiency-fix")
+
+        def scale_sec(f, why):
+            for (p, t), x in list(h.items()):
+                if p == SEC and not (t or "").startswith("as-sourced") and _live(x):
+                    c, lo, hi = _lohi(x)
+                    put(SEC, t, c * f, lo * f, hi * f, x["unit"], [_input(x, f"{k} {SEC}_{t}"), why],
+                        worst(["identity", x.get("grade") or "sourced"]))
+
+        sv = fnum(sec.get("central")) if _live(sec) else 0.0
+        if act in ("feed-identity", "set-aside-energy") and _live(eff):
+            if act == "set-aside-energy":
+                for (p, t), x in list(h.items()):
+                    if p == SEC and not (t or "").startswith("as-sourced") and _live(x):
+                        del h[(p, t)]
+                        x["target"] = _as_sourced(t)
+                        x["central-from"] = "set aside: " + note + " " + (x.get("central-from") or "")
+                        h[(p, x["target"])] = x
+                sv = 0.0
+            ec, el, eh = _lohi(eff)
+            f = 100 / ec - sv
+            put("feedstock-consumption", arg, f, 100 / eh - sv, 100 / el - sv, f"GJ/{pu}",
+                [_input(eff, f"{k} efficiency"), f"less energy use {sv:.4g}"])
+        elif act == "eff-identity" and _live(sec):
+            if arg and not any(p == "feedstock-consumption" and _live(x) for (p, t), x in h.items()):
+                put("feedstock-consumption", arg, 1.0, 1.0, 1.0, f"GJ/{pu}", ["feed of 1 GJ per GJ of product"])
+            d = sv + feed_sum()
+            if d > 0:
+                lo_, hi_ = _lohi(sec)[1:]
+                put("efficiency", "", 100 / d, 100 / (hi_ + feed_sum()) if hi_ else None,
+                    100 / (lo_ + feed_sum()) if lo_ else None, "%",
+                    [_input(sec, f"{k} {SEC}"), f"feed {feed_sum():.4g}"])
+                if _live(h.get(("efficiency", "heat"))):
+                    put("efficiency", "heat", 100 / d, None, None, "%", ["as the overall efficiency"])
+        elif act == "sec-identity" and _live(eff) and sv > 0:
+            target = 100 / fnum(eff["central"])
+            scale_sec(target / sv, f"x {target / sv:.4g}: energy use = 100 / efficiency {fnum(eff['central']):.4g}")
+        elif chp and _live(eff) and _live(h.get(("heat-to-power-ratio", ""))):
+            o = fnum(eff["central"])
+            hpr = fnum(h[("heat-to-power-ratio", "")]["central"])
+            e_el, e_ht = o / (1 + hpr), o * hpr / (1 + hpr)
+            put("efficiency", "electricity", e_el, None, None, "%", [_input(eff, "overall"), f"HPR {hpr:.4g}"])
+            put("efficiency", "heat", e_ht, None, None, "%", [_input(eff, "overall"), f"HPR {hpr:.4g}"])
+            if sv > 0:
+                scale_sec((100 / e_ht) / sv, f"energy per GJ heat = 100 / heat efficiency {e_ht:.4g}")
+        else:
+            continue
+        n += 1
+    stats["efficiency fixes"] = n
+
+
+
+def _ccs_efficiency(psum, ctx, stats):
+    """A capture variant's efficiency is net of capture: 100 / (energy use + feed),
+    the capture steam and electricity included; its host keeps its own (Fable
+    review E7 for Brad, 2026-11-07; extended by Claude from the energy-service
+    variants to every capture variant with an efficiency). CHP variants keep
+    their stream efficiencies."""
+    rule = {"rule-id": "ccs-efficiency", "method": "ccs-efficiency",
+            "formula": "efficiency net of capture = 100 / (energy use + feed)",
+            "rationale": "Consistency check 2026-11-07, E7."}
+    n = 0
+    for k in ctx["arch"]:
+        if "_ccs-" not in k or CHP.search(ctx["arch"][k].get("label", "")) or "chp" in k:
+            continue
+        h = ctx["have"].get(k, {})
+        eff, sec = h.get(("efficiency", "")), h.get((SEC, ""))
+        if not (_live(eff) and _live(sec)):
+            continue
+        feed = sum(fnum(x.get("central")) or 0 for (p, t), x in h.items()
+                   if p == "feedstock-consumption" and t and _live(x))
+        hm = (ctx["hosts"].get(k) or {}).get("host")
+        if not feed and hm:
+            # a conversion variant with no feed row of its own makes its product from
+            # its host's feed
+            feed = sum(fnum(x.get("central")) or 0 for (p, t), x in ctx["have"].get(hm, {}).items()
+                       if p == "feedstock-consumption" and t and _live(x))
+        d = (fnum(sec["central"]) or 0) + feed
+        if d <= 0:
+            continue
+        v = 100 / d
+        if abs(v - (fnum(eff["central"]) or 0)) < 0.01:
+            continue
+        for t in ("", "heat"):
+            if t == "" or _live(h.get(("efficiency", t))):
+                _put(psum, h, _row(k, "efficiency", t, "%", v, None, None, "identity", rule,
+                                   [_input(sec, f"{k} {SEC}"), f"feed {feed:.4g}"], "",
+                                   "net of capture; the host keeps its own efficiency"), stats, "ccs-efficiency")
+        n += 1
+    stats["capture-variant efficiencies net of capture"] = n
+
+
+
+SIZE_FACTOR = {"t": 1000.0, "GJ": 31536.0}
+
+
+def _size_closure(psum, ctx, stats):
+    """Capacity x capacity factor = annual output on every archetype that holds
+    all three (Brad 2026-10-28: keep them aligned; facility statistics anchor the
+    output). Where they disagree by more than 2%, the capacity factor follows
+    (annual output / capacity); where that would pass 100%, the capacity does
+    (annual output / capacity factor)."""
+    rule = {"rule-id": "size-closure", "method": "size-closure",
+            "formula": "capacity x capacity factor = annual output",
+            "rationale": "Consistency check 2026-11-07; Brad 2026-10-28 size alignment."}
+    n = 0
+    for k, a in ctx["arch"].items():
+        h = ctx["have"].get(k, {})
+        cap, cf, ao = (h.get((p, "")) for p in ("capacity", "capacity-factor", "annual-output"))
+        if not (_live(cap) and _live(cf) and _live(ao)):
+            continue
+        f = SIZE_FACTOR.get(a["product-unit"], 1.0)
+        c, x, o = fnum(cap["central"]), fnum(cf["central"]), fnum(ao["central"])
+        if not c or not x or not o:
+            continue
+        exp = c * x / 100 * f
+        if abs(o - exp) <= 0.02 * exp:
+            continue
+        x2 = o / (c * f) * 100
+        if x2 <= 100:
+            _put(psum, h, _row(k, "capacity-factor", "", "%", x2, None, None,
+                               worst(["identity", ao.get("grade") or "sourced", cap.get("grade") or "sourced"]), rule,
+                               [_input(ao, "annual-output"), _input(cap, "capacity")], "",
+                               f"was {x:.4g}%"), stats, "size-closure")
+        else:
+            c2 = o / (x / 100 * f)
+            _put(psum, h, _row(k, "capacity", "", cap["unit"], c2, None, None,
+                               worst(["identity", ao.get("grade") or "sourced", cf.get("grade") or "sourced"]), rule,
+                               [_input(ao, "annual-output"), _input(cf, "capacity-factor")], "",
+                               f"was {c:.4g}"), stats, "size-closure")
+        n += 1
+    stats["sizes closed"] = n

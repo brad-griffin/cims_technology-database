@@ -208,6 +208,8 @@ carriers-species,emissions-total_co2_high,emissions,t/product-unit,
 carriers-species,emissions-total_co2_n,emissions,,
 carriers-species,emissions-total_n2o,emissions,t/product-unit,"Combustion plus process emissions together, per unit of product, where a source reports only the combined figure. Scope 1. NEVER record this alongside emissions-combustion and emissions-process for the same technology and source - it is the sum of them, and the three together double count. Species or stream: n2o."
 carriers-species,emissions-total_n2o_n,emissions,,
+carriers-species,feedstock-consumption_biogas,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: biogas."
+carriers-species,feedstock-consumption_biogas_n,technical,,
 carriers-species,feedstock-consumption_bioliquid,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: bioliquid."
 carriers-species,feedstock-consumption_bioliquid_n,technical,,
 carriers-species,feedstock-consumption_biomass,technical,GJ/product-unit,"Feedstock whose energy ends in the product (gas into hydrogen, ammonia, or methanol; biomass or oil into fuels; naphtha into HVC), GJ HHV per unit of product, by carrier in target. Not part of specific-energy-consumption (ruling 2026-10-13). Species or stream: biomass."
