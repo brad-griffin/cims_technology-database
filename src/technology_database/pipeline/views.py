@@ -302,6 +302,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                                 "sources give (heat-output-temp-min, heat-output-temp-max).",
             "heat-process-temp": "Low and high also span the minimum and maximum temperatures "
                                  "sources give (heat-process-temp-min, heat-process-temp-max).",
+            "heat-waste-temp": "Low and high also span the minimum and maximum temperatures "
+                               "sources give (heat-waste-temp-min, heat-waste-temp-max).",
         }.get(b, "")
         return " ".join(x for x in (
             pdef.get("definition", ""), f"Species or stream: {t}." if t else "", extra) if x)

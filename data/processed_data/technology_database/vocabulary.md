@@ -324,7 +324,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `furnace_hybrid-majority-electric` | Hybrid furnace, majority electric | alternative | natural-gas; electricity | 7 | industrial-minerals.product.glass.furnaces | quantified |
 | `furnace_lehr-electric` | Electric annealing lehr | alternative | electricity | 9 | industrial-minerals.product.glass.form-and-finish | estimated |
 | `furnace_oxy-fuel` | Oxy-fuel glass furnace | alternative | natural-gas; hydrogen; electricity | 9 | industrial-minerals.product.glass.furnaces | quantified |
-| `furnace_oxy-fuel-thermochemical` | Oxy-fuel glass furnace with thermochemical heat recovery | prospective | natural-gas; electricity | 4-7 | industrial-minerals.product.glass.furnaces | estimated |
+| `furnace_oxy-fuel-thermochemical` | Oxy-fuel glass furnace with thermochemical heat recovery | prospective | natural-gas; electricity | 4-7 | industrial-minerals.product.glass.furnaces | quantified |
 | `kiln_ceramic-electric` | Electric kiln | alternative | electricity | 9 | industrial-minerals.product.ceramics.kiln | quantified |
 | `kiln_ceramic-microwave-assisted` | Microwave-assisted ceramic kiln | prospective | natural-gas; electricity | 5-7 | industrial-minerals.product.ceramics.kiln | quantified |
 | `furnace_tempering` | Glass tempering furnace | reference | coal; oil; electricity; natural-gas | 9 | no connection | quantified |
@@ -653,7 +653,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `melting-furnace_crucible-gas-fired` | Gas-fired crucible melting furnace | conventional | natural-gas | 9 | light-industrial.service.heat.metal-melting; non-ferrous-metals.product.aluminum.recycle; non-ferrous-metals.product.copper.melt-cast; non-ferrous-metals.product.lead.melt-cast; non-ferrous-metals.product.magnesium.melt-cast; non-ferrous-metals.product.nickel.melt-cast; non-ferrous-metals.product.zinc.melt-cast | quantified |
 | `melting-furnace_cupola` | Cupola furnace | conventional | coke; natural-gas | 9 | iron-and-steel.product.foundry; light-industrial.service.heat.metal-melting | quantified |
 | `pellet-plant_wood` | Wood pellet mill | conventional | biomass; electricity | 9 | biofuels.product.solid-biofuel | quantified |
-| `press_hot-platen` | Hot press with thermal-oil heater | conventional | biomass | 9 | light-industrial.service.heat.forming-pressing | estimated |
+| `press_hot-platen` | Hot press with thermal-oil heater | conventional | biomass | 9 | light-industrial.service.heat.forming-pressing | quantified |
 | `pulper_fibreboard-refiner` | Fibreboard (MDF) refiner | conventional | electricity; steam | 9 | light-industrial.product.wood-products | quantified |
 | `dryer_direct-fired_efficiency-moderate` | Direct-fired dryer efficiency measures, moderate | efficient variant | natural-gas; electricity | 9 | light-industrial.service.heat.drying | quantified |
 | `dryer_direct-fired_efficiency-strong` | Direct-fired dryer efficiency measures, strong | efficient variant | natural-gas; biogas; electricity; hydrogen; liquid-biomass; lpg; oil | 9 | light-industrial.service.heat.drying | estimated |

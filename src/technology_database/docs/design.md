@@ -252,8 +252,12 @@ are not service keys.
   or the steam or hot gas supplied to a process is ruled out row by row
   (`reference/excluded-row.csv`). `heat-output-temp` counts only on heat supply,
   boilers, and archetypes with heat or steam among their products
-  (`pipeline/normalise.py`, `supplies_heat`); elsewhere, such as a turbine's
-  exhaust, it is excluded.
+  (`pipeline/normalise.py`, `supplies_heat`).
+- `heat-waste-temp` is the temperature of a stream leaving an archetype that
+  waste-heat recovery could use: exhaust, flue or stack gas, exhaust air, engine
+  coolant, condenser heat. Every stream pools as one value; the example row keeps
+  the stream as its target. A turbine's or engine's exhaust is waste heat, not
+  output.
 - Where `heat-process-temp` exists, it decides `heat-process-tier`: the tier takes
   every band the central, low and high values span. The build lists any archetype
   whose recorded tier disagrees, for correction in `archetype.csv`.

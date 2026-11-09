@@ -68,6 +68,10 @@ archetypes,heat-process-temp,technical,degC,"Temperature the process needs to ac
 archetypes,heat-process-temp_low,technical,degC,"Lowest value any example gives for heat-process-temp (for a filled value, the low end of the fill)."
 archetypes,heat-process-temp_high,technical,degC,"Highest value any example gives for heat-process-temp (for a filled value, the high end of the fill)."
 archetypes,heat-process-temp_n,technical,,Number of examples pooled into heat-process-temp; 0 for a filled value.
+archetypes,heat-waste-temp,technical,degC,"Temperature of a heat stream leaving the archetype that waste-heat recovery could use (exhaust, flue gas, stack gas, exhaust air, engine coolant, condenser heat); every stream pooled as one, the stream named in the example row. Low and high also span the minimum and maximum temperatures sources give (heat-waste-temp-min, heat-waste-temp-max)."
+archetypes,heat-waste-temp_low,technical,degC,"Lowest value any example gives for heat-waste-temp (for a filled value, the low end of the fill)."
+archetypes,heat-waste-temp_high,technical,degC,"Highest value any example gives for heat-waste-temp (for a filled value, the high end of the fill)."
+archetypes,heat-waste-temp_n,technical,,Number of examples pooled into heat-waste-temp; 0 for a filled value.
 archetypes,pressure-output,technical,bar,Pressure of delivered steam. Record the source's own unit.
 archetypes,pressure-output_low,technical,bar,"Lowest value any example gives for pressure-output (for a filled value, the low end of the fill)."
 archetypes,pressure-output_high,technical,bar,"Highest value any example gives for pressure-output (for a filled value, the high end of the fill)."

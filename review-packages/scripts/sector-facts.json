@@ -201,9 +201,9 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
+   "lighting": 7,
    "heat-supply": 24,
    "space-conditioning": 7,
-   "lighting": 7,
    "machine-drive": 3
   }
  },
@@ -819,11 +819,11 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "lighting": 7,
-   "space-conditioning": 7,
    "machine-drive": 8,
+   "lighting": 7,
    "heat-supply": 23,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7
   }
  },
  "pulp-and-paper": {
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
+   "machine-drive": 8,
    "lighting": 7,
    "heat-supply": 24,
-   "space-conditioning": 7,
-   "machine-drive": 8,
-   "co2-capture": 4
+   "co2-capture": 4,
+   "space-conditioning": 7
   }
  },
  "cement-and-lime": {
@@ -1677,10 +1677,10 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "space-conditioning": 7,
    "lighting": 7,
    "machine-drive": 8,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7
   }
  },
  "chemicals": {
@@ -2235,11 +2235,11 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "lighting": 7,
-   "space-conditioning": 7,
    "machine-drive": 8,
+   "lighting": 7,
    "heat-supply": 23,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7
   }
  },
  "conventional-oil": {
@@ -2484,9 +2484,9 @@
   "n_sources": 10,
   "n_examples": 59,
   "cross_families": {
+   "machine-drive": 3,
    "heat-supply": 23,
-   "co2-capture": 8,
-   "machine-drive": 3
+   "co2-capture": 8
   }
  },
  "oil-sands": {
@@ -3328,9 +3328,9 @@
   "n_examples": 819,
   "cross_families": {
    "machine-drive": 10,
-   "heat-supply": 5,
    "mobile-equipment": 6,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "heat-supply": 5
   }
  },
  "biofuels": {
@@ -4206,11 +4206,11 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "lighting": 7,
-   "space-conditioning": 7,
    "power-generation": 12,
+   "lighting": 7,
    "machine-drive": 9,
-   "heat-supply": 23
+   "heat-supply": 23,
+   "space-conditioning": 7
   }
  },
  "aluminum": {
@@ -4485,11 +4485,11 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "space-conditioning": 7,
    "lighting": 7,
    "machine-drive": 8,
    "heat-supply": 23,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7
   }
  },
  "petroleum-refining": {
@@ -4774,11 +4774,11 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "lighting": 7,
-   "space-conditioning": 7,
    "machine-drive": 8,
+   "lighting": 7,
    "heat-supply": 30,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "space-conditioning": 7
   }
  },
  "whole-database": {
@@ -6581,7 +6581,7 @@
     "band": "Glass melting",
     "archetype": "furnace_oxy-fuel-thermochemical",
     "label": "Oxy-fuel glass furnace with thermochemical heat recovery",
-    "status": "estimated",
+    "status": "quantified",
     "n": "2",
     "trl": "4-7",
     "unit": "t",
@@ -9561,7 +9561,7 @@
     "band": "Forming and pressing: process heat (GJ)",
     "archetype": "press_hot-platen",
     "label": "Hot press with thermal-oil heater",
-    "status": "estimated",
+    "status": "quantified",
     "n": "3",
     "trl": "9",
     "unit": "t",
@@ -9633,20 +9633,20 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
-   "co2-capture": 13,
-   "machine-drive": 13,
-   "mobile-equipment": 6,
-   "heat-supply": 34,
    "lighting": 7,
+   "machine-drive": 13,
+   "space-conditioning": 7,
+   "heat-supply": 34,
    "power-generation": 13,
-   "space-conditioning": 7
+   "co2-capture": 13,
+   "mobile-equipment": 6
   }
  },
  "_totals": {
   "archetypes": 537,
   "status": {
-   "quantified": 458,
-   "estimated": 79
+   "quantified": 460,
+   "estimated": 77
   },
   "examples": 12331,
   "mapped": 7800,

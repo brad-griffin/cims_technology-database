@@ -4,8 +4,8 @@ archetype-parameter.csv itself, not only the wide view. Runs after the fill step
   * CHP archetypes (label says CHP): `efficiency` is the total CHP efficiency
     (the efficiency-chp summary); an efficiency the sources give without saying
     electric, heat or total moves to target `unspecified` (a secondary parameter).
-  * heat-output-temp-min/-max and heat-process-temp-min/-max (no target) widen
-    heat-output-temp and heat-process-temp:
+  * the -min/-max forms of heat-output-temp, heat-process-temp and heat-waste-temp
+    (no target) widen their base:
     its central stays its own; low and high span every value; n counts the
     examples behind any of the three. The min and max rows are then consumed.
   * Single-stream efficiency: on an archetype with one useful output (not CHP
@@ -51,7 +51,7 @@ def apply(psum: list[dict], records) -> dict:
             chp["central-from"] = "total CHP efficiency (efficiency-chp); " + chp.get("central-from", "")
             n["chp efficiency swapped"] += 1
         # temperature widening, for the output and the process temperature
-        for base in ("heat-output-temp", "heat-process-temp"):
+        for base in ("heat-output-temp", "heat-process-temp", "heat-waste-temp"):
             lo_hi = [cells.get((base + "-min", "")), cells.get((base + "-max", ""))]
             if any(lo_hi):
                 main = cells.get((base, ""))

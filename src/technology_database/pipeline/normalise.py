@@ -50,7 +50,10 @@ PERCENT = {"efficiency", "efficiency-chp", "capacity-factor", "availability", "c
            "cost-learning-rate", "capital-recovery", "degradation-rate"}
 # A share of emissions avoided is one percentage whether the source counted CO2
 # alone or CO2-equivalent, so the species is not a column of its own here.
-SPECIES_POOLED = {"emissions-reduction-potential"}
+# heat-waste-temp pools every leaving stream (exhaust, flue gas, stack, coolant) as one
+# waste-heat temperature; the stream stays in the row (Brad 2026-11-09)
+SPECIES_POOLED = {"emissions-reduction-potential", "heat-waste-temp", "heat-waste-temp-min",
+                  "heat-waste-temp-max"}
 GJ_PER_KW_YR = 8760 * 0.0036
 OUTPUT_BASES = {"thermal-output", "electric-output", "product-output"}
 # A derived cost written "<cost per t> / <GJ per t>" is per GJ of what the
@@ -257,7 +260,7 @@ def target_unit(param: str, pu: str, default: str) -> str:
         return "%"
     if param in ("lifetime", "construction-time"):
         return "years"
-    if param.startswith(("heat-output-temp", "heat-process-temp")):
+    if param.startswith(("heat-output-temp", "heat-process-temp", "heat-waste-temp")):
         return "degC"
     if param == "pressure-output":
         return "bar"
