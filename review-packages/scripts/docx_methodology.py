@@ -158,39 +158,39 @@ BODY = [('h1', '1. What the database is'),
   [['Sourced',
     'Pooled from examples (section 4).',
     'Dry precalciner kiln capital cost, 495 CAD per t/yr: the median of 18 examples.',
-    'Darkest tint'],
+    'Deep ember, white text'],
    ['Sourced, converted',
     'Sourced, but converted with a factor from outside the source (a heating value, density, process ratio, '
     'or assumption).',
     'Dry precalciner kiln energy use, 3.65 GJ/t: 15 of its 21 examples rest on an outside factor, such as a '
     'heating value.',
-    'Second tint'],
+    'Darkest tint'],
    ['Identity',
     "Calculated from the archetype's own values by a definition or physical relation: 100 ÷ efficiency, fuel "
     'use × emission factor, capacity × capacity factor.',
     'Fuel-fired boiler energy use, 1.23 GJ per GJ of heat: 100 ÷ its 81% efficiency.',
-    'Third tint'],
+    'Second tint'],
    ['Estimated',
     'Borrowed or scaled from another archetype, or set by a class rule fitted on this database: a host '
     "plant's cost plus an increment, a sibling's lifetime, a class median, a cost ratio.",
     'Steam-heated paper dryer lifetime, 20 years: taken from its sibling archetypes.',
-    'Fourth tint'],
+    'Third tint'],
    ['Proxy',
     'A class constant from a named outside catalogue or handbook.',
     "Strong-efficiency blast furnace energy use, 12.5 GJ/t: the base blast furnace's energy use less a "
     'catalogue saving for the strong bucket.',
-    'Lightest tint'],
+    'Fourth tint'],
    ['Guess',
     'A judgement, with a stated range, rationale, and basis. Ranges are at least a factor of two for costs, '
     '±30% for energy use, and a factor of three for plant size.',
     'Slag grinding mill capital cost, 90 CAD per t/yr: no source gives one, so it is judged from cement '
     'grinding stations.',
-    'Grey italic, unshaded'],
+    'Lightest tint, grey italic'],
    ['not applicable',
     'The parameter does not characterise the archetype (the energy use of a leak-detection programme, the '
     'variable O&M of a boiler).',
     'Variable operating cost of a standard motor: too small to matter, so it is folded into fixed costs.',
-    'Light grey']]),
+    'Light grey italic, unshaded']]),
  ('gap',),
  ('p',
   'A fill takes the weakest grade among its rule and its inputs. Each borrowing rule is back-tested on cells '

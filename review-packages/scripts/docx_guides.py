@@ -42,7 +42,7 @@ def check_sector(lname):
     return [
         f"**The {lname} archetypes.** Is each one a real option in Canadian facilities, now or in the future? Is anything missing, merged that should be separate, or separate that should be merged? The sector note lists the calls we most want tested.",
         "**The central values and ranges** for energy use, efficiency, emissions, capital and operating costs, lifetime, capacity, and capacity factor. Are they plausible for the technology? Are they on the right basis: per tonne of the right product, for the right scope of equipment, and with energy on a higher heating value basis?",
-        '**The filled values.** The shading shows which values came from sources and which the database estimated or guessed. We most want your view on guessed values (grey italic) and on archetypes marked "filled only" in the sector note.',
+        '**The filled values.** The shading shows which values came from sources and which the database estimated or guessed. We most want your view on guessed values (grey italic on the lightest tint) and on archetypes with few core values sourced (the sector note counts them).',
         "**Sources.** Better, newer, or Canadian sources for any archetype, especially the thin ones.",
         "**The cross-cutting rows** (boilers, combined heat and power, motors, heating and cooling, lighting, and CO2 capture) that serve your sector. Tell us whether they fit how your sector uses them. A detailed check of their values is optional.",
         "**Readiness.** The technology readiness level of emerging options.",

@@ -27,26 +27,27 @@ DETAIL = ("_low", "_high", "_n")
 
 # Ember palette, lightest to darkest (Brad 2026-10-29)
 EMBER = ["FFB58B", "F67A39", "C64E00", "971E00", "5A0C00"]
-# How certain a value is, most certain first: tints of EMBER[1] with a third less
-# chroma, at L* 58, 69, 79, 88, and 96 (about 14 units apart), so the steps read
-# apart without the key (Brad 2026-10-29); a guess is unshaded grey italic and a
-# parameter that does not apply is lighter grey. Keys are the fill grades plus
-# `sourced` (as reported) and `converted` (sourced, external conversion factor).
+# How certain a value is, most certain first (Brad 2026-11-09, one step darker than the
+# 2026-10-29 scale): sourced a deep ember with white text, then the tints of EMBER[1]
+# at L* 58, 69, 79, 88, and 96 for converted, identity, estimated, proxy, and guess
+# (a guess also in grey italic); a parameter that does not apply is unshaded lighter
+# grey italic. Keys are the fill grades plus `sourced` (as reported) and `converted`
+# (sourced, external conversion factor). Fields: key, label, fill, font colour, text.
 SHADE = [
-    ("sourced", "Sourced", "CA764C", None,
+    ("sourced", "Sourced", "A4532B", "FFFFFF",
      "As the source reports it (units converted exactly)."),
-    ("converted", "Sourced, converted", "DF9875", None,
+    ("converted", "Sourced, converted", "CA764C", None,
      "Sourced, but converted with a factor from outside the source (a heating value, a "
      "density, a process ratio, or an assumption); see external-conversions."),
-    ("identity", "Identity", "EEB89F", None, "Calculated from the archetype's own values."),
-    ("estimated", "Estimated", "F8D6C6", None,
+    ("identity", "Identity", "DF9875", None, "Calculated from the archetype's own values."),
+    ("estimated", "Estimated", "EEB89F", None,
      "From other archetypes or a class rule fitted on this database."),
-    ("proxy", "Proxy", "FEF1EB", None, "A class constant from an outside catalogue."),
-    # a very light tint, so a guess reads apart from not-applicable (Brad 2026-11-09)
-    ("guess", "Guess", "FFF8F4", "7F7F7F", "A judgement, with a stated range and rationale."),
+    ("proxy", "Proxy", "F8D6C6", None, "A class constant from an outside catalogue."),
+    ("guess", "Guess", "FEF1EB", "7F7F7F", "A judgement, with a stated range and rationale."),
     ("not-applicable", "not applicable", None, "A6A6A6",
      "The parameter does not characterise the archetype."),
 ]
+ITALIC = {"guess", "not-applicable"}
 
 # the readme sheet: what used to repeat in every sheet's banner (Brad 2026-10-29)
 README = [
@@ -219,7 +220,7 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     f_note = Font(sz=10, italic=True, color=EMBER[4])
     rule = Border(bottom=Side(style="thin", color=EMBER[3]))
     SHADE_FILL = {k: PatternFill("solid", fgColor=c) for k, _, c, _, _ in SHADE if c}
-    SHADE_FONT = {k: Font(sz=11, italic=True, color=fc) for k, _, _, fc, _ in SHADE if fc}
+    SHADE_FONT = {k: Font(sz=11, italic=k in ITALIC, color=fc) for k, _, _, fc, _ in SHADE if fc}
 
     def shade(cell, key):
         if key in SHADE_FILL:
