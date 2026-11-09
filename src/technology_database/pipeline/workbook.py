@@ -123,6 +123,7 @@ SHEET_NOTES = {
     "energy": "Energy use by carrier, for the same rows.",
     "emissions": "Emissions by type and species, for the same rows.",
     "feedstocks": "Feedstock use by carrier, for the same rows.",
+    "heat": "Process, output, and waste heat: a tier on every archetype and a temperature where sourced.",
     "source-list": "The sources, by the family they inform.",
 }
 

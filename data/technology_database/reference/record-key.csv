@@ -1220,6 +1220,7 @@ tp-nedo_2008_001-0084,nedo_2008_001:boiler_recovery-high-solids@2-2-6-pulp-and-p
 tp-neuwahl_2019_001-0032,neuwahl_2019_001:boiler_solid-fuel_msw@energy-demand-per-tonne-of-waste-treated-2016-data-collection-sect-3-5-3-table-3-37|electricity|0.107|0.045|0.264|MWh/t
 tp-neuwahl_2019_001-0033,neuwahl_2019_001:boiler_solid-fuel_msw@energy-demand-per-tonne-of-waste-treated-2016-data-collection-sect-3-5-3-table-3-37|heat|0.505|0.01|0.7|MWh/t
 tp-neuwahl_2019_001-0059,neuwahl_2019_001:boiler_solid-fuel_msw@msw-incineration-energy-recovery-typical-ranges-sects-2-4-4-3-5-2-4-4-1-4-4-3|electricity||60|190|kWh/t
+tp-neuwahl_2019_001-0077,neuwahl_2019_001:steam-turbine_back-pressure_msw@plant-fr53-heat-oriented-chp-performance-test-annex-8-2-2-case-2-b-table-8-4||410|||degC
 tp-nrcan_2005_001-0018,nrcan_2005_001:separator_thickening-filtration@base-metals-concentrators-stage-energy-use-5-mill-sample-sect-4-3-figs-4-3-1-4-3-9|total||1.77|28.56|kWh/t
 tp-nrcan_2007_001-0025,nrcan_2007_001:blast-furnace@ecotech-total-for-ironmaking-app-a-p-86|fuel|10935|||MJ/t
 tp-nrcan_2007_001-0026,nrcan_2007_001:blast-furnace@ecotech-total-for-ironmaking-app-a-p-86|co2|473|||kg/t
@@ -1433,6 +1434,9 @@ tp-scalet_2013_001-0112,scalet_2013_001:melting-furnace_electric-melter@high-tem
 tp-schemme_2020_001-0010,schemme_2020_001:reactor_co2-to-alcohol_ethanol@ethanol-synthesis-from-h2-and-co2-300-mw-fuel-output-table-3-p-20-tables-a1-a2-p-29||557.9|||2020_EUR/kW
 tp-schemme_2020_001-0089,schemme_2020_001:reactor_co2-to-hydrocarbon_fischer-tropsch@diesel-and-kerosene-fischer-tropsch-synthesis-from-h2-and-co2-300-mw-fuel-output-table-3-p-20-tables-a1-a2-p-29||666.6|||2020_EUR/kW
 tp-schlesinger_2011_001-0119,schlesinger_2011_001:smelting-vessel_flash@copper-extraction-complex-0-5-cu-ore-fixed-investment-and-operating-cost-tables-22-1-22-10||9000|||2011_USD/t-per-yr
+tp-sharp_2014_001-0005,sharp_2014_001:steam-turbine_back-pressure@wood-fired-boiler-c-back-pressure-turbine-chp-us-pacific-coast-us-tables-viii-x||399.0|||degC
+tp-sharp_2014_001-0008,sharp_2014_001:steam-turbine_back-pressure@wood-fired-boiler-h-back-pressure-turbine-chp-us-pacific-coast-us-tables-viii-x||482.2|||degC
+tp-sharp_2014_001-0011,sharp_2014_001:steam-turbine_back-pressure@wood-fired-boiler-m-back-pressure-turbine-chp-us-pacific-coast-us-tables-viii-x||480.0|||degC
 tp-siyambalapitiya_2026_001-0007,siyambalapitiya_2026_001:furnace_reheating_natural-gas@billet-reheating-tables-1-4||31|||2025_USD/t
 tp-siyambalapitiya_2026_001-0013,siyambalapitiya_2026_001:furnace_reheating_hydrogen@billet-reheating-tables-1-4||76|||2025_USD/t
 tp-smith_2020_001-0013,smith_2020_001:steam-reformer_ammonia@methane-fed-haber-bosch-2010s-ec-bat-definition-example-esi-table-s1|natural-gas|28.0|||GJ/t
@@ -1594,6 +1598,9 @@ tp-voldsund_2019_001-0011,voldsund_2019_001:kiln_dry-precalciner_amine-scrubbing
 tp-voldsund_2019_001-0018,voldsund_2019_001:kiln_oxy-fuel@reference-plant-retrofitted-with-co2-capture-eu-28-2014-power-mix-sect-4-5-tables-8-12-15|electricity|1094|||kJ/kg
 tp-voldsund_2019_001-0024,voldsund_2019_001:kiln_dry-precalciner_chilled-ammonia@reference-plant-retrofitted-with-co2-capture-eu-28-2014-power-mix-sect-4-5-tables-8-12-15|natural-gas|1859|||kJ/kg
 tp-voldsund_2019_001-0043,voldsund_2019_001:kiln_dry-precalciner_calcium-looping-integrated@reference-plant-retrofitted-with-co2-capture-eu-28-2014-power-mix-sect-4-5-tables-8-12-15|electricity|1272|||kJ/kg
+tp-wade_2003_001-0052,wade_2003_001:fuel-cell_phosphoric-acid-chp@fuel-cell-technology-summary-table-6||200|||degC
+tp-wade_2003_001-0058,wade_2003_001:fuel-cell_solid-oxide-chp@fuel-cell-technology-summary-table-6||1000|||degC
+tp-wade_2003_001-0061,wade_2003_001:fuel-cell_molten-carbonate-chp@fuel-cell-technology-summary-table-6||650|||degC
 tp-wallace_2021_001-0021,wallace_2021_001:haul-truck_hydrogen-fuel-cell@hydrogen-fuel-cell-electric-truck-fcev-one-290-t-converted-komatsu-930e-2020-values-table-5-1|component|800|||kW
 tp-weidmann_2013_001-0049,weidmann_2013_001:combined-cycle_ccs-diffuse@swiss-markal-smm-w1-ngcc-ccs-2030-vintage-table-5-1|electricity|56|||%
 tp-weidmann_2013_001-0055,weidmann_2013_001:combined-cycle_ccs-diffuse@swiss-markal-smm-w1-ngcc-ccs-2050-vintage-table-5-1|electricity|61|||%
@@ -1651,3 +1658,4 @@ tp-zier_2023_001-0006,zier_2023_001:furnace_glass-regenerative@german-flat-glass
 tp-zier_2023_001-0009,zier_2023_001:furnace_glass-oxy-fuel@oxy-fuel-option-table-1-app-f-g|electricity|0.3|||GJ/t-glass
 tp-zier_2023_001-0010,zier_2023_001:furnace_glass-oxy-fuel@oxy-fuel-option-table-1-app-f-g||10|||years
 tp-zier_2023_001-0012,zier_2023_001:melting-furnace_electric-melter@all-electric-melting-option-cold-top-electric-furnace-table-1-app-f-g||6|||years
+tp-zuhlsdorf_2019_001-0039,zuhlsdorf_2019_001:heat-pump_industrial@reversed-brayton-cycle-with-r-744-design-limits-sect-2-2-3-1-2||480|||degC

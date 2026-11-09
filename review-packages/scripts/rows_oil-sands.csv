@@ -1,7 +1,9 @@
 archetype,band
 adsorber_pressure-swing,"CO2 capture, concentrated streams"
+boiler_electric,"Heat, high temperature (> 400 degC)"
 boiler_electric,"Heat, low temperature (< 150 degC)"
 boiler_electric,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired,"Heat, high temperature (> 400 degC)"
 boiler_fuel-fired,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired,"Heat, medium temperature (150-400 degC)"
 boiler_fuel-fired_ccs-diffuse,"Heat, low temperature (< 150 degC)"
@@ -10,6 +12,7 @@ boiler_fuel-fired_efficiency-moderate,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired_efficiency-moderate,"Heat, medium temperature (150-400 degC)"
 boiler_oxy-fuel,"Heat, low temperature (< 150 degC)"
 boiler_oxy-fuel,"Heat, medium temperature (150-400 degC)"
+boiler_solid-fuel,"Heat, high temperature (> 400 degC)"
 boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
 boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
 capture-unit_advanced-solvent,"CO2 capture, diffuse (dilute) streams"
@@ -31,12 +34,15 @@ gasifier_biomass-chp,"Heat, low temperature (< 150 degC)"
 gasifier_biomass-chp,"Heat, medium temperature (150-400 degC)"
 gasifier_coal-petroleum-coke,On-site hydrogen production
 geothermal-well_direct-use,"Heat, low temperature (< 150 degC)"
+geothermal-well_direct-use,"Heat, medium temperature (150-400 degC)"
 haul-truck_battery-electric,Oil sands mining and extraction: ore (t)
 haul-truck_diesel,Oil sands mining and extraction: ore (t)
 haul-truck_dual-fuel,Oil sands mining and extraction: ore (t)
 heat-pump_heat-transformer,"Heat, low temperature (< 150 degC)"
 heat-pump_heat-transformer,"Heat, medium temperature (150-400 degC)"
 heat-pump_industrial,"Heat, low temperature (< 150 degC)"
+heat-pump_industrial,"Heat, medium temperature (150-400 degC)"
+heat-pump_very-high-temperature,"Heat, low temperature (< 150 degC)"
 heat-pump_very-high-temperature,"Heat, medium temperature (150-400 degC)"
 heat-recovery-unit_waste-heat,"Heat, low temperature (< 150 degC)"
 heat-recovery-unit_waste-heat,"Heat, medium temperature (150-400 degC)"
@@ -58,6 +64,9 @@ separator_thickening-filtration,Oil sands tailings
 separator_warm-lime-softening,Produced water handling
 separator_warm-water-extraction,Oil sands mining and extraction: bitumen (m3)
 solar-collector,"Heat, low temperature (< 150 degC)"
+solar-collector,"Heat, medium temperature (150-400 degC)"
+solar-concentrator_line-focus,"Heat, high temperature (> 400 degC)"
+solar-concentrator_line-focus,"Heat, low temperature (< 150 degC)"
 solar-concentrator_line-focus,"Heat, medium temperature (150-400 degC)"
 steam-reformer_methane,On-site hydrogen production
 steam-reformer_methane_ccs-concentrated,On-site hydrogen production
@@ -65,6 +74,7 @@ steam-reformer_methane_ccs-diffuse,On-site hydrogen production
 steam-turbine_back-pressure,"Heat, low temperature (< 150 degC)"
 steam-turbine_back-pressure,"Heat, medium temperature (150-400 degC)"
 steam-turbine_back-pressure_ccs-diffuse,"Heat, low temperature (< 150 degC)"
+thermal-storage_electric,"Heat, low temperature (< 150 degC)"
 thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
 thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"
 well_cyclic-steam,In-situ bitumen recovery

@@ -27,7 +27,7 @@ def _md(x):
 
 def mapping_review(records, hier, loader, stamp, views, ex_result):
     arows = views["archetype"][1]
-    status = Counter(a["status"] for a in arows)
+    status = Counter(a["core-sourced"] for a in arows)
     exs = loader.examples
     by_arch = defaultdict(list)
     for e in exs.values():
@@ -42,9 +42,8 @@ def mapping_review(records, hier, loader, stamp, views, ex_result):
       "what could not be pooled and why, and what needs a decision. To change a mapping, "
       "edit the `archetype` cell of that example in `records/source-example.csv`.\n")
     A("## Summary\n")
-    A(f"- **{len(arows)} archetypes**: {status['quantified']} quantified, {status['named']} "
-      f"named by a source without a number, {status['not pooled']} whose numbers could not "
-      f"be pooled (see *Not pooled*), {status['gap']} with no example yet.")
+    A(f"- **{len(arows)} archetypes**, by how many of the seven core model values come from a "
+      "source: " + ", ".join(f"{status[n]} with {n}" for n in range(7, -1, -1) if status[n]) + ".")
     m = Counter(e["mapping"] for e in exs.values())
     A(f"- **{len(exs)} examples**: {m['mapped']} mapped, {m['none']} marked `(none)`, "
       f"{m['unmapped']} not yet mapped.")
@@ -231,11 +230,11 @@ def vocabulary_md(records, hier, views):
     for a in arows:
         if a["family"] != last:
             A(f"\n### {_md(records.families.get(a['family'], {}).get('label', a['family']))}\n")
-            A("| archetype | label | type | carriers | TRL | applies to | status |")
+            A("| archetype | label | type | carriers | TRL | applies to | core values sourced |")
             A("|---|---|---|---|---:|---|---|")
             last = a["family"]
         A(f"| `{a['archetype']}` | {_md(a['label'])} | {a['type']} | {_md(a['carriers'])} | "
-          f"{a['trl']} | {_md(a['applies-to'])} | {a['status']} |")
+          f"{a['trl']} | {_md(a['applies-to'])} | {a['core-sourced']} of 7 |")
     A("\n## Modifiers\n")
     A("| order | modifier | meaning |\n|---:|---|---|")
     for r in sorted(read(VOCAB / "modifier.csv"), key=lambda r: int(r["order"])):

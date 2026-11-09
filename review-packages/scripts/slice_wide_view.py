@@ -21,7 +21,7 @@ warnings.filterwarnings("ignore")
 FIRST_BODY = 8          # rows 1-7 are the banner and the header block
 HEAD_ROW, GROUP_ROW = 4, 3
 # the main workbook already splits energy, emissions and feedstocks (2026-11-04)
-WIDE = ("archetypes", "energy", "emissions", "feedstocks")
+WIDE = ("archetypes", "energy", "emissions", "feedstocks", "heat")
 # columns left out of the review files (Brad 2026-11-04)
 DROP_COLS = {"families", "end-uses", "discriminator", "modifiers", "applies-to", "external-conversions",
              "source-corrections"}
@@ -252,6 +252,8 @@ def legend_sheet(wb, sheets):
             continue
         if r["sheet"] == "archetypes":
             rows.append(r)
+        elif r["sheet"] == "heat":
+            rows.append(r)
         elif r["sheet"] == "carriers-species":
             for name, prefix, _ in SPLIT:
                 if r["column"].startswith(prefix):
@@ -304,6 +306,7 @@ def readme(ws, package, title, build, sheets, n_rows, n_arch):
              "energy": "Energy use by carrier, for the same rows.",
              "emissions": "Emissions by type and species, for the same rows.",
              "feedstocks": "Feedstock use by carrier, for the same rows.",
+             "heat": "Process, output, and waste heat: a tier on every archetype and a temperature where sourced.",
              "source-list": "Every source in the database, by the family it informs."}
     for i, s in enumerate(sheets):
         ws.cell(30 + i, 2).value = s
@@ -334,14 +337,14 @@ def main(package, build):
     insert_comment_column(wa)
     wb["archetypes"]["B1"].value = None           # the comment column; the banner moved to C1
     wb["archetypes"]["C1"].value = ("One row per archetype in each end use it serves. Capacity is in the unit named in "
-                                    "capacity-unit; energy use by carrier, emissions by species, and feedstocks are on "
-                                    "the energy, emissions, and feedstocks sheets.")
+                                    "capacity-unit; energy use by carrier, emissions by species, feedstocks, and heat are "
+                                    "on the energy, emissions, feedstocks, and heat sheets.")
     split = [name for name, _, _ in SPLIT]
     legend_sheet(wb, WIDE)
     widen_notes(wb)
-    for n in ["archetypes", *split]:
+    for n in ["archetypes", *split, "heat"]:
         wb[n].sheet_view.showGridLines = False
-    sheets = ["column-legend", "archetypes", *split] + (
+    sheets = ["column-legend", "archetypes", *split, "heat"] + (
         ["source-list"] if package == "whole-database" else [])
     rows = counts["archetypes"]
     readme(wb["readme"], package, title, build, sheets, len(rows), len({a for a, _ in rows.values()}))

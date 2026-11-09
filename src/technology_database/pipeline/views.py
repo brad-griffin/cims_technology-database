@@ -26,9 +26,9 @@ from .bands import families
 from . import capacity_unit
 
 IDENT = ["archetype", "label", "family", "families", "end-uses", "equipment", "discriminator", "modifiers",
-         "type", "carriers", "heat-process-tier", "applies-to", "trl", "product-unit", "product",
+         "type", "carriers", "heat-process-tier", "heat-output-tier", "heat-waste-tier", "applies-to", "trl", "product-unit", "product",
          "secondary-products", "product-density", "product-density-unit", "product-energy-content",
-         "product-energy-content-unit", "n-examples", "status", "sources"]
+         "product-energy-content-unit", "n-examples", "core-sourced", "sources"]
 
 
 def unit_label(param: str, target: str) -> str:
@@ -121,11 +121,19 @@ IDENT_NOTES = {
             "(commercial but not common in Canada), prospective (technology readiness level "
             "5-8), component or reference (kept for their numbers; not offered to the model).",
     "carriers": "The energy carriers the archetype can use.",
-    "heat-process-tier": "Temperature band of the process heat the archetype uses, raises or "
-                         "supplies: low-temp below 150 degC, medium-temp 150-400 degC, high-temp "
-                         "above 400 degC; several when the process spans bands; not-applicable when "
-                         "it uses no process heat (shaft work, transport, cooling, lighting). Follows "
+    "heat-process-tier": "Temperature band of the heat the process needs: low-temp below 150 degC, "
+                         "medium-temp 150-400 degC, high-temp above 400 degC; several when the process "
+                         "spans bands; not-applicable when it uses no process heat (shaft work, "
+                         "transport, cooling, lighting) or only supplies heat. Follows "
                          "heat-process-temp where the sources give one.",
+    "heat-output-tier": "Temperature band of the heat an archetype meant to supply heat delivers "
+                        "(heat supply, boilers, archetypes with heat or steam among their products); "
+                        "not-applicable for every other archetype. Covers every band heat-output-temp "
+                        "spans where the sources give one.",
+    "heat-waste-tier": "Temperature band of the main stream leaving the archetype that waste-heat "
+                       "recovery could use (exhaust, flue gas, cooler air, cooling water, condenser "
+                       "heat), after the recovery the equipment itself includes; not-applicable when "
+                       "there is none. Follows heat-waste-temp where the sources give one.",
     "applies-to": "The hierarchy nodes the archetype serves, or \"no connection\".",
     "trl": "Technology readiness level, from 1 (basic principles observed) to 9 (proven in "
            "commercial operation).",
@@ -138,8 +146,10 @@ IDENT_NOTES = {
                               "converting between mass or volume and energy.",
     "product-energy-content-unit": "Unit of product-energy-content.",
     "n-examples": "Number of source examples mapped to the archetype.",
-    "status": "quantified (at least one value from a source) or estimated (every value filled "
-              "by a rule or a judgement).",
+    "core-sourced": "How many of the seven core model values (capex, fixed opex, variable opex, "
+                    "energy use, lifetime, annual output, CO2 emissions) come from a source, 0 to 7; "
+                    "the others are filled (identity, estimated, proxy or guess), not applicable, or "
+                    "missing.",
     "sources": "Short names of the sources behind the examples.",
 }
 SPREAD_NOTES = {
@@ -147,6 +157,39 @@ SPREAD_NOTES = {
     "_high": "Highest value any example gives for {b} (for a filled value, the high end of the fill).",
     "_n": "Number of examples pooled into {b}; 0 for a filled value.",
 }
+
+
+HEAT_TIERS = ("heat-process-tier", "heat-output-tier", "heat-waste-tier")
+HEAT_TEMPS = ("heat-process-temp", "heat-output-temp", "heat-waste-temp")
+
+
+def heat_sheet(view, heat_cells, records):
+    """Order the heat sheet process, output, waste, each tier before its temperature,
+    and grade every tier cell: as the temperature it follows from when the recorded
+    tier equals the tiers that temperature spans, a guess (a judgement) when no
+    temperature decides it, not-applicable when the archetype has no such heat."""
+    from .roll_in import tier_from
+    cols, rows, groups, units, notes, flagged, graded = view
+    ident = [c for c in cols if groups.get(c) == "identity" and c not in HEAT_TIERS]
+    new = list(ident)
+    for tier, temp in zip(HEAT_TIERS, HEAT_TEMPS):
+        new += [tier] + [c for c in (temp, f"{temp}_low", f"{temp}_high", f"{temp}_n") if c in cols]
+        groups[tier] = groups.get(temp, "technical") or "technical"
+        units[tier] = ""
+    for row in rows:
+        k = row["archetype"]
+        for tier, temp in zip(HEAT_TIERS, HEAT_TEMPS):
+            v = row.get(tier, "")
+            s = heat_cells.get(k, {}).get(temp)
+            order = [t for t in ("low-temp", "medium-temp", "high-temp") if t in v]
+            if v == "not-applicable":
+                g = "not-applicable"
+            elif s and tier_from(s) == "; ".join(order):
+                g = ("converted" if (k, temp) in flagged else s.get("grade", "sourced"))
+            else:
+                g = "guess"
+            graded[(k, tier)] = g
+    return new, rows, groups, units, notes, flagged, graded
 
 
 def applies_to(key, service):
@@ -177,6 +220,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     with_fill = {s["archetype"] for s in summaries
                  if s.get("grade", "sourced") not in ("sourced", "not-applicable")}
     with_facts = {e["archetype"] for e in examples.values() if e.get("n-facts")}
+    from .fill import CIMS_CELLS, coverage
+    core = {r["archetype"]: sum(1 for c, _ in CIMS_CELLS if r[c] == "sourced")
+            for r in coverage(summaries, records)}
     arows = []
     props = product_properties()
     fams = families(records)   # home family first, then the end uses' families (2026-10-09)
@@ -191,10 +237,9 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             "n-examples": len(exs),
             # alphabetical by short name (modeller 2026-10-09; was by source rank)
             "sources": "; ".join(sorted((records.short(s) for s in src), key=str.lower)),
-            "status": ("quantified" if k in with_data else
-                       "estimated" if k in with_fill else
-                       "not pooled" if k in with_facts else
-                       "named" if exs else "gap")}))
+            # how many of the seven core model values come from a source (Brad
+            # 2026-11-09; replaces the quantified / estimated status flag)
+            "core-sourced": core.get(k, 0)}))
     # cross-cutting service families first, in records/vocabulary order (heat supply,
     # power, machine drive, ...), then the sector families alphabetically by the
     # label a reader sees (modeller 2026-09-26, 2026-10-08); the catch-all other
@@ -318,10 +363,6 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             cols += ["external-conversions", "source-corrections", "filled"]
         units, groups, notes = {}, {c: "identity" for c in cols}, dict(fill_note)
         for b in keys:
-            if b == "heat-process-temp" and "heat-process-tier" in cols:
-                # the tier sits just before the process temperature it follows from
-                cols.remove("heat-process-tier")
-                cols.append("heat-process-tier")
             extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
             if name == "wide-archetype" and b == "capacity":
                 cols.append("capacity-unit")
@@ -374,17 +415,26 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
 
     fill_note.update(WIDE_NOTES)
     fill_note.update(IDENT_NOTES)
-    ident_main = [c for c in IDENT if c not in ("family", "equipment")]
+    ident_main = [c for c in IDENT if c not in ("family", "equipment") + HEAT_TIERS]
     ident_side = ["archetype", "label", "product-unit", "product"]
+    # the heat columns have their own sheet (Brad 2026-11-09): process, output, waste,
+    # each a tier (a value on every archetype) and the temperature that decides it
+    heat_cells = defaultdict(dict)
+    for k, c in sheets["wide-archetype"].items():
+        for b in [b for b in c if b in HEAT_TEMPS]:
+            heat_cells[k][b] = c.pop(b)
     out = {}
-    for name, ident, order in (("wide-archetype", ident_main, by_param),
-                               ("wide-carriers-species", ident_side, lambda b: b),
-                               ("wide-secondary-parameter", ident_side, by_param)):
-        out[name] = emit(name, sheets[name], ident, order)
+    for name, cells, ident, order in (("wide-archetype", sheets["wide-archetype"], ident_main, by_param),
+                                      ("wide-carriers-species", sheets["wide-carriers-species"], ident_side, lambda b: b),
+                                      ("wide-secondary-parameter", sheets["wide-secondary-parameter"], ident_side, by_param),
+                                      ("wide-heat", heat_cells, ident_side + list(HEAT_TIERS), by_param)):
+        out[name] = emit(name, cells, ident, order)
+    out["wide-heat"] = heat_sheet(out["wide-heat"], heat_cells, records)
     # the wide views are built for the workbook only; no wide CSVs (Brad 2026-11-06).
     # The column legend serves the workbook and the review packages.
     if not wide_only:
-        legend_sheet = {"wide-archetype": "archetypes", "wide-carriers-species": "carriers-species"}
+        legend_sheet = {"wide-archetype": "archetypes", "wide-carriers-species": "carriers-species",
+                        "wide-heat": "heat"}
         write(outdir / "column-legend.csv", ["sheet", "column", "group", "unit", "note"],
               [{"sheet": legend_sheet[name], "column": c, "group": o[2].get(c, ""), "unit": o[3].get(c, ""),
                 "note": o[4].get(c, "")} for name, o in out.items() if name in legend_sheet for c in o[0]],
@@ -410,7 +460,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
     funits = {c: ("" if c in fident or c.endswith("_n") else "per product-unit") for c in flow_cols}
     fgroups = {c: ("identity" if c in fident else "inputs" if c.startswith("in_") else "outputs")
                for c in flow_cols}
-    return {"archetype": (IDENT + ["status"], arows),
+    return {"archetype": (IDENT, arows),
             "wide": out,
             "wide-flow": (flow_cols, frows, fgroups, funits),
             "application": app}

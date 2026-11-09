@@ -53,7 +53,7 @@ for pkg in ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemical
         for a in al:
             if a in own:
                 w = wide[a]
-                table.append(dict(band=b, archetype=a, label=w["label"], status=w["status"],
+                table.append(dict(band=b, archetype=a, label=w["label"], core=int(w["core-sourced"]),
                                   n=w["n-examples"], trl=w["trl"], unit=w["product-unit"],
                                   guesses=w["guesses"]))
     c = Counter(e["source-id"] for e in ex if e["archetype"] in own)
@@ -63,8 +63,8 @@ for pkg in ["breweries", "steel", "pulp-and-paper", "cement-and-lime", "chemical
                     cross=len(allarch - own), table=table, top=top,
                     n_sources=len(c), n_examples=sum(c.values()),
                     cross_families=dict(Counter(arch[a]["family"] for a in allarch - own)))
-tot = Counter(w["status"] for w in wide.values())
-out["_totals"] = dict(archetypes=len(wide), status=dict(tot), examples=len(ex),
+tot = Counter(int(w["core-sourced"]) for w in wide.values())
+out["_totals"] = dict(archetypes=len(wide), core=dict(sorted(tot.items())), examples=len(ex),
                       mapped=sum(1 for e in ex if e["archetype"] not in ("", "(none)")),
                       sources=len(src))
 json.dump(out, open(ROOT / "review-packages" / "scripts" / "sector-facts.json", "w", encoding="utf-8"), indent=1)

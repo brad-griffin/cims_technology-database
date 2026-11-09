@@ -17,7 +17,7 @@ archetypes,product-density-unit,identity,,Unit of product-density.
 archetypes,product-energy-content,identity,,"Energy content of the product (higher heating value), for converting between mass or volume and energy."
 archetypes,product-energy-content-unit,identity,,Unit of product-energy-content.
 archetypes,n-examples,identity,,Number of source examples mapped to the archetype.
-archetypes,status,identity,,quantified (at least one value from a source) or estimated (every value filled by a rule or a judgement).
+archetypes,core-sourced,identity,,"How many of the seven core model values (capex, fixed opex, variable opex, energy use, lifetime, annual output, CO2 emissions) come from a source, 0 to 7; the others are filled (identity, estimated, proxy or guess), not applicable, or missing."
 archetypes,sources,identity,,Short names of the sources behind the examples.
 archetypes,external-conversions,identity,,"Parameters whose pooled value rests on a conversion factor from outside the source (a heating value, a density, a process ratio, a pooled efficiency, or an assumption), as examples so converted / examples pooled. Those values are shaded as converted in the workbook (see readme). Which factors: archetype-parameter.csv (external-factors); how each example was converted: example-parameter.csv (conversion, conversion-class, conversion-factors)."
 archetypes,source-corrections,identity,,"Parameters whose pooled value includes a figure the source prints wrongly and the modeller corrected (a slipped decimal or zero, a wrong unit or carrier label), as examples so corrected / examples pooled. Each correction, the figure as printed, and the evidence: records/reference/source-correction.csv; the rows carry the correction-id in example-parameter.csv (correction) and a note starting ASSUMED CORRECTION. These values are also counted in external-conversions and shaded as converted in the workbook (see readme)."
@@ -59,19 +59,6 @@ archetypes,specific-energy-consumption,technical,GJ/product-unit,"Total final en
 archetypes,specific-energy-consumption_low,technical,GJ/product-unit,"Lowest value any example gives for specific-energy-consumption (for a filled value, the low end of the fill)."
 archetypes,specific-energy-consumption_high,technical,GJ/product-unit,"Highest value any example gives for specific-energy-consumption (for a filled value, the high end of the fill)."
 archetypes,specific-energy-consumption_n,technical,,Number of examples pooled into specific-energy-consumption; 0 for a filled value.
-archetypes,heat-output-temp,technical,degC,"Temperature of the heat an archetype meant to supply heat delivers (steam, hot water, hot gas or thermal oil): heat supply, boilers, and archetypes with heat or steam among their products. Not a heating surface or a turbine exhaust. Low and high also span the minimum and maximum temperatures sources give (heat-output-temp-min, heat-output-temp-max)."
-archetypes,heat-output-temp_low,technical,degC,"Lowest value any example gives for heat-output-temp (for a filled value, the low end of the fill)."
-archetypes,heat-output-temp_high,technical,degC,"Highest value any example gives for heat-output-temp (for a filled value, the high end of the fill)."
-archetypes,heat-output-temp_n,technical,,Number of examples pooled into heat-output-temp; 0 for a filled value.
-archetypes,heat-process-tier,identity,,"Temperature band of the process heat the archetype uses, raises or supplies: low-temp below 150 degC, medium-temp 150-400 degC, high-temp above 400 degC; several when the process spans bands; not-applicable when it uses no process heat (shaft work, transport, cooling, lighting). Follows heat-process-temp where the sources give one."
-archetypes,heat-process-temp,technical,degC,"Temperature the process needs to achieve its end use (kiln sintering, bath, reactor, cooking or drying temperature); not the temperature of the heating side (flame, flue gas, heating surface, tube wall, steam or hot gas supplied). Sets heat-process-tier where it exists. Low and high also span the minimum and maximum temperatures sources give (heat-process-temp-min, heat-process-temp-max)."
-archetypes,heat-process-temp_low,technical,degC,"Lowest value any example gives for heat-process-temp (for a filled value, the low end of the fill)."
-archetypes,heat-process-temp_high,technical,degC,"Highest value any example gives for heat-process-temp (for a filled value, the high end of the fill)."
-archetypes,heat-process-temp_n,technical,,Number of examples pooled into heat-process-temp; 0 for a filled value.
-archetypes,heat-waste-temp,technical,degC,"Temperature of a heat stream leaving the archetype that waste-heat recovery could use (exhaust, flue gas, stack gas, exhaust air, engine coolant, condenser heat); every stream pooled as one, the stream named in the example row. Low and high also span the minimum and maximum temperatures sources give (heat-waste-temp-min, heat-waste-temp-max)."
-archetypes,heat-waste-temp_low,technical,degC,"Lowest value any example gives for heat-waste-temp (for a filled value, the low end of the fill)."
-archetypes,heat-waste-temp_high,technical,degC,"Highest value any example gives for heat-waste-temp (for a filled value, the high end of the fill)."
-archetypes,heat-waste-temp_n,technical,,Number of examples pooled into heat-waste-temp; 0 for a filled value.
 archetypes,pressure-output,technical,bar,Pressure of delivered steam. Record the source's own unit.
 archetypes,pressure-output_low,technical,bar,"Lowest value any example gives for pressure-output (for a filled value, the low end of the fill)."
 archetypes,pressure-output_high,technical,bar,"Highest value any example gives for pressure-output (for a filled value, the high end of the fill)."
@@ -368,3 +355,22 @@ carriers-species,specific-energy-consumption_waste-heat,technical,GJ/product-uni
 carriers-species,specific-energy-consumption_waste-heat_low,technical,GJ/product-unit,"Lowest value any example gives for specific-energy-consumption_waste-heat (for a filled value, the low end of the fill)."
 carriers-species,specific-energy-consumption_waste-heat_high,technical,GJ/product-unit,"Highest value any example gives for specific-energy-consumption_waste-heat (for a filled value, the high end of the fill)."
 carriers-species,specific-energy-consumption_waste-heat_n,technical,,Number of examples pooled into specific-energy-consumption_waste-heat; 0 for a filled value.
+heat,archetype,identity,,"Identifier: the equipment, then what sets the option apart, then any modifiers, joined by underscores."
+heat,label,identity,,Plain-language name of the archetype.
+heat,product-unit,identity,,The unit of output every cost and intensity is per.
+heat,product,identity,,The main product or service the product-unit counts.
+heat,heat-process-tier,technical,,"Temperature band of the heat the process needs: low-temp below 150 degC, medium-temp 150-400 degC, high-temp above 400 degC; several when the process spans bands; not-applicable when it uses no process heat (shaft work, transport, cooling, lighting) or only supplies heat. Follows heat-process-temp where the sources give one."
+heat,heat-process-temp,technical,degC,"Temperature the process needs to achieve its end use (kiln sintering, bath, reactor, cooking or drying temperature); not the temperature of the heating side (flame, flue gas, heating surface, tube wall, steam or hot gas supplied). Sets heat-process-tier where it exists. Low and high also span the minimum and maximum temperatures sources give (heat-process-temp-min, heat-process-temp-max)."
+heat,heat-process-temp_low,technical,degC,"Lowest value any example gives for heat-process-temp (for a filled value, the low end of the fill)."
+heat,heat-process-temp_high,technical,degC,"Highest value any example gives for heat-process-temp (for a filled value, the high end of the fill)."
+heat,heat-process-temp_n,technical,,Number of examples pooled into heat-process-temp; 0 for a filled value.
+heat,heat-output-tier,technical,,"Temperature band of the heat an archetype meant to supply heat delivers (heat supply, boilers, archetypes with heat or steam among their products); not-applicable for every other archetype. Covers every band heat-output-temp spans where the sources give one."
+heat,heat-output-temp,technical,degC,"Temperature of the heat an archetype meant to supply heat delivers (steam, hot water, hot gas or thermal oil): heat supply, boilers, and archetypes with heat or steam among their products. Not a heating surface or a turbine exhaust. Low and high also span the minimum and maximum temperatures sources give (heat-output-temp-min, heat-output-temp-max)."
+heat,heat-output-temp_low,technical,degC,"Lowest value any example gives for heat-output-temp (for a filled value, the low end of the fill)."
+heat,heat-output-temp_high,technical,degC,"Highest value any example gives for heat-output-temp (for a filled value, the high end of the fill)."
+heat,heat-output-temp_n,technical,,Number of examples pooled into heat-output-temp; 0 for a filled value.
+heat,heat-waste-tier,technical,,"Temperature band of the main stream leaving the archetype that waste-heat recovery could use (exhaust, flue gas, cooler air, cooling water, condenser heat), after the recovery the equipment itself includes; not-applicable when there is none. Follows heat-waste-temp where the sources give one."
+heat,heat-waste-temp,technical,degC,"Temperature of a heat stream leaving the archetype that waste-heat recovery could use (exhaust, flue gas, stack gas, exhaust air, engine coolant, condenser heat); every stream pooled as one, the stream named in the example row. Low and high also span the minimum and maximum temperatures sources give (heat-waste-temp-min, heat-waste-temp-max)."
+heat,heat-waste-temp_low,technical,degC,"Lowest value any example gives for heat-waste-temp (for a filled value, the low end of the fill)."
+heat,heat-waste-temp_high,technical,degC,"Highest value any example gives for heat-waste-temp (for a filled value, the high end of the fill)."
+heat,heat-waste-temp_n,technical,,Number of examples pooled into heat-waste-temp; 0 for a filled value.

@@ -16,8 +16,9 @@ BODY = [('h1', '1. What the database is'),
   'It counts **Scope 1 GHG only**: purchased electricity is an energy input, priced by the model, not by the '
   'database.'),
  ('lead_totals',
-  'This build holds {archetypes} archetypes ({quantified} with values pooled from sources, {estimated} with '
-  'filled values only), drawn from {mapped:,} source examples. The database has three layers:'),
+  'This build holds {archetypes} archetypes, drawn from {mapped:,} source examples; {with_core} of them have at '
+  'least one of the seven core model values from a source, and {full} have all seven. The database has three '
+  'layers:'),
  ('table',
   [2000, 4000, 3360],
   ['Layer', 'What it holds', 'Rule'],
@@ -312,12 +313,18 @@ BODY = [('h1', '1. What the database is'),
    'are grouped beside it and folded when the workbook opens. Use the + above a column to show them.',
    '**Read the shading** (section 5) for how certain a value is, and the `filled` column for which '
    'parameters were filled and how. `sources` lists every source behind the row.',
-   '**Check status.** `quantified` means at least one value came from examples; `estimated` means every '
-   'value was filled. `n-examples` counts the examples behind the archetype.',
+   '**Check `core-sourced`.** It counts how many of the seven core model values (capital cost, fixed and '
+   'variable operating cost, energy use, lifetime, annual output, and CO2 emissions) come from sources, 0 to 7; '
+   'the rest are filled, not applicable, or missing. `n-examples` counts the examples behind the archetype.',
    '**Energy use by carrier, emissions by species, and feedstocks** are on the `energy`, `emissions`, and '
    '`feedstocks` sheets, for the same rows as the `archetypes` sheet. The carriers on the energy sheet are '
    "one example's shares of the pooled total and add up to it; `fuel` is the sum of the named "
    'fuels beside it, so add the named fuels or `fuel`, not both.',
+   '**Heat** is on the `heat` sheet: the heat the process needs, the heat the archetype delivers if it is '
+   'meant to supply heat, and the heat it rejects that waste-heat recovery could use. Each has a tier on '
+   'every archetype (low-temp below 150 °C, medium-temp 150–400 °C, high-temp above 400 °C, or not '
+   'applicable) and a temperature where the sources give one. A tier that follows a sourced temperature is '
+   'shaded as sourced; a judgement is shaded as a guess.',
    '**Some end uses restate an archetype in another unit** (per GJ of process heat, hydrogen per tonne, '
    "liquid fuels per m3). The `filled` column names the factor; the long tables keep the archetype's own "
    'unit.',
@@ -327,8 +334,9 @@ BODY = [('h1', '1. What the database is'),
 
 def build(path, facts):
     t = facts["_totals"]
-    body = [("lead", b[1].format(archetypes=t["archetypes"], quantified=t["status"]["quantified"],
-                                 estimated=t["status"]["estimated"], mapped=t["mapped"]))
+    core = {int(k): v for k, v in t["core"].items()}
+    body = [("lead", b[1].format(archetypes=t["archetypes"], mapped=t["mapped"],
+                                 with_core=sum(v for k, v in core.items() if k > 0), full=core.get(7, 0)))
             if b[0] == "lead_totals" else b for b in BODY]
     doc = make_doc(TITLE, SUBTITLE, "Methodology summary")
     render(doc, body)

@@ -235,7 +235,7 @@ def main(argv) -> int:
     print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
     td = roll_in.tier_disagreements(psum, rec)
     if td:
-        print(f"  heat-process-tier against heat-process-temp: {len(td)} to correct in "
+        print(f"  heat tiers against their temperatures: {len(td)} to correct in "
               f"archetype.csv: " + "; ".join(td))
     # a carrier another example names but the archetype's split leaves out (S160,
     # 2026-10-27): listed for the modeller to add by hand (a judgement or an
@@ -415,12 +415,20 @@ def main(argv) -> int:
     banded = {"archetypes": (wa[0], wa_rows) + wa[2:4] + ("_family", "_sub",
                              "One row per archetype in each end use it serves. Capacity is in the unit named "
                              "in capacity-unit; energy by carrier, emissions by species, and feedstocks are on "
-                             "the energy, emissions, and feedstocks sheets.")}
+                             "the energy, emissions, and feedstocks sheets; heat tiers and temperatures on the heat sheet.")}
     for name, (pre, banner) in SPLIT.items():
         banded[name] = (ident + [c for c in wc[0] if c.startswith(pre)], wc_rows) + wc[2:4] + (
             "_family", "_sub", banner)
+    wh = W["wide-heat"]
+    banded["heat"] = (wh[0], bands.expand(wh[1], rec, wh[3], wa[1])) + wh[2:4] + (
+        "_family", "_sub",
+        "The heat each archetype's process needs, the heat it delivers if it is meant to supply heat, and "
+        "the heat it rejects that waste-heat recovery could use, for the same rows as the archetypes sheet. "
+        "Each has a tier on every archetype and a temperature where the sources give one; a tier from a "
+        "sourced temperature is shaded as sourced, a judgement as a guess.")
     banded["source-list"] = (sources.COLS, src_band, {}, {}, "_band", "", "The sources, by the family they inform.")
-    sheet_of = {"archetypes": "wide-archetype", **{n: "wide-carriers-species" for n in SPLIT}}
+    sheet_of = {"archetypes": "wide-archetype", **{n: "wide-carriers-species" for n in SPLIT},
+                "heat": "wide-heat"}
     print("  " + workbook.write_book(
         banded, {},
         {**fam, "": "(not tied to one family)"},
@@ -429,9 +437,9 @@ def main(argv) -> int:
         {n: W[k][6] for n, k in sheet_of.items()},
         grouped=set(sheet_of),
         band_notes=bands.FAMILY_NOTE))
-    q = Counter(a["status"] for a in arows)
-    print(f"\ndone: {len(arows)} archetypes ({q['quantified']} quantified, {q['named']} named, "
-          f"{q['estimated']} estimated only, {q['not pooled']} with numbers none of which could be pooled, {q['gap']} gaps); wide view {len(wrows)} rows x {len(wcols)} columns "
+    q = Counter(a["core-sourced"] for a in arows)
+    print(f"\ndone: {len(arows)} archetypes (core values sourced: "
+          + ", ".join(f"{n} of 7: {q[n]}" for n in range(7, -1, -1)) + f"); wide view {len(wrows)} rows x {len(wcols)} columns "
           f"(carriers-species {len(W['wide-carriers-species'][0])}, secondary {len(W['wide-secondary-parameter'][0])} columns)")
     return 0
 

@@ -34,8 +34,10 @@ blast-furnace_ccs-diffuse,Ironmaking: iron (t)
 blast-furnace_efficiency-moderate,Ironmaking: iron (t)
 blast-furnace_efficiency-strong,Ironmaking: iron (t)
 blast-furnace_top-gas-recycling,Ironmaking: iron (t)
+boiler_electric,"Heat, high temperature (> 400 degC)"
 boiler_electric,"Heat, low temperature (< 150 degC)"
 boiler_electric,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired,"Heat, high temperature (> 400 degC)"
 boiler_fuel-fired,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired,"Heat, medium temperature (150-400 degC)"
 boiler_fuel-fired_ccs-diffuse,"Heat, low temperature (< 150 degC)"
@@ -47,6 +49,7 @@ boiler_oxy-fuel,"Heat, medium temperature (150-400 degC)"
 boiler_recovery,Black liquor evaporation and recovery
 boiler_recovery-high-solids,Black liquor evaporation and recovery
 boiler_recovery_ccs-diffuse,Black liquor evaporation and recovery
+boiler_solid-fuel,"Heat, high temperature (> 400 degC)"
 boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
 boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
 calciner_clay-flash,Calcined clay
@@ -263,6 +266,7 @@ gasifier_coal-petroleum-coke,On-site hydrogen production
 gasifier_coal-petroleum-coke_ccs-concentrated,Centralized hydrogen production
 geothermal-well_binary-power,On-site power-only generation
 geothermal-well_direct-use,"Heat, low temperature (< 150 degC)"
+geothermal-well_direct-use,"Heat, medium temperature (150-400 degC)"
 geothermal-well_flash-power,On-site power-only generation
 grinding-mill_ball,Cement grinding
 grinding-mill_hpgr,Crushing and grinding
@@ -285,7 +289,9 @@ heat-pump_heat-transformer,"Heat, low temperature (< 150 degC)"
 heat-pump_heat-transformer,"Heat, medium temperature (150-400 degC)"
 heat-pump_hvac,HVAC heating
 heat-pump_industrial,"Heat, low temperature (< 150 degC)"
+heat-pump_industrial,"Heat, medium temperature (150-400 degC)"
 heat-pump_oil-treating,Conventional oil and gas production
+heat-pump_very-high-temperature,"Heat, low temperature (< 150 degC)"
 heat-pump_very-high-temperature,"Heat, medium temperature (150-400 degC)"
 heat-recovery-unit_waste-heat,"Heat, low temperature (< 150 degC)"
 heat-recovery-unit_waste-heat,"Heat, medium temperature (150-400 degC)"
@@ -560,8 +566,12 @@ smelting-vessel_smelting-reduction,Ironmaking: iron (t)
 smelting-vessel_smelting-reduction_ccs-concentrated,Ironmaking: iron (t)
 smelting-vessel_top-submerged-lance,"Fuel-fired roasting, smelting and refining: metal (t)"
 solar-collector,"Heat, low temperature (< 150 degC)"
+solar-collector,"Heat, medium temperature (150-400 degC)"
+solar-concentrator_line-focus,"Heat, high temperature (> 400 degC)"
+solar-concentrator_line-focus,"Heat, low temperature (< 150 degC)"
 solar-concentrator_line-focus,"Heat, medium temperature (150-400 degC)"
 solar-concentrator_point-focus,"Heat, high temperature (> 400 degC)"
+solar-concentrator_point-focus,"Heat, medium temperature (150-400 degC)"
 steam-cracker_catalytic-naphtha,Olefins (high-value chemicals)
 steam-cracker_electric,Olefins (high-value chemicals)
 steam-cracker_fired-tubular,Olefins (high-value chemicals)
@@ -591,6 +601,7 @@ steam-turbine_drive,steam-turbine
 steam-turbine_waste-heat,On-site power-only generation
 storage-cavern_hydrogen,(no connection)
 thermal-storage_electric,"Heat, high temperature (> 400 degC)"
+thermal-storage_electric,"Heat, low temperature (< 150 degC)"
 thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
 thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"
 transesterification-unit_acid-catalyzed,Biodiesel production

@@ -58,12 +58,12 @@ def guide(outdir, key, facts):
     if whole:
         files = [["reviewer-guide_whole-database.docx", "This guide."],
                  ["methodology-summary.docx", "How the database is built and how to read it."],
-                 ["wide-view_whole-database.xlsx", f"The database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, feedstocks, and sources, and a column legend."]]
+                 ["wide-view_whole-database.xlsx", f"The database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, feedstocks, heat, and sources, and a column legend."]]
     else:
         files = [[f"reviewer-guide_{key}.docx", "This guide."],
                  ["methodology-summary.docx", "How the database is built and how to read it."],
                  [f"sector-note_{key}.docx", f"The {lname} archetypes, their main sources, and the judgement calls we most want you to test."],
-                 [f"wide-view_{key}.xlsx", f"The {lname} part of the database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, and feedstocks, and a column legend."]]
+                 [f"wide-view_{key}.xlsx", f"The {lname} part of the database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, feedstocks, and heat, and a column legend."]]
     # Out of scope appears only where a sector has its own exclusion (user edit 2026-11-05).
     out_of_scope = [EXTRA_OUT_OF_SCOPE[key]] if key in EXTRA_OUT_OF_SCOPE else []
     sec = iter(range(3, 9))

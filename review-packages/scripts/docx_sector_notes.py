@@ -588,8 +588,7 @@ def build(outdir, facts):
         rows, prev = [], None
         for r in f["table"]:
             rows.append(["" if r["band"] == prev else r["band"], "`" + r["archetype"] + "`",
-                         r["label"] + (" (filled only)" if r["status"] == "estimated" else ""),
-                         example_for(r["archetype"], key), r["n"], r["trl"]])
+                         r["label"], example_for(r["archetype"], key), r["n"], f"{r['core']} of 7", r["trl"]])
             prev = r["band"]
         body = [
             ("p", "This note lists the sector's archetypes, the sources behind them, and the judgement calls we "
@@ -606,10 +605,12 @@ def build(outdir, facts):
                      "table runs from conventional technologies to efficient variants, capture variants, and "
                      "then low-carbon alternatives and prospective options. \"Real-life examples\" names plants, "
                      "technologies, or measures that the archetype represents. \"Source examples\" counts the "
-                     "examples from published sources behind it; an archetype marked \"filled only\" has no "
-                     "sourced values, so every value is estimated."),
-            ("table", [1250, 1950, 1650, 2160, 1050, 1300],
-             ["Step", "Archetype", "Label", "Real-life examples", "Source examples", "Readiness level"], rows),
+                     "examples from published sources behind it, and \"Core values sourced\" how many of the seven "
+                     "core model values (capital cost, fixed and variable operating cost, energy use, "
+                     "lifetime, annual output, and CO2 emissions) come from them; the others are filled."),
+            ("table", [1150, 1800, 1500, 1960, 950, 1000, 1000],
+             ["Step", "Archetype", "Label", "Real-life examples", "Source examples", "Core values sourced",
+              "Readiness level"], rows),
             ("h1", "3. Main sources"),
             ("lead", f"{f['n_sources']} sources supply the {f['n_examples']} examples behind the {adj} archetypes. "
                      "The ten that supply the most:"),

@@ -9,7 +9,7 @@ Cross-sector end uses (heat tiers, CO2 capture) stay in the archetype's own
 family. Repeats are not styled differently (modeller 2026-10-09). `families()`
 gives the derived families column.
 
-  * heat supply: the sub-bands are the heat tiers in the archetype's `heat-process-tier`
+  * heat supply: the sub-bands are the heat tiers in the archetype's `heat-output-tier`
     column (the shared steam node carries only the first tier on the service
     record), plus any other end use it serves;
   * machine drive: kept by equipment in its own band, because most drives serve
@@ -262,7 +262,7 @@ def _products_by_end_use(records, eus) -> dict[str, set]:
     for a in records.archetypes:
         ids = list(eus.get(a["archetype"], []))
         if a.get("family") == "heat-supply":
-            ids += [TIER[t.strip()] for t in (a.get("heat-process-tier") or "").split(";") if t.strip() in TIER]
+            ids += [TIER[t.strip()] for t in (a.get("heat-output-tier") or "").split(";") if t.strip() in TIER]
         for e in ids:
             o = override_for(ov, disp, a["archetype"], e, a)
             out[e].add(_product({"product": o["product"], "product-unit": o["product-unit"]} if o else a))
@@ -333,7 +333,7 @@ def expand(rows: list[dict], records, units: dict | None = None,
         else:
             ids = list(eus.get(k, []))
             if f == "heat-supply":
-                tiers = [TIER[t.strip()] for t in (r.get("heat-process-tier") or "").split(";") if t.strip() in TIER]
+                tiers = [TIER[t.strip()] for t in (r.get("heat-output-tier") or "").split(";") if t.strip() in TIER]
                 ids = tiers + [e for e in ids if e not in TIER.values()] if tiers else ids
             seen, placed = set(), []
             for e in ids:

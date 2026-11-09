@@ -2,8 +2,10 @@ archetype,band
 adsorber_pressure-swing,"CO2 capture, concentrated streams"
 autothermal-reformer_ammonia,Ammonia
 autothermal-reformer_ammonia_ccs-concentrated,Ammonia
+boiler_electric,"Heat, high temperature (> 400 degC)"
 boiler_electric,"Heat, low temperature (< 150 degC)"
 boiler_electric,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired,"Heat, high temperature (> 400 degC)"
 boiler_fuel-fired,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired,"Heat, medium temperature (150-400 degC)"
 boiler_fuel-fired_ccs-diffuse,"Heat, low temperature (< 150 degC)"
@@ -12,6 +14,7 @@ boiler_fuel-fired_efficiency-moderate,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired_efficiency-moderate,"Heat, medium temperature (150-400 degC)"
 boiler_oxy-fuel,"Heat, low temperature (< 150 degC)"
 boiler_oxy-fuel,"Heat, medium temperature (150-400 degC)"
+boiler_solid-fuel,"Heat, high temperature (> 400 degC)"
 boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
 boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
 capture-unit_advanced-solvent,"CO2 capture, diffuse (dilute) streams"
@@ -48,10 +51,13 @@ gasifier_coal-ammonia,Ammonia
 gasifier_coal-methanol,Methanol
 gasifier_coal-methanol_ccs-concentrated,Methanol
 geothermal-well_direct-use,"Heat, low temperature (< 150 degC)"
+geothermal-well_direct-use,"Heat, medium temperature (150-400 degC)"
 heat-pump_heat-transformer,"Heat, low temperature (< 150 degC)"
 heat-pump_heat-transformer,"Heat, medium temperature (150-400 degC)"
 heat-pump_hvac,HVAC heating
 heat-pump_industrial,"Heat, low temperature (< 150 degC)"
+heat-pump_industrial,"Heat, medium temperature (150-400 degC)"
+heat-pump_very-high-temperature,"Heat, low temperature (< 150 degC)"
 heat-pump_very-high-temperature,"Heat, medium temperature (150-400 degC)"
 heat-recovery-unit_waste-heat,"Heat, low temperature (< 150 degC)"
 heat-recovery-unit_waste-heat,"Heat, medium temperature (150-400 degC)"
@@ -96,6 +102,9 @@ resistance-heater_hvac,HVAC heating
 separator_aromatics-extraction,Aromatics
 separator_aromatics-extraction_efficiency-moderate,Aromatics
 solar-collector,"Heat, low temperature (< 150 degC)"
+solar-collector,"Heat, medium temperature (150-400 degC)"
+solar-concentrator_line-focus,"Heat, high temperature (> 400 degC)"
+solar-concentrator_line-focus,"Heat, low temperature (< 150 degC)"
 solar-concentrator_line-focus,"Heat, medium temperature (150-400 degC)"
 steam-cracker_catalytic-naphtha,Olefins (high-value chemicals)
 steam-cracker_electric,Olefins (high-value chemicals)
@@ -112,6 +121,7 @@ steam-turbine_back-pressure,"Heat, low temperature (< 150 degC)"
 steam-turbine_back-pressure,"Heat, medium temperature (150-400 degC)"
 steam-turbine_back-pressure_ccs-diffuse,"Heat, low temperature (< 150 degC)"
 steam-turbine_drive,steam-turbine
+thermal-storage_electric,"Heat, low temperature (< 150 degC)"
 thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
 thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"
 vapour-recompressor_evaporation,Chlor-alkali and sodium chlorate: water evaporated (t)

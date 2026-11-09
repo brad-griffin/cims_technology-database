@@ -1,8 +1,10 @@
 archetype,band
 anaerobic-digester_chp,"Heat, low temperature (< 150 degC)"
 anaerobic-digester_effluent,Effluent treatment
+boiler_electric,"Heat, high temperature (> 400 degC)"
 boiler_electric,"Heat, low temperature (< 150 degC)"
 boiler_electric,"Heat, medium temperature (150-400 degC)"
+boiler_fuel-fired,"Heat, high temperature (> 400 degC)"
 boiler_fuel-fired,"Heat, low temperature (< 150 degC)"
 boiler_fuel-fired,"Heat, medium temperature (150-400 degC)"
 boiler_fuel-fired_ccs-diffuse,"Heat, low temperature (< 150 degC)"
@@ -14,6 +16,7 @@ boiler_oxy-fuel,"Heat, medium temperature (150-400 degC)"
 boiler_recovery,Black liquor evaporation and recovery
 boiler_recovery-high-solids,Black liquor evaporation and recovery
 boiler_recovery_ccs-diffuse,Black liquor evaporation and recovery
+boiler_solid-fuel,"Heat, high temperature (> 400 degC)"
 boiler_solid-fuel,"Heat, low temperature (< 150 degC)"
 boiler_solid-fuel,"Heat, medium temperature (150-400 degC)"
 capture-unit_advanced-solvent,"CO2 capture, diffuse (dilute) streams"
@@ -51,10 +54,13 @@ gasifier_biomass-chp,"Heat, low temperature (< 150 degC)"
 gasifier_biomass-chp,"Heat, medium temperature (150-400 degC)"
 gasifier_black-liquor,Black liquor evaporation and recovery
 geothermal-well_direct-use,"Heat, low temperature (< 150 degC)"
+geothermal-well_direct-use,"Heat, medium temperature (150-400 degC)"
 heat-pump_heat-transformer,"Heat, low temperature (< 150 degC)"
 heat-pump_heat-transformer,"Heat, medium temperature (150-400 degC)"
 heat-pump_hvac,HVAC heating
 heat-pump_industrial,"Heat, low temperature (< 150 degC)"
+heat-pump_industrial,"Heat, medium temperature (150-400 degC)"
+heat-pump_very-high-temperature,"Heat, low temperature (< 150 degC)"
 heat-pump_very-high-temperature,"Heat, medium temperature (150-400 degC)"
 heat-recovery-unit_waste-heat,"Heat, low temperature (< 150 degC)"
 heat-recovery-unit_waste-heat,"Heat, medium temperature (150-400 degC)"
@@ -96,11 +102,15 @@ resistance-heater_hvac,HVAC heating
 separator_clarifier,Effluent treatment
 separator_membrane-bioreactor,Effluent treatment
 solar-collector,"Heat, low temperature (< 150 degC)"
+solar-collector,"Heat, medium temperature (150-400 degC)"
+solar-concentrator_line-focus,"Heat, high temperature (> 400 degC)"
+solar-concentrator_line-focus,"Heat, low temperature (< 150 degC)"
 solar-concentrator_line-focus,"Heat, medium temperature (150-400 degC)"
 steam-turbine_back-pressure,"Heat, low temperature (< 150 degC)"
 steam-turbine_back-pressure,"Heat, medium temperature (150-400 degC)"
 steam-turbine_back-pressure_ccs-diffuse,"Heat, low temperature (< 150 degC)"
 steam-turbine_drive,steam-turbine
+thermal-storage_electric,"Heat, low temperature (< 150 degC)"
 thermal-storage_electric,"Heat, medium temperature (150-400 degC)"
 thermal-storage_heat-charged,"Heat, low temperature (< 150 degC)"
 vapour-recompressor_evaporation,Black liquor evaporation and recovery

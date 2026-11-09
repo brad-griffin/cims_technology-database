@@ -110,21 +110,40 @@ def tier_of(temp: float) -> int:
     return 0 if temp < 150 else 1 if temp <= 400 else 2
 
 
+# each heat tier and the temperature that decides it where one is sourced
+TIER_TEMP = {"heat-process-tier": "heat-process-temp", "heat-output-tier": "heat-output-temp",
+             "heat-waste-tier": "heat-waste-temp"}
+
+
+def tier_from(s) -> str:
+    """The tiers a temperature summary spans (central, low and high)."""
+    vals = [float(s[x]) for x in ("central", "low", "high") if s.get(x) not in (None, "")]
+    if not vals:
+        return ""
+    return "; ".join(TIERS[tier_of(min(vals)):tier_of(max(vals)) + 1])
+
+
 def tier_disagreements(psum, rec) -> list[str]:
-    """Archetypes whose heat-process-tier differs from the tiers their heat-process-temp
-    spans (central, low and high). Temperature decides (Brad 2026-11-09): the record is
-    corrected by hand, never by the pipeline."""
+    """Archetypes whose recorded heat tier differs from the tiers the matching
+    temperature spans (for the output tier: does not cover them). Temperature decides (Brad 2026-11-09): the record is corrected
+    by hand, never by the pipeline."""
+    temp_tier = {v: k for k, v in TIER_TEMP.items()}
     out = []
     for s in psum:
-        if s["parameter"] != "heat-process-temp" or s.get("target"):
+        col = temp_tier.get(s["parameter"])
+        if not col or s.get("target"):
             continue
-        vals = [float(s[x]) for x in ("central", "low", "high") if s.get(x) not in (None, "")]
         a = rec.by_key.get(s["archetype"])
-        if not vals or not a:
+        want = tier_from(s)
+        if not want or not a:
             continue
-        want = "; ".join(TIERS[tier_of(min(vals)):tier_of(max(vals)) + 1])
-        have = "; ".join(t for t in TIERS if t in (a.get("heat-process-tier") or ""))
-        if want != have:
-            out.append(f"{s['archetype']}: {a.get('heat-process-tier')} (temperature says {want})")
+        have = "; ".join(t for t in TIERS if t in (a.get(col) or ""))
+        if col == "heat-output-tier":
+            # sources often print only a supplier's maximum: the recorded output tiers
+            # must cover what the sources give, and may reach further
+            bad = not set(want.split("; ")) <= set(have.split("; "))
+        else:
+            bad = want != have
+        if bad:
+            out.append(f"{s['archetype']} {col}: {a.get(col)} (temperature says {want})")
     return out
-

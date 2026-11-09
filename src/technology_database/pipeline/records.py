@@ -18,6 +18,11 @@ from collections import Counter, defaultdict
 from .common import RECORDS, REFERENCE, VOCAB, read, split_list
 
 
+
+# the three heat tiers (Brad 2026-11-09): the heat the process needs, the heat an
+# archetype meant to supply heat delivers, and the heat it rejects that could be recovered
+HEAT_TIERS = ("heat-process-tier", "heat-output-tier", "heat-waste-tier")
+
 class Records:
     def __init__(self):
         self.archetypes = read(RECORDS / "archetype.csv")
@@ -78,12 +83,13 @@ class Records:
             for c in split_list(a["carriers"]):
                 if c not in self.carriers:
                     fail["carrier not in vocabulary/carrier.csv"].append(f"{k}: {c}")
-            tiers = split_list(a.get("heat-process-tier", ""))
-            if not tiers:
-                fail["archetype with no heat-process-tier"].append(k)
-            elif any(t not in self.lists["heat-process-tier"] for t in tiers) or (
-                    "not-applicable" in tiers and len(tiers) > 1):
-                fail["heat-process-tier not in lists.csv"].append(f"{k}: {a['heat-process-tier']}")
+            for col in HEAT_TIERS:
+                tiers = split_list(a.get(col, ""))
+                if not tiers:
+                    fail[f"archetype with no {col}"].append(k)
+                elif any(t not in self.lists["heat-tier"] for t in tiers) or (
+                        "not-applicable" in tiers and len(tiers) > 1):
+                    fail[f"{col} not in lists.csv (heat-tier)"].append(f"{k}: {a[col]}")
             if not a.get("product-unit"):
                 fail["archetype with no product-unit"].append(k)
             serves = any(s["archetype"] == k for s in self.service)

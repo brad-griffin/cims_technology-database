@@ -1,0 +1,554 @@
+﻿archetype,family,heat-process-tier-was,heat-process-tier,process-basis,heat-output-tier,output-basis,heat-waste-tier,waste-basis
+adsorber_direct-lithium,mining,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+adsorber_molecular-sieve,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,"regeneration gas, about 230-290 degC"
+adsorber_pressure-swing,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+air-separation-unit,iron-and-steel,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+anaerobic-digester,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+anaerobic-digester_biomethane-upgrading,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+anaerobic-digester_chp,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),low-temp; high-temp,engine coolant and exhaust
+anaerobic-digester_effluent,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+annealing-furnace_batch-bell,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+annealing-furnace_continuous,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+annealing-furnace_hydrogen-bell,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+autothermal-reformer_ammonia,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+autothermal-reformer_ammonia_ccs-concentrated,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+autothermal-reformer_hydrogen,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+autothermal-reformer_hydrogen_ccs-concentrated,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+basic-oxygen-furnace,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+basic-oxygen-furnace_efficiency-strong,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+binder_alkali-activated,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+binder_blended-cement,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+binder_calcined-clay,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,calciner exhaust
+binder_carbonated,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,kiln exhaust after the preheater
+binder_electrochemical,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+binder_hydrothermal-silicate,cement-and-lime,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,autoclave flash steam
+binder_portland-cement,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+binder_sulphoaluminate,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,kiln exhaust after the preheater
+blast-furnace,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+blast-furnace_biogenic-carbon,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+blast-furnace_ccs-diffuse,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+blast-furnace_efficiency-moderate,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+blast-furnace_efficiency-strong,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+blast-furnace_top-gas-recycling,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,top gas and hot-stove flue gas at about 150-350 degC
+boiler_electric,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no flue gas
+boiler_fuel-fired,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_fuel-fired_ccs-diffuse,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_fuel-fired_efficiency-moderate,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_oxy-fuel,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_recovery,pulp-and-paper,high-temp,high-temp,,high-temp,"recovery-boiler steam, about 460-520 degC",low-temp; medium-temp,"recovery-boiler flue gas after the economizer, about 150-200 degC"
+boiler_recovery-high-solids,pulp-and-paper,high-temp,high-temp,,high-temp,"recovery-boiler steam, about 460-520 degC",low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_recovery_ccs-diffuse,pulp-and-paper,high-temp,high-temp,,high-temp,"recovery-boiler steam, about 460-520 degC",low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+boiler_solid-fuel,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_clay-flash,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_electric,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_gas-suspension,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_gas-suspension_ccs-diffuse,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_hydrogen-fired,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+calciner_indirect,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"CO2 from the calcination tube, about 900 degC"
+capture-unit_advanced-solvent,co2-capture,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+capture-unit_amine,co2-capture,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+capture-unit_calcium-looping,co2-capture,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"calciner CO2 and carbonator, about 650-900 degC"
+capture-unit_chemical-solvent,co2-capture,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+capture-unit_cryogenic-condensation,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,compressor intercooling
+capture-unit_dac-liquid-solvent,co2-capture,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"calciner CO2, about 900 degC"
+capture-unit_dac-solid-sorbent,co2-capture,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+capture-unit_membrane-cryogenic,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,compressor intercooling
+capture-unit_physical-solvent,co2-capture,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+caster_continuous,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"hot slab or billet, about 800-1000 degC (hot charging)"
+caster_ingot,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+caster_strip,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+chiller_absorption,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,absorber and condenser heat
+chiller_high-efficiency,food-and-beverage,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+chiller_hvac,space-conditioning,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+chiller_vapour-compression,food-and-beverage,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+cleaning-system,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+cleaning-system_efficiency-strong,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+coating-line_electrolytic,iron-and-steel,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+coating-line_hot-dip,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,furnace flue gas
+coke-oven_by-product,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+coke-oven_by-product_efficiency-moderate,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+coke-oven_by-product_efficiency-strong,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+coke-oven_heat-recovery,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+combined-cycle,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+combined-cycle_ccs-diffuse,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+combined-cycle_efficiency-moderate,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+combustion-turbine_chp,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),high-temp,off-gas above 400 degC
+combustion-turbine_chp_ccs-diffuse,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),high-temp,off-gas above 400 degC
+combustion-turbine_drive,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+combustion-turbine_drive_efficiency-moderate,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+combustion-turbine_oxy-fuel,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,CO2-cycle condenser
+combustion-turbine_simple-cycle,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+compressor_blowdown-recovery,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+compressor_co2-dehydration,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+compressor_electric,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+compressor_flare-gas-recovery,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+compressor_low-emission-seal,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+compressor_vapour-recovery,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+converter_continuous,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+converter_peirce-smith,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+conveyor_in-pit-crushing,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+cooling-tower_free-evaporative,space-conditioning,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+debarker_drum,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+digester_batch-kraft,pulp-and-paper,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+digester_bayer,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,medium-temp,"flash vapour, about 100-200 degC"
+digester_bayer_electric-heating,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,medium-temp,flash vapour
+digester_continuous-kraft,pulp-and-paper,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+digester_deep-eutectic-solvent,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+digester_semi-chemical,pulp-and-paper,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+digester_sulphite,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+direct-heater_electric,heat-supply,medium-temp; high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp; high-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no flue gas
+direct-heater_fuel-fired,heat-supply,low-temp; medium-temp; high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp; high-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_fuel-fired_efficiency-moderate,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_line-heater,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_refinery,heat-supply,medium-temp; high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp; high-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_refinery_ccs-diffuse,heat-supply,high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,high-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_refinery_efficiency-moderate,heat-supply,medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_solid-fuel,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+direct-heater_solid-fuel_efficiency-strong,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+distillation-column,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+distillation-column_atmospheric-vacuum,petroleum-refining,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"product rundown, pumparounds, and heater flue"
+distillation-column_atmospheric-vacuum_efficiency-strong,petroleum-refining,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,product rundown and heater flue
+distillation-column_heat-integrated,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+distillation-column_heat-pumped,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+distillery_beverage-spirits,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+drilling-rig_battery-hybrid,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+drilling-rig_diesel,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+drilling-rig_electric,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+dryer_ceramic-hot-air,glass-and-ceramics,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+dryer_direct-fired,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"exhaust gas, about 100-200 degC"
+dryer_direct-fired_efficiency-moderate,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,exhaust gas
+dryer_direct-fired_efficiency-strong,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,exhaust gas after recovery
+dryer_electric,glass-and-ceramics,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,humid exhaust air
+dryer_heat-pump,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,exhaust air recovered by the heat pump
+dryer_market-pulp,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+dryer_rotary-direct-fired,glass-and-ceramics,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,off-gas at about 120 degC
+dryer_solid-fuel,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,exhaust gas
+dryer_solid-fuel_efficiency-strong,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,exhaust gas after recovery
+dryer_steam-heated,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+dryer_steam-heated_efficiency-moderate,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+dryer_steam-heated_efficiency-strong,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+dryer_superheated-steam,other-industry,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,excess steam from the dryer
+dryer_through-air,pulp-and-paper,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electric-arc-furnace,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_reduced-iron-charge,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_scrap-preheating,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_smelting-open-arc-dc,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_smelting-submerged-arc,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+electrolysis-cell_advanced-anodes,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_chlor-alkali-diaphragm,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_chlor-alkali-membrane,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_chlor-alkali-mercury,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_electrolytic-smelting,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_electrorefining,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_inert-anode,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,pot exhaust gas
+electrolysis-cell_iron-electrowinning,iron-and-steel,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_magnesium-chloride,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,cell off-gas and molten-salt heat
+electrolysis-cell_molten-oxide,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas and cell heat above 1500 degC
+electrolysis-cell_multipolar-chloride,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,cell off-gas and molten-salt heat
+electrolysis-cell_oxygen-depolarized,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_prebaked-anode,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"pot exhaust gas, about 100-150 degC"
+electrolysis-cell_prebaked-anode_ccs-diffuse,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_soderberg,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"pot exhaust gas, about 100-150 degC"
+electrolysis-cell_sodium-chlorate,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolysis-cell_zinc-electrowinning,non-ferrous-metals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolyzer_low-temperature,petroleum-refining,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"stack cooling, about 60-80 degC"
+electrolyzer_low-temperature-central,hydrogen,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+electrolyzer_solid-oxide,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,outlet gases after the stack's own recuperation
+evaporator_caustic-soda,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+evaporator_crystallizer,mining,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+evaporator_crystallizer-produced-water,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+evaporator_food,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+evaporator_multiple-effect,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fan_activated-sludge,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fan_activated-sludge_efficiency-moderate,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fan_mine-ventilation,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fermenter_grain-dry-mill,biofuels,low-temp; high-temp,low-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fermenter_grain-dry-mill_ccs-concentrated,biofuels,low-temp; high-temp,low-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fermenter_grain-dry-mill_efficiency-moderate,biofuels,low-temp; high-temp,low-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fermenter_lignocellulosic-enzymatic,biofuels,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fermenter_syngas,biofuels,low-temp; high-temp,low-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+flare,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+flare_enclosed-combustor,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+flare_high-efficiency,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+flotation-cell_froth,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+flotation-cell_potash,mining,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+fracturing-fleet_diesel,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fracturing-fleet_dual-fuel,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fracturing-fleet_electric,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+fuel-cell_chp,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+furnace_anode-baking,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,"baking-furnace flue gas, about 200-300 degC"
+furnace_anode-baking-electric,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,furnace exhaust
+furnace_anode-baking_biogenic-carbon,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,baking-furnace flue gas
+furnace_electric,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,little flue gas; cooling water
+furnace_heat-treatment,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,flue gas
+furnace_homogenizing,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,flue gas after the recuperator
+furnace_hybrid-electric,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_hybrid-majority-electric,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reduced flue gas
+furnace_ladle-metallurgy,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,cooling water
+furnace_lehr,glass-and-ceramics,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,"cooling air, about 200-400 degC"
+furnace_lehr-electric,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,"cooling air, about 200-400 degC"
+furnace_oxy-fuel,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_oxy-fuel-thermochemical,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_regenerative,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"flue gas leaving the regenerators, about 450-500 degC"
+furnace_regenerative_ccs-diffuse,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_reheating,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_reheating_efficiency-moderate,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_reheating_efficiency-strong,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_rotary-hearth-direct-reduction,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+furnace_tempering,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,quench air
+gas-treatment-unit_acid-gas-advanced,petroleum-refining,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+gas-treatment-unit_amine-sweetening,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+gas-treatment-unit_amine-sweetening_ccs-concentrated,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+gas-treatment-unit_glycol-dehydration,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+gas-treatment-unit_sulphur-recovery,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,tail-gas incinerator flue and condensers
+gas-treatment-unit_thermal-oxidiser,chemicals,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,high-temp,oxidiser off-gas without recuperation
+gas-treatment-unit_vam-oxidiser,mining,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,exhaust air after the regenerative bed
+gasifier_biomass-ammonia,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-chp,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,engine coolant and exhaust after recovery
+gasifier_biomass-ethylene,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-fischer-tropsch,biofuels,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-fischer-tropsch_ccs-concentrated,biofuels,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-methanation,biofuels,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-methanol,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_biomass-waste,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_black-liquor,pulp-and-paper,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-ammonia,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-fischer-tropsch,oil-and-gas,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-methanation,oil-and-gas,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-methanol,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-methanol_ccs-concentrated,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-petroleum-coke,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+gasifier_coal-petroleum-coke_ccs-concentrated,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+geothermal-well_binary-power,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+geothermal-well_direct-use,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),low-temp,spent brine
+geothermal-well_flash-power,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+grinding-mill_ball,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+grinding-mill_hpgr,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+grinding-mill_sag-ball,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+grinding-mill_slag,cement-and-lime,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+grinding-mill_stirred,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+grinding-mill_vertical-roller,cement-and-lime,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+haul-truck_battery-electric,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+haul-truck_diesel,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+haul-truck_dual-fuel,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+haul-truck_hydrogen-fuel-cell,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+haul-truck_trolley-assist,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+heat-exchanger_aseptic-uht,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+heat-exchanger_steam-heated,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+heat-exchanger_steam-heated_efficiency-strong,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+heat-pump_heat-transformer,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+heat-pump_hvac,space-conditioning,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+heat-pump_industrial,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+heat-pump_oil-treating,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+heat-pump_very-high-temperature,heat-supply,medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+heat-recovery-unit_waste-heat,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp,exhaust after recovery
+hoist,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+hvac-heater_fuel-fired,space-conditioning,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+hvac-heater_fuel-fired_efficiency-moderate,space-conditioning,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+hvac-heater_fuel-fired_efficiency-strong,space-conditioning,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+incinerator_waste-to-energy,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+induction-heater_reheating,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+induction-heater_strip-heating,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+kiln_calcium-looping,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"CO2 from the calciner, about 900 degC"
+kiln_calcium-silicate-feed,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_ceramic-electric,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_ceramic-microwave-assisted,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_charcoal-retort,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,flue gas from burning the pyrolysis gas
+kiln_clay-calcination,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_dry-precalciner,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_dry-precalciner_ccs-diffuse,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_dry-precalciner_efficiency-moderate,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_dry-precalciner_efficiency-strong,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_electric-plasma,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_intermittent,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_legacy,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-electric,pulp-and-paper,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-long-rotary,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"kiln exit gas, about 600-900 degC"
+kiln_lime-oxy-fuel,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-rotary,pulp-and-paper,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-rotary-preheater,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-rotary-preheater_ccs-diffuse,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-rotary_efficiency-strong,pulp-and-paper,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_lime-shaft,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"shaft-kiln exhaust, about 100-250 degC"
+kiln_lumber-continuous,other-industry,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,humid exhaust air
+kiln_lumber-heat-pump,other-industry,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,humid exhaust air
+kiln_lumber-steam,other-industry,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,humid exhaust air
+kiln_oxy-fuel,cement-and-lime,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_rotary-expanded-clay,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_tunnel-roller,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+kiln_tunnel-roller_efficiency-strong,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+leaching-vessel_heap-atmospheric,mining,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+leaching-vessel_high-pressure-acid,mining,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,"autoclave flash steam, about 150-200 degC"
+leaching-vessel_in-situ,mining,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_fluorescent-high-bay,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_fluorescent-t12,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_fluorescent-t8,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_hid,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_led,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_led-controls,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+lighting_led-high-bay,lighting,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+liquefaction-train_base-load,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,gas-turbine driver exhaust
+liquefaction-train_base-load_efficiency-moderate,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,gas-turbine driver exhaust
+liquefaction-train_electric,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,compressor intercooling
+liquefaction-train_floating,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,gas-turbine driver exhaust
+liquefaction-train_hydrogen,hydrogen,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,compressor intercooling
+liquefaction-train_small-scale,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,gas-engine or turbine driver exhaust
+management-system_leak-detection,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+melting-furnace_crucible-gas-fired,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_cupola,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_electric-smelting,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_hot-blast-cupola,glass-and-ceramics,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_induction,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,coil cooling water
+melting-furnace_isothermal,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,cooling water
+melting-furnace_regenerative-oxy-fuel,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_reverberatory-rotary,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_reverberatory-rotary_efficiency-strong,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_rotary-oxy-fuel,other-industry,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+melting-furnace_twin-chamber,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+mine_open-pit-coal,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mine_open-pit-oil-sands,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,warm tailings
+mine_underground-coal,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mine_open-pit-coal-excavation,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mine_underground-coal-cutting,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_battery-electric,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_diesel,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_diesel-electric,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_hydrogen-combustion,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_hydrogen-fuel-cell,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+mobile-equipment_spark-ignition,mobile-equipment,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+motor_induction-standard,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+motor_induction-standard_efficiency-moderate,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+motor_premium-efficiency,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+motor_variable-speed,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+no-abatement_coal-mine-methane,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+no-abatement_methane,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+no-abatement_n2o,chemicals,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+oven_electric,food-and-beverage,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+oven_fuel-fired,food-and-beverage,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+oven_fuel-fired_efficiency-moderate,food-and-beverage,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+paper-machine,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+paper-machine_efficiency-moderate,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+paper-machine_efficiency-strong,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+paper-machine_waterless,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+paste-plant_soderberg,non-ferrous-metals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pellet-plant_induration,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,induration exhaust and cooler air
+pellet-plant_induration_efficiency-moderate,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,induration exhaust and cooler air
+pellet-plant_plasma-electric,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,cooler air
+pellet-plant_wood,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,dryer exhaust
+photovoltaic-array_battery-storage,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pickling-line_acid,iron-and-steel,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pipeline_co2,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pipeline_crude-oil,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pipeline_hydrogen,hydrogen,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pipeline_natural-gas,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pipeline_plastic-liner,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pneumatic-device_gas-driven,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pneumatic-device_low-bleed,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pneumatic-device_non-emitting,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+preheater_ladle,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+press_all-electric,other-industry,medium-temp,medium-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+press_high-pressure-processing,food-and-beverage,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+press_hot-platen,other-industry,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,press exhaust and thermal-oil return
+process-improvement_automatic-shutoff,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_coal-mine-methane-drainage,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_hydrogen-blending,hydrogen,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_landfill-gas-recovery,biofuels,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_log-thawing,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_low-emission-components,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_nru-optimization,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_pfc-anode-effect-control,non-ferrous-metals,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+electric-arc-furnace_smelting-submerged-arc_pre-reduction,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+pulper_chemi-thermomechanical,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pulper_fibreboard-refiner,other-industry,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pulper_groundwood,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pulper_recycled-fibre,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pulper_refiner-low-energy,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pulper_thermomechanical,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+pump_artificial-lift,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pump_electric-station,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pump_electric-station_efficiency-moderate,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pump_mine-dewatering,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pump_plunger-lift,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+radio-frequency-heater_food,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_adipic-acid,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_alcohol-to-jet,biofuels,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_alkylation,petroleum-refining,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_ammonium-nitrate,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_anthraquinone-autoxidation,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_biomass-flash-pyrolysis,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,pyrolysis vapours and char combustor flue
+reactor_catalytic-n2o,chemicals,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,not-applicable,no stream beyond the host plant's
+reactor_catalytic-reforming,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,heater flue gas and reactor effluent
+reactor_catalytic-reforming_electric-heating,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_chemical-depolymerization,chemicals,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-dme,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-ethanol,biofuels,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-fischer-tropsch,biofuels,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor coolant
+reactor_co2-to-gasoline,biofuels,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_co2-to-higher-alcohols,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-methanol,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-ome1,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_co2-to-ome3-5,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_delayed-coking,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,heater flue gas and coke-drum vapours
+reactor_ebullated-bed-hydrocracking,oil-and-gas,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_ecf-bleaching,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_ethanol-to-ethylene,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_ethylene-oxidation,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_ethylene-oxidation_ccs-concentrated,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_fluid-catalytic-cracking,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,"regenerator flue gas, about 650-730 degC"
+reactor_fluid-catalytic-cracking_ccs-diffuse,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,regenerator flue gas
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,regenerator off-gas
+reactor_fluid-coking,oil-and-gas,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,burner off-gas
+reactor_gas-to-liquids,oil-and-gas,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor coolant and syngas cooling
+reactor_haber-bosch-electrolytic,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_haber-bosch-loop,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_hydroprocessing,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent cooled at 150-300 degC
+reactor_hydroprocessing_electric-heating,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_hydroprocessing_hydrogen-fuel,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent and heater flue
+reactor_hydrothermal-liquefaction,biofuels,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_hydrotreating-lipids,biofuels,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_integrated-upgrader,oil-and-gas,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent and heater flue
+reactor_integrated-upgrader_ccs-concentrated,oil-and-gas,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent and heater flue
+reactor_isomerization,petroleum-refining,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_methane-pyrolysis,hydrogen,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,hot carbon and gas
+reactor_methanol-loop,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_methanol-to-olefins,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,regenerator flue and effluent
+reactor_nitric-acid,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_oxygen-delignification,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_partial-upgrading,oil-and-gas,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent
+reactor_plastics-pyrolysis,chemicals,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,medium-temp,pyrolysis vapours condensed
+reactor_polymerization-extrusion,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_polymerization-extrusion_efficiency-strong,chemicals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_propane-dehydrogenation,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,reactor effluent and heater flue
+reactor_pyrolysis-oil,biofuels,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,pyrolysis vapours condensed
+reactor_silicothermic,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,retort furnace flue gas
+reactor_small-nuclear,heat-supply,low-temp; medium-temp; high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp; high-temp,the tiers it supplies (was its heat-process-tier),low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_small-nuclear-power,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,condenser
+reactor_steel-offgas-chemicals,iron-and-steel,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reactor_sulphuric-acid-metallurgical,non-ferrous-metals,not-applicable,not-applicable,,medium-temp,steam raised from the acid plant's heat,low-temp,"acid cooling water, about 70-110 degC"
+reactor_thermal-n2o-destruction,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,combustion off-gas
+reactor_torrefaction,other-industry,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,torgas combustor flue
+reactor_urea-synthesis,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+reciprocating-engine_chp,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),low-temp,engine coolant after exhaust recovery
+reciprocating-engine_diesel-field,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+reciprocating-engine_drive,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+reciprocating-engine_drive_efficiency-moderate,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+reciprocating-engine_dual-fuel,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+reciprocating-engine_gasoline-propane,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+refinery_alumina,non-ferrous-metals,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,flash vapour and calciner flue
+refinery_conversion,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+refinery_deep-conversion,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+refinery_hydroskimming,petroleum-refining,medium-temp; high-temp,medium-temp; high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+refinery_nickel-matte,non-ferrous-metals,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,medium-temp,roaster and smelter off-gas
+refinery_sugar-beet,food-and-beverage,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+resistance-heater_hvac,space-conditioning,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+rolling-mill_cold,iron-and-steel,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+rolling-mill_cold_efficiency-moderate,iron-and-steel,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+rolling-mill_continuous-casting,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+rolling-mill_hot,iron-and-steel,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,cooling water
+rolling-mill_hot_efficiency-moderate,iron-and-steel,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,cooling water
+rolling-mill_ring,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+rolling-mill_thin-slab,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,tunnel-furnace flue gas
+separator_aromatics-extraction,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,column condensers
+separator_aromatics-extraction_efficiency-moderate,chemicals,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,column condensers
+separator_biogas-upgrading,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_clarifier,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_dry-stack-tailings,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_gravity-magnetic,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_lignin-extraction,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,process water
+separator_membrane-bioreactor,pulp-and-paper,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_mine-water-treatment,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_naphthenic-froth-treatment,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,hot tailings and solvent-recovery condensers
+separator_non-aqueous,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_ore-sorting,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_paraffinic-froth-treatment,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,hot tailings and solvent-recovery condensers
+separator_produced-water-recycling,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_reduced-emission-completion,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_reverse-osmosis,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_thickening-filtration,mining,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+separator_warm-lime-softening,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,warm effluent
+separator_warm-water-extraction,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,warm tailings
+shaft-furnace_direct-reduction,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,"top gas, about 300-400 degC"
+shaft-furnace_direct-reduction_ccs-concentrated,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+shaft-furnace_electrolytic-hydrogen,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+shaft-furnace_hydrogen-direct-reduction,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,medium-temp,off-gas or cooler air at 150-400 degC
+sinter-plant,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+sinter-plant_efficiency-moderate,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+sinter-plant_efficiency-strong,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,off-gas after recirculation
+smelting-vessel_bath-tuyere,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_bottom-blowing,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_flash,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_flash_efficiency-moderate,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_flash_efficiency-strong,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_low-shaft,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas
+smelting-vessel_smelting-reduction,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_smelting-reduction_ccs-concentrated,iron-and-steel,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+smelting-vessel_top-submerged-lance,non-ferrous-metals,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+solar-collector,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+solar-concentrator_line-focus,heat-supply,medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+solar-concentrator_point-focus,heat-supply,high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,high-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+steam-cracker_catalytic-naphtha,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-cracker_electric,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp,no flue gas; cracked-gas cooling below 150 degC after the transfer-line exchangers
+steam-cracker_fired-tubular,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-cracker_fired-tubular_ccs-diffuse,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-cracker_fired-tubular_efficiency-moderate,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-cracker_fired-tubular_hydrogen-fuel,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_ammonia,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_ammonia_ccs-concentrated,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_ammonia_efficiency-moderate,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_ammonia_efficiency-strong,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_methane,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_methane_ccs-concentrated,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_methane_ccs-diffuse,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_methane_efficiency-moderate,petroleum-refining,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-reformer_methanol,chemicals,high-temp,high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+steam-turbine_back-pressure,heat-supply,low-temp; medium-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp; medium-temp,the tiers it supplies (was its heat-process-tier),not-applicable,exhaust steam is the product
+steam-turbine_back-pressure_ccs-diffuse,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),not-applicable,exhaust steam is the product
+steam-turbine_condensing,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+steam-turbine_drive,machine-drive,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,exhaust steam goes to the plant header
+steam-turbine_waste-heat,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+storage-cavern_hydrogen,hydrogen,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+thermal-storage_electric,heat-supply,medium-temp; high-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,medium-temp; high-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+thermal-storage_heat-charged,heat-supply,low-temp,not-applicable,heat supply serves a process; its tier moved to heat-output-tier,low-temp,the tiers it supplies (was its heat-process-tier),not-applicable,no recoverable heat stream
+transesterification-unit_acid-catalyzed,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+transesterification-unit_alkali-catalyzed,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+transesterification-unit_heterogeneous-catalyst,biofuels,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+transesterification-unit_supercritical-methanol,biofuels,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+turboexpander_ngl-recovery,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+turboexpander_pressure-let-down,power-generation,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+ultraviolet-curer_infrared,other-industry,low-temp; medium-temp,low-temp; medium-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+valve_pressure-let-down,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+vapour-recompressor_evaporation,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+well_co2-storage,co2-capture,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+well_cyclic-steam,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,produced fluids
+well_disposal-injection,oil-and-gas,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+well_electromagnetic-heating,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,produced fluids
+well_in-situ-oxy-combustion,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,produced fluids
+well_sagd,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,"produced fluids, about 180-200 degC"
+well_solvent-assisted,oil-and-gas,medium-temp,medium-temp,,not-applicable,not meant to supply heat,medium-temp,produced fluids
+well_solvent-only,oil-and-gas,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"produced fluids, about 40-60 degC"
+wind-turbine,power-generation,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+pulp-mill_kraft,pulp-and-paper,low-temp; medium-temp; high-temp,low-temp; medium-temp; high-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+paper-machine_with-dryer-section,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+gasifier_black-liquor-fuels,pulp-and-paper,high-temp,high-temp,,not-applicable,not meant to supply heat,high-temp,off-gas above 400 degC
+calciner_gypsum,glass-and-ceramics,medium-temp,medium-temp,,not-applicable,not meant to supply heat,low-temp; medium-temp,"flue or stack gas after the unit's own economizer or air preheater, about 120-250 degC"
+dryer_electric-paper,pulp-and-paper,low-temp,low-temp,,not-applicable,not meant to supply heat,low-temp,"cooling water, condenser or humid exhaust air below 150 degC"
+no-abatement_sf6,non-ferrous-metals,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+process-improvement_magnesium-cover-gas,non-ferrous-metals,not-applicable,not-applicable,,not-applicable,not meant to supply heat,not-applicable,no recoverable heat stream
+boiler_solid-fuel,,,,,low-temp; medium-temp; high-temp,temperature: sources give medium-temp; high-temp (was low-temp; medium-temp),,
+fuel-cell_chp,,,,,,,medium-temp,temperature: medium-temp (was low-temp)
+heat-pump_very-high-temperature,,,,,low-temp; medium-temp,temperature: sources give low-temp; medium-temp (was medium-temp),,
+heat-pump_industrial,,,,,low-temp; medium-temp,temperature: sources give low-temp; medium-temp (was low-temp),,
+solar-concentrator_line-focus,,,,,low-temp; medium-temp; high-temp,temperature: sources give low-temp; medium-temp; high-temp (was medium-temp),,
+solar-concentrator_point-focus,,,,,medium-temp; high-temp,temperature: sources give medium-temp; high-temp (was high-temp),,
+thermal-storage_electric,,,,,low-temp; medium-temp; high-temp,temperature: sources give low-temp; medium-temp; high-temp (was medium-temp; high-temp),,
+geothermal-well_direct-use,,,,,low-temp; medium-temp,temperature: sources give low-temp; medium-temp (was low-temp),,
+combustion-turbine_chp,,,,,,,medium-temp; high-temp,temperature: medium-temp; high-temp (was high-temp)
+reciprocating-engine_drive,,,,,,,medium-temp; high-temp,temperature: medium-temp; high-temp (was high-temp)
+boiler_electric,,,,,low-temp; medium-temp; high-temp,temperature: sources give low-temp; medium-temp; high-temp (was low-temp; medium-temp),,
+reciprocating-engine_chp,,,,,,,low-temp; medium-temp; high-temp,temperature: low-temp; medium-temp; high-temp (was low-temp)
+direct-heater_fuel-fired_efficiency-moderate,,,,,,,low-temp,temperature: low-temp (was low-temp; medium-temp)
+direct-heater_refinery,,,,,,,medium-temp,temperature: medium-temp (was low-temp; medium-temp)
+boiler_fuel-fired,,,,,low-temp; medium-temp; high-temp,temperature: sources give medium-temp; high-temp (was low-temp; medium-temp),,
+solar-collector,,,,,low-temp; medium-temp,temperature: sources give low-temp; medium-temp (was low-temp),,

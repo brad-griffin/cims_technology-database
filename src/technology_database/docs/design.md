@@ -237,12 +237,22 @@ are not service keys.
 **Heat.**
 - **Tiers** are banded on the temperature the process needs: `low-temp` below
   150 °C, `medium-temp` 150–400 °C, `high-temp` above 400 °C.
-- Every archetype has a `heat-process-tier`: the tiers of the process heat it uses,
-  raises inside itself, or supplies (several, `; `-separated, when the process spans
-  them). An electrochemical cell takes the tier of its operating temperature.
-  Archetypes with no process heat (shaft work, transport, cooling, lighting,
-  power-only generation, pressure or membrane separation, methane controls) take
-  `not-applicable`. Only heat-supply archetypes are banded by tier in the workbook.
+- Every archetype has three heat tiers (Brad 2026-11-09), each one or more of the
+  bands (`; `-separated) or `not-applicable`:
+  - `heat-process-tier`: the heat the process needs, uses, or raises inside itself.
+    An electrochemical cell takes the tier of its operating temperature. Archetypes
+    with no process heat (shaft work, transport, cooling, lighting, power-only
+    generation, pressure or membrane separation, methane controls) and heat-supply
+    archetypes, which serve a process rather than being one, take `not-applicable`.
+  - `heat-output-tier`: the heat an archetype meant to supply heat delivers. The
+    heat-supply bands in the workbook follow it. Every other archetype takes
+    `not-applicable`.
+  - `heat-waste-tier`: the main stream leaving the archetype that waste-heat
+    recovery could use, after the recovery the equipment itself includes (a
+    boiler's flue gas after its economizer, a cement kiln's exhaust after the
+    preheater); `not-applicable` when there is none.
+  The judgements and their basis are in `reviews/heat-tier-assignment_2026-11-09.csv`
+  and `reviews/heat-output-and-waste-tier_2026-11-09.csv`.
 - Two temperature parameters (Brad 2026-11-09). `heat-process-temp` is the
   temperature the process needs to achieve its end use (kiln sintering, bath,
   reactor, cooking or drying temperature). `heat-output-temp` is the temperature of
@@ -258,9 +268,13 @@ are not service keys.
   coolant, condenser heat. Every stream pools as one value; the example row keeps
   the stream as its target. A turbine's or engine's exhaust is waste heat, not
   output.
-- Where `heat-process-temp` exists, it decides `heat-process-tier`: the tier takes
-  every band the central, low and high values span. The build lists any archetype
-  whose recorded tier disagrees, for correction in `archetype.csv`.
+- Where a temperature exists, it decides its tier: `heat-process-tier` and
+  `heat-waste-tier` take every band the central, low and high values span;
+  `heat-output-tier` must cover them and may reach further, because sources often
+  print only a supplier's maximum. The build lists any archetype whose recorded tier
+  disagrees, for correction in `archetype.csv`. On the workbook's heat sheet a tier
+  that equals its temperature's bands takes that temperature's shading; a tier no
+  temperature decides is shaded as a guess.
 - **Integral heat** is released inside the unit doing the transformation (a kiln, a
   blast furnace, an oven). Its equipment is a sector archetype.
 - **Supplied heat** comes from a separable system (a boiler, CHP, a fired heater).
@@ -848,13 +862,13 @@ compilation cites it as an original.
 
 - The workbook's archetypes sheet has one row per archetype, including blank ones and
   those that serve no hierarchy node (`applies-to` reads `no connection`). `end-uses`
-  names the annotation groups each archetype serves. `status` (also in
-  `archetype.csv`) is one of:
-  - `quantified`: it has pooled numbers;
-  - `named`: a source names it without numbers;
-  - `estimated`: it has no sourced numbers, only filled ones (section 6a);
-  - `not pooled`: its numbers could not be pooled;
-  - `gap`: it has no example yet.
+  names the annotation groups each archetype serves. `core-sourced` (also in
+  `archetype.csv`) counts how many of the seven core model values (capex, fixed
+  opex, variable opex, energy, lifetime, annual output, emissions; `fill.CIMS_CELLS`)
+  come from a source, 0 to 7 (Brad 2026-11-09; it replaces the `status` flag, which
+  marked an archetype quantified on any one sourced value).
+- The heat sheet holds the three heat tiers and their temperatures, process, output,
+  then waste, for the same rows as the archetypes sheet.
 - `filled` lists the parameters the fill step wrote and their grade or marker; in
   the workbook those cells are shaded (identity blue, estimated orange, proxy
   yellow, guess red, not-applicable grey; purple marks a sourced value converted
