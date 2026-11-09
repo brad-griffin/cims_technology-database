@@ -47,7 +47,15 @@ cf-ef-co2-refinery-gas,property,"refinery fuel gas (still gas), CO2 emitted per 
 cf-ef-co2-lpg,property,"LPG (propane), CO2 emitted per GJ burned",GJ,t-CO2,0.05986,0.05986,0.06143,"HHV: NIR 2026 propane 1,515 g/L over the StatCan energy content 25.31 MJ/L (butane as the high)",eccc_2026_001; can-statcan_2022_001,0,0,
 cf-ef-co2-gasoline,property,"motor gasoline, CO2 emitted per GJ burned",GJ,t-CO2,0.06591,,,"HHV: NIR 2026 motor gasoline 2,307 g/L over the StatCan energy content 35.00 MJ/L",eccc_2026_001; can-statcan_2022_001,0,0,
 cf-ef-co2-blast-furnace-gas,property,"blast furnace gas, CO2 emitted per GJ burned",GJ,t-CO2,0.2544,0.2143,0.3014,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-blast-furnace-gas (1.022),ipcc_2006_001,0,0,
-cf-ef-co2-waste-fuel,property,"waste-derived fuel (fossil part), CO2 emitted per GJ burned",GJ,t-CO2,0.08712,0.06964,0.1150,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-solid-liquid (1.0526),ipcc_2006_001,0,0,
+cf-ef-co2-waste-fuel,property,"waste-derived fuel (fossil part), CO2 emitted per GJ burned",GJ,t-CO2,0.073,0.0685,0.086,HHV assumed: ECCC NIR fuel factors are on the Canadian (gross) energy basis; the table does not state it,eccc_2026_001,0,0,
+cf-ef-co2-biomass,property,"solid biomass (wood, wood waste, other solid biomass), biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.1064,0.09025,0.1254,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-solid-liquid (1.0526),ipcc_2006_001,0,0,
+cf-ef-co2-biomass-solid,property,"solid biomass, biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.1064,0.09025,0.1254,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-solid-liquid (1.0526),ipcc_2006_001,0,0,
+cf-ef-co2-black-liquor,property,"kraft black liquor (sulphite lyes), biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.08549,0.07239,0.09867,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-black-liquor (1.1148),ipcc_2006_001,0,0,
+cf-ef-co2-liquid-biomass,property,"liquid biofuels (biodiesel, bio-oil, other liquid biofuels), biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.07562,0.06375,0.09054,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-solid-liquid (1.0526),ipcc_2006_001,0,0,
+cf-ef-co2-biogas,property,"biogas (digester or sludge gas), biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.04921,0.04164,0.05948,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-methane (1.1096),ipcc_2006_001,0,0,
+cf-ef-co2-landfill-gas,property,"landfill gas, biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.04921,0.04164,0.05948,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-methane (1.1096),ipcc_2006_001,0,0,
+cf-ef-co2-biomethane,property,"biomethane (upgraded biogas), biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.04921,0.04164,0.05948,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-methane (1.1096),ipcc_2006_001,0,0,
+cf-ef-co2-renewable-natural-gas,property,"renewable natural gas, biogenic CO2 emitted per GJ burned",GJ,t-CO2,0.04921,0.04164,0.05948,HHV: IPCC default per GJ NCV divided by cf-hhv-lhv-methane (1.1096),ipcc_2006_001,0,0,
 cf-hhv-lhv-black-liquor,property,"kraft black liquor solids, HHV per LHV",GJ-LHV,GJ-HHV,1.1148,1.1148,1.1267,ratio of heating values,larson_2006_001,17,13,boiler_recovery; boiler_recovery-high-solids; gasifier_black-liquor; gasifier_black-liquor-fuels
 cf-hhv-lhv-wood-chips-moist,property,"wood chips at 45% moisture (as received), HHV per LHV",GJ-LHV,GJ-HHV,1.197,1.190,1.203,"ratio of heating values, as received at 45% moisture",ea_2018_001,9,3,boiler_solid-fuel
 cf-hhv-lhv-coke-oven-gas,property,"coke oven gas, HHV per LHV",GJ-LHV,GJ-HHV,1.127,,,ratio of heating values,ieaghg_2013_003; nist_2026_001,15,12,blast-furnace; blast-furnace_top-gas-recycling; caster_continuous; coke-oven_by-product; furnace_ladle-metallurgy; furnace_reheating; sinter-plant
@@ -183,8 +191,8 @@ cf-power-per-heat-lemar-2001-combustion-turbine-100-mw,same-source,"electricity 
 cf-power-per-heat-lemar-2001-combined-cycle-100-mw,same-source,"electricity per unit of useful heat, LeMar 2001 Table 2, combined-cycle 100-mw",GJ,GJ,1.43243,,,HHV or LHV alike (a ratio of two outputs): electric efficiency 53% / (overall efficiency 90% - electric 53%),lemar_2001_001,2,1,combustion-turbine_chp
 cf-cooking-share-steam-jacobs-2006-semichem-avg,same-source,"cooking-area share of the semi-chemical (NSSC) line steam, Jacobs 2006 2002 average",GJ,GJ,0.34891,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 2.24 / 6.42 MMBtu per short ton,jacobs_2006_001,1,1,digester_semi-chemical
 cf-cooking-share-electricity-jacobs-2006-semichem-avg,same-source,"cooking-area share of the semi-chemical (NSSC) line electricity, Jacobs 2006 2002 average",GJ,GJ,0.655331,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 370 / 564.6 kWh per short ton,jacobs_2006_001,2,1,digester_semi-chemical
-cf-cooking-share-steam-jacobs-2006-semichem-bat,same-source,"cooking-area share of the semi-chemical (NSSC) line steam, Jacobs 2006 BAT",GJ,GJ,0.38,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 1.90 / 5.00 MMBtu per short ton,jacobs_2006_001,2,2,digester_semi-chemical
-cf-cooking-share-electricity-jacobs-2006-semichem-bat,same-source,"cooking-area share of the semi-chemical (NSSC) line electricity, Jacobs 2006 BAT",GJ,GJ,0.667932,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 352 / 527 kWh per short ton,jacobs_2006_001,4,2,digester_semi-chemical
+cf-cooking-share-steam-jacobs-2006-semichem-bat,same-source,"cooking-area share of the semi-chemical (NSSC) line steam, Jacobs 2006 BAT",GJ,GJ,0.38,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 1.90 / 5.00 MMBtu per short ton,jacobs_2006_001,1,1,digester_semi-chemical
+cf-cooking-share-electricity-jacobs-2006-semichem-bat,same-source,"cooking-area share of the semi-chemical (NSSC) line electricity, Jacobs 2006 BAT",GJ,GJ,0.667932,,,HHV or LHV alike (a ratio of two figures on one basis): cooking 352 / 527 kWh per short ton,jacobs_2006_001,2,1,digester_semi-chemical
 assume:avoided-co2-for-captured,assumption,avoided co2 for captured,,,,,,,,2,2,capture-unit_amine
 assume:continuous-operation,assumption,continuous operation,,,,,,,,28,27,electrolyzer_low-temperature; fuel-cell_chp; haul-truck_diesel; haul-truck_hydrogen-fuel-cell; lighting_fluorescent-high-bay; lighting_fluorescent-t12; lighting_fluorescent-t8; lighting_hid; lighting_led; lighting_led-high-bay
 assume:haul-truck-trips-per-hour,assumption,haul truck trips per hour,,,,,,,,15,14,haul-truck_battery-electric; haul-truck_diesel; haul-truck_hydrogen-fuel-cell; haul-truck_trolley-assist
@@ -303,6 +311,10 @@ assume:source-correction-sc-193,assumption,source correction sc 193,,,,,,,,1,1,a
 assume:source-correction-sc-194,assumption,source correction sc 194,,,,,,,,1,1,autothermal-reformer_hydrogen
 assume:source-correction-sc-195,assumption,source correction sc 195,,,,,,,,1,1,autothermal-reformer_hydrogen
 assume:source-correction-sc-217,assumption,source correction sc 217,,,,,,,,1,1,reactor_haber-bosch-electrolytic
+assume:source-correction-sc-224,assumption,source correction sc 224,,,,,,,,1,1,kiln_dry-precalciner
+assume:source-correction-sc-225,assumption,source correction sc 225,,,,,,,,1,1,kiln_dry-precalciner
+assume:source-correction-sc-226,assumption,source correction sc 226,,,,,,,,1,1,kiln_dry-precalciner
+assume:source-correction-sc-227,assumption,source correction sc 227,,,,,,,,1,1,kiln_dry-precalciner
 base:basic-oxygen-furnace,,sic oxygen furnace,,,,,,,,1,1,basic-oxygen-furnace_efficiency-strong
 base:blast-furnace,,ast furnace,,,,,,,,5,5,blast-furnace_efficiency-moderate
 base:cleaning-system,,eaning system,,,,,,,,8,7,cleaning-system_efficiency-strong

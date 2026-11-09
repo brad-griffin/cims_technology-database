@@ -201,10 +201,10 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
-   "heat-supply": 24,
-   "machine-drive": 3,
    "lighting": 7,
-   "space-conditioning": 7
+   "heat-supply": 24,
+   "space-conditioning": 7,
+   "machine-drive": 3
   }
  },
  "steel": {
@@ -819,11 +819,11 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
-   "machine-drive": 8,
    "lighting": 7,
-   "co2-capture": 8,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "space-conditioning": 7,
+   "co2-capture": 8
   }
  },
  "pulp-and-paper": {
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
-   "heat-supply": 24,
-   "machine-drive": 8,
    "lighting": 7,
-   "co2-capture": 4,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "heat-supply": 24,
+   "space-conditioning": 7,
+   "co2-capture": 4
   }
  },
  "cement-and-lime": {
@@ -1677,8 +1677,8 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "machine-drive": 8,
    "lighting": 7,
+   "machine-drive": 8,
    "space-conditioning": 7,
    "co2-capture": 8
   }
@@ -2235,11 +2235,11 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
-   "machine-drive": 8,
    "lighting": 7,
-   "co2-capture": 8,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "space-conditioning": 7,
+   "co2-capture": 8
   }
  },
  "conventional-oil": {
@@ -2485,8 +2485,8 @@
   "n_examples": 59,
   "cross_families": {
    "heat-supply": 23,
-   "machine-drive": 3,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "machine-drive": 3
   }
  },
  "oil-sands": {
@@ -4206,10 +4206,10 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 9,
    "lighting": 7,
    "power-generation": 12,
+   "heat-supply": 23,
    "space-conditioning": 7
   }
  },
@@ -4485,11 +4485,11 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "heat-supply": 23,
-   "machine-drive": 8,
    "lighting": 7,
-   "co2-capture": 8,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "space-conditioning": 7,
+   "co2-capture": 8
   }
  },
  "petroleum-refining": {
@@ -4774,9 +4774,9 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "heat-supply": 30,
-   "machine-drive": 8,
    "lighting": 7,
+   "machine-drive": 8,
+   "heat-supply": 30,
    "space-conditioning": 7,
    "co2-capture": 8
   }
@@ -9633,13 +9633,13 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
-   "heat-supply": 34,
    "power-generation": 13,
-   "space-conditioning": 7,
-   "mobile-equipment": 6,
+   "heat-supply": 34,
    "machine-drive": 13,
+   "lighting": 7,
    "co2-capture": 13,
-   "lighting": 7
+   "space-conditioning": 7,
+   "mobile-equipment": 6
   }
  },
  "_totals": {

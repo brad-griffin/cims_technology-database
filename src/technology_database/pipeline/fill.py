@@ -398,6 +398,43 @@ def m_fuel_emission_factor(rule, a, have, ctx):
     return [out]
 
 
+def m_biogenic_emission_factor(rule, a, have, ctx):
+    """Biogenic CO2 (emissions-biomass, CIMS) = sum over the biogenic carriers the
+    archetype burns of specific-energy-consumption(carrier) x its biogenic CO2
+    factor (cf-ef-co2-<carrier>, IPCC 2006 Table 1.4), solid, liquid and gaseous
+    alike (Brad 2026-11-09). Only where no source or judgement gives it; the rule's
+    scope keeps out archetypes whose biomass is a feedstock (gasifiers to fuels,
+    fermenters, reactors, the charcoal retort), whose carbon leaves in the product."""
+    p, t = rule["parameter"], rule["target"]
+    if (p, t) in have:
+        return []
+    secs = {k[1]: v for k, v in have.items() if k[0] == SEC and k[1] in BIOGENIC_ALL and _live(v)}
+    if not secs or any((fnum(r.get("central")) or 0) < 0 for r in secs.values()):
+        return []
+    c = lo = hi = 0.0
+    ins, grades, srcs, ext = [], [], [], []
+    for carrier, r in sorted(secs.items()):
+        f = ctx["factors"].rows.get(f"cf-ef-co2-{carrier}")
+        if not f:
+            return []
+        ef, efl, efh = fnum(f["factor"]), fnum(f.get("factor-low")), fnum(f.get("factor-high"))
+        v, vl, vh = _vals(r)
+        if v is None:
+            return []
+        c += v * ef
+        lo += (vl if vl is not None else v) * (efl or ef)
+        hi += (vh if vh is not None else v) * (efh or ef)
+        ins.append(_input(r, f"{SEC}_{carrier}"))
+        grades.append(r.get("grade", "sourced"))
+        srcs += split_list(r.get("sources", ""))
+        ext.append(f["factor-id"])
+    if c <= 0:
+        return []
+    return [{"parameter": p, "target": t, "central": c, "low": lo, "high": hi,
+             "inputs": ins + ext, "grades": grades,
+             "sources": "; ".join(dict.fromkeys(srcs)), "external": ext}]
+
+
 def m_sec_from_emissions(rule, a, have, ctx):
     """The inverse of the rule above: the fossil energy use = combustion CO2 / the
     CO2 factor of the archetype's fossil carrier, where the archetype names ONE
@@ -760,6 +797,7 @@ NOT_FUEL = {"electricity", "steam", "heat", "waste-heat", "geothermal", "solar"}
 NON_COMBUSTIBLE = {"electricity", "steam", "heat", "geothermal", "hydrogen", "nuclear", "solar", "waste-heat", "ammonia"}
 # biogenic fuels: their combustion CO2 is not fossil CO2 (CIMS counts it as emissions-biomass)
 BIOGENIC = {"biomass", "biogas", "biomethane", "black-liquor", "landfill-gas", "liquid-biomass", "renewable-natural-gas"}
+BIOGENIC_ALL = BIOGENIC | {"biomass-solid"}
 
 
 def m_zero_if_no_fossil(rule, a, have, ctx):
@@ -1470,7 +1508,7 @@ def backtest(records, rules_, have, ctx):
 
 
 METHODS = {"inverse": m_inverse, "inverse-net-feed": m_inverse_net_feed,
-           "chp-heat-inverse": m_chp_heat_inverse, "inverse-net-feed-efficiency": m_inverse_net_feed_efficiency, "fuel-emission-factor": m_fuel_emission_factor,
+           "chp-heat-inverse": m_chp_heat_inverse, "inverse-net-feed-efficiency": m_inverse_net_feed_efficiency, "fuel-emission-factor": m_fuel_emission_factor, "biogenic-emission-factor": m_biogenic_emission_factor,
            "sec-from-emissions": m_sec_from_emissions, "sum": m_sum, "difference": m_difference,
            "capacity-output": m_capacity_output, "bucket-saving": m_bucket_saving,
            "host-increment": m_host_increment, "host-copy": m_host_copy,
@@ -3058,6 +3096,7 @@ def apply(psum, records, target_unit, facts=(), units=None) -> dict:
     # one set of carriers that adds up, on the most likely fuel (Brad 2026-11-07)
     from . import fuel_choice
     hosts_ = {h["archetype"]: h for h in read(FILL / "host-archetype.csv") if h.get("status") == "active"}
+    _central_choices(psum)
     fc = fuel_choice.apply(psum, records, hosts_, stage="pooled")
     ctx = _ctx(psum, records, facts, units)
     stats = {"_backtest": backtest(records, [r for r in rules() if r.get("status") == "active"],
@@ -3137,6 +3176,30 @@ def coverage(psum, records):
 
 
 # ---- emission fixes (consistency check 2026-11-07) ----------------------------
+
+def _central_choices(psum):
+    """records/reference/central-choice.csv: a pooled central replaced by the value
+    typical for the technology in Canadian industry, from a named source (Brad
+    2026-11-09: the precalciner kiln's fuel from GCCA GNR's Canadian precalciner
+    kilns, not the European best-practice sources that set the pooled median).
+    The pooled row moves to target as-sourced, so it stays visible; the fuel split,
+    the totals and the CO2 identities then follow the chosen value."""
+    from .common import REFERENCE
+    for c in read(REFERENCE / "central-choice.csv"):
+        key = (c["archetype"], c["parameter"], c.get("target", ""))
+        old = next((r for r in psum if (r["archetype"], r["parameter"], r.get("target", "")) == key), None)
+        if old is None:
+            raise SystemExit(f"central-choice.csv: no pooled row for {key}")
+        new = dict(old)
+        new.update({"central": c["central"], "low": c.get("low", ""), "high": c.get("high", ""),
+                    "n": 1, "sources": c["source-id"], "examples": "",
+                    "central-from": f"CENTRAL CHOICE (records/reference/central-choice.csv, {c['decided']}): "
+                                    f"{c['basis']}; the pooled value {old.get('central')} moved to as-sourced",
+                    "method": "central-choice"})
+        old["target"] = _as_sourced(old.get("target", ""))
+        old["central-from"] = "pooled value set aside for a central choice: " + (old.get("central-from") or "")
+        psum.append(new)
+
 
 def _emission_fixes(psum, records, ctx, stats):
     """Make each archetype's emissions agree with its own energy rows and totals,

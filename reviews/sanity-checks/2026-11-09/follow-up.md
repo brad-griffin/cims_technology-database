@@ -145,7 +145,7 @@ NRCan Comprehensive Energy Use Database, Table 46, Canadian cement industry, 202
 
 Brad: restate it, as that fits the hierarchy better.
 
-- The Jacobs 2006 and Kramer 2009 rows are restated with the source's own area tables (Tab H, pp.92-97). The new rebases are sc-218 to sc-223, with four same-source factors `cf-cooking-share-*-jacobs-2006-semichem-*`:
+- The Jacobs 2006 and Kramer 2009 rows are restated with the source's own area tables (Tab H, pp.92-97). The new rebases were sc-218 to sc-223 (sc-222 and sc-223, the Kramer rows, were removed in section 10), with four same-source factors `cf-cooking-share-*-jacobs-2006-semichem-*`:
   - 2002 average: steam 2.24 of 6.42 MMBtu/short ton (x 0.349), electricity 370 of 564.6 kWh/short ton (x 0.655);
   - BAT, and Kramer, which reprints it: steam 1.90 of 5.00 (x 0.38), electricity 352 of 527 (x 0.668).
 - Cooking electricity includes the mechanical refining that follows the cook (370 of the 565 kWh).
@@ -244,3 +244,61 @@ Martin 2000 lists the stages separately:
 - chemical recovery (evaporators, recovery boiler 1.1 GJ/t, lime kiln 2.3 GJ/t).
 
 So the 5.3 GJ/t and 505 kWh/t (Kincaid 1998, US 1994) exclude wood preparation, evaporation, and recovery: cooking plus the mechanical refining. It is about twice the Jacobs 2006 cooking area (2.2-2.6 GJ/t). Martin's kraft digester (4.4 GJ/t, from Elaahi and Lowitt 1988) sits similarly above Jacobs' kraft cooking (2.7-2.9 GJ/t), so the gap looks like data vintage, not scope. Kept.
+
+## 10. Fifth round (Brad, 2026-11-09)
+
+### Precalciner kiln energy set to Canadian practice
+
+Brad: use the recommendation (Canadian precalciner kilns); set the low PCA rows aside.
+
+- **New table `records/reference/central-choice.csv`** (`pipeline/fill.py`, `_central_choices`). It replaces a pooled central with the Canadian-typical value from a named source, before the fuel choice. The pooled row moves to target as-sourced, so it stays visible. The fuel split, the totals, and the CO2 identities then follow.
+  - **Fuel 3.727 GJ/t HHV (3.635-3.916).** GCCA GNR Canada, precalciner kilns (25aAGK), 2015-2024 mean 3.488 GJ/t LHV, x 1.0685 for the kiln fuel mix. Was 3.19, the pooled total split by one IEAGHG example.
+  - **Electricity 0.318 GJ/t (0.302-0.334).** GCCA power up to clinker (33eAGW), 2015-2024 mean 88.3 kWh/t. I set this as well because the pooled split fell to 0.14 GJ/t once the PCA rows changed.
+- **The low PCA rows are retargeted, not set aside (sc-224 to sc-227).** They are the plants' waste fuels: the sum of the waste oil, solvents, tire-derived, other solid, and miscellaneous waste lines. The extraction had them as `waste-fuel`, and the 2026-10-02 normalisation folded them into `fuel` because there was no such carrier. Beside the fuel total, they had pulled each PCA example's fuel to the median of the two rows and its total to 2.6 GJ/t.
+- **`waste-fuel` CO2 factor now Canadian.** ECCC NIR 2026 Table A6.1-14, cement industry waste fuel (fossil-based): 73 kg/GJ (68.5-86, GHGRP 2018-2024). This replaces the IPCC stand-in (87.1).
+- **Results:**
+
+| Archetype | Total energy, GJ/t | Combustion CO2, t/t | Total CO2, t/t |
+| - | - | - | - |
+| kiln_dry-precalciner | 4.045 | 0.253 | 0.780 |
+| kiln_dry-precalciner_ccs-diffuse | | | net 0.088 |
+| kiln_dry-precalciner_efficiency-moderate | 3.84 | | |
+| kiln_dry-precalciner_efficiency-strong | 3.17, sourced | | |
+| kiln_legacy | | 0.308 | 0.814 |
+
+  The strong variant now saves 22% against its host (was 8%). The GNR all-kiln gross is 0.80-0.83 t/t.
+
+### Kramer 2009 pooled once
+
+Kramer Table E-1 reprints the Jacobs and IPST 2006 best-available-technology figure (527 kWh and 5.0 MMBtu per short ton). Its two rows are excluded as `repeat:` (excluded-row.csv), the same treatment as the Lazard 2024 reprint, and their rebases (sc-222, sc-223) are removed. The digester is now the median of 3 examples: 4.07 GJ/t (steam 2.61, electricity 1.47). That is the Jacobs 2002 average, between the Jacobs best-available-technology figure (3.61) and Martin (7.12).
+
+### Biogenic CO2 rule
+
+Brad: add it for every biomass type.
+
+- **New rule `id-biomass-co2-from-fuel`** (method `biogenic-emission-factor`): emissions-biomass = biogenic carrier energy x factor. It writes only where no source or judgement gives the value.
+- **New factors `cf-ef-co2-<carrier>`,** IPCC 2006 Table 1.4 per GJ NCV, put on HHV:
+
+| Carrier | Factor, t/GJ HHV |
+| - | - |
+| biomass, biomass-solid | 0.1064 |
+| black-liquor | 0.0855 |
+| liquid-biomass | 0.0756 |
+| biogas, landfill-gas, biomethane, renewable-natural-gas | 0.0492 |
+
+- **Kept out:**
+  - archetypes whose biomass is a feedstock, with its carbon leaving in the product: the fuel and chemical gasifiers, fermenters, reactors, the charcoal retort, and digester CHP;
+  - the biochar shaft furnace, as for the fossil rule;
+  - capture variants, which take the host's value net of capture.
+- **New rows (15).** They include:
+  - boiler_solid-fuel 0.127 t/GJ;
+  - steam-turbine_back-pressure 0.115 t/GJ;
+  - gasifier_black-liquor 1.17 t/t BLS, against 1.11 sourced for the recovery boiler;
+  - boiler_recovery-high-solids 1.12 t/t;
+  - pellet plant 0.32 t/t;
+  - the kilns 0.010-0.015 t/t.
+
+  Capture variants follow their hosts (kiln_dry-precalciner_ccs-diffuse net biogenic 0.0013 t/t).
+- **The reverse (biomass energy from a given biogenic CO2): not added.** Of the sourced and judged biogenic CO2 values, the lime kiln's (calcination of lime mud whose carbon came from the wood) and the fermenter's (fermentation) are process CO2, not burned fuel. A reverse rule would invent 5.5 GJ/t of biomass fuel for the lime kiln. Where a source gives biogenic CO2 from fuel without the fuel, it can be added by judgement.
+
+The consistency check has 76 findings, all ruled. The review packages are regenerated.

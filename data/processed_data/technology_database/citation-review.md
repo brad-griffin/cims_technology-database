@@ -148,10 +148,10 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | NRCan 2007 | 75 | confirmed against the held document 2026-10-03 |
 | Weidmann 2013 | 75 | confirmed against the held document 2026-10-08 |
 | Vaillancourt 2014 (ETSAP P04) | 74 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'April 2014'; authors from the 'Please send comments to' line |
+| PCA 2002 | 74 | confirmed against the held document 2026-10-02 |
 | IEA 2024 | 71 | confirmed against the held document 2026-10-11 |
 | EIA 2013 (buildings equipment) | 70 | confirmed against the held document 2026-10-14 |
 | Lako 2010 (ETSAP E04) | 70 | authorship confirmed from the printed 'send comments to Paul Lako, Author' line; month unverified |
-| PCA 2002 | 70 | confirmed against the held document 2026-10-02 |
 | Energetics 2000 (iron and steel profile) | 69 | confirmed against the held document 2026-10-02 |
 | Songhurst 2018 | 69 | confirmed against the held document 2026-10-02 |
 | Energetics 1998 | 68 | confirmed against the held document 2026-10-03 |
