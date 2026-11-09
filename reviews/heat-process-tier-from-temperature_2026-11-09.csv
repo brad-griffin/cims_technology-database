@@ -1,13 +1,13 @@
-﻿archetype,heat-process-tier-was,heat-process-tier-now,heat-process-temp degC central [low-high]
-capture-unit_amine,low-temp,medium-temp,160 [150-170]
-distillation-column_heat-pumped,low-temp,low-temp; medium-temp,110 [85-165]
-dryer_direct-fired,low-temp; medium-temp,high-temp,"750 [500-1000], drying-gas temperature"
-dryer_rotary-direct-fired,medium-temp,low-temp,120
-dryer_solid-fuel,low-temp; medium-temp,medium-temp,285 [200-370]
-furnace_lehr,high-temp,medium-temp; high-temp,500 [400-600]
-gas-treatment-unit_glycol-dehydration,medium-temp,low-temp; medium-temp,190 [65.6-205]
-gas-treatment-unit_thermal-oxidiser,high-temp,medium-temp; high-temp,650 [300-1000]
-reactor_alkylation,low-temp; medium-temp,medium-temp,218 [204-232]
-reactor_catalytic-n2o,high-temp,medium-temp; high-temp,400 [300-500]
-reactor_chemical-depolymerization,low-temp; medium-temp,low-temp,60
-reactor_plastics-pyrolysis,high-temp,medium-temp; high-temp,500 [300-700]
+﻿archetype,heat-process-tier-was,heat-process-tier-now,heat-process-temp degC central [low-high],later the same day
+capture-unit_amine,low-temp,medium-temp,160 [150-170],"reverted to low-temp: the 150-170 degC was the reboiler steam (heating side), now excluded; reboiler runs about 110-130 degC"
+distillation-column_heat-pumped,low-temp,low-temp; medium-temp,110 [85-165],"reverted to low-temp: the temperatures were heat-pump supply and recovered hot water, now excluded"
+dryer_direct-fired,low-temp; medium-temp,high-temp,"750 [500-1000], drying-gas temperature","reverted to low-temp; medium-temp: the 500-1000 degC was drying-gas inlet (heating side), now excluded"
+dryer_rotary-direct-fired,medium-temp,low-temp,120,
+dryer_solid-fuel,low-temp; medium-temp,medium-temp,285 [200-370],"reverted to low-temp; medium-temp: the 200-370 degC was hot-gas inlet (heating side), now excluded"
+furnace_lehr,high-temp,medium-temp; high-temp,500 [400-600],
+gas-treatment-unit_glycol-dehydration,medium-temp,low-temp; medium-temp,190 [65.6-205],"medium-temp: with the 93 degC regeneration-feed temperature excluded, the reboiler range is 177-205 degC"
+gas-treatment-unit_thermal-oxidiser,high-temp,medium-temp; high-temp,650 [300-1000],
+reactor_alkylation,low-temp; medium-temp,medium-temp,218 [204-232],
+reactor_catalytic-n2o,high-temp,medium-temp; high-temp,400 [300-500],
+reactor_chemical-depolymerization,low-temp; medium-temp,low-temp,60,
+reactor_plastics-pyrolysis,high-temp,medium-temp; high-temp,500 [300-700],

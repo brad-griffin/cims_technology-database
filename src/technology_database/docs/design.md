@@ -243,14 +243,17 @@ are not service keys.
   Archetypes with no process heat (shaft work, transport, cooling, lighting,
   power-only generation, pressure or membrane separation, methane controls) take
   `not-applicable`. Only heat-supply archetypes are banded by tier in the workbook.
-- Two temperature parameters: `heat-process-temp` is the temperature the process
-  needs or runs at (kiln sintering, bath, reactor, cooking or drying temperature);
-  `heat-output-temp` is the temperature of heat an archetype delivers (steam, hot
-  water, hot gas, thermal oil), or of a stream leaving it when a target names one
-  (exhaust, flue gas). Each has `-min` and `-max` forms that widen its low and high.
-  An extraction row takes `heat-output-temp` when its archetype is heat supply,
-  power generation or machine drive, or its target is a leaving stream, and
-  `heat-process-temp` otherwise.
+- Two temperature parameters (Brad 2026-11-09). `heat-process-temp` is the
+  temperature the process needs to achieve its end use (kiln sintering, bath,
+  reactor, cooking or drying temperature). `heat-output-temp` is the temperature of
+  the heat an archetype meant to supply heat delivers (steam, hot water, hot gas,
+  thermal oil). Each has `-min` and `-max` forms that widen its low and high.
+  Neither records the heating side: a flame, flue gas, heating surface, tube wall,
+  or the steam or hot gas supplied to a process is ruled out row by row
+  (`reference/excluded-row.csv`). `heat-output-temp` counts only on heat supply,
+  boilers, and archetypes with heat or steam among their products
+  (`pipeline/normalise.py`, `supplies_heat`); elsewhere, such as a turbine's
+  exhaust, it is excluded.
 - Where `heat-process-temp` exists, it decides `heat-process-tier`: the tier takes
   every band the central, low and high values span. The build lists any archetype
   whose recorded tier disagrees, for correction in `archetype.csv`.

@@ -202,8 +202,8 @@
   "n_examples": 141,
   "cross_families": {
    "heat-supply": 24,
-   "lighting": 7,
    "space-conditioning": 7,
+   "lighting": 7,
    "machine-drive": 3
   }
  },
@@ -819,11 +819,11 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
-   "co2-capture": 8,
-   "machine-drive": 8,
    "lighting": 7,
-   "space-conditioning": 7
+   "space-conditioning": 7,
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "co2-capture": 8
   }
  },
  "pulp-and-paper": {
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
-   "heat-supply": 24,
-   "co2-capture": 4,
-   "machine-drive": 8,
    "lighting": 7,
-   "space-conditioning": 7
+   "heat-supply": 24,
+   "space-conditioning": 7,
+   "machine-drive": 8,
+   "co2-capture": 4
   }
  },
  "cement-and-lime": {
@@ -1677,10 +1677,10 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "co2-capture": 8,
-   "machine-drive": 8,
+   "space-conditioning": 7,
    "lighting": 7,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "co2-capture": 8
   }
  },
  "chemicals": {
@@ -2235,11 +2235,11 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
-   "co2-capture": 8,
-   "machine-drive": 8,
    "lighting": 7,
-   "space-conditioning": 7
+   "space-conditioning": 7,
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "co2-capture": 8
   }
  },
  "conventional-oil": {
@@ -3327,10 +3327,10 @@
   "n_sources": 49,
   "n_examples": 819,
   "cross_families": {
-   "co2-capture": 8,
    "machine-drive": 10,
+   "heat-supply": 5,
    "mobile-equipment": 6,
-   "heat-supply": 5
+   "co2-capture": 8
   }
  },
  "biofuels": {
@@ -4206,11 +4206,11 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "heat-supply": 23,
+   "lighting": 7,
+   "space-conditioning": 7,
    "power-generation": 12,
    "machine-drive": 9,
-   "lighting": 7,
-   "space-conditioning": 7
+   "heat-supply": 23
   }
  },
  "aluminum": {
@@ -4223,7 +4223,7 @@
     "band": "Alumina digestion",
     "archetype": "digester_bayer",
     "label": "Bayer digestion (digestion to evaporation)",
-    "status": "quantified",
+    "status": "estimated",
     "n": "8",
     "trl": "9",
     "unit": "t",
@@ -4485,11 +4485,11 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "heat-supply": 23,
-   "co2-capture": 8,
-   "machine-drive": 8,
+   "space-conditioning": 7,
    "lighting": 7,
-   "space-conditioning": 7
+   "machine-drive": 8,
+   "heat-supply": 23,
+   "co2-capture": 8
   }
  },
  "petroleum-refining": {
@@ -4774,11 +4774,11 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "heat-supply": 30,
-   "co2-capture": 8,
-   "machine-drive": 8,
    "lighting": 7,
-   "space-conditioning": 7
+   "space-conditioning": 7,
+   "machine-drive": 8,
+   "heat-supply": 30,
+   "co2-capture": 8
   }
  },
  "whole-database": {
@@ -6421,7 +6421,7 @@
     "band": "Drying and curing",
     "archetype": "dryer_solid-fuel",
     "label": "Solid-fuel dryer",
-    "status": "quantified",
+    "status": "estimated",
     "n": "13",
     "trl": "9",
     "unit": "t",
@@ -6581,7 +6581,7 @@
     "band": "Glass melting",
     "archetype": "furnace_oxy-fuel-thermochemical",
     "label": "Oxy-fuel glass furnace with thermochemical heat recovery",
-    "status": "quantified",
+    "status": "estimated",
     "n": "2",
     "trl": "4-7",
     "unit": "t",
@@ -7671,7 +7671,7 @@
     "band": "Alumina digestion",
     "archetype": "digester_bayer",
     "label": "Bayer digestion (digestion to evaporation)",
-    "status": "quantified",
+    "status": "estimated",
     "n": "8",
     "trl": "9",
     "unit": "t",
@@ -9561,7 +9561,7 @@
     "band": "Forming and pressing: process heat (GJ)",
     "archetype": "press_hot-platen",
     "label": "Hot press with thermal-oil heater",
-    "status": "quantified",
+    "status": "estimated",
     "n": "3",
     "trl": "9",
     "unit": "t",
@@ -9633,20 +9633,20 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
-   "heat-supply": 34,
    "co2-capture": 13,
    "machine-drive": 13,
-   "power-generation": 13,
+   "mobile-equipment": 6,
+   "heat-supply": 34,
    "lighting": 7,
-   "space-conditioning": 7,
-   "mobile-equipment": 6
+   "power-generation": 13,
+   "space-conditioning": 7
   }
  },
  "_totals": {
   "archetypes": 537,
   "status": {
-   "quantified": 462,
-   "estimated": 75
+   "quantified": 458,
+   "estimated": 79
   },
   "examples": 12331,
   "mapped": 7800,

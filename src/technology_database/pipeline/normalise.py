@@ -264,6 +264,14 @@ def target_unit(param: str, pu: str, default: str) -> str:
     return default
 
 
+def supplies_heat(a) -> bool:
+    """An archetype meant to supply heat: heat supply, a boiler, or heat or steam among
+    its products (a recovery boiler raises steam as well as recovering chemicals)."""
+    prods = {a.get("product", "")} | set(split_list(a.get("secondary-products", "")))
+    return (a.get("family") == "heat-supply" or a["archetype"].split("_")[0] == "boiler"
+            or bool(prods & {"heat", "steam"}))
+
+
 class Units:
     def __init__(self, cur_factors):
         self.table = {}
@@ -532,6 +540,12 @@ def normalise(facts, examples, records, units) -> None:
             continue
         pu = a["product-unit"]
         p = r["parameter"]
+        if p.startswith("heat-output-temp") and not supplies_heat(a):
+            # an output temperature counts only on an archetype meant to supply heat
+            # (Brad 2026-11-09): not a turbine's exhaust or a heating surface
+            r["excluded"] = ("heat-output-temp on an archetype not meant to supply heat "
+                             "(not heat supply, not a boiler, no heat or steam product)")
+            continue
         if (p == "specific-energy-consumption" and (r.get("target") or "").strip().lower() == "heat"
                 and ("steam-heated" in a["archetype"] or a["archetype"] in HEAT_AS_STEAM)
                 and "steam" in split_list(a.get("carriers", ""))
