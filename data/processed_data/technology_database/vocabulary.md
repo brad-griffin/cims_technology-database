@@ -197,14 +197,14 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `grinding-mill_ball` | Ball mill | conventional | electricity | 9 | industrial-minerals.product.cement.grinding | quantified |
 | `grinding-mill_slag` | Slag drying and grinding mill | conventional | natural-gas; electricity | 9 | industrial-minerals.product.cement.ground-slag | estimated |
 | `kiln_clay-calcination` | Rotary kiln for clay calcination | conventional | natural-gas; electricity | 9 | industrial-minerals.product.cement.calcined-clay | quantified |
-| `kiln_dry-precalciner` | Dry rotary kiln with preheater and precalciner | conventional | municipal-waste; hydrogen; coal; petroleum-coke; natural-gas; biomass; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
-| `kiln_legacy` | Legacy cement kiln (wet, semi-dry or long dry) | conventional | coal; petroleum-coke; natural-gas; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
+| `kiln_dry-precalciner` | Dry rotary kiln with preheater and precalciner | conventional | petroleum-coke; coal; natural-gas; waste-fuel; coke; oil; hydrogen; biomass; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
+| `kiln_legacy` | Legacy cement kiln (wet, semi-dry or long dry) | conventional | petroleum-coke; coal; natural-gas; waste-fuel; coke; oil; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
 | `kiln_lime-long-rotary` | Long rotary lime kiln | conventional | coal; natural-gas; petroleum-coke; electricity | 9 | industrial-minerals.product.lime | quantified |
 | `kiln_lime-rotary-preheater` | Rotary lime kiln with preheater | conventional | natural-gas; coal; petroleum-coke; electricity | 9 | industrial-minerals.product.lime | quantified |
 | `kiln_lime-shaft` | Mixed-feed or annular shaft lime kiln | conventional | natural-gas; coal; coke; electricity | 9 | industrial-minerals.product.lime | quantified |
-| `kiln_dry-precalciner_efficiency-moderate` | Cement kiln efficiency measures, moderate | efficient variant | coal; petroleum-coke; natural-gas; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
-| `kiln_dry-precalciner_efficiency-strong` | Cement kiln efficiency measures, strong | efficient variant | coal; petroleum-coke; natural-gas; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
-| `kiln_dry-precalciner_ccs-diffuse` | Cement kiln with post-combustion capture | prospective | waste-heat; coal; petroleum-coke; natural-gas; electricity; steam | 7 | industrial-minerals.product.cement.clinker | quantified |
+| `kiln_dry-precalciner_efficiency-moderate` | Cement kiln efficiency measures, moderate | efficient variant | petroleum-coke; coal; natural-gas; waste-fuel; coke; oil; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
+| `kiln_dry-precalciner_efficiency-strong` | Cement kiln efficiency measures, strong | efficient variant | petroleum-coke; coal; natural-gas; waste-fuel; coke; oil; electricity | 9 | industrial-minerals.product.cement.clinker | quantified |
+| `kiln_dry-precalciner_ccs-diffuse` | Cement kiln with post-combustion capture | prospective | petroleum-coke; coal; natural-gas; waste-fuel; coke; oil; waste-heat; electricity; steam | 7 | industrial-minerals.product.cement.clinker | quantified |
 | `kiln_lime-rotary-preheater_ccs-diffuse` | Lime kiln with post-combustion capture | prospective | natural-gas; coal; petroleum-coke; electricity; steam | 7 | industrial-minerals.product.lime; pulp-and-paper.service.chemical-recovery.lime-kiln | quantified |
 | `binder_alkali-activated` | Alkali-activated binder | alternative | electricity | 9 | industrial-minerals.product.cement.binder | quantified |
 | `binder_blended-cement` | Blended cement with supplementary cementitious materials | alternative | electricity | 9 | industrial-minerals.product.cement.binder | quantified |
@@ -600,7 +600,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `boiler_recovery` | Recovery boiler | conventional | black-liquor; electricity; steam | 9 | pulp-and-paper.service.chemical-recovery.recovery-furnace | quantified |
 | `debarker_drum` | Drum debarker and chipper | conventional | electricity | 9 | pulp-and-paper.product.pulp.wood-preparation | quantified |
 | `digester_continuous-kraft` | Continuous kraft digester | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
-| `digester_semi-chemical` | Semi-chemical pulping | conventional | steam; electricity; natural-gas | 9 | pulp-and-paper.product.pulp.pulping-semi-chemical | quantified |
+| `digester_semi-chemical` | Semi-chemical pulping | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-semi-chemical | quantified |
 | `digester_sulphite` | Sulphite chemical pulping | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.pulping-chemical | quantified |
 | `dryer_market-pulp` | Market pulp dryer | conventional | steam; electricity | 9 | pulp-and-paper.product.pulp.drying | quantified |
 | `dryer_steam-heated` | Steam-heated cylinder dryer section | conventional | steam; electricity | 9 | pulp-and-paper.product.paper.coated.drying; pulp-and-paper.product.paper.linerboard.drying; pulp-and-paper.product.paper.newsprint.drying; pulp-and-paper.product.paper.tissue.drying; pulp-and-paper.product.paper.uncoated.drying | quantified |

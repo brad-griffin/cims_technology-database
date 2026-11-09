@@ -63,8 +63,8 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Daniels 2002 | 243 | confirmed against the held document 2026-10-03 |
 | US DOE 2015 (chemicals bandwidth) | 234 | confirmed 2026-09-22 against the held copy, database/raw-data/gov-usa/doe/bandwidth-studies/doe_2015_chemicals-bandwidth-study.pdf |
 | Johansson et al. 2012 | 226 | title, authors, volume and pages confirmed on the Chalmers research portal; DOI not seen verbatim |
+| Jacobs 2006 | 224 | confirmed against the held document 2026-10-02 |
 | US EPA 2021 (proposal TSD) | 222 | confirmed against the held document 2026-10-06 |
-| Jacobs 2006 | 220 | confirmed against the held document 2026-10-02 |
 | IETD 2013 | 211 | confirmed against the held document 2026-10-07 |
 | IEAGHG 2017 (SMR hydrogen) | 209 | confirmed against the held document 2026-10-02 |
 | Lemar 2001 | 205 | confirmed against the held document 2026-10-02 |

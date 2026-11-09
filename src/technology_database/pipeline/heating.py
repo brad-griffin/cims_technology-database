@@ -66,7 +66,7 @@ CARRIER_RATIO = {
     **{c: "cf-hhv-lhv-solid-liquid" for c in ("coal", "coke", "oil", "diesel", "gasoline", "naphtha",
                                                "petroleum-coke", "biomass", "biomass-solid",
                                                "bioliquid", "liquid-biomass", "fuel-oil",
-                                               "heavy-fuel-oil")},
+                                               "heavy-fuel-oil", "waste-fuel")},
 }
 INPUT_BASES = {"thermal-input", "electric-input"}
 

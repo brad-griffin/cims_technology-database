@@ -94,7 +94,7 @@ digester_bayer,non-ferrous-metals,t,estimated,estimated,estimated,guess,estimate
 digester_bayer_electric-heating,non-ferrous-metals,t,estimated,estimated,estimated,sourced,estimated,guess,guess,sourced
 digester_continuous-kraft,pulp-and-paper,t,sourced,sourced,estimated,sourced,estimated,estimated,identity,sourced
 digester_deep-eutectic-solvent,pulp-and-paper,t,guess,guess,guess,guess,estimated,estimated,identity,sourced
-digester_semi-chemical,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,guess,sourced
+digester_semi-chemical,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 digester_sulphite,pulp-and-paper,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 direct-heater_electric,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
 direct-heater_fuel-fired,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
@@ -259,8 +259,8 @@ kiln_charcoal-retort,other-industry,t,guess,guess,guess,guess,estimated,estimate
 kiln_clay-calcination,cement-and-lime,t,guess,guess,guess,guess,sourced,estimated,guess,sourced
 kiln_dry-precalciner,cement-and-lime,t,sourced,sourced,sourced,sourced,sourced,sourced,sourced,sourced
 kiln_dry-precalciner_ccs-diffuse,cement-and-lime,t,estimated,estimated,estimated,estimated,sourced,estimated,estimated,sourced
-kiln_dry-precalciner_efficiency-moderate,cement-and-lime,t,estimated,estimated,estimated,estimated,estimated,estimated,sourced,sourced
-kiln_dry-precalciner_efficiency-strong,cement-and-lime,t,estimated,estimated,estimated,sourced,sourced,estimated,estimated,sourced
+kiln_dry-precalciner_efficiency-moderate,cement-and-lime,t,estimated,estimated,estimated,estimated,estimated,estimated,identity,sourced
+kiln_dry-precalciner_efficiency-strong,cement-and-lime,t,estimated,estimated,estimated,sourced,sourced,estimated,identity,sourced
 kiln_electric-plasma,cement-and-lime,t,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
 kiln_intermittent,glass-and-ceramics,t,guess,guess,guess,sourced,estimated,guess,identity,sourced
 kiln_legacy,cement-and-lime,t,guess,guess,guess,sourced,estimated,estimated,sourced,sourced

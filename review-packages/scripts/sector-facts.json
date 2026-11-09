@@ -821,9 +821,9 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 8
+   "lighting": 7
   }
  },
  "pulp-and-paper": {
@@ -1300,9 +1300,9 @@
   "cross_families": {
    "heat-supply": 24,
    "space-conditioning": 7,
+   "co2-capture": 4,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 4
+   "lighting": 7
   }
  },
  "cement-and-lime": {
@@ -1678,9 +1678,9 @@
   "n_examples": 508,
   "cross_families": {
    "space-conditioning": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 8
+   "lighting": 7
   }
  },
  "chemicals": {
@@ -2237,9 +2237,9 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 8
+   "lighting": 7
   }
  },
  "conventional-oil": {
@@ -3327,10 +3327,10 @@
   "n_sources": 49,
   "n_examples": 819,
   "cross_families": {
-   "machine-drive": 10,
-   "mobile-equipment": 6,
    "co2-capture": 8,
-   "heat-supply": 5
+   "machine-drive": 10,
+   "heat-supply": 5,
+   "mobile-equipment": 6
   }
  },
  "biofuels": {
@@ -4208,9 +4208,9 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
-   "power-generation": 12,
    "machine-drive": 9,
-   "lighting": 7
+   "lighting": 7,
+   "power-generation": 12
   }
  },
  "aluminum": {
@@ -4487,9 +4487,9 @@
   "cross_families": {
    "heat-supply": 23,
    "space-conditioning": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 8
+   "lighting": 7
   }
  },
  "petroleum-refining": {
@@ -4776,9 +4776,9 @@
   "cross_families": {
    "heat-supply": 30,
    "space-conditioning": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "lighting": 7,
-   "co2-capture": 8
+   "lighting": 7
   }
  },
  "whole-database": {
@@ -9634,12 +9634,12 @@
   "n_examples": 5531,
   "cross_families": {
    "heat-supply": 34,
-   "power-generation": 13,
    "co2-capture": 13,
+   "power-generation": 13,
    "machine-drive": 13,
    "space-conditioning": 7,
-   "lighting": 7,
-   "mobile-equipment": 6
+   "mobile-equipment": 6,
+   "lighting": 7
   }
  },
  "_totals": {

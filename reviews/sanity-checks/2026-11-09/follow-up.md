@@ -107,7 +107,7 @@ All are real energy uses that the declared lists had missed. Two to keep an eye 
   - The archetype is all electricity: 38.4 GJ/t, the pooled electricity median from 9 examples (the 40.2 total had been one MIDDEN card).
   - Combustion CO2 is 0.
 
-### Semi-chemical pulping digester steam and fuel: scope problem, not changed yet
+### Semi-chemical pulping digester steam and fuel: scope problem (restated in section 8)
 
 - **Where the values come from:** Jacobs 2006 (DOE bandwidth study, Table 4.5 and the area tables pp.94-95), repeated in Kramer 2009.
 - **What they cover:** the **whole semi-chemical pulping line**, not the digester.
@@ -124,7 +124,7 @@ All are real energy uses that the declared lists had missed. Two to keep an eye 
 
   The archetype's total would fall from 9.30 to about 4 GJ/t. Waiting for Brad's go-ahead.
 
-### Cement fuel mix: the 2001 mix no longer fits (not changed yet)
+### Cement fuel mix: the 2001 mix no longer fits (changed in section 8)
 
 NRCan Comprehensive Energy Use Database, Table 46, Canadian cement industry, 2022:
 
@@ -138,3 +138,49 @@ NRCan Comprehensive Energy Use Database, Table 46, Canadian cement industry, 202
 | Electricity | 8.9 | not a fuel |
 
 2021 is similar. In 1996-1998, coal was 41% of clinker energy and petroleum coke 13%. Petroleum coke and natural gas have since overtaken coal.
+
+## 8. Third round (Brad, 2026-11-09)
+
+### Semi-chemical digester restated to the cooking area
+
+Brad: restate it, as that fits the hierarchy better.
+
+- The Jacobs 2006 and Kramer 2009 rows are restated with the source's own area tables (Tab H, pp.92-97). The new rebases are sc-218 to sc-223, with four same-source factors `cf-cooking-share-*-jacobs-2006-semichem-*`:
+  - 2002 average: steam 2.24 of 6.42 MMBtu/short ton (x 0.349), electricity 370 of 564.6 kWh/short ton (x 0.655);
+  - BAT, and Kramer, which reprints it: steam 1.90 of 5.00 (x 0.38), electricity 352 of 527 (x 0.668).
+- Cooking electricity includes the mechanical refining that follows the cook (370 of the 565 kWh).
+- The three direct-fuel rows are excluded (excluded-row.csv). They are all lime kiln and chemical preparation, a chemical-recovery node.
+- The carriers are now steam and electricity. The three 2026-10-09 draft judgements (held steam and electricity, natural gas for the fuel) are rejected.
+- Martin 2000 (5.3 GJ/t heat, 505 kWh/t, from Kincaid 1998) is kept. It sits in that source's pulping section, with chemical recovery listed separately, but it is higher than the Jacobs cooking area.
+- Result: total 3.84 GJ/t (was 9.30). Steam 2.46, electricity 1.38, combustion CO2 0. The levelized cost with energy falls from 207 to 126 CAD/t.
+
+### Cement kilns: all current fuels, 2013-2022 average
+
+Brad: add all the current kiln fuels, including waste, averaged over about the past decade.
+
+NRCan CEUD Table 46 (Canadian cement), 2013-2022 average, fuel only (electricity left out), 51.4 PJ/yr:
+
+| Fuel | PJ/yr | Share | Carrier |
+| - | - | - | - |
+| Still gas and petroleum coke | 18.5 | 35.9% | petroleum-coke |
+| Coal | 13.9 | 27.0% | coal |
+| Natural gas | 13.7 | 26.6% | natural-gas |
+| Other (waste fuels, some steam) | 3.9 | 7.6% | waste-fuel (new) |
+| Coke and coke oven gas | 1.1 | 2.1% | coke |
+| Diesel, light and heavy fuel oil | 0.4 | 0.8% | oil |
+
+- Over the decade, natural gas rose from 8.5 to 21.0 PJ and coal fell from 16.6 to 8.3 PJ, so the average sits between the start and end mixes.
+- The mix applies to kiln_dry-precalciner and kiln_legacy, and through them to their variants.
+- **New carrier `waste-fuel`:** waste-derived kiln fuels (tyres, plastics, shingles, solvents, waste oil).
+  - Its CO2 factor is `cf-ef-co2-waste-fuel`, 0.0871 t/GJ HHV (0.070-0.115). That is IPCC 2006 V2 Ch1 Table 1.4, municipal wastes (non-biomass fraction), 91.7 kg/GJ NCV.
+  - It counts as fossil, and its price is 0 (internal).
+  - Any biomass part (wood in shingles, natural rubber in tyres) would lower the CO2; it is not split out.
+- **Combustion CO2 now follows the fuel mix** (emission-fix identity, Claude, following Brad's rule that the CO2 follows the chosen fuel):
+  - kiln_dry-precalciner: 0.232 t/t, was 0.293 pooled from coal-heavy European and global sources. Total 0.760 (was 0.833). The capture variant's net is 0.075, and the efficiency variants follow.
+  - kiln_legacy: 0.330 t/t (0.385 under the 2001 mix). Process CO2 is back to the sourced 0.506 (n=2), not the remainder of a coal-fired wet-kiln total, so the total is 0.836 (was 0.96).
+- **For review:**
+  - the diesel and oil share (mostly start-up fuel and site equipment, about 1%);
+  - the coke share;
+  - treating the CEUD "Other" row as all waste fuel.
+
+The consistency check still has 76 findings, all ruled. The review packages are regenerated.

@@ -47,7 +47,7 @@ ACCEPT[("reactor_co2-to-dme", "levelized-vs-sourced")] = "as F6: 3.4x, source ba
 ACCEPT[("liquefaction-train_base-load", "levelized-vs-sourced")] = "F6: 2.6x, capex basis to check, for Brad"
 PRICE = {r.carrier: (r.kind, float(r.price) if r.price != "" else None) for r in price.itertuples()}
 
-FOSSIL = {"natural-gas", "coal", "oil", "diesel", "gasoline", "coke", "petroleum-coke", "lpg", "naphtha",
+FOSSIL = {"natural-gas", "coal", "waste-fuel", "oil", "diesel", "gasoline", "coke", "petroleum-coke", "lpg", "naphtha",
           "fuel-oil", "heavy-fuel-oil", "refinery-gas", "still-gas", "coke-oven-gas", "blast-furnace-gas"}
 NO_HV = {"electricity", "heat", "steam", "cooling", "hot-water", "waste-heat", "solar", "geothermal", "nuclear", "hydrogen-as-feed"}
 STEAMLIKE = {"steam", "heat", "hot-water", "district-heat", "waste-heat"}
