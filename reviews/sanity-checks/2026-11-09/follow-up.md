@@ -154,7 +154,7 @@ Brad: restate it, as that fits the hierarchy better.
 - Martin 2000 (5.3 GJ/t heat, 505 kWh/t, from Kincaid 1998) is kept. It sits in that source's pulping section, with chemical recovery listed separately, but it is higher than the Jacobs cooking area.
 - Result: total 3.84 GJ/t (was 9.30). Steam 2.46, electricity 1.38, combustion CO2 0. The levelized cost with energy falls from 207 to 126 CAD/t.
 
-### Cement kilns: all current fuels, 2013-2022 average
+### Cement kilns: all current fuels, 2013-2022 average (superseded by section 9)
 
 Brad: add all the current kiln fuels, including waste, averaged over about the past decade.
 
@@ -184,3 +184,63 @@ NRCan CEUD Table 46 (Canadian cement), 2013-2022 average, fuel only (electricity
   - treating the CEUD "Other" row as all waste fuel.
 
 The consistency check still has 76 findings, all ruled. The review packages are regenerated.
+
+## 9. Fourth round (Brad, 2026-11-09)
+
+### Cement kilns on GCCA GNR data; coke and oil dropped
+
+Brad: drop the oil and coke kiln fuels; use the GCCA data for kiln fuels, including waste, and compare it to NRCan.
+
+**The source.** GCCA GNR 2.0 Canada extract (`gcca_2024_001`, indicator 25aTGW: kiln thermal energy, excluding fuel drying), 2015-2024 average.
+
+**What GNR gives.** It splits kiln fuel into conventional fossil, alternative fossil and mixed wastes, and biomass. It does not split the conventional fuels, so those take the NRCan CEUD shares (2015-2022).
+
+| Fuel | GNR 2015-2024, PJ/yr | Within conventional (NRCan 2015-2022) | Wide-view share |
+| - | - | - | - |
+| Conventional fossil | 35.6 (87.5%) | | |
+| - petroleum coke (and still gas) | | 41.0% | 35.9% |
+| - natural gas | | 31.9% | 27.9% |
+| - coal | | 27.1% | 23.7% |
+| Alternative fossil and mixed wastes | 3.9 (9.5%) | | 9.5% (`waste-fuel`) |
+| Biomass | 1.2 (3.0%) | | 3.0% (`biomass`) |
+| Total | 40.7 | | 100% |
+
+**The waste fuel, by energy (GNR, 2015-2022).** Other fossil wastes and mixed fuels, mixed industrial waste, solvents, RDF including plastics, tyres, and waste oil. It keeps the IPCC non-biomass municipal-waste factor (0.0871 t/GJ HHV), now noted as standing in for this mix.
+
+**GCCA against NRCan, 2015-2022 averages, PJ/yr:**
+
+| | GCCA GNR (kilns) | NRCan CEUD Table 46 (industry) |
+| - | - | - |
+| Conventional fossil | 35.4 | 48.1 (natural gas 14.9, petroleum coke 19.2, coal 12.7, coke 1.0, oil 0.4) |
+| Waste fuels | 3.8 (alternative fossil) | 3.9 ("Other": waste fuels and steam) |
+| Biomass | 1.1 | 0 (wood waste row is 0) |
+| Total fuel | 40.3 | 52.0 |
+| Per t clinker | 3.72 GJ/t (25aAG) | about 4.7 GJ/t on GNR clinker |
+
+- **Waste fuels agree:** NRCan "Other" matches GNR alternative fossil.
+- **Biomass:** NRCan shows none. GNR's 1.1 PJ is likely inside NRCan "Other" or another row.
+- **NRCan's conventional fossil is about 36% higher.** CEUD covers the whole cement industry (NAICS 32731): dryers, buildings, site vehicles, and grinding-only plants, as well as kilns. GNR is kiln thermal energy only, covering 92-100% of clinker.
+- **Kiln intensity:** NRCan's 4.7 GJ/t clinker is too high for the Canadian fleet. GNR's 3.72 is the kiln figure.
+
+**CO2 cross-check.** GNR Canadian gross clinker CO2 is 0.80-0.83 t/t (2019-2024), all kilns, at 3.72 GJ/t. The database values follow:
+
+| Kiln | Fuel, GJ/t | Combustion CO2, t/t | Total CO2, t/t |
+| - | - | - | - |
+| kiln_dry-precalciner | 3.19 | 0.221 | 0.748 |
+| Same kiln at the GNR 3.72 GJ/t | 3.72 | about 0.26 | about 0.78 |
+| kiln_legacy | 4.55 | 0.315 | 0.821 |
+
+The capture variant's net is 0.074. Biomass CO2 is biogenic and is not in these totals.
+
+**Unchanged:**
+- The consistency check has 76 findings, all ruled.
+- The review packages are regenerated.
+
+### Martin 2000 semi-chemical row: pulping stage only
+
+Martin 2000 lists the stages separately:
+- wood preparation (debarking, chipping);
+- pulping (kraft 4.4 GJ/t steam, sulfite 4.2, semi-chemical 5.3 thermal);
+- chemical recovery (evaporators, recovery boiler 1.1 GJ/t, lime kiln 2.3 GJ/t).
+
+So the 5.3 GJ/t and 505 kWh/t (Kincaid 1998, US 1994) exclude wood preparation, evaporation, and recovery: cooking plus the mechanical refining. It is about twice the Jacobs 2006 cooking area (2.2-2.6 GJ/t). Martin's kraft digester (4.4 GJ/t, from Elaahi and Lowitt 1988) sits similarly above Jacobs' kraft cooking (2.7-2.9 GJ/t), so the gap looks like data vintage, not scope. Kept.
