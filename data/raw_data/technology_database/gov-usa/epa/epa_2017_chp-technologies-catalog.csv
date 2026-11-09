@@ -31,7 +31,7 @@ steam,steam-turbine,capex,,2013_USD/kW,682,666,1136,,"Table 4-2, p.4-10","COST B
 steam,steam-turbine,opex-variable,,2013_USD/kWh,0.009,0.006,0.010,,"Table 4-2, p.4-10","UNIT CORRECTED: Table 4-2 heads this row '$/kW', but Table 1-3 gives the same 0.006-0.01 range as $/kWh for steam turbines, so the table header is a slip. Values exactly as printed."
 steam,steam-turbine,availability,,fraction,0.9059,0.7237,0.9982,,"Table 4-3, p.4-15","ICF sample of 16 units under 25 MW; value is the sample mean, min and max are the sample extremes. Mean forced outage rate 3.12%. Original: EEA Inc. for ORNL, Distributed Generation Operational Reliability and Availability Database, 2003 [footnote 78]"
 steam,steam-turbine,pressure-output,,psig,150,50,150,,"Table 4-2, p.4-10",turbine outlet pressure; inlet is 500-700 psig
-steam,steam-turbine,temperature-output,,degF,373,298,379.7,,"Table 4-2, p.4-10",turbine outlet temperature; inlet is 550-650 degF
+steam,steam-turbine,heat-output-temp,,degF,373,298,379.7,,"Table 4-2, p.4-10",turbine outlet temperature; inlet is 550-650 degF
 steam,microturbine_natural-gas_chp,description,,,natural gas microturbine with exhaust heat exchanger delivering hot water,,,,"Table 5-2, p.5-6",
 steam,microturbine_natural-gas_chp,state-of-development,,,existing,,,,"Table 5-2, p.5-6",representative Capstone and FlexEnergy units
 steam,microturbine_natural-gas_chp,trl,,,9,,,,"Table 5-2, p.5-6",
@@ -52,4 +52,4 @@ steam,fuel-cell_natural-gas_chp,heat-to-power-ratio,,,,0.746,1.370,1 / 0.73,"Tab
 steam,fuel-cell_natural-gas_chp,capex,,2014_USD/kW,7000,4600,10000,,"Table 6-4, p.6-17","COST BASIS: equipment. 'Total Package Cost' - this is the package, NOT an installed cost, unlike the engine, turbine and microturbine capex rows. Note also the 2014 denomination against 2013 for the other four prime movers."
 steam,fuel-cell_natural-gas_chp,opex-variable,,2014_USD/kWh,0.036,0.036,0.045,,"Table 6-4, p.6-17","catalog gives 2014 $/MWh (36, 40, 45), divided by 1000 here. Text estimates full maintenance contracts at 0.7-2.0 cents/kWh excluding the stack replacement sinking fund - materially lower than the table, and the difference is the stack fund."
 steam,fuel-cell_natural-gas_chp,availability,,fraction,0.95,0.95,,,"Table 1-3, p.1-6","the catalog gives '>95%' only; recorded as the stated floor, not a central estimate"
-steam,fuel-cell_natural-gas_chp,temperature-output,,degF,700,,,,"Table 6-3, p.6-13","MCFC exhaust temperature; PAFC exhaust not reported. Available heat is quoted to 120-140 degF, i.e. hot water rather than steam."
+steam,fuel-cell_natural-gas_chp,heat-output-temp,,degF,700,,,,"Table 6-3, p.6-13","MCFC exhaust temperature; PAFC exhaust not reported. Available heat is quoted to 120-140 degF, i.e. hot water rather than steam."

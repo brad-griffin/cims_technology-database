@@ -233,6 +233,10 @@ def main(argv) -> int:
     print("  " + (", ".join(f"{k} {v}" for k, v in fst.items()) or "nothing to fill"))
     ri = roll_in.apply(psum, rec)
     print("  roll-ins: " + ", ".join(f"{k} {v}" for k, v in ri.items()))
+    td = roll_in.tier_disagreements(psum, rec)
+    if td:
+        print(f"  heat-process-tier against heat-process-temp: {len(td)} to correct in "
+              f"archetype.csv: " + "; ".join(td))
     # a carrier another example names but the archetype's split leaves out (S160,
     # 2026-10-27): listed for the modeller to add by hand (a judgement or an
     # additive row), never added by the pipeline

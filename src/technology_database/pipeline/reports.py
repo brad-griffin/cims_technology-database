@@ -257,5 +257,5 @@ def vocabulary_md(records, hier, views):
     for r in records.annotations:
         nodes = "; ".join(Hierarchy.short(b) for b in split_list(r["branches"]))
         A(f"| `{r['annotation']}` {_md(r['label'])} | {_md(nodes)} | {_md(r['service-unit'])} | "
-          f"{_md(r['heat-demand-temp'])} | {_md(r['draws-on'])} |")
+          f"{_md(r['heat-process-temp'])} | {_md(r['draws-on'])} |")
     (OUTPUT / "vocabulary.md").write_text("\n".join(L) + "\n", encoding="utf-8")

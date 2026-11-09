@@ -16,7 +16,8 @@ MAIN_TARGETS = {("efficiency", "electricity"), ("efficiency", "heat"),
                 ("emissions-combustion", "co2e"), ("emissions-process", "co2e"),
                 ("emissions-total", "co2e")}
 MAIN_ANY_TARGET = {"capture-rate", "share-to-capture"}
-REMOVED = {("temperature-output", t) for t in ("exhaust", "flue-gas", "heat", "steam")} | {
+REMOVED = {(p, t) for p in ("heat-output-temp", "heat-process-temp")
+           for t in ("exhaust", "flue-gas", "heat", "steam")} | {
     ("capex", "brownfield"), ("capex", "first-of-a-kind")}
 REMOVED_ANY_TARGET = {"pressure-output", "abatement-cost"}
 EMISSIONS = {"emissions-combustion", "emissions-process", "emissions-total", "emissions-captured",

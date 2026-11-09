@@ -65,8 +65,8 @@ CCU of smelting gases fact sheet (Part E Sect. 2.5),reactor_steel-offgas-chemica
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,description,,,"Electrode boiler raising steam at 200-500 degC from electricity, replacing gas boilers and CHP steam (initially in hybrid operation).",,,,p.180,
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,trl,,TRL,,8,9,,p.180-181,Two 20 MW electrode boilers in operation since 2014 at Hoechst and Premnitz.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,year-available,,year,2020,,,,p.181,E-boilers from 2020.
-Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,temperature-min,,degC,200,,,,p.180,
-Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,temperature-max,,degC,500,,,,p.180,
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,heat-output-temp-min,,degC,200,,,,p.180,
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,heat-output-temp-max,,degC,500,,,,p.180,
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,capacity,,MW,20,,,,p.180,Output of each 10-kV electrode boiler at Infraserv Hoechst (and Premnitz); CAPACITY BASIS: thermal-output.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,specific-energy-consumption,electricity,kWh/kWh,1,,,,p.181,Approx. 1 kWh electricity per kWh heat. Electricity: heating-value basis not applicable.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,emissions-combustion,co2,g/kWh,0,,,,p.181,g CO2 per kWh heat.
@@ -81,7 +81,7 @@ Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_electric,abatement
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,description,,,"High-temperature heat pump, possibly combined with mechanical vapour recompression, for steam/heat below 200 degC.",,,,p.180,
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,trl,,TRL,7,,,,p.180-181,DryFiciency 400 kW high-temperature heat pumps up to 160 degC in industrial drying.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,year-available,,year,2025,,,,p.181,
-Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,temperature-max,,degC,200,,,,p.180,Printed as < 200 degC.
+Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,heat-output-temp-max,,degC,200,,,,p.180,Printed as < 200 degC.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),heat-pump_industrial,specific-energy-consumption,electricity,kWh/kWh,0.33,,,,p.181,Approx. 0.33 kWh electricity per kWh heat. Electricity: heating-value basis not applicable.
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_fuel-fired,description,,,Reference: steam from fossil CHP plants or gas boilers.,,,,p.181,
 Steam from power-to-heat fact sheet (Part E Sect. 3.2),boiler_fuel-fired,emissions-combustion,co2,g/kWh,223,,,,"p.181, Technologies in comparison",g CO2 per kWh heat (output).
@@ -150,8 +150,8 @@ Chemical recycling fact sheet (Part E Sect. 3.6),reactor_plastics-pyrolysis_stea
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,description,,,"Electrically heated, feedstock-flexible steam cracker supplying the 600-900 degC cracking heat with electricity instead of burning part of the feedstock.",,,,p.190,
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,trl,,TRL,,1,3,,p.190-191,
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,year-available,,year,,2030,2040,,p.191,
-Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,temperature-min,,degC,600,,,,p.190,
-Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,temperature-max,,degC,900,,,,p.190,
+Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,heat-process-temp-min,,degC,600,,,,p.190,
+Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,heat-process-temp-max,,degC,900,,,,p.190,
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,specific-energy-consumption,electricity,MWh/t,2.5,,,,p.191,Per t HVC. Electricity: heating-value basis not applicable.
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,emissions-total,co2,t/t,0,,,,p.191,
 Electric steam cracker fact sheet (Part E Sect. 3.7),steam-cracker_electric,emissions-reduction-potential,,%,100,,,,p.191,vs naphtha steam cracker (0.80 t CO2/t HVC).

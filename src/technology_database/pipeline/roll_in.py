@@ -4,7 +4,8 @@ archetype-parameter.csv itself, not only the wide view. Runs after the fill step
   * CHP archetypes (label says CHP): `efficiency` is the total CHP efficiency
     (the efficiency-chp summary); an efficiency the sources give without saying
     electric, heat or total moves to target `unspecified` (a secondary parameter).
-  * temperature-min and temperature-max (no target) widen temperature-output:
+  * heat-output-temp-min/-max and heat-process-temp-min/-max (no target) widen
+    heat-output-temp and heat-process-temp:
     its central stays its own; low and high span every value; n counts the
     examples behind any of the three. The min and max rows are then consumed.
   * Single-stream efficiency: on an archetype with one useful output (not CHP
@@ -49,40 +50,41 @@ def apply(psum: list[dict], records) -> dict:
             chp["parameter"] = "efficiency"
             chp["central-from"] = "total CHP efficiency (efficiency-chp); " + chp.get("central-from", "")
             n["chp efficiency swapped"] += 1
-        # temperature widening
-        lo_hi = [cells.get(("temperature-min", "")), cells.get(("temperature-max", ""))]
-        if any(lo_hi):
-            main = cells.get(("temperature-output", ""))
-            parts = [x for x in [main] + lo_hi if x]
-            vals = [float(v) for x in parts for v in (x.get("central"), x.get("low"), x.get("high"))
-                    if v not in (None, "")]
-            exs = set().union(*[_exs(x) for x in parts])
-            if not main:
-                main = dict(lo_hi[0] or lo_hi[1], parameter="temperature-output", target="",
-                            central="", grade="sourced")
-                psum.append(main)
-            if vals and min(vals) != max(vals):
-                main["low"], main["high"] = f"{min(vals):.6g}", f"{max(vals):.6g}"
-            elif vals and not main.get("central"):
-                # one bound only (S114): a minimum is a low, a maximum a high
-                side = "low" if lo_hi[0] else "high"
-                main[side] = f"{vals[0]:.6g}"
-            main["n"] = len(exs) or main.get("n")
-            main["examples"] = "; ".join(sorted(exs))
-            main["central-from"] = ((main.get("central-from") or "") +
-                                    "; low/high include temperature-min and -max").lstrip("; ")
-            if not main.get("central") and main.get("low") and main.get("high"):
-                # a temperature given only as a range takes its midpoint, graded
-                # estimated like any range-only value (est-range-midpoint; S114)
-                main["central"] = f"{(float(main['low']) + float(main['high'])) / 2:.6g}"
-                main.update({"grade": "estimated", "method": "range-midpoint",
-                             "rule-id": "est-range-midpoint",
-                             "rationale": "midpoint of the temperature range the sources give "
-                                          "(temperature-output, -min and -max together)"})
-            for x in lo_hi:
-                if x:
-                    drop.add(id(x))
-            n["temperature ranges widened"] += 1
+        # temperature widening, for the output and the process temperature
+        for base in ("heat-output-temp", "heat-process-temp"):
+            lo_hi = [cells.get((base + "-min", "")), cells.get((base + "-max", ""))]
+            if any(lo_hi):
+                main = cells.get((base, ""))
+                parts = [x for x in [main] + lo_hi if x]
+                vals = [float(v) for x in parts for v in (x.get("central"), x.get("low"), x.get("high"))
+                        if v not in (None, "")]
+                exs = set().union(*[_exs(x) for x in parts])
+                if not main:
+                    main = dict(lo_hi[0] or lo_hi[1], parameter=base, target="",
+                                central="", grade="sourced")
+                    psum.append(main)
+                if vals and min(vals) != max(vals):
+                    main["low"], main["high"] = f"{min(vals):.6g}", f"{max(vals):.6g}"
+                elif vals and not main.get("central"):
+                    # one bound only (S114): a minimum is a low, a maximum a high
+                    side = "low" if lo_hi[0] else "high"
+                    main[side] = f"{vals[0]:.6g}"
+                main["n"] = len(exs) or main.get("n")
+                main["examples"] = "; ".join(sorted(exs))
+                main["central-from"] = ((main.get("central-from") or "") +
+                                        f"; low/high include {base}-min and -max").lstrip("; ")
+                if not main.get("central") and main.get("low") and main.get("high"):
+                    # a temperature given only as a range takes its midpoint, graded
+                    # estimated like any range-only value (est-range-midpoint; S114)
+                    main["central"] = f"{(float(main['low']) + float(main['high'])) / 2:.6g}"
+                    main.update({"grade": "estimated", "method": "range-midpoint",
+                                 "rule-id": "est-range-midpoint",
+                                 "rationale": "midpoint of the temperature range the sources give "
+                                              f"({base}, -min and -max together)"})
+                for x in lo_hi:
+                    if x:
+                        drop.add(id(x))
+                n["temperature ranges widened"] += 1
     psum[:] = [s for s in psum if id(s) not in drop]
     # single-stream efficiency repeated in the stream column
     by = {}
@@ -98,3 +100,31 @@ def apply(psum: list[dict], records) -> dict:
                          **{"central-from": "same as efficiency: the archetype's only output stream"}))
         n["stream efficiency repeated"] += 1
     return n
+
+
+TIERS = ("low-temp", "medium-temp", "high-temp")
+
+
+def tier_of(temp: float) -> int:
+    """low below 150 degC, medium 150-400, high above 400 (design.md, Heat)."""
+    return 0 if temp < 150 else 1 if temp <= 400 else 2
+
+
+def tier_disagreements(psum, rec) -> list[str]:
+    """Archetypes whose heat-process-tier differs from the tiers their heat-process-temp
+    spans (central, low and high). Temperature decides (Brad 2026-11-09): the record is
+    corrected by hand, never by the pipeline."""
+    out = []
+    for s in psum:
+        if s["parameter"] != "heat-process-temp" or s.get("target"):
+            continue
+        vals = [float(s[x]) for x in ("central", "low", "high") if s.get(x) not in (None, "")]
+        a = rec.by_key.get(s["archetype"])
+        if not vals or not a:
+            continue
+        want = "; ".join(TIERS[tier_of(min(vals)):tier_of(max(vals)) + 1])
+        have = "; ".join(t for t in TIERS if t in (a.get("heat-process-tier") or ""))
+        if want != have:
+            out.append(f"{s['archetype']}: {a.get('heat-process-tier')} (temperature says {want})")
+    return out
+

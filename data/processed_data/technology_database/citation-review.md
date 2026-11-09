@@ -118,7 +118,7 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Shell Canada 2024 | 109 | confirmed against the held document 2026-10-03 |
 | de Beer et al. 1998 | 107 | confirmed against the held document 2026-10-02 |
 | Lazard 2024 | 107 | confirmed against the held document 2026-10-02 |
-| Van Wortswinkel and Nijs 2010 (ETSAP I02) | 104 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
+| Van Wortswinkel and Nijs 2010 (ETSAP I02) | 105 | code and title confirmed from the indexed PDF; the ETSAP site now redirects to its homepage, so authorship and month are unverified |
 | BC Hydro 2004 | 103 | confirmed against the held document 2026-10-02 |
 | ESMAP 2001 | 103 | confirmed against the held document 2026-10-02 |
 | WADE 2003 | 102 | confirmed against the held document 2026-10-02 |
@@ -178,13 +178,13 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Ekbom et al. 2003 | 55 | confirmed against the held document 2026-10-03 |
 | Blesl and Bruchof 2010 (ETSAP P06) | 55 | confirmed 2026-09-23 against the held copy: page 1 header gives the brief code and 'May 2010'; authors from the 'Please send comments to' line |
 | Brandt et al. 2022 | 54 | confirmed against the held document 2026-10-02 |
+| Cochez and Nijs 2010 (ETSAP I03) | 54 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | Matschegg et al. 2023 | 54 | confirmed against the held document 2026-11-04 |
 | McMillan et al. 2016 | 54 | confirmed against the held document 2026-10-03 |
 | Premkumar and Rangaiah 2009 | 54 | confirmed against the held document 2026-11-04 |
 | Gudde et al. 2019 (CO2 technologies) | 53 | confirmed against the held document 2026-10-02 |
 | Onsite Energy 2001 | 53 | confirmed against the held document 2026-10-03 |
 | Vickers et al. 2020 | 53 | confirmed against the held document 2026-10-03 |
-| Cochez and Nijs 2010 (ETSAP I03) | 53 | the PDF filename indicates I03, June 2010; the Cochez and Nijs attribution is unverified |
 | NCCP 1999 (foundation paper) | 53 | confirmed against the held document 2026-10-02 |
 | Purvin and Gertz 2004 | 53 | confirmed against the held document 2026-10-03 |
 | LDES Council and McKinsey & Company 2022 | 52 | confirmed against the held document 2026-10-11 |
@@ -533,7 +533,7 @@ Grey literature that has gone offline, or that no reachable catalogue indexes. E
 | IISI 1996 | 54 | no catalogue record found; possibly conflated with the 1998 'Energy use in the steel industry' |
 | Ng et al. 2012 | 44 | AIST trade-magazine article not indexed in any reachable source; citation left as UKERC recorded it |
 | Carbon Trust 2004 | 28 | ECG092 not traced; only ECG066 'Steam generation costs' was found. Guide offline with no archived copy |
-| Rosenberg 2012 (ETSAP I10) | 24 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
+| Rosenberg 2012 (ETSAP I10) | 25 | no fetchable copy or indexed snippet found; code, year and the Rosenberg attribution are all unverified |
 | AEA 2000 | 17 | no matching AEA publication found; title, client and report number all unconfirmed |
 | NBF 2007 | 16 | not located; Net Balance ceased trading in 2014. Zeobond hosts a later E-Crete LCA by start2see |
 | Carbon Trust 2007 | 0 | code and title not confirmed; guide offline with no archived copy |

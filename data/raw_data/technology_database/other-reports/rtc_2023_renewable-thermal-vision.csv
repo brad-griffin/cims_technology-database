@@ -1,23 +1,23 @@
 process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
 Renewable thermal technologies and temperature (p.11),geothermal_direct-use,description,,,geothermal heat for industry,,,,p.11,
-Renewable thermal technologies and temperature (p.11),geothermal_direct-use,temperature-max,,degC,95,,,,p.11,"maximum achievable temperature, as charted with a printed label (DOE; BCG analysis)"
+Renewable thermal technologies and temperature (p.11),geothermal_direct-use,heat-output-temp-max,,degC,95,,,,p.11,"maximum achievable temperature, as charted with a printed label (DOE; BCG analysis)"
 Renewable thermal technologies and temperature (p.11),heat-pump_electricity,description,,,electric heat pump for industrial process heat,,,,p.11; pp.131-140,
-Renewable thermal technologies and temperature (p.11),heat-pump_electricity,temperature-max,,degC,130,,160,,p.11,130 degC for the primary technology; 160 degC for 'alternative configurations' (printed labels)
+Renewable thermal technologies and temperature (p.11),heat-pump_electricity,heat-output-temp-max,,degC,130,,160,,p.11,130 degC for the primary technology; 160 degC for 'alternative configurations' (printed labels)
 Renewable thermal technologies and temperature (p.11),heat-pump_electricity,efficiency,,%,300,,,,p.12 fn 1; p.136-137,"COP 3, called 'conservative' (p.136-137); 'COP can increase if a waste heat source is available'. Used in both the LCOH and fuel-cost comparisons."
 Renewable thermal technologies and temperature (p.11),solar-collector_evacuated-tube,description,,,non-concentrating (evacuated tube) solar thermal collector,,,,p.12; p.172,
-Renewable thermal technologies and temperature (p.11),solar-collector_evacuated-tube,temperature-max,,degC,130,,,,p.12,'Evac tube (<130 degC)'
+Renewable thermal technologies and temperature (p.11),solar-collector_evacuated-tube,heat-output-temp-max,,degC,130,,,,p.12,'Evac tube (<130 degC)'
 Renewable thermal technologies and temperature (p.11),solar-concentrator_linear-fresnel,description,,,linear Fresnel or parabolic trough solar thermal concentrator,,,,p.12; p.172,
-Renewable thermal technologies and temperature (p.11),solar-concentrator_linear-fresnel,temperature-min,,degC,130,,,,p.12,'Linear Fresnel (130-300 degC)'
-Renewable thermal technologies and temperature (p.11),solar-concentrator_linear-fresnel,temperature-max,,degC,300,,,,p.12,
+Renewable thermal technologies and temperature (p.11),solar-concentrator_linear-fresnel,heat-output-temp-min,,degC,130,,,,p.12,'Linear Fresnel (130-300 degC)'
+Renewable thermal technologies and temperature (p.11),solar-concentrator_linear-fresnel,heat-output-temp-max,,degC,300,,,,p.12,
 Renewable thermal technologies and temperature (p.11),solar-concentrator_heliostat-tower,description,,,heliostat (power tower) solar thermal concentrator,,,,p.12; p.172,
-Renewable thermal technologies and temperature (p.11),solar-concentrator_heliostat-tower,temperature-min,,degC,300,,,,p.12,'Heliostat tower (300-700 degC)'; 700 degC is also the solar thermal maximum on p.11
-Renewable thermal technologies and temperature (p.11),solar-concentrator_heliostat-tower,temperature-max,,degC,700,,,,p.11-12,
+Renewable thermal technologies and temperature (p.11),solar-concentrator_heliostat-tower,heat-output-temp-min,,degC,300,,,,p.12,'Heliostat tower (300-700 degC)'; 700 degC is also the solar thermal maximum on p.11
+Renewable thermal technologies and temperature (p.11),solar-concentrator_heliostat-tower,heat-output-temp-max,,degC,700,,,,p.11-12,
 Renewable thermal technologies and temperature (p.11),reactor_nuclear,description,,,nuclear heat for industry,,,,p.11,
-Renewable thermal technologies and temperature (p.11),reactor_nuclear,temperature-max,,degC,300,,1000,,p.11,"300 degC primary technology; 1,000 degC for alternative configurations (not named; consistent with high-temperature reactors)"
+Renewable thermal technologies and temperature (p.11),reactor_nuclear,heat-output-temp-max,,degC,300,,1000,,p.11,"300 degC primary technology; 1,000 degC for alternative configurations (not named; consistent with high-temperature reactors)"
 Renewable thermal technologies and temperature (p.11),electromagnetic-heater,description,,,"electromagnetic heating (e.g. induction, microwave, radio frequency; the chart does not name the method)",,,,p.11,
-Renewable thermal technologies and temperature (p.11),electromagnetic-heater,temperature-max,,degC,2000,,3000,,p.11,"2,000 degC primary technology; 3,000 degC for alternative configurations"
+Renewable thermal technologies and temperature (p.11),electromagnetic-heater,heat-output-temp-max,,degC,2000,,3000,,p.11,"2,000 degC primary technology; 3,000 degC for alternative configurations"
 Renewable thermal technologies and temperature (p.11),electric-arc-heater,description,,,electric arc heating,,,,p.11,
-Renewable thermal technologies and temperature (p.11),electric-arc-heater,temperature-max,,degC,1800,,,,p.11,
+Renewable thermal technologies and temperature (p.11),electric-arc-heater,heat-output-temp-max,,degC,1800,,,,p.11,
 "Levelized cost of heat comparison (pp.12, 146, 182)",electric-resistance_grid,description,,,electric resistance heating on grid electricity at industrial retail prices,,,,p.12; p.146; p.182,
 "Levelized cost of heat comparison (pp.12, 146, 182)",electric-resistance_grid,efficiency,,%,99,,,,p.12 fn 1,efficiency used for the LCOH; the fuel-cost comparisons (p.146-147) use 100%
 "Levelized cost of heat comparison (pp.12, 146, 182)",electric-resistance_grid,cost-levelized,,2022_USD/MMBtu,,15,52,,p.182,LCOH in 2022 across the range of US industrial electricity prices in May 2022 (EIA). Includes IRA incentives where applicable (p.12 fn 1); no storage.
@@ -32,6 +32,6 @@ Renewable thermal technologies and temperature (p.11),electric-arc-heater,temper
 "Levelized cost of heat comparison (pp.12, 146, 182)",thermal-storage_electric-offshore-wind,cost-levelized,,2022_USD/MMBtu,38,,,,p.182,LCOH in 2022 WITHOUT subsidies (printed '38 without subsidies'); with the 30% IRA investment tax credit and IRA electricity subsidy it is 27 (printed). Fuel (electricity) is 93% of the subsidized LCOH.
 Industrial heat pump case studies (p.135),heat-pump_two-stage-ammonia,description,,,two-stage heat pump paired with an existing ammonia refrigeration system for HTST dairy pasteurization (Wisconsin); mature application,,,,p.135,Emerson Climate Technologies case study
 Industrial heat pump case studies (p.135),heat-pump_two-stage-ammonia,efficiency,,%,420,,,,p.135,system COP 4.2
-Industrial heat pump case studies (p.135),heat-pump_two-stage-ammonia,temperature-output,,degC,88,,,,p.135,heats water from 10 to 88 degC
+Industrial heat pump case studies (p.135),heat-pump_two-stage-ammonia,heat-output-temp,,degC,88,,,,p.135,heats water from 10 to 88 degC
 Industrial heat pump case studies (p.135),heat-pump_lumber-drying,description,,,"closed-cycle mechanical heat pump supplying hot air to a lumber drying kiln (pilot systems, Quebec); emerging application",,,,p.135,"Minea (2012), Using industrial heat pumps in sawmills for lumber drying"
 Industrial heat pump case studies (p.135),heat-pump_lumber-drying,efficiency,,%,,300,460,,p.135,'COPs of 3-4.6'; up to 57% savings in fuel consumption compared with conventional drying

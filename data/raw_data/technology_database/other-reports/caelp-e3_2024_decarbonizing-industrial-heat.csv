@@ -1,7 +1,7 @@
 process,technology,parameter,target,unit,value,value-min,value-max,formula,reference,note
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,description,,,"closed-cycle industrial heat pump for low-temperature indirect heat, sink below 100 degC, replacing a natural gas boiler at existing manufacturing facilities",,,,"p.19, Table 2; p.20-21",
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,trl,,,9,,,,"p.19, Table 2",TRL column cites the IEA ETP Clean Energy Technology Guide (Sept 2023) and Arpagaus (ACEEE 2023 workshop). Scale not named; treated as the IEA/NASA 1-9 scale the table's range implies.
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,temperature-max,,degC,100,,,,"p.19, Table 2; p.21",heat sink (delivery) temperature band <100 degC
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,heat-output-temp-max,,degC,100,,,,"p.19, Table 2; p.21",heat sink (delivery) temperature band <100 degC
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,efficiency,,%,290,,,,p.37,"weighted average COP 2.9 for heat pumps providing heat below 100 degC, from the report's COP curve: 50% of Carnot, 20 degC source, 5 K approach at both heat exchangers (p.20 fn 27). Printed as a COP; recorded as %."
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,opex-fixed,,%/yr,2,,,,"p.58 (PDF p.62), App. A.1","Annual FOM as a percentage of CAPEX, as printed. CAPACITY BASIS: thermal-output"
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,opex-variable,,2022_USD/kWh,0.002,,,,"p.58, App. A.1","Annual VOM, $/kWh of heat delivered (column unit printed as $/kWh; the report sizes all equipment on output capacity, p.20). Real 2022 USD (p.15)."
@@ -9,22 +9,22 @@ process,technology,parameter,target,unit,value,value-min,value-max,formula,refer
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_low-temperature,discount-rate,,%,10,,,,p.15,real discount rate over the 20-year period; real 2022 dollars
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,description,,,"industrial heat pump for medium-temperature indirect heat, sink 100-140 degC",,,,"p.19, Table 2",
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,trl,,,5-9,,,,"p.19, Table 2",see low-temperature row for the TRL sources
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,temperature-min,,degC,100,,,,"p.19, Table 2",
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,temperature-max,,degC,140,,,,"p.19, Table 2",
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,heat-output-temp-min,,degC,100,,,,"p.19, Table 2",
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,heat-output-temp-max,,degC,140,,,,"p.19, Table 2",
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,opex-fixed,,%/yr,2,,,,"p.58 (PDF p.62), App. A.1","Annual FOM as a percentage of CAPEX, as printed. CAPACITY BASIS: thermal-output"
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,opex-variable,,2022_USD/kWh,0.002,,,,"p.58, App. A.1","Annual VOM, $/kWh of heat delivered (column unit printed as $/kWh; the report sizes all equipment on output capacity, p.20). Real 2022 USD (p.15)."
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,lifetime,,years,20,,,,p.15; p.39,financial lifetime and analysis period: a 20-year timeframe from 2025; p.39 calls 20 years 'the assumed asset lifetime'. The report applies it to every modelled technology.
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_medium-temperature,discount-rate,,%,10,,,,p.15,real discount rate over the 20-year period; real 2022 dollars
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,description,,,"high-temperature industrial heat pump for indirect heat (steam), sink 140-200 degC; 200 degC is the report's practical upper bound for deployment in the next decade",,,,"p.19, Table 2; p.21",
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,trl,,,4-9,,,,"p.19, Table 2",
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,temperature-min,,degC,140,,,,"p.19, Table 2",
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,temperature-max,,degC,200,,,,"p.19, Table 2; p.21",
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,heat-output-temp-min,,degC,140,,,,"p.19, Table 2",
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,heat-output-temp-max,,degC,200,,,,"p.19, Table 2; p.21",
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,opex-fixed,,%/yr,2,,,,"p.58 (PDF p.62), App. A.1","Annual FOM as a percentage of CAPEX, as printed. CAPACITY BASIS: thermal-output"
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,opex-variable,,2022_USD/kWh,0.002,,,,"p.58, App. A.1","Annual VOM, $/kWh of heat delivered (column unit printed as $/kWh; the report sizes all equipment on output capacity, p.20). Real 2022 USD (p.15)."
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,lifetime,,years,20,,,,p.15; p.39,financial lifetime and analysis period: a 20-year timeframe from 2025; p.39 calls 20 years 'the assumed asset lifetime'. The report applies it to every modelled technology.
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity_high-temperature,discount-rate,,%,10,,,,p.15,real discount rate over the 20-year period; real 2022 dollars
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,description,,,"industrial heat pumps across all three sink bands below 200 degC, as a fleet-weighted average",,,,p.37,
-"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,temperature-max,,degC,200,,,,p.21,
+"Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,heat-output-temp-max,,degC,200,,,,p.21,
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,efficiency,,%,230,,,,p.37,weighted average COP 2.3 of heat pumps providing indirect heat below 200 degC in the facility database; compared with RTC's assumed COP 3.
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,opex-fixed,,%/yr,2,,,,"p.58 (PDF p.62), App. A.1","Annual FOM as a percentage of CAPEX, as printed. CAPACITY BASIS: thermal-output"
 "Manufacturing indirect heat (Table 2, Appendix A.1)",heat-pump_electricity,opex-variable,,2022_USD/kWh,0.002,,,,"p.58, App. A.1","Annual VOM, $/kWh of heat delivered (column unit printed as $/kWh; the report sizes all equipment on output capacity, p.20). Real 2022 USD (p.15)."

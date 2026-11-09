@@ -78,6 +78,12 @@ class Records:
             for c in split_list(a["carriers"]):
                 if c not in self.carriers:
                     fail["carrier not in vocabulary/carrier.csv"].append(f"{k}: {c}")
+            tiers = split_list(a.get("heat-process-tier", ""))
+            if not tiers:
+                fail["archetype with no heat-process-tier"].append(k)
+            elif any(t not in self.lists["heat-process-tier"] for t in tiers) or (
+                    "not-applicable" in tiers and len(tiers) > 1):
+                fail["heat-process-tier not in lists.csv"].append(f"{k}: {a['heat-process-tier']}")
             if not a.get("product-unit"):
                 fail["archetype with no product-unit"].append(k)
             serves = any(s["archetype"] == k for s in self.service)

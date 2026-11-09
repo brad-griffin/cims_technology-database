@@ -1,0 +1,499 @@
+archetype,heat-tier,basis
+adsorber_direct-lithium,low-temp,"hot water, low-pressure steam, or warm process"
+adsorber_molecular-sieve,medium-temp,process heat at 150-400 degC
+adsorber_pressure-swing,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+air-separation-unit,not-applicable,cooling or refrigeration
+anaerobic-digester,low-temp,"hot water, low-pressure steam, or warm process"
+anaerobic-digester_biomethane-upgrading,low-temp,"hot water, low-pressure steam, or warm process"
+anaerobic-digester_effluent,low-temp,"hot water, low-pressure steam, or warm process"
+annealing-furnace_batch-bell,high-temp,process heat above 400 degC
+annealing-furnace_continuous,high-temp,process heat above 400 degC
+annealing-furnace_hydrogen-bell,high-temp,process heat above 400 degC
+autothermal-reformer_ammonia,high-temp,process heat above 400 degC
+autothermal-reformer_ammonia_ccs-concentrated,high-temp,process heat above 400 degC
+autothermal-reformer_hydrogen,high-temp,process heat above 400 degC
+autothermal-reformer_hydrogen_ccs-concentrated,high-temp,process heat above 400 degC
+basic-oxygen-furnace,high-temp,process heat above 400 degC
+basic-oxygen-furnace_efficiency-strong,high-temp,process heat above 400 degC
+binder_alkali-activated,not-applicable,blending recipe or ambient process with no process heat
+binder_blended-cement,not-applicable,blending recipe or ambient process with no process heat
+binder_calcined-clay,high-temp,process heat above 400 degC
+binder_carbonated,high-temp,process heat above 400 degC
+binder_electrochemical,not-applicable,blending recipe or ambient process with no process heat
+binder_hydrothermal-silicate,medium-temp,process heat at 150-400 degC
+binder_portland-cement,not-applicable,blending recipe or ambient process with no process heat
+binder_sulphoaluminate,high-temp,process heat above 400 degC
+blast-furnace,high-temp,process heat above 400 degC
+blast-furnace_biogenic-carbon,high-temp,process heat above 400 degC
+blast-furnace_ccs-diffuse,high-temp,process heat above 400 degC
+blast-furnace_efficiency-moderate,high-temp,process heat above 400 degC
+blast-furnace_efficiency-strong,high-temp,process heat above 400 degC
+blast-furnace_top-gas-recycling,high-temp,process heat above 400 degC
+boiler_recovery,high-temp,process heat above 400 degC
+boiler_recovery-high-solids,high-temp,process heat above 400 degC
+boiler_recovery_ccs-diffuse,high-temp,process heat above 400 degC
+calciner_electric,high-temp,process heat above 400 degC
+calciner_gas-suspension,high-temp,process heat above 400 degC
+calciner_gas-suspension_ccs-diffuse,high-temp,process heat above 400 degC
+calciner_hydrogen-fired,high-temp,process heat above 400 degC
+calciner_indirect,high-temp,process heat above 400 degC
+capture-unit_advanced-solvent,low-temp,solvent or sorbent regeneration below 150 degC
+capture-unit_amine,low-temp,solvent or sorbent regeneration below 150 degC
+capture-unit_calcium-looping,high-temp,process heat above 400 degC
+capture-unit_chemical-solvent,low-temp,solvent or sorbent regeneration below 150 degC
+capture-unit_cryogenic-condensation,not-applicable,cooling or refrigeration
+capture-unit_dac-liquid-solvent,high-temp,process heat above 400 degC
+capture-unit_dac-solid-sorbent,low-temp,solvent or sorbent regeneration below 150 degC
+capture-unit_membrane-cryogenic,not-applicable,cooling or refrigeration
+capture-unit_physical-solvent,low-temp,solvent or sorbent regeneration below 150 degC
+caster_continuous,high-temp,process heat above 400 degC
+caster_ingot,high-temp,process heat above 400 degC
+caster_strip,high-temp,process heat above 400 degC
+chiller_absorption,low-temp,"hot water, low-pressure steam, or warm process"
+chiller_high-efficiency,not-applicable,cooling or refrigeration
+chiller_hvac,not-applicable,cooling or refrigeration
+chiller_vapour-compression,not-applicable,cooling or refrigeration
+cleaning-system,low-temp,"hot water, low-pressure steam, or warm process"
+cleaning-system_efficiency-strong,low-temp,"hot water, low-pressure steam, or warm process"
+coating-line_electrolytic,low-temp,electrochemical cell operating below 150 degC
+coating-line_hot-dip,high-temp,process heat above 400 degC
+coke-oven_by-product,high-temp,process heat above 400 degC
+coke-oven_by-product_efficiency-moderate,high-temp,process heat above 400 degC
+coke-oven_by-product_efficiency-strong,high-temp,process heat above 400 degC
+coke-oven_heat-recovery,high-temp,process heat above 400 degC
+combined-cycle,not-applicable,power-only generation
+combined-cycle_ccs-diffuse,not-applicable,power-only generation
+combined-cycle_efficiency-moderate,not-applicable,power-only generation
+combustion-turbine_drive,not-applicable,shaft work or mechanical duty
+combustion-turbine_drive_efficiency-moderate,not-applicable,shaft work or mechanical duty
+combustion-turbine_oxy-fuel,not-applicable,power-only generation
+combustion-turbine_simple-cycle,not-applicable,power-only generation
+compressor_blowdown-recovery,not-applicable,"methane, N2O, or SF6 control without process heat"
+compressor_co2-dehydration,not-applicable,"pipeline, storage, or delivery"
+compressor_electric,not-applicable,shaft work or mechanical duty
+compressor_flare-gas-recovery,not-applicable,"methane, N2O, or SF6 control without process heat"
+compressor_low-emission-seal,not-applicable,"methane, N2O, or SF6 control without process heat"
+compressor_vapour-recovery,not-applicable,"methane, N2O, or SF6 control without process heat"
+converter_continuous,high-temp,process heat above 400 degC
+converter_peirce-smith,high-temp,process heat above 400 degC
+conveyor_in-pit-crushing,not-applicable,shaft work or mechanical duty
+cooling-tower_free-evaporative,not-applicable,cooling or refrigeration
+debarker_drum,not-applicable,shaft work or mechanical duty
+digester_batch-kraft,medium-temp,process heat at 150-400 degC
+digester_continuous-kraft,medium-temp,process heat at 150-400 degC
+digester_deep-eutectic-solvent,low-temp,"hot water, low-pressure steam, or warm process"
+digester_semi-chemical,medium-temp,process heat at 150-400 degC
+digester_sulphite,low-temp,"hot water, low-pressure steam, or warm process"
+direct-heater_line-heater,low-temp,"hot water, low-pressure steam, or warm process"
+direct-heater_solid-fuel,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+direct-heater_solid-fuel_efficiency-strong,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+distillation-column,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+distillation-column_atmospheric-vacuum,medium-temp,process heat at 150-400 degC
+distillation-column_atmospheric-vacuum_efficiency-strong,medium-temp,process heat at 150-400 degC
+distillation-column_heat-integrated,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+distillation-column_heat-pumped,low-temp,"hot water, low-pressure steam, or warm process"
+distillery_beverage-spirits,low-temp,"hot water, low-pressure steam, or warm process"
+drilling-rig_battery-hybrid,not-applicable,shaft work or mechanical duty
+drilling-rig_diesel,not-applicable,shaft work or mechanical duty
+drilling-rig_electric,not-applicable,shaft work or mechanical duty
+dryer_ceramic-hot-air,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_direct-fired,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_direct-fired_efficiency-moderate,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_direct-fired_efficiency-strong,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_electric,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_heat-pump,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_market-pulp,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_rotary-direct-fired,medium-temp,process heat at 150-400 degC
+dryer_solid-fuel,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_solid-fuel_efficiency-strong,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+dryer_steam-heated,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_steam-heated_efficiency-moderate,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_steam-heated_efficiency-strong,low-temp,"hot water, low-pressure steam, or warm process"
+dryer_through-air,medium-temp,process heat at 150-400 degC
+electric-arc-furnace,high-temp,process heat above 400 degC
+electric-arc-furnace_reduced-iron-charge,high-temp,process heat above 400 degC
+electric-arc-furnace_scrap-preheating,high-temp,process heat above 400 degC
+electric-arc-furnace_smelting-open-arc-dc,high-temp,process heat above 400 degC
+electric-arc-furnace_smelting-submerged-arc,high-temp,process heat above 400 degC
+electric-arc-furnace_smelting-submerged-arc_biogenic-carbon,high-temp,process heat above 400 degC
+electric-arc-furnace_smelting-submerged-arc_efficiency-moderate,high-temp,process heat above 400 degC
+electric-arc-furnace_smelting-submerged-arc_pre-reduction,high-temp,process heat above 400 degC
+electrolysis-cell_advanced-anodes,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_chlor-alkali-diaphragm,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_chlor-alkali-membrane,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_chlor-alkali-mercury,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_electrolytic-smelting,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_electrorefining,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_inert-anode,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_iron-electrowinning,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_magnesium-chloride,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_molten-oxide,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_multipolar-chloride,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_oxygen-depolarized,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_prebaked-anode,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_prebaked-anode_ccs-diffuse,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_soderberg,high-temp,electrochemical cell operating above 400 degC
+electrolysis-cell_sodium-chlorate,low-temp,electrochemical cell operating below 150 degC
+electrolysis-cell_zinc-electrowinning,low-temp,electrochemical cell operating below 150 degC
+electrolyzer_low-temperature,low-temp,electrochemical cell operating below 150 degC
+electrolyzer_low-temperature-central,low-temp,electrochemical cell operating below 150 degC
+electrolyzer_solid-oxide,high-temp,process heat above 400 degC
+evaporator_caustic-soda,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+evaporator_crystallizer,low-temp,"hot water, low-pressure steam, or warm process"
+evaporator_crystallizer-produced-water,low-temp,"hot water, low-pressure steam, or warm process"
+evaporator_food,low-temp,"hot water, low-pressure steam, or warm process"
+evaporator_multiple-effect,low-temp,"hot water, low-pressure steam, or warm process"
+fan_activated-sludge,not-applicable,shaft work or mechanical duty
+fan_activated-sludge_efficiency-moderate,not-applicable,shaft work or mechanical duty
+fan_mine-ventilation,not-applicable,shaft work or mechanical duty
+fermenter_grain-dry-mill,low-temp; high-temp,low-temperature cooking and fermentation with high-temperature gasification or drying
+fermenter_grain-dry-mill_ccs-concentrated,low-temp; high-temp,low-temperature cooking and fermentation with high-temperature gasification or drying
+fermenter_grain-dry-mill_efficiency-moderate,low-temp; high-temp,low-temperature cooking and fermentation with high-temperature gasification or drying
+fermenter_lignocellulosic-enzymatic,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+fermenter_syngas,low-temp; high-temp,low-temperature cooking and fermentation with high-temperature gasification or drying
+flare,not-applicable,"methane, N2O, or SF6 control without process heat"
+flare_enclosed-combustor,not-applicable,"methane, N2O, or SF6 control without process heat"
+flare_high-efficiency,not-applicable,"methane, N2O, or SF6 control without process heat"
+flotation-cell_froth,not-applicable,shaft work or mechanical duty
+flotation-cell_potash,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+fracturing-fleet_diesel,not-applicable,shaft work or mechanical duty
+fracturing-fleet_dual-fuel,not-applicable,shaft work or mechanical duty
+fracturing-fleet_electric,not-applicable,shaft work or mechanical duty
+furnace_anode-baking,high-temp,process heat above 400 degC
+furnace_anode-baking-electric,high-temp,process heat above 400 degC
+furnace_anode-baking_biogenic-carbon,high-temp,process heat above 400 degC
+furnace_electric,high-temp,process heat above 400 degC
+furnace_heat-treatment,high-temp,process heat above 400 degC
+furnace_homogenizing,high-temp,process heat above 400 degC
+furnace_hybrid-electric,high-temp,process heat above 400 degC
+furnace_hybrid-majority-electric,high-temp,process heat above 400 degC
+furnace_ladle-metallurgy,high-temp,process heat above 400 degC
+furnace_lehr,high-temp,process heat above 400 degC
+furnace_lehr-electric,high-temp,process heat above 400 degC
+furnace_oxy-fuel,high-temp,process heat above 400 degC
+furnace_oxy-fuel-thermochemical,high-temp,process heat above 400 degC
+furnace_regenerative,high-temp,process heat above 400 degC
+furnace_regenerative_ccs-diffuse,high-temp,process heat above 400 degC
+furnace_reheating,high-temp,process heat above 400 degC
+furnace_reheating_efficiency-moderate,high-temp,process heat above 400 degC
+furnace_reheating_efficiency-strong,high-temp,process heat above 400 degC
+furnace_rotary-hearth-direct-reduction,high-temp,process heat above 400 degC
+furnace_tempering,high-temp,process heat above 400 degC
+gas-treatment-unit_acid-gas-advanced,low-temp,"hot water, low-pressure steam, or warm process"
+gas-treatment-unit_amine-sweetening,low-temp,"hot water, low-pressure steam, or warm process"
+gas-treatment-unit_amine-sweetening_ccs-concentrated,low-temp,"hot water, low-pressure steam, or warm process"
+gas-treatment-unit_glycol-dehydration,medium-temp,process heat at 150-400 degC
+gas-treatment-unit_sulphur-recovery,high-temp,process heat above 400 degC
+gas-treatment-unit_thermal-oxidiser,high-temp,process heat above 400 degC
+gas-treatment-unit_vam-oxidiser,high-temp,process heat above 400 degC
+gasifier_biomass-ammonia,high-temp,process heat above 400 degC
+gasifier_biomass-ethylene,high-temp,process heat above 400 degC
+gasifier_biomass-fischer-tropsch,high-temp,process heat above 400 degC
+gasifier_biomass-fischer-tropsch_ccs-concentrated,high-temp,process heat above 400 degC
+gasifier_biomass-methanation,high-temp,process heat above 400 degC
+gasifier_biomass-methanol,high-temp,process heat above 400 degC
+gasifier_biomass-waste,high-temp,process heat above 400 degC
+gasifier_black-liquor,high-temp,process heat above 400 degC
+gasifier_black-liquor-fuels,high-temp,process heat above 400 degC
+gasifier_coal-ammonia,high-temp,process heat above 400 degC
+gasifier_coal-fischer-tropsch,high-temp,process heat above 400 degC
+gasifier_coal-methanation,high-temp,process heat above 400 degC
+gasifier_coal-methanol,high-temp,process heat above 400 degC
+gasifier_coal-methanol_ccs-concentrated,high-temp,process heat above 400 degC
+gasifier_coal-petroleum-coke,high-temp,process heat above 400 degC
+gasifier_coal-petroleum-coke_ccs-concentrated,high-temp,process heat above 400 degC
+geothermal-well_binary-power,not-applicable,power-only generation
+geothermal-well_flash-power,not-applicable,power-only generation
+grinding-mill_ball,not-applicable,shaft work or mechanical duty
+grinding-mill_hpgr,not-applicable,shaft work or mechanical duty
+grinding-mill_sag-ball,not-applicable,shaft work or mechanical duty
+grinding-mill_stirred,not-applicable,shaft work or mechanical duty
+grinding-mill_vertical-roller,not-applicable,shaft work or mechanical duty
+haul-truck_battery-electric,not-applicable,mobile equipment or haulage
+haul-truck_diesel,not-applicable,mobile equipment or haulage
+haul-truck_dual-fuel,not-applicable,mobile equipment or haulage
+haul-truck_hydrogen-fuel-cell,not-applicable,mobile equipment or haulage
+haul-truck_trolley-assist,not-applicable,mobile equipment or haulage
+heat-exchanger_aseptic-uht,low-temp,"hot water, low-pressure steam, or warm process"
+heat-exchanger_steam-heated,low-temp,"hot water, low-pressure steam, or warm process"
+heat-exchanger_steam-heated_efficiency-strong,low-temp,"hot water, low-pressure steam, or warm process"
+heat-pump_hvac,low-temp,"hot water, low-pressure steam, or warm process"
+heat-pump_oil-treating,low-temp,"hot water, low-pressure steam, or warm process"
+hoist,not-applicable,shaft work or mechanical duty
+hvac-heater_fuel-fired,low-temp,"hot water, low-pressure steam, or warm process"
+hvac-heater_fuel-fired_efficiency-moderate,low-temp,"hot water, low-pressure steam, or warm process"
+hvac-heater_fuel-fired_efficiency-strong,low-temp,"hot water, low-pressure steam, or warm process"
+incinerator_waste-to-energy,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+induction-heater_reheating,high-temp,process heat above 400 degC
+induction-heater_strip-heating,high-temp,process heat above 400 degC
+kiln_calcium-looping,high-temp,process heat above 400 degC
+kiln_calcium-silicate-feed,high-temp,process heat above 400 degC
+kiln_ceramic-electric,high-temp,process heat above 400 degC
+kiln_ceramic-microwave-assisted,high-temp,process heat above 400 degC
+kiln_charcoal-retort,high-temp,process heat above 400 degC
+kiln_dry-precalciner,high-temp,process heat above 400 degC
+kiln_dry-precalciner_ccs-diffuse,high-temp,process heat above 400 degC
+kiln_dry-precalciner_efficiency-moderate,high-temp,process heat above 400 degC
+kiln_dry-precalciner_efficiency-strong,high-temp,process heat above 400 degC
+kiln_electric-plasma,high-temp,process heat above 400 degC
+kiln_intermittent,high-temp,process heat above 400 degC
+kiln_legacy,high-temp,process heat above 400 degC
+kiln_lime-electric,high-temp,process heat above 400 degC
+kiln_lime-long-rotary,high-temp,process heat above 400 degC
+kiln_lime-oxy-fuel,high-temp,process heat above 400 degC
+kiln_lime-rotary,high-temp,process heat above 400 degC
+kiln_lime-rotary-preheater,high-temp,process heat above 400 degC
+kiln_lime-rotary-preheater_ccs-diffuse,high-temp,process heat above 400 degC
+kiln_lime-rotary_efficiency-strong,high-temp,process heat above 400 degC
+kiln_lime-shaft,high-temp,process heat above 400 degC
+kiln_lumber-continuous,low-temp,"hot water, low-pressure steam, or warm process"
+kiln_lumber-heat-pump,low-temp,"hot water, low-pressure steam, or warm process"
+kiln_lumber-steam,low-temp,"hot water, low-pressure steam, or warm process"
+kiln_oxy-fuel,high-temp,process heat above 400 degC
+kiln_rotary-expanded-clay,high-temp,process heat above 400 degC
+kiln_tunnel-roller,high-temp,process heat above 400 degC
+kiln_tunnel-roller_efficiency-strong,high-temp,process heat above 400 degC
+leaching-vessel_heap-atmospheric,low-temp,"hot water, low-pressure steam, or warm process"
+leaching-vessel_high-pressure-acid,medium-temp,process heat at 150-400 degC
+leaching-vessel_in-situ,low-temp,"hot water, low-pressure steam, or warm process"
+lighting_fluorescent-high-bay,not-applicable,lighting
+lighting_fluorescent-t12,not-applicable,lighting
+lighting_fluorescent-t8,not-applicable,lighting
+lighting_hid,not-applicable,lighting
+lighting_led,not-applicable,lighting
+lighting_led-controls,not-applicable,lighting
+lighting_led-high-bay,not-applicable,lighting
+liquefaction-train_base-load,not-applicable,cooling or refrigeration
+liquefaction-train_base-load_efficiency-moderate,not-applicable,cooling or refrigeration
+liquefaction-train_electric,not-applicable,cooling or refrigeration
+liquefaction-train_floating,not-applicable,cooling or refrigeration
+liquefaction-train_hydrogen,not-applicable,cooling or refrigeration
+liquefaction-train_small-scale,not-applicable,cooling or refrigeration
+management-system_leak-detection,not-applicable,"methane, N2O, or SF6 control without process heat"
+melting-furnace_crucible-gas-fired,high-temp,process heat above 400 degC
+melting-furnace_cupola,high-temp,process heat above 400 degC
+melting-furnace_electric-smelting,high-temp,process heat above 400 degC
+melting-furnace_hot-blast-cupola,high-temp,process heat above 400 degC
+melting-furnace_induction,high-temp,process heat above 400 degC
+melting-furnace_isothermal,high-temp,process heat above 400 degC
+melting-furnace_regenerative-oxy-fuel,high-temp,process heat above 400 degC
+melting-furnace_reverberatory-rotary,high-temp,process heat above 400 degC
+melting-furnace_reverberatory-rotary_efficiency-strong,high-temp,process heat above 400 degC
+melting-furnace_rotary-oxy-fuel,high-temp,process heat above 400 degC
+melting-furnace_twin-chamber,high-temp,process heat above 400 degC
+mine_open-pit-coal,not-applicable,shaft work or mechanical duty
+mine_open-pit-coal-excavation,not-applicable,shaft work or mechanical duty
+mine_open-pit-oil-sands,low-temp,"hot water, low-pressure steam, or warm process"
+mine_underground-coal,not-applicable,shaft work or mechanical duty
+mine_underground-coal-cutting,not-applicable,shaft work or mechanical duty
+mobile-equipment_battery-electric,not-applicable,mobile equipment or haulage
+mobile-equipment_diesel,not-applicable,mobile equipment or haulage
+mobile-equipment_diesel-electric,not-applicable,mobile equipment or haulage
+mobile-equipment_hydrogen-combustion,not-applicable,mobile equipment or haulage
+mobile-equipment_hydrogen-fuel-cell,not-applicable,mobile equipment or haulage
+mobile-equipment_spark-ignition,not-applicable,mobile equipment or haulage
+motor_induction-standard,not-applicable,shaft work or mechanical duty
+motor_induction-standard_efficiency-moderate,not-applicable,shaft work or mechanical duty
+motor_premium-efficiency,not-applicable,shaft work or mechanical duty
+motor_variable-speed,not-applicable,shaft work or mechanical duty
+no-abatement_coal-mine-methane,not-applicable,"methane, N2O, or SF6 control without process heat"
+no-abatement_methane,not-applicable,"methane, N2O, or SF6 control without process heat"
+no-abatement_n2o,not-applicable,"methane, N2O, or SF6 control without process heat"
+no-abatement_sf6,not-applicable,"methane, N2O, or SF6 control without process heat"
+oven_electric,medium-temp,process heat at 150-400 degC
+oven_fuel-fired,medium-temp,process heat at 150-400 degC
+oven_fuel-fired_efficiency-moderate,medium-temp,process heat at 150-400 degC
+paper-machine,low-temp,"hot water, low-pressure steam, or warm process"
+paper-machine_efficiency-moderate,low-temp,"hot water, low-pressure steam, or warm process"
+paper-machine_efficiency-strong,low-temp,"hot water, low-pressure steam, or warm process"
+paper-machine_waterless,not-applicable,shaft work or mechanical duty
+paper-machine_with-dryer-section,low-temp,"hot water, low-pressure steam, or warm process"
+paste-plant_soderberg,medium-temp,process heat at 150-400 degC
+pellet-plant_induration,high-temp,process heat above 400 degC
+pellet-plant_induration_efficiency-moderate,high-temp,process heat above 400 degC
+pellet-plant_plasma-electric,high-temp,process heat above 400 degC
+pellet-plant_wood,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+photovoltaic-array_battery-storage,not-applicable,power-only generation
+pickling-line_acid,low-temp,"hot water, low-pressure steam, or warm process"
+pipeline_co2,not-applicable,"pipeline, storage, or delivery"
+pipeline_crude-oil,not-applicable,"pipeline, storage, or delivery"
+pipeline_hydrogen,not-applicable,"pipeline, storage, or delivery"
+pipeline_natural-gas,not-applicable,"pipeline, storage, or delivery"
+pipeline_plastic-liner,not-applicable,"methane, N2O, or SF6 control without process heat"
+pneumatic-device_gas-driven,not-applicable,"methane, N2O, or SF6 control without process heat"
+pneumatic-device_low-bleed,not-applicable,"methane, N2O, or SF6 control without process heat"
+pneumatic-device_non-emitting,not-applicable,"methane, N2O, or SF6 control without process heat"
+preheater_ladle,high-temp,process heat above 400 degC
+press_all-electric,medium-temp,process heat at 150-400 degC
+press_high-pressure-processing,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+press_hot-platen,medium-temp,process heat at 150-400 degC
+process-improvement_automatic-shutoff,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_coal-mine-methane-drainage,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_hydrogen-blending,not-applicable,"pipeline, storage, or delivery"
+process-improvement_landfill-gas-recovery,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_log-thawing,low-temp,"hot water, low-pressure steam, or warm process"
+process-improvement_low-emission-components,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_magnesium-cover-gas,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_nru-optimization,not-applicable,"methane, N2O, or SF6 control without process heat"
+process-improvement_pfc-anode-effect-control,not-applicable,"methane, N2O, or SF6 control without process heat"
+pulp-mill_kraft,low-temp; medium-temp; high-temp,"whole kraft mill: bleaching and evaporation, cooking, and recovery boiler and lime kiln"
+pulper_chemi-thermomechanical,low-temp,"hot water, low-pressure steam, or warm process"
+pulper_fibreboard-refiner,medium-temp,process heat at 150-400 degC
+pulper_groundwood,not-applicable,shaft work or mechanical duty
+pulper_recycled-fibre,low-temp,"hot water, low-pressure steam, or warm process"
+pulper_refiner-low-energy,not-applicable,shaft work or mechanical duty
+pulper_thermomechanical,not-applicable,shaft work or mechanical duty
+pump_artificial-lift,not-applicable,shaft work or mechanical duty
+pump_electric-station,not-applicable,shaft work or mechanical duty
+pump_electric-station_efficiency-moderate,not-applicable,shaft work or mechanical duty
+pump_mine-dewatering,not-applicable,shaft work or mechanical duty
+pump_plunger-lift,not-applicable,shaft work or mechanical duty
+radio-frequency-heater_food,low-temp,"hot water, low-pressure steam, or warm process"
+reactor_adipic-acid,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_alcohol-to-jet,medium-temp,process heat at 150-400 degC
+reactor_alkylation,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_ammonium-nitrate,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_anthraquinone-autoxidation,low-temp,"hot water, low-pressure steam, or warm process"
+reactor_biomass-flash-pyrolysis,high-temp,process heat above 400 degC
+reactor_catalytic-n2o,high-temp,process heat above 400 degC
+reactor_catalytic-reforming,high-temp,process heat above 400 degC
+reactor_catalytic-reforming_electric-heating,high-temp,process heat above 400 degC
+reactor_chemical-depolymerization,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_co2-to-dme,medium-temp,process heat at 150-400 degC
+reactor_co2-to-ethanol,medium-temp,process heat at 150-400 degC
+reactor_co2-to-fischer-tropsch,high-temp,process heat above 400 degC
+reactor_co2-to-gasoline,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_co2-to-higher-alcohols,medium-temp,process heat at 150-400 degC
+reactor_co2-to-methanol,medium-temp,process heat at 150-400 degC
+reactor_co2-to-ome1,medium-temp,process heat at 150-400 degC
+reactor_co2-to-ome3-5,medium-temp,process heat at 150-400 degC
+reactor_delayed-coking,high-temp,process heat above 400 degC
+reactor_ebullated-bed-hydrocracking,high-temp,process heat above 400 degC
+reactor_ecf-bleaching,low-temp,"hot water, low-pressure steam, or warm process"
+reactor_ethanol-to-ethylene,high-temp,process heat above 400 degC
+reactor_ethylene-oxidation,medium-temp,process heat at 150-400 degC
+reactor_ethylene-oxidation_ccs-concentrated,medium-temp,process heat at 150-400 degC
+reactor_fluid-catalytic-cracking,high-temp,process heat above 400 degC
+reactor_fluid-catalytic-cracking_ccs-diffuse,high-temp,process heat above 400 degC
+reactor_fluid-catalytic-cracking_ccs-oxy-fuel,high-temp,process heat above 400 degC
+reactor_fluid-coking,high-temp,process heat above 400 degC
+reactor_gas-to-liquids,high-temp,process heat above 400 degC
+reactor_haber-bosch-electrolytic,high-temp,process heat above 400 degC
+reactor_haber-bosch-loop,high-temp,process heat above 400 degC
+reactor_hydroprocessing,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_hydroprocessing_electric-heating,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_hydroprocessing_hydrogen-fuel,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_hydrothermal-liquefaction,medium-temp,process heat at 150-400 degC
+reactor_hydrotreating-lipids,medium-temp,process heat at 150-400 degC
+reactor_integrated-upgrader,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_integrated-upgrader_ccs-concentrated,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_isomerization,medium-temp,process heat at 150-400 degC
+reactor_methane-pyrolysis,high-temp,process heat above 400 degC
+reactor_methanol-loop,medium-temp,process heat at 150-400 degC
+reactor_methanol-to-olefins,high-temp,process heat above 400 degC
+reactor_nitric-acid,high-temp,process heat above 400 degC
+reactor_oxygen-delignification,low-temp,"hot water, low-pressure steam, or warm process"
+reactor_partial-upgrading,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+reactor_plastics-pyrolysis,high-temp,process heat above 400 degC
+reactor_polymerization-extrusion,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_polymerization-extrusion_efficiency-strong,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+reactor_propane-dehydrogenation,high-temp,process heat above 400 degC
+reactor_pyrolysis-oil,high-temp,process heat above 400 degC
+reactor_silicothermic,high-temp,process heat above 400 degC
+reactor_small-nuclear-power,not-applicable,power-only generation
+reactor_steel-offgas-chemicals,medium-temp,process heat at 150-400 degC
+reactor_sulphuric-acid-metallurgical,not-applicable,the acid plant releases heat rather than using it
+reactor_thermal-n2o-destruction,high-temp,process heat above 400 degC
+reactor_torrefaction,medium-temp,process heat at 150-400 degC
+reactor_urea-synthesis,medium-temp,process heat at 150-400 degC
+reciprocating-engine_diesel-field,not-applicable,shaft work or mechanical duty
+reciprocating-engine_drive,not-applicable,shaft work or mechanical duty
+reciprocating-engine_drive_efficiency-moderate,not-applicable,shaft work or mechanical duty
+reciprocating-engine_dual-fuel,not-applicable,shaft work or mechanical duty
+reciprocating-engine_gasoline-propane,not-applicable,shaft work or mechanical duty
+refinery_alumina,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+refinery_conversion,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+refinery_deep-conversion,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+refinery_hydroskimming,medium-temp; high-temp,process heat spanning 150 degC to above 400 degC
+refinery_nickel-matte,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+refinery_sugar-beet,low-temp,"hot water, low-pressure steam, or warm process"
+resistance-heater_hvac,low-temp,"hot water, low-pressure steam, or warm process"
+rolling-mill_cold,not-applicable,shaft work or mechanical duty
+rolling-mill_cold_efficiency-moderate,low-temp,"hot water, low-pressure steam, or warm process"
+rolling-mill_continuous-casting,high-temp,process heat above 400 degC
+rolling-mill_hot,not-applicable,shaft work or mechanical duty
+rolling-mill_hot_efficiency-moderate,not-applicable,shaft work or mechanical duty
+rolling-mill_ring,high-temp,process heat above 400 degC
+rolling-mill_thin-slab,high-temp,process heat above 400 degC
+separator_aromatics-extraction,medium-temp,process heat at 150-400 degC
+separator_aromatics-extraction_efficiency-moderate,medium-temp,process heat at 150-400 degC
+separator_biogas-upgrading,low-temp,"hot water, low-pressure steam, or warm process"
+separator_clarifier,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_dry-stack-tailings,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_gravity-magnetic,not-applicable,shaft work or mechanical duty
+separator_lignin-extraction,low-temp,"hot water, low-pressure steam, or warm process"
+separator_membrane-bioreactor,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_mine-water-treatment,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_naphthenic-froth-treatment,low-temp,"hot water, low-pressure steam, or warm process"
+separator_non-aqueous,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_ore-sorting,not-applicable,shaft work or mechanical duty
+separator_paraffinic-froth-treatment,low-temp,"hot water, low-pressure steam, or warm process"
+separator_produced-water-recycling,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_reduced-emission-completion,not-applicable,"methane, N2O, or SF6 control without process heat"
+separator_reverse-osmosis,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_thickening-filtration,not-applicable,"separation by pressure, membranes, or settling, with no process heat"
+separator_warm-lime-softening,low-temp,"hot water, low-pressure steam, or warm process"
+separator_warm-water-extraction,low-temp,"hot water, low-pressure steam, or warm process"
+shaft-furnace_direct-reduction,high-temp,process heat above 400 degC
+shaft-furnace_direct-reduction_ccs-concentrated,high-temp,process heat above 400 degC
+shaft-furnace_electrolytic-hydrogen,high-temp,process heat above 400 degC
+shaft-furnace_hydrogen-direct-reduction,high-temp,process heat above 400 degC
+sinter-plant,high-temp,process heat above 400 degC
+sinter-plant_efficiency-moderate,high-temp,process heat above 400 degC
+sinter-plant_efficiency-strong,high-temp,process heat above 400 degC
+smelting-vessel_bath-tuyere,high-temp,process heat above 400 degC
+smelting-vessel_bottom-blowing,high-temp,process heat above 400 degC
+smelting-vessel_flash,high-temp,process heat above 400 degC
+smelting-vessel_flash_efficiency-moderate,high-temp,process heat above 400 degC
+smelting-vessel_flash_efficiency-strong,high-temp,process heat above 400 degC
+smelting-vessel_low-shaft,high-temp,process heat above 400 degC
+smelting-vessel_smelting-reduction,high-temp,process heat above 400 degC
+smelting-vessel_smelting-reduction_ccs-concentrated,high-temp,process heat above 400 degC
+smelting-vessel_top-submerged-lance,high-temp,process heat above 400 degC
+steam-cracker_catalytic-naphtha,high-temp,process heat above 400 degC
+steam-cracker_electric,high-temp,process heat above 400 degC
+steam-cracker_fired-tubular,high-temp,process heat above 400 degC
+steam-cracker_fired-tubular_ccs-diffuse,high-temp,process heat above 400 degC
+steam-cracker_fired-tubular_efficiency-moderate,high-temp,process heat above 400 degC
+steam-cracker_fired-tubular_hydrogen-fuel,high-temp,process heat above 400 degC
+steam-reformer_ammonia,high-temp,process heat above 400 degC
+steam-reformer_ammonia_ccs-concentrated,high-temp,process heat above 400 degC
+steam-reformer_ammonia_efficiency-moderate,high-temp,process heat above 400 degC
+steam-reformer_ammonia_efficiency-strong,high-temp,process heat above 400 degC
+steam-reformer_methane,high-temp,process heat above 400 degC
+steam-reformer_methane_ccs-concentrated,high-temp,process heat above 400 degC
+steam-reformer_methane_ccs-diffuse,high-temp,process heat above 400 degC
+steam-reformer_methane_efficiency-moderate,high-temp,process heat above 400 degC
+steam-reformer_methanol,high-temp,process heat above 400 degC
+steam-turbine_condensing,not-applicable,power-only generation
+steam-turbine_drive,not-applicable,shaft work or mechanical duty
+steam-turbine_waste-heat,not-applicable,power-only generation
+storage-cavern_hydrogen,not-applicable,"pipeline, storage, or delivery"
+transesterification-unit_acid-catalyzed,low-temp,"hot water, low-pressure steam, or warm process"
+transesterification-unit_alkali-catalyzed,low-temp,"hot water, low-pressure steam, or warm process"
+transesterification-unit_heterogeneous-catalyst,low-temp,"hot water, low-pressure steam, or warm process"
+transesterification-unit_supercritical-methanol,medium-temp,process heat at 150-400 degC
+turboexpander_ngl-recovery,not-applicable,cooling or refrigeration
+turboexpander_pressure-let-down,low-temp,"hot water, low-pressure steam, or warm process"
+ultraviolet-curer_infrared,low-temp; medium-temp,steam and hot-gas duties spanning both bands
+valve_pressure-let-down,low-temp,"hot water, low-pressure steam, or warm process"
+vapour-recompressor_evaporation,low-temp,"hot water, low-pressure steam, or warm process"
+well_co2-storage,not-applicable,"pipeline, storage, or delivery"
+well_cyclic-steam,medium-temp,process heat at 150-400 degC
+well_disposal-injection,not-applicable,"pipeline, storage, or delivery"
+well_electromagnetic-heating,medium-temp,process heat at 150-400 degC
+well_in-situ-oxy-combustion,medium-temp,process heat at 150-400 degC
+well_sagd,medium-temp,process heat at 150-400 degC
+well_solvent-assisted,medium-temp,process heat at 150-400 degC
+well_solvent-only,low-temp,"hot water, low-pressure steam, or warm process"
+wind-turbine,not-applicable,power-only generation

@@ -257,7 +257,7 @@ def target_unit(param: str, pu: str, default: str) -> str:
         return "%"
     if param in ("lifetime", "construction-time"):
         return "years"
-    if param == "temperature-output":
+    if param.startswith(("heat-output-temp", "heat-process-temp")):
         return "degC"
     if param == "pressure-output":
         return "bar"

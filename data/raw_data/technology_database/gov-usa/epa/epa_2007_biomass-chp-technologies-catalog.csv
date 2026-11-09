@@ -21,7 +21,7 @@ steam,boiler_biomass,annual-output,GJ,1857470.0,"round(capacity*capacity_factor*
 steam,boiler_biomass,capex,2007_USD,23430000,,Table 5-4,"medium plant, boiler + prep yard"
 steam,boiler_biomass,opex-fixed,2007_USD,1415000,,Table 5-6,"medium plant, boiler + prep yard CAPACITY BASIS: thermal-output (fixed O&M of the boiler case, sized by steam output; basis read back 2026-10-02)."
 steam,boiler_biomass,efficiency,fraction,0.77,,Table 5-7,"medium plant, boiler only"
-steam,boiler_biomass,temperature-output,C,293,,calc based on steam flow data,
+steam,boiler_biomass,heat-output-temp,C,293,,calc based on steam flow data,
 steam,boiler_biomass,pressure-output,psig,750,,Table 5-4,
 steam,combustion-turbine_biogas,description,,biogas combustion turbine,,,syngas from thermal gasification
 steam,combustion-turbine_biogas,trl,,9,,Table 6-1,commercialization status: numerous models available

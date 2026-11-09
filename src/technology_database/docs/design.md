@@ -237,7 +237,23 @@ are not service keys.
 **Heat.**
 - **Tiers** are banded on the temperature the process needs: `low-temp` below
   150 °C, `medium-temp` 150–400 °C, `high-temp` above 400 °C.
-- A heat-supply archetype lists the tiers it reaches in `heat-tier`.
+- Every archetype has a `heat-process-tier`: the tiers of the process heat it uses,
+  raises inside itself, or supplies (several, `; `-separated, when the process spans
+  them). An electrochemical cell takes the tier of its operating temperature.
+  Archetypes with no process heat (shaft work, transport, cooling, lighting,
+  power-only generation, pressure or membrane separation, methane controls) take
+  `not-applicable`. Only heat-supply archetypes are banded by tier in the workbook.
+- Two temperature parameters: `heat-process-temp` is the temperature the process
+  needs or runs at (kiln sintering, bath, reactor, cooking or drying temperature);
+  `heat-output-temp` is the temperature of heat an archetype delivers (steam, hot
+  water, hot gas, thermal oil), or of a stream leaving it when a target names one
+  (exhaust, flue gas). Each has `-min` and `-max` forms that widen its low and high.
+  An extraction row takes `heat-output-temp` when its archetype is heat supply,
+  power generation or machine drive, or its target is a leaving stream, and
+  `heat-process-temp` otherwise.
+- Where `heat-process-temp` exists, it decides `heat-process-tier`: the tier takes
+  every band the central, low and high values span. The build lists any archetype
+  whose recorded tier disagrees, for correction in `archetype.csv`.
 - **Integral heat** is released inside the unit doing the transformation (a kiln, a
   blast furnace, an oven). Its equipment is a sector archetype.
 - **Supplied heat** comes from a separable system (a boiler, CHP, a fired heater).
@@ -848,7 +864,8 @@ compilation cites it as an original.
   `pipeline/placement.py`. Secondary parameters are in `archetype-secondary-parameter.csv`,
   not `archetype-parameter.csv`. Targets that restate the base are pooled with it first
   (`pipeline/roll_up.py`); the CHP efficiency (total CHP efficiency on CHP archetypes),
-  the temperature range (temperature-min/max) and the single-stream efficiency
+  the temperature ranges (heat-output-temp and heat-process-temp -min/-max) and the
+  single-stream efficiency
   (repeated in efficiency_heat or efficiency_electricity) are roll-ins on the
   summaries (`pipeline/roll_in.py`), so both CSVs carry them. In the workbook each
   parameter's `_low`, `_high` and `_n` columns are folded into an outline group beside

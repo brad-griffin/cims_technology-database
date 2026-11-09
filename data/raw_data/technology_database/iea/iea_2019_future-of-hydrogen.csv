@@ -5,7 +5,7 @@ Hydrogen production,electrolyzer_electricity_alkaline,efficiency,,%,,63,70,,"p.4
 Hydrogen production,electrolyzer_electricity_alkaline,capex,,2018_USD/kW,,500,1400,,"p.44, Table 3, p.47","COST BASIS: installed. Per kW ELECTRICAL (kWe). 'CAPEX represents system costs, including power electronics, gas conditioning and balance of plant'; ranges reflect different system sizes and uncertainties. The stack is 50% (alkaline/PEM) to 60% (SOEC) of the capex. Currency year not printed; costs described as today's (2018/2019), 2018_USD assumed. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_alkaline,lifetime,stack,hours,,60000,90000,,"p.44, Table 3","STACK lifetime in operating hours, not plant life. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_alkaline,pressure-output,,bar,,1,30,,"p.44, Table 3",operating pressure
-Hydrogen production,electrolyzer_electricity_alkaline,temperature-output,,degC,,60,80,,"p.44, Table 3",operating temperature
+Hydrogen production,electrolyzer_electricity_alkaline,heat-process-temp,,degC,,60,80,,"p.44, Table 3",operating temperature
 Hydrogen production,electrolyzer_electricity_alkaline,load-range-min,,fraction,0.1,,,,"p.44, Table 3",load range 10-110% of nominal load
 Hydrogen production,electrolyzer_electricity_pem,description,,,proton exchange membrane (PEM) electrolyser,,,,p.43-45,
 Hydrogen production,electrolyzer_electricity_pem,state-of-development,,,commercial,,,,p.43-45,alkaline is mature and commercial; PEM is newer and commercial; SOEC is the least developed and not yet commercialised (materials degradation at high temperature)
@@ -13,7 +13,7 @@ Hydrogen production,electrolyzer_electricity_pem,efficiency,,%,,56,60,,"p.44, Ta
 Hydrogen production,electrolyzer_electricity_pem,capex,,2018_USD/kW,,1100,1800,,"p.44, Table 3, p.47","COST BASIS: installed. Per kW ELECTRICAL (kWe). 'CAPEX represents system costs, including power electronics, gas conditioning and balance of plant'; ranges reflect different system sizes and uncertainties. The stack is 50% (alkaline/PEM) to 60% (SOEC) of the capex. Currency year not printed; costs described as today's (2018/2019), 2018_USD assumed. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_pem,lifetime,stack,hours,,30000,90000,,"p.44, Table 3","STACK lifetime in operating hours, not plant life. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_pem,pressure-output,,bar,,30,80,,"p.44, Table 3",operating pressure
-Hydrogen production,electrolyzer_electricity_pem,temperature-output,,degC,,50,80,,"p.44, Table 3",operating temperature
+Hydrogen production,electrolyzer_electricity_pem,heat-process-temp,,degC,,50,80,,"p.44, Table 3",operating temperature
 Hydrogen production,electrolyzer_electricity_pem,load-range-min,,fraction,0,,,,"p.44, Table 3",load range 0-160% of nominal load
 Hydrogen production,electrolyzer_electricity_solid-oxide,description,,,"solid oxide electrolysis cell (SOEC), steam electrolysis at high temperature; can co-electrolyse steam and CO2 to syngas",,,,p.43-45,
 Hydrogen production,electrolyzer_electricity_solid-oxide,state-of-development,,,pilot,,,,p.43-45,alkaline is mature and commercial; PEM is newer and commercial; SOEC is the least developed and not yet commercialised (materials degradation at high temperature)
@@ -21,7 +21,7 @@ Hydrogen production,electrolyzer_electricity_solid-oxide,efficiency,,%,,74,81,,"
 Hydrogen production,electrolyzer_electricity_solid-oxide,capex,,2018_USD/kW,,2800,5600,,"p.44, Table 3, p.47","COST BASIS: installed. Per kW ELECTRICAL (kWe). 'CAPEX represents system costs, including power electronics, gas conditioning and balance of plant'; ranges reflect different system sizes and uncertainties. The stack is 50% (alkaline/PEM) to 60% (SOEC) of the capex. Currency year not printed; costs described as today's (2018/2019), 2018_USD assumed. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_solid-oxide,lifetime,stack,hours,,10000,30000,,"p.44, Table 3","STACK lifetime in operating hours, not plant life. Table 3 'Today' column. 2030 and long-term values are in the _projections sidecar."
 Hydrogen production,electrolyzer_electricity_solid-oxide,pressure-output,,bar,,1,1,,"p.44, Table 3",operating pressure
-Hydrogen production,electrolyzer_electricity_solid-oxide,temperature-output,,degC,,650,1000,,"p.44, Table 3",operating temperature
+Hydrogen production,electrolyzer_electricity_solid-oxide,heat-process-temp,,degC,,650,1000,,"p.44, Table 3",operating temperature
 Hydrogen production,electrolyzer_electricity_solid-oxide,load-range-min,,fraction,0.2,,,,"p.44, Table 3",load range 20-100% of nominal load
 Hydrogen production,steam-reformer_natural-gas,description,,,"steam methane reforming (SMR) of natural gas - the workhorse of dedicated hydrogen production for ammonia, methanol and refining",,,,p.38-42,
 Hydrogen production,steam-reformer_natural-gas,state-of-development,,,existing,,,,p.38,

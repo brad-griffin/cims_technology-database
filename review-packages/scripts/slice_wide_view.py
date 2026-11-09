@@ -347,7 +347,11 @@ def main(package, build):
     readme(wb["readme"], package, title, build, sheets, len(rows), len({a for a, _ in rows.values()}))
     # sheet order: readme, column-legend, archetypes, energy, emissions, feedstocks[, source-list]
     wb._sheets = [wb[s] for s in ["readme"] + sheets]
-    wb.active = 2
+    # open on the readme: one active, selected sheet
+    for ws in wb.worksheets:
+        ws.sheet_view.tabSelected = False
+    wb.active = 0
+    wb["readme"].sheet_view.tabSelected = True
     out = ROOT / "review-packages" / f"review-package_{package}" / f"wide-view_{package}.xlsx"
     out.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out)

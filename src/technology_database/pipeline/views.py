@@ -26,7 +26,7 @@ from .bands import families
 from . import capacity_unit
 
 IDENT = ["archetype", "label", "family", "families", "end-uses", "equipment", "discriminator", "modifiers",
-         "type", "carriers", "heat-tier", "applies-to", "trl", "product-unit", "product",
+         "type", "carriers", "heat-process-tier", "applies-to", "trl", "product-unit", "product",
          "secondary-products", "product-density", "product-density-unit", "product-energy-content",
          "product-energy-content-unit", "n-examples", "status", "sources"]
 
@@ -98,6 +98,54 @@ WIDE_NOTES = {
         "workbook (see readme). Which factors: archetype-parameter.csv (external-factors); how each example "
         "was converted: example-parameter.csv (conversion, conversion-class, "
         "conversion-factors)."),
+}
+
+
+# short definitions of the identity columns, for the column legend and the header notes
+IDENT_NOTES = {
+    "archetype": "Identifier: the equipment, then what sets the option apart, then any modifiers, "
+                 "joined by underscores.",
+    "label": "Plain-language name of the archetype.",
+    "family": "Home family: the shared service (heat supply, machine drive, ...) or the sector "
+              "whose process equipment the archetype is.",
+    "families": "Every family the archetype appears under in the workbook: its home family "
+                "first, then the families of the sectors whose end uses it serves.",
+    "end-uses": "The end uses (hierarchy service nodes) the archetype serves.",
+    "equipment": "Equipment class: the first part of the identifier.",
+    "discriminator": "What sets the archetype apart from others on the same equipment (the "
+                     "second part of the identifier); blank when nothing does.",
+    "modifiers": "Variant tags that end the identifier: an efficiency step "
+                 "(efficiency-moderate, efficiency-strong), a capture variant (ccs-concentrated, "
+                 "ccs-diffuse) or a fuel or heating change.",
+    "type": "conventional (the incumbent in Canadian plants), efficient variant, alternative "
+            "(commercial but not common in Canada), prospective (technology readiness level "
+            "5-8), component or reference (kept for their numbers; not offered to the model).",
+    "carriers": "The energy carriers the archetype can use.",
+    "heat-process-tier": "Temperature band of the process heat the archetype uses, raises or "
+                         "supplies: low-temp below 150 degC, medium-temp 150-400 degC, high-temp "
+                         "above 400 degC; several when the process spans bands; not-applicable when "
+                         "it uses no process heat (shaft work, transport, cooling, lighting). Follows "
+                         "heat-process-temp where the sources give one.",
+    "applies-to": "The hierarchy nodes the archetype serves, or \"no connection\".",
+    "trl": "Technology readiness level, from 1 (basic principles observed) to 9 (proven in "
+           "commercial operation).",
+    "product-unit": "The unit of output every cost and intensity is per.",
+    "product": "The main product or service the product-unit counts.",
+    "secondary-products": "Other useful outputs (co-products); costs are not split between them.",
+    "product-density": "Density of the product, for converting between mass and volume.",
+    "product-density-unit": "Unit of product-density.",
+    "product-energy-content": "Energy content of the product (higher heating value), for "
+                              "converting between mass or volume and energy.",
+    "product-energy-content-unit": "Unit of product-energy-content.",
+    "n-examples": "Number of source examples mapped to the archetype.",
+    "status": "quantified (at least one value from a source) or estimated (every value filled "
+              "by a rule or a judgement).",
+    "sources": "Short names of the sources behind the examples.",
+}
+SPREAD_NOTES = {
+    "_low": "Lowest value any example gives for {b} (for a filled value, the low end of the fill).",
+    "_high": "Highest value any example gives for {b} (for a filled value, the high end of the fill).",
+    "_n": "Number of examples pooled into {b}; 0 for a filled value.",
 }
 
 
@@ -250,8 +298,10 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                                       "archetype it repeats the efficiency column.",
             "efficiency-chp": "Non-CHP archetypes: a total heat-plus-power efficiency some sources give "
                               "(a boiler or turbine run in CHP mode).",
-            "temperature-output": "Low and high also span the minimum and maximum operating "
-                                  "temperatures sources give (temperature-min, temperature-max).",
+            "heat-output-temp": "Low and high also span the minimum and maximum temperatures "
+                                "sources give (heat-output-temp-min, heat-output-temp-max).",
+            "heat-process-temp": "Low and high also span the minimum and maximum temperatures "
+                                 "sources give (heat-process-temp-min, heat-process-temp-max).",
         }.get(b, "")
         return " ".join(x for x in (
             pdef.get("definition", ""), f"Species or stream: {t}." if t else "", extra) if x)
@@ -266,9 +316,10 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
             cols += ["external-conversions", "source-corrections", "filled"]
         units, groups, notes = {}, {c: "identity" for c in cols}, dict(fill_note)
         for b in keys:
-            if b == "temperature-output" and "heat-tier" in cols:
-                cols.remove("heat-tier")
-                cols.append("heat-tier")
+            if b == "heat-process-temp" and "heat-process-tier" in cols:
+                # the tier sits just before the process temperature it follows from
+                cols.remove("heat-process-tier")
+                cols.append("heat-process-tier")
             extra = [b] + ([f"{b}_low", f"{b}_high"] if b in spread else []) + [f"{b}_n"]
             if name == "wide-archetype" and b == "capacity":
                 cols.append("capacity-unit")
@@ -285,6 +336,8 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
                             "see capacity-unit" if name == "wide-archetype" and b == "capacity" else unit_of(b))
                 groups[c] = records.parameters.get(p, {}).get("parameter-class", "")
             notes[b] = note_of(b)
+            for c in extra[1:]:
+                notes[c] = SPREAD_NOTES[c[len(b):]].format(b=b)
         index = {c: i for i, c in enumerate(cols)}
         rows, flagged, graded = [], set(), {}
         for a in arows:
@@ -318,6 +371,7 @@ def build(records, hier, examples, summaries, flow_summaries, include_empty=True
         return (param_order.get(p, 99), t)
 
     fill_note.update(WIDE_NOTES)
+    fill_note.update(IDENT_NOTES)
     ident_main = [c for c in IDENT if c not in ("family", "equipment")]
     ident_side = ["archetype", "label", "product-unit", "product"]
     out = {}

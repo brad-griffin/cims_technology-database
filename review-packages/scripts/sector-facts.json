@@ -201,8 +201,8 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
-   "lighting": 7,
    "heat-supply": 24,
+   "lighting": 7,
    "space-conditioning": 7,
    "machine-drive": 3
   }
@@ -819,11 +819,11 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "lighting": 7,
-   "machine-drive": 8,
    "heat-supply": 23,
-   "space-conditioning": 7,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "machine-drive": 8,
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "pulp-and-paper": {
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
-   "lighting": 7,
-   "machine-drive": 8,
    "heat-supply": 24,
-   "space-conditioning": 7,
-   "co2-capture": 4
+   "co2-capture": 4,
+   "machine-drive": 8,
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "cement-and-lime": {
@@ -1677,10 +1677,10 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "lighting": 7,
+   "co2-capture": 8,
    "machine-drive": 8,
-   "space-conditioning": 7,
-   "co2-capture": 8
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "chemicals": {
@@ -2235,11 +2235,11 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "lighting": 7,
-   "machine-drive": 8,
    "heat-supply": 23,
-   "space-conditioning": 7,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "machine-drive": 8,
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "conventional-oil": {
@@ -3327,10 +3327,10 @@
   "n_sources": 49,
   "n_examples": 819,
   "cross_families": {
-   "mobile-equipment": 6,
+   "co2-capture": 8,
    "machine-drive": 10,
-   "heat-supply": 5,
-   "co2-capture": 8
+   "mobile-equipment": 6,
+   "heat-supply": 5
   }
  },
  "biofuels": {
@@ -4206,10 +4206,10 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
+   "heat-supply": 23,
+   "power-generation": 12,
    "machine-drive": 9,
    "lighting": 7,
-   "power-generation": 12,
-   "heat-supply": 23,
    "space-conditioning": 7
   }
  },
@@ -4485,11 +4485,11 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "lighting": 7,
-   "machine-drive": 8,
    "heat-supply": 23,
-   "space-conditioning": 7,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "machine-drive": 8,
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "petroleum-refining": {
@@ -4774,19 +4774,239 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "lighting": 7,
-   "machine-drive": 8,
    "heat-supply": 30,
-   "space-conditioning": 7,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "machine-drive": 8,
+   "lighting": 7,
+   "space-conditioning": 7
   }
  },
  "whole-database": {
-  "rows": 612,
+  "rows": 613,
   "archetypes": 537,
   "own": 444,
   "cross": 93,
   "table": [
+   {
+    "band": "Ethanol production",
+    "archetype": "fermenter_grain-dry-mill",
+    "label": "Grain dry-mill fermentation and distillation",
+    "status": "quantified",
+    "n": "15",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Ethanol production",
+    "archetype": "fermenter_grain-dry-mill_efficiency-moderate",
+    "label": "Grain dry-mill efficiency measures, moderate",
+    "status": "quantified",
+    "n": "1",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Ethanol production",
+    "archetype": "fermenter_grain-dry-mill_ccs-concentrated",
+    "label": "Ethanol fermenter with capture of the fermentation CO2",
+    "status": "quantified",
+    "n": "5",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 6
+   },
+   {
+    "band": "Ethanol production",
+    "archetype": "fermenter_lignocellulosic-enzymatic",
+    "label": "Lignocellulosic enzymatic fermentation",
+    "status": "quantified",
+    "n": "11",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Ethanol production",
+    "archetype": "fermenter_syngas",
+    "label": "Syngas fermentation",
+    "status": "quantified",
+    "n": "16",
+    "trl": "8",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Ethanol production",
+    "archetype": "reactor_co2-to-ethanol",
+    "label": "CO2-to-ethanol",
+    "status": "quantified",
+    "n": "7",
+    "trl": "4",
+    "unit": "GJ",
+    "guesses": 2
+   },
+   {
+    "band": "Biodiesel production",
+    "archetype": "transesterification-unit_alkali-catalyzed",
+    "label": "Alkali-catalyzed transesterification",
+    "status": "quantified",
+    "n": "11",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Biodiesel production",
+    "archetype": "transesterification-unit_acid-catalyzed",
+    "label": "Acid-catalyzed transesterification",
+    "status": "quantified",
+    "n": "5",
+    "trl": "8-9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Biodiesel production",
+    "archetype": "transesterification-unit_heterogeneous-catalyst",
+    "label": "Heterogeneous-catalyst transesterification",
+    "status": "quantified",
+    "n": "1",
+    "trl": "8",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Biodiesel production",
+    "archetype": "transesterification-unit_supercritical-methanol",
+    "label": "Supercritical-methanol transesterification",
+    "status": "quantified",
+    "n": "1",
+    "trl": "5-6",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "reactor_hydrotreating-lipids",
+    "label": "Hydrotreating of oils and fats (HEFA/HVO)",
+    "status": "quantified",
+    "n": "13",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "gasifier_biomass-fischer-tropsch_ccs-concentrated",
+    "label": "Biomass or waste gasification to Fischer-Tropsch liquids with capture",
+    "status": "quantified",
+    "n": "1",
+    "trl": "5-6",
+    "unit": "GJ",
+    "guesses": 6
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "gasifier_biomass-fischer-tropsch",
+    "label": "Biomass or waste gasification to Fischer-Tropsch liquids",
+    "status": "quantified",
+    "n": "20",
+    "trl": "7",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "reactor_alcohol-to-jet",
+    "label": "Alcohol-to-jet",
+    "status": "quantified",
+    "n": "12",
+    "trl": "7-8",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "reactor_co2-to-fischer-tropsch",
+    "label": "CO2-to-Fischer-Tropsch fuels",
+    "status": "quantified",
+    "n": "11",
+    "trl": "5-7",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable diesel and SAF",
+    "archetype": "reactor_hydrothermal-liquefaction",
+    "label": "Hydrothermal liquefaction",
+    "status": "quantified",
+    "n": "1",
+    "trl": "5",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Renewable natural gas",
+    "archetype": "process-improvement_landfill-gas-recovery",
+    "label": "Landfill gas recovery and upgrading",
+    "status": "quantified",
+    "n": "2",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 5
+   },
+   {
+    "band": "Renewable natural gas",
+    "archetype": "anaerobic-digester_biomethane-upgrading",
+    "label": "Anaerobic digestion with upgrading",
+    "status": "quantified",
+    "n": "5",
+    "trl": "9",
+    "unit": "GJ",
+    "guesses": 2
+   },
+   {
+    "band": "Renewable natural gas",
+    "archetype": "gasifier_biomass-methanation",
+    "label": "Biomass gasification with methanation",
+    "status": "quantified",
+    "n": "14",
+    "trl": "5",
+    "unit": "GJ",
+    "guesses": 0
+   },
+   {
+    "band": "Solid biofuels (pellets)",
+    "archetype": "kiln_charcoal-retort",
+    "label": "Industrial charcoal retort",
+    "status": "quantified",
+    "n": "4",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 6
+   },
+   {
+    "band": "Solid biofuels (pellets)",
+    "archetype": "pellet-plant_wood",
+    "label": "Wood pellet mill",
+    "status": "quantified",
+    "n": "4",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 2
+   },
+   {
+    "band": "Solid biofuels (pellets)",
+    "archetype": "reactor_torrefaction",
+    "label": "Biomass torrefaction and pelletising",
+    "status": "quantified",
+    "n": "3",
+    "trl": "7",
+    "unit": "t",
+    "guesses": 2
+   },
    {
     "band": "(no connection)",
     "archetype": "reactor_co2-to-gasoline",
@@ -5276,226 +5496,6 @@
     "trl": "9",
     "unit": "t",
     "guesses": 7
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "fermenter_grain-dry-mill",
-    "label": "Grain dry-mill fermentation and distillation",
-    "status": "quantified",
-    "n": "15",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "fermenter_grain-dry-mill_efficiency-moderate",
-    "label": "Grain dry-mill efficiency measures, moderate",
-    "status": "quantified",
-    "n": "1",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "fermenter_grain-dry-mill_ccs-concentrated",
-    "label": "Ethanol fermenter with capture of the fermentation CO2",
-    "status": "quantified",
-    "n": "5",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 6
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "fermenter_lignocellulosic-enzymatic",
-    "label": "Lignocellulosic enzymatic fermentation",
-    "status": "quantified",
-    "n": "11",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "fermenter_syngas",
-    "label": "Syngas fermentation",
-    "status": "quantified",
-    "n": "16",
-    "trl": "8",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Ethanol production",
-    "archetype": "reactor_co2-to-ethanol",
-    "label": "CO2-to-ethanol",
-    "status": "quantified",
-    "n": "7",
-    "trl": "4",
-    "unit": "GJ",
-    "guesses": 2
-   },
-   {
-    "band": "Biodiesel production",
-    "archetype": "transesterification-unit_alkali-catalyzed",
-    "label": "Alkali-catalyzed transesterification",
-    "status": "quantified",
-    "n": "11",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Biodiesel production",
-    "archetype": "transesterification-unit_acid-catalyzed",
-    "label": "Acid-catalyzed transesterification",
-    "status": "quantified",
-    "n": "5",
-    "trl": "8-9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Biodiesel production",
-    "archetype": "transesterification-unit_heterogeneous-catalyst",
-    "label": "Heterogeneous-catalyst transesterification",
-    "status": "quantified",
-    "n": "1",
-    "trl": "8",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Biodiesel production",
-    "archetype": "transesterification-unit_supercritical-methanol",
-    "label": "Supercritical-methanol transesterification",
-    "status": "quantified",
-    "n": "1",
-    "trl": "5-6",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "reactor_hydrotreating-lipids",
-    "label": "Hydrotreating of oils and fats (HEFA/HVO)",
-    "status": "quantified",
-    "n": "13",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "gasifier_biomass-fischer-tropsch_ccs-concentrated",
-    "label": "Biomass or waste gasification to Fischer-Tropsch liquids with capture",
-    "status": "quantified",
-    "n": "1",
-    "trl": "5-6",
-    "unit": "GJ",
-    "guesses": 6
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "gasifier_biomass-fischer-tropsch",
-    "label": "Biomass or waste gasification to Fischer-Tropsch liquids",
-    "status": "quantified",
-    "n": "20",
-    "trl": "7",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "reactor_alcohol-to-jet",
-    "label": "Alcohol-to-jet",
-    "status": "quantified",
-    "n": "12",
-    "trl": "7-8",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "reactor_co2-to-fischer-tropsch",
-    "label": "CO2-to-Fischer-Tropsch fuels",
-    "status": "quantified",
-    "n": "11",
-    "trl": "5-7",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable diesel and SAF",
-    "archetype": "reactor_hydrothermal-liquefaction",
-    "label": "Hydrothermal liquefaction",
-    "status": "quantified",
-    "n": "1",
-    "trl": "5",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Renewable natural gas",
-    "archetype": "process-improvement_landfill-gas-recovery",
-    "label": "Landfill gas recovery and upgrading",
-    "status": "quantified",
-    "n": "2",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 5
-   },
-   {
-    "band": "Renewable natural gas",
-    "archetype": "anaerobic-digester_biomethane-upgrading",
-    "label": "Anaerobic digestion with upgrading",
-    "status": "quantified",
-    "n": "5",
-    "trl": "9",
-    "unit": "GJ",
-    "guesses": 2
-   },
-   {
-    "band": "Renewable natural gas",
-    "archetype": "gasifier_biomass-methanation",
-    "label": "Biomass gasification with methanation",
-    "status": "quantified",
-    "n": "14",
-    "trl": "5",
-    "unit": "GJ",
-    "guesses": 0
-   },
-   {
-    "band": "Solid biofuels (pellets)",
-    "archetype": "kiln_charcoal-retort",
-    "label": "Industrial charcoal retort",
-    "status": "quantified",
-    "n": "4",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 6
-   },
-   {
-    "band": "Solid biofuels (pellets)",
-    "archetype": "pellet-plant_wood",
-    "label": "Wood pellet mill",
-    "status": "quantified",
-    "n": "4",
-    "trl": "9",
-    "unit": "t",
-    "guesses": 2
-   },
-   {
-    "band": "Solid biofuels (pellets)",
-    "archetype": "reactor_torrefaction",
-    "label": "Biomass torrefaction and pelletising",
-    "status": "quantified",
-    "n": "3",
-    "trl": "7",
-    "unit": "t",
-    "guesses": 2
    },
    {
     "band": "Clinker production",
@@ -9633,11 +9633,11 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
-   "power-generation": 13,
    "heat-supply": 34,
-   "machine-drive": 13,
-   "lighting": 7,
    "co2-capture": 13,
+   "machine-drive": 13,
+   "power-generation": 13,
+   "lighting": 7,
    "space-conditioning": 7,
    "mobile-equipment": 6
   }
