@@ -37,8 +37,8 @@ est-sibling-lifetime,chiller_absorption,lifetime,23,25,18.75,31.25,yes,1.08696,t
 est-sibling-lifetime,chiller_hvac,lifetime,25,23,17.25,28.75,yes,0.92,tier 2: chiller_absorption
 est-sibling-lifetime,coke-oven_by-product,lifetime,20,25,18.75,31.25,yes,1.25,tier 1: coke-oven_by-product_efficiency-moderate
 est-sibling-lifetime,coke-oven_by-product_efficiency-moderate,lifetime,25,20,15,40,yes,0.8,tier 1: coke-oven_by-product
-est-sibling-lifetime,combined-cycle,lifetime,22.5,40,25,50,no,1.77778,tier 1: combined-cycle_ccs-diffuse
-est-sibling-lifetime,combined-cycle_ccs-diffuse,lifetime,40,22.5,16.875,40,yes,0.5625,tier 1: combined-cycle
+est-sibling-lifetime,combined-cycle,lifetime,25,40,25,50,yes,1.6,tier 1: combined-cycle_ccs-diffuse
+est-sibling-lifetime,combined-cycle_ccs-diffuse,lifetime,40,25,18.75,40,yes,0.625,tier 1: combined-cycle
 est-sibling-lifetime,combustion-turbine_chp,lifetime,25,25,18.75,31.25,yes,1,tier 1: combustion-turbine_chp_ccs-diffuse
 est-sibling-lifetime,combustion-turbine_chp_ccs-diffuse,lifetime,25,25,10,50,yes,1,tier 1: combustion-turbine_chp
 est-sibling-lifetime,combustion-turbine_simple-cycle,lifetime,25,25,10,50,yes,1,"tier 2: combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse"
@@ -532,7 +532,7 @@ est-class-lifetime,chiller_hvac,lifetime,25,20,10,25,yes,0.8,"class rotating-equ
 est-class-lifetime,cleaning-system_efficiency-strong,lifetime,20,25,15,31.25,yes,1.25,class process-plant: median of 145 archetypes
 est-class-lifetime,coke-oven_by-product,lifetime,20,25,15,31.25,yes,1.25,class process-plant: median of 145 archetypes
 est-class-lifetime,coke-oven_by-product_efficiency-moderate,lifetime,25,22.5,15,30,yes,0.9,class process-plant: median of 145 archetypes
-est-class-lifetime,combined-cycle,lifetime,22.5,25,18.75,40,yes,1.11111,"class power-equipment: median of 10 archetypes: combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
+est-class-lifetime,combined-cycle,lifetime,25,25,18.75,40,yes,1,"class power-equipment: median of 10 archetypes: combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,combined-cycle_ccs-diffuse,lifetime,40,25,18.75,31.25,no,0.625,"class power-equipment: median of 10 archetypes: combined-cycle, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,combustion-turbine_chp,lifetime,25,25,18.75,40,yes,1,"class power-equipment: median of 10 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp_ccs-diffuse, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-lifetime,combustion-turbine_chp_ccs-diffuse,lifetime,25,25,18.75,40,yes,1,"class power-equipment: median of 10 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_simple-cycle, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"

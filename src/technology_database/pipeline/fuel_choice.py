@@ -183,7 +183,23 @@ def apply(psum: list[dict], records, hosts: dict, have: dict | None = None, stag
                         drop(r, "alternative fuel" if v > 0 else "listed possible fuel, no quantity",
                              f"not the most likely fuel ({keep})")
         elif mode == "mix" and fuels:
-            w = {t: fnum(named[t].get("central")) or 0 for t in fuels if t in named}
+            shares = [fnum(x) for x in split_list(c.get("shares", "").replace("|", ";"))]
+            if shares and len(shares) == len(fuels):
+                # shares the table gives (a Canadian fuel mix): rows written where missing
+                for t, sh in zip(fuels, shares):
+                    if t not in named:
+                        base = frow or next(iter(named.values()), None)
+                        if base is None:
+                            continue
+                        nr = dict(base, **{"target": t, "n": 0, "examples": "", "central-from": ""})
+                        psum.append(nr)
+                        if have is not None:
+                            have.setdefault(a, {})[(SEC, t)] = nr
+                        named[t] = nr
+                        tgt[t] = nr
+                w = {t: sh for t, sh in zip(fuels, shares) if t in named}
+            else:
+                w = {t: fnum(named[t].get("central")) or 0 for t in fuels if t in named}
             target = fnum(frow.get("central")) if frow is not None else \
                 sum(fnum(r.get("central")) or 0 for t, r in named.items() if not _apart(r))
             s = sum(w.values())
@@ -191,7 +207,15 @@ def apply(psum: list[dict], records, hosts: dict, have: dict | None = None, stag
                 f = target / s
                 for t in w:
                     r = named[t]
-                    if abs(f - 1) > 1e-6 or _apart(r):
+                    if shares and len(shares) == len(fuels):
+                        for kk in ("central", "low", "high"):
+                            fv_ = fnum(frow.get(kk)) if frow is not None else None
+                            r[kk] = _g(fv_ * w[t] / s) if fv_ is not None else ("" if kk != "central" else _g(target * w[t] / s))
+                        r["central-from"] = (f"{w[t] / s:.0%} of fuel, the share in reference/fuel-choice.csv ({tag}); "
+                                             + (r.get("central-from") or "").replace(MARK, "kept apart by the carriers step, now in the split"))
+                        _worse(r)
+                        stats["fuels renamed or rescaled"] += 1
+                    elif abs(f - 1) > 1e-6 or _apart(r):
                         _scale(r, f)
                         r["central-from"] = (f"co-fired share of fuel ({', '.join(fuels)}), scaled x{f:.3g} to the fuel "
                                              f"total ({tag}); " + (r.get("central-from") or "").replace(MARK, "kept apart by the carriers step, now in the split"))

@@ -202,9 +202,9 @@
   "n_examples": 141,
   "cross_families": {
    "heat-supply": 24,
-   "space-conditioning": 7,
    "lighting": 7,
-   "machine-drive": 3
+   "machine-drive": 3,
+   "space-conditioning": 7
   }
  },
  "steel": {
@@ -820,10 +820,10 @@
   "n_examples": 874,
   "cross_families": {
    "heat-supply": 23,
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 8,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "pulp-and-paper": {
@@ -1299,10 +1299,10 @@
   "n_examples": 455,
   "cross_families": {
    "heat-supply": 24,
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 4,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "cement-and-lime": {
@@ -1677,10 +1677,10 @@
   "n_sources": 71,
   "n_examples": 508,
   "cross_families": {
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 8,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "chemicals": {
@@ -2236,10 +2236,10 @@
   "n_examples": 874,
   "cross_families": {
    "heat-supply": 23,
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 8,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "conventional-oil": {
@@ -2484,8 +2484,8 @@
   "n_sources": 10,
   "n_examples": 59,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 3,
+   "heat-supply": 23,
    "co2-capture": 8
   }
  },
@@ -3327,9 +3327,9 @@
   "n_sources": 49,
   "n_examples": 819,
   "cross_families": {
-   "heat-supply": 5,
    "mobile-equipment": 6,
    "co2-capture": 8,
+   "heat-supply": 5,
    "machine-drive": 10
   }
  },
@@ -3743,7 +3743,7 @@
     "n": "9",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 4
+    "guesses": 7
    },
    {
     "band": "Hydrogen distribution",
@@ -4206,11 +4206,11 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "power-generation": 12,
    "heat-supply": 23,
-   "space-conditioning": 7,
+   "power-generation": 12,
    "lighting": 7,
-   "machine-drive": 9
+   "machine-drive": 9,
+   "space-conditioning": 7
   }
  },
  "aluminum": {
@@ -4486,10 +4486,10 @@
   "n_examples": 191,
   "cross_families": {
    "heat-supply": 23,
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 8,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "petroleum-refining": {
@@ -4775,10 +4775,10 @@
   "n_examples": 468,
   "cross_families": {
    "heat-supply": 30,
-   "space-conditioning": 7,
    "lighting": 7,
    "co2-capture": 8,
-   "machine-drive": 8
+   "machine-drive": 8,
+   "space-conditioning": 7
   }
  },
  "whole-database": {
@@ -6815,7 +6815,7 @@
     "n": "9",
     "trl": "9",
     "unit": "GJ",
-    "guesses": 4
+    "guesses": 7
    },
    {
     "band": "Hydrogen distribution",
@@ -9633,13 +9633,13 @@
   "n_sources": 409,
   "n_examples": 5531,
   "cross_families": {
+   "lighting": 7,
    "power-generation": 13,
    "co2-capture": 13,
-   "heat-supply": 34,
    "mobile-equipment": 6,
+   "heat-supply": 34,
    "machine-drive": 13,
-   "space-conditioning": 7,
-   "lighting": 7
+   "space-conditioning": 7
   }
  },
  "_totals": {

@@ -122,6 +122,9 @@ for a, h in H.items():
                 flag(a, "bounds", "high", f"{p}|{t}", f"efficiency {c:.4g}% implausible (cap {cap})", c)
         if p == "lifetime" and not (1 <= c <= 100):
             flag(a, "bounds", "medium", p, f"lifetime {c:g} years", c)
+        if p in ("emissions-combustion", "emissions-process", "emissions-total", "emissions-captured") \
+                and not str(r.get("unit") or "").startswith("t/"):
+            flag(a, "unit", "high", f"{p}|{t}", f"emissions unit {r.get('unit')} is not a mass per unit of product")
         # unit vs product unit
         u = str(r.get("unit") or "")
         dens = None

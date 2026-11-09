@@ -3275,6 +3275,16 @@ def _emission_fixes(psum, records, ctx, stats):
             c2, lo2, hi2, ins2 = fuel_co2(h, only=red)
             setv(k, h, "emissions-process", c2, lo2, hi2, ins2, note, "estimated")
             parts_total(k, h, note)
+        elif act == "share-capture":
+            (cc, cl, ch), _ = val(h, "emissions-combustion")
+            (pc, pl, ph), _ = val(h, "emissions-process")
+            st = h.get(("share-to-capture", "co2"))
+            sh = (fnum(st.get("central")) or 100) / 100 if _live(st) else 1.0
+            g0, gl, gh = cc + pc, cl + pl, ch + ph
+            setv(k, h, "emissions-captured", g0 * sh, gl * sh, gh * sh,
+                 [f"share-to-capture {sh:.1%} x gross (combustion + process)"], note, "estimated")
+            setv(k, h, "emissions-total", g0 * (1 - sh), gl * (1 - sh), gh * (1 - sh),
+                 ["gross - captured"], note, "estimated")
         elif act == "net-identity":
             (cc, cl, ch), _ = val(h, "emissions-combustion")
             (pc, pl, ph), _ = val(h, "emissions-process")
@@ -3296,7 +3306,8 @@ def _emission_fixes(psum, records, ctx, stats):
 
 def _unit_for(h, p, a):
     for (q, t), r in h.items():
-        if q.startswith("emissions-") and r.get("unit"):
+        if q in ("emissions-combustion", "emissions-process", "emissions-total", "emissions-captured",
+                 "emissions-biomass") and (r.get("unit") or "").startswith("t/"):
             return r["unit"]
     return f"t/{a['product-unit']}"
 

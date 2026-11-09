@@ -67,11 +67,11 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | Jacobs 2006 | 220 | confirmed against the held document 2026-10-02 |
 | IETD 2013 | 211 | confirmed against the held document 2026-10-07 |
 | IEAGHG 2017 (SMR hydrogen) | 209 | confirmed against the held document 2026-10-02 |
+| Lemar 2001 | 205 | confirmed against the held document 2026-10-02 |
 | IEAGHG 2007 | 200 | confirmed against the held document 2026-10-02 |
 | BCS 2007 | 198 | confirmed against the held document 2026-10-02 |
 | Schlesinger et al. 2011 | 197 | confirmed against the held document 2026-10-06 |
 | IEA 2026 (methane tracker) | 192 | confirmed against the held document 2026-10-06 |
-| Lemar 2001 | 184 | confirmed against the held document 2026-10-02 |
 | Meyers 1997 | 179 | confirmed against the held document 2026-10-08 |
 | Hughes and Zoelle 2023 | 176 | confirmed against the held document 2026-09-29 |
 | Lewis et al. 2022 | 176 | confirmed against the held document 2026-10-02 |
