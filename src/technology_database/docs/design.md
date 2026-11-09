@@ -611,7 +611,7 @@ was reached. Adopted 2026-09-30; widened 2026-10-09 (the fill-methods proposal,
 
 | Grade | What it means | Workbook |
 | - | - | - |
-| `sourced` | Pooled from examples, as in section 6. | deep ember, white text (the darkest tint with an external factor) |
+| `sourced` | Pooled from examples, as in section 6. | darkest tint (the same with an external factor) |
 | `identity` | Calculated from the archetype's own values by a definition or a physical relation: 100 / efficiency, fuel use times its emission factor, combustion plus process emissions, capacity times capacity factor. | second tint |
 | `estimated` | Borrowed or scaled from another archetype, or set by a class rule fitted on this database's own values: a host plant's cost plus an increment, a sibling's lifetime, the equipment class's median, a cost ratio. | third tint |
 | `proxy` | A class constant from a named outside catalogue or handbook, not extracted as a source: `records/fill/fill-assumption.csv`, each row with its source, registered in `source-details_reference.csv`. | fourth tint |
@@ -871,7 +871,7 @@ compilation cites it as an original.
   then waste, for the same rows as the archetypes sheet.
 - `filled` lists the parameters the fill step wrote and their grade or marker; in
   the workbook every value is shaded on one ember scale by how certain it is
-  (sourced deep ember with white text, converted, identity, estimated, proxy, then
+  (sourced and converted on the darkest tint, identity, estimated, proxy, then
   guess in grey italic on the lightest tint; not-applicable unshaded light grey
   italic; `pipeline/workbook.py` SHADE, key on the readme sheet), and filled
   values' `_n` is 0. `output/unfilled/` holds the same

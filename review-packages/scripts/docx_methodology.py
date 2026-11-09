@@ -158,7 +158,7 @@ BODY = [('h1', '1. What the database is'),
   [['Sourced',
     'Pooled from examples (section 4).',
     'Dry precalciner kiln capital cost, 495 CAD per t/yr: the median of 18 examples.',
-    'Deep ember, white text'],
+    'Darkest tint'],
    ['Sourced, converted',
     'Sourced, but converted with a factor from outside the source (a heating value, density, process ratio, '
     'or assumption).',

@@ -28,13 +28,13 @@ DETAIL = ("_low", "_high", "_n")
 # Ember palette, lightest to darkest (Brad 2026-10-29)
 EMBER = ["FFB58B", "F67A39", "C64E00", "971E00", "5A0C00"]
 # How certain a value is, most certain first (Brad 2026-11-09, one step darker than the
-# 2026-10-29 scale): sourced a deep ember with white text, then the tints of EMBER[1]
-# at L* 58, 69, 79, 88, and 96 for converted, identity, estimated, proxy, and guess
+# 2026-10-29 scale): sourced and converted share the darkest tint, then the tints of
+# EMBER[1] at L* 69, 79, 88, and 96 for identity, estimated, proxy, and guess
 # (a guess also in grey italic); a parameter that does not apply is unshaded lighter
 # grey italic. Keys are the fill grades plus `sourced` (as reported) and `converted`
 # (sourced, external conversion factor). Fields: key, label, fill, font colour, text.
 SHADE = [
-    ("sourced", "Sourced", "A4532B", "FFFFFF",
+    ("sourced", "Sourced", "CA764C", None,
      "As the source reports it (units converted exactly)."),
     ("converted", "Sourced, converted", "CA764C", None,
      "Sourced, but converted with a factor from outside the source (a heating value, a "
