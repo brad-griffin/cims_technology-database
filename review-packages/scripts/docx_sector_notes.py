@@ -600,6 +600,7 @@ def build(outdir, facts):
                   f"{f['cross']} cross-cutting archetypes that serve the same processes, by family: {cross}. The "
                   "cross-cutting rows stay in their own families. Comment on whether they fit the sector; a "
                   "detailed check of their values is optional."),
+            ("landscape",),
             ("h1", f"2. The {adj} archetypes"),
             ("lead", "Each archetype stands for a real process or piece of equipment. Within each step the "
                      "table runs from conventional technologies to efficient variants, capture variants, and "
@@ -608,9 +609,11 @@ def build(outdir, facts):
                      "examples from published sources behind it, and \"Core values sourced\" how many of the seven "
                      "core model values (capital cost, fixed and variable operating cost, energy use, "
                      "lifetime, annual output, and CO2 emissions) come from them; the others are filled."),
-            ("table", [1150, 1800, 1500, 1960, 950, 1000, 1000],
+            # landscape (Brad 2026-11-09): 9 in of text width
+            ("table", [1500, 2700, 2400, 3060, 1000, 1100, 1200],
              ["Step", "Archetype", "Label", "Real-life examples", "Source examples", "Core values sourced",
               "Readiness level"], rows),
+            ("portrait",),
             ("h1", "3. Main sources"),
             ("lead", f"{f['n_sources']} sources supply the {f['n_examples']} examples behind the {adj} archetypes. "
                      "The ten that supply the most:"),

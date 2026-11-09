@@ -18,7 +18,7 @@ ZOOM = 75
 BOOK = OUTPUT / "technology-database.xlsx"
 NUM_FORMAT = [(1000, "#,##0"), (100, "#,##0"), (10, "#,##0.0"),
               (1, "#,##0.00"), (0.1, "0.000"), (0.01, "0.0000")]
-PLAIN_INT = {"trl", "year-available", "n-examples", "n"}
+PLAIN_INT = {"trl", "year-available", "n-examples", "n", "core-sourced"}
 # identifiers and counts, not measurements: no thousands separator, no decimals
 GENERAL = {"year", "rows-in-database"}
 # columns whose values are left-justified whatever their type (trl mixes 9 and "5-8")
@@ -42,7 +42,8 @@ SHADE = [
     ("estimated", "Estimated", "F8D6C6", None,
      "From other archetypes or a class rule fitted on this database."),
     ("proxy", "Proxy", "FEF1EB", None, "A class constant from an outside catalogue."),
-    ("guess", "Guess", None, "7F7F7F", "A judgement, with a stated range and rationale."),
+    # a very light tint, so a guess reads apart from not-applicable (Brad 2026-11-09)
+    ("guess", "Guess", "FFF8F4", "7F7F7F", "A judgement, with a stated range and rationale."),
     ("not-applicable", "not applicable", None, "A6A6A6",
      "The parameter does not characterise the archetype."),
 ]

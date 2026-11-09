@@ -6,11 +6,13 @@ Content is a list of blocks:
     ("numbered", items)
     ("table", widths_in_dxa, header, rows)
     ("gap",)
+    ("landscape",) / ("portrait",)           start a new page in that orientation
 Inline markup in any text: **bold**, `code`, [[placeholder]] (highlighted).
 """
 import re
 
 from docx import Document
+from docx.enum.section import WD_ORIENT, WD_SECTION
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_COLOR_INDEX
 from docx.oxml import OxmlElement
@@ -214,5 +216,13 @@ def render(doc, blocks):
             table(doc, b[1], b[2], b[3])
         elif kind == "gap":
             doc.add_paragraph().paragraph_format.space_after = Pt(0)
+        elif kind in ("landscape", "portrait"):
+            # a new section on a new page; the footer carries over (linked to the previous)
+            sec = doc.add_section(WD_SECTION.NEW_PAGE)
+            wide = kind == "landscape"
+            sec.orientation = WD_ORIENT.LANDSCAPE if wide else WD_ORIENT.PORTRAIT
+            sec.page_width, sec.page_height = (Inches(11), Inches(8.5)) if wide else (Inches(8.5), Inches(11))
+            for side in ("left_margin", "right_margin", "top_margin", "bottom_margin"):
+                setattr(sec, side, Inches(1))
         else:
             raise ValueError(f"unknown block {kind}")

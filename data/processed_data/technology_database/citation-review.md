@@ -188,10 +188,10 @@ The database now prints the verified form; `citation-as-cited` in `source-list.c
 | NCCP 1999 (foundation paper) | 53 | confirmed against the held document 2026-10-02 |
 | Purvin and Gertz 2004 | 53 | confirmed against the held document 2026-10-03 |
 | LDES Council and McKinsey & Company 2022 | 52 | confirmed against the held document 2026-10-11 |
+| Vattenfall 2018 | 51 | confirmed against the held document 2026-10-02 |
 | DECC 2013 | 50 | confirmed against the held document 2026-11-04 |
 | Kaiser 2017 | 50 | confirmed against the held document 2026-10-02 |
 | Sanchez et al. 2018 | 50 | confirmed against the held document 2026-10-02 |
-| Vattenfall 2018 | 50 | confirmed against the held document 2026-10-02 |
 | Negri and Ligthart 2021 | 49 | confirmed against the held document 2026-09-29 |
 | Haydock and Napp 2013 | 49 | confirmed against the held document 2026-10-06 |
 | Worrell et al. 2000 | 49 | confirmed against the held document 2026-10-02 |
