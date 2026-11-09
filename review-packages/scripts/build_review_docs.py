@@ -31,6 +31,11 @@ def main():
     for p in PACKAGES[1:]:
         shutil.copyfile(first, OUT / f"review-package_{p}" / "methodology-summary.docx")
     docx_sector_notes.build(OUT, facts)
+    # the whole-database package carries every sector note (Brad 2026-11-09)
+    notes = OUT / "review-package_whole-database" / "sector-notes"
+    notes.mkdir(exist_ok=True)
+    for p in PACKAGES[:-1]:
+        shutil.copyfile(OUT / f"review-package_{p}" / f"sector-note_{p}.docx", notes / f"sector-note_{p}.docx")
     docx_guides.build(OUT, facts)
     n = sum(1 for _ in OUT.glob("review-package_*/*.docx"))
     print(f"wrote {n} Word documents in {OUT}")

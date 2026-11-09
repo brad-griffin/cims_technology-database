@@ -58,7 +58,8 @@ def guide(outdir, key, facts):
     if whole:
         files = [["reviewer-guide_whole-database.docx", "This guide."],
                  ["methodology-summary.docx", "How the database is built and how to read it."],
-                 ["wide-view_whole-database.xlsx", f"The database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, feedstocks, heat, and sources, and a column legend."]]
+                 ["wide-view_whole-database.xlsx", f"The database: {f['archetypes']} archetypes in {f['rows']} rows, with sheets for energy use by carrier, emissions by species, feedstocks, heat, and sources, and a column legend."],
+                 ["sector-notes folder", f"One note per sector ({len(SECTORS)}): each sector's archetypes, their main sources, and the judgement calls we most want sector experts to test. Read the notes for the sectors you know; comments on them are welcome but optional."]]
     else:
         files = [[f"reviewer-guide_{key}.docx", "This guide."],
                  ["methodology-summary.docx", "How the database is built and how to read it."],
