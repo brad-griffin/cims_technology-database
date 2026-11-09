@@ -269,7 +269,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_co2-to-ome1` | CO2-to-OME1 (methylal) | prospective | hydrogen; electricity | 5 | no connection | quantified |
 | `reactor_co2-to-ome3-5` | CO2-to-OME3-5 | prospective | hydrogen; electricity; steam | 3-8 | no connection | quantified |
 | `reactor_ethanol-to-ethylene` | Bio-ethanol dehydration to ethylene | alternative | natural-gas | 9 | chemicals.product.petrochemicals.olefins | quantified |
-| `reactor_haber-bosch-electrolytic` | Electrolytic-hydrogen Haber-Bosch | prospective | hydrogen; electricity; natural-gas | 8 | chemicals.product.ammonia | quantified |
+| `reactor_haber-bosch-electrolytic` | Electrolytic-hydrogen Haber-Bosch | prospective | electricity | 8 | chemicals.product.ammonia | quantified |
 | `reactor_methanol-to-olefins` | Methanol to olefins | alternative | methanol; electricity; natural-gas; steam | 9 | chemicals.product.petrochemicals.olefins | quantified |
 | `reactor_plastics-pyrolysis` | Plastics pyrolysis recycling | alternative | natural-gas; electricity | 9 | <root>.common-energy.petrochemical-feedstock | quantified |
 | `reactor_propane-dehydrogenation` | Propane dehydrogenation | alternative | natural-gas; electricity | 9 | chemicals.product.petrochemicals.olefins | quantified |

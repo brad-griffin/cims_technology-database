@@ -82,3 +82,59 @@ The precalciner's sourced combustion CO2 (0.293 t/t) is still within the factor 
 All are real energy uses that the declared lists had missed. Two to keep an eye on:
 - **reactor_haber-bosch-electrolytic:** natural gas 1.45 GJ/t (the earlier Fable flag).
 - **digester_semi-chemical:** sourced fuel 1.40 GJ/t beside steam 5.82. This might be the boiler fuel counted twice, but it is sourced from three examples, so I left it.
+
+## 7. Second round (Brad, 2026-11-09)
+
+### Fermenter capture: in proportion to the whole mix (Brad)
+
+- **Brad's rule:** a capture archetype captures CO2 in proportion to the complete fossil and biogenic mix in the stream sent to capture.
+- **What changed:**
+  - I removed the biogenic-only override.
+  - The capture rule now reads the host's fossil CO2 as its total, or else its combustion plus process CO2. The host fermenter has no total row, so before this change the rule saw no fossil CO2 at all.
+- **Result for fermenter_grain-dry-mill_ccs-concentrated:**
+  - The host mix is 0.0054 fossil and 0.032 biogenic (14% fossil).
+  - Of the 0.029 t/GJ captured, 0.0042 comes off the fossil total and 0.025 off the biogenic CO2.
+  - Net fossil total: 0.0012 t/GJ (was 0.0054). Biogenic: 0.0072 t/GJ (was 0.003).
+
+### Electrolytic Haber-Bosch natural gas: removed
+
+- **What the source says:** IEA 2013's 1.35 GJ/t is the "SEC H2 to product" column of Annex 5, Table 8: the energy of the hydrogen-to-ammonia synthesis step in an all-electric route. The extraction had tagged it as fuel.
+- **The fix:**
+  - The row is re-targeted to electricity (sc-217).
+  - The judgement that named the fuel natural gas is rejected.
+  - Hydrogen and natural gas are removed from the declared carrier list. The hydrogen is made inside the archetype from electricity, and the list sync had added natural gas.
+- **Result:**
+  - The archetype is all electricity: 38.4 GJ/t, the pooled electricity median from 9 examples (the 40.2 total had been one MIDDEN card).
+  - Combustion CO2 is 0.
+
+### Semi-chemical pulping digester steam and fuel: scope problem, not changed yet
+
+- **Where the values come from:** Jacobs 2006 (DOE bandwidth study, Table 4.5 and the area tables pp.94-95), repeated in Kramer 2009.
+- **What they cover:** the **whole semi-chemical pulping line**, not the digester.
+  - Steam 6.42 MMBtu per short ton is wood prep 0.25, cooking 2.24, evaporation 3.40, and lime kiln or chemical preparation 0.53.
+  - The direct fuel (1.17) is all in the lime kiln or chemical-preparation area.
+- **The conflict:**
+  - The kraft digesters are on a cooking-only basis (steam 1.9-4.4 GJ/t).
+  - Evaporation and the lime kiln are separate chemical-recovery nodes in the hierarchy.
+  - So the semi-chemical digester counts recovery energy twice, if CIMS also sends it to chemical recovery.
+- **Proposed fix:** restate the Jacobs and Kramer rows to the cooking area with the source's own area shares:
+  - average: steam 2.60 and electricity 1.47 GJ/t;
+  - BAT: steam 2.21 and electricity 1.40 GJ/t;
+  - fuel moves to the chemical-recovery nodes.
+
+  The archetype's total would fall from 9.30 to about 4 GJ/t. Waiting for Brad's go-ahead.
+
+### Cement fuel mix: the 2001 mix no longer fits (not changed yet)
+
+NRCan Comprehensive Energy Use Database, Table 46, Canadian cement industry, 2022:
+
+| Fuel | PJ | Share of fuel |
+| - | - | - |
+| Natural gas | 21.0 | 39% |
+| Petroleum coke and still gas | 20.0 | 37% |
+| Coal | 8.3 | 16% |
+| Other (waste fuels and steam) | 4.0 | 8% |
+| Heavy fuel oil | 0.1 | |
+| Electricity | 8.9 | not a fuel |
+
+2021 is similar. In 1996-1998, coal was 41% of clinker energy and petroleum coke 13%. Petroleum coke and natural gas have since overtaken coal.

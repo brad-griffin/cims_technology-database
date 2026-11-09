@@ -1949,12 +1949,14 @@ def pm_ccs_emissions(rule, psum, records, target_unit, ctx, stats):
         fshare = 1.0
         if _live(bio) and _live(e):
             b0 = fnum(bio["central"]) or 0.0
-            f0 = (fnum(fos["central"]) or 0.0) if _live(fos) else 0.0
+            # the fossil part of the stream: the host's total, else its combustion plus
+            # process CO2 (Brad 2026-11-09: capture takes the complete mix in proportion)
+            if _live(fos):
+                f0 = fnum(fos["central"]) or 0.0
+            else:
+                f0 = sum(fnum(hh[(q, "co2")]["central"]) or 0.0 for q in ("emissions-combustion", "emissions-process")
+                         if _live(hh.get((q, "co2"))))
             fshare = f0 / (f0 + b0) if (f0 + b0) > 0 else 0.0
-            if k in ctx.get("captured_biogenic", ()):
-                # a stream of biogenic CO2 only (fermentation): none of it is fossil
-                # (reference/emission-fix.csv, 2026-11-07)
-                fshare = 0.0
             ec, el, eh = _lohi(e)
             bc, bl, bh = _lohi(bio)
             kb = 1.0 - fshare
