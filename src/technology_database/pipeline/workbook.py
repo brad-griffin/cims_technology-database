@@ -161,6 +161,34 @@ def _put(ws, r, j, v):
     return cell
 
 
+
+def tidy_panes(ws):
+    """One selection per pane, each inside its pane, the active cell at the top left of
+    the scrolling pane (Brad 2026-11-09). openpyxl leaves the active cell at A1 inside
+    the frozen corner, and repeated freezes add duplicate selections; Excel then draws
+    the frozen view wrongly until the sheet is scrolled."""
+    from openpyxl.utils.cell import coordinate_from_string
+    from openpyxl.worksheet.views import Selection
+    sv = ws.sheet_view
+    pane = sv.pane
+    if pane is None or pane.state != "frozen":
+        sv.selection = [Selection(activeCell="A1", sqref="A1")]
+        return
+    col, row = coordinate_from_string(pane.topLeftCell)
+    sel = []
+    if pane.xSplit and pane.ySplit:
+        sel = [Selection(pane="topRight", activeCell=f"{col}1", sqref=f"{col}1"),
+               Selection(pane="bottomLeft", activeCell=f"A{row}", sqref=f"A{row}"),
+               Selection(pane="bottomRight", activeCell=pane.topLeftCell, sqref=pane.topLeftCell)]
+        pane.activePane = "bottomRight"
+    elif pane.ySplit:
+        sel = [Selection(pane="bottomLeft", activeCell=f"A{row}", sqref=f"A{row}")]
+        pane.activePane = "bottomLeft"
+    else:
+        sel = [Selection(pane="topRight", activeCell=f"{col}1", sqref=f"{col}1")]
+        pane.activePane = "topRight"
+    sv.selection = sel
+
 def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = None,
                flags: dict | None = None, grades: dict | None = None,
                grouped: set | None = None, band_notes: dict | None = None) -> str:
@@ -335,6 +363,7 @@ def write_book(banded: dict, flat: dict, families: dict, notes: dict | None = No
     for ws in wb.worksheets:
         ws.sheet_view.zoomScale = ZOOM
         ws.sheet_view.zoomScaleNormal = ZOOM
+        tidy_panes(ws)
     try:
         wb.save(BOOK)
     except PermissionError:
