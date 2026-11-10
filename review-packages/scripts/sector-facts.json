@@ -201,10 +201,10 @@
   "n_sources": 22,
   "n_examples": 141,
   "cross_families": {
+   "machine-drive": 3,
    "heat-supply": 24,
    "space-conditioning": 7,
-   "lighting": 7,
-   "machine-drive": 3
+   "lighting": 7
   }
  },
  "steel": {
@@ -819,9 +819,9 @@
   "n_sources": 86,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 8,
    "co2-capture": 8,
+   "heat-supply": 23,
    "space-conditioning": 7,
    "lighting": 7
   }
@@ -1298,11 +1298,11 @@
   "n_sources": 54,
   "n_examples": 455,
   "cross_families": {
-   "heat-supply": 24,
    "machine-drive": 8,
+   "co2-capture": 4,
+   "heat-supply": 24,
    "space-conditioning": 7,
-   "lighting": 7,
-   "co2-capture": 4
+   "lighting": 7
   }
  },
  "cement-and-lime": {
@@ -2235,9 +2235,9 @@
   "n_sources": 80,
   "n_examples": 874,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 8,
    "co2-capture": 8,
+   "heat-supply": 23,
    "space-conditioning": 7,
    "lighting": 7
   }
@@ -2484,8 +2484,8 @@
   "n_sources": 10,
   "n_examples": 59,
   "cross_families": {
-   "heat-supply": 23,
    "co2-capture": 8,
+   "heat-supply": 23,
    "machine-drive": 3
   }
  },
@@ -2851,8 +2851,8 @@
   "n_sources": 92,
   "n_examples": 429,
   "cross_families": {
-   "heat-supply": 23,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "heat-supply": 23
   }
  },
  "natural-gas": {
@@ -3328,8 +3328,8 @@
   "n_examples": 819,
   "cross_families": {
    "machine-drive": 10,
-   "mobile-equipment": 6,
    "co2-capture": 8,
+   "mobile-equipment": 6,
    "heat-supply": 5
   }
  },
@@ -3625,8 +3625,8 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "heat-supply": 24,
-   "co2-capture": 8
+   "co2-capture": 8,
+   "heat-supply": 24
   }
  },
  "hydrogen": {
@@ -4206,8 +4206,8 @@
   "n_sources": 41,
   "n_examples": 163,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 9,
+   "heat-supply": 23,
    "power-generation": 12,
    "space-conditioning": 7,
    "lighting": 7
@@ -4485,9 +4485,9 @@
   "n_sources": 28,
   "n_examples": 191,
   "cross_families": {
-   "heat-supply": 23,
    "machine-drive": 8,
    "co2-capture": 8,
+   "heat-supply": 23,
    "space-conditioning": 7,
    "lighting": 7
   }
@@ -4774,9 +4774,9 @@
   "n_sources": 69,
   "n_examples": 468,
   "cross_families": {
-   "heat-supply": 30,
    "machine-drive": 8,
    "co2-capture": 8,
+   "heat-supply": 30,
    "space-conditioning": 7,
    "lighting": 7
   }
@@ -4784,9 +4784,29 @@
  "whole-database": {
   "rows": 624,
   "archetypes": 537,
-  "own": 444,
-  "cross": 93,
+  "own": 445,
+  "cross": 92,
   "table": [
+   {
+    "band": "Heat, low temperature (< 150 degC)",
+    "archetype": "incinerator_waste-to-energy",
+    "label": "Waste-to-energy incineration plant",
+    "core": 2,
+    "n": "20",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
+   },
+   {
+    "band": "Heat, medium temperature (150-400 degC)",
+    "archetype": "incinerator_waste-to-energy",
+    "label": "Waste-to-energy incineration plant",
+    "core": 2,
+    "n": "20",
+    "trl": "9",
+    "unit": "t",
+    "guesses": 0
+   },
    {
     "band": "Ethanol production",
     "archetype": "fermenter_grain-dry-mill",
@@ -9630,15 +9650,15 @@
     "citation": "US EPA Natural Gas STAR Program. 2006. Natural Gas STAR Lessons Learned studies (series). U.S. Environmental Protection Agency"
    }
   ],
-  "n_sources": 409,
-  "n_examples": 5531,
+  "n_sources": 411,
+  "n_examples": 5551,
   "cross_families": {
-   "heat-supply": 34,
    "machine-drive": 13,
-   "power-generation": 13,
-   "space-conditioning": 7,
-   "co2-capture": 13,
    "lighting": 7,
+   "heat-supply": 33,
+   "space-conditioning": 7,
+   "power-generation": 13,
+   "co2-capture": 13,
    "mobile-equipment": 6
   }
  },

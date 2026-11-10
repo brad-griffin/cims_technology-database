@@ -3277,15 +3277,15 @@ Rows converted to the archetype's basis are pooled; these were not.
 | per t cement, but the archetype's product is measured in t | 97 |
 | duplicate of the row in duplicate-of: the same number in another unit; that row is not pooled either | 85 |
 | cost per plant cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 83 |
-| cost per kWe cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 82 |
 | percentage of capital cost: the example has no pooled capital cost to put it on | 81 |
+| cost per kWe cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 78 |
 | example set aside by the modeller: Moya and Pardo 2013 restates the JRC EU27 iron and steel data of Pardo and Moya 2013 (pardo_2013_001, kept as the higher-ranked source); counted once (ruling 2026-10-05) | 70 |
 | per t ethylene, but the archetype's product is measured in t | 69 |
 | cost per GJ-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 66 |
 | duplicate of the row in duplicate-of: the same number in another unit | 66 |
 | steam is measured in GJ, the row in t | 63 |
 | cost per yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 61 |
-| cost per yr cannot be put per t: the source gives no output factor to convert it with | 57 |
+| cost per yr cannot be put per t: the source gives no output factor to convert it with | 58 |
 | cost per yr cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 57 |
 | reported on a lower-heating-value basis; records/reference/heating-value-stream.csv names no fuel or product for this archetype to put it on HHV with | 56 |
 | repeat: the source prints the same figure for carbon-limits_2021_001:pneumatic-device_non-emitting_electric-solar@sample-site-a-3-continuous-2-intermittent-1-esd-new-site-no-electricity-on-site-sect-5-table-7 (duplicate-of); pooled once | 54 |
@@ -3295,9 +3295,9 @@ Rows converted to the archetype's basis are pooled; these were not.
 | no conversion from short-ton/yr to 1000-m3/yr | 48 |
 | cost per kW/yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 47 |
 | example set aside by the modeller: per-mine or per-t-coal figures; the archetype is now per t of methane handled and rests on restated judgements (node alignment CM02, 2026-11-05) | 43 |
-| cost per kWe-per-yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 42 |
 | cost per plant cannot be put per 1000-m3-per-yr: the source gives no output factor to convert it with | 41 |
 | repeat: the source prints the same figure for johansson_2012_001:capture-unit_amine@borealis-cracker-mea-capture-heat-from-ngcc-at-reboiler-duty-2800-kj-kg-co2-table-6-2030 (duplicate-of); pooled once | 40 |
+| cost per kWe-per-yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 38 |
 | example set aside by the modeller: UKERC integrated steelworks (IS-IW): whole-route values per t crude steel (ironmaking, steelmaking, utilities), not the unit-process archetype (sanity-check R231, R286; ruling 2026-10-05: route values without a ratio are not pooled) | 37 |
 | set aside: needs a host-plant cost. UKERC gives this measure's cost as the cost of adding it to a plant and states no baseline cost for its host | 35 |
 | no conversion from MW to kt/yr | 35 |
@@ -3462,7 +3462,6 @@ Rows converted to the archetype's basis are pooled; these were not.
 | heat-output-temp on an archetype not meant to supply heat (not heat supply, not a boiler, no heat or steam product) | 8 |
 | repeat: the source prints the same figure for voldsund_2019_001:kiln_dry-precalciner_amine-scrubbing@reference-plant-retrofitted-with-co2-capture-eu-28-2014-power-mix-sect-4-5-tables-8-12-15 (duplicate-of); pooled once | 8 |
 | ruled out: whole-smelter scope: Cusano 2017 Table 13.8 prices primary copper smelter and acid plant complexes. CIMS splits copper pyrometallurgy into smelting, converting and refining nodes, so each smelting or converting archetype holds its own furnace section (Schlesinger 2011 Table 22.6) and the oxygen plant, slag cleaning, anode furnaces and acid plant are not carried on any one of them (S95, 2026-10-27) (modeller 2026-10-27) | 8 |
-| cost per yr cannot be put per GJ: the source gives no output factor to convert it with | 8 |
 | repeat: the source prints the same figure for dea_2026_006:steam-turbine_back-pressure_wood-pellets-large-40c@09b-biomass-chp-back-pressure-wood-pellets-large-40-80-degc (duplicate-of); pooled once | 8 |
 | example set aside by the modeller: bioethanol dehydration section (pre-concentration from 10 %wt beer plus an extractive dividing-wall column, per t ethanol) does not serve the petrochemical nodes distillation-column_heat-pumped is mapped to (ruling 5); its 2.88 GJ/t heat is the VRC case's own remaining reboiler steam, and its TIC covers a whole three-column section (CH014, CH015) | 8 |
 | no conversion from MWh to MW | 8 |
@@ -3496,6 +3495,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | repeat: the source prints the same figure for dea_2026_003:anaerobic-digester_basic-large@81-biogas-basic-plant-large-biogas-plant-basic-plant-large-6-000-nm3-ch4-h (duplicate-of); pooled once | 7 |
 | repeat: the source prints the same figure for ieaghg_2018_001:capture-unit_mea-bf-ieaghg2013-a@iron-and-steel-blast-furnace-literature-review-table-1 (duplicate-of); pooled once | 7 |
 | cost per yr cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 7 |
+| cost per yr cannot be put per GJ: the source gives no output factor to convert it with | 7 |
 | cost per kW-year cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 7 |
 | example set aside by the modeller: HP007: IRENA 2020 Table 6 2050 TARGET KPIs (stack life 80,000 h, capex 300 USD/kW, 40 kWh/kg); a target, not today's state of the art, which the sibling example gives (modeller 2026-10-13) | 7 |
 | cost per t cannot be put per GJ-per-yr: the source gives no output factor to convert it with | 7 |
@@ -3698,7 +3698,8 @@ Rows converted to the archetype's basis are pooled; these were not.
 | ruled out: Gielen 1997 Table 2.3.9 blast-furnace slag cement: per t of blended cement, its energy is slag drying and grinding of the blend, now on the ground-slag and grinding nodes the recipe requests (S121) (modeller 2026-10-27 (S121, Brad)) | 4 |
 | cost per Mcf cannot be put per t-CH4: the source gives no output factor to convert it with | 4 |
 | repeat: the source prints the same figure for icf_2015_001:management-system_leak-detection@ldar-at-wells-facilities-per-facility-tables-3-4-3-8 (duplicate-of); pooled once | 4 |
-| cost per unit of electricity on a heat-product archetype; no heat-to-power ratio from the source or the archetype's examples | 4 |
+| cost per kWe cannot be put per t-per-yr: the source gives no output factor to convert it with | 4 |
+| cost per kWe-per-yr cannot be put per t-per-yr: the source gives no output factor to convert it with | 4 |
 | ruled out: Lazard 2024 LCOH (unsubsidised) includes underground hydrogen storage capex (USD 20/kg, sized 120 t green / 200 t pink; p.28 note), a storage cost outside the electrolyser plant (D25) (user 2026-10-14) | 4 |
 | repeat: the source prints the same figure for lemar_2001_001:combustion-turbine_heat-recovery-steam-generator@natural-gas-chp-20-50-mw-table-2 (duplicate-of); pooled once | 4 |
 | repeat: the source prints the same figure for mueller_2013_001:fermenter_grain-dry-mill@configuration-1-traditional-dry-mill-ddgs-only-corn-oil-extraction-post-distillation-best-performing-facilities (duplicate-of); pooled once | 4 |
@@ -3857,6 +3858,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | negative cost: a saving against the baseline plant, not the archetype's own absolute cost | 3 |
 | ruled out: whole-cement CO2 including clinker; CIMS takes clinker from the cement clinker node, so the binder node excludes it (sanity-check 2026-10-23, MCF017) (user 2026-10-23 (sanity-check recommendations)) | 3 |
 | repeat: the source prints the same figure for jrc_2014_001:boiler_solid-fuel_fluidised-bed-steam-turbine@biomass-fluidised-bed-boiler-circulating-or-bubbling-with-steam-turbine-2013-table-46-p-71 (duplicate-of); pooled once | 3 |
+| ruled out as the twin of tp-jrc_2014_001-0306 (same source, figure and parameter): variable O&M per MWh of ELECTRICITY (JRC 2014 Table 49, MSW incinerator, power): cannot be put per t of waste without an electricity yield per t, which the source does not give (as its per-kWe rows); the heat factor cf-wte-heat-per-waste would read it as MWh of heat and overstate it about 2.4 times (Brad 2026-11-10 (incinerator moved to per t waste treated)) | 3 |
 | repeat: the source prints the same figure for jrc_2014_001:steam-turbine_back-pressure@biomass-chp-2013-table-51-p-78 (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for lazard_2021_001:electrolyzer_alkaline@alkaline-electrolyzer-1-mw-small-medium-efficiency-case-key-assumptions (duplicate-of); pooled once | 3 |
 | repeat: the source prints the same figure for lazard_2021_001:electrolyzer_alkaline@alkaline-electrolyzer-1-mw-small-high-efficiency-case-key-assumptions (duplicate-of); pooled once | 3 |
@@ -5211,6 +5213,7 @@ Rows converted to the archetype's basis are pooled; these were not.
 | no conversion from kWh/adt to GJ/t | 1 |
 | repeat: the source prints the same figure for jrc_2014_001:boiler_solid-fuel_grate-steam-turbine@biomass-grate-furnace-with-steam-turbine-2020-table-45-p-70 (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for jrc_2014_001:boiler_solid-fuel_grate-steam-turbine@biomass-grate-furnace-with-steam-turbine-2030-table-45-p-70 (duplicate-of); pooled once | 1 |
+| ruled out: variable O&M per MWh of ELECTRICITY (JRC 2014 Table 49, MSW incinerator, power): cannot be put per t of waste without an electricity yield per t, which the source does not give (as its per-kWe rows); the heat factor cf-wte-heat-per-waste would read it as MWh of heat and overstate it about 2.4 times (Brad 2026-11-10 (incinerator moved to per t waste treated)) | 1 |
 | repeat: the source prints the same figure for jrc_2014_001:steam-turbine_back-pressure@biomass-chp-2020-table-51-p-78 (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for jrc_2014_001:combustion-turbine_heat-recovery-steam-generator@ccgt-advanced-chp-2030-table-53-p-80 (duplicate-of); pooled once | 1 |
 | repeat: the source prints the same figure for jrc_2014_001:steam-turbine_back-pressure_coal-supercritical@steam-turbine-coal-supercritical-chp-2030-table-54-p-81 (duplicate-of); pooled once | 1 |
@@ -7223,26 +7226,6 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `thermal-storage_heat-charged` | Hauer 2013 (ETSAP E17) `thermal-storage_phase-change` | Thermal storage summary (Table 8) | 1 | 1 |
 | `thermal-storage_heat-charged` | Hauer 2013 (ETSAP E17) `thermal-storage_sensible` | Thermal energy storage systems (Table 1) | 3 | 1 |
 | `thermal-storage_heat-charged` | Hauer 2013 (ETSAP E17) `thermal-storage_sensible` | Thermal storage summary (Table 8) | 1 |  |
-| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2013 (Table 49, p.75) | 9 | 5 |
-| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2020 (Table 49, p.75) | 9 | 8 |
-| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2030 (Table 49, p.75) | 9 | 8 |
-| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2050 (Table 49, p.75) | 9 | 8 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Comparative cost elements of new incineration plants, 1999 (Sect. 1.6, Table 1.10) | 4 | 1 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Emissions to air: carbon dioxide (Sect. 3.2.1) | 1 |  |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Energy demand per tonne of waste treated, 2016 data collection (Sect. 3.5.3, Table 3.37) | 2 | 2 |
-| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | MSW incineration energy recovery, typical ranges (Sects. 2.4.4, 3.5.2, 4.4.1-4.4.3) | 1 | 1 |
 
 ### On-site power generation
 
@@ -13625,6 +13608,31 @@ Every mapped example, grouped by family and archetype. `rows` counts its fact ro
 | `separator_lignin-extraction` | Kong et al. 2016 `separator_lignoboost` | 3.5 Emerging byproduct/biomass utilization technologies | 1 |  |
 | `separator_lignin-extraction` | Kuparinen and Vakkilainen 2017 `lignin-separation_lignoboost` | Lime kiln fuel supply at a 1.5 Mt/yr kraft pulp mill (Tables 2-3) | 4 |  |
 | `separator_lignin-extraction` | Kuparinen et al. 2019 `separator_lignin-extraction` | Lignin separation by black liquor acidification with CO2 (Sect. 4.3) | 3 |  |
+
+### Waste treatment
+
+| archetype | example | process | rows | not pooled |
+|---|---|---|---:|---:|
+| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2013 (Table 49, p.75) | 9 | 5 |
+| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2020 (Table 49, p.75) | 9 | 8 |
+| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2030 (Table 49, p.75) | 9 | 8 |
+| `incinerator_waste-to-energy` | Carlsson and Vellei 2014 `incinerator_waste-to-energy` | Municipal solid waste incinerator (power) - 2050 (Table 49, p.75) | 9 | 8 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-fgc` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 |  |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc-residue-treatment` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 100 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 200 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 300 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw-dry-wet-fgc` | New MSWI investment cost, Germany, 600 kt/yr (Sect. 1.6, Table 1.9) | 2 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Comparative cost elements of new incineration plants, 1999 (Sect. 1.6, Table 1.10) | 4 | 1 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Emissions to air: carbon dioxide (Sect. 3.2.1) | 1 |  |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | Energy demand per tonne of waste treated, 2016 data collection (Sect. 3.5.3, Table 3.37) | 2 | 2 |
+| `incinerator_waste-to-energy` | Neuwahl et al. 2019 (WI BREF) `boiler_solid-fuel_msw` | MSW incineration energy recovery, typical ranges (Sects. 2.4.4, 3.5.2, 4.4.1-4.4.3) | 1 | 1 |
 
 ### Other industry
 

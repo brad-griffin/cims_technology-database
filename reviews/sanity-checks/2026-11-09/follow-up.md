@@ -302,3 +302,24 @@ Brad: add it for every biomass type.
 - **The reverse (biomass energy from a given biogenic CO2): not added.** Of the sourced and judged biogenic CO2 values, the lime kiln's (calcination of lime mud whose carbon came from the wood) and the fermenter's (fermentation) are process CO2, not burned fuel. A reverse rule would invent 5.5 GJ/t of biomass fuel for the lime kiln. Where a source gives biogenic CO2 from fuel without the fuel, it can be added by judgement.
 
 The consistency check has 76 findings, all ruled. The review packages are regenerated.
+
+## 11. Waste-to-energy incinerator moved to waste treated (Brad, 2026-11-10)
+
+- **Why:** `incinerator_waste-to-energy` sat in the low- and medium-temperature heat bands (from its heat tiers) while showing "no connection". It was the only heat-supply archetype with no link to the CIMS steam nodes. Its service is the waste it treats, not site heat. CIMS carries waste burning only as utility "Waste" base-load generation, and its waste sector is landfill methane.
+- **Changes:**
+  - New family `waste-treatment` (family.csv; NAICS 562213, ISIC 3821).
+  - The archetype is now per **t waste treated**, with heat and electricity as secondary products.
+  - In the workbook it sits once, in the Waste treatment band's "(no connection)" sub-band.
+- **Values now native per t:**
+
+| Parameter | Value |
+| - | - |
+| capex | 1,134 CAD per t/yr (670-1,743; Neuwahl 2019 BREF, 100-600 kt/yr) |
+| capacity | 250 kt/yr |
+| combustion CO2 | 0.54 t/t |
+| calculated levelized cost | 208 CAD/t |
+| sourced levelized cost | 306 CAD/t (1999) |
+
+- **JRC 2014 variable O&M excluded** (6.9 EUR per MWh of electricity, tp-jrc_2014_001-0306). With no electricity yield per t, the heat factor would read it as MWh of heat and overstate it about 2.4 times, as with the source's per-kWe rows. Opex-variable is now estimated (25 CAD/t).
+- The consistency check still has 76 findings, all ruled.
+
