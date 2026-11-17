@@ -585,6 +585,13 @@ BRIEF_SHAPE = [
     ("other-reports/bisaka_2016_prereduction-dc-smelting-ilmenite-pellets_saimm", "bisaka_2016_001", "South Africa"),
     ("peer-reviewed/song_2025_ilmenite-pellets-eaf-titania-slag_rineng", "song_2025_001", "China"),
     ("peer-reviewed/pistorius_2009_partial-slag-solidification-ilmenite-smelter_up", "pistorius_2009_001", "South Africa"),
+    ("other-reports/gem/gem_2026_global-iron-and-steel-tracker", "gem_2026_001", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2026_global-cement-and-concrete-tracker", "gem_2026_002", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2026_global-chemicals-tracker", "gem_2026_003", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2026_global-gas-infrastructure-tracker_lng-terminals", "gem_2026_004", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2025_global-gas-infrastructure-tracker_gas-pipelines", "gem_2025_001", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2026_global-oil-infrastructure-tracker_oil-ngl-pipelines", "gem_2026_005", "Canada where three or more facilities report a value, else North America or global"),
+    ("other-reports/gem/gem_2026_global-coal-mine-tracker", "gem_2026_006", "Canada where three or more facilities report a value, else North America or global"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")

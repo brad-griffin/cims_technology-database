@@ -197,7 +197,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `grinding-mill_ball` | Ball mill | conventional | electricity | 9 | industrial-minerals.product.cement.grinding | 2 of 7 |
 | `grinding-mill_slag` | Slag drying and grinding mill | conventional | natural-gas; electricity | 9 | industrial-minerals.product.cement.ground-slag | 0 of 7 |
 | `kiln_clay-calcination` | Rotary kiln for clay calcination | conventional | natural-gas; electricity | 9 | industrial-minerals.product.cement.calcined-clay | 1 of 7 |
-| `kiln_dry-precalciner` | Dry rotary kiln with preheater and precalciner | conventional | petroleum-coke; natural-gas; coal; waste-fuel; biomass; hydrogen; electricity | 9 | industrial-minerals.product.cement.clinker | 7 of 7 |
+| `kiln_dry-precalciner` | Dry rotary kiln with preheater and precalciner | conventional | petroleum-coke; natural-gas; coal; waste-fuel; biomass; hydrogen; electricity | 9 | industrial-minerals.product.cement.clinker | 6 of 7 |
 | `kiln_legacy` | Legacy cement kiln (wet, semi-dry or long dry) | conventional | petroleum-coke; natural-gas; coal; waste-fuel; biomass; electricity | 9 | industrial-minerals.product.cement.clinker | 2 of 7 |
 | `kiln_lime-long-rotary` | Long rotary lime kiln | conventional | coal; natural-gas; petroleum-coke; electricity | 9 | industrial-minerals.product.lime | 2 of 7 |
 | `kiln_lime-rotary-preheater` | Rotary lime kiln with preheater | conventional | natural-gas; coal; petroleum-coke; electricity | 9 | industrial-minerals.product.lime | 2 of 7 |
@@ -418,7 +418,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `haul-truck_diesel` | Diesel haul trucks | conventional | diesel; electricity | 9 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground; crude-oil.service.mine-haulage | 2 of 7 |
 | `hoist` | Shaft hoist | conventional | electricity | 9 | coal-mining.service.mine-haulage; mining.service.mine-haulage.underground | 0 of 7 |
 | `leaching-vessel_heap-atmospheric` | Heap or atmospheric leaching with SX-EW | conventional | steam; electricity | 9 | non-ferrous-metals.product.copper.hydrometallurgy | 3 of 7 |
-| `mine_open-pit-coal` | Open-pit coal mine (whole mine) | conventional | diesel; electricity | 9 | coal-mining.product.simplified-extraction | 2 of 7 |
+| `mine_open-pit-coal` | Open-pit coal mine (whole mine) | conventional | diesel; electricity | 9 | coal-mining.product.simplified-extraction | 3 of 7 |
 | `mine_open-pit-coal-excavation` | Open-pit coal excavation (drilling, blasting and loading) | conventional | electricity; diesel | 9 | coal-mining.product.raw-product.extraction | 0 of 7 |
 | `mine_underground-coal` | Underground coal mine (whole mine) | conventional | electricity; diesel | 9 | coal-mining.product.simplified-extraction | 0 of 7 |
 | `mine_underground-coal-cutting` | Underground coal cutting (continuous miner or longwall) | conventional | electricity | 9 | coal-mining.product.raw-product.extraction | 0 of 7 |
@@ -428,7 +428,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `conveyor_in-pit-crushing` | In-pit crushing and conveying | efficient variant | electricity | 9 | mining.service.mine-haulage.open-pit | 0 of 7 |
 | `grinding-mill_stirred` | Stirred fine grinding mills | efficient variant | electricity | 9 | mining.service.milling | 0 of 7 |
 | `evaporator_crystallizer` | Evaporator-crystallizer | alternative | diesel; electricity; steam | 9 | mining.service.crystallization | 5 of 7 |
-| `gas-treatment-unit_vam-oxidiser` | Ventilation-air methane oxidiser | alternative | electricity | 7-9 | coal-mining.product.raw-product.mine-methane | 0 of 7 |
+| `gas-treatment-unit_vam-oxidiser` | Ventilation-air methane oxidiser | alternative | electricity | 7-9 | coal-mining.product.raw-product.mine-methane | 1 of 7 |
 | `grinding-mill_hpgr` | HPGR-based grinding circuit | alternative | electricity | 9 | mining.service.milling | 2 of 7 |
 | `haul-truck_battery-electric` | Battery-electric haulage | prospective | electricity; diesel | 8 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground; crude-oil.service.mine-haulage | 0 of 7 |
 | `haul-truck_dual-fuel` | Dual-fuel (LNG-diesel) haul trucks | alternative | natural-gas; diesel | 7-8 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; crude-oil.service.mine-haulage | 0 of 7 |
@@ -436,7 +436,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `haul-truck_trolley-assist` | Trolley-assist haulage | alternative | electricity; diesel | 9 | coal-mining.service.mine-haulage; mining.service.mine-haulage.open-pit; mining.service.mine-haulage.underground | 0 of 7 |
 | `leaching-vessel_high-pressure-acid` | High-pressure acid leaching | alternative | steam | 9 | non-ferrous-metals.product.nickel.hydrometallurgy | 0 of 7 |
 | `leaching-vessel_in-situ` | In-situ leaching | alternative | electricity; natural-gas | 9 | mining.service.leaching | 0 of 7 |
-| `process-improvement_coal-mine-methane-drainage` | Coal-mine methane drainage and use | alternative | electricity | 9 | coal-mining.product.raw-product.mine-methane | 0 of 7 |
+| `process-improvement_coal-mine-methane-drainage` | Coal-mine methane drainage and use | alternative | electricity | 9 | coal-mining.product.raw-product.mine-methane | 1 of 7 |
 | `separator_ore-sorting` | Sensor-based ore sorting | alternative | electricity | 9 | coal-mining.product.size-reduced-product.crushing; mining.service.crushing | 0 of 7 |
 | `separator_reverse-osmosis` | Reverse osmosis mine water treatment | alternative | electricity | 9 | no connection | 1 of 7 |
 | `adsorber_direct-lithium` | Direct lithium extraction | reference | electricity | 6 | no connection | 0 of 7 |

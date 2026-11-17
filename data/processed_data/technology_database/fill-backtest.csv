@@ -308,6 +308,8 @@ est-sibling-capacity-factor,anaerobic-digester_biomethane-upgrading,capacity-fac
 est-sibling-capacity-factor,anaerobic-digester_chp,capacity-factor,70,91.3,68.475,100,yes,1.30429,tier 2: anaerobic-digester_biomethane-upgrading
 est-sibling-capacity-factor,autothermal-reformer_hydrogen,capacity-factor,90,90,67.5,100,yes,1,tier 1: autothermal-reformer_hydrogen_ccs-concentrated
 est-sibling-capacity-factor,autothermal-reformer_hydrogen_ccs-concentrated,capacity-factor,90,90,67.5,100,yes,1,tier 1: autothermal-reformer_hydrogen
+est-sibling-capacity-factor,binder_blended-cement,capacity-factor,61.08,61.08,45.81,77.66,yes,1,tier 2: binder_portland-cement
+est-sibling-capacity-factor,binder_portland-cement,capacity-factor,61.08,61.08,45.81,77.66,yes,1,tier 2: binder_blended-cement
 est-sibling-capacity-factor,boiler_electric,capacity-factor,68.5,88.465,20,100,yes,1.29146,"tier 2: boiler_solid-fuel, boiler_fuel-fired, boiler_recovery, boiler_oxy-fuel"
 est-sibling-capacity-factor,boiler_fuel-fired,capacity-factor,47,88.465,20,100,yes,1.88223,"tier 2: boiler_solid-fuel, boiler_electric, boiler_recovery, boiler_oxy-fuel"
 est-sibling-capacity-factor,boiler_oxy-fuel,capacity-factor,85.62,79.905,20,99.8812,yes,0.933252,"tier 2: boiler_solid-fuel, boiler_electric, boiler_fuel-fired, boiler_recovery"
@@ -322,6 +324,8 @@ est-sibling-capacity-factor,combined-cycle,capacity-factor,82,85,63.75,100,yes,1
 est-sibling-capacity-factor,combined-cycle_ccs-diffuse,capacity-factor,85,82,30,100,yes,0.964706,tier 1: combined-cycle
 est-sibling-capacity-factor,combustion-turbine_chp,capacity-factor,82,54.04,40.53,80,no,0.659024,tier 1: combustion-turbine_chp_ccs-diffuse
 est-sibling-capacity-factor,combustion-turbine_chp_ccs-diffuse,capacity-factor,54.04,82,42.3,100,yes,1.51739,tier 1: combustion-turbine_chp
+est-sibling-capacity-factor,electric-arc-furnace,capacity-factor,75.96,48.87,36.6525,65.19,no,0.643365,tier 2: electric-arc-furnace_reduced-iron-charge
+est-sibling-capacity-factor,electric-arc-furnace_reduced-iron-charge,capacity-factor,48.87,75.96,56.97,94.95,no,1.55433,tier 2: electric-arc-furnace
 est-sibling-capacity-factor,electrolyzer_low-temperature,capacity-factor,85.6,71.0375,10,98,yes,0.829877,"tier 2: electrolyzer_low-temperature-central, electrolyzer_solid-oxide"
 est-sibling-capacity-factor,electrolyzer_low-temperature-central,capacity-factor,54.55,86.5625,34.25,100,yes,1.58685,"tier 2: electrolyzer_low-temperature, electrolyzer_solid-oxide"
 est-sibling-capacity-factor,electrolyzer_solid-oxide,capacity-factor,87.525,70.075,10,98,yes,0.800628,"tier 2: electrolyzer_low-temperature, electrolyzer_low-temperature-central"
@@ -372,6 +376,8 @@ est-sibling-capacity-factor,reactor_methanol-loop,capacity-factor,91.3,91.3,57.0
 est-sibling-capacity-factor,reactor_polymerization-extrusion,capacity-factor,85,91.3,57.08,100,yes,1.07412,"tier 2: reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_delayed-coking, reactor_fluid-catalytic-cracking, reactor_methanol-loop, reactor_small-nuclear-power, reactor_pyrolysis-oil, reactor_co2-to-ome3-5, reactor_co2-to-ethanol, reactor_co2-to-higher-alcohols, reactor_co2-to-dme, reactor_co2-to-ome1, reactor_co2-to-gasoline, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
 est-sibling-capacity-factor,reactor_pyrolysis-oil,capacity-factor,90,91.3,57.08,100,yes,1.01444,"tier 2: reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_delayed-coking, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_methanol-loop, reactor_small-nuclear-power, reactor_co2-to-ome3-5, reactor_co2-to-ethanol, reactor_co2-to-higher-alcohols, reactor_co2-to-dme, reactor_co2-to-ome1, reactor_co2-to-gasoline, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
 est-sibling-capacity-factor,reactor_small-nuclear-power,capacity-factor,93,91.3,57.08,100,yes,0.98172,"tier 2: reactor_haber-bosch-electrolytic, reactor_co2-to-methanol, reactor_gas-to-liquids, reactor_hydrotreating-lipids, reactor_hydroprocessing, reactor_catalytic-reforming, reactor_delayed-coking, reactor_fluid-catalytic-cracking, reactor_polymerization-extrusion, reactor_methanol-loop, reactor_pyrolysis-oil, reactor_co2-to-ome3-5, reactor_co2-to-ethanol, reactor_co2-to-higher-alcohols, reactor_co2-to-dme, reactor_co2-to-ome1, reactor_co2-to-gasoline, reactor_co2-to-fischer-tropsch, reactor_alcohol-to-jet"
+est-sibling-capacity-factor,shaft-furnace_direct-reduction,capacity-factor,80.03,90,67.5,100,yes,1.12458,tier 2: shaft-furnace_electrolytic-hydrogen
+est-sibling-capacity-factor,shaft-furnace_electrolytic-hydrogen,capacity-factor,90,80.03,60.0225,100,yes,0.889222,tier 2: shaft-furnace_direct-reduction
 est-sibling-capacity-factor,steam-reformer_methane,capacity-factor,90,93.75,70.3125,100,yes,1.04167,"tier 1: steam-reformer_methane_ccs-concentrated, steam-reformer_methane_ccs-diffuse"
 est-sibling-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-factor,92.5,92.5,69.375,100,yes,1,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-diffuse"
 est-sibling-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,91.25,68.4375,100,yes,0.960526,"tier 1: steam-reformer_methane, steam-reformer_methane_ccs-concentrated"
@@ -388,110 +394,116 @@ est-sibling-capacity-factor,well_electromagnetic-heating,capacity-factor,95,86.7
 est-sibling-capacity-factor,well_sagd,capacity-factor,86.75,95,71.25,100,yes,1.0951,"tier 2: well_co2-storage, well_solvent-only, well_electromagnetic-heating"
 est-sibling-capacity-factor,well_solvent-only,capacity-factor,95,86.75,65.0625,100,yes,0.913158,"tier 2: well_co2-storage, well_sagd, well_electromagnetic-heating"
 est-sibling-capacity-factor,gasifier_black-liquor-fuels,capacity-factor,95.09,90,57.1,100,yes,0.946472,"tier 2: gasifier_biomass-chp, gasifier_coal-petroleum-coke_ccs-concentrated, gasifier_coal-petroleum-coke, gasifier_coal-methanation, gasifier_biomass-methanation, gasifier_biomass-methanol, gasifier_coal-fischer-tropsch, gasifier_biomass-fischer-tropsch, gasifier_biomass-waste, gasifier_black-liquor"
-est-class-capacity-factor,anaerobic-digester_biomethane-upgrading,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,anaerobic-digester_chp,capacity-factor,70,90,57.08,100,yes,1.28571,class process-plant: median of 60 archetypes
-est-class-capacity-factor,autothermal-reformer_hydrogen,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,autothermal-reformer_hydrogen_ccs-concentrated,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
+est-class-capacity-factor,anaerobic-digester_biomethane-upgrading,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,anaerobic-digester_chp,capacity-factor,70,90,43.66,100,yes,1.28571,class process-plant: median of 66 archetypes
+est-class-capacity-factor,autothermal-reformer_hydrogen,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,autothermal-reformer_hydrogen_ccs-concentrated,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,basic-oxygen-furnace,capacity-factor,63.41,90,43.66,100,yes,1.41933,class process-plant: median of 66 archetypes
+est-class-capacity-factor,binder_blended-cement,capacity-factor,61.08,90,43.66,100,yes,1.47348,class process-plant: median of 66 archetypes
+est-class-capacity-factor,binder_portland-cement,capacity-factor,61.08,90,43.66,100,yes,1.47348,class process-plant: median of 66 archetypes
+est-class-capacity-factor,blast-furnace,capacity-factor,83.03,90,43.66,100,yes,1.08395,class process-plant: median of 66 archetypes
 est-class-capacity-factor,boiler_electric,capacity-factor,68.5,85.62,5,100,yes,1.24993,"class heat-equipment: median of 9 archetypes: boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,boiler_fuel-fired,capacity-factor,47,85.62,5,100,yes,1.8217,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,boiler_oxy-fuel,capacity-factor,85.62,68.5,5,95.09,yes,0.800047,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,boiler_recovery,capacity-factor,95.09,68.5,5,95,no,0.72037,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,boiler_solid-fuel,capacity-factor,91.31,68.5,5,95.09,yes,0.750192,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
-est-class-capacity-factor,capture-unit_advanced-solvent,capacity-factor,80,90,57.08,100,yes,1.125,class process-plant: median of 60 archetypes
-est-class-capacity-factor,capture-unit_amine,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,capture-unit_chemical-solvent,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,capture-unit_dac-liquid-solvent,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,capture-unit_dac-solid-sorbent,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
+est-class-capacity-factor,capture-unit_advanced-solvent,capacity-factor,80,90,43.66,100,yes,1.125,class process-plant: median of 66 archetypes
+est-class-capacity-factor,capture-unit_amine,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,capture-unit_chemical-solvent,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,capture-unit_dac-liquid-solvent,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,capture-unit_dac-solid-sorbent,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
 est-class-capacity-factor,combined-cycle,capacity-factor,82,69.2,17.6,95,yes,0.843902,"class power-equipment: median of 9 archetypes: combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,combined-cycle_ccs-diffuse,capacity-factor,85,69.2,17.6,95,yes,0.814118,"class power-equipment: median of 9 archetypes: combined-cycle, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,combustion-turbine_chp,capacity-factor,82,69.2,17.6,95,yes,0.843902,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,combustion-turbine_chp_ccs-diffuse,capacity-factor,54.04,70,17.6,95,yes,1.29534,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,compressor_co2-dehydration,capacity-factor,82,38.05,20.242,97.03,yes,0.464024,"class rotating-equipment: median of 3 archetypes: heat-recovery-unit_waste-heat, motor_induction-standard, turboexpander_pressure-let-down"
-est-class-capacity-factor,distillation-column_atmospheric-vacuum,capacity-factor,92,90,57.08,100,yes,0.978261,class process-plant: median of 60 archetypes
-est-class-capacity-factor,electric-arc-furnace,capacity-factor,75.1,90,57.08,100,yes,1.1984,class process-plant: median of 60 archetypes
+est-class-capacity-factor,distillation-column_atmospheric-vacuum,capacity-factor,92,90,43.66,100,yes,0.978261,class process-plant: median of 66 archetypes
+est-class-capacity-factor,electric-arc-furnace,capacity-factor,75.96,90,43.66,100,yes,1.18483,class process-plant: median of 66 archetypes
+est-class-capacity-factor,electric-arc-furnace_reduced-iron-charge,capacity-factor,48.87,90,47.04,100,yes,1.84162,class process-plant: median of 66 archetypes
 est-class-capacity-factor,electrolyzer_low-temperature,capacity-factor,85.6,68.49,10,98,yes,0.800117,"class electrochemical: median of 3 archetypes: electrolyzer_low-temperature-central, electrolyzer_solid-oxide, fuel-cell_chp"
 est-class-capacity-factor,electrolyzer_low-temperature-central,capacity-factor,54.55,85.6,34.25,100,yes,1.5692,"class electrochemical: median of 3 archetypes: electrolyzer_low-temperature, electrolyzer_solid-oxide, fuel-cell_chp"
 est-class-capacity-factor,electrolyzer_solid-oxide,capacity-factor,87.525,68.49,10,98,yes,0.782519,"class electrochemical: median of 3 archetypes: electrolyzer_low-temperature, electrolyzer_low-temperature-central, fuel-cell_chp"
-est-class-capacity-factor,fermenter_grain-dry-mill,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 60 archetypes
-est-class-capacity-factor,fermenter_lignocellulosic-enzymatic,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
+est-class-capacity-factor,fermenter_grain-dry-mill,capacity-factor,90.4,90,43.66,100,yes,0.995575,class process-plant: median of 66 archetypes
+est-class-capacity-factor,fermenter_lignocellulosic-enzymatic,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
 est-class-capacity-factor,fuel-cell_chp,capacity-factor,68.49,85.6,10,100,yes,1.24982,"class electrochemical: median of 3 archetypes: electrolyzer_low-temperature, electrolyzer_low-temperature-central, electrolyzer_solid-oxide"
-est-class-capacity-factor,gas-treatment-unit_sulphur-recovery,capacity-factor,95,90,57.08,100,yes,0.947368,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_biomass-chp,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_biomass-fischer-tropsch,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_biomass-methanation,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_biomass-methanol,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_biomass-waste,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_black-liquor,capacity-factor,95.09,90,57.08,100,yes,0.946472,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_coal-fischer-tropsch,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_coal-methanation,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_coal-petroleum-coke,capacity-factor,80,90,57.08,100,yes,1.125,class process-plant: median of 60 archetypes
-est-class-capacity-factor,gasifier_coal-petroleum-coke_ccs-concentrated,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
+est-class-capacity-factor,gas-treatment-unit_sulphur-recovery,capacity-factor,95,90,43.66,100,yes,0.947368,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_biomass-chp,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_biomass-fischer-tropsch,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_biomass-methanation,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_biomass-methanol,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_biomass-waste,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_black-liquor,capacity-factor,95.09,90,43.66,100,yes,0.946472,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_coal-fischer-tropsch,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_coal-methanation,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_coal-petroleum-coke,capacity-factor,80,90,43.66,100,yes,1.125,class process-plant: median of 66 archetypes
+est-class-capacity-factor,gasifier_coal-petroleum-coke_ccs-concentrated,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
 est-class-capacity-factor,geothermal-well_binary-power,capacity-factor,87.5,90,55,100,yes,1.02857,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd, well_solvent-only"
 est-class-capacity-factor,geothermal-well_direct-use,capacity-factor,90,87.5,65.625,100,yes,0.972222,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd, well_solvent-only"
 est-class-capacity-factor,geothermal-well_flash-power,capacity-factor,95,87.5,55,100,yes,0.921053,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd, well_solvent-only"
-est-class-capacity-factor,haul-truck_diesel,capacity-factor,75,90,5,100,yes,1.2,class all (class pool too small): median of 104 archetypes
-est-class-capacity-factor,haul-truck_hydrogen-fuel-cell,capacity-factor,75,90,5,100,yes,1.2,class all (class pool too small): median of 104 archetypes
+est-class-capacity-factor,haul-truck_diesel,capacity-factor,75,87.5125,5,100,yes,1.16683,class all (class pool too small): median of 110 archetypes
+est-class-capacity-factor,haul-truck_hydrogen-fuel-cell,capacity-factor,75,87.5125,5,100,yes,1.16683,class all (class pool too small): median of 110 archetypes
 est-class-capacity-factor,heat-pump_industrial,capacity-factor,59.55,85.62,5,100,yes,1.43778,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_very-high-temperature, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,heat-pump_very-high-temperature,capacity-factor,91.3,68.5,5,95.09,yes,0.750274,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, solar-collector, thermal-storage_electric"
 est-class-capacity-factor,heat-recovery-unit_waste-heat,capacity-factor,97.03,38.05,20.242,85,no,0.392147,"class rotating-equipment: median of 3 archetypes: compressor_co2-dehydration, motor_induction-standard, turboexpander_pressure-let-down"
-est-class-capacity-factor,incinerator_waste-to-energy,capacity-factor,80,90,57.08,100,yes,1.125,class process-plant: median of 60 archetypes
-est-class-capacity-factor,kiln_dry-precalciner,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,kiln_dry-precalciner_ccs-diffuse,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,kiln_oxy-fuel,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
+est-class-capacity-factor,incinerator_waste-to-energy,capacity-factor,80,90,43.66,100,yes,1.125,class process-plant: median of 66 archetypes
+est-class-capacity-factor,kiln_dry-precalciner,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,kiln_dry-precalciner_ccs-diffuse,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,kiln_oxy-fuel,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
 est-class-capacity-factor,lighting_fluorescent-high-bay,capacity-factor,46.1,46.1,33.3,95,yes,1,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,lighting_fluorescent-t8,capacity-factor,46.3,46.1,34.575,95,yes,0.99568,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-high-bay, lighting_hid, lighting_led, lighting_led-high-bay, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,lighting_hid,capacity-factor,42.1,46.1,33.3,95,yes,1.09501,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_led, lighting_led-high-bay, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,lighting_led,capacity-factor,39.2,46.1,33.3,95,yes,1.17602,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led-high-bay, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,lighting_led-high-bay,capacity-factor,46.1,46.1,33.3,95,yes,1,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led, process-improvement_landfill-gas-recovery"
 est-class-capacity-factor,motor_induction-standard,capacity-factor,24.9423,82,38.05,100,no,3.28759,"class rotating-equipment: median of 3 archetypes: compressor_co2-dehydration, heat-recovery-unit_waste-heat, turboexpander_pressure-let-down"
-est-class-capacity-factor,pellet-plant_wood,capacity-factor,91,90,57.08,100,yes,0.989011,class process-plant: median of 60 archetypes
+est-class-capacity-factor,pellet-plant_wood,capacity-factor,91,90,43.66,100,yes,0.989011,class process-plant: median of 66 archetypes
 est-class-capacity-factor,photovoltaic-array_battery-storage,capacity-factor,18.1507,70,17.6,95,yes,3.8566,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,pipeline_co2,capacity-factor,80,90,55,100,yes,1.125,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, well_co2-storage, well_electromagnetic-heating, well_sagd, well_solvent-only"
 est-class-capacity-factor,process-improvement_landfill-gas-recovery,capacity-factor,95,46.1,33.3,57.625,no,0.485263,"class controls-and-programmes: median of 5 archetypes: lighting_fluorescent-high-bay, lighting_fluorescent-t8, lighting_hid, lighting_led, lighting_led-high-bay"
-est-class-capacity-factor,reactor_alcohol-to-jet,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_catalytic-reforming,capacity-factor,91.32,90,57.08,100,yes,0.985545,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-dme,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-ethanol,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-fischer-tropsch,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-gasoline,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-higher-alcohols,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-methanol,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-ome1,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_co2-to-ome3-5,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_delayed-coking,capacity-factor,87,90,57.08,100,yes,1.03448,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_fluid-catalytic-cracking,capacity-factor,87,90,57.08,100,yes,1.03448,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_gas-to-liquids,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_haber-bosch-electrolytic,capacity-factor,57.08,90,57.1,100,no,1.57673,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_hydroprocessing,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_hydrotreating-lipids,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_methanol-loop,capacity-factor,91.3,90,57.08,100,yes,0.985761,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_polymerization-extrusion,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_pyrolysis-oil,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,reactor_small-nuclear-power,capacity-factor,93,90,57.08,100,yes,0.967742,class process-plant: median of 60 archetypes
+est-class-capacity-factor,reactor_alcohol-to-jet,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_catalytic-reforming,capacity-factor,91.32,90,43.66,100,yes,0.985545,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-dme,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-ethanol,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-fischer-tropsch,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-gasoline,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-higher-alcohols,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-methanol,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-ome1,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_co2-to-ome3-5,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_delayed-coking,capacity-factor,87,90,43.66,100,yes,1.03448,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_fluid-catalytic-cracking,capacity-factor,87,90,43.66,100,yes,1.03448,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_gas-to-liquids,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_haber-bosch-electrolytic,capacity-factor,57.08,90,43.66,100,yes,1.57673,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_hydroprocessing,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_hydrotreating-lipids,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_methanol-loop,capacity-factor,91.3,90,43.66,100,yes,0.985761,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_polymerization-extrusion,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_pyrolysis-oil,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,reactor_small-nuclear-power,capacity-factor,93,90,43.66,100,yes,0.967742,class process-plant: median of 66 archetypes
 est-class-capacity-factor,reciprocating-engine_chp,capacity-factor,64.43,70,17.6,95,yes,1.08645,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
-est-class-capacity-factor,separator_lignin-extraction,capacity-factor,81.5,90,57.08,100,yes,1.10429,class process-plant: median of 60 archetypes
-est-class-capacity-factor,shaft-furnace_electrolytic-hydrogen,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
+est-class-capacity-factor,separator_lignin-extraction,capacity-factor,81.5,90,43.66,100,yes,1.10429,class process-plant: median of 66 archetypes
+est-class-capacity-factor,shaft-furnace_direct-reduction,capacity-factor,80.03,90,43.66,100,yes,1.12458,class process-plant: median of 66 archetypes
+est-class-capacity-factor,shaft-furnace_electrolytic-hydrogen,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
 est-class-capacity-factor,solar-collector,capacity-factor,22.8,85.62,20,100,yes,3.75526,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, thermal-storage_electric"
-est-class-capacity-factor,steam-cracker_fired-tubular,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
-est-class-capacity-factor,steam-reformer_methane,capacity-factor,90,90,57.08,100,yes,1,class process-plant: median of 60 archetypes
-est-class-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-factor,92.5,90,57.08,100,yes,0.972973,class process-plant: median of 60 archetypes
-est-class-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,90,57.08,100,yes,0.947368,class process-plant: median of 60 archetypes
-est-class-capacity-factor,steam-reformer_methanol,capacity-factor,85,90,57.08,100,yes,1.05882,class process-plant: median of 60 archetypes
+est-class-capacity-factor,steam-cracker_fired-tubular,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
+est-class-capacity-factor,steam-reformer_methane,capacity-factor,90,90,43.66,100,yes,1,class process-plant: median of 66 archetypes
+est-class-capacity-factor,steam-reformer_methane_ccs-concentrated,capacity-factor,92.5,90,43.66,100,yes,0.972973,class process-plant: median of 66 archetypes
+est-class-capacity-factor,steam-reformer_methane_ccs-diffuse,capacity-factor,95,90,43.66,100,yes,0.947368,class process-plant: median of 66 archetypes
+est-class-capacity-factor,steam-reformer_methanol,capacity-factor,85,90,43.66,100,yes,1.05882,class process-plant: median of 66 archetypes
 est-class-capacity-factor,steam-turbine_back-pressure,capacity-factor,72.5,69.2,17.6,95,yes,0.954483,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_condensing, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,steam-turbine_condensing,capacity-factor,70,69.2,17.6,95,yes,0.988571,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_waste-heat, wind-turbine"
 est-class-capacity-factor,steam-turbine_waste-heat,capacity-factor,69.2,70,18.1507,91.32,yes,1.01156,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, wind-turbine"
 est-class-capacity-factor,thermal-storage_electric,capacity-factor,91.3,68.5,5,95.09,yes,0.750274,"class heat-equipment: median of 9 archetypes: boiler_electric, boiler_fuel-fired, boiler_oxy-fuel, boiler_recovery, boiler_solid-fuel, heat-pump_hvac, heat-pump_industrial, heat-pump_very-high-temperature, solar-collector"
-est-class-capacity-factor,transesterification-unit_acid-catalyzed,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 60 archetypes
-est-class-capacity-factor,transesterification-unit_alkali-catalyzed,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 60 archetypes
-est-class-capacity-factor,transesterification-unit_heterogeneous-catalyst,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 60 archetypes
-est-class-capacity-factor,transesterification-unit_supercritical-methanol,capacity-factor,90.4,90,57.08,100,yes,0.995575,class process-plant: median of 60 archetypes
+est-class-capacity-factor,transesterification-unit_acid-catalyzed,capacity-factor,90.4,90,43.66,100,yes,0.995575,class process-plant: median of 66 archetypes
+est-class-capacity-factor,transesterification-unit_alkali-catalyzed,capacity-factor,90.4,90,43.66,100,yes,0.995575,class process-plant: median of 66 archetypes
+est-class-capacity-factor,transesterification-unit_heterogeneous-catalyst,capacity-factor,90.4,90,43.66,100,yes,0.995575,class process-plant: median of 66 archetypes
+est-class-capacity-factor,transesterification-unit_supercritical-methanol,capacity-factor,90.4,90,43.66,100,yes,0.995575,class process-plant: median of 66 archetypes
 est-class-capacity-factor,turboexpander_pressure-let-down,capacity-factor,38.05,82,20.242,100,yes,2.15506,"class rotating-equipment: median of 3 archetypes: compressor_co2-dehydration, heat-recovery-unit_waste-heat, motor_induction-standard"
 est-class-capacity-factor,well_co2-storage,capacity-factor,80,90,55,100,yes,1.125,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_electromagnetic-heating, well_sagd, well_solvent-only"
 est-class-capacity-factor,well_electromagnetic-heating,capacity-factor,95,87.5,55,100,yes,0.921053,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_sagd, well_solvent-only"
 est-class-capacity-factor,well_sagd,capacity-factor,86.75,90,55,100,yes,1.03746,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_solvent-only"
 est-class-capacity-factor,well_solvent-only,capacity-factor,95,87.5,55,100,yes,0.921053,"class wells-and-pipelines: median of 7 archetypes: geothermal-well_binary-power, geothermal-well_direct-use, geothermal-well_flash-power, pipeline_co2, well_co2-storage, well_electromagnetic-heating, well_sagd"
 est-class-capacity-factor,wind-turbine,capacity-factor,39.9543,70,17.6,95,yes,1.752,"class power-equipment: median of 9 archetypes: combined-cycle, combined-cycle_ccs-diffuse, combustion-turbine_chp, combustion-turbine_chp_ccs-diffuse, photovoltaic-array_battery-storage, reciprocating-engine_chp, steam-turbine_back-pressure, steam-turbine_condensing, steam-turbine_waste-heat"
-est-class-capacity-factor,gasifier_black-liquor-fuels,capacity-factor,95.09,90,57.08,100,yes,0.946472,class process-plant: median of 60 archetypes
+est-class-capacity-factor,gasifier_black-liquor-fuels,capacity-factor,95.09,90,43.66,100,yes,0.946472,class process-plant: median of 66 archetypes
 est-class-lifetime,air-separation-unit,lifetime,25,22.5,15,30,yes,0.9,class process-plant: median of 145 archetypes
 est-class-lifetime,anaerobic-digester,lifetime,12,25,15,31.25,no,2.08333,class process-plant: median of 145 archetypes
 est-class-lifetime,anaerobic-digester_biomethane-upgrading,lifetime,20,25,15,31.25,yes,1.25,class process-plant: median of 145 archetypes
@@ -730,6 +742,7 @@ est-end-use-annual-output,fracturing-fleet_electric,annual-output,224294,224294,
 est-end-use-annual-output,fuel-cell_chp,annual-output,7096,184486,250.2,1.85747e+06,yes,25.9985,"end use heat-low-temp: median of 8 archetypes: anaerobic-digester_chp, boiler_electric, boiler_fuel-fired, boiler_solid-fuel, combustion-turbine_chp, heat-pump_industrial, reciprocating-engine_chp, steam-turbine_back-pressure"
 est-end-use-annual-output,gas-treatment-unit_amine-sweetening,annual-output,95010,927200,27330,2.7816e+06,yes,9.75897,"end use gas-processing: median of 3 archetypes: adsorber_molecular-sieve, gas-treatment-unit_glycol-dehydration, turboexpander_ngl-recovery"
 est-end-use-annual-output,gas-treatment-unit_glycol-dehydration,annual-output,80360,927200,31240,2.7816e+06,yes,11.5381,"end use gas-processing: median of 3 archetypes: adsorber_molecular-sieve, gas-treatment-unit_amine-sweetening, turboexpander_ngl-recovery"
+est-end-use-annual-output,gas-treatment-unit_vam-oxidiser,annual-output,6830,6830,2276.67,29690,yes,1,end use coal-mine-methane: median of 1 archetypes: process-improvement_coal-mine-methane-drainage
 est-end-use-annual-output,gasifier_biomass-fischer-tropsch,annual-output,2.3155e+06,1.15798e+07,2.3178e+06,3.47394e+07,no,5.00099,"end use renewable-diesel-and-saf: median of 2 archetypes: reactor_hydrothermal-liquefaction, reactor_hydrotreating-lipids"
 est-end-use-annual-output,gasifier_black-liquor,annual-output,497389,944392,314797,2.83318e+06,yes,1.8987,end use chemical-recovery: median of 1 archetypes: boiler_recovery
 est-end-use-annual-output,heat-pump_industrial,annual-output,54720,184486,2838,1.85747e+06,yes,3.37145,"end use heat-low-temp: median of 8 archetypes: anaerobic-digester_chp, boiler_electric, boiler_fuel-fired, boiler_solid-fuel, combustion-turbine_chp, fuel-cell_chp, reciprocating-engine_chp, steam-turbine_back-pressure"
@@ -737,6 +750,7 @@ est-end-use-annual-output,heat-pump_oil-treating,annual-output,2676,1482.1,157.5
 est-end-use-annual-output,pneumatic-device_gas-driven,annual-output,18940,18940,5318,64460,yes,1,"end use venting: median of 2 archetypes: pneumatic-device_low-bleed, pneumatic-device_non-emitting"
 est-end-use-annual-output,pneumatic-device_low-bleed,annual-output,18940,18940,5318,64460,yes,1,"end use venting: median of 2 archetypes: pneumatic-device_gas-driven, pneumatic-device_non-emitting"
 est-end-use-annual-output,pneumatic-device_non-emitting,annual-output,18940,18940,5318,64460,yes,1,"end use venting: median of 2 archetypes: pneumatic-device_gas-driven, pneumatic-device_low-bleed"
+est-end-use-annual-output,process-improvement_coal-mine-methane-drainage,annual-output,6830,6830,2276.67,29690,yes,1,end use coal-mine-methane: median of 1 archetypes: gas-treatment-unit_vam-oxidiser
 est-end-use-annual-output,pump_artificial-lift,annual-output,288.2,2676,846.5,9627,no,9.28522,"end use oil-and-gas-production: median of 2 archetypes: direct-heater_line-heater, heat-pump_oil-treating"
 est-end-use-annual-output,reactor_hydrothermal-liquefaction,annual-output,4.6356e+06,1.04198e+07,2.3155e+06,3.12592e+07,yes,2.24777,"end use renewable-diesel-and-saf: median of 2 archetypes: gasifier_biomass-fischer-tropsch, reactor_hydrotreating-lipids"
 est-end-use-annual-output,reactor_hydrotreating-lipids,annual-output,1.8524e+07,3.47555e+06,1.15852e+06,1.04266e+07,no,0.187624,"end use renewable-diesel-and-saf: median of 2 archetypes: gasifier_biomass-fischer-tropsch, reactor_hydrothermal-liquefaction"
