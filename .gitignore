@@ -50,3 +50,9 @@ data/processed_data/technology_database/technology-database.xlsx
 
 # files the Claude app saves into the connected folder
 Claude outputs/
+
+# review packages are built outputs sent to reviewers, and expert reviews are
+# reviewers' own files: neither is tracked; the build scripts are (Brad 2026-11-20)
+review-packages/*
+!review-packages/scripts/
+reviews/expert-reviews/

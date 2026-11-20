@@ -307,6 +307,7 @@ def readme(ws, package, title, build, sheets, n_rows, n_arch):
              "emissions": "Emissions by type and species, for the same rows.",
              "feedstocks": "Feedstock use by carrier, for the same rows.",
              "heat": "Process, output, and waste heat: a tier on every archetype and a temperature where sourced.",
+             "service-requests": "What each archetype draws from other parts of the model per unit of its product (an intermediate such as clinker, steam, or CO2 sent to capture), showing how archetypes stack.",
              "source-list": "Every source in the database, by the family it informs."}
     for i, s in enumerate(sheets):
         ws.cell(30 + i, 2).value = s
@@ -341,11 +342,47 @@ def tidy_panes(ws):
         pane.activePane = "topRight"
     sv.selection = sel
 
+
+def service_requests(ws, archetypes):
+    """The service-requests sheet cut to the package's archetypes (S183, Brad 2026-11-20):
+    a family band stays when a kept row sits beneath it; one blank row separates bands."""
+    kind = {}
+    for r in range(FIRST_BODY, ws.max_row + 1):
+        b, c = ws.cell(r, 2).value, ws.cell(r, 3).value
+        kind[r] = "blank" if b is None else ("family" if c is None else
+                                            ("row" if str(b) in archetypes else "drop"))
+    keep, order = set(range(1, FIRST_BODY)), sorted(kind)
+    for i, r in enumerate(order):
+        if kind[r] == "row":
+            keep.add(r)
+        elif kind[r] == "family":
+            for r2 in order[i + 1:]:
+                if kind[r2] == "family":
+                    break
+                if kind[r2] == "row":
+                    keep.add(r)
+                    break
+    body = [r for r in order if r in keep]
+    for r in order:
+        if kind[r] != "blank":
+            continue
+        before = [x for x in body if x < r]
+        after = [x for x in body if x > r]
+        if before and after and kind[before[-1]] == "row" and kind[after[0]] == "family" \
+                and not any(kind[x] == "blank" for x in keep if before[-1] < x < r):
+            keep.add(r)
+    drop_rows(ws, keep)
+    # the finding and decided columns are internal bookkeeping (Brad 2026-11-20)
+    keep_columns(ws, {j for j in range(1, ws.max_column + 1)
+                      if ws.cell(HEAD_ROW, j).value not in ("finding", "decided")})
+    ws.sheet_view.showGridLines = False
+    return sum(1 for r in keep if kind.get(r) == "row")
+
 def main(package, build):
     title, test = PACKAGES[package]
     ctx = load()
     wb = openpyxl.load_workbook(OUTPUT / "technology-database.xlsx")
-    wanted = ["readme", *WIDE] + (["source-list"] if package == "whole-database" else [])
+    wanted = ["readme", *WIDE, "service-requests"] + (["source-list"] if package == "whole-database" else [])
     for s in list(wb.sheetnames):
         if s not in wanted:
             del wb[s]
@@ -372,9 +409,12 @@ def main(package, build):
     widen_notes(wb)
     for n in ["archetypes", *split, "heat"]:
         wb[n].sheet_view.showGridLines = False
-    sheets = ["column-legend", "archetypes", *split, "heat"] + (
-        ["source-list"] if package == "whole-database" else [])
     rows = counts["archetypes"]
+    n_req = service_requests(wb["service-requests"], {a for a, _ in rows.values()})
+    sheets = ["column-legend", "archetypes", *split, "heat"] + (["service-requests"] if n_req else []) + (
+        ["source-list"] if package == "whole-database" else [])
+    if not n_req:
+        del wb["service-requests"]
     readme(wb["readme"], package, title, build, sheets, len(rows), len({a for a, _ in rows.values()}))
     # sheet order: readme, column-legend, archetypes, energy, emissions, feedstocks[, source-list]
     wb._sheets = [wb[s] for s in ["readme"] + sheets]

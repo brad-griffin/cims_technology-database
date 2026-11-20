@@ -316,10 +316,12 @@ SECTORS = {
                 "that the binder plants' energy covers their whole process.",
             ]),
             ("Merged", [
-                "The fluidized-bed kiln (a niche demonstration) and flash or fluid calciners (part of a "
-                "precalciner line) are pooled into `kiln_dry-precalciner`.",
+                "Flash or fluid calciners (part of a precalciner line) are pooled into `kiln_dry-precalciner`. "
+                "The fluidized-bed kiln, a niche demonstration, has its own archetype, `kiln_fluidized-bed`, kept "
+                "for its numbers and not offered as a choice.",
                 "High-pressure grinding rolls are pooled into `grinding-mill_vertical-roller` for cement.",
-                "`kiln_legacy` holds wet, semi-dry, and long dry kilns together. Is one legacy archetype enough "
+                "`kiln_legacy` holds wet, semi-dry, and long dry kilns together. It stands for existing stock "
+                "only: the model keeps it where it exists but builds no new ones. Is one legacy archetype enough "
                 "for Canadian stock?",
             ]),
             ("Capture and electrification", [
@@ -342,6 +344,8 @@ SECTORS = {
             ]),
             ("Bases", [
                 "Clinker covers raw-meal preparation through the clinker cooler; finish grinding is separate. "
+                "Sources that cost a whole cement plant, through grinding, packing, and dispatch, are cut to the "
+                "clinker line with the share their own cost breakdowns give (about 72.5%). "
                 "A few legacy-kiln sources leave out raw milling or count the whole plant to finished cement; the "
                 "difference is small beside the kiln's fuel, so they are kept.",
                 "Clinker and cement are separate products. Where a source printed a value per tonne of cement "
@@ -503,7 +507,9 @@ SECTORS = {
             ]),
             ("Energy scope", [
                 "For several archetypes the sourced total and its carrier split come from sources with "
-                "different scopes, notably `gasifier_coal-methanol`. Check which scope the total holds.",
+                "different scopes, notably `gasifier_coal-methanol`. Check which scope the total holds. Its "
+                "CO2 follows a carbon balance on its coal use, less the carbon in the methanol (about 2.9 t per "
+                "tonne), since the sourced defaults imply an older, less efficient plant.",
             ]),
         ],
         "gaps": [

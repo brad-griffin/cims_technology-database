@@ -445,7 +445,8 @@ def main(argv) -> int:
     for f in fam_order:
         for r in sorted((x for x in sr if a_fam.get(x["archetype"]) == f), key=lambda x: (x["archetype"], x["request"])):
             sr_band.append(dict(r, label=a_lab.get(r["archetype"], ""), _band=f))
-    sr_cols = ["archetype", "label"] + [c for c in service_request.COLS if c != "archetype"]
+    # the finding and decided columns stay in the CSV only (Brad 2026-11-20)
+    sr_cols = ["archetype", "label"] + [c for c in service_request.COLS if c not in ("archetype", "finding", "decided")]
     banded["service-requests"] = (sr_cols, sr_band, {}, {}, "_band", "",
                                   "What each archetype requests from other CIMS nodes per unit of its product: "
                                   "the intermediate it buys (clinker, hydrogen), the steam or heat it draws, the "
