@@ -1,13 +1,13 @@
-[build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
+# This repository holds the technology database's extractions (the authoring
+# copy), their scripts, and the reviews. The package and records live in CIMS
+# (plan D6), so this project installs CIMS and has no package of its own.
 
 [project]
 name = "technology-database"
-version = "0.1.0"
-description = "Industrial technology archetypes for CIMS, summarised from published sources"
-requires-python = ">=3.10"
-dependencies = ["openpyxl", "pandas"]
+version = "0.2.0"
+description = "Extractions and reviews for the CIMS technology database"
+requires-python = ">=3.11"   # as CIMS
+dependencies = ["CIMS", "openpyxl", "pandas"]
 
 [project.optional-dependencies]
 # the per-source extraction scripts and the marimo input template
@@ -16,6 +16,11 @@ extraction = ["pandas", "pdfplumber", "marimo"]
 [project.urls]
 Repository = "https://github.com/brad-griffin/technology-database"
 
-[tool.setuptools.packages.find]
-where = ["src"]
-include = ["technology_database*"]
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+# CIMS from a local worktree, editable, so a change there shows here at once.
+# Point it at another worktree (for example ../cims/techdb-into-cims) to work
+# against a branch; use a git tag instead for anything that must be reproducible.
+CIMS = { path = "../cims/data-processing-calibration", editable = true }

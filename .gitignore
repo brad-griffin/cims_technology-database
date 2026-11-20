@@ -64,3 +64,6 @@ Claude outputs/
 review-packages/*
 !review-packages/scripts/
 reviews/expert-reviews/
+
+# uv lock file: not tracked, as in CIMS (the CIMS dependency is a local path)
+uv.lock
