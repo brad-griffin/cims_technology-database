@@ -44,9 +44,17 @@ desktop.ini
 primary-sources/
 cims/reporting-accounting/context/*.xlsx
 
-# the workbook is rebuilt from the CSVs on every build; its versions are not kept
-# (Brad 2026-11-06)
-data/processed_data/technology_database/technology-database.xlsx
+# Build outputs. The technology database is built in CIMS
+# (python -m CIMS.data_processing.technology_database.build, in a CIMS
+# worktree), which writes data/processed_data/technology_database/ there.
+# Any copy here is a local snapshot and is not tracked (Brad 2026-11-20).
+data/processed_data/
+
+# The package and records live in CIMS (src/CIMS/data_processing/
+# technology_database/ and data/technology_database/; plan D6). Keep stray
+# local copies out of this repository.
+src/technology_database/
+data/technology_database/
 
 # files the Claude app saves into the connected folder
 Claude outputs/
