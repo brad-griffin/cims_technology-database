@@ -1,0 +1,79 @@
+archetype,unit,cb,cb_n,cb_low,cb_high,cf,cj,sources,regions,rates,basis_tags,ratio_cb_cj,ratio_cb_cf
+liquefaction-train_base-load,2025_CAD/t,132.669,5.0,50.4187,451.259,307.142,912.456,kidnay_2019_001; raj_2016_001,Canada; US,,,0.14539769588889767,0.43194678682824234
+reactor_propane-dehydrogenation,2025_CAD/t,562.633,1.0,,,375.784,1563.62,mccann_2000_001,Canada (Alberta),,incl-feedstock or selling price,0.3598271958660033,1.4972244693760246
+reactor_catalytic-n2o,2025_CAD/t,288.126,1.0,259.049,317.203,698.7,776.96,jrc_2007_002,EU,,,0.3708376235584843,0.4123744096178617
+steam-turbine_condensing,2025_CAD/GJ,29.2584,1.0,16.2547,42.2621,27.4565,68.3955,,,,,0.4277825295523829,1.0656274470526106
+storage-cavern_hydrogen,2025_CAD/GJ,1.01351,1.0,,,1.68928,2.36008,,,,,0.4294388325819464,0.5999656658458041
+pipeline_hydrogen,2025_CAD/GJ,1.01351,2.0,1.01351,25.4911,1.89671,2.34391,etsap_2014_003,global,,per unit of electricity,0.4324014147300877,0.5343515877493132
+anaerobic-digester_chp,2025_CAD/GJ,29.7428,2.0,29.7428,108.564,47.7624,63.3394,etsap_2010_005; etsap_2013_012,global,,incl-feedstock or selling price; per unit of electricity,0.46957817724828466,0.6227241512151818
+transesterification-unit_heterogeneous-catalyst,2025_CAD/GJ,25.3641,1.0,,,0.76776,48.3429,west_2008_001,Canada,,incl-feedstock or selling price,0.5246706341572392,33.03649577993123
+reactor_haber-bosch-electrolytic,2025_CAD/t,1068.3,3.0,437.611,1443.07,1033.79,1892.41,boulamanti_2017_001; material-economics_2019_001,EU,,incl-feedstock or selling price; per unit of electricity,0.5645182597851417,1.033382021493727
+transesterification-unit_supercritical-methanol,2025_CAD/GJ,30.0081,1.0,,,2.6593,52.4446,west_2008_001,Canada,,incl-feedstock or selling price,0.5721866502938339,11.284210130485466
+boiler_electric,2025_CAD/GJ,13.909,7.0,7.36361,75.2711,1.35974,23.9433,agora_2021_001; doe_2023_001; rissman_2022_001; rtc_2023_001; zuhlsdorf_2019_001,EU; US,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,0.5809140761716222,10.229161457337433
+reactor_hydrotreating-lipids,2025_CAD/GJ,39.0528,3.0,25.5345,45.5616,11.6814,61.8616,brown_2020_001; matschegg_2023_001,global,,incl-feedstock or selling price; per unit of electricity,0.6312930800367271,3.343160922492167
+separator_reverse-osmosis,2025_CAD/m3,1.00548,1.0,1.00548,4.02192,1.3106,1.58429,etsap_2013_008,global,,incl-feedstock or selling price; market or price based; per unit of electricity,0.6346565338416578,0.7671905997253166
+well_co2-storage,2025_CAD/t,14.8629,11.0,1.63584,60.3288,22.1355,23.2535,agora_2021_001; kearns_2021_001,EU; US,,incl-transport-storage or net removed,0.639168297245576,0.671450836890967
+process-improvement_landfill-gas-recovery,2025_CAD/GJ,8.27338,1.0,3.42346,13.1233,11.3682,12.7098,etsap_2013_012,global,,incl-feedstock or selling price,0.650944940124943,0.7277651695079256
+reactor_co2-to-methanol,2025_CAD/t,1513.3,1.0,1080.93,1945.67,1181.83,2028.72,etsap_2013_007,global,,incl-feedstock or selling price,0.7459383256437556,1.2804718106665087
+transesterification-unit_acid-catalyzed,2025_CAD/GJ,40.7608,3.0,31.1168,44.4317,3.80279,51.3267,west_2008_001; zhang_2003_001,Canada,,incl-feedstock or selling price,0.7941441783711012,10.71865656531126
+thermal-storage_electric,2025_CAD/GJ,20.3727,16.0,0.40909,55.0058,1.42982,24.9568,doe_2023_001; rissman_2023_001; rtc_2023_001; spees_2023_001,US,,incl-transport-storage or net removed; per unit of electricity,0.816318598538274,14.248436866178958
+transesterification-unit_alkali-catalyzed,2025_CAD/GJ,44.8177,4.0,33.9931,55.9511,6.56771,53.7552,haas_2006_001; west_2008_001; zhang_2003_001,Canada; US,,incl-feedstock or selling price,0.8337370152096913,6.823946246104046
+gasifier_biomass-methanation,2025_CAD/GJ,23.7695,4.0,23.7695,58.4496,21.5349,28.2918,aranda_2014_001; carbo_2011_001; etsap_2013_012,Netherlands; global,,incl-feedstock or selling price; per unit of electricity,0.8401550979435738,1.1037664442370292
+geothermal-well_binary-power,2025_CAD/GJ,32.0724,2.0,28.7708,62.5764,38.099,38.099,etsap_2010_006,global,,incl-feedstock or selling price; per unit of electricity,0.8418173705346598,0.8418173705346598
+combined-cycle,2025_CAD/GJ,24.9746,2.0,13.6636,36.2855,9.07257,29.6346,,,,,0.8427513784562639,2.7527591410151695
+anaerobic-digester_biomethane-upgrading,2025_CAD/GJ,42.161,2.0,21.0805,63.2415,40.7449,45.8493,brown_2020_001; etsap_2013_012,global,,incl-feedstock or selling price; per unit of electricity,0.9195560237560879,1.0347552699847098
+steam-reformer_methane,2025_CAD/GJ,17.2153,8.0,8.38527,34.0614,4.21003,17.8171,abbas-wan-daud_2010_001; agora_2021_001; concawe_2019_001; etsap_2014_003; ieaghg_2017_001,EU; Netherlands; global,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,0.9662234594855503,4.089115754519564
+pipeline_co2,2025_CAD/t,7.16782,1.0,2.04795,12.2877,7.38222,7.38222,,,,,0.970957245923313,0.970957245923313
+electrolyzer_low-temperature,2025_CAD/GJ,45.9108,26.0,12.464,71.65,18.7233,47.1089,agora_2021_001; doe_2025_001; etsap_2014_003; vogl_2018_001,EU; US; global,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,0.9745674384245865,2.452067744468123
+kiln_dry-precalciner,2025_CAD/t,136.695,8.0,90.1741,162.139,110.695,140.149,agora_2021_001; gardarsdottir_2019_001; ieaghg_2008_001; material-economics_2019_001; rootzen_2017_001; vattenfall_2018_001,EU; Nordic countries; Sweden; UK (Europe); Asia sensitivity,,incl-feedstock or selling price; per unit of electricity,0.9753548009618335,1.2348796241926012
+capture-unit_amine,2025_CAD/t,132.686,22.0,29.3559,402.192,86.9101,134.714,doe_2023_002; emanuelsson_2022_001; hughes_2023_001; ieaghg_2008_001; ieaghg_2018_001; kearns_2021_001; netl_2022_001,EU (Sweden); UK (Europe); Asia sensitivity; US; global,,abatement or incremental; incl-transport-storage or net removed; per unit of electricity,0.984945885357127,1.526704030946921
+capture-unit_dac-solid-sorbent,2025_CAD/t,436.238,3.0,218.5,2125.89,314.02,428.479,fasihi_2019_001; larsen_2019_001; sievert_2024_001,US; global,,incl-transport-storage or net removed; per unit of electricity,1.018108238676808,1.3892045092669258
+combustion-turbine_chp,2025_CAD/GJ,37.5632,1.0,,,11.3635,36.6215,agora_2021_001,EU,,incl-feedstock or selling price; per unit of electricity,1.025714402741559,3.3056012672152066
+heat-pump_very-high-temperature,2025_CAD/GJ,19.8548,1.0,15.5619,24.1478,9.00638,19.17,zuhlsdorf_2019_001,EU,,per unit of electricity,1.0357224830464267,2.2045261248137433
+fermenter_grain-dry-mill,2025_CAD/GJ,24.5722,1.0,,,11.9301,23.7085,kwiatkowski_2006_001,US,,incl-feedstock or selling price,1.0364299723727777,2.0596809750127827
+capture-unit_advanced-solvent,2025_CAD/t,82.5634,5.0,12.8432,119.734,25.7328,79.5782,ieaghg_2018_001; kearns_2021_001,US; global,,incl-transport-storage or net removed,1.0375127861650553,3.208488776969471
+gasifier_biomass-methanol,2025_CAD/t,1181.3,5.0,330.458,2032.14,979.102,1131.25,brown_2020_001; etsap_2013_007,global,,incl-feedstock or selling price; per unit of electricity,1.044243093922652,1.206513723799972
+electrolyzer_low-temperature-central,2025_CAD/GJ,52.7175,30.0,22.1968,209.975,18.5499,48.8658,armijo-philibert_2020_001; nrel_2026_001,US; global,,per unit of electricity,1.0788219982073353,2.8419290670030564
+compressor_co2-dehydration,2025_CAD/t,28.3697,17.0,9.86773,169.361,17.6998,26.1333,gielen_1997_003; hughes_2023_001; mccollum_2006_001; netl_2022_001; sanchez_2018_001,Netherlands; US,,abatement or incremental; incl-transport-storage or net removed,1.0855766397661222,1.6028260206330016
+boiler_fuel-fired,2025_CAD/GJ,16.3584,5.0,7.23761,45.6125,2.42526,14.9739,rissman_2022_001; rtc_2023_001; zuhlsdorf_2019_001,EU; US,,per unit of electricity,1.092460881934566,6.745008782563518
+anaerobic-digester,2025_CAD/GJ,30.0817,1.0,22.9684,37.1951,19.8581,27.3469,etsap_2013_012,global,,incl-feedstock or selling price,1.100004022393763,1.514832738278083
+capture-unit_chemical-solvent,2025_CAD/t,105.549,3.0,100.968,233.345,57.8214,90.972,hughes_2023_001; netl_2022_001,US,,abatement or incremental; incl-transport-storage or net removed,1.1602361166073079,1.8254314146665425
+kiln_oxy-fuel,2025_CAD/t,197.271,6.0,112.174,241.001,130.604,166.994,agora_2021_001; gardarsdottir_2019_001; ieaghg_2008_001; material-economics_2019_001; rootzen_2017_001,EU; Nordic countries; UK (Europe); Asia sensitivity,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,1.1813059151825813,1.5104514409972127
+kiln_electric-plasma,2025_CAD/t,243.439,1.0,220.241,266.636,107.437,205.821,vattenfall_2018_001,Sweden,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,1.1827704655987483,2.2658767463722924
+solar-concentrator_line-focus,2025_CAD/GJ,20.8049,2.0,13.2395,28.3703,17.0568,17.0568,saw_2023_001,Australia,,incl-transport-storage or net removed,1.2197422728765068,1.2197422728765068
+kiln_calcium-looping,2025_CAD/t,227.81,1.0,,,140.149,186.075,gardarsdottir_2019_001,EU,,incl-transport-storage or net removed,1.224291280397689,1.6254843059886264
+induction-heater_reheating,2025_CAD/t,57.3136,1.0,,,6.25494,46.5029,siyambalapitiya_2026_001,Australia,,per unit of electricity,1.2324736736848672,9.16293361726891
+reactor_haber-bosch-loop,2025_CAD/t,890.144,1.0,800.87,1230.77,196.221,719.348,armijo-philibert_2020_001,global,,incl-transport-storage or net removed; per unit of electricity,1.2374316742383382,4.536435957415363
+pellet-plant_wood,2025_CAD/t,192.094,1.0,131.233,252.956,46.5498,154.27,etsap_2013_010,global,,incl-feedstock or selling price; incl-transport-storage or net removed,1.2451805276463341,4.126634271253582
+calciner_indirect,2025_CAD/t,284.552,3.0,205.108,284.552,140.661,222.011,agora_2021_001; material-economics_2019_001,EU,,incl-feedstock or selling price; incl-transport-storage or net removed; per unit of electricity,1.2817022579962256,2.0229630103582372
+haul-truck_diesel,2025_CAD/t,2.43713,2.0,1.75556,3.24262,1.35271,1.87134,drebenstedt_2014_001,"Canada, Brazil, Italy",,,1.3023448438017675,1.8016648062038425
+gasifier_coal-petroleum-coke,2025_CAD/GJ,32.0629,3.0,8.38527,42.6546,15.2751,24.5553,etsap_2010_011; etsap_2014_003,global,,incl-feedstock or selling price; per unit of electricity,1.3057425484518617,2.0990304482458377
+solar-concentrator_point-focus,2025_CAD/GJ,56.1732,8.0,25.6279,87.2861,42.7494,42.7494,saw_2023_001,Australia,,,1.3140114247217505,1.3140114247217505
+reactor_alcohol-to-jet,2025_CAD/GJ,57.0794,10.0,7.04374,101.928,9.0756,43.2645,geleynse_2018_001; matschegg_2023_001,US; global,,incl-feedstock or selling price,1.319312600399866,6.289325223676672
+steam-turbine_back-pressure,2025_CAD/GJ,29.5339,2.0,22.0908,36.9769,15.6338,21.8434,etsap_2010_005; iea_2024_002,global,,incl-feedstock or selling price; per unit of electricity,1.352074310775795,1.8891056556947126
+reactor_methane-pyrolysis,2025_CAD/GJ,50.6753,2.0,11.9092,50.6753,11.3067,36.8991,abbas-wan-daud_2010_001,global,,incl-feedstock or selling price,1.373347859432886,4.481882423695685
+steam-reformer_ammonia,2025_CAD/t,869.791,2.0,683.866,869.791,207.194,617.617,bazzanella-ausfelder_2017_001; material-economics_2019_001,EU,,incl-feedstock or selling price,1.4083015849628493,4.19795457397415
+geothermal-well_direct-use,2025_CAD/GJ,25.5994,4.0,4.41817,43.1115,16.9878,17.6586,etsap_2010_006; iea_2024_002,global,,incl-feedstock or selling price; per unit of electricity,1.4496845729559535,1.506928501630582
+reactor_pyrolysis-oil,2025_CAD/GJ,54.5738,2.0,39.5535,69.5941,28.463,36.2261,brown_2020_001,global,,incl-feedstock or selling price; per unit of electricity,1.5064773740479929,1.917359378842708
+capture-unit_dac-liquid-solvent,2025_CAD/t,455.632,7.0,172.466,1365.33,217.694,301.126,fasihi_2019_001; keith_2018_001; larsen_2019_001; sievert_2024_001,North America; US; global,,incl-transport-storage or net removed; per unit of electricity,1.51309418648672,2.0929929166628387
+furnace_reheating,2025_CAD/t,34.7544,1.0,,,4.01347,22.9667,siyambalapitiya_2026_001,Australia,,,1.5132517949901378,8.659439338029186
+geothermal-well_flash-power,2025_CAD/GJ,45.7503,2.0,28.2991,72.6345,29.1574,29.1574,,,,,1.5690802334913265,1.5690802334913265
+combustion-turbine_simple-cycle,2025_CAD/GJ,119.464,5.0,26.0075,127.997,41.868,74.4586,etsap_2010_008; etsap_2013_012,global,,incl-feedstock or selling price; per unit of electricity,1.6044352163484137,2.8533486194707174
+separator_biogas-upgrading,2025_CAD/GJ,11.4842,1.0,8.74172,14.2267,5.236,7.04169,etsap_2013_012,global,,incl-feedstock or selling price,1.6308869035700235,2.1933155080213904
+reactor_ethanol-to-ethylene,2025_CAD/t,3332.0,6.0,1813.29,6879.65,591.338,2012.15,etsap_2013_009; negri_2021_001,Netherlands; global,,incl-feedstock or selling price; per unit of electricity,1.6559401635066968,5.634679320456321
+electrolyzer_solid-oxide,2025_CAD/GJ,60.6255,2.0,49.225,60.6255,10.2224,36.603,nrel_2018_003,US,,,1.6562986640439308,5.9306522930036
+gasifier_biomass-fischer-tropsch,2025_CAD/GJ,83.5806,9.0,26.5359,154.93,36.8341,49.4012,brown_2020_001; matschegg_2023_001,global,,incl-feedstock or selling price; per unit of electricity,1.6918738816061147,2.2691093307560117
+heat-pump_industrial,2025_CAD/GJ,27.264,3.0,10.3091,27.264,8.94843,15.3322,iea_2024_002; rissman_2022_001,US; global,,per unit of electricity,1.778218390054917,3.0467914483322773
+steam-reformer_methanol,2025_CAD/t,963.492,2.0,216.186,963.492,171.343,536.131,bazzanella-ausfelder_2017_001; etsap_2013_007,EU; global,,incl-feedstock or selling price,1.7971204798827152,5.623176902470483
+gasifier_biomass-waste,2025_CAD/GJ,32.977,3.0,28.7895,41.6629,9.40412,18.0668,boulamanti_2017_001; nrel_2013_001; nrel_2018_003,EU; US,,incl-feedstock or selling price,1.8252817322381383,3.5066545301421073
+reactor_co2-to-fischer-tropsch,2025_CAD/GJ,179.393,4.0,66.2827,179.393,65.8507,97.8626,bazzanella-ausfelder_2017_001; concawe_2019_002; matschegg_2023_001,EU; global,,incl-feedstock or selling price; per unit of electricity,1.8331109126469152,2.7242383148546634
+furnace_oxy-fuel,2025_CAD/t,208.488,1.0,,,61.1491,111.186,scalet_2013_001,EU,,per unit of electricity,1.8751281636177215,3.4095023475406836
+reactor_chemical-depolymerization,2025_CAD/t,2617.04,4.0,1642.06,3541.05,1184.89,1347.66,singh_2021_001; uekert_2023_001,US,,incl-feedstock or selling price; market or price based,1.9419141326447322,2.2086775987644423
+smelting-vessel_smelting-reduction,2025_CAD/t,334.174,6.0,205.646,462.703,80.7843,165.433,de-beer_1998_001,global,,incl-feedstock or selling price,2.019996010469495,4.1366206057365105
+boiler_solid-fuel,2025_CAD/GJ,24.3931,2.0,19.0902,29.6959,6.24726,11.4744,zuhlsdorf_2019_001,EU,,,2.125871505263892,3.9046077800507746
+steam-cracker_electric,2025_CAD/t,1566.91,2.0,1566.91,1883.96,203.091,668.448,agora_2021_001; layritz_2021_001,EU,,incl-feedstock or selling price; per unit of electricity,2.344101560629997,7.715309885716255
+reactor_methanol-loop,2025_CAD/t,1992.11,1.0,,,265.695,790.23,schemme_2020_001,Germany,,,2.520924287865558,7.497732362295112
+kiln_charcoal-retort,2025_CAD/t,557.135,2.0,434.785,557.135,47.133,217.348,feliciano-bruzual-mathews_2013_001,global,,incl-feedstock or selling price,2.5633316156578387,11.820486707826786
+reactor_plastics-pyrolysis,2025_CAD/t,839.365,2.0,626.091,839.365,226.233,322.147,joosten_1998_001; negri_2021_001,Netherlands; Western Europe,,,2.6055341195168666,3.7101793283915256
+reactor_co2-to-dme,2025_CAD/t,2826.89,1.0,,,118.534,838.034,schemme_2020_001,Germany,,,3.3732402265301884,23.848769129532453
+reactor_biomass-flash-pyrolysis,2025_CAD/t,3300.01,1.0,2200.0,4400.01,490.844,630.34,gielen_1996_001,Netherlands,,incl-feedstock or selling price,5.235285718818416,6.723134030364027

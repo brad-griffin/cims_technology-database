@@ -201,6 +201,8 @@ tp-barthe_2015_001-0023,barthe_2015_001:distillation-column_progressive@progress
 tp-barthe_2015_001-0024,barthe_2015_001:distillation-column_progressive@progressive-crude-distillation-ekofisk-5-mt-yr-table-4-68|steam|37.6|||kg/t
 tp-barthe_2015_001-0025,barthe_2015_001:distillation-column_progressive@progressive-crude-distillation-ekofisk-5-mt-yr-table-4-68|electricity|11.46|||kWh/t
 tp-barthe_2015_001-0090,barthe_2015_001:steam-reformer_methane@steam-methane-reforming-net-energy-sect-4-14-1|natural-gas||3|3.4|Gcal/1000-Nm3
+tp-bataille_2017_001-0004,bataille_2017_001:kiln@production-processes-dry-kilns||216.468|||2010_GBP/t-per-yr
+tp-bataille_2017_001-0007,bataille_2017_001:kiln@production-processes-kilns-with-higher-waste-biomass-utilization||223.115|||2010_GBP/t-per-yr
 tp-bataille_2017_001-0010,bataille_2017_001:grinding-mill@finishing-process-grinding-mixing-options||160.571|160.571|323.031|2010_GBP/t-per-yr
 tp-bataille_2017_001-0023,bataille_2017_001:process-improvement_efficiency-base@production-processes-other-production-steps-including-improvement-processes||250|||2010_GBP/t-per-yr
 tp-bataille_2017_001-0033,bataille_2017_001:paper-machine@alternative-production-route-dry-sheet-forming||1356|||2010_GBP/t-per-yr
@@ -252,6 +254,8 @@ tp-brandt_2022_001-0050,brandt_2022_001:gas-treatment-unit_glycol-dehydration@gl
 tp-brandt_2022_001-0052,brandt_2022_001:gas-treatment-unit_amine-sweetening@acid-gas-removal-amine-defaults-sect-6-20-table-6-72-p-229||96.1|93.3|121.1|degC
 tp-brinkmann_2014_001-0002,brinkmann_2014_001:electrolysis-cell_membrane@chlor-alkali-electrolysis-eu-27-and-efta-plant-data|steam|0.703|0.46|1.5|t/t
 tp-brinkmann_2016_001-0067,brinkmann_2016_001:gas-treatment-unit_catalytic-oxidation@catalytic-oxidation-sect-3-5-1-3-6-tables-3-208-and-3-211|natural-gas||0|100|Nm3/1000-Nm3
+tp-caelp_2024_001-0025,caelp_2024_001:boiler_electricity@manufacturing-indirect-heat-table-2-appendix-a-1||175|||2022_USD/kW
+tp-caelp_2024_001-0035,caelp_2024_001:boiler_natural-gas@manufacturing-indirect-heat-table-2-appendix-a-1||234|||2022_USD/kW
 tp-canadian-natural_2025_001-0001,canadian-natural_2025_001:well_sagd@jackfish-1-sagd-plant-2024-operations-sect-4-3-8c-slide-35||2059116|||m3/yr
 tp-canadian-natural_2025_001-0003,canadian-natural_2025_001:well_sagd@jackfish-2-sagd-plant-2024-operations-sect-4-3-8c-slide-35||2685342|||m3/yr
 tp-canadian-natural_2025_001-0005,canadian-natural_2025_001:well_sagd@jackfish-3-sagd-plant-2024-operations-sect-4-3-8c-slide-35||2217228|||m3/yr
@@ -555,8 +559,13 @@ tp-eia_2024_001-0046,eia_2024_001:combined-cycle@case-6-combined-cycle-1x1x1-sin
 tp-eia_2024_001-0054,eia_2024_001:combined-cycle_ccs@case-7-combined-cycle-1x1x1-single-shaft-with-95-carbon-capture-h-class-table-1-2-summary-p-iii-p-48-49-table-7-1-p-51-table-7-2|component|47.136|||%
 tp-element-energy_2018_001-0071,element-energy_2018_001:melting-furnace_electric-melter@technology-assumption-table-app-7-2-pp-65-66-electric-glass-furnace||8|||years
 tp-element-energy_2018_001-0082,element-energy_2018_001:boiler_fuel-fired@technology-assumption-table-app-7-2-pp-65-66-100-h2-fuel-boilers|hydrogen|1.09|||kWh/kWh-thermal-output
+tp-element-energy_2018_001-0084,element-energy_2018_001:boiler_fuel-fired@technology-assumption-table-app-7-2-pp-65-66-100-h2-fuel-boilers||199.0|||2018_GBP/kW
+tp-element-energy_2018_001-0085,element-energy_2018_001:boiler_fuel-fired@technology-assumption-table-app-7-2-pp-65-66-100-h2-fuel-boilers||3.98|||2018_GBP/kW-per-yr
 tp-element-energy_2018_001-0087,element-energy_2018_001:furnace_hydrogen-fired@technology-assumption-table-app-7-2-pp-65-66-100-h2-fuel-heaters|hydrogen|1.09|||kWh/kWh-thermal-output
 tp-element-energy_2018_001-0221,element-energy_2018_001:melting-furnace_electric-melter@technology-data-sheet-app-7-3-all-electric-glass-furnace|||5|8|years
+tp-element-energy_2018_001-0224,element-energy_2018_001:boiler_fuel-fired@technology-data-sheet-app-7-3-100-hydrogen-boiler-steam||199|||2018_GBP/kW
+tp-element-energy_2018_001-0226,element-energy_2018_001:boiler_fuel-fired@technology-data-sheet-app-7-3-100-hydrogen-boiler-steam||2.0|||2018_GBP/kW-per-yr
+tp-element-energy_2018_001-0227,element-energy_2018_001:boiler_fuel-fired@technology-data-sheet-app-7-3-100-hydrogen-boiler-steam||0.3|||2018_GBP/MWh
 tp-element-energy_2021_001-0352,element-energy_2021_001:compressor_flare-gas-recovery@ffpfe-and-other-abatement-ffpfecost-gas-recovery-for-sales-both-flaring-ffp|natural-gas|-5429.94|||kWh/t-CO2
 tp-epa_2006_001-0062,epa_2006_001:pump_plunger-lift@installing-plunger-lift-systems-in-gas-wells-ll-2006-general|||2591|10363|2006_USD
 tp-epa_2006_001-0113,epa_2006_001:gas-treatment-unit_glycol-dehydration_electric-pump@replacing-gas-assisted-glycol-pumps-with-electric-pumps-ll-2006-low-pressure-10-mmcf-d-example||10|||MMcf/d
@@ -578,6 +587,7 @@ tp-esmap_2001_001-0014,esmap_2001_001:coke-oven_by-product@stamping-vs-conventio
 tp-etsap_2010_002-0028,etsap_2010_002:smelting-vessel_coal_hismelt@smelting-reduction||18.55|||2000_USD/t
 tp-etsap_2010_002-0040,etsap_2010_002:electric-arc-furnace_electricity@electric-arc-furnace||31.78|||2000_USD/t
 tp-etsap_2010_003-0002,etsap_2010_003:kiln_dry@clinker-kiln|||2000|10000|t/d
+tp-etsap_2010_003-0004,etsap_2010_003:kiln_dry@clinker-kiln||275|||2010_EUR/t-per-yr
 tp-etsap_2010_003-0006,etsap_2010_003:kiln_dry@clinker-kiln||36|||2010_EUR/t
 tp-etsap_2010_003-0008,etsap_2010_003:kiln_dry@clinker-kiln|co2|770|||kg/t
 tp-etsap_2010_003-0011,etsap_2010_003:kiln_post-combustion@clinker-kiln|co2|177|||kg/t
@@ -674,6 +684,7 @@ tp-galitsky_2008_001-0012,galitsky_2008_001:ventilation-unit_heat-recovery_wheel
 tp-galitsky_2008_001-0013,galitsky_2008_001:ventilation-unit_heat-recovery_heat-pipe@hvac-heat-recovery-systems-sect-5-2|heat||45|65|%
 tp-galitsky_2008_001-0014,galitsky_2008_001:ventilation-unit_heat-recovery_run-around-loop@hvac-heat-recovery-systems-sect-5-2|heat||55|65|%
 tp-gardarsdottir_2019_001-0001,gardarsdottir_2019_001:kiln_dry-precalciner@reference-bat-cement-plant-without-capture-sect-2-3-3-tables-1-4-6||3000|||t/d
+tp-gardarsdottir_2019_001-0008,gardarsdottir_2019_001:kiln_dry-precalciner@reference-bat-cement-plant-without-capture-sect-2-3-3-tables-1-4-6||204|||2014_EUR-million
 tp-geleynse_2018_001-0008,geleynse_2018_001:reactor_alcohol-to-jet@core-ethanol-to-jet-atj-ethanol-feed-200-ton-day-add-on-to-an-ethanol-plant-sect-2-1-tables-2-6-11||60.0|||%
 tp-geleynse_2018_001-0027,geleynse_2018_001:reactor_alcohol-to-jet@core-isobutanol-to-jet-atj-isobutanol-feed-200-ton-day-add-on-to-an-alcohol-plant-sect-2-1-tables-2-6-12||75.0|||%
 tp-gielen_1997_001-0032,gielen_1997_001:steam-reformer_ammonia_ccs-concentrated@ammonia-reference-plus-kaap-ici-amv-with-co2-removal-and-disposal-table-2-1-5-2020|co2|1.5|||t/t
@@ -875,10 +886,14 @@ tp-ieaghg_2007_001-0149,ieaghg_2007_001:boiler_fuel-fired@natural-gas-hot-water-
 tp-ieaghg_2007_001-0168,ieaghg_2007_001:fuel-cell_chp_sofc@sofc-chp-500-kwe-without-capture-sect-5-3-5-table-5-10|co2|160.0|||kg/GJ
 tp-ieaghg_2007_001-0184,ieaghg_2007_001:capture-unit_amine@mea-absorber-generic-characterisation-appendix-f-1||150|||degC
 tp-ieaghg_2007_001-0185,ieaghg_2007_001:capture-unit_amine@mea-absorber-generic-characterisation-appendix-f-1||170|||degC
+tp-ieaghg_2008_001-0005,ieaghg_2008_001:kiln_dry-precalciner@base-case-cement-plant-without-capture-1-mt-y-cement-ne-scotland-uk-sect-4-2-4-3-5-3-tables-s-1-5-1-to-5-4-5-9-app-f||289.011|||2008_EUR/t-per-yr
+tp-ieaghg_2008_001-0006,ieaghg_2008_001:kiln_dry-precalciner@base-case-cement-plant-without-capture-1-mt-y-cement-ne-scotland-uk-sect-4-2-4-3-5-3-tables-s-1-5-1-to-5-4-5-9-app-f||20.989|||2008_EUR/t-per-yr
 tp-ieaghg_2008_001-0008,ieaghg_2008_001:kiln_dry-precalciner@base-case-cement-plant-without-capture-1-mt-y-cement-ne-scotland-uk-sect-4-2-4-3-5-3-tables-s-1-5-1-to-5-4-5-9-app-f||65.6|||2008_EUR/t
 tp-ieaghg_2008_001-0015,ieaghg_2008_001:kiln_dry-precalciner_ccs-diffuse@post-combustion-mea-capture-on-a-new-build-cement-plant-1-mt-y-cement-uk-sect-4-4-5-4-tables-4-2-4-3-5-5-to-5-10|steam|1.8264|||t/t
 tp-ieaghg_2008_001-0058,ieaghg_2008_001:kiln_oxy-fuel@oxy-combustion-in-the-precalciner-only-new-build-cement-plant-1-mt-y-cement-uk-sect-4-5-5-5-tables-4-8-4-9-5-21-to-5-26|electricity|83.2374|||kWh/t
 tp-ieaghg_2008_001-0077,ieaghg_2008_001:kiln_oxy-fuel_whole-plant@oxy-combustion-in-the-precalciner-only-new-build-cement-plant-1-mt-y-cement-uk-sect-4-5-5-5-tables-4-8-4-9-5-21-to-5-26||81.6|||2008_EUR/t
+tp-ieaghg_2008_001-0086,ieaghg_2008_001:kiln_dry-precalciner@asian-developing-country-scenario-3-mt-y-cement-sect-5-6-table-5-36-app-f||111.9414|||2008_EUR/t-per-yr
+tp-ieaghg_2008_001-0087,ieaghg_2008_001:kiln_dry-precalciner@asian-developing-country-scenario-3-mt-y-cement-sect-5-6-table-5-36-app-f||9.8168|||2008_EUR/t-per-yr
 tp-ieaghg_2008_001-0089,ieaghg_2008_001:kiln_dry-precalciner@asian-developing-country-scenario-3-mt-y-cement-sect-5-6-table-5-36-app-f||37.3|||2008_EUR/t
 tp-ieaghg_2008_001-0095,ieaghg_2008_001:kiln_oxy-fuel_whole-plant@asian-developing-country-scenario-3-mt-y-cement-sect-5-6-table-5-36-app-f||138.9377|||2008_EUR/t-per-yr
 tp-ieaghg_2008_001-0097,ieaghg_2008_001:kiln_oxy-fuel_whole-plant@asian-developing-country-scenario-3-mt-y-cement-sect-5-6-table-5-36-app-f||46.4|||2008_EUR/t
@@ -894,6 +909,8 @@ tp-ieaghg_2013_003-0113,ieaghg_2013_003:basic-oxygen-furnace@reference-integrate
 tp-ieaghg_2013_003-0130,ieaghg_2013_003:kiln_lime-parallel-flow@reference-integrated-mill-process-units-vol-i-sect-d-e-vol-iii-sect-c-d|coke-oven-gas|3.499|||GJ/t
 tp-ieaghg_2013_003-0131,ieaghg_2013_003:kiln_lime-parallel-flow@reference-integrated-mill-process-units-vol-i-sect-d-e-vol-iii-sect-c-d|electricity|30.0|||kWh/t
 tp-ieaghg_2013_003-0132,ieaghg_2013_003:kiln_lime-parallel-flow@reference-integrated-mill-process-units-vol-i-sect-d-e-vol-iii-sect-c-d|co2|827|||kg/t
+tp-ieaghg_2013_003-0170,ieaghg_2013_003:boiler_fuel-fired_works-gas@captive-power-and-steam-plants-vol-i-sect-f-vol-ii-iii-sect-c-vol-iii-sect-e||90|||2010_USD-million
+tp-ieaghg_2013_003-0173,ieaghg_2013_003:boiler_fuel-fired_works-gas@captive-power-and-steam-plants-vol-i-sect-f-vol-ii-iii-sect-c-vol-iii-sect-e||3.378|||2010_USD-million/yr
 tp-ieaghg_2013_003-0176,ieaghg_2013_003:boiler_ccs-diffuse_works-gas@post-combustion-mea-capture-eop-l1-vol-ii-sect-c|co2|231.7|||kg/GJ
 tp-ieaghg_2013_003-0177,ieaghg_2013_003:boiler_ccs-diffuse_works-gas@post-combustion-mea-capture-eop-l1-vol-ii-sect-c|co2|25.7|||kg/GJ
 tp-ieaghg_2013_003-0182,ieaghg_2013_003:kiln_lime_ccs-diffuse@post-combustion-mea-capture-eop-l2-vol-ii-sect-c|steam|2.365|||GJ/t
@@ -1194,6 +1211,7 @@ tp-minea_2012_001-0007,minea_2012_001:kiln_lumber-heat-pump@softwood-drying-354-
 tp-moore_2017_001-0005,moore_2017_001:autothermal-reformer_natural-gas@hydrogen-production||150|||2017_USD/kW
 tp-moya_2013_001-0038,moya_2013_001:steam-turbine_by-product-gas@current-eu27-process-sect-2-1-table-1|co2|2.057|||t/MWh
 tp-moya_2013_001-0049,moya_2013_001:steam-turbine_by-product-gas_state-of-the-art@bat-retrofit-sect-2-2-tables-3-and-7|co2|1.615|||t/MWh
+tp-mpp_2023_001-0045,mpp_2023_001:boiler_fuel-fired@alumina-refining-digestion-steam-production-hydrogen-boiler-technical-appendix-exhibit-ta3-1||166|||2023_USD/kW
 tp-mpp_2023_001-0155,mpp_2023_001:digester_bayer@alumina-refining-global-average-thermal-energy-full-report-sect-1-1-p-25|heat|9.8|||GJ/t
 tp-mynko_2023_001-0011,mynko_2023_001:steam-cracker_rotodynamic@whole-plant-simulation-per-furnace-hour-propane-feed-p-8-table-2-si-sm5|process-off-gas|6.984|||GJ/t
 tp-mynko_2023_001-0013,mynko_2023_001:steam-cracker_rotodynamic@whole-plant-simulation-per-furnace-hour-propane-feed-p-8-table-2-si-sm5|natural-gas|1.846|||GJ/t
@@ -1681,6 +1699,8 @@ tp-van-geene_2024_001-1174,van-geene_2024_001:tc0483_add-on-ccus-hybrid-waste-in
 tp-van-geene_2024_001-1191,van-geene_2024_001:tc0488_waste-gasification@chemical-recycling-de-leeuw-and-koelemeijer-2022||3.692|||GJ/t
 tp-van-geene_2024_001-1323,van-geene_2024_001:tc0540_add-on-co2-capture-compression-high-concentration-for-g@pre-combustion-carbon-capture-oliveira-and-schure-2020|co2|-1|||t/t
 tp-vattenfall_2018_001-0001,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||1|||Mt/yr
+tp-vattenfall_2018_001-0006,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||210|||2018_EUR-million
+tp-vattenfall_2018_001-0007,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||231|||2018_EUR-million
 tp-vattenfall_2018_001-0008,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||5.3|||2018_EUR/t
 tp-vattenfall_2018_001-0009,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||14.9|||2018_EUR/t-per-yr
 tp-vattenfall_2018_001-0010,vattenfall_2018_001:kiln_dry-precalciner@reference-cement-plant-1-mt-clinker-yr-greenfield-in-sweden-sect-8-1-8-2-tables-9-10-15||52.6|||2018_EUR/t

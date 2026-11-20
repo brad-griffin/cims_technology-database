@@ -357,8 +357,11 @@ for a, h in H.items():
                 if live(x) and live(y) and rel(v(y), v(x)) > 0.02:
                     flag(a, "variant-ccs", "medium", f"{p}|co2", f"gross {v(y):.4g} vs host {v(x):.4g}", v(y), v(x))
             x = hh.get(("emissions-total", "co2"))
-            if live(x) and live(capt) and v(capt) > v(x) * 1.02:
-                flag(a, "variant-ccs", "high", "emissions-captured|co2", f"captured {v(capt):.4g} above host total {v(x):.4g}", v(capt), v(x))
+            xb = hh.get(("emissions-biomass", "co2"))
+            # capture takes the fossil and biogenic mix (Brad 2026-11-09): compare with both (2026-11-20)
+            host_all = (v(x) if live(x) else 0) + (v(xb) if live(xb) else 0)
+            if live(x) and live(capt) and v(capt) > host_all * 1.02:
+                flag(a, "variant-ccs", "high", "emissions-captured|co2", f"captured {v(capt):.4g} above host total {host_all:.4g} (fossil + biogenic)", v(capt), host_all)
         elif meta.get("type") == "efficient variant":
             x, y = hh.get((SEC, "")), h.get((SEC, ""))
             if live(x) and live(y) and v(y) > v(x) * 1.01:

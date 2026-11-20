@@ -1,0 +1,532 @@
+archetype,parameter,n,sources,median,low,high,ratio,p25,p75,iqr_ratio,n_outliers,median_trimmed,cost_bases,family,type
+electrolyzer_solid-oxide,capacity,8,6,80.686,0.0803314,1339.13,16670.069238180837,6.1275385,927.8320000000001,151.42001963757554,0,80.686,,hydrogen,prospective
+heat-pump_very-high-temperature,capacity,20,5,3.65,0.012,70.0,5833.333333333333,0.76875,10.3,13.398373983739837,3,2.25,,heat-supply,alternative
+combustion-turbine_chp,capacity,46,14,23.2135,0.105506,597.634,5664.4551020795025,5.2648649999999995,58.6602,11.141824149337165,4,14.541,,heat-supply,conventional
+heat-pump_industrial,capacity,56,8,0.725,0.012,65.0,5416.666666666667,0.3,3.0,10.0,10,0.6,,heat-supply,alternative
+capture-unit_dac-liquid-solvent,capacity,4,4,750.0,0.3942,1000.0,2536.783358701167,375.09855,1000.0,2.6659660507885197,0,750.0,,co2-capture,prospective
+reciprocating-engine_chp,capacity,30,10,1.291,0.0791292,129.1,1631.5089751949974,0.6706695,3.73652,5.57132835174404,4,1.14618,,heat-supply,conventional
+steam-turbine_back-pressure,capacity,39,13,62.0333,0.469995,525.685,1118.490622240662,17.75,108.0,6.084507042253521,4,54.9782,,heat-supply,conventional
+electrolyzer_low-temperature,capacity,17,5,6.85009,0.0708167,60.6957,857.081733545901,0.78012,13.7112,17.575757575757574,1,4.24559,,petroleum-refining,alternative
+compressor_co2-dehydration,capacity,22,7,447.145,17.52,8743.32,499.04794520547944,170.87075,1358.5,7.9504537786601865,1,408.216,,co2-capture,conventional
+boiler_fuel-fired,capacity,15,14,14.7229,0.811103,290.0,357.537821953562,3.409625,28.1348,8.251581918832715,1,9.86145,,heat-supply,conventional
+pipeline_co2,capacity,10,1,2738.0,89.0,26698.0,299.97752808988764,637.25,10684.75,16.76696743821106,1,1826.0,,co2-capture,conventional
+capture-unit_dac-solid-sorbent,capacity,4,4,182.19,4.0,1000.0,250.0,4.285,520.0,121.35355892648775,0,182.19,,co2-capture,prospective
+gasifier_biomass-chp,capacity,5,4,4.48,0.09,22.3612,248.45777777777778,0.12,8.56386,71.3655,1,2.3000000000000003,,heat-supply,prospective
+boiler_solid-fuel,capacity,24,10,22.98335,1.0,165.45,165.45,6.16,54.212625,8.800750811688312,1,20.0,,heat-supply,conventional
+steam-turbine_condensing,capacity,20,6,232.5,5.0,808.0,161.6,29.4075,434.0,14.758139930289893,0,232.5,,power-generation,conventional
+combustion-turbine_chp_ccs-diffuse,capacity,3,2,25.0,1.8998,250.0,131.59279924202548,13.4499,137.5,10.223124335496918,0,25.0,,heat-supply,prospective
+reactor_plastics-pyrolysis,capacity,4,2,24.38,0.876,87.6,100.0,6.789,51.9,7.6447193990278395,0,24.38,,chemicals,alternative
+boiler_electric,capacity,10,8,17.5,0.981,75.0,76.45259938837921,3.05,42.125,13.811475409836067,0,17.5,,heat-supply,alternative
+combustion-turbine_simple-cycle,capacity,4,3,57.5,5.0,340.0,68.0,12.5,160.0,12.8,0,57.5,,power-generation,conventional
+direct-heater_refinery,capacity,3,2,36.0,0.760635,46.09,60.59410886956294,18.3803175,41.045,2.233095266172633,0,36.0,,heat-supply,conventional
+direct-heater_electric,capacity,7,3,6.3,0.9,50.0,55.55555555555556,4.3,25.0,5.813953488372094,0,6.3,,heat-supply,alternative
+melting-furnace_reverberatory-rotary,capacity,6,3,143.226,11.9136,508.08,42.647058823529406,32.3733,363.54,11.229624412710475,0,143.226,,non-ferrous-metals,conventional
+gasifier_biomass-methanation,capacity,5,3,221.92,19.884,776.72,39.06256286461477,22.192,749.535,33.77500901225667,0,221.92,,biofuels,prospective
+separator_membrane-bioreactor,capacity,6,1,2518500.0,438000.0,16571000.0,37.833333333333336,894250.0,5046125.0,5.642857142857143,1,1387000.0,,pulp-and-paper,alternative
+combustion-turbine_drive,capacity,11,1,14.54,1.185,44.74,37.755274261603375,5.165,30.445,5.894482090997096,0,14.54,,machine-drive,conventional
+capture-unit_amine,capacity,25,11,1331.52,163.161,6131.27,37.57803641801656,701.15,1946.58,2.776267560436426,2,1197.55,,co2-capture,conventional
+reactor_catalytic-n2o,capacity,4,2,3.5275,2.79225,99.0,35.4552780016116,3.0249375,27.714375,9.161966156325544,1,3.1025,,chemicals,efficient variant
+direct-heater_fuel-fired,capacity,3,3,2.5,0.829128,29.0195,35.00002412172789,1.664564,15.75975,9.467794569629044,0,2.5,,heat-supply,conventional
+reactor_small-nuclear,capacity,20,1,330.0,30.0,1000.0,33.333333333333336,171.25,638.75,3.72992700729927,0,330.0,,heat-supply,prospective
+smelting-vessel_smelting-reduction,capacity,8,6,1500.0,60.0,2000.0,33.333333333333336,900.0,1500.0,1.6666666666666667,0,1500.0,,iron-and-steel,alternative
+solar-concentrator_point-focus,capacity,9,1,21.5,17.0,392.0,23.058823529411764,20.15,25.85,1.2828784119106702,1,21.05,,heat-supply,prospective
+distillation-column,capacity,6,2,90.41865,38.5878,789.889,20.469915361850116,76.73757499999999,143.45725000000002,1.869452481395197,1,80.8373,,chemicals,conventional
+distillation-column_heat-integrated,capacity,5,1,80.8373,38.5878,789.889,20.469915361850116,75.371,157.943,2.095540725212615,1,78.10415,,chemicals,alternative
+compressor_vapour-recovery,capacity,5,1,0.701789,0.175447,3.50895,20.00005699726983,0.350895,1.40358,4.0,1,0.526342,,oil-and-gas,efficient variant
+motor_induction-standard,capacity,5,2,0.03729,0.007457,0.1491,19.994635912565375,0.0201337,0.07457,3.703740494792313,0,0.03729,,machine-drive,conventional
+motor_premium-efficiency,capacity,4,1,0.055929999999999994,0.007457,0.1491,19.994635912565375,0.029831749999999997,0.0932025,3.1242719585676335,0,0.055929999999999994,,machine-drive,efficient variant
+fuel-cell_chp,capacity,8,6,0.448972,0.08,1.58,19.75,0.21422725,0.7918762500000001,3.6964310095937845,0,0.448972,,heat-supply,alternative
+reactor_catalytic-reforming,capacity,7,4,1160610.0,174091.0,3191660.0,18.333285465647275,1121030.0,2466285.0,2.2000169486989645,0,1160610.0,,petroleum-refining,conventional
+electrolyzer_low-temperature-central,capacity,26,8,87.87575000000001,47.28,839.568,17.75736040609137,78.3075,627.4725,8.012929795996552,0,87.87575000000001,,hydrogen,alternative
+compressor_electric,capacity,3,2,9.405,1.22732,21.6315,17.624987778248542,5.31616,15.518249999999998,2.9190712845362063,0,9.405,,machine-drive,alternative
+gasifier_coal-methanation,capacity,6,1,2174.815,610.28,7389.94,12.109097463459396,1669.945,4310.7925,2.581397890349682,0,2174.815,,oil-and-gas,alternative
+thermal-storage_electric,capacity,6,3,4.378075,1.0,12.0,12.0,2.534675,8.88255,3.504413780859479,0,4.378075,,heat-supply,prospective
+well_sagd,capacity,11,6,6847570.0,1566820.0,17988700.0,11.481025261357399,2825465.0,12912250.0,4.569955741798252,0,6847570.0,,oil-and-gas,conventional
+steam-turbine_waste-heat,capacity,5,4,6.0,0.7,8.0,11.428571428571429,1.0,8.0,8.0,0,6.0,,power-generation,alternative
+melting-furnace_cupola,capacity,4,1,87.6,39.42,438.0,11.11111111111111,62.415,188.34,3.017543859649123,1,70.08,,other-industry,conventional
+gasifier_coal-petroleum-coke,capacity,3,2,279.167,186.389,2056.3,11.032303408462946,232.778,1167.7335,5.016511440084544,0,279.167,,petroleum-refining,conventional
+combined-cycle,capacity,7,5,500.0,50.0,550.0,11.0,246.0,550.0,2.2357723577235773,0,500.0,,power-generation,conventional
+distillation-column_atmospheric-vacuum,capacity,5,2,9865140.0,1740910.0,18859800.0,10.833299825953093,5988720.0,11606100.0,1.9379934276439708,0,9865140.0,,petroleum-refining,conventional
+caster_continuous,capacity,6,4,1125.0,400.0,4210.0,10.525,850.0,1437.5,1.6911764705882353,1,1000.0,,iron-and-steel,conventional
+reactor_polymerization-extrusion,capacity,5,2,250.0,30.0,300.0,10.0,200.0,300.0,1.5,1,275.0,,chemicals,conventional
+thermal-storage_heat-charged,capacity,3,1,30.0,29.0,288.0,9.931034482758621,29.5,159.0,5.389830508474576,0,30.0,,heat-supply,alternative
+capture-unit_chemical-solvent,capacity,7,4,408.216,364.174,3439.36,9.444276636992209,399.87649999999996,1258.376,3.1469116089592664,1,404.4315,,co2-capture,conventional
+furnace_electric,capacity,6,2,15.695,9.855,91.25,9.25925925925926,11.68,21.07875,1.8046875,1,13.87,,glass-and-ceramics,alternative
+leaching-vessel_heap-atmospheric,capacity,4,1,73.1,37.0,300.0,8.108108108108109,51.400000000000006,142.5,2.7723735408560306,1,56.2,,mining,conventional
+electrolysis-cell_chlor-alkali-membrane,capacity,3,2,640.0,100.0,800.0,8.0,370.0,720.0,1.945945945945946,0,640.0,,chemicals,conventional
+geothermal-well_direct-use,capacity,6,2,20.5,14.0,100.0,7.142857142857143,16.25,51.75,3.1846153846153844,0,20.5,,heat-supply,prospective
+gasifier_coal-fischer-tropsch,capacity,4,1,2733.885,701.734,4298.12,6.1249989312189514,1776.2635,3574.5275,2.0123858312688405,0,2733.885,,oil-and-gas,alternative
+reactor_gas-to-liquids,capacity,3,1,2441.45,804.07,4912.14,6.1090949792928475,1622.76,3676.795,2.2657663486898865,0,2441.45,,oil-and-gas,alternative
+incinerator_waste-to-energy,capacity,5,1,250.0,100.0,600.0,6.0,200.0,300.0,1.5,1,225.0,,waste-treatment,reference
+furnace_regenerative,capacity,12,3,107.4925,54.75,292.0,5.333333333333333,82.76374999999999,152.7525,1.8456449834619628,1,105.485,,glass-and-ceramics,conventional
+haul-truck_diesel,capacity,5,4,862.159,589.898,2994.87,5.07692855374997,820.413,2631.85,3.2079574555742045,0,862.159,,mining,conventional
+well_co2-storage,capacity,3,1,3000.0,1000.0,5000.0,5.0,2000.0,4000.0,2.0,0,3000.0,,co2-capture,conventional
+air-separation-unit,capacity,4,3,894.25,294.699,1460.0,4.9542075134289565,593.79975,1186.25,1.997727348319025,0,894.25,,iron-and-steel,conventional
+boiler_recovery,capacity,6,3,1025.8325,593.855,2932.05,4.937316348266833,704.54125,2126.4900000000002,3.0182618831757546,0,1025.8325,,pulp-and-paper,conventional
+reactor_integrated-upgrader,capacity,3,1,13927300.0,3191660.0,15087900.0,4.727289247601561,8559480.0,14507600.0,1.6949160463018782,0,13927300.0,,oil-and-gas,reference
+well_cyclic-steam,capacity,5,2,4015000.0,1825000.0,8395000.0,4.6,2920000.0,5475000.0,1.875,0,4015000.0,,oil-and-gas,conventional
+furnace_oxy-fuel,capacity,4,1,31.9375,14.6,65.7,4.5,17.3375,50.64375,2.9210526315789473,0,31.9375,,glass-and-ceramics,alternative
+coke-oven_by-product_efficiency-strong,capacity,4,3,1750.0,450.0,2000.0,4.444444444444445,1237.5,2000.0,1.6161616161616161,0,1750.0,,iron-and-steel,efficient variant
+steam-reformer_methane_ccs-concentrated,capacity,3,2,354.083,81.5149,354.245,4.345769914457357,217.79895000000002,354.164,1.6261051763564516,0,354.083,,petroleum-refining,alternative
+geothermal-well_binary-power,capacity,6,2,17.75,10.0,40.1,4.01,10.125,36.25,3.580246913580247,0,17.75,,power-generation,alternative
+gasifier_biomass-methanol,capacity,6,4,210.0,100.0,400.0,4.0,127.20125,292.543,2.2998437515354606,0,210.0,,chemicals,prospective
+steam-reformer_methane,capacity,4,2,275.91700000000003,89.9226,354.245,3.939443476945729,170.7939,354.12350000000004,2.073396649411952,0,275.91700000000003,,petroleum-refining,conventional
+haul-truck_battery-electric,capacity,4,3,357.408,210.24,820.413,3.902268835616438,315.36,478.41525,1.517044805936073,1,350.4,,mining,prospective
+gas-treatment-unit_thermal-oxidiser,capacity,3,1,75467.4,35040.0,133152.0,3.8,55253.7,104309.7,1.8878319460959176,0,75467.4,,chemicals,reference
+calciner_clay-flash,capacity,3,2,80.0,80.0,300.0,3.75,80.0,190.0,2.375,0,80.0,,cement-and-lime,conventional
+kiln_lime-rotary,capacity,4,2,295.725,121.5,448.95,3.6950617283950615,186.52499999999998,399.675,2.1427422597507038,0,295.725,,pulp-and-paper,conventional
+reactor_delayed-coking,capacity,3,2,1624850.0,1229840.0,4410300.0,3.5860762375593573,1427345.0,3017575.0,2.1141174698478644,0,1624850.0,,petroleum-refining,conventional
+electrolysis-cell_electrorefining,capacity,6,1,230.0,199.0,666.658,3.3500402010050254,206.25,283.75,1.3757575757575757,1,225.0,,non-ferrous-metals,conventional
+pellet-plant_wood,capacity,3,1,120.0,40.0,123.8,3.0949999999999998,80.0,121.9,1.5237500000000002,0,120.0,,other-industry,conventional
+reactor_torrefaction,capacity,3,1,100.0,40.0,120.0,3.0,70.0,110.0,1.5714285714285714,0,100.0,,other-industry,prospective
+boiler_recovery-high-solids,capacity,4,3,903.375,401.5,1095.0,2.727272727272727,716.3125,1012.875,1.414012738853503,0,903.375,,pulp-and-paper,alternative
+oven_fuel-fired,capacity,3,2,34.8079,16.3322,43.6018,2.669683202507929,25.57005,39.20484999999999,1.5332332162041136,0,34.8079,,food-and-beverage,conventional
+coke-oven_heat-recovery,capacity,3,3,1200.0,450.0,1200.0,2.6666666666666665,825.0,1200.0,1.4545454545454546,0,1200.0,,iron-and-steel,alternative
+reactor_fluid-catalytic-cracking,capacity,6,3,2524665.0,1740910.0,4584390.0,2.633329695389193,2060250.0,3336742.5,1.6195813614852566,0,2524665.0,,petroleum-refining,conventional
+heat-pump_heat-transformer,capacity,3,1,5.1,2.9,7.553,2.60448275862069,4.0,6.326499999999999,1.5816249999999998,0,5.1,,heat-supply,alternative
+reactor_hydrotreating-lipids,capacity,3,2,768.398,610.508,1468.48,2.405341125751014,689.453,1118.439,1.6222121014775484,0,768.398,,biofuels,conventional
+kiln_dry-precalciner_efficiency-strong,capacity,5,1,1825.0,912.5,2190.0,2.4,1095.0,2007.5,1.8333333333333333,0,1825.0,,cement-and-lime,efficient variant
+smelting-vessel_flash,capacity,6,1,349.6705,189.8,402.61,2.1212328767123285,261.16825,380.23900000000003,1.4559158703249726,0,349.6705,,non-ferrous-metals,conventional
+anaerobic-digester_chp,capacity,3,2,0.524,0.524,1.048,2.0,0.524,0.786,1.5,0,0.524,,heat-supply,alternative
+heat-pump_hvac,capacity,3,2,0.3,0.16,0.32,2.0,0.22999999999999998,0.31,1.3478260869565217,0,0.3,,space-conditioning,alternative
+kiln_oxy-fuel,capacity,3,3,1200.0,1095.0,2000.0,1.82648401826484,1147.5,1600.0,1.3943355119825709,0,1200.0,,cement-and-lime,prospective
+reactor_alkylation,capacity,4,3,478749.5,342379.0,580303.0,1.6949141156437748,412015.0,536779.75,1.3028160382510345,0,478749.5,,petroleum-refining,conventional
+reactor_sulphuric-acid-metallurgical,capacity,4,1,1076.75,822.71,1330.42,1.617119033438271,862.6775,1290.73,1.4961906390279103,0,1076.75,,non-ferrous-metals,conventional
+electric-arc-furnace_scrap-preheating,capacity,3,2,500.0,500.0,800.0,1.6,500.0,650.0,1.3,0,500.0,,iron-and-steel,efficient variant
+haul-truck_trolley-assist,capacity,4,2,744.6,613.2,876.0,1.4285714285714284,613.2,876.0,1.4285714285714284,0,744.6,,mining,alternative
+vapour-recompressor_evaporation,capacity,3,2,490.56,490.56,569.4,1.1607142857142856,490.56,529.98,1.0803571428571428,0,490.56,,pulp-and-paper,alternative
+shaft-furnace_hydrogen-direct-reduction,capacity,4,4,525.0,500.0,569.4,1.1388,500.0,554.85,1.1097000000000001,0,525.0,,iron-and-steel,prospective
+reactor_co2-to-higher-alcohols,capacity,3,1,285.372,253.531,286.165,1.1287179871495006,269.4515,285.7685,1.060556352441905,0,285.372,,chemicals,prospective
+grinding-mill_vertical-roller,capacity,3,2,1752.0,1749.37,1905.3,1.0891349457233175,1750.685,1828.65,1.0445339966927232,0,1752.0,,cement-and-lime,alternative
+gasifier_biomass-waste,capacity,3,3,254.369,253.972,254.697,1.0028546453939804,254.1705,254.53300000000002,1.0014262079981744,0,254.369,,hydrogen,prospective
+annealing-furnace_continuous,capacity,3,3,450.0,450.0,450.0,1.0,450.0,450.0,1.0,0,450.0,,iron-and-steel,alternative
+compressor_blowdown-recovery,capex,10,3,492.7295,47.45,256189.0,5399.13593256059,184.51425,968.41025,5.248430676763448,1,455.448,equipment; incremental; installed,oil-and-gas,alternative
+compressor_vapour-recovery,capex,35,7,750.183,59.5837,58841.7,987.5469297811313,225.101,3223.645,14.320882626021207,5,512.8715,equipment; incremental; installed; not,oil-and-gas,efficient variant
+flare_enclosed-combustor,capex,24,6,3722.17,49.3232,25904.8,525.2051772796574,1054.0715,7069.955,6.707282191008864,4,1951.2,incremental; installed,oil-and-gas,alternative
+management-system_leak-detection,capex,67,7,297.756,10.2476,3853.89,376.0773254225379,125.8585,648.294,5.150975102992646,3,276.73699999999997,capital; equipment; incremental; installed; survey,oil-and-gas,conventional
+compressor_low-emission-seal,capex,16,5,658.5925,81.7625,18392.9,224.95520562605108,209.01675,1785.4125,8.54195895783472,3,522.492,incremental; installed,oil-and-gas,alternative
+gasifier_biomass-chp,capex,3,3,39.0219,0.530211,108.045,203.777364105988,19.776055500000002,73.53345,3.7183072225904703,0,39.0219,installed; overnight,heat-supply,prospective
+compressor_co2-dehydration,capex,41,12,72.9327,17.5489,1913.59,109.0433018593758,38.308,154.073,4.021953638926595,4,62.6308,incremental; installed; overnight; total-plant,co2-capture,conventional
+steam-turbine_back-pressure,capex,45,14,79.0398,16.8701,1642.24,97.34619237586024,52.0751,91.1312,1.7499956793169866,5,76.4216,equipment; installed; overnight; total-plant,heat-supply,conventional
+direct-heater_fuel-fired,capex,16,4,10.2301,0.880823,75.9212,86.19348041547507,9.4117075,13.813424999999999,1.4676853270248782,3,10.1396,installed,heat-supply,conventional
+process-improvement_automatic-shutoff,capex,3,1,409.903,50.4806,4034.98,79.93130034112114,230.1918,2222.4415,9.654737918553137,0,409.903,equipment; installed,oil-and-gas,alternative
+boiler_fuel-fired,capex,29,16,5.88926,1.07635,53.9045,50.08082872671529,3.06813,11.3321,3.6934875640862677,2,5.23891,equipment; installed; overnight; total-plant,heat-supply,conventional
+boiler_solid-fuel,capex,36,13,33.071,15.2949,716.354,46.83613492079059,26.2485,49.175200000000004,1.8734480065527555,5,31.3472,equipment; installed; overnight; total-plant,heat-supply,conventional
+thermal-storage_electric,capex,10,4,3.5786749999999996,0.653796,23.2453,35.554362522866455,1.87233,7.09044,3.7869606319398823,1,2.24159,equipment; installed; overnight,heat-supply,prospective
+reactor_haber-bosch-loop,capex,3,3,1377.08,54.0702,1887.91,34.91590561899161,715.5751,1632.495,2.281374799095161,0,1377.08,installed; overnight; total-plant,chemicals,component
+steam-reformer_ammonia,capex,7,7,839.365,122.658,3274.38,26.695201291395588,784.0695000000001,1457.4499999999998,1.8588275656686042,1,831.9685,installed; total-plant,chemicals,conventional
+reactor_hydroprocessing,capex,21,4,371.038,61.7686,1593.29,25.794497527870146,197.365,612.882,3.1053226255921764,2,298.743,installed; total-plant,petroleum-refining,conventional
+capture-unit_chemical-solvent,capex,14,9,337.997,32.7221,749.878,22.916560978665796,128.13875000000002,563.55675,4.398019724712469,0,337.997,incremental; installed; overnight; total-plant,co2-capture,conventional
+combustion-turbine_chp,capex,78,21,47.495000000000005,16.4657,301.102,18.286620064740642,34.676625,71.76355000000001,2.069507917797652,7,42.9634,installed; overnight; total-plant,heat-supply,conventional
+direct-heater_electric,capex,13,4,9.23095,3.50327,63.7833,18.206789656520908,8.24565,17.0089,2.0627724921625346,1,8.867695000000001,equipment; installed; total-plant,heat-supply,alternative
+blast-furnace_top-gas-recycling,capex,6,5,743.139,104.244,1702.46,16.331491500709873,333.07875,1404.51,4.2167505432273895,0,743.139,installed; overnight; total-plant,iron-and-steel,prospective
+furnace_electric,capex,4,3,1110.7615,419.682,6644.05,15.83115311116512,628.66275,2803.4125000000004,4.459326562612467,1,698.323,equipment; installed,glass-and-ceramics,alternative
+boiler_electric,capex,27,15,7.27578,1.14925,15.3233,13.333304328910158,4.445315,9.13581,2.0551546965738083,0,7.27578,equipment; installed; overnight; total-plant,heat-supply,alternative
+evaporator_food,capex,9,1,19.0014,7.91151,100.554,12.709836680987575,12.3511,41.9291,3.3947664580482706,1,17.990850000000002,installed,food-and-beverage,reference
+grinding-mill_vertical-roller,capex,5,4,33.5499,10.1388,119.337,11.77032784944964,26.1873,56.5379,2.1589816437738905,1,29.8686,installed,cement-and-lime,alternative
+furnace_oxy-fuel,capex,8,2,384.078,299.281,3332.0,11.13334959452822,354.15,1037.5475000000001,2.9296837498235218,1,379.09,installed,glass-and-ceramics,alternative
+reactor_catalytic-n2o,capex,7,3,1166.01,271.981,2980.95,10.960140598056482,627.9594999999999,1505.6599999999999,2.3977023995974265,1,997.0264999999999,incremental; installed,chemicals,efficient variant
+electrolyzer_low-temperature,capex,38,15,55.809799999999996,15.2699,165.567,10.842703619539094,34.16935,82.89525,2.4260119083330527,1,55.2896,equipment; installed; overnight; total-plant,petroleum-refining,alternative
+reactor_plastics-pyrolysis,capex,6,3,957.634,253.399,2711.75,10.701502373726811,863.16025,2253.6085,2.6108807721393563,0,957.634,installed; total-plant,chemicals,alternative
+coke-oven_by-product,capex,12,5,603.5735,94.9247,1009.2,10.631584824603081,439.236,761.89525,1.7345919961023233,0,603.5735,installed; total-plant,iron-and-steel,conventional
+heat-pump_very-high-temperature,capex,14,5,61.320350000000005,12.2515,126.69,10.34077459902869,59.86385,104.4588,1.744939558681909,0,61.320350000000005,installed; total-plant,heat-supply,alternative
+process-improvement_low-emission-components,capex,4,2,169.2085,37.786,389.768,10.315143174720795,96.6355,264.06575,2.7325956817111723,0,169.2085,equipment; incremental; installed,oil-and-gas,alternative
+mine_open-pit-coal,capex,15,1,127.589,57.2248,561.083,9.804892284464078,106.73400000000001,216.5725,2.029086326756235,1,123.63499999999999,total-plant,mining,conventional
+direct-heater_solid-fuel,capex,6,2,15.9619,9.77745,94.3329,9.648006382032124,11.375875,45.1813,3.9716769039744193,0,15.9619,installed,heat-supply,conventional
+gasifier_biomass-methanation,capex,8,4,102.2722,42.8966,413.163,9.631602504627407,89.101175,197.27100000000002,2.2140112069229168,2,91.82105,installed; overnight; total-plant,biofuels,prospective
+heat-pump_industrial,capex,43,18,43.8625,10.5929,96.3783,9.098386655212453,24.1366,57.05335,2.3637691306977784,0,43.8625,equipment; installed; overnight,heat-supply,alternative
+electrolysis-cell_chlor-alkali-membrane,capex,6,5,2130.135,275.726,2380.79,8.634622777685093,1272.80625,2173.5825,1.7077088519953447,0,2130.135,installed; total-plant,chemicals,conventional
+resistance-heater_hvac,capex,5,2,6.41667,4.60419,39.2581,8.526602942102736,5.31736,8.06469,1.5166718070621512,1,5.867015,installed; total,space-conditioning,conventional
+liquefaction-train_base-load,capex,32,3,1852.845,436.712,3710.97,8.497522394621626,1229.6525000000001,2377.51,1.9334812070889946,0,1852.845,total-plant,oil-and-gas,conventional
+melting-furnace_cupola,capex,3,1,18.4496,12.2998,98.1582,7.980471227174426,15.3747,58.3039,3.792197571334725,0,18.4496,installed,other-industry,conventional
+gasifier_biomass-methanol,capex,4,4,5234.84,1296.53,10270.4,7.921451875390465,3152.345,7591.647499999999,2.408254014075236,0,5234.84,installed; overnight; total-plant,chemicals,prospective
+blast-furnace,capex,11,8,407.08,206.735,1621.39,7.842842286018333,303.6675,512.1185,1.6864448780327168,1,399.8425,installed; overnight; total-plant,iron-and-steel,conventional
+steam-cracker_fired-tubular,capex,26,9,1059.675,475.087,3695.05,7.777628097590547,952.7727500000001,1500.595,1.5749768242217255,4,1033.33,installed; total-plant,chemicals,conventional
+electrolyzer_low-temperature-central,capex,47,16,64.2116,17.9209,135.598,7.566472665993338,47.58595,103.6485,2.1781324109322187,0,64.2116,equipment; installed; overnight; total-plant,hydrogen,alternative
+fuel-cell_chp,capex,17,10,352.56,82.6384,565.915,6.848087571879416,234.881,565.915,2.4093689996210848,0,352.56,equipment; installed; overnight; total-plant,heat-supply,alternative
+reciprocating-engine_chp,capex,18,11,44.8286,21.3076,142.693,6.696812404963487,36.1046,52.615825,1.4573163807381886,1,43.5658,installed; overnight; total-plant,heat-supply,conventional
+capture-unit_physical-solvent,capex,9,4,84.7328,38.819,258.608,6.661892372291919,82.2847,214.799,2.610436691146714,0,84.7328,incremental; installed; total-plant,co2-capture,conventional
+electrolyzer_solid-oxide,capex,10,5,62.44525,25.3522,157.962,6.230701872026885,39.92425,99.666775,2.4963969266799,0,62.44525,equipment; installed; overnight; total-plant,hydrogen,prospective
+capture-unit_amine,capex,73,23,440.263,167.207,1031.71,6.1702560299509,300.84,556.834,1.850930727296902,1,438.6885,incremental; installed; overnight; total-plant,co2-capture,conventional
+reactor_partial-upgrading,capex,5,1,346.005,276.098,1656.59,6.000007243804736,301.499,346.595,1.149572635398459,1,323.752,installed,oil-and-gas,prospective
+gasifier_coal-petroleum-coke,capex,5,3,65.5148,29.8361,178.529,5.98365738149423,38.0134,86.8838,2.285609811277076,1,51.7641,overnight; total-plant,petroleum-refining,conventional
+reactor_isomerization,capex,5,2,153.096,74.3029,438.412,5.900334980195928,86.7185,229.108,2.641973742627006,0,153.096,installed; total-plant,petroleum-refining,conventional
+smelting-vessel_smelting-reduction,capex,22,13,511.482,208.488,1216.04,5.83266183185603,416.561,779.617,1.8715554264561494,0,511.482,installed; overnight; total-plant,iron-and-steel,alternative
+fermenter_syngas,capex,3,2,117.787,78.526,453.038,5.769273871074549,98.1565,285.4125,2.9077289838166607,0,117.787,installed; total-plant,biofuels,prospective
+reactor_methanol-loop,capex,3,3,1140.36,282.019,1612.48,5.717628954077562,711.1895,1376.42,1.9353772798951618,0,1140.36,installed; overnight,chemicals,component
+reactor_alkylation,capex,7,4,410.762,211.241,1195.89,5.66125894120933,342.8755,458.1735,1.3362678289933227,1,390.53200000000004,installed,petroleum-refining,conventional
+grinding-mill_hpgr,capex,4,1,23.01924,7.87499,43.6154,5.538470525041936,9.0865325,38.314925,4.216671761202637,0,23.01924,equipment; total-plant,mining,alternative
+capture-unit_advanced-solvent,capex,4,2,153.9975,87.9983,459.526,5.221987242935375,120.998075,246.87925,2.04035684038775,1,131.998,installed,co2-capture,alternative
+anaerobic-digester_chp,capex,3,2,253.071,54.0248,278.846,5.161444373695044,153.5479,265.9585,1.7320881627166507,0,253.071,installed; total-plant,heat-supply,alternative
+combustion-turbine_simple-cycle,capex,12,7,41.30825,21.7511,111.333,5.118499754035428,28.834475,53.8253,1.8666994977366502,1,39.0176,equipment; installed; overnight; total-plant,power-generation,conventional
+steam-turbine_condensing,capex,13,5,147.524,46.2779,230.327,4.97704087696287,129.253,191.609,1.4824336765877777,0,147.524,installed; overnight; total-plant,power-generation,conventional
+kiln_dry-precalciner,capex,15,10,332.694,178.543,873.218,4.89079941526691,280.00350000000003,445.99199999999996,1.5928086613203045,2,329.095,installed; overnight; total-plant,cement-and-lime,conventional
+reactor_integrated-upgrader,capex,7,2,1999.95,639.983,3030.22,4.734844519307544,1014.5245,2514.935,2.4789297843472484,0,1999.95,installed; total-plant,oil-and-gas,reference
+gasifier_coal-methanation,capex,17,1,76.4814,39.5297,185.618,4.69565921319919,69.6067,85.0747,1.2222199874437374,3,76.05165,total-plant,oil-and-gas,alternative
+reactor_small-nuclear-power,capex,5,2,417.309,186.799,875.62,4.687498327078838,361.923,420.298,1.1612912138769849,2,417.309,overnight,power-generation,prospective
+grinding-mill_sag-ball,capex,4,1,19.788435,7.26923,33.7211,4.638881972368463,7.57211,32.358125,4.273330022939445,0,19.788435,equipment; total-plant,mining,conventional
+reactor_co2-to-ome3-5,capex,6,2,2495.6,917.947,4224.83,4.602477049328556,2028.5974999999999,3311.09,1.6322064874870448,0,2495.6,installed,chemicals,prospective
+caster_continuous,capex,10,6,166.1345,55.2867,249.802,4.518301870070016,139.26025,187.04125,1.3431058037020613,1,174.894,installed; total-plant,iron-and-steel,conventional
+electric-arc-furnace,capex,9,8,234.814,127.62,532.759,4.174572950948127,187.351,305.31,1.6296150007205725,1,217.73899999999998,installed; overnight; total-plant,iron-and-steel,conventional
+reactor_catalytic-reforming,capex,7,3,349.229,182.56,758.725,4.156030893952673,225.404,504.193,2.2368414047665524,0,349.229,installed,petroleum-refining,conventional
+steam-turbine_waste-heat,capex,9,5,143.235,64.3609,264.445,4.108783438391943,135.697,255.975,1.8863718431505485,0,143.235,equipment; installed; total-plant,power-generation,alternative
+steam-reformer_methane,capex,25,10,23.1465,11.4823,46.3839,4.03960008012332,20.338,31.6047,1.5539728586881698,0,23.1465,installed; overnight; total-plant,petroleum-refining,conventional
+hvac-heater_fuel-fired,capex,4,2,3.9454450000000003,2.10176,7.91485,3.7658200746041413,2.8349075,5.5874125,1.9709329140368779,0,3.9454450000000003,installed; total,space-conditioning,conventional
+reactor_fluid-catalytic-cracking,capex,7,3,326.362,139.644,520.92,3.730342871874194,177.6,345.62850000000003,1.9461064189189192,0,326.362,installed,petroleum-refining,conventional
+gasifier_biomass-waste,capex,8,4,43.65045,31.0413,114.52,3.689278477383357,38.777175,48.4032,1.2482394604557965,1,42.5939,installed; total-plant,hydrogen,prospective
+pellet-plant_wood,capex,8,1,231.2265,133.135,477.383,3.5857062380290685,217.0095,281.72249999999997,1.298203534868289,1,231.084,total-plant,other-industry,conventional
+transesterification-unit_alkali-catalyzed,capex,5,4,18.4341,9.02125,31.1178,3.4493889427740054,9.25661,20.1344,2.175137550355908,0,18.4341,installed; overnight; total-plant,biofuels,conventional
+air-separation-unit,capex,6,4,177.901,109.801,376.965,3.43316545386654,133.674,197.522,1.4776396307434503,1,171.234,equipment; installed; total-plant,iron-and-steel,conventional
+liquefaction-train_floating,capex,5,1,1585.89,1057.26,3524.19,3.3333238749219682,1453.73,1705.71,1.1733334250514194,2,1585.89,total-plant,oil-and-gas,alternative
+combined-cycle,capex,21,7,55.0403,34.2672,113.187,3.3030711584255497,46.3168,63.7078,1.3754793077241951,3,52.320049999999995,installed; overnight,power-generation,conventional
+reactor_alcohol-to-jet,capex,6,2,28.38515,12.8029,41.8019,3.2650337033015964,21.848724999999998,34.251675000000006,1.567673857399002,0,28.38515,installed; total-plant,biofuels,prospective
+separator_membrane-bioreactor,capex,5,1,8.29457,3.15194,9.95348,3.157890061359036,5.91679,8.84754,1.4953277030281624,0,8.29457,installed,pulp-and-paper,alternative
+rolling-mill_hot,capex,8,4,402.148,187.351,589.532,3.1466712213972707,221.3585,468.37825,2.1159262011623676,0,402.148,installed; total-plant,iron-and-steel,conventional
+distillation-column,capex,6,1,26.3659,18.1228,56.198,3.1009557022093714,23.483249999999998,35.732075,1.5215983733086351,1,23.5596,installed,chemicals,conventional
+geothermal-well_binary-power,capex,16,4,273.9295,166.909,502.386,3.0099395478973574,238.08100000000002,332.90774999999996,1.3982961681108528,1,259.761,overnight; total-plant,power-generation,alternative
+reactor_polymerization-extrusion,capex,16,5,1712.835,942.887,2827.63,2.998906549777439,1499.22,2125.6974999999998,1.4178689585250996,0,1712.835,installed; total-plant,chemicals,conventional
+heat-pump_hvac,capex,11,4,48.8505,27.4295,81.7944,2.9819865473304286,41.30255,59.26715,1.4349513528825704,0,48.8505,installed; total,space-conditioning,alternative
+rolling-mill_thin-slab,capex,7,6,459.366,260.61,771.171,2.959099804305284,393.206,497.58900000000006,1.2654664476127018,1,453.06399999999996,installed; total-plant,iron-and-steel,alternative
+reactor_methanol-to-olefins,capex,3,3,954.728,611.094,1802.46,2.9495625877524567,782.9110000000001,1378.594,1.7608565980041153,0,954.728,installed; total-plant,chemicals,alternative
+electrolysis-cell_electrorefining,capex,3,2,1970.31,1083.67,3061.7,2.8253065970267697,1526.99,2516.005,1.6476892448542557,0,1970.31,installed; total-plant,non-ferrous-metals,conventional
+basic-oxygen-furnace,capex,7,6,212.191,99.9207,275.647,2.7586576154890827,164.2205,258.64099999999996,1.57496171306262,0,212.191,installed; overnight; total-plant,iron-and-steel,conventional
+distillation-column_atmospheric-vacuum,capex,7,3,73.5305,55.7214,151.708,2.7226164453872297,64.25495000000001,113.46345,1.7658320487371009,0,73.5305,installed; total-plant,petroleum-refining,conventional
+distillation-column_heat-integrated,capex,6,1,25.494950000000003,14.3594,38.9859,2.71500898366227,21.006275000000002,30.337625,1.4442172636509802,0,25.494950000000003,installed,chemicals,alternative
+reactor_delayed-coking,capex,3,2,985.249,639.946,1707.13,2.6676157050751157,812.5975000000001,1346.1895,1.6566498174065263,0,985.249,installed,petroleum-refining,conventional
+reactor_haber-bosch-electrolytic,capex,3,3,2569.23,1516.36,4036.74,2.6621250890289905,2042.795,3302.9849999999997,1.616894989462966,0,2569.23,installed; total-plant,chemicals,prospective
+rolling-mill_cold,capex,3,3,282.321,206.735,547.066,2.6462185890149224,244.52800000000002,414.69350000000003,1.6958937217823726,0,282.321,installed; total-plant,iron-and-steel,conventional
+incinerator_waste-to-energy,capex,13,1,1133.98,670.343,1742.51,2.5994304408340208,882.844,1354.21,1.5339176570266093,0,1133.98,total-plant,waste-treatment,reference
+electric-arc-furnace_reduced-iron-charge,capex,4,4,355.33000000000004,187.351,484.067,2.583743881804741,308.6575,392.192,1.270638166900205,0,355.33000000000004,equipment; installed; total-plant,iron-and-steel,alternative
+separator_biogas-upgrading,capex,3,2,10.4626,7.17258,17.3906,2.4245947762172047,8.81759,13.9266,1.5794111542949947,0,10.4626,installed; overnight,biofuels,component
+furnace_regenerative,capex,3,2,359.138,299.281,699.471,2.33717142083861,329.2095,529.3045,1.6078044527876625,0,359.138,installed,glass-and-ceramics,conventional
+shaft-furnace_direct-reduction,capex,10,7,362.408,275.647,624.504,2.2655933131867934,329.83349999999996,489.27525,1.4834007158157072,0,362.408,installed; overnight; total-plant,iron-and-steel,conventional
+sinter-plant,capex,6,5,113.1815,68.9117,152.655,2.2152261517275007,102.845725,135.099,1.3136083196457606,0,113.1815,installed; total-plant,iron-and-steel,conventional
+gasifier_black-liquor,capex,4,2,1322.661,901.033,1994.16,2.2131930794987533,969.28975,1738.5,1.7935813310725714,0,1322.661,installed,pulp-and-paper,alternative
+solar-concentrator_point-focus,capex,11,2,96.6684,56.2171,123.124,2.1901521067433216,70.41065,101.93,1.447650319944497,0,96.6684,installed,heat-supply,prospective
+pulper_recycled-fibre,capex,7,5,1202.1,922.433,2008.62,2.17752400445344,1103.795,1495.4699999999998,1.3548439701212631,0,1202.1,installed; total-plant,pulp-and-paper,conventional
+electrolysis-cell_prebaked-anode,capex,4,4,10701.349999999999,5512.94,11488.8,2.0839697148889704,8961.335,11341.125,1.2655619949482975,0,10701.349999999999,installed; total-plant,non-ferrous-metals,conventional
+capture-unit_dac-solid-sorbent,capex,3,3,2211.43,1434.48,2933.25,2.0448176342646813,1822.955,2572.34,1.4110825555211184,0,2211.43,installed; total-plant,co2-capture,prospective
+chiller_hvac,capex,3,1,14.2087,7.93246,15.7003,1.97924729529049,11.07058,14.9545,1.3508325670380414,0,14.2087,total,space-conditioning,conventional
+shaft-furnace_electrolytic-hydrogen,capex,4,4,1773.825,1127.93,2203.09,1.9532151817931964,1525.625,1967.8675,1.2898762802130275,0,1773.825,installed; total-plant,iron-and-steel,reference
+motor_induction-standard,capex,4,2,5.16769,4.29108,8.32894,1.9409892148363581,4.8751125,6.0314275,1.23718734695866,1,5.06979,equipment; installed,machine-drive,conventional
+transesterification-unit_acid-catalyzed,capex,3,2,17.4847,11.3066,21.9152,1.9382661454371783,14.39565,19.69995,1.3684654739452544,0,17.4847,total-plant,biofuels,alternative
+reactor_co2-to-higher-alcohols,capex,3,1,1449.56,1342.3,2553.22,1.9021232213365118,1395.9299999999998,2001.3899999999999,1.4337323504760269,0,1449.56,installed,chemicals,prospective
+capture-unit_dac-liquid-solvent,capex,6,3,1364.13,1117.36,2102.61,1.8817659483067233,1210.385,1564.87,1.29286962412786,1,1273.31,installed; total-plant,co2-capture,prospective
+geothermal-well_direct-use,capex,7,4,116.892,87.5819,163.639,1.8684111671475498,92.08609999999999,131.0165,1.4227608727050014,0,116.892,installed; overnight; total-plant,heat-supply,prospective
+mobile-equipment_diesel,capex,11,1,55.3324,38.041,70.0655,1.8418416971162694,47.3784,63.9781,1.3503643010316937,0,55.3324,equipment,mobile-equipment,conventional
+turboexpander_pressure-let-down,capex,3,2,139.22,76.3518,139.222,1.8234278694149977,107.7859,139.221,1.2916438977639932,0,139.22,equipment; installed,power-generation,efficient variant
+liquefaction-train_hydrogen,capex,3,1,92.5014,70.1032,127.629,1.8205873626310924,81.3023,110.0652,1.3537771994150227,0,92.5014,installed,hydrogen,alternative
+digester_continuous-kraft,capex,3,3,493.787,436.12,791.849,1.8156677061359259,464.95349999999996,642.818,1.382542555330802,0,493.787,equipment; installed,pulp-and-paper,conventional
+kiln_oxy-fuel,capex,6,5,556.5375,457.755,824.167,1.8004543915413267,515.53925,623.4024999999999,1.209224127939822,1,540.464,installed; overnight; total-plant,cement-and-lime,prospective
+electrolysis-cell_iron-electrowinning,capex,3,3,1486.29,965.674,1721.87,1.7830758620403986,1225.982,1604.08,1.3084042016930102,0,1486.29,installed; total-plant,iron-and-steel,prospective
+geothermal-well_flash-power,capex,11,2,236.402,175.227,310.691,1.7730772084210764,214.164,270.09299999999996,1.261150333389365,0,236.402,overnight; total-plant,power-generation,alternative
+gas-treatment-unit_sulphur-recovery,capex,3,1,3366.67,2480.7,4252.65,1.714294352400532,2923.685,3809.66,1.3030336715480635,0,3366.67,installed,petroleum-refining,conventional
+reactor_hydrotreating-lipids,capex,3,2,46.4948,34.2929,58.2472,1.6985206850397603,40.39385,52.370999999999995,1.2965092458381657,0,46.4948,installed; overnight,biofuels,conventional
+steam-cracker_electric,capex,4,1,1163.0605,870.46,1396.74,1.6045998667371275,922.11325,1389.2775,1.5066235085549415,0,1163.0605,installed,chemicals,prospective
+reactor_propane-dehydrogenation,capex,4,1,1289.0749999999998,1026.83,1628.77,1.5862119338157241,1044.2749999999999,1553.2375,1.487383591486917,0,1289.0749999999998,installed; total-plant,chemicals,alternative
+direct-heater_fuel-fired_efficiency-moderate,capex,5,1,10.7533,8.96725,14.174,1.580640664640776,9.29334,13.0018,1.3990449074283302,0,10.7533,installed,heat-supply,efficient variant
+electrolysis-cell_molten-oxide,capex,3,3,1777.39,1386.67,1857.86,1.3397996639431153,1582.0300000000002,1817.625,1.148919426306707,0,1777.39,installed; total-plant,iron-and-steel,prospective
+reactor_torrefaction,capex,4,1,563.207,532.539,704.663,1.3232138866824779,546.8032499999999,607.3077499999999,1.1106513174528498,1,551.558,total-plant,other-industry,prospective
+steam-reformer_methanol,capex,3,3,762.652,641.31,814.793,1.2705134802201745,701.981,788.7225000000001,1.1235667347121931,0,762.652,installed; total-plant,chemicals,conventional
+anaerobic-digester,capex,7,2,56.2429,47.7126,60.3361,1.2645737184726886,56.108000000000004,58.551,1.043541028017395,1,56.803200000000004,installed; overnight,biofuels,component
+dryer_electric,capex,3,1,64.8858,59.7632,75.5103,1.2634915801028057,62.3245,70.19805,1.1263315389614035,0,64.8858,installed,glass-and-ceramics,alternative
+electrolysis-cell_zinc-electrowinning,capex,3,1,2774.9,2634.74,2935.31,1.1140795676233708,2704.8199999999997,2855.105,1.0555619227896866,0,2774.9,total-plant,non-ferrous-metals,conventional
+solar-concentrator_line-focus,capex,4,1,36.293549999999996,34.6018,37.9856,1.0977926003849512,34.602175,37.985,1.0977633631411898,0,36.293549999999996,installed,heat-supply,alternative
+calciner_clay-flash,capex,3,2,151.636,146.779,160.54,1.0937531935767377,149.20749999999998,156.088,1.0461136336980381,0,151.636,installed,cement-and-lime,conventional
+well_sagd,capex,4,2,823.206,812.294,834.118,1.026867119540462,812.294,834.118,1.026867119540462,0,823.206,installed,oil-and-gas,conventional
+compressor_co2-dehydration,cost-levelized,17,5,28.3697,9.86773,169.361,17.163116542507748,22.3218,45.8145,2.0524554471413596,1,26.329250000000002,,co2-capture,conventional
+reactor_alcohol-to-jet,cost-levelized,10,2,57.0794,7.04374,101.928,14.470721520101538,38.73245,75.42635,1.9473684210526316,0,57.0794,,biofuels,prospective
+thermal-storage_electric,cost-levelized,12,4,20.372700000000002,6.01362,55.0058,9.146869938572772,11.342005,29.997124999999997,2.6447815002726585,0,20.372700000000002,,heat-supply,prospective
+capture-unit_dac-solid-sorbent,cost-levelized,4,2,502.067,261.35,1957.89,7.491448249473885,392.516,915.3945,2.332120219303162,1,436.238,,co2-capture,prospective
+electrolyzer_low-temperature,cost-levelized,4,2,31.2802,12.464,62.3199,4.999991976893453,15.7358,49.880475000000004,3.1698722022394796,0,31.2802,,petroleum-refining,alternative
+well_co2-storage,cost-levelized,7,2,11.1471,5.57357,26.01,4.666667862788123,8.36036,18.7755,2.24577649766278,0,11.1471,,co2-capture,conventional
+capture-unit_dac-liquid-solvent,cost-levelized,7,3,425.66,231.177,1023.24,4.426218871254494,310.0715,544.3154999999999,1.7554515652035092,1,368.783,,co2-capture,prospective
+gasifier_biomass-fischer-tropsch,cost-levelized,6,1,83.5806,36.6939,154.93,4.222227672719444,72.368525,122.31280000000001,1.6901380814380285,0,83.5806,,biofuels,prospective
+liquefaction-train_base-load,cost-levelized,3,2,132.669,118.064,451.259,3.822155779915978,125.3665,291.964,2.32888371295362,0,132.669,,oil-and-gas,conventional
+solar-concentrator_point-focus,cost-levelized,16,1,53.19435,25.6279,87.2861,3.4059013809168914,44.04495,62.887550000000005,1.4278038685479266,0,53.19435,,heat-supply,prospective
+reactor_haber-bosch-electrolytic,cost-levelized,3,2,1068.3,437.611,1443.07,3.297609063757538,752.9555,1255.685,1.6676749157154704,0,1068.3,,chemicals,prospective
+steam-cracker_fired-tubular,cost-levelized,3,3,1626.6,727.941,2204.01,3.027731643086459,1177.2705,1915.305,1.626903077924742,0,1626.6,,chemicals,conventional
+boiler_electric,cost-levelized,3,3,27.3675,13.909,41.8048,3.005593500611115,20.63825,34.58615,1.6758276501156835,0,27.3675,,heat-supply,alternative
+capture-unit_advanced-solvent,cost-levelized,3,2,82.5634,45.8035,119.734,2.6140797100658246,64.18345,101.14869999999999,1.5759311785203196,0,82.5634,,co2-capture,alternative
+capture-unit_amine,cost-levelized,13,5,131.118,80.8802,187.827,2.3222865423181447,110.483,134.591,1.2182055157807083,2,116.122,,co2-capture,conventional
+capture-unit_chemical-solvent,cost-levelized,3,2,105.549,100.968,233.345,2.3110787576261784,103.2585,169.447,1.6409980776400974,0,105.549,,co2-capture,conventional
+reactor_ethanol-to-ethylene,cost-levelized,8,2,3623.01,2422.13,5230.98,2.159661124712546,3119.7975,4101.33,1.314614169669666,0,3623.01,,chemicals,alternative
+reactor_chemical-depolymerization,cost-levelized,4,2,2617.04,1642.06,3541.05,2.1564680949538997,1757.5225,3463.815,1.97085101328717,0,2617.04,,chemicals,reference
+kiln_oxy-fuel,cost-levelized,5,4,197.271,112.174,229.73,2.047979032574393,192.079,229.697,1.1958465006585832,1,213.48399999999998,,cement-and-lime,prospective
+steam-reformer_methane,cost-levelized,4,4,21.49765,17.2153,34.0614,1.9785539607209865,18.15715,26.9085,1.4819781738874216,0,21.49765,,petroleum-refining,conventional
+kiln_dry-precalciner,cost-levelized,8,6,136.6945,90.1741,162.139,1.7980661853015447,125.84100000000001,158.00875,1.2556221740132387,0,136.6945,,cement-and-lime,conventional
+transesterification-unit_alkali-catalyzed,cost-levelized,4,3,44.81765,33.9931,55.9511,1.6459546202023352,35.043099999999995,54.669425,1.5600624659348061,0,44.81765,,biofuels,conventional
+reactor_haber-bosch-loop,cost-levelized,8,1,890.144,800.87,1230.77,1.5367912395270142,842.4735000000001,993.72,1.1795267150836197,1,877.143,,chemicals,component
+gasifier_biomass-waste,cost-levelized,3,3,32.977,28.7895,41.6629,1.4471560812101634,30.883249999999997,37.31995,1.2084204220734542,0,32.977,,hydrogen,prospective
+transesterification-unit_acid-catalyzed,cost-levelized,3,2,40.7608,31.1168,44.4317,1.4279006838749484,35.9388,42.59625,1.1852440816053957,0,40.7608,,biofuels,alternative
+electrolyzer_low-temperature-central,cost-levelized,8,2,26.10845,22.1968,31.1238,1.4021750883010164,25.200875,26.9271,1.0684986136394072,2,26.10845,,hydrogen,alternative
+reactor_hydrotreating-lipids,cost-levelized,3,2,39.0528,32.6168,40.771,1.25,35.8348,39.9119,1.113774878051503,0,39.0528,,biofuels,conventional
+management-system_leak-detection,lifetime,9,4,5.0,1.0,25.0,25.0,1.0,10.0,10.0,1,3.5,,oil-and-gas,conventional
+compressor_blowdown-recovery,lifetime,6,3,10.0,1.0,15.0,15.0,6.25,13.75,2.2,0,10.0,,oil-and-gas,alternative
+lighting_fluorescent-t8,lifetime,7,3,2.28311,1.71233,16.4548,9.609596281090678,2.16895,8.272215,3.813926093270937,0,2.28311,,lighting,alternative
+fuel-cell_chp,lifetime,13,5,7.5,3.3,30.0,9.090909090909092,5.0,10.0,2.0,3,6.924659999999999,,heat-supply,alternative
+electrolyzer_low-temperature-central,lifetime,15,9,25.0,5.82425,40.0,6.867837060565738,9.027585,30.0,3.323147885065607,0,25.0,,hydrogen,alternative
+electrolyzer_low-temperature,lifetime,26,13,11.9344,4.56621,30.0,6.5700000657,7.924805,20.0,2.523721403870505,0,11.9344,,petroleum-refining,alternative
+lighting_hid,lifetime,8,3,4.030825,1.14155,6.84932,6.0000175200385435,2.2374475,6.539175,2.922604887935918,0,4.030825,,lighting,conventional
+combustion-turbine_chp,lifetime,14,12,25.0,10.0,50.0,5.0,20.0,25.0,1.25,3,25.0,,heat-supply,conventional
+compressor_low-emission-seal,lifetime,8,5,4.7,3.0,15.0,5.0,3.675,10.0,2.7210884353741496,0,4.7,,oil-and-gas,alternative
+motor_induction-standard,lifetime,10,2,7.78085,5.3792,25.0,4.647531231409875,6.768925,11.30575,1.6702430592745523,1,7.6923,,machine-drive,conventional
+lighting_led-high-bay,lifetime,3,2,16.5909,5.70776,24.7625,4.33839194359959,11.14933,20.6767,1.8545239938184626,0,16.5909,,lighting,alternative
+gasifier_biomass-waste,lifetime,5,4,40.0,10.0,40.0,4.0,12.0,40.0,3.3333333333333335,0,40.0,,hydrogen,prospective
+oven_fuel-fired_efficiency-moderate,lifetime,4,2,15.0,5.0,20.0,4.0,8.75,20.0,2.2857142857142856,0,15.0,,food-and-beverage,efficient variant
+pneumatic-device_non-emitting,lifetime,11,7,10.0,5.0,20.0,4.0,8.5,15.0,1.7647058823529411,0,10.0,,oil-and-gas,efficient variant
+electrolysis-cell_prebaked-anode,lifetime,3,3,20.0,6.5,25.0,3.8461538461538463,13.25,22.5,1.6981132075471699,0,20.0,,non-ferrous-metals,conventional
+reciprocating-engine_chp,lifetime,6,5,20.0,7.0,25.0,3.5714285714285716,16.25,20.0,1.2307692307692308,1,20.0,,heat-supply,conventional
+steam-cracker_fired-tubular,lifetime,7,7,25.0,15.0,50.0,3.3333333333333335,25.0,27.5,1.1,2,25.0,,chemicals,conventional
+steam-turbine_back-pressure,lifetime,12,10,25.0,15.0,50.0,3.3333333333333335,20.0,27.5,1.375,2,25.0,,heat-supply,conventional
+flare_enclosed-combustor,lifetime,6,5,10.0,5.0,15.0,3.0,7.0,10.0,1.4285714285714286,1,10.0,,oil-and-gas,alternative
+compressor_vapour-recovery,lifetime,5,4,15.0,7.0,20.0,2.857142857142857,10.0,15.0,1.5,0,15.0,,oil-and-gas,efficient variant
+lighting_fluorescent-high-bay,lifetime,3,2,5.94301,2.28311,6.19063,2.7114900289517365,4.11306,6.06682,1.47501373673129,0,5.94301,,lighting,alternative
+lighting_led,lifetime,4,3,10.13418,5.70776,15.4343,2.704090571432576,5.70776,14.779025,2.5892863400002804,0,10.13418,,lighting,alternative
+blast-furnace,lifetime,5,4,25.0,20.0,50.0,2.5,20.0,30.0,1.5,1,22.5,,iron-and-steel,conventional
+electric-arc-furnace_reduced-iron-charge,lifetime,3,3,20.0,20.0,50.0,2.5,20.0,35.0,1.75,0,20.0,,iron-and-steel,alternative
+shaft-furnace_electrolytic-hydrogen,lifetime,5,5,25.0,20.0,50.0,2.5,20.0,25.0,1.25,1,22.5,,iron-and-steel,reference
+kiln_dry-precalciner,lifetime,9,9,25.0,25.0,60.0,2.4,25.0,35.0,1.4,1,25.0,,cement-and-lime,conventional
+boiler_fuel-fired,lifetime,17,13,25.0,15.0,35.0,2.3333333333333335,20.0,25.0,1.25,2,25.0,,heat-supply,conventional
+boiler_solid-fuel,lifetime,10,10,22.5,15.0,35.0,2.3333333333333335,16.25,25.0,1.5384615384615385,0,22.5,,heat-supply,conventional
+anaerobic-digester_chp,lifetime,4,3,17.5,12.0,25.0,2.0833333333333335,14.25,21.25,1.4912280701754386,0,17.5,,heat-supply,alternative
+heat-pump_industrial,lifetime,13,11,20.0,12.0,25.0,2.0833333333333335,20.0,25.0,1.25,1,20.0,,heat-supply,alternative
+boiler_electric,lifetime,12,11,20.0,12.5,25.0,2.0,15.0,20.0,1.3333333333333333,0,20.0,,heat-supply,alternative
+combined-cycle,lifetime,3,3,25.0,20.0,40.0,2.0,22.5,32.5,1.4444444444444444,0,25.0,,power-generation,conventional
+combustion-turbine_simple-cycle,lifetime,5,5,25.0,20.0,40.0,2.0,20.0,30.0,1.5,0,25.0,,power-generation,conventional
+direct-heater_fuel-fired,lifetime,4,3,22.5,15.0,30.0,2.0,18.75,26.25,1.4,0,22.5,,heat-supply,conventional
+dryer_steam-heated_efficiency-moderate,lifetime,3,2,20.0,10.0,20.0,2.0,15.0,20.0,1.3333333333333333,0,20.0,,pulp-and-paper,efficient variant
+electrolyzer_solid-oxide,lifetime,4,4,40.0,20.0,40.0,2.0,35.0,40.0,1.1428571428571428,1,40.0,,hydrogen,prospective
+fermenter_lignocellulosic-enzymatic,lifetime,4,4,25.0,15.0,30.0,2.0,22.5,26.25,1.1666666666666667,1,25.0,,biofuels,alternative
+gasifier_coal-petroleum-coke,lifetime,3,3,30.0,20.0,40.0,2.0,25.0,35.0,1.4,0,30.0,,petroleum-refining,conventional
+pump_plunger-lift,lifetime,3,3,10.0,5.0,10.0,2.0,7.5,10.0,1.3333333333333333,0,10.0,,oil-and-gas,efficient variant
+reactor_chemical-depolymerization,lifetime,3,3,30.0,15.0,30.0,2.0,22.5,30.0,1.3333333333333333,0,30.0,,chemicals,reference
+smelting-vessel_smelting-reduction,lifetime,4,4,25.0,20.0,40.0,2.0,20.0,32.5,1.625,0,25.0,,iron-and-steel,alternative
+steam-reformer_methane,lifetime,10,7,27.5,20.0,40.0,2.0,20.0,40.0,2.0,0,27.5,,petroleum-refining,conventional
+kiln_tunnel-roller,lifetime,5,4,25.0,20.0,35.0,1.75,25.0,30.0,1.2,0,25.0,,glass-and-ceramics,conventional
+fermenter_grain-dry-mill,lifetime,3,3,25.0,15.0,25.0,1.6666666666666667,20.0,25.0,1.25,0,25.0,,biofuels,conventional
+gasifier_biomass-fischer-tropsch,lifetime,3,3,20.0,15.0,25.0,1.6666666666666667,17.5,22.5,1.2857142857142858,0,20.0,,biofuels,prospective
+gasifier_biomass-methanol,lifetime,3,3,15.0,15.0,25.0,1.6666666666666667,15.0,20.0,1.3333333333333333,0,15.0,,chemicals,prospective
+heat-pump_very-high-temperature,lifetime,3,3,20.0,12.0,20.0,1.6666666666666667,16.0,20.0,1.25,0,20.0,,heat-supply,alternative
+reactor_methanol-to-olefins,lifetime,3,3,25.0,15.0,25.0,1.6666666666666667,20.0,25.0,1.25,0,25.0,,chemicals,alternative
+reactor_plastics-pyrolysis,lifetime,4,4,17.5,15.0,25.0,1.6666666666666667,15.0,21.25,1.4166666666666667,0,17.5,,chemicals,alternative
+resistance-heater_hvac,lifetime,3,2,25.0,18.0,30.0,1.6666666666666667,21.5,27.5,1.2790697674418605,0,25.0,,space-conditioning,conventional
+separator_biogas-upgrading,lifetime,3,2,15.0,12.0,20.0,1.6666666666666667,13.5,17.5,1.2962962962962963,0,15.0,,biofuels,component
+electric-arc-furnace_scrap-preheating,lifetime,3,2,25.0,25.0,40.0,1.6,25.0,32.5,1.3,0,25.0,,iron-and-steel,efficient variant
+steam-reformer_methane_ccs-concentrated,lifetime,4,4,35.0,25.0,40.0,1.6,28.75,40.0,1.391304347826087,0,35.0,,petroleum-refining,alternative
+steam-turbine_condensing,lifetime,3,3,25.0,25.0,40.0,1.6,25.0,32.5,1.3,0,25.0,,power-generation,conventional
+basic-oxygen-furnace,lifetime,3,3,20.0,20.0,30.0,1.5,20.0,25.0,1.25,0,20.0,,iron-and-steel,conventional
+electric-arc-furnace,lifetime,4,4,22.5,20.0,30.0,1.5,20.0,26.25,1.3125,0,22.5,,iron-and-steel,conventional
+shaft-furnace_direct-reduction,lifetime,3,3,20.0,20.0,30.0,1.5,20.0,25.0,1.25,0,20.0,,iron-and-steel,conventional
+thermal-storage_electric,lifetime,5,5,25.0,20.0,30.0,1.5,20.0,25.0,1.25,0,25.0,,heat-supply,prospective
+well_co2-storage,lifetime,3,3,20.0,20.0,30.0,1.5,20.0,25.0,1.25,0,20.0,,co2-capture,conventional
+heat-pump_hvac,lifetime,8,6,20.0,15.0,22.0,1.4666666666666666,19.5,20.25,1.0384615384615385,3,20.0,,space-conditioning,alternative
+autothermal-reformer_hydrogen_ccs-concentrated,lifetime,3,3,40.0,30.0,40.0,1.3333333333333333,35.0,40.0,1.1428571428571428,0,40.0,,hydrogen,prospective
+compressor_co2-dehydration,lifetime,4,3,20.0,15.0,20.0,1.3333333333333333,18.75,20.0,1.0666666666666667,1,20.0,,co2-capture,conventional
+direct-heater_electric,lifetime,3,3,20.0,15.0,20.0,1.3333333333333333,17.5,20.0,1.1428571428571428,0,20.0,,heat-supply,alternative
+gasifier_coal-petroleum-coke_ccs-concentrated,lifetime,4,4,35.0,30.0,40.0,1.3333333333333333,30.0,40.0,1.3333333333333333,0,35.0,,hydrogen,prospective
+geothermal-well_binary-power,lifetime,3,3,30.0,30.0,40.0,1.3333333333333333,30.0,35.0,1.1666666666666667,0,30.0,,power-generation,alternative
+geothermal-well_direct-use,lifetime,3,3,25.0,20.0,25.0,1.25,22.5,25.0,1.1111111111111112,0,25.0,,heat-supply,prospective
+capture-unit_amine,lifetime,7,7,25.0,25.0,30.0,1.2,25.0,25.0,1.0,1,25.0,,co2-capture,conventional
+capture-unit_dac-liquid-solvent,lifetime,3,3,25.0,25.0,30.0,1.2,25.0,27.5,1.1,0,25.0,,co2-capture,prospective
+solar-concentrator_point-focus,lifetime,4,3,30.0,25.0,30.0,1.2,28.75,30.0,1.0434782608695652,1,30.0,,heat-supply,prospective
+capture-unit_chemical-solvent,lifetime,3,3,25.0,25.0,25.0,1.0,25.0,25.0,1.0,0,25.0,,co2-capture,conventional
+reactor_haber-bosch-loop,lifetime,3,3,30.0,30.0,30.0,1.0,30.0,30.0,1.0,0,30.0,,chemicals,component
+management-system_leak-detection,opex-fixed,68,10,770.2455,3.23722,5013.39,1548.6713908847714,206.2345,1862.9750000000001,9.03328492565502,1,757.534,annual; incremental; installed,oil-and-gas,conventional
+compressor_vapour-recovery,opex-fixed,25,7,84.451,4.78858,6035.24,1260.3402261213137,36.5985,575.4,15.721955817861387,4,76.4144,incremental; installed,oil-and-gas,efficient variant
+flare_enclosed-combustor,opex-fixed,15,5,918.812,9.8645,11098.2,1125.0646256779362,208.21949999999998,2263.755,10.871964441370766,2,843.609,incremental; installed,oil-and-gas,alternative
+compressor_blowdown-recovery,opex-fixed,7,3,302.503,5.31744,4892.9,920.1608292712282,238.96550000000002,508.5275,2.1280373108252024,1,271.017,incremental,oil-and-gas,alternative
+direct-heater_fuel-fired,opex-fixed,6,3,0.35817750000000004,0.01066,1.51842,142.4409005628518,0.24832425000000002,0.41125875,1.6561360801452132,1,0.356331,,heat-supply,conventional
+compressor_low-emission-seal,opex-fixed,4,2,1264.4009999999998,37.0703,3814.18,102.89045408318788,756.4565749999999,2102.9575,2.780010868436169,0,1264.4009999999998,installed,oil-and-gas,alternative
+combustion-turbine_chp,opex-fixed,22,10,1.72676,0.0967995,6.60786,68.26336912897277,1.486545,3.3132574999999997,2.2288309469272707,1,1.60582,installed; not-applicable; total-plant,heat-supply,conventional
+coke-oven_by-product,opex-fixed,3,2,44.6927,1.12131,52.5071,46.826568923848,22.907005,48.599900000000005,2.1216173829795735,0,44.6927,installed,iron-and-steel,conventional
+fuel-cell_chp,opex-fixed,7,6,5.69978,0.408923,18.9426,46.32314641142709,3.744535,12.757445,3.406950395710015,0,5.69978,equipment; installed; not-applicable; total-plant,heat-supply,alternative
+heat-pump_industrial,opex-fixed,21,8,0.45924,0.102463,4.08704,39.88795955613246,0.124817,0.68886,5.518959757084372,3,0.2932585,equipment; installed; total-plant,heat-supply,alternative
+steam-cracker_fired-tubular,opex-fixed,14,5,31.32585,9.49191,366.657,38.62836878984314,26.73915,106.80695,3.9944033374284524,1,30.746,total-plant,chemicals,conventional
+steam-turbine_back-pressure,opex-fixed,22,7,3.51952,0.682686,24.4798,35.85806651960052,2.3870275,3.6797725,1.5415710543762065,3,3.24701,not-applicable; total-plant,heat-supply,conventional
+reciprocating-engine_chp,opex-fixed,9,7,1.68743,0.536422,15.4971,28.889754708047025,0.720366,5.18687,7.200325945422189,1,1.6347,installed; not-applicable; total-plant,heat-supply,conventional
+boiler_fuel-fired,opex-fixed,16,8,0.12253549999999999,0.0446744,1.07201,23.996069337249068,0.09958785,0.24122875,2.4222708894709544,1,0.120322,installed; total-plant,heat-supply,conventional
+evaporator_food,opex-fixed,9,1,0.373831,0.0869791,1.91884,22.060931879037607,0.135867,0.749609,5.517226405234531,1,0.297931,,food-and-beverage,reference
+electrolyzer_low-temperature-central,opex-fixed,14,8,3.265945,0.558056,11.4297,20.481277864587067,2.264375,4.470555,1.9742997515870828,2,2.7331250000000002,total-plant,hydrogen,alternative
+capture-unit_amine,opex-fixed,13,7,13.9131,6.86008,130.151,18.972227729122693,11.1982,33.3784,2.980693325713061,2,12.5927,installed; total-plant,co2-capture,conventional
+steam-reformer_ammonia,opex-fixed,3,3,97.6686,11.1915,203.698,18.20113478979583,54.43005,150.6833,2.7683843759099984,0,97.6686,,chemicals,conventional
+boiler_solid-fuel,opex-fixed,21,8,1.86799,0.446072,7.23309,16.215072903029107,1.00126,2.21349,2.210704512314484,3,1.287755,installed; total-plant,heat-supply,conventional
+reactor_polymerization-extrusion,opex-fixed,13,3,104.099,39.1704,626.448,15.992892592365664,88.3816,111.915,1.2662703549155028,3,106.608,total-plant,chemicals,conventional
+capture-unit_chemical-solvent,opex-fixed,5,3,9.54683,6.15654,98.2807,15.963625672861705,7.72085,9.66225,1.2514489984910988,1,8.63384,total-plant,co2-capture,conventional
+furnace_oxy-fuel,opex-fixed,7,1,11.3727,8.97844,133.08,14.82217400795684,9.028324999999999,26.9852,2.988948669880626,1,10.2055,,glass-and-ceramics,alternative
+boiler_electric,opex-fixed,18,10,0.0869116,0.0268041,0.384368,14.33989576221548,0.0633092,0.1495175,2.3617025645561784,2,0.07845795,total-plant,heat-supply,alternative
+reactor_haber-bosch-electrolytic,opex-fixed,3,3,127.089,45.4908,590.725,12.985592691269444,86.2899,358.90700000000004,4.159316443755295,0,127.089,,chemicals,prospective
+furnace_electric,opex-fixed,3,2,27.9788,20.9497,265.363,12.66667303111739,24.46425,146.67090000000002,5.995315613599437,0,27.9788,,glass-and-ceramics,alternative
+anaerobic-digester_chp,opex-fixed,3,2,4.87306,1.64496,18.5898,11.3010650714911,3.25901,11.73143,3.59969131730188,0,4.87306,not-applicable,heat-supply,alternative
+compressor_co2-dehydration,opex-fixed,5,2,4.77365,0.98467,10.4349,10.597357490326708,2.77827,6.86802,2.472049152890108,0,4.77365,total-plant,co2-capture,conventional
+gasifier_biomass-waste,opex-fixed,5,3,2.67245,0.703579,6.87121,9.766081705110585,2.64533,2.86531,1.0831578668823927,2,2.67245,total-plant,hydrogen,prospective
+resistance-heater_hvac,opex-fixed,3,1,0.0781981,0.0168183,0.156396,9.29915627619914,0.0475082,0.11729705000000001,2.468985354107291,0,0.0781981,installed,space-conditioning,conventional
+combined-cycle,opex-fixed,12,4,1.55043,0.446417,4.02192,9.009334321945625,1.38698,1.674185,1.2070722000317236,3,1.50373,installed,power-generation,conventional
+basic-oxygen-furnace,opex-fixed,3,3,11.0259,4.22984,27.8178,6.576560815539121,7.62787,19.42185,2.5461695073460873,0,11.0259,installed,iron-and-steel,conventional
+furnace_regenerative,opex-fixed,3,2,9.01835,8.97844,55.9577,6.232452408213454,8.998395,32.488025,3.610424414576155,0,9.01835,,glass-and-ceramics,conventional
+blast-furnace,opex-fixed,4,4,14.944005,4.88826,27.887,5.704892947592804,7.4241225,23.1857,3.1230222831048384,0,14.944005,installed; overnight,iron-and-steel,conventional
+electrolyzer_low-temperature,opex-fixed,8,5,2.964845,1.5114,8.42242,5.572594945084028,2.2923025,4.396325,1.9178642434844442,1,2.76448,installed; total-plant,petroleum-refining,alternative
+electrolyzer_solid-oxide,opex-fixed,6,4,3.64516,1.98543,11.0573,5.569221780672197,2.86015,6.360647500000001,2.223885985000787,0,3.64516,total-plant,hydrogen,prospective
+kiln_dry-precalciner,opex-fixed,8,6,40.02255,13.9894,73.7733,5.273514232204384,29.021974999999998,48.653400000000005,1.6764331166297266,0,40.02255,installed; total-plant,cement-and-lime,conventional
+process-improvement_low-emission-components,opex-fixed,3,1,18.893,7.55721,37.786,4.999993383801694,13.225105000000001,28.3395,2.1428563327096457,0,18.893,,oil-and-gas,alternative
+combustion-turbine_simple-cycle,opex-fixed,7,4,1.11145,0.516141,2.33785,4.529479347697626,0.7980645000000001,1.2328700000000001,1.5448250110110149,1,1.072305,not-applicable; total-plant,power-generation,conventional
+reactor_hydroprocessing_electric-heating,opex-fixed,3,1,2.57162,2.57162,11.418,4.440002799791571,2.57162,6.994809999999999,2.7200013998957853,0,2.57162,,petroleum-refining,reference
+gasifier_coal-petroleum-coke,opex-fixed,5,3,3.47347,1.27519,5.26159,4.126122381762718,1.84547,4.68704,2.5397541005814235,0,3.47347,not-applicable,petroleum-refining,conventional
+steam-turbine_condensing,opex-fixed,8,3,3.8293800000000005,2.10887,8.15489,3.866947701849806,3.43675,4.2207574999999995,1.228124681748745,2,3.8293800000000005,installed; total-plant,power-generation,conventional
+steam-reformer_methane,opex-fixed,8,4,0.763523,0.65352,2.381,3.643346798873791,0.73246225,1.079299,1.4735216729599376,2,0.749575,installed; total-plant,petroleum-refining,conventional
+heat-pump_hvac,opex-fixed,7,3,0.571389,0.274208,0.916982,3.3441110397946083,0.44582999999999995,0.658617,1.477282820806137,0,0.571389,installed; not-applicable,space-conditioning,alternative
+smelting-vessel_smelting-reduction,opex-fixed,4,2,21.146050000000002,13.7823,45.9772,3.3359598905843004,18.9507,27.70825,1.46212277119051,1,20.6735,overnight,iron-and-steel,alternative
+kiln_oxy-fuel,opex-fixed,5,3,55.1197,24.5784,81.0696,3.2984083585587345,47.8671,67.2275,1.404461519498779,0,55.1197,installed; total-plant,cement-and-lime,prospective
+steam-reformer_methanol,opex-fixed,3,2,42.1355,37.1784,122.219,3.2873657822821847,39.65695,82.17725,2.072202980814208,0,42.1355,,chemicals,conventional
+thermal-storage_electric,opex-fixed,3,2,0.232453,0.0933995,0.280198,2.999994646652284,0.16292625,0.2563255,1.5732609079261322,0,0.232453,,heat-supply,prospective
+separator_biogas-upgrading,opex-fixed,3,2,1.60353,0.627203,1.7828,2.842460893841388,1.1153665,1.693165,1.518034654976638,0,1.60353,,biofuels,component
+geothermal-well_direct-use,opex-fixed,5,3,2.75257,2.27291,6.43725,2.83216229415155,2.50234,3.00281,1.2000007992519004,1,2.627455,not-applicable; total-plant,heat-supply,prospective
+direct-heater_electric,opex-fixed,4,1,0.165837,0.0923095,0.253432,2.7454595680834584,0.11875262500000001,0.21643825,1.822597605737136,0,0.165837,,heat-supply,alternative
+reactor_small-nuclear-power,opex-fixed,3,1,10.2722,6.35116,14.8377,2.3362188954458714,8.311679999999999,12.55495,1.5105189323939325,0,10.2722,,power-generation,prospective
+solar-concentrator_point-focus,opex-fixed,9,2,1.9694,1.22948,2.46248,2.0028629989914437,1.72789,2.0567,1.190295678544352,1,1.9949500000000002,installed,heat-supply,prospective
+hvac-heater_fuel-fired,opex-fixed,4,2,0.172729,0.12056,0.236434,1.9611313868613138,0.1536305,0.19471149999999998,1.2674013298140667,0,0.172729,installed,space-conditioning,conventional
+geothermal-well_flash-power,opex-fixed,11,2,6.70059,5.42089,10.1545,1.8732163906664774,5.965775000000001,6.86646,1.1509753552556037,1,6.57453,total-plant,power-generation,alternative
+blast-furnace_top-gas-recycling,opex-fixed,3,3,32.4278,27.6439,49.0821,1.7755128617886766,30.035849999999996,40.754949999999994,1.3568768654790857,0,32.4278,installed; overnight,iron-and-steel,prospective
+geothermal-well_binary-power,opex-fixed,11,3,7.7456,6.0164,10.0732,1.6742902732531082,7.151294999999999,8.511330000000001,1.1901802400823909,0,7.7456,not-applicable; total-plant,power-generation,alternative
+reactor_gas-to-liquids,opex-fixed,3,1,0.407366,0.325893,0.529575,1.6249965479467188,0.3666295,0.4684705,1.2777763382379215,0,0.407366,not-applicable,oil-and-gas,alternative
+steam-cracker_electric,opex-fixed,3,1,26.5577,17.4092,27.7357,1.5931633848769617,21.983449999999998,27.146700000000003,1.2348698680143475,0,26.5577,,chemicals,prospective
+gasifier_coal-fischer-tropsch,opex-fixed,3,1,0.993972,0.855468,1.27913,1.4952400323565582,0.92472,1.136551,1.2290758283588548,0,0.993972,not-applicable,oil-and-gas,alternative
+dryer_electric,opex-fixed,3,1,1.91359,1.791,2.25772,1.2605918481295366,1.8522949999999998,2.085655,1.1259842519685042,0,1.91359,,glass-and-ceramics,alternative
+well_sagd,opex-fixed,3,2,54.3724,54.2722,64.2619,1.1840666123724486,54.3223,59.31715,1.091948426336882,0,54.3724,,oil-and-gas,conventional
+reactor_polymerization-extrusion,specific-energy-consumption,72,12,2.66431,0.281446,28.2097,100.23130547245299,2.0,3.8024999999999998,1.9012499999999999,8,2.446605,,chemicals,conventional
+distillation-column,specific-energy-consumption,5,2,3.9007,0.19,18.301,96.32105263157894,0.85,7.58509,8.923635294117647,1,2.37535,,chemicals,conventional
+reactor_delayed-coking,specific-energy-consumption,11,8,0.726438,0.0487727,3.14426,64.46762225589315,0.556219,0.802418,1.4426296117176867,3,0.7274625,,petroleum-refining,conventional
+evaporator_food,specific-energy-consumption,20,3,0.547,0.1256,4.418,35.175159235668794,0.36924999999999997,0.83241925,2.2543513879485446,3,0.515,,food-and-beverage,reference
+reactor_hydroprocessing,specific-energy-consumption,46,12,0.8858174999999999,0.101363,3.32355,32.78859149788384,0.54692125,1.1332675,2.0720853322119046,3,0.829167,,petroleum-refining,conventional
+steam-reformer_methane,specific-energy-consumption,17,9,0.30511,0.0402841,1.30646,32.43115770241857,0.261324,0.437178,1.6729347476695597,2,0.304427,,petroleum-refining,conventional
+heat-exchanger_steam-heated,specific-energy-consumption,14,2,0.327966,0.027961,0.835034,29.864239476413577,0.179102,0.452407,2.5259740259740258,0,0.327966,,food-and-beverage,conventional
+boiler_recovery,specific-energy-consumption,3,3,16.143,0.817333,17.4464,21.34552257158343,8.4801665,16.7947,1.9804681900998053,0,16.143,,pulp-and-paper,conventional
+reactor_ammonium-nitrate,specific-energy-consumption,5,1,0.161684,0.04145,0.7,16.887816646562122,0.083621,0.36821,4.4033197402566335,0,0.161684,,chemicals,conventional
+sinter-plant,specific-energy-consumption,11,11,1.56864,0.168384,2.6155,15.532948498669706,0.8132064999999999,1.8303699999999998,2.2508059146108645,0,1.56864,,iron-and-steel,conventional
+gasifier_biomass-waste,specific-energy-consumption,4,3,0.889266,0.0687837,0.939307,13.655953372674048,0.649331925,0.93658975,1.4423898070312806,1,0.935684,,hydrogen,prospective
+reactor_hydrotreating-lipids,specific-energy-consumption,3,2,0.0540927,0.0289326,0.374685,12.950270628979075,0.04151265,0.21438885,5.164422170109593,0,0.0540927,,biofuels,conventional
+separator_aromatics-extraction,specific-energy-consumption,12,7,3.97656,1.43,18.301,12.797902097902098,2.3475,5.6475,2.405750798722045,1,3.83312,,chemicals,conventional
+blast-furnace,specific-energy-consumption,14,13,14.326450000000001,1.6,18.7486,11.717875,11.014574999999999,16.784125000000003,1.5238104965466217,1,14.8879,,iron-and-steel,conventional
+cleaning-system,specific-energy-consumption,7,2,0.504742,0.100018,1.16815,11.679397708412486,0.429147,0.669996,1.5612272717740077,1,0.473341,,food-and-beverage,conventional
+reactor_adipic-acid,specific-energy-consumption,4,3,18.480800000000002,2.60004,26.9,10.345994677004969,13.371210000000001,21.725,1.6247594645510766,0,18.480800000000002,,chemicals,conventional
+reactor_nitric-acid,specific-energy-consumption,8,4,0.17125,0.1,1.01875,10.1875,0.16945,0.6069104999999999,3.581649454116258,0,0.17125,,chemicals,conventional
+reactor_oxygen-delignification,specific-energy-consumption,4,4,1.328165,0.356,3.43,9.634831460674159,0.8827475,2.056,2.3290918410983887,0,1.328165,,pulp-and-paper,alternative
+caster_strip,specific-energy-consumption,5,5,0.2012,0.05,0.46795,9.358999999999998,0.09,0.2012,2.2355555555555555,1,0.1456,,iron-and-steel,alternative
+caster_continuous,specific-energy-consumption,7,5,0.156,0.058493,0.525,8.97543295778982,0.06934,0.2475,3.569368329968272,1,0.11734,,iron-and-steel,conventional
+reactor_isomerization,specific-energy-consumption,10,5,1.160245,0.415886,3.56938,8.582592345017625,0.8762595,1.68101,1.9183928961683154,2,1.05228,,petroleum-refining,conventional
+reactor_fluid-catalytic-cracking,specific-energy-consumption,14,10,0.4010775,0.121622,1.04351,8.5799444179507,0.323799,0.807221,2.4929694038585666,0,0.4010775,,petroleum-refining,conventional
+reactor_ethylene-oxidation,specific-energy-consumption,9,6,4.45662,1.2,10.0,8.333333333333334,3.30059,4.75667,1.4411574900245105,2,4.29988,,chemicals,conventional
+basic-oxygen-furnace,specific-energy-consumption,8,8,0.4566745,0.1338,1.02144,7.634080717488788,0.382925,0.5650000000000001,1.4754847555004245,1,0.456045,,iron-and-steel,conventional
+pellet-plant_induration,specific-energy-consumption,8,8,0.7574,0.328071,2.19961,6.704676731561156,0.59753,0.91993475,1.5395624487473432,1,0.6948,,iron-and-steel,conventional
+steam-cracker_fired-tubular,specific-energy-consumption,39,13,12.8398,3.54379,23.4834,6.6266341967215885,12.02525,17.14855,1.42604519656556,2,12.9014,,chemicals,conventional
+distillation-column_atmospheric-vacuum,specific-energy-consumption,11,9,0.684563,0.367914,2.37858,6.46504346124366,0.6053795,0.8061685000000001,1.331674594200828,1,0.6806155,,petroleum-refining,conventional
+pulper_recycled-fibre,specific-energy-consumption,31,12,1.9131,0.7,3.92552,5.607885714285715,1.4877,2.9,1.949317738791423,0,1.9131,,pulp-and-paper,conventional
+reactor_polymerization-extrusion_efficiency-strong,specific-energy-consumption,21,3,2.40494,0.455428,2.52156,5.536681978270989,1.98004,2.4636,1.2442172885396254,2,2.40729,,chemicals,efficient variant
+oven_fuel-fired,specific-energy-consumption,7,3,0.937176,0.74432,4.07171,5.470375644883921,0.795782,1.78796,2.2467962331392264,1,0.8771880000000001,,food-and-beverage,conventional
+kiln_tunnel-roller,specific-energy-consumption,14,5,3.8016449999999997,1.7874,9.3768,5.246055723397112,2.42657,5.150125,2.122388803949608,1,3.45455,,glass-and-ceramics,conventional
+compressor_co2-dehydration,specific-energy-consumption,41,11,0.377169,0.11412,0.583,5.108657553452506,0.357084,0.4,1.1201846064231387,11,0.38232,,co2-capture,conventional
+steam-cracker_fired-tubular_hydrogen-fuel,specific-energy-consumption,3,1,15.622,3.54379,17.6787,4.988642103510648,9.582895,16.65035,1.7375072981598982,0,15.622,,chemicals,alternative
+furnace_regenerative,specific-energy-consumption,24,5,5.42858,3.65005,18.1839,4.981822166819633,4.5985025,7.0347,1.529780618799272,1,5.30916,,glass-and-ceramics,conventional
+furnace_ladle-metallurgy,specific-energy-consumption,5,3,0.48,0.108257,0.52,4.803384538644152,0.46996,0.48248,1.0266405651544812,2,0.48,,iron-and-steel,conventional
+rolling-mill_hot,specific-energy-consumption,5,4,0.4458,0.3124,1.5,4.801536491677337,0.4187,0.49224,1.1756388822545976,1,0.43225,,iron-and-steel,conventional
+capture-unit_chemical-solvent,specific-energy-consumption,8,6,2.7668299999999997,1.16577,5.5,4.717911766471945,2.4201799999999998,3.175415,1.3120573676338125,2,2.7668299999999997,,co2-capture,conventional
+furnace_oxy-fuel,specific-energy-consumption,20,4,4.57618,2.97,13.6216,4.5863973063973065,4.0218025,8.0667325,2.0057505310119037,0,4.57618,,glass-and-ceramics,alternative
+capture-unit_cryogenic-condensation,specific-energy-consumption,4,3,1.19088,0.4,1.818,4.545,0.6659200000000001,1.6749,2.5151669870254683,0,1.19088,,co2-capture,prospective
+steam-reformer_methane_ccs-concentrated,specific-energy-consumption,4,3,0.428045,0.318956,1.31642,4.12727774363862,0.39574475000000003,0.65516675,1.6555285951361325,1,0.421341,,petroleum-refining,alternative
+heat-exchanger_steam-heated_efficiency-strong,specific-energy-consumption,12,3,0.180381,0.0642636,0.262373,4.082762247991087,0.13246850000000002,0.20672849999999998,1.5605861016015126,0,0.180381,,food-and-beverage,efficient variant
+furnace_electric,specific-energy-consumption,17,7,4.2,3.0,11.98,3.9933333333333336,3.49,4.4,1.2607449856733524,3,4.035,,glass-and-ceramics,alternative
+kiln_lime-rotary,specific-energy-consumption,5,3,7.21668,2.34,8.40688,3.5926837606837605,5.7048,7.228,1.2670032253540877,1,7.22234,,pulp-and-paper,conventional
+reactor_alkylation,specific-energy-consumption,13,9,1.66834,1.06302,3.77547,3.5516453124118077,1.39306,2.53283,1.8181772500825522,0,1.66834,,petroleum-refining,conventional
+reactor_ethanol-to-ethylene,specific-energy-consumption,4,1,0.875,0.57,2.0,3.5087719298245617,0.705,1.25,1.773049645390071,0,0.875,,chemicals,alternative
+cleaning-system_efficiency-strong,specific-energy-consumption,8,2,0.4107815,0.12912,0.447666,3.467053903345725,0.388519,0.4447385,1.1447020609030703,1,0.417769,,food-and-beverage,efficient variant
+lighting_hid,specific-energy-consumption,9,2,0.0636042,0.037461,0.125,3.3368036090867834,0.0440098,0.0861244,1.9569368640620952,0,0.0636042,,lighting,conventional
+digester_continuous-kraft,specific-energy-consumption,8,6,2.44871,1.7584,5.8616,3.3334849863512286,2.04035,3.039855,1.4898693851545077,1,2.39578,,pulp-and-paper,conventional
+capture-unit_amine,specific-energy-consumption,69,14,4.15831,3.2,10.3753,3.2422812499999996,3.54247,4.31276,1.2174443255694474,1,4.1577850000000005,,co2-capture,conventional
+reactor_urea-synthesis,specific-energy-consumption,24,5,2.6176,1.7,5.5,3.235294117647059,2.0141675,3.025,1.501861190789743,1,2.6176,,chemicals,conventional
+reactor_ecf-bleaching,specific-energy-consumption,6,4,2.24426,1.53516,4.8724,3.173871127439485,1.72482,3.3787450000000003,1.958897160283392,0,2.24426,,pulp-and-paper,conventional
+kiln_dry-precalciner_ccs-diffuse,specific-energy-consumption,7,3,4.1809,3.76306,11.8885,3.159264003231413,3.99824,4.4875,1.1223688422906077,1,4.1019000000000005,,cement-and-lime,prospective
+grinding-mill_vertical-roller,specific-energy-consumption,9,5,0.1224,0.06978,0.209,2.995127543708799,0.108,0.1818,1.6833333333333333,0,0.1224,,cement-and-lime,alternative
+paper-machine,specific-energy-consumption,3,3,2.35872,0.804,2.40741,2.9942910447761193,1.58136,2.383065,1.5069718470177569,0,2.35872,,pulp-and-paper,conventional
+rolling-mill_thin-slab,specific-energy-consumption,3,3,0.4,0.2488,0.71,2.8536977491961415,0.3244,0.5549999999999999,1.7108508014796544,0,0.4,,iron-and-steel,alternative
+dryer_steam-heated,specific-energy-consumption,9,7,4.176,3.57704,10.0756,2.816742334444121,3.78,5.9104,1.5635978835978837,1,4.175000000000001,,pulp-and-paper,conventional
+annealing-furnace_batch-bell,specific-energy-consumption,4,2,0.986,0.584,1.5372,2.632191780821918,0.8075,1.2018,1.488297213622291,0,0.986,,iron-and-steel,conventional
+adsorber_pressure-swing,specific-energy-consumption,4,1,1.1916,0.72,1.818,2.5250000000000004,0.747,1.6749,2.2421686746987954,0,1.1916,,co2-capture,conventional
+digester_sulphite,specific-energy-consumption,3,3,6.2592,2.7784,6.98314,2.513367405701123,4.5188,6.621169999999999,1.4652496237939276,0,6.2592,,pulp-and-paper,conventional
+evaporator_multiple-effect,specific-energy-consumption,9,5,2.6608,1.43409,3.57991,2.496293816984987,2.005,2.75243,1.372783042394015,0,2.6608,,pulp-and-paper,conventional
+electric-arc-furnace,specific-energy-consumption,21,19,2.12,1.40425,3.45106,2.457582339327043,1.9,2.52445,1.3286578947368421,0,2.12,,iron-and-steel,conventional
+melting-furnace_induction,specific-energy-consumption,6,3,1.73625,1.29,3.02386,2.344077519379845,1.63047,1.8349575,1.1254162910081142,2,1.73625,,other-industry,alternative
+dryer_market-pulp,specific-energy-consumption,9,6,4.20653,2.632,6.14,2.3328267477203646,2.8076,5.058,1.80153868072375,0,4.20653,,pulp-and-paper,conventional
+reactor_catalytic-reforming,specific-energy-consumption,15,11,1.49836,1.0658,2.43307,2.282857947082004,1.407605,1.81379,1.2885646186252535,1,1.492385,,petroleum-refining,conventional
+steam-reformer_methanol,specific-energy-consumption,9,6,11.3997,8.8,20.0816,2.282,9.79654,15.1302,1.5444432422059218,0,11.3997,,chemicals,conventional
+steam-reformer_ammonia,specific-energy-consumption,16,11,15.085899999999999,8.5416,19.1669,2.2439472698323497,12.113199999999999,17.321,1.429927682197933,0,15.085899999999999,,chemicals,conventional
+anaerobic-digester,specific-energy-consumption,7,2,0.0829335,0.064596,0.142295,2.2028453774227508,0.06537095,0.08371925,1.2806797208851943,1,0.07431805,,biofuels,component
+reactor_methanol-to-olefins,specific-energy-consumption,3,3,7.29677,5.0,11.0,2.2,6.148385,9.148385000000001,1.487933010050607,0,7.29677,,chemicals,alternative
+furnace_anode-baking,specific-energy-consumption,5,3,2.9,2.1,4.56923,2.1758238095238096,2.28658,4.19018,1.8325096869560655,0,2.9,,non-ferrous-metals,conventional
+steam-cracker_fired-tubular_ccs-diffuse,specific-energy-consumption,9,2,17.7812,11.3773,24.3323,2.1386708621553443,15.3876,18.1298,1.1782084275650522,1,17.26915,,chemicals,prospective
+lighting_led,specific-energy-consumption,6,3,0.03605805,0.0262582,0.0559876,2.132194895308894,0.030809975,0.039295975000000004,1.2754302786678666,1,0.0336134,,lighting,alternative
+electric-arc-furnace_scrap-preheating,specific-energy-consumption,24,10,1.7914249999999998,0.981257,2.09021,2.130135122602947,1.5352675,1.92788,1.2557290504749172,0,1.7914249999999998,,iron-and-steel,efficient variant
+kiln_legacy,specific-energy-consumption,12,6,4.544315,3.25206,6.86128,2.109825771972227,3.995495,6.180124999999999,1.5467733034329914,0,4.544315,,cement-and-lime,conventional
+rolling-mill_cold,specific-energy-consumption,3,3,0.5,0.3528,0.743,2.1060090702947845,0.4264,0.6214999999999999,1.4575515947467166,0,0.5,,iron-and-steel,conventional
+gasifier_coal-ammonia,specific-energy-consumption,4,3,21.5,13.52,27.92,2.06508875739645,19.13,23.48,1.227391531625719,0,21.5,,chemicals,conventional
+electric-arc-furnace_reduced-iron-charge,specific-energy-consumption,3,3,3.603,1.76425,3.63733,2.061686268952813,2.683625,3.620165,1.3489831850575247,0,3.603,,iron-and-steel,alternative
+electrolysis-cell_molten-oxide,specific-energy-consumption,6,6,12.96,7.2,14.76,2.05,12.6,13.98,1.1095238095238096,1,13.32,,iron-and-steel,prospective
+dryer_rotary-direct-fired,specific-energy-consumption,5,1,0.232625,0.213678,0.435776,2.0394050861576765,0.222805,0.270518,1.2141468997553915,1,0.227715,,glass-and-ceramics,conventional
+coating-line_hot-dip,specific-energy-consumption,6,4,1.9174,1.60349,3.26,2.033065376148276,1.8673175,2.86974,1.5368248838239882,0,1.9174,,iron-and-steel,conventional
+coke-oven_by-product,specific-energy-consumption,9,9,4.00836,3.39892,6.864,2.0194650065314863,3.62689,4.46,1.2297036855267185,1,3.9482549999999996,,iron-and-steel,conventional
+digester_semi-chemical,specific-energy-consumption,3,2,4.0734,3.60655,7.118,1.9736313097004063,3.839975,5.595700000000001,1.4572230287957606,0,4.0734,,pulp-and-paper,conventional
+grinding-mill_ball,specific-energy-consumption,7,3,0.213992,0.152733,0.3,1.9642120563336016,0.19010349999999998,0.26061500000000004,1.3709111089485468,0,0.213992,,cement-and-lime,conventional
+furnace_reheating,specific-energy-consumption,8,6,1.76668,1.30276,2.5586,1.9639841567134395,1.6163175,1.8760175,1.1606738775024088,1,1.6896,,iron-and-steel,conventional
+electrolyzer_low-temperature,specific-energy-consumption,31,13,1.26948,1.12098,2.09465,1.8685881996110545,1.25171,1.44467,1.154157113069321,4,1.26948,,petroleum-refining,alternative
+grinding-mill_sag-ball,specific-energy-consumption,8,5,0.06696,0.04932,0.09108,1.8467153284671531,0.053334,0.07901999999999999,1.481606479919001,0,0.06696,,mining,conventional
+electrolyzer_low-temperature-central,specific-energy-consumption,25,9,1.35581,1.13492,2.09465,1.8456366968596907,1.26948,1.40913,1.1100056716135742,2,1.34565,,hydrogen,alternative
+capture-unit_physical-solvent,specific-energy-consumption,5,2,0.6,0.4,0.72,1.7999999999999998,0.52,0.71,1.3653846153846152,0,0.6,,co2-capture,conventional
+refinery_alumina,specific-energy-consumption,6,4,10.5136,7.14745,12.7546,1.784496568706322,9.6419325,10.565075,1.0957424769360293,2,10.5136,,non-ferrous-metals,reference
+fermenter_grain-dry-mill,specific-energy-consumption,11,5,0.305941,0.233298,0.416188,1.7839329955679002,0.2806635,0.32957349999999996,1.1742656241370892,2,0.283698,,biofuels,conventional
+shaft-furnace_direct-reduction,specific-energy-consumption,8,6,11.2361,9.68,17.064,1.762809917355372,10.508880000000001,12.345875,1.1748040704623135,1,11.0403,,iron-and-steel,conventional
+pulp-mill_kraft,specific-energy-consumption,5,2,14.33,10.7,18.5,1.7289719626168225,13.3,17.6,1.3233082706766917,0,14.33,,pulp-and-paper,reference
+lighting_fluorescent-t8,specific-energy-consumption,6,2,0.0454985,0.0418605,0.0718563,1.7165657361952198,0.043657225,0.0483177,1.106751517074207,1,0.044665,,lighting,alternative
+lighting_led-high-bay,specific-energy-consumption,4,2,0.029388650000000002,0.0247593,0.0421546,1.7025764056334387,0.0262941,0.03451735,1.3127412613476028,0,0.029388650000000002,,lighting,alternative
+furnace_reheating_efficiency-strong,specific-energy-consumption,5,2,1.33007,0.846016,1.42474,1.684057984718965,1.0714,1.38094,1.2889117043121152,0,1.33007,,iron-and-steel,efficient variant
+electrolysis-cell_chlor-alkali-membrane,specific-energy-consumption,15,10,9.0,6.08,10.1787,1.674128289473684,8.015,9.846,1.2284466625077979,0,9.0,,chemicals,conventional
+combustion-turbine_chp,specific-energy-consumption,16,3,2.018515,1.86752,3.1132,1.6670236463331047,1.91778,2.6199825,1.366153834120702,0,2.018515,,heat-supply,conventional
+steam-reformer_ammonia_efficiency-strong,specific-energy-consumption,5,4,10.8314,7.80598,12.995,1.6647493332035181,9.0466,11.2833,1.247242057789667,0,10.8314,,chemicals,efficient variant
+evaporator_crystallizer,specific-energy-consumption,3,1,5.57104,4.57104,7.60104,1.6628688438517274,5.07104,6.586040000000001,1.2987552849119708,0,5.57104,,mining,alternative
+capture-unit_dac-liquid-solvent,specific-energy-consumption,5,2,6.5676,5.5272,8.81,1.5939354465190334,5.724,8.81,1.5391334730957373,0,6.5676,,co2-capture,prospective
+mine_open-pit-oil-sands,specific-energy-consumption,5,2,2.70754,2.13679,3.3965,1.5895338334604712,2.35194,3.08147,1.3101822325399457,0,2.70754,,oil-and-gas,reference
+pulper_thermomechanical,specific-energy-consumption,8,5,8.961045,7.6,11.8175,1.554934210526316,8.4369,9.380435,1.1118343230333416,1,8.96039,,pulp-and-paper,conventional
+kiln_dry-precalciner,specific-energy-consumption,20,15,3.79019,3.1,4.7104,1.5194838709677418,3.4710225,4.3743549999999995,1.2602496814699413,0,3.79019,,cement-and-lime,conventional
+distillation-column_heat-integrated,specific-energy-consumption,3,1,2.62162,2.30041,3.41266,1.4835007672545328,2.4610149999999997,3.01714,1.2259738359985617,0,2.62162,,chemicals,alternative
+separator_aromatics-extraction_efficiency-moderate,specific-energy-consumption,4,3,2.51684,2.12341,3.13371,1.4757912979594145,2.3016625,2.7878775,1.2112451325943747,0,2.51684,,chemicals,efficient variant
+steam-cracker_electric,specific-energy-consumption,4,1,15.722649999999998,13.1886,19.3941,1.47051999454074,14.435849999999999,17.293799999999997,1.1979758725672545,0,15.722649999999998,,chemicals,prospective
+paper-machine_with-dryer-section,specific-energy-consumption,9,2,7.59,5.94,8.73,1.4696969696969697,6.7,7.76,1.1582089552238806,0,7.59,,pulp-and-paper,reference
+melting-furnace_reverberatory-rotary,specific-energy-consumption,3,3,6.0932,5.18465,7.59977,1.4658212222618692,5.638925,6.846485,1.2141472000425613,0,6.0932,,non-ferrous-metals,conventional
+heat-pump_industrial,specific-energy-consumption,7,4,0.2855,0.25,0.3626,1.4504,0.252,0.315,1.25,0,0.2855,,heat-supply,alternative
+capture-unit_advanced-solvent,specific-energy-consumption,5,3,3.3,2.5,3.5644,1.42576,3.2,3.5,1.09375,1,3.4,,co2-capture,alternative
+blast-furnace_top-gas-recycling,specific-energy-consumption,3,2,16.4104,12.1907,17.3163,1.4204516557703823,14.30055,16.863349999999997,1.1792098905286859,0,16.4104,,iron-and-steel,prospective
+steam-turbine_condensing,specific-energy-consumption,4,2,2.65042,2.38889,3.38139,1.4154649230395708,2.5436825,2.8745175,1.1300614365196915,1,2.59528,,power-generation,conventional
+paper-machine_efficiency-strong,specific-energy-consumption,3,2,1.9902,1.5383,2.17528,1.4140804784502372,1.76425,2.08274,1.1805243021113787,0,1.9902,,pulp-and-paper,efficient variant
+grinding-mill_hpgr,specific-energy-consumption,3,1,0.06156,0.05544,0.07812,1.409090909090909,0.058499999999999996,0.06984,1.193846153846154,0,0.06156,,mining,alternative
+electrolysis-cell_iron-electrowinning,specific-energy-consumption,4,3,9.754999999999999,9.36,12.96,1.3846153846153848,9.5475,10.665000000000001,1.1170463472113121,1,9.61,,iron-and-steel,prospective
+electrolyzer_solid-oxide,specific-energy-consumption,6,4,1.26082,1.01925,1.39775,1.3713514839342655,1.155505,1.26712,1.0965941298393342,0,1.26082,,hydrogen,prospective
+reciprocating-engine_drive,specific-energy-consumption,4,1,3.27486,2.9201,3.96281,1.3570802369781856,3.04169,3.5913275,1.1807013535238633,0,3.27486,,machine-drive,conventional
+evaporator_caustic-soda,specific-energy-consumption,3,1,1.43872,1.26821,1.67851,1.323526860693418,1.353465,1.558615,1.1515739232266813,0,1.43872,,chemicals,conventional
+electrolysis-cell_prebaked-anode,specific-energy-consumption,5,4,53.0,42.1215,54.8,1.300998302529587,50.0,54.4005,1.08801,1,53.70025,,non-ferrous-metals,conventional
+kiln_lime-rotary_efficiency-strong,specific-energy-consumption,4,1,5.831910000000001,5.15477,6.59492,1.2793820092846044,5.54138,6.1439075,1.1087323915703309,0,5.831910000000001,,pulp-and-paper,efficient variant
+dryer_electric,specific-energy-consumption,3,1,0.221,0.203,0.257,1.2660098522167487,0.21200000000000002,0.239,1.1273584905660377,0,0.221,,glass-and-ceramics,alternative
+fuel-cell_chp,specific-energy-consumption,3,2,2.55182,2.55182,3.17024,1.2423446794836626,2.55182,2.8610300000000004,1.1211723397418314,0,2.55182,,heat-supply,alternative
+steam-cracker_fired-tubular_efficiency-moderate,specific-energy-consumption,7,3,10.5558,9.8869,11.8446,1.1980094873013785,10.45685,10.888349999999999,1.0412648168425482,1,10.55275,,chemicals,efficient variant
+kiln_oxy-fuel,specific-energy-consumption,3,3,3.937,3.83361,4.50848,1.1760403379582167,3.885305,4.22274,1.0868490375916435,0,3.937,,cement-and-lime,prospective
+oven_fuel-fired_efficiency-moderate,specific-energy-consumption,7,4,0.836976,0.756575,0.874829,1.1563017546178502,0.8088945,0.856545,1.0589081765298194,0,0.836976,,food-and-beverage,efficient variant
+electrolysis-cell_chlor-alkali-diaphragm,specific-energy-consumption,6,6,10.751850000000001,9.792,11.304,1.1544117647058825,10.1725,11.073425,1.0885647579257804,0,10.751850000000001,,chemicals,conventional
+shaft-furnace_electrolytic-hydrogen,specific-energy-consumption,3,3,13.5779,12.96,14.838,1.1449074074074073,13.26895,14.20795,1.0707667147739648,0,13.5779,,iron-and-steel,reference
+reciprocating-engine_chp,specific-energy-consumption,7,2,2.21337,2.13406,2.43743,1.1421562655220567,2.15925,2.3120399999999997,1.0707606807919414,0,2.21337,,heat-supply,conventional
+lighting_fluorescent-high-bay,specific-energy-consumption,5,2,0.0476821,0.0433735,0.0492476,1.1354306200790805,0.0442804,0.0478723,1.0811171534132484,0,0.0476821,,lighting,alternative
+coke-oven_by-product_efficiency-moderate,specific-energy-consumption,4,3,3.97022,3.61597,4.04115,1.1175839401322467,3.8541999999999996,4.01541,1.0418270977115875,0,3.97022,,iron-and-steel,efficient variant
+lighting_fluorescent-t12,specific-energy-consumption,4,2,0.05852615,0.0557276,0.0601002,1.0784638132630868,0.056721125,0.060025049999999996,1.0582485802247399,0,0.05852615,,lighting,conventional
+electrolysis-cell_chlor-alkali-mercury,specific-energy-consumption,4,4,12.204,11.8,12.6,1.0677966101694913,12.022,12.384,1.0301114623190817,0,12.204,,chemicals,conventional
+blast-furnace_efficiency-moderate,specific-energy-consumption,5,4,13.779,13.6118,14.2224,1.0448581377922097,13.779,14.0661,1.0208360548661006,0,13.779,,iron-and-steel,efficient variant
+annealing-furnace_continuous,specific-energy-consumption,3,2,0.962,0.945,0.984,1.0412698412698413,0.9535,0.973,1.0204509701101205,0,0.962,,iron-and-steel,alternative
+paper-machine_efficiency-moderate,specific-energy-consumption,4,1,2.2937399999999997,2.25135,2.29829,1.0208497123947855,2.2820549999999997,2.295965,1.0060953833277464,1,2.29519,,pulp-and-paper,efficient variant
+separator_biogas-upgrading,specific-energy-consumption,3,2,0.112028,0.111141,0.11281,1.0150169604376422,0.1115845,0.11241899999999999,1.0074786372659283,0,0.112028,,biofuels,component
+boiler_electric,specific-energy-consumption,4,3,1.01,1.0,1.01,1.01,1.0075,1.01,1.0024813895781637,1,1.01,,heat-supply,alternative
+well_co2-storage,specific-energy-consumption,10,1,0.05,0.05,0.05,1.0,0.05,0.05,1.0,0,0.05,,co2-capture,conventional
