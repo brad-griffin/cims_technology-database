@@ -1,0 +1,9 @@
+process,technology,item,value,unit,reference,note
+"Tallow rendering, 46 plants (Table 2)",(none),Energy input per kg finished tallow,7.43,MJ/kg,"p.7515, Table 2","natural gas 4.99, animal fat 0.98, electricity 1.46 MJ/kg; feed 2.26 kg/kg; meat and bone meal 1.04 kg/kg. No rendering archetype."
+"UCO rendering, traditional (Table 2)",(none),Energy input per kg finished oil,2.36,MJ/kg,"p.7515, Table 2","natural gas 2.11, electricity 0.25 MJ/kg; feed 1.35 kg/kg"
+"UCO rendering, settling (Table 2)",(none),Energy input per kg finished oil,0.85,MJ/kg,"p.7515, Table 2","natural gas 0.76, electricity 0.09 MJ/kg"
+Distillers corn oil extraction,(none),Electricity per kg oil,0.43,MJ/kg,p.7515,centrifuge in corn ethanol plants
+"US biodiesel plants, vegetable oil only, 13 surveyed plants 2018-2020 (Table 3)",transesterification-unit_alkali-catalyzed,Other chemical inputs,,g/kg,"p.7515, Table 3","sodium methoxide 3.62, HCl 1.68, H3PO4 0.44, H2SO4 1.10, citric 0.003, sodium methylate 0.35; water 0.15 L/kg"
+"US biodiesel plants, mixed vegetable and high-FFA feedstock, 14 surveyed plants 2018-2020 (Table 3)",transesterification-unit_acid-catalyzed,Other chemical inputs,,g/kg,"p.7515, Table 3","HCl 2.61, H3PO4 2.17; water 0.99 L/kg"
+"US renewable diesel plants, all feedstocks, 5 producers (Table 3)",reactor_hydrotreating-lipids,"Conversion-stage life-cycle GHG, high-FFA vs vegetable oil (biodiesel)",7.7 vs 3.9,g CO2e/MJ,p.7517,"Life-cycle conversion stage incl. upstream of energy and chemicals; not scope 1, not loaded"
+Well-to-wheels results,(none),WTW GHG of BD and RD pathways,,g CO2e/MJ,Figs. 2-3,"Life-cycle values, not scope 1; not loaded"

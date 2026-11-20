@@ -181,7 +181,7 @@ Status: *quantified* (its examples' numbers are pooled), *not pooled* (its examp
 | `reactor_co2-to-fischer-tropsch` | CO2-to-Fischer-Tropsch fuels | prospective | hydrogen; electricity | 5-7 | biofuels.product.renewable-diesel-and-saf | 2 of 7 |
 | `reactor_co2-to-gasoline` | CO2-to-gasoline (methanol-to-gasoline) | prospective | hydrogen; electricity | 6-7 | no connection | 2 of 7 |
 | `reactor_hydrothermal-liquefaction` | Hydrothermal liquefaction | prospective | biomass; electricity | 5 | biofuels.product.renewable-diesel-and-saf | 6 of 7 |
-| `transesterification-unit_acid-catalyzed` | Acid-catalyzed transesterification | alternative | steam; electricity | 8-9 | biofuels.product.biodiesel | 2 of 7 |
+| `transesterification-unit_acid-catalyzed` | Acid-catalyzed transesterification | alternative | steam; electricity | 8-9 | biofuels.product.biodiesel | 3 of 7 |
 | `transesterification-unit_heterogeneous-catalyst` | Heterogeneous-catalyst transesterification | alternative | electricity; steam | 8 | biofuels.product.biodiesel | 2 of 7 |
 | `transesterification-unit_supercritical-methanol` | Supercritical-methanol transesterification | prospective | steam; electricity | 5-6 | biofuels.product.biodiesel | 2 of 7 |
 | `anaerobic-digester` | Anaerobic digester (component) | component | biomass; municipal-waste; electricity | 9 | no connection | 5 of 7 |

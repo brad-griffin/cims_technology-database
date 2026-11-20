@@ -1,0 +1,7 @@
+process,technology,item,value,unit,reference,note
+"HEFA SAF pathway, representative US producer, 2024 (Table 4)",reactor_hydrotreating-lipids,Fixed (non-feedstock) production cost,1.63,2024_USD/gal,"p.15, Table 4","Amortized capex + opex excl. feedstock and transport; RD + 8 c/gal premium. Not loaded: excludes feedstock, so it cannot be pooled with production costs that include it (see sanity check 2026-11-20)."
+"HEFA renewable diesel pathway, representative US producer, 2024 (Table 4)",reactor_hydrotreating-lipids,Fixed (non-feedstock) production cost,1.55,2024_USD/gal,"p.15, Table 4",From 2022 California Argus prices net of subsidies and soybean oil cost
+"Biodiesel pathway, representative US producer, 2024 (Table 4)",transesterification-unit_alkali-catalyzed,Fixed (non-feedstock) production cost,1.19,2024_USD/gal,"p.15, Table 4",
+"ATJ SAF, corn pathway, representative US producer, 2024 (Table 4)",biorefinery_corn-grain-ethanol-to-jet,Fixed (non-feedstock) production cost,4.8,2024_USD/gal,"p.15, Table 4",ATJ+CCS 4.99; sugarcane 6.07 (6.26 with CCS) incl. 12.5% tariff
+"Corn ethanol pathway, representative US producer, 2024 (Table 4)",fermenter_grain-dry-mill,Fixed (non-feedstock) production cost,0.83,2024_USD/gal,"p.15, Table 4","Irwin 2019, 2025; sugarcane 1.58"
+Biofuel pathways (Table 1),(none),Pathway carbon intensities,,g CO2e/MJ,"p.12, Table 1; Table A1","Life-cycle, not scope 1"

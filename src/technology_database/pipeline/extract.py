@@ -592,6 +592,11 @@ BRIEF_SHAPE = [
     ("other-reports/gem/gem_2025_global-gas-infrastructure-tracker_gas-pipelines", "gem_2025_001", "Canada where three or more facilities report a value, else North America or global"),
     ("other-reports/gem/gem_2026_global-oil-infrastructure-tracker_oil-ngl-pipelines", "gem_2026_005", "Canada where three or more facilities report a value, else North America or global"),
     ("other-reports/gem/gem_2026_global-coal-mine-tracker", "gem_2026_006", "Canada where three or more facilities report a value, else North America or global"),
+    ("peer-reviewed/xu_2022_biodiesel-renewable-diesel-lca-us_est", "xu_2022_001", "US"),
+    ("peer-reviewed/sievert_2024_dac-cost-projection-technology-characteristics_joule", "sievert_2024_001", "global"),
+    ("peer-reviewed/scott_2025_biofuel-cost-carbon-intensity-innovation_enpol", "scott_2025_001", "US"),
+    ("other-reports/wu_2025_policy-options-us-saf-targets_nber", "wu_2025_001", "US"),
+    ("other-reports/mi_2022_carbon-footprint-of-methanol_sgu", "mi_2022_001", "global"),
 ]
 # parameters that describe the example rather than quantify it
 EXAMPLE_ATTRS = ("description", "trl", "state-of-development", "year-available")
