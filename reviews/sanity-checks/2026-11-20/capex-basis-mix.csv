@@ -1,0 +1,254 @@
+archetype,bases,n_bases,has_equipment_and_plant
+air-separation-unit,equipment; installed; total-plant,3,True
+anaerobic-digester,installed; overnight,2,False
+anaerobic-digester_biomethane-upgrading,installed,1,False
+anaerobic-digester_chp,installed; total-plant,2,False
+annealing-furnace_continuous,installed; total-plant,2,False
+basic-oxygen-furnace,installed; overnight; total-plant,3,False
+binder_hydrothermal-silicate,installed,1,False
+binder_sulphoaluminate,installed,1,False
+blast-furnace,installed; overnight; total-plant,3,False
+blast-furnace_top-gas-recycling,installed; overnight; total-plant,3,False
+boiler_electric,equipment; installed; overnight; total-plant,4,True
+boiler_fuel-fired,equipment; installed; overnight; total-plant,4,True
+boiler_oxy-fuel,installed,1,False
+boiler_recovery,installed,1,False
+boiler_solid-fuel,equipment; installed; overnight; total-plant,4,True
+calciner_clay-flash,installed,1,False
+calciner_electric,installed,1,False
+calciner_gas-suspension,installed,1,False
+calciner_hydrogen-fired,installed,1,False
+capture-unit_advanced-solvent,installed,1,False
+capture-unit_amine,incremental; installed; overnight; total-plant,4,False
+capture-unit_calcium-looping,installed,1,False
+capture-unit_chemical-solvent,incremental; installed; overnight; total-plant,4,False
+capture-unit_cryogenic-condensation,total-plant,1,False
+capture-unit_dac-liquid-solvent,installed; total-plant,2,False
+capture-unit_dac-solid-sorbent,installed; total-plant,2,False
+capture-unit_membrane-cryogenic,installed,1,False
+capture-unit_physical-solvent,incremental; installed; total-plant,3,False
+caster_continuous,installed; total-plant,2,False
+chiller_absorption,total,1,False
+chiller_hvac,total,1,False
+chiller_vapour-compression,installed,1,False
+coating-line_electrolytic,total-plant,1,False
+coating-line_hot-dip,installed; total-plant,2,False
+coke-oven_by-product,installed; total-plant,2,False
+coke-oven_heat-recovery,total-plant,1,False
+combined-cycle,installed; overnight,2,False
+combustion-turbine_chp,installed; overnight; total-plant,3,False
+combustion-turbine_drive,total-plant,1,False
+combustion-turbine_simple-cycle,equipment; installed; overnight; total-plant,4,True
+compressor_blowdown-recovery,equipment; incremental; installed; no,4,True
+compressor_co2-dehydration,incremental; installed; overnight; total-plant,4,False
+compressor_electric,installed,1,False
+compressor_flare-gas-recovery,installed,1,False
+compressor_low-emission-seal,incremental; installed,2,False
+compressor_vapour-recovery,equipment; incremental; installed; not,4,True
+converter_continuous,installed,1,False
+debarker_drum,total-plant,1,False
+digester_continuous-kraft,equipment; installed,2,True
+direct-heater_electric,equipment; installed; total-plant,3,True
+direct-heater_fuel-fired,installed,1,False
+direct-heater_fuel-fired_efficiency-moderate,installed,1,False
+direct-heater_refinery,total-plant,1,False
+direct-heater_solid-fuel,installed,1,False
+direct-heater_solid-fuel_efficiency-strong,installed,1,False
+distillation-column,installed,1,False
+distillation-column_atmospheric-vacuum,installed; total-plant,2,False
+distillation-column_heat-integrated,installed,1,False
+dryer_electric,installed,1,False
+dryer_market-pulp,installed,1,False
+dryer_steam-heated,installed,1,False
+electric-arc-furnace,installed; overnight; total-plant,3,False
+electric-arc-furnace_reduced-iron-charge,equipment; installed; total-plant,3,True
+electrolysis-cell_chlor-alkali-diaphragm,installed,1,False
+electrolysis-cell_chlor-alkali-membrane,installed; total-plant,2,False
+electrolysis-cell_chlor-alkali-mercury,installed,1,False
+electrolysis-cell_electrorefining,installed; total-plant,2,False
+electrolysis-cell_iron-electrowinning,installed; total-plant,2,False
+electrolysis-cell_molten-oxide,installed; total-plant,2,False
+electrolysis-cell_oxygen-depolarized,installed,1,False
+electrolysis-cell_prebaked-anode,installed; total-plant,2,False
+electrolysis-cell_zinc-electrowinning,total-plant,1,False
+electrolyzer_low-temperature,equipment; installed; overnight; total-plant,4,True
+electrolyzer_low-temperature-central,equipment; installed; overnight; total-plant,4,True
+electrolyzer_solid-oxide,equipment; installed; overnight; total-plant,4,True
+evaporator_crystallizer,installed,1,False
+evaporator_food,installed,1,False
+fermenter_grain-dry-mill,installed; overnight,2,False
+fermenter_lignocellulosic-enzymatic,installed; overnight,2,False
+fermenter_syngas,installed; total-plant,2,False
+flare_enclosed-combustor,incremental; installed,2,False
+fracturing-fleet_diesel,equipment,1,False
+fracturing-fleet_dual-fuel,equipment,1,False
+fracturing-fleet_electric,equipment,1,False
+fuel-cell_chp,equipment; installed; overnight; total-plant,4,True
+furnace_anode-baking,installed,1,False
+furnace_electric,equipment; installed,2,True
+furnace_oxy-fuel,installed,1,False
+furnace_regenerative,installed,1,False
+furnace_reheating,total-plant,1,False
+gas-treatment-unit_amine-sweetening,installed,1,False
+gas-treatment-unit_glycol-dehydration,installed,1,False
+gas-treatment-unit_sulphur-recovery,installed,1,False
+gas-treatment-unit_thermal-oxidiser,installed,1,False
+gasifier_biomass-ammonia,total-plant,1,False
+gasifier_biomass-chp,installed; overnight,2,False
+gasifier_biomass-fischer-tropsch,overnight; total-plant,2,False
+gasifier_biomass-methanation,installed; overnight; total-plant,3,False
+gasifier_biomass-methanol,installed; overnight; total-plant,3,False
+gasifier_biomass-waste,installed; total-plant,2,False
+gasifier_black-liquor,installed,1,False
+gasifier_coal-fischer-tropsch,overnight; total-plant,2,False
+gasifier_coal-methanation,total-plant,1,False
+gasifier_coal-methanol,installed,1,False
+gasifier_coal-petroleum-coke,overnight; total-plant,2,False
+geothermal-well_binary-power,overnight; total-plant,2,False
+geothermal-well_direct-use,installed; overnight; total-plant,3,False
+geothermal-well_flash-power,overnight; total-plant,2,False
+grinding-mill_ball,installed,1,False
+grinding-mill_hpgr,equipment; total-plant,2,True
+grinding-mill_sag-ball,equipment; total-plant,2,True
+grinding-mill_vertical-roller,installed,1,False
+heat-exchanger_steam-heated,installed,1,False
+heat-pump_hvac,installed; total,2,False
+heat-pump_industrial,equipment; installed; overnight,3,True
+heat-pump_very-high-temperature,installed; total-plant,2,False
+heat-recovery-unit_waste-heat,installed,1,False
+hvac-heater_fuel-fired,installed; total,2,False
+incinerator_waste-to-energy,total-plant,1,False
+induction-heater_reheating,total-plant,1,False
+kiln_calcium-looping,total-plant,1,False
+kiln_dry-precalciner,installed; overnight; total-plant,3,False
+kiln_electric-plasma,installed; total-plant,2,False
+kiln_fluidized-bed,installed,1,False
+kiln_lime-electric,installed,1,False
+kiln_lime-rotary,installed,1,False
+kiln_lime-rotary-preheater,installed,1,False
+kiln_lime-shaft,installed,1,False
+kiln_oxy-fuel,installed; overnight; total-plant,3,False
+kiln_tunnel-roller,installed,1,False
+kiln_tunnel-roller_efficiency-strong,installed,1,False
+leaching-vessel_heap-atmospheric,total-plant,1,False
+lighting_fluorescent-high-bay,total,1,False
+lighting_fluorescent-t8,total,1,False
+lighting_hid,total,1,False
+lighting_led,total,1,False
+lighting_led-high-bay,total,1,False
+liquefaction-train_base-load,total-plant,1,False
+liquefaction-train_electric,total-plant,1,False
+liquefaction-train_floating,total-plant,1,False
+liquefaction-train_hydrogen,installed,1,False
+management-system_leak-detection,capital; equipment; incremental; installed; survey,5,True
+melting-furnace_cupola,installed,1,False
+melting-furnace_induction,installed,1,False
+melting-furnace_rotary-oxy-fuel,installed,1,False
+mine_open-pit-coal,total-plant,1,False
+mine_open-pit-oil-sands,installed,1,False
+mobile-equipment_diesel,equipment,1,False
+motor_induction-standard,equipment; installed,2,True
+motor_premium-efficiency,installed,1,False
+paper-machine,installed,1,False
+paper-machine_waterless,total-plant,1,False
+paper-machine_with-dryer-section,installed,1,False
+pellet-plant_induration,installed; total-plant,2,False
+pellet-plant_wood,total-plant,1,False
+photovoltaic-array_battery-storage,overnight,1,False
+pipeline_plastic-liner,installed,1,False
+process-improvement_automatic-shutoff,equipment; installed,2,True
+process-improvement_low-emission-components,equipment; incremental; installed,3,True
+process-improvement_nru-optimization,not,1,False
+pulp-mill_kraft,installed,1,False
+pulper_recycled-fibre,installed; total-plant,2,False
+pulper_refiner-low-energy,installed,1,False
+pulper_thermomechanical,installed,1,False
+pump_plunger-lift,incremental; installed,2,False
+reactor_adipic-acid,total-plant,1,False
+reactor_alcohol-to-jet,installed; total-plant,2,False
+reactor_alkylation,installed,1,False
+reactor_biomass-flash-pyrolysis,total-plant,1,False
+reactor_catalytic-n2o,incremental; installed,2,False
+reactor_catalytic-reforming,installed,1,False
+reactor_chemical-depolymerization,installed; total-plant,2,False
+reactor_co2-to-dme,installed,1,False
+reactor_co2-to-ethanol,total-plant,1,False
+reactor_co2-to-gasoline,installed,1,False
+reactor_co2-to-higher-alcohols,installed,1,False
+reactor_co2-to-methanol,installed,1,False
+reactor_co2-to-ome1,installed,1,False
+reactor_co2-to-ome3-5,installed,1,False
+reactor_delayed-coking,installed,1,False
+reactor_ethanol-to-ethylene,total-plant,1,False
+reactor_ethylene-oxidation,installed; total-plant,2,False
+reactor_fluid-catalytic-cracking,installed,1,False
+reactor_fluid-coking,installed,1,False
+reactor_haber-bosch-electrolytic,installed; total-plant,2,False
+reactor_haber-bosch-loop,installed; overnight; total-plant,3,False
+reactor_hydroprocessing,installed; total-plant,2,False
+reactor_hydrothermal-liquefaction,overnight,1,False
+reactor_hydrotreating-lipids,installed; overnight,2,False
+reactor_integrated-upgrader,installed; total-plant,2,False
+reactor_isomerization,installed; total-plant,2,False
+reactor_methane-pyrolysis,installed,1,False
+reactor_methanol-loop,installed; overnight,2,False
+reactor_methanol-to-olefins,installed; total-plant,2,False
+reactor_nitric-acid,installed; total-plant,2,False
+reactor_partial-upgrading,installed,1,False
+reactor_plastics-pyrolysis,installed; total-plant,2,False
+reactor_polymerization-extrusion,installed; total-plant,2,False
+reactor_propane-dehydrogenation,installed; total-plant,2,False
+reactor_pyrolysis-oil,installed,1,False
+reactor_small-nuclear-power,overnight,1,False
+reactor_steel-offgas-chemicals,total-plant,1,False
+reactor_sulphuric-acid-metallurgical,installed,1,False
+reactor_thermal-n2o-destruction,incremental; installed,2,False
+reactor_torrefaction,total-plant,1,False
+reactor_urea-synthesis,total-plant,1,False
+reciprocating-engine_chp,installed; overnight; total-plant,3,False
+refinery_conversion,total-plant,1,False
+refinery_deep-conversion,total-plant,1,False
+refinery_hydroskimming,total-plant,1,False
+resistance-heater_hvac,installed; total,2,False
+rolling-mill_cold,installed; total-plant,2,False
+rolling-mill_hot,installed; total-plant,2,False
+rolling-mill_thin-slab,installed; total-plant,2,False
+separator_aromatics-extraction,total-plant,1,False
+separator_biogas-upgrading,installed; overnight,2,False
+separator_lignin-extraction,installed; total-plant,2,False
+separator_membrane-bioreactor,installed,1,False
+separator_reduced-emission-completion,equipment,1,False
+shaft-furnace_direct-reduction,installed; overnight; total-plant,3,False
+shaft-furnace_electrolytic-hydrogen,installed; total-plant,2,False
+shaft-furnace_hydrogen-direct-reduction,installed,1,False
+sinter-plant,installed; total-plant,2,False
+smelting-vessel_flash,installed,1,False
+smelting-vessel_low-shaft,overnight,1,False
+smelting-vessel_smelting-reduction,installed; overnight; total-plant,3,False
+solar-collector,installed; overnight,2,False
+solar-concentrator_line-focus,installed,1,False
+solar-concentrator_point-focus,installed,1,False
+steam-cracker_electric,installed,1,False
+steam-cracker_fired-tubular,installed; total-plant,2,False
+steam-reformer_ammonia,installed; total-plant,2,False
+steam-reformer_ammonia_efficiency-strong,installed,1,False
+steam-reformer_methane,installed; overnight; total-plant,3,False
+steam-reformer_methanol,installed; total-plant,2,False
+steam-turbine_back-pressure,equipment; installed; overnight; total-plant,4,True
+steam-turbine_condensing,installed; overnight; total-plant,3,False
+steam-turbine_waste-heat,equipment; installed; total-plant,3,True
+storage-cavern_hydrogen,installed,1,False
+thermal-storage_electric,equipment; installed; overnight,3,True
+transesterification-unit_acid-catalyzed,total-plant,1,False
+transesterification-unit_alkali-catalyzed,installed; overnight; total-plant,3,False
+transesterification-unit_heterogeneous-catalyst,total-plant,1,False
+transesterification-unit_supercritical-methanol,total-plant,1,False
+turboexpander_ngl-recovery,installed,1,False
+turboexpander_pressure-let-down,equipment; installed,2,True
+vapour-recompressor_evaporation,installed,1,False
+well_co2-storage,incremental,1,False
+well_electromagnetic-heating,total-plant,1,False
+well_sagd,installed,1,False
+well_solvent-assisted,installed,1,False
+well_solvent-only,total-plant,1,False
+wind-turbine,total-plant,1,False

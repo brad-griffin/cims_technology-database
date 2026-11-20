@@ -372,7 +372,7 @@ pump_electric-station_efficiency-moderate,oil-and-gas,m3-km,guess,guess,not-appl
 pump_mine-dewatering,machine-drive,GJ,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 pump_plunger-lift,oil-and-gas,t,sourced,sourced,not-applicable,guess,sourced,identity,identity,sourced
 radio-frequency-heater_food,food-and-beverage,t,guess,guess,not-applicable,guess,estimated,estimated,identity,sourced
-reactor_adipic-acid,chemicals,t,sourced,estimated,estimated,estimated,estimated,estimated,guess,sourced
+reactor_adipic-acid,chemicals,t,sourced,estimated,estimated,sourced,estimated,estimated,guess,sourced
 reactor_alcohol-to-jet,biofuels,GJ,sourced,sourced,sourced,sourced,sourced,estimated,identity,sourced
 reactor_alkylation,petroleum-refining,m3,sourced,estimated,sourced,sourced,sourced,estimated,identity,sourced
 reactor_ammonium-nitrate,chemicals,t,guess,guess,guess,sourced,estimated,sourced,missing,sourced
@@ -511,7 +511,7 @@ steam-turbine_waste-heat,power-generation,GJ,sourced,sourced,sourced,sourced,sou
 storage-cavern_hydrogen,hydrogen,GJ,sourced,sourced,not-applicable,guess,sourced,guess,identity,sourced
 thermal-storage_electric,heat-supply,GJ,sourced,sourced,sourced,sourced,sourced,sourced,identity,sourced
 thermal-storage_heat-charged,heat-supply,GJ,guess,guess,sourced,sourced,sourced,estimated,identity,sourced
-transesterification-unit_acid-catalyzed,biofuels,GJ,sourced,estimated,sourced,identity,estimated,estimated,identity,sourced
+transesterification-unit_acid-catalyzed,biofuels,GJ,sourced,estimated,sourced,sourced,estimated,estimated,identity,sourced
 transesterification-unit_alkali-catalyzed,biofuels,GJ,sourced,sourced,sourced,sourced,sourced,sourced,estimated,sourced
 transesterification-unit_heterogeneous-catalyst,biofuels,GJ,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
 transesterification-unit_supercritical-methanol,biofuels,GJ,sourced,estimated,estimated,sourced,estimated,estimated,identity,sourced
@@ -536,3 +536,4 @@ calciner_gypsum,glass-and-ceramics,t,guess,guess,guess,guess,estimated,guess,gue
 dryer_electric-paper,pulp-and-paper,t,guess,guess,not-applicable,guess,estimated,guess,identity,sourced
 no-abatement_sf6,non-ferrous-metals,t,guess,guess,not-applicable,guess,guess,not-applicable,guess,sourced
 process-improvement_magnesium-cover-gas,non-ferrous-metals,t,guess,guess,not-applicable,guess,estimated,guess,guess,sourced
+kiln_fluidized-bed,cement-and-lime,t,sourced,sourced,estimated,sourced,sourced,missing,sourced,sourced

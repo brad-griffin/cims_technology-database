@@ -133,14 +133,35 @@ BODY = [('h1', '1. What the database is'),
     'the example whose source ranks highest in the source-priority list. A value read through a compilation '
     "carries the compilation's rank."],
    ['low, high',
-    'The smallest and largest values any example gives, including ranges the sources print themselves. '
-    'Written only where the values spread.'],
+    'In the database file, the 25th and 75th percentiles where four or more examples give the median, so a '
+    'few extreme examples do not stretch the range. Otherwise the smallest and largest values any example '
+    'gives, including ranges the sources print themselves. The detailed tables keep the full range. Written '
+    'only where the values spread.'],
    ['n', 'The number of examples behind the value. Always shown; 0 for a filled value.']]),
  ('gap',),
  ('p',
   'Several rows for the same quantity in one example (sizes, cases) count as one example, at their median. A '
-  'figure a source prints more than once is pooled once. Where the original document is held, its own figure '
-  "is used and a compilation's reprint of it is dropped."),
+  'figure a source prints more than once, or that two sources print identically because one reprints the '
+  'other, is pooled once. Where the original document is held, its own figure is used and a compilation\'s '
+  'reprint of it is dropped.'),
+ ('p',
+  '**Capital costs on one basis.** Capital cost means the full installed cost of a new unit: equipment, '
+  "civil works, erection, engineering, and the owner's costs, without land. A source's equipment-only figure "
+  'is raised to installed cost before pooling, with an installation factor for its class of equipment (2.6 '
+  'for heat equipment, 1.75 for power equipment, 2.2 for electrochemical units, 3.0 for process plant, 2.2 '
+  'otherwise), taken from sources that print both figures. A whole-plant figure is cut to the part of the '
+  'plant the archetype covers where the source breaks its costs down (a cement plant to its clinker line, '
+  'for example).'),
+ ('p',
+  '**Capital costs at one size.** Where cost per unit of capacity falls with size (boilers, CHP, heat pumps, '
+  "carbon capture, reformers, electrolyzers, and similar plant), each example's cost is moved to the "
+  "archetype's reference size before pooling: × (reference size ÷ example size)^(exponent − 1). The exponent "
+  "is 0.7 unless the archetype's own examples support another (0.85 for electrolyzers, which are built from "
+  'repeated stacks). An example takes its own stated size, else a size its source gives elsewhere or a '
+  "judged size, else the typical size of the archetype's other examples. The reference size is the median "
+  'of existing facilities where facility statistics exist (steel, cement, chemicals, liquefied natural gas). '
+  'The fuel-fired boiler takes 25 MW, a large industrial unit, from Canadian facility emissions and boiler '
+  'counts.'),
  ('p',
   '**Figures a source prints wrongly.** Where a figure cannot be right as printed (a slipped decimal, a '
   'wrong unit, a row shifted against its label) and the source itself shows what was meant, the corrected '
@@ -157,18 +178,18 @@ BODY = [('h1', '1. What the database is'),
   ['Grade', 'What it means', 'Example', 'Workbook shading'],
   [['Sourced',
     'Pooled from examples (section 4).',
-    'Dry precalciner kiln capital cost, 495 CAD per t/yr: the median of 18 examples.',
+    'Dry precalciner kiln capital cost, 333 CAD per t/yr: the median of 13 examples.',
     'Darkest tint'],
    ['Sourced, converted',
     'Sourced, but converted with a factor from outside the source (a heating value, density, process ratio, '
     'or assumption).',
-    'Dry precalciner kiln energy use, 3.65 GJ/t: 15 of its 21 examples rest on an outside factor, such as a '
-    'heating value.',
+    'Fuel-fired boiler efficiency, 81.9%: the median of 67 examples, many put on a higher heating value '
+    'basis with a heating-value ratio.',
     'Darkest tint'],
    ['Identity',
     "Calculated from the archetype's own values by a definition or physical relation: 100 ÷ efficiency, fuel "
     'use × emission factor, capacity × capacity factor.',
-    'Fuel-fired boiler energy use, 1.23 GJ per GJ of heat: 100 ÷ its 81% efficiency.',
+    'Fuel-fired boiler energy use, 1.22 GJ per GJ of heat: 100 ÷ its 81.9% efficiency.',
     'Second tint'],
    ['Estimated',
     'Borrowed or scaled from another archetype, or set by a class rule fitted on this database: a host '
@@ -177,7 +198,7 @@ BODY = [('h1', '1. What the database is'),
     'Third tint'],
    ['Proxy',
     'A class constant from a named outside catalogue or handbook.',
-    "Strong-efficiency blast furnace energy use, 12.5 GJ/t: the base blast furnace's energy use less a "
+    "Strong-efficiency blast furnace energy use, 10.7 GJ/t: the base blast furnace's energy use less a "
     'catalogue saving for the strong bucket.',
     'Fourth tint'],
    ['Guess',
@@ -205,8 +226,9 @@ BODY = [('h1', '1. What the database is'),
    '**Calculated levelized cost**, `cost-levelized_calculated`: (capex × capital recovery factor + fixed '
    "O&M) ÷ capacity factor + variable O&M, at the archetype's lifetime and an 8% real reference discount "
    "rate. The `_calculated-incl-energy` column adds each carrier's energy use at a reference 2025 Canadian "
-   'price. Neither includes transport or a rate of return. A levelized cost a source prints stays in '
-   '`cost-levelized`.']),
+   'price. Neither includes transport or a rate of return. Levelized costs that sources print are not in '
+   'the database file: each rests on its own prices, region, discount rate, and scope, so they serve only '
+   'as a check on the calculated cost.']),
  ('h1', '6. Units and conversions'),
  ('h2', 'Product unit'),
  ('lead',
@@ -249,7 +271,10 @@ BODY = [('h1', '1. What the database is'),
    '**Emissions** are kept as separate parameters: combustion, process, total (only where a source reports '
    'them together), and captured. Species stay explicit and are not converted to CO2-eq, except in '
    '`emissions-reduction-potential`. On a capture variant, total emissions are net; total plus captured '
-   "equals the host's gross. Biogenic CO2 is recorded apart from fossil CO2.",
+   "equals the host's gross. Biogenic CO2 is recorded apart from fossil CO2. Every archetype's CO2 is "
+   'checked against a carbon balance: the fossil carbon in its fuels and feedstocks, less the carbon in its '
+   'product and the CO2 captured. Where a sourced total is clearly wrong, it is corrected or replaced with '
+   'the balance.',
    'A value per unit of energy input (an emission factor per GJ of fuel, a cost per kW of input) is put per '
    "unit of output with an efficiency: the example's own where the source gives one, otherwise the "
    "archetype's pooled value. CHP costs per kW of electricity are put per kW of heat with the heat-to-power "
@@ -310,7 +335,8 @@ BODY = [('h1', '1. What the database is'),
    'and CAD per GJ on a boiler row. Never sort, average, or chart a cost or intensity column across '
    'families.',
    '**Fold out the range.** Each parameter shows its central value; the `_low`, `_high`, and `_n` columns '
-   'are grouped beside it and folded when the workbook opens. Use the + above a column to show them.',
+   'are grouped beside it and folded when the workbook opens. Use the + above a column to show them. Where '
+   'four or more examples give the median, low and high are the 25th and 75th percentiles (section 4).',
    '**Read the shading** (section 5) for how certain a value is, and the `filled` column for which '
    'parameters were filled and how. `sources` lists every source behind the row.',
    '**Check `core-sourced`.** It counts how many of the seven core model values (capital cost, fixed and '
@@ -324,7 +350,12 @@ BODY = [('h1', '1. What the database is'),
    'meant to supply heat, and the heat it rejects that waste-heat recovery could use. Each has a tier on '
    'every archetype (low-temp below 150 °C, medium-temp 150–400 °C, high-temp above 400 °C, or not '
    'applicable) and a temperature where the sources give one. A tier that follows a sourced temperature is '
-   'shaded as sourced; a judgement is shaded as a guess.',
+   'shaded as sourced; a judgement is shaded as a guess. A boiler shown under the medium- and '
+   'high-temperature bands carries a judged adjustment for the higher steam pressure: lower efficiency and '
+   'higher capital cost than under the low-temperature band.',
+   '**Service requests** are on the `service-requests` sheet: what each archetype draws from other parts of '
+   'the model per unit of its product, such as clinker for a cement, steam for a dryer, or CO2 sent to '
+   'capture. They show how the archetypes stack into a whole process.',
    '**Some end uses restate an archetype in another unit** (per GJ of process heat, hydrogen per tonne, '
    "liquid fuels per m3). The `filled` column names the factor; the long tables keep the archetype's own "
    'unit.',
