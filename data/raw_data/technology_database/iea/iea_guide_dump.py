@@ -38,7 +38,6 @@ from pathlib import Path as _Path
 _HERE = _Path(__file__).resolve().parent
 _RAW = next(p for p in (_HERE, *_HERE.parents) if p.name == "technology_database" and p.parent.name == "raw_data")
 REPO_ROOT = _RAW.parents[2]
-RECORDS = REPO_ROOT / "data" / "technology_database"
 _DOCS = REPO_ROOT / "primary-sources" / _HERE.relative_to(_RAW)
 DOCS, HERE = _DOCS, _HERE
 SRC = HERE / "iea_2024_clean-energy-technology-guide.csv"

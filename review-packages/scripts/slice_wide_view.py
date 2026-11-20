@@ -15,7 +15,7 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.dimensions import ColumnDimension
 
-from package_map import EXCLUDE_BANDS, HARM, OUTPUT, PACKAGES, ROOT, load, row_nodes
+from package_map import EXCLUDE_BANDS, OUTPUT, PACKAGES, ROOT, load, row_nodes
 
 warnings.filterwarnings("ignore")
 FIRST_BODY = 8          # rows 1-7 are the banner and the header block
