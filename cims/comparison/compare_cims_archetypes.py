@@ -29,7 +29,10 @@ def f(x):
     except (TypeError, ValueError):
         return None
 
-H = os.path.join(ROOT, 'data', 'processed_data', 'technology_database')
+# Build outputs live in a CIMS worktree (plan D6); take their paths
+# from the CIMS package, so they follow whichever CIMS this environment installs.
+from CIMS.data_processing.technology_database.pipeline.common import OUTPUT as _OUTPUT  # noqa: E402
+H = str(_OUTPUT)
 arch = {r['archetype']: r for r in csv.DictReader(open(os.path.join(H, 'archetype.csv'), encoding='utf-8-sig'))}
 par = collections.defaultdict(dict)
 for r in csv.DictReader(open(os.path.join(H, 'archetype-parameter.csv'), encoding='utf-8-sig')):

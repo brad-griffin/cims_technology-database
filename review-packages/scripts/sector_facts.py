@@ -6,7 +6,7 @@ import sys
 import openpyxl
 from collections import Counter, OrderedDict
 
-from package_map import HARM, OUTPUT, RECORDS, ROOT
+from package_map import OUTPUT, RECORDS, ROOT
 
 CROSS = {"heat-supply", "power-generation", "machine-drive", "space-conditioning", "lighting",
          "mobile-equipment", "co2-capture"}
@@ -18,8 +18,7 @@ def rd(p):
 
 # one record per archetype from output/archetype.csv, with the count of guessed cells on the
 # archetypes sheet from archetype-parameter.csv (the wide CSVs are gone, Brad 2026-11-06)
-sys.path.insert(0, str(HARM))
-from pipeline.placement import placement  # noqa: E402
+from CIMS.data_processing.technology_database.pipeline.placement import placement  # noqa: E402
 wide = {r["archetype"]: dict(r, guesses=0) for r in rd(OUTPUT / "archetype.csv")}
 for r in rd(OUTPUT / "archetype-parameter.csv"):
     if r.get("grade") == "guess" and r["archetype"] in wide and placement(r["parameter"], r["target"]) == "main":

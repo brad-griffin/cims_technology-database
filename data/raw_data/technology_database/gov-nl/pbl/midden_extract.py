@@ -33,7 +33,9 @@ from pathlib import Path as _Path
 _HERE = _Path(__file__).resolve().parent
 _RAW = next(p for p in (_HERE, *_HERE.parents) if p.name == "technology_database" and p.parent.name == "raw_data")
 REPO_ROOT = _RAW.parents[2]
-RECORDS = REPO_ROOT / "data" / "technology_database"
+# Records and build outputs live in a CIMS worktree (plan D6); take their paths
+# from the CIMS package, so they follow whichever CIMS this environment installs.
+from CIMS.data_processing.technology_database.pipeline.common import VOCAB  # noqa: E402
 _DOCS = REPO_ROOT / "primary-sources" / _HERE.relative_to(_RAW)
 DOCS, HERE = _DOCS, _HERE
 STEM = "van-geene_2024_midden-database-v0-4a_pbl"
@@ -127,7 +129,7 @@ HEAT_PUMP = re.compile(r"heat pump|mvr|recompression", re.I)
 
 
 def load_vocab():
-    p = RECORDS / "vocabulary" / "commodity.csv"
+    p = VOCAB / "commodity.csv"
     return {r["commodity"]: r["commodity-class"] for r in csv.DictReader(open(p, encoding="utf-8-sig"))}
 
 

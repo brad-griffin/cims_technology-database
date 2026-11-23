@@ -85,5 +85,5 @@ is the IEA's download as published (Windows-1252).
 
 A new source is added in the technology-database repository: its document goes in
 `primary-sources/`, its extraction in this folder, and its rows in the manifest (see
-`src/technology_database/docs/pipeline.md`, *Add a source*). The folder is then deposited
+the CIMS package's `docs/pipeline.md`, *Add a source*; `src/CIMS/data_processing/technology_database/` in CIMS). The folder is then deposited
 on FRDR as a new version.

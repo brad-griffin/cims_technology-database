@@ -37,7 +37,7 @@ dotted, dropping grouping folders and the `technology/` leaf.
 Currency and unit values keep the underscore as their component separator by the
 same rule (`2015_CAD`, `k_pkm`).
 
-The full statement of the rule is in `src/technology_database/docs/design.md` (Naming). Extraction names
+The full statement of the rule is in the CIMS package's `docs/design.md` (Naming; `src/CIMS/data_processing/technology_database/` in CIMS). Extraction names
 use the terms in `data/raw_data/technology_database/extraction-vocabulary.csv`; archetype names use the
-vocabularies in `data/technology_database/vocabulary/`. Run
-`python src/technology_database/extraction/check_names.py` from the repo root to check the tree.
+vocabularies in CIMS's `data/technology_database/vocabulary/`. Run
+`uv run python -m CIMS.data_processing.technology_database.extraction.check_names` to check the tree.

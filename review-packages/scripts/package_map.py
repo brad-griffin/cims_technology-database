@@ -10,11 +10,13 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-RECORDS = ROOT / "data" / "technology_database"
-OUTPUT = ROOT / "data" / "processed_data" / "technology_database"
-PACKAGE = ROOT / "src" / "technology_database"
-HARM = PACKAGE   # kept for older imports
+import CIMS.data_processing.technology_database as _tdb
+from CIMS.data_processing.technology_database.pipeline.common import OUTPUT, RECORDS
+
+ROOT = Path(__file__).resolve().parents[2]   # this repository (reviews, review-packages)
+# RECORDS and OUTPUT: records and build outputs live in a CIMS worktree (plan D6); take their paths
+# from the CIMS package, so they follow whichever CIMS this environment installs.
+PACKAGE = Path(_tdb.__file__).resolve().parent
 
 BREWERY_EXCLUDE = ("light-industrial.service.heat.drying", "light-industrial.service.heat.metal-melting",
                    "light-industrial.service.heat.heat-treatment", "light-industrial.service.heat.forming-pressing")
